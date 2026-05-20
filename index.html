@@ -1,3 +1,43 @@
+<!-- 
+=============================================================
+  ChatScript — AI Conversation Exporter
+  Owner: Mike Koga (mikekoga@hotmail.com)
+  GitHub: github.com/skychael/chatscript (PRIVATE repo)
+  Live: chatscript.pages.dev (Cloudflare Pages)
+=============================================================
+  VERSION HISTORY:
+  v0.1 - Initial build
+  v0.2 - UI redesign (modern, rounded, gradient style)
+  v0.3 - Multi-platform parser (Claude, ChatGPT, Gemini)
+         Confidence check / cross-validation added
+         Timestamp-only-on-own-line fix to avoid false splits
+=============================================================
+  ARCHITECTURE:
+  - Single index.html file, no build step
+  - pdfmake library for PDF generation (CDN)
+  - Cloudflare Pages serves the frontend
+  - Future: move parser logic to Cloudflare Worker
+    so source code is not fully visible to public
+=============================================================
+  PARSER LOGIC (Claude.ai format):
+  - "Claude finished the response" stripped from top
+  - Timestamps (e.g. "1:23 PM") on their own line
+    mark END of user message, START of AI response
+  - Text BEFORE timestamp = human (blue)
+  - Text AFTER timestamp = AI (plain)
+  - Minimum message length = 1 char (after trim)
+=============================================================
+  OTHER MIKE PROJECTS ON CLOUDFLARE:
+  - ask-ai.mikekoga.workers.dev (Ask AI site)
+  - weather-site-5vz.pages.dev (Weather site)
+=============================================================
+  NEXT STEPS:
+  1. Fix single-char user replies showing as AI (minor)
+  2. Add Stripe payment ($5/month, 30 msg free limit)
+  3. Move parser to Cloudflare Worker (hide source logic)
+  4. Add ChatGPT and Gemini real-world testing
+=============================================================
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -639,7 +679,7 @@ body {
     </div>
     Chat<span>Script</span>
   </div>
-  <div class="badge">Free Preview</div>
+  <div class="badge">Free Preview · v0.3</div>
 </header>
 
 <div class="screen-ui">
@@ -749,24 +789,56 @@ function redactText(text) {
   return out;
 }
 
-// ── Detect platform ──
+// ── PLATFORM DETECTION ──
+// We require multiple occurrences of speaker labels to avoid false positives
+// (e.g. our own chat talking ABOUT Gemini shouldn't trigger Gemini parser)
 function detectPlatform(text) {
   const lines = text.split('\n').map(l => l.trim());
-  const hasYouLabel = lines.some(l => l === 'You');
-  const hasChatGPTLabel = lines.some(l => l === 'ChatGPT');
-  if (hasYouLabel && hasChatGPTLabel) return 'chatgpt';
+
+  const youCount     = lines.filter(l => l === 'You').length;
+  const chatgptCount = lines.filter(l => l === 'ChatGPT').length;
+  const geminiCount  = lines.filter(l => l === 'Gemini').length;
+  const hasTS        = /\b\d{1,2}:\d{2}\s*(AM|PM)\b/i.test(text);
+
+  // Need at least 2 occurrences of each label to be confident
+  if (youCount >= 2 && chatgptCount >= 2) return 'chatgpt';
+  if (geminiCount >= 2) return 'gemini';
+  if (hasTS) return 'claude';
+
+  // Single occurrence fallbacks
+  if (youCount >= 1 && chatgptCount >= 1) return 'chatgpt';
+  if (geminiCount >= 1 && !hasTS) return 'gemini';
+
   return 'claude';
 }
 
-// ── Parse Claude ──
-function parseClaude(text) {
-  text = text.replace(/^Claude finished the response[\s\n]*/i, '');
-  text = text.replace(/\[Claude is AI and can make mistakes\..*?\]/gis, '');
-  text = text.replace(/Claude is AI and can make mistakes\..*$/gim, '');
+// ── CONFIDENCE CHECK ──
+function checkConfidence(messages) {
+  if (messages.length < 2) return { ok: false, warning: 'Only ' + messages.length + ' message detected — make sure you copied the full conversation.' };
+  const h = messages.filter(m => m.role === 'human').length;
+  const a = messages.filter(m => m.role === 'ai').length;
+  if (h === 0) return { ok: false, warning: 'No user messages detected. Try copying again with Ctrl+A first.' };
+  if (a === 0) return { ok: false, warning: 'No AI messages detected. Try copying again with Ctrl+A first.' };
+  const ratio = Math.max(h, a) / Math.min(h, a);
+  if (ratio > 4) return { ok: true, warning: `Heads up: detected ${h} user and ${a} AI messages — ratio seems off. Colors may not be 100% accurate.` };
+  return { ok: true, warning: null };
+}
 
-  const tsPattern = /\b(\d{1,2}:\d{2}\s*(?:AM|PM))\b/gi;
+// ── PARSE CLAUDE ──
+// claude.ai format: [user text] → HH:MM AM/PM → [AI text] → [user text] → HH:MM AM/PM → ...
+// Timestamp always follows the USER message. Text after timestamp = AI.
+function parseClaude(text) {
+  // Strip UI noise
+  text = text.replace(/Claude finished the response[\s\n]*/gi, '');
+  text = text.replace(/\[Claude is AI[\s\S]*?\]/gi, '');
+  text = text.replace(/Claude is AI and can make mistakes\..*$/gim, '');
+  text = text.trim();
+
+  // Timestamp must be on its own line (not embedded in a sentence)
+  const tsPattern = /(?:^|\n)(\d{1,2}:\d{2}\s*(?:AM|PM))(?:\n|$)/gi;
   const matches = [...text.matchAll(tsPattern)];
 
+  // No timestamps — can't parse reliably, return empty
   if (matches.length === 0) {
     const blocks = text.split(/\n{2,}/).map(b => b.trim()).filter(b => b.length > 3);
     return blocks.map((block, i) => ({ role: i % 2 === 0 ? 'human' : 'ai', text: block, time: '' }));
@@ -776,29 +848,33 @@ function parseClaude(text) {
   let cursor = 0;
 
   for (let i = 0; i < matches.length; i++) {
-    const tsStart = matches[i].index;
-    const tsEnd   = tsStart + matches[i][0].length;
-    const time    = matches[i][1];
+    const tsStart     = matches[i].index + matches[i][0].indexOf(matches[i][1]);
+    const tsEnd       = tsStart + matches[i][1].length;
+    const time        = matches[i][1];
     const nextTsStart = matches[i + 1] ? matches[i + 1].index : text.length;
 
+    // Text BEFORE timestamp = human message
     const humanText = text.substring(cursor, tsStart).trim();
-    if (humanText.length > 2) messages.push({ role: 'human', text: humanText, time });
+    if (humanText.trim().length >= 1) messages.push({ role: 'human', text: humanText, time });
 
+    // Text AFTER timestamp = AI response
     const aiText = text.substring(tsEnd, nextTsStart).trim();
-    if (aiText.length > 2) messages.push({ role: 'ai', text: aiText, time: '' });
+    if (aiText.trim().length >= 1) messages.push({ role: 'ai', text: aiText, time: '' });
 
     cursor = nextTsStart;
   }
 
-  return messages.filter(m => m.text.length > 2 && !m.text.match(/^Claude finished/i));
+  return messages.filter(m => m.text.trim().length >= 1);
 }
 
-// ── Parse ChatGPT ──
+// ── PARSE CHATGPT ──
+// Format: standalone "You" / "ChatGPT" label lines
 function parseChatGPT(text) {
   const lines = text.split('\n');
   const messages = [];
   let currentRole = null;
   let currentLines = [];
+  const NOISE = /^(Share|Copy|More|Thumbs|Report|Edit|Regenerate|Continue generating|ChatGPT can make mistakes)$/i;
 
   const flush = () => {
     if (currentRole && currentLines.length > 0) {
@@ -809,12 +885,47 @@ function parseChatGPT(text) {
   };
 
   for (let i = 0; i < lines.length; i++) {
-    const trimmed = lines[i].trim();
-    if (trimmed === 'You') { flush(); currentRole = 'human'; }
-    else if (trimmed === 'ChatGPT') { flush(); currentRole = 'ai'; }
-    else if (currentRole !== null) {
-      if (trimmed.match(/^(Share|Copy|More|Thumbs|Report|Edit|Regenerate|Continue generating)$/i)) continue;
-      currentLines.push(lines[i]);
+    const t = lines[i].trim();
+    if (t === 'You')     { flush(); currentRole = 'human'; }
+    else if (t === 'ChatGPT') { flush(); currentRole = 'ai'; }
+    else if (currentRole !== null && !NOISE.test(t)) currentLines.push(lines[i]);
+  }
+  flush();
+
+  if (messages.length === 0) {
+    const blocks = text.split(/\n{2,}/).map(b => b.trim()).filter(b => b.length > 3);
+    return blocks.map((block, i) => ({ role: i % 2 === 0 ? 'human' : 'ai', text: block, time: '' }));
+  }
+  return messages;
+}
+
+// ── PARSE GEMINI ──
+// Format: [user text] → standalone "Gemini" line → [AI text] → blank line → [user text] ...
+function parseGemini(text) {
+  const lines = text.split('\n');
+  const messages = [];
+  let currentRole = 'human';
+  let currentLines = [];
+  const NOISE = /^(Share|Copy|Thumbs|Report|Edit|Regenerate|Show drafts|Retry)$/i;
+
+  const flush = () => {
+    const txt = currentLines.join('\n').trim();
+    if (txt.length > 2) messages.push({ role: currentRole, text: txt, time: '' });
+    currentLines = [];
+  };
+
+  for (let i = 0; i < lines.length; i++) {
+    const t = lines[i].trim();
+    if (t === 'Gemini') { flush(); currentRole = 'ai'; }
+    else if (NOISE.test(t)) continue;
+    else {
+      // After an AI block, a blank line followed by text = new human turn
+      if (currentRole === 'ai' && t === '' && currentLines.length > 0) {
+        const next = lines.slice(i + 1).find(l => l.trim().length > 0);
+        if (next && next.trim() !== 'Gemini') { flush(); currentRole = 'human'; }
+      } else {
+        currentLines.push(lines[i]);
+      }
     }
   }
   flush();
@@ -826,18 +937,24 @@ function parseChatGPT(text) {
   return messages;
 }
 
+// ── MAIN PARSER — returns { messages, platform, confidence } ──
 function parseConversation(raw) {
   const platform = detectPlatform(raw);
-  return platform === 'chatgpt' ? parseChatGPT(raw) : parseClaude(raw);
+  let messages;
+  if (platform === 'chatgpt')    messages = parseChatGPT(raw);
+  else if (platform === 'gemini') messages = parseGemini(raw);
+  else                            messages = parseClaude(raw);
+  return { messages, platform, confidence: checkConfidence(messages) };
 }
 
 // ── Live counter ──
 document.getElementById('pasteArea').addEventListener('input', function() {
-  const msgs = parseConversation(this.value);
+  const { messages, platform } = parseConversation(this.value);
   const el = document.getElementById('charInfo');
+  const pLabel = platform === 'chatgpt' ? 'ChatGPT' : platform === 'gemini' ? 'Gemini' : 'Claude';
   el.textContent = this.value.trim().length === 0
     ? '0 messages detected'
-    : `${msgs.length} message${msgs.length !== 1 ? 's' : ''} detected`;
+    : `${messages.length} msg${messages.length !== 1 ? 's' : ''} · ${pLabel} detected`;
 });
 
 let parsedMessages = [];
@@ -867,10 +984,10 @@ function processConversation() {
     return;
   }
 
-  let messages = parseConversation(raw);
+  const { messages, platform, confidence } = parseConversation(raw);
 
-  if (messages.length === 0) {
-    errorEl.textContent = 'Could not detect any messages. Make sure you copied the full conversation.';
+  if (!confidence.ok) {
+    errorEl.textContent = confidence.warning;
     errorEl.style.display = 'block';
     return;
   }
@@ -882,22 +999,34 @@ function processConversation() {
     return;
   }
 
+  let msgs = messages;
   if (document.getElementById('redactCheck').checked) {
-    messages = messages.map(m => ({ ...m, text: redactText(m.text) }));
+    msgs = msgs.map(m => ({ ...m, text: redactText(m.text) }));
   }
 
-  parsedMessages = messages;
-  renderPreview(messages);
+  parsedMessages = msgs;
+  renderPreview(msgs, platform, confidence.warning);
 }
 
 // ── Screen preview ──
-function renderPreview(messages) {
+function renderPreview(messages, platform, warning) {
   const now = new Date();
   const dateStr = now.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
   const humanCount = messages.filter(m => m.role === 'human').length;
+  const pLabel = platform === 'chatgpt' ? 'ChatGPT' : platform === 'gemini' ? 'Gemini' : 'Claude';
 
   document.getElementById('previewMeta').textContent =
-    `${messages.length} messages · ${humanCount} from you · Generated ${dateStr}`;
+    `${messages.length} messages · ${humanCount} from you · ${pLabel} · Generated ${dateStr}`;
+
+  // Show soft warning if confidence flagged something
+  const errorEl = document.getElementById('errorMsg');
+  if (warning) {
+    errorEl.textContent = '⚠️ ' + warning;
+    errorEl.style.display = 'block';
+    errorEl.style.background = '#FFFBEB';
+    errorEl.style.borderColor = '#FDE68A';
+    errorEl.style.color = '#92400E';
+  }
 
   let html = `
     <div class="doc-title">Conversation Export</div>
