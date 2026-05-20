@@ -3,39 +3,63 @@
   ChatScript — AI Conversation Exporter
   Owner: Mike Koga (mikekoga@hotmail.com)
   GitHub: github.com/skychael/chatscript (PRIVATE repo)
-  Live: chatscript.pages.dev (Cloudflare Pages).
+  Live: chatscript.pages.dev (Cloudflare Pages)
 =============================================================
   VERSION HISTORY:
   v0.1 - Initial build
   v0.2 - UI redesign (modern, rounded, gradient style)
   v0.3 - Multi-platform parser (Claude, ChatGPT, Gemini)
          Confidence check / cross-validation added
-         Timestamp-only-on-own-line fix to avoid false splits
+         Timestamp-only-on-own-line fix
+  v0.4 - Parser fix: AI block split by blank line so trailing
+         user messages are correctly identified as human
 =============================================================
   ARCHITECTURE:
   - Single index.html file, no build step
   - pdfmake library for PDF generation (CDN)
-  - Cloudflare Pages serves the frontend
+  - Cloudflare Pages auto-deploys from GitHub main branch
   - Future: move parser logic to Cloudflare Worker
     so source code is not fully visible to public
 =============================================================
-  PARSER LOGIC (Claude.ai format):
-  - "Claude finished the response" stripped from top
-  - Timestamps (e.g. "1:23 PM") on their own line
-    mark END of user message, START of AI response
-  - Text BEFORE timestamp = human (blue)
-  - Text AFTER timestamp = AI (plain)
-  - Minimum message length = 1 char (after trim)
+  KNOWN BUG LOG (for future Claude to read):
+  - BUG 1 [FIXED v0.4]: User replies after AI response were
+    being caught inside the AI block. Fixed by splitting AI
+    block on blank lines and treating last paragraph as human.
+  - BUG 2 [OPEN]: Single-char replies still show as AI in
+    some edge cases. Needs ensemble/voting parser approach.
+  - BUG 3 [OPEN]: Long conversations with timestamps IN the
+    AI text (e.g. Claude writing "at 12:32 PM...") can cause
+    false splits. Mitigation: timestamps must be on own line.
+=============================================================
+  FUTURE PARSER PLAN — ENSEMBLE/VOTING SYSTEM:
+  Build multiple independent detection methods that each vote:
+  METHOD A: Timestamp-based (current approach)
+  METHOD B: Blank-line paragraph splitting with role alternation
+  METHOD C: Speaker label detection (You/ChatGPT/Gemini)
+  METHOD D: Message length heuristics (AI tends to be longer)
+  METHOD E: Pattern matching (AI often starts with capital, ends with period)
+  
+  Each method returns { role, confidence } per message block.
+  Voting logic: majority wins. Tie = fall back to Method A.
+  Log which method won for debugging. Never crash — always
+  return SOMETHING even if confidence is low, just warn user.
+  
+  Dependencies to build before ensemble parser:
+  1. A message segmentation layer (split raw text into blocks first)
+  2. A confidence scoring system (0-100 per method per message)
+  3. A fallback chain: A -> B -> C -> alternating
+  4. A debug mode (add ?debug=1 to URL to see parse log)
 =============================================================
   OTHER MIKE PROJECTS ON CLOUDFLARE:
   - ask-ai.mikekoga.workers.dev (Ask AI site)
   - weather-site-5vz.pages.dev (Weather site)
 =============================================================
   NEXT STEPS:
-  1. Fix single-char user replies showing as AI (minor)
-  2. Add Stripe payment ($5/month, 30 msg free limit)
-  3. Move parser to Cloudflare Worker (hide source logic)
-  4. Add ChatGPT and Gemini real-world testing
+  1. Add Stripe payment ($5/month, 30 msg free limit)
+  2. Move parser to Cloudflare Worker (hide source logic)
+  3. Build ensemble parser (see FUTURE PARSER PLAN above)
+  4. Add real ChatGPT and Gemini testing with live pastes
+  5. Make GitHub repo Private
 =============================================================
 -->
 <!DOCTYPE html>
@@ -679,7 +703,7 @@ body {
     </div>
     Chat<span>Script</span>
   </div>
-  <div class="badge">Free Preview · v0.3</div>
+  <div class="badge">Free Preview · v0.4</div>
 </header>
 
 <div class="screen-ui">
@@ -858,8 +882,22 @@ function parseClaude(text) {
     if (humanText.trim().length >= 1) messages.push({ role: 'human', text: humanText, time });
 
     // Text AFTER timestamp = AI response
-    const aiText = text.substring(tsEnd, nextTsStart).trim();
-    if (aiText.trim().length >= 1) messages.push({ role: 'ai', text: aiText, time: '' });
+    // IMPORTANT: The AI block may contain the NEXT user message at the end,
+    // separated by a blank line. Split on double newlines and treat the
+    // last paragraph as the next human message if another timestamp follows.
+    const aiBlock = text.substring(tsEnd, nextTsStart).trim();
+    if (aiBlock.trim().length >= 1) {
+      const aiParagraphs = aiBlock.split(/\n{2,}/).map(p => p.trim()).filter(p => p.length >= 1);
+      if (aiParagraphs.length > 1 && matches[i + 1]) {
+        // Last paragraph is likely the next user message
+        const aiText = aiParagraphs.slice(0, -1).join('\n\n');
+        const nextHuman = aiParagraphs[aiParagraphs.length - 1];
+        if (aiText.trim().length >= 1) messages.push({ role: 'ai', text: aiText, time: '' });
+        if (nextHuman.trim().length >= 1) messages.push({ role: 'human', text: nextHuman, time: matches[i+1][1] });
+      } else {
+        messages.push({ role: 'ai', text: aiBlock, time: '' });
+      }
+    }
 
     cursor = nextTsStart;
   }
