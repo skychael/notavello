@@ -13,7 +13,7 @@
          Timestamp-only-on-own-line fix
   v0.4 - Parser fix: AI block split by blank line so trailing
          user messages are correctly identified as human
-  v0.069 - Added floating debug panel for page break data, color coded green/yellow/red
+  v0.070 - Added Ctrl+A in debug panel, minimum gap cooldown to prevent back-to-back dividers
 =============================================================
   !! IMPORTANT FOR FUTURE CLAUDE SESSIONS !!
   Every time you make ANY change to this file you MUST:
@@ -709,7 +709,7 @@ body {
     </div>
     Nota<span>vello</span>
   </div>
-  <div class="badge">Free Preview · v0.069</div>
+  <div class="badge">Free Preview · v0.070</div>
 </header>
 
 <div class="screen-ui">
@@ -1078,7 +1078,18 @@ function renderPreview(messages, platform, warning) {
       background:#0F172A;color:#94A3B8;font-family:monospace;font-size:11px;
       padding:12px 16px;border-radius:10px;max-width:320px;
       box-shadow:0 4px 20px rgba(0,0,0,0.4);line-height:1.8;
-      max-height:300px;overflow-y:auto;`;
+      max-height:300px;overflow-y:auto;user-select:text;`;
+    debugPanel.setAttribute('tabindex', '0');
+    debugPanel.addEventListener('keydown', e => {
+      if (e.key === 'a' && (e.ctrlKey || e.metaKey)) {
+        e.preventDefault();
+        const sel = window.getSelection();
+        const range = document.createRange();
+        range.selectNodeContents(debugPanel);
+        sel.removeAllRanges();
+        sel.addRange(range);
+      }
+    });
     debugPanel.innerHTML = '<div style="color:#4F46E5;font-weight:700;margin-bottom:6px;">📐 Page Break Debug</div>';
     document.body.appendChild(debugPanel);
   } else {
@@ -1102,8 +1113,10 @@ function renderPreview(messages, platform, warning) {
   // insert a divider. No character counting, no estimation — the browser knows.
   // Letter page at 96dpi screen = 1056px. With margins/padding we use 900px per page.
   const PAGE_HEIGHT_PX = 900;
+  const MIN_GAP_PX = 500; // minimum px after a divider before next can fire
   let pageNum = 1;
   let lastPageHeight = 0;
+  let lastDividerHeight = 0;
 
   messages.forEach((msg) => {
     // Build message HTML
@@ -1130,7 +1143,8 @@ function renderPreview(messages, platform, warning) {
     // Measure real rendered height — browser accounts for everything
     const currentHeight = docPage.scrollHeight;
     const gap = currentHeight - lastPageHeight;
-    if (currentHeight - (pageNum - 1) * 50 >= pageNum * PAGE_HEIGHT_PX) {
+    const sinceLastDivider = currentHeight - lastDividerHeight;
+    if (currentHeight - (pageNum - 1) * 50 >= pageNum * PAGE_HEIGHT_PX && sinceLastDivider >= MIN_GAP_PX) {
       pageNum++;
       docPage.insertAdjacentHTML('beforeend', `
         <div style="display:flex;align-items:center;gap:12px;margin:24px 0;opacity:0.4;">
@@ -1139,6 +1153,7 @@ function renderPreview(messages, platform, warning) {
           <div style="flex:1;height:1px;background:var(--border);"></div>
         </div>`);
       lastPageHeight = currentHeight;
+      lastDividerHeight = docPage.scrollHeight;
       // Log to debug panel
       debugPanel.insertAdjacentHTML('beforeend',
         `<div><span style="color:#4F46E5">P${pageNum}</span> h:${currentHeight} gap:<span style="color:${gap < 800 ? '#ef4444' : gap > 1100 ? '#f59e0b' : '#22c55e'}">${gap}</span> thr:${pageNum * PAGE_HEIGHT_PX}</div>`
