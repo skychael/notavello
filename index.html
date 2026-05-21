@@ -13,7 +13,7 @@
          Timestamp-only-on-own-line fix
   v0.4 - Parser fix: AI block split by blank line so trailing
          user messages are correctly identified as human
-  v0.077 - Inner content div for measurement, page shell is visual only, fixed PAGE_CONTENT_HEIGHT
+  v0.078 - Increased PAGE_CONTENT_HEIGHT to 1500 for testing, fixed debug output
 =============================================================
   !! IMPORTANT FOR FUTURE CLAUDE SESSIONS !!
   Every time you make ANY change to this file you MUST:
@@ -720,7 +720,7 @@ body {
     </div>
     Nota<span>vello</span>
   </div>
-  <div class="badge">Free Preview · v0.077</div>
+  <div class="badge">Free Preview · v0.078</div>
 </header>
 
 <div class="screen-ui">
@@ -1110,7 +1110,7 @@ function renderPreview(messages, platform, warning) {
   docPage.innerHTML = '';
 
   // Usable content height = 11in minus top and bottom padding (0.75in each) at 96dpi
-  const PAGE_CONTENT_HEIGHT = Math.round((11 - 1.5) * 96); // 912px
+  const PAGE_CONTENT_HEIGHT = 1500;
 
   function newPage(isFirst) {
     const page = document.createElement('div');
@@ -1161,10 +1161,11 @@ function renderPreview(messages, platform, warning) {
 
     // If content div is taller than one page's usable height, move block to new page
     if (currentContent.scrollHeight > PAGE_CONTENT_HEIGHT) {
+      const triggerHeight = currentContent.scrollHeight;
       currentContent.removeChild(block);
       pageCount++;
       debugPanel.insertAdjacentHTML('beforeend',
-        `<div><span style="color:#4F46E5">P${pageCount}</span> prev:${currentContent.scrollHeight}px</div>`);
+        `<div><span style="color:#4F46E5">P${pageCount}</span> triggered@${triggerHeight}px remaining:${currentContent.scrollHeight}px</div>`);
       currentContent = newPage(false);
       currentContent.appendChild(block);
     }
