@@ -13,7 +13,7 @@
          Timestamp-only-on-own-line fix
   v0.4 - Parser fix: AI block split by blank line so trailing
          user messages are correctly identified as human
-  v0.063 - Page dividers now use browser-measured real rendered height instead of character estimation
+  v0.064 - Fixed page divider measurement by showing preview div before measuring heights
 =============================================================
   !! IMPORTANT FOR FUTURE CLAUDE SESSIONS !!
   Every time you make ANY change to this file you MUST:
@@ -709,7 +709,7 @@ body {
     </div>
     Nota<span>vello</span>
   </div>
-  <div class="badge">Free Preview · v0.063</div>
+  <div class="badge">Free Preview · v0.064</div>
 </header>
 
 <div class="screen-ui">
@@ -1065,6 +1065,9 @@ function renderPreview(messages, platform, warning) {
     errorEl.style.color = '#92400E';
   }
 
+  // Show preview section FIRST so browser can measure real rendered heights
+  document.getElementById('previewSection').style.display = 'block';
+
   // Render header first
   const docPage = document.getElementById('docPage');
   docPage.innerHTML = `
@@ -1121,7 +1124,6 @@ function renderPreview(messages, platform, warning) {
     }
   });
 
-  document.getElementById('previewSection').style.display = 'block';
   document.getElementById('previewSection').scrollIntoView({ behavior: 'smooth' });
 }
 
