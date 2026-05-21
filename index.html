@@ -13,7 +13,7 @@
          Timestamp-only-on-own-line fix
   v0.4 - Parser fix: AI block split by blank line so trailing
          user messages are correctly identified as human
-  v0.074 - Fixed page height to fixed 11in for overflow detection, restored debug panel
+  v0.075 - Remove overflow:hidden so scrollHeight can grow, use clientHeight for comparison
 =============================================================
   !! IMPORTANT FOR FUTURE CLAUDE SESSIONS !!
   Every time you make ANY change to this file you MUST:
@@ -510,11 +510,10 @@ body {
   box-shadow: var(--shadow);
   width: 8.5in;
   height: 11in;
-  padding: 1in;
+  padding: 0.75in;
   margin: 0 auto 32px auto;
   box-sizing: border-box;
   position: relative;
-  overflow: hidden;
 }
 
 .doc-title {
@@ -718,7 +717,7 @@ body {
     </div>
     Nota<span>vello</span>
   </div>
-  <div class="badge">Free Preview · v0.074</div>
+  <div class="badge">Free Preview · v0.075</div>
 </header>
 
 <div class="screen-ui">
@@ -1169,12 +1168,12 @@ function renderPreview(messages, platform, warning) {
 
     currentPage.appendChild(block);
 
-    // If page overflows, move block to a new page
-    if (currentPage.scrollHeight > currentPage.offsetHeight) {
+    // Check if content overflows by comparing content scrollHeight to available inner height
+    if (currentPage.scrollHeight > currentPage.clientHeight) {
       currentPage.removeChild(block);
       pageCount++;
       debugPanel.insertAdjacentHTML('beforeend',
-        `<div><span style="color:#4F46E5">P${pageCount}</span> scroll:${currentPage.scrollHeight} offset:${currentPage.offsetHeight}</div>`);
+        `<div><span style="color:#4F46E5">P${pageCount}</span> scroll:${currentPage.scrollHeight} client:${currentPage.clientHeight}</div>`);
       currentPage = newPage(false);
       currentPage.appendChild(block);
     }
