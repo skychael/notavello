@@ -13,7 +13,7 @@
          Timestamp-only-on-own-line fix
   v0.4 - Parser fix: AI block split by blank line so trailing
          user messages are correctly identified as human
-  v0.073 - Complete rewrite: preview uses real 8.5x11in page divs, browser handles overflow naturally
+  v0.074 - Fixed page height to fixed 11in for overflow detection, restored debug panel
 =============================================================
   !! IMPORTANT FOR FUTURE CLAUDE SESSIONS !!
   Every time you make ANY change to this file you MUST:
@@ -509,7 +509,7 @@ body {
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   width: 8.5in;
-  min-height: 11in;
+  height: 11in;
   padding: 1in;
   margin: 0 auto 32px auto;
   box-sizing: border-box;
@@ -718,7 +718,7 @@ body {
     </div>
     Nota<span>vello</span>
   </div>
-  <div class="badge">Free Preview · v0.073</div>
+  <div class="badge">Free Preview · v0.074</div>
 </header>
 
 <div class="screen-ui">
@@ -1075,11 +1075,58 @@ function renderPreview(messages, platform, warning) {
 
   document.getElementById('previewSection').style.display = 'block';
 
+  // ── DEBUG PANEL ──
+  let debugPanel = document.getElementById('debugPanel');
+  if (!debugPanel) {
+    debugPanel = document.createElement('div');
+    debugPanel.id = 'debugPanel';
+    debugPanel.style.cssText = `
+      position:fixed;bottom:16px;right:16px;z-index:9999;
+      background:#0F172A;color:#94A3B8;font-family:monospace;font-size:11px;
+      padding:12px 16px;border-radius:10px;max-width:320px;
+      box-shadow:0 4px 20px rgba(0,0,0,0.4);line-height:1.8;
+      max-height:300px;overflow-y:auto;user-select:text;`;
+    debugPanel.setAttribute('tabindex', '0');
+    debugPanel.addEventListener('keydown', e => {
+      if (e.key === 'a' && (e.ctrlKey || e.metaKey)) {
+        e.preventDefault();
+        const sel = window.getSelection();
+        const range = document.createRange();
+        range.selectNodeContents(debugPanel);
+        sel.removeAllRanges();
+        sel.addRange(range);
+      }
+    });
+    document.body.appendChild(debugPanel);
+  }
+  debugPanel.innerHTML = '<div style="color:#4F46E5;font-weight:700;margin-bottom:6px;">📐 Page Debug</div>';
+
   // Build pages — each page is a real 8.5×11in div.
   // We fill each page until its scrollHeight exceeds its offsetHeight,
   // then start a new page. Simple, accurate, easy to change page size later.
   const docPage = document.getElementById('docPage');
   docPage.innerHTML = '';
+
+  function newPage(isFirst) {
+    const page = document.createElement('div');
+    page.className = 'page';
+    if (isFirst) {
+      page.innerHTML = `
+        <div class="doc-title">Conversation Export</div>
+        <div class="doc-meta">
+          Generated ${dateStr}
+          <div class="doc-meta-dot"></div>
+          ${messages.length} messages
+          <div class="doc-meta-dot"></div>
+          <span style="color:var(--accent);font-weight:500;">Blue = your messages</span>
+        </div>`;
+    }
+    docPage.appendChild(page);
+    return page;
+  }
+
+  let pageCount = 1;
+  debugPanel.insertAdjacentHTML('beforeend', `<div>Page 1 created</div>`);
 
   function newPage(isFirst) {
     const page = document.createElement('div');
@@ -1120,12 +1167,14 @@ function renderPreview(messages, platform, warning) {
       </div>`;
     }
 
-    // Try adding to current page
     currentPage.appendChild(block);
 
     // If page overflows, move block to a new page
     if (currentPage.scrollHeight > currentPage.offsetHeight) {
       currentPage.removeChild(block);
+      pageCount++;
+      debugPanel.insertAdjacentHTML('beforeend',
+        `<div><span style="color:#4F46E5">P${pageCount}</span> scroll:${currentPage.scrollHeight} offset:${currentPage.offsetHeight}</div>`);
       currentPage = newPage(false);
       currentPage.appendChild(block);
     }
