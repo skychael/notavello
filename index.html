@@ -13,7 +13,7 @@
          Timestamp-only-on-own-line fix
   v0.4 - Parser fix: AI block split by blank line so trailing
          user messages are correctly identified as human
-  v0.064 - Fixed page divider measurement by showing preview div before measuring heights
+  v0.065 - Debug mode: page dividers show real height, gap, and threshold values
 =============================================================
   !! IMPORTANT FOR FUTURE CLAUDE SESSIONS !!
   Every time you make ANY change to this file you MUST:
@@ -709,7 +709,7 @@ body {
     </div>
     Nota<span>vello</span>
   </div>
-  <div class="badge">Free Preview · v0.064</div>
+  <div class="badge">Free Preview · v0.065</div>
 </header>
 
 <div class="screen-ui">
@@ -1112,15 +1112,16 @@ function renderPreview(messages, platform, warning) {
 
     // Measure real rendered height — browser accounts for everything
     const currentHeight = docPage.scrollHeight;
-    if (currentHeight - lastPageHeight >= PAGE_HEIGHT_PX) {
+    const gap = currentHeight - lastPageHeight;
+    if (gap >= PAGE_HEIGHT_PX) {
       pageNum++;
-      lastPageHeight = currentHeight;
       docPage.insertAdjacentHTML('beforeend', `
         <div style="display:flex;align-items:center;gap:12px;margin:24px 0;opacity:0.4;">
           <div style="flex:1;height:1px;background:var(--border);"></div>
-          <div style="font-size:0.68rem;color:var(--ink-faint);font-weight:600;letter-spacing:0.1em;text-transform:uppercase;">Page ${pageNum}</div>
+          <div style="font-size:0.68rem;color:var(--ink-faint);font-weight:600;letter-spacing:0.1em;text-transform:uppercase;">Page ${pageNum} | h:${currentHeight}px gap:${gap}px threshold:${PAGE_HEIGHT_PX}px</div>
           <div style="flex:1;height:1px;background:var(--border);"></div>
         </div>`);
+      lastPageHeight = currentHeight;
     }
   });
 
