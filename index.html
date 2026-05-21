@@ -13,7 +13,7 @@
          Timestamp-only-on-own-line fix
   v0.4 - Parser fix: AI block split by blank line so trailing
          user messages are correctly identified as human
-  v0.075 - Remove overflow:hidden so scrollHeight can grow, use clientHeight for comparison
+  v0.076 - Use empty page height as baseline for overflow detection, removed duplicate newPage
 =============================================================
   !! IMPORTANT FOR FUTURE CLAUDE SESSIONS !!
   Every time you make ANY change to this file you MUST:
@@ -717,7 +717,7 @@ body {
     </div>
     Nota<span>vello</span>
   </div>
-  <div class="badge">Free Preview · v0.075</div>
+  <div class="badge">Free Preview · v0.076</div>
 </header>
 
 <div class="screen-ui">
@@ -1121,29 +1121,13 @@ function renderPreview(messages, platform, warning) {
         </div>`;
     }
     docPage.appendChild(page);
+    // Store empty height as baseline so we know how tall the page is before any messages
+    page._emptyHeight = page.scrollHeight;
     return page;
   }
 
   let pageCount = 1;
   debugPanel.insertAdjacentHTML('beforeend', `<div>Page 1 created</div>`);
-
-  function newPage(isFirst) {
-    const page = document.createElement('div');
-    page.className = 'page';
-    if (isFirst) {
-      page.innerHTML = `
-        <div class="doc-title">Conversation Export</div>
-        <div class="doc-meta">
-          Generated ${dateStr}
-          <div class="doc-meta-dot"></div>
-          ${messages.length} messages
-          <div class="doc-meta-dot"></div>
-          <span style="color:var(--accent);font-weight:500;">Blue = your messages</span>
-        </div>`;
-    }
-    docPage.appendChild(page);
-    return page;
-  }
 
   let currentPage = newPage(true);
 
@@ -1168,12 +1152,12 @@ function renderPreview(messages, platform, warning) {
 
     currentPage.appendChild(block);
 
-    // Check if content overflows by comparing content scrollHeight to available inner height
-    if (currentPage.scrollHeight > currentPage.clientHeight) {
+    // Overflow = content grew taller than the fixed page height
+    if (currentPage.scrollHeight > currentPage._emptyHeight) {
       currentPage.removeChild(block);
       pageCount++;
       debugPanel.insertAdjacentHTML('beforeend',
-        `<div><span style="color:#4F46E5">P${pageCount}</span> scroll:${currentPage.scrollHeight} client:${currentPage.clientHeight}</div>`);
+        `<div><span style="color:#4F46E5">P${pageCount}</span> scroll:${currentPage.scrollHeight} empty:${currentPage._emptyHeight}</div>`);
       currentPage = newPage(false);
       currentPage.appendChild(block);
     }
