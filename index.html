@@ -13,7 +13,7 @@
          Timestamp-only-on-own-line fix
   v0.4 - Parser fix: AI block split by blank line so trailing
          user messages are correctly identified as human
-  v0.062 - Fixed page divider logic to use character-count approximation of real PDF page height
+  v0.063 - Page dividers now use browser-measured real rendered height instead of character estimation
 =============================================================
   !! IMPORTANT FOR FUTURE CLAUDE SESSIONS !!
   Every time you make ANY change to this file you MUST:
@@ -709,7 +709,7 @@ body {
     </div>
     Nota<span>vello</span>
   </div>
-  <div class="badge">Free Preview · v0.062</div>
+  <div class="badge">Free Preview · v0.063</div>
 </header>
 
 <div class="screen-ui">
@@ -1065,7 +1065,9 @@ function renderPreview(messages, platform, warning) {
     errorEl.style.color = '#92400E';
   }
 
-  let html = `
+  // Render header first
+  const docPage = document.getElementById('docPage');
+  docPage.innerHTML = `
     <div class="doc-title">Conversation Export</div>
     <div class="doc-meta">
       Generated ${dateStr}
@@ -1075,32 +1077,19 @@ function renderPreview(messages, platform, warning) {
       <span style="color:var(--accent);font-weight:500;">Blue = your messages</span>
     </div>`;
 
-  // Approximate lines per page based on pdfmake Letter page layout:
-  // Usable height ~715pt, line height ~17.6pt = ~40 lines per page
-  // Characters per line at font-size 11 with margins ~95 chars
-  const CHARS_PER_LINE = 95;
-  const LINES_PER_PAGE = 40;
-  const CHARS_PER_PAGE = CHARS_PER_LINE * LINES_PER_PAGE; // ~3800 chars
-
-  let charAccumulator = 0;
+  // PAGE DIVIDER STRATEGY: measure the browser's actual rendered height after
+  // each message. When the div grows past one Letter-page-equivalent in pixels,
+  // insert a divider. No character counting, no estimation — the browser knows.
+  // Letter page at 96dpi screen = 1056px. With margins/padding we use 900px per page.
+  const PAGE_HEIGHT_PX = 900;
   let pageNum = 1;
+  let lastPageHeight = 0;
 
-  messages.forEach((msg, index) => {
-    // Estimate lines this message takes up
-    const msgChars = msg.text.length;
-    charAccumulator += msgChars;
-
-    // Insert page divider when we cross a page boundary
-    if (charAccumulator >= CHARS_PER_PAGE * pageNum) {
-      pageNum++;
-      html += `<div style="display:flex;align-items:center;gap:12px;margin:24px 0;opacity:0.4;">
-        <div style="flex:1;height:1px;background:var(--border);"></div>
-        <div style="font-size:0.68rem;color:var(--ink-faint);font-weight:600;letter-spacing:0.1em;text-transform:uppercase;">Page ${pageNum}</div>
-        <div style="flex:1;height:1px;background:var(--border);"></div>
-      </div>`;
-    }
+  messages.forEach((msg) => {
+    // Build message HTML
+    let msgHtml = '';
     if (msg.role === 'human') {
-      html += `<div class="msg-block"><div class="msg-human">
+      msgHtml = `<div class="msg-block"><div class="msg-human">
         <div class="msg-label">
           <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
           You
@@ -1109,14 +1098,29 @@ function renderPreview(messages, platform, warning) {
         ${msg.time ? `<div class="msg-timestamp">${msg.time}</div>` : ''}
       </div></div>`;
     } else {
-      html += `<div class="msg-block"><div class="msg-ai">
+      msgHtml = `<div class="msg-block"><div class="msg-ai">
         <div class="msg-label">Claude / AI</div>
         <div class="msg-text">${escHtml(msg.text)}</div>
       </div></div>`;
     }
+
+    // Append message to DOM
+    docPage.insertAdjacentHTML('beforeend', msgHtml);
+
+    // Measure real rendered height — browser accounts for everything
+    const currentHeight = docPage.scrollHeight;
+    if (currentHeight - lastPageHeight >= PAGE_HEIGHT_PX) {
+      pageNum++;
+      lastPageHeight = currentHeight;
+      docPage.insertAdjacentHTML('beforeend', `
+        <div style="display:flex;align-items:center;gap:12px;margin:24px 0;opacity:0.4;">
+          <div style="flex:1;height:1px;background:var(--border);"></div>
+          <div style="font-size:0.68rem;color:var(--ink-faint);font-weight:600;letter-spacing:0.1em;text-transform:uppercase;">Page ${pageNum}</div>
+          <div style="flex:1;height:1px;background:var(--border);"></div>
+        </div>`);
+    }
   });
 
-  document.getElementById('docPage').innerHTML = html;
   document.getElementById('previewSection').style.display = 'block';
   document.getElementById('previewSection').scrollIntoView({ behavior: 'smooth' });
 }
