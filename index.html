@@ -13,7 +13,7 @@
          Timestamp-only-on-own-line fix
   v0.4 - Parser fix: AI block split by blank line so trailing
          user messages are correctly identified as human
-  v0.6 - Removed hard paywall, added rotating watermark footers
+  v0.061 - Watermark font larger, page numbers in footer, screen page dividers, version format changed to thousandths
 =============================================================
   !! IMPORTANT FOR FUTURE CLAUDE SESSIONS !!
   Every time you make ANY change to this file you MUST:
@@ -709,7 +709,7 @@ body {
     </div>
     Nota<span>vello</span>
   </div>
-  <div class="badge">Free Preview · v0.6</div>
+  <div class="badge">Free Preview · v0.061</div>
 </header>
 
 <div class="screen-ui">
@@ -1075,7 +1075,15 @@ function renderPreview(messages, platform, warning) {
       <span style="color:var(--accent);font-weight:500;">Blue = your messages</span>
     </div>`;
 
-  messages.forEach(msg => {
+  messages.forEach((msg, index) => {
+    // Visual page break divider every 10 messages
+    if (index > 0 && index % 10 === 0) {
+      html += `<div style="display:flex;align-items:center;gap:12px;margin:24px 0;opacity:0.4;">
+        <div style="flex:1;height:1px;background:var(--border);"></div>
+        <div style="font-size:0.68rem;color:var(--ink-faint);font-weight:600;letter-spacing:0.1em;text-transform:uppercase;">Page ${Math.floor(index/10) + 1}</div>
+        <div style="flex:1;height:1px;background:var(--border);"></div>
+      </div>`;
+    }
     if (msg.role === 'human') {
       html += `<div class="msg-block"><div class="msg-human">
         <div class="msg-label">
@@ -1188,11 +1196,11 @@ function downloadPDF() {
     footer: function(currentPage, pageCount) {
       const pageWm = WATERMARKS[(watermarkIndex - 1 + currentPage - 1) % WATERMARKS.length];
       return {
-        text: pageWm,
-        fontSize: 7,
-        color: '#94A3B8',
-        alignment: 'center',
-        margin: [50, 8, 50, 0]
+        columns: [
+          { text: `Page ${currentPage} of ${pageCount}`, fontSize: 8, color: '#CBD5E1', margin: [50, 10, 0, 0] },
+          { text: pageWm, fontSize: 9, color: '#94A3B8', alignment: 'center', margin: [0, 10, 0, 0] },
+          { text: '', margin: [0, 10, 50, 0] }
+        ]
       };
     },
     defaultStyle: { font: 'Roboto', fontSize: 11 }
