@@ -13,7 +13,7 @@
          Timestamp-only-on-own-line fix
   v0.4 - Parser fix: AI block split by blank line so trailing
          user messages are correctly identified as human
-  v0.072 - Track and subtract total divider height for accurate content-only page measurement
+  v0.073 - Complete rewrite: preview uses real 8.5x11in page divs, browser handles overflow naturally
 =============================================================
   !! IMPORTANT FOR FUTURE CLAUDE SESSIONS !!
   Every time you make ANY change to this file you MUST:
@@ -500,12 +500,21 @@ body {
 
 /* ── DOC PAGE ── */
 #docPage {
+  animation: fadeUp 0.4s ease both;
+}
+
+.page {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  padding: 48px;
-  animation: fadeUp 0.4s ease both;
+  width: 8.5in;
+  min-height: 11in;
+  padding: 1in;
+  margin: 0 auto 32px auto;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
 }
 
 .doc-title {
@@ -709,7 +718,7 @@ body {
     </div>
     Nota<span>vello</span>
   </div>
-  <div class="badge">Free Preview · v0.072</div>
+  <div class="badge">Free Preview · v0.073</div>
 </header>
 
 <div class="screen-ui">
@@ -1055,7 +1064,6 @@ function renderPreview(messages, platform, warning) {
   document.getElementById('previewMeta').textContent =
     `${messages.length} messages · ${humanCount} from you · ${pLabel} · Generated ${dateStr}`;
 
-  // Show soft warning if confidence flagged something
   const errorEl = document.getElementById('errorMsg');
   if (warning) {
     errorEl.textContent = '⚠️ ' + warning;
@@ -1065,100 +1073,61 @@ function renderPreview(messages, platform, warning) {
     errorEl.style.color = '#92400E';
   }
 
-  // Show preview section FIRST so browser can measure real rendered heights
   document.getElementById('previewSection').style.display = 'block';
 
-  // ── DEBUG PANEL ── floating box bottom-right, strip when done
-  let debugPanel = document.getElementById('debugPanel');
-  if (!debugPanel) {
-    debugPanel = document.createElement('div');
-    debugPanel.id = 'debugPanel';
-    debugPanel.style.cssText = `
-      position:fixed;bottom:16px;right:16px;z-index:9999;
-      background:#0F172A;color:#94A3B8;font-family:monospace;font-size:11px;
-      padding:12px 16px;border-radius:10px;max-width:320px;
-      box-shadow:0 4px 20px rgba(0,0,0,0.4);line-height:1.8;
-      max-height:300px;overflow-y:auto;user-select:text;`;
-    debugPanel.setAttribute('tabindex', '0');
-    debugPanel.addEventListener('keydown', e => {
-      if (e.key === 'a' && (e.ctrlKey || e.metaKey)) {
-        e.preventDefault();
-        const sel = window.getSelection();
-        const range = document.createRange();
-        range.selectNodeContents(debugPanel);
-        sel.removeAllRanges();
-        sel.addRange(range);
-      }
-    });
-    debugPanel.innerHTML = '<div style="color:#4F46E5;font-weight:700;margin-bottom:6px;">📐 Page Break Debug</div>';
-    document.body.appendChild(debugPanel);
-  } else {
-    debugPanel.innerHTML = '<div style="color:#4F46E5;font-weight:700;margin-bottom:6px;">📐 Page Break Debug</div>';
+  // Build pages — each page is a real 8.5×11in div.
+  // We fill each page until its scrollHeight exceeds its offsetHeight,
+  // then start a new page. Simple, accurate, easy to change page size later.
+  const docPage = document.getElementById('docPage');
+  docPage.innerHTML = '';
+
+  function newPage(isFirst) {
+    const page = document.createElement('div');
+    page.className = 'page';
+    if (isFirst) {
+      page.innerHTML = `
+        <div class="doc-title">Conversation Export</div>
+        <div class="doc-meta">
+          Generated ${dateStr}
+          <div class="doc-meta-dot"></div>
+          ${messages.length} messages
+          <div class="doc-meta-dot"></div>
+          <span style="color:var(--accent);font-weight:500;">Blue = your messages</span>
+        </div>`;
+    }
+    docPage.appendChild(page);
+    return page;
   }
 
-  // Render header first
-  const docPage = document.getElementById('docPage');
-  docPage.innerHTML = `
-    <div class="doc-title">Conversation Export</div>
-    <div class="doc-meta">
-      Generated ${dateStr}
-      <div class="doc-meta-dot"></div>
-      ${messages.length} messages
-      <div class="doc-meta-dot"></div>
-      <span style="color:var(--accent);font-weight:500;">Blue = your messages</span>
-    </div>`;
-
-  // PAGE DIVIDER STRATEGY: measure the browser's actual rendered height after
-  // each message. When the div grows past one Letter-page-equivalent in pixels,
-  // insert a divider. No character counting, no estimation — the browser knows.
-  // Letter page at 96dpi screen = 1056px. With margins/padding we use 900px per page.
-  const PAGE_HEIGHT_PX = 900;
-  let pageNum = 1;
-  let lastPageHeight = 0;
-  let lastDividerHeight = 0;
-  let lastDividerGap = 0;
-  let totalDividerHeight = 0; // track cumulative height added by divider elements
+  let currentPage = newPage(true);
 
   messages.forEach((msg) => {
-    // Build message HTML
-    let msgHtml = '';
+    const block = document.createElement('div');
+    block.className = 'msg-block';
     if (msg.role === 'human') {
-      msgHtml = `<div class="msg-block"><div class="msg-human">
+      block.innerHTML = `<div class="msg-human">
         <div class="msg-label">
           <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
           You
         </div>
         <div class="msg-text">${escHtml(msg.text)}</div>
         ${msg.time ? `<div class="msg-timestamp">${msg.time}</div>` : ''}
-      </div></div>`;
+      </div>`;
     } else {
-      msgHtml = `<div class="msg-block"><div class="msg-ai">
+      block.innerHTML = `<div class="msg-ai">
         <div class="msg-label">Claude / AI</div>
         <div class="msg-text">${escHtml(msg.text)}</div>
-      </div></div>`;
+      </div>`;
     }
 
-    // Append message to DOM
-    docPage.insertAdjacentHTML('beforeend', msgHtml);
+    // Try adding to current page
+    currentPage.appendChild(block);
 
-    // Subtract cumulative divider height to get true content height
-    const currentHeight = docPage.scrollHeight;
-    const contentHeight = currentHeight - totalDividerHeight;
-    const gap = currentHeight - lastPageHeight;
-    if (contentHeight >= pageNum * PAGE_HEIGHT_PX) {
-      pageNum++;
-      const beforeInsert = docPage.scrollHeight;
-      docPage.insertAdjacentHTML('beforeend', `
-        <div style="display:flex;align-items:center;gap:12px;margin:24px 0;opacity:0.4;">
-          <div style="flex:1;height:1px;background:var(--border);"></div>
-          <div style="font-size:0.68rem;color:var(--ink-faint);font-weight:600;letter-spacing:0.1em;text-transform:uppercase;">Page ${pageNum} | gap:${gap}px content:${contentHeight}px</div>
-          <div style="flex:1;height:1px;background:var(--border);"></div>
-        </div>`);
-      totalDividerHeight += docPage.scrollHeight - beforeInsert;
-      lastPageHeight = currentHeight;
-      debugPanel.insertAdjacentHTML('beforeend',
-        `<div><span style="color:#4F46E5">P${pageNum}</span> gap:<span style="color:${gap < 750 ? '#ef4444' : gap > 1100 ? '#f59e0b' : '#22c55e'}">${gap}</span> content:${contentHeight}</div>`
-      );
+    // If page overflows, move block to a new page
+    if (currentPage.scrollHeight > currentPage.offsetHeight) {
+      currentPage.removeChild(block);
+      currentPage = newPage(false);
+      currentPage.appendChild(block);
     }
   });
 
