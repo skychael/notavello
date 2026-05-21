@@ -13,7 +13,7 @@
          Timestamp-only-on-own-line fix
   v0.4 - Parser fix: AI block split by blank line so trailing
          user messages are correctly identified as human
-  v0.5 - Rebranded from ChatScript to Notavello
+  v0.6 - Removed hard paywall, added rotating watermark footers
 =============================================================
   !! IMPORTANT FOR FUTURE CLAUDE SESSIONS !!
   Every time you make ANY change to this file you MUST:
@@ -709,7 +709,7 @@ body {
     </div>
     Nota<span>vello</span>
   </div>
-  <div class="badge">Free Preview · v0.5</div>
+  <div class="badge">Free Preview · v0.6</div>
 </header>
 
 <div class="screen-ui">
@@ -1036,13 +1036,6 @@ function processConversation() {
     return;
   }
 
-  if (messages.length > 30) {
-    document.getElementById('msgCount').textContent = messages.length + ' messages';
-    document.getElementById('paywall').style.display = 'block';
-    document.getElementById('paywall').scrollIntoView({ behavior: 'smooth' });
-    return;
-  }
-
   let msgs = messages;
   if (document.getElementById('redactCheck').checked) {
     msgs = msgs.map(m => ({ ...m, text: redactText(m.text) }));
@@ -1105,6 +1098,31 @@ function renderPreview(messages, platform, warning) {
   document.getElementById('previewSection').scrollIntoView({ behavior: 'smooth' });
 }
 
+// ── WATERMARK MESSAGES (rotating, one per page in sequence) ──
+const WATERMARKS = [
+  "Messy AI chat → clean color-coded PDF. Notavello.com — go watermark-free for $5/month",
+  "Auto-formatted with speaker highlighting by Notavello.com — go watermark-free for $5/month",
+  "AI conversation auto-formatted with color-coded speakers by Notavello.com — remove watermark for $5/mo",
+  "Speaker-highlighted & auto-formatted by Notavello.com · Watermark-free at $5/month",
+  "Automatically parsed & color-coded by Notavello.com — go clean for $5/month",
+  "Your AI conversation, professionally formatted — Notavello.com · $5/mo removes this line",
+  "Turned your AI chat into a professional document. Notavello.com · Remove watermark $5/mo",
+  "AI conversation made shareable & professional by Notavello.com — $5/mo for clean exports",
+  "Raw AI chat → formatted, color-coded, shareable. Notavello.com · Watermark-free at $5/mo",
+  "Formatted by Notavello.com — speakers highlighted automatically · Go clean for $5/month",
+  "Color-coded by Notavello.com — because messy chat shouldn't stay messy · $5/mo watermark-free",
+  "Auto-formatted AI conversation · Notavello.com · Remove watermark for $5/month",
+  "Built for professionals who use AI. Notavello.com — watermark-free at $5/month",
+  "Your AI conversation, document-ready. Notavello.com · $5/mo removes this",
+  "How is this so clean? Notavello.com auto-formats AI chats with speaker highlighting · $5/mo",
+  "AI chat → professional PDF in seconds. Notavello.com — Watermark-free $5/mo",
+  "Notavello.com turned this AI conversation into a document · Speaker highlighting included · $5/mo",
+  "AI conversation formatted for professional use by Notavello.com · Clean exports at $5/month",
+  "Documentation-ready AI transcript · Speaker-highlighted by Notavello.com · $5/mo watermark-free",
+  "Speakers auto-detected & highlighted by Notavello.com — watermark-free for $5/mo",
+];
+let watermarkIndex = 0;
+
 // ── PDF ──
 function downloadPDF() {
   if (!parsedMessages.length) return;
@@ -1115,6 +1133,10 @@ function downloadPDF() {
 
   const now = new Date();
   const dateStr = now.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+
+  // Each download cycles to the next watermark message
+  const wmText = WATERMARKS[watermarkIndex % WATERMARKS.length];
+  watermarkIndex++;
 
   const content = [
     { text: 'Conversation Export', fontSize: 20, bold: true, color: '#0F172A', margin: [0, 0, 0, 6] },
@@ -1163,6 +1185,16 @@ function downloadPDF() {
     pageSize: 'LETTER',
     pageMargins: [50, 50, 50, 50],
     content,
+    footer: function(currentPage, pageCount) {
+      const pageWm = WATERMARKS[(watermarkIndex - 1 + currentPage - 1) % WATERMARKS.length];
+      return {
+        text: pageWm,
+        fontSize: 7,
+        color: '#94A3B8',
+        alignment: 'center',
+        margin: [50, 8, 50, 0]
+      };
+    },
     defaultStyle: { font: 'Roboto', fontSize: 11 }
   };
 
