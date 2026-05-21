@@ -1,9 +1,9 @@
 <!-- 
 =============================================================
-  ChatScript — AI Conversation Exporter
+  Notavello — AI Conversation Exporter
   Owner: Mike Koga (mikekoga@hotmail.com)
   GitHub: github.com/skychael/chatscript (PRIVATE repo)
-  Live: chatscript.pages.dev (Cloudflare Pages)
+  Live: notavello.com (Cloudflare Pages)
 =============================================================
   VERSION HISTORY:
   v0.1 - Initial build
@@ -13,6 +13,13 @@
          Timestamp-only-on-own-line fix
   v0.4 - Parser fix: AI block split by blank line so trailing
          user messages are correctly identified as human
+  v0.5 - Rebranded from ChatScript to Notavello
+=============================================================
+  !! IMPORTANT FOR FUTURE CLAUDE SESSIONS !!
+  Every time you make ANY change to this file you MUST:
+  1. Bump the version number in VERSION HISTORY above (v0.X)
+  2. Bump the badge in the HTML: <div class="badge">Free Preview · vX.X</div>
+  Both must always match. This lets Mike verify live site vs local.
 =============================================================
   ARCHITECTURE:
   - Single index.html file, no build step
@@ -59,7 +66,6 @@
   2. Move parser to Cloudflare Worker (hide source logic)
   3. Build ensemble parser (see FUTURE PARSER PLAN above)
   4. Add real ChatGPT and Gemini testing with live pastes
-  5. Make GitHub repo Private
 =============================================================
 -->
 <!DOCTYPE html>
@@ -67,7 +73,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>ChatScript — AI Conversation Exporter</title>
+<title>Notavello — AI Conversation Exporter</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
@@ -701,9 +707,9 @@ body {
     <div class="logo-icon">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
     </div>
-    Chat<span>Script</span>
+    Nota<span>vello</span>
   </div>
-  <div class="badge">Free Preview · v0.4</div>
+  <div class="badge">Free Preview · v0.5</div>
 </header>
 
 <div class="screen-ui">
