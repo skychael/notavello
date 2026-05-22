@@ -1,10 +1,10 @@
 <!-- 
 =============================================================
   NOTAVELLO — Root Landing Page
-  Owner: Mike Koga (mikekoga@hotmail.com)
-  GitHub: github.com/skychael/notavello (PRIVATE repo)
+  Owner: Mike Koga
+  GitHub: github.com/skychael/notavello (PRIVATE repo — do not share URL)
   Live: notavello.com/ (Cloudflare Pages)
-  Current version: root-1.0
+  Current version: root-1.1
 =============================================================
 
   !! READ THIS FIRST — FUTURE CLAUDE SESSIONS !!
@@ -50,6 +50,8 @@
              at root). Three AI cards: Claude live, ChatGPT and
              Gemini coming soon. Full SEO optimization.
              Independent versioning system introduced.
+  root-1.1 - Full site footer added matching claude page footer.
+             Navigation for all AI pages, product links, legal links.
 
 =============================================================
   ACTIVATING NEW AI PAGES
@@ -74,11 +76,14 @@
   or existing SEO will be lost.
 
 =============================================================
-  OTHER MIKE PROJECTS ON CLOUDFLARE
+  NOTE ON SOURCE CODE VISIBILITY
 =============================================================
-  - ask-ai.mikekoga.workers.dev (Ask AI site)
-  - weather-site-5vz.pages.dev (Weather site)
-  - GitHub username: skychael
+  HTML comments are visible to anyone who does View Source
+  (Ctrl+U) in their browser. Personal contact details and
+  project URLs have been removed from these comments for this
+  reason. This is fully resolved when the parser is moved to
+  a Cloudflare Worker — at that point source code is no longer
+  exposed in the browser at all.
 
 =============================================================
 -->
@@ -521,14 +526,81 @@ body {
 }
 
 /* ── FOOTER ── */
-footer {
-  text-align: center;
-  padding: 32px 24px;
-  font-size: 0.78rem;
-  color: var(--ink-faint);
+.site-footer {
   border-top: 1px solid var(--border);
+  padding: 32px 36px;
   margin-top: 48px;
+  background: var(--surface);
 }
+
+.site-footer-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  align-items: center;
+}
+
+.footer-nav-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink-faint);
+  width: 100%;
+  margin-bottom: 4px;
+}
+
+.footer-nav a {
+  font-size: 0.8rem;
+  color: var(--ink-muted);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.footer-nav a:hover { color: var(--accent); }
+
+.footer-nav-divider {
+  color: var(--border);
+  font-size: 0.8rem;
+}
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.footer-copy {
+  font-size: 0.75rem;
+  color: var(--ink-faint);
+}
+
+.footer-legal {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.footer-legal a {
+  font-size: 0.75rem;
+  color: var(--ink-faint);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.footer-legal a:hover { color: var(--accent); }
 
 /* ── ANIMATIONS ── */
 @keyframes fadeUp {
@@ -678,8 +750,39 @@ footer {
 
 </main>
 
-<footer>
-  &copy; 2026 Notavello &nbsp;·&nbsp; <a href="/claude/" style="color:var(--ink-faint);">Claude Exporter</a>
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <nav class="footer-nav">
+      <div class="footer-nav-label">Export AI Conversations</div>
+      <a href="/claude/">Claude</a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/chatgpt/" style="opacity:0.5;pointer-events:none;">ChatGPT <small>(soon)</small></a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/gemini/" style="opacity:0.5;pointer-events:none;">Gemini <small>(soon)</small></a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/copilot/" style="opacity:0.5;pointer-events:none;">Copilot <small>(soon)</small></a>
+    </nav>
+    <nav class="footer-nav">
+      <div class="footer-nav-label">Product</div>
+      <a href="/pricing/">Pricing</a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/faq/">FAQ</a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/sample/">Sample PDF</a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/about/">About</a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/sitemap/">Sitemap</a>
+    </nav>
+    <div class="footer-bottom">
+      <div class="footer-copy">&copy; 2026 Notavello. Made in Reno, NV.</div>
+      <div class="footer-legal">
+        <a href="/privacy/">Privacy Policy</a>
+        <a href="/terms/">Terms of Service</a>
+        <a href="/contact/">Contact</a>
+      </div>
+    </div>
+  </div>
 </footer>
 
 </body>
