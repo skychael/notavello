@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Sample PDF — Notavello</title>
+<meta name="description" content="Download a sample Notavello export to see exactly what your AI conversation looks like as a formatted PDF before you pay."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/sample/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://notavello.com/sample/"/>
+<meta property="og:title" content="Sample PDF — Notavello"/>
+<meta property="og:description" content="See exactly what a Notavello export looks like before you pay."/>
+<meta property="og:site_name" content="Notavello"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+  --shadow-lg: 0 4px 16px rgba(79,70,229,0.12), 0 16px 48px rgba(15,23,42,0.12);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink); font-family: 'Sora', sans-serif;
+  min-height: 100vh; -webkit-font-smoothing: antialiased;
+  background-image: radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%), radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.main { max-width: 700px; margin: 0 auto; padding: 64px 24px 80px; }
+.page-title { font-family: 'Lora', serif; font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 600; color: var(--ink); margin-bottom: 12px; letter-spacing: -0.02em; text-align: center; }
+.page-subtitle { font-size: 1rem; color: var(--ink-muted); text-align: center; margin-bottom: 48px; line-height: 1.7; }
+.sample-card {
+  background: var(--surface); border: 1.5px solid var(--border);
+  border-radius: var(--radius); padding: 40px 36px;
+  box-shadow: var(--shadow-lg); text-align: center; margin-bottom: 32px;
+}
+.sample-preview {
+  background: var(--surface2); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); padding: 24px; margin-bottom: 28px;
+  text-align: left;
+}
+.preview-header { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--ink-faint); margin-bottom: 16px; }
+.preview-msg { margin-bottom: 14px; }
+.preview-you { border-left: 3px solid var(--accent); padding: 10px 14px; background: var(--accent-light); border-radius: 0 8px 8px 0; }
+.preview-you-label { font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); margin-bottom: 5px; }
+.preview-you-text { font-size: 0.83rem; color: #3730A3; line-height: 1.6; }
+.preview-ai { padding: 10px 14px 10px 17px; }
+.preview-ai-label { font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--ink-faint); margin-bottom: 5px; }
+.preview-ai-text { font-size: 0.83rem; color: var(--ink); line-height: 1.6; }
+.preview-more { text-align: center; font-size: 0.78rem; color: var(--ink-faint); margin-top: 8px; }
+.sample-card h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
+.sample-card p { font-size: 0.88rem; color: var(--ink-muted); margin-bottom: 24px; line-height: 1.6; }
+.btn-download {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 15px 40px; border-radius: var(--radius-sm);
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: white; font-family: 'Sora', sans-serif; font-size: 0.95rem;
+  font-weight: 600; border: none; cursor: pointer;
+  box-shadow: 0 4px 16px rgba(79,70,229,0.35); transition: all 0.2s;
+  letter-spacing: -0.01em;
+}
+.btn-download:hover { opacity: 0.92; box-shadow: 0 6px 24px rgba(79,70,229,0.45); transform: translateY(-1px); }
+.btn-download:disabled { opacity: 0.5; cursor: default; transform: none; }
+.download-note { font-size: 0.78rem; color: var(--ink-faint); margin-top: 12px; }
+.watermark-note {
+  background: #FFFBEB; border: 1px solid #FDE68A;
+  border-radius: var(--radius-sm); padding: 14px 18px;
+  font-size: 0.84rem; color: #92400E; line-height: 1.6;
+  display: flex; gap: 10px; align-items: flex-start;
+}
+.watermark-note-icon { flex-shrink: 0; margin-top: 1px; }
+.cta-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 32px; }
+.btn-secondary { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: var(--radius-sm); background: var(--surface); color: var(--ink-muted); font-family: 'Sora', sans-serif; font-size: 0.88rem; font-weight: 500; border: 1.5px solid var(--border); text-decoration: none; transition: all 0.2s; }
+.btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+.btn-primary { display: inline-flex; align-items: center; gap: 8px; padding: 12px 28px; border-radius: var(--radius-sm); background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.88rem; font-weight: 600; text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: all 0.2s; }
+.btn-primary:hover { opacity: 0.92; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@media (max-width: 640px) { .header { padding: 14px 20px; } .sample-card { padding: 28px 20px; } .site-footer { padding: 24px 16px; } .footer-bottom { flex-direction: column; align-items: flex-start; } }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <a class="logo" href="/">
+    <div class="logo-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+    Nota<span>vello</span>
+  </a>
+</header>
+
+<main class="main">
+
+  <h1 class="page-title">See it before you export</h1>
+  <p class="page-subtitle">Download a real sample PDF so you know exactly what you're getting.</p>
+
+  <div class="sample-card">
+
+    <div class="sample-preview">
+      <div class="preview-header">Preview — what your PDF looks like</div>
+      <div class="preview-msg">
+        <div class="preview-you">
+          <div class="preview-you-label">You</div>
+          <div class="preview-you-text">Can you summarize the key risks in this contract and flag anything unusual?</div>
+        </div>
+      </div>
+      <div class="preview-msg">
+        <div class="preview-ai">
+          <div class="preview-ai-label">Claude</div>
+          <div class="preview-ai-text">Here's a summary of the key risks I identified in the contract, along with three clauses that stand out as unusual compared to standard agreements...</div>
+        </div>
+      </div>
+      <div class="preview-more">+ 18 more messages in the sample PDF</div>
+    </div>
+
+    <h2>Download the sample PDF</h2>
+    <p>A real export with 20 messages — including the watermark so you can judge it for yourself. No sign-up, no email required.</p>
+    <button class="btn-download" id="downloadBtn" onclick="downloadSample()">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Download Sample PDF
+    </button>
+    <div class="download-note">Free · No sign-up · Instant download</div>
+
+    <div style="margin-top: 24px;">
+      <div class="watermark-note">
+        <div class="watermark-note-icon">ℹ️</div>
+        <div>This sample includes the free-tier watermark — a diagonal NOTAVELLO.COM stamp at 18% opacity. <a href="/pricing/" style="color:#92400E;font-weight:600;">Upgrade to Pro for $5/month</a> to remove it from all your exports.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="cta-row">
+    <a href="/claude/" class="btn-primary">Export my own conversation</a>
+    <a href="/pricing/" class="btn-secondary">View pricing</a>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <nav class="footer-nav">
+      <div class="footer-nav-label">Export AI Conversations</div>
+      <a href="/claude/">Claude</a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/chatgpt/" style="opacity:0.5;pointer-events:none;">ChatGPT <small>(soon)</small></a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/gemini/" style="opacity:0.5;pointer-events:none;">Gemini <small>(soon)</small></a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/copilot/" style="opacity:0.5;pointer-events:none;">Copilot <small>(soon)</small></a>
+    </nav>
+    <nav class="footer-nav">
+      <div class="footer-nav-label">Product</div>
+      <a href="/pricing/">Pricing</a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/faq/">FAQ</a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/sample/">Sample PDF</a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/about/">About</a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/sitemap/">Sitemap</a>
+    </nav>
+    <div class="footer-bottom">
+      <div class="footer-copy">&copy; 2026 Notavello. Made in Reno, NV.</div>
+      <div class="footer-legal">
+        <a href="/privacy/">Privacy Policy</a>
+        <a href="/terms/">Terms of Service</a>
+        <a href="/contact/">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const DEMO = [
+  { role: 'human', text: 'Can you summarize the key risks in this contract and flag anything unusual?', time: '9:14 AM' },
+  { role: 'ai', text: 'Here\'s a summary of the key risks I identified in the contract, along with three clauses that stand out as unusual compared to standard agreements:\n\n1. Unlimited liability clause (Section 4.2) — Most contracts cap liability at the contract value. This one does not.\n\n2. Automatic renewal with 90-day notice window (Section 8.1) — The renewal window is unusually short. Most B2B contracts use 30 days.\n\n3. Unilateral amendment rights (Section 12.3) — The vendor can modify terms with only 7 days written notice. This is aggressive.' },
+  { role: 'human', text: 'What should I negotiate on first?', time: '9:16 AM' },
+  { role: 'ai', text: 'I\'d prioritize the unlimited liability clause first — it\'s the highest-risk item and vendors usually have room to negotiate on caps. A standard ask is to cap liability at 12 months of fees paid.\n\nSecond priority is the amendment clause. Push for 30 days notice minimum, and ideally mutual consent for material changes.\n\nThe renewal window is worth fixing but is lower stakes if you set a calendar reminder.' },
+  { role: 'human', text: 'Draft a response email to the vendor requesting these changes.', time: '9:18 AM' },
+  { role: 'ai', text: 'Subject: Contract Review — Requested Amendments\n\nDear [Vendor Name],\n\nThank you for sending over the agreement. We\'ve completed our review and would like to propose the following amendments before signing:\n\n1. Section 4.2 (Liability) — We request a mutual liability cap of 12 months\' fees paid in the prior year.\n\n2. Section 8.1 (Renewal) — We request the notice period be extended to 60 days.\n\n3. Section 12.3 (Amendments) — We request that material changes require mutual written consent with 30 days notice.\n\nWe\'re committed to moving forward and hope these are straightforward adjustments. Please let us know if you\'d like to discuss.\n\nBest regards,\n[Your Name]' },
+  { role: 'human', text: 'Perfect. One more thing — is there anything in the payment terms that could be a problem?', time: '9:21 AM' },
+  { role: 'ai', text: 'Yes — Section 6.4 requires payment within 10 days of invoice. This is significantly tighter than the industry standard of Net 30. If your AP process runs on a monthly cycle, you could miss this window regularly and trigger late fees.\n\nI\'d request Net 30 as a standard ask. If they push back, Net 15 is a reasonable compromise.' },
+];
+
+function downloadSample() {
+  const btn = document.getElementById('downloadBtn');
+  btn.disabled = true;
+  btn.textContent = 'Generating…';
+
+  const now = new Date();
+  const dateStr = now.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+
+  const content = [
+    { text: 'Conversation Export — Sample', fontSize: 20, bold: true, color: '#0F172A', margin: [0, 0, 0, 6] },
+    { text: `Generated ${dateStr}  ·  ${DEMO.length} messages  ·  Blue = your messages`, fontSize: 9, color: '#94A3B8', margin: [0, 0, 0, 4] },
+    { canvas: [{ type: 'line', x1: 0, y1: 0, x2: 515, y2: 0, lineWidth: 1, lineColor: '#E2E8F0' }], margin: [0, 0, 0, 18] },
+  ];
+
+  DEMO.forEach(msg => {
+    if (msg.role === 'human') {
+      content.push({
+        table: {
+          widths: [4, '*'],
+          body: [[
+            { border: [false,false,false,false], fillColor: '#4F46E5', text: '', margin: [0,0,0,0] },
+            { border: [false,false,false,false], fillColor: '#EEF2FF', stack: [
+              { text: 'YOU', fontSize: 7, bold: true, color: '#4F46E5', characterSpacing: 1.5, margin: [0, 0, 0, 4] },
+              { text: msg.text, fontSize: 11, color: '#3730A3', lineHeight: 1.6 },
+              msg.time ? { text: msg.time, fontSize: 8, color: '#94A3B8', margin: [0, 4, 0, 0] } : {}
+            ], margin: [12, 10, 10, 10] }
+          ]]
+        },
+        layout: { defaultBorder: false, paddingLeft: () => 0, paddingRight: () => 0, paddingTop: () => 0, paddingBottom: () => 0 },
+        margin: [0, 0, 0, 10]
+      });
+    } else {
+      content.push({
+        stack: [
+          { text: 'CLAUDE', fontSize: 7, bold: true, color: '#94A3B8', characterSpacing: 1.5, margin: [0, 0, 0, 4] },
+          { text: msg.text, fontSize: 11, color: '#0F172A', lineHeight: 1.6 },
+        ],
+        margin: [0, 0, 0, 16]
+      });
+    }
+  });
+
+  const docDef = {
+    pageSize: 'LETTER',
+    pageMargins: [50, 50, 50, 50],
+    content,
+    watermark: { text: 'NOTAVELLO.COM', color: '#4F46E5', opacity: 0.18, bold: true, fontSize: 52, angle: -45 },
+    footer: function(currentPage, pageCount) {
+      return {
+        columns: [
+          { text: `Page ${currentPage} of ${pageCount}`, fontSize: 8, color: '#CBD5E1', margin: [50, 10, 0, 0] },
+          { text: 'Sample export by Notavello.com — watermark-free exports from $5/month', fontSize: 9, color: '#94A3B8', alignment: 'center', margin: [0, 10, 0, 0] },
+          { text: '', margin: [0, 10, 50, 0] }
+        ]
+      };
+    },
+    defaultStyle: { font: 'Roboto', fontSize: 11 }
+  };
+
+  try {
+    pdfMake.createPdf(docDef).download('notavello-sample.pdf');
+  } catch(e) {
+    alert('Error generating PDF: ' + e.message);
+  }
+
+  setTimeout(() => {
+    btn.disabled = false;
+    btn.innerHTML = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download Sample PDF`;
+  }, 3000);
+}
+</script>
+
+</body>
+</html>
