@@ -15,7 +15,8 @@
            user messages are correctly identified as human
   v0.080 - Rolled back to v0.075 clean page div approach
            with empty height baseline
-  v0.092 - Added diagonal NOTAVELLO.COM watermark across every PDF page.
+  v0.093 - Watermark tuned: removed diagonal bands entirely, opacity
+           raised from 7% to 18%. Text only, centered diagonal stamp.
            Opacity 0.07 — visible but not overwhelming. Keeps footer text too.
            Two subtle diagonal bands behind content for depth.
            Added floating download bar at screen bottom when preview visible.
@@ -917,7 +918,7 @@ body {
     </div>
     Nota<span>vello</span>
   </div>
-  <div class="badge">Free Preview · v0.092</div>
+  <div class="badge">Free Preview · v0.093</div>
 </header>
 
 <div class="screen-ui">
@@ -1220,7 +1221,7 @@ function renderDebugPanel(messages, pageLog) {
   const h = messages.filter(m => m.role === 'human').length;
   const a = messages.filter(m => m.role === 'ai').length;
 
-  panel.innerHTML = `<div style="color:#4F46E5;font-weight:700;margin-bottom:6px;">📐 Notavello Debug · v0.092</div>`;
+  panel.innerHTML = `<div style="color:#4F46E5;font-weight:700;margin-bottom:6px;">📐 Notavello Debug · v0.093</div>`;
 
   // Parse log
   panel.insertAdjacentHTML('beforeend', `<div style="color:#7C3AED;margin-top:4px;font-weight:600;">── Parse Log ──</div>`);
@@ -1466,44 +1467,11 @@ function downloadPDF() {
     pageSize: 'LETTER',
     pageMargins: [50, 50, 50, 50],
     content,
-    // ── DIAGONAL WATERMARK — drawn behind content on every page ──
-    background: function(currentPage, pageSize) {
-      return {
-        canvas: [
-          // Main diagonal text stamp — center of page
-          {
-            type: 'rect',
-            x: 0, y: 0,
-            w: pageSize.width,
-            h: pageSize.height,
-            color: 'white',
-            fillOpacity: 0
-          },
-          // Diagonal line 1 — upper left to lower right
-          {
-            type: 'line',
-            x1: 0, y1: pageSize.height * 0.25,
-            x2: pageSize.width, y2: pageSize.height * 0.65,
-            lineWidth: 28,
-            lineColor: '#4F46E5',
-            lineOpacity: 0.04
-          },
-          // Diagonal line 2 — slightly offset for depth
-          {
-            type: 'line',
-            x1: 0, y1: pageSize.height * 0.35,
-            x2: pageSize.width, y2: pageSize.height * 0.75,
-            lineWidth: 18,
-            lineColor: '#4F46E5',
-            lineOpacity: 0.025
-          },
-        ]
-      };
-    },
+    // ── WATERMARK — text only, no bands, 18% opacity ──
     watermark: {
       text: 'NOTAVELLO.COM',
       color: '#4F46E5',
-      opacity: 0.07,
+      opacity: 0.18,
       bold: true,
       italics: false,
       fontSize: 52,
