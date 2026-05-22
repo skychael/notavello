@@ -1,10 +1,10 @@
-<!--  
+<!-- 
 =============================================================
   NOTAVELLO — Claude Conversation Exporter
   Owner: Mike Koga
   GitHub: github.com/skychael/notavello (PRIVATE repo — do not share URL)
   Live: notavello.com/claude/ (Cloudflare Pages)
-  Current version: claude-1.3
+  Current version: claude-1.4
 =============================================================
 
   !! READ THIS FIRST — FUTURE CLAUDE SESSIONS !!
@@ -73,11 +73,16 @@
                future Claude sessions from attempting to fix the
                preview simulation. Band-aid loop history documented.
   claude-1.3 - BUG 5 partial fix: file attachments, image IDs, and
-               artifact labels now replaced with [Attachment] 
+               artifact labels now replaced with [Attachment]
                placeholders instead of bleeding through as raw text.
                Note: actual image data cannot be recovered from
                copy-paste — this is a fundamental limitation.
                Browser extension (Phase 2) is the real solution.
+  claude-1.4 - Full site footer added. Navigation links for all
+               current and future AI pages, product links (Pricing,
+               FAQ, Sample PDF, About, Sitemap), and legal links
+               (Privacy Policy, Terms of Service, Contact).
+               Footer CSS added. Mobile responsive.
 
 =============================================================
   AI_NAME — CRITICAL FOR FUTURE AI PAGES
@@ -1030,6 +1035,83 @@ body {
   to   { transform: translateY(0); opacity: 1; }
 }
 
+/* ── FOOTER ── */
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 32px 36px;
+  margin-top: 48px;
+  background: var(--surface);
+}
+
+.site-footer-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  align-items: center;
+}
+
+.footer-nav-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink-faint);
+  width: 100%;
+  margin-bottom: 4px;
+}
+
+.footer-nav a {
+  font-size: 0.8rem;
+  color: var(--ink-muted);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.footer-nav a:hover { color: var(--accent); }
+
+.footer-nav-divider {
+  color: var(--border);
+  font-size: 0.8rem;
+}
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.footer-copy {
+  font-size: 0.75rem;
+  color: var(--ink-faint);
+}
+
+.footer-legal {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.footer-legal a {
+  font-size: 0.75rem;
+  color: var(--ink-faint);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.footer-legal a:hover { color: var(--accent); }
+
 /* ── MOBILE ── */
 @media (max-width: 600px) {
   .screen-ui { padding: 32px 16px 72px; }
@@ -1044,6 +1126,8 @@ body {
   .how-to { padding: 18px 20px; }
   .toolbar-right { width: 100%; }
   .btn-download, .btn-reset { flex: 1; justify-content: center; }
+  .site-footer { padding: 24px 16px; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; }
 }
 </style>
 </head>
@@ -1058,7 +1142,7 @@ body {
     Nota<span>vello</span>
   </div>
   </a>
-  <div class="badge">Free Preview · claude-1.3</div>
+  <div class="badge">Free Preview · claude-1.4</div>
 </header>
 
 <div class="screen-ui">
@@ -1344,7 +1428,7 @@ function renderDebugPanel(messages, pageLog) {
   const h = messages.filter(m => m.role === 'human').length;
   const a = messages.filter(m => m.role === 'ai').length;
 
-  panel.innerHTML = `<div style="color:#4F46E5;font-weight:700;margin-bottom:6px;">📐 Notavello Debug · claude-1.3</div>`;
+  panel.innerHTML = `<div style="color:#4F46E5;font-weight:700;margin-bottom:6px;">📐 Notavello Debug · claude-1.4</div>`;
 
   // Parse log
   panel.insertAdjacentHTML('beforeend', `<div style="color:#7C3AED;margin-top:4px;font-weight:600;">── Parse Log ──</div>`);
@@ -1641,6 +1725,42 @@ function escHtml(t) {
     </button>
   </div>
 </div>
+
+<!-- SITE FOOTER -->
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <nav class="footer-nav">
+      <div class="footer-nav-label">Export AI Conversations</div>
+      <a href="/claude/">Claude</a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/chatgpt/" style="opacity:0.5;pointer-events:none;">ChatGPT <small>(soon)</small></a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/gemini/" style="opacity:0.5;pointer-events:none;">Gemini <small>(soon)</small></a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/copilot/" style="opacity:0.5;pointer-events:none;">Copilot <small>(soon)</small></a>
+    </nav>
+    <nav class="footer-nav">
+      <div class="footer-nav-label">Product</div>
+      <a href="/pricing/">Pricing</a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/faq/">FAQ</a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/sample/">Sample PDF</a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/about/">About</a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/sitemap/">Sitemap</a>
+    </nav>
+    <div class="footer-bottom">
+      <div class="footer-copy">&copy; 2026 Notavello. Made in Reno, NV.</div>
+      <div class="footer-legal">
+        <a href="/privacy/">Privacy Policy</a>
+        <a href="/terms/">Terms of Service</a>
+        <a href="/contact/">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
 
 </body>
 </html>
