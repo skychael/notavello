@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Pricing — Notavello</title>
+<meta name="description" content="Notavello is free to use. Export unlimited AI conversations as PDFs with a watermark. Remove the watermark for $5/month. Cancel anytime."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pricing/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://notavello.com/pricing/"/>
+<meta property="og:title" content="Pricing — Notavello"/>
+<meta property="og:description" content="Free to use. Remove the watermark for $5/month. Cancel anytime."/>
+<meta property="og:site_name" content="Notavello"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+  --shadow-lg: 0 4px 16px rgba(79,70,229,0.12), 0 16px 48px rgba(15,23,42,0.12);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header {
+  background: rgba(255,255,255,0.85); backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border); padding: 16px 36px;
+  display: flex; align-items: center; justify-content: space-between;
+  position: sticky; top: 0; z-index: 100;
+}
+.logo {
+  font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700;
+  color: var(--ink); letter-spacing: -0.03em;
+  display: flex; align-items: center; gap: 10px; text-decoration: none;
+}
+.logo-icon {
+  width: 32px; height: 32px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  border-radius: 10px; display: flex; align-items: center;
+  justify-content: center; color: white; font-size: 0.85rem;
+  box-shadow: 0 2px 8px rgba(79,70,229,0.35);
+}
+.logo span { color: var(--accent); }
+.main { max-width: 860px; margin: 0 auto; padding: 64px 24px 80px; }
+.page-title {
+  font-family: 'Lora', serif; font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 600; color: var(--ink); margin-bottom: 12px;
+  letter-spacing: -0.02em; text-align: center;
+}
+.page-subtitle {
+  font-size: 1rem; color: var(--ink-muted); text-align: center;
+  margin-bottom: 56px; line-height: 1.7;
+}
+.plans {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+  margin-bottom: 56px;
+}
+.plan {
+  background: var(--surface); border: 1.5px solid var(--border);
+  border-radius: var(--radius); padding: 36px 32px;
+  box-shadow: var(--shadow);
+}
+.plan--paid {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-lg);
+  position: relative;
+}
+.plan-badge {
+  position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: white; font-size: 0.68rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.1em;
+  padding: 4px 14px; border-radius: 20px;
+}
+.plan-name {
+  font-size: 0.8rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.1em; color: var(--ink-faint); margin-bottom: 16px;
+}
+.plan-price {
+  font-size: 2.8rem; font-weight: 700; color: var(--ink);
+  letter-spacing: -0.03em; margin-bottom: 4px; line-height: 1;
+}
+.plan-price span { font-size: 1rem; font-weight: 400; color: var(--ink-muted); }
+.plan-desc { font-size: 0.85rem; color: var(--ink-muted); margin-bottom: 28px; line-height: 1.6; }
+.plan-features { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
+.plan-features li {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size: 0.88rem; color: var(--ink-muted); line-height: 1.5;
+}
+.feature-check {
+  width: 18px; height: 18px; border-radius: 50%; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.65rem; font-weight: 700; margin-top: 1px;
+}
+.feature-check--yes { background: var(--green-light); color: var(--green); }
+.feature-check--no { background: var(--border); color: var(--ink-faint); }
+.btn-plan {
+  display: block; width: 100%; text-align: center;
+  padding: 14px; border-radius: var(--radius-sm);
+  font-family: 'Sora', sans-serif; font-size: 0.9rem; font-weight: 600;
+  cursor: pointer; text-decoration: none; transition: all 0.2s;
+}
+.btn-plan--free {
+  background: var(--surface2); color: var(--ink-muted);
+  border: 1.5px solid var(--border);
+}
+.btn-plan--free:hover { border-color: var(--accent); color: var(--accent); }
+.btn-plan--paid {
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: white; border: none;
+  box-shadow: 0 4px 16px rgba(79,70,229,0.35);
+}
+.btn-plan--paid:hover { opacity: 0.92; box-shadow: 0 6px 24px rgba(79,70,229,0.45); }
+.cancel-note {
+  text-align: center; font-size: 0.8rem; color: var(--ink-faint);
+  margin-top: 12px;
+}
+.faq-section { margin-top: 56px; }
+.faq-title {
+  font-family: 'Lora', serif; font-size: 1.5rem; font-weight: 600;
+  color: var(--ink); margin-bottom: 28px; text-align: center;
+}
+.faq-list { display: flex; flex-direction: column; gap: 16px; }
+.faq-item {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); padding: 20px 24px;
+  box-shadow: var(--shadow);
+}
+.faq-q { font-size: 0.92rem; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
+.faq-a { font-size: 0.86rem; color: var(--ink-muted); line-height: 1.65; }
+.site-footer {
+  border-top: 1px solid var(--border); padding: 32px 36px;
+  margin-top: 48px; background: var(--surface);
+}
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; transition: color 0.15s; }
+.footer-legal a:hover { color: var(--accent); }
+@media (max-width: 640px) {
+  .header { padding: 14px 20px; }
+  .plans { grid-template-columns: 1fr; }
+  .site-footer { padding: 24px 16px; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <a class="logo" href="/">
+    <div class="logo-icon">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+    </div>
+    Nota<span>vello</span>
+  </a>
+</header>
+
+<main class="main">
+
+  <h1 class="page-title">Simple, honest pricing</h1>
+  <p class="page-subtitle">Start for free. Upgrade when the watermark bothers you.</p>
+
+  <div class="plans">
+
+    <div class="plan">
+      <div class="plan-name">Free</div>
+      <div class="plan-price">$0 <span>/ forever</span></div>
+      <div class="plan-desc">Export unlimited conversations. Always free, no sign-up required.</div>
+      <ul class="plan-features">
+        <li><div class="feature-check feature-check--yes">✓</div> Unlimited exports</li>
+        <li><div class="feature-check feature-check--yes">✓</div> Color-coded PDF output</li>
+        <li><div class="feature-check feature-check--yes">✓</div> Auto-redaction of sensitive data</li>
+        <li><div class="feature-check feature-check--yes">✓</div> No sign-up required</li>
+        <li><div class="feature-check feature-check--no">–</div> Watermark on every page</li>
+        <li><div class="feature-check feature-check--no">–</div> Limited to 30 messages per export</li>
+      </ul>
+      <a href="/claude/" class="btn-plan btn-plan--free">Start Exporting Free</a>
+    </div>
+
+    <div class="plan plan--paid">
+      <div class="plan-badge">Most Popular</div>
+      <div class="plan-name">Pro</div>
+      <div class="plan-price">$5 <span>/ month</span></div>
+      <div class="plan-desc">For professionals who export regularly and need clean, client-ready documents.</div>
+      <ul class="plan-features">
+        <li><div class="feature-check feature-check--yes">✓</div> Everything in Free</li>
+        <li><div class="feature-check feature-check--yes">✓</div> No watermark</li>
+        <li><div class="feature-check feature-check--yes">✓</div> Unlimited message length</li>
+        <li><div class="feature-check feature-check--yes">✓</div> Priority support</li>
+        <li><div class="feature-check feature-check--yes">✓</div> All future features included</li>
+        <li><div class="feature-check feature-check--yes">✓</div> Cancel anytime, instantly</div></li>
+      </ul>
+      <a href="/claude/" class="btn-plan btn-plan--paid">Upgrade to Pro — $5/mo</a>
+      <div class="cancel-note">No contracts. Cancel anytime from your account.</div>
+    </div>
+
+  </div>
+
+  <div class="faq-section">
+    <h2 class="faq-title">Pricing questions</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">What happens if I cancel?</div>
+        <div class="faq-a">You keep access until the end of your billing period. After that you drop back to the free tier automatically — no data is deleted, and you can still export with the watermark.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Is there a contract or commitment?</div>
+        <div class="faq-a">No. Month-to-month only. Cancel any time from your account page with one click.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What payment methods do you accept?</div>
+        <div class="faq-a">All major credit and debit cards via Stripe. Apple Pay and Google Pay where supported.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do you offer refunds?</div>
+        <div class="faq-a">If something isn't working as expected, contact us at mikekoga@hotmail.com and we'll make it right.</div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <nav class="footer-nav">
+      <div class="footer-nav-label">Export AI Conversations</div>
+      <a href="/claude/">Claude</a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/chatgpt/" style="opacity:0.5;pointer-events:none;">ChatGPT <small>(soon)</small></a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/gemini/" style="opacity:0.5;pointer-events:none;">Gemini <small>(soon)</small></a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/copilot/" style="opacity:0.5;pointer-events:none;">Copilot <small>(soon)</small></a>
+    </nav>
+    <nav class="footer-nav">
+      <div class="footer-nav-label">Product</div>
+      <a href="/pricing/">Pricing</a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/faq/">FAQ</a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/sample/">Sample PDF</a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/about/">About</a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/sitemap/">Sitemap</a>
+    </nav>
+    <div class="footer-bottom">
+      <div class="footer-copy">&copy; 2026 Notavello. Made in Reno, NV.</div>
+      <div class="footer-legal">
+        <a href="/privacy/">Privacy Policy</a>
+        <a href="/terms/">Terms of Service</a>
+        <a href="/contact/">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
