@@ -15,7 +15,11 @@
            user messages are correctly identified as human
   v0.080 - Rolled back to v0.075 clean page div approach
            with empty height baseline
-  v0.090 - Claude-only release. Stripped ChatGPT + Gemini
+  v0.091 - UX fix: renamed "Preview & Download" to "Preview Conversation".
+           Added floating download bar at screen bottom when preview visible.
+           Added bottom download button after last preview page.
+           Added preview hint explaining this is preview only.
+           Float bar and bottom button hide on reset.
            parsers and detection logic. Added AI selector
            UI (dropdown) ready for future platforms.
            Improved debug panel with parse log.
@@ -784,6 +788,107 @@ body {
   color: var(--ink-faint);
 }
 
+/* ── PREVIEW HINT ── */
+.preview-hint {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: var(--ink-muted);
+  background: #FFFBEB;
+  border: 1px solid #FDE68A;
+  border-radius: var(--radius-sm);
+  padding: 10px 16px;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+.preview-hint svg { flex-shrink: 0; color: #D97706; }
+.preview-hint strong { color: var(--ink); }
+
+/* ── BOTTOM DOWNLOAD ── */
+.bottom-download {
+  text-align: center;
+  padding: 32px 0 8px;
+}
+.btn-download-bottom {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 48px;
+  background: linear-gradient(135deg, #059669, #047857);
+  color: white;
+  font-family: 'Sora', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: opacity 0.2s, box-shadow 0.2s, transform 0.15s;
+  box-shadow: 0 6px 24px rgba(5,150,105,0.4);
+  letter-spacing: -0.01em;
+}
+.btn-download-bottom:hover { opacity: 0.92; transform: translateY(-1px); box-shadow: 0 8px 28px rgba(5,150,105,0.5); }
+.btn-download-bottom:active { transform: scale(0.98); }
+.bottom-download-note {
+  font-size: 0.78rem;
+  color: var(--ink-faint);
+  margin-top: 10px;
+}
+
+/* ── FLOATING DOWNLOAD BAR ── */
+.float-bar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  background: rgba(15,23,42,0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 14px 24px;
+  box-shadow: 0 -4px 24px rgba(0,0,0,0.25);
+  animation: slideUp 0.3s ease both;
+}
+.float-bar-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.float-bar-text {
+  font-size: 0.86rem;
+  color: #94A3B8;
+  line-height: 1.4;
+}
+.float-bar-text strong { color: white; }
+.btn-float-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  background: linear-gradient(135deg, #059669, #047857);
+  color: white;
+  font-family: 'Sora', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 16px rgba(5,150,105,0.4);
+  flex-shrink: 0;
+}
+.btn-float-download:hover { opacity: 0.92; }
+
+@keyframes slideUp {
+  from { transform: translateY(100%); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+
 /* ── MOBILE ── */
 @media (max-width: 600px) {
   .screen-ui { padding: 32px 16px 72px; }
@@ -810,7 +915,7 @@ body {
     </div>
     Nota<span>vello</span>
   </div>
-  <div class="badge">Free Preview · v0.090</div>
+  <div class="badge">Free Preview · v0.091</div>
 </header>
 
 <div class="screen-ui">
@@ -890,8 +995,8 @@ body {
         Auto-redact sensitive data (API keys, emails, SSNs)
       </label>
       <button class="btn-convert" onclick="processConversation()">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 5"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-        Preview &amp; Download
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        Preview Conversation
       </button>
     </div>
   </div>
@@ -913,7 +1018,19 @@ body {
         </button>
       </div>
     </div>
+    <div class="preview-hint">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      This is a preview only — scroll down to review, then use <strong>Download PDF</strong> above or the button at the bottom to save your file.
+    </div>
     <div id="docPage"></div>
+    <!-- Bottom download button — shown after preview renders -->
+    <div class="bottom-download" id="bottomDownload" style="display:none;">
+      <button class="btn-download-bottom" onclick="downloadPDF()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download PDF
+      </button>
+      <p class="bottom-download-note">Your conversation is ready — click to save as a PDF file</p>
+    </div>
   </div>
 
   <div class="paywall" id="paywall">
@@ -1101,7 +1218,7 @@ function renderDebugPanel(messages, pageLog) {
   const h = messages.filter(m => m.role === 'human').length;
   const a = messages.filter(m => m.role === 'ai').length;
 
-  panel.innerHTML = `<div style="color:#4F46E5;font-weight:700;margin-bottom:6px;">📐 Notavello Debug · v0.090</div>`;
+  panel.innerHTML = `<div style="color:#4F46E5;font-weight:700;margin-bottom:6px;">📐 Notavello Debug · v0.091</div>`;
 
   // Parse log
   panel.insertAdjacentHTML('beforeend', `<div style="color:#7C3AED;margin-top:4px;font-weight:600;">── Parse Log ──</div>`);
@@ -1139,6 +1256,8 @@ function resetApp() {
   document.getElementById('previewSection').style.display = 'none';
   document.getElementById('paywall').style.display = 'none';
   document.getElementById('errorMsg').style.display = 'none';
+  document.getElementById('floatBar').style.display = 'none';
+  document.getElementById('bottomDownload').style.display = 'none';
   parsedMessages = [];
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
@@ -1193,6 +1312,8 @@ function renderPreview(messages, platform, warning) {
   }
 
   document.getElementById('previewSection').style.display = 'block';
+  document.getElementById('floatBar').style.display = 'block';
+  document.getElementById('bottomDownload').style.display = 'block';
 
   const docPage = document.getElementById('docPage');
   docPage.innerHTML = '';
@@ -1372,5 +1493,18 @@ function escHtml(t) {
   return t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>');
 }
 </script>
+<!-- FLOATING DOWNLOAD BAR — appears when preview is shown -->
+<div class="float-bar" id="floatBar">
+  <div class="float-bar-inner">
+    <div class="float-bar-text">
+      <strong>Your PDF is ready.</strong> Review the preview above, then download when you're happy.
+    </div>
+    <button class="btn-float-download" onclick="downloadPDF()">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Download PDF
+    </button>
+  </div>
+</div>
+
 </body>
 </html>
