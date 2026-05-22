@@ -4,7 +4,7 @@
   Owner: Mike Koga
   GitHub: github.com/skychael/notavello (PRIVATE repo — do not share URL)
   Live: notavello.com/claude/ (Cloudflare Pages)
-  Current version: claude-1.4
+  Current version: claude-1.5
 =============================================================
 
   !! READ THIS FIRST — FUTURE CLAUDE SESSIONS !!
@@ -83,6 +83,10 @@
                FAQ, Sample PDF, About, Sitemap), and legal links
                (Privacy Policy, Terms of Service, Contact).
                Footer CSS added. Mobile responsive.
+  claude-1.5 - AI order updated across all pages to reflect real
+               market share: ChatGPT first (~65-80%), Gemini second
+               (~18%), Copilot third (~5%), Claude last (~2%).
+               Claude stays live/active, others remain coming soon.
 
 =============================================================
   AI_NAME — CRITICAL FOR FUTURE AI PAGES
@@ -1142,7 +1146,7 @@ body {
     Nota<span>vello</span>
   </div>
   </a>
-  <div class="badge">Free Preview · claude-1.4</div>
+  <div class="badge">Free Preview · claude-1.5</div>
 </header>
 
 <div class="screen-ui">
@@ -1428,7 +1432,7 @@ function renderDebugPanel(messages, pageLog) {
   const h = messages.filter(m => m.role === 'human').length;
   const a = messages.filter(m => m.role === 'ai').length;
 
-  panel.innerHTML = `<div style="color:#4F46E5;font-weight:700;margin-bottom:6px;">📐 Notavello Debug · claude-1.4</div>`;
+  panel.innerHTML = `<div style="color:#4F46E5;font-weight:700;margin-bottom:6px;">📐 Notavello Debug · claude-1.5</div>`;
 
   // Parse log
   panel.insertAdjacentHTML('beforeend', `<div style="color:#7C3AED;margin-top:4px;font-weight:600;">── Parse Log ──</div>`);
@@ -1731,13 +1735,13 @@ function escHtml(t) {
   <div class="site-footer-inner">
     <nav class="footer-nav">
       <div class="footer-nav-label">Export AI Conversations</div>
-      <a href="/claude/">Claude</a>
-      <span class="footer-nav-divider">·</span>
       <a href="/chatgpt/" style="opacity:0.5;pointer-events:none;">ChatGPT <small>(soon)</small></a>
       <span class="footer-nav-divider">·</span>
       <a href="/gemini/" style="opacity:0.5;pointer-events:none;">Gemini <small>(soon)</small></a>
       <span class="footer-nav-divider">·</span>
       <a href="/copilot/" style="opacity:0.5;pointer-events:none;">Copilot <small>(soon)</small></a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/claude/">Claude</a>
     </nav>
     <nav class="footer-nav">
       <div class="footer-nav-label">Product</div>
