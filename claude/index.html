@@ -4,7 +4,7 @@
   Owner: Mike Koga
   GitHub: github.com/skychael/notavello (PRIVATE repo — do not share URL)
   Live: notavello.com/claude/ (Cloudflare Pages)
-  Current version: claude-1.2
+  Current version: claude-1.3
 =============================================================
 
   !! READ THIS FIRST — FUTURE CLAUDE SESSIONS !!
@@ -72,6 +72,12 @@
   claude-1.2 - BUG 4 warning expanded with full history to prevent
                future Claude sessions from attempting to fix the
                preview simulation. Band-aid loop history documented.
+  claude-1.3 - BUG 5 partial fix: file attachments, image IDs, and
+               artifact labels now replaced with [Attachment] 
+               placeholders instead of bleeding through as raw text.
+               Note: actual image data cannot be recovered from
+               copy-paste — this is a fundamental limitation.
+               Browser extension (Phase 2) is the real solution.
 
 =============================================================
   AI_NAME — CRITICAL FOR FUTURE AI PAGES
@@ -1052,7 +1058,7 @@ body {
     Nota<span>vello</span>
   </div>
   </a>
-  <div class="badge">Free Preview · claude-1.2</div>
+  <div class="badge">Free Preview · claude-1.3</div>
 </header>
 
 <div class="screen-ui">
@@ -1222,6 +1228,15 @@ function parseClaude(text) {
   text = text.replace(/Claude finished the response[\s\n]*/gi, '');
   text = text.replace(/\[Claude is AI[\s\S]*?\]/gi, '');
   text = text.replace(/Claude is AI and can make mistakes\..*$/gim, '');
+
+  // Replace file/image attachments with [Attachment] placeholder
+  // Pattern: image ID files (e.g. 1779458847864_image.png)
+  text = text.replace(/^\d{10,}_image\.\w+$/gim, '[Attachment: image]');
+  // Pattern: named file + file type on next line (e.g. "index.html\nhtml")
+  text = text.replace(/^([\w\-. ]+\.\w+)\n(\d+ lines\n)?(\w+)$/gim, '[Attachment: $1]');
+  // Pattern: artifact labels (e.g. "Notavello root index\nCode · HTML")
+  text = text.replace(/^.+\nCode · (HTML|CSS|JS|JavaScript|Python|JSON|Text)$/gim, '[Attachment: artifact]');
+
   text = text.trim();
 
   // Timestamp must be on its own line
@@ -1329,7 +1344,7 @@ function renderDebugPanel(messages, pageLog) {
   const h = messages.filter(m => m.role === 'human').length;
   const a = messages.filter(m => m.role === 'ai').length;
 
-  panel.innerHTML = `<div style="color:#4F46E5;font-weight:700;margin-bottom:6px;">📐 Notavello Debug · claude-1.2</div>`;
+  panel.innerHTML = `<div style="color:#4F46E5;font-weight:700;margin-bottom:6px;">📐 Notavello Debug · claude-1.3</div>`;
 
   // Parse log
   panel.insertAdjacentHTML('beforeend', `<div style="color:#7C3AED;margin-top:4px;font-weight:600;">── Parse Log ──</div>`);
