@@ -1,3 +1,87 @@
+<!-- 
+=============================================================
+  NOTAVELLO — Root Landing Page
+  Owner: Mike Koga (mikekoga@hotmail.com)
+  GitHub: github.com/skychael/notavello (PRIVATE repo)
+  Live: notavello.com/ (Cloudflare Pages)
+  Current version: root-1.0
+=============================================================
+
+  !! READ THIS FIRST — FUTURE CLAUDE SESSIONS !!
+
+  This is the ROOT LANDING PAGE only. It does not contain
+  any parser logic. Its only job is to explain the product
+  and route users to the correct AI-specific page.
+
+  Do NOT add parser logic to this file.
+  Do NOT confuse this file with notavello.com/claude/index.html.
+
+  Full file structure:
+    notavello.com/index.html          ← THIS FILE (root landing page)
+                                         Version prefix: root-X.X
+    notavello.com/claude/index.html   ← Claude parser
+                                         Version prefix: claude-X.X
+    notavello.com/chatgpt/index.html  ← ChatGPT parser (not built yet)
+                                         Version prefix: chatgpt-X.X
+    notavello.com/gemini/index.html   ← Gemini parser (not built yet)
+                                         Version prefix: gemini-X.X
+
+  Each file has its OWN independent version number.
+  This file will be updated least frequently.
+  Only bump root-X.X when THIS file changes — never for
+  changes to claude/, chatgpt/, or gemini/ pages.
+
+=============================================================
+  VERSIONING RULE — ALWAYS FOLLOW THIS
+=============================================================
+  Every change to THIS file must bump the version in this
+  comment header. There is no badge or debug panel in this
+  file — just the comment header version is sufficient.
+
+  Version format: root-MAJOR.MINOR
+  - Bump MINOR for small changes (copy tweaks, style)
+  - Bump MAJOR for structural changes (new section, new AI card)
+
+=============================================================
+  VERSION HISTORY — THIS FILE ONLY
+=============================================================
+  root-1.0 - Initial build. Master landing page created as part
+             of URL restructure (previously Claude parser lived
+             at root). Three AI cards: Claude live, ChatGPT and
+             Gemini coming soon. Full SEO optimization.
+             Independent versioning system introduced.
+
+=============================================================
+  ACTIVATING NEW AI PAGES
+=============================================================
+  When chatgpt/index.html or gemini/index.html are built:
+  1. Find the relevant <div class="ai-card ai-card--soon"> block
+  2. Change the outer div to <a href="/chatgpt/" class="ai-card ai-card--live">
+  3. Change the status badge from "Coming soon" to "Live now"
+  4. Change the status class from ai-card-status--soon to ai-card-status--live
+  5. Bump this file's version to root-1.1
+
+=============================================================
+  URL STRUCTURE — DO NOT CHANGE WITHOUT 301 REDIRECTS
+=============================================================
+  notavello.com/          ← This file
+  notavello.com/claude/   ← Claude parser
+  notavello.com/chatgpt/  ← Future
+  notavello.com/gemini/   ← Future
+
+  Structure was set before significant Google indexing.
+  Moving any file requires a _redirects file with 301 redirects
+  or existing SEO will be lost.
+
+=============================================================
+  OTHER MIKE PROJECTS ON CLOUDFLARE
+=============================================================
+  - ask-ai.mikekoga.workers.dev (Ask AI site)
+  - weather-site-5vz.pages.dev (Weather site)
+  - GitHub username: skychael
+
+=============================================================
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
