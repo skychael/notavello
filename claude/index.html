@@ -1,128 +1,194 @@
 <!-- 
 =============================================================
-  Notavello — Claude Conversation Exporter
-  Owner: Mike Koga (mikekoga@hotmail.com)
-  GitHub: github.com/skychael/notavello (PRIVATE repo)
+  NOTAVELLO — Claude Conversation Exporter
+  Owner: Mike Koga
+  GitHub: github.com/skychael/notavello (PRIVATE repo — do not share URL)
   Live: notavello.com/claude/ (Cloudflare Pages)
+  Current version: claude-1.2
 =============================================================
-  VERSION HISTORY:
+
+  !! READ THIS FIRST — FUTURE CLAUDE SESSIONS !!
+
+  This is ONE of several independent files in the Notavello
+  project. Do not confuse them. The full file structure is:
+
+    notavello.com/index.html          ← Root landing page
+                                         Version prefix: root-X.X
+    notavello.com/claude/index.html   ← THIS FILE
+                                         Version prefix: claude-X.X
+    notavello.com/chatgpt/index.html  ← ChatGPT parser (not built yet)
+                                         Version prefix: chatgpt-X.X
+    notavello.com/gemini/index.html   ← Gemini parser (not built yet)
+                                         Version prefix: gemini-X.X
+
+  Each file has its OWN independent version number.
+  Updating claude does NOT change the version of root or chatgpt.
+  This is intentional. Do not synchronize version numbers
+  across files. Do not suggest doing so.
+
+=============================================================
+  VERSIONING RULE — ALWAYS FOLLOW THIS
+=============================================================
+  Every change to THIS file must bump ALL THREE of:
+  1. Version in this comment header (e.g. claude-1.0 → claude-1.1)
+  2. Badge in HTML: <div class="badge">Free Preview · claude-X.X</div>
+  3. Debug panel string in renderDebugPanel(): "Notavello Debug · claude-X.X"
+  All three must always match exactly.
+  Mike uses this to verify the live site matches his local copy.
+
+  Version format for this file: claude-MAJOR.MINOR
+  - Bump MINOR for small changes (copy, style tweaks, bug fixes)
+  - Bump MAJOR for structural changes (new feature, parser rewrite)
+
+=============================================================
+  VERSION HISTORY — THIS FILE ONLY
+=============================================================
+  [Legacy — single shared versioning, pre-restructure]
   v0.1   - Initial build
   v0.2   - UI redesign (modern, rounded, gradient style)
-  v0.3   - Multi-platform parser (Claude, ChatGPT, Gemini)
-           Confidence check / cross-validation added
-           Timestamp-only-on-own-line fix
-  v0.4   - Parser fix: AI block split by blank line so trailing
-           user messages are correctly identified as human
-  v0.080 - Rolled back to v0.075 clean page div approach
-           with empty height baseline (best page break solution found)
-  v0.090 - Claude-only release. Stripped ChatGPT + Gemini parsers
-           and detection logic. Added AI selector UI (radio buttons)
-           ready for future platforms. Improved debug panel with
-           full parse log. Updated all UI copy to Claude-only.
-  v0.091 - UX fix: renamed "Preview & Download" to "Preview
-           Conversation". Added floating download bar at screen
-           bottom. Added bottom download button after preview.
-           Added yellow hint bar explaining preview vs download.
-  v0.092 - Added diagonal watermark + background bands (too aggressive
-           — bands removed in v0.093)
-  v0.093 - Watermark tuned: bands removed, opacity raised from
-           7% to 18%. Text-only diagonal stamp. Research confirmed
-           15-25% is the effective range for freemium conversion.
-  v0.094 - URL restructure. Claude parser moved from notavello.com/
-           to notavello.com/claude/. Master landing page now lives
-           at notavello.com/. SEO optimization: meta description,
-           canonical URL, Open Graph tags, Twitter Card added.
-           Routing stubs updated to reflect new path structure.
+  v0.3   - Multi-platform parser attempted (Claude, ChatGPT, Gemini)
+  v0.4   - Parser fix: AI block split on blank lines
+  v0.080 - Rolled back to clean page div / empty height approach
+  v0.090 - Claude-only release. Stripped other parsers.
+           Added AI selector UI with routing stubs.
+  v0.091 - UX: renamed button, added floating download bar,
+           bottom download button, yellow hint bar
+  v0.092 - Watermark bands added (too aggressive)
+  v0.093 - Watermark tuned: bands removed, opacity 7%→18%
+  v0.094 - Moved to notavello.com/claude/. SEO optimization.
+           Root landing page created at notavello.com/.
+  v0.095 - AI_NAME variable added. All UI "Claude" strings
+           now pull from AI_NAME — change one value when
+           copying this file for a new AI. AI selector
+           removed, replaced with "Not using Claude?" link.
+
+  [Independent versioning begins here]
+  claude-1.0 - Version system changed to per-file independent
+               numbering. Full comment header rewritten for
+               future-session reliability. Handoff note updated.
+  claude-1.1 - Personal info removed from HTML comments (email,
+               other project URLs). View Source note added.
+               Cloudflare Worker migration resolves this fully.
+  claude-1.2 - BUG 4 warning expanded with full history to prevent
+               future Claude sessions from attempting to fix the
+               preview simulation. Band-aid loop history documented.
+
 =============================================================
-  !! IMPORTANT FOR FUTURE CLAUDE SESSIONS !!
-  Every time you make ANY change to this file you MUST:
-  1. Bump the version number in VERSION HISTORY above
-  2. Bump the badge in the HTML: <div class="badge">Free Preview · vX.XXX</div>
-  3. Bump the debug panel version string in renderDebugPanel()
-  All three must always match. This lets Mike verify live vs local.
+  AI_NAME — CRITICAL FOR FUTURE AI PAGES
 =============================================================
-  ARCHITECTURE — FILE STRUCTURE:
-  This file is the Claude-specific exporter at notavello.com/claude/
-  It is NOT a generic multi-AI tool. See WHY CLAUDE-ONLY below.
+  This file uses a single variable at the top of the <script>:
 
-  Current:
-    notavello.com/index.html          ← Master landing page (choose AI)
-    notavello.com/claude/index.html   ← THIS FILE (Claude parser)
+    const AI_NAME = 'Claude';
 
-  Future (when paste format confirmed for each):
-    notavello.com/chatgpt/index.html  ← ChatGPT parser (standalone)
-    notavello.com/gemini/index.html   ← Gemini parser (standalone)
+  Every UI string that says the AI name pulls from this variable.
+  When copying this file to make chatgpt/index.html or
+  gemini/index.html, change ONLY this one value.
+  Do not hunt for and replace individual strings — they are
+  already wired to AI_NAME. The only strings that intentionally
+  stay hardcoded are:
+  - SEO meta tags in <head> (page-specific, Google reads them)
+  - Parser noise-stripping regexes (they match Claude's actual UI text)
 
-  Each AI file:
-  - Is completely standalone — no shared parser logic
+=============================================================
+  ARCHITECTURE — WHY ONE FILE PER AI
+=============================================================
+  A previous version tried to auto-detect Claude, ChatGPT, and
+  Gemini from a single file. It failed completely for ChatGPT
+  and Gemini — their copy-paste format changes whenever they
+  update their UI, which is frequent and unpredictable.
+
+  Decision: one standalone file per AI. Each file:
   - Has its own parser tuned to that AI's exact paste format
-  - Gets indexed by Google independently (SEO benefit)
-  - Can be updated without touching any other AI's file
-  - Uses same pdfmake CDN, same UI design, same watermark system
+  - Is completely independent — updating one never breaks another
+  - Gets indexed by Google separately (SEO benefit)
+  - Uses the same pdfmake CDN, UI design, and watermark system
+  - Changes only its own version number when updated
 
-  The AI selector radio buttons in this file already have routing
-  stubs pointing to /chatgpt/ and /gemini/. When those files exist,
-  just uncomment the window.location.href lines — done.
+  DO NOT rebuild a unified auto-detecting multi-AI parser.
+  It was tried, it failed. The decision is final.
 
-  URL STRUCTURE — RESOLVED (v0.094):
-  Master landing page lives at notavello.com/ (root).
-  Claude parser lives at notavello.com/claude/.
-  This decision was made before significant Google indexing,
-  so no redirect was needed. Do not move these again without
-  setting up proper 301 redirects via _redirects file.
 =============================================================
-  WHY CLAUDE-ONLY (do not rebuild as multi-AI):
-  A previous version attempted to auto-detect and parse Claude,
-  ChatGPT, and Gemini from a single file. It failed completely
-  for ChatGPT and Gemini because their copy-paste output format
-  changes whenever they update their UI — which is frequent and
-  unpredictable. The detection logic became a permanent maintenance
-  burden with no reliable fix.
-
-  The decision was made to:
-  1. Make Claude-only first (parser works, product is stable)
-  2. Add other AIs only when their paste format is confirmed with
-     a real sample — each in its own isolated file
-  3. Let users self-select their AI via the selector UI
-
-  DO NOT attempt to rebuild a single auto-detecting multi-AI parser.
-  It was tried, it failed, and the architecture decision to use
-  separate files per AI was deliberate and correct.
+  URL STRUCTURE — RESOLVED, DO NOT CHANGE WITHOUT REDIRECTS
 =============================================================
-  KNOWN BUG LOG:
-  - BUG 1 [FIXED v0.4]: User replies after AI response were being
-    caught inside the AI block. Fixed by splitting AI block on blank
-    lines and treating last paragraph as human.
-  - BUG 2 [OPEN]: Single-char replies show as AI in edge cases.
-    Low priority.
-  - BUG 3 [OPEN]: Timestamps embedded IN AI text can cause false
-    splits. Mitigation: timestamps must be on their own line.
-  - BUG 4 [OPEN]: Page break logic is approximate — tends toward
-    one message per page. This is the best solution found after
-    multiple attempts. Do not try to "fix" without reading the
-    full version history. The v0.075/v0.080 approach is correct.
-  - BUG 5 [OPEN]: Images in conversation silently dropped.
-    Add [Image] placeholder in future.
-  - BUG 6 [OPEN]: Claude tool-use labels ("Searched the web",
-    "Viewed X files") appear in exported content. Stripping them
-    is risky — could delete real user content with same text.
-    Leave as-is for now. Note in known issues.
+  notavello.com/          ← Root landing page (choose your AI)
+  notavello.com/claude/   ← This file
+  notavello.com/chatgpt/  ← Future
+  notavello.com/gemini/   ← Future
+
+  This structure was set before significant Google indexing.
+  Do NOT move any file to a different URL without first setting
+  up a 301 redirect via a _redirects file in the repo root.
+  Moving without redirecting will lose any SEO built up.
+
 =============================================================
-  NEXT STEPS (in order):
-  1. Add Stripe ($5/month removes watermark)
-     - After payment: set localStorage paid=true, skip watermark
+  KNOWN BUG LOG
+=============================================================
+  BUG 1 [FIXED v0.4]: User replies caught inside AI block. Fixed.
+  BUG 2 [OPEN]: Single-char replies show as AI in edge cases.
+  BUG 3 [OPEN]: Timestamps embedded in AI text cause false splits.
+                Mitigation: timestamps must be on their own line.
+  BUG 4 [OPEN — DO NOT ATTEMPT TO FIX]:
+                The browser preview is a SIMULATION using div
+                elements — it is not a real PDF renderer and will
+                never be 100% accurate. The actual downloaded PDF
+                generated by pdfmake is the real output and is
+                correct. Judge the PDF, not the preview.
+
+                CRITICAL HISTORY — READ BEFORE TOUCHING ANYTHING:
+                Multiple Claude sessions attempted to fix this.
+                Each time the session convinced itself the problem
+                was clear, applied a fix, broke something else,
+                applied another fix, and spiraled into circular
+                band-aid-on-band-aid loops. Sessions had to be
+                fully reset multiple times to regain a big-picture
+                view. The v0.080 empty height baseline approach is
+                the best solution found after all those attempts.
+
+                DO NOT touch page break logic without:
+                1. Reading full version history from v0.075
+                2. Understanding that preview does not equal PDF
+                3. Explicit instruction from Mike to investigate
+  BUG 5 [OPEN]: Images in conversation silently dropped.
+                Future: add [Image] placeholder.
+  BUG 6 [OPEN]: Claude tool-use labels appear in exported content
+                ("Searched the web", "Viewed X files" etc).
+                Stripping is risky — could delete real user content.
+                Leave as-is for now.
+
+=============================================================
+  DEBUG PANEL
+=============================================================
+  Intentionally kept in production code. Appears bottom-right
+  after Preview is clicked. Shows parse log, message counts,
+  page break data. Ctrl+A inside panel selects all for copying.
+  DO NOT remove until Mike explicitly decides to.
+
+=============================================================
+  NEXT STEPS (in priority order)
+=============================================================
+  1. Stripe integration ($5/month removes watermark)
+     - On payment: localStorage paid=true, skip watermark block
      - Future: Cloudflare D1 for proper user tracking
   2. Email capture after first download (non-blocking)
-  3. Build chatgpt/index.html — need real paste sample first
-  4. Build gemini/index.html — need real paste sample first
-  5. Decide master landing page URL structure before marketing
-  6. Move parser to Cloudflare Worker (hide source code)
-  7. Remove debug panel before any marketing push
+  3. Build chatgpt/index.html
+     - Copy this file, change AI_NAME = 'ChatGPT'
+     - Need real ChatGPT paste sample from Mike to confirm format
+     - Update SEO meta tags in <head> for ChatGPT-specific keywords
+  4. Build gemini/index.html
+     - Same process — need real Gemini paste sample first
+  5. Move parser to Cloudflare Worker (hides source code)
+  6. Remove debug panel (only when Mike decides — not before)
+
 =============================================================
-  OTHER MIKE PROJECTS ON CLOUDFLARE:
-  - ask-ai.mikekoga.workers.dev (Ask AI site)
-  - weather-site-5vz.pages.dev (Weather site)
-  - GitHub username: skychael
+  NOTE ON SOURCE CODE VISIBILITY
+=============================================================
+  HTML comments are visible to anyone who does View Source
+  (Ctrl+U) in their browser. Personal contact details and
+  project URLs have been removed from these comments for this
+  reason. This is fully resolved when the parser is moved to
+  a Cloudflare Worker — at that point source code is no longer
+  exposed in the browser at all.
+
 =============================================================
 -->
 <!DOCTYPE html>
@@ -986,7 +1052,7 @@ body {
     Nota<span>vello</span>
   </div>
   </a>
-  <div class="badge">Free Preview · v0.094</div>
+  <div class="badge">Free Preview · claude-1.2</div>
 </header>
 
 <div class="screen-ui">
@@ -994,10 +1060,10 @@ body {
   <div class="hero">
     <div class="hero-pill">
       <div class="hero-pill-dot"></div>
-      Claude supported · More AIs coming soon
+      <span id="heroAIName"></span> supported · More AIs coming soon
     </div>
-    <h1>Export Claude conversations<br>as <em>beautiful PDFs</em></h1>
-    <p>Paste your Claude conversation and get a clean, color-coded PDF — searchable, shareable, and professionally formatted.</p>
+    <h1>Export <span id="heroAIName2"></span> conversations<br>as <em>beautiful PDFs</em></h1>
+    <p>Paste your <span id="heroAIName3"></span> conversation and get a clean, color-coded PDF — searchable, shareable, and professionally formatted.</p>
   </div>
 
   <div class="how-to">
@@ -1005,48 +1071,24 @@ body {
     <div class="how-to-steps">
       <div class="step">
         <div class="step-num">1</div>
-        <div class="step-text"><strong>Select your AI</strong> — choose which AI you used below</div>
+        <div class="step-text"><strong>Copy your chat</strong> — open <span class="ai-inline"></span>, press Ctrl+A then Ctrl+C</div>
       </div>
       <div class="step">
         <div class="step-num">2</div>
-        <div class="step-text"><strong>Copy your chat</strong> — open Claude, press Ctrl+A then Ctrl+C</div>
+        <div class="step-text"><strong>Paste below</strong> — drop it into the text area</div>
       </div>
       <div class="step">
         <div class="step-num">3</div>
-        <div class="step-text"><strong>Paste &amp; download</strong> — get your color-coded PDF instantly</div>
+        <div class="step-text"><strong>Download</strong> — get your color-coded PDF instantly</div>
       </div>
     </div>
   </div>
 
-  <!-- AI SELECTOR — routes to per-AI pages when others are ready -->
-  <div class="ai-selector-card">
-    <div class="ai-selector-label">Which AI did you use?</div>
-    <div class="ai-selector-options">
-      <label class="ai-option ai-option--active">
-        <input type="radio" name="aiPlatform" value="claude" checked onchange="handleAISelect(this.value)">
-        <div class="ai-option-inner">
-          <div class="ai-option-dot"></div>
-          <span class="ai-option-name">Claude</span>
-          <span class="ai-option-status ai-option-status--live">Live</span>
-        </div>
-      </label>
-      <label class="ai-option ai-option--soon">
-        <input type="radio" name="aiPlatform" value="chatgpt" disabled onchange="handleAISelect(this.value)">
-        <div class="ai-option-inner">
-          <div class="ai-option-dot ai-option-dot--soon"></div>
-          <span class="ai-option-name">ChatGPT</span>
-          <span class="ai-option-status ai-option-status--soon">Soon</span>
-        </div>
-      </label>
-      <label class="ai-option ai-option--soon">
-        <input type="radio" name="aiPlatform" value="gemini" disabled onchange="handleAISelect(this.value)">
-        <div class="ai-option-inner">
-          <div class="ai-option-dot ai-option-dot--soon"></div>
-          <span class="ai-option-name">Gemini</span>
-          <span class="ai-option-status ai-option-status--soon">Soon</span>
-        </div>
-      </label>
-    </div>
+  <!-- "Not using X?" link — replaces AI selector, links back to landing page -->
+  <div style="text-align:right; margin-bottom:16px;">
+    <a href="/" id="notUsingLink" style="font-size:0.82rem; color:var(--ink-faint); text-decoration:none; transition:color 0.15s;">
+      Not using <span class="ai-inline"></span>? →
+    </a>
   </div>
 
   <div class="error-msg" id="errorMsg"></div>
@@ -1059,7 +1101,7 @@ body {
       </div>
       <div class="char-info" id="charInfo">0 messages detected</div>
     </div>
-    <textarea id="pasteArea" placeholder="Paste your Claude conversation here (Ctrl+V)..."></textarea>
+    <textarea id="pasteArea" placeholder="Paste your conversation here (Ctrl+V)..."></textarea>
     <div class="input-footer">
       <label class="redact-option">
         <input type="checkbox" id="redactCheck" checked>
@@ -1139,23 +1181,20 @@ function redactText(text) {
   return out;
 }
 
-// ── AI SELECTOR ──
-// When other AI pages are ready, this routes the user to the correct file.
-// File structure (v0.094):
-//   notavello.com/index.html          ← Master landing page
-//   notavello.com/claude/index.html   ← Claude (this file)
-//   notavello.com/chatgpt/index.html  ← ChatGPT (future)
-//   notavello.com/gemini/index.html   ← Gemini (future)
-function handleAISelect(value) {
-  if (value === 'chatgpt') {
-    // Future: window.location.href = '/chatgpt/';
-    debugLog('AI selector: ChatGPT selected (not yet available)');
-  } else if (value === 'gemini') {
-    // Future: window.location.href = '/gemini/';
-    debugLog('AI selector: Gemini selected (not yet available)');
-  } else {
-    debugLog('AI selector: Claude selected');
-  }
+// ── Change this one value when copying this file for a new AI ──
+const AI_NAME = 'Claude';
+
+// Populate all AI name spans from the single source above
+document.querySelectorAll('.ai-inline, #heroAIName, #heroAIName2, #heroAIName3').forEach(el => {
+  el.textContent = AI_NAME;
+});
+document.getElementById('pasteArea').placeholder = `Paste your ${AI_NAME} conversation here (Ctrl+V)...`;
+
+// Add hover style to "Not using X?" link
+const notUsingLink = document.getElementById('notUsingLink');
+if (notUsingLink) {
+  notUsingLink.addEventListener('mouseover', () => notUsingLink.style.color = 'var(--accent)');
+  notUsingLink.addEventListener('mouseout',  () => notUsingLink.style.color = 'var(--ink-faint)');
 }
 
 // ── CONFIDENCE CHECK ──
@@ -1290,7 +1329,7 @@ function renderDebugPanel(messages, pageLog) {
   const h = messages.filter(m => m.role === 'human').length;
   const a = messages.filter(m => m.role === 'ai').length;
 
-  panel.innerHTML = `<div style="color:#4F46E5;font-weight:700;margin-bottom:6px;">📐 Notavello Debug · v0.094</div>`;
+  panel.innerHTML = `<div style="color:#4F46E5;font-weight:700;margin-bottom:6px;">📐 Notavello Debug · claude-1.2</div>`;
 
   // Parse log
   panel.insertAdjacentHTML('beforeend', `<div style="color:#7C3AED;margin-top:4px;font-weight:600;">── Parse Log ──</div>`);
@@ -1316,7 +1355,7 @@ document.getElementById('pasteArea').addEventListener('input', function() {
   const el = document.getElementById('charInfo');
   el.textContent = this.value.trim().length === 0
     ? '0 messages detected'
-    : `${messages.length} msg${messages.length !== 1 ? 's' : ''} · Claude detected`;
+    : `${messages.length} msg${messages.length !== 1 ? 's' : ''} · ${AI_NAME} detected`;
 });
 
 let parsedMessages = [];
@@ -1372,7 +1411,7 @@ function renderPreview(messages, platform, warning) {
   const humanCount = messages.filter(m => m.role === 'human').length;
 
   document.getElementById('previewMeta').textContent =
-    `${messages.length} messages · ${humanCount} from you · Claude · Generated ${dateStr}`;
+    `${messages.length} messages · ${humanCount} from you · ${AI_NAME} · Generated ${dateStr}`;
 
   const errorEl = document.getElementById('errorMsg');
   if (warning) {
@@ -1429,7 +1468,7 @@ function renderPreview(messages, platform, warning) {
       </div>`;
     } else {
       block.innerHTML = `<div class="msg-ai">
-        <div class="msg-label">Claude</div>
+        <div class="msg-label">${AI_NAME}</div>
         <div class="msg-text">${escHtml(msg.text)}</div>
       </div>`;
     }
@@ -1524,7 +1563,7 @@ function downloadPDF() {
     } else {
       content.push({
         stack: [
-          { text: 'CLAUDE', fontSize: 7, bold: true, color: '#94A3B8', characterSpacing: 1.5, margin: [0, 0, 0, 4] },
+          { text: AI_NAME.toUpperCase(), fontSize: 7, bold: true, color: '#94A3B8', characterSpacing: 1.5, margin: [0, 0, 0, 4] },
           { text: msg.text, fontSize: 11, color: '#0F172A', lineHeight: 1.6 },
         ],
         margin: [0, 0, 0, 16]
