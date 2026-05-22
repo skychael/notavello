@@ -2,30 +2,42 @@
 =============================================================
   Notavello — AI Conversation Exporter
   Owner: Mike Koga (mikekoga@hotmail.com)
-  GitHub: github.com/skychael/chatscript (PRIVATE repo)
+  GitHub: github.com/skychael/notavello (PRIVATE repo)
   Live: notavello.com (Cloudflare Pages)
 =============================================================
   VERSION HISTORY:
-  v0.1 - Initial build
-  v0.2 - UI redesign (modern, rounded, gradient style)
-  v0.3 - Multi-platform parser (Claude, ChatGPT, Gemini)
-         Confidence check / cross-validation added
-         Timestamp-only-on-own-line fix
-  v0.4 - Parser fix: AI block split by blank line so trailing
-         user messages are correctly identified as human
-  v0.080 - Rolled back to v0.075 clean page div approach with empty height baseline
+  v0.1   - Initial build
+  v0.2   - UI redesign (modern, rounded, gradient style)
+  v0.3   - Multi-platform parser (Claude, ChatGPT, Gemini)
+           Confidence check / cross-validation added
+           Timestamp-only-on-own-line fix
+  v0.4   - Parser fix: AI block split by blank line so trailing
+           user messages are correctly identified as human
+  v0.080 - Rolled back to v0.075 clean page div approach
+           with empty height baseline
+  v0.090 - Claude-only release. Stripped ChatGPT + Gemini
+           parsers and detection logic. Added AI selector
+           UI (dropdown) ready for future platforms.
+           Improved debug panel with parse log.
+           Updated all UI copy to reflect Claude-only.
 =============================================================
   !! IMPORTANT FOR FUTURE CLAUDE SESSIONS !!
   Every time you make ANY change to this file you MUST:
-  1. Bump the version number in VERSION HISTORY above (v0.X)
-  2. Bump the badge in the HTML: <div class="badge">Free Preview · vX.X</div>
+  1. Bump the version number in VERSION HISTORY above
+  2. Bump the badge in the HTML: <div class="badge">Free Preview · vX.XXX</div>
   Both must always match. This lets Mike verify live site vs local.
 =============================================================
-  ARCHITECTURE:
-  - Single index.html file, no build step
-  - pdfmake library for PDF generation (CDN)
-  - Cloudflare Pages auto-deploys from GitHub main branch
-  - Future: move parser logic to Cloudflare Worker
+  ARCHITECTURE — FILE STRUCTURE PLAN:
+  - This file: notavello.com/index.html (Claude parser)
+  - Future:    notavello.com/chatgpt/index.html (ChatGPT parser)
+  - Future:    notavello.com/gemini/index.html  (Gemini parser)
+  - Each AI gets its own folder/file with its own parser
+  - The AI selector dropdown in this file routes to those URLs
+  - No shared parser logic between files — each is standalone
+  - Cloudflare Pages serves all folders from same GitHub repo
+  - Single index.html file per AI, no build step needed
+  - pdfmake library for PDF generation (CDN, same across all)
+  - Future: move parser logic to Cloudflare Worker per AI
     so source code is not fully visible to public
 =============================================================
   KNOWN BUG LOG (for future Claude to read):
@@ -33,39 +45,27 @@
     being caught inside the AI block. Fixed by splitting AI
     block on blank lines and treating last paragraph as human.
   - BUG 2 [OPEN]: Single-char replies still show as AI in
-    some edge cases. Needs ensemble/voting parser approach.
+    some edge cases. Low priority for now.
   - BUG 3 [OPEN]: Long conversations with timestamps IN the
     AI text (e.g. Claude writing "at 12:32 PM...") can cause
     false splits. Mitigation: timestamps must be on own line.
+  - BUG 4 [OPEN]: Page break logic is approximate — each page
+    tends to get one message before triggering new page.
+    Acceptable for now. See page div / _emptyHeight approach.
+  - BUG 5 [OPEN]: Images in conversation are silently dropped.
+    Should add [Image] placeholder in future.
 =============================================================
-  FUTURE PARSER PLAN — ENSEMBLE/VOTING SYSTEM:
-  Build multiple independent detection methods that each vote:
-  METHOD A: Timestamp-based (current approach)
-  METHOD B: Blank-line paragraph splitting with role alternation
-  METHOD C: Speaker label detection (You/ChatGPT/Gemini)
-  METHOD D: Message length heuristics (AI tends to be longer)
-  METHOD E: Pattern matching (AI often starts with capital, ends with period)
-  
-  Each method returns { role, confidence } per message block.
-  Voting logic: majority wins. Tie = fall back to Method A.
-  Log which method won for debugging. Never crash — always
-  return SOMETHING even if confidence is low, just warn user.
-  
-  Dependencies to build before ensemble parser:
-  1. A message segmentation layer (split raw text into blocks first)
-  2. A confidence scoring system (0-100 per method per message)
-  3. A fallback chain: A -> B -> C -> alternating
-  4. A debug mode (add ?debug=1 to URL to see parse log)
+  NEXT STEPS:
+  1. Add Stripe payment ($5/month removes watermark)
+  2. Strip debug panel before any marketing push
+  3. Build chatgpt/index.html when ChatGPT paste format confirmed
+  4. Build gemini/index.html when Gemini paste format confirmed
+  5. Move parser logic to Cloudflare Worker (hide source)
 =============================================================
   OTHER MIKE PROJECTS ON CLOUDFLARE:
   - ask-ai.mikekoga.workers.dev (Ask AI site)
   - weather-site-5vz.pages.dev (Weather site)
-=============================================================
-  NEXT STEPS:
-  1. Add Stripe payment ($5/month, 30 msg free limit)
-  2. Move parser to Cloudflare Worker (hide source logic)
-  3. Build ensemble parser (see FUTURE PARSER PLAN above)
-  4. Add real ChatGPT and Gemini testing with live pastes
+  - GitHub username: skychael
 =============================================================
 -->
 <!DOCTYPE html>
@@ -73,7 +73,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Notavello — AI Conversation Exporter</title>
+<title>Notavello — Claude Conversation Exporter</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
@@ -691,6 +691,99 @@ body {
   50%       { opacity: 0.5; transform: scale(0.85); }
 }
 
+/* ── AI SELECTOR ── */
+.ai-selector-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 24px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow);
+  animation: fadeUp 0.6s 0.12s ease both;
+  opacity: 0;
+}
+
+.ai-selector-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--ink-faint);
+  margin-bottom: 14px;
+}
+
+.ai-selector-options {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.ai-option {
+  cursor: pointer;
+  flex: 1;
+  min-width: 100px;
+}
+
+.ai-option input[type="radio"] { display: none; }
+
+.ai-option-inner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface2);
+  transition: all 0.15s;
+  font-size: 0.86rem;
+  font-weight: 500;
+  color: var(--ink-muted);
+}
+
+.ai-option--active .ai-option-inner {
+  border-color: var(--accent);
+  background: var(--accent-light);
+  color: var(--accent);
+}
+
+.ai-option--soon { cursor: not-allowed; opacity: 0.5; }
+.ai-option--soon .ai-option-inner { cursor: not-allowed; }
+
+.ai-option-dot {
+  width: 7px;
+  height: 7px;
+  background: var(--green);
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: pulse 2s infinite;
+}
+
+.ai-option-dot--soon {
+  background: var(--ink-faint);
+  animation: none;
+}
+
+.ai-option-name { flex: 1; }
+
+.ai-option-status {
+  font-size: 0.62rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 2px 7px;
+  border-radius: 20px;
+}
+
+.ai-option-status--live {
+  background: var(--green-light);
+  color: var(--green);
+}
+
+.ai-option-status--soon {
+  background: var(--border);
+  color: var(--ink-faint);
+}
+
 /* ── MOBILE ── */
 @media (max-width: 600px) {
   .screen-ui { padding: 32px 16px 72px; }
@@ -717,7 +810,7 @@ body {
     </div>
     Nota<span>vello</span>
   </div>
-  <div class="badge">Free Preview · v0.080</div>
+  <div class="badge">Free Preview · v0.090</div>
 </header>
 
 <div class="screen-ui">
@@ -725,10 +818,10 @@ body {
   <div class="hero">
     <div class="hero-pill">
       <div class="hero-pill-dot"></div>
-      Claude &amp; ChatGPT supported
+      Claude supported · More AIs coming soon
     </div>
-    <h1>Export AI conversations<br>as <em>beautiful PDFs</em></h1>
-    <p>Paste any Claude or ChatGPT conversation and get a clean, color-coded PDF — searchable, shareable, and professionally formatted.</p>
+    <h1>Export Claude conversations<br>as <em>beautiful PDFs</em></h1>
+    <p>Paste your Claude conversation and get a clean, color-coded PDF — searchable, shareable, and professionally formatted.</p>
   </div>
 
   <div class="how-to">
@@ -736,16 +829,47 @@ body {
     <div class="how-to-steps">
       <div class="step">
         <div class="step-num">1</div>
-        <div class="step-text"><strong>Copy your chat</strong> — open Claude or ChatGPT, press Ctrl+A then Ctrl+C</div>
+        <div class="step-text"><strong>Select your AI</strong> — choose which AI you used below</div>
       </div>
       <div class="step">
         <div class="step-num">2</div>
-        <div class="step-text"><strong>Paste below</strong> — click the box and press Ctrl+V</div>
+        <div class="step-text"><strong>Copy your chat</strong> — open Claude, press Ctrl+A then Ctrl+C</div>
       </div>
       <div class="step">
         <div class="step-num">3</div>
-        <div class="step-text"><strong>Preview &amp; download</strong> — get your color-coded PDF instantly</div>
+        <div class="step-text"><strong>Paste &amp; download</strong> — get your color-coded PDF instantly</div>
       </div>
+    </div>
+  </div>
+
+  <!-- AI SELECTOR — routes to per-AI pages when others are ready -->
+  <div class="ai-selector-card">
+    <div class="ai-selector-label">Which AI did you use?</div>
+    <div class="ai-selector-options">
+      <label class="ai-option ai-option--active">
+        <input type="radio" name="aiPlatform" value="claude" checked onchange="handleAISelect(this.value)">
+        <div class="ai-option-inner">
+          <div class="ai-option-dot"></div>
+          <span class="ai-option-name">Claude</span>
+          <span class="ai-option-status ai-option-status--live">Live</span>
+        </div>
+      </label>
+      <label class="ai-option ai-option--soon">
+        <input type="radio" name="aiPlatform" value="chatgpt" disabled onchange="handleAISelect(this.value)">
+        <div class="ai-option-inner">
+          <div class="ai-option-dot ai-option-dot--soon"></div>
+          <span class="ai-option-name">ChatGPT</span>
+          <span class="ai-option-status ai-option-status--soon">Soon</span>
+        </div>
+      </label>
+      <label class="ai-option ai-option--soon">
+        <input type="radio" name="aiPlatform" value="gemini" disabled onchange="handleAISelect(this.value)">
+        <div class="ai-option-inner">
+          <div class="ai-option-dot ai-option-dot--soon"></div>
+          <span class="ai-option-name">Gemini</span>
+          <span class="ai-option-status ai-option-status--soon">Soon</span>
+        </div>
+      </label>
     </div>
   </div>
 
@@ -759,7 +883,7 @@ body {
       </div>
       <div class="char-info" id="charInfo">0 messages detected</div>
     </div>
-    <textarea id="pasteArea" placeholder="Paste your Claude or ChatGPT conversation here (Ctrl+V)..."></textarea>
+    <textarea id="pasteArea" placeholder="Paste your Claude conversation here (Ctrl+V)..."></textarea>
     <div class="input-footer">
       <label class="redact-option">
         <input type="checkbox" id="redactCheck" checked>
@@ -827,27 +951,22 @@ function redactText(text) {
   return out;
 }
 
-// ── PLATFORM DETECTION ──
-// We require multiple occurrences of speaker labels to avoid false positives
-// (e.g. our own chat talking ABOUT Gemini shouldn't trigger Gemini parser)
-function detectPlatform(text) {
-  const lines = text.split('\n').map(l => l.trim());
-
-  const youCount     = lines.filter(l => l === 'You').length;
-  const chatgptCount = lines.filter(l => l === 'ChatGPT').length;
-  const geminiCount  = lines.filter(l => l === 'Gemini').length;
-  const hasTS        = /\b\d{1,2}:\d{2}\s*(AM|PM)\b/i.test(text);
-
-  // Need at least 2 occurrences of each label to be confident
-  if (youCount >= 2 && chatgptCount >= 2) return 'chatgpt';
-  if (geminiCount >= 2) return 'gemini';
-  if (hasTS) return 'claude';
-
-  // Single occurrence fallbacks
-  if (youCount >= 1 && chatgptCount >= 1) return 'chatgpt';
-  if (geminiCount >= 1 && !hasTS) return 'gemini';
-
-  return 'claude';
+// ── AI SELECTOR ──
+// When other AI pages are ready, this routes the user to the correct file.
+// File structure plan:
+//   notavello.com/index.html         ← Claude (this file)
+//   notavello.com/chatgpt/index.html ← ChatGPT (future)
+//   notavello.com/gemini/index.html  ← Gemini (future)
+function handleAISelect(value) {
+  if (value === 'chatgpt') {
+    // Future: window.location.href = '/chatgpt/';
+    debugLog('AI selector: ChatGPT selected (not yet available)');
+  } else if (value === 'gemini') {
+    // Future: window.location.href = '/gemini/';
+    debugLog('AI selector: Gemini selected (not yet available)');
+  } else {
+    debugLog('AI selector: Claude selected');
+  }
 }
 
 // ── CONFIDENCE CHECK ──
@@ -865,20 +984,28 @@ function checkConfidence(messages) {
 // ── PARSE CLAUDE ──
 // claude.ai format: [user text] → HH:MM AM/PM → [AI text] → [user text] → HH:MM AM/PM → ...
 // Timestamp always follows the USER message. Text after timestamp = AI.
+const parseLog = []; // debug log accumulator
+
 function parseClaude(text) {
+  parseLog.length = 0; // clear on each parse
+  parseLog.push('── Parser started ──');
+
   // Strip UI noise
   text = text.replace(/Claude finished the response[\s\n]*/gi, '');
   text = text.replace(/\[Claude is AI[\s\S]*?\]/gi, '');
   text = text.replace(/Claude is AI and can make mistakes\..*$/gim, '');
   text = text.trim();
 
-  // Timestamp must be on its own line (not embedded in a sentence)
+  // Timestamp must be on its own line
   const tsPattern = /(?:^|\n)(\d{1,2}:\d{2}\s*(?:AM|PM))(?:\n|$)/gi;
   const matches = [...text.matchAll(tsPattern)];
+  parseLog.push(`Timestamps found: ${matches.length}`);
 
-  // No timestamps — can't parse reliably, return empty
+  // No timestamps — fall back to alternating block split
   if (matches.length === 0) {
+    parseLog.push('No timestamps → fallback: alternating block split');
     const blocks = text.split(/\n{2,}/).map(b => b.trim()).filter(b => b.length > 3);
+    parseLog.push(`Blocks found: ${blocks.length}`);
     return blocks.map((block, i) => ({ role: i % 2 === 0 ? 'human' : 'ai', text: block, time: '' }));
   }
 
@@ -893,120 +1020,114 @@ function parseClaude(text) {
 
     // Text BEFORE timestamp = human message
     const humanText = text.substring(cursor, tsStart).trim();
-    if (humanText.trim().length >= 1) messages.push({ role: 'human', text: humanText, time });
+    if (humanText.trim().length >= 1) {
+      messages.push({ role: 'human', text: humanText, time });
+      parseLog.push(`[${i}] HUMAN @ ${time} | ${humanText.substring(0,40).replace(/\n/g,' ')}…`);
+    }
 
     // Text AFTER timestamp = AI response
-    // IMPORTANT: The AI block may contain the NEXT user message at the end,
-    // separated by a blank line. Split on double newlines and treat the
-    // last paragraph as the next human message if another timestamp follows.
+    // Split on double newlines; if multiple paragraphs and another timestamp
+    // follows, treat last paragraph as the next human message
     const aiBlock = text.substring(tsEnd, nextTsStart).trim();
     if (aiBlock.trim().length >= 1) {
       const aiParagraphs = aiBlock.split(/\n{2,}/).map(p => p.trim()).filter(p => p.length >= 1);
       if (aiParagraphs.length > 1 && matches[i + 1]) {
-        // Last paragraph is likely the next user message
-        const aiText = aiParagraphs.slice(0, -1).join('\n\n');
+        const aiText    = aiParagraphs.slice(0, -1).join('\n\n');
         const nextHuman = aiParagraphs[aiParagraphs.length - 1];
-        if (aiText.trim().length >= 1) messages.push({ role: 'ai', text: aiText, time: '' });
-        if (nextHuman.trim().length >= 1) messages.push({ role: 'human', text: nextHuman, time: matches[i+1][1] });
+        if (aiText.trim().length >= 1) {
+          messages.push({ role: 'ai', text: aiText, time: '' });
+          parseLog.push(`[${i}] AI | ${aiText.substring(0,40).replace(/\n/g,' ')}…`);
+        }
+        if (nextHuman.trim().length >= 1) {
+          messages.push({ role: 'human', text: nextHuman, time: matches[i+1][1] });
+          parseLog.push(`[${i}] HUMAN (trailing) | ${nextHuman.substring(0,40).replace(/\n/g,' ')}…`);
+        }
       } else {
         messages.push({ role: 'ai', text: aiBlock, time: '' });
+        parseLog.push(`[${i}] AI | ${aiBlock.substring(0,40).replace(/\n/g,' ')}…`);
       }
     }
 
     cursor = nextTsStart;
   }
 
-  return messages.filter(m => m.text.trim().length >= 1);
+  const result = messages.filter(m => m.text.trim().length >= 1);
+  parseLog.push(`── Parse complete: ${result.length} messages ──`);
+  return result;
 }
 
-// ── PARSE CHATGPT ──
-// Format: standalone "You" / "ChatGPT" label lines
-function parseChatGPT(text) {
-  const lines = text.split('\n');
-  const messages = [];
-  let currentRole = null;
-  let currentLines = [];
-  const NOISE = /^(Share|Copy|More|Thumbs|Report|Edit|Regenerate|Continue generating|ChatGPT can make mistakes)$/i;
-
-  const flush = () => {
-    if (currentRole && currentLines.length > 0) {
-      const txt = currentLines.join('\n').trim();
-      if (txt.length > 2) messages.push({ role: currentRole, text: txt, time: '' });
-    }
-    currentLines = [];
-  };
-
-  for (let i = 0; i < lines.length; i++) {
-    const t = lines[i].trim();
-    if (t === 'You')     { flush(); currentRole = 'human'; }
-    else if (t === 'ChatGPT') { flush(); currentRole = 'ai'; }
-    else if (currentRole !== null && !NOISE.test(t)) currentLines.push(lines[i]);
-  }
-  flush();
-
-  if (messages.length === 0) {
-    const blocks = text.split(/\n{2,}/).map(b => b.trim()).filter(b => b.length > 3);
-    return blocks.map((block, i) => ({ role: i % 2 === 0 ? 'human' : 'ai', text: block, time: '' }));
-  }
-  return messages;
-}
-
-// ── PARSE GEMINI ──
-// Format: [user text] → standalone "Gemini" line → [AI text] → blank line → [user text] ...
-function parseGemini(text) {
-  const lines = text.split('\n');
-  const messages = [];
-  let currentRole = 'human';
-  let currentLines = [];
-  const NOISE = /^(Share|Copy|Thumbs|Report|Edit|Regenerate|Show drafts|Retry)$/i;
-
-  const flush = () => {
-    const txt = currentLines.join('\n').trim();
-    if (txt.length > 2) messages.push({ role: currentRole, text: txt, time: '' });
-    currentLines = [];
-  };
-
-  for (let i = 0; i < lines.length; i++) {
-    const t = lines[i].trim();
-    if (t === 'Gemini') { flush(); currentRole = 'ai'; }
-    else if (NOISE.test(t)) continue;
-    else {
-      // After an AI block, a blank line followed by text = new human turn
-      if (currentRole === 'ai' && t === '' && currentLines.length > 0) {
-        const next = lines.slice(i + 1).find(l => l.trim().length > 0);
-        if (next && next.trim() !== 'Gemini') { flush(); currentRole = 'human'; }
-      } else {
-        currentLines.push(lines[i]);
-      }
-    }
-  }
-  flush();
-
-  if (messages.length === 0) {
-    const blocks = text.split(/\n{2,}/).map(b => b.trim()).filter(b => b.length > 3);
-    return blocks.map((block, i) => ({ role: i % 2 === 0 ? 'human' : 'ai', text: block, time: '' }));
-  }
-  return messages;
-}
-
-// ── MAIN PARSER — returns { messages, platform, confidence } ──
+// ── MAIN PARSER ── Claude only. Future: route by AI selector value.
 function parseConversation(raw) {
-  const platform = detectPlatform(raw);
-  let messages;
-  if (platform === 'chatgpt')    messages = parseChatGPT(raw);
-  else if (platform === 'gemini') messages = parseGemini(raw);
-  else                            messages = parseClaude(raw);
-  return { messages, platform, confidence: checkConfidence(messages) };
+  const messages = parseClaude(raw);
+  return { messages, platform: 'claude', confidence: checkConfidence(messages) };
+}
+
+// ── DEBUG PANEL ──
+function getOrCreateDebugPanel() {
+  let panel = document.getElementById('debugPanel');
+  if (!panel) {
+    panel = document.createElement('div');
+    panel.id = 'debugPanel';
+    panel.style.cssText = `
+      position:fixed;bottom:16px;right:16px;z-index:9999;
+      background:#0F172A;color:#94A3B8;font-family:monospace;font-size:11px;
+      padding:12px 16px;border-radius:10px;max-width:340px;width:340px;
+      box-shadow:0 4px 20px rgba(0,0,0,0.4);line-height:1.8;
+      max-height:360px;overflow-y:auto;user-select:text;`;
+    panel.setAttribute('tabindex', '0');
+    panel.addEventListener('keydown', e => {
+      if (e.key === 'a' && (e.ctrlKey || e.metaKey)) {
+        e.preventDefault();
+        const sel = window.getSelection();
+        const range = document.createRange();
+        range.selectNodeContents(panel);
+        sel.removeAllRanges();
+        sel.addRange(range);
+      }
+    });
+    document.body.appendChild(panel);
+  }
+  return panel;
+}
+
+function debugLog(msg) {
+  const panel = getOrCreateDebugPanel();
+  panel.insertAdjacentHTML('beforeend', `<div>${msg}</div>`);
+  panel.scrollTop = panel.scrollHeight;
+}
+
+function renderDebugPanel(messages, pageLog) {
+  const panel = getOrCreateDebugPanel();
+  const h = messages.filter(m => m.role === 'human').length;
+  const a = messages.filter(m => m.role === 'ai').length;
+
+  panel.innerHTML = `<div style="color:#4F46E5;font-weight:700;margin-bottom:6px;">📐 Notavello Debug · v0.090</div>`;
+
+  // Parse log
+  panel.insertAdjacentHTML('beforeend', `<div style="color:#7C3AED;margin-top:4px;font-weight:600;">── Parse Log ──</div>`);
+  parseLog.forEach(line => {
+    panel.insertAdjacentHTML('beforeend', `<div>${line}</div>`);
+  });
+
+  // Message summary
+  panel.insertAdjacentHTML('beforeend',
+    `<div style="color:#7C3AED;margin-top:6px;font-weight:600;">── Messages ──</div>
+     <div>Total: ${messages.length} | Human: ${h} | AI: ${a}</div>`);
+
+  // Page break log
+  panel.insertAdjacentHTML('beforeend', `<div style="color:#7C3AED;margin-top:6px;font-weight:600;">── Pages ──</div>`);
+  pageLog.forEach(line => {
+    panel.insertAdjacentHTML('beforeend', `<div>${line}</div>`);
+  });
 }
 
 // ── Live counter ──
 document.getElementById('pasteArea').addEventListener('input', function() {
-  const { messages, platform } = parseConversation(this.value);
+  const { messages } = parseConversation(this.value);
   const el = document.getElementById('charInfo');
-  const pLabel = platform === 'chatgpt' ? 'ChatGPT' : platform === 'gemini' ? 'Gemini' : 'Claude';
   el.textContent = this.value.trim().length === 0
     ? '0 messages detected'
-    : `${messages.length} msg${messages.length !== 1 ? 's' : ''} · ${pLabel} detected`;
+    : `${messages.length} msg${messages.length !== 1 ? 's' : ''} · Claude detected`;
 });
 
 let parsedMessages = [];
@@ -1058,10 +1179,9 @@ function renderPreview(messages, platform, warning) {
   const now = new Date();
   const dateStr = now.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
   const humanCount = messages.filter(m => m.role === 'human').length;
-  const pLabel = platform === 'chatgpt' ? 'ChatGPT' : platform === 'gemini' ? 'Gemini' : 'Claude';
 
   document.getElementById('previewMeta').textContent =
-    `${messages.length} messages · ${humanCount} from you · ${pLabel} · Generated ${dateStr}`;
+    `${messages.length} messages · ${humanCount} from you · Claude · Generated ${dateStr}`;
 
   const errorEl = document.getElementById('errorMsg');
   if (warning) {
@@ -1074,34 +1194,10 @@ function renderPreview(messages, platform, warning) {
 
   document.getElementById('previewSection').style.display = 'block';
 
-  // ── DEBUG PANEL ──
-  let debugPanel = document.getElementById('debugPanel');
-  if (!debugPanel) {
-    debugPanel = document.createElement('div');
-    debugPanel.id = 'debugPanel';
-    debugPanel.style.cssText = `
-      position:fixed;bottom:16px;right:16px;z-index:9999;
-      background:#0F172A;color:#94A3B8;font-family:monospace;font-size:11px;
-      padding:12px 16px;border-radius:10px;max-width:320px;
-      box-shadow:0 4px 20px rgba(0,0,0,0.4);line-height:1.8;
-      max-height:300px;overflow-y:auto;user-select:text;`;
-    debugPanel.setAttribute('tabindex', '0');
-    debugPanel.addEventListener('keydown', e => {
-      if (e.key === 'a' && (e.ctrlKey || e.metaKey)) {
-        e.preventDefault();
-        const sel = window.getSelection();
-        const range = document.createRange();
-        range.selectNodeContents(debugPanel);
-        sel.removeAllRanges();
-        sel.addRange(range);
-      }
-    });
-    document.body.appendChild(debugPanel);
-  }
-  debugPanel.innerHTML = '<div style="color:#4F46E5;font-weight:700;margin-bottom:6px;">📐 Page Debug</div>';
-
   const docPage = document.getElementById('docPage');
   docPage.innerHTML = '';
+
+  const pageLog = [];
 
   function newPage(isFirst) {
     const page = document.createElement('div');
@@ -1124,7 +1220,7 @@ function renderPreview(messages, platform, warning) {
 
   let pageCount = 1;
   let currentPage = newPage(true);
-  debugPanel.insertAdjacentHTML('beforeend', `<div>Page 1 | empty:${currentPage._emptyHeight}px</div>`);
+  pageLog.push(`Page 1 | empty:${currentPage._emptyHeight}px`);
 
   messages.forEach((msg) => {
     const block = document.createElement('div');
@@ -1140,25 +1236,24 @@ function renderPreview(messages, platform, warning) {
       </div>`;
     } else {
       block.innerHTML = `<div class="msg-ai">
-        <div class="msg-label">Claude / AI</div>
+        <div class="msg-label">Claude</div>
         <div class="msg-text">${escHtml(msg.text)}</div>
       </div>`;
     }
 
     currentPage.appendChild(block);
 
-    // If content grew beyond empty page height, move block to new page
     if (currentPage.scrollHeight > currentPage._emptyHeight) {
       const triggerHeight = currentPage.scrollHeight;
       currentPage.removeChild(block);
       pageCount++;
-      debugPanel.insertAdjacentHTML('beforeend',
-        `<div><span style="color:#4F46E5">P${pageCount}</span> trigger:${triggerHeight}px remaining:${currentPage.scrollHeight}px</div>`);
+      pageLog.push(`P${pageCount} trigger:${triggerHeight}px remaining:${currentPage.scrollHeight}px`);
       currentPage = newPage(false);
       currentPage.appendChild(block);
     }
   });
 
+  renderDebugPanel(messages, pageLog);
   document.getElementById('previewSection').scrollIntoView({ behavior: 'smooth' });
 }
 
@@ -1198,7 +1293,6 @@ function downloadPDF() {
   const now = new Date();
   const dateStr = now.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 
-  // Each download cycles to the next watermark message
   const wmText = WATERMARKS[watermarkIndex % WATERMARKS.length];
   watermarkIndex++;
 
@@ -1237,7 +1331,7 @@ function downloadPDF() {
     } else {
       content.push({
         stack: [
-          { text: 'CLAUDE / AI', fontSize: 7, bold: true, color: '#94A3B8', characterSpacing: 1.5, margin: [0, 0, 0, 4] },
+          { text: 'CLAUDE', fontSize: 7, bold: true, color: '#94A3B8', characterSpacing: 1.5, margin: [0, 0, 0, 4] },
           { text: msg.text, fontSize: 11, color: '#0F172A', lineHeight: 1.6 },
         ],
         margin: [0, 0, 0, 16]
