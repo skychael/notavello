@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>About — Notavello</title>
-<meta name="description" content="Notavello was built because exporting AI conversations shouldn't be hard. Made in Reno, NV."/>
+<meta name="description" content="Notavello was built because exporting AI conversations shouldn't be hard. Made in Reno, NV — by a human and an AI, working together."/>
 <meta name="robots" content="index, follow"/>
 <link rel="canonical" href="https://notavello.com/about/"/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,9 +22,15 @@ body { background: var(--bg); color: var(--ink); font-family: 'Sora', sans-serif
 .page-title { font-family: 'Lora', serif; font-size: 2.2rem; font-weight: 600; color: var(--ink); margin-bottom: 32px; letter-spacing: -0.02em; }
 .prose p { font-size: 0.95rem; color: var(--ink-muted); line-height: 1.85; margin-bottom: 20px; }
 .prose strong { color: var(--ink); font-weight: 600; }
+.prose em { font-style: italic; color: var(--ink); }
 .prose a { color: var(--accent); text-decoration: none; }
 .prose a:hover { text-decoration: underline; }
 .divider { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
+.origin-card { background: var(--surface); border: 1.5px solid rgba(79,70,229,0.15); border-radius: var(--radius); padding: 28px 32px; box-shadow: var(--shadow); margin-bottom: 40px; background-image: linear-gradient(135deg, rgba(79,70,229,0.02), rgba(124,58,237,0.04)); }
+.origin-card-label { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: var(--accent); margin-bottom: 14px; }
+.origin-card p { font-size: 0.9rem; color: var(--ink-muted); line-height: 1.8; margin-bottom: 14px; }
+.origin-card p:last-child { margin-bottom: 0; }
+.origin-card strong { color: var(--ink); }
 .roadmap { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px 32px; box-shadow: var(--shadow); margin-bottom: 40px; }
 .roadmap h2 { font-family: 'Lora', serif; font-size: 1.2rem; font-weight: 600; color: var(--ink); margin-bottom: 20px; }
 .roadmap-item { display: flex; align-items: center; gap: 14px; padding: 10px 0; border-bottom: 1px solid var(--border); }
@@ -51,7 +57,7 @@ body { background: var(--bg); color: var(--ink); font-family: 'Sora', sans-serif
 .footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
 .footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
 .footer-legal a:hover { color: var(--accent); }
-@media (max-width: 640px) { .header { padding: 14px 20px; } .site-footer { padding: 24px 16px; } .footer-bottom { flex-direction: column; align-items: flex-start; } }
+@media (max-width: 640px) { .header { padding: 14px 20px; } .origin-card { padding: 22px 20px; } .site-footer { padding: 24px 16px; } .footer-bottom { flex-direction: column; align-items: flex-start; } }
 </style>
 </head>
 <body>
@@ -77,13 +83,17 @@ body { background: var(--bg); color: var(--ink); font-family: 'Sora', sans-serif
     <p>Notavello takes your copy-pasted conversation and turns it into a clean, color-coded PDF in seconds. Your messages in blue. AI responses in plain text. Professional enough to share with a client or file in a case.</p>
 
     <p><strong>It runs entirely in your browser.</strong> Your conversation never touches our servers. There's nothing to install, no account required to start, and no limit on how many times you use it for free.</p>
-
-    <p>Notavello is built and maintained by <strong>Mike Koga</strong>, based in Reno, NV.</p>
-
-    <p>Questions or feedback: <a href="mailto:hello@notavello.com">hello@notavello.com</a></p>
   </div>
 
   <hr class="divider"/>
+
+  <div class="origin-card">
+    <div class="origin-card-label">How Notavello was made</div>
+    <p>Notavello was built in Reno, NV through an extended collaboration between a human and an AI — the same kind of AI this tool is designed to export.</p>
+    <p>Every line of code, every design decision, every word of copy was the result of a real back-and-forth conversation. The human brought the problem, the vision, and the judgment. The AI brought the execution. Neither could have built this alone.</p>
+    <p><strong>We think that's worth being honest about.</strong> The world is filling up with software built this way — tools, products, and companies where the traditional line between creator and creation has quietly blurred. Most of them won't tell you. We will.</p>
+    <p>What you're using is a product of genuine human intent, shaped and built with AI. We think that's actually something to be proud of — not hidden.</p>
+  </div>
 
   <div class="roadmap">
     <h2>What's coming</h2>
