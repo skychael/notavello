@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>About — Notavello</title>
+<meta name="description" content="Notavello was built because exporting AI conversations shouldn't be hard. Made in Reno, NV."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/about/"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root { --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF; --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8; --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF; --green: #059669; --border: #E2E8F0; --radius: 20px; --radius-sm: 12px; --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08); --shadow-lg: 0 4px 16px rgba(79,70,229,0.12), 0 16px 48px rgba(15,23,42,0.12); }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--ink); font-family: 'Sora', sans-serif; min-height: 100vh; -webkit-font-smoothing: antialiased; background-image: radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%), radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%); }
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 80px; }
+.page-title { font-family: 'Lora', serif; font-size: 2.2rem; font-weight: 600; color: var(--ink); margin-bottom: 32px; letter-spacing: -0.02em; }
+.prose p { font-size: 0.95rem; color: var(--ink-muted); line-height: 1.85; margin-bottom: 20px; }
+.prose strong { color: var(--ink); font-weight: 600; }
+.prose a { color: var(--accent); text-decoration: none; }
+.prose a:hover { text-decoration: underline; }
+.divider { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
+.roadmap { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px 32px; box-shadow: var(--shadow); margin-bottom: 40px; }
+.roadmap h2 { font-family: 'Lora', serif; font-size: 1.2rem; font-weight: 600; color: var(--ink); margin-bottom: 20px; }
+.roadmap-item { display: flex; align-items: center; gap: 14px; padding: 10px 0; border-bottom: 1px solid var(--border); }
+.roadmap-item:last-child { border-bottom: none; padding-bottom: 0; }
+.roadmap-status { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 3px 10px; border-radius: 20px; flex-shrink: 0; }
+.status-live { background: #D1FAE5; color: #059669; }
+.status-building { background: #EEF2FF; color: #4F46E5; }
+.status-planned { background: var(--border); color: var(--ink-faint); }
+.roadmap-label { font-size: 0.88rem; color: var(--ink-muted); }
+.cta-box { background: var(--surface); border: 1.5px solid rgba(79,70,229,0.2); border-radius: var(--radius); padding: 36px; text-align: center; box-shadow: var(--shadow); }
+.cta-box h2 { font-family: 'Lora', serif; font-size: 1.4rem; font-weight: 600; color: var(--ink); margin-bottom: 10px; }
+.cta-box p { font-size: 0.9rem; color: var(--ink-muted); margin-bottom: 20px; line-height: 1.6; }
+.btn-cta { display: inline-flex; align-items: center; gap: 8px; padding: 13px 32px; border-radius: var(--radius-sm); background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.88rem; font-weight: 600; text-decoration: none; box-shadow: 0 4px 16px rgba(79,70,229,0.35); transition: all 0.2s; }
+.btn-cta:hover { opacity: 0.92; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@media (max-width: 640px) { .header { padding: 14px 20px; } .site-footer { padding: 24px 16px; } .footer-bottom { flex-direction: column; align-items: flex-start; } }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <a class="logo" href="/">
+    <div class="logo-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+    Nota<span>vello</span>
+  </a>
+</header>
+
+<main class="main">
+
+  <h1 class="page-title">About Notavello</h1>
+
+  <div class="prose">
+    <p><strong>Notavello exists because exporting an AI conversation shouldn't require a workaround.</strong></p>
+
+    <p>If you use Claude, ChatGPT, or Gemini seriously — for legal research, consulting work, business decisions, or just keeping a record — you've run into the same problem. The conversation is valuable. You want to save it, share it, or file it. But the AI tools don't give you a clean way to do that.</p>
+
+    <p>You end up screenshotting pages, printing to PDF with all the UI chrome included, or copy-pasting into a Word document and spending twenty minutes reformatting. None of it is good enough.</p>
+
+    <p>Notavello takes your copy-pasted conversation and turns it into a clean, color-coded PDF in seconds. Your messages in blue. AI responses in plain text. Professional enough to share with a client or file in a case.</p>
+
+    <p><strong>It runs entirely in your browser.</strong> Your conversation never touches our servers. There's nothing to install, no account required to start, and no limit on how many times you use it for free.</p>
+
+    <p>Notavello is built and maintained by <strong>Mike Koga</strong>, based in Reno, NV.</p>
+
+    <p>Questions or feedback: <a href="mailto:mikekoga@hotmail.com">mikekoga@hotmail.com</a></p>
+  </div>
+
+  <hr class="divider"/>
+
+  <div class="roadmap">
+    <h2>What's coming</h2>
+    <div class="roadmap-item">
+      <div class="roadmap-status status-live">Live</div>
+      <div class="roadmap-label">Claude conversation exporter</div>
+    </div>
+    <div class="roadmap-item">
+      <div class="roadmap-status status-building">Building</div>
+      <div class="roadmap-label">ChatGPT exporter</div>
+    </div>
+    <div class="roadmap-item">
+      <div class="roadmap-status status-building">Building</div>
+      <div class="roadmap-label">Gemini exporter</div>
+    </div>
+    <div class="roadmap-item">
+      <div class="roadmap-status status-planned">Planned</div>
+      <div class="roadmap-label">Chrome extension (includes images)</div>
+    </div>
+    <div class="roadmap-item">
+      <div class="roadmap-status status-planned">Planned</div>
+      <div class="roadmap-label">Firefox &amp; Edge extensions</div>
+    </div>
+    <div class="roadmap-item">
+      <div class="roadmap-status status-planned">Planned</div>
+      <div class="roadmap-label">Mobile apps (iOS &amp; Android)</div>
+    </div>
+  </div>
+
+  <div class="cta-box">
+    <h2>Try it now</h2>
+    <p>Free, instant, no sign-up required.</p>
+    <a href="/claude/" class="btn-cta">Export a Claude Conversation</a>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <nav class="footer-nav">
+      <div class="footer-nav-label">Export AI Conversations</div>
+      <a href="/claude/">Claude</a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/chatgpt/" style="opacity:0.5;pointer-events:none;">ChatGPT <small>(soon)</small></a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/gemini/" style="opacity:0.5;pointer-events:none;">Gemini <small>(soon)</small></a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/copilot/" style="opacity:0.5;pointer-events:none;">Copilot <small>(soon)</small></a>
+    </nav>
+    <nav class="footer-nav">
+      <div class="footer-nav-label">Product</div>
+      <a href="/pricing/">Pricing</a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/faq/">FAQ</a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/sample/">Sample PDF</a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/about/">About</a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/sitemap/">Sitemap</a>
+    </nav>
+    <div class="footer-bottom">
+      <div class="footer-copy">&copy; 2026 Notavello. Made in Reno, NV.</div>
+      <div class="footer-legal">
+        <a href="/privacy/">Privacy Policy</a>
+        <a href="/terms/">Terms of Service</a>
+        <a href="/contact/">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
