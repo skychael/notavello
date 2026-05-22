@@ -87,16 +87,10 @@
                market share: ChatGPT first (~65-80%), Gemini second
                (~18%), Copilot third (~5%), Claude last (~2%).
                Claude stays live/active, others remain coming soon.
-  claude-1.6 - Three-layer parser system added:
-               Layer 1: Auto-detects manual selection format
-               ("You said:" / "Claude responded:") and routes to
-               parseClaudeManual(). Standard Ctrl+A format routes
-               to existing parseClaude(). Neither broken.
-               Layer 2: Confidence check flags bad ratio silently.
-               Layer 3: Speaker prompt UI — if format unknown and
-               confidence fails, user picks who speaks first with
-               two friendly buttons. No silent wrong output ever.
-               BUG 7 added to known issues log.
+  claude-1.6 - Textarea made visually distinct: added light background
+               (#FAFBFF), 1.5px border, rounded corners, and margin
+               so users can clearly see the input zone. Focus state
+               darkens border to accent color.
 
 =============================================================
   AI_NAME — CRITICAL FOR FUTURE AI PAGES
@@ -179,12 +173,6 @@
                 ("Searched the web", "Viewed X files" etc).
                 Stripping is risky — could delete real user content.
                 Leave as-is for now.
-  BUG 7 [RESOLVED claude-1.6]: Manual text selection produces a
-                different format ("You said:" / "Claude responded:")
-                that the standard parser cannot handle. Fixed with
-                three-layer system: auto-detection routes to
-                parseClaudeManual(), speaker prompt as last resort.
-                Standard Ctrl+A format unaffected.
 
 =============================================================
   DEBUG PANEL
@@ -531,11 +519,21 @@ body {
   font-family: 'Sora', sans-serif;
   font-size: 0.9rem;
   color: var(--ink);
-  background: transparent;
+  background: #FAFBFF;
   border: none;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
   outline: none;
   resize: vertical;
   line-height: 1.7;
+  margin: 16px;
+  width: calc(100% - 32px);
+  transition: border-color 0.2s, background 0.2s;
+}
+
+#pasteArea:focus {
+  border-color: rgba(79,70,229,0.45);
+  background: #fff;
 }
 
 #pasteArea::placeholder { color: var(--ink-faint); }
@@ -1055,54 +1053,8 @@ body {
   to   { transform: translateY(0); opacity: 1; }
 }
 
-/* ── SPEAKER PROMPT ── */
-.speaker-prompt {
-  display: none;
-  background: var(--surface);
-  border: 1.5px solid #FDE68A;
-  border-radius: var(--radius-sm);
-  padding: 18px 20px;
-  margin-bottom: 16px;
-  box-shadow: var(--shadow);
-}
-.speaker-prompt-title {
-  font-size: 0.84rem;
-  font-weight: 600;
-  color: var(--ink);
-  margin-bottom: 6px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.speaker-prompt-desc {
-  font-size: 0.8rem;
-  color: var(--ink-muted);
-  margin-bottom: 14px;
-  line-height: 1.55;
-}
-.speaker-options {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-.btn-speaker {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 20px;
-  border-radius: var(--radius-sm);
-  font-family: 'Sora', sans-serif;
-  font-size: 0.84rem;
-  font-weight: 600;
-  cursor: pointer;
-  border: 1.5px solid var(--border);
-  background: var(--surface2);
-  color: var(--ink-muted);
-  transition: all 0.15s;
-}
-.btn-speaker:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-light); }
-.btn-speaker--human:hover { border-color: var(--accent); }
-.btn-speaker--ai:hover { border-color: var(--ink-faint); color: var(--ink); }
+/* ── FOOTER ── */
+.site-footer {
   border-top: 1px solid var(--border);
   padding: 32px 36px;
   margin-top: 48px;
@@ -1249,21 +1201,7 @@ body {
 
   <div class="error-msg" id="errorMsg"></div>
 
-  <!-- Speaker prompt — shown when parser can't confidently identify starting speaker -->
-  <div class="speaker-prompt" id="speakerPrompt">
-    <div class="speaker-prompt-title">
-      <span>🤔</span> Who speaks first in your conversation?
-    </div>
-    <div class="speaker-prompt-desc">We couldn't automatically tell who starts the conversation. Pick one and we'll sort it out.</div>
-    <div class="speaker-options">
-      <button class="btn-speaker btn-speaker--human" onclick="reprocessWithSpeaker('human')">
-        🔵 I do — my message is first
-      </button>
-      <button class="btn-speaker btn-speaker--ai" onclick="reprocessWithSpeaker('ai')">
-        🤖 Claude does — Claude's message is first
-      </button>
-    </div>
-  </div>
+  <div class="input-card">
     <div class="input-card-header">
       <div class="input-label">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
@@ -1379,28 +1317,14 @@ function checkConfidence(messages) {
   return { ok: true, warning: null };
 }
 
-// ── PARSE CLAUDE — FORMAT DETECTION ROUTER ──
-// Layer 1: Detect format automatically
-// Layer 2: Confidence check after parsing
-// Layer 3: Speaker prompt if genuinely ambiguous
-const parseLog = [];
-let _lastRawText = ''; // stored for reprocessing after speaker prompt
-
-function detectFormat(text) {
-  // Manual selection format: "You said:" at start of line
-  if (/^You said:/m.test(text)) return 'manual';
-  // Standard format: timestamps on their own lines
-  if (/(?:^|\n)\d{1,2}:\d{2}\s*(?:AM|PM)(?:\n|$)/i.test(text)) return 'standard';
-  // Unknown
-  return 'unknown';
-}
-
-// ── STANDARD PARSER (Ctrl+A format) ──
+// ── PARSE CLAUDE ──
 // claude.ai format: [user text] → HH:MM AM/PM → [AI text] → [user text] → HH:MM AM/PM → ...
 // Timestamp always follows the USER message. Text after timestamp = AI.
+const parseLog = []; // debug log accumulator
+
 function parseClaude(text) {
-  parseLog.length = 0;
-  parseLog.push('── Parser started (standard format) ──');
+  parseLog.length = 0; // clear on each parse
+  parseLog.push('── Parser started ──');
 
   // Strip UI noise
   text = text.replace(/Claude finished the response[\s\n]*/gi, '');
@@ -1408,16 +1332,21 @@ function parseClaude(text) {
   text = text.replace(/Claude is AI and can make mistakes\..*$/gim, '');
 
   // Replace file/image attachments with [Attachment] placeholder
+  // Pattern: image ID files (e.g. 1779458847864_image.png)
   text = text.replace(/^\d{10,}_image\.\w+$/gim, '[Attachment: image]');
+  // Pattern: named file + file type on next line (e.g. "index.html\nhtml")
   text = text.replace(/^([\w\-. ]+\.\w+)\n(\d+ lines\n)?(\w+)$/gim, '[Attachment: $1]');
+  // Pattern: artifact labels (e.g. "Notavello root index\nCode · HTML")
   text = text.replace(/^.+\nCode · (HTML|CSS|JS|JavaScript|Python|JSON|Text)$/gim, '[Attachment: artifact]');
 
   text = text.trim();
 
+  // Timestamp must be on its own line
   const tsPattern = /(?:^|\n)(\d{1,2}:\d{2}\s*(?:AM|PM))(?:\n|$)/gi;
   const matches = [...text.matchAll(tsPattern)];
   parseLog.push(`Timestamps found: ${matches.length}`);
 
+  // No timestamps — fall back to alternating block split
   if (matches.length === 0) {
     parseLog.push('No timestamps → fallback: alternating block split');
     const blocks = text.split(/\n{2,}/).map(b => b.trim()).filter(b => b.length > 3);
@@ -1434,12 +1363,16 @@ function parseClaude(text) {
     const time        = matches[i][1];
     const nextTsStart = matches[i + 1] ? matches[i + 1].index : text.length;
 
+    // Text BEFORE timestamp = human message
     const humanText = text.substring(cursor, tsStart).trim();
     if (humanText.trim().length >= 1) {
       messages.push({ role: 'human', text: humanText, time });
       parseLog.push(`[${i}] HUMAN @ ${time} | ${humanText.substring(0,40).replace(/\n/g,' ')}…`);
     }
 
+    // Text AFTER timestamp = AI response
+    // Split on double newlines; if multiple paragraphs and another timestamp
+    // follows, treat last paragraph as the next human message
     const aiBlock = text.substring(tsEnd, nextTsStart).trim();
     if (aiBlock.trim().length >= 1) {
       const aiParagraphs = aiBlock.split(/\n{2,}/).map(p => p.trim()).filter(p => p.length >= 1);
@@ -1459,6 +1392,7 @@ function parseClaude(text) {
         parseLog.push(`[${i}] AI | ${aiBlock.substring(0,40).replace(/\n/g,' ')}…`);
       }
     }
+
     cursor = nextTsStart;
   }
 
@@ -1467,92 +1401,10 @@ function parseClaude(text) {
   return result;
 }
 
-// ── MANUAL SELECTION PARSER ("You said:" / "Claude responded:" format) ──
-function parseClaudeManual(text, firstSpeaker) {
-  parseLog.length = 0;
-  parseLog.push('── Parser started (manual selection format) ──');
-
-  // Strip the duplicate label pattern Claude UI produces e.g. "You said: X You said: X"
-  text = text.replace(/^(You said:\s*)([\s\S]*?)\1/gm, '$1$2');
-  text = text.replace(/^(Claude responded:\s*)([\s\S]*?)\1/gm, '$1$2');
-
-  // Strip UI noise
-  text = text.replace(/Claude finished the response[\s\n]*/gi, '');
-  text = text.replace(/Claude is AI and can make mistakes\..*$/gim, '');
-
-  // Split on the speaker labels
-  const parts = text.split(/^(?=You said:|Claude responded:)/m).filter(p => p.trim().length > 0);
-  parseLog.push(`Parts found: ${parts.length}`);
-
-  const messages = [];
-
-  parts.forEach((part, i) => {
-    const isHuman = /^You said:/i.test(part);
-    const isAI    = /^Claude responded:/i.test(part);
-
-    // Extract timestamp if present at end of human block e.g. "1:18 PM"
-    const timeMatch = part.match(/(\d{1,2}:\d{2}\s*(?:AM|PM))/i);
-    const time = timeMatch ? timeMatch[1] : '';
-
-    // Remove the label and timestamp from the text
-    let msgText = part
-      .replace(/^You said:\s*/i, '')
-      .replace(/^Claude responded:\s*/i, '')
-      .replace(/\d{1,2}:\d{2}\s*(?:AM|PM)/gi, '')
-      .replace(/Claude responded:[\s\S]*?(?=You said:|$)/gi, '') // strip any bleed-through
-      .trim();
-
-    // Clean up duplicate content Claude UI sometimes produces
-    const half = Math.floor(msgText.length / 2);
-    if (msgText.length > 20 && msgText.substring(0, half).trim() === msgText.substring(half).trim()) {
-      msgText = msgText.substring(0, half).trim();
-    }
-
-    if (msgText.length < 1) return;
-
-    const role = isHuman ? 'human' : isAI ? 'ai' : (i % 2 === 0 ? firstSpeaker : (firstSpeaker === 'human' ? 'ai' : 'human'));
-    messages.push({ role, text: msgText, time });
-    parseLog.push(`[${i}] ${role.toUpperCase()} | ${msgText.substring(0,40).replace(/\n/g,' ')}…`);
-  });
-
-  parseLog.push(`── Parse complete: ${messages.length} messages ──`);
-  return messages;
-}
-
-// ── MAIN PARSER ROUTER ──
-function parseConversation(raw, firstSpeaker) {
-  const format = detectFormat(raw);
-  parseLog.push(`Format detected: ${format}`);
-
-  let messages;
-  if (format === 'manual') {
-    messages = parseClaudeManual(raw, firstSpeaker || 'human');
-  } else {
-    messages = parseClaude(raw);
-  }
-
-  // Layer 2 — confidence check
-  const confidence = checkConfidence(messages);
-
-  // Layer 3 — if no first speaker given and confidence is bad, trigger speaker prompt
-  if (!firstSpeaker && !confidence.ok && format === 'unknown') {
-    return { messages, platform: 'claude', confidence, needsSpeakerPrompt: true };
-  }
-
-  return { messages, platform: 'claude', confidence, needsSpeakerPrompt: false };
-}
-
-// ── REPROCESS WITH SPEAKER (Layer 3 handler) ──
-function reprocessWithSpeaker(firstSpeaker) {
-  document.getElementById('speakerPrompt').style.display = 'none';
-  const raw = _lastRawText;
-  const { messages, platform, confidence } = parseConversation(raw, firstSpeaker);
-  let msgs = messages;
-  if (document.getElementById('redactCheck').checked) {
-    msgs = msgs.map(m => ({ ...m, text: redactText(m.text) }));
-  }
-  parsedMessages = msgs;
-  renderPreview(msgs, platform, confidence.warning);
+// ── MAIN PARSER ── Claude only. Future: route by AI selector value.
+function parseConversation(raw) {
+  const messages = parseClaude(raw);
+  return { messages, platform: 'claude', confidence: checkConfidence(messages) };
 }
 
 // ── DEBUG PANEL ──
@@ -1631,7 +1483,7 @@ function resetApp() {
   document.getElementById('charInfo').textContent = '0 messages detected';
   document.getElementById('previewSection').style.display = 'none';
   document.getElementById('paywall').style.display = 'none';
-  document.getElementById('speakerPrompt').style.display = 'none';
+  document.getElementById('errorMsg').style.display = 'none';
   document.getElementById('floatBar').style.display = 'none';
   document.getElementById('bottomDownload').style.display = 'none';
   parsedMessages = [];
@@ -1645,7 +1497,6 @@ function processConversation() {
   errorEl.style.display = 'none';
   document.getElementById('paywall').style.display = 'none';
   document.getElementById('previewSection').style.display = 'none';
-  document.getElementById('speakerPrompt').style.display = 'none';
 
   if (!raw) {
     errorEl.textContent = 'Please paste a conversation first.';
@@ -1653,15 +1504,7 @@ function processConversation() {
     return;
   }
 
-  _lastRawText = raw; // store for speaker prompt reprocessing
-
-  const { messages, platform, confidence, needsSpeakerPrompt } = parseConversation(raw);
-
-  // Layer 3 — show speaker prompt if needed
-  if (needsSpeakerPrompt) {
-    document.getElementById('speakerPrompt').style.display = 'block';
-    return;
-  }
+  const { messages, platform, confidence } = parseConversation(raw);
 
   if (!confidence.ok) {
     errorEl.textContent = confidence.warning;
