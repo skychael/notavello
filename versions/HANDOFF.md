@@ -2,8 +2,8 @@
 > **⚠️ BEFORE CLOSING ANY SESSION: say "wrap up" so Claude updates this file.**
 > **START OF EVERY SESSION: upload `claude/index.html` + this file.**
 
-Last updated: May 22, 2026 — Session 5
-Current versions: `root-1.1` · `claude-1.6`
+Last updated: May 22, 2026 — Session 6
+Current versions: `root-1.1` · `claude-1.7`
 
 ---
 
@@ -23,7 +23,7 @@ Paste an AI conversation → get a clean, color-coded PDF.
 
 ---
 
-## FILE STRUCTURE (as of Session 5)
+## FILE STRUCTURE (as of Session 6)
 
 ### Root level (notavello.com/)
 ```
@@ -37,185 +37,183 @@ privacy.html      ← Privacy policy (Nevada law)
 sample.html       ← Sample PDF (generated on the fly)
 sitemap.html      ← Human-readable sitemap
 terms.html        ← Terms of service
+.gitignore        ← Hides versions/ folder if repo goes public
 ```
 
 ### AI parser pages
 ```
-claude/index.html   ← MAIN WORKING FILE (claude-1.6)
+claude/index.html   ← MAIN WORKING FILE (claude-1.7)
 chatgpt/            ← NOT BUILT YET
 gemini/             ← NOT BUILT YET
 copilot/            ← NOT BUILT YET
 ```
 
-### Versions folder (NEW — added Session 5)
+### Versions folder
 ```
-versions/HANDOFF.md     ← This file
-versions/CHANGELOG.md   ← Full version history
-versions/claude-1.6.html  ← Snapshot of current working file
+versions/HANDOFF.md       ← This file
+versions/CHANGELOG.md     ← Full version history
+versions/claude-1.6.html  ← Snapshot (NOTE: claude-1.7 snapshot not yet added)
 ```
-
-> Note: Supporting pages live at ROOT as flat .html files, not subfolders.
-> e.g. notavello.com/about.html NOT notavello.com/about/index.html
 
 ---
 
 ## VERSIONING RULES — NEVER SKIP THIS
 
-Each file has its own independent version. Never sync them.
-
-| Prefix | File |
-|--------|------|
-| root-X.X | notavello.com/index.html |
-| claude-X.X | notavello.com/claude/index.html |
-| chatgpt-X.X | future |
-| gemini-X.X | future |
-
-**For claude/index.html — every change must bump ALL THREE:**
+Every change to claude/index.html must bump ALL THREE:
 1. Version in the comment header
 2. Badge: `<div class="badge">Free Preview · claude-X.X</div>`
 3. Debug panel string: `"Notavello Debug · claude-X.X"`
-
-All three must match or Mike can't verify live vs local.
 
 ---
 
 ## ARCHITECTURE — DO NOT VIOLATE
 
 **ONE FILE PER AI. No shared parser. No auto-detection.**
+A unified multi-AI parser was tried and failed. Decision is final.
 
-A unified multi-AI parser was tried and failed completely.
-ChatGPT and Gemini paste formats change with every UI update.
-This decision is final. Do not revisit it.
-
-**AI_NAME variable:**
-`const AI_NAME = 'Claude';`
-When copying to make chatgpt/index.html — change ONLY this one value.
-All UI strings pull from it. Exception: SEO meta tags and parser regexes stay hardcoded.
+**AI_NAME variable:** `const AI_NAME = 'Claude';`
+When copying for chatgpt/index.html — change ONLY this one value.
 
 ---
 
-## PARSER SYSTEM (claude-1.6 — Three-Layer Architecture)
+## PARSER SYSTEM (claude-1.7)
 
-### Two copy formats handled:
+### What works:
+- Ctrl+A copy format with timestamps on their own lines
+- First-speaker detection: if block before first timestamp is long,
+  has no question mark, and starts with a Claude-style opener,
+  it gets correctly labeled as AI instead of human
+- Confidence check flags bad human/AI ratios
+- Attachment placeholders replace raw metadata
 
-**Format A** (Ctrl+A — standard):
-```
-[user text]
-9:14 AM
-[AI text]
-[user text]
-9:16 AM
-```
-Timestamps on their own lines. Parser: `parseClaude()`
+### What is still broken/unhandled:
+- Manual selection format (You said: / Claude responded:) — unsupported
+- AI openers not in the detection list may still misattribute
+- Short AI responses may not trigger length check
+- Tool-use labels still bleed in ("Searched the web" etc)
+- Watermark text fragments into PDF text layer (pdfmake limitation)
+- This is NOT foolproof — claude-1.7 fixed one pattern, not all
 
-**Format B** (Manual selection):
-```
-You said: [user text] timestamp PM
-Claude responded: [AI text]
-```
-Labels at line start. Parser: `parseClaudeManual()`
-
-**Detection:** `detectFormat()` checks for "You said:" at line start.
-If found → `parseClaudeManual()`. If not → `parseClaude()`.
-
-### Three layers:
-1. Format auto-detection (invisible to user)
-2. Confidence check — flags bad human/AI ratio
-3. Speaker prompt UI — "Who speaks first?" Only appears if genuinely ambiguous.
-
----
-
-## KNOWN BUGS
-
+### Known bugs:
 | # | Status | Description |
 |---|--------|-------------|
 | 2 | OPEN | Single-char replies show as AI in edge cases |
 | 3 | OPEN | Timestamps embedded in AI text cause false splits |
-| 4 | **DO NOT TOUCH** | Preview is a simulation, not a real PDF renderer. Multiple sessions tried to fix this and spiraled. PDF output is correct. Do not touch without reading full history from v0.075 and explicit instruction from Mike. |
-| 5 | OPEN | Images can't export — copy-paste is text only. Shows [Attachment] placeholder. Mike hasn't decided whether to tell users upfront. |
-| 6 | OPEN | Claude tool-use labels bleed into export ("Searched the web" etc). Stripping is risky — could delete real content. Leave as-is. |
-| 8 | OPEN | Manual parser produces extreme page heights on large conversations (101,729px observed). Likely _emptyHeight logic misfiring. LOW PRIORITY. Do not touch without understanding BUG 4 first. |
+| 4 | **DO NOT TOUCH** | Preview is simulation not PDF renderer. Multiple sessions spiraled fixing this. Do not touch without reading full history from v0.075 and explicit Mike instruction. |
+| 5 | OPEN | Images can't export. Shows [Attachment] placeholder. Mike hasn't decided whether to tell users upfront. |
+| 6 | OPEN | Claude tool-use labels bleed into export. Stripping risky. Leave as-is. |
+| 8 | OPEN | Watermark fragments into PDF text layer. pdfmake limitation. |
+
+---
+
+## NEXT STEPS (priority order as of Session 6)
+
+1. **Cloudflare Worker** — THIS IS THE PREREQUISITE FOR EVERYTHING ELSE
+   - Hides source code from View Source
+   - Enables AI speaker validation API call safely (API key server-side)
+   - Enables auto-commit of version snapshots to versions/ folder on GitHub
+   - Fixes chatscript.pages.dev naming issue
+   - Enables server-side footer injection
+
+2. **AI speaker validation layer** — once Worker exists
+   - Send first ~20 lines to Haiku 4.5 (~$0.0009 per export)
+   - AI checks speaker attribution, flags errors
+   - Catches what code parser misses
+   - Targeted and surgical — not full conversation read
+
+3. **Auto-versioning via Worker**
+   - On each deploy, Worker commits snapshot to versions/ on GitHub
+   - File named automatically using version number already in code
+   - No manual rename, no drag and drop
+   - Completely automatic
+
+4. **Stripe** — $5/month removes watermark
+
+5. **BUG 5 decision** — Tell users about image limitation upfront?
+
+6. **Domain emails** — Set up hello@ and legal@notavello.com
+
+7. **Google Search Console** — Submit sitemap.xml
+
+8. **chatgpt/index.html** — Need real paste sample from Mike first
+
+9. **gemini/index.html** — Same
+
+10. **robots.txt** — Add to root
+
+11. **Remove debug panel** — Only when Mike explicitly decides
+
+---
+
+## CLOUDFLARE WORKER — WHAT IT IS & WHY IT MATTERS
+
+A Worker is a small piece of server-side JavaScript that runs on
+Cloudflare's servers between the user's browser and your site.
+It can:
+- Hold API keys securely (not visible in browser source)
+- Make API calls to Anthropic for AI speaker validation
+- Make API calls to GitHub to auto-commit version snapshots
+- Inject the footer into every page automatically
+
+This is the single most important infrastructure piece.
+Everything good depends on it.
+
+---
+
+## COST ESTIMATES (AI validation layer)
+
+Model: Claude Haiku 4.5
+Price: $1.00 input / $5.00 output per million tokens
+Per export (first 20 lines only): ~$0.0009
+At scale:
+- 1,000 exports = $0.90
+- 10,000 exports = $9.00
+- 50,000 exports = $45.00
+Revenue at 4% conversion: 50,000 users = $10,000/month
+AI cost at that scale: $45. Essentially free.
 
 ---
 
 ## WATERMARK
 - Diagonal: NOTAVELLO.COM · 52pt · -45° · 18% opacity · #4F46E5
-- Rotating footer watermark text as secondary nudge
 - Mike confirmed "perfect" at v0.093. Do not change without asking.
 
 ---
 
 ## FOOTER (all pages)
-Same footer copy-pasted into every file (not JS-injected — better for SEO).
+Same footer copy-pasted into every file (not JS-injected — SEO).
 
-**Section 1 — AI Exporters (market share order):**
-ChatGPT (soon) · Gemini (soon) · Copilot (soon) · Claude (live)
-
-**Section 2 — Product:**
-Pricing · FAQ · Sample PDF · About · Sitemap
-
-**Bottom:** © 2026 Notavello. Made in Reno, NV. · Privacy Policy · Terms of Service · Contact
-
-AI order rationale: ChatGPT ~65-80%, Gemini ~18%, Copilot ~5%, Claude ~2%.
-Claude listed last by share but only working one — has "Live now" badge.
+AI order (market share): ChatGPT (soon) · Gemini (soon) · Copilot (soon) · Claude (live)
+Product: Pricing · FAQ · Sample PDF · About · Sitemap
+Bottom: © 2026 Notavello. Made in Reno, NV. · Privacy · Terms · Contact
 
 ---
 
 ## SEO STATUS
-- Full SEO heads on root and claude pages (title, description, canonical, OG, Twitter Card)
-- sitemap.xml exists — **not yet submitted to Google Search Console**
-- Missing: robots.txt, Search Console setup, structured data/schema
+- Full SEO heads on root and claude pages
+- sitemap.xml exists — not yet submitted to Google Search Console
+- Missing: robots.txt, Search Console setup, structured data
 
 ---
 
 ## ABOUT PAGE NOTE
-Deliberately does NOT name Mike Koga. Framing: human + AI collaboration.
-"The world is filling up with software built this way — most won't tell you. We will."
-**Do NOT add a founder name without asking Mike first.**
+No founder name. Human + AI collaboration framing. Do NOT add name without asking Mike.
 
 ---
 
 ## CONTACT EMAILS (not yet set up)
-- hello@notavello.com — general / feedback / bugs
-- legal@notavello.com — legal / privacy
+- hello@notavello.com
+- legal@notavello.com
 
 ---
 
 ## CLOUDFLARE / GITHUB NOTES
-- Cloudflare Pages project name: notavello
+- Cloudflare Pages project: notavello
 - Auto-deploys from GitHub main branch
-- The .pages.dev URL shows "chatscript.pages.dev" — cosmetic leftover, harmless, leave it
-- **GitHub upload gotcha:** "Add file → Upload files" does NOT overwrite existing files. To update: click file → pencil → select all → paste → commit.
-- GitHub sometimes duplicates files on upload — remove duplicates before committing.
-- Committing rapidly creates a Cloudflare deployment queue — wait, don't cancel.
-- **Commit messages should describe what changed**, not just "Add files via upload."
-
----
-
-## NEXT STEPS (priority order as of Session 5)
-
-1. **BUG 8** — Fix manual parser extreme page heights on large conversations
-2. **BUG 5 decision** — Tell users about image limitation upfront, or let them discover it?
-3. **Stripe** — $5/month removes watermark. pricing.html and terms.html already exist.
-4. **Domain emails** — Set up hello@ and legal@notavello.com
-5. **Google Search Console** — Submit sitemap.xml
-6. **Email capture** — After first download, non-blocking
-7. **chatgpt/index.html** — Copy claude file, change AI_NAME, need real paste sample from Mike
-8. **gemini/index.html** — Same process
-9. **robots.txt** — Add to root
-10. **Cloudflare Worker** — Hides source, enables server-side footer injection, fixes chatscript.pages.dev
-11. **Remove debug panel** — Only when Mike explicitly decides
-
----
-
-## PRODUCT ROADMAP
-- Phase 1: Web app (IN PROGRESS)
-- Phase 2: Chrome extension ($5 one-time) — fixes image problem
-- Phase 3: Firefox + Edge (free)
-- Phase 4: Safari ($99/year Apple dev)
-- Phase 5: Android ($25 one-time)
-- Phase 6: iOS (same Apple account)
-- Future: B2B API
+- .pages.dev shows "chatscript.pages.dev" — harmless leftover, leave it
+- GitHub upload gotcha: "Add file → Upload files" does NOT overwrite existing files
+  To update: click file → pencil → select all → paste → commit
+- Commit messages should describe what changed
 
 ---
 
@@ -224,7 +222,7 @@ Deliberately does NOT name Mike Koga. Framing: human + AI collaboration.
 - pdfmake via CDN
 - Cloudflare Pages → GitHub main branch
 - No backend currently
-- Future: Cloudflare Worker + Cloudflare D1
+- Next: Cloudflare Worker + Cloudflare D1
 
 ---
 
@@ -233,8 +231,9 @@ Deliberately does NOT name Mike Koga. Framing: human + AI collaboration.
 | Session | Date | Key changes |
 |---------|------|-------------|
 | 1–4 | Pre-May 2026 | See CHANGELOG.md for full history |
-| 5 | May 22, 2026 | Textarea made visible (border + background). Versions folder created. HANDOFF.md and CHANGELOG.md introduced. claude-1.5 → claude-1.6 |
+| 5 | May 22, 2026 (morning) | Textarea visible (claude-1.6). versions/ folder, HANDOFF.md, CHANGELOG.md, .gitignore created |
+| 6 | May 22, 2026 (evening) | Diagnosed all-blue PDF bug. claude-1.7: first-speaker detection added. Confirmed working on 367-message conversation (183 human / 184 AI). Agreed Cloudflare Worker is next priority. AI cost analysis done (~$0.0009/export with Haiku 4.5). |
 
 ---
-*This file replaces all numbered handoff notes (handoff_note_may22_1 through _5).*
-*Do not create handoff_note_may22_6.txt — update this file instead.*
+*This file replaces all numbered handoff notes.*
+*Do not create handoff_note_may22_7.txt — update this file instead.*
