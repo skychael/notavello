@@ -4,7 +4,7 @@
   Owner: Mike Koga
   GitHub: github.com/skychael/notavello (PRIVATE repo — do not share URL)
   Live: notavello.com/claude/ (Cloudflare Pages)
-  Current version: claude-1.7
+  Current version: claude-1.8
 =============================================================
 
   !! READ THIS FIRST — FUTURE CLAUDE SESSIONS !!
@@ -92,12 +92,13 @@
                Focus state sharpens border to accent color.
                versions/ folder created with HANDOFF.md, CHANGELOG.md,
                and claude-1.6.html snapshot. .gitignore added.
+  claude-1.8 - AI speaker validation added via Cloudflare Worker.
+               processConversation() is now async. Sends first 20
+               messages to notavello-worker for Haiku 4.5 check.
+               5-second timeout — Worker failure never blocks user.
+               Warning shown if AI flags a speaker attribution issue.
+
   claude-1.7 - First-speaker detection added to parseClaude().
-               Parser now checks if block before first timestamp
-               looks like AI text (long, no question mark, starts
-               with a Claude-style opener). If so, flips it to AI
-               role. Fixes "everything blue" bug on conversations
-               where Claude responds first.
 
 =============================================================
   AI_NAME — CRITICAL FOR FUTURE AI PAGES
@@ -1157,7 +1158,7 @@ body {
     Nota<span>vello</span>
   </div>
   </a>
-  <div class="badge">Free Preview · claude-1.7</div>
+  <div class="badge">Free Preview · claude-1.8</div>
 </header>
 
 <div class="screen-ui">
@@ -1454,7 +1455,7 @@ function renderDebugPanel(messages, pageLog) {
   const h = messages.filter(m => m.role === 'human').length;
   const a = messages.filter(m => m.role === 'ai').length;
 
-  panel.innerHTML = `<div style="color:#4F46E5;font-weight:700;margin-bottom:6px;">📐 Notavello Debug · claude-1.7</div>`;
+  panel.innerHTML = `<div style="color:#4F46E5;font-weight:700;margin-bottom:6px;">📐 Notavello Debug · claude-1.8</div>`;
 
   // Parse log
   panel.insertAdjacentHTML('beforeend', `<div style="color:#7C3AED;margin-top:4px;font-weight:600;">── Parse Log ──</div>`);
@@ -1499,9 +1500,10 @@ function resetApp() {
 }
 
 // ── Process ──
-function processConversation() {
+async function processConversation() {
   const raw = document.getElementById('pasteArea').value.trim();
   const errorEl = document.getElementById('errorMsg');
+  const btn = document.querySelector('.btn-convert');
   errorEl.style.display = 'none';
   document.getElementById('paywall').style.display = 'none';
   document.getElementById('previewSection').style.display = 'none';
@@ -1523,6 +1525,36 @@ function processConversation() {
   let msgs = messages;
   if (document.getElementById('redactCheck').checked) {
     msgs = msgs.map(m => ({ ...m, text: redactText(m.text) }));
+  }
+
+  // ── AI SPEAKER VALIDATION via Cloudflare Worker ──
+  // Sends first 20 messages to Haiku 4.5 to check speaker attribution.
+  // If Worker is down or slow, we fall through silently — never block the user.
+  try {
+    btn.textContent = 'Checking speakers…';
+    btn.disabled = true;
+    const first20 = msgs.slice(0, 20).map(m => ({ role: m.role, text: m.text }));
+    const res = await Promise.race([
+      fetch('https://notavello-worker.mikekoga.workers.dev/validate-speakers', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ lines: first20 })
+      }),
+      new Promise((_, reject) => setTimeout(() => reject(new Error('timeout')), 5000))
+    ]);
+    const result = await res.json();
+    if (result && result.ok === false && result.fix) {
+      errorEl.textContent = '⚠️ Speaker check: ' + result.fix;
+      errorEl.style.display = 'block';
+      errorEl.style.background = '#FFFBEB';
+      errorEl.style.borderColor = '#FDE68A';
+      errorEl.style.color = '#92400E';
+    }
+  } catch (e) {
+    // Worker unavailable or timed out — silent fallthrough, never block user
+  } finally {
+    btn.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> Preview Conversation`;
+    btn.disabled = false;
   }
 
   parsedMessages = msgs;
