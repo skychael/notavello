@@ -209,7 +209,7 @@ body {
         <li><div class="feature-check feature-check--yes">✓</div> All future features included</li>
         <li><div class="feature-check feature-check--yes">✓</div> Cancel anytime, instantly</div></li>
       </ul>
-      <a href="/claude/" class="btn-plan btn-plan--paid">Upgrade to Pro — $5/mo</a>
+      <button onclick="startCheckout(this)" class="btn-plan btn-plan--paid">Upgrade to Pro — $5/mo</button>
       <div class="cancel-note">No contracts. Cancel anytime from your account.</div>
     </div>
 
@@ -274,5 +274,43 @@ body {
   </div>
 </footer>
 
+<script>
+async function startCheckout(btn) {
+  btn.disabled = true;
+  btn.textContent = 'Redirecting to checkout…';
+  try {
+    const res = await fetch('https://notavello-worker.mikekoga.workers.dev/create-checkout', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+    });
+    const data = await res.json();
+    if (data.url) {
+      window.location.href = data.url;
+    } else {
+      throw new Error('No URL returned');
+    }
+  } catch (err) {
+    btn.disabled = false;
+    btn.textContent = 'Upgrade to Pro — $5/mo';
+    alert('Checkout unavailable — please try again in a moment.');
+  }
+}
+
+// Handle return from Stripe (?paid=true)
+(function handleStripeReturn() {
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('paid') === 'true') {
+    localStorage.setItem('notavello_paid', 'true');
+    window.history.replaceState({}, '', '/pricing/');
+    const msg = document.createElement('div');
+    msg.style.cssText = 'position:fixed;top:24px;left:50%;transform:translateX(-50%);background:#059669;color:white;padding:14px 28px;border-radius:12px;font-size:0.95rem;font-weight:600;z-index:9999;box-shadow:0 4px 20px rgba(5,150,105,0.4);';
+    msg.textContent = '✓ Payment confirmed — watermark removed, unlimited exports unlocked!';
+    document.body.appendChild(msg);
+    setTimeout(() => msg.remove(), 5000);
+  } else if (params.get('paid') === 'cancelled') {
+    window.history.replaceState({}, '', '/pricing/');
+  }
+})();
+</script>
 </body>
 </html>
