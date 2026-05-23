@@ -4,7 +4,7 @@
   Owner: Mike Koga
   GitHub: github.com/skychael/notavello (PRIVATE repo — do not share URL)
   Live: notavello.com/claude/ (Cloudflare Pages)
-  Current version: claude-2.5
+  Current version: claude-2.6
 =============================================================
 
   !! READ THIS FIRST — FUTURE CLAUDE SESSIONS !!
@@ -92,6 +92,11 @@
                Focus state sharpens border to accent color.
                versions/ folder created with HANDOFF.md, CHANGELOG.md,
                and claude-1.6.html snapshot. .gitignore added.
+  claude-2.6 - Stripe integration live. "$5/month" paywall button now
+               calls /create-checkout on notavello-worker, redirects to
+               Stripe hosted checkout. On return (?paid=true), sets
+               localStorage notavello_paid=true and shows success message.
+
   claude-2.5 - Fixed two paywall bugs from claude-2.4:
                1. "Download First 30 Free" was blocked by its own
                   paywall check — truncated downloads now skip check.
@@ -1217,7 +1222,7 @@ body {
     Nota<span>vello</span>
   </div>
   </a>
-  <div class="badge">Free Preview · claude-2.5</div>
+  <div class="badge">Free Preview · claude-2.6</div>
 </header>
 
 <div class="screen-ui">
@@ -1321,7 +1326,7 @@ body {
         Download First 30 Free
       </button>
       <div style="font-size:0.8rem;color:var(--ink-faint);">— or —</div>
-      <button class="btn-pay" style="background:linear-gradient(135deg,#059669,#047857);box-shadow:0 4px 16px rgba(5,150,105,0.35);" onclick="alert('Payment coming soon — check back shortly!')">
+      <button class="btn-pay" style="background:linear-gradient(135deg,#059669,#047857);box-shadow:0 4px 16px rgba(5,150,105,0.35);" onclick="startCheckout(this)">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
         $5/month — Export Everything
       </button>
@@ -1533,7 +1538,7 @@ function renderDebugPanel(messages, pageLog, workerResult) {
   const a = messages.filter(m => m.role === 'ai').length;
   const ratio = Math.max(h, a) / Math.min(h, a || 1);
 
-  panel.innerHTML = `<div style="color:#4F46E5;font-weight:700;margin-bottom:6px;">📐 Notavello Debug · claude-2.5</div>`;
+  panel.innerHTML = `<div style="color:#4F46E5;font-weight:700;margin-bottom:6px;">📐 Notavello Debug · claude-2.6</div>`;
 
   // ── WORKER STATUS ──
   const workerColor = !workerResult ? '#64748B'
@@ -1911,6 +1916,48 @@ function downloadPDF(truncate) {
     btn.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download PDF`;
   }, 3000);
 }
+
+// ── STRIPE CHECKOUT ──
+async function startCheckout(btn) {
+  btn.disabled = true;
+  btn.textContent = 'Redirecting to checkout…';
+  try {
+    const res = await fetch('https://notavello-worker.mikekoga.workers.dev/create-checkout', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+    });
+    const data = await res.json();
+    if (data.url) {
+      window.location.href = data.url;
+    } else {
+      throw new Error('No URL returned');
+    }
+  } catch (err) {
+    btn.disabled = false;
+    btn.innerHTML = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg> $5/month — Export Everything`;
+    alert('Checkout unavailable — please try again in a moment.');
+  }
+}
+
+// ── HANDLE RETURN FROM STRIPE ──
+// On success, Stripe redirects to /claude/?paid=true
+// On cancel, Stripe redirects to /claude/?paid=cancelled
+(function handleStripeReturn() {
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('paid') === 'true') {
+    localStorage.setItem('notavello_paid', 'true');
+    // Clean up URL
+    window.history.replaceState({}, '', '/claude/');
+    // Show success message briefly
+    const msg = document.createElement('div');
+    msg.style.cssText = 'position:fixed;top:24px;left:50%;transform:translateX(-50%);background:#059669;color:white;padding:14px 28px;border-radius:12px;font-size:0.95rem;font-weight:600;z-index:9999;box-shadow:0 4px 20px rgba(5,150,105,0.4);';
+    msg.textContent = '✓ Payment confirmed — watermark removed, unlimited exports unlocked!';
+    document.body.appendChild(msg);
+    setTimeout(() => msg.remove(), 5000);
+  } else if (params.get('paid') === 'cancelled') {
+    window.history.replaceState({}, '', '/claude/');
+  }
+})();
 
 function escHtml(t) {
   return t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>');
