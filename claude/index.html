@@ -4,7 +4,7 @@
   Owner: Mike Koga
   GitHub: github.com/skychael/notavello (PRIVATE repo — do not share URL)
   Live: notavello.com/claude/ (Cloudflare Pages)
-  Current version: claude-1.8
+  Current version: claude-1.9
 =============================================================
 
   !! READ THIS FIRST — FUTURE CLAUDE SESSIONS !!
@@ -92,6 +92,13 @@
                Focus state sharpens border to accent color.
                versions/ folder created with HANDOFF.md, CHANGELOG.md,
                and claude-1.6.html snapshot. .gitignore added.
+  claude-1.9 - Enhanced debug panel. Worker section now shows status
+               (ok/timeout/error), response time in ms, and exact JSON
+               returned by Haiku. Message section adds: ratio warning,
+               short message detection (<5 chars), longest AI block
+               length, attachment count. renderDebugPanel() now takes
+               workerResult as third argument.
+
   claude-1.8 - AI speaker validation added via Cloudflare Worker.
                processConversation() is now async. Sends first 20
                messages to notavello-worker for Haiku 4.5 check.
@@ -1158,7 +1165,7 @@ body {
     Nota<span>vello</span>
   </div>
   </a>
-  <div class="badge">Free Preview · claude-1.8</div>
+  <div class="badge">Free Preview · claude-1.9</div>
 </header>
 
 <div class="screen-ui">
@@ -1450,25 +1457,56 @@ function debugLog(msg) {
   panel.scrollTop = panel.scrollHeight;
 }
 
-function renderDebugPanel(messages, pageLog) {
+function renderDebugPanel(messages, pageLog, workerResult) {
   const panel = getOrCreateDebugPanel();
   const h = messages.filter(m => m.role === 'human').length;
   const a = messages.filter(m => m.role === 'ai').length;
+  const ratio = Math.max(h, a) / Math.min(h, a || 1);
 
-  panel.innerHTML = `<div style="color:#4F46E5;font-weight:700;margin-bottom:6px;">📐 Notavello Debug · claude-1.8</div>`;
+  panel.innerHTML = `<div style="color:#4F46E5;font-weight:700;margin-bottom:6px;">📐 Notavello Debug · claude-1.9</div>`;
 
-  // Parse log
-  panel.insertAdjacentHTML('beforeend', `<div style="color:#7C3AED;margin-top:4px;font-weight:600;">── Parse Log ──</div>`);
+  // ── WORKER STATUS ──
+  const workerColor = !workerResult ? '#64748B'
+    : workerResult.status === 'ok' ? '#059669'
+    : workerResult.status === 'timeout' ? '#D97706'
+    : '#BE123C';
+  const workerLabel = !workerResult ? 'not called'
+    : workerResult.status === 'ok'
+      ? `✓ ${workerResult.ms}ms → ${JSON.stringify(workerResult.response)}`
+    : workerResult.status === 'timeout' ? '⚠ timed out (>5s)'
+    : workerResult.status === 'http_error' ? `✗ HTTP error → ${JSON.stringify(workerResult.response)}`
+    : `✗ ${workerResult.response}`;
+  panel.insertAdjacentHTML('beforeend',
+    `<div style="color:#7C3AED;margin-top:4px;font-weight:600;">── Worker ──</div>
+     <div style="color:${workerColor};">Status: ${workerLabel}</div>`);
+
+  // ── PARSE LOG ──
+  panel.insertAdjacentHTML('beforeend', `<div style="color:#7C3AED;margin-top:6px;font-weight:600;">── Parse Log ──</div>`);
   parseLog.forEach(line => {
     panel.insertAdjacentHTML('beforeend', `<div>${line}</div>`);
   });
 
-  // Message summary
+  // ── MESSAGE SUMMARY ──
+  const ratioFlag = ratio > 4 ? ` ⚠ ratio ${ratio.toFixed(1)}x` : '';
+  const shortMsgs = messages.filter(m => m.text.trim().length < 5);
+  const longestAI = messages.filter(m => m.role === 'ai').reduce((max, m) => Math.max(max, m.text.length), 0);
+  const attachments = messages.filter(m => m.text.includes('[Attachment')).length;
   panel.insertAdjacentHTML('beforeend',
     `<div style="color:#7C3AED;margin-top:6px;font-weight:600;">── Messages ──</div>
-     <div>Total: ${messages.length} | Human: ${h} | AI: ${a}</div>`);
+     <div>Total: ${messages.length} | Human: ${h} | AI: ${a}${ratioFlag}</div>
+     <div>Short (<5 chars): ${shortMsgs.length}${shortMsgs.length ? ' ⚠ check these' : ''}</div>
+     <div>Longest AI block: ${longestAI} chars</div>
+     <div>Attachments replaced: ${attachments}</div>`);
 
-  // Page break log
+  // List any suspiciously short messages
+  if (shortMsgs.length) {
+    shortMsgs.forEach(m => {
+      panel.insertAdjacentHTML('beforeend',
+        `<div style="color:#D97706;">  [${m.role.toUpperCase()}] "${m.text.trim()}"</div>`);
+    });
+  }
+
+  // ── PAGES ──
   panel.insertAdjacentHTML('beforeend', `<div style="color:#7C3AED;margin-top:6px;font-weight:600;">── Pages ──</div>`);
   pageLog.forEach(line => {
     panel.insertAdjacentHTML('beforeend', `<div>${line}</div>`);
@@ -1530,10 +1568,12 @@ async function processConversation() {
   // ── AI SPEAKER VALIDATION via Cloudflare Worker ──
   // Sends first 20 messages to Haiku 4.5 to check speaker attribution.
   // If Worker is down or slow, we fall through silently — never block the user.
+  let workerResult = { status: 'not_called', ms: 0, response: null };
   try {
     btn.textContent = 'Checking speakers…';
     btn.disabled = true;
     const first20 = msgs.slice(0, 20).map(m => ({ role: m.role, text: m.text }));
+    const t0 = Date.now();
     const res = await Promise.race([
       fetch('https://notavello-worker.mikekoga.workers.dev/validate-speakers', {
         method: 'POST',
@@ -1542,7 +1582,10 @@ async function processConversation() {
       }),
       new Promise((_, reject) => setTimeout(() => reject(new Error('timeout')), 5000))
     ]);
+    workerResult.ms = Date.now() - t0;
     const result = await res.json();
+    workerResult.status = res.ok ? 'ok' : 'http_error';
+    workerResult.response = result;
     if (result && result.ok === false && result.fix) {
       errorEl.textContent = '⚠️ Speaker check: ' + result.fix;
       errorEl.style.display = 'block';
@@ -1551,18 +1594,19 @@ async function processConversation() {
       errorEl.style.color = '#92400E';
     }
   } catch (e) {
-    // Worker unavailable or timed out — silent fallthrough, never block user
+    workerResult.status = e.message === 'timeout' ? 'timeout' : 'error';
+    workerResult.response = e.message;
   } finally {
     btn.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> Preview Conversation`;
     btn.disabled = false;
   }
 
   parsedMessages = msgs;
-  renderPreview(msgs, platform, confidence.warning);
+  renderPreview(msgs, platform, confidence.warning, workerResult);
 }
 
 // ── Screen preview ──
-function renderPreview(messages, platform, warning) {
+function renderPreview(messages, platform, warning, workerResult) {
   const now = new Date();
   const dateStr = now.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
   const humanCount = messages.filter(m => m.role === 'human').length;
@@ -1642,7 +1686,7 @@ function renderPreview(messages, platform, warning) {
     }
   });
 
-  renderDebugPanel(messages, pageLog);
+  renderDebugPanel(messages, pageLog, workerResult);
   document.getElementById('previewSection').scrollIntoView({ behavior: 'smooth' });
 }
 
