@@ -4,7 +4,7 @@
   Owner: Mike Koga
   GitHub: github.com/skychael/notavello (PRIVATE repo — do not share URL)
   Live: notavello.com/claude/ (Cloudflare Pages)
-  Current version: claude-1.9
+  Current version: claude-2.0
 =============================================================
 
   !! READ THIS FIRST — FUTURE CLAUDE SESSIONS !!
@@ -92,6 +92,11 @@
                Focus state sharpens border to accent color.
                versions/ folder created with HANDOFF.md, CHANGELOG.md,
                and claude-1.6.html snapshot. .gitignore added.
+  claude-2.0 - Hardening fix: added overflow:hidden to .page CSS.
+               Prevents preview window from exploding beyond page
+               bounds when message content is too large. This was
+               the root cause of past catastrophic preview failures.
+
   claude-1.9 - Enhanced debug panel. Worker section now shows status
                (ok/timeout/error), response time in ms, and exact JSON
                returned by Haiku. Message section adds: ratio warning,
@@ -687,6 +692,7 @@ body {
   margin: 0 auto 32px auto;
   box-sizing: border-box;
   position: relative;
+  overflow: hidden;
 }
 
 .doc-title {
@@ -1165,7 +1171,7 @@ body {
     Nota<span>vello</span>
   </div>
   </a>
-  <div class="badge">Free Preview · claude-1.9</div>
+  <div class="badge">Free Preview · claude-2.0</div>
 </header>
 
 <div class="screen-ui">
@@ -1463,7 +1469,7 @@ function renderDebugPanel(messages, pageLog, workerResult) {
   const a = messages.filter(m => m.role === 'ai').length;
   const ratio = Math.max(h, a) / Math.min(h, a || 1);
 
-  panel.innerHTML = `<div style="color:#4F46E5;font-weight:700;margin-bottom:6px;">📐 Notavello Debug · claude-1.9</div>`;
+  panel.innerHTML = `<div style="color:#4F46E5;font-weight:700;margin-bottom:6px;">📐 Notavello Debug · claude-2.0</div>`;
 
   // ── WORKER STATUS ──
   const workerColor = !workerResult ? '#64748B'
