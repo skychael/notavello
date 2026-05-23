@@ -4,7 +4,7 @@
   Owner: Mike Koga
   GitHub: github.com/skychael/notavello (PRIVATE repo — do not share URL)
   Live: notavello.com/claude/ (Cloudflare Pages)
-  Current version: claude-2.1
+  Current version: claude-2.4
 =============================================================
 
   !! READ THIS FIRST — FUTURE CLAUDE SESSIONS !!
@@ -92,6 +92,20 @@
                Focus state sharpens border to accent color.
                versions/ folder created with HANDOFF.md, CHANGELOG.md,
                and claude-1.6.html snapshot. .gitignore added.
+  claude-2.4 - Paywall completely redesigned. Preview always completes.
+               Paywall now triggers on Download click, not on parse.
+               Two options shown: "Download First 30 Free" (truncated PDF)
+               and "$5/month — Export Everything" (Stripe, coming soon).
+               Messaging is transparent — free tier explained clearly,
+               no bait-and-switch. Truncated PDF still has watermark.
+               Dev mode added: Ctrl+Shift+D bypasses paywall for testing.
+               Dev mode stored in sessionStorage (resets on browser close).
+               Dev mode status shown in debug panel in green when active.
+
+  claude-2.2 - Button text changed from "Checking speakers…" to
+               "Analyzing…" — previous text sounded like an audio
+               device test, not a document operation.
+
   claude-2.1 - Redaction patterns trimmed: email and phone removed.
                Both were too aggressive — likely to strip legitimate
                content users want in their export. Kept: API keys,
@@ -1197,7 +1211,7 @@ body {
     Nota<span>vello</span>
   </div>
   </a>
-  <div class="badge">Free Preview · claude-2.1</div>
+  <div class="badge">Free Preview · claude-2.4</div>
 </header>
 
 <div class="screen-ui">
@@ -1292,20 +1306,26 @@ body {
   </div>
 
   <div class="paywall" id="paywall">
-    <div class="paywall-icon">🔒</div>
-    <h3>Conversation too long for free tier</h3>
-    <p>You have <strong id="msgCount"></strong> messages. Free exports are limited to 30 messages.</p>
-    <div class="paywall-price">$5 <span>/ month</span></div>
+    <div class="paywall-icon">📄</div>
+    <h3>Your conversation has <span id="msgCount"></span> messages</h3>
+    <p>Free exports include the <strong>first 30 messages</strong> — yours to keep, forever, no account needed. Or upgrade to export everything.</p>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:12px;margin:20px 0;">
+      <button class="btn-pay" onclick="downloadPDF(true)">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download First 30 Free
+      </button>
+      <div style="font-size:0.8rem;color:var(--ink-faint);">— or —</div>
+      <button class="btn-pay" style="background:linear-gradient(135deg,#059669,#047857);box-shadow:0 4px 16px rgba(5,150,105,0.35);" onclick="alert('Payment coming soon — check back shortly!')">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+        $5/month — Export Everything
+      </button>
+    </div>
     <div class="paywall-perks">
-      <div class="perk"><div class="perk-check">✓</div> Unlimited exports</div>
-      <div class="perk"><div class="perk-check">✓</div> Priority support</div>
+      <div class="perk"><div class="perk-check">✓</div> No watermark</div>
+      <div class="perk"><div class="perk-check">✓</div> Unlimited length</div>
       <div class="perk"><div class="perk-check">✓</div> All future features</div>
     </div>
-    <button class="btn-pay" onclick="alert('Payment coming soon — check back shortly!')">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
-      Upgrade Now
-    </button>
-    <div class="paywall-note">Or trim your conversation to under 30 messages and export for free.</div>
+    <div class="paywall-note">The free download includes your watermark and ends at message 30.</div>
   </div>
 
 </div>
@@ -1316,7 +1336,7 @@ body {
 // Email and phone removed — too likely to be legitimate content
 // that users actually want in their export (contacts, examples, etc).
 //
-// FUTURE PAID FEATURE IDEA (claude-2.1):
+// FUTURE PAID FEATURE IDEA (claude-2.4):
 // Add a "Custom Redaction" panel for paid users with checkboxes:
 //   ☑ API keys (always on, not toggleable)
 //   ☑ SSNs
@@ -1507,7 +1527,7 @@ function renderDebugPanel(messages, pageLog, workerResult) {
   const a = messages.filter(m => m.role === 'ai').length;
   const ratio = Math.max(h, a) / Math.min(h, a || 1);
 
-  panel.innerHTML = `<div style="color:#4F46E5;font-weight:700;margin-bottom:6px;">📐 Notavello Debug · claude-2.1</div>`;
+  panel.innerHTML = `<div style="color:#4F46E5;font-weight:700;margin-bottom:6px;">📐 Notavello Debug · claude-2.4</div>`;
 
   // ── WORKER STATUS ──
   const workerColor = !workerResult ? '#64748B'
@@ -1522,7 +1542,8 @@ function renderDebugPanel(messages, pageLog, workerResult) {
     : `✗ ${workerResult.response}`;
   panel.insertAdjacentHTML('beforeend',
     `<div style="color:#7C3AED;margin-top:4px;font-weight:600;">── Worker ──</div>
-     <div style="color:${workerColor};">Status: ${workerLabel}</div>`);
+     <div style="color:${workerColor};">Status: ${workerLabel}</div>
+     <div style="margin-top:2px;color:${devMode ? '#059669' : '#94A3B8'};">Dev mode: ${devMode ? '🛠 ON (paywall bypassed) — Ctrl+Shift+D to toggle' : 'OFF — Ctrl+Shift+D to enable'}</div>`);
 
   // ── PARSE LOG ──
   panel.insertAdjacentHTML('beforeend', `<div style="color:#7C3AED;margin-top:6px;font-weight:600;">── Parse Log ──</div>`);
@@ -1605,6 +1626,7 @@ async function processConversation() {
   }
 
   let msgs = messages;
+
   if (document.getElementById('redactCheck').checked) {
     msgs = msgs.map(m => ({ ...m, text: redactText(m.text) }));
   }
@@ -1614,7 +1636,7 @@ async function processConversation() {
   // If Worker is down or slow, we fall through silently — never block the user.
   let workerResult = { status: 'not_called', ms: 0, response: null };
   try {
-    btn.textContent = 'Checking speakers…';
+    btn.textContent = 'Analyzing…';
     btn.disabled = true;
     const first20 = msgs.slice(0, 20).map(m => ({ role: m.role, text: m.text }));
     const t0 = Date.now();
@@ -1759,9 +1781,33 @@ const WATERMARKS = [
 ];
 let watermarkIndex = 0;
 
+// ── DEV MODE — Ctrl+Shift+D toggles paywall bypass for testing ──
+let devMode = sessionStorage.getItem('notavello_dev') === 'true';
+document.addEventListener('keydown', e => {
+  if (e.ctrlKey && e.shiftKey && e.key === 'D') {
+    devMode = !devMode;
+    sessionStorage.setItem('notavello_dev', devMode);
+    alert(devMode ? '🛠 Dev mode ON — paywall bypassed' : '🔒 Dev mode OFF — paywall active');
+  }
+});
+
 // ── PDF ──
-function downloadPDF() {
+function checkPaywallBeforeDownload() {
+  const isPaid = localStorage.getItem('notavello_paid') === 'true';
+  if (!isPaid && !devMode && parsedMessages.length > 30) {
+    document.getElementById('msgCount').textContent = parsedMessages.length;
+    document.getElementById('paywall').style.display = 'block';
+    document.getElementById('paywall').scrollIntoView({ behavior: 'smooth' });
+    return false;
+  }
+  return true;
+}
+
+function downloadPDF(truncate) {
   if (!parsedMessages.length) return;
+  if (!checkPaywallBeforeDownload()) return;
+
+  const msgs = truncate ? parsedMessages.slice(0, 30) : parsedMessages;
 
   const btn = document.getElementById('downloadBtn');
   btn.disabled = true;
@@ -1775,11 +1821,11 @@ function downloadPDF() {
 
   const content = [
     { text: 'Conversation Export', fontSize: 20, bold: true, color: '#0F172A', margin: [0, 0, 0, 6] },
-    { text: `Generated ${dateStr}  ·  ${parsedMessages.length} messages  ·  Blue = your messages`, fontSize: 9, color: '#94A3B8', margin: [0, 0, 0, 4] },
+    { text: `Generated ${dateStr}  ·  ${msgs.length} messages  ·  Blue = your messages`, fontSize: 9, color: '#94A3B8', margin: [0, 0, 0, 4] },
     { canvas: [{ type: 'line', x1: 0, y1: 0, x2: 515, y2: 0, lineWidth: 1, lineColor: '#E2E8F0' }], margin: [0, 0, 0, 18] },
   ];
 
-  parsedMessages.forEach(msg => {
+  msgs.forEach(msg => {
     if (msg.role === 'human') {
       content.push({
         table: {
