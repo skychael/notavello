@@ -4,7 +4,7 @@
   Owner: Mike Koga
   GitHub: github.com/skychael/notavello (PRIVATE repo — do not share URL)
   Live: notavello.com/claude/ (Cloudflare Pages)
-  Current version: claude-2.0
+  Current version: claude-2.1
 =============================================================
 
   !! READ THIS FIRST — FUTURE CLAUDE SESSIONS !!
@@ -92,6 +92,13 @@
                Focus state sharpens border to accent color.
                versions/ folder created with HANDOFF.md, CHANGELOG.md,
                and claude-1.6.html snapshot. .gitignore added.
+  claude-2.1 - Redaction patterns trimmed: email and phone removed.
+               Both were too aggressive — likely to strip legitimate
+               content users want in their export. Kept: API keys,
+               hex keys, SSNs, credit card numbers only.
+               Future paid feature noted in code comments: custom
+               redaction checkboxes (email, phone, custom regex).
+
   claude-2.0 - Hardening fix: added overflow:hidden to .page CSS.
                Prevents preview window from exploding beyond page
                bounds when message content is too large. This was
@@ -1190,7 +1197,7 @@ body {
     Nota<span>vello</span>
   </div>
   </a>
-  <div class="badge">Free Preview · claude-2.0</div>
+  <div class="badge">Free Preview · claude-2.1</div>
 </header>
 
 <div class="screen-ui">
@@ -1305,12 +1312,24 @@ body {
 
 <script>
 // ── Redaction ──
+// Default patterns: high-confidence sensitive data only.
+// Email and phone removed — too likely to be legitimate content
+// that users actually want in their export (contacts, examples, etc).
+//
+// FUTURE PAID FEATURE IDEA (claude-2.1):
+// Add a "Custom Redaction" panel for paid users with checkboxes:
+//   ☑ API keys (always on, not toggleable)
+//   ☑ SSNs
+//   ☑ Credit card numbers
+//   ☐ Email addresses (off by default)
+//   ☐ Phone numbers (off by default)
+//   ☐ Custom pattern (text input for regex or keyword)
+// This is a genuine paid differentiator — lawyers/consultants would use it.
+// Build after Stripe exists. Store preference in localStorage per user.
 const REDACT_PATTERNS = [
   { pattern: /\bsk-[A-Za-z0-9]{20,}\b/g,                               replace: '[API_KEY]' },
   { pattern: /\b[A-Fa-f0-9]{32,}\b/g,                                   replace: '[KEY]' },
-  { pattern: /[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}/g,     replace: '[EMAIL]' },
   { pattern: /\b\d{3}[-.\s]?\d{2}[-.\s]?\d{4}\b/g,                     replace: '[SSN]' },
-  { pattern: /\b(\+1[-.\s]?)?\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}\b/g, replace: '[PHONE]' },
   { pattern: /\b4[0-9]{12}(?:[0-9]{3})?\b|\b5[1-5][0-9]{14}\b/g,       replace: '[CARD]' },
 ];
 function redactText(text) {
@@ -1488,7 +1507,7 @@ function renderDebugPanel(messages, pageLog, workerResult) {
   const a = messages.filter(m => m.role === 'ai').length;
   const ratio = Math.max(h, a) / Math.min(h, a || 1);
 
-  panel.innerHTML = `<div style="color:#4F46E5;font-weight:700;margin-bottom:6px;">📐 Notavello Debug · claude-2.0</div>`;
+  panel.innerHTML = `<div style="color:#4F46E5;font-weight:700;margin-bottom:6px;">📐 Notavello Debug · claude-2.1</div>`;
 
   // ── WORKER STATUS ──
   const workerColor = !workerResult ? '#64748B'
