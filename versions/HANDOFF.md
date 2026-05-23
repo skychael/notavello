@@ -2,7 +2,7 @@
 > **⚠️ BEFORE CLOSING ANY SESSION: say "wrap up" so Claude updates this file.**
 > **START OF EVERY SESSION: upload `claude/index.html` + this file.**
 
-Last updated: May 22, 2026 — Session 6
+Last updated: May 22, 2026 — Session 7
 Current versions: `root-1.1` · `claude-1.7`
 
 ---
@@ -23,7 +23,7 @@ Paste an AI conversation → get a clean, color-coded PDF.
 
 ---
 
-## FILE STRUCTURE (as of Session 6)
+## FILE STRUCTURE (as of Session 7)
 
 ### Root level (notavello.com/)
 ```
@@ -106,7 +106,7 @@ When copying for chatgpt/index.html — change ONLY this one value.
 
 ---
 
-## NEXT STEPS (priority order as of Session 6)
+## NEXT STEPS (priority order as of Session 7)
 
 1. **Cloudflare Worker** — THIS IS THE PREREQUISITE FOR EVERYTHING ELSE
    - Hides source code from View Source
@@ -129,19 +129,29 @@ When copying for chatgpt/index.html — change ONLY this one value.
 
 4. **Stripe** — $5/month removes watermark
 
-5. **BUG 5 decision** — Tell users about image limitation upfront?
+5. **Investigate auto-redaction checkbox** — Does it exist in the product yet?
+   Where is it in the UI? Does it actually work? Needs answer before FAQ copy
+   about redaction can be trusted as accurate.
 
-6. **Domain emails** — Set up hello@ and legal@notavello.com
+6. **Verify 30-message limit enforcement** — Confirm how the limit actually
+   works in claude/index.html (truncated? blocked? prompt shown?). Pricing
+   and FAQ copy was updated to say "truncated at 30, prompt to upgrade shown"
+   but this needs to be verified against the actual code.
 
-7. **Google Search Console** — Submit sitemap.xml
+7. **BUG 5 decision** — Tell users about image limitation upfront?
 
-8. **chatgpt/index.html** — Need real paste sample from Mike first
+8. **Domain emails** — Set up hello@, legal@, bugs@, and billing@notavello.com
+   (contact.html now uses bugs@ and billing@ as separate addresses)
 
-9. **gemini/index.html** — Same
+9. **Google Search Console** — Submit sitemap.xml
 
-10. **robots.txt** — Add to root
+10. **chatgpt/index.html** — Need real paste sample from Mike first
 
-11. **Remove debug panel** — Only when Mike explicitly decides
+11. **gemini/index.html** — Same
+
+12. **robots.txt** — Add to root
+
+13. **Remove debug panel** — Only when Mike explicitly decides
 
 ---
 
@@ -201,9 +211,13 @@ No founder name. Human + AI collaboration framing. Do NOT add name without askin
 
 ---
 
-## CONTACT EMAILS (not yet set up)
-- hello@notavello.com
-- legal@notavello.com
+## CONTACT EMAILS
+Current state in contact.html:
+- hello@notavello.com — general questions & feedback
+- bugs@notavello.com — bug reports (new this session)
+- billing@notavello.com — billing & account (new this session)
+- legal@notavello.com — legal & privacy
+All can forward to the same inbox. None are set up yet in Cloudflare.
 
 ---
 
@@ -233,6 +247,7 @@ No founder name. Human + AI collaboration framing. Do NOT add name without askin
 | 1–4 | Pre-May 2026 | See CHANGELOG.md for full history |
 | 5 | May 22, 2026 (morning) | Textarea visible (claude-1.6). versions/ folder, HANDOFF.md, CHANGELOG.md, .gitignore created |
 | 6 | May 22, 2026 (evening) | Diagnosed all-blue PDF bug. claude-1.7: first-speaker detection added. Confirmed working on 367-message conversation (183 human / 184 AI). Agreed Cloudflare Worker is next priority. AI cost analysis done (~$0.0009/export with Haiku 4.5). |
+| 7 | May 22, 2026 (night) | Site copy edits from Corrections.txt. about.html: removed "Reno, NV" from origin card, changed "UI" → "user interface". faq.html: removed "each AI gets its dedicated page" line, added cancel transparency line. contact.html: split into 4 unique email addresses (hello@, bugs@, billing@, legal@). pricing.html: expanded 30-message limit description. Two items from corrections deferred to morning: auto-redaction checkbox (does it exist/work?), and verification of how the 30-message limit is actually enforced in code. |
 
 ---
 *This file replaces all numbered handoff notes.*
