@@ -195,6 +195,25 @@
                 Leave as-is for now.
 
 =============================================================
+  FUTURE AI PAGES — KNOWN DIFFERENCES TO HANDLE
+=============================================================
+  When building chatgpt/index.html, gemini/index.html, copilot/index.html:
+
+  SYSTEM MESSAGES: ChatGPT, Copilot, and sometimes Gemini include
+  a system message before the human opens. If included in the
+  copy-paste, the parser will misattribute it (wrong role or wrong
+  position) and the human/AI ratio check may skew.
+  Decision needed at build time: strip silently, flag as [SYSTEM],
+  or leave and let ratio warning surface it.
+
+  HUMAN/AI RATIO CHECK: Still valid and applicable to all AI pages.
+  Two-speaker assumption holds for all supported AIs.
+
+  FORMAT INSTABILITY: ChatGPT and Gemini UI copy-paste format
+  changes frequently. Build each parser from a real paste sample
+  from Mike — do not assume Claude's format applies.
+
+=============================================================
   DEBUG PANEL
 =============================================================
   Intentionally kept in production code. Appears bottom-right
