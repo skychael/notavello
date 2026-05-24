@@ -833,6 +833,27 @@ body {
       <div class="char-info" id="charInfo">0 messages detected</div>
     </div>
     <textarea id="pasteArea" placeholder="Paste your ChatGPT conversation here (Ctrl+V)..."></textarea>
+    <textarea id="pasteArea" placeholder="Paste your ChatGPT conversation here (Ctrl+V)..."></textarea>
+
+<textarea id="debugPasteBox" placeholder="Paste ChatGPT copy here for clipboard test" style="width:100%;height:180px;"></textarea>
+
+<pre id="debugOutput" style="white-space:pre-wrap;background:#111;color:#0f0;padding:16px;font-size:12px;"></pre>
+
+<script>
+document.getElementById('debugPasteBox').addEventListener('paste', function(e) {
+  const plain = e.clipboardData.getData('text/plain');
+  const html = e.clipboardData.getData('text/html');
+
+  document.getElementById('debugOutput').textContent =
+    '--- TEXT/PLAIN ---\n' +
+    plain.slice(0, 5000) +
+    '\n\n--- TEXT/HTML ---\n' +
+    html.slice(0, 10000);
+
+  console.log('TEXT/PLAIN:', plain);
+  console.log('TEXT/HTML:', html);
+});
+</script>
     <div class="input-footer">
       <label class="redact-option">
         <input type="checkbox" id="redactCheck" checked>
