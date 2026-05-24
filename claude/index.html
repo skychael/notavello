@@ -1,4 +1,4 @@
-<!-- Notavello claude-2.7 -->
+<!-- Notavello claude-2.8 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -940,7 +940,7 @@ body {
     Nota<span>vello</span>
   </div>
   </a>
-  <div class="badge">Free Preview · claude-2.7</div>
+  <div class="badge">Free Preview · claude-2.8</div>
 </header>
 
 <div class="screen-ui">
@@ -1055,6 +1055,25 @@ body {
       <div class="perk"><div class="perk-check">✓</div> All future features</div>
     </div>
     <div class="paywall-note">The free download includes your watermark and ends at message 30.</div>
+
+    <!-- Already paid restore access -->
+    <div style="margin-top:20px;padding-top:16px;border-top:1px solid var(--border);text-align:center;">
+      <button onclick="toggleRestoreAccess()" style="background:none;border:none;font-size:0.8rem;color:var(--ink-faint);cursor:pointer;text-decoration:underline;font-family:'Sora',sans-serif;">Already a Pro member? Restore your access &#x2192;</button>
+      <div id="restorePanel" style="display:none;margin-top:14px;">
+        <div id="restoreStep1">
+          <input id="restoreEmail" type="email" placeholder="Your email address" style="width:100%;max-width:300px;padding:10px 14px;border:1.5px solid var(--border);border-radius:var(--radius-sm);font-family:'Sora',sans-serif;font-size:0.88rem;margin-bottom:10px;outline:none;"/>
+          <br>
+          <button onclick="sendRestoreCode()" style="background:linear-gradient(135deg,var(--accent),var(--accent2));color:white;border:none;padding:10px 24px;border-radius:var(--radius-sm);font-family:'Sora',sans-serif;font-size:0.88rem;font-weight:600;cursor:pointer;">Send login code</button>
+        </div>
+        <div id="restoreStep2" style="display:none;">
+          <p style="font-size:0.83rem;color:var(--ink-muted);margin-bottom:10px;">Enter the 6-digit code we sent to your email.</p>
+          <input id="restoreCode" type="text" placeholder="123456" maxlength="6" style="width:120px;padding:10px 14px;border:1.5px solid var(--border);border-radius:var(--radius-sm);font-family:'Sora',sans-serif;font-size:1rem;text-align:center;letter-spacing:0.2em;margin-bottom:10px;outline:none;"/>
+          <br>
+          <button onclick="verifyRestoreCode()" style="background:linear-gradient(135deg,var(--accent),var(--accent2));color:white;border:none;padding:10px 24px;border-radius:var(--radius-sm);font-family:'Sora',sans-serif;font-size:0.88rem;font-weight:600;cursor:pointer;">Verify code</button>
+        </div>
+        <div id="restoreMsg" style="font-size:0.83rem;margin-top:8px;"></div>
+      </div>
+    </div>
   </div>
 
 </div>
@@ -1256,7 +1275,7 @@ function renderDebugPanel(messages, pageLog, workerResult) {
   const a = messages.filter(m => m.role === 'ai').length;
   const ratio = Math.max(h, a) / Math.min(h, a || 1);
 
-  panel.innerHTML = `<div style="color:#4F46E5;font-weight:700;margin-bottom:6px;">📐 Notavello Debug · claude-2.7</div>`;
+  panel.innerHTML = `<div style="color:#4F46E5;font-weight:700;margin-bottom:6px;">📐 Notavello Debug · claude-2.8</div>`;
 
   // ── WORKER STATUS ──
   const workerColor = !workerResult ? '#64748B'
@@ -1679,6 +1698,111 @@ async function startCheckout(btn) {
 
 function escHtml(t) {
   return t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>');
+}
+
+// ── CHECK ACCESS ON PAGE LOAD ──
+// Reads session cookie via Worker. If valid, sets localStorage as backup
+// so returning paid users on any device don't hit the paywall.
+(async function checkAccessOnLoad() {
+  if (localStorage.getItem('notavello_paid') === 'true') return; // already set
+  try {
+    const res = await fetch('https://notavello-worker.mikekoga.workers.dev/check-access', {
+      method: 'POST',
+      credentials: 'include',
+    });
+    const data = await res.json();
+    if (data.ok) {
+      localStorage.setItem('notavello_paid', 'true');
+    }
+  } catch (e) {
+    // Silent fail — never block the user
+  }
+})();
+
+// ── RESTORE ACCESS UI ──
+function toggleRestoreAccess() {
+  const panel = document.getElementById('restorePanel');
+  panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
+}
+
+async function sendRestoreCode() {
+  const email = document.getElementById('restoreEmail').value.trim();
+  const msg = document.getElementById('restoreMsg');
+
+  if (!email || !email.includes('@')) {
+    msg.style.color = '#DC2626';
+    msg.textContent = 'Please enter a valid email address.';
+    return;
+  }
+
+  msg.style.color = 'var(--ink-muted)';
+  msg.textContent = 'Sending code…';
+
+  try {
+    const res = await fetch('https://notavello-worker.mikekoga.workers.dev/send-code', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email }),
+    });
+    const data = await res.json();
+
+    if (data.ok) {
+      document.getElementById('restoreStep1').style.display = 'none';
+      document.getElementById('restoreStep2').style.display = 'block';
+      msg.style.color = '#059669';
+      msg.textContent = 'Code sent! Check your email.';
+    } else {
+      msg.style.color = '#DC2626';
+      msg.textContent = data.error || 'No active subscription found for that email.';
+    }
+  } catch (e) {
+    msg.style.color = '#DC2626';
+    msg.textContent = 'Something went wrong. Please try again.';
+  }
+}
+
+async function verifyRestoreCode() {
+  const email = document.getElementById('restoreEmail').value.trim();
+  const code = document.getElementById('restoreCode').value.trim();
+  const msg = document.getElementById('restoreMsg');
+
+  if (!code || code.length !== 6) {
+    msg.style.color = '#DC2626';
+    msg.textContent = 'Please enter the 6-digit code.';
+    return;
+  }
+
+  msg.style.color = 'var(--ink-muted)';
+  msg.textContent = 'Verifying…';
+
+  try {
+    const res = await fetch('https://notavello-worker.mikekoga.workers.dev/verify-code', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
+      body: JSON.stringify({ email, code }),
+    });
+    const data = await res.json();
+
+    if (data.ok) {
+      localStorage.setItem('notavello_paid', 'true');
+      document.getElementById('paywall').style.display = 'none';
+      document.getElementById('floatBar').style.display = 'block';
+      document.getElementById('bottomDownload').style.display = 'block';
+      document.getElementById('downloadBtn').style.display = '';
+      const toast = document.createElement('div');
+      toast.style.cssText = 'position:fixed;top:24px;left:50%;transform:translateX(-50%);background:#059669;color:white;padding:14px 28px;border-radius:12px;font-size:0.95rem;font-weight:600;z-index:9999;box-shadow:0 4px 20px rgba(5,150,105,0.4);';
+      toast.textContent = '✓ Access restored — unlimited exports unlocked!';
+      document.body.appendChild(toast);
+      setTimeout(() => toast.remove(), 5000);
+    } else {
+      msg.style.color = '#DC2626';
+      msg.textContent = data.error || 'Invalid code. Please try again.';
+    }
+  } catch (e) {
+    msg.style.color = '#DC2626';
+    msg.textContent = 'Something went wrong. Please try again.';
+  }
 }
 </script>
 <!-- FLOATING DOWNLOAD BAR — appears when preview is shown -->
