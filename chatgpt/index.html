@@ -1323,7 +1323,7 @@ async function processConversation() {
     return;
   }
 
-  const { messages, platform, confidence } = parseConversation(raw,
+ const { messages, platform, confidence } = parseConversation(raw, lastClipboardHTML);
 
   if (!confidence.ok) {
     errorEl.textContent = confidence.warning;
