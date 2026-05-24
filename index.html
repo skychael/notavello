@@ -4,7 +4,7 @@
   Owner: Mike Koga
   GitHub: github.com/skychael/notavello (PRIVATE repo — do not share URL)
   Live: notavello.com/ (Cloudflare Pages)
-  Current version: root-1.2
+  Current version: root-1.3
 =============================================================
 
   !! READ THIS FIRST — FUTURE CLAUDE SESSIONS !!
@@ -45,6 +45,8 @@
 =============================================================
   VERSION HISTORY — THIS FILE ONLY
 =============================================================
+  root-1.3 - Header and footer replaced with <!--HEADER--> and <!--FOOTER-->
+             placeholders. Now managed centrally via _worker.js injection.
   root-1.0 - Initial build. Master landing page created as part
              of URL restructure (previously Claude parser lived
              at root). Three AI cards: Claude live, ChatGPT and
@@ -627,14 +629,7 @@ body {
 </head>
 <body>
 
-<header class="header">
-  <a class="logo" href="/">
-    <div class="logo-icon">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-    </div>
-    Nota<span>vello</span>
-  </a>
-</header>
+<!--HEADER-->
 
 <main class="screen-ui">
 
@@ -751,40 +746,7 @@ body {
 
 </main>
 
-<footer class="site-footer">
-  <div class="site-footer-inner">
-    <nav class="footer-nav">
-      <div class="footer-nav-label">Export AI Conversations</div>
-      <a href="/chatgpt/" style="opacity:0.5;pointer-events:none;">ChatGPT <small>(soon)</small></a>
-      <span class="footer-nav-divider">·</span>
-      <a href="/gemini/" style="opacity:0.5;pointer-events:none;">Gemini <small>(soon)</small></a>
-      <span class="footer-nav-divider">·</span>
-      <a href="/copilot/" style="opacity:0.5;pointer-events:none;">Copilot <small>(soon)</small></a>
-      <span class="footer-nav-divider">·</span>
-      <a href="/claude/">Claude</a>
-    </nav>
-    <nav class="footer-nav">
-      <div class="footer-nav-label">Product</div>
-      <a href="/pricing/">Pricing</a>
-      <span class="footer-nav-divider">·</span>
-      <a href="/faq/">FAQ</a>
-      <span class="footer-nav-divider">·</span>
-      <a href="/sample/">Sample PDF</a>
-      <span class="footer-nav-divider">·</span>
-      <a href="/about/">About</a>
-      <span class="footer-nav-divider">·</span>
-      <a href="/sitemap/">Sitemap</a>
-    </nav>
-    <div class="footer-bottom">
-      <div class="footer-copy">&copy; 2026 Notavello. Made in Reno, NV.</div>
-      <div class="footer-legal">
-        <a href="/privacy/">Privacy Policy</a>
-        <a href="/terms/">Terms of Service</a>
-        <a href="/contact/">Contact</a>
-      </div>
-    </div>
-  </div>
-</footer>
+<!--FOOTER-->
 
 </body>
 </html>
