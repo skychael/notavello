@@ -32,7 +32,7 @@ body {
     radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
 }
 
-/* Header styles (injected by _worker.js, but also defined here for fallback) */
+/* Header styles needed for injected _header.html to render */
 .header {
   background: rgba(255,255,255,0.85); backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border); padding: 16px 36px;
@@ -52,13 +52,8 @@ body {
   box-shadow: 0 2px 8px rgba(79,70,229,0.35);
 }
 .logo span { color: var(--accent); }
-.header-login {
-  font-size: 0.82rem; font-weight: 600; color: var(--accent);
-  text-decoration: none; padding: 7px 18px;
-  border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px;
-  background: var(--accent-light); transition: background 0.15s, border-color 0.15s;
-}
-.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+/* Hide the Log In button on the login page itself */
+.header-login { display: none; }
 
 /* Main layout */
 .main {
@@ -168,9 +163,14 @@ body {
 .login-footer-note a:hover { text-decoration: underline; }
 
 /* Site footer */
-.site-footer { border-top: 1px solid var(--border); padding: 24px 36px; background: var(--surface); }
-.site-footer-inner { max-width: 860px; margin: 0 auto; }
-.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; background: var(--surface); margin-top: 0; }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
 .footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
 .footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
 .footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
@@ -238,7 +238,7 @@ body {
       <div class="success-icon">✅</div>
       <h1 class="login-title">You're in!</h1>
       <p class="login-subtitle">Pro access restored. Watermark removed, no message limit.</p>
-      <a href="/claude/" class="btn-primary" style="display:block;text-decoration:none;padding:14px;margin-top:8px;">Start exporting →</a>
+      <a href="/" class="btn-primary" style="display:block;text-decoration:none;padding:14px;margin-top:8px;">Go to Notavello →</a>
       <div class="login-footer-note" style="margin-top:16px;">
         Access is tied to this browser for 90 days.
       </div>
@@ -247,18 +247,7 @@ body {
   </div>
 </main>
 
-<footer class="site-footer">
-  <div class="site-footer-inner">
-    <div class="footer-bottom">
-      <div class="footer-copy">&copy; 2026 Notavello.</div>
-      <div class="footer-legal">
-        <a href="/privacy/">Privacy</a>
-        <a href="/terms/">Terms</a>
-        <a href="/contact/">Contact</a>
-      </div>
-    </div>
-  </div>
-</footer>
+<!--FOOTER-->
 
 <script>
 const WORKER = 'https://notavello-worker.mikekoga.workers.dev';
