@@ -855,6 +855,7 @@ document.getElementById('debugPasteBox').addEventListener('paste', function(e) {
     const role = turn.getAttribute('data-turn');
     const msg = turn.querySelector('[data-message-author-role]');
     const text = msg ? msg.innerText.trim() : turn.innerText.trim();
+    if (!text || text.length < 3) return;
 
     report += i + ' | ' + role + ' | ' + text.slice(0, 200).replace(/\n/g, ' ') + '\n\n';
   });
