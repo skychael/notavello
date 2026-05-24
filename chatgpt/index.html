@@ -1,4 +1,4 @@
-<!-- Notavello chatgpt-1.0 -->
+<!-- Notavello chatgpt-1.1 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -784,7 +784,7 @@ body {
     Nota<span>vello</span>
   </div>
   </a>
-  <div class="badge">Free Preview &middot; chatgpt-1.0</div>
+  <div class="badge">Free Preview &middot; chatgpt-1.1</div>
 </header>
 
 <div class="screen-ui">
@@ -960,33 +960,72 @@ function checkConfidence(messages) {
 }
 
 // ── PARSE CHATGPT ──
-// ChatGPT Ctrl+A copy format uses explicit speaker labels:
-//   Pattern 1 (chatgpt.com standard): "You said:\n...\nChatGPT said:\n..."
-//   Pattern 2 (compact sidebar copy): "You\n...\nChatGPT\n..."
-//   Pattern 3 (no labels): falls back to alternating double-newline blocks
+// ── PARSE CHATGPT v2 ──
+// Real-world ChatGPT Ctrl+A paste format (observed from chatgpt.com):
 //
-// UI chrome stripped first: action buttons, sidebar labels, version strings, memory notices.
+//   ChatGPT          <- site header (first line, stripped before matching)
+//   You              <- speaker label (standalone line)
+//   [user text]
+//   ChatGPT          <- speaker label (standalone line)
+//   [ai text]
+//   You
+//   [user text]  ...
+//
+// Pattern 1 (newer chatgpt.com): "You said:\n..." / "ChatGPT said:\n..."
+// Pattern 2 (current standard):  standalone "You" / "ChatGPT" lines (no colon)
+// Fallback: double-newline block split with first-speaker detection
+//
+// OpenAI image URLs are replaced with [Attachment: image].
 const parseLog = [];
+
+// Exposed after each parse so renderDebugPanel can read them
+let parseStats = {
+  mode: 'none',
+  charsRaw: 0,
+  charsAfterStrip: 0,
+  imageUrlsStripped: 0,
+  headerStripped: false,
+  fallbackFirstSpeaker: null,
+};
 
 function parseChatGPT(text) {
   parseLog.length = 0;
-  parseLog.push('── ChatGPT Parser started ──');
+  parseLog.push('── ChatGPT Parser v2 ──');
 
-  // Strip UI chrome
-  text = text.replace(/^(Share|Copy|Like|Dislike|Report|Regenerate response|Stop generating)\s*$/gim, '');
-  text = text.replace(/^Search conversation\s*$/gim, '');
-  text = text.replace(/^(New chat|Today|Yesterday|Previous \d+ [Dd]ays|Last \d+ [Dd]ays)\s*$/gim, '');
-  text = text.replace(/^\d{1,2}\/\d{1,2}\/\d{2,4},?\s*\d{1,2}:\d{2}(:\d{2})?\s*(AM|PM)?\s*$/gim, '');
-  text = text.replace(/^ChatGPT \d+[\w.]*([-\s][\w]+)?\s*$/gim, '');  // "ChatGPT 4o", "ChatGPT 4.5", etc.
-  text = text.replace(/Memory updated\.?\s*/gi, '');
-  text = text.replace(/^\d+ image(s)? generated?\s*$/gim, '');
-  text = text.replace(/^(DALL-E|DALL·E|GPT-4|GPT-3\.5|GPT-4o|o1|o3)\s*$/gim, '');
+  parseStats = { mode: 'none', charsRaw: text.length, charsAfterStrip: 0,
+                 imageUrlsStripped: 0, headerStripped: false, fallbackFirstSpeaker: null };
+
+  // ── Strip UI chrome ──
+  text = text.replace(/^(Share|Copy|Like|Dislike|Report|Regenerate response|Stop generating|Read aloud)[ \t]*$/gim, '');
+  text = text.replace(/^Search conversation[ \t]*$/gim, '');
+  text = text.replace(/^(New chat|Today|Yesterday|Previous \d+ [Dd]ays|Last \d+ [Dd]ays)[ \t]*$/gim, '');
+  text = text.replace(/^\d{1,2}\/\d{1,2}\/\d{2,4},?[ \t]*\d{1,2}:\d{2}(:\d{2})?[ \t]*(AM|PM)?[ \t]*$/gim, '');
+  text = text.replace(/^ChatGPT[ \t]+[\w.+-]+[ \t]*$/gim, '');
+  text = text.replace(/^(DALL-E|DALL\u00b7E|GPT-4o?|GPT-3\.5[- \w]*|o1|o3|o4)[ \t]*$/gim, '');
+  text = text.replace(/Memory updated\.?[ \t]*/gi, '');
+  text = text.replace(/^\d+ images?[ \t]*generated?[ \t]*$/gim, '');
+
+  // Count and replace OpenAI image URLs
+  const imageMatches = text.match(/https?:\/\/images\.openai\.com\/[^\s]+/gi) || [];
+  parseStats.imageUrlsStripped = imageMatches.length;
+  text = text.replace(/https?:\/\/images\.openai\.com\/[^\s]+/gi, '[Attachment: image]');
+
+  // Strip the very first bare "ChatGPT" line (site page header) only
+  if (/^ChatGPT[ \t]*\n/.test(text)) {
+    parseStats.headerStripped = true;
+    text = text.replace(/^ChatGPT[ \t]*\n/, '');
+  }
+
   text = text.trim();
+  parseStats.charsAfterStrip = text.length;
+
+  parseLog.push(`Raw: ${parseStats.charsRaw} → stripped: ${parseStats.charsAfterStrip} chars`);
+  parseLog.push(`Image URLs replaced: ${parseStats.imageUrlsStripped} | Page header stripped: ${parseStats.headerStripped}`);
 
   // ── PATTERN 1: "You said:" / "ChatGPT said:" explicit labels ──
-  const labelPattern = /^(You said:|ChatGPT said:|You:|ChatGPT:)\s*/gim;
+  const labelPattern = /^(You said:|ChatGPT said:|You:|ChatGPT:)[ \t]*/gim;
   const labelMatches = [...text.matchAll(labelPattern)];
-  parseLog.push(`Label matches (pattern 1): ${labelMatches.length}`);
+  parseLog.push(`P1 "said:" labels found: ${labelMatches.length}`);
 
   if (labelMatches.length >= 2) {
     const messages = [];
@@ -998,40 +1037,58 @@ function parseChatGPT(text) {
       const msgText = text.substring(start, end).trim();
       if (msgText.length >= 1) {
         messages.push({ role, text: msgText, time: '' });
-        parseLog.push(`[${i}] ${role.toUpperCase()} | ${msgText.substring(0, 50).replace(/\n/g, ' ')}…`);
+        parseLog.push(`[${i}] ${role.toUpperCase()} | ${msgText.substring(0, 50).replace(/\n/g, ' ')}\u2026`);
       }
     }
-    parseLog.push(`── Parse complete (label mode): ${messages.length} messages ──`);
+    parseStats.mode = 'pattern1';
+    parseLog.push(`\u2500\u2500 Done (P1): ${messages.length} messages \u2500\u2500`);
     return messages;
   }
 
-  // ── PATTERN 2: Standalone "You" / "ChatGPT" speaker lines ──
-  const compactPattern = /^(You|ChatGPT)\n/gim;
+  // ── PATTERN 2: Standalone "You" / "ChatGPT" lines (no colon) ──
+  const compactPattern = /^(You|ChatGPT)[ \t]*$/gim;
   const compactMatches = [...text.matchAll(compactPattern)];
-  parseLog.push(`Compact label matches (pattern 2): ${compactMatches.length}`);
+  parseLog.push(`P2 standalone labels found: ${compactMatches.length}`);
 
   if (compactMatches.length >= 2) {
     const messages = [];
     for (let i = 0; i < compactMatches.length; i++) {
       const match = compactMatches[i];
       const role = match[1] === 'You' ? 'human' : 'ai';
-      const start = match.index + match[0].length;
+      const labelEnd = match.index + match[0].length;
+      const contentStart = labelEnd + (text[labelEnd] === '\n' ? 1 : 0);
       const end = i + 1 < compactMatches.length ? compactMatches[i + 1].index : text.length;
-      const msgText = text.substring(start, end).trim();
+      const msgText = text.substring(contentStart, end).trim();
       if (msgText.length >= 1) {
         messages.push({ role, text: msgText, time: '' });
-        parseLog.push(`[${i}] ${role.toUpperCase()} | ${msgText.substring(0, 50).replace(/\n/g, ' ')}…`);
+        parseLog.push(`[${i}] ${role.toUpperCase()} | ${msgText.substring(0, 50).replace(/\n/g, ' ')}\u2026`);
       }
     }
-    parseLog.push(`── Parse complete (compact mode): ${messages.length} messages ──`);
-    return messages;
+    if (messages.length >= 2) {
+      parseStats.mode = 'pattern2';
+      parseLog.push(`\u2500\u2500 Done (P2): ${messages.length} messages \u2500\u2500`);
+      return messages;
+    }
+    parseLog.push('P2 yielded < 2 messages \u2192 fallback');
   }
 
-  // ── FALLBACK: alternating double-newline block split ──
-  parseLog.push('No speaker labels detected → fallback: alternating block split');
-  const blocks = text.split(/\n{2,}/).map(b => b.trim()).filter(b => b.length > 3);
-  parseLog.push(`Blocks found: ${blocks.length}`);
-  return blocks.map((block, i) => ({ role: i % 2 === 0 ? 'human' : 'ai', text: block, time: '' }));
+  // ── FALLBACK: alternating double-newline blocks + first-speaker detection ──
+  parseLog.push('Fallback: alternating block split');
+  const blocks = text.split(/\n{2,}/).map(b => b.trim()).filter(b => b.length > 2);
+  parseLog.push(`Blocks: ${blocks.length}`);
+
+  const aiOpeners = /^(Sure|Of course|Great|Here|I |Let me|To |Based on|The |Absolutely|Happy to|Yes|No[,. ]|In |There )/i;
+  const firstBlock = blocks[0] || '';
+  const firstIsAI = firstBlock.length > 100 && !firstBlock.includes('?') && aiOpeners.test(firstBlock);
+  parseStats.fallbackFirstSpeaker = firstIsAI ? 'AI' : 'HUMAN';
+  parseLog.push(`First-speaker: ${parseStats.fallbackFirstSpeaker} (len=${firstBlock.length}, hasQ=${firstBlock.includes('?')})`);
+
+  parseStats.mode = 'fallback';
+  return blocks.map((block, i) => ({
+    role: ((firstIsAI ? i + 1 : i) % 2 === 0) ? 'human' : 'ai',
+    text: block,
+    time: ''
+  }));
 }
 
 // ── MAIN PARSER ──
@@ -1074,8 +1131,9 @@ function renderDebugPanel(messages, pageLog, workerResult) {
   const a = messages.filter(m => m.role === 'ai').length;
   const ratio = Math.max(h, a) / Math.min(h, a || 1);
 
-  panel.innerHTML = `<div style="color:#4F46E5;font-weight:700;margin-bottom:6px;">&#x1F4D0; Notavello Debug &middot; chatgpt-1.0</div>`;
+  panel.innerHTML = `<div style="color:#4F46E5;font-weight:700;margin-bottom:6px;">&#x1F4D0; Notavello Debug &middot; chatgpt-1.1</div>`;
 
+  // ── WORKER ──
   const workerColor = !workerResult ? '#64748B'
     : workerResult.status === 'ok' ? '#059669'
     : workerResult.status === 'timeout' ? '#D97706'
@@ -1084,32 +1142,52 @@ function renderDebugPanel(messages, pageLog, workerResult) {
     : workerResult.status === 'ok'
       ? `&#x2713; ${workerResult.ms}ms &rarr; ${JSON.stringify(workerResult.response)}`
     : workerResult.status === 'timeout' ? '&#x26A0; timed out (>5s)'
-    : workerResult.status === 'http_error' ? `&#x2717; HTTP error &rarr; ${JSON.stringify(workerResult.response)}`
+    : workerResult.status === 'http_error' ? `&#x2717; HTTP ${JSON.stringify(workerResult.response)}`
     : `&#x2717; ${workerResult.response}`;
   panel.insertAdjacentHTML('beforeend',
     `<div style="color:#7C3AED;margin-top:4px;font-weight:600;">── Worker ──</div>
      <div style="color:${workerColor};">Status: ${workerLabel}</div>
-     <div style="margin-top:2px;color:${devMode ? '#059669' : '#94A3B8'};">Dev mode: ${devMode ? '&#x1F6E0; ON (paywall bypassed) — Ctrl+Shift+D to toggle' : 'OFF — Ctrl+Shift+D to enable'}</div>`);
+     <div style="margin-top:2px;color:${devMode ? '#059669' : '#94A3B8'};">Dev mode: ${devMode ? '&#x1F6E0; ON &mdash; Ctrl+Shift+D to toggle' : 'OFF &mdash; Ctrl+Shift+D to enable'}</div>`);
 
+  // ── PARSE LOG ──
   panel.insertAdjacentHTML('beforeend', `<div style="color:#7C3AED;margin-top:6px;font-weight:600;">── Parse Log ──</div>`);
   parseLog.forEach(line => panel.insertAdjacentHTML('beforeend', `<div>${line}</div>`));
 
+  // ── CHATGPT-SPECIFIC: Chrome Strip & Parser Mode ──
+  const modeColor = parseStats.mode === 'pattern1' ? '#059669'
+                  : parseStats.mode === 'pattern2' ? '#059669'
+                  : parseStats.mode === 'fallback'  ? '#D97706'
+                  : '#BE123C';
+  const modeLabel = parseStats.mode === 'pattern1' ? '&#x2713; Pattern 1 ("said:" labels)'
+                  : parseStats.mode === 'pattern2' ? '&#x2713; Pattern 2 (standalone labels)'
+                  : parseStats.mode === 'fallback'  ? '&#x26A0; Fallback (alternating blocks)'
+                  : '&#x2717; none';
+  panel.insertAdjacentHTML('beforeend',
+    `<div style="color:#7C3AED;margin-top:6px;font-weight:600;">── ChatGPT Parser ──</div>
+     <div style="color:${modeColor};">Mode: ${modeLabel}</div>
+     <div>Chars: ${parseStats.charsRaw} raw &rarr; ${parseStats.charsAfterStrip} stripped</div>
+     <div>OpenAI image URLs replaced: ${parseStats.imageUrlsStripped}</div>
+     <div>Page header stripped: ${parseStats.headerStripped}</div>
+     ${parseStats.mode === 'fallback' ? `<div style="color:#D97706;">First-speaker guess: ${parseStats.fallbackFirstSpeaker}</div>` : ''}`);
+
+  // ── MESSAGES ──
   const ratioFlag = ratio > 4 ? ` &#x26A0; ratio ${ratio.toFixed(1)}x` : '';
   const shortMsgs = messages.filter(m => m.text.trim().length < 5);
   const longestAI = messages.filter(m => m.role === 'ai').reduce((max, m) => Math.max(max, m.text.length), 0);
-  const attachments = messages.filter(m => m.text.includes('[Attachment')).length;
+  const attachmentsInOutput = messages.filter(m => m.text.includes('[Attachment')).length;
   panel.insertAdjacentHTML('beforeend',
     `<div style="color:#7C3AED;margin-top:6px;font-weight:600;">── Messages ──</div>
      <div>Total: ${messages.length} | Human: ${h} | AI: ${a}${ratioFlag}</div>
      <div>Short (<5 chars): ${shortMsgs.length}${shortMsgs.length ? ' &#x26A0; check these' : ''}</div>
      <div>Longest AI block: ${longestAI} chars</div>
-     <div>Attachments replaced: ${attachments}</div>`);
+     <div>Attachments in output: ${attachmentsInOutput}</div>`);
 
   if (shortMsgs.length) {
     shortMsgs.forEach(m => panel.insertAdjacentHTML('beforeend',
       `<div style="color:#D97706;">  [${m.role.toUpperCase()}] "${m.text.trim()}"</div>`));
   }
 
+  // ── PAGES ──
   panel.insertAdjacentHTML('beforeend', `<div style="color:#7C3AED;margin-top:6px;font-weight:600;">── Pages ──</div>`);
   pageLog.forEach(line => panel.insertAdjacentHTML('beforeend', `<div>${line}</div>`));
 }
