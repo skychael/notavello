@@ -840,6 +840,8 @@ body {
 <pre id="debugOutput" style="white-space:pre-wrap;background:#111;color:#0f0;padding:16px;font-size:12px;"></pre>
 
 <script>
+  document.querySelector('.badge').textContent =
+  'Free Preview · ' + new Date().toLocaleTimeString();
 document.getElementById('debugPasteBox').addEventListener('paste', function(e) {
   const plain = e.clipboardData.getData('text/plain');
   const html = e.clipboardData.getData('text/html');
