@@ -1239,11 +1239,7 @@ document.getElementById('pasteArea').addEventListener('input', function() {
     ? '0 messages detected'
     : `${messages.length} msg${messages.length !== 1 ? 's' : ''} · ${AI_NAME} detected`;
 });
-  const el = document.getElementById('charInfo');
-  el.textContent = this.value.trim().length === 0
-    ? '0 messages detected'
-    : `${messages.length} msg${messages.length !== 1 ? 's' : ''} \u00b7 ${AI_NAME} detected`;
-});
+ 
 
 let parsedMessages = [];
 let lastClipboardHTML = '';
