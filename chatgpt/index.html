@@ -832,7 +832,7 @@ body {
       </div>
       <div class="char-info" id="charInfo">0 messages detected</div>
     </div>
-    <textarea id="pasteArea" placeholder="Paste your ChatGPT conversation here (Ctrl+V)..."></textarea>
+    
     <textarea id="pasteArea" placeholder="Paste your ChatGPT conversation here (Ctrl+V)..."></textarea>
 
 <textarea id="debugPasteBox" placeholder="Paste ChatGPT copy here for clipboard test" style="width:100%;height:180px;"></textarea>
@@ -844,14 +844,25 @@ document.getElementById('debugPasteBox').addEventListener('paste', function(e) {
   const plain = e.clipboardData.getData('text/plain');
   const html = e.clipboardData.getData('text/html');
 
-  document.getElementById('debugOutput').textContent =
-    '--- TEXT/PLAIN ---\n' +
-    plain.slice(0, 5000) +
-    '\n\n--- TEXT/HTML ---\n' +
-    html.slice(0, 10000);
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(html, 'text/html');
+  const turns = [...doc.querySelectorAll('[data-turn]')];
 
-  console.log('TEXT/PLAIN:', plain);
-  console.log('TEXT/HTML:', html);
+  let report = '--- TURN TEST ---\n';
+  report += 'Turn count: ' + turns.length + '\n\n';
+
+  turns.slice(0, 30).forEach((turn, i) => {
+    const role = turn.getAttribute('data-turn');
+    const msg = turn.querySelector('[data-message-author-role]');
+    const text = msg ? msg.innerText.trim() : turn.innerText.trim();
+
+    report += i + ' | ' + role + ' | ' + text.slice(0, 200).replace(/\n/g, ' ') + '\n\n';
+  });
+
+  report += '\n--- TEXT/PLAIN ---\n' + plain.slice(0, 3000);
+  report += '\n\n--- TEXT/HTML FIRST 3000 ---\n' + html.slice(0, 3000);
+
+  document.getElementById('debugOutput').textContent = report;
 });
 </script>
     <div class="input-footer">
