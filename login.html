@@ -1,0 +1,399 @@
+<!-- Notavello login-1.0 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Log In — Notavello</title>
+<meta name="description" content="Restore your Notavello Pro access on any device. Enter your email and we'll send a login code."/>
+<meta name="robots" content="noindex, follow"/>
+<link rel="canonical" href="https://notavello.com/login/"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --red: #DC2626; --red-light: #FEE2E2;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+  --shadow-lg: 0 4px 16px rgba(79,70,229,0.12), 0 16px 48px rgba(15,23,42,0.12);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+
+/* Header styles (injected by _worker.js, but also defined here for fallback) */
+.header {
+  background: rgba(255,255,255,0.85); backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border); padding: 16px 36px;
+  display: flex; align-items: center; justify-content: space-between;
+  position: sticky; top: 0; z-index: 100;
+}
+.logo {
+  font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700;
+  color: var(--ink); letter-spacing: -0.03em;
+  display: flex; align-items: center; gap: 10px; text-decoration: none;
+}
+.logo-icon {
+  width: 32px; height: 32px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  border-radius: 10px; display: flex; align-items: center;
+  justify-content: center; color: white; font-size: 0.85rem;
+  box-shadow: 0 2px 8px rgba(79,70,229,0.35);
+}
+.logo span { color: var(--accent); }
+.header-login {
+  font-size: 0.82rem; font-weight: 600; color: var(--accent);
+  text-decoration: none; padding: 7px 18px;
+  border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px;
+  background: var(--accent-light); transition: background 0.15s, border-color 0.15s;
+}
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+
+/* Main layout */
+.main {
+  min-height: calc(100vh - 65px);
+  display: flex; align-items: center; justify-content: center;
+  padding: 48px 24px;
+}
+
+.login-card {
+  background: var(--surface);
+  border: 1.5px solid rgba(79,70,229,0.15);
+  border-radius: var(--radius);
+  padding: 48px 40px;
+  width: 100%; max-width: 420px;
+  box-shadow: var(--shadow-lg);
+  text-align: center;
+}
+
+.login-icon {
+  width: 52px; height: 52px;
+  background: linear-gradient(135deg, var(--accent-light), #DDD6FE);
+  border-radius: 16px;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 1.5rem;
+}
+
+.login-title {
+  font-family: 'Lora', serif;
+  font-size: 1.5rem; font-weight: 600;
+  color: var(--ink); margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+
+.login-subtitle {
+  font-size: 0.85rem; color: var(--ink-muted);
+  line-height: 1.6; margin-bottom: 32px;
+}
+
+/* Steps */
+.step { display: none; }
+.step.active { display: block; }
+
+/* Input */
+.input-group { margin-bottom: 16px; text-align: left; }
+.input-label {
+  display: block; font-size: 0.78rem; font-weight: 600;
+  color: var(--ink); margin-bottom: 6px;
+}
+.input-field {
+  width: 100%; padding: 12px 16px;
+  border: 1.5px solid var(--border); border-radius: var(--radius-sm);
+  font-family: 'Sora', sans-serif; font-size: 0.9rem; color: var(--ink);
+  background: var(--surface2); outline: none;
+  transition: border-color 0.15s;
+}
+.input-field:focus { border-color: var(--accent); background: var(--surface); }
+.input-field.code-field {
+  font-size: 1.4rem; font-weight: 700; letter-spacing: 0.3em;
+  text-align: center;
+}
+
+/* Buttons */
+.btn-primary {
+  width: 100%; padding: 14px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: white; font-family: 'Sora', sans-serif;
+  font-size: 0.9rem; font-weight: 600;
+  border: none; border-radius: var(--radius-sm);
+  cursor: pointer; transition: opacity 0.15s;
+  box-shadow: 0 4px 16px rgba(79,70,229,0.3);
+}
+.btn-primary:hover:not(:disabled) { opacity: 0.9; }
+.btn-primary:disabled { opacity: 0.6; cursor: not-allowed; }
+
+/* Messages */
+.msg {
+  font-size: 0.82rem; margin-bottom: 16px;
+  padding: 10px 14px; border-radius: 8px;
+  text-align: left; display: none;
+}
+.msg.show { display: block; }
+.msg-error { background: var(--red-light); color: var(--red); }
+.msg-success { background: var(--green-light); color: var(--green); }
+
+/* Code hint */
+.code-hint {
+  font-size: 0.78rem; color: var(--ink-faint);
+  margin-top: 10px; line-height: 1.5;
+}
+.resend-link {
+  color: var(--accent); cursor: pointer;
+  text-decoration: underline; font-size: 0.78rem;
+}
+
+/* Success state */
+.success-icon {
+  font-size: 3rem; margin-bottom: 12px;
+}
+
+/* Footer note */
+.login-footer-note {
+  font-size: 0.75rem; color: var(--ink-faint);
+  margin-top: 24px; line-height: 1.5;
+}
+.login-footer-note a { color: var(--accent); text-decoration: none; }
+.login-footer-note a:hover { text-decoration: underline; }
+
+/* Site footer */
+.site-footer { border-top: 1px solid var(--border); padding: 24px 36px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+
+@media (max-width: 480px) {
+  .login-card { padding: 36px 24px; }
+  .header { padding: 14px 20px; }
+}
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+  <div class="login-card">
+    <div class="login-icon">🔑</div>
+
+    <!-- Step 1: Email -->
+    <div class="step active" id="step-email">
+      <h1 class="login-title">Restore Pro access</h1>
+      <p class="login-subtitle">Enter the email you used to subscribe. We'll send a 6-digit code to verify it's you.</p>
+
+      <div class="msg msg-error" id="email-error"></div>
+
+      <div class="input-group">
+        <label class="input-label" for="email-input">Email address</label>
+        <input class="input-field" id="email-input" type="email" placeholder="you@example.com" autocomplete="email"/>
+      </div>
+
+      <button class="btn-primary" id="send-btn" onclick="sendCode()">Send login code</button>
+
+      <div class="login-footer-note">
+        Not a Pro member yet? <a href="/pricing/">See pricing →</a>
+      </div>
+    </div>
+
+    <!-- Step 2: Code -->
+    <div class="step" id="step-code">
+      <h1 class="login-title">Check your email</h1>
+      <p class="login-subtitle" id="code-subtitle">We sent a 6-digit code to <strong id="sent-to-email"></strong>. Enter it below.</p>
+
+      <div class="msg msg-error" id="code-error"></div>
+      <div class="msg msg-success" id="code-success"></div>
+
+      <div class="input-group">
+        <label class="input-label" for="code-input">6-digit code</label>
+        <input class="input-field code-field" id="code-input" type="text"
+               inputmode="numeric" pattern="[0-9]*" maxlength="6" placeholder="000000"
+               oninput="this.value=this.value.replace(/\D/g,'')"/>
+      </div>
+
+      <button class="btn-primary" id="verify-btn" onclick="verifyCode()">Verify &amp; log in</button>
+
+      <div class="code-hint">
+        Didn't get it? <span class="resend-link" onclick="resend()">Resend code</span>
+        &nbsp;·&nbsp;
+        <span class="resend-link" onclick="goBack()">Use different email</span>
+      </div>
+    </div>
+
+    <!-- Step 3: Success -->
+    <div class="step" id="step-done">
+      <div class="success-icon">✅</div>
+      <h1 class="login-title">You're in!</h1>
+      <p class="login-subtitle">Pro access restored. Watermark removed, no message limit.</p>
+      <a href="/claude/" class="btn-primary" style="display:block;text-decoration:none;padding:14px;margin-top:8px;">Start exporting →</a>
+      <div class="login-footer-note" style="margin-top:16px;">
+        Access is tied to this browser for 90 days.
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="footer-bottom">
+      <div class="footer-copy">&copy; 2026 Notavello.</div>
+      <div class="footer-legal">
+        <a href="/privacy/">Privacy</a>
+        <a href="/terms/">Terms</a>
+        <a href="/contact/">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const WORKER = 'https://notavello-worker.mikekoga.workers.dev';
+let currentEmail = '';
+
+function showStep(id) {
+  document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+function showError(elId, msg) {
+  const el = document.getElementById(elId);
+  el.textContent = msg;
+  el.classList.add('show');
+}
+function hideMsg(elId) {
+  document.getElementById(elId).classList.remove('show');
+}
+
+async function sendCode() {
+  const emailEl = document.getElementById('email-input');
+  const email = emailEl.value.trim().toLowerCase();
+  hideMsg('email-error');
+
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    showError('email-error', 'Please enter a valid email address.');
+    emailEl.focus();
+    return;
+  }
+
+  const btn = document.getElementById('send-btn');
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+
+  try {
+    const res = await fetch(`${WORKER}/send-code`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email })
+    });
+    const data = await res.json();
+
+    if (res.ok && data.ok) {
+      currentEmail = email;
+      document.getElementById('sent-to-email').textContent = email;
+      showStep('step-code');
+      setTimeout(() => document.getElementById('code-input').focus(), 100);
+    } else {
+      showError('email-error', data.error || 'That email isn\'t in our system. Have you subscribed?');
+      btn.disabled = false;
+      btn.textContent = 'Send login code';
+    }
+  } catch (err) {
+    showError('email-error', 'Network error — please try again.');
+    btn.disabled = false;
+    btn.textContent = 'Send login code';
+  }
+}
+
+async function verifyCode() {
+  const code = document.getElementById('code-input').value.trim();
+  hideMsg('code-error');
+  hideMsg('code-success');
+
+  if (code.length !== 6) {
+    showError('code-error', 'Please enter the 6-digit code.');
+    return;
+  }
+
+  const btn = document.getElementById('verify-btn');
+  btn.disabled = true;
+  btn.textContent = 'Verifying…';
+
+  try {
+    const res = await fetch(`${WORKER}/verify-code`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: currentEmail, code }),
+      credentials: 'include'
+    });
+    const data = await res.json();
+
+    if (res.ok && data.ok) {
+      localStorage.setItem('notavello_paid', 'true');
+      showStep('step-done');
+    } else {
+      showError('code-error', data.error || 'Incorrect or expired code. Try again or resend.');
+      btn.disabled = false;
+      btn.textContent = 'Verify & log in';
+    }
+  } catch (err) {
+    showError('code-error', 'Network error — please try again.');
+    btn.disabled = false;
+    btn.textContent = 'Verify & log in';
+  }
+}
+
+async function resend() {
+  hideMsg('code-error');
+  try {
+    await fetch(`${WORKER}/send-code`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: currentEmail })
+    });
+    const s = document.getElementById('code-success');
+    s.textContent = 'New code sent!';
+    s.classList.add('show');
+    setTimeout(() => s.classList.remove('show'), 3000);
+  } catch(e) {}
+}
+
+function goBack() {
+  document.getElementById('code-input').value = '';
+  hideMsg('code-error');
+  hideMsg('code-success');
+  showStep('step-email');
+  setTimeout(() => document.getElementById('email-input').focus(), 100);
+}
+
+// Enter key support
+document.addEventListener('keydown', e => {
+  if (e.key !== 'Enter') return;
+  if (document.getElementById('step-email').classList.contains('active')) sendCode();
+  else if (document.getElementById('step-code').classList.contains('active')) verifyCode();
+});
+
+// Check if already logged in
+(async function checkExisting() {
+  if (localStorage.getItem('notavello_paid') === 'true') {
+    // Already has local flag — offer to go straight to exporter
+    const note = document.querySelector('.login-subtitle');
+    if (note) note.textContent = 'You appear to already have Pro access on this device. You can log in again to refresh it, or go straight to exporting.';
+  }
+})();
+</script>
+</body>
+</html>

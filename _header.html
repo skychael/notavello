@@ -3,4 +3,24 @@
     <div class="logo-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
     Nota<span>vello</span>
   </a>
+  <a class="header-login" href="/login/">Log In</a>
 </header>
+<style>
+.header { justify-content: space-between; }
+.header-login {
+  font-family: 'Sora', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+  padding: 7px 18px;
+  border: 1.5px solid rgba(79,70,229,0.3);
+  border-radius: 8px;
+  background: var(--accent-light);
+  transition: background 0.15s, border-color 0.15s;
+}
+.header-login:hover {
+  background: #e0e7ff;
+  border-color: var(--accent);
+}
+</style>
