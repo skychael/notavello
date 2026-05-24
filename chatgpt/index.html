@@ -1127,9 +1127,58 @@ function parseChatGPT(text) {
 }
 
 // ── MAIN PARSER ──
-function parseConversation(raw) {
+function parseConversation(raw, html = '') {
+
+  // --- NEW HTML PARSER ---
+  if (html && html.includes('data-turn')) {
+
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(html, 'text/html');
+
+    const turns = [...doc.querySelectorAll('[data-turn]')];
+
+    const messages = [];
+
+    turns.forEach(turn => {
+
+      const roleAttr = turn.getAttribute('data-turn');
+
+      const role =
+        roleAttr === 'user'
+          ? 'human'
+          : 'ai';
+
+      const msg = turn.querySelector('[data-message-author-role]');
+
+      const text = msg
+        ? msg.innerText.trim()
+        : turn.innerText.trim();
+
+      if (!text || text.length < 3) return;
+
+      messages.push({
+        role,
+        text,
+        time: ''
+      });
+
+    });
+
+    return {
+      messages,
+      platform: 'chatgpt',
+      confidence: checkConfidence(messages)
+    };
+  }
+
+  // --- FALLBACK OLD PARSER ---
   const messages = parseChatGPT(raw);
-  return { messages, platform: 'chatgpt', confidence: checkConfidence(messages) };
+
+  return {
+    messages,
+    platform: 'chatgpt',
+    confidence: checkConfidence(messages)
+  };
 }
 
 // ── DEBUG PANEL ──
