@@ -1226,8 +1226,19 @@ function renderDebugPanel(messages, pageLog, workerResult) {
 }
 
 // ── Live counter ──
+document.getElementById('pasteArea').addEventListener('paste', function(e) {
+  lastClipboardHTML = e.clipboardData.getData('text/html') || '';
+});
+
 document.getElementById('pasteArea').addEventListener('input', function() {
-  const { messages } = parseConversation(this.value);
+  const { messages } = parseConversation(this.value, lastClipboardHTML);
+
+  const el = document.getElementById('charInfo');
+
+  el.textContent = this.value.trim().length === 0
+    ? '0 messages detected'
+    : `${messages.length} msg${messages.length !== 1 ? 's' : ''} · ${AI_NAME} detected`;
+});
   const el = document.getElementById('charInfo');
   el.textContent = this.value.trim().length === 0
     ? '0 messages detected'
@@ -1235,6 +1246,7 @@ document.getElementById('pasteArea').addEventListener('input', function() {
 });
 
 let parsedMessages = [];
+let lastClipboardHTML = '';
 
 // ── Reset ──
 function resetApp() {
