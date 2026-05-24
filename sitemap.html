@@ -11,25 +11,96 @@
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-:root { --bg: #F0F4FF; --surface: #FFFFFF; --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8; --accent: #4F46E5; --accent2: #7C3AED; --border: #E2E8F0; --radius: 20px; --radius-sm: 12px; --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08); }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
 html { scroll-behavior: smooth; }
-body { background: var(--bg); color: var(--ink); font-family: 'Sora', sans-serif; min-height: 100vh; -webkit-font-smoothing: antialiased; }
-.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; position: sticky; top: 0; z-index: 100; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
 .logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
 .logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
 .logo span { color: var(--accent); }
-.main { max-width: 700px; margin: 0 auto; padding: 64px 24px 80px; }
-.page-title { font-family: 'Lora', serif; font-size: 2.2rem; font-weight: 600; color: var(--ink); margin-bottom: 12px; letter-spacing: -0.02em; }
-.page-subtitle { font-size: 0.9rem; color: var(--ink-faint); margin-bottom: 48px; }
-.sitemap-section { margin-bottom: 40px; }
-.sitemap-section-title { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: var(--ink-faint); margin-bottom: 14px; }
-.sitemap-list { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm); box-shadow: var(--shadow); overflow: hidden; }
-.sitemap-item { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; border-bottom: 1px solid var(--border); }
-.sitemap-item:last-child { border-bottom: none; }
-.sitemap-link { font-size: 0.88rem; font-weight: 500; color: var(--accent); text-decoration: none; }
-.sitemap-link:hover { text-decoration: underline; }
-.sitemap-desc { font-size: 0.8rem; color: var(--ink-faint); }
-.sitemap-soon { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-faint); background: var(--border); padding: 2px 8px; border-radius: 20px; }
+.header-login { font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s, border-color 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+
+.main { max-width: 760px; margin: 0 auto; padding: 64px 24px 80px; }
+
+.page-title { font-family: 'Lora', serif; font-size: 2.2rem; font-weight: 600; color: var(--ink); margin-bottom: 6px; letter-spacing: -0.02em; }
+.page-subtitle { font-size: 0.88rem; color: var(--ink-faint); margin-bottom: 48px; }
+
+/* Section */
+.sm-section { margin-bottom: 36px; }
+.sm-section-header {
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 12px;
+}
+.sm-section-icon {
+  width: 28px; height: 28px; border-radius: 8px;
+  background: var(--accent-light);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.85rem; flex-shrink: 0;
+}
+.sm-section-title {
+  font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.14em; color: var(--ink-faint);
+}
+
+/* Link list */
+.sm-list {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.sm-row {
+  display: grid;
+  grid-template-columns: 1fr 2fr auto;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.1s;
+}
+.sm-row:last-child { border-bottom: none; }
+.sm-row:hover { background: var(--surface2); }
+.sm-row--disabled { pointer-events: none; }
+.sm-row--disabled:hover { background: var(--surface); }
+
+.sm-name {
+  font-size: 0.9rem; font-weight: 600; color: var(--ink);
+  text-decoration: none; display: flex; align-items: center; gap: 8px;
+}
+.sm-name:hover { color: var(--accent); }
+.sm-row--disabled .sm-name { color: var(--ink-faint); }
+
+.sm-desc {
+  font-size: 0.82rem; color: var(--ink-muted); line-height: 1.4;
+}
+.sm-row--disabled .sm-desc { color: var(--ink-faint); }
+
+.sm-badge {
+  font-size: 0.65rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.08em; padding: 3px 9px; border-radius: 20px;
+  white-space: nowrap; flex-shrink: 0;
+}
+.badge-live { background: var(--green-light); color: var(--green); }
+.badge-soon { background: var(--border); color: var(--ink-faint); }
+.badge-pro { background: var(--accent-light); color: var(--accent); }
+
+/* Footer */
 .site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
 .site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
 .footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; }
@@ -42,7 +113,14 @@ body { background: var(--bg); color: var(--ink); font-family: 'Sora', sans-serif
 .footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
 .footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
 .footer-legal a:hover { color: var(--accent); }
-@media (max-width: 640px) { .header { padding: 14px 20px; } .sitemap-item { flex-direction: column; align-items: flex-start; gap: 4px; } .site-footer { padding: 24px 16px; } }
+
+@media (max-width: 640px) {
+  .header { padding: 14px 20px; }
+  .sm-row { grid-template-columns: 1fr auto; gap: 10px; }
+  .sm-desc { display: none; }
+  .site-footer { padding: 24px 16px; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; }
+}
 </style>
 </head>
 <body>
@@ -50,87 +128,121 @@ body { background: var(--bg); color: var(--ink); font-family: 'Sora', sans-serif
 <!--HEADER-->
 
 <main class="main">
+
   <h1 class="page-title">Sitemap</h1>
-  <p class="page-subtitle">All pages on notavello.com</p>
+  <p class="page-subtitle">Every page on notavello.com</p>
 
-  <div class="sitemap-section">
-    <div class="sitemap-section-title">Main</div>
-    <div class="sitemap-list">
-      <div class="sitemap-item">
-        <a href="/" class="sitemap-link">notavello.com/</a>
-        <div class="sitemap-desc">Home — choose your AI</div>
+  <!-- Home -->
+  <div class="sm-section">
+    <div class="sm-section-header">
+      <div class="sm-section-icon">🏠</div>
+      <div class="sm-section-title">Home</div>
+    </div>
+    <div class="sm-list">
+      <div class="sm-row">
+        <a href="/" class="sm-name">Home</a>
+        <div class="sm-desc">Landing page — choose your AI and get started</div>
+        <span class="sm-badge badge-live">Live</span>
       </div>
     </div>
   </div>
 
-  <div class="sitemap-section">
-    <div class="sitemap-section-title">AI Exporters</div>
-    <div class="sitemap-list">
-      <div class="sitemap-item">
-        <div class="sitemap-link" style="color:var(--ink-faint);">notavello.com/chatgpt/</div>
-        <div class="sitemap-soon">Coming soon</div>
+  <!-- AI Exporters -->
+  <div class="sm-section">
+    <div class="sm-section-header">
+      <div class="sm-section-icon">📄</div>
+      <div class="sm-section-title">AI Exporters</div>
+    </div>
+    <div class="sm-list">
+      <div class="sm-row">
+        <a href="/claude/" class="sm-name">Claude</a>
+        <div class="sm-desc">Export Claude conversations by Anthropic as color-coded PDFs</div>
+        <span class="sm-badge badge-live">Live</span>
       </div>
-      <div class="sitemap-item">
-        <div class="sitemap-link" style="color:var(--ink-faint);">notavello.com/gemini/</div>
-        <div class="sitemap-soon">Coming soon</div>
+      <div class="sm-row sm-row--disabled">
+        <span class="sm-name">ChatGPT</span>
+        <div class="sm-desc">Export ChatGPT conversations by OpenAI — coming soon</div>
+        <span class="sm-badge badge-soon">Soon</span>
       </div>
-      <div class="sitemap-item">
-        <div class="sitemap-link" style="color:var(--ink-faint);">notavello.com/copilot/</div>
-        <div class="sitemap-soon">Coming soon</div>
+      <div class="sm-row sm-row--disabled">
+        <span class="sm-name">Gemini</span>
+        <div class="sm-desc">Export Gemini conversations by Google — coming soon</div>
+        <span class="sm-badge badge-soon">Soon</span>
       </div>
-      <div class="sitemap-item">
-        <a href="/claude/" class="sitemap-link">notavello.com/claude/</a>
-        <div class="sitemap-desc">Export Claude conversations</div>
+      <div class="sm-row sm-row--disabled">
+        <span class="sm-name">Copilot</span>
+        <div class="sm-desc">Export Microsoft Copilot conversations — coming soon</div>
+        <span class="sm-badge badge-soon">Soon</span>
       </div>
     </div>
   </div>
 
-  <div class="sitemap-section">
-    <div class="sitemap-section-title">Product</div>
-    <div class="sitemap-list">
-      <div class="sitemap-item">
-        <a href="/pricing/" class="sitemap-link">notavello.com/pricing/</a>
-        <div class="sitemap-desc">Free vs Pro — $5/month</div>
+  <!-- Product -->
+  <div class="sm-section">
+    <div class="sm-section-header">
+      <div class="sm-section-icon">⚡</div>
+      <div class="sm-section-title">Product</div>
+    </div>
+    <div class="sm-list">
+      <div class="sm-row">
+        <a href="/pricing/" class="sm-name">Pricing</a>
+        <div class="sm-desc">Free vs Pro — $5/month, cancel anytime</div>
+        <span class="sm-badge badge-live">Live</span>
       </div>
-      <div class="sitemap-item">
-        <a href="/faq/" class="sitemap-link">notavello.com/faq/</a>
-        <div class="sitemap-desc">Frequently asked questions</div>
+      <div class="sm-row">
+        <a href="/sample/" class="sm-name">Sample PDF</a>
+        <div class="sm-desc">Download a real export to see exactly what you're getting</div>
+        <span class="sm-badge badge-live">Live</span>
       </div>
-      <div class="sitemap-item">
-        <a href="/sample/" class="sitemap-link">notavello.com/sample/</a>
-        <div class="sitemap-desc">Download a sample PDF</div>
+      <div class="sm-row">
+        <a href="/faq/" class="sm-name">FAQ</a>
+        <div class="sm-desc">How it works, privacy, output quality, billing</div>
+        <span class="sm-badge badge-live">Live</span>
       </div>
-      <div class="sitemap-item">
-        <a href="/about/" class="sitemap-link">notavello.com/about/</a>
-        <div class="sitemap-desc">About Notavello</div>
+      <div class="sm-row">
+        <a href="/about/" class="sm-name">About</a>
+        <div class="sm-desc">The story behind Notavello and what's coming next</div>
+        <span class="sm-badge badge-live">Live</span>
       </div>
     </div>
   </div>
 
-  <div class="sitemap-section">
-    <div class="sitemap-section-title">Account</div>
-    <div class="sitemap-list">
-      <div class="sitemap-item">
-        <a href="/login/" class="sitemap-link">notavello.com/login/</a>
-        <div class="sitemap-desc">Restore Pro access on any device</div>
+  <!-- Account -->
+  <div class="sm-section">
+    <div class="sm-section-header">
+      <div class="sm-section-icon">🔑</div>
+      <div class="sm-section-title">Account</div>
+    </div>
+    <div class="sm-list">
+      <div class="sm-row">
+        <a href="/login/" class="sm-name">Log In</a>
+        <div class="sm-desc">Restore Pro access on any device — enter your email, get a code</div>
+        <span class="sm-badge badge-pro">Pro</span>
       </div>
     </div>
   </div>
 
-  <div class="sitemap-section">
-    <div class="sitemap-section-title">Legal & Support</div>
-    <div class="sitemap-list">
-      <div class="sitemap-item">
-        <a href="/privacy/" class="sitemap-link">notavello.com/privacy/</a>
-        <div class="sitemap-desc">Privacy Policy</div>
+  <!-- Legal & Support -->
+  <div class="sm-section">
+    <div class="sm-section-header">
+      <div class="sm-section-icon">📋</div>
+      <div class="sm-section-title">Legal &amp; Support</div>
+    </div>
+    <div class="sm-list">
+      <div class="sm-row">
+        <a href="/privacy/" class="sm-name">Privacy Policy</a>
+        <div class="sm-desc">What we collect, what we don't, and how data is used</div>
+        <span class="sm-badge badge-live">Live</span>
       </div>
-      <div class="sitemap-item">
-        <a href="/terms/" class="sitemap-link">notavello.com/terms/</a>
-        <div class="sitemap-desc">Terms of Service</div>
+      <div class="sm-row">
+        <a href="/terms/" class="sm-name">Terms of Service</a>
+        <div class="sm-desc">Usage rules, billing terms, and governing law</div>
+        <span class="sm-badge badge-live">Live</span>
       </div>
-      <div class="sitemap-item">
-        <a href="/contact/" class="sitemap-link">notavello.com/contact/</a>
-        <div class="sitemap-desc">Contact us</div>
+      <div class="sm-row">
+        <a href="/contact/" class="sm-name">Contact</a>
+        <div class="sm-desc">hello · bugs · billing · legal — all at notavello.com</div>
+        <span class="sm-badge badge-live">Live</span>
       </div>
     </div>
   </div>

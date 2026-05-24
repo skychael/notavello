@@ -14,7 +14,7 @@
 :root { --bg: #F0F4FF; --surface: #FFFFFF; --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8; --accent: #4F46E5; --accent2: #7C3AED; --border: #E2E8F0; --radius-sm: 12px; --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08); }
 html { scroll-behavior: smooth; }
 body { background: var(--bg); color: var(--ink); font-family: 'Sora', sans-serif; min-height: 100vh; -webkit-font-smoothing: antialiased; }
-.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; position: sticky; top: 0; z-index: 100; }
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
 .logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
 .logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
 .logo span { color: var(--accent); }
@@ -40,6 +40,14 @@ body { background: var(--bg); color: var(--ink); font-family: 'Sora', sans-serif
 .footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
 .footer-legal a:hover { color: var(--accent); }
 @media (max-width: 640px) { .header { padding: 14px 20px; } .site-footer { padding: 24px 16px; } }
+.header-login {
+  font-family: 'Sora', sans-serif;
+  font-size: 0.82rem; font-weight: 600; color: var(--accent);
+  text-decoration: none; padding: 7px 18px;
+  border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px;
+  background: var(--accent-light); transition: background 0.15s, border-color 0.15s;
+}
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
 </style>
 </head>
 <body>
