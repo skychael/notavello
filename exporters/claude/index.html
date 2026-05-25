@@ -1137,7 +1137,7 @@ function checkConfidence(messages) {
 // ── PARSE CLAUDE ──
 // claude.ai format: [user text] → HH:MM AM/PM → [AI text] → [user text] → HH:MM AM/PM → ...
 // Timestamp always follows the USER message. Text after timestamp = AI.
-const parseLog = []; // debug log accumulator
+const parseLog = []; // kept for internal confidence checks — panel removed
 
 function parseClaude(text) {
   parseLog.length = 0; // clear on each parse
@@ -1233,97 +1233,6 @@ function parseClaude(text) {
 function parseConversation(raw) {
   const messages = parseClaude(raw);
   return { messages, platform: 'claude', confidence: checkConfidence(messages) };
-}
-
-// ── DEBUG PANEL ──
-function getOrCreateDebugPanel() {
-  let panel = document.getElementById('debugPanel');
-  if (!panel) {
-    panel = document.createElement('div');
-    panel.id = 'debugPanel';
-    panel.style.cssText = `
-      position:fixed;bottom:16px;right:16px;z-index:9999;
-      background:#0F172A;color:#94A3B8;font-family:monospace;font-size:11px;
-      padding:12px 16px;border-radius:10px;max-width:340px;width:340px;
-      box-shadow:0 4px 20px rgba(0,0,0,0.4);line-height:1.8;
-      max-height:360px;overflow-y:auto;user-select:text;`;
-    panel.setAttribute('tabindex', '0');
-    panel.addEventListener('keydown', e => {
-      if (e.key === 'a' && (e.ctrlKey || e.metaKey)) {
-        e.preventDefault();
-        const sel = window.getSelection();
-        const range = document.createRange();
-        range.selectNodeContents(panel);
-        sel.removeAllRanges();
-        sel.addRange(range);
-      }
-    });
-    document.body.appendChild(panel);
-  }
-  return panel;
-}
-
-function debugLog(msg) {
-  const panel = getOrCreateDebugPanel();
-  panel.insertAdjacentHTML('beforeend', `<div>${msg}</div>`);
-  panel.scrollTop = panel.scrollHeight;
-}
-
-function renderDebugPanel(messages, pageLog, workerResult) {
-  const panel = getOrCreateDebugPanel();
-  const h = messages.filter(m => m.role === 'human').length;
-  const a = messages.filter(m => m.role === 'ai').length;
-  const ratio = Math.max(h, a) / Math.min(h, a || 1);
-
-  panel.innerHTML = `<div style="color:#4F46E5;font-weight:700;margin-bottom:6px;">📐 Notavello Debug · claude-3.0</div>`;
-
-  // ── WORKER STATUS ──
-  const workerColor = !workerResult ? '#64748B'
-    : workerResult.status === 'ok' ? '#059669'
-    : workerResult.status === 'timeout' ? '#D97706'
-    : '#BE123C';
-  const workerLabel = !workerResult ? 'not called'
-    : workerResult.status === 'ok'
-      ? `✓ ${workerResult.ms}ms → ${JSON.stringify(workerResult.response)}`
-    : workerResult.status === 'timeout' ? '⚠ timed out (>5s)'
-    : workerResult.status === 'http_error' ? `✗ HTTP error → ${JSON.stringify(workerResult.response)}`
-    : `✗ ${workerResult.response}`;
-  panel.insertAdjacentHTML('beforeend',
-    `<div style="color:#7C3AED;margin-top:4px;font-weight:600;">── Worker ──</div>
-     <div style="color:${workerColor};">Status: ${workerLabel}</div>
-     <div style="margin-top:2px;color:${devMode ? '#059669' : '#94A3B8'};">Dev mode: ${devMode ? '🛠 ON (paywall bypassed) — Ctrl+Shift+D to toggle' : 'OFF — Ctrl+Shift+D to enable'}</div>`);
-
-  // ── PARSE LOG ──
-  panel.insertAdjacentHTML('beforeend', `<div style="color:#7C3AED;margin-top:6px;font-weight:600;">── Parse Log ──</div>`);
-  parseLog.forEach(line => {
-    panel.insertAdjacentHTML('beforeend', `<div>${line}</div>`);
-  });
-
-  // ── MESSAGE SUMMARY ──
-  const ratioFlag = ratio > 4 ? ` ⚠ ratio ${ratio.toFixed(1)}x` : '';
-  const shortMsgs = messages.filter(m => m.text.trim().length < 5);
-  const longestAI = messages.filter(m => m.role === 'ai').reduce((max, m) => Math.max(max, m.text.length), 0);
-  const attachments = messages.filter(m => m.text.includes('[Attachment')).length;
-  panel.insertAdjacentHTML('beforeend',
-    `<div style="color:#7C3AED;margin-top:6px;font-weight:600;">── Messages ──</div>
-     <div>Total: ${messages.length} | Human: ${h} | AI: ${a}${ratioFlag}</div>
-     <div>Short (<5 chars): ${shortMsgs.length}${shortMsgs.length ? ' ⚠ check these' : ''}</div>
-     <div>Longest AI block: ${longestAI} chars</div>
-     <div>Attachments replaced: ${attachments}</div>`);
-
-  // List any suspiciously short messages
-  if (shortMsgs.length) {
-    shortMsgs.forEach(m => {
-      panel.insertAdjacentHTML('beforeend',
-        `<div style="color:#D97706;">  [${m.role.toUpperCase()}] "${m.text.trim()}"</div>`);
-    });
-  }
-
-  // ── PAGES ──
-  panel.insertAdjacentHTML('beforeend', `<div style="color:#7C3AED;margin-top:6px;font-weight:600;">── Pages ──</div>`);
-  pageLog.forEach(line => {
-    panel.insertAdjacentHTML('beforeend', `<div>${line}</div>`);
-  });
 }
 
 // ── Live counter ──
@@ -1500,7 +1409,6 @@ function renderPreview(messages, platform, warning, workerResult) {
     }
   });
 
-  renderDebugPanel(messages, pageLog, workerResult);
   document.getElementById('previewSection').scrollIntoView({ behavior: 'smooth' });
 }
 
