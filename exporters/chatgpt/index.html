@@ -7,11 +7,11 @@
 <title>Export ChatGPT Conversations to PDF — Notavello</title>
 <meta name="description" content="Paste your ChatGPT conversation and get a clean, color-coded PDF in seconds. User messages in blue, AI responses in plain text. Free to use — no sign-up required."/>
 <meta name="robots" content="index, follow"/>
-<link rel="canonical" href="https://notavello.com/chatgpt/"/>
+<link rel="canonical" href="https://notavello.com/exporters/chatgpt/"/>
 
 <!-- Open Graph -->
 <meta property="og:type" content="website"/>
-<meta property="og:url" content="https://notavello.com/chatgpt/"/>
+<meta property="og:url" content="https://notavello.com/exporters/chatgpt/"/>
 <meta property="og:title" content="Export ChatGPT Conversations to PDF — Notavello"/>
 <meta property="og:description" content="Paste your ChatGPT conversation and get a clean, color-coded PDF in seconds. Free to use — no sign-up required."/>
 <meta property="og:site_name" content="Notavello"/>
@@ -1675,7 +1675,7 @@ async function startCheckout(btn) {
   }
   if (params.get('paid') === 'true') {
     localStorage.setItem('notavello_paid', 'true');
-    window.history.replaceState({}, '', '/chatgpt/');
+    window.history.replaceState({}, '', '/exporters/chatgpt/');
     restoreSavedConversation();
     const msg = document.createElement('div');
     msg.style.cssText = 'position:fixed;top:24px;left:50%;transform:translateX(-50%);background:#059669;color:white;padding:14px 28px;border-radius:12px;font-size:0.95rem;font-weight:600;z-index:9999;box-shadow:0 4px 20px rgba(5,150,105,0.4);';
@@ -1683,7 +1683,7 @@ async function startCheckout(btn) {
     document.body.appendChild(msg);
     setTimeout(() => msg.remove(), 5000);
   } else if (params.get('paid') === 'cancelled') {
-    window.history.replaceState({}, '', '/chatgpt/');
+    window.history.replaceState({}, '', '/exporters/chatgpt/');
     restoreSavedConversation();
   }
 })();
