@@ -5,7 +5,8 @@ on:
     branches: [main]
     paths:
       - 'index.html'
-      - 'claude/index.html'
+      - 'exporters/claude/index.html'
+      - 'exporters/chatgpt/index.html'
 
 jobs:
   bump-version:
@@ -24,14 +25,12 @@ jobs:
         run: |
           FILE="index.html"
           if [ -f "$FILE" ]; then
-            # Extract current version e.g. root-1.5
             CURRENT=$(grep -o 'root-[0-9]*\.[0-9]*' "$FILE" | head -1)
             if [ -n "$CURRENT" ]; then
               MAJOR=$(echo $CURRENT | sed 's/root-//' | cut -d. -f1)
               MINOR=$(echo $CURRENT | sed 's/root-//' | cut -d. -f2)
               NEWMINOR=$((MINOR + 1))
               NEW="root-${MAJOR}.${NEWMINOR}"
-              # Replace all occurrences in the file
               sed -i "s/${CURRENT}/${NEW}/g" "$FILE"
               echo "Bumped root: $CURRENT → $NEW"
               echo "ROOT_BUMPED=true" >> $GITHUB_ENV
@@ -39,12 +38,11 @@ jobs:
             fi
           fi
 
-      - name: Bump claude/index.html version
-        if: contains(github.event.head_commit.modified, 'claude/index.html') || contains(github.event.head_commit.added, 'claude/index.html')
+      - name: Bump exporters/claude/index.html version
+        if: contains(github.event.head_commit.modified, 'exporters/claude/index.html') || contains(github.event.head_commit.added, 'exporters/claude/index.html')
         run: |
-          FILE="claude/index.html"
+          FILE="exporters/claude/index.html"
           if [ -f "$FILE" ]; then
-            # Extract current version e.g. claude-3.0
             CURRENT=$(grep -o 'claude-[0-9]*\.[0-9]*' "$FILE" | head -1)
             if [ -n "$CURRENT" ]; then
               MAJOR=$(echo $CURRENT | sed 's/claude-//' | cut -d. -f1)
@@ -58,15 +56,33 @@ jobs:
             fi
           fi
 
+      - name: Bump exporters/chatgpt/index.html version
+        if: contains(github.event.head_commit.modified, 'exporters/chatgpt/index.html') || contains(github.event.head_commit.added, 'exporters/chatgpt/index.html')
+        run: |
+          FILE="exporters/chatgpt/index.html"
+          if [ -f "$FILE" ]; then
+            CURRENT=$(grep -o 'chatgpt-[0-9]*\.[0-9]*' "$FILE" | head -1)
+            if [ -n "$CURRENT" ]; then
+              MAJOR=$(echo $CURRENT | sed 's/chatgpt-//' | cut -d. -f1)
+              MINOR=$(echo $CURRENT | sed 's/chatgpt-//' | cut -d. -f2)
+              NEWMINOR=$((MINOR + 1))
+              NEW="chatgpt-${MAJOR}.${NEWMINOR}"
+              sed -i "s/${CURRENT}/${NEW}/g" "$FILE"
+              echo "Bumped chatgpt: $CURRENT → $NEW"
+              echo "CHATGPT_BUMPED=true" >> $GITHUB_ENV
+              echo "CHATGPT_VERSION=$NEW" >> $GITHUB_ENV
+            fi
+          fi
+
       - name: Commit bumped versions
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git diff --quiet && echo "No changes to commit" && exit 0
-          git add index.html claude/index.html
-          # Build commit message
+          git add index.html exporters/claude/index.html exporters/chatgpt/index.html
           MSG="[version-bump]"
           [ -n "$ROOT_VERSION" ] && MSG="$MSG root→$ROOT_VERSION"
           [ -n "$CLAUDE_VERSION" ] && MSG="$MSG claude→$CLAUDE_VERSION"
+          [ -n "$CHATGPT_VERSION" ] && MSG="$MSG chatgpt→$CHATGPT_VERSION"
           git commit -m "$MSG"
           git push
