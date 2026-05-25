@@ -1,0 +1,19 @@
+# Notavello URL redirects
+# Cloudflare Pages honors this file automatically
+# Format: /old-url/   /new-url/   301
+
+# Marketing pages → /pages/
+/about/         /pages/about/       301
+/faq/           /pages/faq/         301
+/pricing/       /pages/pricing/     301
+/contact/       /pages/contact/     301
+/privacy/       /pages/privacy/     301
+/terms/         /pages/terms/       301
+/sitemap/       /pages/sitemap/     301
+/sample/        /pages/sample/      301
+
+# AI exporters → /exporters/
+/claude/        /exporters/claude/      301
+/chatgpt/       /exporters/chatgpt/     301
+/gemini/        /exporters/gemini/      301
+/copilot/       /exporters/copilot/     301
