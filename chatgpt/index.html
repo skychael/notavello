@@ -1,4 +1,4 @@
-<!-- Notavello chatgpt-1.1 -->
+<!-- Notavello chatgpt-1.2 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -784,7 +784,7 @@ body {
     Nota<span>vello</span>
   </div>
   </a>
-  <div class="badge">Free Preview &middot; chatgpt-1.1</div>
+  <div class="badge">Free Preview &middot; chatgpt-1.2</div>
 </header>
 
 <div class="screen-ui">
@@ -1149,10 +1149,36 @@ function parseConversation(raw, html = '') {
           : 'ai';
 
       const msg = turn.querySelector('[data-message-author-role]');
+      const root = msg || turn;
 
-      const text = msg
-        ? msg.innerText.trim()
-        : turn.innerText.trim();
+      // Walk the DOM tree, inserting newlines at block-level boundaries
+      // so that paragraphs, lists, code blocks, and line breaks all
+      // render correctly in the PDF instead of collapsing into one line.
+      function extractText(node) {
+        const BLOCK = new Set(['P','DIV','LI','PRE','BLOCKQUOTE',
+                               'H1','H2','H3','H4','H5','H6','TR']);
+        const NEWLINE = new Set(['BR']);
+        let out = '';
+        for (const child of node.childNodes) {
+          if (child.nodeType === 3) {
+            // Text node — append directly
+            out += child.textContent;
+          } else if (child.nodeType === 1) {
+            const tag = child.tagName;
+            if (NEWLINE.has(tag)) {
+              out += '\n';
+            } else if (BLOCK.has(tag)) {
+              const inner = extractText(child).trimEnd();
+              if (inner) out += '\n' + inner + '\n';
+            } else {
+              out += extractText(child);
+            }
+          }
+        }
+        return out;
+      }
+
+      const text = extractText(root).replace(/\n{3,}/g, '\n\n').trim();
 
       if (!text || text.length < 3) return;
 
@@ -1215,7 +1241,7 @@ function renderDebugPanel(messages, pageLog, workerResult) {
   const a = messages.filter(m => m.role === 'ai').length;
   const ratio = Math.max(h, a) / Math.min(h, a || 1);
 
-  panel.innerHTML = `<div style="color:#4F46E5;font-weight:700;margin-bottom:6px;">&#x1F4D0; Notavello Debug &middot; chatgpt-1.1</div>`;
+  panel.innerHTML = `<div style="color:#4F46E5;font-weight:700;margin-bottom:6px;">&#x1F4D0; Notavello Debug &middot; chatgpt-1.2</div>`;
 
   // ── WORKER ──
   const workerColor = !workerResult ? '#64748B'
