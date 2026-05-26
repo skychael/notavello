@@ -5,7 +5,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Notavello — Export AI Conversations as Beautiful PDFs</title>
-<meta name="description" content="Turn your Claude, ChatGPT, or Gemini conversations into clean, color-coded PDFs. Paste your chat, get a professionally formatted document instantly. Free to use."/>
+<meta name="description" content="Turn your Claude, ChatGPT, Gemini, Copilot, Grok, or Perplexity conversations into clean, color-coded PDFs. Paste your chat, get a professionally formatted document instantly. Free to use."/>
 <meta name="robots" content="index, follow"/>
 <link rel="canonical" href="https://notavello.com/"/>
 
@@ -13,7 +13,7 @@
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://notavello.com/"/>
 <meta property="og:title" content="Notavello — Export AI Conversations as Beautiful PDFs"/>
-<meta property="og:description" content="Turn your Claude, ChatGPT, or Gemini conversations into clean, color-coded PDFs. Free to use. No sign-up required."/>
+<meta property="og:description" content="Turn your Claude, ChatGPT, Gemini, Copilot, Grok, or Perplexity conversations into clean, color-coded PDFs. Free to use. No sign-up required."/>
 <meta property="og:site_name" content="Notavello"/>
 
 <!-- Twitter Card -->
@@ -223,9 +223,12 @@ body {
   font-size: 1.5rem;
 }
 
-.ai-card-icon--claude { background: linear-gradient(135deg, #EEF2FF, #DDD6FE); }
-.ai-card-icon--chatgpt { background: linear-gradient(135deg, #D1FAE5, #A7F3D0); }
-.ai-card-icon--gemini { background: linear-gradient(135deg, #FEF3C7, #FDE68A); }
+.ai-card-icon--claude     { background: linear-gradient(135deg, #EEF2FF, #DDD6FE); }
+.ai-card-icon--chatgpt   { background: linear-gradient(135deg, #D1FAE5, #A7F3D0); }
+.ai-card-icon--gemini    { background: linear-gradient(135deg, #FEF3C7, #FDE68A); }
+.ai-card-icon--copilot   { background: linear-gradient(135deg, #DBEAFE, #BFDBFE); }
+.ai-card-icon--grok      { background: linear-gradient(135deg, #F1F5F9, #E2E8F0); }
+.ai-card-icon--perplexity{ background: linear-gradient(135deg, #F0FDF4, #BBF7D0); }
 
 .ai-card-name {
   font-size: 1rem;
@@ -529,7 +532,7 @@ body {
 @media (max-width: 640px) {
   .header { padding: 14px 20px; }
   .screen-ui { padding: 48px 16px 80px; }
-  .ai-cards { grid-template-columns: 1fr; }
+  .ai-cards { grid-template-columns: repeat(2, 1fr); }
   .steps { grid-template-columns: 1fr; }
   .perks { grid-template-columns: 1fr; }
   .cta-section { padding: 36px 24px; }
@@ -567,7 +570,7 @@ body {
       Free to use · No sign-up required
     </div>
     <h1>Turn AI conversations into<br><em>beautiful PDFs</em></h1>
-    <p>Paste any AI conversation and get a clean, color-coded PDF — searchable, shareable, and professionally formatted. Claude, ChatGPT, and Gemini supported now.</p>
+    <p>Paste any AI conversation and get a clean, color-coded PDF — searchable, shareable, and professionally formatted. ChatGPT, Gemini, Copilot, Claude, Grok, and Perplexity supported.</p>
   </section>
 
   <div class="ai-cards-label">Choose your AI to get started</div>
@@ -593,10 +596,40 @@ body {
       </div>
     </a>
 
+    <a href="/exporters/copilot/" class="ai-card ai-card--live">
+      <div class="ai-card-icon ai-card-icon--copilot">🪟</div>
+      <div class="ai-card-name">Copilot</div>
+      <div class="ai-card-desc">Export Copilot conversations by Microsoft as color-coded PDFs</div>
+      <div class="ai-card-status ai-card-status--live">
+        <div class="ai-card-status-dot"></div>
+        Live now
+      </div>
+    </a>
+
     <a href="/exporters/claude/" class="ai-card ai-card--live">
       <div class="ai-card-icon ai-card-icon--claude">🤖</div>
       <div class="ai-card-name">Claude</div>
       <div class="ai-card-desc">Export Claude conversations by Anthropic as color-coded PDFs</div>
+      <div class="ai-card-status ai-card-status--live">
+        <div class="ai-card-status-dot"></div>
+        Live now
+      </div>
+    </a>
+
+    <a href="/exporters/grok/" class="ai-card ai-card--live">
+      <div class="ai-card-icon ai-card-icon--grok">𝕏</div>
+      <div class="ai-card-name">Grok</div>
+      <div class="ai-card-desc">Export Grok conversations by xAI as color-coded PDFs</div>
+      <div class="ai-card-status ai-card-status--live">
+        <div class="ai-card-status-dot"></div>
+        Live now
+      </div>
+    </a>
+
+    <a href="/exporters/perplexity/" class="ai-card ai-card--live">
+      <div class="ai-card-icon ai-card-icon--perplexity">🔍</div>
+      <div class="ai-card-name">Perplexity</div>
+      <div class="ai-card-desc">Export Perplexity conversations as color-coded PDFs</div>
       <div class="ai-card-status ai-card-status--live">
         <div class="ai-card-status-dot"></div>
         Live now
@@ -612,7 +645,7 @@ body {
       <div class="step-card">
         <div class="step-num">1</div>
         <h3>Choose your AI</h3>
-        <p>Select which AI assistant you used above — Claude, ChatGPT, or Gemini.</p>
+        <p>Select which AI assistant you used — ChatGPT, Gemini, Copilot, Claude, Grok, or Perplexity.</p>
       </div>
       <div class="step-card">
         <div class="step-num">2</div>
