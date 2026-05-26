@@ -1320,7 +1320,7 @@ function summarizeHtmlForDebug(htmlText) {
 // This is a genuine paid differentiator — lawyers/consultants would use it.
 // Build after Stripe exists. Store preference in localStorage per user.
 const REDACT_PATTERNS = [
-  { pattern: /\bsk-[A-Za-z0-9]{20,}\b/g,                               replace: '[API_KEY]' },
+  { pattern: /\bsk[-_][A-Za-z0-9_\-]{20,}\b/g,                         replace: '[API_KEY]' },
   { pattern: /\b[A-Fa-f0-9]{32,}\b/g,                                   replace: '[KEY]' },
   { pattern: /\b\d{3}[-.\s]?\d{2}[-.\s]?\d{4}\b/g,                     replace: '[SSN]' },
   { pattern: /\b4[0-9]{12}(?:[0-9]{3})?\b|\b5[1-5][0-9]{14}\b/g,       replace: '[CARD]' },
