@@ -1,4 +1,4 @@
-<!-- Notavello gemini-1.1 -->
+<!-- Notavello gemini-1.2 smart-parser -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -940,7 +940,7 @@ body {
     Nota<span>vello</span>
   </div>
   </a>
-  <div class="badge">FREE PREVIEW · GEMINI-1.1 · 18:21:00</div>
+  <div class="badge">FREE PREVIEW · GEMINI-1.2 · 18:29:33</div>
 </header>
 
 <div class="screen-ui">
@@ -1109,6 +1109,28 @@ function redactText(text) {
 // ── Change this one value when copying this file for a new AI ──
 const AI_NAME = 'Gemini';
 
+// ── SMART PASTE CAPTURE ──
+// The best Gemini parsing signal is usually the copied HTML, not plain text.
+// We store text/html during paste and use it as the primary parser input.
+let lastPastedHtml = '';
+let lastPastedPlain = '';
+
+document.getElementById('pasteArea').addEventListener('paste', function(e) {
+  if (!e.clipboardData) return;
+  lastPastedHtml = e.clipboardData.getData('text/html') || '';
+  lastPastedPlain = e.clipboardData.getData('text/plain') || '';
+});
+
+function getCurrentPasteHtml(raw) {
+  // Only trust stored HTML if it belongs to the current pasted text.
+  // This avoids stale HTML from a previous paste.
+  if (!lastPastedHtml || !lastPastedPlain) return '';
+  const current = (raw || '').trim().slice(0, 120);
+  const pasted = (lastPastedPlain || '').trim().slice(0, 120);
+  return current && pasted && current === pasted ? lastPastedHtml : '';
+}
+
+
 // Populate all AI name spans from the single source above
 document.querySelectorAll('.ai-inline, #heroAIName, #heroAIName2, #heroAIName3').forEach(el => {
   el.textContent = AI_NAME;
@@ -1130,21 +1152,20 @@ function checkConfidence(messages) {
   if (h === 0) return { ok: false, warning: 'No user messages detected. Try copying again with Ctrl+A first.' };
   if (a === 0) return { ok: false, warning: 'No AI messages detected. Try copying again with Ctrl+A first.' };
   const ratio = Math.max(h, a) / Math.min(h, a);
-  if (ratio > 4) return { ok: true, warning: `Heads up: detected ${h} user and ${a} AI messages — ratio seems off. Colors may not be 100% accurate.` };
+  if (ratio > 4) return { ok: true, warning: `Heads up: detected ${h} user and ${a} AI messages — ratio seems off. Please review before exporting.` };
   return { ok: true, warning: null };
 }
 
 // ── PARSE GEMINI ──
-// Gemini copies can vary by browser and page version. This parser supports:
-// 1) explicit speaker labels such as "You", "User", "Gemini", or "Gemini Advanced";
-// 2) pasted transcript labels like "You said:" / "Gemini said:";
-// 3) timestamp-separated text similar to other AI chat exports;
-// 4) an alternating-block fallback when labels are unavailable.
-const parseLog = []; // kept for internal confidence checks — panel removed
+// Parser hierarchy:
+// 1) copied HTML/DOM parser — best and most faithful;
+// 2) explicit speaker label parser;
+// 3) timestamp parser;
+// 4) conservative plain-text fallback with continuation merging.
+// The fallback no longer blindly alternates every line without checks.
+const parseLog = [];
 
 function cleanGeminiNoise(text) {
-  // Deterministic Gemini cleanup only.
-  // Removes copied page chrome/header/footer text without rewriting conversation content.
   const exactNoiseLines = new Set([
     'About Gemini',
     'Gemini App',
@@ -1185,15 +1206,106 @@ function cleanGeminiNoise(text) {
     .trim();
 }
 
+function normalizeMessageText(text) {
+  return cleanGeminiNoise((text || '').replace(/\u00a0/g, ' ')).trim();
+}
+
 function pushGeminiMessage(messages, role, text, time) {
-  const cleaned = cleanGeminiNoise(text || '').trim();
+  const cleaned = normalizeMessageText(text);
   if (cleaned.length < 1) return;
+
+  // Avoid duplicate adjacent fragments.
   const last = messages[messages.length - 1];
   if (last && last.role === role && !time) {
-    last.text += '\n\n' + cleaned;
+    if (!last.text.includes(cleaned)) last.text += '\n\n' + cleaned;
   } else {
     messages.push({ role, text: cleaned, time: role === 'human' ? (time || '') : '' });
   }
+}
+
+function parseGeminiHtml(htmlText) {
+  if (!htmlText || htmlText.length < 20) return [];
+
+  const doc = new DOMParser().parseFromString(htmlText, 'text/html');
+  const messages = [];
+
+  // Gemini DOM names have changed over time. Try known strong selectors first.
+  const userSelectors = [
+    'user-query',
+    '[data-test-id*="user"]',
+    '[class*="user-query"]',
+    '[class*="query-text"]',
+    '[class*="user"] [class*="message"]'
+  ];
+
+  const aiSelectors = [
+    'model-response',
+    '[data-test-id*="response"]',
+    '[class*="model-response"]',
+    '[class*="response-content"]',
+    '[class*="markdown"]',
+    '[class*="message-content"]'
+  ];
+
+  // Candidate block approach: look for common message-ish containers in DOM order.
+  const candidates = [...doc.body.querySelectorAll(
+    [
+      'user-query',
+      'model-response',
+      '[data-test-id]',
+      '[class*="user-query"]',
+      '[class*="model-response"]',
+      '[class*="query-text"]',
+      '[class*="response-content"]',
+      '[class*="message-content"]',
+      '[class*="conversation"]'
+    ].join(',')
+  )];
+
+  const seenTexts = new Set();
+
+  function roleFromElement(el) {
+    const s = [
+      el.tagName || '',
+      el.getAttribute('class') || '',
+      el.getAttribute('data-test-id') || '',
+      el.getAttribute('aria-label') || '',
+      el.getAttribute('role') || ''
+    ].join(' ').toLowerCase();
+
+    if (/user|query|you|human/.test(s) && !/response|model|gemini/.test(s)) return 'human';
+    if (/model|response|gemini|bard|answer|markdown/.test(s)) return 'ai';
+    return null;
+  }
+
+  for (const el of candidates) {
+    const role = roleFromElement(el);
+    if (!role) continue;
+
+    // Avoid parent containers swallowing children.
+    const childRoles = [...el.querySelectorAll('*')].map(roleFromElement).filter(Boolean);
+    if (childRoles.length > 2 && el.innerText.length > 500) continue;
+
+    const text = normalizeMessageText(el.innerText || el.textContent || '');
+    if (!text || text.length < 1) continue;
+
+    const key = role + '|' + text.slice(0, 160);
+    if (seenTexts.has(key)) continue;
+    seenTexts.add(key);
+
+    pushGeminiMessage(messages, role, text, '');
+  }
+
+  // If the DOM parser found a healthy mix, trust it.
+  const h = messages.filter(m => m.role === 'human').length;
+  const a = messages.filter(m => m.role === 'ai').length;
+  if (messages.length >= 2 && h > 0 && a > 0) {
+    parseLog.push(`HTML parser messages: ${messages.length}`);
+    return messages;
+  }
+
+  parseLog.push(`HTML parser weak result: ${messages.length}`);
+  return [];
 }
 
 function parseGeminiByLabels(text) {
@@ -1256,26 +1368,61 @@ function parseGeminiByTimestamps(text) {
 
     pushGeminiMessage(messages, 'human', text.substring(cursor, tsStart), time);
     const aiBlock = text.substring(tsEnd, nextTsStart).trim();
-    if (aiBlock.length >= 1) {
-      const parts = aiBlock.split(/\n{2,}/).map(p => p.trim()).filter(Boolean);
-      if (parts.length > 1 && matches[i + 1]) {
-        pushGeminiMessage(messages, 'ai', parts.slice(0, -1).join('\n\n'), '');
-        pushGeminiMessage(messages, 'human', parts[parts.length - 1], matches[i + 1][1]);
-      } else {
-        pushGeminiMessage(messages, 'ai', aiBlock, '');
-      }
-    }
+    if (aiBlock.length >= 1) pushGeminiMessage(messages, 'ai', aiBlock, '');
     cursor = nextTsStart;
   }
   return messages;
 }
 
-function parseGemini(text) {
+function looksLikeAiContinuation(line) {
+  return /^(however|also|additionally|alternatively|for example|for instance|in other words|that said|yes|no|sure|absolutely|understood|i can|i can't|i cannot|i’ll|i will|here are|here's|would you like|if you want|to clarify|as an ai|gemini)/i.test(line.trim());
+}
+
+function looksLikeUserPrompt(line) {
+  return /(\?|please|can you|could you|i need|i want|i meant|test|^\d+$|^one$|^two$|^three$|^four$|^five$|^six$|^seven$|^eight$|^nine$|^ten$)/i.test(line.trim());
+}
+
+function parseGeminiConservativeFallback(text) {
+  let lines = text
+    .split('\n')
+    .map(l => normalizeMessageText(l))
+    .filter(Boolean);
+
+  if (lines[0] && /^Gemini$/i.test(lines[0])) lines.shift();
+
+  const messages = [];
+  let expected = 'human';
+
+  for (const line of lines) {
+    const last = messages[messages.length - 1];
+
+    // Keep obvious Gemini continuation with Gemini instead of flipping to user.
+    if (last && last.role === 'ai' && expected === 'human' && looksLikeAiContinuation(line) && !looksLikeUserPrompt(line)) {
+      last.text += '\n\n' + line;
+      continue;
+    }
+
+    // Keep obvious user continuation with user.
+    if (last && last.role === 'human' && expected === 'ai' && looksLikeUserPrompt(line) && line.length > 80) {
+      last.text += '\n\n' + line;
+      continue;
+    }
+
+    messages.push({ role: expected, text: line, time: '' });
+    expected = expected === 'human' ? 'ai' : 'human';
+  }
+
+  parseLog.push(`Conservative fallback messages: ${messages.length}`);
+  return messages;
+}
+
+function parseGemini(text, htmlText) {
   parseLog.length = 0;
   parseLog.push('── Gemini parser started ──');
 
-  // Use raw pasted text first. Cleanup removes "Conversation with Gemini",
-  // so the transcript boundary must be found before cleanup runs.
+  const htmlMessages = parseGeminiHtml(htmlText);
+  if (htmlMessages.length >= 2) return htmlMessages;
+
   const rawText = text || '';
   const markerMatch = rawText.match(/Conversation with Gemini/i);
   if (markerMatch) {
@@ -1297,28 +1444,7 @@ function parseGemini(text) {
   }
 
   if (messages.length < 2) {
-    const lines = text
-      .split('\n')
-      .map(l => cleanGeminiNoise(l))
-      .map(l => l.trim())
-      .filter(Boolean);
-
-    parseLog.push(`Fallback lines: ${lines.length}`);
-
-    if (lines[0] && /^Gemini$/i.test(lines[0])) lines.shift();
-
-    messages = [];
-    if (lines.length >= 2) {
-      lines.forEach((line, i) => {
-        messages.push({
-          role: i % 2 === 0 ? 'human' : 'ai',
-          text: line,
-          time: ''
-        });
-      });
-    } else if (lines.length === 1) {
-      messages.push({ role: 'human', text: lines[0], time: '' });
-    }
+    messages = parseGeminiConservativeFallback(text);
   }
 
   const result = messages.filter(m => m.text.trim().length >= 1);
@@ -1328,7 +1454,8 @@ function parseGemini(text) {
 
 // ── MAIN PARSER ── Gemini only. Future: route by AI selector value.
 function parseConversation(raw) {
-  const messages = parseGemini(raw);
+  const html = getCurrentPasteHtml(raw);
+  const messages = parseGemini(raw, html);
   return { messages, platform: 'gemini', confidence: checkConfidence(messages) };
 }
 
