@@ -1,4 +1,4 @@
-<!-- Notavello gemini-1.3 html-first-parser -->
+<!-- Notavello gemini-1.4 html-format-preserving-parser -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -940,7 +940,7 @@ body {
     Nota<span>vello</span>
   </div>
   </a>
-  <div class="badge">FREE PREVIEW · GEMINI-1.3 · 18:37:39</div>
+  <div class="badge">FREE PREVIEW · GEMINI-1.4 · 18:41:24</div>
 </header>
 
 <div class="screen-ui">
@@ -1203,7 +1203,9 @@ function cleanGeminiNoise(text) {
 }
 
 function normalizeMessageText(text) {
-  return cleanGeminiNoise(text || '').trim();
+  return cleanGeminiNoise(text || '')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
 }
 
 function pushGeminiMessage(messages, role, text, time) {
@@ -1218,8 +1220,31 @@ function pushGeminiMessage(messages, role, text, time) {
 }
 
 function getDirectText(el) {
-  // innerText is best in browser. textContent is fallback.
-  return (el.innerText || el.textContent || '').replace(/\n{3,}/g, '\n\n').trim();
+  // DOMParser documents often do not preserve useful innerText spacing.
+  // Clone and inject line breaks around block elements so Gemini paragraphs,
+  // bullets, and numbered lists do not get flattened together.
+  const clone = el.cloneNode(true);
+
+  clone.querySelectorAll('br').forEach(br => br.replaceWith('\n'));
+
+  clone.querySelectorAll('p, div, section, article, blockquote, pre, table, tr').forEach(node => {
+    node.insertBefore(document.createTextNode('\n'), node.firstChild);
+    node.appendChild(document.createTextNode('\n'));
+  });
+
+  clone.querySelectorAll('li').forEach((li, idx) => {
+    const parent = li.parentElement;
+    const isOrdered = parent && parent.tagName && parent.tagName.toLowerCase() === 'ol';
+    const prefix = isOrdered ? `${idx + 1}. ` : '• ';
+    li.insertBefore(document.createTextNode('\n' + prefix), li.firstChild);
+    li.appendChild(document.createTextNode('\n'));
+  });
+
+  return (clone.textContent || '')
+    .replace(/[ \t]+\n/g, '\n')
+    .replace(/\n[ \t]+/g, '\n')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
 }
 
 function elementSignature(el) {
