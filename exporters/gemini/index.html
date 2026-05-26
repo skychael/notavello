@@ -1,4 +1,4 @@
-<!-- Notavello gemini-1.4 html-format-preserving-parser -->
+<!-- Notavello gemini-1.5 pagination-buffer -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -457,7 +457,7 @@ body {
   box-shadow: var(--shadow);
   width: 8.5in;
   height: 11in;
-  padding: 0.75in;
+  padding: 0.75in 0.75in 0.9in 0.75in;
   margin: 0 auto 32px auto;
   box-sizing: border-box;
   position: relative;
@@ -940,7 +940,7 @@ body {
     Nota<span>vello</span>
   </div>
   </a>
-  <div class="badge">FREE PREVIEW · GEMINI-1.4 · 18:41:24</div>
+  <div class="badge">FREE PREVIEW · GEMINI-1.5 · 18:45:09</div>
 </header>
 
 <div class="screen-ui">
@@ -1649,7 +1649,7 @@ function renderPreview(messages, platform, warning, workerResult) {
 
     currentPage.appendChild(block);
 
-    if (currentPage.scrollHeight > currentPage._emptyHeight) {
+    if (currentPage.scrollHeight > currentPage._emptyHeight - 36) {
       const triggerHeight = currentPage.scrollHeight;
       currentPage.removeChild(block);
       pageCount++;
