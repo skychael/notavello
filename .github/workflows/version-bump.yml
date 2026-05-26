@@ -1,5 +1,4 @@
 name: Auto Version Bump
-
 on:
   push:
     branches: [main]
@@ -7,21 +6,17 @@ on:
       - 'index.html'
       - 'exporters/claude/index.html'
       - 'exporters/chatgpt/index.html'
-
 jobs:
   bump-version:
     runs-on: ubuntu-latest
     # Don't run if the commit was made by this action (prevents infinite loop)
     if: "!contains(github.event.head_commit.message, '[version-bump]')"
-
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Bump root/index.html version
-        if: contains(github.event.head_commit.modified, 'index.html') || contains(github.event.head_commit.added, 'index.html')
         run: |
           FILE="index.html"
           if [ -f "$FILE" ]; then
@@ -37,9 +32,7 @@ jobs:
               echo "ROOT_VERSION=$NEW" >> $GITHUB_ENV
             fi
           fi
-
       - name: Bump exporters/claude/index.html version
-        if: contains(github.event.head_commit.modified, 'exporters/claude/index.html') || contains(github.event.head_commit.added, 'exporters/claude/index.html')
         run: |
           FILE="exporters/claude/index.html"
           if [ -f "$FILE" ]; then
@@ -55,9 +48,7 @@ jobs:
               echo "CLAUDE_VERSION=$NEW" >> $GITHUB_ENV
             fi
           fi
-
       - name: Bump exporters/chatgpt/index.html version
-        if: contains(github.event.head_commit.modified, 'exporters/chatgpt/index.html') || contains(github.event.head_commit.added, 'exporters/chatgpt/index.html')
         run: |
           FILE="exporters/chatgpt/index.html"
           if [ -f "$FILE" ]; then
@@ -75,7 +66,6 @@ jobs:
               echo "CHATGPT_VERSION=$NEW" >> $GITHUB_ENV
             fi
           fi
-
       - name: Commit bumped versions
         run: |
           git config user.name "github-actions[bot]"
