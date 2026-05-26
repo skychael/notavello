@@ -986,7 +986,14 @@ body {
     Nota<span>vello</span>
   </div>
   </a>
-  <div class="badge" id="liveBadge">FREE PREVIEW · GEMINI-2.2 · 20:46:53 UTC</div>
+  <div class="badge" id="liveBadge">FREE PREVIEW · GEMINI-2.2 · --:--:-- UTC</div>
+<script>
+(function(){
+  const n=new Date();
+  const t=[n.getUTCHours(),n.getUTCMinutes(),n.getUTCSeconds()].map(v=>String(v).padStart(2,'0')).join(':');
+  document.getElementById('liveBadge').textContent='FREE PREVIEW · GEMINI-2.2 · '+t+' UTC';
+})();
+</script>
 </header>
 
 <div class="screen-ui">
