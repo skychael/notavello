@@ -68,7 +68,9 @@ jobs:
               NEWMINOR=$((MINOR + 1))
               NEW="chatgpt-${MAJOR}.${NEWMINOR}"
               sed -i "s/${CURRENT}/${NEW}/g" "$FILE"
-              echo "Bumped chatgpt: $CURRENT → $NEW"
+              TIMESTAMP=$(date -u '+%-I:%M %p UTC')
+              sed -i "s/DEPLOY_TIME/$TIMESTAMP/g" "$FILE"
+              echo "Bumped chatgpt: $CURRENT → $NEW | $TIMESTAMP"
               echo "CHATGPT_BUMPED=true" >> $GITHUB_ENV
               echo "CHATGPT_VERSION=$NEW" >> $GITHUB_ENV
             fi
