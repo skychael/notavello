@@ -1,4 +1,4 @@
-<!-- Notavello gemini-2.1-strict-dom-parser-debug -->
+<!-- Notavello gemini-2.2-strict-dom-priority-debug -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1033,7 +1033,7 @@ body {
     Nota<span>vello</span>
   </div>
   </a>
-  <div class="badge">FREE PREVIEW · GEMINI-2.1 DEBUG · 19:35:00</div>
+  <div class="badge">FREE PREVIEW · GEMINI-2.2 DEBUG · 19:40:18</div>
 </header>
 
 <div class="screen-ui">
@@ -1763,22 +1763,30 @@ function chooseBestGeminiParse(htmlMessages, plainMessages) {
 
   parseLog.push(`Scores — HTML: ${htmlScore}, plain: ${plainScore}`);
 
-  // Strict DOM ownership is more trustworthy than plain text guessing.
-  // Prefer HTML when it has balanced ownership and is not missing lots of messages.
-  const htmlBalanced = htmlMessages.length >= 2 && htmlH > 0 && htmlA > 0 && Math.abs(htmlH - htmlA) <= 2;
-  const plainMuchLarger = plainMessages.length > htmlMessages.length + 8;
+  // Gemini rule:
+  // If strict DOM extraction finds balanced USER-QUERY / MODEL-RESPONSE pairs,
+  // trust it over plain text, even if plain text produces more chunks.
+  //
+  // Plain text often turns one Gemini response into many fake alternating messages:
+  // card number lines, bullet lists, numbered lists, notes, etc.
+  const htmlBalanced =
+    htmlMessages.length >= 2 &&
+    htmlH > 0 &&
+    htmlA > 0 &&
+    Math.abs(htmlH - htmlA) <= 2;
 
-  if (htmlBalanced && !plainMuchLarger) {
-    parseLog.push('Parser choice: strict HTML');
+  if (htmlBalanced) {
+    parseLog.push('Parser choice: strict HTML DOM ownership');
     return htmlMessages;
   }
 
-  if (plainScore > htmlScore + 20) {
-    parseLog.push('Parser choice: plain smart fallback');
+  // Only fall back to plain text if HTML is unusable.
+  if (plainMessages.length >= 2 && plainH > 0 && plainA > 0) {
+    parseLog.push('Parser choice: plain smart fallback because HTML was weak');
     return plainMessages;
   }
 
-  parseLog.push('Parser choice: HTML by default');
+  parseLog.push('Parser choice: best available fallback');
   return htmlMessages.length >= 2 ? htmlMessages : plainMessages;
 }
 
@@ -1803,8 +1811,8 @@ function parseConversation(raw) {
   const humanCount = messages.filter(m => m.role === 'human').length;
   const aiCount = messages.filter(m => m.role === 'ai').length;
   DEBUG_STATE.summary = [
-    `Version: GEMINI-1.9 DEBUG`,
-    `Timestamp: 19:09:39`,
+    `Version: GEMINI-2.2 DEBUG`,
+    `Timestamp: 19:40:18`,
     `Raw chars: ${(raw || '').length}`,
     `Clipboard HTML chars: ${(html || '').length}`,
     `Messages: ${messages.length}`,
