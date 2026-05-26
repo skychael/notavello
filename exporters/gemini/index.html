@@ -780,53 +780,6 @@ body {
 }
 
 /* ── FLOATING DOWNLOAD BAR ── */
-.float-bar {
-  display: none;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 200;
-  background: rgba(15,23,42,0.96);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  padding: 14px 24px;
-  box-shadow: 0 -4px 24px rgba(0,0,0,0.25);
-  animation: slideUp 0.3s ease both;
-}
-.float-bar-inner {
-  max-width: 800px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-}
-.float-bar-text {
-  font-size: 0.86rem;
-  color: #94A3B8;
-  line-height: 1.4;
-}
-.float-bar-text strong { color: white; }
-.btn-float-download {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 28px;
-  background: linear-gradient(135deg, #059669, #047857);
-  color: white;
-  font-family: 'Sora', sans-serif;
-  font-size: 0.9rem;
-  font-weight: 700;
-  border: none;
-  border-radius: var(--radius-sm);
-  cursor: pointer;
-  white-space: nowrap;
-  transition: opacity 0.2s, box-shadow 0.2s;
-  box-shadow: 0 4px 16px rgba(5,150,105,0.4);
-  flex-shrink: 0;
-}
-.btn-float-download:hover { opacity: 0.92; }
 
 @keyframes slideUp {
   from { transform: translateY(100%); opacity: 0; }
@@ -1848,7 +1801,6 @@ function resetApp() {
   document.getElementById('previewSection').style.display = 'none';
   document.getElementById('paywall').style.display = 'none';
   document.getElementById('errorMsg').style.display = 'none';
-  document.getElementById('floatBar').style.display = 'none';
   document.getElementById('bottomDownload').style.display = 'none';
   parsedMessages = [];
   window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -1911,7 +1863,6 @@ function renderPreview(messages, platform, warning, workerResult) {
   }
 
   document.getElementById('previewSection').style.display = 'block';
-  document.getElementById('floatBar').style.display = 'block';
   document.getElementById('bottomDownload').style.display = 'block';
 
   const docPage = document.getElementById('docPage');
@@ -2022,7 +1973,6 @@ function checkPaywallBeforeDownload() {
     document.getElementById('paywall').style.display = 'block';
     document.getElementById('paywall').scrollIntoView({ behavior: 'smooth' });
     // Hide all download buttons so user only sees the paywall options
-    document.getElementById('floatBar').style.display = 'none';
     document.getElementById('bottomDownload').style.display = 'none';
     document.getElementById('downloadBtn').style.display = 'none';
     return false;
@@ -2278,7 +2228,6 @@ async function verifyRestoreCode() {
     if (data.ok) {
       localStorage.setItem('notavello_paid', 'true');
       document.getElementById('paywall').style.display = 'none';
-      document.getElementById('floatBar').style.display = 'block';
       document.getElementById('bottomDownload').style.display = 'block';
       document.getElementById('downloadBtn').style.display = '';
       const toast = document.createElement('div');
@@ -2296,19 +2245,6 @@ async function verifyRestoreCode() {
   }
 }
 </script>
-<!-- FLOATING DOWNLOAD BAR — appears when preview is shown -->
-<div class="float-bar" id="floatBar">
-  <div class="float-bar-inner">
-    <div class="float-bar-text">
-      <strong>Your PDF is ready.</strong> Review the preview above, then download when you're happy.
-    </div>
-    <button class="btn-float-download" onclick="downloadPDF()">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-      Download PDF
-    </button>
-  </div>
-</div>
-
 <!-- SITE FOOTER -->
 <footer class="site-footer">
   <div class="site-footer-inner">
