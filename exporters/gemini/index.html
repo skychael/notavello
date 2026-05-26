@@ -1,4 +1,4 @@
-<!-- Notavello gemini-2.0-debug-numbered-list-normalizer -->
+<!-- Notavello gemini-2.1-strict-dom-parser-debug -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1033,7 +1033,7 @@ body {
     Nota<span>vello</span>
   </div>
   </a>
-  <div class="badge">FREE PREVIEW · GEMINI-2.0 DEBUG · 19:18:21</div>
+  <div class="badge">FREE PREVIEW · GEMINI-2.1 DEBUG · 19:35:00</div>
 </header>
 
 <div class="screen-ui">
@@ -1433,13 +1433,8 @@ function cleanGeminiNoise(text) {
 }
 
 function normalizeGeminiNumberedLists(text) {
-  // Gemini copied HTML can sometimes render ordered-list items as:
-  // 1.
-  // System active.
-  //
-  // That doubles the visual height and destabilizes page breaks.
-  // Normalize it to:
-  // 1. System active.
+  // Only normalize inside one already-owned Gemini message.
+  // This avoids changing message ownership, while preserving list readability.
   return (text || '')
     .replace(/(^|\n)(\d{1,2})\.\s*\n\s*([^\n]+)/g, '$1$2. $3')
     .replace(/\n{3,}/g, '\n\n');
@@ -1524,12 +1519,80 @@ function parseGeminiHtml(htmlText) {
   if (!htmlText || htmlText.length < 30) return [];
 
   const doc = new DOMParser().parseFromString(htmlText, 'text/html');
-  if (!doc.body) return [];
+  const body = doc.body;
+  if (!body) return [];
 
-  doc.body.querySelectorAll('script, style, noscript, svg, button, nav, header, footer').forEach(el => el.remove());
+  body.querySelectorAll('script, style, noscript, svg, button, nav, header, footer').forEach(el => el.remove());
 
-  const all = [...doc.body.querySelectorAll('*')];
+  const messages = [];
+
+  // STRICT GEMINI DOM PARSER:
+  // Gemini clipboard HTML contains conversation containers.
+  // Each container owns exactly one user query and/or one model response.
+  // Do not parse loose paragraphs globally because that causes cross-speaker merging.
+  const containers = [...body.querySelectorAll(
+    '.conversation-container, [class*="conversation-container"], [id][class*="message-actions-hover-boundary"]'
+  )];
+
+  parseLog.push(`Strict containers found: ${containers.length}`);
+
+  function firstUsefulText(root, selectors) {
+    for (const sel of selectors) {
+      const found = root.querySelector(sel);
+      if (!found) continue;
+      const text = normalizeMessageText(getDirectText(found));
+      if (text) return text;
+    }
+    return '';
+  }
+
+  const userSelectors = [
+    'user-query-content',
+    'user-query',
+    '[id^="user-query-content"]',
+    '.query-content',
+    '.query-text',
+    'p.query-text-line',
+    '[data-test-id="luminous-collapsed-bubble"]'
+  ];
+
+  const aiSelectors = [
+    'model-response message-content',
+    'message-content',
+    '[id^="model-response-message-content"]',
+    '.markdown-main-panel',
+    '.model-response-text',
+    'structured-content-container',
+    '.response-content'
+  ];
+
+  for (const container of containers) {
+    const userText = firstUsefulText(container, userSelectors);
+    const aiText = firstUsefulText(container, aiSelectors);
+
+    if (userText) {
+      messages.push({ role: 'human', text: userText, time: '' });
+    }
+
+    if (aiText) {
+      messages.push({ role: 'ai', text: aiText, time: '' });
+    }
+  }
+
+  const strict = dedupeMessages(messages);
+  const h = strict.filter(m => m.role === 'human').length;
+  const a = strict.filter(m => m.role === 'ai').length;
+
+  parseLog.push(`Strict HTML candidate: ${strict.length} messages (${h} human / ${a} ai)`);
+
+  // Trust strict DOM if it found a healthy conversation.
+  if (strict.length >= 2 && h > 0 && a > 0) {
+    return strict;
+  }
+
+  // Fallback: older explicit parser logic, but still no global text stream ownership.
   let candidates = [];
+  const all = [...body.querySelectorAll('*')];
 
   for (const el of all) {
     const role = classifyGeminiElement(el);
@@ -1538,7 +1601,6 @@ function parseGeminiHtml(htmlText) {
     const text = normalizeMessageText(getDirectText(el));
     if (!text || text.length < 1 || text.length > 5000) continue;
 
-    // Avoid giant parent containers.
     const childText = [...el.children].map(ch => normalizeMessageText(getDirectText(ch))).filter(Boolean).join('\n');
     if (childText && childText.length >= text.length * 0.85 && el.children.length > 1) continue;
 
@@ -1546,12 +1608,12 @@ function parseGeminiHtml(htmlText) {
   }
 
   candidates = dedupeMessages(candidates);
-
-  const h = candidates.filter(m => m.role === 'human').length;
-  const a = candidates.filter(m => m.role === 'ai').length;
-  parseLog.push(`HTML candidate: ${candidates.length} messages (${h} human / ${a} ai)`);
+  const ch = candidates.filter(m => m.role === 'human').length;
+  const ca = candidates.filter(m => m.role === 'ai').length;
+  parseLog.push(`Fallback HTML candidate: ${candidates.length} messages (${ch} human / ${ca} ai)`);
   return candidates;
 }
+
 
 function parseGeminiByLabels(text) {
   const lines = text.split('\n');
@@ -1694,16 +1756,30 @@ function chooseBestGeminiParse(htmlMessages, plainMessages) {
   const htmlScore = scoreMessages(htmlMessages);
   const plainScore = scoreMessages(plainMessages);
 
+  const htmlH = htmlMessages.filter(m => m.role === 'human').length;
+  const htmlA = htmlMessages.filter(m => m.role === 'ai').length;
+  const plainH = plainMessages.filter(m => m.role === 'human').length;
+  const plainA = plainMessages.filter(m => m.role === 'ai').length;
+
   parseLog.push(`Scores — HTML: ${htmlScore}, plain: ${plainScore}`);
 
-  // Important: HTML may be more semantically accurate but often misses user bubbles.
-  // Prefer plain text if it has meaningfully more messages and a balanced speaker ratio.
-  if (plainScore >= htmlScore - 8) {
-    lastParseUsedFallback = false;
+  // Strict DOM ownership is more trustworthy than plain text guessing.
+  // Prefer HTML when it has balanced ownership and is not missing lots of messages.
+  const htmlBalanced = htmlMessages.length >= 2 && htmlH > 0 && htmlA > 0 && Math.abs(htmlH - htmlA) <= 2;
+  const plainMuchLarger = plainMessages.length > htmlMessages.length + 8;
+
+  if (htmlBalanced && !plainMuchLarger) {
+    parseLog.push('Parser choice: strict HTML');
+    return htmlMessages;
+  }
+
+  if (plainScore > htmlScore + 20) {
+    parseLog.push('Parser choice: plain smart fallback');
     return plainMessages;
   }
 
-  return htmlMessages;
+  parseLog.push('Parser choice: HTML by default');
+  return htmlMessages.length >= 2 ? htmlMessages : plainMessages;
 }
 
 function parseGemini(rawText, htmlText) {
