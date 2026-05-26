@@ -1,4 +1,4 @@
-<!-- Notavello gemini-1.0 -->
+<!-- Notavello gemini-1.1 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -940,7 +940,7 @@ body {
     Nota<span>vello</span>
   </div>
   </a>
-  <div class="badge">Free Preview · gemini-1.0</div>
+  <div class="badge">Free Preview · gemini-1.1</div>
 </header>
 
 <div class="screen-ui">
@@ -1084,7 +1084,7 @@ body {
 // Email and phone removed — too likely to be legitimate content
 // that users actually want in their export (contacts, examples, etc).
 //
-// FUTURE PAID FEATURE IDEA (gemini-1.0):
+// FUTURE PAID FEATURE IDEA (gemini-1.1):
 // Add a "Custom Redaction" panel for paid users with checkboxes:
 //   ☑ API keys (always on, not toggleable)
 //   ☑ SSNs
@@ -1143,24 +1143,44 @@ function checkConfidence(messages) {
 const parseLog = []; // kept for internal confidence checks — panel removed
 
 function cleanGeminiNoise(text) {
-  return text
+  // Deterministic Gemini cleanup only.
+  // Removes copied page chrome/header/footer text without rewriting conversation content.
+  const exactNoiseLines = new Set([
+    'About Gemini',
+    'Gemini App',
+    'Subscriptions',
+    'For Business',
+    'Conversation with Gemini',
+    'Google apps',
+    'New chat',
+    'Ask Gemini',
+    'Enter a prompt here',
+    'Show thinking',
+    'Thinking...',
+    'Listen to this response',
+    'Share & export',
+    'Export to Docs',
+    'Open in Gmail',
+    'Copy code',
+    'Use code with caution.',
+    'Sources',
+    'Source',
+    'Related content',
+    'Gemini is AI and can make mistakes.',
+    'Gemini can make mistakes, so double-check it.'
+  ]);
+
+  return (text || '')
+    .replace(/Opens in a new window/gi, '')
     .replace(/Gemini can make mistakes, so double-check it\.?/gi, '')
-    .replace(/Google apps?\s*$/gim, '')
-    .replace(/Show thinking\s*/gi, '')
-    .replace(/Thinking\.\.\.\s*/gi, '')
-    .replace(/Drafts?\s*\d+\s*/gi, '')
-    .replace(/Listen to this response\s*/gi, '')
-    .replace(/Share & export\s*/gi, '')
-    .replace(/Export to Docs\s*/gi, '')
-    .replace(/Open in Gmail\s*/gi, '')
-    .replace(/Copy code\s*/gi, '')
-    .replace(/Use code with caution\.\s*/gi, '')
-    .replace(/^Sources?\s*$/gim, '')
-    .replace(/^Related content\s*$/gim, '')
-    .replace(/^New chat\s*$/gim, '')
-    .replace(/^Ask Gemini\s*$/gim, '')
-    .replace(/^Enter a prompt here\s*$/gim, '')
-    .replace(/^\d{10,}_image\.\w+$/gim, '[Attachment: image]')
+    .replace(/Gemini is AI and can make mistakes\.?/gi, '')
+    .split('\n')
+    .map(line => line.trim())
+    .filter(line => line.length > 0)
+    .filter(line => !exactNoiseLines.has(line))
+    .filter(line => !/^Drafts?\s*\d+$/i.test(line))
+    .filter(line => !/^\d{10,}_image\.\w+$/i.test(line))
+    .join('\n')
     .replace(/^([\w\-. ]+\.\w+)\n(\d+ lines\n)?(\w+)$/gim, '[Attachment: $1]')
     .trim();
 }
@@ -1253,6 +1273,14 @@ function parseGeminiByTimestamps(text) {
 function parseGemini(text) {
   parseLog.length = 0;
   parseLog.push('── Gemini parser started ──');
+
+  // If Gemini page chrome was copied, start after the conversation marker.
+  // This fixes pasted headers such as About Gemini / Gemini App / Subscriptions.
+  const marker = text.match(/Conversation with Gemini/i);
+  if (marker) {
+    text = text.slice(marker.index + marker[0].length);
+  }
+
   text = cleanGeminiNoise(text);
   if (!text) return [];
 
@@ -1334,41 +1362,10 @@ async function processConversation() {
     msgs = msgs.map(m => ({ ...m, text: redactText(m.text) }));
   }
 
-  // ── AI SPEAKER VALIDATION via Cloudflare Worker ──
-  // Sends first 20 messages to Haiku 4.5 to check speaker attribution.
-  // If Worker is down or slow, we fall through silently — never block the user.
-  let workerResult = { status: 'not_called', ms: 0, response: null };
-  try {
-    btn.textContent = 'Analyzing…';
-    btn.disabled = true;
-    const first20 = msgs.slice(0, 20).map(m => ({ role: m.role, text: m.text }));
-    const t0 = Date.now();
-    const res = await Promise.race([
-      fetch('https://notavello-worker.mikekoga.workers.dev/validate-speakers', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ lines: first20 })
-      }),
-      new Promise((_, reject) => setTimeout(() => reject(new Error('timeout')), 5000))
-    ]);
-    workerResult.ms = Date.now() - t0;
-    const result = await res.json();
-    workerResult.status = res.ok ? 'ok' : 'http_error';
-    workerResult.response = result;
-    if (result && result.ok === false && result.fix) {
-      errorEl.textContent = '⚠️ Speaker check: ' + result.fix;
-      errorEl.style.display = 'block';
-      errorEl.style.background = '#FFFBEB';
-      errorEl.style.borderColor = '#FDE68A';
-      errorEl.style.color = '#92400E';
-    }
-  } catch (e) {
-    workerResult.status = e.message === 'timeout' ? 'timeout' : 'error';
-    workerResult.response = e.message;
-  } finally {
-    btn.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> Preview Conversation`;
-    btn.disabled = false;
-  }
+  // ── Speaker validation disabled ──
+  // Gemini export now uses deterministic local cleanup only.
+  // This avoids remote AI checks rewriting, delaying, or second-guessing copied text.
+  const workerResult = { status: 'disabled', ms: 0, response: null };
 
   parsedMessages = msgs;
   renderPreview(msgs, platform, confidence.warning, workerResult);
