@@ -1,4 +1,4 @@
-<!-- Notavello gemini-1.9-debug-panel -->
+<!-- Notavello gemini-2.0-debug-numbered-list-normalizer -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1033,7 +1033,7 @@ body {
     Nota<span>vello</span>
   </div>
   </a>
-  <div class="badge">FREE PREVIEW · GEMINI-1.9 DEBUG · 19:09:39</div>
+  <div class="badge">FREE PREVIEW · GEMINI-2.0 DEBUG · 19:18:21</div>
 </header>
 
 <div class="screen-ui">
@@ -1432,8 +1432,23 @@ function cleanGeminiNoise(text) {
     .trim();
 }
 
+function normalizeGeminiNumberedLists(text) {
+  // Gemini copied HTML can sometimes render ordered-list items as:
+  // 1.
+  // System active.
+  //
+  // That doubles the visual height and destabilizes page breaks.
+  // Normalize it to:
+  // 1. System active.
+  return (text || '')
+    .replace(/(^|\n)(\d{1,2})\.\s*\n\s*([^\n]+)/g, '$1$2. $3')
+    .replace(/\n{3,}/g, '\n\n');
+}
+
 function normalizeMessageText(text) {
-  return cleanGeminiNoise(text || '').replace(/\n{3,}/g, '\n\n').trim();
+  return normalizeGeminiNumberedLists(
+    cleanGeminiNoise(text || '').replace(/\n{3,}/g, '\n\n')
+  ).trim();
 }
 
 function pushGeminiMessage(messages, role, text, time) {
