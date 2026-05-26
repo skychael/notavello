@@ -1,4 +1,4 @@
-<!-- Notavello gemini-1.7 smaller-pagination-buffer -->
+<!-- Notavello gemini-1.9-debug-panel -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -910,6 +910,99 @@ body {
 
 .footer-legal a:hover { color: var(--accent); }
 
+
+/* ── DEBUG PANEL ── */
+.debug-panel {
+  display: none;
+  max-width: 1000px;
+  margin: 28px auto;
+  background: #0F172A;
+  color: #E2E8F0;
+  border: 1px solid #334155;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(15,23,42,0.35);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+}
+.debug-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: #111827;
+  border-bottom: 1px solid #334155;
+}
+.debug-panel-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #A5B4FC;
+}
+.debug-panel-actions {
+  display: flex;
+  gap: 8px;
+}
+.debug-btn {
+  background: #1E293B;
+  color: #CBD5E1;
+  border: 1px solid #475569;
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 0.72rem;
+  cursor: pointer;
+}
+.debug-btn:hover { background: #334155; }
+.debug-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+.debug-box {
+  border-right: 1px solid #334155;
+  border-bottom: 1px solid #334155;
+  padding: 12px;
+  min-height: 120px;
+}
+.debug-box:nth-child(even) { border-right: none; }
+.debug-box h4 {
+  color: #93C5FD;
+  font-size: 0.72rem;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.debug-pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-size: 0.72rem;
+  line-height: 1.45;
+  color: #E5E7EB;
+  max-height: 260px;
+  overflow: auto;
+}
+.debug-toggle {
+  position: fixed;
+  right: 18px;
+  bottom: 70px;
+  z-index: 300;
+  background: #0F172A;
+  color: #A5B4FC;
+  border: 1px solid #475569;
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 18px rgba(15,23,42,0.25);
+}
+.debug-toggle:hover { background: #1E293B; }
+@media (max-width: 800px) {
+  .debug-grid { grid-template-columns: 1fr; }
+  .debug-box { border-right: none; }
+}
+
 /* ── MOBILE ── */
 @media (max-width: 600px) {
   .screen-ui { padding: 32px 16px 72px; }
@@ -940,7 +1033,7 @@ body {
     Nota<span>vello</span>
   </div>
   </a>
-  <div class="badge">FREE PREVIEW · GEMINI-1.7 · 19:01:11</div>
+  <div class="badge">FREE PREVIEW · GEMINI-1.9 DEBUG · 19:09:39</div>
 </header>
 
 <div class="screen-ui">
@@ -1078,7 +1171,139 @@ body {
 
 </div>
 
+
+<button class="debug-toggle" type="button" onclick="toggleDebugPanel()">Debug</button>
+
+<div class="debug-panel" id="debugPanel">
+  <div class="debug-panel-header">
+    <div class="debug-panel-title">Gemini Parser Debug Panel</div>
+    <div class="debug-panel-actions">
+      <button class="debug-btn" type="button" onclick="copyDebugReport()">Copy report</button>
+      <button class="debug-btn" type="button" onclick="clearDebugPanel()">Clear</button>
+      <button class="debug-btn" type="button" onclick="toggleDebugPanel()">Close</button>
+    </div>
+  </div>
+  <div class="debug-grid">
+    <div class="debug-box">
+      <h4>Summary</h4>
+      <pre class="debug-pre" id="debugSummary">No parse yet.</pre>
+    </div>
+    <div class="debug-box">
+      <h4>Parser Log</h4>
+      <pre class="debug-pre" id="debugParserLog">No parse yet.</pre>
+    </div>
+    <div class="debug-box">
+      <h4>Extracted Messages</h4>
+      <pre class="debug-pre" id="debugMessages">No parse yet.</pre>
+    </div>
+    <div class="debug-box">
+      <h4>Page Break Log</h4>
+      <pre class="debug-pre" id="debugPageLog">No preview yet.</pre>
+    </div>
+    <div class="debug-box">
+      <h4>Plain Text Sample</h4>
+      <pre class="debug-pre" id="debugPlain">No paste yet.</pre>
+    </div>
+    <div class="debug-box">
+      <h4>HTML Clipboard Signal</h4>
+      <pre class="debug-pre" id="debugHtml">No HTML captured yet.</pre>
+    </div>
+  </div>
+</div>
+
 <script>
+
+// ── DEBUG HELPERS ──
+const DEBUG_STATE = {
+  summary: '',
+  parserLog: '',
+  messages: '',
+  pageLog: '',
+  plain: '',
+  html: ''
+};
+
+function setDebug(id, text) {
+  const el = document.getElementById(id);
+  if (el) el.textContent = text || '';
+}
+
+function refreshDebugPanel() {
+  setDebug('debugSummary', DEBUG_STATE.summary || 'No parse yet.');
+  setDebug('debugParserLog', DEBUG_STATE.parserLog || 'No parse yet.');
+  setDebug('debugMessages', DEBUG_STATE.messages || 'No parse yet.');
+  setDebug('debugPageLog', DEBUG_STATE.pageLog || 'No preview yet.');
+  setDebug('debugPlain', DEBUG_STATE.plain || 'No paste yet.');
+  setDebug('debugHtml', DEBUG_STATE.html || 'No HTML captured yet.');
+}
+
+function toggleDebugPanel() {
+  const panel = document.getElementById('debugPanel');
+  if (!panel) return;
+  panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
+  refreshDebugPanel();
+}
+
+function clearDebugPanel() {
+  Object.keys(DEBUG_STATE).forEach(k => DEBUG_STATE[k] = '');
+  refreshDebugPanel();
+}
+
+function copyDebugReport() {
+  const report = [
+    '--- GEMINI DEBUG SUMMARY ---',
+    DEBUG_STATE.summary || '',
+    '',
+    '--- PARSER LOG ---',
+    DEBUG_STATE.parserLog || '',
+    '',
+    '--- MESSAGES ---',
+    DEBUG_STATE.messages || '',
+    '',
+    '--- PAGE LOG ---',
+    DEBUG_STATE.pageLog || '',
+    '',
+    '--- PLAIN TEXT SAMPLE ---',
+    DEBUG_STATE.plain || '',
+    '',
+    '--- HTML SIGNAL ---',
+    DEBUG_STATE.html || ''
+  ].join('\n');
+
+  navigator.clipboard?.writeText(report).then(() => {
+    alert('Debug report copied.');
+  }).catch(() => {
+    prompt('Copy debug report:', report);
+  });
+}
+
+function summarizeMessagesForDebug(messages) {
+  return (messages || []).map((m, i) => {
+    const text = (m.text || '').replace(/\s+/g, ' ').slice(0, 180);
+    return `${String(i + 1).padStart(2, '0')}. ${m.role.toUpperCase()} (${(m.text || '').length} chars): ${text}`;
+  }).join('\n');
+}
+
+function summarizeHtmlForDebug(htmlText) {
+  if (!htmlText) return 'No text/html captured from clipboard.';
+  const doc = new DOMParser().parseFromString(htmlText, 'text/html');
+  const all = [...doc.body.querySelectorAll('*')];
+  const interesting = all.slice(0, 800).map((el, i) => {
+    const sig = [
+      el.tagName,
+      el.id ? '#' + el.id : '',
+      el.className ? '.' + String(el.className).replace(/\s+/g, '.') : '',
+      el.getAttribute('data-test-id') ? `[data-test-id="${el.getAttribute('data-test-id')}"]` : '',
+      el.getAttribute('aria-label') ? `[aria-label="${el.getAttribute('aria-label')}"]` : ''
+    ].filter(Boolean).join('');
+    const txt = (el.innerText || el.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 120);
+    if (!txt) return null;
+    return `${i}: ${sig} :: ${txt}`;
+  }).filter(Boolean).slice(0, 120);
+  return `HTML length: ${htmlText.length}\nElements: ${all.length}\n\n${interesting.join('\n')}`;
+}
+
+
 // ── Redaction ──
 // Default patterns: high-confidence sensitive data only.
 // Email and phone removed — too likely to be legitimate content
@@ -1117,6 +1342,9 @@ document.getElementById('pasteArea').addEventListener('paste', function(e) {
   if (!e.clipboardData) return;
   lastPastedHtml = e.clipboardData.getData('text/html') || '';
   lastPastedPlain = e.clipboardData.getData('text/plain') || '';
+  DEBUG_STATE.plain = (lastPastedPlain || '').slice(0, 3000);
+  DEBUG_STATE.html = summarizeHtmlForDebug(lastPastedHtml);
+  refreshDebugPanel();
 });
 
 function getCurrentPasteHtml(raw) {
@@ -1480,6 +1708,26 @@ function parseConversation(raw) {
   const html = getCurrentPasteHtml(raw);
   const messages = parseGemini(raw, html);
   const confidence = checkConfidence(messages);
+
+  const humanCount = messages.filter(m => m.role === 'human').length;
+  const aiCount = messages.filter(m => m.role === 'ai').length;
+  DEBUG_STATE.summary = [
+    `Version: GEMINI-1.9 DEBUG`,
+    `Timestamp: 19:09:39`,
+    `Raw chars: ${(raw || '').length}`,
+    `Clipboard HTML chars: ${(html || '').length}`,
+    `Messages: ${messages.length}`,
+    `Human: ${humanCount}`,
+    `Gemini: ${aiCount}`,
+    `Confidence ok: ${confidence.ok}`,
+    `Warning: ${confidence.warning || 'none'}`
+  ].join('\n');
+  DEBUG_STATE.parserLog = (parseLog || []).join('\n');
+  DEBUG_STATE.messages = summarizeMessagesForDebug(messages);
+  DEBUG_STATE.plain = ((raw || lastPastedPlain || '').slice(0, 3000));
+  DEBUG_STATE.html = summarizeHtmlForDebug(html || lastPastedHtml || '');
+  refreshDebugPanel();
+
   return { messages, platform: 'gemini', confidence };
 }
 
@@ -1616,7 +1864,7 @@ function renderPreview(messages, platform, warning, workerResult) {
 
     currentPage.appendChild(block);
 
-    if (currentPage.scrollHeight > currentPage._emptyHeight - 10) {
+    if (currentPage.scrollHeight > currentPage._emptyHeight) {
       const triggerHeight = currentPage.scrollHeight;
       currentPage.removeChild(block);
       pageCount++;
@@ -1625,6 +1873,9 @@ function renderPreview(messages, platform, warning, workerResult) {
       currentPage.appendChild(block);
     }
   });
+
+  DEBUG_STATE.pageLog = pageLog.join('\n') || 'No page breaks recorded.';
+  refreshDebugPanel();
 
   document.getElementById('previewSection').scrollIntoView({ behavior: 'smooth' });
 }
