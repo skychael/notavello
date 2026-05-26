@@ -413,17 +413,22 @@ body {
   align-items: center;
   gap: 6px;
   padding: 10px 18px;
-  background: var(--surface2);
-  color: var(--ink-muted);
+  background: var(--surface);
+  color: var(--accent);
   font-family: 'Sora', sans-serif;
   font-size: 0.84rem;
-  font-weight: 500;
-  border: 1px solid var(--border);
+  font-weight: 600;
+  border: 1.5px solid rgba(79,70,229,0.35);
   border-radius: var(--radius-sm);
   cursor: pointer;
-  transition: background 0.15s;
+  transition: background 0.15s, border-color 0.15s, box-shadow 0.15s;
+  box-shadow: 0 1px 4px rgba(79,70,229,0.08);
 }
-.btn-reset:hover { background: var(--border); }
+.btn-reset:hover {
+  background: var(--accent-light);
+  border-color: var(--accent);
+  box-shadow: 0 2px 8px rgba(79,70,229,0.15);
+}
 
 .btn-download {
   display: flex;
