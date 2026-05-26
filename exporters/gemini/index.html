@@ -1173,7 +1173,7 @@ function cleanGeminiNoise(text) {
   return (text || '')
     .replace(/Opens in a new window/gi, '')
     .replace(/Gemini can make mistakes, so double-check it\.?/gi, '')
-    .replace(/Gemini is AI and can make mistakes\.?/gi, '')
+    .replace(/Gemini\s+is\s+AI\s+and\s+can\s+make\s+mistakes\.?/gi, '')
     .split('\n')
     .map(line => line.trim())
     .filter(line => line.length > 0)
@@ -1274,13 +1274,20 @@ function parseGemini(text) {
   parseLog.length = 0;
   parseLog.push('── Gemini parser started ──');
 
-  // If Gemini page chrome was copied, start after the conversation marker.
-  // This fixes pasted headers such as About Gemini / Gemini App / Subscriptions.
-  const marker = text.match(/Conversation with Gemini/i);
-  if (marker) {
-    text = text.slice(marker.index + marker[0].length);
+  // Clean first, then optionally trim copied Gemini page chrome.
+  // Do not blindly slice after the marker unless useful transcript text remains.
+  text = cleanGeminiNoise(text);
+
+  const markerMatch = text.match(/Conversation with Gemini/i);
+  if (markerMatch) {
+    const afterMarker = cleanGeminiNoise(text.slice(markerMatch.index + markerMatch[0].length));
+    const afterLines = afterMarker.split('\n').map(l => l.trim()).filter(Boolean);
+    if (afterLines.length >= 2) {
+      text = afterMarker;
+    }
   }
 
+  // Final pass removes footer-only leftovers such as Gemini's AI warning.
   text = cleanGeminiNoise(text);
   if (!text) return [];
 
