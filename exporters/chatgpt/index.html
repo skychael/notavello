@@ -984,6 +984,7 @@ if (notUsingLink) {
 
 // ── CONFIDENCE CHECK ──
 function checkConfidence(messages) {
+  if (messages.length === 0) return { ok: false, warning: 'No speaker labels found. Copy your ChatGPT conversation with Ctrl+A then Ctrl+C, then paste here.' };
   if (messages.length < 2) return { ok: false, warning: 'Only ' + messages.length + ' message detected — make sure you copied the full conversation.' };
   const h = messages.filter(m => m.role === 'human').length;
   const a = messages.filter(m => m.role === 'ai').length;
@@ -1107,23 +1108,22 @@ function parseChatGPT(text) {
     parseLog.push('P2 yielded < 2 messages \u2192 fallback');
   }
 
-  // ── FALLBACK: alternating double-newline blocks + first-speaker detection ──
-  parseLog.push('Fallback: alternating block split');
-  const blocks = text.split(/\n{2,}/).map(b => b.trim()).filter(b => b.length > 2);
-  parseLog.push(`Blocks: ${blocks.length}`);
+  // ── FALLBACK: no recognizable speaker labels found ──
+  // Returning [] surfaces a user-facing error instead of the old alternating-block
+  // guess that produced 700+ fake messages on non-ChatGPT pastes.
+  parseStats.mode = 'failed';
+  parseLog.push('── No speaker labels found — parse failed ──');
+  return [];
 
-  const aiOpeners = /^(Sure|Of course|Great|Here|I |Let me|To |Based on|The |Absolutely|Happy to|Yes|No[,. ]|In |There )/i;
-  const firstBlock = blocks[0] || '';
-  const firstIsAI = firstBlock.length > 100 && !firstBlock.includes('?') && aiOpeners.test(firstBlock);
-  parseStats.fallbackFirstSpeaker = firstIsAI ? 'AI' : 'HUMAN';
-  parseLog.push(`First-speaker: ${parseStats.fallbackFirstSpeaker} (len=${firstBlock.length}, hasQ=${firstBlock.includes('?')})`);
-
-  parseStats.mode = 'fallback';
-  return blocks.map((block, i) => ({
-    role: ((firstIsAI ? i + 1 : i) % 2 === 0) ? 'human' : 'ai',
-    text: block,
-    time: ''
-  }));
+  // Kept for debugging future DOM changes — unreachable unless mode above is removed:
+  // const blocks = text.split(/\n{2,}/).map(b => b.trim()).filter(b => b.length > 2);
+  // const aiOpeners = /^(Sure|Of course|Great|Here|I |Let me|To |Based on|The |Absolutely|Happy to|Yes|No[,. ]|In |There )/i;
+  // const firstBlock = blocks[0] || '';
+  // const firstIsAI = firstBlock.length > 100 && !firstBlock.includes('?') && aiOpeners.test(firstBlock);
+  // return blocks.map((block, i) => ({
+  //   role: ((firstIsAI ? i + 1 : i) % 2 === 0) ? 'human' : 'ai',
+  //   text: block, time: ''
+  // }));
 }
 
 // ── MAIN PARSER ──
@@ -1643,7 +1643,10 @@ async function startCheckout(btn) {
   btn.disabled = true;
   btn.textContent = 'Redirecting to checkout\u2026';
   const raw = document.getElementById('pasteArea').value;
-  if (raw.trim()) sessionStorage.setItem('notavello_saved_conversation', raw);
+  if (raw.trim()) {
+    sessionStorage.setItem('notavello_saved_conversation', raw);
+    if (lastClipboardHTML) sessionStorage.setItem('notavello_saved_html', lastClipboardHTML);
+  }
   try {
     const res = await fetch('https://notavello-worker.mikekoga.workers.dev/create-checkout', {
       method: 'POST',
@@ -1670,6 +1673,9 @@ async function startCheckout(btn) {
     if (saved) {
       document.getElementById('pasteArea').value = saved;
       sessionStorage.removeItem('notavello_saved_conversation');
+      const savedHtml = sessionStorage.getItem('notavello_saved_html') || '';
+      sessionStorage.removeItem('notavello_saved_html');
+      lastClipboardHTML = savedHtml;
       document.getElementById('pasteArea').dispatchEvent(new Event('input'));
     }
   }
