@@ -1,4 +1,4 @@
-<!-- Notavello root-1.6 -->
+<!-- Notavello root-1.5 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -546,9 +546,16 @@ body {
     </div>
     Nota<span>vello</span>
   </a>
-  <div style="font-size:0.68rem;font-weight:600;background:linear-gradient(135deg,var(--accent-light),#F5F3FF);color:var(--accent);padding:5px 14px;border-radius:20px;letter-spacing:0.06em;text-transform:uppercase;border:1px solid rgba(79,70,229,0.2);">
-    ROOT · 18:06:12
+  <div id="liveBadge" style="font-size:0.68rem;font-weight:600;background:linear-gradient(135deg,var(--accent-light),#F5F3FF);color:var(--accent);padding:5px 14px;border-radius:20px;letter-spacing:0.06em;text-transform:uppercase;border:1px solid rgba(79,70,229,0.2);">
+    ROOT · --:--:-- UTC
   </div>
+<script>
+(function(){
+  const n=new Date();
+  const t=[n.getUTCHours(),n.getUTCMinutes(),n.getUTCSeconds()].map(v=>String(v).padStart(2,'0')).join(':');
+  document.getElementById('liveBadge').textContent='ROOT · '+t+' UTC';
+})();
+</script>
 </header>
 
 
