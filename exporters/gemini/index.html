@@ -940,7 +940,7 @@ body {
     Nota<span>vello</span>
   </div>
   </a>
-  <div class="badge">FREE PREVIEW · GEMINI-1.1 · 18:16:54</div>
+  <div class="badge">FREE PREVIEW · GEMINI-1.1 · 18:21:00</div>
 </header>
 
 <div class="screen-ui">
@@ -1274,20 +1274,17 @@ function parseGemini(text) {
   parseLog.length = 0;
   parseLog.push('── Gemini parser started ──');
 
-  // Clean first, then optionally trim copied Gemini page chrome.
-  // Do not blindly slice after the marker unless useful transcript text remains.
-  text = cleanGeminiNoise(text);
-
-  const markerMatch = text.match(/Conversation with Gemini/i);
+  // Use raw pasted text first. Cleanup removes "Conversation with Gemini",
+  // so the transcript boundary must be found before cleanup runs.
+  const rawText = text || '';
+  const markerMatch = rawText.match(/Conversation with Gemini/i);
   if (markerMatch) {
-    const afterMarker = cleanGeminiNoise(text.slice(markerMatch.index + markerMatch[0].length));
-    const afterLines = afterMarker.split('\n').map(l => l.trim()).filter(Boolean);
-    if (afterLines.length >= 2) {
-      text = afterMarker;
-    }
+    text = rawText.slice(markerMatch.index + markerMatch[0].length);
+    parseLog.push('Trimmed Gemini page chrome before transcript marker.');
+  } else {
+    text = rawText;
   }
 
-  // Final pass removes footer-only leftovers such as Gemini's AI warning.
   text = cleanGeminiNoise(text);
   if (!text) return [];
 
@@ -1300,9 +1297,28 @@ function parseGemini(text) {
   }
 
   if (messages.length < 2) {
-    const blocks = text.split(/\n{2,}/).map(b => cleanGeminiNoise(b)).filter(b => b.length > 3);
-    parseLog.push(`Fallback blocks: ${blocks.length}`);
-    messages = blocks.map((block, i) => ({ role: i % 2 === 0 ? 'human' : 'ai', text: block, time: '' }));
+    const lines = text
+      .split('\n')
+      .map(l => cleanGeminiNoise(l))
+      .map(l => l.trim())
+      .filter(Boolean);
+
+    parseLog.push(`Fallback lines: ${lines.length}`);
+
+    if (lines[0] && /^Gemini$/i.test(lines[0])) lines.shift();
+
+    messages = [];
+    if (lines.length >= 2) {
+      lines.forEach((line, i) => {
+        messages.push({
+          role: i % 2 === 0 ? 'human' : 'ai',
+          text: line,
+          time: ''
+        });
+      });
+    } else if (lines.length === 1) {
+      messages.push({ role: 'human', text: lines[0], time: '' });
+    }
   }
 
   const result = messages.filter(m => m.text.trim().length >= 1);
