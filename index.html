@@ -1,4 +1,4 @@
-<!-- Notavello root-1.6 -->
+<!-- Notavello root-1.5 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -538,7 +538,19 @@ body {
 </head>
 <body>
 
-<!--HEADER-->
+
+<header class="header">
+  <a href="/" class="logo">
+    <div class="logo-icon">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+    </div>
+    Nota<span>vello</span>
+  </a>
+  <div style="font-size:0.68rem;font-weight:600;background:linear-gradient(135deg,var(--accent-light),#F5F3FF);color:var(--accent);padding:5px 14px;border-radius:20px;letter-spacing:0.06em;text-transform:uppercase;border:1px solid rgba(79,70,229,0.2);">
+    ROOT · 18:06:12
+  </div>
+</header>
+
 
 <main class="screen-ui">
 
@@ -548,13 +560,13 @@ body {
       Free to use · No sign-up required
     </div>
     <h1>Turn AI conversations into<br><em>beautiful PDFs</em></h1>
-    <p>Paste any AI conversation and get a clean, color-coded PDF — searchable, shareable, and professionally formatted. Claude, ChatGPT, and Gemini are all supported now.</p>
+    <p>Paste any AI conversation and get a clean, color-coded PDF — searchable, shareable, and professionally formatted. Claude, ChatGPT, and Gemini supported now.</p>
   </section>
 
   <div class="ai-cards-label">Choose your AI to get started</div>
   <div class="ai-cards">
 
-    <a href="/chatgpt/" class="ai-card ai-card--live">
+    <a href="/exporters/chatgpt/" class="ai-card ai-card--live">
       <div class="ai-card-icon ai-card-icon--chatgpt">💬</div>
       <div class="ai-card-name">ChatGPT</div>
       <div class="ai-card-desc">Export ChatGPT conversations by OpenAI as color-coded PDFs</div>
@@ -564,7 +576,7 @@ body {
       </div>
     </a>
 
-    <a href="/gemini/" class="ai-card ai-card--live">
+    <a href="/exporters/gemini/" class="ai-card ai-card--live">
       <div class="ai-card-icon ai-card-icon--gemini">✨</div>
       <div class="ai-card-name">Gemini</div>
       <div class="ai-card-desc">Export Gemini conversations by Google as color-coded PDFs</div>
@@ -574,7 +586,7 @@ body {
       </div>
     </a>
 
-    <a href="/claude/" class="ai-card ai-card--live">
+    <a href="/exporters/claude/" class="ai-card ai-card--live">
       <div class="ai-card-icon ai-card-icon--claude">🤖</div>
       <div class="ai-card-name">Claude</div>
       <div class="ai-card-desc">Export Claude conversations by Anthropic as color-coded PDFs</div>
@@ -645,17 +657,37 @@ body {
 
   <section class="cta-section">
     <h2>Ready to export your conversation?</h2>
-    <p>Choose any supported AI exporter — free, instant, no account needed.</p>
-    <a href="/claude/" class="btn-cta">
+    <p>Start with any supported AI — free, instant, no account needed.</p>
+    <a href="/exporters/gemini/" class="btn-cta">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-      Export AI Conversations
+      Export a Gemini Conversation
     </a>
-    <div class="cta-note">root-1.6</div>
+    <div class="cta-note">root-1.5</div>
   </section>
 
 </main>
 
-<!--FOOTER-->
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="footer-nav">
+      <div class="footer-nav-label">Export AI Conversations</div>
+      <a href="/exporters/chatgpt/">ChatGPT</a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/exporters/gemini/">Gemini</a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/exporters/claude/">Claude</a>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© Notavello</div>
+      <div class="footer-legal">
+        <a href="/privacy/">Privacy</a>
+        <a href="/terms/">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
 
 </body>
 </html>
