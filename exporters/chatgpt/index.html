@@ -1,4 +1,7 @@
-<!-- Notavello chatgpt-1.6 -->
+<!-- Notavello chatgpt-1.7 | generated 22:30:00 UTC | remove debug panel, add report issue button + sendBugReport -->
+<!-- ⚠️ AI INSTRUCTION: Every time you modify this file you MUST update the version comment on line 1.
+     Bump the patch number (e.g. 1.7 → 1.8), update the UTC time, and add a brief note of what changed.
+     This is how we verify the correct version is live. Do not skip this step. -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -771,6 +774,32 @@ body {
   .site-footer { padding: 24px 16px; }
   .footer-bottom { flex-direction: column; align-items: flex-start; }
 }
+
+.report-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #FFFFFF;
+  border: 1px solid #94A3B8;
+  color: #334155;
+  border-radius: 12px;
+  padding: 11px 16px;
+  font-size: 0.84rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all .15s ease;
+  font-family: 'Sora', sans-serif;
+  box-shadow: 0 1px 2px rgba(15,23,42,0.04);
+}
+.report-btn:hover {
+  background: #F8FAFC;
+  border-color: #64748B;
+  transform: translateY(-1px);
+}
+.report-btn .warn-icon {
+  color: #D97706;
+  font-size: 0.95rem;
+}
 </style>
 </head>
 <body>
@@ -835,37 +864,6 @@ body {
     
     <textarea id="pasteArea" placeholder="Paste your ChatGPT conversation here (Ctrl+V)..."></textarea>
 
-<textarea id="debugPasteBox" placeholder="Paste ChatGPT copy here for clipboard test" style="width:100%;height:180px;"></textarea>
-
-<pre id="debugOutput" style="white-space:pre-wrap;background:#111;color:#0f0;padding:16px;font-size:12px;"></pre>
-
-<script>
-document.getElementById('debugPasteBox').addEventListener('paste', function(e) {
-  const plain = e.clipboardData.getData('text/plain');
-  const html = e.clipboardData.getData('text/html');
-
-  const parser = new DOMParser();
-  const doc = parser.parseFromString(html, 'text/html');
-  const turns = [...doc.querySelectorAll('[data-turn]')];
-
-  let report = '--- TURN TEST ---\n';
-  report += 'Turn count: ' + turns.length + '\n\n';
-
-  turns.slice(0, 30).forEach((turn, i) => {
-    const role = turn.getAttribute('data-turn');
-    const msg = turn.querySelector('[data-message-author-role]');
-    const text = msg ? msg.innerText.trim() : turn.innerText.trim();
-    if (!text || text.length < 3) return;
-
-    report += i + ' | ' + role + ' | ' + text.slice(0, 200).replace(/\n/g, ' ') + '\n\n';
-  });
-
-  report += '\n--- TEXT/PLAIN ---\n' + plain.slice(0, 3000);
-  report += '\n\n--- TEXT/HTML FIRST 3000 ---\n' + html.slice(0, 3000);
-
-  document.getElementById('debugOutput').textContent = report;
-});
-</script>
     <div class="input-footer">
       <label class="redact-option">
         <input type="checkbox" id="redactCheck" checked>
@@ -889,6 +887,9 @@ document.getElementById('debugPasteBox').addEventListener('paste', function(e) {
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-3.69"/></svg>
           Start over
         </button>
+        <button class="report-btn" onclick="sendBugReport(this)">
+          <span class="warn-icon">⚠</span> Report issue
+        </button>
         <button class="btn-download" id="downloadBtn" onclick="downloadPDF()">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           Download PDF
@@ -906,6 +907,9 @@ document.getElementById('debugPasteBox').addEventListener('paste', function(e) {
         Download PDF
       </button>
       <p class="bottom-download-note">Your conversation is ready &mdash; click to save as a PDF file</p>
+      <button class="report-btn" onclick="sendBugReport(this)" style="margin-top:10px;">
+        <span class="warn-icon">⚠</span> Report issue
+      </button>
     </div>
   </div>
 
@@ -1515,6 +1519,51 @@ const WATERMARKS = [
   "Speakers auto-detected & highlighted by Notavello.com \u2014 watermark-free for $5/mo",
 ];
 let watermarkIndex = 0;
+
+// ── BUG REPORT ──
+async function sendBugReport(btn) {
+  const originalHTML = btn.innerHTML;
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+
+  const rawText = (document.getElementById('pasteArea').value || '').slice(0, 3000);
+  const msgSummary = (parsedMessages || []).map((m, i) =>
+    String(i+1).padStart(2,'0') + '. ' + m.role.toUpperCase() + ' (' + (m.text||'').length + ' chars): ' + (m.text||'').replace(/[\s]+/g,' ').slice(0,120)
+  ).join('\n');
+
+  const report = [
+    '--- CHATGPT DEBUG SUMMARY ---',
+    'Timestamp: ' + new Date().toISOString(),
+    'Messages parsed: ' + (parsedMessages||[]).length,
+    'Human: ' + (parsedMessages||[]).filter(m=>m.role==='human').length,
+    'AI: ' + (parsedMessages||[]).filter(m=>m.role==='ai').length,
+    '',
+    '--- PARSER LOG ---',
+    (parseLog||[]).join('\n') || 'none',
+    '',
+    '--- MESSAGES ---',
+    msgSummary || 'none',
+    '',
+    '--- RAW TEXT SAMPLE ---',
+    rawText || 'none'
+  ].join('\n');
+
+  try {
+    await fetch('https://notavello-worker.mikekoga.workers.dev/bug-report', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ page: 'chatgpt', timestamp: new Date().toISOString(), report })
+    });
+  } catch (e) { /* silent fail */ }
+
+  btn.disabled = false;
+  btn.innerHTML = originalHTML;
+  const toast = document.createElement('div');
+  toast.style.cssText = 'position:fixed;top:24px;left:50%;transform:translateX(-50%);background:rgba(255,255,255,0.75);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);color:#4F46E5;border:1px solid rgba(79,70,229,0.25);padding:14px 28px;border-radius:12px;font-size:0.95rem;font-weight:600;z-index:9999;box-shadow:0 4px 20px rgba(79,70,229,0.15);pointer-events:none;';
+  toast.textContent = '✓ Thanks for the report! We\'ll look into it.';
+  document.body.appendChild(toast);
+  setTimeout(() => toast.remove(), 4000);
+}
 
 // ── DEV MODE ──
 let devMode = sessionStorage.getItem('notavello_dev') === 'true';
