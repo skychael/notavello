@@ -20,7 +20,25 @@
   </url>
 
   <url>
+    <loc>https://notavello.com/exporters/gemini/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://notavello.com/exporters/copilot/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
     <loc>https://notavello.com/exporters/grok/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://notavello.com/exporters/perplexity/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
