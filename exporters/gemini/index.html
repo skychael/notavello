@@ -466,7 +466,7 @@ body {
   margin: 0 auto 32px auto;
   box-sizing: border-box;
   position: relative;
-  overflow: visible;
+  overflow: hidden;
 }
 
 .doc-title {
@@ -991,7 +991,7 @@ body {
     Nota<span>vello</span>
   </div>
   </a>
-  <div class="badge" id="liveBadge">FREE PREVIEW · GEMINI-2.3.2 · GENERATED 2026-05-27 18:24:52 UTC</div>
+  <div class="badge" id="liveBadge">FREE PREVIEW · GEMINI-2.3.3 · GENERATED 2026-05-27 18:27:09 UTC</div>
 
 </header>
 
@@ -1891,13 +1891,15 @@ function renderPreview(messages, platform, warning, workerResult) {
         </div>`;
     }
     docPage.appendChild(page);
-    page._emptyHeight = page.scrollHeight;
     return page;
   }
 
   let pageCount = 1;
   let currentPage = newPage(true);
-  pageLog.push(`Page 1 | empty:${currentPage._emptyHeight}px`);
+
+  const PAGE_LIMIT = 1056;
+
+  pageLog.push(`Page 1 created`);
 
   messages.forEach((msg) => {
     const block = document.createElement('div');
@@ -1920,11 +1922,14 @@ function renderPreview(messages, platform, warning, workerResult) {
 
     currentPage.appendChild(block);
 
-    if (currentPage.scrollHeight > currentPage._emptyHeight) {
-      const triggerHeight = currentPage.scrollHeight;
+    // Correct pagination check:
+    // compare actual content height to fixed page limit.
+    if (currentPage.scrollHeight > PAGE_LIMIT) {
       currentPage.removeChild(block);
+
       pageCount++;
-      pageLog.push(`P${pageCount} trigger:${triggerHeight}px remaining:${currentPage.scrollHeight}px`);
+      pageLog.push(`Created page ${pageCount}`);
+
       currentPage = newPage(false);
       currentPage.appendChild(block);
     }
