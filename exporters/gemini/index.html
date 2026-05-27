@@ -1,4 +1,4 @@
-<!-- Notavello gemini-2.3.5 | generated 18:30:35 UTC | preview pagination fix -->
+<!-- Notavello gemini-2.3.6 | generated 18:33:04 UTC | preview overflow fix using actual page height -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -991,7 +991,7 @@ body {
     Nota<span>vello</span>
   </div>
   </a>
-  <div class="badge" id="liveBadge">FREE PREVIEW · GEMINI-2.3.5 · GENERATED 18:30:35 UTC</div>
+  <div class="badge" id="liveBadge">FREE PREVIEW · GEMINI-2.3.6 · GENERATED 18:33:04 UTC</div>
 </header>
 
 <div class="screen-ui">
@@ -1895,11 +1895,7 @@ function renderPreview(messages, platform, warning, workerResult) {
 
   let pageCount = 1;
   let currentPage = newPage(true);
-
-  // Fixed printable page content limit for the on-screen preview.
-  // This replaces the old broken _emptyHeight check.
-  const PAGE_LIMIT = 980;
-  pageLog.push(`Page 1 created · limit:${PAGE_LIMIT}px`);
+  pageLog.push(`Page 1 created · pageHeight:${currentPage.clientHeight}px`);
 
   messages.forEach((msg) => {
     const block = document.createElement('div');
@@ -1922,12 +1918,15 @@ function renderPreview(messages, platform, warning, workerResult) {
 
     currentPage.appendChild(block);
 
-    if (currentPage.scrollHeight > PAGE_LIMIT) {
+    // Page-break only when real content overflows the actual fixed page height.
+    // This avoids the old one-message-per-page bug caused by comparing to a blank page height.
+    if (currentPage.scrollHeight > currentPage.clientHeight + 2) {
       const triggerHeight = currentPage.scrollHeight;
-      currentPage.removeChild(block);
+      const pageHeight = currentPage.clientHeight;
 
+      currentPage.removeChild(block);
       pageCount++;
-      pageLog.push(`Page ${pageCount} created · trigger:${triggerHeight}px`);
+      pageLog.push(`Page ${pageCount} created · trigger:${triggerHeight}px · pageHeight:${pageHeight}px`);
 
       currentPage = newPage(false);
       currentPage.appendChild(block);
