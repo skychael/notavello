@@ -1,0 +1,292 @@
+<!-- Notavello sitemap-1.1 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Sitemap — Notavello</title>
+<meta name="description" content="Every page on Notavello — exporters, product pages, legal, and account tools."/>
+<meta name="robots" content="noindex, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/sitemap/"/>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+
+/* HEADER */
+.header {
+  background: rgba(255,255,255,0.85); backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border); padding: 16px 36px;
+  display: flex; align-items: center; justify-content: space-between;
+  position: sticky; top: 0; z-index: 100;
+}
+.logo {
+  font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700;
+  color: var(--ink); letter-spacing: -0.03em;
+  display: flex; align-items: center; gap: 10px; text-decoration: none;
+}
+.logo-icon {
+  width: 32px; height: 32px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  border-radius: 10px; display: flex; align-items: center;
+  justify-content: center; color: white;
+  box-shadow: 0 2px 8px rgba(79,70,229,0.35);
+}
+.logo span { color: var(--accent); }
+
+/* MAIN */
+.main { max-width: 680px; margin: 0 auto; padding: 56px 24px 100px; }
+
+.page-title {
+  font-family: 'Lora', serif; font-size: 2rem; font-weight: 600;
+  color: var(--ink); margin-bottom: 8px; letter-spacing: -0.02em;
+}
+.page-subtitle {
+  font-size: 0.9rem; color: var(--ink-muted); margin-bottom: 44px; line-height: 1.6;
+}
+
+/* SECTION */
+.section { margin-bottom: 36px; }
+
+.section-label {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 0.68rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.12em; color: var(--ink-faint);
+  margin-bottom: 12px;
+}
+.section-label-icon { font-size: 0.9rem; }
+
+/* CARDS */
+.card-list { display: flex; flex-direction: column; gap: 2px; }
+
+.site-card {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px; padding: 16px 20px;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  text-decoration: none; color: inherit;
+  transition: box-shadow 0.15s, border-color 0.15s;
+}
+.site-card:hover {
+  box-shadow: var(--shadow); border-color: rgba(79,70,229,0.25);
+}
+.site-card:first-child { border-radius: var(--radius-sm) var(--radius-sm) var(--radius-sm) var(--radius-sm); }
+
+.card-left { flex: 1; min-width: 0; }
+.card-name {
+  font-size: 0.92rem; font-weight: 600; color: var(--ink); margin-bottom: 2px;
+}
+.card-desc { font-size: 0.8rem; color: var(--ink-muted); line-height: 1.5; }
+
+/* BADGES */
+.badge-live {
+  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.08em;
+  text-transform: uppercase; padding: 4px 10px; border-radius: 20px;
+  background: var(--green-light); color: var(--green);
+  white-space: nowrap; flex-shrink: 0;
+}
+.badge-pro {
+  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.08em;
+  text-transform: uppercase; padding: 4px 10px; border-radius: 20px;
+  background: var(--accent-light); color: var(--accent);
+  white-space: nowrap; flex-shrink: 0;
+}
+
+/* FOOTER */
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+
+@media (max-width: 600px) {
+  .header { padding: 14px 20px; }
+  .main { padding: 36px 16px 80px; }
+  .page-title { font-size: 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+  <h1 class="page-title">Sitemap</h1>
+  <p class="page-subtitle">Every page on Notavello, organized by section.</p>
+
+  <!-- HOME -->
+  <div class="section">
+    <a class="site-card" href="/">
+      <div class="card-left">
+        <div class="card-name">Home</div>
+        <div class="card-desc">Landing page — choose your AI and get started</div>
+      </div>
+      <span class="badge-live">Live</span>
+    </a>
+  </div>
+
+  <!-- AI EXPORTERS -->
+  <div class="section">
+    <div class="section-label">
+      <span class="section-label-icon">🤖</span> AI Exporters
+    </div>
+    <div class="card-list">
+      <a class="site-card" href="/exporters/claude/">
+        <div class="card-left">
+          <div class="card-name">Claude</div>
+          <div class="card-desc">Export Claude conversations by Anthropic as color-coded PDFs</div>
+        </div>
+        <span class="badge-live">Live</span>
+      </a>
+      <a class="site-card" href="/exporters/chatgpt/">
+        <div class="card-left">
+          <div class="card-name">ChatGPT</div>
+          <div class="card-desc">Export ChatGPT conversations by OpenAI as color-coded PDFs</div>
+        </div>
+        <span class="badge-live">Live</span>
+      </a>
+      <a class="site-card" href="/exporters/gemini/">
+        <div class="card-left">
+          <div class="card-name">Gemini</div>
+          <div class="card-desc">Export Gemini conversations by Google as color-coded PDFs</div>
+        </div>
+        <span class="badge-live">Live</span>
+      </a>
+      <a class="site-card" href="/exporters/copilot/">
+        <div class="card-left">
+          <div class="card-name">Copilot</div>
+          <div class="card-desc">Export Microsoft Copilot conversations as color-coded PDFs</div>
+        </div>
+        <span class="badge-live">Live</span>
+      </a>
+      <a class="site-card" href="/exporters/grok/">
+        <div class="card-left">
+          <div class="card-name">Grok</div>
+          <div class="card-desc">Export Grok conversations by xAI as color-coded PDFs</div>
+        </div>
+        <span class="badge-live">Live</span>
+      </a>
+      <a class="site-card" href="/exporters/perplexity/">
+        <div class="card-left">
+          <div class="card-name">Perplexity</div>
+          <div class="card-desc">Export Perplexity AI conversations as color-coded PDFs</div>
+        </div>
+        <span class="badge-live">Live</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- PRODUCT -->
+  <div class="section">
+    <div class="section-label">
+      <span class="section-label-icon">⚡</span> Product
+    </div>
+    <div class="card-list">
+      <a class="site-card" href="/pages/pricing/">
+        <div class="card-left">
+          <div class="card-name">Pricing</div>
+          <div class="card-desc">Free vs Pro — $5/month, cancel anytime</div>
+        </div>
+        <span class="badge-live">Live</span>
+      </a>
+      <a class="site-card" href="/pages/sample/">
+        <div class="card-left">
+          <div class="card-name">Sample PDF</div>
+          <div class="card-desc">Download a real export to see exactly what you're getting</div>
+        </div>
+        <span class="badge-live">Live</span>
+      </a>
+      <a class="site-card" href="/pages/faq/">
+        <div class="card-left">
+          <div class="card-name">FAQ</div>
+          <div class="card-desc">How it works, privacy, output quality, billing</div>
+        </div>
+        <span class="badge-live">Live</span>
+      </a>
+      <a class="site-card" href="/pages/about/">
+        <div class="card-left">
+          <div class="card-name">About</div>
+          <div class="card-desc">The story behind Notavello and what's coming next</div>
+        </div>
+        <span class="badge-live">Live</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- ACCOUNT -->
+  <div class="section">
+    <div class="section-label">
+      <span class="section-label-icon">🔑</span> Account
+    </div>
+    <div class="card-list">
+      <a class="site-card" href="/login/">
+        <div class="card-left">
+          <div class="card-name">Log In</div>
+          <div class="card-desc">Restore Pro access on any device — enter your email, get a code</div>
+        </div>
+        <span class="badge-pro">Pro</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- LEGAL & SUPPORT -->
+  <div class="section">
+    <div class="section-label">
+      <span class="section-label-icon">📋</span> Legal &amp; Support
+    </div>
+    <div class="card-list">
+      <a class="site-card" href="/pages/privacy/">
+        <div class="card-left">
+          <div class="card-name">Privacy Policy</div>
+          <div class="card-desc">What we collect, what we don't, and how data is used</div>
+        </div>
+        <span class="badge-live">Live</span>
+      </a>
+      <a class="site-card" href="/pages/terms/">
+        <div class="card-left">
+          <div class="card-name">Terms of Service</div>
+          <div class="card-desc">Usage rules, billing terms, and governing law</div>
+        </div>
+        <span class="badge-live">Live</span>
+      </a>
+      <a class="site-card" href="/pages/contact/">
+        <div class="card-left">
+          <div class="card-name">Contact</div>
+          <div class="card-desc">hello · bugs · billing · legal — all at notavello.com</div>
+        </div>
+        <span class="badge-live">Live</span>
+      </a>
+    </div>
+  </div>
+
+</main>
+
+<!--FOOTER-->
+
+</body>
+</html>
