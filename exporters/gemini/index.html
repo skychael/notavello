@@ -1,4 +1,4 @@
-<!-- Notavello gemini-2.3.6 | generated 18:33:04 UTC | preview overflow fix using actual page height -->
+<!-- Notavello gemini-2.3.7 | generated 18:37:00 UTC | plain fallback parser fix -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -991,7 +991,7 @@ body {
     Nota<span>vello</span>
   </div>
   </a>
-  <div class="badge" id="liveBadge">FREE PREVIEW · GEMINI-2.3.6 · GENERATED 18:33:04 UTC</div>
+  <div class="badge" id="liveBadge">FREE PREVIEW · GEMINI-2.3.7 · GENERATED 18:37:00 UTC</div>
 </header>
 
 <div class="screen-ui">
@@ -1632,7 +1632,7 @@ function isLikelyUserBlock(block) {
   if (/^\d+$/.test(t)) return true;
   if (/^(test|one|two|three|four|five|six|seven|eight|nine|ten)$/i.test(t)) return true;
   if (/[?]$/.test(t)) return true;
-  if (/^(can you|could you|please|i need|i want|i meant|i'm|im|let's|lets|ok|okay|now|next|continue|stop|start|do|make|create|show|give|tell|explain|write)\b/i.test(t)) return true;
+  if (/^(can you|could you|please|i need|i want|i meant|i'm|im|let's|lets|ok|okay|thanks|thank you|now|next|continue|stop|start|do|make|create|show|give|tell|explain|write)\b/i.test(t)) return true;
   return false;
 }
 
@@ -1653,43 +1653,82 @@ function parseGeminiPlainSmart(rawText) {
     return messages;
   }
 
-  // Gemini plain paste usually separates bubbles with blank lines.
   let blocks = text
     .split(/\n{2,}/)
     .map(b => normalizeMessageText(b))
     .filter(Boolean);
 
-  // If blank-line splitting failed, fall back to single lines.
   if (blocks.length < 2) {
     blocks = text.split('\n').map(b => normalizeMessageText(b)).filter(Boolean);
   }
 
-  if (blocks[0] && /^Gemini$/i.test(blocks[0])) blocks.shift();
+  // ChatGPT/Claude-style plain copies often start with a product title.
+  // It is not a message, and keeping it caused "YOU ChatGPT" false positives.
+  if (blocks[0] && /^(ChatGPT|Claude|Gemini|Copilot|Perplexity)$/i.test(blocks[0])) {
+    blocks.shift();
+  }
 
-  messages = [];
-  let expected = 'human';
+  const messagesOut = [];
+
+  function appendMessage(role, text) {
+    const cleaned = normalizeMessageText(text);
+    if (!cleaned) return;
+
+    const last = messagesOut[messagesOut.length - 1];
+
+    // Plain fallback should merge adjacent AI paragraphs/lists into one answer.
+    // Do not create a new Gemini message for every bullet or list item.
+    if (last && last.role === role) {
+      if (!last.text.includes(cleaned)) last.text += '\n\n' + cleaned;
+      return;
+    }
+
+    messagesOut.push({ role, text: cleaned, time: '' });
+  }
+
+  function isStrongUserPrompt(block) {
+    const t = block.trim();
+
+    // Questions and direct task requests are usually user prompts.
+    if (/[?]$/.test(t)) return true;
+    if (/^(can you|could you|please|i need|i want|i meant|i understand|i thought|i didn't|i dont|i don't|i have|i like|i tried|i uploaded|what is|what are|why|how|where|when|who|do you|did you|should|would|make|create|show|give|tell|explain|write|redo|fix|repair|thank you|thanks)\b/i.test(t)) return true;
+
+    // Uploaded file prompt fragments from copied chat.
+    if (/\bfile\b/i.test(t) && /\b(index|html|pdf|upload|uploaded)\b/i.test(t)) return true;
+
+    return false;
+  }
 
   for (const block of blocks) {
-    const last = messages[messages.length - 1];
+    if (isStrongUserPrompt(block)) {
+      appendMessage('human', block);
+    } else {
+      appendMessage('ai', block);
+    }
+  }
 
-    if (expected === 'human') {
-      // If a block looks like an AI continuation, keep it with previous Gemini response.
-      if (last && last.role === 'ai' && isLikelyAiContinuation(block) && !isLikelyUserBlock(block)) {
-        last.text += '\n\n' + block;
-        continue;
-      }
-      messages.push({ role: 'human', text: block, time: '' });
-      expected = 'ai';
+  // If the heuristic still produced too many tiny alternating messages,
+  // collapse obvious list fragments back into the preceding AI answer.
+  const cleaned = [];
+  for (const m of messagesOut) {
+    const t = (m.text || '').trim();
+    const prev = cleaned[cleaned.length - 1];
+
+    const looksLikeListFragment =
+      t.length < 80 &&
+      !/[?]$/.test(t) &&
+      !/^(can you|could you|please|i need|i want|what is|why|how|thank you|thanks)\b/i.test(t);
+
+    if (m.role === 'human' && prev && prev.role === 'ai' && looksLikeListFragment) {
+      prev.text += '\n\n' + t;
       continue;
     }
 
-    // expected AI.
-    messages.push({ role: 'ai', text: block, time: '' });
-    expected = 'human';
+    cleaned.push(m);
   }
 
-  parseLog.push(`Plain smart candidate: ${messages.length}`);
-  return messages;
+  parseLog.push(`Plain smart grouped candidate: ${cleaned.length}`);
+  return cleaned;
 }
 
 function scoreMessages(messages) {
@@ -1890,12 +1929,13 @@ function renderPreview(messages, platform, warning, workerResult) {
         </div>`;
     }
     docPage.appendChild(page);
+    page._emptyHeight = page.scrollHeight;
     return page;
   }
 
   let pageCount = 1;
   let currentPage = newPage(true);
-  pageLog.push(`Page 1 created · pageHeight:${currentPage.clientHeight}px`);
+  pageLog.push(`Page 1 | empty:${currentPage._emptyHeight}px`);
 
   messages.forEach((msg) => {
     const block = document.createElement('div');
@@ -1918,16 +1958,11 @@ function renderPreview(messages, platform, warning, workerResult) {
 
     currentPage.appendChild(block);
 
-    // Page-break only when real content overflows the actual fixed page height.
-    // This avoids the old one-message-per-page bug caused by comparing to a blank page height.
-    if (currentPage.scrollHeight > currentPage.clientHeight + 2) {
+    if (currentPage.scrollHeight > currentPage._emptyHeight) {
       const triggerHeight = currentPage.scrollHeight;
-      const pageHeight = currentPage.clientHeight;
-
       currentPage.removeChild(block);
       pageCount++;
-      pageLog.push(`Page ${pageCount} created · trigger:${triggerHeight}px · pageHeight:${pageHeight}px`);
-
+      pageLog.push(`P${pageCount} trigger:${triggerHeight}px remaining:${currentPage.scrollHeight}px`);
       currentPage = newPage(false);
       currentPage.appendChild(block);
     }
