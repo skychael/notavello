@@ -1,4 +1,5 @@
 name: Auto Version Bump
+
 on:
   push:
     branches: [main]
@@ -6,17 +7,25 @@ on:
       - 'index.html'
       - 'exporters/claude/index.html'
       - 'exporters/chatgpt/index.html'
+      - 'exporters/gemini/index.html'
+      - 'exporters/perplexity/index.html'
+      - 'exporters/grok/index.html'
+      - 'exporters/copilot/index.html'
+      - 'exporters/other/index.html'
+
 jobs:
   bump-version:
     runs-on: ubuntu-latest
-    # Don't run if the commit was made by this action (prevents infinite loop)
     if: "!contains(github.event.head_commit.message, '[version-bump]')"
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Bump root/index.html version
+        if: contains(github.event.head_commit.modified, 'index.html') || contains(github.event.head_commit.added, 'index.html')
         run: |
           FILE="index.html"
           if [ -f "$FILE" ]; then
@@ -26,13 +35,17 @@ jobs:
               MINOR=$(echo $CURRENT | sed 's/root-//' | cut -d. -f2)
               NEWMINOR=$((MINOR + 1))
               NEW="root-${MAJOR}.${NEWMINOR}"
+              TIMESTAMP=$(date -u '+%H:%M:%S UTC')
               sed -i "s/${CURRENT}/${NEW}/g" "$FILE"
+              sed -i "s/generated [0-9]*:[0-9]*:[0-9]* UTC/generated ${TIMESTAMP}/g" "$FILE"
               echo "Bumped root: $CURRENT → $NEW"
               echo "ROOT_BUMPED=true" >> $GITHUB_ENV
               echo "ROOT_VERSION=$NEW" >> $GITHUB_ENV
             fi
           fi
+
       - name: Bump exporters/claude/index.html version
+        if: contains(github.event.head_commit.modified, 'exporters/claude/index.html') || contains(github.event.head_commit.added, 'exporters/claude/index.html')
         run: |
           FILE="exporters/claude/index.html"
           if [ -f "$FILE" ]; then
@@ -42,13 +55,17 @@ jobs:
               MINOR=$(echo $CURRENT | sed 's/claude-//' | cut -d. -f2)
               NEWMINOR=$((MINOR + 1))
               NEW="claude-${MAJOR}.${NEWMINOR}"
+              TIMESTAMP=$(date -u '+%H:%M:%S UTC')
               sed -i "s/${CURRENT}/${NEW}/g" "$FILE"
+              sed -i "s/generated [0-9]*:[0-9]*:[0-9]* UTC/generated ${TIMESTAMP}/g" "$FILE"
               echo "Bumped claude: $CURRENT → $NEW"
               echo "CLAUDE_BUMPED=true" >> $GITHUB_ENV
               echo "CLAUDE_VERSION=$NEW" >> $GITHUB_ENV
             fi
           fi
+
       - name: Bump exporters/chatgpt/index.html version
+        if: contains(github.event.head_commit.modified, 'exporters/chatgpt/index.html') || contains(github.event.head_commit.added, 'exporters/chatgpt/index.html')
         run: |
           FILE="exporters/chatgpt/index.html"
           if [ -f "$FILE" ]; then
@@ -58,23 +75,129 @@ jobs:
               MINOR=$(echo $CURRENT | sed 's/chatgpt-//' | cut -d. -f2)
               NEWMINOR=$((MINOR + 1))
               NEW="chatgpt-${MAJOR}.${NEWMINOR}"
+              TIMESTAMP=$(date -u '+%H:%M:%S UTC')
               sed -i "s/${CURRENT}/${NEW}/g" "$FILE"
-              TIMESTAMP=$(date -u '+%-I:%M %p UTC')
-              sed -i "s/DEPLOY_TIME/$TIMESTAMP/g" "$FILE"
-              echo "Bumped chatgpt: $CURRENT → $NEW | $TIMESTAMP"
+              sed -i "s/generated [0-9]*:[0-9]*:[0-9]* UTC/generated ${TIMESTAMP}/g" "$FILE"
+              echo "Bumped chatgpt: $CURRENT → $NEW"
               echo "CHATGPT_BUMPED=true" >> $GITHUB_ENV
               echo "CHATGPT_VERSION=$NEW" >> $GITHUB_ENV
             fi
           fi
+
+      - name: Bump exporters/gemini/index.html version
+        if: contains(github.event.head_commit.modified, 'exporters/gemini/index.html') || contains(github.event.head_commit.added, 'exporters/gemini/index.html')
+        run: |
+          FILE="exporters/gemini/index.html"
+          if [ -f "$FILE" ]; then
+            CURRENT=$(grep -o 'gemini-[0-9]*\.[0-9]*' "$FILE" | head -1)
+            if [ -n "$CURRENT" ]; then
+              MAJOR=$(echo $CURRENT | sed 's/gemini-//' | cut -d. -f1)
+              MINOR=$(echo $CURRENT | sed 's/gemini-//' | cut -d. -f2)
+              NEWMINOR=$((MINOR + 1))
+              NEW="gemini-${MAJOR}.${NEWMINOR}"
+              TIMESTAMP=$(date -u '+%H:%M:%S UTC')
+              sed -i "s/${CURRENT}/${NEW}/g" "$FILE"
+              sed -i "s/generated [0-9]*:[0-9]*:[0-9]* UTC/generated ${TIMESTAMP}/g" "$FILE"
+              echo "Bumped gemini: $CURRENT → $NEW"
+              echo "GEMINI_BUMPED=true" >> $GITHUB_ENV
+              echo "GEMINI_VERSION=$NEW" >> $GITHUB_ENV
+            fi
+          fi
+
+      - name: Bump exporters/perplexity/index.html version
+        if: contains(github.event.head_commit.modified, 'exporters/perplexity/index.html') || contains(github.event.head_commit.added, 'exporters/perplexity/index.html')
+        run: |
+          FILE="exporters/perplexity/index.html"
+          if [ -f "$FILE" ]; then
+            CURRENT=$(grep -o 'perplexity-[0-9]*\.[0-9]*' "$FILE" | head -1)
+            if [ -n "$CURRENT" ]; then
+              MAJOR=$(echo $CURRENT | sed 's/perplexity-//' | cut -d. -f1)
+              MINOR=$(echo $CURRENT | sed 's/perplexity-//' | cut -d. -f2)
+              NEWMINOR=$((MINOR + 1))
+              NEW="perplexity-${MAJOR}.${NEWMINOR}"
+              TIMESTAMP=$(date -u '+%H:%M:%S UTC')
+              sed -i "s/${CURRENT}/${NEW}/g" "$FILE"
+              sed -i "s/generated [0-9]*:[0-9]*:[0-9]* UTC/generated ${TIMESTAMP}/g" "$FILE"
+              echo "Bumped perplexity: $CURRENT → $NEW"
+              echo "PERPLEXITY_BUMPED=true" >> $GITHUB_ENV
+              echo "PERPLEXITY_VERSION=$NEW" >> $GITHUB_ENV
+            fi
+          fi
+
+      - name: Bump exporters/grok/index.html version
+        if: contains(github.event.head_commit.modified, 'exporters/grok/index.html') || contains(github.event.head_commit.added, 'exporters/grok/index.html')
+        run: |
+          FILE="exporters/grok/index.html"
+          if [ -f "$FILE" ]; then
+            CURRENT=$(grep -o 'grok-[0-9]*\.[0-9]*' "$FILE" | head -1)
+            if [ -n "$CURRENT" ]; then
+              MAJOR=$(echo $CURRENT | sed 's/grok-//' | cut -d. -f1)
+              MINOR=$(echo $CURRENT | sed 's/grok-//' | cut -d. -f2)
+              NEWMINOR=$((MINOR + 1))
+              NEW="grok-${MAJOR}.${NEWMINOR}"
+              TIMESTAMP=$(date -u '+%H:%M:%S UTC')
+              sed -i "s/${CURRENT}/${NEW}/g" "$FILE"
+              sed -i "s/generated [0-9]*:[0-9]*:[0-9]* UTC/generated ${TIMESTAMP}/g" "$FILE"
+              echo "Bumped grok: $CURRENT → $NEW"
+              echo "GROK_BUMPED=true" >> $GITHUB_ENV
+              echo "GROK_VERSION=$NEW" >> $GITHUB_ENV
+            fi
+          fi
+
+      - name: Bump exporters/copilot/index.html version
+        if: contains(github.event.head_commit.modified, 'exporters/copilot/index.html') || contains(github.event.head_commit.added, 'exporters/copilot/index.html')
+        run: |
+          FILE="exporters/copilot/index.html"
+          if [ -f "$FILE" ]; then
+            CURRENT=$(grep -o 'copilot-[0-9]*\.[0-9]*' "$FILE" | head -1)
+            if [ -n "$CURRENT" ]; then
+              MAJOR=$(echo $CURRENT | sed 's/copilot-//' | cut -d. -f1)
+              MINOR=$(echo $CURRENT | sed 's/copilot-//' | cut -d. -f2)
+              NEWMINOR=$((MINOR + 1))
+              NEW="copilot-${MAJOR}.${NEWMINOR}"
+              TIMESTAMP=$(date -u '+%H:%M:%S UTC')
+              sed -i "s/${CURRENT}/${NEW}/g" "$FILE"
+              sed -i "s/generated [0-9]*:[0-9]*:[0-9]* UTC/generated ${TIMESTAMP}/g" "$FILE"
+              echo "Bumped copilot: $CURRENT → $NEW"
+              echo "COPILOT_BUMPED=true" >> $GITHUB_ENV
+              echo "COPILOT_VERSION=$NEW" >> $GITHUB_ENV
+            fi
+          fi
+
+      - name: Bump exporters/other/index.html version
+        if: contains(github.event.head_commit.modified, 'exporters/other/index.html') || contains(github.event.head_commit.added, 'exporters/other/index.html')
+        run: |
+          FILE="exporters/other/index.html"
+          if [ -f "$FILE" ]; then
+            CURRENT=$(grep -o 'other-[0-9]*\.[0-9]*' "$FILE" | head -1)
+            if [ -n "$CURRENT" ]; then
+              MAJOR=$(echo $CURRENT | sed 's/other-//' | cut -d. -f1)
+              MINOR=$(echo $CURRENT | sed 's/other-//' | cut -d. -f2)
+              NEWMINOR=$((MINOR + 1))
+              NEW="other-${MAJOR}.${NEWMINOR}"
+              TIMESTAMP=$(date -u '+%H:%M:%S UTC')
+              sed -i "s/${CURRENT}/${NEW}/g" "$FILE"
+              sed -i "s/generated [0-9]*:[0-9]*:[0-9]* UTC/generated ${TIMESTAMP}/g" "$FILE"
+              echo "Bumped other: $CURRENT → $NEW"
+              echo "OTHER_BUMPED=true" >> $GITHUB_ENV
+              echo "OTHER_VERSION=$NEW" >> $GITHUB_ENV
+            fi
+          fi
+
       - name: Commit bumped versions
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git diff --quiet && echo "No changes to commit" && exit 0
-          git add index.html exporters/claude/index.html exporters/chatgpt/index.html
+          git add index.html exporters/claude/index.html exporters/chatgpt/index.html exporters/gemini/index.html exporters/perplexity/index.html exporters/grok/index.html exporters/copilot/index.html exporters/other/index.html
           MSG="[version-bump]"
           [ -n "$ROOT_VERSION" ] && MSG="$MSG root→$ROOT_VERSION"
           [ -n "$CLAUDE_VERSION" ] && MSG="$MSG claude→$CLAUDE_VERSION"
           [ -n "$CHATGPT_VERSION" ] && MSG="$MSG chatgpt→$CHATGPT_VERSION"
+          [ -n "$GEMINI_VERSION" ] && MSG="$MSG gemini→$GEMINI_VERSION"
+          [ -n "$PERPLEXITY_VERSION" ] && MSG="$MSG perplexity→$PERPLEXITY_VERSION"
+          [ -n "$GROK_VERSION" ] && MSG="$MSG grok→$GROK_VERSION"
+          [ -n "$COPILOT_VERSION" ] && MSG="$MSG copilot→$COPILOT_VERSION"
+          [ -n "$OTHER_VERSION" ] && MSG="$MSG other→$OTHER_VERSION"
           git commit -m "$MSG"
           git push
