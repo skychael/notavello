@@ -1,4 +1,4 @@
-<!-- Notavello root-1.12 -->
+<!-- Notavello root-1.8 | generated 22:20:00 UTC | add Other AI full-width card to grid -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -230,6 +230,50 @@ body {
 .ai-card-icon--copilot   { background: linear-gradient(135deg, #DBEAFE, #BFDBFE); }
 .ai-card-icon--grok      { background: linear-gradient(135deg, #F1F5F9, #E2E8F0); }
 .ai-card-icon--perplexity{ background: linear-gradient(135deg, #F0FDF4, #BBF7D0); }
+
+.ai-card--other {
+  grid-column: 1 / -1;
+  flex-direction: row;
+  justify-content: center;
+  padding: 18px 24px;
+  border-style: dashed;
+  border-color: var(--ink-faint);
+  opacity: 0.75;
+  gap: 14px;
+}
+.ai-card--other:hover {
+  opacity: 1;
+  border-color: var(--accent);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-1px);
+}
+.ai-card--other .ai-card-icon {
+  width: 36px;
+  height: 36px;
+  font-size: 1rem;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #F5F3FF, #EDE9FE);
+  flex-shrink: 0;
+}
+.ai-card--other .ai-card-name {
+  font-size: 0.9rem;
+}
+.ai-card--other .ai-card-desc {
+  font-size: 0.78rem;
+  text-align: left;
+}
+.ai-other-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: var(--accent-light);
+  color: var(--accent);
+  padding: 3px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
 
 .ai-card-name {
   font-size: 1rem;
@@ -571,7 +615,7 @@ body {
       Searchable PDFs in seconds
     </div>
     <h1>Turn AI conversations into<br><em>beautiful PDFs</em></h1>
-    <p>Paste any AI conversation and get a clean, color-coded PDF — searchable, shareable, and professionally formatted. ChatGPT, Gemini, Copilot, Claude, Grok, and Perplexity supported.</p>
+    <p>Paste any AI conversation and get a clean, color-coded PDF — searchable, shareable, and professionally formatted. ChatGPT, Gemini, Copilot, Claude, Grok, Perplexity, and more supported.</p>
   </section>
 
   <div class="ai-cards-label">Choose your AI to get started</div>
@@ -637,6 +681,15 @@ body {
       </div>
     </a>
 
+    <a href="/exporters/other/" class="ai-card ai-card--live ai-card--other">
+      <div class="ai-card-icon ai-card-icon--other">•••</div>
+      <div>
+        <div class="ai-card-name">Other AI</div>
+        <div class="ai-card-desc">Mistral, DeepSeek, Llama, Le Chat, and more — works with most AI tools</div>
+      </div>
+      <div class="ai-other-badge">Try it</div>
+    </a>
+
   </div>
 
   <section class="how-section">
@@ -646,7 +699,7 @@ body {
       <div class="step-card">
         <div class="step-num">1</div>
         <h3>Choose your AI</h3>
-        <p>Select which AI assistant you used — ChatGPT, Gemini, Copilot, Claude, Grok, or Perplexity.</p>
+        <p>Select which AI assistant you used — ChatGPT, Gemini, Copilot, Claude, Grok, Perplexity, or any other AI tool.</p>
       </div>
       <div class="step-card">
         <div class="step-num">2</div>
