@@ -1,4 +1,4 @@
-<!-- Notavello gemini-2.3.7 | generated 18:37:00 UTC | plain fallback parser fix -->
+<!-- Notavello gemini-2.3.8 | generated 18:44:45 UTC | visual bug-report button -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -941,21 +941,33 @@ body {
   overflow: auto;
 }
 .debug-toggle {
+  display: none;
   position: fixed;
-  right: 18px;
-  bottom: 70px;
+  left: 50%;
+  bottom: 22px;
+  transform: translateX(-50%);
   z-index: 300;
   background: #0F172A;
-  color: #A5B4FC;
+  color: #E2E8F0;
   border: 1px solid #475569;
   border-radius: 999px;
-  padding: 8px 12px;
-  font-size: 0.72rem;
+  padding: 12px 18px;
+  font-size: 0.82rem;
   font-weight: 700;
   cursor: pointer;
-  box-shadow: 0 4px 18px rgba(15,23,42,0.25);
+  box-shadow: 0 8px 28px rgba(15,23,42,0.28);
+  font-family: 'Sora', sans-serif;
+  letter-spacing: -0.01em;
 }
-.debug-toggle:hover { background: #1E293B; }
+.debug-toggle:hover {
+  background: #1E293B;
+  border-color: #64748B;
+}
+.debug-toggle small {
+  color: #A5B4FC;
+  font-weight: 600;
+  margin-left: 6px;
+}
 @media (max-width: 800px) {
   .debug-grid { grid-template-columns: 1fr; }
   .debug-box { border-right: none; }
@@ -991,7 +1003,7 @@ body {
     Nota<span>vello</span>
   </div>
   </a>
-  <div class="badge" id="liveBadge">FREE PREVIEW · GEMINI-2.3.7 · GENERATED 18:37:00 UTC</div>
+  <div class="badge" id="liveBadge">FREE PREVIEW · GEMINI-2.3.8 · GENERATED 18:44:45 UTC</div>
 </header>
 
 <div class="screen-ui">
@@ -1130,7 +1142,7 @@ body {
 </div>
 
 
-<button class="debug-toggle" type="button" onclick="toggleDebugPanel()">Debug</button>
+<button class="debug-toggle" id="debugToggle" type="button" onclick="toggleDebugPanel()">Preview not right? <small>Send bug report</small></button>
 
 <div class="debug-panel" id="debugPanel">
   <div class="debug-panel-header">
@@ -1846,6 +1858,8 @@ function resetApp() {
   document.getElementById('paywall').style.display = 'none';
   document.getElementById('errorMsg').style.display = 'none';
   document.getElementById('bottomDownload').style.display = 'none';
+  const debugToggle = document.getElementById('debugToggle');
+  if (debugToggle) debugToggle.style.display = 'none';
   parsedMessages = [];
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
@@ -1908,6 +1922,8 @@ function renderPreview(messages, platform, warning, workerResult) {
 
   document.getElementById('previewSection').style.display = 'block';
   document.getElementById('bottomDownload').style.display = 'block';
+  const debugToggle = document.getElementById('debugToggle');
+  if (debugToggle) debugToggle.style.display = 'block';
 
   const docPage = document.getElementById('docPage');
   docPage.innerHTML = '';
