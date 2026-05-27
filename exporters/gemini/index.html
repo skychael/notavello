@@ -1,4 +1,4 @@
-<!-- Notavello gemini-2.3 -->
+<!-- Notavello gemini-2.3.5 | generated 18:30:35 UTC | preview pagination fix -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -991,8 +991,7 @@ body {
     Nota<span>vello</span>
   </div>
   </a>
-  <div class="badge" id="liveBadge">FREE PREVIEW · GEMINI-2.3.3 · GENERATED 2026-05-27 18:27:09 UTC</div>
-
+  <div class="badge" id="liveBadge">FREE PREVIEW · GEMINI-2.3.5 · GENERATED 18:30:35 UTC</div>
 </header>
 
 <div class="screen-ui">
@@ -1897,9 +1896,10 @@ function renderPreview(messages, platform, warning, workerResult) {
   let pageCount = 1;
   let currentPage = newPage(true);
 
-  const PAGE_LIMIT = 1056;
-
-  pageLog.push(`Page 1 created`);
+  // Fixed printable page content limit for the on-screen preview.
+  // This replaces the old broken _emptyHeight check.
+  const PAGE_LIMIT = 980;
+  pageLog.push(`Page 1 created · limit:${PAGE_LIMIT}px`);
 
   messages.forEach((msg) => {
     const block = document.createElement('div');
@@ -1922,13 +1922,12 @@ function renderPreview(messages, platform, warning, workerResult) {
 
     currentPage.appendChild(block);
 
-    // Correct pagination check:
-    // compare actual content height to fixed page limit.
     if (currentPage.scrollHeight > PAGE_LIMIT) {
+      const triggerHeight = currentPage.scrollHeight;
       currentPage.removeChild(block);
 
       pageCount++;
-      pageLog.push(`Created page ${pageCount}`);
+      pageLog.push(`Page ${pageCount} created · trigger:${triggerHeight}px`);
 
       currentPage = newPage(false);
       currentPage.appendChild(block);
