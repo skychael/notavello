@@ -1,25 +1,25 @@
-<!-- Notavello chatgpt-1.10 -->
+<!-- Notavello perplexity-2.2-strict-dom-priority-debug -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Export ChatGPT Conversations to PDF — Notavello</title>
-<meta name="description" content="Paste your ChatGPT conversation and get a clean, color-coded PDF in seconds. User messages in blue, AI responses in plain text. Free to use — no sign-up required."/>
+<title>Export Perplexity Conversations to PDF — Notavello</title>
+<meta name="description" content="Paste your Perplexity conversation and get a clean, color-coded PDF in seconds. User messages in blue, AI responses in plain text. Free to use — no sign-up required."/>
 <meta name="robots" content="index, follow"/>
-<link rel="canonical" href="https://notavello.com/exporters/chatgpt/"/>
+<link rel="canonical" href="https://notavello.com/perplexity/"/>
 
 <!-- Open Graph -->
 <meta property="og:type" content="website"/>
-<meta property="og:url" content="https://notavello.com/exporters/chatgpt/"/>
-<meta property="og:title" content="Export ChatGPT Conversations to PDF — Notavello"/>
-<meta property="og:description" content="Paste your ChatGPT conversation and get a clean, color-coded PDF in seconds. Free to use — no sign-up required."/>
+<meta property="og:url" content="https://notavello.com/perplexity/"/>
+<meta property="og:title" content="Export Perplexity Conversations to PDF — Notavello"/>
+<meta property="og:description" content="Paste your Perplexity conversation and get a clean, color-coded PDF in seconds. Free to use — no sign-up required."/>
 <meta property="og:site_name" content="Notavello"/>
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Export ChatGPT Conversations to PDF — Notavello"/>
-<meta name="twitter:description" content="Paste your ChatGPT conversation and get a clean, color-coded PDF in seconds. Free to use — no sign-up required."/>
+<meta name="twitter:title" content="Export Perplexity Conversations to PDF — Notavello"/>
+<meta name="twitter:description" content="Paste your Perplexity conversation and get a clean, color-coded PDF in seconds. Free to use — no sign-up required."/>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
@@ -64,7 +64,7 @@ body {
     radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
 }
 
-/* HEADER */
+/* ── HEADER ── */
 .header {
   background: rgba(255,255,255,0.85);
   backdrop-filter: blur(16px);
@@ -117,14 +117,14 @@ body {
   border: 1px solid rgba(79,70,229,0.2);
 }
 
-/* MAIN */
+/* ── MAIN ── */
 .screen-ui {
   max-width: 800px;
   margin: 0 auto;
   padding: 56px 24px 100px;
 }
 
-/* HERO */
+/* ── HERO ── */
 .hero {
   text-align: center;
   margin-bottom: 44px;
@@ -181,7 +181,7 @@ body {
   font-weight: 400;
 }
 
-/* HOW IT WORKS */
+/* ── HOW IT WORKS ── */
 .how-to {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -202,7 +202,10 @@ body {
   margin-bottom: 16px;
 }
 
-.how-to-steps { display: flex; gap: 0; }
+.how-to-steps {
+  display: flex;
+  gap: 0;
+}
 
 .step {
   display: flex;
@@ -239,10 +242,16 @@ body {
 }
 
 .step:not(:first-child) { padding-left: 16px; }
-.step-text { font-size: 0.83rem; color: var(--ink-muted); line-height: 1.5; }
+
+.step-text {
+  font-size: 0.83rem;
+  color: var(--ink-muted);
+  line-height: 1.5;
+}
+
 .step-text strong { font-weight: 600; color: var(--ink); }
 
-/* INPUT CARD */
+/* ── INPUT CARD ── */
 .input-card {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -284,6 +293,7 @@ body {
 
 .char-info {
   font-size: 0.78rem;
+  color: var(--ink-faint);
   background: var(--accent-light);
   color: var(--accent);
   padding: 3px 10px;
@@ -356,7 +366,7 @@ body {
 .btn-convert:hover { opacity: 0.92; box-shadow: 0 6px 20px rgba(79,70,229,0.45); }
 .btn-convert:active { transform: scale(0.98); }
 
-/* ERROR */
+/* ── ERROR ── */
 .error-msg {
   display: none;
   background: #FFF1F2;
@@ -369,7 +379,7 @@ body {
   border-left: 3px solid #BE123C;
 }
 
-/* PREVIEW */
+/* ── PREVIEW ── */
 #previewSection { display: none; }
 
 .preview-toolbar {
@@ -395,6 +405,7 @@ body {
 }
 
 .preview-info p { font-size: 0.8rem; color: var(--ink-muted); }
+
 .toolbar-right { display: flex; gap: 10px; align-items: center; }
 
 .btn-reset {
@@ -439,8 +450,10 @@ body {
 .btn-download:hover { opacity: 0.92; box-shadow: 0 6px 18px rgba(5,150,105,0.4); }
 .btn-download:disabled { opacity: 0.45; cursor: default; }
 
-/* DOC PAGE */
-#docPage { animation: fadeUp 0.4s ease both; }
+/* ── DOC PAGE ── */
+#docPage {
+  animation: fadeUp 0.4s ease both;
+}
 
 .page {
   background: var(--surface);
@@ -477,6 +490,7 @@ body {
 }
 
 .doc-meta-dot { width: 3px; height: 3px; background: var(--border); border-radius: 50%; }
+
 .msg-block { margin-bottom: 16px; }
 
 .msg-human {
@@ -499,6 +513,7 @@ body {
 }
 
 .msg-human .msg-text { font-size: 0.92rem; color: var(--human-text); line-height: 1.75; }
+
 .msg-ai { padding: 14px 18px 14px 21px; }
 
 .msg-ai .msg-label {
@@ -513,7 +528,7 @@ body {
 .msg-ai .msg-text { font-size: 0.92rem; color: var(--ink); line-height: 1.75; }
 .msg-timestamp { font-size: 0.68rem; color: var(--ink-faint); margin-top: 5px; }
 
-/* PAYWALL */
+/* ── PAYWALL ── */
 .paywall {
   display: none;
   background: var(--surface);
@@ -552,6 +567,19 @@ body {
   margin: 0 auto 22px;
   line-height: 1.65;
 }
+
+.paywall-price {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 4px;
+  letter-spacing: -0.03em;
+}
+
+.paywall-price span { font-size: 1rem; font-weight: 400; -webkit-text-fill-color: var(--ink-muted); }
 
 .paywall-perks {
   display: flex;
@@ -605,7 +633,7 @@ body {
 .btn-pay:hover { opacity: 0.92; box-shadow: 0 6px 24px rgba(79,70,229,0.45); }
 .paywall-note { font-size: 0.75rem; color: var(--ink-faint); margin-top: 14px; }
 
-/* ANIMATIONS */
+/* ── ANIMATIONS ── */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(14px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -616,7 +644,100 @@ body {
   50%       { opacity: 0.5; transform: scale(0.85); }
 }
 
-/* PREVIEW HINT */
+/* ── AI SELECTOR ── */
+.ai-selector-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 24px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow);
+  animation: fadeUp 0.6s 0.12s ease both;
+  opacity: 0;
+}
+
+.ai-selector-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--ink-faint);
+  margin-bottom: 14px;
+}
+
+.ai-selector-options {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.ai-option {
+  cursor: pointer;
+  flex: 1;
+  min-width: 100px;
+}
+
+.ai-option input[type="radio"] { display: none; }
+
+.ai-option-inner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface2);
+  transition: all 0.15s;
+  font-size: 0.86rem;
+  font-weight: 500;
+  color: var(--ink-muted);
+}
+
+.ai-option--active .ai-option-inner {
+  border-color: var(--accent);
+  background: var(--accent-light);
+  color: var(--accent);
+}
+
+.ai-option--soon { cursor: not-allowed; opacity: 0.5; }
+.ai-option--soon .ai-option-inner { cursor: not-allowed; }
+
+.ai-option-dot {
+  width: 7px;
+  height: 7px;
+  background: var(--green);
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: pulse 2s infinite;
+}
+
+.ai-option-dot--soon {
+  background: var(--ink-faint);
+  animation: none;
+}
+
+.ai-option-name { flex: 1; }
+
+.ai-option-status {
+  font-size: 0.62rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 2px 7px;
+  border-radius: 20px;
+}
+
+.ai-option-status--live {
+  background: var(--green-light);
+  color: var(--green);
+}
+
+.ai-option-status--soon {
+  background: var(--border);
+  color: var(--ink-faint);
+}
+
+/* ── PREVIEW HINT ── */
 .preview-hint {
   display: flex;
   align-items: center;
@@ -633,9 +754,11 @@ body {
 .preview-hint svg { flex-shrink: 0; color: #D97706; }
 .preview-hint strong { color: var(--ink); }
 
-/* BOTTOM DOWNLOAD */
-.bottom-download { text-align: center; padding: 32px 0 8px; }
-
+/* ── BOTTOM DOWNLOAD ── */
+.bottom-download {
+  text-align: center;
+  padding: 32px 0 8px;
+}
 .btn-download-bottom {
   display: inline-flex;
   align-items: center;
@@ -655,15 +778,20 @@ body {
 }
 .btn-download-bottom:hover { opacity: 0.92; transform: translateY(-1px); box-shadow: 0 8px 28px rgba(5,150,105,0.5); }
 .btn-download-bottom:active { transform: scale(0.98); }
-.bottom-download-note { font-size: 0.78rem; color: var(--ink-faint); margin-top: 10px; }
+.bottom-download-note {
+  font-size: 0.78rem;
+  color: var(--ink-faint);
+  margin-top: 10px;
+}
 
-/* FLOATING DOWNLOAD BAR */
+/* ── FLOATING DOWNLOAD BAR ── */
+
 @keyframes slideUp {
   from { transform: translateY(100%); opacity: 0; }
   to   { transform: translateY(0); opacity: 1; }
 }
 
-/* FOOTER */
+/* ── FOOTER ── */
 .site-footer {
   border-top: 1px solid var(--border);
   padding: 32px 36px;
@@ -696,9 +824,19 @@ body {
   margin-bottom: 4px;
 }
 
-.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a {
+  font-size: 0.8rem;
+  color: var(--ink-muted);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
 .footer-nav a:hover { color: var(--accent); }
-.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+
+.footer-nav-divider {
+  color: var(--border);
+  font-size: 0.8rem;
+}
 
 .footer-bottom {
   display: flex;
@@ -710,12 +848,120 @@ body {
   border-top: 1px solid var(--border);
 }
 
-.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
-.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
-.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; transition: color 0.15s; }
+.footer-copy {
+  font-size: 0.75rem;
+  color: var(--ink-faint);
+}
+
+.footer-legal {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.footer-legal a {
+  font-size: 0.75rem;
+  color: var(--ink-faint);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
 .footer-legal a:hover { color: var(--accent); }
 
-/* MOBILE */
+
+/* ── DEBUG PANEL ── */
+.debug-panel {
+  display: none;
+  max-width: 1000px;
+  margin: 28px auto;
+  background: #0F172A;
+  color: #E2E8F0;
+  border: 1px solid #334155;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(15,23,42,0.35);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+}
+.debug-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: #111827;
+  border-bottom: 1px solid #334155;
+}
+.debug-panel-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #A5B4FC;
+}
+.debug-panel-actions {
+  display: flex;
+  gap: 8px;
+}
+.debug-btn {
+  background: #1E293B;
+  color: #CBD5E1;
+  border: 1px solid #475569;
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 0.72rem;
+  cursor: pointer;
+}
+.debug-btn:hover { background: #334155; }
+.debug-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+.debug-box {
+  border-right: 1px solid #334155;
+  border-bottom: 1px solid #334155;
+  padding: 12px;
+  min-height: 120px;
+}
+.debug-box:nth-child(even) { border-right: none; }
+.debug-box h4 {
+  color: #93C5FD;
+  font-size: 0.72rem;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.debug-pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-size: 0.72rem;
+  line-height: 1.45;
+  color: #E5E7EB;
+  max-height: 260px;
+  overflow: auto;
+}
+.debug-toggle {
+  position: fixed;
+  right: 18px;
+  bottom: 70px;
+  z-index: 300;
+  background: #0F172A;
+  color: #A5B4FC;
+  border: 1px solid #475569;
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 18px rgba(15,23,42,0.25);
+}
+.debug-toggle:hover { background: #1E293B; }
+@media (max-width: 800px) {
+  .debug-grid { grid-template-columns: 1fr; }
+  .debug-box { border-right: none; }
+}
+
+/* ── MOBILE ── */
 @media (max-width: 600px) {
   .screen-ui { padding: 32px 16px 72px; }
   #docPage { padding: 24px 18px; }
@@ -745,12 +991,12 @@ body {
     Nota<span>vello</span>
   </div>
   </a>
-  <div class="badge" id="liveBadge">FREE PREVIEW · CHATGPT-1.2 · --:--:-- UTC</div>
+  <div class="badge" id="liveBadge">FREE PREVIEW · PERPLEXITY-2.2 · --:--:-- UTC</div>
 <script>
 (function(){
   const n=new Date();
   const t=[n.getUTCHours(),n.getUTCMinutes(),n.getUTCSeconds()].map(v=>String(v).padStart(2,'0')).join(':');
-  document.getElementById('liveBadge').textContent='FREE PREVIEW · CHATGPT-1.2 · '+t+' UTC';
+  document.getElementById('liveBadge').textContent='FREE PREVIEW · PERPLEXITY-2.2 · '+t+' UTC';
 })();
 </script>
 </header>
@@ -760,33 +1006,34 @@ body {
   <div class="hero">
     <div class="hero-pill">
       <div class="hero-pill-dot"></div>
-      <span id="heroAIName"></span> supported &middot; More AIs coming soon
+      <span id="heroAIName"></span> supported · More AIs coming soon
     </div>
     <h1>Export <span id="heroAIName2"></span> conversations<br>as <em>beautiful PDFs</em></h1>
-    <p>Paste your <span id="heroAIName3"></span> conversation and get a clean, color-coded PDF &mdash; searchable, shareable, and professionally formatted.</p>
+    <p>Paste your <span id="heroAIName3"></span> conversation and get a clean, color-coded PDF — searchable, shareable, and professionally formatted.</p>
   </div>
 
   <div class="how-to">
-    <div class="how-to-title">How it works &mdash; 3 steps</div>
+    <div class="how-to-title">How it works — 3 steps</div>
     <div class="how-to-steps">
       <div class="step">
         <div class="step-num">1</div>
-        <div class="step-text"><strong>Copy your chat</strong> &mdash; open <span class="ai-inline"></span>, press Ctrl+A then Ctrl+C</div>
+        <div class="step-text"><strong>Copy your chat</strong> — open <span class="ai-inline"></span>, press Ctrl+A then Ctrl+C</div>
       </div>
       <div class="step">
         <div class="step-num">2</div>
-        <div class="step-text"><strong>Paste below</strong> &mdash; drop it into the text area</div>
+        <div class="step-text"><strong>Paste below</strong> — drop it into the text area</div>
       </div>
       <div class="step">
         <div class="step-num">3</div>
-        <div class="step-text"><strong>Download</strong> &mdash; get your color-coded PDF instantly</div>
+        <div class="step-text"><strong>Download</strong> — get your color-coded PDF instantly</div>
       </div>
     </div>
   </div>
 
+  <!-- "Not using X?" link — replaces AI selector, links back to landing page -->
   <div style="text-align:right; margin-bottom:16px;">
     <a href="/" id="notUsingLink" style="font-size:0.82rem; color:var(--ink-faint); text-decoration:none; transition:color 0.15s;">
-      Not using <span class="ai-inline"></span>? &rarr;
+      Not using <span class="ai-inline"></span>? →
     </a>
   </div>
 
@@ -800,9 +1047,7 @@ body {
       </div>
       <div class="char-info" id="charInfo">0 messages detected</div>
     </div>
-    
-    <textarea id="pasteArea" placeholder="Paste your ChatGPT conversation here (Ctrl+V)..."></textarea>
-
+    <textarea id="pasteArea" placeholder="Paste your conversation here (Ctrl+V)..."></textarea>
     <div class="input-footer">
       <label class="redact-option">
         <input type="checkbox" id="redactCheck" checked>
@@ -834,40 +1079,42 @@ body {
     </div>
     <div class="preview-hint">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-      This is a preview only &mdash; scroll down to review, then use <strong>Download PDF</strong> above or the button at the bottom to save your file.
-    </div>
+      This is a preview only — scroll down to review, then use <strong>Download PDF</strong> above or the button at the bottom to save your file.
+    <br><span style="color:var(--amber);font-weight:600;">⚠️ Always check this export against your original conversation.</span> Speakers are detected automatically and occasionally get it wrong — especially on long or complex conversations.</div>
     <div id="docPage"></div>
+    <!-- Bottom download button — shown after preview renders -->
     <div class="bottom-download" id="bottomDownload" style="display:none;">
       <button class="btn-download-bottom" onclick="downloadPDF()">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         Download PDF
       </button>
-      <p class="bottom-download-note">Your conversation is ready &mdash; click to save as a PDF file</p>
+      <p class="bottom-download-note">Your conversation is ready — click to save as a PDF file</p>
     </div>
   </div>
 
   <div class="paywall" id="paywall">
-    <div class="paywall-icon">&#x1F4C4;</div>
+    <div class="paywall-icon">📄</div>
     <h3>Your conversation has <span id="msgCount"></span> messages</h3>
-    <p>Free exports include the <strong>first 30 messages</strong> &mdash; yours to keep, forever, no account needed. Or upgrade to export everything.</p>
+    <p>Free exports include the <strong>first 30 messages</strong> — yours to keep, forever, no account needed. Or upgrade to export everything.</p>
     <div style="display:flex;flex-direction:column;align-items:center;gap:12px;margin:20px 0;">
       <button class="btn-pay" onclick="downloadPDF(true)">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         Download First 30 Free
       </button>
-      <div style="font-size:0.8rem;color:var(--ink-faint);">&mdash; or &mdash;</div>
+      <div style="font-size:0.8rem;color:var(--ink-faint);">— or —</div>
       <button class="btn-pay" style="background:linear-gradient(135deg,#059669,#047857);box-shadow:0 4px 16px rgba(5,150,105,0.35);" onclick="startCheckout(this)">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
-        $5/month &mdash; Export Everything
+        $5/month — Export Everything
       </button>
     </div>
     <div class="paywall-perks">
-      <div class="perk"><div class="perk-check">&#x2713;</div> No watermark</div>
-      <div class="perk"><div class="perk-check">&#x2713;</div> Unlimited length</div>
-      <div class="perk"><div class="perk-check">&#x2713;</div> All future features</div>
+      <div class="perk"><div class="perk-check">✓</div> No watermark</div>
+      <div class="perk"><div class="perk-check">✓</div> Unlimited length</div>
+      <div class="perk"><div class="perk-check">✓</div> All future features</div>
     </div>
     <div class="paywall-note">The free download includes your watermark and ends at message 30.</div>
 
+    <!-- Already paid restore access -->
     <div style="margin-top:20px;padding-top:16px;border-top:1px solid var(--border);text-align:center;">
       <button onclick="toggleRestoreAccess()" style="background:var(--accent-light);border:1.5px solid rgba(79,70,229,0.3);border-radius:var(--radius-sm);padding:10px 20px;font-size:0.84rem;font-weight:600;color:var(--accent);cursor:pointer;font-family:'Sora',sans-serif;width:100%;max-width:320px;transition:background 0.15s;">Already a Pro member? Restore your access &#x2192;</button>
       <div id="restorePanel" style="display:none;margin-top:14px;">
@@ -889,13 +1136,159 @@ body {
 
 </div>
 
+
+<button class="debug-toggle" type="button" onclick="toggleDebugPanel()">Debug</button>
+
+<div class="debug-panel" id="debugPanel">
+  <div class="debug-panel-header">
+    <div class="debug-panel-title">Perplexity Parser Debug Panel</div>
+    <div class="debug-panel-actions">
+      <button class="debug-btn" type="button" onclick="copyDebugReport()">Copy report</button>
+      <button class="debug-btn" type="button" onclick="clearDebugPanel()">Clear</button>
+      <button class="debug-btn" type="button" onclick="toggleDebugPanel()">Close</button>
+    </div>
+  </div>
+  <div class="debug-grid">
+    <div class="debug-box">
+      <h4>Summary</h4>
+      <pre class="debug-pre" id="debugSummary">No parse yet.</pre>
+    </div>
+    <div class="debug-box">
+      <h4>Parser Log</h4>
+      <pre class="debug-pre" id="debugParserLog">No parse yet.</pre>
+    </div>
+    <div class="debug-box">
+      <h4>Extracted Messages</h4>
+      <pre class="debug-pre" id="debugMessages">No parse yet.</pre>
+    </div>
+    <div class="debug-box">
+      <h4>Page Break Log</h4>
+      <pre class="debug-pre" id="debugPageLog">No preview yet.</pre>
+    </div>
+    <div class="debug-box">
+      <h4>Plain Text Sample</h4>
+      <pre class="debug-pre" id="debugPlain">No paste yet.</pre>
+    </div>
+    <div class="debug-box">
+      <h4>HTML Clipboard Signal</h4>
+      <pre class="debug-pre" id="debugHtml">No HTML captured yet.</pre>
+    </div>
+  </div>
+</div>
+
 <script>
+
+// ── DEBUG HELPERS ──
+const DEBUG_STATE = {
+  summary: '',
+  parserLog: '',
+  messages: '',
+  pageLog: '',
+  plain: '',
+  html: ''
+};
+
+function setDebug(id, text) {
+  const el = document.getElementById(id);
+  if (el) el.textContent = text || '';
+}
+
+function refreshDebugPanel() {
+  setDebug('debugSummary', DEBUG_STATE.summary || 'No parse yet.');
+  setDebug('debugParserLog', DEBUG_STATE.parserLog || 'No parse yet.');
+  setDebug('debugMessages', DEBUG_STATE.messages || 'No parse yet.');
+  setDebug('debugPageLog', DEBUG_STATE.pageLog || 'No preview yet.');
+  setDebug('debugPlain', DEBUG_STATE.plain || 'No paste yet.');
+  setDebug('debugHtml', DEBUG_STATE.html || 'No HTML captured yet.');
+}
+
+function toggleDebugPanel() {
+  const panel = document.getElementById('debugPanel');
+  if (!panel) return;
+  panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
+  refreshDebugPanel();
+}
+
+function clearDebugPanel() {
+  Object.keys(DEBUG_STATE).forEach(k => DEBUG_STATE[k] = '');
+  refreshDebugPanel();
+}
+
+function copyDebugReport() {
+  const report = [
+    '--- PERPLEXITY DEBUG SUMMARY ---',
+    DEBUG_STATE.summary || '',
+    '',
+    '--- PARSER LOG ---',
+    DEBUG_STATE.parserLog || '',
+    '',
+    '--- MESSAGES ---',
+    DEBUG_STATE.messages || '',
+    '',
+    '--- PAGE LOG ---',
+    DEBUG_STATE.pageLog || '',
+    '',
+    '--- PLAIN TEXT SAMPLE ---',
+    DEBUG_STATE.plain || '',
+    '',
+    '--- HTML SIGNAL ---',
+    DEBUG_STATE.html || ''
+  ].join('\n');
+
+  navigator.clipboard?.writeText(report).then(() => {
+    alert('Debug report copied.');
+  }).catch(() => {
+    prompt('Copy debug report:', report);
+  });
+}
+
+function summarizeMessagesForDebug(messages) {
+  return (messages || []).map((m, i) => {
+    const text = (m.text || '').replace(/\s+/g, ' ').slice(0, 180);
+    return `${String(i + 1).padStart(2, '0')}. ${m.role.toUpperCase()} (${(m.text || '').length} chars): ${text}`;
+  }).join('\n');
+}
+
+function summarizeHtmlForDebug(htmlText) {
+  if (!htmlText) return 'No text/html captured from clipboard.';
+  const doc = new DOMParser().parseFromString(htmlText, 'text/html');
+  const all = [...doc.body.querySelectorAll('*')];
+  const interesting = all.slice(0, 800).map((el, i) => {
+    const sig = [
+      el.tagName,
+      el.id ? '#' + el.id : '',
+      el.className ? '.' + String(el.className).replace(/\s+/g, '.') : '',
+      el.getAttribute('data-test-id') ? `[data-test-id="${el.getAttribute('data-test-id')}"]` : '',
+      el.getAttribute('aria-label') ? `[aria-label="${el.getAttribute('aria-label')}"]` : ''
+    ].filter(Boolean).join('');
+    const txt = (el.innerText || el.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 120);
+    if (!txt) return null;
+    return `${i}: ${sig} :: ${txt}`;
+  }).filter(Boolean).slice(0, 120);
+  return `HTML length: ${htmlText.length}\nElements: ${all.length}\n\n${interesting.join('\n')}`;
+}
+
+
 // ── Redaction ──
+// Default patterns: high-confidence sensitive data only.
+// Email and phone removed — too likely to be legitimate content
+// that users actually want in their export (contacts, examples, etc).
+//
+// FUTURE PAID FEATURE IDEA (perplexity-1.1):
+// Add a "Custom Redaction" panel for paid users with checkboxes:
+//   ☑ API keys (always on, not toggleable)
+//   ☑ SSNs
+//   ☑ Credit card numbers
+//   ☐ Email addresses (off by default)
+//   ☐ Phone numbers (off by default)
+//   ☐ Custom pattern (text input for regex or keyword)
+// This is a genuine paid differentiator — lawyers/consultants would use it.
+// Build after Stripe exists. Store preference in localStorage per user.
 const REDACT_PATTERNS = [
-  { pattern: /\bsk-[A-Za-z0-9]{20,}\b/g,                               replace: '[API_KEY]' },
+  { pattern: /\bsk[-_][A-Za-z0-9_\-]{20,}\b/g,                         replace: '[API_KEY]' },
   { pattern: /\b[A-Fa-f0-9]{32,}\b/g,                                   replace: '[KEY]' },
   { pattern: /\b\d{3}[-.\s]?\d{2}[-.\s]?\d{4}\b/g,                     replace: '[SSN]' },
-  { pattern: /\b4[0-9]{12}(?:[0-9]{3})?\b|\b5[1-5][0-9]{14}\b/g,       replace: '[CARD]' },
+  { pattern: /\b4[0-9]{3}[\s-]?[0-9]{4}[\s-]?[0-9]{4}[\s-]?[0-9]{4}\b|\b5[1-5][0-9]{2}[\s-]?[0-9]{4}[\s-]?[0-9]{4}[\s-]?[0-9]{4}\b/g, replace: '[CARD]' },
 ];
 function redactText(text) {
   let out = text;
@@ -903,14 +1296,37 @@ function redactText(text) {
   return out;
 }
 
-// ── AI name — change only this when copying for a new AI ──
-const AI_NAME = 'ChatGPT';
+// ── Change this one value when copying this file for a new AI ──
+const AI_NAME = 'Perplexity';
 
+// ── SMART PASTE CAPTURE ──
+let lastPastedHtml = '';
+let lastPastedPlain = '';
+
+document.getElementById('pasteArea').addEventListener('paste', function(e) {
+  if (!e.clipboardData) return;
+  lastPastedHtml = e.clipboardData.getData('text/html') || '';
+  lastPastedPlain = e.clipboardData.getData('text/plain') || '';
+  DEBUG_STATE.plain = (lastPastedPlain || '').slice(0, 3000);
+  DEBUG_STATE.html = summarizeHtmlForDebug(lastPastedHtml);
+  refreshDebugPanel();
+});
+
+function getCurrentPasteHtml(raw) {
+  if (!lastPastedHtml) return '';
+  if (!lastPastedPlain) return lastPastedHtml;
+  const current = (raw || '').trim().replace(/\s+/g, ' ').slice(0, 160);
+  const pasted = (lastPastedPlain || '').trim().replace(/\s+/g, ' ').slice(0, 160);
+  return current && pasted && current === pasted ? lastPastedHtml : lastPastedHtml;
+}
+
+// Populate all AI name spans from the single source above
 document.querySelectorAll('.ai-inline, #heroAIName, #heroAIName2, #heroAIName3').forEach(el => {
   el.textContent = AI_NAME;
 });
 document.getElementById('pasteArea').placeholder = `Paste your ${AI_NAME} conversation here (Ctrl+V)...`;
 
+// Add hover style to "Not using X?" link
 const notUsingLink = document.getElementById('notUsingLink');
 if (notUsingLink) {
   notUsingLink.addEventListener('mouseover', () => notUsingLink.style.color = 'var(--accent)');
@@ -919,254 +1335,476 @@ if (notUsingLink) {
 
 // ── CONFIDENCE CHECK ──
 function checkConfidence(messages) {
-  if (messages.length === 0) return { ok: false, warning: 'No speaker labels found. Copy your ChatGPT conversation with Ctrl+A then Ctrl+C, then paste here.' };
   if (messages.length < 2) return { ok: false, warning: 'Only ' + messages.length + ' message detected — make sure you copied the full conversation.' };
   const h = messages.filter(m => m.role === 'human').length;
   const a = messages.filter(m => m.role === 'ai').length;
   if (h === 0) return { ok: false, warning: 'No user messages detected. Try copying again with Ctrl+A first.' };
   if (a === 0) return { ok: false, warning: 'No AI messages detected. Try copying again with Ctrl+A first.' };
   const ratio = Math.max(h, a) / Math.min(h, a);
-  if (ratio > 4) return { ok: true, warning: `Heads up: detected ${h} user and ${a} AI messages — ratio seems off. Colors may not be 100% accurate.` };
+  if (ratio > 4) return { ok: true, warning: `Heads up: detected ${h} user and ${a} Perplexity messages — please review before exporting.` };
   return { ok: true, warning: null };
 }
 
-// ── PARSE CHATGPT ──
-// ── PARSE CHATGPT v2 ──
-// Real-world ChatGPT Ctrl+A paste format (observed from chatgpt.com):
-//
-//   ChatGPT          <- site header (first line, stripped before matching)
-//   You              <- speaker label (standalone line)
-//   [user text]
-//   ChatGPT          <- speaker label (standalone line)
-//   [ai text]
-//   You
-//   [user text]  ...
-//
-// Pattern 1 (newer chatgpt.com): "You said:\n..." / "ChatGPT said:\n..."
-// Pattern 2 (current standard):  standalone "You" / "ChatGPT" lines (no colon)
-// Fallback: double-newline block split with first-speaker detection
-//
-// OpenAI image URLs are replaced with [Attachment: image].
+// ── PERPLEXITY BALANCED PARSER ──
+// v1.6 strategy:
+// 1. Build an HTML/DOM candidate.
+// 2. Build a smarter plain-text candidate.
+// 3. Choose the more complete/consistent result.
+// This avoids blindly trusting weak Perplexity HTML extraction while still using it when it is clearly better.
 const parseLog = [];
+let lastParseUsedFallback = false;
 
-// Exposed after each parse so renderDebugPanel can read them
-let parseStats = {
-  mode: 'none',
-  charsRaw: 0,
-  charsAfterStrip: 0,
-  imageUrlsStripped: 0,
-  headerStripped: false,
-  fallbackFirstSpeaker: null,
-};
+function cleanPerplexityNoise(text) {
+  const exactNoiseLines = new Set([
+    'About Perplexity',
+    'Perplexity App',
+    'Subscriptions',
+    'For Business',
+    'Conversation with Perplexity',
+    'Google apps',
+    'New chat',
+    'Ask Perplexity',
+    'Enter a prompt here',
+    'Show thinking',
+    'Thinking...',
+    'Listen to this response',
+    'Share & export',
+    'Export to Docs',
+    'Open in Gmail',
+    'Copy code',
+    'Use code with caution.',
+    'Sources',
+    'Source',
+    'Related content',
+    'Perplexity is AI and can make mistakes.',
+    'Perplexity can make mistakes, so double-check it.'
+  ]);
 
-function parseChatGPT(text) {
-  parseLog.length = 0;
-  parseLog.push('── ChatGPT Parser v2 ──');
+  return (text || '')
+    .replace(/\u00a0/g, ' ')
+    .replace(/Opens in a new window/gi, '')
+    .replace(/Perplexity can make mistakes, so double-check it\.?/gi, '')
+    .replace(/Perplexity\s+is\s+AI\s+and\s+can\s+make\s+mistakes\.?/gi, '')
+    .split('\n')
+    .map(line => line.trim())
+    .filter(line => line.length > 0)
+    .filter(line => !exactNoiseLines.has(line))
+    .filter(line => !/^Drafts?\s*\d+$/i.test(line))
+    .filter(line => !/^\d{10,}_image\.\w+$/i.test(line))
+    .join('\n')
+    .replace(/^([\w\-. ]+\.\w+)\n(\d+ lines\n)?(\w+)$/gim, '[Attachment: $1]')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
+}
 
-  parseStats = { mode: 'none', charsRaw: text.length, charsAfterStrip: 0,
-                 imageUrlsStripped: 0, headerStripped: false, fallbackFirstSpeaker: null };
+function normalizePerplexityNumberedLists(text) {
+  // Only normalize inside one already-owned Perplexity message.
+  // This avoids changing message ownership, while preserving list readability.
+  return (text || '')
+    .replace(/(^|\n)(\d{1,2})\.\s*\n\s*([^\n]+)/g, '$1$2. $3')
+    .replace(/\n{3,}/g, '\n\n');
+}
 
-  // ── Strip UI chrome ──
-  text = text.replace(/^(Share|Copy|Like|Dislike|Report|Regenerate response|Stop generating|Read aloud)[ \t]*$/gim, '');
-  text = text.replace(/^Search conversation[ \t]*$/gim, '');
-  text = text.replace(/^(New chat|Today|Yesterday|Previous \d+ [Dd]ays|Last \d+ [Dd]ays)[ \t]*$/gim, '');
-  text = text.replace(/^\d{1,2}\/\d{1,2}\/\d{2,4},?[ \t]*\d{1,2}:\d{2}(:\d{2})?[ \t]*(AM|PM)?[ \t]*$/gim, '');
-  text = text.replace(/^ChatGPT[ \t]+[\w.+-]+[ \t]*$/gim, '');
-  text = text.replace(/^(DALL-E|DALL\u00b7E|GPT-4o?|GPT-3\.5[- \w]*|o1|o3|o4)[ \t]*$/gim, '');
-  text = text.replace(/Memory updated\.?[ \t]*/gi, '');
-  text = text.replace(/^\d+ images?[ \t]*generated?[ \t]*$/gim, '');
+function normalizeMessageText(text) {
+  return normalizePerplexityNumberedLists(
+    cleanPerplexityNoise(text || '').replace(/\n{3,}/g, '\n\n')
+  ).trim();
+}
 
-  // Count and replace OpenAI image URLs
-  const imageMatches = text.match(/https?:\/\/images\.openai\.com\/[^\s]+/gi) || [];
-  parseStats.imageUrlsStripped = imageMatches.length;
-  text = text.replace(/https?:\/\/images\.openai\.com\/[^\s]+/gi, '[Attachment: image]');
+function pushPerplexityMessage(messages, role, text, time) {
+  const cleaned = normalizeMessageText(text);
+  if (!cleaned) return;
 
-  // Strip the very first bare "ChatGPT" line (site page header) only
-  if (/^ChatGPT[ \t]*\n/.test(text)) {
-    parseStats.headerStripped = true;
-    text = text.replace(/^ChatGPT[ \t]*\n/, '');
+  const last = messages[messages.length - 1];
+  if (last && last.role === role && !time) {
+    if (!last.text.includes(cleaned)) last.text += '\n\n' + cleaned;
+  } else {
+    messages.push({ role, text: cleaned, time: role === 'human' ? (time || '') : '' });
+  }
+}
+
+function getDirectText(el) {
+  const clone = el.cloneNode(true);
+
+  clone.querySelectorAll('br').forEach(br => br.replaceWith('\n'));
+
+  clone.querySelectorAll('p, div, section, article, blockquote, pre, table, tr').forEach(node => {
+    node.insertBefore(document.createTextNode('\n'), node.firstChild);
+    node.appendChild(document.createTextNode('\n'));
+  });
+
+  clone.querySelectorAll('li').forEach((li, idx) => {
+    const parent = li.parentElement;
+    const isOrdered = parent && parent.tagName && parent.tagName.toLowerCase() === 'ol';
+    const prefix = isOrdered ? `${idx + 1}. ` : '• ';
+    li.insertBefore(document.createTextNode('\n' + prefix), li.firstChild);
+    li.appendChild(document.createTextNode('\n'));
+  });
+
+  return (clone.textContent || '')
+    .replace(/[ \t]+\n/g, '\n')
+    .replace(/\n[ \t]+/g, '\n')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
+}
+
+function elementSignature(el) {
+  return [
+    el.tagName || '',
+    el.id || '',
+    el.className || '',
+    el.getAttribute('data-test-id') || '',
+    el.getAttribute('aria-label') || '',
+    el.getAttribute('role') || ''
+  ].join(' ').toLowerCase();
+}
+
+function classifyPerplexityElement(el) {
+  const sig = elementSignature(el);
+  if (/user-query|user_query|query-text|user input|user-message|human-message/.test(sig)) return 'human';
+  if (/model-response|response-container|response-content|model-response-text|assistant-message|perplexity-response|markdown/.test(sig)) return 'ai';
+  if (/(you|user)\s*(said|message|query|input)/.test(sig)) return 'human';
+  if (/(perplexity|perplexity|assistant|model)\s*(said|response|answer|message)/.test(sig)) return 'ai';
+  return null;
+}
+
+function dedupeMessages(messages) {
+  const out = [];
+  for (const m of messages) {
+    const text = normalizeMessageText(m.text);
+    if (!text) continue;
+    const prev = out[out.length - 1];
+    if (prev && prev.role === m.role && prev.text === text) continue;
+    out.push({ ...m, text });
+  }
+  return out;
+}
+
+function parsePerplexityHtml(htmlText) {
+  if (!htmlText || htmlText.length < 30) return [];
+
+  const doc = new DOMParser().parseFromString(htmlText, 'text/html');
+  const body = doc.body;
+  if (!body) return [];
+
+  body.querySelectorAll('script, style, noscript, svg, button, nav, header, footer').forEach(el => el.remove());
+
+  const messages = [];
+
+  // STRICT PERPLEXITY DOM PARSER:
+  // Perplexity clipboard HTML contains conversation containers.
+  // Each container owns exactly one user query and/or one model response.
+  // Do not parse loose paragraphs globally because that causes cross-speaker merging.
+  const containers = [...body.querySelectorAll(
+    '.conversation-container, [class*="conversation-container"], [id][class*="message-actions-hover-boundary"]'
+  )];
+
+  parseLog.push(`Strict containers found: ${containers.length}`);
+
+  function firstUsefulText(root, selectors) {
+    for (const sel of selectors) {
+      const found = root.querySelector(sel);
+      if (!found) continue;
+      const text = normalizeMessageText(getDirectText(found));
+      if (text) return text;
+    }
+    return '';
   }
 
-  text = text.trim();
-  parseStats.charsAfterStrip = text.length;
+  const userSelectors = [
+    'user-query-content',
+    'user-query',
+    '[id^="user-query-content"]',
+    '.query-content',
+    '.query-text',
+    'p.query-text-line',
+    '[data-test-id="luminous-collapsed-bubble"]'
+  ];
 
-  parseLog.push(`Raw: ${parseStats.charsRaw} → stripped: ${parseStats.charsAfterStrip} chars`);
-  parseLog.push(`Image URLs replaced: ${parseStats.imageUrlsStripped} | Page header stripped: ${parseStats.headerStripped}`);
+  const aiSelectors = [
+    'model-response message-content',
+    'message-content',
+    '[id^="model-response-message-content"]',
+    '.markdown-main-panel',
+    '.model-response-text',
+    'structured-content-container',
+    '.response-content'
+  ];
 
-  // ── PATTERN 1: "You said:" / "ChatGPT said:" explicit labels ──
-  const labelPattern = /^(You said:|ChatGPT said:|You:|ChatGPT:)[ \t]*/gim;
-  const labelMatches = [...text.matchAll(labelPattern)];
-  parseLog.push(`P1 "said:" labels found: ${labelMatches.length}`);
+  for (const container of containers) {
+    const userText = firstUsefulText(container, userSelectors);
+    const aiText = firstUsefulText(container, aiSelectors);
 
-  if (labelMatches.length >= 2) {
-    const messages = [];
-    for (let i = 0; i < labelMatches.length; i++) {
-      const match = labelMatches[i];
-      const role = match[1].toLowerCase().startsWith('you') ? 'human' : 'ai';
-      const start = match.index + match[0].length;
-      const end = i + 1 < labelMatches.length ? labelMatches[i + 1].index : text.length;
-      const msgText = text.substring(start, end).trim();
-      if (msgText.length >= 1) {
-        messages.push({ role, text: msgText, time: '' });
-        parseLog.push(`[${i}] ${role.toUpperCase()} | ${msgText.substring(0, 50).replace(/\n/g, ' ')}\u2026`);
-      }
+    if (userText) {
+      messages.push({ role: 'human', text: userText, time: '' });
     }
-    parseStats.mode = 'pattern1';
-    parseLog.push(`\u2500\u2500 Done (P1): ${messages.length} messages \u2500\u2500`);
+
+    if (aiText) {
+      messages.push({ role: 'ai', text: aiText, time: '' });
+    }
+  }
+
+  const strict = dedupeMessages(messages);
+  const h = strict.filter(m => m.role === 'human').length;
+  const a = strict.filter(m => m.role === 'ai').length;
+
+  parseLog.push(`Strict HTML candidate: ${strict.length} messages (${h} human / ${a} ai)`);
+
+  // Trust strict DOM if it found a healthy conversation.
+  if (strict.length >= 2 && h > 0 && a > 0) {
+    return strict;
+  }
+
+  // Fallback: older explicit parser logic, but still no global text stream ownership.
+  let candidates = [];
+  const all = [...body.querySelectorAll('*')];
+
+  for (const el of all) {
+    const role = classifyPerplexityElement(el);
+    if (!role) continue;
+
+    const text = normalizeMessageText(getDirectText(el));
+    if (!text || text.length < 1 || text.length > 5000) continue;
+
+    const childText = [...el.children].map(ch => normalizeMessageText(getDirectText(ch))).filter(Boolean).join('\n');
+    if (childText && childText.length >= text.length * 0.85 && el.children.length > 1) continue;
+
+    candidates.push({ role, text, time: '' });
+  }
+
+  candidates = dedupeMessages(candidates);
+  const ch = candidates.filter(m => m.role === 'human').length;
+  const ca = candidates.filter(m => m.role === 'ai').length;
+  parseLog.push(`Fallback HTML candidate: ${candidates.length} messages (${ch} human / ${ca} ai)`);
+  return candidates;
+}
+
+
+function parsePerplexityByLabels(text) {
+  const lines = text.split('\n');
+  const messages = [];
+  let currentRole = null;
+  let currentTime = '';
+  let buffer = [];
+
+  const labelPattern = /^\s*(You|User|Me|Perplexity|Perplexity Advanced|Google Perplexity|Perplexity)\s*(?:said:|:)?\s*$/i;
+  const inlinePattern = /^\s*(You|User|Me|Perplexity|Perplexity Advanced|Google Perplexity|Perplexity)\s*(?:said:|:)\s+(.+)$/i;
+  const tsPattern = /^\s*(\d{1,2}:\d{2}\s*(?:AM|PM)?)\s*$/i;
+
+  function flush() {
+    if (currentRole) pushPerplexityMessage(messages, currentRole, buffer.join('\n'), currentTime);
+    buffer = [];
+    currentTime = '';
+  }
+
+  for (const line of lines) {
+    const inline = line.match(inlinePattern);
+    if (inline) {
+      flush();
+      currentRole = /perplexity|perplexity/i.test(inline[1]) ? 'ai' : 'human';
+      buffer = [inline[2]];
+      continue;
+    }
+
+    const label = line.match(labelPattern);
+    if (label) {
+      flush();
+      currentRole = /perplexity|perplexity/i.test(label[1]) ? 'ai' : 'human';
+      continue;
+    }
+
+    const ts = line.match(tsPattern);
+    if (ts && currentRole === 'human') {
+      currentTime = ts[1];
+      continue;
+    }
+
+    if (currentRole) buffer.push(line);
+  }
+
+  flush();
+  return messages;
+}
+
+function preparePlainPerplexityText(rawText) {
+  rawText = rawText || '';
+  const markerMatch = rawText.match(/Conversation with Perplexity/i);
+  const text = markerMatch ? rawText.slice(markerMatch.index + markerMatch[0].length) : rawText;
+  return cleanPerplexityNoise(text);
+}
+
+function isLikelyUserBlock(block) {
+  const t = block.trim();
+  if (!t) return false;
+  if (/^\d+$/.test(t)) return true;
+  if (/^(test|one|two|three|four|five|six|seven|eight|nine|ten)$/i.test(t)) return true;
+  if (/[?]$/.test(t)) return true;
+  if (/^(can you|could you|please|i need|i want|i meant|i'm|im|let's|lets|ok|okay|now|next|continue|stop|start|do|make|create|show|give|tell|explain|write)\b/i.test(t)) return true;
+  return false;
+}
+
+function isLikelyAiContinuation(block) {
+  const t = block.trim();
+  if (/^(however|also|additionally|alternatively|for example|for instance|in other words|that said|yes|no|sure|absolutely|understood|i can|i can't|i cannot|i’ll|i will|here are|here's|would you like|if you want|to clarify|as an ai|perplexity)\b/i.test(t)) return true;
+  if (/^(system active|checking connection|fully functional|data streaming|all clear)\.?$/i.test(t)) return true;
+  return false;
+}
+
+function parsePerplexityPlainSmart(rawText) {
+  const text = preparePlainPerplexityText(rawText);
+  if (!text) return [];
+
+  let messages = parsePerplexityByLabels(text);
+  if (messages.length >= 2) {
+    parseLog.push(`Plain label candidate: ${messages.length}`);
     return messages;
   }
 
-  // ── PATTERN 2: Standalone "You" / "ChatGPT" lines (no colon) ──
-  const compactPattern = /^(You|ChatGPT)[ \t]*$/gim;
-  const compactMatches = [...text.matchAll(compactPattern)];
-  parseLog.push(`P2 standalone labels found: ${compactMatches.length}`);
+  // Perplexity plain paste usually separates bubbles with blank lines.
+  let blocks = text
+    .split(/\n{2,}/)
+    .map(b => normalizeMessageText(b))
+    .filter(Boolean);
 
-  if (compactMatches.length >= 2) {
-    const messages = [];
-    for (let i = 0; i < compactMatches.length; i++) {
-      const match = compactMatches[i];
-      const role = match[1] === 'You' ? 'human' : 'ai';
-      const labelEnd = match.index + match[0].length;
-      const contentStart = labelEnd + (text[labelEnd] === '\n' ? 1 : 0);
-      const end = i + 1 < compactMatches.length ? compactMatches[i + 1].index : text.length;
-      const msgText = text.substring(contentStart, end).trim();
-      if (msgText.length >= 1) {
-        messages.push({ role, text: msgText, time: '' });
-        parseLog.push(`[${i}] ${role.toUpperCase()} | ${msgText.substring(0, 50).replace(/\n/g, ' ')}\u2026`);
-      }
-    }
-    if (messages.length >= 2) {
-      parseStats.mode = 'pattern2';
-      parseLog.push(`\u2500\u2500 Done (P2): ${messages.length} messages \u2500\u2500`);
-      return messages;
-    }
-    parseLog.push('P2 yielded < 2 messages \u2192 fallback');
+  // If blank-line splitting failed, fall back to single lines.
+  if (blocks.length < 2) {
+    blocks = text.split('\n').map(b => normalizeMessageText(b)).filter(Boolean);
   }
 
-  // ── FALLBACK: no recognizable speaker labels found ──
-  // Returning [] surfaces a user-facing error instead of the old alternating-block
-  // guess that produced 700+ fake messages on non-ChatGPT pastes.
-  parseStats.mode = 'failed';
-  parseLog.push('── No speaker labels found — parse failed ──');
-  return [];
+  if (blocks[0] && /^Perplexity$/i.test(blocks[0])) blocks.shift();
 
-  // Kept for debugging future DOM changes — unreachable unless mode above is removed:
-  // const blocks = text.split(/\n{2,}/).map(b => b.trim()).filter(b => b.length > 2);
-  // const aiOpeners = /^(Sure|Of course|Great|Here|I |Let me|To |Based on|The |Absolutely|Happy to|Yes|No[,. ]|In |There )/i;
-  // const firstBlock = blocks[0] || '';
-  // const firstIsAI = firstBlock.length > 100 && !firstBlock.includes('?') && aiOpeners.test(firstBlock);
-  // return blocks.map((block, i) => ({
-  //   role: ((firstIsAI ? i + 1 : i) % 2 === 0) ? 'human' : 'ai',
-  //   text: block, time: ''
-  // }));
-}
+  messages = [];
+  let expected = 'human';
 
-// ── MAIN PARSER ──
-function parseConversation(raw, html = '') {
+  for (const block of blocks) {
+    const last = messages[messages.length - 1];
 
-  // --- NEW HTML PARSER ---
-  if (html && html.includes('data-turn')) {
-
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(html, 'text/html');
-
-    const turns = [...doc.querySelectorAll('[data-turn]')];
-
-    const messages = [];
-
-    turns.forEach(turn => {
-
-      const roleAttr = turn.getAttribute('data-turn');
-
-      const role =
-        roleAttr === 'user'
-          ? 'human'
-          : 'ai';
-
-      const msg = turn.querySelector('[data-message-author-role]');
-      const root = msg || turn;
-
-      // Walk the DOM tree, inserting newlines at block-level boundaries
-      // so that paragraphs, lists, code blocks, and line breaks all
-      // render correctly in the PDF instead of collapsing into one line.
-      function extractText(node) {
-        const BLOCK = new Set(['P','DIV','LI','PRE','BLOCKQUOTE',
-                               'H1','H2','H3','H4','H5','H6','TR']);
-        const NEWLINE = new Set(['BR']);
-        let out = '';
-        for (const child of node.childNodes) {
-          if (child.nodeType === 3) {
-            // Text node — append directly
-            out += child.textContent;
-          } else if (child.nodeType === 1) {
-            const tag = child.tagName;
-            if (NEWLINE.has(tag)) {
-              out += '\n';
-            } else if (BLOCK.has(tag)) {
-              const inner = extractText(child).trimEnd();
-              if (inner) out += '\n' + inner + '\n';
-            } else {
-              out += extractText(child);
-            }
-          }
-        }
-        return out;
+    if (expected === 'human') {
+      // If a block looks like an AI continuation, keep it with previous Perplexity response.
+      if (last && last.role === 'ai' && isLikelyAiContinuation(block) && !isLikelyUserBlock(block)) {
+        last.text += '\n\n' + block;
+        continue;
       }
+      messages.push({ role: 'human', text: block, time: '' });
+      expected = 'ai';
+      continue;
+    }
 
-      const text = extractText(root).replace(/\n{3,}/g, '\n\n').trim();
-
-      if (!text || text.length < 3) return;
-
-      messages.push({
-        role,
-        text,
-        time: ''
-      });
-
-    });
-
-    return {
-      messages,
-      platform: 'chatgpt',
-      confidence: checkConfidence(messages)
-    };
+    // expected AI.
+    messages.push({ role: 'ai', text: block, time: '' });
+    expected = 'human';
   }
 
-  // --- FALLBACK OLD PARSER ---
-  const messages = parseChatGPT(raw);
-
-  return {
-    messages,
-    platform: 'chatgpt',
-    confidence: checkConfidence(messages)
-  };
+  parseLog.push(`Plain smart candidate: ${messages.length}`);
+  return messages;
 }
 
-// ── DEBUG PANEL ──
+function scoreMessages(messages) {
+  const h = messages.filter(m => m.role === 'human').length;
+  const a = messages.filter(m => m.role === 'ai').length;
+  const total = messages.length;
+  if (total < 2 || h === 0 || a === 0) return -999;
+
+  let score = total * 10;
+  score -= Math.abs(h - a) * 4;
+
+  // Penalize obvious AI language in human blocks.
+  for (const m of messages) {
+    if (m.role === 'human' && /^(however|i can't|i cannot|understood|absolutely|here are|would you like|if you want)/i.test(m.text.trim())) score -= 20;
+    if (m.role === 'ai' && /^(can you|i need|i meant|test$|^\d+$)/i.test(m.text.trim())) score -= 12;
+  }
+
+  return score;
+}
+
+function chooseBestPerplexityParse(htmlMessages, plainMessages) {
+  const htmlScore = scoreMessages(htmlMessages);
+  const plainScore = scoreMessages(plainMessages);
+
+  const htmlH = htmlMessages.filter(m => m.role === 'human').length;
+  const htmlA = htmlMessages.filter(m => m.role === 'ai').length;
+  const plainH = plainMessages.filter(m => m.role === 'human').length;
+  const plainA = plainMessages.filter(m => m.role === 'ai').length;
+
+  parseLog.push(`Scores — HTML: ${htmlScore}, plain: ${plainScore}`);
+
+  // Perplexity rule:
+  // If strict DOM extraction finds balanced USER-QUERY / MODEL-RESPONSE pairs,
+  // trust it over plain text, even if plain text produces more chunks.
+  //
+  // Plain text often turns one Perplexity response into many fake alternating messages:
+  // card number lines, bullet lists, numbered lists, notes, etc.
+  const htmlBalanced =
+    htmlMessages.length >= 2 &&
+    htmlH > 0 &&
+    htmlA > 0 &&
+    Math.abs(htmlH - htmlA) <= 2;
+
+  if (htmlBalanced) {
+    parseLog.push('Parser choice: strict HTML DOM ownership');
+    return htmlMessages;
+  }
+
+  // Only fall back to plain text if HTML is unusable.
+  if (plainMessages.length >= 2 && plainH > 0 && plainA > 0) {
+    parseLog.push('Parser choice: plain smart fallback because HTML was weak');
+    return plainMessages;
+  }
+
+  parseLog.push('Parser choice: best available fallback');
+  return htmlMessages.length >= 2 ? htmlMessages : plainMessages;
+}
+
+function parsePerplexity(rawText, htmlText) {
+  parseLog.length = 0;
+  lastParseUsedFallback = false;
+  parseLog.push('── Perplexity balanced parser started ──');
+
+  const htmlMessages = parsePerplexityHtml(htmlText);
+  const plainMessages = parsePerplexityPlainSmart(rawText);
+
+  const best = chooseBestPerplexityParse(htmlMessages, plainMessages);
+  return dedupeMessages(best).filter(m => m.text.trim().length >= 1);
+}
+
+// ── MAIN PARSER ── Perplexity only.
+function parseConversation(raw) {
+  const html = getCurrentPasteHtml(raw);
+  const messages = parsePerplexity(raw, html);
+  const confidence = checkConfidence(messages);
+
+  const humanCount = messages.filter(m => m.role === 'human').length;
+  const aiCount = messages.filter(m => m.role === 'ai').length;
+  DEBUG_STATE.summary = [
+    `Version: PERPLEXITY-2.2 DEBUG`,
+    `Timestamp: 19:40:18`,
+    `Raw chars: ${(raw || '').length}`,
+    `Clipboard HTML chars: ${(html || '').length}`,
+    `Messages: ${messages.length}`,
+    `Human: ${humanCount}`,
+    `Perplexity: ${aiCount}`,
+    `Confidence ok: ${confidence.ok}`,
+    `Warning: ${confidence.warning || 'none'}`
+  ].join('\n');
+  DEBUG_STATE.parserLog = (parseLog || []).join('\n');
+  DEBUG_STATE.messages = summarizeMessagesForDebug(messages);
+  DEBUG_STATE.plain = ((raw || lastPastedPlain || '').slice(0, 3000));
+  DEBUG_STATE.html = summarizeHtmlForDebug(html || lastPastedHtml || '');
+  refreshDebugPanel();
+
+  return { messages, platform: 'perplexity', confidence };
+}
+
 // ── Live counter ──
-document.getElementById('pasteArea').addEventListener('paste', function(e) {
-  lastClipboardHTML = e.clipboardData.getData('text/html') || '';
-  // Auto-reset UI state when user pastes new content — no "Start over" needed
-  document.getElementById('previewSection').style.display = 'none';
-  document.getElementById('paywall').style.display = 'none';
-  document.getElementById('errorMsg').style.display = 'none';
-  document.getElementById('bottomDownload').style.display = 'none';
-  parsedMessages = [];
-});
-
 document.getElementById('pasteArea').addEventListener('input', function() {
-  const { messages } = parseConversation(this.value, lastClipboardHTML);
-
+  const { messages } = parseConversation(this.value);
   const el = document.getElementById('charInfo');
-
   el.textContent = this.value.trim().length === 0
     ? '0 messages detected'
     : `${messages.length} msg${messages.length !== 1 ? 's' : ''} · ${AI_NAME} detected`;
 });
- 
 
 let parsedMessages = [];
-let lastClipboardHTML = '';
 
 // ── Reset ──
 function resetApp() {
@@ -1195,7 +1833,7 @@ async function processConversation() {
     return;
   }
 
- const { messages, platform, confidence } = parseConversation(raw, lastClipboardHTML);
+  const { messages, platform, confidence } = parseConversation(raw);
 
   if (!confidence.ok) {
     errorEl.textContent = confidence.warning;
@@ -1209,39 +1847,10 @@ async function processConversation() {
     msgs = msgs.map(m => ({ ...m, text: redactText(m.text) }));
   }
 
-  // ── AI SPEAKER VALIDATION via Cloudflare Worker ──
-  let workerResult = { status: 'not_called', ms: 0, response: null };
-  try {
-    btn.textContent = 'Analyzing\u2026';
-    btn.disabled = true;
-    const first20 = msgs.slice(0, 20).map(m => ({ role: m.role, text: m.text }));
-    const t0 = Date.now();
-    const res = await Promise.race([
-      fetch('https://notavello-worker.mikekoga.workers.dev/validate-speakers', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ lines: first20 })
-      }),
-      new Promise((_, reject) => setTimeout(() => reject(new Error('timeout')), 5000))
-    ]);
-    workerResult.ms = Date.now() - t0;
-    const result = await res.json();
-    workerResult.status = res.ok ? 'ok' : 'http_error';
-    workerResult.response = result;
-    if (result && result.ok === false && result.fix) {
-      errorEl.textContent = '\u26A0\uFE0F Speaker check: ' + result.fix;
-      errorEl.style.display = 'block';
-      errorEl.style.background = '#FFFBEB';
-      errorEl.style.borderColor = '#FDE68A';
-      errorEl.style.color = '#92400E';
-    }
-  } catch (e) {
-    workerResult.status = e.message === 'timeout' ? 'timeout' : 'error';
-    workerResult.response = e.message;
-  } finally {
-    btn.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> Preview Conversation`;
-    btn.disabled = false;
-  }
+  // ── Speaker validation disabled ──
+  // Perplexity export now uses deterministic local cleanup only.
+  // This avoids remote AI checks rewriting, delaying, or second-guessing copied text.
+  const workerResult = { status: 'disabled', ms: 0, response: null };
 
   parsedMessages = msgs;
   renderPreview(msgs, platform, confidence.warning, workerResult);
@@ -1254,11 +1863,11 @@ function renderPreview(messages, platform, warning, workerResult) {
   const humanCount = messages.filter(m => m.role === 'human').length;
 
   document.getElementById('previewMeta').textContent =
-    `${messages.length} messages \u00b7 ${humanCount} from you \u00b7 ${AI_NAME} \u00b7 Generated ${dateStr}`;
+    `${messages.length} messages · ${humanCount} from you · ${AI_NAME} · Generated ${dateStr}`;
 
   const errorEl = document.getElementById('errorMsg');
   if (warning) {
-    errorEl.textContent = '\u26A0\uFE0F ' + warning;
+    errorEl.textContent = '⚠️ ' + warning;
     errorEl.style.display = 'block';
     errorEl.style.background = '#FFFBEB';
     errorEl.style.borderColor = '#FDE68A';
@@ -1327,41 +1936,44 @@ function renderPreview(messages, platform, warning, workerResult) {
     }
   });
 
+  DEBUG_STATE.pageLog = pageLog.join('\n') || 'No page breaks recorded.';
+  refreshDebugPanel();
+
   document.getElementById('previewSection').scrollIntoView({ behavior: 'smooth' });
 }
 
-// ── WATERMARK MESSAGES ──
+// ── WATERMARK MESSAGES (rotating, one per page in sequence) ──
 const WATERMARKS = [
-  "Messy AI chat \u2192 clean color-coded PDF. Notavello.com \u2014 go watermark-free for $5/month",
-  "Auto-formatted with speaker highlighting by Notavello.com \u2014 go watermark-free for $5/month",
-  "AI conversation auto-formatted with color-coded speakers by Notavello.com \u2014 remove watermark for $5/mo",
-  "Speaker-highlighted & auto-formatted by Notavello.com \u00b7 Watermark-free at $5/month",
-  "Automatically parsed & color-coded by Notavello.com \u2014 go clean for $5/month",
-  "Your AI conversation, professionally formatted \u2014 Notavello.com \u00b7 $5/mo removes this line",
-  "Turned your AI chat into a professional document. Notavello.com \u00b7 Remove watermark $5/mo",
-  "AI conversation made shareable & professional by Notavello.com \u2014 $5/mo for clean exports",
-  "Raw AI chat \u2192 formatted, color-coded, shareable. Notavello.com \u00b7 Watermark-free at $5/mo",
-  "Formatted by Notavello.com \u2014 speakers highlighted automatically \u00b7 Go clean for $5/month",
-  "Color-coded by Notavello.com \u2014 because messy chat shouldn't stay messy \u00b7 $5/mo watermark-free",
-  "Auto-formatted AI conversation \u00b7 Notavello.com \u00b7 Remove watermark for $5/month",
-  "Built for professionals who use AI. Notavello.com \u2014 watermark-free at $5/month",
-  "Your AI conversation, document-ready. Notavello.com \u00b7 $5/mo removes this",
-  "How is this so clean? Notavello.com auto-formats AI chats with speaker highlighting \u00b7 $5/mo",
-  "AI chat \u2192 professional PDF in seconds. Notavello.com \u2014 Watermark-free $5/mo",
-  "Notavello.com turned this AI conversation into a document \u00b7 Speaker highlighting included \u00b7 $5/mo",
-  "AI conversation formatted for professional use by Notavello.com \u00b7 Clean exports at $5/month",
-  "Documentation-ready AI transcript \u00b7 Speaker-highlighted by Notavello.com \u00b7 $5/mo watermark-free",
-  "Speakers auto-detected & highlighted by Notavello.com \u2014 watermark-free for $5/mo",
+  "Messy AI chat → clean color-coded PDF. Notavello.com — go watermark-free for $5/month",
+  "Auto-formatted with speaker highlighting by Notavello.com — go watermark-free for $5/month",
+  "AI conversation auto-formatted with color-coded speakers by Notavello.com — remove watermark for $5/mo",
+  "Speaker-highlighted & auto-formatted by Notavello.com · Watermark-free at $5/month",
+  "Automatically parsed & color-coded by Notavello.com — go clean for $5/month",
+  "Your AI conversation, professionally formatted — Notavello.com · $5/mo removes this line",
+  "Turned your AI chat into a professional document. Notavello.com · Remove watermark $5/mo",
+  "AI conversation made shareable & professional by Notavello.com — $5/mo for clean exports",
+  "Raw AI chat → formatted, color-coded, shareable. Notavello.com · Watermark-free at $5/mo",
+  "Formatted by Notavello.com — speakers highlighted automatically · Go clean for $5/month",
+  "Color-coded by Notavello.com — because messy chat shouldn't stay messy · $5/mo watermark-free",
+  "Auto-formatted AI conversation · Notavello.com · Remove watermark for $5/month",
+  "Built for professionals who use AI. Notavello.com — watermark-free at $5/month",
+  "Your AI conversation, document-ready. Notavello.com · $5/mo removes this",
+  "How is this so clean? Notavello.com auto-formats AI chats with speaker highlighting · $5/mo",
+  "AI chat → professional PDF in seconds. Notavello.com — Watermark-free $5/mo",
+  "Notavello.com turned this AI conversation into a document · Speaker highlighting included · $5/mo",
+  "AI conversation formatted for professional use by Notavello.com · Clean exports at $5/month",
+  "Documentation-ready AI transcript · Speaker-highlighted by Notavello.com · $5/mo watermark-free",
+  "Speakers auto-detected & highlighted by Notavello.com — watermark-free for $5/mo",
 ];
 let watermarkIndex = 0;
 
-// ── DEV MODE ──
+// ── DEV MODE — Ctrl+Shift+D toggles paywall bypass for testing ──
 let devMode = sessionStorage.getItem('notavello_dev') === 'true';
 document.addEventListener('keydown', e => {
   if (e.ctrlKey && e.shiftKey && e.key === 'D') {
     devMode = !devMode;
     sessionStorage.setItem('notavello_dev', devMode);
-    alert(devMode ? '\u{1F6E0} Dev mode ON \u2014 paywall bypassed' : '\u{1F512} Dev mode OFF \u2014 paywall active');
+    alert(devMode ? '🛠 Dev mode ON — paywall bypassed' : '🔒 Dev mode OFF — paywall active');
   }
 });
 
@@ -1372,6 +1984,7 @@ function checkPaywallBeforeDownload() {
     document.getElementById('msgCount').textContent = parsedMessages.length;
     document.getElementById('paywall').style.display = 'block';
     document.getElementById('paywall').scrollIntoView({ behavior: 'smooth' });
+    // Hide all download buttons so user only sees the paywall options
     document.getElementById('bottomDownload').style.display = 'none';
     document.getElementById('downloadBtn').style.display = 'none';
     return false;
@@ -1381,13 +1994,14 @@ function checkPaywallBeforeDownload() {
 
 function downloadPDF(truncate) {
   if (!parsedMessages.length) return;
+  // Truncated (free) download always allowed — skip paywall check
   if (!truncate && !checkPaywallBeforeDownload()) return;
 
   const msgs = truncate ? parsedMessages.slice(0, 30) : parsedMessages;
 
   const btn = document.getElementById('downloadBtn');
   btn.disabled = true;
-  btn.textContent = 'Generating\u2026';
+  btn.textContent = 'Generating…';
 
   const now = new Date();
   const dateStr = now.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
@@ -1397,7 +2011,7 @@ function downloadPDF(truncate) {
 
   const content = [
     { text: 'Conversation Export', fontSize: 20, bold: true, color: '#0F172A', margin: [0, 0, 0, 6] },
-    { text: `Generated ${dateStr}  \u00b7  ${msgs.length} messages  \u00b7  Blue = your messages`, fontSize: 9, color: '#94A3B8', margin: [0, 0, 0, 4] },
+    { text: `Generated ${dateStr}  ·  ${msgs.length} messages  ·  Blue = your messages`, fontSize: 9, color: '#94A3B8', margin: [0, 0, 0, 4] },
     { canvas: [{ type: 'line', x1: 0, y1: 0, x2: 515, y2: 0, lineWidth: 1, lineColor: '#E2E8F0' }], margin: [0, 0, 0, 18] },
   ];
 
@@ -1445,6 +2059,7 @@ function downloadPDF(truncate) {
     pageSize: 'LETTER',
     pageMargins: [50, 50, 50, 50],
     content,
+    // ── WATERMARK — removed for paid users ──
     ...(isPaid ? {} : {
       watermark: {
         text: 'NOTAVELLO.COM',
@@ -1470,7 +2085,7 @@ function downloadPDF(truncate) {
   };
 
   try {
-    pdfMake.createPdf(docDef).download('chatgpt-export.pdf');
+    pdfMake.createPdf(docDef).download('conversation-export.pdf');
   } catch(e) {
     alert('PDF error: ' + e.message);
   }
@@ -1484,12 +2099,10 @@ function downloadPDF(truncate) {
 // ── STRIPE CHECKOUT ──
 async function startCheckout(btn) {
   btn.disabled = true;
-  btn.textContent = 'Redirecting to checkout\u2026';
+  btn.textContent = 'Redirecting to checkout…';
+  // Save conversation so we can restore it after Stripe redirect
   const raw = document.getElementById('pasteArea').value;
-  if (raw.trim()) {
-    sessionStorage.setItem('notavello_saved_conversation', raw);
-    if (lastClipboardHTML) sessionStorage.setItem('notavello_saved_html', lastClipboardHTML);
-  }
+  if (raw.trim()) sessionStorage.setItem('notavello_saved_conversation', raw);
   try {
     const res = await fetch('https://notavello-worker.mikekoga.workers.dev/create-checkout', {
       method: 'POST',
@@ -1503,12 +2116,14 @@ async function startCheckout(btn) {
     }
   } catch (err) {
     btn.disabled = false;
-    btn.innerHTML = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg> $5/month \u2014 Export Everything`;
-    alert('Checkout unavailable \u2014 please try again in a moment.');
+    btn.innerHTML = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg> $5/month — Export Everything`;
+    alert('Checkout unavailable — please try again in a moment.');
   }
 }
 
 // ── HANDLE RETURN FROM STRIPE ──
+// On success, Stripe redirects to /perplexity/?paid=true
+// On cancel, Stripe redirects to /perplexity/?paid=cancelled
 (function handleStripeReturn() {
   const params = new URLSearchParams(window.location.search);
   function restoreSavedConversation() {
@@ -1516,15 +2131,12 @@ async function startCheckout(btn) {
     if (saved) {
       document.getElementById('pasteArea').value = saved;
       sessionStorage.removeItem('notavello_saved_conversation');
-      const savedHtml = sessionStorage.getItem('notavello_saved_html') || '';
-      sessionStorage.removeItem('notavello_saved_html');
-      lastClipboardHTML = savedHtml;
       document.getElementById('pasteArea').dispatchEvent(new Event('input'));
     }
   }
   if (params.get('paid') === 'true') {
     localStorage.setItem('notavello_paid', 'true');
-    window.history.replaceState({}, '', '/exporters/chatgpt/');
+    window.history.replaceState({}, '', '/perplexity/');
     restoreSavedConversation();
     const msg = document.createElement('div');
     msg.style.cssText = 'position:fixed;top:24px;left:50%;transform:translateX(-50%);background:#059669;color:white;padding:14px 28px;border-radius:12px;font-size:0.95rem;font-weight:600;z-index:9999;box-shadow:0 4px 20px rgba(5,150,105,0.4);';
@@ -1532,7 +2144,7 @@ async function startCheckout(btn) {
     document.body.appendChild(msg);
     setTimeout(() => msg.remove(), 5000);
   } else if (params.get('paid') === 'cancelled') {
-    window.history.replaceState({}, '', '/exporters/chatgpt/');
+    window.history.replaceState({}, '', '/perplexity/');
     restoreSavedConversation();
   }
 })();
@@ -1542,17 +2154,21 @@ function escHtml(t) {
 }
 
 // ── CHECK ACCESS ON PAGE LOAD ──
+// Reads session cookie via Worker. If valid, sets localStorage as backup
+// so returning paid users on any device don't hit the paywall.
 (async function checkAccessOnLoad() {
-  if (localStorage.getItem('notavello_paid') === 'true') return;
+  if (localStorage.getItem('notavello_paid') === 'true') return; // already set
   try {
     const res = await fetch('https://notavello-worker.mikekoga.workers.dev/check-access', {
       method: 'POST',
       credentials: 'include',
     });
     const data = await res.json();
-    if (data.ok) localStorage.setItem('notavello_paid', 'true');
+    if (data.ok) {
+      localStorage.setItem('notavello_paid', 'true');
+    }
   } catch (e) {
-    // Silent fail
+    // Silent fail — never block the user
   }
 })();
 
@@ -1565,13 +2181,16 @@ function toggleRestoreAccess() {
 async function sendRestoreCode() {
   const email = document.getElementById('restoreEmail').value.trim();
   const msg = document.getElementById('restoreMsg');
+
   if (!email || !email.includes('@')) {
     msg.style.color = '#DC2626';
     msg.textContent = 'Please enter a valid email address.';
     return;
   }
+
   msg.style.color = 'var(--ink-muted)';
-  msg.textContent = 'Sending code\u2026';
+  msg.textContent = 'Sending code…';
+
   try {
     const res = await fetch('https://notavello-worker.mikekoga.workers.dev/send-code', {
       method: 'POST',
@@ -1579,6 +2198,7 @@ async function sendRestoreCode() {
       body: JSON.stringify({ email }),
     });
     const data = await res.json();
+
     if (data.ok) {
       document.getElementById('restoreStep1').style.display = 'none';
       document.getElementById('restoreStep2').style.display = 'block';
@@ -1598,13 +2218,16 @@ async function verifyRestoreCode() {
   const email = document.getElementById('restoreEmail').value.trim();
   const code = document.getElementById('restoreCode').value.trim();
   const msg = document.getElementById('restoreMsg');
+
   if (!code || code.length !== 6) {
     msg.style.color = '#DC2626';
     msg.textContent = 'Please enter the 6-digit code.';
     return;
   }
+
   msg.style.color = 'var(--ink-muted)';
-  msg.textContent = 'Verifying\u2026';
+  msg.textContent = 'Verifying…';
+
   try {
     const res = await fetch('https://notavello-worker.mikekoga.workers.dev/verify-code', {
       method: 'POST',
@@ -1613,6 +2236,7 @@ async function verifyRestoreCode() {
       body: JSON.stringify({ email, code }),
     });
     const data = await res.json();
+
     if (data.ok) {
       localStorage.setItem('notavello_paid', 'true');
       document.getElementById('paywall').style.display = 'none';
@@ -1620,7 +2244,7 @@ async function verifyRestoreCode() {
       document.getElementById('downloadBtn').style.display = '';
       const toast = document.createElement('div');
       toast.style.cssText = 'position:fixed;top:24px;left:50%;transform:translateX(-50%);background:#059669;color:white;padding:14px 28px;border-radius:12px;font-size:0.95rem;font-weight:600;z-index:9999;box-shadow:0 4px 20px rgba(5,150,105,0.4);';
-      toast.textContent = '\u2713 Access restored \u2014 unlimited exports unlocked!';
+      toast.textContent = '✓ Access restored — unlimited exports unlocked!';
       document.body.appendChild(toast);
       setTimeout(() => toast.remove(), 5000);
     } else {
@@ -1633,34 +2257,33 @@ async function verifyRestoreCode() {
   }
 }
 </script>
-
 <!-- SITE FOOTER -->
 <footer class="site-footer">
   <div class="site-footer-inner">
     <nav class="footer-nav">
       <div class="footer-nav-label">Export AI Conversations</div>
       <a href="/chatgpt/">ChatGPT</a>
-      <span class="footer-nav-divider">&middot;</span>
-      <a href="/gemini/" style="opacity:0.5;pointer-events:none;">Gemini <small>(soon)</small></a>
-      <span class="footer-nav-divider">&middot;</span>
+      <span class="footer-nav-divider">·</span>
+      <a href="/perplexity/">Perplexity</a>
+      <span class="footer-nav-divider">·</span>
       <a href="/copilot/" style="opacity:0.5;pointer-events:none;">Copilot <small>(soon)</small></a>
-      <span class="footer-nav-divider">&middot;</span>
+      <span class="footer-nav-divider">·</span>
       <a href="/claude/">Claude</a>
     </nav>
     <nav class="footer-nav">
       <div class="footer-nav-label">Product</div>
       <a href="/pricing/">Pricing</a>
-      <span class="footer-nav-divider">&middot;</span>
+      <span class="footer-nav-divider">·</span>
       <a href="/faq/">FAQ</a>
-      <span class="footer-nav-divider">&middot;</span>
+      <span class="footer-nav-divider">·</span>
       <a href="/sample/">Sample PDF</a>
-      <span class="footer-nav-divider">&middot;</span>
+      <span class="footer-nav-divider">·</span>
       <a href="/about/">About</a>
-      <span class="footer-nav-divider">&middot;</span>
+      <span class="footer-nav-divider">·</span>
       <a href="/sitemap/">Sitemap</a>
     </nav>
     <div class="footer-bottom">
-      <div class="footer-copy">&copy; 2026 Notavello.</div>
+      <div class="footer-copy">&copy; 2026 Notavello. Made in Reno, NV.</div>
       <div class="footer-legal">
         <a href="/privacy/">Privacy Policy</a>
         <a href="/terms/">Terms of Service</a>
