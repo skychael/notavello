@@ -2124,8 +2124,8 @@ async function startCheckout(btn) {
 }
 
 // ── HANDLE RETURN FROM STRIPE ──
-// On success, Stripe redirects to /gemini/?paid=true
-// On cancel, Stripe redirects to /gemini/?paid=cancelled
+// On success, Stripe redirects to /exporters/gemini/?paid=true
+// On cancel, Stripe redirects to /exporters/gemini/?paid=cancelled
 (function handleStripeReturn() {
   const params = new URLSearchParams(window.location.search);
   function restoreSavedConversation() {
@@ -2138,7 +2138,7 @@ async function startCheckout(btn) {
   }
   if (params.get('paid') === 'true') {
     localStorage.setItem('notavello_paid', 'true');
-    window.history.replaceState({}, '', '/gemini/');
+    window.history.replaceState({}, '', '/exporters/gemini/');
     restoreSavedConversation();
     const msg = document.createElement('div');
     msg.style.cssText = 'position:fixed;top:24px;left:50%;transform:translateX(-50%);background:#059669;color:white;padding:14px 28px;border-radius:12px;font-size:0.95rem;font-weight:600;z-index:9999;box-shadow:0 4px 20px rgba(5,150,105,0.4);';
@@ -2146,7 +2146,7 @@ async function startCheckout(btn) {
     document.body.appendChild(msg);
     setTimeout(() => msg.remove(), 5000);
   } else if (params.get('paid') === 'cancelled') {
-    window.history.replaceState({}, '', '/gemini/');
+    window.history.replaceState({}, '', '/exporters/gemini/');
     restoreSavedConversation();
   }
 })();
