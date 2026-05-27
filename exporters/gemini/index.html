@@ -1,4 +1,7 @@
-<!-- Notavello gemini-2.3.8 | generated 18:44:45 UTC | visual bug-report button -->
+<!-- Notavello gemini-2.3.9 | generated 20:45:00 UTC | bug-report button wired + added to bottom bar -->
+<!-- ⚠️ AI INSTRUCTION: Every time you modify this file you MUST update the version comment on line 1.
+     Bump the patch number (e.g. 2.3.9 → 2.3.10), update the UTC time, and add a brief note of what changed.
+     This is how we verify the correct version is live. Do not skip this step. -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1305,7 +1308,7 @@ async function sendBugReport(btn) {
 
   // Toast
   const toast = document.createElement('div');
-  toast.style.cssText = 'position:fixed;top:24px;left:50%;transform:translateX(-50%);background:#059669;color:white;padding:14px 28px;border-radius:12px;font-size:0.95rem;font-weight:600;z-index:9999;box-shadow:0 4px 20px rgba(5,150,105,0.4);pointer-events:none;';
+  toast.style.cssText = 'position:fixed;top:24px;left:50%;transform:translateX(-50%);background:rgba(255,255,255,0.75);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);color:#4F46E5;border:1px solid rgba(79,70,229,0.25);padding:14px 28px;border-radius:12px;font-size:0.95rem;font-weight:600;z-index:9999;box-shadow:0 4px 20px rgba(79,70,229,0.15);pointer-events:none;';
   toast.textContent = '✓ Thanks for the report! We\'ll look into it.';
   document.body.appendChild(toast);
   setTimeout(() => toast.remove(), 4000);
