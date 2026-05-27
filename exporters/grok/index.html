@@ -1,4 +1,4 @@
-<!-- Notavello grok-1.1 -->
+<!-- Notavello grok-2.0 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,11 +7,11 @@
 <title>Export Grok Conversations to PDF — Notavello</title>
 <meta name="description" content="Paste your Grok conversation and get a clean, color-coded PDF in seconds. User messages in blue, AI responses in plain text. Free to use — no sign-up required."/>
 <meta name="robots" content="index, follow"/>
-<link rel="canonical" href="https://notavello.com/exporters/grok/"/>
+<link rel="canonical" href="https://notavello.com/gemini/"/>
 
 <!-- Open Graph -->
 <meta property="og:type" content="website"/>
-<meta property="og:url" content="https://notavello.com/exporters/grok/"/>
+<meta property="og:url" content="https://notavello.com/gemini/"/>
 <meta property="og:title" content="Export Grok Conversations to PDF — Notavello"/>
 <meta property="og:description" content="Paste your Grok conversation and get a clean, color-coded PDF in seconds. Free to use — no sign-up required."/>
 <meta property="og:site_name" content="Notavello"/>
@@ -785,6 +785,7 @@ body {
 }
 
 /* ── FLOATING DOWNLOAD BAR ── */
+
 @keyframes slideUp {
   from { transform: translateY(100%); opacity: 0; }
   to   { transform: translateY(0); opacity: 1; }
@@ -867,6 +868,99 @@ body {
 
 .footer-legal a:hover { color: var(--accent); }
 
+
+/* ── DEBUG PANEL ── */
+.debug-panel {
+  display: none;
+  max-width: 1000px;
+  margin: 28px auto;
+  background: #0F172A;
+  color: #E2E8F0;
+  border: 1px solid #334155;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(15,23,42,0.35);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+}
+.debug-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: #111827;
+  border-bottom: 1px solid #334155;
+}
+.debug-panel-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #A5B4FC;
+}
+.debug-panel-actions {
+  display: flex;
+  gap: 8px;
+}
+.debug-btn {
+  background: #1E293B;
+  color: #CBD5E1;
+  border: 1px solid #475569;
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 0.72rem;
+  cursor: pointer;
+}
+.debug-btn:hover { background: #334155; }
+.debug-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+.debug-box {
+  border-right: 1px solid #334155;
+  border-bottom: 1px solid #334155;
+  padding: 12px;
+  min-height: 120px;
+}
+.debug-box:nth-child(even) { border-right: none; }
+.debug-box h4 {
+  color: #93C5FD;
+  font-size: 0.72rem;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.debug-pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-size: 0.72rem;
+  line-height: 1.45;
+  color: #E5E7EB;
+  max-height: 260px;
+  overflow: auto;
+}
+.debug-toggle {
+  position: fixed;
+  right: 18px;
+  bottom: 70px;
+  z-index: 300;
+  background: #0F172A;
+  color: #A5B4FC;
+  border: 1px solid #475569;
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 18px rgba(15,23,42,0.25);
+}
+.debug-toggle:hover { background: #1E293B; }
+@media (max-width: 800px) {
+  .debug-grid { grid-template-columns: 1fr; }
+  .debug-box { border-right: none; }
+}
+
 /* ── MOBILE ── */
 @media (max-width: 600px) {
   .screen-ui { padding: 32px 16px 72px; }
@@ -897,12 +991,12 @@ body {
     Nota<span>vello</span>
   </div>
   </a>
-  <div class="badge" id="liveBadge">FREE PREVIEW · GROK-1.1 · --:--:-- UTC</div>
+  <div class="badge" id="liveBadge">FREE PREVIEW · GROK-2.0 · --:--:-- UTC</div>
 <script>
 (function(){
   const n=new Date();
   const t=[n.getUTCHours(),n.getUTCMinutes(),n.getUTCSeconds()].map(v=>String(v).padStart(2,'0')).join(':');
-  document.getElementById('liveBadge').textContent='FREE PREVIEW · GROK-1.1 · '+t+' UTC';
+  document.getElementById('liveBadge').textContent='FREE PREVIEW · GROK-2.0 · '+t+' UTC';
 })();
 </script>
 </header>
@@ -1042,13 +1136,145 @@ body {
 
 </div>
 
+
+<button class="debug-toggle" type="button" onclick="toggleDebugPanel()">Debug</button>
+
+<div class="debug-panel" id="debugPanel">
+  <div class="debug-panel-header">
+    <div class="debug-panel-title">Gemini Parser Debug Panel</div>
+    <div class="debug-panel-actions">
+      <button class="debug-btn" type="button" onclick="copyDebugReport()">Copy report</button>
+      <button class="debug-btn" type="button" onclick="clearDebugPanel()">Clear</button>
+      <button class="debug-btn" type="button" onclick="toggleDebugPanel()">Close</button>
+    </div>
+  </div>
+  <div class="debug-grid">
+    <div class="debug-box">
+      <h4>Summary</h4>
+      <pre class="debug-pre" id="debugSummary">No parse yet.</pre>
+    </div>
+    <div class="debug-box">
+      <h4>Parser Log</h4>
+      <pre class="debug-pre" id="debugParserLog">No parse yet.</pre>
+    </div>
+    <div class="debug-box">
+      <h4>Extracted Messages</h4>
+      <pre class="debug-pre" id="debugMessages">No parse yet.</pre>
+    </div>
+    <div class="debug-box">
+      <h4>Page Break Log</h4>
+      <pre class="debug-pre" id="debugPageLog">No preview yet.</pre>
+    </div>
+    <div class="debug-box">
+      <h4>Plain Text Sample</h4>
+      <pre class="debug-pre" id="debugPlain">No paste yet.</pre>
+    </div>
+    <div class="debug-box">
+      <h4>HTML Clipboard Signal</h4>
+      <pre class="debug-pre" id="debugHtml">No HTML captured yet.</pre>
+    </div>
+  </div>
+</div>
+
 <script>
+
+// ── DEBUG HELPERS ──
+const DEBUG_STATE = {
+  summary: '',
+  parserLog: '',
+  messages: '',
+  pageLog: '',
+  plain: '',
+  html: ''
+};
+
+function setDebug(id, text) {
+  const el = document.getElementById(id);
+  if (el) el.textContent = text || '';
+}
+
+function refreshDebugPanel() {
+  setDebug('debugSummary', DEBUG_STATE.summary || 'No parse yet.');
+  setDebug('debugParserLog', DEBUG_STATE.parserLog || 'No parse yet.');
+  setDebug('debugMessages', DEBUG_STATE.messages || 'No parse yet.');
+  setDebug('debugPageLog', DEBUG_STATE.pageLog || 'No preview yet.');
+  setDebug('debugPlain', DEBUG_STATE.plain || 'No paste yet.');
+  setDebug('debugHtml', DEBUG_STATE.html || 'No HTML captured yet.');
+}
+
+function toggleDebugPanel() {
+  const panel = document.getElementById('debugPanel');
+  if (!panel) return;
+  panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
+  refreshDebugPanel();
+}
+
+function clearDebugPanel() {
+  Object.keys(DEBUG_STATE).forEach(k => DEBUG_STATE[k] = '');
+  refreshDebugPanel();
+}
+
+function copyDebugReport() {
+  const report = [
+    '--- GEMINI DEBUG SUMMARY ---',
+    DEBUG_STATE.summary || '',
+    '',
+    '--- PARSER LOG ---',
+    DEBUG_STATE.parserLog || '',
+    '',
+    '--- MESSAGES ---',
+    DEBUG_STATE.messages || '',
+    '',
+    '--- PAGE LOG ---',
+    DEBUG_STATE.pageLog || '',
+    '',
+    '--- PLAIN TEXT SAMPLE ---',
+    DEBUG_STATE.plain || '',
+    '',
+    '--- HTML SIGNAL ---',
+    DEBUG_STATE.html || ''
+  ].join('\n');
+
+  navigator.clipboard?.writeText(report).then(() => {
+    alert('Debug report copied.');
+  }).catch(() => {
+    prompt('Copy debug report:', report);
+  });
+}
+
+function summarizeMessagesForDebug(messages) {
+  return (messages || []).map((m, i) => {
+    const text = (m.text || '').replace(/\s+/g, ' ').slice(0, 180);
+    return `${String(i + 1).padStart(2, '0')}. ${m.role.toUpperCase()} (${(m.text || '').length} chars): ${text}`;
+  }).join('\n');
+}
+
+function summarizeHtmlForDebug(htmlText) {
+  if (!htmlText) return 'No text/html captured from clipboard.';
+  const doc = new DOMParser().parseFromString(htmlText, 'text/html');
+  const all = [...doc.body.querySelectorAll('*')];
+  const interesting = all.slice(0, 800).map((el, i) => {
+    const sig = [
+      el.tagName,
+      el.id ? '#' + el.id : '',
+      el.className ? '.' + String(el.className).replace(/\s+/g, '.') : '',
+      el.getAttribute('data-test-id') ? `[data-test-id="${el.getAttribute('data-test-id')}"]` : '',
+      el.getAttribute('aria-label') ? `[aria-label="${el.getAttribute('aria-label')}"]` : ''
+    ].filter(Boolean).join('');
+    const txt = (el.innerText || el.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 120);
+    if (!txt) return null;
+    return `${i}: ${sig} :: ${txt}`;
+  }).filter(Boolean).slice(0, 120);
+  return `HTML length: ${htmlText.length}\nElements: ${all.length}\n\n${interesting.join('\n')}`;
+}
+
+
 // ── Redaction ──
 // Default patterns: high-confidence sensitive data only.
 // Email and phone removed — too likely to be legitimate content
 // that users actually want in their export (contacts, examples, etc).
 //
-// FUTURE PAID FEATURE IDEA (claude-2.5):
+// FUTURE PAID FEATURE IDEA (gemini-1.1):
 // Add a "Custom Redaction" panel for paid users with checkboxes:
 //   ☑ API keys (always on, not toggleable)
 //   ☑ SSNs
@@ -1059,10 +1285,10 @@ body {
 // This is a genuine paid differentiator — lawyers/consultants would use it.
 // Build after Stripe exists. Store preference in localStorage per user.
 const REDACT_PATTERNS = [
-  { pattern: /\bsk-[A-Za-z0-9]{20,}\b/g,                               replace: '[API_KEY]' },
+  { pattern: /\bsk[-_][A-Za-z0-9_\-]{20,}\b/g,                         replace: '[API_KEY]' },
   { pattern: /\b[A-Fa-f0-9]{32,}\b/g,                                   replace: '[KEY]' },
   { pattern: /\b\d{3}[-.\s]?\d{2}[-.\s]?\d{4}\b/g,                     replace: '[SSN]' },
-  { pattern: /\b4[0-9]{12}(?:[0-9]{3})?\b|\b5[1-5][0-9]{14}\b/g,       replace: '[CARD]' },
+  { pattern: /\b4[0-9]{3}[\s-]?[0-9]{4}[\s-]?[0-9]{4}[\s-]?[0-9]{4}\b|\b5[1-5][0-9]{2}[\s-]?[0-9]{4}[\s-]?[0-9]{4}[\s-]?[0-9]{4}\b/g, replace: '[CARD]' },
 ];
 function redactText(text) {
   let out = text;
@@ -1072,6 +1298,27 @@ function redactText(text) {
 
 // ── Change this one value when copying this file for a new AI ──
 const AI_NAME = 'Grok';
+
+// ── SMART PASTE CAPTURE ──
+let lastPastedHtml = '';
+let lastPastedPlain = '';
+
+document.getElementById('pasteArea').addEventListener('paste', function(e) {
+  if (!e.clipboardData) return;
+  lastPastedHtml = e.clipboardData.getData('text/html') || '';
+  lastPastedPlain = e.clipboardData.getData('text/plain') || '';
+  DEBUG_STATE.plain = (lastPastedPlain || '').slice(0, 3000);
+  DEBUG_STATE.html = summarizeHtmlForDebug(lastPastedHtml);
+  refreshDebugPanel();
+});
+
+function getCurrentPasteHtml(raw) {
+  if (!lastPastedHtml) return '';
+  if (!lastPastedPlain) return lastPastedHtml;
+  const current = (raw || '').trim().replace(/\s+/g, ' ').slice(0, 160);
+  const pasted = (lastPastedPlain || '').trim().replace(/\s+/g, ' ').slice(0, 160);
+  return current && pasted && current === pasted ? lastPastedHtml : lastPastedHtml;
+}
 
 // Populate all AI name spans from the single source above
 document.querySelectorAll('.ai-inline, #heroAIName, #heroAIName2, #heroAIName3').forEach(el => {
@@ -1094,20 +1341,148 @@ function checkConfidence(messages) {
   if (h === 0) return { ok: false, warning: 'No user messages detected. Try copying again with Ctrl+A first.' };
   if (a === 0) return { ok: false, warning: 'No AI messages detected. Try copying again with Ctrl+A first.' };
   const ratio = Math.max(h, a) / Math.min(h, a);
-  if (ratio > 4) return { ok: true, warning: `Heads up: detected ${h} user and ${a} AI messages — ratio seems off. Colors may not be 100% accurate.` };
+  if (ratio > 4) return { ok: true, warning: `Heads up: detected ${h} user and ${a} Gemini messages — please review before exporting.` };
   return { ok: true, warning: null };
+}
+
+// ── GEMINI BALANCED PARSER ──
+// v1.6 strategy:
+// 1. Build an HTML/DOM candidate.
+// 2. Build a smarter plain-text candidate.
+// 3. Choose the more complete/consistent result.
+// This avoids blindly trusting weak Gemini HTML extraction while still using it when it is clearly better.
+const parseLog = [];
+let lastParseUsedFallback = false;
+
+function cleanGeminiNoise(text) {
+  const exactNoiseLines = new Set([
+    'About Gemini',
+    'Gemini App',
+    'Subscriptions',
+    'For Business',
+    'Conversation with Gemini',
+    'Google apps',
+    'New chat',
+    'Ask Gemini',
+    'Enter a prompt here',
+    'Show thinking',
+    'Thinking...',
+    'Listen to this response',
+    'Share & export',
+    'Export to Docs',
+    'Open in Gmail',
+    'Copy code',
+    'Use code with caution.',
+    'Sources',
+    'Source',
+    'Related content',
+    'Gemini is AI and can make mistakes.',
+    'Gemini can make mistakes, so double-check it.'
+  ]);
+
+  return (text || '')
+    .replace(/\u00a0/g, ' ')
+    .replace(/Opens in a new window/gi, '')
+    .replace(/Gemini can make mistakes, so double-check it\.?/gi, '')
+    .replace(/Gemini\s+is\s+AI\s+and\s+can\s+make\s+mistakes\.?/gi, '')
+    .split('\n')
+    .map(line => line.trim())
+    .filter(line => line.length > 0)
+    .filter(line => !exactNoiseLines.has(line))
+    .filter(line => !/^Drafts?\s*\d+$/i.test(line))
+    .filter(line => !/^\d{10,}_image\.\w+$/i.test(line))
+    .join('\n')
+    .replace(/^([\w\-. ]+\.\w+)\n(\d+ lines\n)?(\w+)$/gim, '[Attachment: $1]')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
+}
+
+function normalizeGeminiNumberedLists(text) {
+  // Only normalize inside one already-owned Gemini message.
+  // This avoids changing message ownership, while preserving list readability.
+  return (text || '')
+    .replace(/(^|\n)(\d{1,2})\.\s*\n\s*([^\n]+)/g, '$1$2. $3')
+    .replace(/\n{3,}/g, '\n\n');
+}
+
+function normalizeMessageText(text) {
+  return normalizeGeminiNumberedLists(
+    cleanGeminiNoise(text || '').replace(/\n{3,}/g, '\n\n')
+  ).trim();
+}
+
+function pushGeminiMessage(messages, role, text, time) {
+  const cleaned = normalizeMessageText(text);
+  if (!cleaned) return;
+
+  const last = messages[messages.length - 1];
+  if (last && last.role === role && !time) {
+    if (!last.text.includes(cleaned)) last.text += '\n\n' + cleaned;
+  } else {
+    messages.push({ role, text: cleaned, time: role === 'human' ? (time || '') : '' });
+  }
+}
+
+function getDirectText(el) {
+  const clone = el.cloneNode(true);
+
+  clone.querySelectorAll('br').forEach(br => br.replaceWith('\n'));
+
+  clone.querySelectorAll('p, div, section, article, blockquote, pre, table, tr').forEach(node => {
+    node.insertBefore(document.createTextNode('\n'), node.firstChild);
+    node.appendChild(document.createTextNode('\n'));
+  });
+
+  clone.querySelectorAll('li').forEach((li, idx) => {
+    const parent = li.parentElement;
+    const isOrdered = parent && parent.tagName && parent.tagName.toLowerCase() === 'ol';
+    const prefix = isOrdered ? `${idx + 1}. ` : '• ';
+    li.insertBefore(document.createTextNode('\n' + prefix), li.firstChild);
+    li.appendChild(document.createTextNode('\n'));
+  });
+
+  return (clone.textContent || '')
+    .replace(/[ \t]+\n/g, '\n')
+    .replace(/\n[ \t]+/g, '\n')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
+}
+
+function elementSignature(el) {
+  return [
+    el.tagName || '',
+    el.id || '',
+    el.className || '',
+    el.getAttribute('data-test-id') || '',
+    el.getAttribute('aria-label') || '',
+    el.getAttribute('role') || ''
+  ].join(' ').toLowerCase();
+}
+
+function classifyGeminiElement(el) {
+  const sig = elementSignature(el);
+  if (/user-query|user_query|query-text|user input|user-message|human-message/.test(sig)) return 'human';
+  if (/model-response|response-container|response-content|model-response-text|assistant-message|gemini-response|markdown/.test(sig)) return 'ai';
+  if (/(you|user)\s*(said|message|query|input)/.test(sig)) return 'human';
+  if (/(gemini|bard|assistant|model)\s*(said|response|answer|message)/.test(sig)) return 'ai';
+  return null;
+}
+
+function dedupeMessages(messages) {
+  const out = [];
+  for (const m of messages) {
+    const text = normalizeMessageText(m.text);
+    if (!text) continue;
+    const prev = out[out.length - 1];
+    if (prev && prev.role === m.role && prev.text === text) continue;
+    out.push({ ...m, text });
+  }
+  return out;
 }
 
 // ── PARSE GROK ──
 // grok.com format: alternating blocks separated by the speaker labels
 // "You" for the user, "Grok" for the AI. Labels appear on their own line.
-// Example:
-//   You
-//   What is the meaning of life?
-//   Grok
-//   The answer is 42...
-//   You
-//   ...
 // Fallback: if no speaker labels found, use alternating paragraph blocks.
 function parseGrok(text) {
   // Strip UI noise
@@ -1123,26 +1498,37 @@ function parseGrok(text) {
   if (labelMatches.length >= 2) {
     const messages = [];
     for (let i = 0; i < labelMatches.length; i++) {
-      const label     = labelMatches[i][1];
-      const role      = label === 'You' ? 'human' : 'ai';
-      const start     = labelMatches[i].index + labelMatches[i][0].length;
-      const end       = labelMatches[i + 1] ? labelMatches[i + 1].index : text.length;
-      const content   = text.substring(start, end).trim();
-      if (content.length >= 1) {
-        messages.push({ role, text: content, time: '' });
-      }
+      const label   = labelMatches[i][1];
+      const role    = label === 'You' ? 'human' : 'ai';
+      const start   = labelMatches[i].index + labelMatches[i][0].length;
+      const end     = labelMatches[i + 1] ? labelMatches[i + 1].index : text.length;
+      const block   = text.substring(start, end).trim();
+      if (block.length >= 1) messages.push({ role, text: block, time: '' });
     }
     return messages;
   }
 
-  // Fallback: alternating paragraph blocks (no labels found)
+  // Fallback: alternating paragraph blocks
   const blocks = text.split(/\n{2,}/).map(b => b.trim()).filter(b => b.length > 3);
   return blocks.map((block, i) => ({ role: i % 2 === 0 ? 'human' : 'ai', text: block, time: '' }));
 }
 
 // ── MAIN PARSER ── Grok only.
-function parseConversation(raw) {
+function parseConversation(raw, htmlText) {
   const messages = parseGrok(raw);
+
+  const humanCount = messages.filter(m => m.role === 'human').length;
+  const aiCount = messages.filter(m => m.role === 'ai').length;
+  DEBUG_STATE.summary = [
+    `Version: GROK-2.0 DEBUG`,
+    `Raw chars: ${(raw || '').length}`,
+    `Messages: ${messages.length}`,
+    `Human: ${humanCount}`,
+    `Grok: ${aiCount}`,
+    `Confidence ok: ${checkConfidence(messages).ok}`
+  ].join('\n');
+  refreshDebugPanel();
+
   return { messages, platform: 'grok', confidence: checkConfidence(messages) };
 }
 
@@ -1199,8 +1585,6 @@ async function processConversation() {
   }
 
   // ── AI SPEAKER VALIDATION via Cloudflare Worker ──
-  // Sends first 20 messages to Haiku 4.5 to check speaker attribution.
-  // If Worker is down or slow, we fall through silently — never block the user.
   let workerResult = { status: 'not_called', ms: 0, response: null };
   try {
     btn.textContent = 'Analyzing…';
@@ -1317,6 +1701,9 @@ function renderPreview(messages, platform, warning, workerResult) {
       currentPage.appendChild(block);
     }
   });
+
+  DEBUG_STATE.pageLog = pageLog.join('\n') || 'No page breaks recorded.';
+  refreshDebugPanel();
 
   document.getElementById('previewSection').scrollIntoView({ behavior: 'smooth' });
 }
@@ -1503,8 +1890,8 @@ async function startCheckout(btn) {
 }
 
 // ── HANDLE RETURN FROM STRIPE ──
-// On success, Stripe redirects to /exporters/grok/?paid=true
-// On cancel, Stripe redirects to /exporters/grok/?paid=cancelled
+// On success, Stripe redirects to /gemini/?paid=true
+// On cancel, Stripe redirects to /gemini/?paid=cancelled
 (function handleStripeReturn() {
   const params = new URLSearchParams(window.location.search);
   function restoreSavedConversation() {
@@ -1517,7 +1904,7 @@ async function startCheckout(btn) {
   }
   if (params.get('paid') === 'true') {
     localStorage.setItem('notavello_paid', 'true');
-    window.history.replaceState({}, '', '/exporters/grok/');
+    window.history.replaceState({}, '', '/gemini/');
     restoreSavedConversation();
     const msg = document.createElement('div');
     msg.style.cssText = 'position:fixed;top:24px;left:50%;transform:translateX(-50%);background:#059669;color:white;padding:14px 28px;border-radius:12px;font-size:0.95rem;font-weight:600;z-index:9999;box-shadow:0 4px 20px rgba(5,150,105,0.4);';
@@ -1525,7 +1912,7 @@ async function startCheckout(btn) {
     document.body.appendChild(msg);
     setTimeout(() => msg.remove(), 5000);
   } else if (params.get('paid') === 'cancelled') {
-    window.history.replaceState({}, '', '/exporters/grok/');
+    window.history.replaceState({}, '', '/gemini/');
     restoreSavedConversation();
   }
 })();
