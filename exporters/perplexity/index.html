@@ -1,4 +1,4 @@
-<!-- Notavello perplexity-2.2-strict-dom-priority-debug -->
+<!-- Notavello perplexity-2.3 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1095,11 +1095,11 @@ body {
   <div class="paywall" id="paywall">
     <div class="paywall-icon">📄</div>
     <h3>Your conversation has <span id="msgCount"></span> messages</h3>
-    <p>Free exports include the <strong>first 30 messages</strong> — yours to keep, forever, no account needed. Or upgrade to export everything.</p>
+    <p>Free exports include the <strong>first 65 messages</strong> — yours to keep, forever, no account needed. Or upgrade to export everything.</p>
     <div style="display:flex;flex-direction:column;align-items:center;gap:12px;margin:20px 0;">
       <button class="btn-pay" onclick="downloadPDF(true)">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Download First 30 Free
+        Download First 65 Free
       </button>
       <div style="font-size:0.8rem;color:var(--ink-faint);">— or —</div>
       <button class="btn-pay" style="background:linear-gradient(135deg,#059669,#047857);box-shadow:0 4px 16px rgba(5,150,105,0.35);" onclick="startCheckout(this)">
@@ -1112,7 +1112,7 @@ body {
       <div class="perk"><div class="perk-check">✓</div> Unlimited length</div>
       <div class="perk"><div class="perk-check">✓</div> All future features</div>
     </div>
-    <div class="paywall-note">The free download includes your watermark and ends at message 30.</div>
+    <div class="paywall-note">The free download includes a watermark and ends at message 65.</div>
 
     <!-- Already paid restore access -->
     <div style="margin-top:20px;padding-top:16px;border-top:1px solid var(--border);text-align:center;">
@@ -1980,7 +1980,7 @@ document.addEventListener('keydown', e => {
 // ── PDF ──
 function checkPaywallBeforeDownload() {
   const isPaid = localStorage.getItem('notavello_paid') === 'true';
-  if (!isPaid && !devMode && parsedMessages.length > 30) {
+  if (!isPaid && !devMode && parsedMessages.length > 65) {
     document.getElementById('msgCount').textContent = parsedMessages.length;
     document.getElementById('paywall').style.display = 'block';
     document.getElementById('paywall').scrollIntoView({ behavior: 'smooth' });
@@ -1997,7 +1997,7 @@ function downloadPDF(truncate) {
   // Truncated (free) download always allowed — skip paywall check
   if (!truncate && !checkPaywallBeforeDownload()) return;
 
-  const msgs = truncate ? parsedMessages.slice(0, 30) : parsedMessages;
+  const msgs = truncate ? parsedMessages.slice(0, 65) : parsedMessages;
 
   const btn = document.getElementById('downloadBtn');
   btn.disabled = true;
@@ -2054,13 +2054,15 @@ function downloadPDF(truncate) {
 
   const isPaid = localStorage.getItem('notavello_paid') === 'true'
               || sessionStorage.getItem('notavello_dev') === 'true';
+  const isOverLimit = parsedMessages.length > 65;
+  const showWatermark = !isPaid && isOverLimit;
 
   const docDef = {
     pageSize: 'LETTER',
     pageMargins: [50, 50, 50, 50],
     content,
-    // ── WATERMARK — removed for paid users ──
-    ...(isPaid ? {} : {
+    // ── WATERMARK — only shown when unpaid AND over 65 messages ──
+    ...(showWatermark ? {
       watermark: {
         text: 'NOTAVELLO.COM',
         color: '#4F46E5',
@@ -2070,9 +2072,9 @@ function downloadPDF(truncate) {
         fontSize: 52,
         angle: -45
       }
-    }),
+    } : {}),
     footer: function(currentPage, pageCount) {
-      const pageWm = isPaid ? '' : WATERMARKS[(watermarkIndex - 1 + currentPage - 1) % WATERMARKS.length];
+      const pageWm = showWatermark ? WATERMARKS[(watermarkIndex - 1 + currentPage - 1) % WATERMARKS.length] : '';
       return {
         columns: [
           { text: `Page ${currentPage} of ${pageCount}`, fontSize: 8, color: '#CBD5E1', margin: [50, 10, 0, 0] },
@@ -2258,40 +2260,7 @@ async function verifyRestoreCode() {
 }
 </script>
 <!-- SITE FOOTER -->
-<footer class="site-footer">
-  <div class="site-footer-inner">
-    <nav class="footer-nav">
-      <div class="footer-nav-label">Export AI Conversations</div>
-      <a href="/chatgpt/">ChatGPT</a>
-      <span class="footer-nav-divider">·</span>
-      <a href="/perplexity/">Perplexity</a>
-      <span class="footer-nav-divider">·</span>
-      <a href="/copilot/" style="opacity:0.5;pointer-events:none;">Copilot <small>(soon)</small></a>
-      <span class="footer-nav-divider">·</span>
-      <a href="/claude/">Claude</a>
-    </nav>
-    <nav class="footer-nav">
-      <div class="footer-nav-label">Product</div>
-      <a href="/pricing/">Pricing</a>
-      <span class="footer-nav-divider">·</span>
-      <a href="/faq/">FAQ</a>
-      <span class="footer-nav-divider">·</span>
-      <a href="/sample/">Sample PDF</a>
-      <span class="footer-nav-divider">·</span>
-      <a href="/about/">About</a>
-      <span class="footer-nav-divider">·</span>
-      <a href="/sitemap/">Sitemap</a>
-    </nav>
-    <div class="footer-bottom">
-      <div class="footer-copy">&copy; 2026 Notavello. Made in Reno, NV.</div>
-      <div class="footer-legal">
-        <a href="/privacy/">Privacy Policy</a>
-        <a href="/terms/">Terms of Service</a>
-        <a href="/contact/">Contact</a>
-      </div>
-    </div>
-  </div>
-</footer>
+<!--FOOTER-->
 
 </body>
 </html>
