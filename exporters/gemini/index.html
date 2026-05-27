@@ -974,21 +974,27 @@ body {
 .report-btn{
   display:inline-flex;
   align-items:center;
-  gap:7px;
+  gap:8px;
   background:#FFFFFF;
-  border:1px solid #CBD5E1;
+  border:1px solid #94A3B8;
   color:#334155;
   border-radius:12px;
   padding:11px 16px;
   font-size:0.84rem;
-  font-weight:600;
+  font-weight:700;
   cursor:pointer;
   transition:all .15s ease;
   font-family:'Sora',sans-serif;
+  box-shadow:0 1px 2px rgba(15,23,42,0.04);
 }
 .report-btn:hover{
   background:#F8FAFC;
-  border-color:#94A3B8;
+  border-color:#64748B;
+  transform:translateY(-1px);
+}
+.report-btn .warn-icon{
+  color:#D97706;
+  font-size:0.95rem;
 }
 
 </style>
@@ -1004,7 +1010,7 @@ body {
     Nota<span>vello</span>
   </div>
   </a>
-  <div class="badge" id="liveBadge">FREE PREVIEW · GEMINI-2.3.9 · GENERATED 18:51:29 UTC</div>
+  <div class="badge" id="liveBadge">FREE PREVIEW · GEMINI-2.4.0 · GENERATED 18:56:23 UTC</div>
 </header>
 
 <div class="screen-ui">
@@ -1078,7 +1084,7 @@ body {
           Convert another
         </button>
         <button class="report-btn" onclick="toggleDebugPanel()">
-          ⚠ Report issue
+          <span class="warn-icon">⚠</span> Report issue
         </button>
 
         <button class="btn-download" id="downloadBtn" onclick="downloadPDF()">
