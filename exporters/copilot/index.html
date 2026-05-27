@@ -1,4 +1,7 @@
-<!-- Notavello copilot-2.3 -->
+<!-- Notavello copilot-2.4 | generated 21:50:00 UTC | 250 limit, no watermark, bug report button, remove FREE PREVIEW -->
+<!-- ⚠️ AI INSTRUCTION: Every time you modify this file you MUST update the version comment on line 1.
+     Bump the patch number (e.g. 2.4 → 2.5), update the UTC time, and add a brief note of what changed.
+     This is how we verify the correct version is live. Do not skip this step. -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -978,6 +981,32 @@ body {
   .site-footer { padding: 24px 16px; }
   .footer-bottom { flex-direction: column; align-items: flex-start; }
 }
+
+.report-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #FFFFFF;
+  border: 1px solid #94A3B8;
+  color: #334155;
+  border-radius: 12px;
+  padding: 11px 16px;
+  font-size: 0.84rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all .15s ease;
+  font-family: 'Sora', sans-serif;
+  box-shadow: 0 1px 2px rgba(15,23,42,0.04);
+}
+.report-btn:hover {
+  background: #F8FAFC;
+  border-color: #64748B;
+  transform: translateY(-1px);
+}
+.report-btn .warn-icon {
+  color: #D97706;
+  font-size: 0.95rem;
+}
 </style>
 </head>
 <body>
@@ -991,12 +1020,12 @@ body {
     Nota<span>vello</span>
   </div>
   </a>
-  <div class="badge" id="liveBadge">FREE PREVIEW · COPILOT-2.2 · --:--:-- UTC</div>
+  <div class="badge" id="liveBadge">COPILOT-2.4 · --:--:-- UTC</div>
 <script>
 (function(){
   const n=new Date();
   const t=[n.getUTCHours(),n.getUTCMinutes(),n.getUTCSeconds()].map(v=>String(v).padStart(2,'0')).join(':');
-  document.getElementById('liveBadge').textContent='FREE PREVIEW · COPILOT-2.2 · '+t+' UTC';
+  document.getElementById('liveBadge').textContent='COPILOT-2.4 · '+t+' UTC';
 })();
 </script>
 </header>
@@ -1071,6 +1100,9 @@ body {
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-3.69"/></svg>
           Convert another
         </button>
+        <button class="report-btn" onclick="sendBugReport(this)">
+          <span class="warn-icon">⚠</span> Report issue
+        </button>
         <button class="btn-download" id="downloadBtn" onclick="downloadPDF()">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           Download PDF
@@ -1089,17 +1121,20 @@ body {
         Download PDF
       </button>
       <p class="bottom-download-note">Your conversation is ready — click to save as a PDF file</p>
+      <button class="report-btn" onclick="sendBugReport(this)" style="margin-top:10px;">
+        <span class="warn-icon">⚠</span> Report issue
+      </button>
     </div>
   </div>
 
   <div class="paywall" id="paywall">
     <div class="paywall-icon">📄</div>
     <h3>Your conversation has <span id="msgCount"></span> messages</h3>
-    <p>Free exports include the <strong>first 65 messages</strong> — yours to keep, forever, no account needed. Or upgrade to export everything.</p>
+    <p>Free exports include the <strong>first 250 messages</strong> — yours to keep, forever, no account needed. Or upgrade to export everything.</p>
     <div style="display:flex;flex-direction:column;align-items:center;gap:12px;margin:20px 0;">
       <button class="btn-pay" onclick="downloadPDF(true)">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Download First 65 Free
+        Download First 250 Free
       </button>
       <div style="font-size:0.8rem;color:var(--ink-faint);">— or —</div>
       <button class="btn-pay" style="background:linear-gradient(135deg,#059669,#047857);box-shadow:0 4px 16px rgba(5,150,105,0.35);" onclick="startCheckout(this)">
@@ -1112,7 +1147,7 @@ body {
       <div class="perk"><div class="perk-check">✓</div> Unlimited length</div>
       <div class="perk"><div class="perk-check">✓</div> All future features</div>
     </div>
-    <div class="paywall-note">The free download includes a watermark and ends at message 65.</div>
+    <div class="paywall-note">The free download ends at message 250.</div>
 
     <!-- Already paid restore access -->
     <div style="margin-top:20px;padding-top:16px;border-top:1px solid var(--border);text-align:center;">
@@ -1942,30 +1977,30 @@ function renderPreview(messages, platform, warning, workerResult) {
   document.getElementById('previewSection').scrollIntoView({ behavior: 'smooth' });
 }
 
-// ── WATERMARK MESSAGES (rotating, one per page in sequence) ──
-const WATERMARKS = [
-  "Messy AI chat → clean color-coded PDF. Notavello.com — go watermark-free for $5/month",
-  "Auto-formatted with speaker highlighting by Notavello.com — go watermark-free for $5/month",
-  "AI conversation auto-formatted with color-coded speakers by Notavello.com — remove watermark for $5/mo",
-  "Speaker-highlighted & auto-formatted by Notavello.com · Watermark-free at $5/month",
-  "Automatically parsed & color-coded by Notavello.com — go clean for $5/month",
-  "Your AI conversation, professionally formatted — Notavello.com · $5/mo removes this line",
-  "Turned your AI chat into a professional document. Notavello.com · Remove watermark $5/mo",
-  "AI conversation made shareable & professional by Notavello.com — $5/mo for clean exports",
-  "Raw AI chat → formatted, color-coded, shareable. Notavello.com · Watermark-free at $5/mo",
-  "Formatted by Notavello.com — speakers highlighted automatically · Go clean for $5/month",
-  "Color-coded by Notavello.com — because messy chat shouldn't stay messy · $5/mo watermark-free",
-  "Auto-formatted AI conversation · Notavello.com · Remove watermark for $5/month",
-  "Built for professionals who use AI. Notavello.com — watermark-free at $5/month",
-  "Your AI conversation, document-ready. Notavello.com · $5/mo removes this",
-  "How is this so clean? Notavello.com auto-formats AI chats with speaker highlighting · $5/mo",
-  "AI chat → professional PDF in seconds. Notavello.com — Watermark-free $5/mo",
-  "Notavello.com turned this AI conversation into a document · Speaker highlighting included · $5/mo",
-  "AI conversation formatted for professional use by Notavello.com · Clean exports at $5/month",
-  "Documentation-ready AI transcript · Speaker-highlighted by Notavello.com · $5/mo watermark-free",
-  "Speakers auto-detected & highlighted by Notavello.com — watermark-free for $5/mo",
-];
-let watermarkIndex = 0;
+// ── BUG REPORT ──
+async function sendBugReport(btn) {
+  const originalHTML = btn.innerHTML;
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+  try {
+    await fetch('https://notavello-worker.mikekoga.workers.dev/bug-report', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        page: 'copilot',
+        timestamp: new Date().toISOString(),
+        report: 'Bug report from Copilot page'
+      })
+    });
+  } catch (e) { /* silent fail */ }
+  btn.disabled = false;
+  btn.innerHTML = originalHTML;
+  const toast = document.createElement('div');
+  toast.style.cssText = 'position:fixed;top:24px;left:50%;transform:translateX(-50%);background:rgba(255,255,255,0.75);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);color:#4F46E5;border:1px solid rgba(79,70,229,0.25);padding:14px 28px;border-radius:12px;font-size:0.95rem;font-weight:600;z-index:9999;box-shadow:0 4px 20px rgba(79,70,229,0.15);pointer-events:none;';
+  toast.textContent = '✓ Thanks for the report! We\'ll look into it.';
+  document.body.appendChild(toast);
+  setTimeout(() => toast.remove(), 4000);
+}
 
 // ── DEV MODE — Ctrl+Shift+D toggles paywall bypass for testing ──
 let devMode = sessionStorage.getItem('notavello_dev') === 'true';
@@ -1980,7 +2015,7 @@ document.addEventListener('keydown', e => {
 // ── PDF ──
 function checkPaywallBeforeDownload() {
   const isPaid = localStorage.getItem('notavello_paid') === 'true';
-  if (!isPaid && !devMode && parsedMessages.length > 65) {
+  if (!isPaid && !devMode && parsedMessages.length > 250) {
     document.getElementById('msgCount').textContent = parsedMessages.length;
     document.getElementById('paywall').style.display = 'block';
     document.getElementById('paywall').scrollIntoView({ behavior: 'smooth' });
@@ -1997,7 +2032,7 @@ function downloadPDF(truncate) {
   // Truncated (free) download always allowed — skip paywall check
   if (!truncate && !checkPaywallBeforeDownload()) return;
 
-  const msgs = truncate ? parsedMessages.slice(0, 65) : parsedMessages;
+  const msgs = truncate ? parsedMessages.slice(0, 250) : parsedMessages;
 
   const btn = document.getElementById('downloadBtn');
   btn.disabled = true;
@@ -2005,9 +2040,6 @@ function downloadPDF(truncate) {
 
   const now = new Date();
   const dateStr = now.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-
-  const wmText = WATERMARKS[watermarkIndex % WATERMARKS.length];
-  watermarkIndex++;
 
   const content = [
     { text: 'Conversation Export', fontSize: 20, bold: true, color: '#0F172A', margin: [0, 0, 0, 6] },
@@ -2054,31 +2086,17 @@ function downloadPDF(truncate) {
 
   const isPaid = localStorage.getItem('notavello_paid') === 'true'
               || sessionStorage.getItem('notavello_dev') === 'true';
-  const isOverLimit = parsedMessages.length > 65;
-  const showWatermark = !isPaid && isOverLimit;
+  const showWatermark = false;
 
   const docDef = {
     pageSize: 'LETTER',
     pageMargins: [50, 50, 50, 50],
     content,
-    // ── WATERMARK — only shown when unpaid AND over 65 messages ──
-    ...(showWatermark ? {
-      watermark: {
-        text: 'NOTAVELLO.COM',
-        color: '#4F46E5',
-        opacity: 0.18,
-        bold: true,
-        italics: false,
-        fontSize: 52,
-        angle: -45
-      }
-    } : {}),
     footer: function(currentPage, pageCount) {
-      const pageWm = showWatermark ? WATERMARKS[(watermarkIndex - 1 + currentPage - 1) % WATERMARKS.length] : '';
       return {
         columns: [
           { text: `Page ${currentPage} of ${pageCount}`, fontSize: 8, color: '#CBD5E1', margin: [50, 10, 0, 0] },
-          { text: pageWm, fontSize: 9, color: '#94A3B8', alignment: 'center', margin: [0, 10, 0, 0] },
+          { text: '', fontSize: 9, color: '#94A3B8', alignment: 'center', margin: [0, 10, 0, 0] },
           { text: '', margin: [0, 10, 50, 0] }
         ]
       };
