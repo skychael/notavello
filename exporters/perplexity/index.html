@@ -1982,22 +1982,42 @@ async function sendBugReport(btn) {
   const originalHTML = btn.innerHTML;
   btn.disabled = true;
   btn.textContent = 'Sending…';
+
+  const rawText = (document.getElementById('pasteArea').value || '').slice(0, 3000);
+  const msgSummary = (parsedMessages || []).map((m, i) =>
+    String(i+1).padStart(2,'0') + '. ' + m.role.toUpperCase() + ' (' + (m.text||'').length + ' chars): ' + (m.text||'').replace(/[\s]+/g,' ').slice(0,120)
+  ).join('\n');
+
+  const report = [
+    '--- PERPLEXITY DEBUG SUMMARY ---',
+    'Timestamp: ' + new Date().toISOString(),
+    'Messages parsed: ' + (parsedMessages||[]).length,
+    'Human: ' + (parsedMessages||[]).filter(m=>m.role==='human').length,
+    'AI: ' + (parsedMessages||[]).filter(m=>m.role==='ai').length,
+    '',
+    '--- PARSER LOG ---',
+    (parseLog||[]).join('\n') || 'none',
+    '',
+    '--- MESSAGES ---',
+    msgSummary || 'none',
+    '',
+    '--- RAW TEXT SAMPLE ---',
+    rawText || 'none'
+  ].join('\n');
+
   try {
     await fetch('https://notavello-worker.mikekoga.workers.dev/bug-report', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        page: 'perplexity',
-        timestamp: new Date().toISOString(),
-        report: 'Bug report from Perplexity page'
-      })
+      body: JSON.stringify({ page: 'perplexity', timestamp: new Date().toISOString(), report })
     });
   } catch (e) { /* silent fail */ }
+
   btn.disabled = false;
   btn.innerHTML = originalHTML;
   const toast = document.createElement('div');
   toast.style.cssText = 'position:fixed;top:24px;left:50%;transform:translateX(-50%);background:rgba(255,255,255,0.75);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);color:#4F46E5;border:1px solid rgba(79,70,229,0.25);padding:14px 28px;border-radius:12px;font-size:0.95rem;font-weight:600;z-index:9999;box-shadow:0 4px 20px rgba(79,70,229,0.15);pointer-events:none;';
-  toast.textContent = '✓ Thanks for the report! We\'ll look into it.';
+  toast.textContent = '\u2713 Thanks for the report! We\'ll look into it.';
   document.body.appendChild(toast);
   setTimeout(() => toast.remove(), 4000);
 }
