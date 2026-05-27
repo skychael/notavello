@@ -1,6 +1,9 @@
 <!-- Notavello chatgpt-1.7 | generated 22:30:00 UTC | remove debug panel, add report issue button + sendBugReport -->
 <!-- ⚠️ AI INSTRUCTION: Every time you modify this file you MUST update the version comment on line 1.
      Bump the patch number (e.g. 1.7 → 1.8), update the UTC time, and add a brief note of what changed.
+     Also update the GENERATED timestamp in the badge in the <header> to match.
+     The badge timestamp is hardcoded ON PURPOSE — it shows when the file was last edited so you can
+     verify the correct version is live after deployment. Do NOT replace it with a live clock.
      This is how we verify the correct version is live. Do not skip this step. -->
 <!DOCTYPE html>
 <html lang="en">
@@ -813,7 +816,9 @@ body {
     Nota<span>vello</span>
   </div>
   </a>
-  <div class="badge">chatgpt-1.6 &middot; 4:43 PM UTC</div>
+  <div class="badge" id="liveBadge">CHATGPT-1.7 · GENERATED 22:30:00 UTC</div>
+  <!-- ⚠️ BADGE NOTE: This timestamp is hardcoded on purpose. It shows when this file was last edited,
+       so you can verify the correct version is live after deployment. Do NOT replace with a live clock. -->
 </header>
 
 <div class="screen-ui">
@@ -1243,7 +1248,7 @@ function renderDebugPanel(messages, pageLog, workerResult) {
   const a = messages.filter(m => m.role === 'ai').length;
   const ratio = Math.max(h, a) / Math.min(h, a || 1);
 
-  panel.innerHTML = `<div style="color:#4F46E5;font-weight:700;margin-bottom:6px;">&#x1F4D0; Notavello Debug &middot; chatgpt-1.6</div>`;
+  panel.innerHTML = `<div style="color:#4F46E5;font-weight:700;margin-bottom:6px;">&#x1F4D0; Notavello Debug &middot; chatgpt-1.7</div>`;
 
   // ── WORKER ──
   const workerColor = !workerResult ? '#64748B'
