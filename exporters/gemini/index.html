@@ -1159,7 +1159,7 @@ body {
   <div class="debug-panel-header">
     <div class="debug-panel-title">Gemini Parser Debug Panel</div>
     <div class="debug-panel-actions">
-      <button class="debug-btn" type="button" onclick="copyDebugReport()">Copy report</button>
+      <button class="debug-btn" type="button" onclick="sendBugReport(this)">Send bug report</button>
       <button class="debug-btn" type="button" onclick="clearDebugPanel()">Clear</button>
       <button class="debug-btn" type="button" onclick="toggleDebugPanel()">Close</button>
     </div>
@@ -1256,6 +1256,56 @@ function copyDebugReport() {
   }).catch(() => {
     prompt('Copy debug report:', report);
   });
+}
+
+async function sendBugReport(btn) {
+  const report = [
+    '--- GEMINI DEBUG SUMMARY ---',
+    DEBUG_STATE.summary || '',
+    '',
+    '--- PARSER LOG ---',
+    DEBUG_STATE.parserLog || '',
+    '',
+    '--- MESSAGES ---',
+    DEBUG_STATE.messages || '',
+    '',
+    '--- PAGE LOG ---',
+    DEBUG_STATE.pageLog || '',
+    '',
+    '--- PLAIN TEXT SAMPLE ---',
+    DEBUG_STATE.plain || '',
+    '',
+    '--- HTML SIGNAL ---',
+    DEBUG_STATE.html || ''
+  ].join('\n');
+
+  const originalText = btn.textContent;
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+
+  try {
+    await fetch('https://notavello-worker.mikekoga.workers.dev/bug-report', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        page: 'gemini',
+        timestamp: new Date().toISOString(),
+        report
+      })
+    });
+  } catch (e) {
+    // Silent fail — don't alarm the user
+  }
+
+  btn.disabled = false;
+  btn.textContent = originalText;
+
+  // Toast
+  const toast = document.createElement('div');
+  toast.style.cssText = 'position:fixed;top:24px;left:50%;transform:translateX(-50%);background:#059669;color:white;padding:14px 28px;border-radius:12px;font-size:0.95rem;font-weight:600;z-index:9999;box-shadow:0 4px 20px rgba(5,150,105,0.4);pointer-events:none;';
+  toast.textContent = '✓ Thanks for the report! We\'ll look into it.';
+  document.body.appendChild(toast);
+  setTimeout(() => toast.remove(), 4000);
 }
 
 function summarizeMessagesForDebug(messages) {
