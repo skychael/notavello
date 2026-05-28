@@ -1,174 +1,44 @@
-}
-</style>
-</head>
-<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>AI Writing Detector — Notavello</title>
+<meta name="description" content="Paste any text and find out if it was written by AI. Checks for AI patterns, sentence uniformity, transition phrases, and more. Free, private, runs in your browser."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/tools/ai-detector/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://notavello.com/tools/ai-detector/"/>
+<meta property="og:title" content="AI Writing Detector — Notavello"/>
+<meta property="og:description" content="Paste any text and find out if it was written by AI. Free, private, runs entirely in your browser."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="AI Writing Detector — Notavello"/>
+<meta name="twitter:description" content="Paste any text and find out if it was written by AI. Free, private, runs entirely in your browser."/>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 
-<header class="header">
-  <a href="/" class="logo">
-    <div class="logo-icon">N</div>
-    Notavello <span>Tools</span>
-  </a>
-  <div class="badge">AI Detector</div>
-</header>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-<main class="screen-ui">
-
-  <section class="hero">
-    <div class="hero-pill">
-      <div class="hero-pill-dot"></div>
-      AI Writing Detector
-    </div>
-    <h1>Is this <em>AI‑generated</em> text?</h1>
-    <p>Paste any text below and instantly analyze it for AI‑writing patterns.</p>
-  </section>
-
-  <div class="disclaimer">
-    <strong>Note:</strong> This tool provides an estimate based on linguistic patterns.  
-    It does not guarantee authorship.
-  </div>
-
-  <div class="error-msg" id="errorMsg">Please paste at least 30 characters.</div>
-
-  <div class="input-card">
-    <div class="input-card-header">
-      <div class="input-label">Your Text</div>
-      <div class="char-info" id="charCount">0 chars</div>
-    </div>
-
-    <textarea id="pasteArea" placeholder="Paste text here..."></textarea>
-
-    <div class="input-footer">
-      <button class="btn-reset" id="resetBtn">Reset</button>
-      <button class="btn-analyze" id="analyzeBtn">Analyze</button>
-    </div>
-  </div>
-
-  <section id="resultsSection">
-
-    <div id="verdictCard" class="verdict-card uncertain">
-      <div class="verdict-icon" id="verdictIcon">🤔</div>
-      <div class="verdict-label" id="verdictLabel">Uncertain</div>
-      <div class="verdict-title" id="verdictTitle">Needs More Text</div>
-      <p class="verdict-desc" id="verdictDesc">
-        Paste some text and click Analyze to see results.
-      </p>
-
-      <div class="score-meter-wrap">
-        <div class="score-meter-label">
-          <span>Human‑like</span>
-          <span>AI‑like</span>
-        </div>
-        <div class="score-meter-track">
-          <div class="score-meter-fill" id="scoreFill" style="width: 0%; background: var(--accent);"></div>
-        </div>
-      </div>
-    </div>
-
-  </section>
-
-</main>
-
-<footer style="text-align:center; padding:40px 0; color:var(--ink-faint); font-size:0.8rem;">
-  © 2026 Notavello — AI Tools
-</footer>
-
-<script>
-const pasteArea = document.getElementById("pasteArea");
-const charCount = document.getElementById("charCount");
-const analyzeBtn = document.getElementById("analyzeBtn");
-const resetBtn = document.getElementById("resetBtn");
-const errorMsg = document.getElementById("errorMsg");
-const resultsSection = document.getElementById("resultsSection");
-
-const verdictCard = document.getElementById("verdictCard");
-const verdictIcon = document.getElementById("verdictIcon");
-const verdictLabel = document.getElementById("verdictLabel");
-const verdictTitle = document.getElementById("verdictTitle");
-const verdictDesc = document.getElementById("verdictDesc");
-const scoreFill = document.getElementById("scoreFill");
-
-pasteArea.addEventListener("input", () => {
-  charCount.textContent = pasteArea.value.length + " chars";
-});
-
-resetBtn.addEventListener("click", () => {
-  pasteArea.value = "";
-  charCount.textContent = "0 chars";
-  resultsSection.style.display = "none";
-  errorMsg.style.display = "none";
-});
-
-analyzeBtn.addEventListener("click", () => {
-  const text = pasteArea.value.trim();
-
-  if (text.length < 30) {
-    errorMsg.style.display = "block";
-    return;
-  }
-
-  errorMsg.style.display = "none";
-  resultsSection.style.display = "block";
-
-  const score = calculateAIScore(text);
-  updateUI(score);
-});
-
-function calculateAIScore(text) {
-  let score = 0;
-
-  const avgSentence = text.split(/[.!?]/).map(s => s.trim()).filter(Boolean)
-    .reduce((a, b) => a + b.length, 0) / Math.max(1, text.split(/[.!?]/).length);
-
-  if (avgSentence > 140) score += 25;
-  if (avgSentence < 40) score += 15;
-
-  const transitions = ["however", "moreover", "in addition", "furthermore", "consequently"];
-  let transitionCount = transitions.filter(t => text.toLowerCase().includes(t)).length;
-  score += transitionCount * 10;
-
-  const uniformity = text.length / (new Set(text.split(" ")).size);
-  if (uniformity > 4) score += 20;
-
-  return Math.min(100, Math.max(0, score));
-}
-
-function updateUI(score) {
-  scoreFill.style.width = score + "%";
-
-  if (score > 70) {
-    verdictCard.className = "verdict-card likely-ai";
-    verdictIcon.textContent = "⚠️";
-    verdictLabel.textContent = "Likely AI";
-    verdictTitle.textContent = "High AI‑likeness detected";
-    verdictDesc.textContent = "The text shows strong patterns commonly found in AI‑generated writing.";
-    scoreFill.style.background = "var(--red)";
-  }
-  else if (score > 45) {
-    verdictCard.className = "verdict-card possibly-ai";
-    verdictIcon.textContent = "🟡";
-    verdictLabel.textContent = "Possibly AI";
-    verdictTitle.textContent = "Mixed indicators";
-    verdictDesc.textContent = "Some AI‑like patterns are present, but not enough for a strong conclusion.";
-    scoreFill.style.background = "var(--amber)";
-  }
-  else if (score > 20) {
-    verdictCard.className = "verdict-card uncertain";
-    verdictIcon.textContent = "🤔";
-    verdictLabel.textContent = "Uncertain";
-    verdictTitle.textContent = "Inconclusive";
-    verdictDesc.textContent = "The text does not strongly match AI or human patterns.";
-    scoreFill.style.background = "var(--accent)";
-  }
-  else {
-    verdictCard.className = "verdict-card likely-human";
-    verdictIcon.textContent = "🟢";
-    verdictLabel.textContent = "Likely Human";
-    verdictTitle.textContent = "Low AI‑likeness detected";
-    verdictDesc.textContent = "The writing style appears more natural and varied, typical of human authors.";
-    scoreFill.style.background = "var(--green)";
-  }
-}
-</script>
-
-</body>
-</html>
+:root {
+  --bg: #F0F4FF;
+  --surface: #FFFFFF;
+  --surface2: #F8FAFF;
+  --ink: #0F172A;
+  --ink-muted: #64748B;
+  --ink-faint: #94A3B8;
+  --accent: #4F46E5;
+  --accent2: #7C3AED;
+  --accent-light: #EEF2FF;
+  --green: #059669;
+  --green-light: #D1FAE5;
+  --amber: #D97706;
+  --amber-light: #FEF3C7;
+  --red: #DC2626;
+  --red-light: #FEE2E2;
+  --border: #E2E8F0;
+  --radius: 20px;
+  --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba
