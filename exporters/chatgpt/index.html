@@ -1,4 +1,4 @@
-<!-- Notavello chatgpt-1.9 -->
+<!-- Notavello chatgpt-1.2 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -402,22 +402,17 @@ body {
   align-items: center;
   gap: 6px;
   padding: 10px 18px;
-  background: var(--surface);
-  color: var(--accent);
+  background: var(--surface2);
+  color: var(--ink-muted);
   font-family: 'Sora', sans-serif;
   font-size: 0.84rem;
-  font-weight: 600;
-  border: 1.5px solid rgba(79,70,229,0.35);
+  font-weight: 500;
+  border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   cursor: pointer;
-  transition: background 0.15s, border-color 0.15s, box-shadow 0.15s;
-  box-shadow: 0 1px 4px rgba(79,70,229,0.08);
+  transition: background 0.15s;
 }
-.btn-reset:hover {
-  background: var(--accent-light);
-  border-color: var(--accent);
-  box-shadow: 0 2px 8px rgba(79,70,229,0.15);
-}
+.btn-reset:hover { background: var(--border); }
 
 .btn-download {
   display: flex;
@@ -658,6 +653,50 @@ body {
 .bottom-download-note { font-size: 0.78rem; color: var(--ink-faint); margin-top: 10px; }
 
 /* FLOATING DOWNLOAD BAR */
+.float-bar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  background: rgba(15,23,42,0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 14px 24px;
+  box-shadow: 0 -4px 24px rgba(0,0,0,0.25);
+  animation: slideUp 0.3s ease both;
+}
+.float-bar-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.float-bar-text { font-size: 0.86rem; color: #94A3B8; line-height: 1.4; }
+.float-bar-text strong { color: white; }
+.btn-float-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  background: linear-gradient(135deg, #059669, #047857);
+  color: white;
+  font-family: 'Sora', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 16px rgba(5,150,105,0.4);
+  flex-shrink: 0;
+}
+.btn-float-download:hover { opacity: 0.92; }
+
 @keyframes slideUp {
   from { transform: translateY(100%); opacity: 0; }
   to   { transform: translateY(0); opacity: 1; }
@@ -745,14 +784,7 @@ body {
     Nota<span>vello</span>
   </div>
   </a>
-  <div class="badge" id="liveBadge">FREE PREVIEW · CHATGPT-1.2 · --:--:-- UTC</div>
-<script>
-(function(){
-  const n=new Date();
-  const t=[n.getUTCHours(),n.getUTCMinutes(),n.getUTCSeconds()].map(v=>String(v).padStart(2,'0')).join(':');
-  document.getElementById('liveBadge').textContent='FREE PREVIEW · CHATGPT-1.2 · '+t+' UTC';
-})();
-</script>
+  <div class="badge">Free Preview &middot; chatgpt-1.2</div>
 </header>
 
 <div class="screen-ui">
@@ -802,7 +834,6 @@ body {
     </div>
     
     <textarea id="pasteArea" placeholder="Paste your ChatGPT conversation here (Ctrl+V)..."></textarea>
-
     <div class="input-footer">
       <label class="redact-option">
         <input type="checkbox" id="redactCheck" checked>
@@ -824,7 +855,7 @@ body {
       <div class="toolbar-right">
         <button class="btn-reset" onclick="resetApp()">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-3.69"/></svg>
-          Convert another
+          Start over
         </button>
         <button class="btn-download" id="downloadBtn" onclick="downloadPDF()">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
@@ -919,7 +950,6 @@ if (notUsingLink) {
 
 // ── CONFIDENCE CHECK ──
 function checkConfidence(messages) {
-  if (messages.length === 0) return { ok: false, warning: 'No speaker labels found. Copy your ChatGPT conversation with Ctrl+A then Ctrl+C, then paste here.' };
   if (messages.length < 2) return { ok: false, warning: 'Only ' + messages.length + ' message detected — make sure you copied the full conversation.' };
   const h = messages.filter(m => m.role === 'human').length;
   const a = messages.filter(m => m.role === 'ai').length;
@@ -1043,22 +1073,23 @@ function parseChatGPT(text) {
     parseLog.push('P2 yielded < 2 messages \u2192 fallback');
   }
 
-  // ── FALLBACK: no recognizable speaker labels found ──
-  // Returning [] surfaces a user-facing error instead of the old alternating-block
-  // guess that produced 700+ fake messages on non-ChatGPT pastes.
-  parseStats.mode = 'failed';
-  parseLog.push('── No speaker labels found — parse failed ──');
-  return [];
+  // ── FALLBACK: alternating double-newline blocks + first-speaker detection ──
+  parseLog.push('Fallback: alternating block split');
+  const blocks = text.split(/\n{2,}/).map(b => b.trim()).filter(b => b.length > 2);
+  parseLog.push(`Blocks: ${blocks.length}`);
 
-  // Kept for debugging future DOM changes — unreachable unless mode above is removed:
-  // const blocks = text.split(/\n{2,}/).map(b => b.trim()).filter(b => b.length > 2);
-  // const aiOpeners = /^(Sure|Of course|Great|Here|I |Let me|To |Based on|The |Absolutely|Happy to|Yes|No[,. ]|In |There )/i;
-  // const firstBlock = blocks[0] || '';
-  // const firstIsAI = firstBlock.length > 100 && !firstBlock.includes('?') && aiOpeners.test(firstBlock);
-  // return blocks.map((block, i) => ({
-  //   role: ((firstIsAI ? i + 1 : i) % 2 === 0) ? 'human' : 'ai',
-  //   text: block, time: ''
-  // }));
+  const aiOpeners = /^(Sure|Of course|Great|Here|I |Let me|To |Based on|The |Absolutely|Happy to|Yes|No[,. ]|In |There )/i;
+  const firstBlock = blocks[0] || '';
+  const firstIsAI = firstBlock.length > 100 && !firstBlock.includes('?') && aiOpeners.test(firstBlock);
+  parseStats.fallbackFirstSpeaker = firstIsAI ? 'AI' : 'HUMAN';
+  parseLog.push(`First-speaker: ${parseStats.fallbackFirstSpeaker} (len=${firstBlock.length}, hasQ=${firstBlock.includes('?')})`);
+
+  parseStats.mode = 'fallback';
+  return blocks.map((block, i) => ({
+    role: ((firstIsAI ? i + 1 : i) % 2 === 0) ? 'human' : 'ai',
+    text: block,
+    time: ''
+  }));
 }
 
 // ── MAIN PARSER ──
@@ -1143,15 +1174,103 @@ function parseConversation(raw, html = '') {
 }
 
 // ── DEBUG PANEL ──
+function getOrCreateDebugPanel() {
+  let panel = document.getElementById('debugPanel');
+  if (!panel) {
+    panel = document.createElement('div');
+    panel.id = 'debugPanel';
+    panel.style.cssText = `
+      position:fixed;bottom:16px;right:16px;z-index:9999;
+      background:#0F172A;color:#94A3B8;font-family:monospace;font-size:11px;
+      padding:12px 16px;border-radius:10px;max-width:340px;width:340px;
+      box-shadow:0 4px 20px rgba(0,0,0,0.4);line-height:1.8;
+      max-height:360px;overflow-y:auto;user-select:text;`;
+    panel.setAttribute('tabindex', '0');
+    panel.addEventListener('keydown', e => {
+      if (e.key === 'a' && (e.ctrlKey || e.metaKey)) {
+        e.preventDefault();
+        const sel = window.getSelection();
+        const range = document.createRange();
+        range.selectNodeContents(panel);
+        sel.removeAllRanges();
+        sel.addRange(range);
+      }
+    });
+    document.body.appendChild(panel);
+  }
+  return panel;
+}
+
+function renderDebugPanel(messages, pageLog, workerResult) {
+  const panel = getOrCreateDebugPanel();
+  const h = messages.filter(m => m.role === 'human').length;
+  const a = messages.filter(m => m.role === 'ai').length;
+  const ratio = Math.max(h, a) / Math.min(h, a || 1);
+
+  panel.innerHTML = `<div style="color:#4F46E5;font-weight:700;margin-bottom:6px;">&#x1F4D0; Notavello Debug &middot; chatgpt-1.2</div>`;
+
+  // ── WORKER ──
+  const workerColor = !workerResult ? '#64748B'
+    : workerResult.status === 'ok' ? '#059669'
+    : workerResult.status === 'timeout' ? '#D97706'
+    : '#BE123C';
+  const workerLabel = !workerResult ? 'not called'
+    : workerResult.status === 'ok'
+      ? `&#x2713; ${workerResult.ms}ms &rarr; ${JSON.stringify(workerResult.response)}`
+    : workerResult.status === 'timeout' ? '&#x26A0; timed out (>5s)'
+    : workerResult.status === 'http_error' ? `&#x2717; HTTP ${JSON.stringify(workerResult.response)}`
+    : `&#x2717; ${workerResult.response}`;
+  panel.insertAdjacentHTML('beforeend',
+    `<div style="color:#7C3AED;margin-top:4px;font-weight:600;">── Worker ──</div>
+     <div style="color:${workerColor};">Status: ${workerLabel}</div>
+     <div style="margin-top:2px;color:${devMode ? '#059669' : '#94A3B8'};">Dev mode: ${devMode ? '&#x1F6E0; ON &mdash; Ctrl+Shift+D to toggle' : 'OFF &mdash; Ctrl+Shift+D to enable'}</div>`);
+
+  // ── PARSE LOG ──
+  panel.insertAdjacentHTML('beforeend', `<div style="color:#7C3AED;margin-top:6px;font-weight:600;">── Parse Log ──</div>`);
+  parseLog.forEach(line => panel.insertAdjacentHTML('beforeend', `<div>${line}</div>`));
+
+  // ── CHATGPT-SPECIFIC: Chrome Strip & Parser Mode ──
+  const modeColor = parseStats.mode === 'pattern1' ? '#059669'
+                  : parseStats.mode === 'pattern2' ? '#059669'
+                  : parseStats.mode === 'fallback'  ? '#D97706'
+                  : '#BE123C';
+  const modeLabel = parseStats.mode === 'pattern1' ? '&#x2713; Pattern 1 ("said:" labels)'
+                  : parseStats.mode === 'pattern2' ? '&#x2713; Pattern 2 (standalone labels)'
+                  : parseStats.mode === 'fallback'  ? '&#x26A0; Fallback (alternating blocks)'
+                  : '&#x2717; none';
+  panel.insertAdjacentHTML('beforeend',
+    `<div style="color:#7C3AED;margin-top:6px;font-weight:600;">── ChatGPT Parser ──</div>
+     <div style="color:${modeColor};">Mode: ${modeLabel}</div>
+     <div>Chars: ${parseStats.charsRaw} raw &rarr; ${parseStats.charsAfterStrip} stripped</div>
+     <div>OpenAI image URLs replaced: ${parseStats.imageUrlsStripped}</div>
+     <div>Page header stripped: ${parseStats.headerStripped}</div>
+     ${parseStats.mode === 'fallback' ? `<div style="color:#D97706;">First-speaker guess: ${parseStats.fallbackFirstSpeaker}</div>` : ''}`);
+
+  // ── MESSAGES ──
+  const ratioFlag = ratio > 4 ? ` &#x26A0; ratio ${ratio.toFixed(1)}x` : '';
+  const shortMsgs = messages.filter(m => m.text.trim().length < 5);
+  const longestAI = messages.filter(m => m.role === 'ai').reduce((max, m) => Math.max(max, m.text.length), 0);
+  const attachmentsInOutput = messages.filter(m => m.text.includes('[Attachment')).length;
+  panel.insertAdjacentHTML('beforeend',
+    `<div style="color:#7C3AED;margin-top:6px;font-weight:600;">── Messages ──</div>
+     <div>Total: ${messages.length} | Human: ${h} | AI: ${a}${ratioFlag}</div>
+     <div>Short (<5 chars): ${shortMsgs.length}${shortMsgs.length ? ' &#x26A0; check these' : ''}</div>
+     <div>Longest AI block: ${longestAI} chars</div>
+     <div>Attachments in output: ${attachmentsInOutput}</div>`);
+
+  if (shortMsgs.length) {
+    shortMsgs.forEach(m => panel.insertAdjacentHTML('beforeend',
+      `<div style="color:#D97706;">  [${m.role.toUpperCase()}] "${m.text.trim()}"</div>`));
+  }
+
+  // ── PAGES ──
+  panel.insertAdjacentHTML('beforeend', `<div style="color:#7C3AED;margin-top:6px;font-weight:600;">── Pages ──</div>`);
+  pageLog.forEach(line => panel.insertAdjacentHTML('beforeend', `<div>${line}</div>`));
+}
+
 // ── Live counter ──
 document.getElementById('pasteArea').addEventListener('paste', function(e) {
   lastClipboardHTML = e.clipboardData.getData('text/html') || '';
-  // Auto-reset UI state when user pastes new content — no "Start over" needed
-  document.getElementById('previewSection').style.display = 'none';
-  document.getElementById('paywall').style.display = 'none';
-  document.getElementById('errorMsg').style.display = 'none';
-  document.getElementById('bottomDownload').style.display = 'none';
-  parsedMessages = [];
 });
 
 document.getElementById('pasteArea').addEventListener('input', function() {
@@ -1175,6 +1294,7 @@ function resetApp() {
   document.getElementById('previewSection').style.display = 'none';
   document.getElementById('paywall').style.display = 'none';
   document.getElementById('errorMsg').style.display = 'none';
+  document.getElementById('floatBar').style.display = 'none';
   document.getElementById('bottomDownload').style.display = 'none';
   parsedMessages = [];
   window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -1266,6 +1386,7 @@ function renderPreview(messages, platform, warning, workerResult) {
   }
 
   document.getElementById('previewSection').style.display = 'block';
+  document.getElementById('floatBar').style.display = 'block';
   document.getElementById('bottomDownload').style.display = 'block';
 
   const docPage = document.getElementById('docPage');
@@ -1327,6 +1448,7 @@ function renderPreview(messages, platform, warning, workerResult) {
     }
   });
 
+  renderDebugPanel(messages, pageLog, workerResult);
   document.getElementById('previewSection').scrollIntoView({ behavior: 'smooth' });
 }
 
@@ -1372,6 +1494,7 @@ function checkPaywallBeforeDownload() {
     document.getElementById('msgCount').textContent = parsedMessages.length;
     document.getElementById('paywall').style.display = 'block';
     document.getElementById('paywall').scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('floatBar').style.display = 'none';
     document.getElementById('bottomDownload').style.display = 'none';
     document.getElementById('downloadBtn').style.display = 'none';
     return false;
@@ -1486,10 +1609,7 @@ async function startCheckout(btn) {
   btn.disabled = true;
   btn.textContent = 'Redirecting to checkout\u2026';
   const raw = document.getElementById('pasteArea').value;
-  if (raw.trim()) {
-    sessionStorage.setItem('notavello_saved_conversation', raw);
-    if (lastClipboardHTML) sessionStorage.setItem('notavello_saved_html', lastClipboardHTML);
-  }
+  if (raw.trim()) sessionStorage.setItem('notavello_saved_conversation', raw);
   try {
     const res = await fetch('https://notavello-worker.mikekoga.workers.dev/create-checkout', {
       method: 'POST',
@@ -1516,9 +1636,6 @@ async function startCheckout(btn) {
     if (saved) {
       document.getElementById('pasteArea').value = saved;
       sessionStorage.removeItem('notavello_saved_conversation');
-      const savedHtml = sessionStorage.getItem('notavello_saved_html') || '';
-      sessionStorage.removeItem('notavello_saved_html');
-      lastClipboardHTML = savedHtml;
       document.getElementById('pasteArea').dispatchEvent(new Event('input'));
     }
   }
@@ -1616,6 +1733,7 @@ async function verifyRestoreCode() {
     if (data.ok) {
       localStorage.setItem('notavello_paid', 'true');
       document.getElementById('paywall').style.display = 'none';
+      document.getElementById('floatBar').style.display = 'block';
       document.getElementById('bottomDownload').style.display = 'block';
       document.getElementById('downloadBtn').style.display = '';
       const toast = document.createElement('div');
@@ -1633,6 +1751,19 @@ async function verifyRestoreCode() {
   }
 }
 </script>
+
+<!-- FLOATING DOWNLOAD BAR -->
+<div class="float-bar" id="floatBar">
+  <div class="float-bar-inner">
+    <div class="float-bar-text">
+      <strong>Your PDF is ready.</strong> Review the preview above, then download when you're happy.
+    </div>
+    <button class="btn-float-download" onclick="downloadPDF()">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Download PDF
+    </button>
+  </div>
+</div>
 
 <!-- SITE FOOTER -->
 <footer class="site-footer">
