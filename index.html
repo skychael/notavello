@@ -1,4 +1,4 @@
-<!-- Notavello root-1.9 | generated 00:00:00 UTC | SEO improvements -->
+<!-- Notavello root-2.0 | generated 00:00:00 UTC | fix CTA + style structure -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -277,13 +277,9 @@ body {
   background: linear-gradient(135deg, #F5F3FF, #EDE9FE);
   flex-shrink: 0;
 }
-.ai-card--other .ai-card-name {
-  font-size: 0.9rem;
-}
-.ai-card--other .ai-card-desc {
-  font-size: 0.78rem;
-  text-align: left;
-}
+.ai-card--other .ai-card-name { font-size: 0.9rem; }
+.ai-card--other .ai-card-desc { font-size: 0.78rem; text-align: left; }
+
 .ai-other-badge {
   font-size: 0.65rem;
   font-weight: 700;
@@ -323,15 +319,8 @@ body {
   margin-top: 4px;
 }
 
-.ai-card-status--live {
-  background: var(--green-light);
-  color: var(--green);
-}
-
-.ai-card-status--soon {
-  background: var(--border);
-  color: var(--ink-faint);
-}
+.ai-card-status--live { background: var(--green-light); color: var(--green); }
+.ai-card-status--soon { background: var(--border); color: var(--ink-faint); }
 
 .ai-card-status-dot {
   width: 5px;
@@ -398,18 +387,8 @@ body {
   box-shadow: 0 2px 8px rgba(79,70,229,0.3);
 }
 
-.step-card h3 {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--ink);
-  margin-bottom: 8px;
-}
-
-.step-card p {
-  font-size: 0.83rem;
-  color: var(--ink-muted);
-  line-height: 1.6;
-}
+.step-card h3 { font-size: 0.95rem; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
+.step-card p { font-size: 0.83rem; color: var(--ink-muted); line-height: 1.6; }
 
 /* ── WHY SECTION ── */
 .why-section {
@@ -435,24 +414,9 @@ body {
   align-items: flex-start;
 }
 
-.perk-icon {
-  font-size: 1.4rem;
-  flex-shrink: 0;
-  margin-top: 2px;
-}
-
-.perk-card h3 {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--ink);
-  margin-bottom: 5px;
-}
-
-.perk-card p {
-  font-size: 0.8rem;
-  color: var(--ink-muted);
-  line-height: 1.55;
-}
+.perk-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 2px; }
+.perk-card h3 { font-size: 0.9rem; font-weight: 600; color: var(--ink); margin-bottom: 5px; }
+.perk-card p { font-size: 0.8rem; color: var(--ink-muted); line-height: 1.55; }
 
 /* ── CTA ── */
 .cta-section {
@@ -464,6 +428,7 @@ body {
   border-radius: var(--radius);
   padding: 52px 40px;
   box-shadow: var(--shadow-lg);
+  margin-bottom: 64px;
 }
 
 .cta-section h2 {
@@ -501,20 +466,8 @@ body {
 
 .btn-cta:hover { opacity: 0.92; transform: translateY(-1px); box-shadow: 0 6px 24px rgba(79,70,229,0.45); }
 
-.cta-note {
-  font-size: 0.78rem;
-  color: var(--ink-faint);
-  margin-top: 14px;
-}
-  </style>
-<section class="cta-section">
-    <h2>Ready to save your first conversation?</h2>
-    <p>Pick your AI below and get a clean, color-coded PDF in seconds — free, no sign-up required.</p>
-    <a href="/exporters/chatgpt/" class="btn-cta">
-      Get started free →
-    </a>
-    <p class="cta-note">Free export available · Pro removes watermark · $5/month</p>
-  </section>
+.cta-note { font-size: 0.78rem; color: var(--ink-faint); margin-top: 14px; }
+
 /* ── FOOTER ── */
 .site-footer {
   border-top: 1px solid var(--border);
@@ -531,12 +484,7 @@ body {
   gap: 20px;
 }
 
-.footer-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 24px;
-  align-items: center;
-}
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
 
 .footer-nav-label {
   font-size: 0.7rem;
@@ -548,19 +496,9 @@ body {
   margin-bottom: 4px;
 }
 
-.footer-nav a {
-  font-size: 0.8rem;
-  color: var(--ink-muted);
-  text-decoration: none;
-  transition: color 0.15s;
-}
-
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
 .footer-nav a:hover { color: var(--accent); }
-
-.footer-nav-divider {
-  color: var(--border);
-  font-size: 0.8rem;
-}
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
 
 .footer-bottom {
   display: flex;
@@ -572,24 +510,9 @@ body {
   border-top: 1px solid var(--border);
 }
 
-.footer-copy {
-  font-size: 0.75rem;
-  color: var(--ink-faint);
-}
-
-.footer-legal {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.footer-legal a {
-  font-size: 0.75rem;
-  color: var(--ink-faint);
-  text-decoration: none;
-  transition: color 0.15s;
-}
-
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; transition: color 0.15s; }
 .footer-legal a:hover { color: var(--accent); }
 
 /* ── ANIMATIONS ── */
@@ -616,7 +539,6 @@ body {
 </head>
 <body>
 
-
 <header class="header">
   <a href="/" class="logo">
     <div class="logo-icon">
@@ -625,17 +547,16 @@ body {
     Nota<span>vello</span>
   </a>
   <div id="liveBadge" style="font-size:0.68rem;font-weight:600;background:linear-gradient(135deg,var(--accent-light),#F5F3FF);color:var(--accent);padding:5px 14px;border-radius:20px;letter-spacing:0.06em;text-transform:uppercase;border:1px solid rgba(79,70,229,0.2);">
-    ROOT-1.9 · --:--:-- UTC
+    ROOT-2.0 · --:--:-- UTC
   </div>
 <script>
 (function(){
   const n=new Date();
   const t=[n.getUTCHours(),n.getUTCMinutes(),n.getUTCSeconds()].map(v=>String(v).padStart(2,'0')).join(':');
-  document.getElementById('liveBadge').textContent='ROOT-1.9 · '+t+' UTC';
+  document.getElementById('liveBadge').textContent='ROOT-2.0 · '+t+' UTC';
 })();
 </script>
 </header>
-
 
 <main class="screen-ui">
 
@@ -785,6 +706,12 @@ body {
     <a href="/pages/sample/" style="font-size:0.88rem; color:var(--ink-muted); text-decoration:none; font-weight:500; border-bottom: 1.5px solid var(--border); padding-bottom:2px;">View sample PDF →</a>
   </div>
 
+  <section class="cta-section">
+    <h2>Ready to save your first conversation?</h2>
+    <p>Pick your AI and get a clean, color-coded PDF in seconds — free, no sign-up required.</p>
+    <a href="/exporters/chatgpt/" class="btn-cta">Get started free →</a>
+    <p class="cta-note">Free export available · Pro removes watermark · $5/month</p>
+  </section>
 
 </main>
 
