@@ -4,8 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>AI Writing Detector — Notavello</title>
-<link rel="icon" type="image/x-icon" href="/favicon.ico">
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600&family=Lora:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -13,13 +12,11 @@
 :root {
   --bg: #F0F4FF;
   --surface: #FFFFFF;
-  --surface2: #F8FAFF;
   --ink: #0F172A;
   --ink-muted: #64748B;
   --ink-faint: #94A3B8;
   --accent: #4F46E5;
   --accent2: #7C3AED;
-  --accent-light: #EEF2FF;
   --green: #059669;
   --amber: #D97706;
   --red: #DC2626;
@@ -76,52 +73,16 @@ body {
   border-bottom: 1px solid var(--ink-faint);
   display: flex; justify-content: space-between;
 }
-#pasteArea {
-  width: 100%; min-height: 200px;
-  padding: 20px;
-  border: none; outline: none;
+
+/* UPLOAD BUTTON */
+.upload-box {
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--ink-faint);
+}
+.upload-box input {
   font-size: 0.9rem;
 }
-.input-footer {
-  padding: 14px 20px;
-  border-top: 1px solid var(--ink-faint);
-  display: flex; justify-content: flex-end; gap: 12px;
-}
-.btn-analyze {
-  padding: 12px 28px;
-  background: linear-gradient(135deg, var(--accent), var(--accent2));
-  color: white; border: none; border-radius: var(--radius-sm);
-}
-.btn-reset {
-  padding: 10px 18px;
-  background: var(--surface);
-  color: var(--accent);
-  border: 1.5px solid rgba(79,70,229,0.35);
-  border-radius: var(--radius-sm);
-}
 
-/* RESULTS SECTION */
-.verdict-card {
-  border-radius: var(--radius);
-  padding: 32px 36px;
-  margin-top: 20px;
-  text-align: center;
-  box-shadow: var(--shadow-lg);
-}
-.verdict-card.likely-ai { background: #FEE2E2; border: 1.5px solid rgba(220,38,38,0.2); }
-.verdict-card.possibly-ai { background: #FEF3C7; border: 1.5px solid rgba(217,119,6,0.25); }
-.verdict-card.likely-human { background: #D1FAE5; border: 1.5px solid rgba(5,150,105,0.2); }
-.verdict-card.uncertain { background: #EEF2FF; border: 1.5px solid rgba(79,70,229,0.2); }
-
-.verdict-icon { font-size: 2.8rem; margin-bottom: 12px; }
-.verdict-title { font-family: 'Lora', serif; font-size: 1.6rem; margin-bottom: 10px; }
-.verdict-desc { color: var(--ink-muted); margin-bottom: 20px; }
-
-.score-meter-wrap { max-width: 340px; margin: 0 auto; }
-.score-meter-label { display: flex; justify-content: space-between; font-size: 0.72rem; color: var(--ink-faint); }
-.score-meter-track { height: 10px; background: rgba(15,23,42,0.08); border-radius: 100px; overflow: hidden; }
-.score-meter-fill { height: 100%; border-radius: 100px; }
-</style>
 </head>
 <body>
 
@@ -133,7 +94,7 @@ body {
 
   <div class="hero">
     <h1>AI Writing Detector</h1>
-    <p>Paste text below and analyze how human‑like or AI‑like it appears.</p>
+    <p>Paste text or upload a file to analyze how human‑like or AI‑like it appears.</p>
   </div>
 
   <div class="disclaimer">
@@ -141,9 +102,14 @@ body {
   </div>
 
   <div class="input-card">
+
     <div class="input-card-header">
-      <span class="input-label">Your Text</span>
+      <span>Your Text</span>
       <span id="charCount">0 chars</span>
+    </div>
+
+    <div class="upload-box">
+      <input type="file" id="fileUpload" accept=".txt">
     </div>
 
     <textarea id="pasteArea"></textarea>
@@ -189,16 +155,32 @@ const verdictTitle = document.getElementById("verdictTitle");
 const verdictDesc = document.getElementById("verdictDesc");
 const scoreFill = document.getElementById("scoreFill");
 
+/* Character counter */
 pasteArea.addEventListener("input", () => {
   charCount.textContent = pasteArea.value.length + " chars";
 });
 
+/* Reset */
 resetBtn.addEventListener("click", () => {
   pasteArea.value = "";
   charCount.textContent = "0 chars";
   resultsSection.style.display = "none";
 });
 
+/* Upload file */
+document.getElementById("fileUpload").addEventListener("change", function () {
+  const file = this.files[0];
+  if (!file) return;
+
+  const reader = new FileReader();
+  reader.onload = function (e) {
+    pasteArea.value = e.target.result;
+    charCount.textContent = pasteArea.value.length + " chars";
+  };
+  reader.readAsText(file);
+});
+
+/* Analyze */
 analyzeBtn.addEventListener("click", () => {
   const text = pasteArea.value.trim();
   if (text.length < 30) {
@@ -213,6 +195,7 @@ analyzeBtn.addEventListener("click", () => {
   resultsSection.style.display = "block";
 });
 
+/* Scoring logic */
 function calculateAIScore(text) {
   let score = 0;
 
@@ -231,6 +214,7 @@ function calculateAIScore(text) {
   return Math.min(100, Math.max(0, score));
 }
 
+/* UI update */
 function updateUI(score) {
   scoreFill.style.width = score + "%";
 
@@ -254,13 +238,4 @@ function updateUI(score) {
     scoreFill.style.background = "var(--accent)";
   } else {
     verdictCard.className = "verdict-card likely-human";
-    verdictIcon.textContent = "🟢";
-    verdictTitle.textContent = "Likely Human";
-    verdictDesc.textContent = "Natural human‑like variation detected.";
-    scoreFill.style.background = "var(--green)";
-  }
-}
-</script>
-
-</body>
-</html>
+    verdictIcon.text
