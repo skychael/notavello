@@ -4,10 +4,8 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>AI Writing Detector — Notavello</title>
-<meta name="description" content="Paste any text and find out if it was written by AI. Checks for AI patterns, sentence uniformity, transition phrases, and more. Free, private, runs in your browser."/>
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -23,195 +21,155 @@
   --accent2: #7C3AED;
   --accent-light: #EEF2FF;
   --green: #059669;
-  --green-light: #D1FAE5;
   --amber: #D97706;
-  --amber-light: #FEF3C7;
   --red: #DC2626;
-  --red-light: #FEE2E2;
-  --border: #E2E8F0;
   --radius: 20px;
   --radius-sm: 12px;
   --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
   --shadow-lg: 0 4px 16px rgba(79,70,229,0.12), 0 16px 48px rgba(15,23,42,0.12);
 }
 
-html { scroll-behavior: smooth; }
-
 body {
   background: var(--bg);
-  color: var(--ink);
   font-family: 'Sora', sans-serif;
+  color: var(--ink);
   min-height: 100vh;
-  -webkit-font-smoothing: antialiased;
-  background-image:
-    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
 }
 
 /* HEADER */
 .header {
   background: rgba(255,255,255,0.85);
   backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--ink-faint);
   padding: 16px 36px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  display: flex; justify-content: space-between; align-items: center;
 }
-.logo {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--ink);
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-}
-.logo-icon {
-  width: 32px; height: 32px;
-  background: linear-gradient(135deg, var(--accent), var(--accent2));
-  border-radius: 10px;
-  display: flex; align-items: center; justify-content: center;
-  color: white; font-size: 0.85rem;
-}
-.logo span { color: var(--accent); }
-.badge {
-  font-size: 0.68rem; font-weight: 600;
-  background: var(--accent-light);
-  color: var(--accent);
-  padding: 5px 14px; border-radius: 20px;
-  border: 1px solid rgba(79,70,229,0.2);
-}
+.logo { font-size: 1.25rem; font-weight: 700; text-decoration: none; color: var(--ink); }
 
 /* MAIN */
-.screen-ui {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 56px 24px 100px;
-}
+.screen-ui { max-width: 800px; margin: 0 auto; padding: 56px 24px 100px; }
 
 /* HERO */
-.hero {
-  text-align: center;
-  margin-bottom: 44px;
-}
-.hero-pill {
-  display: inline-flex; align-items: center; gap: 6px;
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: 100px; padding: 6px 16px 6px 10px;
-  font-size: 0.78rem; font-weight: 500; color: var(--ink-muted);
-}
-.hero-pill-dot {
-  width: 7px; height: 7px;
-  background: var(--amber);
-  border-radius: 50%;
-}
-.hero h1 {
-  font-family: 'Lora', serif;
-  font-size: clamp(2rem, 5vw, 3rem);
-  font-weight: 600;
-  margin-bottom: 16px;
-}
-.hero h1 em {
-  font-style: italic;
-  background: linear-gradient(135deg, var(--accent), var(--accent2));
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-}
-.hero p {
-  font-size: 1rem; color: var(--ink-muted);
-  max-width: 480px; margin: 0 auto;
-  line-height: 1.75;
-}
+.hero { text-align: center; margin-bottom: 44px; }
+.hero h1 { font-family: 'Lora', serif; font-size: 2.6rem; margin-bottom: 16px; }
+.hero p { color: var(--ink-muted); max-width: 480px; margin: 0 auto; }
 
 /* DISCLAIMER */
 .disclaimer {
-  background: var(--amber-light);
+  background: #FEF3C7;
   border-left: 3px solid var(--amber);
-  border-radius: var(--radius-sm);
   padding: 14px 18px;
-  font-size: 0.82rem;
-  color: #92400E;
+  border-radius: var(--radius-sm);
   margin-bottom: 24px;
 }
 
 /* INPUT CARD */
 .input-card {
   background: var(--surface);
-  border: 1px solid var(--border);
+  border: 1px solid var(--ink-faint);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  overflow: hidden;
   margin-bottom: 20px;
 }
 .input-card-header {
   padding: 14px 20px;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--ink-faint);
   display: flex; justify-content: space-between;
-}
-.input-label {
-  font-size: 0.75rem; font-weight: 600;
-  text-transform: uppercase;
-  color: var(--ink-muted);
-}
-.char-info {
-  font-size: 0.78rem; background: var(--accent-light);
-  color: var(--accent); padding: 3px 10px;
-  border-radius: 20px;
 }
 #pasteArea {
   width: 100%; min-height: 200px;
   padding: 20px;
-  font-size: 0.9rem;
   border: none; outline: none;
-  resize: vertical;
+  font-size: 0.9rem;
 }
 .input-footer {
   padding: 14px 20px;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--ink-faint);
   display: flex; justify-content: flex-end; gap: 12px;
 }
 .btn-analyze {
   padding: 12px 28px;
   background: linear-gradient(135deg, var(--accent), var(--accent2));
-  color: white; font-weight: 600;
-  border: none; border-radius: var(--radius-sm);
-  cursor: pointer;
+  color: white; border: none; border-radius: var(--radius-sm);
 }
 .btn-reset {
   padding: 10px 18px;
-  background: var(--surface); color: var(--accent);
+  background: var(--surface);
+  color: var(--accent);
   border: 1.5px solid rgba(79,70,229,0.35);
   border-radius: var(--radius-sm);
-  cursor: pointer;
 }
-</div> <!-- end input-footer -->
-</div> <!-- end input-card -->
 
-<section id="resultsSection" style="display:none;">
+/* RESULTS SECTION */
+.verdict-card {
+  border-radius: var(--radius);
+  padding: 32px 36px;
+  margin-top: 20px;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+}
+.verdict-card.likely-ai { background: #FEE2E2; border: 1.5px solid rgba(220,38,38,0.2); }
+.verdict-card.possibly-ai { background: #FEF3C7; border: 1.5px solid rgba(217,119,6,0.25); }
+.verdict-card.likely-human { background: #D1FAE5; border: 1.5px solid rgba(5,150,105,0.2); }
+.verdict-card.uncertain { background: #EEF2FF; border: 1.5px solid rgba(79,70,229,0.2); }
 
-  <div id="verdictCard" class="verdict-card uncertain">
-    <div class="verdict-icon" id="verdictIcon">🤔</div>
-    <div class="verdict-label" id="verdictLabel">Uncertain</div>
-    <div class="verdict-title" id="verdictTitle">Needs More Text</div>
-    <p class="verdict-desc" id="verdictDesc">
-      Paste some text and click Analyze to see results.
-    </p>
+.verdict-icon { font-size: 2.8rem; margin-bottom: 12px; }
+.verdict-title { font-family: 'Lora', serif; font-size: 1.6rem; margin-bottom: 10px; }
+.verdict-desc { color: var(--ink-muted); margin-bottom: 20px; }
 
-    <div class="score-meter-wrap">
-      <div class="score-meter-label">
-        <span>Human‑like</span>
-        <span>AI‑like</span>
-      </div>
-      <div class="score-meter-track">
-        <div class="score-meter-fill" id="scoreFill" style="width: 0%; background: var(--accent);"></div>
-      </div>
+.score-meter-wrap { max-width: 340px; margin: 0 auto; }
+.score-meter-label { display: flex; justify-content: space-between; font-size: 0.72rem; color: var(--ink-faint); }
+.score-meter-track { height: 10px; background: rgba(15,23,42,0.08); border-radius: 100px; overflow: hidden; }
+.score-meter-fill { height: 100%; border-radius: 100px; }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <a class="logo" href="#">Notavello</a>
+</header>
+
+<main class="screen-ui">
+
+  <div class="hero">
+    <h1>AI Writing Detector</h1>
+    <p>Paste text below and analyze how human‑like or AI‑like it appears.</p>
+  </div>
+
+  <div class="disclaimer">
+    This tool is heuristic and not definitive. Results are estimates only.
+  </div>
+
+  <div class="input-card">
+    <div class="input-card-header">
+      <span class="input-label">Your Text</span>
+      <span id="charCount">0 chars</span>
+    </div>
+
+    <textarea id="pasteArea"></textarea>
+
+    <div class="input-footer">
+      <button class="btn-reset" id="resetBtn">Reset</button>
+      <button class="btn-analyze" id="analyzeBtn">Analyze</button>
     </div>
   </div>
 
-</section>
+  <section id="resultsSection" style="display:none;">
+    <div id="verdictCard" class="verdict-card uncertain">
+      <div id="verdictIcon" class="verdict-icon">🤔</div>
+      <div id="verdictTitle" class="verdict-title">Needs More Text</div>
+      <p id="verdictDesc" class="verdict-desc">Paste text and click Analyze.</p>
+
+      <div class="score-meter-wrap">
+        <div class="score-meter-label">
+          <span>Human‑like</span><span>AI‑like</span>
+        </div>
+        <div class="score-meter-track">
+          <div id="scoreFill" class="score-meter-fill" style="width:0%; background:var(--accent);"></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
 </main>
 
@@ -224,12 +182,9 @@ const pasteArea = document.getElementById("pasteArea");
 const charCount = document.getElementById("charCount");
 const analyzeBtn = document.getElementById("analyzeBtn");
 const resetBtn = document.getElementById("resetBtn");
-const errorMsg = document.getElementById("errorMsg");
 const resultsSection = document.getElementById("resultsSection");
-
 const verdictCard = document.getElementById("verdictCard");
 const verdictIcon = document.getElementById("verdictIcon");
-const verdictLabel = document.getElementById("verdictLabel");
 const verdictTitle = document.getElementById("verdictTitle");
 const verdictDesc = document.getElementById("verdictDesc");
 const scoreFill = document.getElementById("scoreFill");
@@ -242,41 +197,36 @@ resetBtn.addEventListener("click", () => {
   pasteArea.value = "";
   charCount.textContent = "0 chars";
   resultsSection.style.display = "none";
-  errorMsg.style.display = "none";
 });
 
 analyzeBtn.addEventListener("click", () => {
   const text = pasteArea.value.trim();
-
   if (text.length < 30) {
-    errorMsg.style.display = "block";
+    verdictTitle.textContent = "Needs More Text";
+    verdictDesc.textContent = "Enter at least 30 characters.";
+    resultsSection.style.display = "block";
     return;
   }
 
-  errorMsg.style.display = "none";
-  resultsSection.style.display = "block";
-
   const score = calculateAIScore(text);
   updateUI(score);
+  resultsSection.style.display = "block";
 });
 
 function calculateAIScore(text) {
   let score = 0;
 
-  const sentences = text.split(/[.!?]/).map(s => s.trim()).filter(Boolean);
-  const avgSentence = sentences.reduce((a, b) => a + b.length, 0) / Math.max(1, sentences.length);
-
+  const sentences = text.split(/[.!?]/).filter(s => s.trim().length > 0);
+  const avgSentence = sentences.reduce((a,b)=>a+b.length,0) / sentences.length;
   if (avgSentence > 140) score += 25;
   if (avgSentence < 40) score += 15;
 
-  const transitions = ["however", "moreover", "in addition", "furthermore", "consequently"];
-  let transitionCount = transitions.filter(t => text.toLowerCase().includes(t)).length;
-  score += transitionCount * 10;
+  const transitions = ["however","moreover","in addition","furthermore","consequently"];
+  transitions.forEach(t => { if (text.toLowerCase().includes(t)) score += 10; });
 
   const words = text.split(/\s+/);
-  const uniqueWords = new Set(words).size;
-  const uniformity = words.length / uniqueWords;
-  if (uniformity > 4) score += 20;
+  const unique = new Set(words).size;
+  if (words.length / unique > 4) score += 20;
 
   return Math.min(100, Math.max(0, score));
 }
@@ -287,33 +237,26 @@ function updateUI(score) {
   if (score > 70) {
     verdictCard.className = "verdict-card likely-ai";
     verdictIcon.textContent = "⚠️";
-    verdictLabel.textContent = "Likely AI";
-    verdictTitle.textContent = "High AI‑likeness detected";
-    verdictDesc.textContent = "The text shows strong patterns commonly found in AI‑generated writing.";
+    verdictTitle.textContent = "Likely AI";
+    verdictDesc.textContent = "Strong AI‑like patterns detected.";
     scoreFill.style.background = "var(--red)";
-  }
-  else if (score > 45) {
+  } else if (score > 45) {
     verdictCard.className = "verdict-card possibly-ai";
     verdictIcon.textContent = "🟡";
-    verdictLabel.textContent = "Possibly AI";
-    verdictTitle.textContent = "Mixed indicators";
-    verdictDesc.textContent = "Some AI‑like patterns are present, but not enough for a strong conclusion.";
+    verdictTitle.textContent = "Possibly AI";
+    verdictDesc.textContent = "Mixed indicators detected.";
     scoreFill.style.background = "var(--amber)";
-  }
-  else if (score > 20) {
+  } else if (score > 20) {
     verdictCard.className = "verdict-card uncertain";
     verdictIcon.textContent = "🤔";
-    verdictLabel.textContent = "Uncertain";
-    verdictTitle.textContent = "Inconclusive";
-    verdictDesc.textContent = "The text does not strongly match AI or human patterns.";
+    verdictTitle.textContent = "Uncertain";
+    verdictDesc.textContent = "Inconclusive patterns.";
     scoreFill.style.background = "var(--accent)";
-  }
-  else {
+  } else {
     verdictCard.className = "verdict-card likely-human";
     verdictIcon.textContent = "🟢";
-    verdictLabel.textContent = "Likely Human";
-    verdictTitle.textContent = "Low AI‑likeness detected";
-    verdictDesc.textContent = "The writing style appears more natural and varied, typical of human authors.";
+    verdictTitle.textContent = "Likely Human";
+    verdictDesc.textContent = "Natural human‑like variation detected.";
     scoreFill.style.background = "var(--green)";
   }
 }
