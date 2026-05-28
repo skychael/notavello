@@ -1,1 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Why Copilot Silently Cuts Off Your Code — The Export | Notavello</title>
+<meta name="description" content="Microsoft Copilot has an output limit it won't tell you about. Most developers discover it the hard way — broken code, no warning. Here's what's happening and what to do."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/blog/why-copilot-silently-cuts-off-your-code/"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://notavello.com/pages/blog/why-copilot-silently-cuts-off-your-code/"/>
+<meta property="og:title" content="Why Copilot Silently Cuts Off Your Code"/>
+<meta property="og:description" content="Microsoft Copilot has an output limit it won't tell you about. Most developers discover it the hard way — broken code, no warning. Here's what's happening and what to do."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Why Copilot Silently Cuts Off Your Code"/>
+<meta name="twitter:description" content="Copilot has an output limit it won't tell you about. Here's what's happening and what to do."/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Why Copilot silently cuts off your code — and how to catch it",
+  "description": "Microsoft Copilot has an output limit it won't tell you about. Most developers discover it the hard way.",
+  "url": "https://notavello.com/pages/blog/why-copilot-silently-cuts-off-your-code/",
+  "datePublished": "2026-05-28",
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
 
+.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
+
+.back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; color: var(--ink-muted); text-decoration: none; margin-bottom: 40px; transition: color 0.15s; }
+.back-link:hover { color: var(--accent); }
+
+.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
+.post-date { font-size: 0.78rem; color: var(--ink-faint); }
+
+.post-title { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; color: var(--ink); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
+
+.post-lede { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+
+.post-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink); }
+.post-body h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 44px 0 16px; letter-spacing: -0.01em; }
+.post-body p { margin-bottom: 20px; color: var(--ink-muted); }
+.post-body p strong { color: var(--ink); font-weight: 600; }
+.post-body ul { margin: 0 0 20px 20px; color: var(--ink-muted); }
+.post-body ul li { margin-bottom: 8px; line-height: 1.7; }
+
+.callout {
+  background: var(--accent-light); border-left: 3px solid var(--accent);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 18px 22px; margin: 32px 0;
+  font-size: 0.9rem; color: var(--ink); line-height: 1.7;
+}
+
+.post-footer { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: gap; gap: 16px; }
+.post-footer-label { font-size: 0.8rem; color: var(--ink-faint); }
+.btn-export { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: opacity 0.2s; }
+.btn-export:hover { opacity: 0.9; }
+
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+
+@media (max-width: 600px) {
+  .header { padding: 14px 20px; }
+  .main { padding: 40px 16px 80px; }
+}
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+
+  <a class="back-link" href="/pages/blog/">← The Export</a>
+
+  <div class="post-meta">
+    <span class="post-tag">AI Tools</span>
+    <span class="post-date">May 28, 2026</span>
+  </div>
+
+  <h1 class="post-title">Why Copilot silently cuts off your code — and how to catch it</h1>
+
+  <p class="post-lede">Microsoft Copilot has an output length limit it will never tell you about. Most developers hit it mid-function, assume something broke in their own code, and spend twenty minutes debugging a problem that was never theirs to begin with.</p>
+
+  <div class="post-body">
+
+    <h2>What actually happens</h2>
+    <p>When you ask Copilot to generate a long piece of code — a full component, a complex function, a multi-step script — it will sometimes stop mid-way through. Not with an error. Not with a warning. It just stops, presents the truncated output as if it were complete, and waits for your next message.</p>
+    <p>The result looks like finished code. It's formatted the same way. The response ends cleanly. There's no indication that anything is missing. You copy it, paste it, and hit run — only then do you discover that a closing bracket is missing, a function is half-written, or an entire section was simply never generated.</p>
+
+    <div class="callout">
+      <strong>The frustrating part:</strong> Copilot doesn't admit it cut off. Ask it "did you finish?" and it will often say yes, or repeat the truncated version, or confidently provide a slightly different incomplete version. You have to discover the limit yourself — and then tell it.
+    </div>
+
+    <h2>Why this happens</h2>
+    <p>Every AI model has a maximum output token limit — a ceiling on how much text it can generate in a single response. This is a technical constraint, not a design choice, and it applies to every major AI tool including Claude, ChatGPT, and Gemini.</p>
+    <p>The difference is how each tool handles hitting that limit. Some models signal when they've been cut off. Others simply stop. Copilot, in most contexts, falls into the second camp — it reaches its limit and ends the response without flagging it.</p>
+    <p>This is a UX failure more than a technical one. The limit itself is unavoidable. Not communicating it is a choice.</p>
+
+    <h2>How to catch it</h2>
+    <p>Until Copilot addresses this, here are the practical workarounds:</p>
+    <ul>
+      <li><strong>Count your brackets and braces.</strong> If a function or component looks complete but your linter is unhappy, check for unclosed brackets first — it's the most common sign of a mid-truncation cut.</li>
+      <li><strong>Ask explicitly.</strong> After any long generation, ask "is that the complete code?" or "did you finish the entire function?" The response won't always be reliable, but it sometimes triggers Copilot to continue.</li>
+      <li><strong>Break the task down.</strong> Instead of asking for a full 200-line component in one go, ask for it in logical sections — the types first, then the logic, then the render. Smaller outputs are less likely to hit the ceiling.</li>
+      <li><strong>Ask it to continue.</strong> If you suspect truncation, type "continue" or "keep going from where you left off." This usually works, though you may need to do it two or three times on particularly long outputs.</li>
+    </ul>
+
+    <h2>The wider lesson</h2>
+    <p>This is one of many things AI tools won't tell you unprompted. Output limits, context window sizes, training data cutoffs, confidence levels — most tools present their outputs with the same tone regardless of how reliable or complete they are.</p>
+    <p>The developers who get the most out of AI are the ones who've learned to probe for these edges. Not because the tools are bad, but because understanding their limits is part of using them well.</p>
+    <p>We'll keep writing about this stuff here — the gaps, the quirks, and the things you only find out by pushing these tools hard every day.</p>
+
+  </div>
+
+  <div class="post-footer">
+    <span class="post-footer-label">Save this conversation as a PDF →</span>
+    <a class="btn-export" href="/exporters/chatgpt/">Try Notavello free</a>
+  </div>
+
+</main>
+
+<!--FOOTER-->
+
+</body>
+</html>
