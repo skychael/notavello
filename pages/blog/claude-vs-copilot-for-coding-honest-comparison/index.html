@@ -1,1 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Two Weeks With Claude, One Day With Copilot — The Export | Notavello</title>
+<meta name="description" content="An honest comparison of Claude vs Microsoft Copilot for real coding work. Which one actually helps you ship? Spoiler: I'm a paid Claude user and I'm telling you anyway."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/blog/claude-vs-copilot-for-coding-honest-comparison/"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://notavello.com/pages/blog/claude-vs-copilot-for-coding-honest-comparison/"/>
+<meta property="og:title" content="Two Weeks With Claude, One Day With Copilot — Why I Think Claude Wins at Coding"/>
+<meta property="og:description" content="An honest comparison from someone actually building with both. I'm a paid Claude user — you should know that. Here's what I found anyway."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Two Weeks With Claude, One Day With Copilot"/>
+<meta name="twitter:description" content="An honest comparison from someone actually building with both. Paid Claude user. Here's what I found anyway."/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Two weeks with Claude, one day with Copilot — why I think Claude wins at coding",
+  "description": "An honest comparison of Claude vs Microsoft Copilot for real coding work, from someone actually building a product with both.",
+  "url": "https://notavello.com/pages/blog/claude-vs-copilot-for-coding-honest-comparison/",
+  "datePublished": "2026-05-28",
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --amber: #D97706; --amber-light: #FEF3C7;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+  --shadow-lg: 0 4px 16px rgba(79,70,229,0.12), 0 16px 48px rgba(15,23,42,0.12);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
 
+.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
+
+.back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; color: var(--ink-muted); text-decoration: none; margin-bottom: 40px; transition: color 0.15s; }
+.back-link:hover { color: var(--accent); }
+
+.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
+.post-date { font-size: 0.78rem; color: var(--ink-faint); }
+
+.post-title { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; color: var(--ink); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
+
+.post-lede { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: 32px; }
+
+.disclaimer {
+  background: var(--amber-light);
+  border-left: 3px solid var(--amber);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 18px 22px; margin-bottom: 40px;
+  font-size: 0.88rem; color: var(--ink); line-height: 1.7;
+}
+.disclaimer strong { color: var(--amber); }
+
+.post-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink); }
+.post-body h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 44px 0 16px; letter-spacing: -0.01em; }
+.post-body p { margin-bottom: 20px; color: var(--ink-muted); }
+.post-body p strong { color: var(--ink); font-weight: 600; }
+.post-body ul { margin: 0 0 20px 20px; color: var(--ink-muted); }
+.post-body ul li { margin-bottom: 10px; line-height: 1.7; }
+
+.callout {
+  background: var(--accent-light); border-left: 3px solid var(--accent);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 18px 22px; margin: 32px 0;
+  font-size: 0.9rem; color: var(--ink); line-height: 1.7;
+}
+
+.verdict {
+  background: var(--surface); border: 1.5px solid var(--border);
+  border-radius: var(--radius); padding: 28px 32px; margin: 40px 0;
+  box-shadow: var(--shadow);
+}
+.verdict-title { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--ink-faint); margin-bottom: 16px; }
+.verdict-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--border); font-size: 0.88rem; }
+.verdict-row:last-child { border-bottom: none; padding-bottom: 0; }
+.verdict-label { color: var(--ink-muted); flex: 1; }
+.verdict-claude { color: var(--green); font-weight: 600; flex: 1; text-align: center; }
+.verdict-copilot { color: var(--ink-muted); flex: 1; text-align: right; }
+.verdict-header { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; }
+.verdict-header .verdict-claude { color: var(--accent); }
+.verdict-header .verdict-copilot { color: var(--ink-faint); }
+
+.post-footer { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.post-footer-label { font-size: 0.8rem; color: var(--ink-faint); }
+.btn-export { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: opacity 0.2s; }
+.btn-export:hover { opacity: 0.9; }
+
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+
+@media (max-width: 600px) {
+  .header { padding: 14px 20px; }
+  .main { padding: 40px 16px 80px; }
+  .verdict-row { flex-direction: column; gap: 4px; }
+  .verdict-claude, .verdict-copilot { text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+
+  <a class="back-link" href="/pages/blog/">← The Export</a>
+
+  <div class="post-meta">
+    <span class="post-tag">AI Comparison</span>
+    <span class="post-date">May 28, 2026</span>
+  </div>
+
+  <h1 class="post-title">Two weeks with Claude, one day with Copilot — why I think Claude wins at coding</h1>
+
+  <p class="post-lede">I built a real product using both. Here's what actually happened — the good, the bad, and the loops that nearly drove me insane.</p>
+
+  <div class="disclaimer">
+    <strong>Disclosure:</strong> I'm a paid Claude subscriber. I used Copilot on the free tier. That matters and you should factor it in. I'm telling you anyway because I think the difference is real enough to be worth saying — but you deserve to know where I'm coming from.
+  </div>
+
+  <div class="post-body">
+
+    <h2>What I was actually building</h2>
+    <p>I spent the last two weeks building Notavello — a tool that exports AI conversations to color-coded PDFs. Real code, real deadlines, real frustration when things broke. Not a toy project or a tutorial. A product I'm trying to ship.</p>
+    <p>I used Claude for the majority of it. One day I switched to Copilot to see what I was missing. I switched back by the end of that day.</p>
+
+    <h2>What Copilot does well — honestly</h2>
+    <p>I want to be fair here because there are real things Copilot does better, or at least differently in ways some people might prefer.</p>
+    <p><strong>It feels more human.</strong> Copilot has a personality. It opens sessions warmly, it called me Mike without being asked, it says things like "let's talk through this together as developers." Some people will find that annoying. Some will find it reassuring. It's a real difference.</p>
+    <p><strong>No hard usage wall.</strong> This is a genuine advantage. Claude has a hard limit — when you hit it, the conversation ends and you get a message telling you you're out. Copilot slows down instead. It gets less responsive, things start taking longer, sometimes it just doesn't reply for a bit. That's frustrating in its own way, but it at least gives you a chance to notice and adjust rather than hitting a wall mid-thought.</p>
+    <p><strong>It's free.</strong> That's not nothing. If you're just starting out and can't justify a subscription, free access to a capable AI coding assistant is genuinely useful.</p>
+
+    <h2>What Copilot does that drove me up the wall</h2>
+    <p>Here's where I stop being diplomatic.</p>
+    <p><strong>It cuts off your code silently.</strong> Copilot has an output limit — a ceiling on how much code it can generate in one response. When it hits that limit it doesn't tell you. It just stops, presents the truncated output as if it's complete, and waits. You copy the code, paste it, run it, and only then discover that a function is half-written or a closing bracket is missing. I wrote a whole article about this — it's one of the most frustrating things I've encountered in any AI tool.</p>
+    <p><strong>When caught, it suggested I use Microsoft Word.</strong> I'm not joking. When I pushed back on the truncation issue, Copilot suggested that developers dealing with long outputs should break their work into Word documents or PowerPoint slides to manage complexity. I asked what percentage of developers actually do that. It said 0 to 2 percent. So its official workaround for its own limitation is something 98% of its users will never do. That's not a solution, that's deflection.</p>
+    <p><strong>The confidence loops.</strong> Every session Copilot greets you fresh. No memory of what you tried before. So you explain the problem, it says "I see the issue clearly, here's the fix" with complete confidence, you try it, it doesn't work, you explain again, it says "I see the issue clearly now, here's what we missed" — and you do this five, ten, fifteen times. The tone never changes. The confidence never wavers. But neither does the wrongness.</p>
+
+    <div class="callout">
+      The problem isn't that it gets things wrong. Every AI gets things wrong. The problem is that Copilot sounds equally confident whether it's right or completely off-base. You have no signal for when to trust it.
+    </div>
+
+    <h2>Claude's problems — because I promised honesty</h2>
+    <p>Claude is not innocent here. I've been using it for two weeks and I've hit its walls too.</p>
+    <p><strong>"I see the problem clearly now."</strong> Claude says this. A lot. Especially in long sessions when the context is filling up. It will diagnose a problem with complete confidence, give you a fix, watch it fail, diagnose again with complete confidence, give you another fix — and you'll do this loop multiple times before it actually solves it. It's less frequent than with Copilot in my experience, but it happens, and it's just as maddening.</p>
+    <p><strong>It degrades in long sessions.</strong> As a conversation gets longer — especially past 70 or 80 percent of the context window — Claude gets noticeably worse. It starts forgetting things you established earlier, contradicts itself, misses details it would have caught at the start. It doesn't always tell you this is happening. Sometimes I have to start a fresh conversation and re-explain the context, which costs time.</p>
+    <p><strong>The hard cutoff is brutal.</strong> When you hit the usage limit, Claude ends the conversation. You get a message, you're out, you're notified. No gradual slowdown, no warning five minutes earlier. Just a wall. When you're 90% of the way through solving something difficult, this is genuinely painful.</p>
+
+    <h2>Why I kept coming back to Claude anyway</h2>
+    <p>After all that — here's the thing. Claude makes fewer errors. Not zero errors, but fewer. And when it gets something right, it tends to stay right. The code works. I'm not going back to fix the same thing three sessions later because it gave me something subtly broken the first time.</p>
+    <p>The endless loops happen far less often. With Copilot I was going around the same problem ten or fifteen times regularly. With Claude it's more like three or four times on a hard problem, and then it actually resolves. That difference compounds over two weeks of real work. It's the difference between feeling like you're making progress and feeling like you're running in place.</p>
+    <p>It also handles complexity better. When a problem has five moving parts that interact with each other, Claude tends to hold all of them in mind at once. Copilot more often fixes one thing and breaks another, then fixes that and breaks something else.</p>
+
+    <div class="callout">
+      The best way I can put it: Copilot feels more like a person. Claude feels more like a tool that actually works. Depending on what you need, that could go either way — but when I'm trying to ship something, I want the thing that works.
+    </div>
+
+    <h2>The verdict</h2>
+
+    <div class="verdict">
+      <div class="verdict-title">Head to head</div>
+      <div class="verdict-row">
+        <span class="verdict-label verdict-header"></span>
+        <span class="verdict-claude verdict-header">Claude (paid)</span>
+        <span class="verdict-copilot verdict-header">Copilot (free)</span>
+      </div>
+      <div class="verdict-row">
+        <span class="verdict-label">Error rate</span>
+        <span class="verdict-claude">Lower</span>
+        <span class="verdict-copilot">Higher</span>
+      </div>
+      <div class="verdict-row">
+        <span class="verdict-label">Endless loops</span>
+        <span class="verdict-claude">Less frequent</span>
+        <span class="verdict-copilot">Very frequent</span>
+      </div>
+      <div class="verdict-row">
+        <span class="verdict-label">Output truncation</span>
+        <span class="verdict-claude">Signals when cut off</span>
+        <span class="verdict-copilot">Silent, no warning</span>
+      </div>
+      <div class="verdict-row">
+        <span class="verdict-label">Usage limit</span>
+        <span class="verdict-claude">Hard wall</span>
+        <span class="verdict-copilot">Soft slowdown</span>
+      </div>
+      <div class="verdict-row">
+        <span class="verdict-label">Personality</span>
+        <span class="verdict-claude">More neutral</span>
+        <span class="verdict-copilot">Warmer, more human</span>
+      </div>
+      <div class="verdict-row">
+        <span class="verdict-label">Long session quality</span>
+        <span class="verdict-claude">Degrades noticeably</span>
+        <span class="verdict-copilot">Degrades differently</span>
+      </div>
+      <div class="verdict-row">
+        <span class="verdict-label">Cost</span>
+        <span class="verdict-claude">Paid subscription</span>
+        <span class="verdict-copilot">Free tier available</span>
+      </div>
+    </div>
+
+    <p>If you're choosing between the two for serious coding work, I think Claude is worth the subscription. But I'm biased, I told you that upfront, and Copilot Pro might close some of these gaps — I haven't tested it.</p>
+    <p>What I can tell you is that after two weeks of building something real, Claude is still open in my browser and Copilot isn't.</p>
+
+  </div>
+
+  <div class="post-footer">
+    <span class="post-footer-label">Save your AI conversations as PDFs →</span>
+    <a class="btn-export" href="/">Try Notavello free</a>
+  </div>
+
+</main>
+
+<!--FOOTER-->
+
+</body>
+</html>
