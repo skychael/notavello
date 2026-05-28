@@ -3,86 +3,39 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>AI Writing Detector — Notavello</title>
+<title>AI Writing Detector</title>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600&family=Lora:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-:root {
-  --bg: #F0F4FF;
-  --surface: #FFFFFF;
-  --ink: #0F172A;
-  --ink-muted: #64748B;
-  --ink-faint: #94A3B8;
-  --accent: #4F46E5;
-  --accent2: #7C3AED;
-  --green: #059669;
-  --amber: #D97706;
-  --red: #DC2626;
-  --radius: 20px;
-  --radius-sm: 12px;
-  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
-  --shadow-lg: 0 4px 16px rgba(79,70,229,0.12), 0 16px 48px rgba(15,23,42,0.12);
+*,*:before,*:after{box-sizing:border-box;margin:0;padding:0}
+:root{
+--bg:#F0F4FF;--surface:#fff;--ink:#0F172A;--ink2:#64748B;--ink3:#94A3B8;
+--a:#4F46E5;--a2:#7C3AED;--g:#059669;--y:#D97706;--r:#DC2626;
+--rad:20px;--rad2:12px;--sh:0 2px 8px rgba(0,0,0,.06),0 8px 32px rgba(0,0,0,.08)
 }
-
-body {
-  background: var(--bg);
-  font-family: 'Sora', sans-serif;
-  color: var(--ink);
-  min-height: 100vh;
-}
-
-/* HEADER */
-.header {
-  background: rgba(255,255,255,0.85);
-  backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--ink-faint);
-  padding: 16px 36px;
-  display: flex; justify-content: space-between; align-items: center;
-}
-.logo { font-size: 1.25rem; font-weight: 700; text-decoration: none; color: var(--ink); }
-
-/* MAIN */
-.screen-ui { max-width: 800px; margin: 0 auto; padding: 56px 24px 100px; }
-
-/* HERO */
-.hero { text-align: center; margin-bottom: 44px; }
-.hero h1 { font-family: 'Lora', serif; font-size: 2.6rem; margin-bottom: 16px; }
-.hero p { color: var(--ink-muted); max-width: 480px; margin: 0 auto; }
-
-/* DISCLAIMER */
-.disclaimer {
-  background: #FEF3C7;
-  border-left: 3px solid var(--amber);
-  padding: 14px 18px;
-  border-radius: var(--radius-sm);
-  margin-bottom: 24px;
-}
-
-/* INPUT CARD */
-.input-card {
-  background: var(--surface);
-  border: 1px solid var(--ink-faint);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  margin-bottom: 20px;
-}
-.input-card-header {
-  padding: 14px 20px;
-  border-bottom: 1px solid var(--ink-faint);
-  display: flex; justify-content: space-between;
-}
-
-/* UPLOAD BUTTON */
-.upload-box {
-  padding: 14px 20px;
-  border-bottom: 1px solid var(--ink-faint);
-}
-.upload-box input {
-  font-size: 0.9rem;
-}
-
+body{background:var(--bg);font-family:Sora,sans-serif;color:var(--ink)}
+.header{background:#fffcc;border-bottom:1px solid var(--ink3);padding:16px 36px;display:flex;justify-content:space-between}
+.logo{font-weight:700;color:var(--ink);text-decoration:none}
+.screen{max-width:800px;margin:0 auto;padding:50px 20px}
+.hero{text-align:center;margin-bottom:40px}
+.hero h1{font-family:Lora,serif;font-size:2.4rem;margin-bottom:10px}
+.hero p{color:var(--ink2)}
+.disclaimer{background:#FEF3C7;border-left:3px solid var(--y);padding:12px 16px;border-radius:var(--rad2);margin-bottom:20px}
+.card{background:#fff;border:1px solid var(--ink3);border-radius:var(--rad);box-shadow:var(--sh);margin-bottom:20px}
+.card-head{padding:14px 20px;border-bottom:1px solid var(--ink3);display:flex;justify-content:space-between}
+.upload{padding:14px 20px;border-bottom:1px solid var(--ink3)}
+.upload input{font-size:.9rem}
+#text{width:100%;min-height:200px;padding:20px;border:none;outline:none;font-size:.9rem}
+.card-foot{padding:14px 20px;border-top:1px solid var(--ink3);display:flex;gap:12px;justify-content:flex-end}
+.btn{padding:10px 20px;border-radius:var(--rad2);cursor:pointer}
+.reset{background:#fff;border:1px solid var(--a);color:var(--a)}
+.go{background:linear-gradient(135deg,var(--a),var(--a2));color:#fff;border:none}
+.res{display:none;margin-top:20px;text-align:center;padding:30px;border-radius:var(--rad);box-shadow:var(--sh)}
+.res h2{font-family:Lora,serif;margin-bottom:10px}
+.meter{max-width:320px;margin:0 auto}
+.meter-track{height:10px;background:#ddd;border-radius:50px;overflow:hidden}
+.meter-fill{height:100%;border-radius:50px;width:0;background:var(--a)}
+</style>
 </head>
 <body>
 
@@ -90,152 +43,101 @@ body {
   <a class="logo" href="#">Notavello</a>
 </header>
 
-<main class="screen-ui">
+<main class="screen">
 
   <div class="hero">
     <h1>AI Writing Detector</h1>
-    <p>Paste text or upload a file to analyze how human‑like or AI‑like it appears.</p>
+    <p>Paste text or upload a file to analyze it.</p>
   </div>
 
   <div class="disclaimer">
-    This tool is heuristic and not definitive. Results are estimates only.
+    This tool is heuristic and not definitive.
   </div>
 
-  <div class="input-card">
-
-    <div class="input-card-header">
+  <div class="card">
+    <div class="card-head">
       <span>Your Text</span>
-      <span id="charCount">0 chars</span>
+      <span id="count">0 chars</span>
     </div>
 
-    <div class="upload-box">
-      <input type="file" id="fileUpload" accept=".txt">
+    <div class="upload">
+      <input type="file" id="file" accept=".txt">
     </div>
 
-    <textarea id="pasteArea"></textarea>
+    <textarea id="text"></textarea>
 
-    <div class="input-footer">
-      <button class="btn-reset" id="resetBtn">Reset</button>
-      <button class="btn-analyze" id="analyzeBtn">Analyze</button>
+    <div class="card-foot">
+      <button class="btn reset" id="reset">Reset</button>
+      <button class="btn go" id="go">Analyze</button>
     </div>
   </div>
 
-  <section id="resultsSection" style="display:none;">
-    <div id="verdictCard" class="verdict-card uncertain">
-      <div id="verdictIcon" class="verdict-icon">🤔</div>
-      <div id="verdictTitle" class="verdict-title">Needs More Text</div>
-      <p id="verdictDesc" class="verdict-desc">Paste text and click Analyze.</p>
+  <div id="res" class="res">
+    <div id="icon" style="font-size:2.4rem;margin-bottom:10px">🤔</div>
+    <h2 id="title">Needs More Text</h2>
+    <p id="desc" style="color:var(--ink2);margin-bottom:20px">Paste text and analyze.</p>
 
-      <div class="score-meter-wrap">
-        <div class="score-meter-label">
-          <span>Human‑like</span><span>AI‑like</span>
-        </div>
-        <div class="score-meter-track">
-          <div id="scoreFill" class="score-meter-fill" style="width:0%; background:var(--accent);"></div>
-        </div>
+    <div class="meter">
+      <div class="meter-track">
+        <div id="fill" class="meter-fill"></div>
       </div>
     </div>
-  </section>
+  </div>
 
 </main>
-
-<footer style="text-align:center; padding:40px 0; color:var(--ink-faint); font-size:0.8rem;">
-  © 2026 Notavello — AI Tools
-</footer>
-
 <script>
-const pasteArea = document.getElementById("pasteArea");
-const charCount = document.getElementById("charCount");
-const analyzeBtn = document.getElementById("analyzeBtn");
-const resetBtn = document.getElementById("resetBtn");
-const resultsSection = document.getElementById("resultsSection");
-const verdictCard = document.getElementById("verdictCard");
-const verdictIcon = document.getElementById("verdictIcon");
-const verdictTitle = document.getElementById("verdictTitle");
-const verdictDesc = document.getElementById("verdictDesc");
-const scoreFill = document.getElementById("scoreFill");
+const t=document.getElementById("text"),
+c=document.getElementById("count"),
+go=document.getElementById("go"),
+r=document.getElementById("reset"),
+res=document.getElementById("res"),
+icon=document.getElementById("icon"),
+title=document.getElementById("title"),
+desc=document.getElementById("desc"),
+fill=document.getElementById("fill");
 
-/* Character counter */
-pasteArea.addEventListener("input", () => {
-  charCount.textContent = pasteArea.value.length + " chars";
-});
+/* typing counter */
+t.oninput=()=>c.textContent=t.value.length+" chars";
 
-/* Reset */
-resetBtn.addEventListener("click", () => {
-  pasteArea.value = "";
-  charCount.textContent = "0 chars";
-  resultsSection.style.display = "none";
-});
+/* reset */
+r.onclick=()=>{t.value="";c.textContent="0 chars";res.style.display="none"};
 
-/* Upload file */
-document.getElementById("fileUpload").addEventListener("change", function () {
-  const file = this.files[0];
-  if (!file) return;
+/* upload */
+document.getElementById("file").onchange=e=>{
+ let f=e.target.files[0]; if(!f)return;
+ let rd=new FileReader();
+ rd.onload=x=>{t.value=x.target.result;c.textContent=t.value.length+" chars"};
+ rd.readAsText(f);
+};
 
-  const reader = new FileReader();
-  reader.onload = function (e) {
-    pasteArea.value = e.target.result;
-    charCount.textContent = pasteArea.value.length + " chars";
-  };
-  reader.readAsText(file);
-});
+/* analyze */
+go.onclick=()=>{
+ let v=t.value.trim();
+ if(v.length<30){title.textContent="Needs More Text";desc.textContent="Enter at least 30 characters.";res.style.display="block";return}
+ let s=score(v); update(s); res.style.display="block";
+};
 
-/* Analyze */
-analyzeBtn.addEventListener("click", () => {
-  const text = pasteArea.value.trim();
-  if (text.length < 30) {
-    verdictTitle.textContent = "Needs More Text";
-    verdictDesc.textContent = "Enter at least 30 characters.";
-    resultsSection.style.display = "block";
-    return;
-  }
-
-  const score = calculateAIScore(text);
-  updateUI(score);
-  resultsSection.style.display = "block";
-});
-
-/* Scoring logic */
-function calculateAIScore(text) {
-  let score = 0;
-
-  const sentences = text.split(/[.!?]/).filter(s => s.trim().length > 0);
-  const avgSentence = sentences.reduce((a,b)=>a+b.length,0) / sentences.length;
-  if (avgSentence > 140) score += 25;
-  if (avgSentence < 40) score += 15;
-
-  const transitions = ["however","moreover","in addition","furthermore","consequently"];
-  transitions.forEach(t => { if (text.toLowerCase().includes(t)) score += 10; });
-
-  const words = text.split(/\s+/);
-  const unique = new Set(words).size;
-  if (words.length / unique > 4) score += 20;
-
-  return Math.min(100, Math.max(0, score));
+/* scoring */
+function score(v){
+ let s=0;
+ let sen=v.split(/[.!?]/).filter(x=>x.trim().length);
+ let avg=sen.reduce((a,b)=>a+b.length,0)/sen.length;
+ if(avg>140)s+=25; if(avg<40)s+=15;
+ ["however","moreover","in addition","furthermore","consequently"].forEach(w=>{if(v.toLowerCase().includes(w))s+=10});
+ let w=v.split(/\s+/),u=new Set(w).size;
+ if(w.length/u>4)s+=20;
+ return Math.min(100,Math.max(0,s));
 }
 
 /* UI update */
-function updateUI(score) {
-  scoreFill.style.width = score + "%";
+function update(s){
+ fill.style.width=s+"%";
+ if(s>70){res.style.background="#FEE2E2";icon.textContent="⚠️";title.textContent="Likely AI";desc.textContent="Strong AI‑like patterns detected.";fill.style.background="var(--r)"}
+ else if(s>45){res.style.background="#FEF3C7";icon.textContent="🟡";title.textContent="Possibly AI";desc.textContent="Mixed indicators detected.";fill.style.background="var(--y)"}
+ else if(s>20){res.style.background="#EEF2FF";icon.textContent="🤔";title.textContent="Uncertain";desc.textContent="Inconclusive patterns.";fill.style.background="var(--a)"}
+ else{res.style.background="#D1FAE5";icon.textContent="🟢";title.textContent="Likely Human";desc.textContent="Natural human‑like variation detected.";fill.style.background="var(--g)"}
+}
+</script>
 
-  if (score > 70) {
-    verdictCard.className = "verdict-card likely-ai";
-    verdictIcon.textContent = "⚠️";
-    verdictTitle.textContent = "Likely AI";
-    verdictDesc.textContent = "Strong AI‑like patterns detected.";
-    scoreFill.style.background = "var(--red)";
-  } else if (score > 45) {
-    verdictCard.className = "verdict-card possibly-ai";
-    verdictIcon.textContent = "🟡";
-    verdictTitle.textContent = "Possibly AI";
-    verdictDesc.textContent = "Mixed indicators detected.";
-    scoreFill.style.background = "var(--amber)";
-  } else if (score > 20) {
-    verdictCard.className = "verdict-card uncertain";
-    verdictIcon.textContent = "🤔";
-    verdictTitle.textContent = "Uncertain";
-    verdictDesc.textContent = "Inconclusive patterns.";
-    scoreFill.style.background = "var(--accent)";
-  } else {
-    verdictCard.className = "verdict-card likely-human";
-    verdictIcon.text
+</body>
+</html>
