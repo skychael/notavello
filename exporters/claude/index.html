@@ -1,4 +1,4 @@
-<!-- Notavello claude-3.2 | generated 21:40:00 UTC | 250 limit, no watermark, bug report button, remove FREE PREVIEW -->
+<!-- Notavello claude-3.3 | generated 23:08:39 UTC | SEO canonical fixed, Claude landing copy added, redirect paths corrected -->
 <!-- ⚠️ AI INSTRUCTION: Every time you modify this file you MUST update the version comment on line 1.
      Bump the patch number (e.g. 3.2 → 3.3), update the UTC time, and add a brief note of what changed.
      Also update the GENERATED timestamp in the badge in the <header> to match.
@@ -10,22 +10,71 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Export Claude Conversations to PDF — Notavello</title>
-<meta name="description" content="Paste your Claude conversation and get a clean, color-coded PDF in seconds. User messages in blue, AI responses in plain text. Free to use — no sign-up required."/>
+<title>Export Claude Conversations to PDF Free — Notavello</title>
+<meta name="description" content="Export Claude conversations to clean, searchable PDFs. Paste your Claude chat, preview the formatting, auto-redact sensitive data, and download a professional PDF — no sign-up required."/>
 <meta name="robots" content="index, follow"/>
-<link rel="canonical" href="https://notavello.com/claude/"/>
+<link rel="canonical" href="https://notavello.com/exporters/claude/"/>
 
 <!-- Open Graph -->
 <meta property="og:type" content="website"/>
-<meta property="og:url" content="https://notavello.com/claude/"/>
-<meta property="og:title" content="Export Claude Conversations to PDF — Notavello"/>
-<meta property="og:description" content="Paste your Claude conversation and get a clean, color-coded PDF in seconds. Free to use — no sign-up required."/>
+<meta property="og:url" content="https://notavello.com/exporters/claude/"/>
+<meta property="og:title" content="Export Claude Conversations to PDF Free — Notavello"/>
+<meta property="og:description" content="Paste your Claude chat and download a clean, searchable, color-coded PDF. Free to use — no sign-up required."/>
 <meta property="og:site_name" content="Notavello"/>
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Export Claude Conversations to PDF — Notavello"/>
-<meta name="twitter:description" content="Paste your Claude conversation and get a clean, color-coded PDF in seconds. Free to use — no sign-up required."/>
+<meta name="twitter:title" content="Export Claude Conversations to PDF Free — Notavello"/>
+<meta name="twitter:description" content="Paste your Claude chat and download a clean, searchable, color-coded PDF. Free to use — no sign-up required."/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Notavello Claude PDF Exporter",
+  "applicationCategory": "ProductivityApplication",
+  "operatingSystem": "Web",
+  "url": "https://notavello.com/exporters/claude/",
+  "description": "Export Claude conversations to clean, searchable PDF files with color-coded speaker formatting and optional sensitive-data redaction.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I export a Claude conversation to PDF?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Paste your Claude conversation into Notavello, preview the formatted export, and download a searchable PDF."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Notavello store my Claude conversation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Notavello is designed for browser-based PDF creation. You paste your conversation, preview it, and download the PDF without creating an account."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the Claude PDF export searchable?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The generated PDF keeps conversation text searchable and formats user messages separately from Claude responses."
+      }
+    }
+  ]
+}
+</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
@@ -639,6 +688,59 @@ body {
 .btn-pay:hover { opacity: 0.92; box-shadow: 0 6px 24px rgba(79,70,229,0.45); }
 .paywall-note { font-size: 0.75rem; color: var(--ink-faint); margin-top: 14px; }
 
+
+/* ── SEO CONTENT ── */
+.seo-content {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  margin: 28px 0 20px;
+  box-shadow: var(--shadow);
+  color: var(--ink);
+}
+.seo-content h2 {
+  font-family: 'Lora', serif;
+  font-size: 1.45rem;
+  line-height: 1.25;
+  margin-bottom: 12px;
+}
+.seo-content h3 {
+  font-size: 0.98rem;
+  margin: 20px 0 8px;
+}
+.seo-content p, .seo-content li {
+  font-size: 0.9rem;
+  color: var(--ink-muted);
+  line-height: 1.75;
+}
+.seo-content ul {
+  padding-left: 20px;
+  margin: 10px 0 0;
+}
+.seo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 18px;
+}
+.seo-mini-card {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+}
+.seo-mini-card strong {
+  display: block;
+  color: var(--ink);
+  font-size: 0.88rem;
+  margin-bottom: 6px;
+}
+@media (max-width: 600px) {
+  .seo-grid { grid-template-columns: 1fr; }
+  .seo-content { padding: 22px; }
+}
+
 /* ── ANIMATIONS ── */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(14px); }
@@ -929,7 +1031,7 @@ body {
     Nota<span>vello</span>
   </div>
   </a>
-  <div class="badge" id="liveBadge">CLAUDE-3.2 · GENERATED 21:40:00 UTC</div>
+  <div class="badge" id="liveBadge">CLAUDE-3.3 · GENERATED 23:08:39 UTC</div>
   <!-- ⚠️ BADGE NOTE: This timestamp is hardcoded on purpose. It shows when this file was last edited,
        so you can verify the correct version is live after deployment. Do NOT replace with a live clock. -->
 </header>
@@ -992,6 +1094,36 @@ body {
       </button>
     </div>
   </div>
+
+
+  <section class="seo-content" aria-labelledby="claude-export-heading">
+    <h2 id="claude-export-heading">Save a Claude chat as a clean PDF</h2>
+    <p>Notavello turns copied Claude conversations into professional PDF exports for records, client files, research notes, support tickets, legal documentation, insurance documentation, and project archives. Paste the conversation, review the preview, then download a PDF that is easier to share, print, search, and store.</p>
+    <div class="seo-grid">
+      <div class="seo-mini-card">
+        <strong>Designed for Claude conversations</strong>
+        <p>The page is tuned for Claude-style chat text and separates your messages from Claude responses with readable formatting.</p>
+      </div>
+      <div class="seo-mini-card">
+        <strong>Searchable PDF output</strong>
+        <p>Your exported conversation remains text-based, so you can search the PDF later instead of relying on screenshots.</p>
+      </div>
+      <div class="seo-mini-card">
+        <strong>Optional auto-redaction</strong>
+        <p>Keep the redaction option on to help mask common sensitive patterns like API keys, SSNs, and card numbers.</p>
+      </div>
+      <div class="seo-mini-card">
+        <strong>No account required</strong>
+        <p>Use the free export flow directly from your browser without signing up before your first download.</p>
+      </div>
+    </div>
+    <h3>How to export Claude to PDF</h3>
+    <ul>
+      <li>Open your Claude conversation and copy the chat text.</li>
+      <li>Paste the conversation into Notavello.</li>
+      <li>Preview the color-coded export and download the PDF.</li>
+    </ul>
+  </section>
 
   <div id="previewSection">
     <div class="preview-toolbar">
@@ -1590,8 +1722,8 @@ async function startCheckout(btn) {
 }
 
 // ── HANDLE RETURN FROM STRIPE ──
-// On success, Stripe redirects to /claude/?paid=true
-// On cancel, Stripe redirects to /claude/?paid=cancelled
+// On success, Stripe redirects to /exporters/claude/?paid=true
+// On cancel, Stripe redirects to /exporters/claude/?paid=cancelled
 (function handleStripeReturn() {
   const params = new URLSearchParams(window.location.search);
   function restoreSavedConversation() {
@@ -1604,7 +1736,7 @@ async function startCheckout(btn) {
   }
   if (params.get('paid') === 'true') {
     localStorage.setItem('notavello_paid', 'true');
-    window.history.replaceState({}, '', '/claude/');
+    window.history.replaceState({}, '', '/exporters/claude/');
     restoreSavedConversation();
     const msg = document.createElement('div');
     msg.style.cssText = 'position:fixed;top:24px;left:50%;transform:translateX(-50%);background:#059669;color:white;padding:14px 28px;border-radius:12px;font-size:0.95rem;font-weight:600;z-index:9999;box-shadow:0 4px 20px rgba(5,150,105,0.4);';
@@ -1612,7 +1744,7 @@ async function startCheckout(btn) {
     document.body.appendChild(msg);
     setTimeout(() => msg.remove(), 5000);
   } else if (params.get('paid') === 'cancelled') {
-    window.history.replaceState({}, '', '/claude/');
+    window.history.replaceState({}, '', '/exporters/claude/');
     restoreSavedConversation();
   }
 })();
