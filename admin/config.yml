@@ -1,0 +1,25 @@
+backend:
+  name: github
+  repo: skychael/notavello
+  branch: main
+  base_url: https://notavello.com
+  auth_endpoint: /admin/auth
+
+media_folder: "pages/blog/assets"
+public_folder: "/pages/blog/assets"
+
+collections:
+  - name: "blog"
+    label: "The Export — Blog Posts"
+    folder: "pages/blog"
+    create: true
+    slug: "{{slug}}/index"
+    path: "{{slug}}/index"
+    extension: "html"
+    format: "frontmatter"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime", format: "MMMM D, YYYY" }
+      - { label: "Tag", name: "tag", widget: "string", default: "AI Tools" }
+      - { label: "Excerpt", name: "excerpt", widget: "text" }
+      - { label: "Body", name: "body", widget: "markdown" }
