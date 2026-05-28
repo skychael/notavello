@@ -187,144 +187,10 @@ body {
   border-radius: var(--radius-sm);
   cursor: pointer;
 }
+</div>
+</div>
 
-/* ERROR */
-.error-msg {
-  display: none;
-  background: #FFF1F2; border-left: 3px solid #BE123C;
-  padding: 12px 16px;
-  margin-bottom: 16px;
-  color: #BE123C;
-}
-
-/* RESULTS */
-#resultsSection { display: none; }
-
-/* VERDICT CARD */
-.verdict-card {
-  border-radius: var(--radius);
-  padding: 32px 36px;
-  margin-bottom: 20px;
-  text-align: center;
-  box-shadow: var(--shadow-lg);
-}
-.verdict-card.likely-ai {
-  background: #FFE4E6;
-  border: 1.5px solid rgba(220,38,38,0.2);
-}
-.verdict-card.possibly-ai {
-  background: #FEF3C7;
-  border: 1.5px solid rgba(217,119,6,0.25);
-}
-.verdict-card.likely-human {
-  background: #DCFCE7;
-  border: 1.5px solid rgba(5,150,105,0.2);
-}
-.verdict-card.uncertain {
-  background: #EEF2FF;
-  border: 1.5px solid rgba(79,70,229,0.2);
-}
-
-.verdict-icon { font-size: 2.8rem; margin-bottom: 12px; }
-.verdict-label {
-  font-size: 0.7rem; font-weight: 700;
-  text-transform: uppercase;
-  margin-bottom: 8px;
-}
-.verdict-title {
-  font-family: 'Lora', serif;
-  font-size: 1.6rem; font-weight: 600;
-  margin-bottom: 10px;
-}
-.verdict-desc {
-  font-size: 0.88rem; color: var(--ink-muted);
-  max-width: 460px; margin: 0 auto 20px;
-  line-height: 1.7;
-}
-
-/* SCORE METER */
-.score-meter-wrap {
-  max-width: 340px; margin: 0 auto;
-}
-.score-meter-label {
-  display: flex; justify-content: space-between;
-  font-size: 0.72rem; color: var(--ink-faint);
-  margin-bottom: 6px;
-}
-.score-meter-track {
-  height: 10px; background: rgba(15,23,42,0.08);
-  border-radius: 100px; overflow: hidden;
-}
-.score-meter-fill {
-  height: 100%; border-radius: 100px;
-}
-</style>
-</head>
-
-<body>
-
-<header class="header">
-  <a href="/" class="logo">
-    <div class="logo-icon">N</div>
-    Notavello <span>Tools</span>
-  </a>
-  <div class="badge">AI Detector</div>
-</header>
-
-<main class="screen-ui">
-
-  <section class="hero">
-    <div class="hero-pill">
-      <div class="hero-pill-dot"></div>
-      AI Writing Detector
-    </div>
-    <h1>Is this <em>AI‑generated</em> text?</h1>
-    <p>Paste any text below and instantly analyze it for AI‑writing patterns.</p>
-  </section>
-
-  <div class="disclaimer">
-    <strong>Note:</strong> This tool provides an estimate based on linguistic patterns.  
-    It does not guarantee authorship.
-  </div>
-
-  <div class="error-msg" id="errorMsg">Please paste at least 30 characters.</div>
-
-  <div class="input-card">
-    <div class="input-card-header">
-      <div class="input-label">Your Text</div>
-      <div class="char-info" id="charCount">0 chars</div>
-    </div>
-
-    <textarea id="pasteArea" placeholder="Paste text here..."></textarea>
-
-    <div class="input-footer">
-      <button class="btn-reset" id="resetBtn">Reset</button>
-      <button class="btn-analyze" id="analyzeBtn">Analyze</button>
-    </div>
-  </div>
-
-  <section id="resultsSection">
-
-    <div id="verdictCard" class="verdict-card uncertain">
-      <div class="verdict-icon" id="verdictIcon">🤔</div>
-      <div class="verdict-label" id="verdictLabel">Uncertain</div>
-      <div class="verdict-title" id="verdictTitle">Needs More Text</div>
-      <p class="verdict-desc" id="verdictDesc">
-        Paste some text and click Analyze to see results.
-      </p>
-
-      <div class="score-meter-wrap">
-        <div class="score-meter-label">
-          <span>Human‑like</span>
-          <span>AI‑like</span>
-        </div>
-        <div class="score-meter-track">
-          <div class="score-meter-fill" id="scoreFill" style="width: 0%; background: var(--accent);"></div>
-        </div>
-      </div>
-    </div>
-
-  </section>
+</section>
 
 </main>
 
@@ -353,4 +219,84 @@ pasteArea.addEventListener("input", () => {
 
 resetBtn.addEventListener("click", () => {
   pasteArea.value = "";
-  charCount.textContent = "
+  charCount.textContent = "0 chars";
+  resultsSection.style.display = "none";
+  errorMsg.style.display = "none";
+});
+
+analyzeBtn.addEventListener("click", () => {
+  const text = pasteArea.value.trim();
+
+  if (text.length < 30) {
+    errorMsg.style.display = "block";
+    return;
+  }
+
+  errorMsg.style.display = "none";
+  resultsSection.style.display = "block";
+
+  const score = calculateAIScore(text);
+  updateUI(score);
+});
+
+function calculateAIScore(text) {
+  let score = 0;
+
+  const sentences = text.split(/[.!?]/).map(s => s.trim()).filter(Boolean);
+  const avgSentence = sentences.reduce((a, b) => a + b.length, 0) / Math.max(1, sentences.length);
+
+  if (avgSentence > 140) score += 25;
+  if (avgSentence < 40) score += 15;
+
+  const transitions = ["however", "moreover", "in addition", "furthermore", "consequently"];
+  let transitionCount = transitions.filter(t => text.toLowerCase().includes(t)).length;
+  score += transitionCount * 10;
+
+  const words = text.split(/\s+/);
+  const uniqueWords = new Set(words).size;
+  const uniformity = words.length / uniqueWords;
+  if (uniformity > 4) score += 20;
+
+  return Math.min(100, Math.max(0, score));
+}
+
+function updateUI(score) {
+  scoreFill.style.width = score + "%";
+
+  if (score > 70) {
+    verdictCard.className = "verdict-card likely-ai";
+    verdictIcon.textContent = "⚠️";
+    verdictLabel.textContent = "Likely AI";
+    verdictTitle.textContent = "High AI‑likeness detected";
+    verdictDesc.textContent = "The text shows strong patterns commonly found in AI‑generated writing.";
+    scoreFill.style.background = "var(--red)";
+  }
+  else if (score > 45) {
+    verdictCard.className = "verdict-card possibly-ai";
+    verdictIcon.textContent = "🟡";
+    verdictLabel.textContent = "Possibly AI";
+    verdictTitle.textContent = "Mixed indicators";
+    verdictDesc.textContent = "Some AI‑like patterns are present, but not enough for a strong conclusion.";
+    scoreFill.style.background = "var(--amber)";
+  }
+  else if (score > 20) {
+    verdictCard.className = "verdict-card uncertain";
+    verdictIcon.textContent = "🤔";
+    verdictLabel.textContent = "Uncertain";
+    verdictTitle.textContent = "Inconclusive";
+    verdictDesc.textContent = "The text does not strongly match AI or human patterns.";
+    scoreFill.style.background = "var(--accent)";
+  }
+  else {
+    verdictCard.className = "verdict-card likely-human";
+    verdictIcon.textContent = "🟢";
+    verdictLabel.textContent = "Likely Human";
+    verdictTitle.textContent = "Low AI‑likeness detected";
+    verdictDesc.textContent = "The writing style appears more natural and varied, typical of human authors.";
+    scoreFill.style.background = "var(--green)";
+  }
+}
+</script>
+
+</body>
+</html>
