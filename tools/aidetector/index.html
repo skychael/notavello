@@ -91,6 +91,14 @@ body {
   box-shadow: 0 2px 8px rgba(79,70,229,0.35);
 }
 .logo span { color: var(--accent); }
+.badge {
+  font-size: 0.68rem; font-weight: 600;
+  background: linear-gradient(135deg, var(--accent-light), #F5F3FF);
+  color: var(--accent);
+  padding: 5px 14px; border-radius: 20px;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  border: 1px solid rgba(79,70,229,0.2);
+}
 
 /* MAIN */
 .screen-ui {
@@ -107,80 +115,4 @@ body {
 }
 .hero-pill {
   display: inline-flex; align-items: center; gap: 6px;
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: 100px; padding: 6px 16px 6px 10px;
-  font-size: 0.78rem; font-weight: 500; color: var(--ink-muted);
-  margin-bottom: 22px; box-shadow: 0 1px 4px rgba(15,23,42,0.06);
-}
-.hero-pill-dot {
-  width: 7px; height: 7px;
-  background: var(--amber);
-  border-radius: 50%;
-  animation: pulse 2s infinite;
-}
-.hero h1 {
-  font-family: 'Lora', serif;
-  font-size: clamp(2rem, 5vw, 3rem);
-  font-weight: 600; line-height: 1.18;
-  color: var(--ink); margin-bottom: 16px;
-  letter-spacing: -0.02em;
-}
-.hero h1 em {
-  font-style: italic;
-  background: linear-gradient(135deg, var(--accent), var(--accent2));
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.hero p {
-  font-size: 1rem; color: var(--ink-muted);
-  max-width: 480px; margin: 0 auto;
-  line-height: 1.75; font-weight: 400;
-}
-
-/* DISCLAIMER BANNER */
-.disclaimer {
-  background: var(--amber-light);
-  border: 1px solid rgba(217,119,6,0.25);
-  border-left: 3px solid var(--amber);
-  border-radius: var(--radius-sm);
-  padding: 14px 18px;
-  font-size: 0.82rem;
-  color: #92400E;
-  line-height: 1.6;
-  margin-bottom: 24px;
-  animation: fadeUp 0.6s 0.05s ease both;
-}
-.disclaimer strong { font-weight: 700; }
-
-/* INPUT CARD */
-.input-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  overflow: hidden;
-  margin-bottom: 20px;
-  animation: fadeUp 0.6s 0.1s ease both;
-  transition: box-shadow 0.2s, border-color 0.2s;
-}
-.input-card:focus-within {
-  box-shadow: var(--shadow-lg);
-  border-color: rgba(79,70,229,0.35);
-}
-.input-card-header {
-  padding: 14px 20px;
-  border-bottom: 1px solid var(--border);
-  display: flex; align-items: center; justify-content: space-between;
-  background: var(--surface2);
-}
-.input-label {
-  font-size: 0.75rem; font-weight: 600;
-  text-transform: uppercase; letter-spacing: 0.1em;
-  color: var(--ink-muted);
-  display: flex; align-items: center; gap: 8px;
-}
-.input-label svg { color: var(--accent); }
-.char-info {
-  font-size: 0.78rem; background: var(--accent-light);
-  color: var(--accent); padding: 3px 10px;
-  border-radius: 20px; font-weight: 500;
+  background: var(--surface); border: 1px solid var(--
