@@ -5,17 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>AI Writing Detector — Notavello</title>
 <meta name="description" content="Paste any text and find out if it was written by AI. Checks for AI patterns, sentence uniformity, transition phrases, and more. Free, private, runs in your browser."/>
-<meta name="robots" content="index, follow"/>
-<link rel="canonical" href="https://notavello.com/tools/ai-detector/"/>
-<meta property="og:type" content="website"/>
-<meta property="og:url" content="https://notavello.com/tools/ai-detector/"/>
-<meta property="og:title" content="AI Writing Detector — Notavello"/>
-<meta property="og:description" content="Paste any text and find out if it was written by AI. Free, private, runs entirely in your browser."/>
-<meta property="og:site_name" content="Notavello"/>
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="AI Writing Detector — Notavello"/>
-<meta name="twitter:description" content="Paste any text and find out if it was written by AI. Free, private, runs entirely in your browser."/>
-<link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <style>
@@ -57,61 +46,17 @@ body {
     radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
 }
 
-/* HEADER */
-.header {
-  background: rgba(255,255,255,0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--border);
-  padding: 16px 36px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-.logo {
-  font-family: 'Sora', sans-serif;
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--ink);
-  letter-spacing: -0.03em;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-}
-.logo-icon {
-  width: 32px; height: 32px;
-  background: linear-gradient(135deg, var(--accent), var(--accent2));
-  border-radius: 10px;
-  display: flex; align-items: center; justify-content: center;
-  color: white; font-size: 0.85rem;
-  box-shadow: 0 2px 8px rgba(79,70,229,0.35);
-}
-.logo span { color: var(--accent); }
-.badge {
-  font-size: 0.68rem; font-weight: 600;
-  background: linear-gradient(135deg, var(--accent-light), #F5F3FF);
-  color: var(--accent);
-  padding: 5px 14px; border-radius: 20px;
-  letter-spacing: 0.06em; text-transform: uppercase;
-  border: 1px solid rgba(79,70,229,0.2);
-}
-
-/* MAIN */
+/* MAIN UI LAYOUT */
 .screen-ui {
   max-width: 800px;
   margin: 0 auto;
   padding: 56px 24px 100px;
 }
 
-/* HERO */
+/* HERO SECTION */
 .hero {
   text-align: center;
   margin-bottom: 44px;
-  animation: fadeUp 0.6s ease both;
 }
 .hero-pill {
   display: inline-flex; align-items: center; gap: 6px;
@@ -124,7 +69,6 @@ body {
   width: 7px; height: 7px;
   background: var(--amber);
   border-radius: 50%;
-  animation: pulse 2s infinite;
 }
 .hero h1 {
   font-family: 'Lora', serif;
@@ -156,8 +100,6 @@ body {
   color: #92400E;
   line-height: 1.6;
   margin-bottom: 24px;
-  animation: fadeUp 0.6s 0.05s ease both;
-  opacity: 0;
 }
 .disclaimer strong { font-weight: 700; }
 
@@ -169,8 +111,6 @@ body {
   box-shadow: var(--shadow);
   overflow: hidden;
   margin-bottom: 20px;
-  animation: fadeUp 0.6s 0.1s ease both;
-  opacity: 0;
   transition: box-shadow 0.2s, border-color 0.2s;
 }
 .input-card:focus-within {
@@ -248,7 +188,7 @@ body {
 }
 .btn-reset:hover { background: var(--accent-light); }
 
-/* ERROR */
+/* ERROR DISPLAYS */
 .error-msg {
   display: none;
   background: #FFF1F2; border: 1px solid #FECDD3;
@@ -257,10 +197,10 @@ body {
   border-left: 3px solid #BE123C;
 }
 
-/* RESULTS */
-#resultsSection { display: none; animation: fadeUp 0.5s ease both; }
+/* RESULTS PANEL */
+#resultsSection { display: none; }
 
-/* VERDICT CARD */
+/* VERDICT CARD styles */
 .verdict-card {
   border-radius: var(--radius);
   padding: 32px 36px;
@@ -278,4 +218,456 @@ body {
   border: 1.5px solid rgba(217,119,6,0.25);
 }
 .verdict-card.likely-human {
-  background: linear-gradient(135deg,
+  background: linear-gradient(135deg, #F0FDF4, #DCFCE7);
+  border: 1.5px solid rgba(5,150,105,0.2);
+}
+.verdict-card.uncertain {
+  background: linear-gradient(135deg, #F8FAFF, #EEF2FF);
+  border: 1.5px solid rgba(79,70,229,0.2);
+}
+
+.verdict-icon { font-size: 2.8rem; margin-bottom: 12px; }
+.verdict-label {
+  font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.14em; margin-bottom: 8px;
+}
+.verdict-card.likely-ai .verdict-label { color: var(--red); }
+.verdict-card.possibly-ai .verdict-label { color: var(--amber); }
+.verdict-card.likely-human .verdict-label { color: var(--green); }
+.verdict-card.uncertain .verdict-label { color: var(--accent); }
+
+.verdict-title {
+  font-family: 'Lora', serif;
+  font-size: 1.6rem; font-weight: 600;
+  color: var(--ink); margin-bottom: 10px;
+  letter-spacing: -0.02em;
+}
+.verdict-desc {
+  font-size: 0.88rem; color: var(--ink-muted);
+  max-width: 460px; margin: 0 auto 20px;
+  line-height: 1.7;
+}
+
+/* TRACKERS & METERS */
+.score-meter-wrap {
+  max-width: 340px; margin: 0 auto;
+}
+.score-meter-label {
+  display: flex; justify-content: space-between;
+  font-size: 0.72rem; color: var(--ink-faint);
+  margin-bottom: 6px; font-weight: 500;
+}
+.score-meter-track {
+  height: 10px; background: rgba(15,23,42,0.08);
+  border-radius: 100px; overflow: hidden;
+}
+.score-meter-fill {
+  height: 100%; border-radius: 100px;
+  transition: width 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.likely-ai .score-meter-fill { background: linear-gradient(90deg, var(--amber), var(--red)); }
+.possibly-ai .score-meter-fill { background: linear-gradient(90deg, var(--green), var(--amber)); }
+.likely-human .score-meter-fill { background: linear-gradient(90deg, #34D399, var(--green)); }
+.uncertain .score-meter-fill { background: linear-gradient(90deg, var(--accent-light), var(--accent)); }
+.score-number {
+  font-size: 0.8rem; color: var(--ink-muted);
+  margin-top: 8px; font-weight: 600;
+}
+
+/* SIGNALS INTERFACE */
+.signals-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px 28px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow);
+}
+.signals-title {
+  font-size: 0.68rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.12em;
+  color: var(--ink-faint); margin-bottom: 18px;
+}
+.signals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+}
+.signal-item {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+}
+.signal-name {
+  font-size: 0.78rem; font-weight: 600;
+  color: var(--ink); margin-bottom: 6px;
+}
+.signal-bar-track {
+  height: 5px; background: var(--border);
+  border-radius: 100px; overflow: hidden; margin-bottom: 5px;
+}
+.signal-bar-fill {
+  height: 100%; border-radius: 100px;
+  transition: width 0.8s ease;
+}
+.signal-bar-fill.high-ai { background: var(--red); }
+.signal-bar-fill.mid-ai { background: var(--amber); }
+.signal-bar-fill.low-ai { background: var(--green); }
+.signal-value {
+  font-size: 0.72rem; color: var(--ink-faint);
+  display: flex; justify-content: space-between;
+}
+.signal-flag {
+  font-size: 0.68rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.06em;
+}
+.signal-flag.red { color: var(--red); }
+.signal-flag.amber { color: var(--amber); }
+.signal-flag.green { color: var(--green); }
+
+/* SENTENCE HIGHLIGHTS */
+.highlights-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px 28px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow);
+}
+.highlights-title {
+  font-size: 0.68rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.12em;
+  color: var(--ink-faint); margin-bottom: 6px;
+}
+.highlights-subtitle {
+  font-size: 0.8rem; color: var(--ink-muted);
+  margin-bottom: 18px; line-height: 1.5;
+}
+.highlighted-text {
+  font-size: 0.9rem; line-height: 2;
+  color: var(--ink);
+}
+.hl-ai-strong {
+  background: rgba(220,38,38,0.12);
+  border-bottom: 2px solid rgba(220,38,38,0.5);
+  border-radius: 3px; padding: 1px 2px;
+}
+.hl-ai-weak {
+  background: rgba(217,119,6,0.1);
+  border-bottom: 2px solid rgba(217,119,6,0.4);
+  border-radius: 3px; padding: 1px 2px;
+}
+
+.legend {
+  display: flex; gap: 16px; flex-wrap: wrap;
+  margin-top: 14px; padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+.legend-item {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 0.75rem; color: var(--ink-muted);
+}
+.legend-dot {
+  width: 12px; height: 4px; border-radius: 2px;
+}
+.legend-dot.strong { background: rgba(220,38,38,0.5); }
+.legend-dot.weak { background: rgba(217,119,6,0.4); }
+
+.result-disclaimer {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 14px 18px;
+  font-size: 0.78rem; color: var(--ink-muted);
+  line-height: 1.65; margin-bottom: 20px;
+}
+.result-disclaimer strong { color: var(--ink); }
+
+@media (max-width: 600px) {
+  .screen-ui { padding: 36px 16px 80px; }
+  .verdict-card { padding: 24px 20px; }
+  .signals-card, .highlights-card { padding: 18px 16px; }
+  .signals-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<main class="screen-ui">
+
+  <div class="hero">
+    <div class="hero-pill">Free · Private · Runs in your browser</div>
+    <h1>Does this text look<br><em>AI-generated?</em></h1>
+    <p>Paste any writing — an email, resume, report, or document — and we'll analyze it for patterns common in AI-generated text.</p>
+  </div>
+
+  <div class="disclaimer">
+    <strong>Important:</strong> AI detection is probabilistic, not proof. This tool identifies statistical patterns that <em>suggest</em> AI involvement — it cannot confirm it. False positives happen, especially with formal, edited, or non-native English writing.
+  </div>
+
+  <div class="input-card">
+    <div class="input-card-header">
+      <div class="input-label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        Paste text or upload file
+      </div>
+      <div class="header-controls">
+        <input type="file" id="filePicker" accept=".txt" style="display: none;" onchange="handleFileUpload(this)">
+        <button class="btn-upload" onclick="document.getElementById('filePicker').click()">
+          Choose File (.txt)
+        </button>
+        <span class="char-info" id="charInfo">0 words</span>
+      </div>
+    </div>
+    <textarea id="pasteArea" placeholder="Paste any text here — minimum of 30 words required to build an analytical fingerprint profile..."></textarea>
+    <div class="input-footer">
+      <button class="btn-reset" onclick="resetApp()" style="display:none;" id="resetBtn">Start over</button>
+      <button class="btn-analyze" id="analyzeBtn" onclick="analyze()">Analyze Text</button>
+    </div>
+  </div>
+
+  <div class="error-msg" id="errorMsg"></div>
+
+  <div id="resultsSection">
+
+    <div class="verdict-card" id="verdictCard">
+      <div class="verdict-icon" id="verdictIcon"></div>
+      <div class="verdict-label" id="verdictLabel"></div>
+      <div class="verdict-title" id="verdictTitle"></div>
+      <div class="verdict-desc" id="verdictDesc"></div>
+      <div class="score-meter-wrap">
+        <div class="score-meter-label">
+          <span>Human</span>
+          <span>AI</span>
+        </div>
+        <div class="score-meter-track">
+          <div class="score-meter-fill" id="scoreFill" style="width:0%"></div>
+        </div>
+        <div class="score-number" id="scoreNumber"></div>
+      </div>
+    </div>
+
+    <div class="signals-card">
+      <div class="signals-title">Signal breakdown</div>
+      <div class="signals-grid" id="signalsGrid"></div>
+    </div>
+
+    <div class="highlights-card">
+      <div class="highlights-title">Sentence-level analysis</div>
+      <div class="highlights-subtitle">Sentences highlighted in <span style="color:var(--red);font-weight:600;">red</span> show strong AI signals. <span style="color:var(--amber);font-weight:600;">Amber</span> sentences show weaker signals.</div>
+      <div class="highlighted-text" id="highlightedText"></div>
+      <div class="legend">
+        <div class="legend-item"><div class="legend-dot strong"></div> Strong AI signal</div>
+        <div class="legend-item"><div class="legend-dot weak"></div> Weak AI signal</div>
+      </div>
+    </div>
+
+    <div class="result-disclaimer">
+      <strong>Remember:</strong> This analysis is based on statistical patterns only. A high AI score does not prove AI authorship, and a low score does not prove human authorship. Use this as one data point, not a conclusion.
+    </div>
+
+  </div>
+</main>
+
+<script>
+// WORD COUNTER
+document.getElementById('pasteArea').addEventListener('input', function() {
+  const words = this.value.trim().split(/\s+/).filter(w => w.length > 0).length;
+  document.getElementById('charInfo').textContent = this.value.trim() === '' ? '0 words' : `${words} words`;
+});
+
+// FILE UPLOAD HANDLING
+function handleFileUpload(input) {
+  const file = input.files[0];
+  const errorEl = document.getElementById('errorMsg');
+  errorEl.style.display = 'none';
+
+  if (!file) return;
+
+  if (file.type !== "text/plain" && !file.name.endsWith('.txt')) {
+    errorEl.textContent = 'Only standard plain text (.txt) files are supported natively.';
+    errorEl.style.display = 'block';
+    return;
+  }
+
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    const text = e.target.result;
+    document.getElementById('pasteArea').value = text;
+    
+    const words = text.trim().split(/\s+/).filter(w => w.length > 0).length;
+    document.getElementById('charInfo').textContent = `${words} words`;
+    
+    analyze();
+  };
+  reader.readAsText(file);
+}
+
+// RESET APP
+function resetApp() {
+  document.getElementById('pasteArea').value = '';
+  document.getElementById('filePicker').value = '';
+  document.getElementById('charInfo').textContent = '0 words';
+  document.getElementById('resultsSection').style.display = 'none';
+  document.getElementById('errorMsg').style.display = 'none';
+  document.getElementById('resetBtn').style.display = 'none';
+}
+
+// PATTERNS
+const AI_TRANSITIONS = [
+  'furthermore', 'moreover', 'additionally', 'in conclusion', 'in summary',
+  'it is important to note', 'it is worth noting', 'delve into', 'robust',
+  'comprehensive', 'pivotal', 'synergy', 'actionable', 'facilitate'
+];
+
+const AI_OPENERS = [
+  /^(certainly|absolutely|of course|sure|excellent)[,!.]/i,
+  /^(as an ai|as a language model)/i,
+  /^(in today's|in the modern|in our current)/i
+];
+
+// ANALYSIS ENGINE
+function analyzeText(text) {
+  const sentences = text.match(/[^.!?]+[.!?]+/g) || [text];
+  const words = text.toLowerCase().match(/\b[a-z]+\b/g) || [];
+  const paragraphs = text.split(/\n{2,}/).filter(p => p.trim().length > 20);
+
+  const sentLengths = sentences.map(s => s.trim().split(/\s+/).length);
+  const avgLen = sentLengths.reduce((a,b) => a+b, 0) / sentences.length;
+  const variance = sentLengths.reduce((a,b) => a + Math.pow(b - avgLen, 2), 0) / sentences.length;
+  const stdDev = Math.sqrt(variance);
+  const burstiness = stdDev / (avgLen || 1); 
+  const burstScore = Math.max(0, Math.min(100, (1 - burstiness / 0.6) * 100));
+
+  const textLower = text.toLowerCase();
+  const transitionHits = AI_TRANSITIONS.filter(t => textLower.includes(t)).length;
+  const transitionScore = Math.min(100, (transitionHits / sentences.length) * 120);
+
+  const openerHits = sentences.filter(s => AI_OPENERS.some(p => p.test(s.trim()))).length;
+  const openerScore = Math.min(100, (openerHits / sentences.length) * 200);
+
+  const passivePattern = /\b(is|are|was|were|be|been|being)\s+\w+ed\b/gi;
+  const passiveMatches = (text.match(passivePattern) || []).length;
+  const passiveScore = Math.min(100, (passiveMatches / sentences.length) * 150);
+
+  const wordFreq = {};
+  words.forEach(w => { if (w.length > 4) wordFreq[w] = (wordFreq[w] || 0) + 1; });
+  const repeated = Object.values(wordFreq).filter(c => c > 2).length;
+  const repeatScore = Math.min(100, (repeated / Math.max(1, Object.keys(wordFreq).length)) * 200);
+
+  let paraScore = 0;
+  if (paragraphs.length >= 3) {
+    const paraLens = paragraphs.map(p => p.split(/\s+/).length);
+    const paraAvg = paraLens.reduce((a,b) => a+b, 0) / paraLens.length;
+    const paraVariance = paraLens.reduce((a,b) => a + Math.pow(b - paraAvg, 2), 0) / paraLens.length;
+    const paraStd = Math.sqrt(paraVariance);
+    paraScore = Math.max(0, Math.min(100, (1 - (paraStd / paraAvg) / 0.5) * 100));
+  }
+
+  const composite = (burstScore * 0.3) + (transitionScore * 0.25) + (openerScore * 0.2) + (passiveScore * 0.15) + (repeatScore * 0.1);
+
+  return {
+    composite: Math.round(composite),
+    signals: [
+      { name: 'Sentence Uniformity', score: burstScore, desc: `Avg ${avgLen.toFixed(1)} words/sentence` },
+      { name: 'AI Transition Phrases', score: transitionScore, desc: `${transitionHits} phrases flagged` },
+      { name: 'AI Sentence Openers', score: openerScore, desc: `${openerHits} openers flagged` },
+      { name: 'Passive Voice Ratio', score: passiveScore, desc: `${passiveMatches} passive structures` },
+      { name: 'Word Repetition', score: repeatScore, desc: `${repeated} heavy repetitions` }
+    ],
+    sentences
+  };
+}
+
+function scoreSentence(sentence) {
+  const s = sentence.toLowerCase();
+  let score = 0;
+  AI_TRANSITIONS.forEach(t => { if (s.includes(t)) score += 2; });
+  if (AI_OPENERS.some(p => p.test(sentence.trim()))) score += 3;
+  if (/\b(is|are|was|were|be|been|being)\s+\w+ed\b/i.test(sentence)) score += 1;
+  return score;
+}
+
+function renderResults(result) {
+  const { composite, signals, sentences } = result;
+
+  let verdictClass, icon, label, title, desc;
+  if (composite >= 60) {
+    verdictClass = 'likely-ai'; icon = '🤖'; label = 'Strong AI Signals'; title = 'Likely AI-Generated';
+    desc = 'This text displays mathematical structural patterns common in algorithmic generation.';
+  } else if (composite >= 35) {
+    verdictClass = 'possibly-ai'; icon = '⚠️'; label = 'Mixed Signals'; title = 'Possibly AI-Assisted';
+    desc = 'Contains an even distribution of varied structures and standard machine vocabulary signatures.';
+  } else {
+    verdictClass = 'likely-human'; icon = '✍️'; label = 'Low AI Signals'; title = 'Likely Human-Written';
+    desc = 'The copy reads with high structural diversity, uneven phrasing, and natural variation.';
+  }
+
+  const card = document.getElementById('verdictCard');
+  card.className = 'verdict-card ' + verdictClass;
+  document.getElementById('verdictIcon').textContent = icon;
+  document.getElementById('verdictLabel').textContent = label;
+  document.getElementById('verdictTitle').textContent = title;
+  document.getElementById('verdictDesc').textContent = desc;
+
+  setTimeout(() => {
+    document.getElementById('scoreFill').style.width = composite + '%';
+  }, 50);
+  document.getElementById('scoreNumber').textContent = `AI score index: ${composite}/100`;
+
+  document.getElementById('signalsGrid').innerHTML = signals.map(sig => {
+    const pct = Math.round(sig.score);
+    const cls = pct >= 60 ? 'high-ai' : pct >= 35 ? 'mid-ai' : 'low-ai';
+    const flag = pct >= 60 ? '<span class="signal-flag red">High</span>' : pct >= 35 ? '<span class="signal-flag amber">Med</span>' : '<span class="signal-flag green">Low</span>';
+    return `<div class="signal-item">
+      <div class="signal-name">${sig.name}</div>
+      <div class="signal-bar-track"><div class="signal-bar-fill ${cls}" style="width:${pct}%"></div></div>
+      <div class="signal-value"><span>${sig.desc}</span>${flag}</div>
+    </div>`;
+  }).join('');
+
+  document.getElementById('highlightedText').innerHTML = sentences.map(sentence => {
+    const score = scoreSentence(sentence);
+    const escaped = sentence.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    if (score >= 4) return `<span class="hl-ai-strong">${escaped}</span>`;
+    if (score >= 2) return `<span class="hl-ai-weak">${escaped}</span>`;
+    return escaped;
+  }).join(' ');
+}
+
+function analyze() {
+  const text = document.getElementById('pasteArea').value.trim();
+  const errorEl = document.getElementById('errorMsg');
+  errorEl.style.display = 'none';
+
+  if (!text) {
+    errorEl.textContent = 'Please paste some text to initiate structural processing.';
+    errorEl.style.display = 'block';
+    return;
+  }
+
+  const words = text.split(/\s+/).filter(w => w.length > 0).length;
+  if (words < 30) {
+    errorEl.textContent = 'Please provide a minimum of 30 words for analysis precision.';
+    errorEl.style.display = 'block';
+    return;
+  }
+
+  const btn = document.getElementById('analyzeBtn');
+  btn.disabled = true;
+  btn.textContent = 'Analyzing...';
+
+  setTimeout(() => {
+    const result = analyzeText(text);
+    renderResults(result);
+    document.getElementById('resultsSection').style.display = 'block';
+    document.getElementById('resetBtn').style.display = 'flex';
+    btn.disabled = false;
+    btn.textContent = 'Analyze Text';
+  }, 200);
+}
+</script>
+
+</body>
+</html>
