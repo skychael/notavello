@@ -1,4 +1,4 @@
-<!-- Notavello chatgpt-1.3 | generated 01:28:41 UTC -->
+<!-- Notavello chatgpt-1.4 | generated 01:48:57 UTC -->
 <!-- ⚠️ AI INSTRUCTION: Every time you modify this file you MUST update the version comment on line 1.
      Format: version | generated HH:MM:SS UTC
      This is how we verify the correct version is live. Do not skip this step. -->
@@ -440,6 +440,27 @@ body {
 /* DOC PAGE */
 #docPage { animation: fadeUp 0.4s ease both; }
 
+.page-watermark {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 10;
+  overflow: hidden;
+}
+.page-watermark span {
+  font-family: 'Sora', sans-serif;
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: rgba(79,70,229,0.18);
+  transform: rotate(-45deg);
+  white-space: nowrap;
+  letter-spacing: 0.05em;
+  user-select: none;
+}
+
 .page {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -787,7 +808,7 @@ body {
     Nota<span>vello</span>
   </div>
   </a>
-  <div class="badge" id="liveBadge">CHATGPT-1.3 · GENERATED 01:28:41 UTC</div>
+  <div class="badge" id="liveBadge">CHATGPT-1.4 · GENERATED 01:48:57 UTC</div>
 </header>
 
 <div class="screen-ui">
@@ -1422,6 +1443,12 @@ function renderPreview(messages, platform, warning, workerResult) {
           <div class="doc-meta-dot"></div>
           <span style="color:var(--accent);font-weight:500;">Blue = your messages</span>
         </div>`;
+    }
+    if (!isPaidUser) {
+      const wm = document.createElement('div');
+      wm.className = 'page-watermark';
+      wm.innerHTML = '<span>NOTAVELLO.COM</span>';
+      page.appendChild(wm);
     }
     docPage.appendChild(page);
     page._emptyHeight = page.scrollHeight;
