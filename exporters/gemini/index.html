@@ -1,4 +1,4 @@
-<!-- Notavello gemini-2.4.3 | generated 21:26:00 UTC | remove FREE PREVIEW from header badge -->
+<!-- Notavello gemini-2.4.4 | generated 01:30:06 UTC | SEO canonical fixed, Gemini landing copy added, structured data added -->
 <!-- ⚠️ AI INSTRUCTION: Every time you modify this file you MUST update the version comment on line 1.
      Bump the patch number (e.g. 2.3.9 → 2.3.10), update the UTC time, and add a brief note of what changed.
      This is how we verify the correct version is live. Do not skip this step. -->
@@ -7,22 +7,72 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Export Gemini Conversations to PDF — Notavello</title>
-<meta name="description" content="Paste your Gemini conversation and get a clean, color-coded PDF in seconds. User messages in blue, AI responses in plain text. Free to use — no sign-up required."/>
+<title>Export Gemini Conversations to PDF Free — Notavello</title>
+<meta name="description" content="Export Gemini conversations to clean, searchable PDFs. Paste your Gemini chat, preview the formatting, auto-redact sensitive data, and download a professional PDF — no sign-up required."/>
 <meta name="robots" content="index, follow"/>
-<link rel="canonical" href="https://notavello.com/gemini/"/>
+<link rel="canonical" href="https://notavello.com/exporters/gemini/"/>
 
 <!-- Open Graph -->
 <meta property="og:type" content="website"/>
-<meta property="og:url" content="https://notavello.com/gemini/"/>
-<meta property="og:title" content="Export Gemini Conversations to PDF — Notavello"/>
-<meta property="og:description" content="Paste your Gemini conversation and get a clean, color-coded PDF in seconds. Free to use — no sign-up required."/>
+<meta property="og:url" content="https://notavello.com/exporters/gemini/"/>
+<meta property="og:title" content="Export Gemini Conversations to PDF Free — Notavello"/>
+<meta property="og:description" content="Paste your Gemini chat and download a clean, searchable, color-coded PDF. Free to use — no sign-up required."/>
 <meta property="og:site_name" content="Notavello"/>
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Export Gemini Conversations to PDF — Notavello"/>
-<meta name="twitter:description" content="Paste your Gemini conversation and get a clean, color-coded PDF in seconds. Free to use — no sign-up required."/>
+<meta name="twitter:title" content="Export Gemini Conversations to PDF Free — Notavello"/>
+<meta name="twitter:description" content="Paste your Gemini chat and download a clean, searchable, color-coded PDF. Free to use — no sign-up required."/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Notavello Gemini PDF Exporter",
+  "applicationCategory": "ProductivityApplication",
+  "operatingSystem": "Web",
+  "url": "https://notavello.com/exporters/gemini/",
+  "description": "Export Gemini conversations to clean, searchable PDF files with color-coded speaker formatting and optional sensitive-data redaction.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I export a Gemini conversation to PDF?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Paste your Gemini conversation into Notavello, preview the formatted export, and download a searchable PDF."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Notavello store my Gemini conversation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Notavello is designed for browser-based PDF creation. You paste your conversation, preview it, and download the PDF without creating an account."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the Gemini PDF export searchable?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The generated PDF keeps conversation text searchable and formats user messages separately from Gemini responses."
+      }
+    }
+  ]
+}
+</script>
+
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
@@ -636,6 +686,59 @@ body {
 .btn-pay:hover { opacity: 0.92; box-shadow: 0 6px 24px rgba(79,70,229,0.45); }
 .paywall-note { font-size: 0.75rem; color: var(--ink-faint); margin-top: 14px; }
 
+
+/* ── SEO CONTENT ── */
+.seo-content {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  margin: 28px 0 20px;
+  box-shadow: var(--shadow);
+  color: var(--ink);
+}
+.seo-content h2 {
+  font-family: 'Lora', serif;
+  font-size: 1.45rem;
+  line-height: 1.25;
+  margin-bottom: 12px;
+}
+.seo-content h3 {
+  font-size: 0.98rem;
+  margin: 20px 0 8px;
+}
+.seo-content p, .seo-content li {
+  font-size: 0.9rem;
+  color: var(--ink-muted);
+  line-height: 1.75;
+}
+.seo-content ul {
+  padding-left: 20px;
+  margin: 10px 0 0;
+}
+.seo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 18px;
+}
+.seo-mini-card {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+}
+.seo-mini-card strong {
+  display: block;
+  color: var(--ink);
+  font-size: 0.88rem;
+  margin-bottom: 6px;
+}
+@media (max-width: 600px) {
+  .seo-grid { grid-template-columns: 1fr; }
+  .seo-content { padding: 22px; }
+}
+
 /* ── ANIMATIONS ── */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(14px); }
@@ -1013,7 +1116,7 @@ body {
     Nota<span>vello</span>
   </div>
   </a>
-  <div class="badge" id="liveBadge">GEMINI-2.4.3 · GENERATED 21:26:00 UTC</div>
+  <div class="badge" id="liveBadge">GEMINI-2.4.4 · GENERATED 01:30:06 UTC</div>
 </header>
 
 <div class="screen-ui">
@@ -1074,6 +1177,36 @@ body {
       </button>
     </div>
   </div>
+
+
+  <section class="seo-content" aria-labelledby="gemini-export-heading">
+    <h2 id="gemini-export-heading">Save a Gemini chat as a clean PDF</h2>
+    <p>Notavello turns copied Gemini conversations into professional PDF exports for records, research notes, client files, support tickets, legal documentation, insurance documentation, and project archives. Paste the conversation, review the preview, then download a PDF that is easier to share, print, search, and store.</p>
+    <div class="seo-grid">
+      <div class="seo-mini-card">
+        <strong>Designed for Gemini conversations</strong>
+        <p>The page is tuned for Gemini-style chat text and separates your messages from Gemini responses with readable formatting.</p>
+      </div>
+      <div class="seo-mini-card">
+        <strong>Searchable PDF output</strong>
+        <p>Your exported conversation remains text-based, so you can search the PDF later instead of relying on screenshots.</p>
+      </div>
+      <div class="seo-mini-card">
+        <strong>Optional auto-redaction</strong>
+        <p>Keep the redaction option on to help mask common sensitive patterns like API keys, SSNs, and card numbers.</p>
+      </div>
+      <div class="seo-mini-card">
+        <strong>No account required</strong>
+        <p>Use the free export flow directly from your browser without signing up before your first download.</p>
+      </div>
+    </div>
+    <h3>How to export Gemini to PDF</h3>
+    <ul>
+      <li>Open your Gemini conversation and copy the chat text.</li>
+      <li>Paste the conversation into Notavello.</li>
+      <li>Preview the color-coded export and download the PDF.</li>
+    </ul>
+  </section>
 
   <div id="previewSection">
     <div class="preview-toolbar">
