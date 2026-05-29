@@ -1,6 +1,9 @@
-<!-- Notavello other-1.1 | generated 22:15:00 UTC | better hero description with specific AI names -->
+<!-- Notavello other-1.2 | generated 02:30:00 UTC | smart universal parser: HTML/label/alternation tiers + safety checks -->
 <!-- ⚠️ AI INSTRUCTION: Every time you modify this file you MUST update the version comment on line 1.
-     Bump the patch number (e.g. 1.0 → 1.1), update the UTC time, and add a brief note of what changed.
+     Bump the patch number (e.g. 1.1 → 1.2), update the UTC time, and add a brief note of what changed.
+     Also update the GENERATED timestamp in the badge in the <header> to match.
+     The badge timestamp is hardcoded ON PURPOSE — it shows when the file was last edited so you can
+     verify the correct version is live after deployment. Do NOT replace it with a live clock.
      This is how we verify the correct version is live. Do not skip this step. -->
 <!DOCTYPE html>
 <html lang="en">
@@ -1013,7 +1016,9 @@ body {
     Nota<span>vello</span>
   </div>
   </a>
-  <div class="badge" id="liveBadge">OTHER-1.0 · GENERATED 22:10:00 UTC</div>
+  <div class="badge" id="liveBadge">OTHER-1.2 · GENERATED 02:30:00 UTC</div>
+  <!-- ⚠️ BADGE NOTE: This timestamp is hardcoded on purpose. It shows when this file was last edited,
+       so you can verify the correct version is live after deployment. Do NOT replace with a live clock. -->
 </header>
 
 <div class="screen-ui">
@@ -1381,9 +1386,12 @@ document.getElementById('pasteArea').addEventListener('paste', function(e) {
 function getCurrentPasteHtml(raw) {
   if (!lastPastedHtml) return '';
   if (!lastPastedPlain) return lastPastedHtml;
+  // Only trust the captured HTML if the textarea still holds the pasted text.
+  // If the user edited or re-typed it, the rich-text structure is stale — skip
+  // Tier A and let the text tiers handle the current content.
   const current = (raw || '').trim().replace(/\s+/g, ' ').slice(0, 160);
   const pasted = (lastPastedPlain || '').trim().replace(/\s+/g, ' ').slice(0, 160);
-  return current && pasted && current === pasted ? lastPastedHtml : lastPastedHtml;
+  return current && pasted && current === pasted ? lastPastedHtml : '';
 }
 
 // Populate all AI name spans from the single source above
@@ -1399,58 +1407,207 @@ if (notUsingLink) {
   notUsingLink.addEventListener('mouseout',  () => notUsingLink.style.color = 'var(--ink-faint)');
 }
 
-// ── CONFIDENCE CHECK ──
-function checkConfidence(messages) {
-  if (messages.length < 2) return { ok: false, warning: 'Only ' + messages.length + ' message detected — make sure you copied the full conversation.' };
-  const h = messages.filter(m => m.role === 'human').length;
-  const a = messages.filter(m => m.role === 'ai').length;
-  if (h === 0) return { ok: false, warning: 'No user messages detected. Try copying again with Ctrl+A first.' };
-  if (a === 0) return { ok: false, warning: 'No AI messages detected. Try copying again with Ctrl+A first.' };
-  const ratio = Math.max(h, a) / Math.min(h, a);
-  if (ratio > 4) return { ok: true, warning: `Heads up: detected ${h} user and ${a} AI messages — ratio seems off. Colors may not be 100% accurate.` };
-  return { ok: true, warning: null };
-}
-
-// ── GENERIC PARSER ──
-// Splits on blank lines and alternates human/ai.
-// Works for most AI tools that don't have a dedicated parser yet.
+// ── SMART UNIVERSAL PARSER ──────────────────────────────────────────────
+// This is the catch-all exporter: users paste conversations from ANY AI tool
+// here (ChatGPT, Claude, Gemini, Copilot, Perplexity, Grok, Mistral, etc.),
+// and many paste mainstream tools into it too. So the parser is deliberately
+// broad, with three tiers that degrade gracefully:
+//
+//   Tier A — Structured HTML (most reliable). Roles come from clipboard
+//            text/html attributes/classes (e.g. data-message-author-role),
+//            not from guessing.
+//   Tier B — Labelled text. Detects a wide vocabulary of speaker labels
+//            ("You said:", "ChatGPT said:", standalone "You"/"Claude",
+//            "User:"/"Assistant:", "Human:"/"AI:", etc.).
+//   Tier C — Unlabelled text. Blank-line blocks, human-first alternation.
+//
+// Design rules carried over from the chatgpt parser (do NOT regress — these
+// were bugs we already paid for):
+//  • Pick the label scheme whose FIRST label appears earliest; never "first
+//    pattern with >=2 matches wins" (that let quoted labels hijack the parse).
+//  • A "X said:" line is a turn boundary ONLY in block form (alone on its
+//    line). "...you wrote You said: \"hi\"..." mid-message is the AI quoting
+//    the user, not a new turn.
+//  • Keep leading content before the first label as an opening turn.
+//  • A label repeating the previous speaker is FOLDED into that message and
+//    raises an inconsistency warning — we do NOT try to auto-split it (clever
+//    alternation guards pick the wrong line and make output worse).
+//  • Keep short blocks ("Hi"/"ok"). Dropping one inverts alternation after it.
+//  • Default first speaker is HUMAN; flip to AI only when the opening block is
+//    clearly an answer (no "?", > 80 chars, longer than the next block).
 const parseLog = [];
+const parseStats = { method: null, labelInconsistent: false, dropped: 0 };
 
 function normalizeText(t) {
   return (t || '').replace(/\r\n/g, '\n').replace(/\r/g, '\n').trim();
 }
 
-function parseOther(raw) {
+const HUMAN_LABELS = ['you', 'me', 'user', 'human', 'prompt'];
+const AI_LABELS = ['chatgpt', 'gpt', 'gpt-4', 'gpt-4o', 'gpt-5', 'openai', 'claude',
+  'anthropic', 'gemini', 'bard', 'copilot', 'microsoft copilot', 'perplexity', 'grok',
+  'mistral', 'le chat', 'llama', 'meta ai', 'deepseek', 'qwen', 'kimi', 'assistant',
+  'ai', 'bot', 'model'];
+const ALL_LABELS = [...AI_LABELS, ...HUMAN_LABELS];
+
+function escapeRe(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
+const LABEL_RE = new RegExp(
+  '^(' + ALL_LABELS.slice().sort((a, b) => b.length - a.length).map(escapeRe).join('|') +
+  ')(\\s+said)?\\s*(?::\\s*(.*))?$', 'i');
+
+const NOISE_LINES = [
+  /^copy code$/i, /^copy$/i, /^share$/i, /^regenerate( response)?$/i, /^edit$/i,
+  /^retry$/i, /^continue generating$/i, /can make mistakes/i, /^new chat$/i,
+];
+
+function stripDecoration(line) {
+  let s = (line || '').trim();
+  s = s.replace(/^([#>]+\s*)+/, '');
+  s = s.replace(/^\*\*(.+?)\*\*$/, '$1').replace(/^__(.+?)__$/, '$1');
+  return s.trim();
+}
+function roleOfLabel(label) {
+  return HUMAN_LABELS.includes(label.toLowerCase().trim()) ? 'human' : 'ai';
+}
+function opposite(role) { return role === 'human' ? 'ai' : 'human'; }
+
+// ── Tier A: structured HTML ──
+function parseFromHtml(html) {
+  if (!html || html.length < 30) return null;
+  let doc;
+  try { doc = new DOMParser().parseFromString(html, 'text/html'); } catch (e) { return null; }
+  if (!doc || !doc.body) return null;
+
+  // 1) Explicit author-role attribute (ChatGPT/OpenAI and similar).
+  let nodes = [...doc.querySelectorAll('[data-message-author-role]')];
+  let getRole = el => /user/i.test(el.getAttribute('data-message-author-role')) ? 'human' : 'ai';
+
+  // 2) Fall back to role-ish test-ids / classes used across other tools.
+  if (nodes.length < 2) {
+    nodes = [...doc.querySelectorAll(
+      '[data-testid*="user-message"],[data-testid*="bot-message"],' +
+      '[data-testid*="assistant"],[class*="user-message"],[class*="human"],' +
+      '[class*="assistant"],[class*="agent-turn"],[class*="model-response"]')];
+    getRole = el => {
+      const sig = ((el.getAttribute('data-testid') || '') + ' ' + (el.className || '')).toLowerCase();
+      return /user|human/.test(sig) && !/assistant|agent|model|bot/.test(sig) ? 'human' : 'ai';
+    };
+  }
+  if (nodes.length < 2) return null;
+
+  const messages = [];
+  nodes.forEach(el => {
+    const text = (el.innerText || el.textContent || '').replace(/\u00a0/g, ' ').trim();
+    if (!text) return;
+    const role = getRole(el);
+    const last = messages[messages.length - 1];
+    if (last && last.role === role) last.text += '\n\n' + text;
+    else messages.push({ role, text, time: '' });
+  });
+
+  const roles = new Set(messages.map(m => m.role));
+  if (messages.length < 2 || roles.size < 2) return null;
+  parseStats.method = 'html';
+  parseLog.push(`Tier A (HTML): ${nodes.length} role nodes → ${messages.length} messages.`);
+  return messages;
+}
+
+// ── Tier B: labelled text ──
+function findLabels(lines) {
+  const hits = [];
+  lines.forEach((line, idx) => {
+    const m = stripDecoration(line).match(LABEL_RE);
+    if (!m) return;
+    const said = !!m[2];
+    const inline = (m[3] || '').trim();
+    if (said && inline) return; // "X said: ..." with trailing text = quote, not a boundary
+    hits.push({ idx, role: roleOfLabel(m[1]), inline });
+  });
+  return hits;
+}
+
+function parseFromLabels(text) {
+  const lines = text.split('\n');
+  const hits = findLabels(lines);
+  if (hits.length < 2) return null;
+  if (new Set(hits.map(h => h.role)).size < 2) return null;
+
+  const messages = [];
+  const firstIdx = hits[0].idx;
+  const leading = lines.slice(0, firstIdx).join('\n').trim();
+  if (leading && !NOISE_LINES.some(re => re.test(leading))) {
+    messages.push({ role: opposite(hits[0].role), text: leading, time: '' });
+  }
+
+  hits.forEach((h, i) => {
+    const end = (i + 1 < hits.length) ? hits[i + 1].idx : lines.length;
+    const bodyLines = lines.slice(h.idx + 1, end)
+      .filter(l => !NOISE_LINES.some(re => re.test(l.trim())));
+    const body = [h.inline, bodyLines.join('\n')].filter(Boolean).join('\n').trim();
+    const last = messages[messages.length - 1];
+    if (last && last.role === h.role) {
+      if (body) last.text += '\n\n' + body;
+      parseStats.labelInconsistent = true;
+    } else {
+      messages.push({ role: h.role, text: body, time: '' });
+    }
+  });
+
+  parseStats.method = 'labels';
+  parseLog.push(`Tier B (labels): ${hits.length} labels → ${messages.length} turns` +
+    (parseStats.labelInconsistent ? ' (folded a repeated speaker — flagged).' : '.'));
+  return messages;
+}
+
+// ── Tier C: unlabelled alternation ──
+function parseByAlternation(text) {
+  let blocks = text.split(/\n{2,}/).map(b => b.trim()).filter(Boolean);
+  if (blocks.length < 2) blocks = text.split('\n').map(b => b.trim()).filter(Boolean);
+  blocks = blocks.filter(b => !NOISE_LINES.some(re => re.test(b)));
+  if (blocks[0] && /^(ChatGPT|Claude|Gemini|Copilot|Perplexity|Grok|Mistral|Llama|AI)$/i.test(blocks[0])) {
+    blocks.shift();
+  }
+  if (!blocks.length) return [];
+
+  let firstIsHuman = true;
+  const b0 = blocks[0], b1 = blocks[1] || '';
+  if (!/\?/.test(b0) && b0.length > 80 && b0.length > b1.length) firstIsHuman = false;
+
+  const messages = [];
+  blocks.forEach((block, i) => {
+    const role = ((i % 2 === 0) === firstIsHuman) ? 'human' : 'ai';
+    const last = messages[messages.length - 1];
+    if (last && last.role === role) last.text += '\n\n' + block;
+    else messages.push({ role, text: block, time: '' });
+  });
+
+  parseStats.method = 'alternation';
+  parseLog.push(`Tier C (alternation): ${blocks.length} blocks, first=${firstIsHuman ? 'human' : 'ai'} → ${messages.length} messages.`);
+  return messages;
+}
+
+// ── Orchestrator ──
+function parseOther(raw, html) {
   parseLog.length = 0;
-  parseLog.push('── Generic parser started ──');
+  parseStats.method = null;
+  parseStats.labelInconsistent = false;
+  parseStats.dropped = 0;
+  parseLog.push('── Smart parser started ──');
 
   const text = normalizeText(raw);
   if (!text) return [];
 
-  // Split into blocks on 2+ blank lines first, then single blank lines
-  let blocks = text.split(/\n{2,}/).map(b => b.trim()).filter(Boolean);
-  if (blocks.length < 2) {
-    blocks = text.split('\n').map(b => b.trim()).filter(Boolean);
-  }
+  let messages = parseFromHtml(html);
+  if (!messages || messages.length < 2) messages = parseFromLabels(text);
+  if (!messages || messages.length < 2) messages = parseByAlternation(text);
 
-  // Strip common AI product title lines at the top
-  if (blocks[0] && /^(ChatGPT|Claude|Gemini|Copilot|Perplexity|Grok|Mistral|Llama|AI)$/i.test(blocks[0])) {
-    blocks.shift();
-  }
+  // Safety net: never emit empty turns; note if removing one disturbed structure.
+  const before = messages.length;
+  messages = messages.filter(m => (m.text || '').trim().length > 0);
+  parseStats.dropped = before - messages.length;
+  if (parseStats.dropped > 0) parseStats.labelInconsistent = true;
 
-  const messages = [];
-  blocks.forEach((block, i) => {
-    const role = i % 2 === 0 ? 'human' : 'ai';
-    const last = messages[messages.length - 1];
-    // Merge consecutive same-role blocks
-    if (last && last.role === role) {
-      last.text += '\n\n' + block;
-    } else {
-      messages.push({ role, text: block, time: '' });
-    }
-  });
-
-  parseLog.push(`Blocks found: ${blocks.length}, Messages: ${messages.length}`);
+  parseLog.push(`Final: method=${parseStats.method}, messages=${messages.length}` +
+    (parseStats.dropped ? `, dropped ${parseStats.dropped} empty` : ''));
   return messages;
 }
 
@@ -1461,15 +1618,27 @@ function checkConfidence(messages) {
   const a = messages.filter(m => m.role === 'ai').length;
   if (h === 0) return { ok: false, warning: 'No user messages detected. Try copying again with Ctrl+A first.' };
   if (a === 0) return { ok: false, warning: 'No AI messages detected. Try copying again with Ctrl+A first.' };
+  let warning = null;
   const ratio = Math.max(h, a) / Math.min(h, a);
-  if (ratio > 4) return { ok: true, warning: `Heads up: detected ${h} user and ${a} AI messages — ratio seems off. Colors may not be 100% accurate.` };
-  return { ok: true, warning: null };
+  if (ratio > 4) warning = `Heads up: detected ${h} user and ${a} AI messages — ratio seems off. Double-check the colors before downloading.`;
+  if (parseStats.labelInconsistent) {
+    const note = 'A speaker label may have appeared inside a message — double-check the colors before downloading.';
+    warning = warning ? warning + ' ' + note : note;
+  }
+  return { ok: true, warning };
 }
 
 // ── MAIN PARSER ──
 function parseConversation(raw) {
-  const messages = parseOther(raw);
+  const messages = parseOther(raw, getCurrentPasteHtml(raw));
   const confidence = checkConfidence(messages);
+  // Surface diagnostics in the debug panel.
+  DEBUG_STATE.parserLog = parseLog.join('\n');
+  DEBUG_STATE.messages = summarizeMessagesForDebug(messages);
+  DEBUG_STATE.summary = `method=${parseStats.method} · ${messages.length} messages · ` +
+    `${messages.filter(m => m.role === 'human').length} human / ` +
+    `${messages.filter(m => m.role === 'ai').length} ai` +
+    (parseStats.labelInconsistent ? ' · INCONSISTENT' : '');
   return { messages, platform: 'other', confidence };
 }
 
