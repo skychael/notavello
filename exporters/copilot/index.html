@@ -1,4 +1,4 @@
-<!-- Notavello copilot-2.5 | generated 12:00:00 UTC | Fix canonical/OG URLs, add og:image, twitter:card large image, add structured data -->
+<!-- Notavello copilot-2.6 | generated 18:05:00 UTC | Rework Copilot parser: recognize "You said"/"Copilot said" labels, rebuild noise list (drop Gemini/Google leftovers, add Edit-in-a-page/Message-Copilot/sidebar), port shred guard + rebalanced scorer + confidence warning -->
 <!-- ⚠️ AI INSTRUCTION: Every time you modify this file you MUST update the version comment on line 1.
      Bump the patch number (e.g. 2.4 → 2.5), update the UTC time, and add a brief note of what changed.
      Also update the GENERATED timestamp in the badge in the <header> to match.
@@ -1050,7 +1050,7 @@ body {
     Nota<span>vello</span>
   </div>
   </a>
-  <div class="badge" id="liveBadge">COPILOT-2.5 · GENERATED 12:00:00 UTC</div>
+  <div class="badge" id="liveBadge">COPILOT-2.6 · GENERATED 18:05:00 UTC</div>
   <!-- ⚠️ BADGE NOTE: This timestamp is hardcoded on purpose. It shows when this file was last edited,
        so you can verify the correct version is live after deployment. Do NOT replace with a live clock. -->
 </header>
@@ -1400,55 +1400,91 @@ function checkConfidence(messages) {
   const a = messages.filter(m => m.role === 'ai').length;
   if (h === 0) return { ok: false, warning: 'No user messages detected. Try copying again with Ctrl+A first.' };
   if (a === 0) return { ok: false, warning: 'No AI messages detected. Try copying again with Ctrl+A first.' };
+  const shortRatio = messages.filter(m => (m.text || '').trim().length < 40).length / messages.length;
+  if (messages.length >= 8 && shortRatio > 0.5) {
+    return { ok: false, warning: `Detected ${messages.length} very short messages — the conversation may have been split incorrectly. Please review carefully before exporting.` };
+  }
   const ratio = Math.max(h, a) / Math.min(h, a);
   if (ratio > 4) return { ok: true, warning: `Heads up: detected ${h} user and ${a} Copilot messages — please review before exporting.` };
   return { ok: true, warning: null };
 }
 
 // ── COPILOT BALANCED PARSER ──
-// v1.6 strategy:
+// Strategy (v2.6):
 // 1. Build an HTML/DOM candidate.
-// 2. Build a smarter plain-text candidate.
-// 3. Choose the more complete/consistent result.
-// This avoids blindly trusting weak Copilot HTML extraction while still using it when it is clearly better.
+// 2. Build a plain-text candidate, primarily via "You said" / "Copilot said" labels.
+// 3. Choose the better candidate by score, with a guard that rejects a "shredded"
+//    HTML candidate (many tiny perfectly-alternating turns) even when balanced.
 const parseLog = [];
 let lastParseUsedFallback = false;
 
 function cleanCopilotNoise(text) {
+  // Real Microsoft Copilot (copilot.microsoft.com) chrome and per-turn UI noise.
+  // NOTE: do NOT put the turn labels ("You said" / "Copilot said") in here —
+  // those are consumed by the label parser, not stripped as noise.
   const exactNoiseLines = new Set([
-    'About Copilot',
-    'Copilot App',
-    'Subscriptions',
-    'For Business',
-    'Conversation with Copilot',
-    'Google apps',
+    // Left sidebar / top nav
     'New chat',
-    'Ask Copilot',
-    'Enter a prompt here',
-    'Show thinking',
-    'Thinking...',
+    'Library',
+    'Tasks',
+    'Projects',
+    'Discover',
+    'Health',
+    'Shopping',
+    'Imagine',
+    'Experiments',
+    'Preview',
+    'Pages',
+    'Vision',
+    // Account / plan chrome
+    'Free Plan',
+    'Upgrade',
+    'Invite',
+    'Sign in',
+    'Settings',
+    // Day separators
+    'Today',
+    'Yesterday',
+    // Composer / per-turn controls
+    'Message Copilot',
+    'Ask me anything...',
+    'Edit in a page',
+    'Listen',
     'Listen to this response',
-    'Share & export',
-    'Export to Docs',
-    'Open in Gmail',
+    'Read aloud',
+    'Copy',
     'Copy code',
-    'Use code with caution.',
+    'Share',
+    'Export',
+    'Like',
+    'Dislike',
+    'Good response',
+    'Bad response',
+    'Quick response',
+    'Think Deeper',
+    'Smart (GPT-5)',
+    'Talk',
     'Sources',
     'Source',
-    'Related content',
-    'Copilot is AI and can make mistakes.',
-    'Copilot can make mistakes, so double-check it.'
+    'Show more',
+    'Show less',
+    // Footer disclaimers
+    'Copilot uses AI. Check for mistakes.',
+    'Copilot can make mistakes. Check important info.'
   ]);
 
   return (text || '')
     .replace(/\u00a0/g, ' ')
     .replace(/Opens in a new window/gi, '')
+    .replace(/Copilot uses AI\.?\s*Check for mistakes\.?/gi, '')
+    .replace(/Copilot can make mistakes\.?\s*Check important info\.?/gi, '')
     .replace(/Copilot can make mistakes, so double-check it\.?/gi, '')
-    .replace(/Copilot\s+is\s+AI\s+and\s+can\s+make\s+mistakes\.?/gi, '')
     .split('\n')
     .map(line => line.trim())
     .filter(line => line.length > 0)
     .filter(line => !exactNoiseLines.has(line))
+    .filter(line => !/^\[(Discover|Health|Shopping|Imagine|Experiments|Tasks|Library|Projects)\]\(https?:\/\/[^)]*\)$/i.test(line)) // markdown-link nav
+    .filter(line => !/^[A-Z]$/.test(line)) // single-letter avatar initials (e.g. "M")
     .filter(line => !/^Drafts?\s*\d+$/i.test(line))
     .filter(line => !/^\d{10,}_image\.\w+$/i.test(line))
     .join('\n')
@@ -1524,7 +1560,7 @@ function classifyCopilotElement(el) {
   if (/user-query|user_query|query-text|user input|user-message|human-message/.test(sig)) return 'human';
   if (/model-response|response-container|response-content|model-response-text|assistant-message|copilot-response|markdown/.test(sig)) return 'ai';
   if (/(you|user)\s*(said|message|query|input)/.test(sig)) return 'human';
-  if (/(copilot|copilot|assistant|model)\s*(said|response|answer|message)/.test(sig)) return 'ai';
+  if (/(copilot|bing|assistant|model)\s*(said|response|answer|message)/.test(sig)) return 'ai';
   return null;
 }
 
@@ -1640,6 +1676,11 @@ function parseCopilotHtml(htmlText) {
 }
 
 
+function copilotLabelRole(label) {
+  // Maps a turn-label speaker name to a role.
+  return /copilot|bing|assistant|microsoft|model/i.test(label) ? 'ai' : 'human';
+}
+
 function parseCopilotByLabels(text) {
   const lines = text.split('\n');
   const messages = [];
@@ -1647,8 +1688,11 @@ function parseCopilotByLabels(text) {
   let currentTime = '';
   let buffer = [];
 
-  const labelPattern = /^\s*(You|User|Me|Copilot|Copilot Advanced|Google Copilot|Copilot)\s*(?:said:|:)?\s*$/i;
-  const inlinePattern = /^\s*(You|User|Me|Copilot|Copilot Advanced|Google Copilot|Copilot)\s*(?:said:|:)\s+(.+)$/i;
+  // Real Copilot web UI emits bare "You said" / "Copilot said" lines (no colon).
+  // Stay tolerant of colon variants and a few alternate speaker names.
+  const speaker = '(You|User|Me|Copilot|Microsoft Copilot|Bing|Assistant)';
+  const labelPattern = new RegExp(`^\\s*${speaker}(?:\\s+said)?\\s*:?\\s*$`, 'i');
+  const inlinePattern = new RegExp(`^\\s*${speaker}(?:\\s+said)?\\s*:\\s+(.+)$`, 'i');
   const tsPattern = /^\s*(\d{1,2}:\d{2}\s*(?:AM|PM)?)\s*$/i;
 
   function flush() {
@@ -1661,7 +1705,7 @@ function parseCopilotByLabels(text) {
     const inline = line.match(inlinePattern);
     if (inline) {
       flush();
-      currentRole = /copilot|copilot/i.test(inline[1]) ? 'ai' : 'human';
+      currentRole = copilotLabelRole(inline[1]);
       buffer = [inline[2]];
       continue;
     }
@@ -1669,7 +1713,7 @@ function parseCopilotByLabels(text) {
     const label = line.match(labelPattern);
     if (label) {
       flush();
-      currentRole = /copilot|copilot/i.test(label[1]) ? 'ai' : 'human';
+      currentRole = copilotLabelRole(label[1]);
       continue;
     }
 
@@ -1688,8 +1732,10 @@ function parseCopilotByLabels(text) {
 
 function preparePlainCopilotText(rawText) {
   rawText = rawText || '';
-  const markerMatch = rawText.match(/Conversation with Copilot/i);
-  const text = markerMatch ? rawText.slice(markerMatch.index + markerMatch[0].length) : rawText;
+  // Copilot paste has no "Conversation with…" banner; the real boundary is the
+  // first turn label. Drop everything before the first "You said"/"Copilot said".
+  const firstMarker = rawText.search(/^\s*(You|User|Me|Copilot|Microsoft Copilot|Bing|Assistant)(?:\s+said)?\s*:?\s*$/im);
+  const text = firstMarker > -1 ? rawText.slice(firstMarker) : rawText;
   return cleanCopilotNoise(text);
 }
 
@@ -1759,16 +1805,38 @@ function parseCopilotPlainSmart(rawText) {
   return messages;
 }
 
+// Detects the classic broken parse: many tiny messages alternating like clockwork.
+function looksShredded(messages) {
+  if (!messages || messages.length < 6) return false;
+  const shortRatio = messages.filter(m => (m.text || '').trim().length < 40).length / messages.length;
+  let alternations = 0;
+  for (let i = 1; i < messages.length; i++) {
+    if (messages[i].role !== messages[i - 1].role) alternations++;
+  }
+  const altRatio = alternations / (messages.length - 1);
+  return shortRatio > 0.5 && altRatio > 0.9;
+}
+
 function scoreMessages(messages) {
   const h = messages.filter(m => m.role === 'human').length;
   const a = messages.filter(m => m.role === 'ai').length;
   const total = messages.length;
   if (total < 2 || h === 0 || a === 0) return -999;
 
-  let score = total * 10;
+  // Reward having messages, but only modestly (was total * 10).
+  let score = total * 4;
   score -= Math.abs(h - a) * 4;
 
-  // Penalize obvious AI language in human blocks.
+  // Penalize fragmentation: very short messages are usually mis-split list items.
+  const shortMsgs = messages.filter(m => (m.text || '').trim().length < 25).length;
+  score -= shortMsgs * 8;
+  if (shortMsgs / total > 0.5) score -= 60; // mostly fragments = almost certainly broken
+
+  // Reward coherent, substantial turns (caps so one huge message can't dominate).
+  const avgLen = messages.reduce((s, m) => s + (m.text || '').trim().length, 0) / total;
+  score += Math.min(avgLen, 400) / 4;
+
+  // Existing penalties — keep.
   for (const m of messages) {
     if (m.role === 'human' && /^(however|i can't|i cannot|understood|absolutely|here are|would you like|if you want)/i.test(m.text.trim())) score -= 20;
     if (m.role === 'ai' && /^(can you|i need|i meant|test$|^\d+$)/i.test(m.text.trim())) score -= 12;
@@ -1800,8 +1868,17 @@ function chooseBestCopilotParse(htmlMessages, plainMessages) {
     htmlA > 0 &&
     Math.abs(htmlH - htmlA) <= 2;
 
-  if (htmlBalanced) {
+  if (htmlBalanced && !looksShredded(htmlMessages)) {
     parseLog.push('Parser choice: strict HTML DOM ownership');
+    return htmlMessages;
+  }
+  if (looksShredded(htmlMessages)) {
+    parseLog.push('HTML candidate looks shredded — deciding by score instead of balance');
+  }
+
+  // Decide by score; a coherent plain parse should beat shredded HTML.
+  if (htmlScore >= plainScore && htmlMessages.length >= 2) {
+    parseLog.push('Parser choice: HTML (higher score)');
     return htmlMessages;
   }
 
@@ -1836,8 +1913,8 @@ function parseConversation(raw) {
   const humanCount = messages.filter(m => m.role === 'human').length;
   const aiCount = messages.filter(m => m.role === 'ai').length;
   DEBUG_STATE.summary = [
-    `Version: COPILOT-2.2 DEBUG`,
-    `Timestamp: 19:40:18`,
+    `Version: COPILOT-2.6 DEBUG`,
+    `Timestamp: 18:05:00`,
     `Raw chars: ${(raw || '').length}`,
     `Clipboard HTML chars: ${(html || '').length}`,
     `Messages: ${messages.length}`,
