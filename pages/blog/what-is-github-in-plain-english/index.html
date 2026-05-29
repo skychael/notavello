@@ -1,91 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>What Is GitHub — And Why Do Developers Keep Talking About It? — The Export | Notavello</title>
+<meta name="description" content="GitHub explained without the jargon. What it actually is, why developers use it, and why it matters even if you've never written a line of code."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/blog/what-is-github-in-plain-english/"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://notavello.com/pages/blog/what-is-github-in-plain-english/"/>
+<meta property="og:title" content="What Is GitHub — And Why Do Developers Keep Talking About It?"/>
+<meta property="og:description" content="GitHub explained without the jargon. What it actually is, why developers use it, and why it matters even if you've never written a line of code."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="What Is GitHub — In Plain English"/>
+<meta name="twitter:description" content="GitHub explained without the jargon. What it actually is, why developers use it, and why it matters even if you've never written a line of code."/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "What is GitHub — and why do developers keep talking about it?",
+  "description": "GitHub explained without the jargon. What it actually is, why developers use it, and why it matters even if you've never written a line of code.",
+  "url": "https://notavello.com/pages/blog/what-is-github-in-plain-english/",
+  "datePublished": "2026-05-29",
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
+.back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; color: var(--ink-muted); text-decoration: none; margin-bottom: 40px; transition: color 0.15s; }
+.back-link:hover { color: var(--accent); }
+.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
+.post-date { font-size: 0.78rem; color: var(--ink-faint); }
+.post-title { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; color: var(--ink); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
+.post-lede { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+.post-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink); }
+.post-body h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 44px 0 16px; letter-spacing: -0.01em; }
+.post-body p { margin-bottom: 20px; color: var(--ink-muted); }
+.post-body p strong { color: var(--ink); font-weight: 600; }
+.post-body ul { margin: 0 0 20px 20px; color: var(--ink-muted); }
+.post-body ul li { margin-bottom: 8px; line-height: 1.7; }
+.callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 32px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.7; }
+.post-footer { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.post-footer-label { font-size: 0.8rem; color: var(--ink-faint); }
+.btn-export { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: opacity 0.2s; }
+.btn-export:hover { opacity: 0.9; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } }
+</style>
+</head>
+<body>
 
+<!--HEADER-->
 
----
-canonical: https://notavello.com/pages/blog/what-is-github-in-plain-english/
-meta-description: GitHub explained without the jargon. What it actually is, why developers use it, and why it matters even if you've never written a line of code.
-meta-og:description: GitHub explained without the jargon. What it actually is, why developers use it, and why it matters even if you've never written a line of code.
-meta-og:image: https://notavello.com/og-image.png
-meta-og:site_name: Notavello
-meta-og:title: What Is GitHub — And Why Do Developers Keep Talking About It?
-meta-og:type: article
-meta-og:url: https://notavello.com/pages/blog/what-is-github-in-plain-english/
-meta-robots: index, follow
-meta-twitter:card: summary_large_image
-meta-twitter:image: https://notavello.com/og-image.png
-meta-twitter:title: What Is GitHub — In Plain English
-meta-viewport: width=device-width, initial-scale=1.0
-title: What Is GitHub — And Why Do Developers Keep Talking About It? — The Export | Notavello
----
+<main class="main">
 
+  <a class="back-link" href="/pages/blog/">← The Export</a>
 
-[Nota vello](https://notavello.com/) [Log In](https://notavello.com/login/)
+  <div class="post-meta">
+    <span class="post-tag">Developer Tools</span>
+    <span class="post-date">May 29, 2026</span>
+  </div>
 
-[← The Export](https://notavello.com/pages/blog/)
+  <h1 class="post-title">What is GitHub — and why do developers keep talking about it?</h1>
 
-Developer Tools May 29, 2026
+  <p class="post-lede">GitHub explained without the jargon. What it actually is, why developers use it, and why it matters — even if you've never written a line of code.</p>
 
-# What is GitHub — and why do developers keep talking about it?
+  <div class="post-body">
 
-GitHub explained without the jargon. What it actually is, what it does, and why it matters — even if you've never written a line of code.
+    <h2>The simplest way to think about it</h2>
+    <p>Imagine you're writing a book. As you work through drafts, you save different versions — draft one, draft two, the version before you cut chapter three, the version you sent to an editor. You keep these so you can go back if something goes wrong, compare what changed, or understand why you made a decision three months ago.</p>
+    <p>GitHub is that system, built specifically for code. It stores your work, tracks every change ever made to it, and lets you go back to any previous version at any point. Developers call this version control, but the idea is simple: nothing is ever truly deleted, and nothing is ever truly lost.</p>
 
-## The simplest way to think about it
+    <h2>What actually lives on GitHub</h2>
+    <p>When a developer puts their project on GitHub, they're uploading their codebase — all the files that make a piece of software run. That could be a website, a mobile app, a tool, a game, anything built with code.</p>
+    <p>But GitHub doesn't just store a snapshot. It stores the entire history of the project. Every time someone makes a change — fixes a bug, adds a feature, rewrites a section — that change gets saved as a distinct entry with a timestamp, a description of what changed, and the name of the person who made it. You can scroll back through months or years of changes and see exactly what the project looked like at any point.</p>
 
-Imagine you're writing a book. As you work through drafts, you save different versions — draft one, draft two, the version before you cut chapter three, the version you sent to an editor. You keep these so you can go back if something goes wrong, compare what changed, or understand why you made a decision three months ago.
+    <div class="callout">
+      <strong>Why this matters:</strong> When something breaks, you don't have to guess what caused it. You look at what changed recently and you know.
+    </div>
 
-GitHub is that system, built specifically for code. It stores your work, tracks every change ever made to it, and lets you go back to any previous version at any point. Developers call this version control, but the idea is simple: nothing is ever truly deleted, and nothing is ever truly lost.
+    <h2>Why developers use it for collaboration</h2>
+    <p>Version control alone would be valuable. But GitHub's bigger contribution is making it easy for multiple people to work on the same codebase without constantly stepping on each other.</p>
+    <p>Here's the problem it solves. If two developers are working on the same file at the same time and both save their changes, one of them overwrites the other's work. Before tools like GitHub, this happened constantly and caused real damage. Someone's work would disappear without warning.</p>
+    <p>GitHub solves this by letting each developer work on their own separate copy of the project at the same time. When they're done, GitHub helps merge those copies back together intelligently — and flags any conflicts so a human can decide how to resolve them. Teams of ten, fifty, or five hundred people can work on the same codebase simultaneously without chaos.</p>
 
-## What actually lives on GitHub
+    <h2>Public repos versus private repos</h2>
+    <p>One thing people find confusing about GitHub is the difference between public and private repositories — a repository being the technical term for a project stored on GitHub.</p>
+    <p>A <strong>public repository</strong> means anyone on the internet can see your code. They can read it, copy it, and study it. They cannot change it without your permission, but they can see everything. Many developers keep their projects public to build a portfolio, attract contributors, or participate in the open source community.</p>
+    <p>A <strong>private repository</strong> means the code is hidden. Only you and people you explicitly invite can see it. The project still exists, it's still tracked, you can still use all of GitHub's features — it's just not visible to the outside world. This is what most commercial products use.</p>
+    <p>It's worth being clear on one thing: whether a GitHub repository is public or private has no effect on whether the actual website is publicly accessible. A company can keep its code completely private on GitHub and still run a fully public website. These are two separate things.</p>
 
-When a developer puts their project on GitHub, they're uploading their codebase — all the files that make a piece of software run. That could be a website, a mobile app, a tool, a game, anything built with code.
+    <h2>The open source world lives here</h2>
+    <p>One of GitHub's biggest roles is as the home of open source software — software where the code is intentionally made public so anyone can use it, study it, or contribute to it.</p>
+    <p>Almost every piece of software you use relies on open source code somewhere underneath it. The browser you're reading this in. The operating system on your phone. The AI tools you use every day. All of it is built, in part, on open source libraries and tools that live on GitHub and are maintained by developers around the world.</p>
+    <p>When a developer finds a bug in an open source project, they can propose a fix directly. The project maintainers review it, and if it's good, it gets merged in. This is how thousands of strangers collaborate on software that the entire world depends on — without ever being in the same room.</p>
 
-But GitHub doesn't just store a snapshot. It stores the entire history of the project. Every time someone makes a change — fixes a bug, adds a feature, rewrites a section — that change gets saved as a distinct entry with a timestamp, a description of what changed, and the name of the person who made it. You can scroll back through months or years of changes and see exactly what the project looked like at any point.
+    <h2>Why it matters even if you don't code</h2>
+    <p>You may never use GitHub directly. But you interact with its output constantly.</p>
+    <p>The software that runs your bank, your hospital, your phone, your car — much of it was built using GitHub. The open source projects hosted there form the invisible foundation of the modern internet. And increasingly, AI tools are releasing their models, research, and tools on GitHub too, making it one of the primary places where the future of technology actually gets built.</p>
+    <p>Understanding what GitHub is doesn't require understanding how to code. It just requires understanding that software, like any complex work, needs a place to be stored, tracked, and collaborated on. GitHub is that place — for most of the software in the world.</p>
 
-This is more useful than it sounds. When something breaks, you don't have to guess what caused it. You look at what changed recently and you know.
+  </div>
 
-## Why developers use it for collaboration
+  <div class="post-footer">
+    <span class="post-footer-label">Save your AI conversations as PDFs →</span>
+    <a class="btn-export" href="https://notavello.com/">Try Notavello free</a>
+  </div>
 
-Version control alone would be valuable. But GitHub's bigger contribution is making it easy for multiple people to work on the same codebase without constantly stepping on each other.
+</main>
 
-Here's the problem it solves. If two developers are working on the same file at the same time and both save their changes, one of them overwrites the other's work. Before tools like GitHub, this happened constantly and caused real damage. Someone's work would disappear without warning.
+<!--FOOTER-->
 
-GitHub solves this by letting each developer work on their own separate copy of the project at the same time. When they're done, GitHub helps merge those copies back together intelligently — and flags any conflicts so a human can decide how to resolve them. Teams of ten, fifty, or five hundred people can work on the same codebase simultaneously without chaos.
-
-## Public repos versus private repos
-
-One thing people find confusing about GitHub is the difference between public and private repositories — a repository being the technical term for a project stored on GitHub.
-
-A public repository means anyone on the internet can see your code. They can read it, copy it, and study it. They cannot change it without your permission, but they can see everything. Many developers keep their projects public to build a portfolio, attract contributors, or participate in the open source community.
-
-A private repository means the code is hidden. Only you and people you explicitly invite can see it. The project still exists, it's still tracked, you can still use all of GitHub's features — it's just not visible to the outside world. This is what most commercial projects and products use.
-
-It's worth being clear on one thing: whether a GitHub repository is public or private has no effect on whether the actual product or website is accessible. A company can keep its code completely private on GitHub and still run a fully public website. These are two separate things.
-
-## The open source world lives here
-
-One of GitHub's biggest roles is as the home of open source software — software where the code is intentionally made public so anyone can use it, study it, or contribute to it.
-
-Almost every piece of software you use relies on open source code somewhere underneath it. The browser you're reading this in. The operating system on your phone. The AI tools you use every day. All of it is built, in part, on open source libraries and tools that live on GitHub and are maintained by developers around the world.
-
-When a developer finds a bug in an open source project, they can propose a fix directly. The project maintainers review it, and if it's good, it gets merged in. This is how thousands of strangers collaborate on software that the entire world depends on — without ever being in the same room.
-
-## Why it matters even if you don't code
-
-You may never use GitHub directly. But you interact with its output constantly.
-
-The software that runs your bank, your hospital, your phone, your car — much of it was built using GitHub. The open source projects hosted there form the invisible foundation of the modern internet. And increasingly, AI tools are releasing their models, research, and tools on GitHub too, making it one of the primary places where the future of technology actually gets built.
-
-Understanding what GitHub is doesn't require understanding how to code. It just requires understanding that software, like any complex work, needs a place to be stored, tracked, and collaborated on. GitHub is that place — for most of the software in the world.
-
-Save your AI conversations as PDFs → [Try Notavello free](https://notavello.com/)
-
-Export AI Conversations
-
-[ChatGPT](https://notavello.com/exporters/chatgpt/) · [Gemini](https://notavello.com/exporters/gemini/) · [Copilot](https://notavello.com/exporters/copilot/) · [Claude](https://notavello.com/exporters/claude/) · [Grok](https://notavello.com/exporters/grok/) · [Perplexity](https://notavello.com/exporters/perplexity/) · [Other AI](https://notavello.com/exporters/other/)
-
-Product
-
-[Home](https://notavello.com/) · [AI Detector](https://notavello.com/tools/ai-detector/) · [Tools](https://notavello.com/tools/) · [Pricing](https://notavello.com/pages/pricing/) · [FAQ](https://notavello.com/pages/faq/) · [Sample PDF](https://notavello.com/pages/sample/) · [About](https://notavello.com/pages/about/) · [Sitemap](https://notavello.com/pages/sitemap/) · [Log In](https://notavello.com/login/)
-
-© 2026 Notavello.
-
-[Privacy Policy](https://notavello.com/pages/privacy/) [Terms of Service](https://notavello.com/pages/terms/) [Contact](https://notavello.com/pages/contact/)
+</body>
+</html>

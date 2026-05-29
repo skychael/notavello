@@ -1,37 +1,148 @@
----
-canonical: https://notavello.com/pages/blog/
-meta-og:image: https://notavello.com/og-image.png
-meta-og:site_name: Notavello
-meta-og:title: The Export — AI Tips & Insights | Notavello
-meta-og:type: website
-meta-og:url: https://notavello.com/pages/blog/
-meta-robots: index, follow
-meta-twitter:card: summary_large_image
-meta-twitter:image: https://notavello.com/og-image.png
-meta-twitter:title: The Export — AI Tips & Insights | Notavello
-meta-viewport: width=device-width, initial-scale=1.0
-title: The Export — AI Tips & Insights | Notavello
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>The Export — AI Tips & Insights | Notavello</title>
+<meta name="description" content="Honest tips, hidden quirks, and practical insights about AI tools — from the people who use them all day."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/blog/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://notavello.com/pages/blog/"/>
+<meta property="og:title" content="The Export — AI Tips & Insights | Notavello"/>
+<meta property="og:description" content="Honest tips, hidden quirks, and practical insights about AI tools — from the people who use them all day."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="The Export — AI Tips & Insights | Notavello"/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+.main { max-width: 720px; margin: 0 auto; padding: 64px 24px 100px; }
+.blog-header { margin-bottom: 56px; }
+.blog-byline { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); margin-bottom: 12px; }
+.blog-title { font-family: 'Lora', serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 600; color: var(--ink); line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 16px; }
+.blog-title em { font-style: italic; color: var(--accent); }
+.blog-desc { font-size: 1rem; color: var(--ink-muted); line-height: 1.7; }
+.post-list { display: flex; flex-direction: column; gap: 2px; }
+.post-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px 32px; text-decoration: none; color: inherit; display: block; transition: box-shadow 0.2s, border-color 0.2s; }
+.post-card:hover { box-shadow: 0 4px 24px rgba(79,70,229,0.10); border-color: rgba(79,70,229,0.25); }
+.post-card + .post-card { margin-top: 12px; }
+.post-card-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; }
+.post-tag { font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 3px 9px; border-radius: 20px; }
+.post-date { font-size: 0.75rem; color: var(--ink-faint); }
+.post-card-title { font-family: 'Lora', serif; font-size: 1.15rem; font-weight: 600; color: var(--ink); line-height: 1.35; margin-bottom: 8px; letter-spacing: -0.01em; }
+.post-card-desc { font-size: 0.85rem; color: var(--ink-muted); line-height: 1.65; margin-bottom: 14px; }
+.post-card-read { font-size: 0.78rem; font-weight: 600; color: var(--accent); }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } .post-card { padding: 20px; } }
+</style>
+</head>
+<body>
 
+<!--HEADER-->
 
-[Nota vello](https://notavello.com/) [Log In](https://notavello.com/login/)
+<main class="main">
 
-By Notavello
+  <div class="blog-header">
+    <p class="blog-byline">By Notavello</p>
+    <h1 class="blog-title">The <em>Export</em></h1>
+    <p class="blog-desc">Honest tips, hidden quirks, and practical insights about AI tools — from the people who use them all day.</p>
+  </div>
 
-# The *Export*
+  <div class="post-list">
 
-Honest tips, hidden quirks, and practical insights about AI tools — from the people who use them all day.
+    <a class="post-card" href="/pages/blog/github-web-ui-limits-command-line-vs-desktop/">
+      <div class="post-card-meta">
+        <span class="post-tag">Developer Tools</span>
+        <span class="post-date">May 29, 2026</span>
+      </div>
+      <div class="post-card-title">The GitHub wall nobody warns you about — and what to do when you hit it</div>
+      <div class="post-card-desc">Most people discover the GitHub web UI's limits by accident. Here's what the wall is, why it exists, and an honest comparison of the two ways out — command line versus GitHub Desktop.</div>
+      <span class="post-card-read">Read article →</span>
+    </a>
 
-[Privacy May 29, 2026 Chrome, Firefox, and Chromium — what your browser actually knows about you Chrome, Chromium, and Firefox side by side — what each one collects, what it shares, and which one actually respects your privacy. In plain English. Read article →](https://notavello.com/pages/blog/chrome-firefox-chromium-privacy-comparison/) [Developer Tools May 29, 2026 What is GitHub — and why do developers keep talking about it? GitHub explained without the jargon. What it actually is, why developers use it, and why it matters even if you've never written a line of code. Read article →](https://notavello.com/pages/blog/what-is-github-in-plain-english/) [AI Comparison May 28, 2026 Two weeks with Claude, one day with Copilot — why I think Claude wins at coding I built a real product using both. An honest comparison — including Claude's own worst habits — from someone who is a paid Claude user and is telling you anyway. Read article →](https://notavello.com/pages/blog/claude-vs-copilot-for-coding-honest-comparison/) [AI Tools May 28, 2026 Why Copilot silently cuts off your code — and how to catch it Microsoft Copilot has an output limit it won't tell you about. Most developers discover it the hard way — broken code, no warning, no apology. Here's what's happening and what to do about it. Read article →](https://notavello.com/pages/blog/why-copilot-silently-cuts-off-your-code/)
+    <a class="post-card" href="/pages/blog/chrome-firefox-chromium-privacy-comparison/">
+      <div class="post-card-meta">
+        <span class="post-tag">Privacy</span>
+        <span class="post-date">May 29, 2026</span>
+      </div>
+      <div class="post-card-title">Chrome, Firefox, and Chromium — what your browser actually knows about you</div>
+      <div class="post-card-desc">Chrome, Chromium, and Firefox side by side — what each one collects, what it shares, and which one actually respects your privacy. In plain English.</div>
+      <span class="post-card-read">Read article →</span>
+    </a>
 
-Export AI Conversations
+    <a class="post-card" href="/pages/blog/what-is-github-in-plain-english/">
+      <div class="post-card-meta">
+        <span class="post-tag">Developer Tools</span>
+        <span class="post-date">May 29, 2026</span>
+      </div>
+      <div class="post-card-title">What is GitHub — and why do developers keep talking about it?</div>
+      <div class="post-card-desc">GitHub explained without the jargon. What it actually is, why developers use it, and why it matters even if you've never written a line of code.</div>
+      <span class="post-card-read">Read article →</span>
+    </a>
 
-[ChatGPT](https://notavello.com/exporters/chatgpt/) · [Gemini](https://notavello.com/exporters/gemini/) · [Copilot](https://notavello.com/exporters/copilot/) · [Claude](https://notavello.com/exporters/claude/) · [Grok](https://notavello.com/exporters/grok/) · [Perplexity](https://notavello.com/exporters/perplexity/) · [Other AI](https://notavello.com/exporters/other/)
+    <a class="post-card" href="/pages/blog/claude-vs-copilot-for-coding-honest-comparison/">
+      <div class="post-card-meta">
+        <span class="post-tag">AI Comparison</span>
+        <span class="post-date">May 28, 2026</span>
+      </div>
+      <div class="post-card-title">Two weeks with Claude, one day with Copilot — why I think Claude wins at coding</div>
+      <div class="post-card-desc">I built a real product using both. An honest comparison — including Claude's own worst habits — from someone who is a paid Claude user and is telling you anyway.</div>
+      <span class="post-card-read">Read article →</span>
+    </a>
 
-Product
+    <a class="post-card" href="/pages/blog/why-copilot-silently-cuts-off-your-code/">
+      <div class="post-card-meta">
+        <span class="post-tag">AI Tools</span>
+        <span class="post-date">May 28, 2026</span>
+      </div>
+      <div class="post-card-title">Why Copilot silently cuts off your code — and how to catch it</div>
+      <div class="post-card-desc">Microsoft Copilot has an output limit it won't tell you about. Most developers discover it the hard way — broken code, no warning, no apology. Here's what's happening and what to do about it.</div>
+      <span class="post-card-read">Read article →</span>
+    </a>
 
-[Home](https://notavello.com/) · [AI Detector](https://notavello.com/tools/ai-detector/) · [Tools](https://notavello.com/tools/) · [Pricing](https://notavello.com/pages/pricing/) · [FAQ](https://notavello.com/pages/faq/) · [Sample PDF](https://notavello.com/pages/sample/) · [About](https://notavello.com/pages/about/) · [Sitemap](https://notavello.com/pages/sitemap/) · [Log In](https://notavello.com/login/)
+  </div>
 
-© 2026 Notavello.
+</main>
 
-[Privacy Policy](https://notavello.com/pages/privacy/) [Terms of Service](https://notavello.com/pages/terms/) [Contact](https://notavello.com/pages/contact/)
+<!--FOOTER-->
+
+</body>
+</html>

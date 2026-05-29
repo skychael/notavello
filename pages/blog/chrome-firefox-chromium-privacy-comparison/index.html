@@ -1,107 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Chrome, Firefox, and Chromium — What Your Browser Actually Knows About You — The Export | Notavello</title>
+<meta name="description" content="Chrome, Chromium, and Firefox side by side — what each one collects, what it shares, and which one actually respects your privacy. In plain English."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/blog/chrome-firefox-chromium-privacy-comparison/"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://notavello.com/pages/blog/chrome-firefox-chromium-privacy-comparison/"/>
+<meta property="og:title" content="Chrome, Firefox, and Chromium — What Your Browser Actually Knows About You"/>
+<meta property="og:description" content="Chrome, Chromium, and Firefox side by side — what each one collects, what it shares, and which one actually respects your privacy. In plain English."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Chrome, Firefox, Chromium — What Your Browser Knows About You"/>
+<meta name="twitter:description" content="Chrome, Chromium, and Firefox side by side — what each one collects and what it shares. In plain English."/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Chrome, Firefox, and Chromium — what your browser actually knows about you",
+  "description": "Chrome, Chromium, and Firefox side by side — what each one collects, what it shares, and which one actually respects your privacy.",
+  "url": "https://notavello.com/pages/blog/chrome-firefox-chromium-privacy-comparison/",
+  "datePublished": "2026-05-29",
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
+.back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; color: var(--ink-muted); text-decoration: none; margin-bottom: 40px; transition: color 0.15s; }
+.back-link:hover { color: var(--accent); }
+.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
+.post-date { font-size: 0.78rem; color: var(--ink-faint); }
+.post-title { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; color: var(--ink); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
+.post-lede { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+.post-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink); }
+.post-body h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 44px 0 16px; letter-spacing: -0.01em; }
+.post-body p { margin-bottom: 20px; color: var(--ink-muted); }
+.post-body p strong { color: var(--ink); font-weight: 600; }
+.post-body ul { margin: 0 0 20px 20px; color: var(--ink-muted); }
+.post-body ul li { margin-bottom: 8px; line-height: 1.7; }
+.callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 32px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.7; }
+.post-footer { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.post-footer-label { font-size: 0.8rem; color: var(--ink-faint); }
+.btn-export { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: opacity 0.2s; }
+.btn-export:hover { opacity: 0.9; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } }
+</style>
+</head>
+<body>
 
+<!--HEADER-->
 
----
-canonical: https://notavello.com/pages/blog/chrome-firefox-chromium-privacy-comparison/
-meta-description: Chrome, Chromium, and Firefox side by side — what each one collects, what it shares, and which one actually respects your privacy. In plain English.
-meta-og:description: Chrome, Chromium, and Firefox side by side — what each one collects, what it shares, and which one actually respects your privacy. In plain English.
-meta-og:image: https://notavello.com/og-image.png
-meta-og:site_name: Notavello
-meta-og:title: Chrome, Firefox, and Chromium — What Your Browser Actually Knows About You
-meta-og:type: article
-meta-og:url: https://notavello.com/pages/blog/chrome-firefox-chromium-privacy-comparison/
-meta-robots: index, follow
-meta-twitter:card: summary_large_image
-meta-twitter:image: https://notavello.com/og-image.png
-meta-twitter:title: Chrome, Firefox, Chromium — What Your Browser Knows About You
-meta-viewport: width=device-width, initial-scale=1.0
-title: Chrome, Firefox, and Chromium — What Your Browser Actually Knows About You — The Export | Notavello
----
+<main class="main">
 
+  <a class="back-link" href="/pages/blog/">← The Export</a>
 
-[Nota vello](https://notavello.com/) [Log In](https://notavello.com/login/)
+  <div class="post-meta">
+    <span class="post-tag">Privacy</span>
+    <span class="post-date">May 29, 2026</span>
+  </div>
 
-[← The Export](https://notavello.com/pages/blog/)
+  <h1 class="post-title">Chrome, Firefox, and Chromium — what your browser actually knows about you</h1>
 
-Privacy May 29, 2026
+  <p class="post-lede">Most people pick a browser once and never think about it again. Here's why that choice matters more than you'd expect — and what each of the big three is actually doing in the background.</p>
 
-# Chrome, Firefox, and Chromium — what your browser actually knows about you
+  <div class="post-body">
 
-Most people pick a browser once and never think about it again. Here's why that choice matters more than you'd expect — and what each of the big three is actually doing in the background.
+    <h2>Why your browser choice is a privacy decision</h2>
+    <p>Your browser sits between you and the entire internet. Every site you visit, every search you run, every link you click — it all passes through your browser first. That makes it one of the most data-rich pieces of software on your device.</p>
+    <p>Most people don't think of choosing a browser as a privacy decision. It's more of a habit — you use whatever came installed, or whatever you heard of first. But the three browsers we're comparing here have very different business models, and that difference shows up directly in what they collect about you and why.</p>
 
-## Why your browser choice is a privacy decision
+    <h2>Chrome — powerful, convenient, and expensive in ways that don't show on a price tag</h2>
+    <p>Chrome is the most popular browser in the world by a wide margin. It's fast, it works everywhere, extensions are plentiful, and it syncs beautifully across your devices if you're signed into a Google account. These are real advantages and the reason most people use it.</p>
+    <p>But Chrome is made by Google, and Google's business is advertising. That context matters.</p>
+    <p>By default, Chrome sends your keystrokes to Google as you type in the address bar — before you've hit enter, before you've even finished forming a search. It collects crash reports and usage statistics. It tracks which features you use and how often. If you're signed into a Google account, your browsing history is synced and linked directly to your identity.</p>
+    <p>The deeper issue isn't any single data point — it's the accumulation. Google also operates the largest advertising network on the web, runs the most popular search engine, and provides analytics tools that appear on the majority of websites you visit. Chrome is one more data source feeding into a profile of you that already has a lot of it.</p>
 
-Your browser sits between you and the entire internet. Every site you visit, every search you run, every link you click — it all passes through your browser first. That makes it one of the most data-rich pieces of software on your device.
+    <div class="callout">
+      <strong>Sign in with Google makes this worse.</strong> When you use the Sign in with Google button on other websites — your food delivery app, a news site, a shopping platform — Google gets a confirmed record that you have an account there. It's no longer inferring your behaviour from ad tracking. It knows, with certainty, that you use those services. Combine that with Chrome's telemetry and Google's ad network, and you have a very complete picture of someone's online life tied to a real identity.
+    </div>
 
-Most people don't think of choosing a browser as a privacy decision. It's more of a habit — you use whatever came installed, or whatever you heard of first. But the three browsers we're comparing here have very different business models, and that difference shows up directly in what they collect about you and why.
+    <h2>Chromium — the open source version most people have never heard of</h2>
+    <p>Chromium is the open source project that Chrome is built on top of. Google develops it, publishes the code publicly, and then uses it as the foundation for Chrome — adding their own proprietary features, their own data collection, and their own branding on top.</p>
+    <p>Chromium itself, without Google's additions, is considerably cleaner from a privacy standpoint. It doesn't have the same built-in telemetry that Chrome ships with. But almost nobody uses raw Chromium directly — it requires more technical setup and lacks some features most people expect.</p>
+    <p>Where Chromium actually matters is as a foundation. A number of other browsers are built on it — Brave, Edge, Vivaldi, and others. These take the Chromium base and build different things on top of it, some with stronger privacy defaults than Chrome, some with different trade-offs.</p>
 
-## Chrome — powerful, convenient, and expensive in ways that don't show on a price tag
+    <h2>Firefox — the nonprofit browser that's genuinely different</h2>
+    <p>Firefox is made by Mozilla, a nonprofit organisation. Mozilla does not run an advertising business. That single fact is the most important thing to understand about how Firefox differs from Chrome.</p>
+    <p>When a company's revenue doesn't come from knowing what you do online, it has far less structural incentive to collect and retain detailed data about you. Firefox still has some telemetry enabled by default — crash reports, feature usage statistics — but it's less extensive than Chrome's, and Mozilla has a documented track record of advocating for user privacy rather than quietly expanding data collection.</p>
+    <p>Firefox is also fully open source, which means the code can be independently audited by security researchers and privacy advocates. This doesn't guarantee perfection, but it means there are more eyes on what the browser is actually doing.</p>
+    <p>Firefox has faced its own criticism. Sponsored suggestions that appear in the address bar, a deal with Google that makes Google the default search engine and provides a significant portion of Mozilla's funding. None of these are scandalous, but they're worth knowing about.</p>
 
-Chrome is the most popular browser in the world by a wide margin. It's fast, it works everywhere, extensions are plentiful, and it syncs beautifully across your devices if you're signed into a Google account. These are real advantages and the reason most people use it.
+    <h2>One thing none of them can fully protect you from</h2>
+    <p>Even on Firefox with strong settings, most websites you visit have Google Analytics, Google Fonts, or Google ad tags embedded in them. Google sees a request from your browser every time you load one of those pages — regardless of which browser you're using.</p>
+    <p>This is the deeper problem with online privacy. It's not just about your browser. It's about the infrastructure of the web itself, which Google and a handful of other large companies are deeply embedded in. Your browser choice reduces your exposure. It doesn't eliminate it.</p>
 
-But Chrome is made by Google, and Google's business is advertising. That context matters.
+    <h2>What most privacy-conscious people actually do</h2>
+    <p>The most common practical recommendation from people who take this seriously: use Firefox as your default browser, turn off telemetry in settings, use a search engine other than Google (DuckDuckGo and Kagi are popular options), and be thoughtful about which sites you sign into using Google credentials.</p>
+    <p>That combination doesn't make you invisible. But it meaningfully reduces how much of your browsing life is being systematically recorded and tied to your identity. For most people, that's a reasonable place to land.</p>
 
-By default, Chrome sends your keystrokes to Google as you type in the address bar — before you've hit enter, before you've even finished forming a search. It collects crash reports and usage statistics. It tracks which features you use and how often. If you're signed into a Google account, your browsing history is synced and linked directly to your identity.
+  </div>
 
-The deeper issue isn't any single data point — it's the accumulation. Google also operates the largest advertising network on the web, runs the most popular search engine, and provides analytics tools that appear on the majority of websites you visit. Chrome is one more data source feeding into a profile of you that already has a lot of it.
+  <div class="post-footer">
+    <span class="post-footer-label">Save your AI conversations as PDFs →</span>
+    <a class="btn-export" href="https://notavello.com/">Try Notavello free</a>
+  </div>
 
-None of this is hidden in the legal sense. It's in the terms of service. But "it's in the terms of service" is not the same as "most people know about it and made an informed choice."
+</main>
 
-**"Sign in with Google" makes this worse.** When you use the Sign in with Google button on other websites — your food delivery app, a news site, a shopping platform — Google gets a confirmed record that you have an account there. It's no longer inferring your behaviour from ad tracking. It knows, with certainty, that you use those services. Combine that with Chrome's telemetry and Google's ad network, and you have a very complete picture of someone's online life tied to a real identity.
+<!--FOOTER-->
 
-## Chromium — the open source version most people have never heard of
-
-Chromium is the open source project that Chrome is built on top of. Google develops it, publishes the code publicly, and then uses it as the foundation for Chrome — adding their own proprietary features, their own data collection, and their own branding on top.
-
-Chromium itself, without Google's additions, is considerably cleaner from a privacy standpoint. It doesn't have the same built-in telemetry that Chrome ships with. But almost nobody uses raw Chromium directly — it requires more technical setup, it doesn't auto-update the same way, and it lacks some features most people expect.
-
-Where Chromium actually matters is as a foundation. A number of other browsers are built on it — Brave, Edge, Vivaldi, and others. These take the Chromium base and build different things on top of it, some with stronger privacy defaults than Chrome, some with different trade-offs.
-
-So when people talk about Chromium, they're usually either talking about the technical underpinning of the modern web browser landscape, or distinguishing between Chrome (Google's version) and the base it was built from.
-
-## Firefox — the nonprofit browser that's genuinely different
-
-Firefox is made by Mozilla, a nonprofit organisation. Mozilla does not run an advertising business. That single fact is the most important thing to understand about how Firefox differs from Chrome.
-
-When a company's revenue doesn't come from knowing what you do online, it has far less structural incentive to collect and retain detailed data about you. Firefox still has some telemetry enabled by default — crash reports, feature usage statistics — but it's less extensive than Chrome's, and Mozilla has a documented track record of advocating for user privacy rather than quietly expanding data collection.
-
-Firefox is also fully open source, which means the code can be independently audited by security researchers and privacy advocates. This doesn't guarantee perfection — open source software still has vulnerabilities — but it means there are more eyes on what the browser is actually doing, and anyone can verify the claims Mozilla makes about privacy.
-
-Firefox has faced its own criticism. Sponsored suggestions that appear in the address bar, a deal with Google that makes Google the default search engine and provides a significant portion of Mozilla's funding, some past decisions around data partnerships. None of these are scandalous, but they're worth knowing about if you're trying to understand the full picture.
-
-On balance, Firefox is genuinely more privacy-respecting than Chrome for most users in most situations. That's not marketing — it follows directly from the difference in business models.
-
-## The comparison in plain terms
-
-Chrome (Google) — Feature-rich, fast, deeply integrated with Google services. Collects significant data by default. Designed by a company whose business depends on knowing what you do online.
-
-Chromium — The open source base Chrome is built on. Cleaner than Chrome but rarely used directly. Foundation for many other browsers.
-
-Firefox (Mozilla) — Open source, nonprofit, less data collection by default. Slower to add certain features but meaningfully different in its incentives.
-
-## One thing none of them can fully protect you from
-
-Even on Firefox with strong settings, most websites you visit have Google Analytics, Google Fonts, or Google ad tags embedded in them. Google sees a request from your browser every time you load one of those pages — regardless of which browser you're using.
-
-This is the deeper problem with online privacy. It's not just about your browser. It's about the infrastructure of the web itself, which Google and a handful of other large companies are deeply embedded in. Your browser choice reduces your exposure. It doesn't eliminate it.
-
-What it does change is how much your browser itself is contributing to that profile — and whether the company that made your browser is the same one building the profile.
-
-## What most privacy-conscious people actually do
-
-The most common practical recommendation from people who take this seriously: use Firefox as your default browser, turn off telemetry in settings, use a search engine other than Google (DuckDuckGo and Kagi are popular options), and be thoughtful about which sites you sign into using Google credentials.
-
-That combination doesn't make you invisible. But it meaningfully reduces how much of your browsing life is being systematically recorded and tied to your identity. For most people, that's a reasonable place to land.
-
-Save your AI conversations as PDFs → [Try Notavello free](https://notavello.com/)
-
-Export AI Conversations
-
-[ChatGPT](https://notavello.com/exporters/chatgpt/) · [Gemini](https://notavello.com/exporters/gemini/) · [Copilot](https://notavello.com/exporters/copilot/) · [Claude](https://notavello.com/exporters/claude/) · [Grok](https://notavello.com/exporters/grok/) · [Perplexity](https://notavello.com/exporters/perplexity/) · [Other AI](https://notavello.com/exporters/other/)
-
-Product
-
-[Home](https://notavello.com/) · [AI Detector](https://notavello.com/tools/ai-detector/) · [Tools](https://notavello.com/tools/) · [Pricing](https://notavello.com/pages/pricing/) · [FAQ](https://notavello.com/pages/faq/) · [Sample PDF](https://notavello.com/pages/sample/) · [About](https://notavello.com/pages/about/) · [Sitemap](https://notavello.com/pages/sitemap/) · [Log In](https://notavello.com/login/)
-
-© 2026 Notavello.
-
-[Privacy Policy](https://notavello.com/pages/privacy/) [Terms of Service](https://notavello.com/pages/terms/) [Contact](https://notavello.com/pages/contact/)
+</body>
+</html>

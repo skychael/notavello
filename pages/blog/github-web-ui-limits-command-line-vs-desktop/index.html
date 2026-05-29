@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>The GitHub Wall Nobody Warns You About — And What To Do When You Hit It — The Export | Notavello</title>
+<meta name="description" content="Most people hit the GitHub web UI wall by accident. Here's what it is, why it happens, and an honest comparison of the two ways out — command line versus GitHub Desktop."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/blog/github-web-ui-limits-command-line-vs-desktop/"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://notavello.com/pages/blog/github-web-ui-limits-command-line-vs-desktop/"/>
+<meta property="og:title" content="The GitHub Wall Nobody Warns You About — And What To Do When You Hit It"/>
+<meta property="og:description" content="Most people hit the GitHub web UI wall by accident. Here's what it is, why it happens, and an honest comparison of the two ways out — command line versus GitHub Desktop."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="The GitHub Wall Nobody Warns You About"/>
+<meta name="twitter:description" content="Most people hit the GitHub web UI wall by accident. Here's what it is, why it happens, and what to do."/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "The GitHub wall nobody warns you about — and what to do when you hit it",
+  "description": "Most people hit the GitHub web UI wall by accident. Here's what it is, why it happens, and an honest comparison of the two ways out.",
+  "url": "https://notavello.com/pages/blog/github-web-ui-limits-command-line-vs-desktop/",
+  "datePublished": "2026-05-29",
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
+.back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; color: var(--ink-muted); text-decoration: none; margin-bottom: 40px; transition: color 0.15s; }
+.back-link:hover { color: var(--accent); }
+.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
+.post-date { font-size: 0.78rem; color: var(--ink-faint); }
+.post-title { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; color: var(--ink); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
+.post-lede { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+.post-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink); }
+.post-body h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 44px 0 16px; letter-spacing: -0.01em; }
+.post-body p { margin-bottom: 20px; color: var(--ink-muted); }
+.post-body p strong { color: var(--ink); font-weight: 600; }
+.post-body ul { margin: 0 0 20px 20px; color: var(--ink-muted); }
+.post-body ul li { margin-bottom: 8px; line-height: 1.7; }
+.callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 32px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.7; }
+.post-footer { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.post-footer-label { font-size: 0.8rem; color: var(--ink-faint); }
+.btn-export { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: opacity 0.2s; }
+.btn-export:hover { opacity: 0.9; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } }
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+
+  <a class="back-link" href="/pages/blog/">← The Export</a>
+
+  <div class="post-meta">
+    <span class="post-tag">Developer Tools</span>
+    <span class="post-date">May 29, 2026</span>
+  </div>
+
+  <h1 class="post-title">The GitHub wall nobody warns you about — and what to do when you hit it</h1>
+
+  <p class="post-lede">You didn't do anything wrong. The web browser just quietly stopped working the way you expected, and nobody told you why.</p>
+
+  <div class="post-body">
+
+    <h2>How most people discover the problem</h2>
+    <p>It usually happens the same way. You've been managing a project on GitHub through the website — uploading files one at a time, creating folders manually, editing things directly in the browser. It works, mostly. It's a little fiddly but you get by.</p>
+    <p>Then one day you need to upload an entire folder. Maybe it's a new section of your project, a set of files that belong together, something that needs to land in a specific place in your folder structure. You go to the GitHub website, look for the upload option, and realise there isn't one. Not for folders. You can upload individual files. You cannot upload a folder as a folder.</p>
+    <p>So you start working around it. You create the folder on GitHub manually first, navigate into it, then upload the files one by one. It works, but it's slow, and one wrong character in a folder name means your links break and nothing loads. You're copy-pasting long folder names and hoping nothing slips.</p>
+
+    <div class="callout">
+      This is the wall. Almost everyone who uses GitHub through the browser hits it eventually. It's not a bug — it's just a hard limit of what the web interface was designed to do.
+    </div>
+
+    <h2>Why the web UI has limits in the first place</h2>
+    <p>GitHub's browser interface was built for quick edits and simple changes. Fixing a typo, updating a readme, tweaking a single file. It was never really designed to be a full project management workflow, even though plenty of people end up using it that way because it's what's visible and accessible when you first sign up.</p>
+    <p>The underlying system that GitHub is built on — Git — is a command line tool. The website is a layer on top of that, exposing some of its features in a visual interface. But that layer has limits. No folder uploads. A 25MB cap per file through the browser. If GitHub redirects you back to the root of the repo after an upload instead of staying in your subfolder, that's not a glitch — it's how the web interface is designed.</p>
+    <p>Once your project grows beyond simple one-file edits, you will hit these limits. It's just a matter of when.</p>
+
+    <h2>The two ways out</h2>
+    <p>When people discover the wall, they're typically pointed toward one of two solutions. They are very different experiences.</p>
+
+    <h2>Option one — the command line</h2>
+    <p>The command line is the direct, technical way to use Git. You open a terminal window, type commands, and Git does exactly what you tell it. Clone a repo, add files, commit changes, push to GitHub — all of it through text commands you type by hand.</p>
+    <p><strong>The honest case for it:</strong> it's powerful, it works on every operating system, it's what professional developers use, and once it's set up it's genuinely fast. There's no extra software to install beyond Git itself, and you have complete control over everything.</p>
+    <p><strong>The honest case against it:</strong> the learning curve is steep and the error messages are brutal. Git's command line feedback was written for people who already understand Git. If something goes wrong — and it will — you'll see messages like "fatal: refusing to merge unrelated histories" with no plain English explanation of what happened or what to do next.</p>
+    <p>There's also the matter of authentication. GitHub no longer accepts your regular password from the command line. You have to generate a Personal Access Token — a long string of characters copied from deep in your GitHub account settings — and use that as your password instead. It expires. When it does, Git fails and the error message doesn't clearly tell you why.</p>
+    <p>For someone who just wants to upload a folder without their links breaking, being pointed at the command line is like asking someone who wants to drive to work to first rebuild the engine. Technically correct. Practically overwhelming.</p>
+
+    <h2>Option two — GitHub Desktop</h2>
+    <p>GitHub Desktop is a free application made by GitHub specifically for people who don't want to use the command line. It connects to your GitHub account, shows your repository as a file tree, and handles all the Git operations through buttons and menus instead of typed commands.</p>
+    <p>You install it, sign in with your GitHub account through a browser window — no tokens, no passwords to copy — and it clones your repository to your computer automatically. From that point, your project is just a folder on your PC. You manage files using normal Windows Explorer or Mac Finder. When you've made changes, you go back to GitHub Desktop, type a short description of what you did, click Commit, then click Push. Done.</p>
+    <p>Uploading a folder is no longer a special operation. You open your project folder in Explorer, create whatever folders you need, drop the files in, and GitHub Desktop picks up the changes automatically.</p>
+    <p><strong>The honest case against it:</strong> it only covers the basics. If you ever need advanced Git operations, GitHub Desktop either can't do them or sends you to the command line anyway. It also doesn't sync automatically — if you make a change on the GitHub website directly, you need to remember to click Fetch before you start working locally, or you'll end up with conflicting versions of the same file.</p>
+
+    <h2>Which one is actually right</h2>
+    <p>For someone building and maintaining a real project without a background in software development, GitHub Desktop is the more practical choice. The command line is more powerful, but power you can't use isn't an advantage.</p>
+    <p>The command line becomes worth learning when you're doing things GitHub Desktop genuinely can't handle — complex branching, working across multiple contributors with conflicting changes. That's not where most small projects live.</p>
+    <p>The wall you hit when you tried to upload a folder wasn't a sign you were doing something wrong. It was the natural edge of a tool you'd outgrown. GitHub Desktop is the next tool. It's not the last one, but it's the right one for where most people are when they first hit the wall.</p>
+
+  </div>
+
+  <div class="post-footer">
+    <span class="post-footer-label">Save your AI conversations as PDFs →</span>
+    <a class="btn-export" href="https://notavello.com/">Try Notavello free</a>
+  </div>
+
+</main>
+
+<!--FOOTER-->
+
+</body>
+</html>
