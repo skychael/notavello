@@ -1,140 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>The Export — AI Tips & Insights | Notavello</title>
-<meta name="description" content="Honest tips, hidden quirks, and practical insights about AI tools — from the people who use them all day. By Notavello."/>
-<meta name="robots" content="index, follow"/>
-<link rel="canonical" href="https://notavello.com/pages/blog/"/>
-<meta property="og:type" content="website"/>
-<meta property="og:url" content="https://notavello.com/pages/blog/"/>
-<meta property="og:title" content="The Export — AI Tips & Insights | Notavello"/>
-<meta property="og:description" content="Honest tips, hidden quirks, and practical insights about AI tools — from the people who use them all day."/>
-<meta property="og:site_name" content="Notavello"/>
-<meta property="og:image" content="https://notavello.com/og-image.png"/>
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="The Export — AI Tips & Insights | Notavello"/>
-<meta name="twitter:description" content="Honest tips, hidden quirks, and practical insights about AI tools."/>
-<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
-<link rel="icon" type="image/x-icon" href="/favicon.ico">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-<style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-:root {
-  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
-  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
-  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
-  --green: #059669; --green-light: #D1FAE5;
-  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
-  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
-  --shadow-lg: 0 4px 16px rgba(79,70,229,0.12), 0 16px 48px rgba(15,23,42,0.12);
-}
-html { scroll-behavior: smooth; }
-body {
-  background: var(--bg); color: var(--ink);
-  font-family: 'Sora', sans-serif; min-height: 100vh;
-  -webkit-font-smoothing: antialiased;
-  background-image:
-    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
-}
-.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
-.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
-.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
-.logo span { color: var(--accent); }
-.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s, border-color 0.15s; }
-.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+---
+canonical: https://notavello.com/pages/blog/
+meta-og:image: https://notavello.com/og-image.png
+meta-og:site_name: Notavello
+meta-og:title: The Export — AI Tips & Insights | Notavello
+meta-og:type: website
+meta-og:url: https://notavello.com/pages/blog/
+meta-robots: index, follow
+meta-twitter:card: summary_large_image
+meta-twitter:image: https://notavello.com/og-image.png
+meta-twitter:title: The Export — AI Tips & Insights | Notavello
+meta-viewport: width=device-width, initial-scale=1.0
+title: The Export — AI Tips & Insights | Notavello
+---
 
-.main { max-width: 760px; margin: 0 auto; padding: 64px 24px 100px; }
 
-.blog-header { text-align: center; margin-bottom: 56px; }
-.blog-eyebrow { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: var(--accent); margin-bottom: 14px; }
-.blog-title { font-family: 'Lora', serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 600; color: var(--ink); letter-spacing: -0.02em; margin-bottom: 14px; line-height: 1.15; }
-.blog-title em { font-style: italic; background: linear-gradient(135deg, var(--accent), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-.blog-desc { font-size: 1rem; color: var(--ink-muted); max-width: 480px; margin: 0 auto; line-height: 1.7; }
+[Nota vello](https://notavello.com/) [Log In](https://notavello.com/login/)
 
-.posts { display: flex; flex-direction: column; gap: 24px; }
+By Notavello
 
-.post-card {
-  background: var(--surface); border: 1.5px solid var(--border);
-  border-radius: var(--radius); padding: 32px 36px;
-  text-decoration: none; color: inherit;
-  box-shadow: var(--shadow);
-  transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
-  display: block;
-}
-.post-card:hover { border-color: var(--accent); box-shadow: var(--shadow-lg); transform: translateY(-2px); }
+# The *Export*
 
-.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; flex-wrap: wrap; }
-.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
-.post-date { font-size: 0.78rem; color: var(--ink-faint); }
-.post-title { font-family: 'Lora', serif; font-size: 1.35rem; font-weight: 600; color: var(--ink); margin-bottom: 10px; line-height: 1.3; letter-spacing: -0.01em; }
-.post-excerpt { font-size: 0.88rem; color: var(--ink-muted); line-height: 1.7; margin-bottom: 18px; }
-.post-read-more { font-size: 0.82rem; font-weight: 600; color: var(--accent); }
+Honest tips, hidden quirks, and practical insights about AI tools — from the people who use them all day.
 
-.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
-.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
-.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
-.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
-.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
-.footer-nav a:hover { color: var(--accent); }
-.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
-.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
-.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
-.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
-.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
-.footer-legal a:hover { color: var(--accent); }
+[Privacy May 29, 2026 Chrome, Firefox, and Chromium — what your browser actually knows about you Chrome, Chromium, and Firefox side by side — what each one collects, what it shares, and which one actually respects your privacy. In plain English. Read article →](https://notavello.com/pages/blog/chrome-firefox-chromium-privacy-comparison/) [Developer Tools May 29, 2026 What is GitHub — and why do developers keep talking about it? GitHub explained without the jargon. What it actually is, why developers use it, and why it matters even if you've never written a line of code. Read article →](https://notavello.com/pages/blog/what-is-github-in-plain-english/) [AI Comparison May 28, 2026 Two weeks with Claude, one day with Copilot — why I think Claude wins at coding I built a real product using both. An honest comparison — including Claude's own worst habits — from someone who is a paid Claude user and is telling you anyway. Read article →](https://notavello.com/pages/blog/claude-vs-copilot-for-coding-honest-comparison/) [AI Tools May 28, 2026 Why Copilot silently cuts off your code — and how to catch it Microsoft Copilot has an output limit it won't tell you about. Most developers discover it the hard way — broken code, no warning, no apology. Here's what's happening and what to do about it. Read article →](https://notavello.com/pages/blog/why-copilot-silently-cuts-off-your-code/)
 
-@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
-.blog-header { animation: fadeUp 0.6s ease both; }
-.posts { animation: fadeUp 0.6s 0.1s ease both; opacity: 0; }
+Export AI Conversations
 
-@media (max-width: 600px) {
-  .header { padding: 14px 20px; }
-  .main { padding: 40px 16px 80px; }
-  .post-card { padding: 24px 20px; }
-}
-</style>
-</head>
-<body>
+[ChatGPT](https://notavello.com/exporters/chatgpt/) · [Gemini](https://notavello.com/exporters/gemini/) · [Copilot](https://notavello.com/exporters/copilot/) · [Claude](https://notavello.com/exporters/claude/) · [Grok](https://notavello.com/exporters/grok/) · [Perplexity](https://notavello.com/exporters/perplexity/) · [Other AI](https://notavello.com/exporters/other/)
 
-<!--HEADER-->
+Product
 
-<main class="main">
-  <div class="blog-header">
-    <div class="blog-eyebrow">By Notavello</div>
-    <h1 class="blog-title">The <em>Export</em></h1>
-    <p class="blog-desc">Honest tips, hidden quirks, and practical insights about AI tools — from the people who use them all day.</p>
-  </div>
+[Home](https://notavello.com/) · [AI Detector](https://notavello.com/tools/ai-detector/) · [Tools](https://notavello.com/tools/) · [Pricing](https://notavello.com/pages/pricing/) · [FAQ](https://notavello.com/pages/faq/) · [Sample PDF](https://notavello.com/pages/sample/) · [About](https://notavello.com/pages/about/) · [Sitemap](https://notavello.com/pages/sitemap/) · [Log In](https://notavello.com/login/)
 
-  <div class="posts">
+© 2026 Notavello.
 
-    <a class="post-card" href="/pages/blog/claude-vs-copilot-for-coding-honest-comparison/">
-      <div class="post-meta">
-        <span class="post-tag">AI Comparison</span>
-        <span class="post-date">May 28, 2026</span>
-      </div>
-      <div class="post-title">Two weeks with Claude, one day with Copilot — why I think Claude wins at coding</div>
-      <p class="post-excerpt">I built a real product using both. An honest comparison — including Claude's own worst habits — from someone who is a paid Claude user and is telling you anyway.</p>
-      <span class="post-read-more">Read article →</span>
-    </a>
-
-    <a class="post-card" href="/pages/blog/why-copilot-silently-cuts-off-your-code/">
-      <div class="post-meta">
-        <span class="post-tag">AI Tools</span>
-        <span class="post-date">May 28, 2026</span>
-      </div>
-      <div class="post-title">Why Copilot silently cuts off your code — and how to catch it</div>
-      <p class="post-excerpt">Microsoft Copilot has an output limit it won't tell you about. Most developers discover it the hard way — broken code, no warning, no apology. Here's what's happening and what to do about it.</p>
-      <span class="post-read-more">Read article →</span>
-    </a>
-
-  </div>
-</main>
-
-<!--FOOTER-->
-
-</body>
-</html>
+[Privacy Policy](https://notavello.com/pages/privacy/) [Terms of Service](https://notavello.com/pages/terms/) [Contact](https://notavello.com/pages/contact/)
