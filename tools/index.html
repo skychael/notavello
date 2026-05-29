@@ -1,1 +1,197 @@
+<!-- Notavello tools-1.0 | generated 12:30:00 UTC -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Free AI Tools — Notavello</title>
+<meta name="description" content="Free tools for AI users. Detect AI-written text, export conversations to PDF, and more — no sign-up required."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/tools/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://notavello.com/tools/"/>
+<meta property="og:title" content="Free AI Tools — Notavello"/>
+<meta property="og:description" content="Free tools for AI users. Detect AI-written text, export conversations to PDF, and more — no sign-up required."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Free AI Tools — Notavello"/>
+<meta name="twitter:description" content="Free tools for AI users. Detect AI-written text, export conversations to PDF, and more."/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Free AI Tools — Notavello",
+  "url": "https://notavello.com/tools/",
+  "description": "Free tools for AI users. Detect AI-written text, export conversations to PDF, and more.",
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+  --shadow-lg: 0 4px 16px rgba(79,70,229,0.12), 0 16px 48px rgba(15,23,42,0.12);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
 
+.main { max-width: 860px; margin: 0 auto; padding: 72px 24px 100px; animation: fadeUp 0.6s ease both; }
+
+/* PAGE HEADER */
+.page-header { text-align: center; margin-bottom: 64px; }
+.page-header-label { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.14em; color: var(--ink-faint); margin-bottom: 14px; }
+.page-header h1 { font-family: 'Lora', serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 600; color: var(--ink); line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 16px; }
+.page-header h1 em { font-style: italic; background: linear-gradient(135deg, var(--accent), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.page-header p { font-size: 1rem; color: var(--ink-muted); line-height: 1.75; max-width: 480px; margin: 0 auto; }
+
+/* SECTION LABEL */
+.section-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--ink-faint); margin-bottom: 16px; }
+
+/* TOOL GRID */
+.tool-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 48px; }
+
+.tool-card { background: var(--surface); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 28px 28px 24px; text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: 14px; box-shadow: var(--shadow); transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s; }
+.tool-card:hover { border-color: var(--accent); box-shadow: var(--shadow-lg); transform: translateY(-2px); }
+
+.tool-card-icon { width: 44px; height: 44px; border-radius: 13px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; }
+.tool-card-icon--detector { background: linear-gradient(135deg, #FEF3C7, #FDE68A); }
+.tool-card-icon--exporter { background: linear-gradient(135deg, #EEF2FF, #DDD6FE); }
+.tool-card-icon--blog     { background: linear-gradient(135deg, #D1FAE5, #A7F3D0); }
+
+.tool-card-body { flex: 1; }
+.tool-card-name { font-size: 1rem; font-weight: 700; color: var(--ink); letter-spacing: -0.02em; margin-bottom: 6px; }
+.tool-card-desc { font-size: 0.83rem; color: var(--ink-muted); line-height: 1.6; margin-bottom: 12px; }
+
+.tool-card-footer { display: flex; align-items: center; justify-content: space-between; }
+.tool-card-status { display: inline-flex; align-items: center; gap: 5px; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 4px 10px; border-radius: 20px; }
+.tool-card-status--live { background: var(--green-light); color: var(--green); }
+.tool-card-status--new  { background: var(--accent-light); color: var(--accent); }
+.tool-card-status-dot { width: 5px; height: 5px; border-radius: 50%; background: currentColor; animation: pulse 2s infinite; }
+.tool-card-link { font-size: 0.78rem; font-weight: 600; color: var(--accent); }
+
+/* BLOG SECTION */
+.blog-section { margin-bottom: 64px; }
+.blog-card { background: var(--surface); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 32px; text-decoration: none; color: inherit; display: flex; align-items: center; justify-content: space-between; gap: 24px; box-shadow: var(--shadow); transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s; }
+.blog-card:hover { border-color: var(--accent); box-shadow: var(--shadow-lg); transform: translateY(-2px); }
+.blog-card-left { display: flex; align-items: center; gap: 20px; }
+.blog-card-icon { width: 48px; height: 48px; border-radius: 14px; background: linear-gradient(135deg, #D1FAE5, #A7F3D0); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0; }
+.blog-card-name { font-size: 1rem; font-weight: 700; color: var(--ink); letter-spacing: -0.02em; margin-bottom: 5px; }
+.blog-card-desc { font-size: 0.83rem; color: var(--ink-muted); line-height: 1.55; }
+.blog-card-right { font-size: 0.85rem; font-weight: 600; color: var(--accent); white-space: nowrap; }
+
+/* FOOTER */
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.85); } }
+
+@media (max-width: 640px) {
+  .header { padding: 14px 20px; }
+  .main { padding: 48px 16px 80px; }
+  .tool-grid { grid-template-columns: 1fr; }
+  .blog-card { flex-direction: column; align-items: flex-start; }
+  .blog-card-right { align-self: flex-start; }
+}
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+
+  <div class="page-header">
+    <p class="page-header-label">Free tools</p>
+    <h1>Everything you need to work<br>with <em>AI smarter</em></h1>
+    <p>Simple, free tools built for people who use AI every day. No sign-up, no install, no fuss.</p>
+  </div>
+
+  <!-- TOOLS -->
+  <p class="section-label">Tools</p>
+  <div class="tool-grid">
+
+    <a class="tool-card" href="/tools/ai-detector/">
+      <div class="tool-card-icon tool-card-icon--detector">🔍</div>
+      <div class="tool-card-body">
+        <div class="tool-card-name">AI Detector</div>
+        <div class="tool-card-desc">Paste any text and find out if it was written by an AI. Fast, free, and no account needed.</div>
+        <div class="tool-card-footer">
+          <span class="tool-card-status tool-card-status--live"><span class="tool-card-status-dot"></span> Live</span>
+          <span class="tool-card-link">Try it →</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="tool-card" href="/">
+      <div class="tool-card-icon tool-card-icon--exporter">📄</div>
+      <div class="tool-card-body">
+        <div class="tool-card-name">AI to PDF Exporter</div>
+        <div class="tool-card-desc">Export ChatGPT, Claude, Gemini, Grok, Copilot, and Perplexity conversations to clean, color-coded PDFs.</div>
+        <div class="tool-card-footer">
+          <span class="tool-card-status tool-card-status--live"><span class="tool-card-status-dot"></span> Live</span>
+          <span class="tool-card-link">Export now →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- ADD NEW TOOLS BELOW THIS LINE — copy a tool-card block above -->
+
+  </div>
+
+  <!-- BLOG -->
+  <p class="section-label">From the blog</p>
+  <div class="blog-section">
+    <a class="blog-card" href="/pages/blog/">
+      <div class="blog-card-left">
+        <div class="blog-card-icon">✍️</div>
+        <div>
+          <div class="blog-card-name">The Export</div>
+          <div class="blog-card-desc">Honest tips, hidden quirks, and practical insights about AI tools — from the people who use them all day.</div>
+        </div>
+      </div>
+      <span class="blog-card-right">Read the blog →</span>
+    </a>
+  </div>
+
+</main>
+
+<!--FOOTER-->
+
+</body>
+</html>
