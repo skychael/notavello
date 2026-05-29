@@ -6,12 +6,19 @@
 <title>Pricing — Notavello</title>
 <meta name="description" content="Notavello is free to use. Export unlimited AI conversations as PDFs with a watermark. Remove the watermark for $5/month. Cancel anytime."/>
 <meta name="robots" content="index, follow"/>
-<link rel="canonical" href="https://notavello.com/pricing/"/>
+<link rel="canonical" href="https://notavello.com/pages/pricing/"/>
 <meta property="og:type" content="website"/>
-<meta property="og:url" content="https://notavello.com/pricing/"/>
+<meta property="og:url" content="https://notavello.com/pages/pricing/"/>
 <meta property="og:title" content="Pricing — Notavello"/>
 <meta property="og:description" content="Free to use. Remove the watermark for $5/month. Cancel anytime."/>
 <meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Pricing — Notavello"/>
+<meta name="twitter:description" content="Free to use. Remove the watermark for $5/month. Cancel anytime."/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <style>
@@ -194,7 +201,7 @@ body {
         <li><div class="feature-check feature-check--no">–</div> Watermark on every page</li>
         <li><div class="feature-check feature-check--no">–</div> Limited to 30 messages per export — longer conversations are truncated at 30 and a prompt to upgrade is shown</li>
       </ul>
-      <a href="/claude/" class="btn-plan btn-plan--free">Start Exporting Free</a>
+      <a href="/exporters/claude/" class="btn-plan btn-plan--free">Start Exporting Free</a>
     </div>
 
     <div class="plan plan--paid">
@@ -269,14 +276,14 @@ async function startCheckout(btn) {
   const params = new URLSearchParams(window.location.search);
   if (params.get('paid') === 'true') {
     localStorage.setItem('notavello_paid', 'true');
-    window.history.replaceState({}, '', '/pricing/');
+    window.history.replaceState({}, '', '/pages/pricing/');
     const msg = document.createElement('div');
     msg.style.cssText = 'position:fixed;top:24px;left:50%;transform:translateX(-50%);background:#059669;color:white;padding:14px 28px;border-radius:12px;font-size:0.95rem;font-weight:600;z-index:9999;box-shadow:0 4px 20px rgba(5,150,105,0.4);';
     msg.textContent = '✓ Payment confirmed — watermark removed, unlimited exports unlocked!';
     document.body.appendChild(msg);
     setTimeout(() => msg.remove(), 5000);
   } else if (params.get('paid') === 'cancelled') {
-    window.history.replaceState({}, '', '/pricing/');
+    window.history.replaceState({}, '', '/pages/pricing/');
   }
 })();
 </script>

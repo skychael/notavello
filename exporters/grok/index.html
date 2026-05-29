@@ -1,4 +1,4 @@
-<!-- Notavello grok-2.2 | generated 12:15:00 UTC | Fix canonical/OG URLs, add og:image, upgrade twitter:card, add structured data -->
+<!-- Notavello grok-2.3 | generated 20:48:51 UTC | Rewrite Grok parser: use "Thought for"/"N sources" turn markers instead of blind paragraph alternation; strip trailing page-title + extra UI noise -->
 <!-- ⚠️ AI INSTRUCTION: Every time you modify this file you MUST update the version comment on line 1.
      Bump the patch number (e.g. 2.1 → 2.2), update the UTC time, and add a brief note of what changed.
      Also update the GENERATED timestamp in the badge in the <header> to match.
@@ -1050,7 +1050,7 @@ body {
     Nota<span>vello</span>
   </div>
   </a>
-  <div class="badge" id="liveBadge">GROK-2.2 · GENERATED 12:15:00 UTC</div>
+  <div class="badge" id="liveBadge">GROK-2.3 · GENERATED 20:48:51 UTC</div>
   <!-- ⚠️ BADGE NOTE: This timestamp is hardcoded on purpose. It shows when this file was last edited,
        so you can verify the correct version is live after deployment. Do NOT replace with a live clock. -->
 </header>
@@ -1401,7 +1401,7 @@ function checkConfidence(messages) {
   if (h === 0) return { ok: false, warning: 'No user messages detected. Try copying again with Ctrl+A first.' };
   if (a === 0) return { ok: false, warning: 'No AI messages detected. Try copying again with Ctrl+A first.' };
   const ratio = Math.max(h, a) / Math.min(h, a);
-  if (ratio > 4) return { ok: true, warning: `Heads up: detected ${h} user and ${a} Gemini messages — please review before exporting.` };
+  if (ratio > 4) return { ok: true, warning: `Heads up: detected ${h} user and ${a} Grok messages — please review before exporting.` };
   return { ok: true, warning: null };
 }
 
@@ -1541,34 +1541,89 @@ function dedupeMessages(messages) {
 }
 
 // ── PARSE GROK ──
-// grok.com format: alternating blocks separated by the speaker labels
-// "You" for the user, "Grok" for the AI. Labels appear on their own line.
-// Fallback: if no speaker labels found, use alternating paragraph blocks.
+// When you copy a conversation from grok.com there are NO "You"/"Grok"
+// speaker labels in the clipboard text. Instead each turn is delimited by
+// structural markers the UI emits:
+//   • an AI turn STARTS with a "Thought for 4s" reasoning line
+//   • an AI turn ENDS with a "35 sources" citation-count line
+// The text before the first "Thought for" is the opening user message; the
+// text between a "N sources" line and the next "Thought for" is a user
+// message; everything else between those markers is Grok.
+//
+// Older/explicitly-labelled pastes (rare) are still handled first. Blind
+// paragraph alternation is kept only as a last resort, because it shreds a
+// single multi-paragraph answer across both speakers (the old bug).
 function parseGrok(text) {
-  // Strip UI noise
-  text = text.replace(/^(New chat|Grok\s*\d*)\s*$/gim, '');
-  text = text.replace(/^\d{1,2}:\d{2}\s*(AM|PM)\s*$/gim, '');
-  text = text.replace(/^(Copy|Share|Retry|Like|Dislike)\s*$/gim, '');
-  text = text.trim();
+  text = (text || '').replace(/\r\n?/g, '\n');
 
-  // Try labelled format: lines that are exactly "You" or "Grok"
-  const labelPattern = /^(You|Grok)\s*$/gim;
+  // ── Strip UI chrome (whole lines only) ──
+  // NOTE: we deliberately do NOT strip bare "You"/"Grok" lines here, so the
+  // labelled path below can still see them.
+  const NOISE = [
+    /^\s*Ctrl\+[A-Za-z]\s*$/,
+    /^\s*New chat\s*$/i,
+    /^\s*See new posts\s*$/i,
+    /^\s*(Copy|Share|Retry|Edit|Regenerate|Like|Dislike|Good response|Bad response)\s*$/i,
+    /^\s*Upgrade to SuperGrok\s*$/i,
+    /^\s*Are you satisfied with Grok'?s answer\??\s*$/i,
+    /^\s*\d{1,2}:\d{2}\s*(AM|PM)?\s*$/i,
+    // trailing browser-tab title, e.g. "GitHub + Cloudflare: ... - Grok"
+    /\s[-–|]\s*Grok\s*$/,
+  ];
+  text = text.split('\n')
+             .filter(line => !NOISE.some(re => re.test(line)))
+             .join('\n')
+             .trim();
+
+  // ── Path 1: explicit "You" / "Grok" speaker labels ──
+  const labelPattern = /^[ \t]*(You|Grok)[ \t]*$/gim;
   const labelMatches = [...text.matchAll(labelPattern)];
-
   if (labelMatches.length >= 2) {
     const messages = [];
     for (let i = 0; i < labelMatches.length; i++) {
-      const label   = labelMatches[i][1];
-      const role    = label === 'You' ? 'human' : 'ai';
-      const start   = labelMatches[i].index + labelMatches[i][0].length;
-      const end     = labelMatches[i + 1] ? labelMatches[i + 1].index : text.length;
-      const block   = text.substring(start, end).trim();
+      const role  = labelMatches[i][1] === 'You' ? 'human' : 'ai';
+      const start = labelMatches[i].index + labelMatches[i][0].length;
+      const end   = labelMatches[i + 1] ? labelMatches[i + 1].index : text.length;
+      const block = text.substring(start, end).trim();
       if (block.length >= 1) messages.push({ role, text: block, time: '' });
     }
     return messages;
   }
 
-  // Fallback: alternating paragraph blocks
+  // ── Path 2: marker-based (the normal grok.com copy format) ──
+  const isAiStart = l => /^[ \t]*Thought for\b/i.test(l)
+                      || /^[ \t]*Thinking\b.*$/i.test(l);
+  const isSources = l => /^[ \t]*\d+\s+sources?\s*$/i.test(l);
+
+  if (text.split('\n').some(isAiStart)) {
+    const lines = text.split('\n');
+    const messages = [];
+    let buf = [];
+    let role = 'human'; // a conversation always opens with the user
+
+    const flush = () => {
+      const t = buf.join('\n').trim();
+      if (t) messages.push({ role, text: t, time: '' });
+      buf = [];
+    };
+
+    for (const line of lines) {
+      if (isAiStart(line)) {            // user turn (if any) just ended
+        flush();
+        role = 'ai';
+        continue;                       // drop the "Thought for …" line
+      }
+      if (isSources(line)) {            // AI turn just ended
+        if (role === 'ai') { flush(); role = 'human'; }
+        continue;                       // drop the "N sources" line
+      }
+      buf.push(line);
+    }
+    flush();
+    return messages;
+  }
+
+  // ── Path 3: last-resort alternating paragraph blocks ──
   const blocks = text.split(/\n{2,}/).map(b => b.trim()).filter(b => b.length > 3);
   return blocks.map((block, i) => ({ role: i % 2 === 0 ? 'human' : 'ai', text: block, time: '' }));
 }
@@ -1580,7 +1635,7 @@ function parseConversation(raw, htmlText) {
   const humanCount = messages.filter(m => m.role === 'human').length;
   const aiCount = messages.filter(m => m.role === 'ai').length;
   DEBUG_STATE.summary = [
-    `Version: GROK-2.0 DEBUG`,
+    `Version: GROK-2.3 DEBUG`,
     `Raw chars: ${(raw || '').length}`,
     `Messages: ${messages.length}`,
     `Human: ${humanCount}`,
