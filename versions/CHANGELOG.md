@@ -6,6 +6,52 @@
 
 ---
 
+## SESSION 17 · May 30, 2026
+
+### Context
+Worker URL migration — removed Mike's account name (`mikekoga`) from the public
+Worker URL, plus a full sweep of external services for stale references to the
+old host. (NOTE: the three May 29 sessions are documented in HANDOFF.md but were
+never assigned CHANGELOG session numbers — this entry is numbered 17 as the next
+integer after the last logged session, 16.)
+
+### The problem
+The Worker's default URL `notavello-worker.mikekoga.workers.dev` exposed the
+Cloudflare account name publicly — visible in View Source on every exporter page.
+
+### What changed
+- **Custom Domain added:** `api.notavello.com` connected to the `notavello-worker`
+  Worker via the dashboard Domains tab. DNS auto-created (`notavello.com` was
+  already an active Cloudflare zone). Verified live.
+- **Old URLs disabled:** both the `workers.dev` Worker URL and the Preview URL set
+  Inactive. Dashboard-only deploy (no Wrangler) means they stay off.
+- **Frontend updated:** all `fetch()` calls → `https://api.notavello.com` across
+  `login.html`, `pages/pricing.html`, and exporters claude/grok/perplexity/gemini/
+  copilot/other. (chatgpt was already migrated.) No version bumps applied to these
+  files this session — single-line host swap only. Deployed via GitHub → Pages.
+- **Stripe webhook updated:** endpoint URL changed (existing destination edited, not
+  recreated, so signing secret preserved) to `https://api.notavello.com/stripe-webhook`.
+  This was a hidden external dependency — easy to miss.
+
+### Verifications (all passed)
+- Live grok page source: zero `mikekoga`.
+- Webhook resend: 200 OK, `{"received": true}`, Delivered/Recovered. Welcome email delivered.
+- Stripe Event destinations: one destination, new URL, 0% error rate.
+- Live Upgrade button → reached Stripe checkout page.
+- Worker code: success_url/cancel_url point to notavello.com; CORS = notavello.com; no old host.
+- `/admin/` Decap CMS: blank/unconfigured — confirmed NOT a migration issue.
+
+### Findings / decisions
+1. Session cookie (`Domain=notavello.com`) was likely rejected on the old workers.dev
+   host (different registrable domain) — should now persist correctly on api.notavello.com.
+   Pending a login-and-reload confirmation.
+2. Polish backlog: email em-dash UTF-8 encoding; success_url always returns to
+   /exporters/claude/; optional config.js to centralize the API base (hardcoded ~30× across 8 files).
+3. External sweep cleared Worker code, Stripe, CMS, and all repo files. Workers Routes /
+   GitHub webhooks / Resend webhooks left unchecked as low-probability.
+
+---
+
 ## SESSION 16 · May 25, 2026
 
 ### Context
@@ -327,3 +373,4 @@ floating download bar, multi-platform parser attempt (failed), rollback to one-f
 12. notavello-worker lives ONLY in Cloudflare editor — never put its code in GitHub
 13. NEVER use fetch('https://notavello.com/...') in _worker.js — use env.ASSETS.fetch()
 14. All new pages MUST use <!--HEADER--> and <!--FOOTER--> placeholders
+15. notavello-worker is served at api.notavello.com (Custom Domain). The default workers.dev Worker URL AND Preview URL are DISABLED — do not re-enable (re-exposes the account name). Every external integration (Stripe webhook, any future OAuth callbacks, monitoring) must point at api.notavello.com, never the old …workers.dev host.
