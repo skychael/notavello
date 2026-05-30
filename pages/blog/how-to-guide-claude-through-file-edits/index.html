@@ -1,0 +1,169 @@
+<!-- ⚠️ ALL %% PLACEHOLDERS MUST BE REPLACED — they feed SEO meta tags, OG, Twitter, and schema -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>How to Guide Claude Through File Edits Without Losing Control — The Export | Notavello</title>
+<meta name="description" content="Claude is fast at editing your files — but it can't see outside your site. Here's how to stay in control: check external links, catch silent changes, and avoid context meltdown."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/blog/how-to-guide-claude-through-file-edits/"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://notavello.com/pages/blog/how-to-guide-claude-through-file-edits/"/>
+<meta property="og:title" content="How to Guide Claude Through File Edits Without Losing Control"/>
+<meta property="og:description" content="Claude is fast at editing your files — but it can't see outside your site. Here's how to stay in control: check external links, catch silent changes, and avoid context meltdown."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="How to Guide Claude Through File Edits Without Losing Control"/>
+<meta name="twitter:description" content="Claude is fast at editing your files — but it can't see outside your site. Here's how to stay in control: check external links, catch silent changes, and avoid context meltdown."/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "How to Guide Claude Through File Edits Without Losing Control",
+  "description": "Claude is fast at editing your files — but it can't see outside your site. Here's how to stay in control: check external links, catch silent changes, and avoid context meltdown.",
+  "url": "https://notavello.com/pages/blog/how-to-guide-claude-through-file-edits/",
+  "datePublished": "2026-05-30",
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
+.back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; color: var(--ink-muted); text-decoration: none; margin-bottom: 40px; transition: color 0.15s; }
+.back-link:hover { color: var(--accent); }
+.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
+.post-date { font-size: 0.78rem; color: var(--ink-faint); }
+.post-title { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; color: var(--ink); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
+.post-lede { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+.post-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink); }
+.post-body h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 44px 0 16px; letter-spacing: -0.01em; }
+.post-body p { margin-bottom: 20px; color: var(--ink-muted); }
+.post-body p strong { color: var(--ink); font-weight: 600; }
+.post-body ul { margin: 0 0 20px 20px; color: var(--ink-muted); }
+.post-body ul li { margin-bottom: 8px; line-height: 1.7; }
+.callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 32px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.7; }
+.callout-warn { background: #FFF7ED; border-left: 3px solid #F97316; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 32px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.7; }
+.post-footer { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.post-footer-label { font-size: 0.8rem; color: var(--ink-faint); }
+.btn-export { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: opacity 0.2s; }
+.btn-export:hover { opacity: 0.9; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } }
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+
+  <a class="back-link" href="/pages/blog/">← The Export</a>
+
+  <div class="post-meta">
+    <span class="post-tag">AI Tools</span>
+    <span class="post-date">May 30, 2026</span>
+  </div>
+
+  <h1 class="post-title">How to Guide Claude Through File Edits Without Losing Control</h1>
+
+  <p class="post-lede">Claude can tear through file edits at a speed no human can match. But speed without direction is just chaos faster. Here's how to stay the one in charge — and catch everything Claude can't see from inside your files.</p>
+
+  <div class="post-body">
+
+    <h2>You're the architect. Claude is the contractor.</h2>
+    <p>Claude is remarkably good at editing HTML, fixing logic, rewriting functions, and cleaning up code. What it <strong>cannot do</strong> is understand your project from the outside in. It sees only what you give it. It doesn't know that your API endpoint is tied to a Cloudflare Worker with its own routing rules, that your button label maps to a specific onboarding flow in your docs, or that your form action hits a third-party service with its own field naming conventions. That's your job to know. Claude's job is to execute what you describe, accurately. The split of responsibility is that clean — and when it breaks down, it's almost always because the human handed over the big-picture thinking too.</p>
+
+    <h2>Before you start: map what's connected outside the files</h2>
+    <p>Before you ask Claude to touch anything, spend two minutes listing what your files talk to that isn't in the files themselves. This includes API endpoints (yours or third-party), Cloudflare Workers or edge functions, environment variables and secrets, external CDN assets, authentication providers, payment processors, analytics scripts, and any redirect rules living in your hosting config. Write this list down — even in a scratch note. When Claude finishes the visible edits, you'll need it. The mistake most people make is assuming that if the HTML looks right, everything is right. It isn't. The file is the tip of the iceberg.</p>
+
+    <div class="callout">
+      <strong>The rule of thumb:</strong> If something in your site <em>calls out</em> to something else — a fetch, a form action, a script src, an API key reference — that external thing needs to be checked separately after any edit. Claude made the change; you have to verify the handshake still works.
+    </div>
+
+    <h2>After the edits: make Claude list its own blind spots</h2>
+    <p>Once Claude has finished editing your files, don't just deploy and hope. Instead, prompt it explicitly: <em>"Now list every possible failure point that exists outside of what you just edited. Include API paths, external services, environment variables, routing rules, and anything you assumed was correct but couldn't verify."</em> Claude will produce a methodical list when asked this way — and it's almost always longer than you expected. Then go check each item yourself, or paste the relevant config into a new message and ask Claude to verify it matches.</p>
+
+    <div class="callout-warn">
+      <strong>Watch for silent "improvements."</strong> Claude will occasionally reword a button label, tweak a heading, or restructure a sentence because it thinks the new version is clearer. It usually is — but "Get Started" and "Begin Free Trial" are not the same thing if one of them maps to a specific A/B test, analytics event, or onboarding script trigger. Always review text changes, not just code changes, before deploying.
+    </div>
+
+    <h2>Keep your chats short and focused — context decay is real</h2>
+    <p>The longer a conversation runs, the more Claude's attention drifts from the early details. Decisions made in message three can be quietly contradicted by message thirty. This isn't a flaw to complain about — it's a constraint to design around. Work in short, scoped sessions: one session per logical task. When you're switching from "edit the frontend" to "now check the Worker routes," start a fresh conversation and paste in only the relevant context. This isn't inefficient — it's the fastest way to get accurate work. A long tangled chat is where subtle bugs get born.</p>
+
+    <h2>When you have two files with the same name, say so immediately</h2>
+    <p>This one is easy to forget and genuinely dangerous. If you're working with files that share a name but live in different folders — like two different <code>index.html</code> files, or a <code>worker.js</code> in both your dev and prod directories — Claude has no way to know which one you mean unless you tell it. Be explicit every time: <em>"I'm uploading the blog index at <code>/pages/blog/index.html</code>, not the root index."</em> A Claude that edits the wrong file confidently is worse than one that asks for clarification. Don't make it guess.</p>
+
+    <h2>Ask Claude to approach the problem from a different angle</h2>
+    <p>If something isn't working and you've gone a few rounds trying to fix it, the most powerful thing you can do is ask Claude to reset its assumptions entirely. Try: <em>"Forget the approach we've been using. What's a completely different way to solve this?"</em> or <em>"Assume everything we've tried is wrong. What would you check first?"</em> Claude is good at fresh starts when you explicitly invite one. Staying locked into a failing approach because the conversation has momentum is a human problem — Claude will pivot cleanly if you ask it to.</p>
+
+    <h2>Test from outside, not just inside</h2>
+    <p>When Claude tells you the edits are done, resist the urge to eyeball the file and call it good. Test the actual behavior: load the page in a browser, submit the form, trigger the API call, check the network tab. For anything involving external services, test in a real environment — not just by reading the code. Claude edited what it could see. Reality includes everything it couldn't. A five-minute real-world test catches more bugs than an hour of re-reading the source.</p>
+
+    <div class="callout">
+      <strong>The short version:</strong> Claude handles the execution. You handle the big picture, the external connections, the naming collisions, and the final test. Keep sessions short, name your files explicitly, ask for the blind-spot list after every major edit, and always read the text changes — not just the code ones.
+    </div>
+
+  </div>
+
+  <div class="post-footer">
+    <span class="post-footer-label">Export your Claude chats as clean PDFs</span>
+    <a class="btn-export" href="/">Try Notavello free →</a>
+  </div>
+
+</main>
+
+<!--FOOTER-->
+
+</body>
+</html>
+
+<!--
+=== ⚠️ NOTE TO FUTURE CLAUDES — READ BEFORE TOUCHING THIS FILE ===
+This is a completed, deployed blog post. DO NOT edit content, headings, button text,
+or any copy without first explicitly asking Mike and receiving approval in the conversation.
+This includes "minor improvements" to wording — those have downstream meaning.
+===
+-->
