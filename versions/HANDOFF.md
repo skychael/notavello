@@ -232,6 +232,16 @@ Three sessions this date:
 
 ---
 
+## Session Notes — May 29, 2026 (analytics + architecture session)
+
+- Submitted to Google Search Console yesterday — indexing not yet visible, expected delay 1–2 weeks
+- Cloudflare Web Analytics confirmed active (JS snippet already installed) — 24 real visitors in last 24hrs, 31 page views
+- Traffic is 100% direct or word-of-mouth right now (20 direct, 3 via Gmail on Android, 1 via chatgpt.com referral)
+- `notavello.com/exporters/chatgpt/` has a **Poor LCP** in Core Web Vitals — root cause is `vfs_fonts.js` (~1.5MB) loading synchronously in `<head>` before render. Fix: lazy-load pdfmake only on download click
+- **Worker URL exposes your name publicly** — `notavello-worker.mikekoga.workers.dev` is visible in View Source on every page. Hardcoded across all exporter pages. **Recommended fix:** set up a Cloudflare Workers Route mapping `notavello.com/api/*` → Worker, then update all fetch calls to use `/api/...` instead. One route rule to maintain instead of hunting across every HTML file.
+
+---
+
 ## Known Remaining Issues
 - `sitemap.xml` may need updating to include `/tools/` and `/pages/blog/` if not already there — check
 - Cloudflare bot settings block Claude's web fetch tool — not fixable on free plan, not a Googlebot issue
@@ -242,9 +252,11 @@ Three sessions this date:
 ---
 
 ## Active Development Priorities (unchanged)
-1. Cloudflare Worker implementation
-2. Haiku 4.5 speaker validation
-3. Auto-versioning
-4. Stripe integration ($5/mo)
-5. Paywall enforcement (30 message limit — UI exists, not yet enforced)
-6. ChatGPT + Gemini support improvements
+1. **`/api/` proxy route** — replace hardcoded `notavello-worker.mikekoga.workers.dev` URLs across all pages with `notavello.com/api/...` via Cloudflare Workers Route (privacy + maintainability fix)
+2. **LCP fix on chatgpt exporter** — lazy-load pdfmake + vfs_fonts.js on download click instead of in `<head>`
+3. Cloudflare Worker implementation
+4. Haiku 4.5 speaker validation
+5. Auto-versioning
+6. Stripe integration ($5/mo)
+7. Paywall enforcement (30 message limit — UI exists, not yet enforced)
+8. ChatGPT + Gemini support improvements
