@@ -1,4 +1,4 @@
-<!-- Notavello perplexity-2.5 | generated 12:25:00 UTC | Fix canonical/OG URLs, add og:image, upgrade twitter:card, add structured data -->
+<!-- Notavello perplexity-2.6 | generated 00:06:26 UTC | Add structural "Completed N steps" plain-text parser, wired as highest-priority path in parsePerplexity -->
 <!-- ⚠️ AI INSTRUCTION: Every time you modify this file you MUST update the version comment on line 1.
      Bump the patch number (e.g. 2.4 → 2.5), update the UTC time, and add a brief note of what changed.
      Also update the GENERATED timestamp in the badge in the <header> to match.
@@ -1050,7 +1050,7 @@ body {
     Nota<span>vello</span>
   </div>
   </a>
-  <div class="badge" id="liveBadge">PERPLEXITY-2.5 · GENERATED 12:25:00 UTC</div>
+  <div class="badge" id="liveBadge">PERPLEXITY-2.6 · GENERATED 00:06:26 UTC</div>
   <!-- ⚠️ BADGE NOTE: This timestamp is hardcoded on purpose. It shows when this file was last edited,
        so you can verify the correct version is live after deployment. Do NOT replace with a live clock. -->
 </header>
@@ -1777,6 +1777,90 @@ function scoreMessages(messages) {
   return score;
 }
 
+// ── PERPLEXITY STEP-MARKER PARSER ──
+// Handles the plain-text copy format where each turn is:
+//     <user question>
+//     Completed N steps        <- the one reliable structural marker
+//     <AI answer, often multiple paragraphs / headings>
+// ...repeated, with a trailing "Follow-ups" + plan footer block.
+// Trusts the structural marker instead of guessing speakers from wording.
+// Returns [] when the marker is absent, so other parsers take over.
+const PPLX_STEP_MARKER = /^\s*Completed\s+\d+\s+steps?\s*$/i;
+const PPLX_FOLLOWUPS_MARKER = /^\s*Follow[-\s]?ups?\s*$/i;
+const PPLX_NOISE_LINES = new Set([
+  'Conversation with Perplexity',
+  'Ask anything', 'Ask Perplexity', 'New chat',
+  'Sources', 'Source', 'Related', 'Related content',
+  'Share', 'Share & export', 'Export', 'Copy', 'Rewrite',
+  'Pro', 'Free preview of advanced search enabled.',
+  'Perplexity is AI and can make mistakes.',
+  'Perplexity can make mistakes, so double-check it.'
+]);
+
+function looksLikePerplexityStepFormat(rawText) {
+  if (!rawText) return false;
+  return rawText.split('\n').some(line => PPLX_STEP_MARKER.test(line));
+}
+
+function pplxStepClean(text) {
+  return (text || '')
+    .replace(/\u00a0/g, ' ')
+    .split('\n')
+    .map(l => l.replace(/\s+$/, ''))
+    .filter(l => !PPLX_NOISE_LINES.has(l.trim()))
+    .join('\n')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
+}
+
+function pplxStepBlocks(segment) {
+  return segment.split(/\n\s*\n/).map(b => b.trim()).filter(Boolean);
+}
+
+function pplxStepStripTrailingChrome(segment) {
+  const out = [];
+  for (const line of segment.split('\n')) {
+    if (PPLX_FOLLOWUPS_MARKER.test(line)) break;
+    out.push(line);
+  }
+  return out.join('\n');
+}
+
+function parsePerplexityStepFormat(rawText) {
+  if (!rawText) return [];
+  const text = rawText.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+
+  // 1) Split into segments at each "Completed N steps" marker (marker dropped).
+  const segments = [];
+  let buf = [];
+  for (const line of text.split('\n')) {
+    if (PPLX_STEP_MARKER.test(line)) { segments.push(buf.join('\n')); buf = []; }
+    else buf.push(line);
+  }
+  segments.push(buf.join('\n'));
+  if (segments.length < 2) return []; // no marker => not this format
+
+  const messages = [];
+  const push = (role, raw) => {
+    const t = pplxStepClean(raw);
+    if (t) messages.push({ role, text: t, time: '' });
+  };
+
+  const lastIdx = segments.length - 1;
+  segments.forEach((seg, i) => {
+    if (i === 0) { push('human', seg); return; }                 // opening question
+    if (i === lastIdx) { push('ai', pplxStepStripTrailingChrome(seg)); return; } // final answer, no trailing question
+    // Middle segment = <AI answer> ... <next user question (final block)>.
+    const blocks = pplxStepBlocks(seg);
+    if (blocks.length === 0) return;
+    if (blocks.length === 1) { push('human', blocks[0]); return; }
+    push('ai', blocks.slice(0, -1).join('\n\n'));
+    push('human', blocks[blocks.length - 1]);
+  });
+
+  return messages;
+}
+
 function chooseBestPerplexityParse(htmlMessages, plainMessages) {
   const htmlScore = scoreMessages(htmlMessages);
   const plainScore = scoreMessages(plainMessages);
@@ -1819,6 +1903,21 @@ function parsePerplexity(rawText, htmlText) {
   parseLog.length = 0;
   lastParseUsedFallback = false;
   parseLog.push('── Perplexity balanced parser started ──');
+
+  // Highest-priority path: the "Completed N steps" plain-text copy format.
+  // It keys off a real structural marker, so when present we trust it
+  // over the HTML/plain heuristics.
+  if (looksLikePerplexityStepFormat(rawText)) {
+    const stepMessages = parsePerplexityStepFormat(rawText);
+    const sh = stepMessages.filter(m => m.role === 'human').length;
+    const sa = stepMessages.filter(m => m.role === 'ai').length;
+    parseLog.push(`Step-marker candidate: ${stepMessages.length} messages (${sh} human / ${sa} ai)`);
+    if (stepMessages.length >= 2 && sh > 0 && sa > 0) {
+      parseLog.push('Parser choice: step-marker (structural)');
+      lastParseUsedFallback = false;
+      return dedupeMessages(stepMessages).filter(m => m.text.trim().length >= 1);
+    }
+  }
 
   const htmlMessages = parsePerplexityHtml(htmlText);
   const plainMessages = parsePerplexityPlainSmart(rawText);
