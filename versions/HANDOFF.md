@@ -238,7 +238,7 @@ Three sessions this date:
 - Cloudflare Web Analytics confirmed active (JS snippet already installed) — 24 real visitors in last 24hrs, 31 page views
 - Traffic is 100% direct or word-of-mouth right now (20 direct, 3 via Gmail on Android, 1 via chatgpt.com referral)
 - `notavello.com/exporters/chatgpt/` has a **Poor LCP** in Core Web Vitals — root cause is `vfs_fonts.js` (~1.5MB) loading synchronously in `<head>` before render. Fix: lazy-load pdfmake only on download click
-- **Worker URL exposes your name publicly** — `notavello-worker.mikekoga.workers.dev` is visible in View Source on every page. Hardcoded across all exporter pages. **Recommended fix:** set up a Cloudflare Workers Route mapping `notavello.com/api/*` → Worker, then update all fetch calls to use `/api/...` instead. One route rule to maintain instead of hunting across every HTML file.
+- **[RESOLVED May 30, 2026] Worker URL no longer exposes personal name.** Previously the Worker was served at `notavello-worker.<account-subdomain>.workers.dev`, which leaked the account name in View Source. Fix applied: added a Custom Domain (`api.notavello.com`) to the `notavello-worker` Worker via the Cloudflare dashboard (Worker → Domains), then updated every `fetch()` call across all exporter pages, `login.html`, and `pages/pricing.html` to use `https://api.notavello.com`. The old `workers.dev` Worker URL **and** Preview URL were disabled (set Inactive in the dashboard) so the name-bearing endpoints no longer respond. Verified live: `api.notavello.com/check-access` returns "Notavello Worker running." Deploy flow is dashboard/GitHub upload — no Wrangler in use, so the disabled workers.dev route stays disabled.
 
 ---
 
@@ -252,7 +252,7 @@ Three sessions this date:
 ---
 
 ## Active Development Priorities (unchanged)
-1. **`/api/` proxy route** — replace hardcoded `notavello-worker.mikekoga.workers.dev` URLs across all pages with `notavello.com/api/...` via Cloudflare Workers Route (privacy + maintainability fix)
+1. **[DONE] Name removed from Worker URL** — now served at `api.notavello.com` via Custom Domain; workers.dev disabled. (Optional future polish: centralize the API base into one shared `config.js` so a future domain change is a one-line edit instead of editing ~30 lines across 8 files. Not urgent.)
 2. **LCP fix on chatgpt exporter** — lazy-load pdfmake + vfs_fonts.js on download click instead of in `<head>`
 3. Cloudflare Worker implementation
 4. Haiku 4.5 speaker validation

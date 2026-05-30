@@ -254,7 +254,7 @@ async function startCheckout(btn) {
   btn.disabled = true;
   btn.textContent = 'Redirecting to checkout…';
   try {
-    const res = await fetch('https://notavello-worker.mikekoga.workers.dev/create-checkout', {
+    const res = await fetch('https://api.notavello.com/create-checkout', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
     });

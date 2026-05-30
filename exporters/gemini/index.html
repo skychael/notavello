@@ -1427,7 +1427,7 @@ async function sendBugReport(btn) {
   btn.textContent = 'Sending…';
 
   try {
-    await fetch('https://notavello-worker.mikekoga.workers.dev/bug-report', {
+    await fetch('https://api.notavello.com/bug-report', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -2371,7 +2371,7 @@ async function startCheckout(btn) {
   const raw = document.getElementById('pasteArea').value;
   if (raw.trim()) sessionStorage.setItem('notavello_saved_conversation', raw);
   try {
-    const res = await fetch('https://notavello-worker.mikekoga.workers.dev/create-checkout', {
+    const res = await fetch('https://api.notavello.com/create-checkout', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
     });
@@ -2426,7 +2426,7 @@ function escHtml(t) {
 (async function checkAccessOnLoad() {
   if (localStorage.getItem('notavello_paid') === 'true') return; // already set
   try {
-    const res = await fetch('https://notavello-worker.mikekoga.workers.dev/check-access', {
+    const res = await fetch('https://api.notavello.com/check-access', {
       method: 'POST',
       credentials: 'include',
     });
@@ -2459,7 +2459,7 @@ async function sendRestoreCode() {
   msg.textContent = 'Sending code…';
 
   try {
-    const res = await fetch('https://notavello-worker.mikekoga.workers.dev/send-code', {
+    const res = await fetch('https://api.notavello.com/send-code', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email }),
@@ -2496,7 +2496,7 @@ async function verifyRestoreCode() {
   msg.textContent = 'Verifying…';
 
   try {
-    const res = await fetch('https://notavello-worker.mikekoga.workers.dev/verify-code', {
+    const res = await fetch('https://api.notavello.com/verify-code', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       credentials: 'include',
