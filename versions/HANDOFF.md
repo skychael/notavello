@@ -1,10 +1,11 @@
 # Notavello Handoff — May 29, 2026
 
 ## Session Summary
-Two sessions this date:
+Three sessions this date:
 
 1. **Full site SEO audit and fix** across all 17 pages. Every page now has correct canonicals, OG tags, Twitter cards, and structured data. Several pages had broken internal links and outdated content that were also fixed. Blog template created. Tools page built from scratch.
 2. **Gemini + Copilot parser rework.** Gemini was shredding single responses into dozens of fake alternating turns. Copilot's label parser wasn't recognising the real "You said" / "Copilot said" markers and its noise list was full of Gemini/Google leftovers. Both fixed and verified against real paste input.
+3. **Perplexity structural parser.** Added a `Completed N steps` marker-based plain-text parser to the Perplexity exporter, wired as the highest-priority path in `parsePerplexity`. Fixes the common Perplexity copy format — plain text with no speaker labels — which the existing HTML/heuristic parsers shredded into fake alternating turns. Verified against a real 5-turn paste.
 
 ---
 
@@ -37,13 +38,9 @@ Two sessions this date:
 - SEO session: added `og:image`, upgraded Twitter card
 - Parser session: see **Gemini parser rework** section below
 
-**`exporters/perplexity/` — v2.5**
-- Fixed canonical URL (`/perplexity/` → `/exporters/perplexity/`)
-- Fixed OG URL to match
-- Added `og:image` and dimensions
-- Upgraded `twitter:card` to `summary_large_image`
-- Added `twitter:image`
-- Added full structured data (`WebApplication` schema)
+**`exporters/perplexity/` — v2.6** *(was v2.5 after SEO session, bumped again in parser session)*
+- SEO session: fixed canonical URL (`/perplexity/` → `/exporters/perplexity/`), OG URL, added `og:image` + dimensions, upgraded `twitter:card` to `summary_large_image`, added `twitter:image`, added full structured data (`WebApplication` schema)
+- Parser session: see **Perplexity parser rework** section below
 
 **`exporters/other/` — v1.3**
 - Fixed canonical URL (`/other/` → `/exporters/other/`)
@@ -90,6 +87,36 @@ Two sessions this date:
 - Housekeeping: version comment, badge, stale `COPILOT-2.2 DEBUG` / `19:40:18` debug strings, `v1.6 strategy` parser header — all updated.
 
 **Verified:** Real 8-turn paste → 16 messages (8 human / 8 AI), parsed via `Plain label candidate: 16` (label parser fired, no fallback), zero chrome or noise leaked into any message.
+
+---
+
+### Perplexity parser rework (`perplexity-2.6`)
+
+**What was broken** (tested against a real 5-turn Perplexity paste — a plain-text copy with no clipboard HTML):
+1. Perplexity plain-text copy carries **no speaker labels** — "You" / "Perplexity" never appear — so `parsePerplexityByLabels` matched nothing and fell through to the alternation guesser.
+2. `cleanPerplexityNoise` strips all blank lines, destroying paragraph boundaries, so `split(/\n{2,}/)` found nothing and the smart parser dropped to splitting on *every line* — shredding each multi-paragraph answer into many fake alternating turns. Mid-answer headings ("How it works", etc.) became fake user messages.
+3. The real turn delimiter, `Completed N steps` (printed before every answer), was not in the noise list and was itself consumed as an AI message.
+4. The trailing `Follow-ups` block (5 suggested prompts) plus the `Pro` / `Free preview of advanced search enabled.` footer were absorbed as messages.
+
+**What was fixed:** rather than patch the heuristic path, added a dedicated structural parser that trusts the one real marker instead of guessing speakers from wording.
+- **`PPLX_STEP_MARKER`** = `/^\s*Completed\s+\d+\s+steps?\s*$/i` — the turn delimiter (also matches singular "1 step").
+- **`PPLX_FOLLOWUPS_MARKER`** + **`PPLX_NOISE_LINES`** — tail-strip marker and chrome set.
+- **`looksLikePerplexityStepFormat(raw)`** — returns true if any line matches the step marker; gate for whether to run the new path at all.
+- **`parsePerplexityStepFormat(raw)`** — splits the transcript on the step markers (marker dropped). Text before the first marker = opening user question. Each middle segment = AI answer (all paragraph blocks except the last) + next user question (the final block). Final segment = last AI answer with the Follow-ups/footer tail cut. Returns `[]` when no marker is present so other parsers take over.
+- Helpers: **`pplxStepClean`** (rstrip + drop chrome, preserve blank lines), **`pplxStepBlocks`** (split on blank lines), **`pplxStepStripTrailingChrome`** (cut at `Follow-ups`).
+- **`parsePerplexity`** — now tries the step parser *first*. If the marker is present and it yields ≥2 messages with both roles, it returns immediately (`Parser choice: step-marker (structural)`). Otherwise it falls through to the existing HTML / plain candidates **completely unchanged**.
+
+**Design note:** this path deliberately does NOT add a fourth copy of `looksShredded` / `scoreMessages` — it sidesteps the score contest entirely by keying on a real structural marker. Speakers are derived from document structure, not inferred from sentence content.
+
+**Verified:**
+- Real 5-turn paste → 10 messages (5 human / 5 AI), correct chronological order, via the structural path.
+- Mid-answer headings and the answer's own closing question ("Would you like a simple breakdown…?") stayed inside the AI turn — not split off.
+- Follow-ups suggestions + footer fully stripped — zero leakage into any message.
+- Regression: a no-marker paste returns `looksLikePerplexityStepFormat === false`, skips the new path, and falls through to the label parser with no error (returned 2 messages on a labelled `You` / `Perplexity` test).
+- `node --check` passes on the full extracted `<script>` block.
+- Housekeeping: version comment + header badge bumped 2.5 → 2.6 (timestamp `00:06:26 UTC`).
+
+**Known caveat:** assumes each user question is a single paragraph block. A single-line question — or a multi-line question with soft line breaks but no blank line — parses fine. Only a question containing a genuinely *blank* line would have its earlier paragraph(s) glued onto the preceding answer. Rare for Perplexity follow-ups, and covered by the HTML path when clipboard HTML is present.
 
 ---
 
@@ -210,6 +237,7 @@ Two sessions this date:
 - Cloudflare bot settings block Claude's web fetch tool — not fixable on free plan, not a Googlebot issue
 - Homepage version badge shows `ROOT-2.0 · HH:MM:SS UTC` — dev artifact, consider removing
 - `looksShredded`, `scoreMessages`, the chooser guard, and the `checkConfidence` shred warning are now copy-pasted identically across the Gemini and Copilot pages. When ChatGPT gets a parser, it will need a third manual copy. **Recommended action:** extract into a shared parser utility module before adding ChatGPT support.
+- **Perplexity's non-marker path still has the pre-fix scorer.** The Gemini/Copilot shred fixes (`looksShredded`, the `total * 4` scorer, the chooser guard, the `checkConfidence` shred warning) were never ported to Perplexity — it still uses the old `total * 10` scorer and blind `htmlBalanced` trust. The new `perplexity-2.6` step-marker path sidesteps this whenever a `Completed N steps` marker is present, but Perplexity pastes *without* that marker (clipboard-HTML-only, or future label formats) still run through the unfixed scorer. Port the shred fixes — or better, the shared module above — to Perplexity too.
 
 ---
 
