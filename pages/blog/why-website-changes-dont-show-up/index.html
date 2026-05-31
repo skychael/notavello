@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Why Your Website Changes Won't Show Up — The Export | Notavello</title>
+<meta name="description" content="You edit a page but the old version won't budge. A plain-English guide to cache, redirects, and 404s — and the quick tests that find the real cause."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/blog/why-website-changes-dont-show-up/"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://notavello.com/pages/blog/why-website-changes-dont-show-up/"/>
+<meta property="og:title" content="Why Your Website Changes Won't Show Up — and How to Find the Real Cause"/>
+<meta property="og:description" content="You edit a page but the old version won't budge. A plain-English guide to cache, redirects, and 404s — and the quick tests that find the real cause."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Why Your Website Changes Won't Show Up — and How to Find the Real Cause"/>
+<meta name="twitter:description" content="You edit a page but the old version won't budge. A plain-English guide to cache, redirects, and 404s — and the quick tests that find the real cause."/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Why Your Website Changes Won't Show Up — and How to Find the Real Cause",
+  "description": "You edit a page but the old version won't budge. A plain-English guide to cache, redirects, and 404s — and the quick tests that find the real cause.",
+  "url": "https://notavello.com/pages/blog/why-website-changes-dont-show-up/",
+  "datePublished": "2026-05-31",
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
+.back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; color: var(--ink-muted); text-decoration: none; margin-bottom: 40px; transition: color 0.15s; }
+.back-link:hover { color: var(--accent); }
+.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
+.post-date { font-size: 0.78rem; color: var(--ink-faint); }
+.post-title { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; color: var(--ink); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
+.post-lede { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+.post-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink); }
+.post-body h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 44px 0 16px; letter-spacing: -0.01em; }
+.post-body p { margin-bottom: 20px; color: var(--ink-muted); }
+.post-body p strong { color: var(--ink); font-weight: 600; }
+.post-body ul { margin: 0 0 20px 20px; color: var(--ink-muted); }
+.post-body ul li { margin-bottom: 8px; line-height: 1.7; }
+.post-body ul li strong { color: var(--ink); font-weight: 600; }
+.callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 32px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.7; }
+.post-footer { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.post-footer-label { font-size: 0.8rem; color: var(--ink-faint); }
+.btn-export { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: opacity 0.2s; }
+.btn-export:hover { opacity: 0.9; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } }
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+
+  <a class="back-link" href="/pages/blog/">← The Export</a>
+
+  <div class="post-meta">
+    <span class="post-tag">Developer Tools</span>
+    <span class="post-date">May 31, 2026</span>
+  </div>
+
+  <h1 class="post-title">Why Your Website Changes Won't Show Up — and How to Find the Real Cause</h1>
+
+  <p class="post-lede">You edit a page, hit save, refresh the site — and the old version is still sitting there, smug as ever. Or you delete a page and it flat-out refuses to die. Before you blame your hosting or start re-uploading files at random, it helps to know what actually happens between the file on your computer and the page your visitor sees. There are more layers in that journey than you'd think, and once you can name them, finding the stuck one takes minutes instead of an afternoon.</p>
+
+  <div class="post-body">
+
+    <h2>The change is fine. The problem is the layers in between.</h2>
+    <p>When someone visits your site, your shiny new file doesn't get beamed straight onto their screen. It travels through a chain of steps, and your change can get stuck at any one of them:</p>
+    <ul>
+      <li><strong>Your files.</strong> The actual HTML sitting in your repository or on your host.</li>
+      <li><strong>The build/deploy step.</strong> Most modern hosts publish a fresh copy of your site every time you push. If that didn't run, your live site is still the old version no matter what your files say.</li>
+      <li><strong>Routing and redirect rules.</strong> Quiet instructions that send one address to another, or serve a different file than the URL implies.</li>
+      <li><strong>The CDN edge cache.</strong> A network of servers around the world that keep copies of your pages close to visitors so they load fast. Fast is wonderful — until it's handing out a copy you already replaced.</li>
+      <li><strong>The browser cache.</strong> Your own browser hanging onto an old copy to save itself a download.</li>
+    </ul>
+    <p>The skill in debugging this isn't trying harder. It's working out <em>which</em> of those five links is holding the old version — and there's a quick test for each one.</p>
+
+    <h2>First, rule out the dumbest cause: your own browser.</h2>
+    <p>Do a hard refresh (Ctrl+Shift+R, or Cmd+Shift+R on a Mac), open the page in a private/incognito window, or just pull it up on your phone or a browser you haven't touched today. If a brand-new browser <em>still</em> shows the old page, your browser is innocent — the stale copy is coming from somewhere further up the chain. That's one minute of work, and it knocks out an entire category of causes.</p>
+
+    <h2>The one test that splits the problem in half.</h2>
+    <p>This is the trick worth memorizing: add a meaningless query string to the end of the URL — <strong>?x=123</strong>, or honestly <strong>?anything</strong>. To a CDN, a different query string looks like a different address, so it skips its saved copy and asks your real site directly. Then compare the two:</p>
+    <ul>
+      <li>If <strong>?x=123 shows the new page</strong> but the plain URL still shows the old one → the cache is your culprit. Your real site is already correct; the CDN is just serving a stale copy. Go purge it.</li>
+      <li>If <strong>both versions are wrong</strong> → the cache is innocent. Your change never reached the origin in the first place. Now you're looking at a deploy problem or a routing problem.</li>
+    </ul>
+    <div class="callout">
+      <strong>The ten-second test:</strong> that single query-string trick tells you whether to go purge a cache or go check your deploy — and stops you from spending an hour fixing the layer that was never broken.
+    </div>
+
+    <h2>When the cache is innocent: did your change actually go live?</h2>
+    <p>Two usual suspects. First, the deploy never ran or quietly failed — open your host's deployment history and confirm the latest build succeeded <em>and</em> matches your latest commit. Second, you're looking at a stale snapshot: if your repository URL has a long random-looking commit ID buried in it, you're staring at a frozen point in time, not the live site. Switch back to your main branch. And keep this distinction close — saving a change on your computer (committing) and sending it to your host (pushing) are two separate actions. A commit you never pushed will never, ever go live.</p>
+
+    <h2>The sneaky one — redirects, and the page that refuses to 404.</h2>
+    <p>A redirect file (often literally named <strong>_redirects</strong>) is just a list of rules that reroute traffic. The status code on each rule matters far more than most people realize:</p>
+    <ul>
+      <li><strong>A 301 is a permanent redirect.</strong> The address in the bar changes to the new one. Use this whenever you move a page — it also hands your old page's search ranking to the new URL, so you don't quietly torch your SEO.</li>
+      <li><strong>A 200 is a rewrite.</strong> The address stays the same, but a different file gets served behind it.</li>
+    </ul>
+    <p>That 200 rewrite is exactly where deletions go to die. A catch-all rule that says "send everything to the homepage" — or a host default that does the same thing when no 404 page exists — means every address that doesn't match a real file quietly serves your homepage with a cheerful "200 OK." So a page you deleted <em>looks</em> alive; it's just showing the wrong content. Worse, search engines see a genuine "success" at a URL that should be gone. That's called a <strong>soft 404</strong>, and it clutters your site in their index and wastes the crawl budget you'd rather spend on pages that exist.</p>
+
+    <h2>A file structure that keeps you out of trouble.</h2>
+    <p>A handful of habits prevent most of the haunting before it starts:</p>
+    <ul>
+      <li><strong>One folder per page, each with its own index.html.</strong> That gives you clean addresses like <em>/blog/my-post/</em> instead of <em>/blog/my-post.html</em>, and it's what most hosts expect.</li>
+      <li><strong>Put a real 404.html at the root.</strong> On a lot of static hosts, simply <em>not</em> having one makes the host assume your whole site is a single-page app and serve your homepage for every unknown URL — the exact trap above. A 404 page switches that behavior off and lets dead links honestly say "not found."</li>
+      <li><strong>Keep your slugs consistent.</strong> The link in your blog index, the folder name on disk, and the page's own canonical tag should all spell the same thing. A canonical pointing at a different URL than the page actually lives on tells search engines to rank a version that may not even exist.</li>
+      <li><strong>When you move or rename a page, add a 301</strong> from the old URL to the new one. Visitors with the old link still land in the right place, and you keep the ranking you earned.</li>
+    </ul>
+
+    <h2>Purge, then verify — in that order.</h2>
+    <p>Once you've confirmed it really is the cache, clear it. Most CDNs let you purge a single URL or purge everything; a single URL is the gentle, surgical option, while purge-everything is the simplest choice for a small site. Give it up to a minute, then reload the plain URL. For peace of mind, load it with your <strong>?x=</strong> cache-buster too: if the plain and busted versions now match, you're done. If only the busted one is right, the purge didn't take — purge again, or go hunting for an aggressive "cache everything" rule that's overriding you.</p>
+
+    <h2>The five-minute checklist.</h2>
+    <ul>
+      <li>Fresh browser still wrong? → it's not your browser.</li>
+      <li>?x=123 right but the plain URL wrong? → it's the cache. Purge it.</li>
+      <li>?x=123 also wrong? → it's the deploy or routing, not the cache.</li>
+      <li>Deploy history shows your latest commit, built successfully? If not, push and redeploy.</li>
+      <li>A "deleted" page still resolving to something? → hunt for a catch-all rewrite or a missing 404.html.</li>
+      <li>Moved a page? → 301 the old URL and make the canonical match the new one.</li>
+    </ul>
+    <p>Caching, redirects, and 404s aren't the enemy. They're what make your site fast, keep your old links alive, and tell search engines the truth about what exists. They only bite when they're invisible. Once you can see the layers, the "haunted" page that won't change stops being a mystery and turns into a thirty-second fix.</p>
+
+  </div>
+
+  <div class="post-footer">
+    <span class="post-footer-label">Looking for more AI tools?</span>
+    <a class="btn-export" href="/tools/">See our free AI tools →</a>
+  </div>
+
+</main>
+
+<!--FOOTER-->
+
+</body>
+</html>
