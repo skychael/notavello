@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>404 — Page Not Found | Notavello</title>
+<meta name="robots" content="noindex, follow"/>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 50% at 90% 10%, rgba(124,58,237,0.10) 0%, transparent 55%);
+  background-attachment: fixed;
+  display: flex; flex-direction: column;
+}
+
+/* Minimal self-contained header (worker does not inject into 404 responses) */
+header {
+  display: flex; align-items: center;
+  padding: 22px clamp(20px, 5vw, 48px);
+}
+.logo { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo .mark {
+  width: 34px; height: 34px; border-radius: 9px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  display: grid; place-items: center; color: #fff;
+  box-shadow: 0 4px 14px rgba(79,70,229,0.35);
+}
+.logo .mark svg { width: 18px; height: 18px; }
+.logo .name { font-weight: 600; font-size: 1.25rem; letter-spacing: -0.01em; color: var(--ink); }
+.logo .name b { color: var(--accent); font-weight: 600; }
+
+main {
+  flex: 1;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center;
+  padding: 40px clamp(20px, 5vw, 48px) 80px;
+}
+
+.code {
+  font-family: 'Lora', serif; font-weight: 600;
+  font-size: clamp(5.5rem, 22vw, 11rem); line-height: 0.9;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+  letter-spacing: -0.04em;
+  opacity: 0; transform: translateY(16px);
+  animation: rise 0.7s cubic-bezier(.2,.7,.2,1) 0.05s forwards;
+}
+h1 {
+  font-weight: 600; font-size: clamp(1.5rem, 4vw, 2.1rem);
+  letter-spacing: -0.02em; margin-top: 8px;
+  opacity: 0; transform: translateY(16px);
+  animation: rise 0.7s cubic-bezier(.2,.7,.2,1) 0.18s forwards;
+}
+h1 em { font-family: 'Lora', serif; font-style: italic; font-weight: 400; color: var(--accent2); }
+p.lead {
+  color: var(--ink-muted); font-size: clamp(1rem, 2.4vw, 1.12rem);
+  max-width: 30rem; margin: 16px auto 0; line-height: 1.6;
+  opacity: 0; transform: translateY(16px);
+  animation: rise 0.7s cubic-bezier(.2,.7,.2,1) 0.30s forwards;
+}
+.actions {
+  margin-top: 34px; display: flex; gap: 14px; flex-wrap: wrap; justify-content: center;
+  opacity: 0; transform: translateY(16px);
+  animation: rise 0.7s cubic-bezier(.2,.7,.2,1) 0.42s forwards;
+}
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: inherit; font-size: 0.98rem; font-weight: 500;
+  padding: 13px 24px; border-radius: var(--radius-sm);
+  text-decoration: none; cursor: pointer; transition: transform .15s ease, box-shadow .2s ease, background .2s ease;
+}
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent), var(--accent2)); color: #fff;
+  box-shadow: 0 6px 18px rgba(79,70,229,0.35);
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgba(79,70,229,0.42); }
+.btn-ghost {
+  background: var(--surface); color: var(--ink); border: 1px solid var(--border); box-shadow: var(--shadow);
+}
+.btn-ghost:hover { transform: translateY(-2px); border-color: var(--accent); color: var(--accent); }
+
+footer {
+  text-align: center; padding: 26px; color: var(--ink-faint);
+  font-size: 0.85rem; border-top: 1px solid var(--border);
+}
+footer a { color: var(--ink-muted); text-decoration: none; }
+footer a:hover { color: var(--accent); }
+
+@keyframes rise { to { opacity: 1; transform: translateY(0); } }
+@media (prefers-reduced-motion: reduce) {
+  .code, h1, p.lead, .actions { animation: none; opacity: 1; transform: none; }
+}
+</style>
+</head>
+<body>
+<header>
+  <a class="logo" href="/">
+    <span class="mark" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6 3h8l4 4v14a0 0 0 0 1 0 0H6a0 0 0 0 1 0 0V3z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+        <path d="M13 3v5h5M9 13h6M9 16.5h6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </span>
+    <span class="name">Nota<b>vello</b></span>
+  </a>
+</header>
+
+<main>
+  <div class="code">404</div>
+  <h1>This page <em>wandered off</em>.</h1>
+  <p class="lead">The page you're looking for doesn't exist or has moved. Let's get you back to exporting beautiful PDFs.</p>
+  <div class="actions">
+    <a class="btn btn-primary" href="/">Back to home</a>
+    <a class="btn btn-ghost" href="/pages/blog/">Read the blog</a>
+  </div>
+</main>
+
+<footer>
+  &copy; Notavello &middot; <a href="/">notavello.com</a>
+</footer>
+</body>
+</html>
