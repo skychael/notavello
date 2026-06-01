@@ -1,0 +1,187 @@
+<!-- ⚠️ ALL %% PLACEHOLDERS MUST BE REPLACED — they feed SEO meta tags, OG, Twitter, and schema -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>How to Set a 4-Digit PIN on Ubuntu (The Script That Actually Works) — The Export | Notavello</title>
+<meta name="description" content="Set a 4-digit numeric login PIN on Ubuntu without getting locked out. Free download — the bash script that works when every other guide fails."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/blog/ubuntu-4-digit-pin-login/"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://notavello.com/pages/blog/ubuntu-4-digit-pin-login/"/>
+<meta property="og:title" content="How to Set a 4-Digit PIN on Ubuntu (The Script That Actually Works)"/>
+<meta property="og:description" content="Set a 4-digit numeric login PIN on Ubuntu without getting locked out. Free download — the bash script that works when every other guide fails."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="How to Set a 4-Digit PIN on Ubuntu (The Script That Actually Works)"/>
+<meta name="twitter:description" content="Set a 4-digit numeric login PIN on Ubuntu without getting locked out. Free download — the bash script that works when every other guide fails."/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "How to Set a 4-Digit PIN on Ubuntu (The Script That Actually Works)",
+  "description": "Set a 4-digit numeric login PIN on Ubuntu without getting locked out. Free download — the bash script that works when every other guide fails.",
+  "url": "https://notavello.com/pages/blog/ubuntu-4-digit-pin-login/",
+  "datePublished": "2026-06-01",
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
+.back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; color: var(--ink-muted); text-decoration: none; margin-bottom: 40px; transition: color 0.15s; }
+.back-link:hover { color: var(--accent); }
+.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
+.post-date { font-size: 0.78rem; color: var(--ink-faint); }
+.post-title { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; color: var(--ink); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
+.post-lede { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+.post-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink); }
+.post-body h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 44px 0 16px; letter-spacing: -0.01em; }
+.post-body p { margin-bottom: 20px; color: var(--ink-muted); }
+.post-body p strong { color: var(--ink); font-weight: 600; }
+.post-body ul { margin: 0 0 20px 20px; color: var(--ink-muted); }
+.post-body ul li { margin-bottom: 8px; line-height: 1.7; }
+.callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 32px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.7; }
+.download-box { background: var(--green-light); border: 1.5px solid var(--green); border-radius: var(--radius-sm); padding: 24px 28px; margin: 36px 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.download-box-text { font-size: 0.9rem; color: var(--ink); line-height: 1.6; }
+.download-box-text strong { display: block; font-size: 1rem; margin-bottom: 4px; color: var(--ink); }
+.download-box-text span { color: var(--ink-muted); font-size: 0.82rem; }
+.btn-download { display: inline-flex; align-items: center; gap: 8px; padding: 11px 22px; background: var(--green); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; white-space: nowrap; transition: opacity 0.2s; }
+.btn-download:hover { opacity: 0.88; }
+.post-footer { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.post-footer-label { font-size: 0.8rem; color: var(--ink-faint); }
+.btn-export { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: opacity 0.2s; }
+.btn-export:hover { opacity: 0.9; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } }
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+
+  <a class="back-link" href="/pages/blog/">← The Export</a>
+
+  <div class="post-meta">
+    <span class="post-tag">Linux</span>
+    <span class="post-date">June 1, 2026</span>
+  </div>
+
+  <h1 class="post-title">How to Set a 4-Digit PIN on Ubuntu — The Script That Actually Works</h1>
+
+  <p class="post-lede">You searched. You tried three different guides. You edited the config file, ran the command, and Ubuntu rejected your PIN anyway. Here's why that keeps happening — and a free script you can download right now that fixes it for real.</p>
+
+  <div class="post-body">
+
+    <div class="download-box">
+      <div class="download-box-text">
+        <strong>⬇ Free Download — Ubuntu 4-Digit PIN Tool</strong>
+        <span>One script. Works on Ubuntu 20.04, 22.04, and 24.04. Makes backups before touching anything.</span>
+      </div>
+      <a class="btn-download" href="https://github.com/skychael/ubuntu-pin4-tool" target="_blank" rel="noopener">Get it on GitHub →</a>
+    </div>
+
+    <h2>Why every other guide fails</h2>
+    <p>If you've been Googling "ubuntu set 4 digit pin" or "ubuntu short password," you've probably found the same advice recycled across a dozen forums: edit <strong>pwquality.conf</strong>, lower the minimum length, then use <strong>passwd</strong> to set your new PIN. Sounds simple. Doesn't work.</p>
+    <p>The problem is that Ubuntu doesn't have one password enforcement system — it has several, and they don't fully talk to each other. You can relax the rules in one place and a different layer quietly overrides you. The two biggest culprits are a setting called <strong>obscure</strong> and another called <strong>enforce_for_root</strong>. These sit inside a file called <strong>common-password</strong> and they will reject your short PIN even when you're an administrator, even after you've supposedly turned everything off.</p>
+    <p>Most guides miss both of them. That's why you keep getting "BAD PASSWORD: The password fails the dictionary check" no matter what you do.</p>
+
+    <div class="callout">
+      <strong>The real fix:</strong> Don't use <code>passwd</code> at all. Use <code>chpasswd</code> instead — it writes the password hash directly to the system and completely bypasses the rule-checker. That's the one change that makes everything actually work.
+    </div>
+
+    <h2>What the script does (in plain English)</h2>
+    <p>The script handles the whole process in one shot. Here's what it does under the hood — no terminal experience required to understand it:</p>
+    <ul>
+      <li><strong>Backs up three system files</strong> before touching anything, and prints an exact restore command when it finishes — so you can undo everything with one line if needed.</li>
+      <li><strong>Lowers the minimum password length</strong> to 4 digits across all the places Ubuntu checks it, not just one.</li>
+      <li><strong>Removes the obscure and enforce_for_root settings</strong> — the two flags that block short passwords even as an admin.</li>
+      <li><strong>Sets your PIN using chpasswd</strong>, which skips the rule-checker entirely rather than fighting through it.</li>
+      <li><strong>Runs a safety check on the PAM file</strong> — if something looks broken after the edit, it auto-restores the original so you can't get locked out.</li>
+    </ul>
+    <p>It asks you to confirm before doing anything, lets you pick which user account gets the PIN, and makes you type it twice to confirm. The whole thing takes about 60 seconds.</p>
+
+    <h2>Is a 4-digit PIN safe on Ubuntu?</h2>
+    <p>Short answer: it's weaker than a normal password, and you should know that going in. A 4-digit PIN has only 10,000 possible combinations. Someone with physical access to your computer could try to brute-force it.</p>
+    <p>Windows also uses 4-digit PINs for login — but Windows ties the PIN to your specific device using a hardware security chip called TPM. That means the PIN is useless on any other machine. This script does <strong>not</strong> do that. Your PIN is essentially just a short password, not a hardware-bound credential.</p>
+    <p>For a personal home computer where convenience matters more than high security, it's a reasonable tradeoff. For a work laptop, a server, or any machine with sensitive data, stick with a strong password.</p>
+
+    <h2>Which Ubuntu versions does it work on?</h2>
+    <p>The script has been tested and confirmed working on <strong>Ubuntu 22.04 LTS</strong> and <strong>Ubuntu 24.04 LTS</strong>. It should also work on Ubuntu 20.04. Linux Mint, Pop!_OS, Kubuntu, and other Ubuntu-based distros will likely work too since they share the same underlying password system — but they haven't been formally tested.</p>
+    <p>If you're on Fedora, Arch, Manjaro, or another non-Debian-based distro, this script is not for you. Those systems use a different password management stack and the script won't behave correctly.</p>
+    <p>Not sure what version you're running? Open a terminal and type <code>lsb_release -d</code> — it'll tell you exactly.</p>
+
+    <h2>One thing to do before you reboot</h2>
+    <p>This is the most important thing in this entire article: <strong>test your PIN before you reboot.</strong> Once the script finishes, lock your screen with <strong>Super + L</strong> (the Windows key plus L) and log back in with your new 4-digit PIN. If it works, you're done. If it doesn't, your terminal window is still open and you can run the restore command the script printed — no harm done.</p>
+    <p>If you skip this step and reboot into a broken login, recovery is possible but it means booting from a USB drive. Just test first. It takes 10 seconds.</p>
+
+    <h2>How to download and run it</h2>
+    <p>The script is free and hosted on GitHub. You don't need a GitHub account to download it.</p>
+    <ul>
+      <li>Go to the <a href="https://github.com/skychael/ubuntu-pin4-tool" target="_blank" rel="noopener">ubuntu-pin4-tool repository</a></li>
+      <li>Click <strong>install_pin4_ubuntu.sh</strong>, then click the download button</li>
+      <li>Save it to your Desktop or Downloads folder</li>
+      <li>Open your Files app, navigate to the file, right-click on empty space in that folder, and choose <strong>Open Terminal Here</strong></li>
+      <li>Type <code>sudo bash install_pin4_ubuntu.sh</code> and press Enter</li>
+      <li>Follow the prompts — it walks you through everything</li>
+    </ul>
+    <p>The README on the GitHub page has the full step-by-step instructions including what to do if something goes wrong. It's written for people who aren't Linux experts — no jargon, no assumptions.</p>
+
+  </div>
+
+  <div class="post-footer">
+    <span class="post-footer-label">Looking for more AI tools?</span>
+    <a class="btn-export" href="/tools/">See our free AI tools →</a>
+  </div>
+
+</main>
+
+<!--FOOTER-->
+
+</body>
+</html>
