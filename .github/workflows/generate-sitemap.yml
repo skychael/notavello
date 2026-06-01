@@ -1,0 +1,42 @@
+name: Generate sitemap
+
+# Runs on every push to main, EXCEPT pushes that only change sitemap.xml
+# (that prevents the bot's own commit from triggering another run).
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - 'sitemap.xml'
+
+# The job needs write access so it can commit the regenerated sitemap back.
+permissions:
+  contents: write
+
+jobs:
+  sitemap:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # full history so per-file <lastmod> dates are real
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Generate sitemap.xml
+        run: node .github/scripts/generate-sitemap.js
+
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- sitemap.xml; then
+            echo "Sitemap unchanged - nothing to commit."
+          else
+            git config user.name  "sitemap-bot"
+            git config user.email "actions@github.com"
+            git add sitemap.xml
+            git commit -m "Auto-update sitemap [skip ci]"
+            git push
+          fi
