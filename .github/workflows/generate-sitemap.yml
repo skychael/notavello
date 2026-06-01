@@ -18,8 +18,6 @@ jobs:
     steps:
       - name: Check out repo
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0   # full history so per-file <lastmod> dates are real
 
       - name: Set up Node
         uses: actions/setup-node@v4
@@ -31,12 +29,27 @@ jobs:
 
       - name: Commit if changed
         run: |
+          # Nothing to do if the page list didn't change.
           if git diff --quiet -- sitemap.xml; then
             echo "Sitemap unchanged - nothing to commit."
-          else
-            git config user.name  "sitemap-bot"
-            git config user.email "actions@github.com"
-            git add sitemap.xml
-            git commit -m "Auto-update sitemap [skip ci]"
-            git push
+            exit 0
           fi
+
+          git config user.name  "sitemap-bot"
+          git config user.email "actions@github.com"
+          git add sitemap.xml
+          git commit -m "Auto-update sitemap [skip ci]"
+
+          # Safety net: if the version-bump workflow committed at the same
+          # moment, pull its change in and stack ours on top, then push.
+          # Retry a couple of times in case of a near-simultaneous push.
+          for attempt in 1 2 3; do
+            if git pull --rebase origin main && git push; then
+              echo "Pushed on attempt $attempt."
+              exit 0
+            fi
+            echo "Push race on attempt $attempt - retrying in 5s..."
+            sleep 5
+          done
+          echo "Could not push sitemap after 3 attempts." >&2
+          exit 1

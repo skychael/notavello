@@ -1,18 +1,22 @@
 // .github/scripts/generate-sitemap.js
 //
 // Scans the repo for pages and writes sitemap.xml at the repo root.
-// No external dependencies — just plain Node. Run automatically by
+// No external dependencies - just plain Node. Run automatically by
 // .github/workflows/generate-sitemap.yml on every push to main.
 //
+// The sitemap only changes when a page is ADDED, REMOVED, or RENAMED -
+// never on a simple content edit. That keeps it from clashing with the
+// auto-version-bump workflow, which fires on content edits.
+//
 // HOW IT DECIDES WHAT'S A PAGE:
-//   - Every index.html in the repo becomes a URL (e.g. exporters/claude/index.html -> /exporters/claude/)
+//   - Every index.html in the repo becomes a URL
+//       (e.g. exporters/claude/index.html -> /exporters/claude/)
 //   - Folders in EXCLUDE_DIRS are skipped entirely (tooling / internal / CMS)
-//   - Standalone .html pages that aren't named index.html are listed in EXTRA_PAGES
-//   - Everything else (partials like _header.html, 404.html, images, etc.) is ignored
+//   - Standalone .html pages that aren't named index.html go in EXTRA_PAGES
+//   - Everything else (partials like _header.html, 404.html, images) is ignored
 
 const fs = require('fs');
 const path = require('path');
-const { execSync } = require('child_process');
 
 const SITE = 'https://notavello.com';
 
@@ -42,7 +46,7 @@ function walk(dir) {
       walk(path.join(dir, entry.name));
     } else if (entry.name === 'index.html') {
       const rel = path.relative(root, path.join(dir, entry.name));
-      pages.push({ file: rel, url: fileToUrl(rel) });
+      pages.push({ url: fileToUrl(rel) });
     }
   }
 }
@@ -55,26 +59,12 @@ function fileToUrl(rel) {
   return p;
 }
 
-// Last git commit date for a file as YYYY-MM-DD. Falls back to today.
-function lastmod(file) {
-  try {
-    const d = execSync(`git log -1 --format=%cs -- "${file}"`, { encoding: 'utf8' }).trim();
-    return d || today();
-  } catch {
-    return today();
-  }
-}
-
-function today() {
-  return new Date().toISOString().slice(0, 10);
-}
-
 walk(root);
 
 // Add explicit standalone pages (only if the file actually exists).
 for (const [file, url] of Object.entries(EXTRA_PAGES)) {
   if (fs.existsSync(path.join(root, file))) {
-    pages.push({ file, url });
+    pages.push({ url });
   }
 }
 
@@ -91,10 +81,9 @@ const lines = [
   '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
   '',
 ];
-for (const { file, url } of pages) {
+for (const { url } of pages) {
   lines.push('  <url>');
   lines.push(`    <loc>${SITE}${url}</loc>`);
-  lines.push(`    <lastmod>${lastmod(file)}</lastmod>`);
   lines.push('  </url>');
   lines.push('');
 }
