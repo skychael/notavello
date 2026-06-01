@@ -1,0 +1,269 @@
+<!-- ⚠️ ALL %% PLACEHOLDERS MUST BE REPLACED — they feed SEO meta tags, OG, Twitter, and schema -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Google Drive vs OneDrive for Developers: Which Is Better for Sending Files to Yourself? — The Export | Notavello</title>
+<meta name="description" content="Google Drive vs OneDrive for developers, privacy, security, blocked file types, and the best way to transfer files to yourself."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/blog/google-drive-vs-onedrive-file-transfer-developers/"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://notavello.com/pages/blog/google-drive-vs-onedrive-file-transfer-developers/"/>
+<meta property="og:title" content="Google Drive vs OneDrive for Developers: Which Is Better for Sending Files to Yourself?"/>
+<meta property="og:description" content="Google Drive vs OneDrive for developers, privacy, security, blocked file types, and the best way to transfer files to yourself."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Google Drive vs OneDrive for Developers: Which Is Better for Sending Files to Yourself?"/>
+<meta name="twitter:description" content="Google Drive vs OneDrive for developers, privacy, security, blocked file types, and the best way to transfer files to yourself."/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Google Drive vs OneDrive for Developers: Which Is Better for Sending Files to Yourself?",
+  "description": "Google Drive vs OneDrive for developers, privacy, security, blocked file types, and the best way to transfer files to yourself.",
+  "url": "https://notavello.com/pages/blog/google-drive-vs-onedrive-file-transfer-developers/",
+  "datePublished": "2026-05-31",
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
+.back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; color: var(--ink-muted); text-decoration: none; margin-bottom: 40px; transition: color 0.15s; }
+.back-link:hover { color: var(--accent); }
+.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
+.post-date { font-size: 0.78rem; color: var(--ink-faint); }
+.post-title { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; color: var(--ink); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
+.post-lede { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+.post-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink); }
+.post-body h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 44px 0 16px; letter-spacing: -0.01em; }
+.post-body p { margin-bottom: 20px; color: var(--ink-muted); }
+.post-body p strong { color: var(--ink); font-weight: 600; }
+.post-body ul { margin: 0 0 20px 20px; color: var(--ink-muted); }
+.post-body ul li { margin-bottom: 8px; line-height: 1.7; }
+.callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 32px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.7; }
+.post-footer { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.post-footer-label { font-size: 0.8rem; color: var(--ink-faint); }
+.btn-export { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: opacity 0.2s; }
+.btn-export:hover { opacity: 0.9; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } }
+
+.post-body code { background: var(--surface2); border: 1px solid var(--border); border-radius: 6px; padding: 2px 6px; font-size: 0.86em; color: var(--ink); }
+.post-body a { color: var(--accent); text-decoration: none; font-weight: 600; }
+.post-body a:hover { text-decoration: underline; }
+
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+
+  <a class="back-link" href="/pages/blog/">← The Export</a>
+
+  <div class="post-meta">
+    <span class="post-tag">Developer Tools</span>
+    <span class="post-date">May 31, 2026</span>
+  </div>
+
+  <h1 class="post-title">Google Drive vs OneDrive for Developers: Which Is Better for Sending Files to Yourself?</h1>
+
+  <p class="post-lede">Google Drive and Microsoft OneDrive both look like simple cloud folders until you try to move a build, script, archive, dataset, or odd developer file between machines. Then the difference gets interesting: Google usually feels more permissive, while OneDrive is more tied to corporate controls, sync rules, and Microsoft 365 security.</p>
+
+  <div class="post-body">
+
+    <h2>Google Drive vs OneDrive: the quick answer</h2>
+    <p><strong>For transferring files to yourself, Google Drive is usually the easier choice for developers.</strong> It is more forgiving with strange file names, random archives, code bundles, small utilities, exported project folders, and one-off files you just need to move from one computer to another. You upload the thing, grab it somewhere else, and move on.</p>
+    <p><strong>OneDrive is usually better when the file is part of a Microsoft 365 workflow.</strong> If you live in Windows, Office, Teams, SharePoint, Outlook, or a company-managed laptop, OneDrive feels less like a generic cloud bucket and more like part of the operating system. That can be powerful. It can also be annoying when you are moving developer files that were never meant to become corporate documents.</p>
+    <p>The short version: <strong>Google Drive is better as a personal transfer locker. OneDrive is better as a managed enterprise document system.</strong> That one sentence explains most of the frustration people feel when comparing them.</p>
+
+    <div class="callout">
+      <strong>The developer angle:</strong> A cloud drive is not Git, not a package registry, not artifact storage, and not a secrets manager. For quick personal transfers, Drive or OneDrive can be fine. For real code history, releases, CI artifacts, private keys, database dumps, or production backups, use developer-native tools.
+    </div>
+
+    <h2>Why file transfers feel different in Google Drive and OneDrive</h2>
+    <p>Google Drive behaves like a broad consumer cloud storage system. Its default personality is: store nearly anything, scan or warn when needed, restrict files that violate policy, and let the user keep going when the risk is acceptable. That is why developers often find it easier for moving compressed folders, APKs, scripts, exported builds, JSON dumps, video files, SQLite databases, and other oddball files.</p>
+    <p>OneDrive behaves like the front door to SharePoint. That matters because SharePoint was built for business content management, retention rules, sync controls, compliance, permissions, legal holds, device management, and admin policy. Even when you are using OneDrive personally, the product inherits a lot of Microsoft’s enterprise DNA: rules around sync behavior, special characters, reserved names, path length, file count performance, and organization-level governance.</p>
+    <p>This is why the same file can feel normal in Google Drive and suspicious in OneDrive for work. You may not be fighting “OneDrive” itself. You may be fighting your company’s SharePoint policies, Microsoft Defender settings, blocked extension rules, or sync-client limitations.</p>
+
+    <h2>Does OneDrive really block some file types?</h2>
+    <p>Sometimes, yes — but the answer depends on which OneDrive you mean. Consumer OneDrive is generally not a giant blacklist of developer extensions. In Microsoft 365 business environments, however, administrators can block specific file types from syncing. Microsoft documents a SharePoint admin setting that lets organizations prevent users from uploading selected extensions through OneDrive sync. Microsoft also notes that the OneDrive sync app does not sync certain files such as <code>.tmp</code> and <code>.ini</code>.</p>
+    <p>That distinction matters. A developer might say, “OneDrive blocks my file,” but the real cause could be one of four different things:</p>
+    <ul>
+      <li>the file extension is blocked by the organization;</li>
+      <li>the file name uses unsupported characters or reserved names;</li>
+      <li>the file is being flagged by Microsoft malware scanning;</li>
+      <li>the sync client is refusing a temporary/system file that cloud storage was never meant to preserve.</li>
+    </ul>
+    <p>Microsoft’s reasoning is not mysterious: businesses do not want executable payloads, scripts, temporary files, malware droppers, or unmanaged binaries spreading through synced folders. In a company, OneDrive is not just your personal locker. It is part of a managed data environment. Blocking certain file types reduces support tickets, sync failures, malware spread, and compliance risk.</p>
+
+    <h2>Why Google Drive usually feels more permissive</h2>
+    <p>Google Drive usually lets you upload more file types because it treats storage more generically. A file does not have to be a Word document, spreadsheet, or business record to belong there. Google Drive can store “a file of any type,” subject to storage limits, abuse rules, malware detection, and account policy.</p>
+    <p>That does not mean Google ignores risk. Google’s policies prohibit transmitting malware, viruses, destructive code, and harmful software. Google also restricts files that violate its abuse policies, which can make a file no longer publicly accessible or shareable. The difference is that Google often intervenes after scanning, policy detection, or sharing risk — while Microsoft business tenants often let admins block categories of files before they become part of the synced environment.</p>
+    <p>In plain English: <strong>Google Drive often says, “We will store it unless it is abusive or dangerous.” OneDrive for business often says, “Your organization may not allow this kind of file here at all.”</strong></p>
+
+    <h2>The file-type problem developers run into</h2>
+    <p>Developers move weird files. That is the whole problem. Normal office users move PDFs, DOCX files, spreadsheets, photos, and presentations. Developers move shell scripts, PowerShell scripts, unsigned executables, package caches, virtual environments, dependency folders, compiled binaries, logs, API exports, test databases, Node modules, generated files, Docker-related assets, and zipped project folders.</p>
+    <p>Some of those files look risky to a cloud provider because they are risky in the wrong hands. A <code>.ps1</code> file may be a harmless deployment helper. It may also be a credential stealer. An <code>.exe</code> may be your own tiny utility. It may also be ransomware. A zip archive may be a project backup. It may also be a malware delivery wrapper. Cloud platforms cannot know your intent just from the extension.</p>
+    <p>This is why Google Drive may warn, flag, or restrict a developer file, and why OneDrive may refuse to sync it entirely in a managed tenant. Both companies are trying to prevent cloud storage from becoming a malware distribution network. The difference is where they draw the line between convenience and control.</p>
+
+    <h2>Best for sending files to yourself: Google Drive wins for quick transfers</h2>
+    <p>If your goal is simple — move a file from your desktop to your laptop, phone, VM, or test machine — <strong>Google Drive is usually the better experience.</strong> It is less opinionated. It is less entangled with Windows shell integration. It is less likely to behave like a corporate records system. It also works cleanly across operating systems through the browser.</p>
+    <p>For developers, this matters most when transferring:</p>
+    <ul>
+      <li>small zip archives of a project;</li>
+      <li>screenshots, logs, and crash reports;</li>
+      <li>APK files or other mobile test builds;</li>
+      <li>database exports that are not sensitive;</li>
+      <li>JSON, CSV, XML, and config samples;</li>
+      <li>one-off scripts you wrote yourself;</li>
+      <li>video captures or recordings of bugs.</li>
+    </ul>
+    <p>OneDrive can do these things too, especially on a personal Microsoft account. But when OneDrive is managed by work or school, the odds of friction go up. If you are transferring developer files to yourself across company devices, OneDrive may be intentionally strict because your employer wants it strict.</p>
+
+    <h2>Where OneDrive is actually better</h2>
+    <p>OneDrive is not bad. It is just optimized for a different world. It shines when files belong inside Microsoft 365: Word documents, Excel models, PowerPoint decks, Teams files, shared department folders, HR forms, legal documents, and collaboration-heavy office work. It also benefits from deep Windows integration and enterprise-grade admin controls.</p>
+    <p>For large organizations, OneDrive connects naturally to SharePoint, Teams, Microsoft Defender, Entra ID, Intune, retention policies, eDiscovery, conditional access, sensitivity labels, and compliance tooling. That is the reason many corporations prefer Microsoft. They are not choosing OneDrive because it is the most pleasant way to move a zip file. They are choosing it because it fits into an entire corporate operating system.</p>
+    <p>For a developer inside a Microsoft-heavy company, this can be useful. Your team can share documentation, specs, meeting recordings, diagrams, runbooks, and reports in the same place as the rest of the business. But for source code and build artifacts, most teams still use GitHub, Azure DevOps, GitLab, package registries, object storage, or artifact repositories.</p>
+
+    <h2>Which one is more private?</h2>
+    <p>For normal users, neither Google Drive nor OneDrive should be treated as a private, end-to-end encrypted vault. Both companies encrypt data in transit and at rest. Both scan for abuse, malware, spam, policy violations, and account security risks. Both can process file metadata. Both can be subject to lawful requests. Both can restrict content that violates their rules.</p>
+    <p>The privacy question depends on your threat model:</p>
+    <ul>
+      <li><strong>Against random hackers:</strong> both are strong if you use a unique password, two-factor authentication, recovery codes, and careful sharing settings.</li>
+      <li><strong>Against accidental sharing:</strong> Microsoft may have the edge in enterprises because admins can apply stricter controls, sensitivity labels, and conditional access.</li>
+      <li><strong>Against platform scanning:</strong> neither is ideal. If the provider must scan for malware and abuse, the provider is not a zero-knowledge vault.</li>
+      <li><strong>Against your employer:</strong> a work OneDrive or work Google Drive is not private from your organization’s administrators.</li>
+      <li><strong>Against the cloud provider itself:</strong> use client-side encryption before uploading, or use a storage provider designed around zero-knowledge encryption.</li>
+    </ul>
+    <p>So the honest answer is this: <strong>OneDrive is often more governable. Google Drive is often more convenient. Neither is the most private place for sensitive developer material.</strong></p>
+
+    <h2>Which one is more secure?</h2>
+    <p>Security is not one score. It is a stack of tradeoffs. Google Drive has excellent account security, strong infrastructure, broad malware defenses, and a simpler sharing experience for many users. OneDrive has strong Microsoft 365 integration, enterprise compliance features, ransomware recovery options, Defender integration, and admin policy depth.</p>
+    <p>For a solo developer, Google Drive can feel safer because there are fewer moving parts. For a corporation, OneDrive can be safer because IT can control more of the environment. A lock that users cannot configure is annoying, but it is also harder for users to accidentally weaken.</p>
+    <p>The biggest security mistake is using either one as a dumping ground. Do not casually store private keys, production credentials, unencrypted database backups, customer exports, password lists, signing certificates, or environment files in a cloud drive just because it is convenient. If you must move sensitive files, encrypt them locally first with a tool you trust, then upload the encrypted archive — not the raw secret.</p>
+
+    <h2>Why corporations often favor Microsoft OneDrive</h2>
+    <p>Large corporations tend to favor Microsoft 365 because Microsoft is already embedded everywhere: Windows desktops, Office files, Outlook, Teams, Active Directory/Entra ID, SharePoint, Intune, Defender, compliance centers, legal discovery, and procurement contracts. OneDrive comes along for the ride.</p>
+    <p>This is not always because OneDrive is “better storage.” It is because OneDrive is part of a bundle that solves business problems beyond storage. A CIO is thinking about identity, device management, audit logs, data loss prevention, regulatory compliance, employee onboarding, retention, and vendor consolidation. Google Drive may be nicer for a developer sending themselves a tarball. Microsoft may be easier for a 50,000-person company trying to control every laptop, file permission, and compliance policy.</p>
+    <p>That is also why corporations sometimes make OneDrive feel worse for technical users. The friction is the feature. Blocked file types, download restrictions, conditional access, and Defender warnings are there because the company is trying to prevent exactly the kind of uncontrolled file movement developers sometimes do casually.</p>
+
+    <h2>Why startups and developers often like Google Drive</h2>
+    <p>Google Drive fits the “move fast and share a link” culture. It is browser-first, cross-platform, easy to understand, and usually less fussy for non-Office files. Teams that already live in Gmail, Docs, Sheets, Meet, and Chrome often find Drive natural. For small teams, freelancers, creators, and developers who do not want the whole Microsoft stack, Google Drive feels lighter.</p>
+    <p>That lightness is the appeal and the risk. It is easy to share the wrong thing. It is easy to lose track of public links. It is easy to treat Drive like a junk drawer. Google Workspace admins can impose controls, but the default user experience still feels more open than a locked-down Microsoft tenant.</p>
+
+    <h2>The bad parts of Google Drive</h2>
+    <p>Google Drive’s biggest weakness is that permissive storage can become messy storage. Developers often create piles of “final-final.zip,” “project-backup-new.zip,” “logs2,” “dump-old,” and “use-this-one” files. Drive search is powerful, but a cloud junk drawer is still a junk drawer.</p>
+    <p>Google Drive can also flag legitimate files, warn on large downloads it cannot scan, restrict sharing when abuse systems are triggered, and confuse users when a file is stored successfully but cannot be previewed. More importantly, Google Drive is not a private vault. If you store sensitive code, credentials, or client data there without encryption and good sharing hygiene, convenience becomes risk.</p>
+
+    <h2>The bad parts of OneDrive</h2>
+    <p>OneDrive’s biggest weakness is that it sometimes feels like it is arguing with you. Sync errors, blocked names, organization policies, “upload blocked” messages, and Windows integration quirks can turn a simple file transfer into troubleshooting. Developers especially notice this because development folders contain exactly the kinds of files sync tools dislike: temporary files, dependency trees, hidden folders, build output, huge file counts, and constantly changing artifacts.</p>
+    <p>OneDrive also blurs the line between local and cloud files. That is great until you assume something is local and it is actually a placeholder, or you assume something synced and it quietly did not. For normal documents, this is manageable. For dev folders, it can be maddening.</p>
+
+    <h2>Developer recommendation: use the right tool for the job</h2>
+    <p>For quick personal transfer, use Google Drive. For corporate document collaboration, use OneDrive if your company is Microsoft-based. For code, use Git. For releases, use GitHub Releases, GitLab releases, Azure Artifacts, npm, PyPI, Docker Hub, a private registry, or object storage. For secrets, use a password manager or secrets manager. For backups, use real backup software.</p>
+    <p>Here is the practical split:</p>
+    <ul>
+      <li><strong>Google Drive:</strong> best for quick cross-platform personal file transfers and loose collaboration.</li>
+      <li><strong>OneDrive:</strong> best for Microsoft 365 workplaces, Office documents, Teams files, and admin-controlled environments.</li>
+      <li><strong>GitHub/GitLab/Azure DevOps:</strong> best for source code, version history, issues, pull requests, and releases.</li>
+      <li><strong>S3, Azure Blob, or Google Cloud Storage:</strong> best for large artifacts, datasets, automated uploads, and infrastructure workflows.</li>
+      <li><strong>1Password, Bitwarden, Doppler, AWS Secrets Manager, or similar:</strong> best for credentials and secrets.</li>
+    </ul>
+
+    <h2>Final verdict: Google Drive is better for transferring files to yourself, OneDrive is better for managed companies</h2>
+    <p>If you are a developer moving files between your own devices, <strong>Google Drive is usually better</strong>. It is simpler, more permissive, and less likely to turn your random file transfer into an IT policy conversation.</p>
+    <p>If you are inside a large company, <strong>OneDrive is usually the expected choice</strong> because it plugs into Microsoft 365 governance. It may block or restrict files not because Microsoft hates developers, but because enterprises need guardrails. Those guardrails protect companies from malware, accidental leaks, unmanaged scripts, compliance failures, and risky sharing.</p>
+    <p>The mistake is expecting one cloud folder to be perfect for every job. Google Drive is the better personal handoff tool. OneDrive is the better corporate control layer. Neither replaces Git, encrypted backups, artifact storage, or a real developer workflow.</p>
+
+    <div class="callout">
+      <strong>Bottom line:</strong> If the file is harmless and you just need it on another device, Google Drive is usually the least annoying answer. If the file belongs to work, compliance, Teams, Office, or a managed Windows environment, OneDrive is probably where your company wants it — even when developers wish it were more flexible.
+    </div>
+
+    <h2>Sources and further reading</h2>
+    <p>For readers who want the official details, see Microsoft’s documentation on OneDrive and SharePoint restrictions, Microsoft’s SharePoint file-type blocking controls, Microsoft’s OneDrive privacy and encryption documentation, Google’s Drive privacy explanation, Google’s Drive file storage limits, Google’s abuse policies, and Google Workspace security documentation.</p>
+
+    </div>
+
+  <div class="post-footer">
+    <span class="post-footer-label">Looking for more AI tools?</span>
+    <a class="btn-export" href="/tools/">See our free AI tools →</a>
+  </div>
+
+</main>
+
+<!--FOOTER-->
+
+</body>
+</html>
+
+<!--
+=== ⚠️ NOTE TO FUTURE CLAUDES — READ BEFORE TOUCHING THIS FILE ===
+DO NOT edit, modify, or update this template without first explicitly asking Mike
+and receiving clear approval in the conversation. Even if asked to "update the
+template" or "clean up the template" as part of a larger task — STOP and confirm
+with Mike first. This file is intentionally locked to manual review.
+===
+
+=== CHECKLIST FOR EACH NEW POST ===
+Replace all %% placeholders before deploying:
+
+Google Drive vs OneDrive for Developers: Which Is Better for Sending Files to Yourself?      → Full post title (used in <title>, OG, Twitter, h1, schema)
+Google Drive vs OneDrive for developers, privacy, security, blocked file types, and the best way to transfer files to yourself.→ 150 char max description (used in meta, OG, Twitter, schema)
+google-drive-vs-onedrive-file-transfer-developers            → URL slug e.g. why-copilot-silently-cuts-off-your-code
+2026-05-31        → ISO date e.g. 2026-05-28 (used in schema)
+May 31, 2026    → Human date e.g. May 28, 2026 (shown on page)
+Developer Tools             → Category e.g. AI Tools, Developer Tools, Privacy, AI Comparison
+Google Drive and Microsoft OneDrive both look like simple cloud folders until you try to move a build, script, archive, dataset, or odd developer file between machines. Then the difference gets interesting: Google usually feels more permissive, while OneDrive is more tied to corporate controls, sync rules, and Microsoft 365 security.            → Opening paragraph (1-2 sentences, hooks the reader)
+%%SECTION_X_HEADING%%  → h2 subheading
+%%SECTION_X_BODY%%     → Paragraph(s) of content
+%%CALLOUT_LABEL%%   → Bold callout intro e.g. "The frustrating part:"
+%%CALLOUT_TEXT%%    → Callout body text
+
+Also add a card for this post in /pages/blog/index.html
+-->
