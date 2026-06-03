@@ -72,27 +72,29 @@ body {
 /* SECTION LABEL */
 .section-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--ink-faint); margin-bottom: 16px; }
 
-/* TOOL GRID */
-.tool-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 48px; }
+/* TOOL LIST */
+.tool-grid { display: flex; flex-direction: column; gap: 2px; margin-bottom: 48px; border: 1.5px solid var(--border); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
 
-.tool-card { background: var(--surface); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 28px 28px 24px; text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: 14px; box-shadow: var(--shadow); transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s; }
-.tool-card:hover { border-color: var(--accent); box-shadow: var(--shadow-lg); transform: translateY(-2px); }
+.tool-card { background: var(--surface); border: none; border-bottom: 1px solid var(--border); padding: 18px 24px; text-decoration: none; color: inherit; display: flex; align-items: center; gap: 16px; transition: background 0.15s; }
+.tool-card:last-child { border-bottom: none; }
+.tool-card:hover { background: var(--surface2); }
 
-.tool-card-icon { width: 44px; height: 44px; border-radius: 13px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; }
+.tool-card-icon { width: 38px; height: 38px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
 .tool-card-icon--detector { background: linear-gradient(135deg, #FEF3C7, #FDE68A); }
 .tool-card-icon--exporter { background: linear-gradient(135deg, #EEF2FF, #DDD6FE); }
+.tool-card-icon--pwa      { background: linear-gradient(135deg, #FCE7F3, #FBCFE8); }
 .tool-card-icon--blog     { background: linear-gradient(135deg, #D1FAE5, #A7F3D0); }
 
-.tool-card-body { flex: 1; }
-.tool-card-name { font-size: 1rem; font-weight: 700; color: var(--ink); letter-spacing: -0.02em; margin-bottom: 6px; }
-.tool-card-desc { font-size: 0.83rem; color: var(--ink-muted); line-height: 1.6; margin-bottom: 12px; }
+.tool-card-body { flex: 1; min-width: 0; }
+.tool-card-name { font-size: 0.92rem; font-weight: 700; color: var(--ink); letter-spacing: -0.01em; margin-bottom: 2px; }
+.tool-card-desc { font-size: 0.78rem; color: var(--ink-muted); line-height: 1.5; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
-.tool-card-footer { display: flex; align-items: center; justify-content: space-between; }
-.tool-card-status { display: inline-flex; align-items: center; gap: 5px; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 4px 10px; border-radius: 20px; }
+.tool-card-footer { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+.tool-card-status { display: inline-flex; align-items: center; gap: 5px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 3px 8px; border-radius: 20px; }
 .tool-card-status--live { background: var(--green-light); color: var(--green); }
 .tool-card-status--new  { background: var(--accent-light); color: var(--accent); }
 .tool-card-status-dot { width: 5px; height: 5px; border-radius: 50%; background: currentColor; animation: pulse 2s infinite; }
-.tool-card-link { font-size: 0.78rem; font-weight: 600; color: var(--accent); }
+.tool-card-link { font-size: 0.78rem; font-weight: 600; color: var(--accent); white-space: nowrap; }
 
 /* BLOG SECTION */
 .blog-section { margin-bottom: 64px; }
@@ -124,7 +126,7 @@ body {
 @media (max-width: 640px) {
   .header { padding: 14px 20px; }
   .main { padding: 48px 16px 80px; }
-  .tool-grid { grid-template-columns: 1fr; }
+  .tool-card-desc { display: none; }
   .blog-card { flex-direction: column; align-items: flex-start; }
   .blog-card-right { align-self: flex-start; }
 }
@@ -150,11 +152,11 @@ body {
       <div class="tool-card-icon tool-card-icon--detector">🔍</div>
       <div class="tool-card-body">
         <div class="tool-card-name">AI Detector</div>
-        <div class="tool-card-desc">Paste any text and find out if it was written by an AI. Fast, free, and no account needed.</div>
-        <div class="tool-card-footer">
-          <span class="tool-card-status tool-card-status--live"><span class="tool-card-status-dot"></span> Live</span>
-          <span class="tool-card-link">Try it →</span>
-        </div>
+        <div class="tool-card-desc">Paste any text and find out if it was written by an AI. Fast, free, no account needed.</div>
+      </div>
+      <div class="tool-card-footer">
+        <span class="tool-card-status tool-card-status--live"><span class="tool-card-status-dot"></span> Live</span>
+        <span class="tool-card-link">Try it →</span>
       </div>
     </a>
 
@@ -162,11 +164,23 @@ body {
       <div class="tool-card-icon tool-card-icon--exporter">📄</div>
       <div class="tool-card-body">
         <div class="tool-card-name">AI to PDF Exporter</div>
-        <div class="tool-card-desc">Export ChatGPT, Claude, Gemini, Grok, Copilot, and Perplexity conversations to clean, color-coded PDFs.</div>
-        <div class="tool-card-footer">
-          <span class="tool-card-status tool-card-status--live"><span class="tool-card-status-dot"></span> Live</span>
-          <span class="tool-card-link">Export now →</span>
-        </div>
+        <div class="tool-card-desc">Export ChatGPT, Claude, Gemini, Grok, Copilot, and Perplexity conversations to clean PDFs.</div>
+      </div>
+      <div class="tool-card-footer">
+        <span class="tool-card-status tool-card-status--live"><span class="tool-card-status-dot"></span> Live</span>
+        <span class="tool-card-link">Export now →</span>
+      </div>
+    </a>
+
+    <a class="tool-card" href="/app/">
+      <div class="tool-card-icon tool-card-icon--pwa">📲</div>
+      <div class="tool-card-body">
+        <div class="tool-card-name">Notavello App</div>
+        <div class="tool-card-desc">Install Notavello on your phone or desktop — no app store required.</div>
+      </div>
+      <div class="tool-card-footer">
+        <span class="tool-card-status tool-card-status--new"><span class="tool-card-status-dot"></span> New</span>
+        <span class="tool-card-link">Install →</span>
       </div>
     </a>
 
