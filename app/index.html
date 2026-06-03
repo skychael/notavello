@@ -1,26 +1,22 @@
-<!-- Notavello app-1.0 | 2026-06-03 | PWA standalone launcher -->
+<!-- Notavello app-1.1 | 2026-06-03 | PWA install landing — focused single-purpose -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
-<title>Notavello App — Export AI Conversations to PDF</title>
-<meta name="description" content="Export ChatGPT, Claude, Gemini, Copilot, Grok, and Perplexity conversations to clean color-coded PDFs. Install Notavello as an app on your device."/>
+<title>Install Notavello — Export AI Conversations to PDF</title>
+<meta name="description" content="Add Notavello to your home screen. Export ChatGPT, Claude, Gemini, and more to PDF — no app store, no sign-up, launches instantly."/>
 <meta name="robots" content="index, follow"/>
 <link rel="canonical" href="https://notavello.com/app/"/>
-
-<!-- Open Graph -->
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://notavello.com/app/"/>
-<meta property="og:title" content="Notavello App — Export AI Conversations to PDF"/>
-<meta property="og:description" content="Export ChatGPT, Claude, Gemini, and more to clean PDFs. Install as an app on your phone or desktop."/>
+<meta property="og:title" content="Install Notavello — Export AI Conversations to PDF"/>
+<meta property="og:description" content="Add Notavello to your home screen. No app store, no sign-up, launches instantly."/>
 <meta property="og:site_name" content="Notavello"/>
 <meta property="og:image" content="https://notavello.com/og-image.png"/>
-
-<!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="Notavello App — Export AI Conversations to PDF"/>
-<meta name="twitter:description" content="Export ChatGPT, Claude, Gemini, and more to clean PDFs. Install as an app on your device."/>
+<meta name="twitter:title" content="Install Notavello — Export AI Conversations to PDF"/>
+<meta name="twitter:description" content="Add Notavello to your home screen. No app store, no sign-up, launches instantly."/>
 <meta name="twitter:image" content="https://notavello.com/og-image.png"/>
 
 <!-- PWA -->
@@ -30,29 +26,18 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
 <meta name="apple-mobile-web-app-title" content="Notavello"/>
 <link rel="apple-touch-icon" href="/favicon.ico"/>
-
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
 :root {
-  --bg: #F0F4FF;
-  --surface: #FFFFFF;
-  --surface2: #F8FAFF;
-  --ink: #0F172A;
-  --ink-muted: #64748B;
-  --ink-faint: #94A3B8;
-  --accent: #4F46E5;
-  --accent2: #7C3AED;
-  --accent-light: #EEF2FF;
-  --green: #059669;
-  --green-light: #D1FAE5;
-  --border: #E2E8F0;
-  --radius: 20px;
-  --radius-sm: 12px;
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
   --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
   --shadow-lg: 0 4px 16px rgba(79,70,229,0.12), 0 16px 48px rgba(15,23,42,0.12);
 }
@@ -69,9 +54,10 @@ body {
   background-image:
     radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
     radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
-  /* PWA standalone: account for safe areas on notched phones */
   padding-top: env(safe-area-inset-top);
   padding-bottom: env(safe-area-inset-bottom);
+  display: flex;
+  flex-direction: column;
 }
 
 /* ── HEADER ── */
@@ -88,7 +74,6 @@ body {
   top: 0;
   z-index: 100;
 }
-
 .logo {
   font-family: 'Sora', sans-serif;
   font-size: 1.25rem;
@@ -100,350 +85,214 @@ body {
   gap: 10px;
   text-decoration: none;
 }
-
 .logo-icon {
-  width: 32px;
-  height: 32px;
+  width: 32px; height: 32px;
   background: linear-gradient(135deg, var(--accent), var(--accent2));
   border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: flex; align-items: center; justify-content: center;
   color: white;
   box-shadow: 0 2px 8px rgba(79,70,229,0.35);
 }
-
 .logo span { color: var(--accent); }
-
 .header-login {
   font-family: 'Sora', sans-serif;
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--accent);
-  text-decoration: none;
+  font-size: 0.82rem; font-weight: 600;
+  color: var(--accent); text-decoration: none;
   padding: 7px 18px;
   border: 1.5px solid rgba(79,70,229,0.3);
   border-radius: 8px;
   background: var(--accent-light);
   transition: background 0.15s, border-color 0.15s;
 }
-
-.header-login:hover {
-  background: #e0e7ff;
-  border-color: var(--accent);
-}
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
 
 /* ── MAIN ── */
-.screen-ui {
-  max-width: 860px;
-  margin: 0 auto;
-  padding: 56px 24px 100px;
-}
-
-/* ── INSTALL BANNER ── */
-.install-banner {
-  background: linear-gradient(135deg, var(--accent), var(--accent2));
-  border-radius: var(--radius);
-  padding: 28px 32px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  margin-bottom: 48px;
-  box-shadow: var(--shadow-lg);
-  animation: fadeUp 0.5s ease both;
-}
-
-/* Hidden once installed */
-.install-banner.hidden { display: none; }
-
-.install-banner-text h2 {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: white;
-  margin-bottom: 4px;
-}
-
-.install-banner-text p {
-  font-size: 0.82rem;
-  color: rgba(255,255,255,0.8);
-}
-
-.install-btn {
-  background: white;
-  color: var(--accent);
-  font-family: 'Sora', sans-serif;
-  font-size: 0.85rem;
-  font-weight: 700;
-  border: none;
-  border-radius: 10px;
-  padding: 10px 22px;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: opacity 0.15s, transform 0.15s;
-  flex-shrink: 0;
-}
-
-.install-btn:hover { opacity: 0.9; transform: translateY(-1px); }
-
-/* iOS instructions shown when no prompt available */
-.ios-hint {
-  font-size: 0.8rem;
-  color: rgba(255,255,255,0.85);
-  margin-top: 8px;
-  display: none;
-}
-
-/* ── SECTION LABEL ── */
-.section-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--accent);
-  background: var(--accent-light);
-  padding: 5px 12px;
-  border-radius: 100px;
-  margin-bottom: 16px;
-}
-
-/* ── AI CARDS ── */
-.ai-cards-label {
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--ink-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  margin-bottom: 16px;
-}
-
-.ai-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 16px;
-  margin-bottom: 56px;
-  animation: fadeUp 0.6s ease 0.1s both;
-}
-
-.ai-card {
-  background: var(--surface);
-  border: 1.5px solid var(--border);
-  border-radius: var(--radius);
-  padding: 22px 20px 18px;
-  text-decoration: none;
-  color: inherit;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
-  box-shadow: var(--shadow);
-}
-
-.ai-card:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-lg);
-  border-color: rgba(79,70,229,0.25);
-}
-
-.ai-card:active { transform: translateY(0); }
-
-.ai-card-icon {
-  font-size: 1.6rem;
-  line-height: 1;
-  margin-bottom: 4px;
-}
-
-.ai-card-name {
-  font-weight: 700;
-  font-size: 1rem;
-  color: var(--ink);
-}
-
-.ai-card-desc {
-  font-size: 0.78rem;
-  color: var(--ink-muted);
-  line-height: 1.5;
+.main {
   flex: 1;
-}
-
-.ai-card-status {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  font-size: 0.72rem;
-  font-weight: 600;
-  color: var(--green);
-  background: var(--green-light);
-  padding: 3px 9px;
-  border-radius: 100px;
-  width: fit-content;
-  margin-top: 4px;
-}
-
-.ai-card-status-dot {
-  width: 6px;
-  height: 6px;
-  background: var(--green);
-  border-radius: 50%;
-  animation: pulse 2s infinite;
-}
-
-/* ── HOW IT WORKS ── */
-.how-section {
-  margin-bottom: 56px;
-  animation: fadeUp 0.6s ease 0.2s both;
-}
-
-.section-title {
-  font-family: 'Lora', serif;
-  font-size: 1.6rem;
-  font-weight: 600;
-  color: var(--ink);
-  line-height: 1.25;
-  margin-bottom: 28px;
-}
-
-.steps {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 16px;
-}
-
-.step-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 24px;
-  box-shadow: var(--shadow);
-}
-
-.step-num {
-  width: 34px;
-  height: 34px;
-  background: linear-gradient(135deg, var(--accent), var(--accent2));
-  color: white;
-  font-weight: 700;
-  font-size: 0.9rem;
-  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 48px 24px 80px;
+}
+
+/* ── INSTALL CARD ── */
+.install-card {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 28px;
+  box-shadow: var(--shadow-lg);
+  padding: 52px 48px;
+  max-width: 520px;
+  width: 100%;
+  text-align: center;
+  animation: fadeUp 0.55s ease both;
+}
+
+/* App icon */
+.app-icon {
+  width: 80px; height: 80px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  border-radius: 22px;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 24px;
+  box-shadow: 0 8px 24px rgba(79,70,229,0.35);
+}
+
+.install-card h1 {
+  font-family: 'Lora', serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.2;
   margin-bottom: 12px;
-  box-shadow: 0 2px 8px rgba(79,70,229,0.3);
+  letter-spacing: -0.02em;
 }
 
-.step-card h3 {
-  font-size: 0.95rem;
+.install-card h1 em {
+  font-style: italic;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.install-card .subtitle {
+  font-size: 0.9rem;
+  color: var(--ink-muted);
+  line-height: 1.7;
+  margin-bottom: 32px;
+  max-width: 380px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Perks list */
+.perks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 36px;
+  text-align: left;
+}
+
+.perk {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.83rem;
+  color: var(--ink-muted);
+}
+
+.perk-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  flex-shrink: 0;
+}
+
+/* Install button */
+.install-btn {
+  width: 100%;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: white;
+  font-family: 'Sora', sans-serif;
+  font-size: 1rem;
   font-weight: 700;
-  margin-bottom: 6px;
+  border: none;
+  border-radius: 14px;
+  padding: 16px 24px;
+  cursor: pointer;
+  transition: opacity 0.15s, transform 0.15s;
+  box-shadow: 0 4px 16px rgba(79,70,229,0.35);
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
 }
+.install-btn:hover { opacity: 0.92; transform: translateY(-1px); }
+.install-btn:active { transform: translateY(0); }
 
-.step-card p {
-  font-size: 0.82rem;
+/* Already installed state */
+.install-btn.installed {
+  background: var(--green);
+  box-shadow: 0 4px 16px rgba(5,150,105,0.3);
+  cursor: default;
+}
+.install-btn.installed:hover { opacity: 1; transform: none; }
+
+/* iOS hint */
+.ios-hint {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 16px;
+  font-size: 0.8rem;
   color: var(--ink-muted);
   line-height: 1.6;
+  margin-bottom: 12px;
+  text-align: left;
+  display: none;
 }
+
+.ios-hint strong { color: var(--ink); }
+
+.back-link {
+  font-size: 0.78rem;
+  color: var(--ink-faint);
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 4px;
+  transition: color 0.15s;
+}
+.back-link:hover { color: var(--accent); }
 
 /* ── FOOTER ── */
 .site-footer {
   background: var(--surface);
   border-top: 1px solid var(--border);
-  padding: 40px 36px 32px;
+  padding: 28px 36px;
 }
-
 .site-footer-inner {
-  max-width: 860px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  max-width: 860px; margin: 0 auto;
+  display: flex; flex-direction: column; gap: 16px;
 }
-
 .footer-nav {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 6px;
+  display: flex; flex-wrap: wrap;
+  align-items: center; gap: 6px;
   font-size: 0.8rem;
 }
-
 .footer-nav-label {
-  font-weight: 600;
-  color: var(--ink-muted);
-  margin-right: 4px;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  font-weight: 600; color: var(--ink-muted);
+  margin-right: 4px; font-size: 0.75rem;
+  text-transform: uppercase; letter-spacing: 0.05em;
 }
-
-.footer-nav a {
-  color: var(--ink-muted);
-  text-decoration: none;
-  transition: color 0.15s;
-}
-
+.footer-nav a { color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
 .footer-nav a:hover { color: var(--accent); }
-
 .footer-nav-divider { color: var(--ink-faint); }
-
 .footer-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 16px;
-  border-top: 1px solid var(--border);
-  flex-wrap: wrap;
-  gap: 10px;
+  display: flex; justify-content: space-between; align-items: center;
+  padding-top: 14px; border-top: 1px solid var(--border);
+  flex-wrap: wrap; gap: 10px;
 }
-
-.footer-copy {
-  font-size: 0.78rem;
-  color: var(--ink-faint);
-}
-
-.footer-legal {
-  display: flex;
-  gap: 16px;
-}
-
-.footer-legal a {
-  font-size: 0.78rem;
-  color: var(--ink-faint);
-  text-decoration: none;
-  transition: color 0.15s;
-}
-
+.footer-copy { font-size: 0.78rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; }
+.footer-legal a { font-size: 0.78rem; color: var(--ink-faint); text-decoration: none; transition: color 0.15s; }
 .footer-legal a:hover { color: var(--accent); }
 
-/* ── ANIMATIONS ── */
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(16px); }
+  from { opacity: 0; transform: translateY(18px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0.4; }
-}
-
-/* ── MOBILE ── */
 @media (max-width: 600px) {
   .header { padding: 14px 20px; }
-  .screen-ui { padding: 36px 16px 80px; }
-  .install-banner { flex-direction: column; align-items: flex-start; padding: 22px 20px; }
-  .install-btn { width: 100%; text-align: center; }
-  .section-title { font-size: 1.3rem; }
-  .site-footer { padding: 32px 20px 24px; }
-  .footer-bottom { flex-direction: column; align-items: flex-start; }
+  .main { padding: 32px 16px 60px; align-items: flex-start; }
+  .install-card { padding: 36px 24px; }
+  .install-card h1 { font-size: 1.45rem; }
+  .site-footer { padding: 24px 20px; }
 }
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
 <header class="header">
   <a class="logo" href="/">
     <div class="logo-icon">
@@ -457,153 +306,51 @@ body {
   <a class="header-login" href="/login/">Log In</a>
 </header>
 
-<main class="screen-ui">
+<main class="main">
+  <div class="install-card">
 
-  <!-- INSTALL BANNER -->
-  <div class="install-banner" id="installBanner">
-    <div class="install-banner-text">
-      <h2>📲 Add Notavello to your home screen</h2>
-      <p>Install as an app — no app store, no sign-up, launches instantly.</p>
-      <p class="ios-hint" id="iosHint">Tap the <strong>Share</strong> button in your browser, then choose <strong>"Add to Home Screen"</strong></p>
+    <!-- App icon -->
+    <div class="app-icon">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+        <polyline points="14 2 14 8 20 8"/>
+      </svg>
     </div>
-    <button class="install-btn" id="installBtn">Install App</button>
-  </div>
 
-  <!-- AI CARDS -->
-  <div class="ai-cards-label">Choose your AI to export</div>
-  <div class="ai-cards">
+    <h1>Notavello, right on<br>your <em>home screen</em></h1>
+    <p class="subtitle">One tap and you're exporting. No app store, no account, no install file — it works like a native app because it practically is one.</p>
 
-    <a href="/exporters/chatgpt/" class="ai-card">
-      <div class="ai-card-icon">💬</div>
-      <div class="ai-card-name">ChatGPT</div>
-      <div class="ai-card-desc">Export ChatGPT conversations by OpenAI as color-coded PDFs</div>
-      <div class="ai-card-status">
-        <div class="ai-card-status-dot"></div>
-        Live now
-      </div>
-    </a>
+    <div class="perks">
+      <div class="perk"><div class="perk-dot"></div>Export ChatGPT, Claude, Gemini, Copilot, Grok &amp; Perplexity to PDF</div>
+      <div class="perk"><div class="perk-dot"></div>Launches instantly, full screen, no browser chrome</div>
+      <div class="perk"><div class="perk-dot"></div>Free to install — no app store, no review wait</div>
+      <div class="perk"><div class="perk-dot"></div>Updates automatically, always the latest version</div>
+    </div>
 
-    <a href="/exporters/claude/" class="ai-card">
-      <div class="ai-card-icon">🤖</div>
-      <div class="ai-card-name">Claude</div>
-      <div class="ai-card-desc">Export Claude conversations by Anthropic as color-coded PDFs</div>
-      <div class="ai-card-status">
-        <div class="ai-card-status-dot"></div>
-        Live now
-      </div>
-    </a>
+    <!-- iOS instructions (shown on iOS only) -->
+    <div class="ios-hint" id="iosHint">
+      On iPhone or iPad: tap the <strong>Share</strong> button at the bottom of your browser, then choose <strong>"Add to Home Screen"</strong> and tap <strong>Add</strong>.
+    </div>
 
-    <a href="/exporters/gemini/" class="ai-card">
-      <div class="ai-card-icon">✨</div>
-      <div class="ai-card-name">Gemini</div>
-      <div class="ai-card-desc">Export Gemini conversations by Google as color-coded PDFs</div>
-      <div class="ai-card-status">
-        <div class="ai-card-status-dot"></div>
-        Live now
-      </div>
-    </a>
+    <!-- Install button (Android/desktop) or already-installed state -->
+    <button class="install-btn" id="installBtn">📲 &nbsp;Add to Home Screen</button>
 
-    <a href="/exporters/copilot/" class="ai-card">
-      <div class="ai-card-icon">🪟</div>
-      <div class="ai-card-name">Copilot</div>
-      <div class="ai-card-desc">Export Copilot conversations by Microsoft as color-coded PDFs</div>
-      <div class="ai-card-status">
-        <div class="ai-card-status-dot"></div>
-        Live now
-      </div>
-    </a>
-
-    <a href="/exporters/grok/" class="ai-card">
-      <div class="ai-card-icon">𝕏</div>
-      <div class="ai-card-name">Grok</div>
-      <div class="ai-card-desc">Export Grok conversations by xAI as color-coded PDFs</div>
-      <div class="ai-card-status">
-        <div class="ai-card-status-dot"></div>
-        Live now
-      </div>
-    </a>
-
-    <a href="/exporters/perplexity/" class="ai-card">
-      <div class="ai-card-icon">🔍</div>
-      <div class="ai-card-name">Perplexity</div>
-      <div class="ai-card-desc">Export Perplexity conversations as color-coded PDFs</div>
-      <div class="ai-card-status">
-        <div class="ai-card-status-dot"></div>
-        Live now
-      </div>
-    </a>
-
-    <a href="/exporters/other/" class="ai-card">
-      <div class="ai-card-icon">•••</div>
-      <div class="ai-card-name">Other AI</div>
-      <div class="ai-card-desc">Mistral, DeepSeek, Llama, Le Chat, and more</div>
-      <div class="ai-card-status">
-        <div class="ai-card-status-dot"></div>
-        Live now
-      </div>
-    </a>
+    <a href="/" class="back-link">or go straight to the exporter →</a>
 
   </div>
-
-  <!-- HOW IT WORKS -->
-  <section class="how-section">
-    <div class="section-label">How it works</div>
-    <h2 class="section-title">Three steps to a professional PDF</h2>
-    <div class="steps">
-      <div class="step-card">
-        <div class="step-num">1</div>
-        <h3>Choose your AI</h3>
-        <p>Select which AI assistant you used — ChatGPT, Claude, Gemini, Copilot, Grok, or Perplexity.</p>
-      </div>
-      <div class="step-card">
-        <div class="step-num">2</div>
-        <h3>Copy your chat</h3>
-        <p>Open your conversation, press Ctrl+A to select all, then Ctrl+C to copy.</p>
-      </div>
-      <div class="step-card">
-        <div class="step-num">3</div>
-        <h3>Paste &amp; download</h3>
-        <p>Paste into Notavello and get a color-coded, formatted PDF instantly.</p>
-      </div>
-    </div>
-  </section>
-
 </main>
 
-<!-- FOOTER -->
 <footer class="site-footer">
   <div class="site-footer-inner">
     <nav class="footer-nav">
       <div class="footer-nav-label">Export AI Conversations</div>
-      <a href="/exporters/chatgpt/">ChatGPT</a>
-      <span class="footer-nav-divider">·</span>
-      <a href="/exporters/gemini/">Gemini</a>
-      <span class="footer-nav-divider">·</span>
-      <a href="/exporters/copilot/">Copilot</a>
-      <span class="footer-nav-divider">·</span>
-      <a href="/exporters/claude/">Claude</a>
-      <span class="footer-nav-divider">·</span>
-      <a href="/exporters/grok/">Grok</a>
-      <span class="footer-nav-divider">·</span>
-      <a href="/exporters/perplexity/">Perplexity</a>
-      <span class="footer-nav-divider">·</span>
+      <a href="/exporters/chatgpt/">ChatGPT</a><span class="footer-nav-divider">·</span>
+      <a href="/exporters/gemini/">Gemini</a><span class="footer-nav-divider">·</span>
+      <a href="/exporters/copilot/">Copilot</a><span class="footer-nav-divider">·</span>
+      <a href="/exporters/claude/">Claude</a><span class="footer-nav-divider">·</span>
+      <a href="/exporters/grok/">Grok</a><span class="footer-nav-divider">·</span>
+      <a href="/exporters/perplexity/">Perplexity</a><span class="footer-nav-divider">·</span>
       <a href="/exporters/other/">Other AI</a>
-    </nav>
-    <nav class="footer-nav">
-      <div class="footer-nav-label">Product</div>
-      <a href="/">Home</a>
-      <span class="footer-nav-divider">·</span>
-      <a href="/tools/ai-detector/">AI Detector</a>
-      <span class="footer-nav-divider">·</span>
-      <a href="/tools/">Tools</a>
-      <span class="footer-nav-divider">·</span>
-      <a href="/pages/pricing/">Pricing</a>
-      <span class="footer-nav-divider">·</span>
-      <a href="/pages/faq/">FAQ</a>
-      <span class="footer-nav-divider">·</span>
-      <a href="/pages/about/">About</a>
-      <span class="footer-nav-divider">·</span>
-      <a href="/login/">Log In</a>
     </nav>
     <div class="footer-bottom">
       <div class="footer-copy">&copy; 2026 Notavello.</div>
@@ -616,40 +363,35 @@ body {
   </div>
 </footer>
 
-<!-- SERVICE WORKER REGISTRATION -->
+<!-- SERVICE WORKER -->
 <script>
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('/app/sw.js')
       .then(reg => console.log('[Notavello PWA] SW registered:', reg.scope))
-      .catch(err => console.warn('[Notavello PWA] SW registration failed:', err));
+      .catch(err => console.warn('[Notavello PWA] SW failed:', err));
   });
 }
 </script>
 
-<!-- INSTALL PROMPT LOGIC -->
+<!-- INSTALL LOGIC -->
 <script>
 (function () {
   let deferredPrompt = null;
-  const banner = document.getElementById('installBanner');
   const btn = document.getElementById('installBtn');
   const iosHint = document.getElementById('iosHint');
 
-  // Detect iOS
   const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
-  // Detect standalone (already installed)
   const isStandalone = window.matchMedia('(display-mode: standalone)').matches
     || window.navigator.standalone === true;
 
   if (isStandalone) {
-    // Already running as installed PWA — hide the banner entirely
-    banner.classList.add('hidden');
+    btn.textContent = '✓  Already installed';
+    btn.classList.add('installed');
   } else if (isIOS) {
-    // iOS can't programmatically prompt — show manual instructions
     btn.style.display = 'none';
     iosHint.style.display = 'block';
   } else {
-    // Chrome / Android — wait for the beforeinstallprompt event
     window.addEventListener('beforeinstallprompt', (e) => {
       e.preventDefault();
       deferredPrompt = e;
@@ -657,19 +399,23 @@ if ('serviceWorker' in navigator) {
 
     btn.addEventListener('click', async () => {
       if (!deferredPrompt) {
-        // Prompt not available (already installed or not eligible)
-        banner.classList.add('hidden');
+        // Prompt not available — browser may have already dismissed or installed
+        btn.textContent = '✓  Already installed or not supported';
+        btn.classList.add('installed');
         return;
       }
       deferredPrompt.prompt();
       const { outcome } = await deferredPrompt.userChoice;
       deferredPrompt = null;
-      if (outcome === 'accepted') banner.classList.add('hidden');
+      if (outcome === 'accepted') {
+        btn.textContent = '✓  Installed — check your home screen';
+        btn.classList.add('installed');
+      }
     });
 
-    // If installed via other means, hide banner
     window.addEventListener('appinstalled', () => {
-      banner.classList.add('hidden');
+      btn.textContent = '✓  Installed — check your home screen';
+      btn.classList.add('installed');
     });
   }
 })();
