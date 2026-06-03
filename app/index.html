@@ -282,6 +282,17 @@ body {
   to   { opacity: 1; transform: translateY(0); }
 }
 
+/* iOS — hide everything except instructions */
+body.is-ios .app-icon,
+body.is-ios h1,
+body.is-ios .subtitle,
+body.is-ios .perks,
+body.is-ios .back-link { display: none; }
+
+body.is-ios .install-card { padding: 36px 32px; }
+body.is-ios .ios-hint { display: block; font-size: 0.92rem; padding: 20px; line-height: 1.8; }
+body.is-ios .ios-hint strong { color: var(--accent); font-size: 1rem; }
+
 @media (max-width: 600px) {
   .header { padding: 14px 20px; }
   .main { padding: 32px 16px 60px; align-items: flex-start; }
@@ -329,6 +340,7 @@ body {
 
     <!-- iOS instructions (shown on iOS only) -->
     <div class="ios-hint" id="iosHint">
+      <div style="font-size:1.1rem; font-weight:700; color:var(--ink); margin-bottom:14px;">📲 Add Notavello to your home screen</div>
       ⚠️ iPhone &amp; iPad require <strong>Safari</strong> for this to work. If you're in Brave, Chrome, or another browser, copy this URL, open <strong>Safari</strong>, paste it, then tap the <strong>Share</strong> button at the bottom and choose <strong>"Add to Home Screen"</strong>.<br><br>
       <span style="font-family:monospace; font-size:0.75rem; background:var(--border); padding:4px 8px; border-radius:6px; display:inline-block; margin-top:2px; user-select:all;">notavello.com/app/</span>
     </div>
@@ -385,6 +397,8 @@ if ('serviceWorker' in navigator) {
   const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
   const isStandalone = window.matchMedia('(display-mode: standalone)').matches
     || window.navigator.standalone === true;
+
+  if (isIOS) document.body.classList.add('is-ios');
 
   if (isStandalone) {
     btn.textContent = '✓  Already installed';
