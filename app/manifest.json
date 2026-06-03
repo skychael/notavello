@@ -1,0 +1,20 @@
+{
+  "name": "Notavello — Export AI Conversations to PDF",
+  "short_name": "Notavello",
+  "description": "Export ChatGPT, Claude, Gemini, Copilot, Grok, and Perplexity conversations to clean color-coded PDFs.",
+  "start_url": "/app/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#F0F4FF",
+  "theme_color": "#4F46E5",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ],
+  "categories": ["productivity", "utilities"],
+  "lang": "en-US"
+}
