@@ -149,20 +149,66 @@ template" or "clean up the template" as part of a larger task — STOP and confi
 with Mike first. This file is intentionally locked to manual review.
 ===
 
-=== CHECKLIST FOR EACH NEW POST ===
-Replace all %% placeholders before deploying:
+=== WORKFLOW FOR EACH NEW POST ===
 
-%%POST_TITLE%%      → Full post title (used in <title>, OG, Twitter, h1, schema)
-%%META_DESCRIPTION%%→ 150 char max description (used in meta, OG, Twitter, schema)
-%%SLUG%%            → URL slug e.g. why-copilot-silently-cuts-off-your-code
-%%DATE_ISO%%        → ISO date e.g. 2026-05-28 (used in schema)
-%%DATE_DISPLAY%%    → Human date e.g. May 28, 2026 (shown on page)
-%%TAG%%             → Category e.g. AI Tools, Developer Tools, Privacy, AI Comparison
-%%LEDE%%            → Opening paragraph (1-2 sentences, hooks the reader)
-%%SECTION_X_HEADING%%  → h2 subheading
-%%SECTION_X_BODY%%     → Paragraph(s) of content
-%%CALLOUT_LABEL%%   → Bold callout intro e.g. "The frustrating part:"
-%%CALLOUT_TEXT%%    → Callout body text
+STEP 1 — RESEARCH
+Research the topic before writing. Use web search if needed for current facts,
+stats, or market data. Accuracy matters more than speed.
 
-Also add a card for this post in /pages/blog/index.html
+STEP 2 — DETERMINE SLUG
+Slug format: lowercase, hyphenated, descriptive, SEO-friendly.
+Example: displayport-vs-hdmi
+The post will live at: https://notavello.com/pages/blog/%%SLUG%%/
+The output HTML filename should match the slug: e.g. displayport-vs-hdmi.html
+Tell Mike the folder/slug before delivering files.
+
+STEP 3 — REPLACE ALL %% PLACEHOLDERS
+%%POST_TITLE%%         → Full post title (used in <title>, OG, Twitter, h1, schema)
+%%META_DESCRIPTION%%   → 150 char max. Punchy, keyword-rich. No quotes inside.
+%%SLUG%%               → URL slug e.g. displayport-vs-hdmi (no trailing slash in tag)
+%%DATE_ISO%%           → ISO date e.g. 2026-06-08 (schema only)
+%%DATE_DISPLAY%%       → Human date e.g. June 8, 2026 (shown on page)
+%%TAG%%                → Category tag. Current tags in use:
+                          AI Tools | AI Comparison | AI Trends | AI Markets |
+                          Developer Tools | Privacy | Energy | Insurance | Tech
+                          (Add new tags sparingly; check index.html for consistency)
+%%LEDE%%               → Hook paragraph. 1-2 sentences. Make the dry interesting.
+%%SECTION_X_HEADING%%  → h2 subheadings. Aim for 4-8 sections per post.
+%%SECTION_X_BODY%%     → One or more <p> tags per section. Use <strong> for emphasis.
+                          Optional: <ul><li> lists, extra callout blocks, tables.
+%%CALLOUT_LABEL%%      → Bold intro label e.g. "The bottom line:" or "Watch out:"
+%%CALLOUT_TEXT%%       → Callout body. 1-3 sentences. Punchy.
+
+STEP 4 — ADD CARD TO INDEX
+Insert a new <a class="post-card"> block at the TOP of <div class="post-list">
+in /pages/blog/index.html. Newest post always first.
+Card structure:
+  - post-tag: match %%TAG%% exactly
+  - post-date: match %%DATE_DISPLAY%% exactly
+  - post-card-title: match %%POST_TITLE%% exactly
+  - post-card-desc: 1-2 sentence teaser (can differ from %%LEDE%%)
+  - href: /pages/blog/%%SLUG%%/
+
+STEP 5 — DELIVER FILES
+Return both files for download:
+  1. %%SLUG%%.html  (the new post)
+  2. index.html     (updated with new card)
+And return the updated blog-post-template.html if it was modified.
+
+STEP 6 — TELL MIKE THE URL
+State the live URL clearly: https://notavello.com/pages/blog/%%SLUG%%/
+
+=== FOOTER CTA — NEVER ALTER ===
+The post footer CTA is locked. Always:
+  Label:  "Looking for more AI tools?"
+  Button: "See our free AI tools →"  linking to /tools/
+Do not change the text, link, or structure.
+
+=== STYLE NOTES ===
+- Tone: Confident, plain-English, occasionally dry wit. Not corporate.
+- Headers: Use Lora serif h2s. Be specific — avoid generic headings like "Overview."
+- Callout blocks: Use sparingly (1-2 per post). Best for warnings, bottom lines, gotchas.
+- Tables: Fine to add inside .post-body for comparisons. Use inline styles or add a
+  .compare-table class if needed (see displayport-vs-hdmi.html for example).
+- Length: 800-1800 words is the sweet spot. Don't pad; don't truncate good info.
 -->
