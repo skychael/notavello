@@ -1,0 +1,261 @@
+<!-- ⚠️ ALL %% PLACEHOLDERS HAVE BEEN REPLACED -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>The Three-Minute GitHub Action That Injects Code Into Every Page You'll Ever Deploy — The Export | Notavello</title>
+<meta name="description" content="Set up a GitHub Action once and it automatically injects analytics, cookie banners, or any script into every HTML file you deploy — forever. Here's exactly how."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/blog/github-action-inject-code-all-html-pages/"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://notavello.com/pages/blog/github-action-inject-code-all-html-pages/"/>
+<meta property="og:title" content="The Three-Minute GitHub Action That Injects Code Into Every Page You'll Ever Deploy"/>
+<meta property="og:description" content="Set up a GitHub Action once and it automatically injects analytics, cookie banners, or any script into every HTML file you deploy — forever. Here's exactly how."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="The Three-Minute GitHub Action That Injects Code Into Every Page You'll Ever Deploy"/>
+<meta name="twitter:description" content="Set up a GitHub Action once and it automatically injects analytics, cookie banners, or any script into every HTML file you deploy — forever. Here's exactly how."/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "The Three-Minute GitHub Action That Injects Code Into Every Page You'll Ever Deploy",
+  "description": "Set up a GitHub Action once and it automatically injects analytics, cookie banners, or any script into every HTML file you deploy — forever. Here's exactly how.",
+  "url": "https://notavello.com/pages/blog/github-action-inject-code-all-html-pages/",
+  "datePublished": "2026-06-08",
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
+.back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; color: var(--ink-muted); text-decoration: none; margin-bottom: 40px; transition: color 0.15s; }
+.back-link:hover { color: var(--accent); }
+.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
+.post-date { font-size: 0.78rem; color: var(--ink-faint); }
+.post-title { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; color: var(--ink); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
+.post-lede { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+.post-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink); }
+.post-body h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 44px 0 16px; letter-spacing: -0.01em; }
+.post-body p { margin-bottom: 20px; color: var(--ink-muted); }
+.post-body p strong { color: var(--ink); font-weight: 600; }
+.post-body ul { margin: 0 0 20px 20px; color: var(--ink-muted); }
+.post-body ul li { margin-bottom: 8px; line-height: 1.7; }
+.callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 32px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.7; }
+.code-block { background: #1E293B; color: #E2E8F0; border-radius: var(--radius-sm); padding: 20px 24px; margin: 24px 0; font-family: 'Courier New', Courier, monospace; font-size: 0.82rem; line-height: 1.75; overflow-x: auto; white-space: pre; }
+.code-block .comment { color: #64748B; }
+.code-block .key { color: #93C5FD; }
+.code-block .val { color: #86EFAC; }
+.compare-table { width: 100%; border-collapse: collapse; margin: 24px 0 28px; font-size: 0.88rem; }
+.compare-table th { background: var(--accent-light); color: var(--accent); font-weight: 700; text-align: left; padding: 10px 16px; border-bottom: 2px solid var(--border); }
+.compare-table td { padding: 10px 16px; border-bottom: 1px solid var(--border); color: var(--ink-muted); vertical-align: top; }
+.compare-table tr:last-child td { border-bottom: none; }
+.compare-table td:first-child { font-weight: 600; color: var(--ink); white-space: nowrap; }
+.post-footer { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.post-footer-label { font-size: 0.8rem; color: var(--ink-faint); }
+.btn-export { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: opacity 0.2s; }
+.btn-export:hover { opacity: 0.9; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } }
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+
+  <a class="back-link" href="/pages/blog/">← The Export</a>
+
+  <div class="post-meta">
+    <span class="post-tag">Developer Tools</span>
+    <span class="post-date">June 8, 2026</span>
+  </div>
+
+  <h1 class="post-title">The Three-Minute GitHub Action That Injects Code Into Every Page You'll Ever Deploy</h1>
+
+  <p class="post-lede">You set it up once. After that, every HTML file you push — today, next month, whenever — automatically gets your analytics snippet, cookie notice, or any other code block injected before it hits production. No shared templates. No manual copy-paste. No "oh, I forgot to add it to the new page." Here's exactly how it works and whether it's right for your project.</p>
+
+  <div class="post-body">
+
+    <h2>Why People Go Looking for This</h2>
+    <p>The search usually starts after one of a few frustrating moments. You add a new page to your site, push it, then realize two weeks later it has zero analytics data — because you forgot to paste the tracking snippet in. Or you need to swap out one script across forty files and the only option is <strong>find-and-replace across your whole repo</strong> and hoping nothing breaks. Or you read about a GDPR cookie requirement and realize there's no practical way to add a banner sitewide without touching every file individually.</p>
+    <p>The underlying problem is the same in all three cases: you have site-wide code that belongs on every page, but your site is made of individual HTML files rather than a templating system that generates them. WordPress users don't have this problem — they just drop something in <code>footer.php</code>. If your site is flat HTML files hosted on Cloudflare Pages, GitHub Pages, or Netlify, you need a different approach.</p>
+
+    <h2>What a YML File Actually Is</h2>
+    <p>Before getting into the how, it's worth demystifying the file format, because <strong>yml (or YAML) files intimidate people who've never seen one</strong> despite being extremely simple. YAML stands for "YAML Ain't Markup Language" — a naming choice that should disqualify whoever made it, but here we are.</p>
+    <p>A <code>.yml</code> file is just a structured text file for configuration. It uses indentation (spaces, not tabs) to show hierarchy, and colons to separate keys from values. When you create a file at <code>.github/workflows/something.yml</code> in your GitHub repository, GitHub reads it and knows it's an automation instruction. That's a GitHub Action. The file tells GitHub: "when this event happens, run these steps on a temporary server."</p>
+    <p>You don't need to understand YAML deeply to use it. You need to understand it about as much as you need to understand HTML to edit a webpage — which is to say, enough to not break the indentation.</p>
+
+    <h2>The "Just Edit the Footer File" Approach — and Why It Falls Short</h2>
+    <p>The obvious first instinct for site-wide code is to put it in a shared footer file. If your site uses a build system like Jekyll, Hugo, or Eleventy, this works perfectly — those tools compile your templates into HTML and the footer gets included in every output file automatically.</p>
+    <p>But a lot of sites — especially fast, lightweight ones deployed directly from a GitHub repo — don't use a build system at all. They're just folders of HTML files. There's no "footer file" that gets included anywhere, because nothing is building anything. Each HTML file is self-contained and gets served exactly as written.</p>
+
+    <table class="compare-table">
+      <tr>
+        <th>Approach</th>
+        <th>Works for static HTML files?</th>
+        <th>Scales to new pages?</th>
+        <th>Setup time</th>
+      </tr>
+      <tr>
+        <td>Edit each file manually</td>
+        <td>Yes</td>
+        <td>No — manual every time</td>
+        <td>Seconds per file, forever</td>
+      </tr>
+      <tr>
+        <td>Shared footer template (Jekyll/Hugo/etc.)</td>
+        <td>Only if using a build system</td>
+        <td>Yes</td>
+        <td>Moderate — requires framework setup</td>
+      </tr>
+      <tr>
+        <td>Cloudflare Transform Rule</td>
+        <td>Yes, but limited</td>
+        <td>Yes</td>
+        <td>Easy — but requires paid plan for HTML injection</td>
+      </tr>
+      <tr>
+        <td>GitHub Action (this article)</td>
+        <td>Yes</td>
+        <td>Yes — automatically</td>
+        <td>~3 minutes, one time</td>
+      </tr>
+    </table>
+
+    <p>It's also worth noting a common misconception about Cloudflare: you might expect that since Cloudflare sits between your visitors and your server, it could inject a script tag into every page as it passes through. Cloudflare <em>can</em> do HTML injection — but it requires a Cloudflare Worker with specific configuration, not a simple dashboard toggle. For most small site owners, the GitHub Action is easier and free.</p>
+
+    <h2>How the GitHub Action Actually Works</h2>
+    <p>When you push code to your repository's <code>main</code> branch, GitHub spins up a temporary Ubuntu server, checks out your code onto it, and runs whatever steps you've defined in your workflow file. In the case of a code-injection Action, those steps are straightforward:</p>
+    <ul>
+      <li><strong>Find every HTML file</strong> in the repository using the Unix <code>find</code> command</li>
+      <li><strong>Check each file</strong> for whether the snippet is already present (to avoid duplicating it)</li>
+      <li><strong>Insert the snippet</strong> before the <code>&lt;/body&gt;</code> tag using <code>sed</code>, a basic text-processing tool</li>
+      <li><strong>Commit the changes</strong> back to the repository automatically</li>
+    </ul>
+    <p>The whole operation runs in about 10–15 seconds for a small-to-medium site. The first time it runs, it patches every existing HTML file. Every subsequent run, it only touches files that are missing the snippet — so new pages get covered automatically, and existing ones are left alone.</p>
+
+    <div class="callout">
+      <strong>The idempotency trick:</strong> The Action checks for the snippet before injecting it. This means you can run it a hundred times and never end up with duplicate script tags. In automation, an operation that produces the same result no matter how many times you run it is called <em>idempotent</em> — and it's what separates a reliable workflow from a messy one.
+    </div>
+
+    <h2>What It Costs to Run This</h2>
+    <p>For public repositories, GitHub Actions is completely free with no practical limits for tasks like this. For private repositories, GitHub gives you 2,000 free minutes per month on the free plan, and this workflow uses roughly 15–20 seconds per run. Even if you push code 20 times a day, you'd use about 10 minutes per month — well under any threshold.</p>
+    <p><strong>The math for heavy users:</strong> 20 pushes/day × 0.33 minutes × 30 days = roughly 200 minutes/month. The free tier covers 2,000 minutes. You'd need to be pushing code 200+ times a day before you touched the limit. At that point you're probably a team and on a paid plan anyway.</p>
+    <p>If you somehow exceeded the free tier, additional minutes cost $0.008 per minute on GitHub's pay-as-you-go plan — so 1,000 extra minutes would cost about $8. This is not a bill that will surprise you.</p>
+
+    <h2>What You Can Inject — and What You Shouldn't</h2>
+    <p>The approach works for anything that lives in a <code>&lt;script&gt;</code> tag or a small block of HTML near the closing <code>&lt;/body&gt;</code>. Common use cases include analytics (GoatCounter, Plausible, Fathom, Google Analytics), cookie consent banners, live chat widgets, error tracking (Sentry), A/B testing scripts, and feedback widgets.</p>
+    <p>What it's less suited for: anything that needs to go in the <code>&lt;head&gt;</code> tag (fonts, canonical URLs, meta tags), content that varies per page, or anything that requires logic — for those, you want a proper build system. This approach is deliberately blunt. It finds <code>&lt;/body&gt;</code> and inserts before it. That simplicity is the feature, not a limitation.</p>
+
+    <div class="callout">
+      <strong>Watch out:</strong> If any of your HTML files use a non-standard closing tag like <code>&lt;/BODY&gt;</code> (uppercase) or have unusual whitespace before it, the <code>sed</code> replacement will miss them. A quick lowercase pass or adjusted regex handles this — but for most modern HTML files it's a non-issue.
+    </div>
+
+    <h2>The Cloudflare KV Warning That Prompted This Article</h2>
+    <p>One thing worth addressing for Cloudflare users specifically: if you got an email from Cloudflare warning that you've hit 50% of your daily Workers KV free tier limit, and you're wondering if there's a connection — there isn't a direct one. The GitHub Action modifies files in your GitHub repository and commits them back; it has no interaction with Cloudflare KV at all.</p>
+    <p>Workers KV is Cloudflare's global key-value store, and on the free tier you get 100,000 reads and 1,000 writes per day. If you're using KV to store bug reports, user sessions, access logs, or any data that writes on every user action, those writes add up quickly. A 50% warning means you're at roughly 500 KV write operations for the day — which for a small site suggests either a bug causing excess writes, or growth that may warrant the $5/month paid Workers plan, which includes 1 million write operations per month.</p>
+
+    <h2>Why This Saves Real Time Over the Long Run</h2>
+    <p>The time savings aren't in the initial setup — three minutes is three minutes. The savings compound over every page you add after that. If you publish two blog posts a week and each one requires you to remember to add an analytics snippet, cookie notice, or other site-wide code, you're making that decision 100 times a year. Multiply that by the probability that you'll eventually forget once, or paste it in the wrong place, or update the snippet in 47 of 48 files and miss one — and the automation pays for itself in avoided annoyance within the first month.</p>
+    <p>There's also a less obvious benefit: <strong>the Action serves as documentation</strong>. The <code>.yml</code> file in your repo is a permanent record of exactly what code is being injected and how. Six months from now, when you can't remember why there's a GoatCounter script on every page or whether it was added consistently, the workflow file tells the whole story in 25 lines.</p>
+
+    <h2>The Complete Workflow File</h2>
+    <p>For reference, here is the full GitHub Action workflow that handles this. Save it to <code>.github/workflows/inject-analytics.yml</code> in your repository and push it — it runs immediately on the first push and on every subsequent push to <code>main</code>.</p>
+
+    <div class="code-block"><span class="key">name:</span> <span class="val">Inject Analytics</span>
+
+<span class="key">on:</span>
+  <span class="key">push:</span>
+    <span class="key">branches:</span> <span class="val">[main]</span>
+  <span class="key">workflow_dispatch:</span>
+
+<span class="key">jobs:</span>
+  <span class="key">inject-analytics:</span>
+    <span class="key">runs-on:</span> <span class="val">ubuntu-latest</span>
+    <span class="key">steps:</span>
+      - <span class="key">name:</span> <span class="val">Checkout</span>
+        <span class="key">uses:</span> <span class="val">actions/checkout@v4</span>
+
+      - <span class="key">name:</span> <span class="val">Inject snippet</span>
+        <span class="key">run:</span> <span class="val">|</span>
+          SNIPPET='&lt;script data-goatcounter="https://yoursite.goatcounter.com/count" async src="//gc.zgo.at/count.js"&gt;&lt;/script&gt;'
+          find . -name "*.html" \
+            -not -path "./.git/*" \
+            -not -path "./node_modules/*" \
+            | while read file; do
+              if grep -q "goatcounter" "$file"; then
+                echo "Already has snippet: $file"
+              else
+                sed -i "s|&lt;/body&gt;|$SNIPPET&lt;/body&gt;|g" "$file"
+                echo "Injected: $file"
+              fi
+            done
+
+      - <span class="key">name:</span> <span class="val">Commit changes</span>
+        <span class="key">run:</span> <span class="val">|</span>
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add -A
+          git diff --staged --quiet || git commit -m "chore: inject analytics"
+          git push</div>
+
+    <p>Replace the <code>SNIPPET</code> value with whatever code you want injected. The <code>grep -q "goatcounter"</code> check should also be updated to match a unique string from your snippet so the duplicate-check works correctly for non-GoatCounter scripts.</p>
+
+  </div>
+
+  <div class="post-footer">
+    <span class="post-footer-label">Looking for more AI tools?</span>
+    <a class="btn-export" href="/tools/">See our free AI tools →</a>
+  </div>
+
+</main>
+
+<!--FOOTER-->
+
+<script data-goatcounter="https://notavello.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script></body>
+</html>
