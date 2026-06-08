@@ -204,6 +204,17 @@ body {
     <p>The time savings aren't in the initial setup — three minutes is three minutes. The savings compound over every page you add after that. If you publish two blog posts a week and each one requires you to remember to add an analytics snippet, cookie notice, or other site-wide code, you're making that decision 100 times a year. Multiply that by the probability that you'll eventually forget once, or paste it in the wrong place, or update the snippet in 47 of 48 files and miss one — and the automation pays for itself in avoided annoyance within the first month.</p>
     <p>There's also a less obvious benefit: <strong>the Action serves as documentation</strong>. The <code>.yml</code> file in your repo is a permanent record of exactly what code is being injected and how. Six months from now, when you can't remember why there's a GoatCounter script on every page or whether it was added consistently, the workflow file tells the whole story in 25 lines.</p>
 
+    <h2>The One Annoying Thing Nobody Warns You About</h2>
+    <p>If you use <strong>GitHub Desktop</strong> to manage your repository — which is completely normal and fine — this workflow introduces a friction point that will bite you the first few times until it becomes muscle memory.</p>
+    <p>Here's what happens: you make changes locally, open GitHub Desktop, and hit Push. GitHub rejects it. The error tells you the remote is ahead of your local branch. What actually happened is that the Action ran on your last push, injected the snippet into your HTML files, and committed those changes back to the repository on GitHub's servers. Your local copy doesn't have those commits yet — so now the remote and local are out of sync.</p>
+    <p>The fix is always the same two steps: <strong>Pull first, then Push.</strong> In GitHub Desktop that's "Fetch origin" followed by "Pull origin," and then you push your new changes on top. Once you do this a few times it becomes automatic — fetch, pull, push — but the first time it happens it looks like something is broken when nothing is.</p>
+
+    <div class="callout">
+      <strong>The silver lining:</strong> This pull-before-push habit is actually good version control hygiene regardless of automation. It keeps your local copy in sync with the remote before you layer on new changes, which prevents the kind of merge conflicts that are genuinely painful to untangle. The Action is just enforcing a workflow you should probably be doing anyway.
+    </div>
+
+    <p>If you use the command line instead of GitHub Desktop, the equivalent is <code>git pull</code> before <code>git push</code>. Some developers configure <code>git pull --rebase</code> as their default to keep history cleaner, but for a solo project it makes little practical difference.</p>
+
     <h2>The Complete Workflow File</h2>
     <p>For reference, here is the full GitHub Action workflow that handles this. Save it to <code>.github/workflows/inject-analytics.yml</code> in your repository and push it — it runs immediately on the first push and on every subsequent push to <code>main</code>.</p>
 
