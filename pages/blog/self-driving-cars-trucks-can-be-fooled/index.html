@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Self-Driving Cars Can See Everything — Except the Trick — The Export | Notavello</title>
+<meta name="description" content="How self-driving cars and trucks sense the road, how they can be fooled, and why security may decide how fast autonomy scales."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/blog/self-driving-cars-trucks-can-be-fooled/"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://notavello.com/pages/blog/self-driving-cars-trucks-can-be-fooled/"/>
+<meta property="og:title" content="Self-Driving Cars Can See Everything — Except the Trick"/>
+<meta property="og:description" content="How self-driving cars and trucks sense the road, how they can be fooled, and why security may decide how fast autonomy scales."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Self-Driving Cars Can See Everything — Except the Trick"/>
+<meta name="twitter:description" content="How self-driving cars and trucks sense the road, how they can be fooled, and why security may decide how fast autonomy scales."/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Self-Driving Cars Can See Everything — Except the Trick",
+  "description": "How self-driving cars and trucks sense the road, how they can be fooled, and why security may decide how fast autonomy scales.",
+  "url": "https://notavello.com/pages/blog/self-driving-cars-trucks-can-be-fooled/",
+  "datePublished": "2026-06-08",
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
+.back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; color: var(--ink-muted); text-decoration: none; margin-bottom: 40px; transition: color 0.15s; }
+.back-link:hover { color: var(--accent); }
+.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
+.post-date { font-size: 0.78rem; color: var(--ink-faint); }
+.post-title { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; color: var(--ink); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
+.post-lede { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+.post-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink); }
+.post-body h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 44px 0 16px; letter-spacing: -0.01em; }
+.post-body p { margin-bottom: 20px; color: var(--ink-muted); }
+.post-body p strong { color: var(--ink); font-weight: 600; }
+.post-body ul { margin: 0 0 20px 20px; color: var(--ink-muted); }
+.post-body ul li { margin-bottom: 8px; line-height: 1.7; }
+.callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 32px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.7; }
+.post-footer { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.post-footer-label { font-size: 0.8rem; color: var(--ink-faint); }
+.btn-export { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: opacity 0.2s; }
+.btn-export:hover { opacity: 0.9; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } }
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+
+  <a class="back-link" href="/pages/blog/">← The Export</a>
+
+  <div class="post-meta">
+    <span class="post-tag">AI Trends</span>
+    <span class="post-date">June 8, 2026</span>
+  </div>
+
+  <h1 class="post-title">Self-Driving Cars Can See Everything — Except the Trick</h1>
+
+  <p class="post-lede">Self-driving cars do not get tired, drunk, angry, or distracted. That is the sales pitch. The uncomfortable part is that they also do not see the world the way humans do — and the difference creates a strange new target.</p>
+
+  <div class="post-body">
+
+    <h2>The car is not “looking.” It is building a temporary version of reality.</h2>
+    <p>A self-driving vehicle does not simply look out the windshield and think, <em>road, truck, child, stop sign</em>. It builds a rolling, mathematical guess about the world around it. Cameras read color, lane lines, traffic lights, signs, body language, brake lights, construction cones, and the weird little social cues that make roads work. Radar measures motion and distance, especially when visibility is poor. LiDAR, when used, paints the surroundings with laser pulses to build a 3D shape of nearby objects. GPS and inertial sensors estimate where the vehicle is. High-definition maps tell it what the road is supposed to look like. Software then fuses all of that into a “world model”: what exists, where it is going, what it might do next, and what the vehicle should do about it.</p>
+    <p>That is the miracle. It is also the vulnerability. A human driver can be fooled, but a human also has messy general knowledge. We know a stop sign printed on a T-shirt is not commanding traffic. We know a plastic bag is probably not a boulder, even if it briefly looks dramatic. We know a person standing in the street making eye contact might be asking us to stop, even if no traffic law covers that exact moment. A vehicle has to infer all of this from sensors, maps, probabilities, and rules.</p>
+    <p>This is why the phrase “self-driving car” hides more than it explains. The serious term is <strong>operational design domain</strong>, or ODD: the conditions where the system is designed to operate. City, highway, weather, lighting, mapped area, road type, speed range, construction complexity, emergency scenes — all of that matters. Today’s best driverless systems are not magic cars that can go anywhere. They are very carefully bounded machines that are getting better at specific kinds of places.</p>
+
+    <div class="callout">
+      <strong>The overlooked point:</strong> A bad actor does not have to “hack the AI” in the Hollywood sense. Sometimes the easier move is to change what the AI sees, where it thinks it is, or what its remote human support team believes is happening.
+    </div>
+
+    <h2>Where we really are now: impressive, useful, and still fenced in.</h2>
+    <p>As of 2026, fully driverless vehicles are real, but they are not universal. Waymo has been operating paid robotaxi rides in major U.S. markets such as Phoenix, San Francisco, Los Angeles, and Austin, and has been preparing expansion into more cities. Aurora launched commercial driverless trucking in Texas in 2025, starting with specific freight routes rather than every highway in America. Tesla has pushed aggressively into robotaxi service in Texas, while also remaining under scrutiny over the safety and limits of its driver-assistance and autonomy claims.</p>
+    <p>The honest map looks like this: <strong>Level 2 driver assistance is common</strong>, meaning the human is still responsible. <strong>Level 4 autonomy exists</strong>, but usually within known routes, mapped cities, chosen weather conditions, and remote-assistance frameworks. <strong>Level 5 — a vehicle that can drive anywhere a human can, under essentially all normal conditions — is still not here.</strong> The gap between Level 4 and Level 5 is not a software update. It is the difference between being very good in Phoenix and being trusted on an icy rural road at midnight after a storm has knocked out traffic lights and somebody is waving a flashlight near a downed tree.</p>
+    <p>Trucks are a different story than cars. Highways are more structured than city streets, which sounds easier, but the stakes are heavier. A driverless semi at 65 mph has long stopping distances, huge mass, and a business model built around running for long hours. That makes autonomous trucking economically tempting and operationally frightening in equal measure. The first deployments are not “send it anywhere.” They are corridor businesses: known lanes, known depots, known weather policies, known fallback plans.</p>
+
+    <h2>The ways a self-driving vehicle can be fooled.</h2>
+    <p>The cartoon version is a hacker with a laptop taking over the steering wheel. That risk exists in the broad cybersecurity sense, but it is not the only or even always the easiest attack. Autonomous vehicles sit at the intersection of cyber, physical, and social systems. Bad inputs can come from the internet, from the road, from infrastructure, from people, or from the vehicle’s own assumptions.</p>
+    <p><strong>Physical perception tricks</strong> are the most intuitive. Researchers have shown that visual systems can be confused by altered signs, adversarial markings, unusual lighting, or objects that do not look important to humans but disturb the model. LiDAR can be attacked or confused by carefully shaped reflections, spoofed points, or surfaces that create phantom objects or hide real ones. Radar can struggle with odd reflections and clutter. Cameras can be blinded by glare, dirt, stickers, weather, or deliberately placed visual noise. The point is not that every trick works on every vehicle. The point is that the road itself becomes part of the attack surface.</p>
+    <p><strong>Location and map attacks</strong> are subtler. A vehicle uses GPS, inertial sensors, maps, lane geometry, and landmarks to determine where it is. If one signal is wrong, the others may catch it. If several signals become inconsistent, the vehicle may slow, stop, or request remote assistance. A bad actor does not always need to make the vehicle crash. Causing confusion, delay, rerouting, or emergency fallback can be enough.</p>
+    <p><strong>Electronic and network attacks</strong> include the familiar world of software vulnerabilities, compromised fleet tools, fake updates, weak supplier systems, cloud outages, or attacks against vehicle-to-infrastructure messages. Modern vehicles are rolling computers with cellular connections, diagnostics, over-the-air updates, payment systems, apps, fleet portals, and vendor dependencies. The autonomous stack may be hardened, but the business around the vehicle still has doors.</p>
+    <p><strong>Social engineering</strong> may be the least discussed and most human. Robotaxi companies rely on remote assistance, incident response teams, depot workers, customer-support workflows, emergency services coordination, contractors, and local regulators. A criminal who cannot fool the LiDAR may try to fool the help desk. A cargo thief who cannot hack the truck may target the pickup appointment, the yard access badge, the dispatch credentials, or the person authorized to release a trailer.</p>
+
+    <h2>Why would anyone do this?</h2>
+    <p>The motives are not exotic. They are the same motives behind older crimes, with newer tools. <strong>Money</strong> is the obvious one: cargo theft, ransom, insurance fraud, extortion, stolen ride credits, stolen accounts, or attacks on a competitor’s fleet. A truck full of electronics, pharmaceuticals, or groceries does not become less valuable because the driver seat is empty.</p>
+    <p><strong>Hijacking</strong> becomes more interesting when there is no driver to threaten. Traditional cargo theft relies on people, timing, and access. Autonomous freight may shift the target from the driver to the route, the depot, the trailer, the authentication system, or the remote operations channel. A criminal might not need to “drive” the truck away. They may only need to make it stop in the wrong place, accept the wrong instruction, or arrive at a fake handoff.</p>
+    <p><strong>Disruption</strong> is another motive. A city with thousands of robotaxis has a new kind of traffic dependency. A coordinated attempt to confuse vehicles near airports, stadiums, ports, bridges, or downtown corridors could create gridlock without destroying anything. Even a small number of stopped vehicles can cause outsized trouble if they stop in the wrong locations.</p>
+    <p><strong>Politics and spectacle</strong> matter too. Autonomous vehicles are symbols. Activists have already learned that robotaxis can be stopped physically, sometimes with absurdly simple methods. That does not make every protest a security threat, but it shows a larger truth: driverless vehicles operate in public, and the public can touch them.</p>
+
+    <h2>Have there already been cases?</h2>
+    <p>There have been real-world safety failures, public interference, and many research demonstrations. The famous 2023 Cruise incident in San Francisco was not a “bad actor” attack, but it became a defining example of how an autonomous vehicle can mishandle an edge case after a human-driven vehicle struck a pedestrian and pushed her into the robotaxi’s path. The vehicle stopped, then moved again and dragged the pedestrian during a pullover maneuver. The fallout was not only technical; regulators said Cruise failed to fully report key details, and the company’s operations collapsed into investigations, penalties, and suspended permits.</p>
+    <p>Waymo has had its own regulatory and operational scrutiny, including investigations into behavior around stopped school buses and questions about robotaxi readiness during citywide disruptions. Again, those are not necessarily malicious attacks. But they are useful previews of what attackers would study: unusual angles, emergency scenes, broken infrastructure, flashing signals, remote-assistance overload, and conditions that force the machine out of its comfort zone.</p>
+    <p>On the intentional side, researchers have repeatedly demonstrated that autonomous perception can be manipulated. Some studies have explored LiDAR spoofing, including creating phantom obstacles or hiding real ones. Others have examined GPS/GNSS spoofing, adversarial signs, camera attacks, and sensor-fusion failures. Many of these demonstrations require expertise, equipment, positioning, or controlled conditions. That matters. A vulnerability in a paper is not the same as a cheap street crime. But papers have a habit of becoming cheaper over time.</p>
+
+    <h2>The annoying truth: some attacks are easy, some are very hard, and both matter.</h2>
+    <p>It is usually hard to make a modern autonomous vehicle do one precise dangerous thing on command. These systems use redundant sensors, safety rules, remote monitoring, simulations, testing, geofences, fallback behavior, and conservative planning. If a sensor looks suspicious, the vehicle may slow down or stop. If the map disagrees with the camera, the vehicle may ask for help. If the weather gets bad, the service may restrict operations. That is why “take over a robotaxi with a laser pointer” is mostly fantasy.</p>
+    <p>But it can be much easier to make autonomous vehicles become useless for a while. Confuse them. Block them. Make them stop. Force remote assistance. Create a fake construction scene. Abuse pickup and drop-off behavior. Jam a weak signal. Put an object where the machine becomes more cautious than a human. For the public, a stopped robotaxi is comedy. For a fleet operator, a stopped robotaxi at scale is a business problem. For emergency services, it can be a public-safety problem.</p>
+    <p>This distinction matters because attackers do not need cinematic success. They need profitable success. A thief does not need to defeat autonomy forever. They need one delivery to pause in the wrong lot. A vandal does not need to break the AI. They need a viral video. A ransomware group does not need to touch the steering system. They need to freeze fleet operations long enough for the company to pay.</p>
+
+    <h2>How companies reduce the risk.</h2>
+    <p>The first defense is <strong>sensor fusion</strong>. If cameras, radar, LiDAR, GPS, inertial sensors, and maps all agree, confidence rises. If one source lies, the others can challenge it. The strongest systems do not treat sensors as decorative extras; they use redundancy so the vehicle can survive partial failure, poor visibility, and weird scenes.</p>
+    <p>The second defense is <strong>operational humility</strong>. That means limiting service to areas, weather, speeds, and road types the system has proven it can handle. This is why geofencing is not an embarrassment. It is the safety case. The public wants “drive anywhere.” Engineers want “define exactly where this thing is allowed to be trusted.” Engineers are annoying that way because physics keeps siding with them.</p>
+    <p>The third defense is <strong>cybersecurity discipline</strong>: secure updates, signed software, isolated safety-critical systems, intrusion detection, supplier audits, fleet monitoring, hardened remote-assistance tools, access controls, incident logging, and fast patching. Autonomous vehicles are not just cars. They are fleets, apps, cloud services, depots, maps, sensors, and people. The security program has to cover all of it.</p>
+    <p>The fourth defense is <strong>abuse testing</strong>. Companies need to test not only normal driving, but malicious driving environments: fake signs, blocked sensors, staged construction, deceptive lights, map conflicts, remote-assistance overload, social engineering, cargo-yard fraud, and coordinated disruption. In cybersecurity, defenders eventually learned that “nobody would do that” is not a strategy. Roads are learning the same lesson.</p>
+
+    <h2>How much is this slowing full deployment?</h2>
+    <p>There is no clean public percentage. Companies do not release a pie chart that says “37% cyber risk, 22% rain, 18% lawyers, 9% cones.” But the honest answer is that malicious manipulation is probably <strong>not</strong> the main thing slowing deployment today. The bigger blockers are still ordinary reality: edge cases, weather, construction, emergency vehicles, regulatory approval, liability, cost, public trust, remote operations, scaling hardware, mapping, maintenance, and proving safety statistically.</p>
+    <p>Security is more like a multiplier. If the system already struggles with unusual construction, a malicious fake construction scene becomes more plausible. If remote assistance is already a bottleneck during outages, an attacker who creates many confusing situations can exploit that bottleneck. If public trust is fragile, one spectacular abuse case can delay permits faster than a thousand normal rides can repair confidence.</p>
+    <p>So the number may not be “security is half the delay.” It is more like this: <strong>security is the thing that can turn a technical limitation into a headline, a headline into a regulator meeting, and a regulator meeting into a deployment freeze.</strong></p>
+
+    <h2>What happens next.</h2>
+    <p>The near future is not one giant national switch from human driving to robot driving. It is a patchwork. Robotaxis will expand city by city. Driverless trucks will expand lane by lane. Some vehicles will use LiDAR-heavy sensor suites. Some will try camera-first approaches. Some will rely more on maps and remote support. Some will be conservative and boring, which is exactly what you want from a machine that weighs several thousand pounds.</p>
+    <p>Regulators are moving too, though not always at the same speed as deployment. In the U.S., NHTSA has been modernizing its automated-vehicle framework, holding safety forums, investigating incidents, and collecting crash reports. Internationally, UNECE’s WP.29 process has pushed vehicle cybersecurity and automated-driving rules into a more formal global framework. The EU AI Act also adds pressure around high-risk AI systems, transparency, and safety governance. None of this eliminates risk. It creates paperwork, accountability, and audit trails — which sounds dull until something goes wrong.</p>
+    <p>The most likely future is not that bad actors effortlessly hijack every self-driving car. It is also not that the vehicles become invulnerable. The future is messier: fleets get safer, attackers get more creative, regulators demand more proof, companies narrow their operating domains, and the public slowly learns that “autonomous” does not mean “all-powerful.”</p>
+    <p>The best self-driving vehicles may eventually be safer than average humans in many settings. That is a big deal. Humans are, frankly, a terrible baseline. But autonomy has a different weakness: it can fail in unfamiliar, repeatable, machine-shaped ways. Once criminals, pranksters, activists, and bored teenagers learn those shapes, the road becomes a security environment.</p>
+    <p>And that is the strange future of transportation. The car can see 360 degrees. It can react in milliseconds. It can monitor objects a football field away. But it still has to answer the oldest question in driving: <strong>what is really happening here?</strong></p>
+
+  </div>
+
+  <div class="post-footer">
+    <span class="post-footer-label">Looking for more AI tools?</span>
+    <a class="btn-export" href="/tools/">See our free AI tools →</a>
+  </div>
+
+</main>
+
+<!--FOOTER-->
+
+<script data-goatcounter="https://notavello.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script></body>
+</html>
