@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Handing the Mouse to an AI: What Claude in Chrome Actually Does (and How to Make It Stop) — The Export | Notavello</title>
+<meta name="description" content="Claude in Chrome clicks, types, and fills forms for you. What to expect, what it's good at, how the plan step works, and where the stop button is."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/blog/claude-in-chrome-what-to-expect/"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://notavello.com/pages/blog/claude-in-chrome-what-to-expect/"/>
+<meta property="og:title" content="Handing the Mouse to an AI: What Claude in Chrome Actually Does (and How to Make It Stop)"/>
+<meta property="og:description" content="Claude in Chrome clicks, types, and fills forms for you. What to expect, what it's good at, how the plan step works, and where the stop button is."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Handing the Mouse to an AI: What Claude in Chrome Actually Does (and How to Make It Stop)"/>
+<meta name="twitter:description" content="Claude in Chrome clicks, types, and fills forms for you. What to expect, what it's good at, how the plan step works, and where the stop button is."/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Handing the Mouse to an AI: What Claude in Chrome Actually Does (and How to Make It Stop)",
+  "description": "Claude in Chrome clicks, types, and fills forms for you. What to expect, what it's good at, how the plan step works, and where the stop button is.",
+  "url": "https://notavello.com/pages/blog/claude-in-chrome-what-to-expect/",
+  "datePublished": "2026-06-10",
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
+.back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; color: var(--ink-muted); text-decoration: none; margin-bottom: 40px; transition: color 0.15s; }
+.back-link:hover { color: var(--accent); }
+.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
+.post-date { font-size: 0.78rem; color: var(--ink-faint); }
+.post-title { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; color: var(--ink); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
+.post-lede { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+.post-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink); }
+.post-body h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 44px 0 16px; letter-spacing: -0.01em; }
+.post-body p { margin-bottom: 20px; color: var(--ink-muted); }
+.post-body p strong { color: var(--ink); font-weight: 600; }
+.post-body ul { margin: 0 0 20px 20px; color: var(--ink-muted); }
+.post-body ul li { margin-bottom: 8px; line-height: 1.7; }
+.callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 32px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.7; }
+.post-footer { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.post-footer-label { font-size: 0.8rem; color: var(--ink-faint); }
+.btn-export { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: opacity 0.2s; }
+.btn-export:hover { opacity: 0.9; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } }
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+
+  <a class="back-link" href="/pages/blog/">← The Export</a>
+
+  <div class="post-meta">
+    <span class="post-tag">AI Tools</span>
+    <span class="post-date">June 10, 2026</span>
+  </div>
+
+  <h1 class="post-title">Handing the Mouse to an AI: What Claude in Chrome Actually Does (and How to Make It Stop)</h1>
+
+  <p class="post-lede">There's now a class of AI that doesn't just answer questions — it drives your browser. It clicks, types, scrolls, and fills out forms while you watch. I installed Claude in Chrome this week, got startled by it within five minutes, and learned the things nobody puts in the marketing copy. Here's the honest version.</p>
+
+  <div class="post-body">
+
+    <h2>What Claude in Chrome actually is</h2>
+    <p>Claude in Chrome is a browser extension from Anthropic that puts Claude in a side panel of your browser — but unlike a normal chatbot, it can <strong>take actions on real web pages</strong>. You describe a task in plain English ("go through my email settings and check the forwarding rules") and Claude navigates the site itself: it opens menus, reads what's on screen, clicks buttons, and types into fields, using the same simulated mouse-and-keyboard actions a human would make.</p>
+    <p>The mental model that helped me: it's not a smarter chatbot, it's a <strong>temp worker sitting at your computer</strong>. You're the supervisor. You give the assignment, you watch it work, and you can grab the wheel at any moment. The division of labor matters: <strong>you</strong> handle the logins — your passwords stay with you, and the AI should never be the one typing your credentials. Claude handles the clicking safari that comes after.</p>
+    <p>It's available to paid Claude subscribers and currently labeled a beta, which is the software industry's way of saying "it works, but keep one hand near the wheel." That's accurate.</p>
+
+    <h2>Yes, it has to be actual Chrome</h2>
+    <p>If you live in Brave, Vivaldi, Arc, or another Chromium-based browser, here's the bad news: the extension <strong>only officially works in Google Chrome</strong>. Anthropic states flat-out that other Chromium browsers aren't supported. As a daily Brave user, I wasn't thrilled — but there's a silver lining in the workaround. I now keep Chrome as a dedicated "the AI does chores in this one" browser, separate from my daily driver. That separation turns out to be a feature: the agent only ever sees the sites I deliberately bring it to.</p>
+    <p>Setup is short: install Chrome, install the extension from the Chrome Web Store (the official entry point is claude.ai/chrome), sign in with your existing Claude account, and open the sidebar. The first time Claude wants to act on a site, it asks for permission for that site specifically — permissions are granted per-site, not globally, which is exactly how it should be.</p>
+
+    <h2>The plan step — the part that confused me at first</h2>
+    <p>Here's the thing that genuinely threw me. Within minutes of installing, a panel appeared in my sidebar titled <strong>"Claude's plan"</strong> — a numbered list of steps it intended to take, on a page I cared about, and my honest first reaction was: <em>how do I stop this thing?</em></p>
+    <p>The answer turned out to be the most reassuring detail in the whole product: <strong>I had already stopped it, by doing nothing.</strong> The plan is a proposal, not an action. Claude writes out exactly what it intends to do — step 1, step 2, step 3 — and then it sits and waits for one of two buttons: <strong>Approve plan</strong> or <strong>Make changes</strong>. Until you click Approve, zero clicks happen. The list that looks like an AI going rogue is actually the AI asking permission in writing.</p>
+    <p>Once you understand that, the plan step becomes the best part of the experience. You can read the steps, catch a misunderstanding before it happens ("no, the <em>other</em> inbox"), hit Make Changes, and correct it in plain English. It's a contract review before the work starts.</p>
+
+    <div class="callout">
+      <strong>The golden rule:</strong> nothing runs until you click Approve. If a plan appears and you don't like it — or don't understand it — just don't approve it. Close the panel with the X. The scariest-looking moment of the product is actually its safest.
+    </div>
+
+    <h2>The stop button, the Esc key, and the X</h2>
+    <p>For when something <em>is</em> running, you have three off-switches, and you should know them before you need them:</p>
+    <ul>
+      <li><strong>The Stop button</strong> in the side panel halts the task mid-action.</li>
+      <li><strong>The Esc key</strong> does the same thing from the keyboard — useful when the AI has the mouse busy.</li>
+      <li><strong>Closing the side panel</strong> (the X at the top) ends the session entirely.</li>
+    </ul>
+    <p>On top of that, Claude pauses on its own before sensitive actions — things like purchases, sending messages, or deleting data — and asks for confirmation even mid-task. In my testing it errs on the side of asking too often rather than too rarely, which is mildly annoying and entirely correct.</p>
+
+    <h2>How smart is it, really? It depends on the task</h2>
+    <p>Here's the part vendors won't tell you plainly: an AI agent's intelligence is <strong>wildly uneven across task types</strong>, and knowing the terrain is the difference between delight and frustration.</p>
+    <p><strong>Where it's genuinely strong:</strong> reading and auditing. "Go through every settings page in this account and tell me anything unusual" is a perfect task — it's mostly looking, it covers tedious ground a human dreads, and a mistake costs nothing. Same for filling repetitive forms, extracting data from multiple pages into a summary, and multi-step workflows you can describe clearly ("open each of these, archive the ones that say X").</p>
+    <p><strong>Where it's middling:</strong> tasks requiring judgment calls it can't verify. "Find me the best deal" works, but "best" is doing a lot of lifting — review the answer, don't just trust it. Unusual or badly built websites also slow it down; if a page confuses a screen reader, it'll confuse an agent too.</p>
+    <p><strong>Where it's weak:</strong> anything truly novel, anything behind a CAPTCHA (sites are actively fighting bots, including yours), and long open-ended missions with no checkpoints. Independent benchmarks of computer-using agents still show them well behind human performance on complex tasks — these tools went mainstream in the past year, but "mainstream" and "infallible" are different words. Treat the agent like a capable new assistant on day one: great with clear instructions, supervised on anything that matters.</p>
+
+    <h2>Can ChatGPT, Gemini, and the others do this too?</h2>
+    <p>Yes — this is a full-blown arms race, and every major AI company has an entry. The approaches differ in a way that matters:</p>
+    <ul>
+      <li><strong>OpenAI's ChatGPT Atlas</strong> is a whole separate browser built around ChatGPT, with an "agent mode" for automated tasks. It launched Mac-first, with agent features tied to paid plans.</li>
+      <li><strong>Perplexity's Comet</strong> is also a standalone AI-first browser, free to use and strongest at research-style work — though its automated shopping features landed it in a legal fight with Amazon, the first lawsuit of its kind.</li>
+      <li><strong>Google's Gemini in Chrome</strong> bakes an agent into the browser most people already use, with auto-browse abilities gated behind Google's premium AI subscriptions.</li>
+      <li><strong>Microsoft's Copilot Mode in Edge</strong> bolts a free assistant onto Edge.</li>
+    </ul>
+    <p>Claude's approach — an extension inside regular Chrome rather than a replacement browser — is the least disruptive of the bunch: you keep your browser, your bookmarks, your habits, and add the agent on top. The replacement browsers integrate deeper but ask you to move your whole digital life into them. Pick your poison; the capability itself is now table stakes.</p>
+
+    <h2>The safety stuff worth taking seriously</h2>
+    <p>One risk deserves plain-English explanation because it's unique to browser agents: <strong>prompt injection</strong>. A malicious website can hide instructions in its content — invisible text, sneaky form labels — hoping the AI reads them and treats them as orders from you. Anthropic builds defenses against this and publishes its testing, but no vendor claims the problem is solved. The practical defenses are simple: grant site permissions only to places you trust, keep confirmation prompts turned on for anything sensitive, and don't point an agent at sketchy corners of the internet.</p>
+    <p>And the rule worth repeating one more time: <strong>never hand any AI your passwords.</strong> You log in; the agent works in the session you opened. Any tool, article, or person telling you otherwise is giving you bad advice.</p>
+
+    <h2>The bottom line</h2>
+    <p>After a week, here's my honest read: Claude in Chrome is the first version of this technology that feels less like a demo and more like a tool — <em>because</em> of the friction, not despite it. The plan-approval step that confused me at first is the whole design philosophy in one screen: the AI proposes, you dispose. For settings safaris, form drudgery, and "check fifteen things across six menus" jobs, it's already a genuine time-saver. For anything involving your money, your data, or your reputation, it's a capable assistant that still needs a supervisor.</p>
+    <p>That supervisor is you. Keep the Esc key warm.</p>
+
+  </div>
+
+  <div class="post-footer">
+    <span class="post-footer-label">Looking for more AI tools?</span>
+    <a class="btn-export" href="/tools/">See our free AI tools →</a>
+  </div>
+
+</main>
+
+<!--FOOTER-->
+
+<script data-goatcounter="https://notavello.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script></body>
+</html>
