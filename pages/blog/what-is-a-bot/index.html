@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>What Is a Bot, Really? The Most Overused Word on the Internet, Explained — The Export | Notavello</title>
+<meta name="description" content="Half the internet isn't human. What a bot really is, the good and bad kinds, who builds them, where they come from, and how the fight is fought."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/blog/what-is-a-bot/"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://notavello.com/pages/blog/what-is-a-bot/"/>
+<meta property="og:title" content="What Is a Bot, Really? The Most Overused Word on the Internet, Explained"/>
+<meta property="og:description" content="Half the internet isn't human. What a bot really is, the good and bad kinds, who builds them, where they come from, and how the fight is fought."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="What Is a Bot, Really? The Most Overused Word on the Internet, Explained"/>
+<meta name="twitter:description" content="Half the internet isn't human. What a bot really is, the good and bad kinds, who builds them, where they come from, and how the fight is fought."/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "What Is a Bot, Really? The Most Overused Word on the Internet, Explained",
+  "description": "Half the internet isn't human. What a bot really is, the good and bad kinds, who builds them, where they come from, and how the fight is fought.",
+  "url": "https://notavello.com/pages/blog/what-is-a-bot/",
+  "datePublished": "2026-06-15",
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
+.back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; color: var(--ink-muted); text-decoration: none; margin-bottom: 40px; transition: color 0.15s; }
+.back-link:hover { color: var(--accent); }
+.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
+.post-date { font-size: 0.78rem; color: var(--ink-faint); }
+.post-title { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; color: var(--ink); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
+.post-lede { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+.post-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink); }
+.post-body h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 44px 0 16px; letter-spacing: -0.01em; }
+.post-body p { margin-bottom: 20px; color: var(--ink-muted); }
+.post-body p strong { color: var(--ink); font-weight: 600; }
+.post-body ul { margin: 0 0 20px 20px; color: var(--ink-muted); }
+.post-body ul li { margin-bottom: 8px; line-height: 1.7; }
+.callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 32px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.7; }
+.post-footer { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.post-footer-label { font-size: 0.8rem; color: var(--ink-faint); }
+.btn-export { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: opacity 0.2s; }
+.btn-export:hover { opacity: 0.9; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } }
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+
+  <a class="back-link" href="/pages/blog/">← The Export</a>
+
+  <div class="post-meta">
+    <span class="post-tag">Tech</span>
+    <span class="post-date">June 15, 2026</span>
+  </div>
+
+  <h1 class="post-title">What Is a Bot, Really? The Most Overused Word on the Internet, Explained</h1>
+
+  <p class="post-lede">Roughly half of everything that moves across the internet was never typed by a person. It was sent by a bot &mdash; a word so overused it has nearly stopped meaning anything. Here is what is actually underneath it.</p>
+
+  <div class="post-body">
+
+    <h2>A Word That Forgot What It Meant</h2>
+    <p>Ask ten people what a "bot" is and you'll get ten answers: a spam account, a chatbot, the thing that buys all the concert tickets, a search crawler, a Twitter troll, a customer-service menu that won't let you reach a human. They're all right, which is another way of saying the word has gone soft. At its core a <strong>bot</strong> is just a program that does a repetitive task automatically, without a person driving each step. That's it. The drama comes from <em>what</em> task, and <em>who</em> benefits.</p>
+    <p>The name is older than the internet. It's clipped from <strong>robot</strong>, which comes from the Czech word <em>robota</em> &mdash; meaning forced labor or drudgery. It entered the language through a 1920 play, Karel &#268;apek's <em>R.U.R.</em>, about artificial workers who eventually stop taking orders. A century later we shortened the word and handed the drudgery to software. The lineage is fitting: a bot is a tireless worker that never sleeps, never gets bored, and does exactly what it's told &mdash; for better or worse.</p>
+
+    <h2>The Three Buckets</h2>
+    <p>For years the honest split was just two: good bots and bad bots. The dividing line isn't the technology &mdash; it's permission and intent. Roughly:</p>
+    <ul>
+      <li><strong>Good bots</strong> announce themselves, respect the rules, and do work the site owner generally wants. Search crawlers (Googlebot, Bingbot) that index pages so people can find them. Uptime monitors that ping a server to check it's alive. Price-comparison and feed fetchers. The AI crawlers that read the web to train and answer.</li>
+      <li><strong>Bad bots</strong> hide what they are and take what they weren't given. Scrapers that strip-mine content, credential-stuffers that test stolen passwords by the million, scalpers that hoover up sneakers and tickets, spam and fake-engagement bots, and the brute-force swarms behind denial-of-service attacks.</li>
+      <li><strong>Agents</strong> &mdash; the new third category. As of 2025, the security industry stopped lumping AI agents in with the other two and started counting them separately, because they don't behave like either. More on that next.</li>
+    </ul>
+
+    <h2>Is an "Agent" Just a Bot With a Brain?</h2>
+    <p>Short answer: more or less, yes &mdash; and the words are cousins. "Agent" comes from the Latin <em>agere</em>, "to do" or "to act," so an agent is literally "one who acts on your behalf." A bot is a little worker that follows a fixed script. An <strong>agent</strong> is a bot that can make decisions toward a goal instead of just repeating steps &mdash; it can read a page, decide the next move, click a button, change its plan when something fails. A classic bot fills the same form a thousand times. An agent is told "book me the cheapest flight" and figures out the rest. The lines blur, but the rule of thumb holds: <strong>a bot repeats, an agent decides.</strong> The reason traffic analysts now track them apart is that agents look human in ways old bots never did, which makes them far harder to tell from a real visitor.</p>
+
+    <h2>Half the Internet Stopped Being Human</h2>
+    <p>This is the fact that stops people cold. According to the 2026 Thales Bad Bot Report &mdash; the thirteenth annual study of automated traffic &mdash; bots made up <strong>53% of all web traffic in 2025</strong>. That breaks down to about 40% bad bots and 13% good ones, meaning humans are now the minority online for the second year running. The security network behind that report blocked <strong>17.2 trillion</strong> bot requests in a single year. AI-enabled attacks jumped more than twelvefold, with the daily average of blocked attacks climbing from roughly 2 million to 25 million. None of this is slowing down.</p>
+    <div class="callout">
+      <strong>The bottom line:</strong> The "dead internet" idea &mdash; that most online activity is machines talking to machines &mdash; used to be a conspiracy theory. On raw traffic numbers, it's now closer to a description.
+    </div>
+
+    <h2>Who Builds Them, and Why It's Rarely Personal</h2>
+    <p>Bots are built by basically everyone. Search engines and AI labs build the big crawlers. Retailers and banks run monitoring and pricing bots. Marketers run engagement bots. Criminals and fraud rings run the malicious fleets. And increasingly, <strong>anyone</strong> can build one &mdash; generative AI has knocked the floor out from under bot-making. A task that once needed a coder now takes a few plain-English prompts, which is a big reason the simple-bot volume exploded. The motive is almost never about you specifically. It's economics: a bot that costs pennies to run can test a million stolen passwords, scrape a competitor's entire catalog, or fake enough clicks to drain an ad budget. When the upside is automated and the cost is near zero, scale does the rest.</p>
+
+    <h2>The Map Is a Lie</h2>
+    <p>People love to ask which <em>country</em> the bots come from, and the honest answer is that the map mostly lies to you. By raw origin, the United States "sends" the largest share &mdash; around 40% of global bot traffic in 2025 &mdash; but that's not American hackers. It's because <strong>Amazon Web Services and Google Cloud</strong> live there, and roughly a quarter of all bot traffic is just cloud servers doing their thing. Renting a server in Virginia is cheap, fast, and close to everything.</p>
+    <p>The real origins are deliberately hidden. Serious operators route through <strong>residential proxy networks</strong> &mdash; pools of real home IP addresses, often borrowed from ordinary people's devices &mdash; so their traffic looks like a grandmother in Ohio rather than a data center. That's why blocking "by country" barely works. When researchers do trace deployment, the recurring names are the ones you'd guess: the US, China, Russia, Vietnam, and the UK show up repeatedly. The motives sort cleanly by who's behind them &mdash; commercial scraping and fraud where there's money, and state-linked surveillance and influence operations where there's geopolitics. China hosts enormous scraping and AI operations; Russia is associated with disinformation and influence bots; and the big powers all run intelligence-gathering swarms while complaining about being targets of the same.</p>
+
+    <h2>Following the Money &mdash; and What's Worth More</h2>
+    <p>The cash motives are obvious enough. Scalper bots buy scarce goods at retail and flip them at a markup. Ad-fraud bots fake the clicks and views that advertisers pay for, skimming from a multi-billion-dollar pool. Credential-stuffing bots turn leaked passwords into drained accounts and stolen loyalty points. Scraper bots lift pricing and product data to undercut a rival.</p>
+    <p>But a lot of the most valuable bot work isn't paid in dollars at all. The currencies are <strong>data, attention, influence, and intelligence</strong>. AI crawlers harvest the open web to build models &mdash; training data is the asset. Engagement bots manufacture the appearance of consensus, inflating a follower count or burying a hashtag, because <em>perception</em> moves markets and elections. State bots gather and shape information as a strategic resource, not a sellable one. In each case the bot isn't there to make a sale. It's there to tilt what people see, believe, or know &mdash; which is often worth more than money to whoever's running it.</p>
+
+    <h2>Why Nobody Actually Wants to Kill Them All</h2>
+    <p>Here's the catch that makes "just block the bots" naive: <strong>the internet you use runs on them.</strong> Search literally cannot function without crawlers cataloging the web. Wikipedia, weather, flight prices, stock tickers, fraud detection on your credit card, the system that texts you a code at login &mdash; all bots, all working in the background. Strip them out and most of the modern web stops.</p>
+    <p>Governments need them too, and not only the spy kind. They run crawlers to archive public records, monitor for child-exploitation material, track disease outbreaks and disinformation, enforce sanctions, and watch their own critical infrastructure for attacks. The same automation that lets a criminal scan a million sites for a weakness lets a defender scan a million sites for the same weakness first. Bots aren't good or evil any more than a crowbar is. The fight is never about banning them &mdash; it's about telling the welcome ones from the rest, fast, at a scale no human could.</p>
+
+    <h2>The Fight: Your Toolbox vs. Cloudflare's Maze</h2>
+    <p>What you can do as an individual site operator is real but modest. You can post a <code>robots.txt</code> file asking bots to stay out of certain areas &mdash; though it's an honor system, and the badly behaved ones ignore it. You can rate-limit, block obvious bad IPs, add a CAPTCHA, and watch your logs for the tells: sessions that last zero seconds, impossible request rates, traffic spiking from one network at 3 a.m. It's a losing arms race to fight alone, because a determined operator just rotates proxies and tries again.</p>
+    <p>That's why most of the actual war is fought by infrastructure giants &mdash; above all <strong>Cloudflare</strong>, which sits in front of roughly a fifth of the web and sees patterns no single site ever could. Its defenses have gotten clever. There's one-click bot blocking, and as of mid-2025 it began <strong>blocking AI crawlers by default</strong> on new sites, flipping the web from opt-out to opt-in. It launched <strong>Pay Per Crawl</strong>, a marketplace letting publishers charge AI companies for access instead of just allowing or denying it. And the most fun one: <strong>AI Labyrinth</strong>, which doesn't block misbehaving crawlers at all &mdash; it lures them into an endless maze of convincing, AI-generated decoy pages full of harmless science facts, wasting their time and compute while quietly fingerprinting them. As Cloudflare put it, no real human clicks four links deep into a maze of nonsense, so anything that does is a bot, caught.</p>
+    <div class="callout">
+      <strong>Watch out:</strong> If your site sits behind Cloudflare, it may have answered "no" to AI crawlers on your behalf. Great for stopping scrapers &mdash; but it can also make your content invisible to ChatGPT, Claude, and AI search. Worth checking which side of that switch you're on.
+    </div>
+
+    <h2>Fast Facts Most People Don't Know</h2>
+    <ul>
+      <li><strong>The US is the top bot "source" and the top bot target</strong> at the same time &mdash; origin and destination are different questions, and the same country can lead both.</li>
+      <li><strong>AI crawlers take far more than they give back.</strong> In Cloudflare's 2025 numbers, the leading AI crawlers requested enormous volumes of pages while sending back almost no referral traffic &mdash; a lopsided exchange publishers increasingly resent.</li>
+      <li><strong>"Robot" was coined by a playwright's brother.</strong> Karel &#268;apek wanted to use a different word; his brother Josef suggested <em>robot</em>. It stuck for a century.</li>
+      <li><strong>Residential proxies often run on borrowed devices.</strong> The "real home IP" disguising a bot may belong to a person who installed a free app and never read what it does in the background.</li>
+      <li><strong>Blocking a bot can backfire.</strong> A hard block tells the operator they've been spotted, so they adapt &mdash; which is exactly why Cloudflare's maze quietly misleads them instead.</li>
+      <li><strong>By some forecasts, bad-bot traffic alone could exceed all human traffic by the end of 2026.</strong> Not all bots &mdash; just the malicious ones.</li>
+    </ul>
+
+  </div>
+
+  <div class="post-footer">
+    <span class="post-footer-label">Looking for more AI tools?</span>
+    <a class="btn-export" href="/tools/">See our free AI tools →</a>
+  </div>
+
+</main>
+
+<!--FOOTER-->
+
+<script data-goatcounter="https://notavello.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script></body>
+</html>
