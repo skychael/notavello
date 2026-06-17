@@ -1,0 +1,180 @@
+<!-- ⚠️ ALL %% PLACEHOLDERS MUST BE REPLACED — they feed SEO meta tags, OG, Twitter, and schema -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>How Software Decides Whether You're a "He," a "She," or a "They" — The Export | Notavello</title>
+<meta name="description" content="From baby-name lists to billion-parameter models: how computers guess gender and pronouns from text, why they get it wrong, and what comes next."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/blog/how-ai-knows-he-or-she/"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://notavello.com/pages/blog/how-ai-knows-he-or-she/"/>
+<meta property="og:title" content="How Software Decides Whether You're a &quot;He,&quot; a &quot;She,&quot; or a &quot;They&quot;"/>
+<meta property="og:description" content="From baby-name lists to billion-parameter models: how computers guess gender and pronouns from text, why they get it wrong, and what comes next."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="How Software Decides Whether You're a &quot;He,&quot; a &quot;She,&quot; or a &quot;They&quot;"/>
+<meta name="twitter:description" content="From baby-name lists to billion-parameter models: how computers guess gender and pronouns from text, why they get it wrong, and what comes next."/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "How Software Decides Whether You're a \"He,\" a \"She,\" or a \"They\"",
+  "description": "From baby-name lists to billion-parameter models: how computers guess gender and pronouns from text, why they get it wrong, and what comes next.",
+  "url": "https://notavello.com/pages/blog/how-ai-knows-he-or-she/",
+  "datePublished": "2026-06-16",
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
+.back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; color: var(--ink-muted); text-decoration: none; margin-bottom: 40px; transition: color 0.15s; }
+.back-link:hover { color: var(--accent); }
+.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
+.post-date { font-size: 0.78rem; color: var(--ink-faint); }
+.post-title { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; color: var(--ink); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
+.post-lede { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+.post-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink); }
+.post-body h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 44px 0 16px; letter-spacing: -0.01em; }
+.post-body p { margin-bottom: 20px; color: var(--ink-muted); }
+.post-body p strong { color: var(--ink); font-weight: 600; }
+.post-body ul { margin: 0 0 20px 20px; color: var(--ink-muted); }
+.post-body ul li { margin-bottom: 8px; line-height: 1.7; }
+.callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 32px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.7; }
+.compare-table { width: 100%; border-collapse: collapse; margin: 28px 0; font-size: 0.85rem; }
+.compare-table th, .compare-table td { text-align: left; padding: 11px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
+.compare-table th { font-weight: 600; color: var(--ink); background: var(--surface2); }
+.compare-table td { color: var(--ink-muted); line-height: 1.6; }
+.post-footer { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.post-footer-label { font-size: 0.8rem; color: var(--ink-faint); }
+.btn-export { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: opacity 0.2s; }
+.btn-export:hover { opacity: 0.9; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } }
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+
+  <a class="back-link" href="/pages/blog/">← The Export</a>
+
+  <div class="post-meta">
+    <span class="post-tag">AI Trends</span>
+    <span class="post-date">June 16, 2026</span>
+  </div>
+
+  <h1 class="post-title">How Software Decides Whether You're a "He," a "She," or a "They"</h1>
+
+  <p class="post-lede">It sounds like the simplest thing in the world. A program needs to refer to a person, so it picks "he" or "she" and moves on. But that one little word hides one of the oldest, trickiest problems in all of language software — and the way a 1990s database and a modern AI go about solving it could not be more different.</p>
+
+  <div class="post-body">
+
+    <h2>The problem that hides in a single word</h2>
+    <p>Imagine you're building an app that watches over an aging parent and quietly emails their family if something seems off. At some point the app has to write a sentence like "Skips <strong>her</strong> normal quiet times like an afternoon nap." Innocent enough — until you realize the software has no idea whether the person being watched is a "her," a "him," or a "them."</p>
+    <p>A human never thinks about this. You meet someone, you learn their name and a few facts, and the right pronoun falls out automatically. For a computer, that reflex has to be manufactured from scratch — and there are really only a few ways to do it, each with its own failure mode. The history of those methods is, in miniature, the history of how machines learned to read.</p>
+
+    <h2>Method one: the giant list of names</h2>
+    <p>The oldest trick is also the dumbest, and it works more often than you'd expect: keep a giant list. Somewhere in the program sits a table that says "Michael → male, Mary → female, Jordan → either," and the software simply looks your name up like a word in a dictionary. The U.S. Social Security Administration publishes decades of baby-name data, so building such a list is easy. Type a name in, get a gender out.</p>
+    <p>This is fast, cheap, and completely transparent — you can see exactly why it decided what it decided. It's also brittle in ways that get people misgendered constantly. "Jordan," "Taylor," "Alex," and "Casey" shrug and refuse to commit. "Andrea" is overwhelmingly female in the United States and male in Italy. Nicknames like "Sam" could be Samuel or Samantha. And a list of names knows nothing about the actual human in front of it — it's playing the odds on a spreadsheet, nothing more.</p>
+
+    <div class="callout">
+      <strong>The honest version:</strong> a name-based gender guess isn't a fact, it's a bet. For common names the bet pays off most of the time, which is exactly what makes the occasional confident wrong answer so jarring.
+    </div>
+
+    <h2>Method two: grammar rules and the "agreement" trick</h2>
+    <p>Most of the time, software doesn't actually need to guess gender from a name — it needs to keep pronouns straight inside a chunk of text it's already been handed. "John went to the store. He bought milk." Which person does "he" point back to? Linguists call this <strong>coreference resolution</strong>: figuring out which words refer to the same thing. The pronoun "he" is an arrow, and the computer's job is to find what it's pointing at.</p>
+    <p>For decades, the workhorse approach was a stack of hand-written rules. Match on gender ("he" goes with a male name, not a female one). Match on number ("they" goes with a plural, "it" with a singular thing). Prefer the nearest sensible noun. Walk through the sentence applying filter after filter until one candidate survives. These rule-based "sieves" were the backbone of serious language tools like Stanford's CoreNLP, and when the cues line up neatly, they're remarkably effective.</p>
+    <p>The catch is that grammar rules only carry you as far as grammar goes. The moment meaning enters the picture, a rulebook is hopelessly outgunned.</p>
+
+    <h2>The sentence that broke the rulebook</h2>
+    <p>Computer scientists have a favorite torture test for this, and it's worth seeing because it makes the whole problem click. It's called a <strong>Winograd schema</strong>, named after researcher Terry Winograd, and the classic example is a pair of nearly identical sentences:</p>
+    <ul>
+      <li>"The city councilmen refused the demonstrators a permit because <strong>they</strong> feared violence."</li>
+      <li>"The city councilmen refused the demonstrators a permit because <strong>they</strong> advocated violence."</li>
+    </ul>
+    <p>One word changes — <em>feared</em> becomes <em>advocated</em> — and the meaning of "they" flips entirely. In the first sentence "they" is the councilmen; in the second it's the demonstrators. No rule about gender, number, or word order can tell these apart, because the grammar is identical. You can only solve it if you actually understand how the world works: who tends to fear violence, who tends to advocate it. For a long time, this was considered a clean line between genuine understanding and mere statistical mimicry — a test a machine couldn't fake its way through.</p>
+
+    <h2>Method three: the AI that reads the whole room</h2>
+    <p>Then the line moved. Modern AI assistants don't follow a rulebook at all. They were trained on staggering quantities of human writing, and in the process absorbed the statistical shape of how language actually behaves — including which way a "they" leans when the only clue is meaning. By 2019, transformer-based language models were scoring above 90% on the Winograd Schema Challenge, and the test that was supposed to separate real comprehension from tricks was essentially declared beaten.</p>
+    <p>So an assistant like Claude, handed "the councilmen refused the demonstrators because they feared violence," will quietly land on the councilmen — not because a rule told it to, but because in everything it has read, that's how the sentence resolves. It's reading the whole room instead of checking boxes. The difference in approach is stark:</p>
+
+    <table class="compare-table">
+      <tr><th>&nbsp;</th><th>Traditional code</th><th>Modern AI</th></tr>
+      <tr><td><strong>How it decides</strong></td><td>Looks up lists, applies fixed grammar rules</td><td>Pattern learned from billions of sentences</td></tr>
+      <tr><td><strong>Handles meaning?</strong></td><td>No — grammar only</td><td>Often yes — that's its whole trick</td></tr>
+      <tr><td><strong>Can you see why?</strong></td><td>Yes, every step is inspectable</td><td>Rarely — the reasoning is buried in the math</td></tr>
+      <tr><td><strong>Typical failure</strong></td><td>Trips on ambiguity and uncommon names</td><td>Confidently inherits society's stereotypes</td></tr>
+    </table>
+
+    <h2>Smart doesn't mean unbiased</h2>
+    <p>Here's the uncomfortable part. Being able to read the room means an AI also picks up the room's prejudices. Researchers built a clever test set called <strong>Winogender</strong> that takes a sentence about, say, a surgeon or a nurse and swaps only the pronoun. Flip "he" to "she" around the word "surgeon," and coreference systems start making different — and worse — choices, because their training data is steeped in the assumption that surgeons are men. The bias isn't typed in by a programmer; it's quietly inherited from a world that wrote those patterns down for centuries.</p>
+    <p>Gender-neutral language exposes the seams even more. Datasets built specifically to test singular "they" and non-binary references reveal that many systems, traditional and modern alike, stumble badly the moment a person doesn't fit a tidy he-or-she box. The machine that aces the famous brain-teaser can still fumble the most basic act of respect: referring to someone the way they actually are.</p>
+
+    <div class="callout">
+      <strong>Why this lands close to home:</strong> the safest design choice is often to stop guessing entirely. In our own caregiving app, we ditched the clever name-to-gender inference and just added a setting: <em>They / Their</em> by default, with <em>She / Her</em> and <em>He / His</em> one tap away. Boring, explicit, and never wrong.
+    </div>
+
+    <h2>What comes next</h2>
+    <p>The trajectory is fairly clear, even if the destination isn't. Pure name-list lookups are fading into the background, useful only as a rough fallback. Hand-written grammar sieves are becoming a legacy layer — reliable for the easy 80%, quietly handing off the hard cases. The frontier now is teaching large models to handle the cases they're worst at: gender-neutral pronouns, non-binary identities, names and languages underrepresented in their training, and the basic humility to say "I'm not sure" instead of guessing wrong with total confidence.</p>
+    <p>And increasingly the smartest move isn't a better guess at all — it's a better question. Rather than infer your gender from your name and risk an insult, well-designed software is learning to simply ask once and remember the answer. A century of computer science went into making machines clever enough to deduce a pronoun from context. It turns out the most respectful thing they can do with that cleverness is know when not to use it.</p>
+
+  </div>
+
+  <div class="post-footer">
+    <span class="post-footer-label">Looking for more AI tools?</span>
+    <a class="btn-export" href="/tools/">See our free AI tools →</a>
+  </div>
+
+</main>
+
+<!--FOOTER-->
+
+<script data-goatcounter="https://notavello.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script></body>
+</html>
