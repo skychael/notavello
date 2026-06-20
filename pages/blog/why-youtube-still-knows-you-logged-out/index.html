@@ -1,0 +1,161 @@
+<!-- ⚠️ ALL %% PLACEHOLDERS MUST BE REPLACED — they feed SEO meta tags, OG, Twitter, and schema -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Why YouTube Still Knows You, Even When You&#39;re &quot;Logged Out&quot; — The Export | Notavello</title>
+<meta name="description" content="Logged out of YouTube but still getting eerily familiar recommendations? Here's the real reason — shared browser sessions and device fingerprinting — and what actually stops it."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/blog/why-youtube-still-knows-you-logged-out/"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://notavello.com/pages/blog/why-youtube-still-knows-you-logged-out/"/>
+<meta property="og:title" content="Why YouTube Still Knows You, Even When You&#39;re &quot;Logged Out&quot;"/>
+<meta property="og:description" content="Logged out of YouTube but still getting eerily familiar recommendations? Here's the real reason — shared browser sessions and device fingerprinting — and what actually stops it."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Why YouTube Still Knows You, Even When You&#39;re &quot;Logged Out&quot;"/>
+<meta name="twitter:description" content="Logged out of YouTube but still getting eerily familiar recommendations? Here's the real reason — shared browser sessions and device fingerprinting — and what actually stops it."/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Why YouTube Still Knows You, Even When You're \"Logged Out\"",
+  "description": "Logged out of YouTube but still getting eerily familiar recommendations? Here's the real reason — shared browser sessions and device fingerprinting — and what actually stops it.",
+  "url": "https://notavello.com/pages/blog/why-youtube-still-knows-you-logged-out/",
+  "datePublished": "2026-06-20",
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
+.back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; color: var(--ink-muted); text-decoration: none; margin-bottom: 40px; transition: color 0.15s; }
+.back-link:hover { color: var(--accent); }
+.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
+.post-date { font-size: 0.78rem; color: var(--ink-faint); }
+.post-title { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; color: var(--ink); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
+.post-lede { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+.post-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink); }
+.post-body h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 44px 0 16px; letter-spacing: -0.01em; }
+.post-body p { margin-bottom: 20px; color: var(--ink-muted); }
+.post-body p strong { color: var(--ink); font-weight: 600; }
+.post-body ul { margin: 0 0 20px 20px; color: var(--ink-muted); }
+.post-body ul li { margin-bottom: 8px; line-height: 1.7; }
+.callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 32px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.7; }
+.post-footer { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.post-footer-label { font-size: 0.8rem; color: var(--ink-faint); }
+.btn-export { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: opacity 0.2s; }
+.btn-export:hover { opacity: 0.9; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } }
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+
+  <a class="back-link" href="/pages/blog/">← The Export</a>
+
+  <div class="post-meta">
+    <span class="post-tag">Privacy</span>
+    <span class="post-date">June 20, 2026</span>
+  </div>
+
+  <h1 class="post-title">Why YouTube Still Knows You, Even When You're "Logged Out"</h1>
+
+  <p class="post-lede">You open YouTube, the corner says you're signed out, and yet the homepage looks exactly like your subscriptions feed. That's not a glitch, and it's not paranoia — it's two separate systems working as designed, and neither one needs your password to find you.</p>
+
+  <div class="post-body">
+
+    <h2>The thing people notice and can't quite explain</h2>
+    <p>It's a specific, recognizable feeling: you watch YouTube signed out on purpose — maybe to get away from the algorithm's idea of you, maybe just out of habit — and the videos staring back are suspiciously close to what you'd see logged in. The "Sign in" button is sitting right there in the corner. And yet.</p>
+    <p>The instinct to assume something sneaky is happening is reasonable. The actual explanation is less a conspiracy and more a story about how browsers and accounts quietly overlap in ways most people never see broken down.</p>
+
+    <h2>Reason one: your browser never actually logged you out</h2>
+    <p>Google accounts work across <strong>all</strong> Google products at once inside a browser — Gmail, YouTube, Search, Drive, all of it shares the same sign-in session by default. If Gmail is open as an app or a pinned tab and you're signed in there, that session can still be active in the background even on a tab where YouTube's interface says "not signed in." Tabs in a normal browser window typically share one cookie jar, not a separate one per tab or per site.</p>
+    <p>This gets murkier with Progressive Web Apps (installing Gmail as a PWA, for instance) because a PWA can run as its own semi-isolated window — but if it's built on the same browser engine and profile, it doesn't always get a fully separate cookie jar from the rest of that browser. The visible "logged out" state on one tab doesn't guarantee the underlying session is gone.</p>
+
+    <div class="callout">
+      <strong>The simple test:</strong> if recommendations still look personal after you've fully closed every Google tab, signed out everywhere via your Google Account's "Manage your devices" page, and reopened the browser fresh — the explanation isn't a stray session. It's the second thing.
+    </div>
+
+    <h2>Reason two: device fingerprinting doesn't need a login at all</h2>
+    <p>Even with zero cookies and zero account session, a browser leaks a surprising amount of identifying detail just by existing: screen resolution, installed fonts, time zone, graphics hardware, browser version, and dozens of smaller settings. None of these facts is unique on its own. Combined, they form a "fingerprint" that's specific enough to recognize the same device again later — no cookie required, no login required.</p>
+    <p>This is the part that actually explains the "tricky" feeling. Clearing cookies resets the part of tracking that depends on cookies. It does nothing to the part that depends on what your hardware and software look like to a server. A fresh incognito window run from the same physical machine can still resemble the same fingerprint as the last session.</p>
+
+    <h2>It's not just paranoia — YouTube actually changed this</h2>
+    <p>Worth knowing: this isn't a static, unchanging system. YouTube has previously dialed back logged-out personalization — for a stretch, opening YouTube signed out (or in Incognito) produced a blank "Get Started" screen instead of a tailored feed, specifically because the lack of a strong signal made recommendations there look more like noise than help. That behavior has shifted back and forth over time, which is itself a clue: when a logged-out homepage looks unusually generic, the account-and-cookie layer is probably the one being neutralized. When it looks unusually familiar, fingerprinting or a lingering session is more likely doing the work.</p>
+
+    <h2>What this means for Microsoft, and where the comparison breaks down</h2>
+    <p>The instinct to wonder "is Microsoft doing the same thing" is fair, but the two companies aren't built the same way here. A local Windows account avoids the deepest layer of Microsoft account-based tracking — but Windows 11 still phones home a meaningful amount of diagnostic and telemetry data regardless of which account type is signing in, and Edge (Microsoft's browser) carries its own separate sync and identity layer on top of that. Device fingerprinting itself isn't unique to Google — it's a browser-and-server-level technique any sufficiently large site can use, Google's products are simply some of the most visible and well-documented examples because of how much of the open web runs through them.</p>
+    <p>In short: Google's footprint is wider because more of the internet touches a Google product somewhere in the chain (Search, YouTube, embedded ads, embedded fonts, Analytics). That width is what makes it <em>feel</em> more invasive — not necessarily that the underlying tracking technique itself is unique to Google.</p>
+
+    <h2>What actually breaks the pattern</h2>
+    <ul>
+      <li><strong>Sign out everywhere, not just one tab</strong> — Google Account → Security → "Your devices" lets you end every active session at once, not just the one in front of you.</li>
+      <li><strong>Use a separate browser profile or container for logged-out browsing</strong> — Firefox's Multi-Account Containers (or a fully separate browser) keeps the cookie jar genuinely isolated, instead of relying on incognito mode alone.</li>
+      <li><strong>Accept that fingerprinting is the harder problem</strong> — clearing cookies and cache resets one layer of tracking. It does not reset the hardware/software signature a browser exposes by default. Extensions designed to resist fingerprinting (rather than just block cookies) are a different category of tool aimed specifically at this.</li>
+      <li><strong>Watch for the "blank slate" signal</strong> — if a logged-out homepage looks generic and untailored, that's a sign the account/cookie layer was actually cleared. A still-personal feed after a real sign-out is the more telling case.</li>
+    </ul>
+
+    <h2>The honest bottom line</h2>
+    <p>Google isn't reading your mind, and this isn't some secret system reserved for power users who notice things. It's the predictable result of two ordinary, well-documented mechanisms — shared browser sessions and device fingerprinting — stacking on top of each other in a way that's genuinely hard to picture until you've watched it happen to your own account. Noticing the gap between "the UI says logged out" and "the content says otherwise" isn't being paranoid. It's just paying closer attention than the interface wants you to.</p>
+
+  </div>
+
+  <div class="post-footer">
+    <span class="post-footer-label">Looking for more AI tools?</span>
+    <a class="btn-export" href="/tools/">See our free AI tools →</a>
+  </div>
+
+</main>
+
+<!--FOOTER-->
+
+<script data-goatcounter="https://notavello.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script></body>
+</html>
