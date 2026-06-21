@@ -1,0 +1,328 @@
+<!-- ⚠️ ALL %% PLACEHOLDERS MUST BE REPLACED — they feed SEO meta tags, OG, Twitter, and schema -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>The Tiny Text Files That Taught the Internet Manners — The Export | Notavello</title>
+<meta name="description" content="From robots.txt to .gitignore to llms.txt, the web has been quietly ruled by tiny files that tell machines what to do."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/blog/tiny-text-files-that-taught-the-internet-manners/"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://notavello.com/pages/blog/tiny-text-files-that-taught-the-internet-manners/"/>
+<meta property="og:title" content="The Tiny Text Files That Taught the Internet Manners"/>
+<meta property="og:description" content="From robots.txt to .gitignore to llms.txt, the web has been quietly ruled by tiny files that tell machines what to do."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="The Tiny Text Files That Taught the Internet Manners"/>
+<meta name="twitter:description" content="From robots.txt to .gitignore to llms.txt, the web has been quietly ruled by tiny files that tell machines what to do."/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "The Tiny Text Files That Taught the Internet Manners",
+  "description": "From robots.txt to .gitignore to llms.txt, the web has been quietly ruled by tiny files that tell machines what to do.",
+  "url": "https://notavello.com/pages/blog/tiny-text-files-that-taught-the-internet-manners/",
+  "datePublished": "2026-06-20",
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
+.back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; color: var(--ink-muted); text-decoration: none; margin-bottom: 40px; transition: color 0.15s; }
+.back-link:hover { color: var(--accent); }
+.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
+.post-date { font-size: 0.78rem; color: var(--ink-faint); }
+.post-title { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; color: var(--ink); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
+.post-lede { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+.post-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink); }
+.post-body h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 44px 0 16px; letter-spacing: -0.01em; }
+.post-body p { margin-bottom: 20px; color: var(--ink-muted); }
+.post-body p strong { color: var(--ink); font-weight: 600; }
+.post-body ul { margin: 0 0 20px 20px; color: var(--ink-muted); }
+.post-body ul li { margin-bottom: 8px; line-height: 1.7; }
+.callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 32px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.7; }
+.post-footer { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.post-footer-label { font-size: 0.8rem; color: var(--ink-faint); }
+.btn-export { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: opacity 0.2s; }
+.btn-export:hover { opacity: 0.9; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } }
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+
+  <a class="back-link" href="/pages/blog/">← The Export</a>
+
+  <div class="post-meta">
+    <span class="post-tag">Tech</span>
+    <span class="post-date">June 20, 2026</span>
+  </div>
+
+  <h1 class="post-title">The Tiny Text Files That Taught the Internet Manners</h1>
+
+  <p class="post-lede">Before AI assistants started asking for clean Markdown, the web had already spent thirty years leaving little notes for machines. Some said “come in.” Some said “stay out.” Some just begged developers not to upload their trash.</p>
+
+  <div class="post-body">
+
+<h2>The web has always needed little signs on the door</h2>
+    <p>The internet looks like pages, apps, videos, stores, feeds, and endless buttons asking you to accept cookies like you are entering a diplomatic treaty. But underneath all of that, the web has always had a second layer: small, boring text files that tell machines how to behave.</p>
+    <p>They are not glamorous. Nobody launches a startup by saying, “We invented a tiny plain-text file.” Nobody’s keynote ends with confetti because a crawler discovered a sitemap. But these little files are some of the most important social contracts on the internet.</p>
+    <p>They are how site owners talk to bots. They are how developers protect themselves from accidentally publishing secrets. They are how search engines discover pages. And now, with AI assistants reading and summarizing the web, they are becoming the latest battlefield in the long argument between humans, machines, and “please do not scrape my entire life’s work before breakfast.”</p>
+    <p>If you read the earlier Notavello piece on <a href="/pages/blog/machine-readable-web-ai-bots/">the web’s machine-readable second layer</a>, this is the origin story. The web did not suddenly become bot-friendly because AI arrived. It was already leaving notes for robots in the hallway.</p>
+
+    <div class="callout">
+      <strong>The short version:</strong> The web has slowly built a collection of small instruction files: robots.txt for crawlers, sitemap.xml for discovery, .gitignore for developers, and now llms.txt for AI-readable guidance. They are all different, but they share one theme: machines are fast, literal, and very bad at guessing what humans meant.
+    </div>
+
+    <h2>First came robots.txt: the polite “do not enter” sign</h2>
+    <p>In the early web, crawlers were not giant AI data vacuums yet. They were spiders, wanderers, indexers, and experimental bots built by people trying to map a strange new network. The problem was that even a well-meaning bot could accidentally hammer a server, wander into useless duplicate pages, or crawl places the site owner did not want crawled.</p>
+    <p>So the web needed a convention. Not a lock. Not a login. Not a lawyer in a blazer. Just a plain-text file called <strong>robots.txt</strong>.</p>
+    <p>The idea was beautifully naive in the way early internet ideas often were. A website could place a file at its root:</p>
+    <p><code>https://example.com/robots.txt</code></p>
+    <p>Inside, the site owner could write instructions like:</p>
+    <p><code>User-agent: *<br>Disallow: /private/</code></p>
+    <p>Translated from robot to human: “Hey, all crawlers, please do not crawl this folder.”</p>
+    <p>That “please” is doing a lot of work. Robots.txt is not a security wall. It does not stop a bad actor. It does not hide secret files. It is more like a sign on a hiking trail that says, “Don’t walk here; the ground is being restored.” Decent people obey it. Raccoons and venture-backed scraping companies may have mixed feelings.</p>
+
+    <h2>Then came sitemaps: less “stay out,” more “start here”</h2>
+    <p>Robots.txt tells machines where not to go. But as websites grew larger, search engines needed another kind of note: a map.</p>
+    <p>That is what <strong>sitemap.xml</strong> does. A sitemap gives crawlers a structured list of pages that exist on a site. Instead of waiting for a crawler to discover everything by following links like a very patient intern, the site can hand it a list:</p>
+    <p><code>Here are the important URLs. Here is when they changed. Please do not miss them.</code></p>
+    <p>This changed the relationship. Robots.txt was defensive. Sitemap.xml was cooperative. It said: “The site is big. Crawlers are busy. Let’s not make this weird.”</p>
+    <p>That pattern kept repeating: machines got more important, so websites started adding machine-readable side channels. Not because humans wanted to read XML. Humans do not want to read XML. XML looks like paperwork got into a fight with angle brackets. But machines are fine with it, and that was the point.</p>
+
+    <h2>Developers needed notes to themselves too</h2>
+    <p>Not every tiny file is for outside bots. Some are for the most dangerous user of all: the person building the thing.</p>
+    <p>That is where <strong>.gitignore</strong> enters the story.</p>
+    <p>Git tracks files in a project. This is wonderful until it tracks the wrong files: temporary folders, build junk, local settings, secret keys, giant dependency folders, operating-system crumbs, and that one experimental file named <code>final-final-actually-working-copy-2.js</code>.</p>
+    <p>A <strong>.gitignore</strong> file tells Git which files should stay untracked. It is a developer’s way of saying:</p>
+    <p><code>Do not commit this. Future me is not emotionally prepared.</code></p>
+    <p>That might sound minor, but it is one of the most practical safety rails in software. It protects repositories from clutter. It reduces accidents. It keeps local machine garbage from becoming team history. It does not fix every mistake — files already tracked by Git are not magically forgotten — but it prevents a lot of self-inflicted wounds.</p>
+    <p>This is a different kind of machine instruction. Robots.txt talks to crawlers. Sitemap.xml talks to search engines. .gitignore talks to the toolchain. But the core idea is the same: small plain-text rules keep fast systems from doing exactly the wrong thing very efficiently.</p>
+
+    <h2>The family got bigger: env files, dockerignore, npmignore, and friends</h2>
+    <p>Once developers got used to writing little instruction files, they appeared everywhere.</p>
+    <ul>
+      <li><strong>.env</strong> files keep local configuration and secrets out of the code itself.</li>
+      <li><strong>.dockerignore</strong> tells Docker not to copy unnecessary files into a container build.</li>
+      <li><strong>.npmignore</strong> controls what gets left out of a package published to npm.</li>
+      <li><strong>.editorconfig</strong> helps different editors agree on formatting rules.</li>
+      <li><strong>humans.txt</strong> was a charming attempt to credit the humans behind a website.</li>
+    </ul>
+    <p>Some of these files are about privacy. Some are about speed. Some are about consistency. Some are about not humiliating yourself in public.</p>
+    <p>They also reveal a funny truth about software: the computer is rarely the only thing being controlled. These files control humans too. They reduce the number of decisions a person has to remember. They turn “please don’t forget” into “the system will help you not forget.”</p>
+    <p>That is why they matter. A good little file does not just instruct a machine. It protects a workflow from human tiredness.</p>
+
+    <h2>Then AI crawlers made the old handshake awkward</h2>
+    <p>For years, the basic deal was simple enough: search engines crawled pages, indexed them, and sent traffic back. The arrangement was imperfect, but at least the trade was visible. A site allowed crawling. Google, Bing, or another engine helped users find it. The site got visitors. Everyone pretended this was a clean arrangement and moved on.</p>
+    <p>AI complicated that bargain.</p>
+    <p>When large language models and AI search tools began consuming huge amounts of web content, site owners started asking a new question: “Is this crawler indexing my page, summarizing it, training on it, replacing the visit, or all of the above?”</p>
+    <p>That is why robots.txt returned to the spotlight. A file created for polite crawlers in the 1990s suddenly had to carry the emotional weight of the AI age. Site owners began adding specific AI user agents. Some allowed search crawlers but blocked training crawlers. Others blocked everything that smelled like a bot with a venture capital budget.</p>
+    <p>This is where the old system started to creak. Robots.txt can say “do not crawl.” It does not explain the site. It does not summarize the best pages. It does not say, “If an AI assistant is trying to understand this site, read these pages first and don’t hallucinate that we sell refrigerators.”</p>
+
+    <h2>llms.txt is the newest note on the door</h2>
+    <p>That is where <strong>llms.txt</strong> fits in.</p>
+    <p>The idea is simple: put a Markdown file at the root of a website, usually here:</p>
+    <p><code>https://example.com/llms.txt</code></p>
+    <p>Instead of telling crawlers only what not to crawl, the site gives AI systems a clean, short guide:</p>
+    <ul>
+      <li>What the site is</li>
+      <li>Which pages matter most</li>
+      <li>Where the documentation lives</li>
+      <li>What tone or context matters</li>
+      <li>Which links are canonical</li>
+    </ul>
+    <p>It is not magic. It is not an official universal law. It may or may not become a major standard. But it is very much in the same tradition as the files before it: a tiny, readable note for machines that are moving too fast to infer everything correctly.</p>
+    <p>The interesting part is that llms.txt is not just about blocking. It is about helping. Robots.txt says, “Don’t go there.” Sitemap.xml says, “Here are the pages.” llms.txt says, “Here is how to understand the place.”</p>
+
+    <h2>The timeline is really a story about trust</h2>
+    <p>These files tell a quiet history of the internet’s changing relationship with automation.</p>
+    <p>At first, the web assumed bots would be polite. Then the web realized bots needed maps. Then developers realized they needed guardrails against their own tools. Then platforms realized the whole system needed metadata, schemas, manifests, ignore files, feeds, package rules, and endless tiny declarations just to keep the machinery from chewing through the furniture.</p>
+    <p>Now AI has made the machine-readable layer more visible. Not new. Just visible.</p>
+    <p>When an assistant summarizes a page, when a search engine builds an answer box, when a crawler decides whether to index or skip a page, when a developer avoids committing a password by accident — somewhere nearby, there is usually a tiny file doing thankless work.</p>
+    <p>It is tempting to think the future of the web will be giant models, agents, browsers that click for you, and answer engines that reduce whole websites into three bullet points. Some of that is probably true. But the future will also be small text files with boring names. The internet loves glamour, but it runs on notes.</p>
+
+    <div class="callout">
+      <strong>The real lesson:</strong> The smarter machines get, the more explicit humans have to be. Ambiguity is cute in poetry. It is less cute when a crawler, model, build system, or deployment tool decides to interpret your silence at scale.
+    </div>
+
+    <h2>What site owners should actually do</h2>
+    <p>If you run a website, you do not need to chase every new file format like it is a limited-edition sneaker drop. But you should understand the basics.</p>
+    <p>Use <strong>robots.txt</strong> to express crawler access preferences. Use <strong>sitemap.xml</strong> to help search engines discover your public pages. Use structured data where it genuinely describes the page. Use <strong>.gitignore</strong> and related ignore files to keep your own tools from publishing junk. And if your site has articles, documentation, tools, or explanations that AI systems might summarize, consider adding a modest <strong>llms.txt</strong>.</p>
+    <p>Not because it guarantees traffic. It does not. Not because Google will throw a parade. It will not. But because the web is increasingly read by machines before humans ever see it. A clean note at the door is cheap insurance.</p>
+    <p>For more on the crawler side of the story, the Notavello explainer <a href="/pages/blog/what-is-a-bot/">What Is a Bot, Really?</a> breaks down how bots became such a large part of internet traffic. And if you want the newer AI-search angle, <a href="/pages/blog/how-ai-actually-searches-the-web/">How AI Actually Searches the Web</a> explains why this is no longer just “Google with a nicer paragraph.”</p>
+
+    <h2>The boring files won</h2>
+    <p>The funny ending is that the most durable web technologies are often the least impressive ones. Plain text. Simple rules. Files with names that sound like someone forgot to finish them.</p>
+    <p>Robots.txt. Sitemap.xml. .gitignore. .dockerignore. llms.txt.</p>
+    <p>They are not the show. They are the stage directions. And as the web fills with more bots, agents, crawlers, assistants, build tools, deploy scripts, and automated everything, stage directions matter more than ever.</p>
+    <p>The machines are coming. Actually, they already came. The least we can do is leave them a note — and occasionally tell them not to touch the good towels.</p>
+
+  </div>
+
+  <div class="post-footer">
+    <span class="post-footer-label">Looking for more AI tools?</span>
+    <a class="btn-export" href="/tools/">See our free AI tools →</a>
+  </div>
+
+</main>
+
+<!--FOOTER-->
+
+<script data-goatcounter="https://notavello.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script></body>
+</html>
+
+<!--
+=== ⚠️ NOTE TO FUTURE CLAUDES — READ BEFORE TOUCHING THIS FILE ===
+DO NOT edit, modify, or update this template without first explicitly asking Mike
+and receiving clear approval in the conversation. Even if asked to "update the
+template" or "clean up the template" as part of a larger task — STOP and confirm
+with Mike first. This file is intentionally locked to manual review.
+===
+
+=== WORKFLOW FOR EACH NEW POST ===
+
+STEP 1 — RESEARCH
+Research the topic before writing. Use web search if needed for current facts,
+stats, or market data. Accuracy matters more than speed.
+
+STEP 2 — DETERMINE SLUG
+Slug format: lowercase, hyphenated, descriptive, SEO-friendly.
+Example: displayport-vs-hdmi
+The post will live at: https://notavello.com/pages/blog/tiny-text-files-that-taught-the-internet-manners/
+The output HTML filename should match the slug: e.g. displayport-vs-hdmi.html
+Tell Mike the folder/slug before delivering files.
+
+STEP 3 — REPLACE ALL %% PLACEHOLDERS
+The Tiny Text Files That Taught the Internet Manners         → Full post title (used in <title>, OG, Twitter, h1, schema)
+From robots.txt to .gitignore to llms.txt, the web has been quietly ruled by tiny files that tell machines what to do.   → 150 char max. Punchy, keyword-rich. No quotes inside.
+tiny-text-files-that-taught-the-internet-manners               → URL slug e.g. displayport-vs-hdmi (no trailing slash in tag)
+2026-06-20           → ISO date e.g. 2026-06-08 (schema only)
+June 20, 2026       → Human date e.g. June 8, 2026 (shown on page)
+Tech                → Category tag. Current tags in use:
+                          AI Tools | AI Comparison | AI Trends | AI Markets |
+                          Developer Tools | Privacy | Energy | Insurance | Tech
+                          (Add new tags sparingly; check index.html for consistency)
+Before AI assistants started asking for clean Markdown, the web had already spent thirty years leaving little notes for machines. Some said “come in.” Some said “stay out.” Some just begged developers not to upload their trash.               → Hook paragraph. 1-2 sentences. Make the dry interesting.
+%%SECTION_X_HEADING%%  → h2 subheadings. Aim for 4-8 sections per post.
+%%SECTION_X_BODY%%     → One or more <p> tags per section. Use <strong> for emphasis.
+                          Optional: <ul><li> lists, extra callout blocks, tables.
+%%CALLOUT_LABEL%%      → Bold intro label e.g. "The bottom line:" or "Watch out:"
+%%CALLOUT_TEXT%%       → Callout body. 1-3 sentences. Punchy.
+
+=== INTERNAL LINKING / BACKLINKS TO NOTAVELLO (SEO) ===
+IMPORTANT: Every new post must make a best-effort attempt to include at least
+one contextual internal backlink to another page on notavello.com. This is not
+optional to check. It is only optional to include if there is truly no relevant
+Notavello page to link to.
+
+What counts:
+- A link to another Notavello blog post, e.g. /pages/blog/what-is-a-bot/
+- A link to /tools/ when the article naturally mentions tools or AI tools
+- A link to a specific Notavello tool/exporter page when directly relevant
+
+Required workflow before writing:
+1. Skim index.html's post-list for related titles/slugs.
+2. Pick 1-3 genuinely relevant Notavello pages.
+3. Add the link inline inside the article body, usually inside a <p>.
+4. If no internal link is included, state in the final response: "No internal
+   Notavello link was added because no relevant existing page fit naturally."
+
+Guidelines:
+- Include at least 1 internal Notavello backlink whenever a relevant page exists.
+- Aim for roughly 1 internal link per 400-600 words where relevant, but never
+  force irrelevant links just to hit a number.
+- Link the relevant phrase inline within a <p>, not as a standalone "see also" line.
+  Good: "...similar to how <a href="/pages/blog/how-ai-actually-searches-the-web/">
+  AI assistants search the web</a>, ..."
+  Bad: "Click here for another article."
+- Anchor text should be descriptive and natural, not generic.
+- Do not link the same target more than once per post.
+- External links do not satisfy this requirement. The link must point to notavello.com
+  or use a root-relative internal path like /pages/blog/example-slug/.
+
+STEP 4 — ADD CARD TO INDEX
+Insert a new <a class="post-card"> block at the TOP of <div class="post-list">
+in /pages/blog/index.html. Newest post always first.
+Card structure:
+  - post-tag: match Tech exactly
+  - post-date: match June 20, 2026 exactly
+  - post-card-title: match The Tiny Text Files That Taught the Internet Manners exactly
+  - post-card-desc: 1-2 sentence teaser (can differ from Before AI assistants started asking for clean Markdown, the web had already spent thirty years leaving little notes for machines. Some said “come in.” Some said “stay out.” Some just begged developers not to upload their trash.)
+  - href: /pages/blog/tiny-text-files-that-taught-the-internet-manners/
+
+STEP 5 — DELIVER FILES
+Return both files for download:
+  1. tiny-text-files-that-taught-the-internet-manners.html  (the new post)
+  2. index.html     (updated with new card)
+And return the updated blog-post-template.html if it was modified.
+
+STEP 6 — TELL MIKE THE URL
+State the live URL clearly: https://notavello.com/pages/blog/tiny-text-files-that-taught-the-internet-manners/
+
+=== FOOTER CTA — NEVER ALTER ===
+The post footer CTA is locked. Always:
+  Label:  "Looking for more AI tools?"
+  Button: "See our free AI tools →"  linking to /tools/
+Do not change the text, link, or structure.
+
+=== STYLE NOTES ===
+- Tone: Confident, plain-English, occasionally dry wit. Not corporate.
+- Voice/POV: Always write about AI in the THIRD PERSON. Refer to AI assistants as
+  "an assistant like Claude," "it," or "they" — NEVER in the first person as if the
+  AI is narrating the post (no "I search," "let me," "on my end," "AI like me").
+  Second person ("you") to address the reader is fine and encouraged.
+- Headers: Use Lora serif h2s. Be specific — avoid generic headings like "Overview."
+- Callout blocks: Use sparingly (1-2 per post). Best for warnings, bottom lines, gotchas.
+- Tables: Fine to add inside .post-body for comparisons. Use inline styles or add a
+  .compare-table class if needed (see displayport-vs-hdmi.html for example).
+- Length: 800-1800 words is the sweet spot. Don't pad; don't truncate good info.
+-->
