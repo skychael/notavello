@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Export — Page 2 | Notavello</title>
+<meta content="Older Notavello posts from The Export, page 2 of 3." name="description"/>
+<meta content="index, follow" name="robots"/>
+<link href="https://notavello.com/pages/blog/page-2/" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="https://notavello.com/pages/blog/page-2/" property="og:url"/>
+<meta content="The Export — Page 2 | Notavello" property="og:title"/>
+<meta content="Older Notavello posts from The Export, page 2 of 3." property="og:description"/>
+<meta content="Notavello" property="og:site_name"/>
+<meta content="https://notavello.com/og-image.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="The Export — Page 2 | Notavello" name="twitter:title"/>
+<meta content="https://notavello.com/og-image.png" name="twitter:image"/>
+<link href="/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&amp;family=Lora:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet"/>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+.main { max-width: 720px; margin: 0 auto; padding: 64px 24px 100px; }
+.blog-header { margin-bottom: 56px; }
+.blog-byline { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); margin-bottom: 12px; }
+.blog-title { font-family: 'Lora', serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 600; color: var(--ink); line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 16px; }
+.blog-title em { font-style: italic; color: var(--accent); }
+.blog-desc { font-size: 1rem; color: var(--ink-muted); line-height: 1.7; }
+.post-list { display: flex; flex-direction: column; gap: 2px; }
+.post-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px 32px; text-decoration: none; color: inherit; display: block; transition: box-shadow 0.2s, border-color 0.2s; }
+.post-card:hover { box-shadow: 0 4px 24px rgba(79,70,229,0.10); border-color: rgba(79,70,229,0.25); }
+.post-card + .post-card { margin-top: 12px; }
+.post-card-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; }
+.post-tag { font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 3px 9px; border-radius: 20px; }
+.post-date { font-size: 0.75rem; color: var(--ink-faint); }
+.post-card-title { font-family: 'Lora', serif; font-size: 1.15rem; font-weight: 600; color: var(--ink); line-height: 1.35; margin-bottom: 8px; letter-spacing: -0.01em; }
+.post-card-desc { font-size: 0.85rem; color: var(--ink-muted); line-height: 1.65; margin-bottom: 14px; }
+.post-card-read { font-size: 0.78rem; font-weight: 600; color: var(--accent); }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } .post-card { padding: 20px; } }
+
+.blog-pagination { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 28px; flex-wrap: wrap; }
+.blog-pagination a, .blog-pagination span { font-size: 0.78rem; font-weight: 600; text-decoration: none; border: 1px solid var(--border); background: var(--surface); color: var(--ink-muted); border-radius: 999px; padding: 9px 14px; }
+.blog-pagination a:hover { color: var(--accent); border-color: rgba(79,70,229,0.30); background: var(--accent-light); }
+.blog-pagination .current-page { color: var(--accent); background: var(--accent-light); border-color: rgba(79,70,229,0.22); }
+</style>
+</head>
+<body>
+<!--HEADER-->
+<main class="main">
+<div class="blog-header">
+<p class="blog-byline">By Notavello</p>
+<h1 class="blog-title">The <em>Export</em></h1>
+<p class="blog-desc">Honest tips, hidden quirks, and practical insights about AI tools — from the people who use them all day.</p>
+</div>
+<div class="post-list">
+
+<a class="post-card" href="/pages/blog/why-ai-customer-service-is-so-bad/">
+<div class="post-card-meta">
+<span class="post-tag">AI Trends</span>
+<span class="post-date">June 9, 2026</span>
+</div>
+<div class="post-card-title">Why AI Customer Service Still Feels Like It Was Designed by Your Enemy</div>
+<div class="post-card-desc">Phone robots and chatbots are not always broken by accident. Here is why customer-service AI feels hostile, what companies are optimizing for, and where the technology actually works.</div>
+<span class="post-card-read">Read article →</span>
+</a>
+
+<a class="post-card" href="/pages/blog/crude-oil-futures-price-manipulation/">
+<div class="post-card-meta">
+<span class="post-tag">Energy</span>
+<span class="post-date">June 9, 2026</span>
+</div>
+<div class="post-card-title">Why Oil Futures Don't Tell You the Truth</div>
+<div class="post-card-desc">Crude oil and Brent futures are shaped by politics, leverage, and coordinated messaging as much as supply and demand. Here is what they are, why they lag reality, who benefits from keeping prices low, and what the real timeline looks like.</div>
+<span class="post-card-read">Read article →</span>
+</a>
+
+<a class="post-card" href="/pages/blog/asic-vs-gpu-mining-versatility/">
+<div class="post-card-meta">
+<span class="post-tag">Tech</span>
+<span class="post-date">June 8, 2026</span>
+</div>
+<div class="post-card-title">ASIC Miners vs GPUs: The Specialist vs. the Generalist</div>
+<div class="post-card-desc">One does one thing at extraordinary speed and becomes a pricey paperweight when that thing stops paying. The other mines crypto, trains AI, renders 3D scenes, and heats your house. A plain-English breakdown of both — and which actually holds value long-term.</div>
+<span class="post-card-read">Read article →</span>
+</a>
+
+<a class="post-card" href="/pages/blog/displayport-vs-hdmi/">
+<div class="post-card-meta">
+<span class="post-tag">Tech</span>
+<span class="post-date">June 8, 2026</span>
+</div>
+<div class="post-card-title">DisplayPort vs HDMI: Which Cable Actually Wins in 2026?</div>
+<div class="post-card-desc">You're staring at the back of a monitor with two ports that look nearly identical. There's actually a billion-dollar standards war behind that choice — and a right answer that depends on what you're doing.</div>
+<span class="post-card-read">Read article →</span>
+</a>
+
+<a class="post-card" href="/pages/blog/self-driving-cars-trucks-can-be-fooled/">
+<div class="post-card-meta">
+<span class="post-tag">AI Trends</span>
+<span class="post-date">June 8, 2026</span>
+</div>
+<div class="post-card-title">Self-Driving Cars Can See Everything — Except the Trick</div>
+<div class="post-card-desc">Self-driving cars and trucks do not just need better AI. They need to survive a world where the road itself can lie — through spoofed sensors, fake scenes, confused maps, cargo scams, and people who discover that making a robot stop can be profitable.</div>
+<span class="post-card-read">Read article →</span>
+</a>
+
+<a class="post-card" href="/pages/blog/github-action-inject-code-all-html-pages/">
+<div class="post-card-meta">
+<span class="post-tag">Developer Tools</span>
+<span class="post-date">June 8, 2026</span>
+</div>
+<div class="post-card-title">The Three-Minute GitHub Action That Injects Code Into Every Page You'll Ever Deploy</div>
+<div class="post-card-desc">You set it up once. Then every HTML file you push — now and forever — automatically gets your analytics snippet, cookie banner, or any other code injected before deployment. No templates. No manual edits. No forgetting.</div>
+<span class="post-card-read">Read article →</span>
+</a>
+
+<a class="post-card" href="/pages/blog/truth-machine-ai-disinformation/">
+<div class="post-card-meta">
+<span class="post-tag">AI Trends</span>
+<span class="post-date">June 8, 2026</span>
+</div>
+<div class="post-card-title">The Truth Machine Nobody Wants to Build</div>
+<div class="post-card-desc">An AI that finds truth sounds obvious. The problem is that truth is not just a search result — and disinformation actors know exactly how to exploit the machines that pretend it is.</div>
+<span class="post-card-read">Read article →</span>
+</a>
+
+<a class="post-card" href="/pages/blog/strait-of-hormuz-oil-crisis-rationing-timeline/">
+<div class="post-card-meta">
+<span class="post-tag">Energy</span>
+<span class="post-date">June 6, 2026</span>
+</div>
+<div class="post-card-title">The Strait of Hormuz Oil Crisis: How Close Are We to Rationing?</div>
+<div class="post-card-desc">A fifth of the world's oil flows through one narrow strait — and it's been shut for three months. Where supply actually stands, who's already rationing fuel, when the U.S. feels it, which states get hit first, and how bad it could get.</div>
+<span class="post-card-read">Read article →</span>
+</a>
+
+<a class="post-card" href="/pages/blog/deepseek-ai-china-openai-future/">
+<div class="post-card-meta">
+<span class="post-tag">AI Trends</span>
+<span class="post-date">June 5, 2026</span>
+</div>
+<div class="post-card-title">DeepSeek, OpenAI, and the New AI Cold War: Is China's Cheaper AI the Future?</div>
+<div class="post-card-desc">A Chinese AI company most people had never heard of suddenly made Silicon Valley look over its shoulder. DeepSeek, OpenAI, copying claims, security risks, cheaper models, and who may win the next phase of AI.</div>
+<span class="post-card-read">Read article →</span>
+</a>
+
+<a class="post-card" href="/pages/blog/openai-anthropic-ipo-outcomes-spacex/">
+<div class="post-card-meta">
+<span class="post-tag">AI Markets</span>
+<span class="post-date">June 5, 2026</span>
+</div>
+<div class="post-card-title">OpenAI vs. Anthropic IPOs: Possible Outcomes, Probable Winners, and the SpaceX Shadow</div>
+<div class="post-card-desc">OpenAI vs Anthropic IPO outlook: possible outcomes, valuation risks, AI bubble fears, and how SpaceX changes the market story.</div>
+<span class="post-card-read">Read article →</span>
+</a>
+
+<a class="post-card" href="/pages/blog/how-ai-really-learns-human-trainers/">
+<div class="post-card-meta">
+<span class="post-tag">AI Trends</span>
+<span class="post-date">June 4, 2026</span>
+</div>
+<div class="post-card-title">How AI Really Learns — and the Hidden Humans Paid $2 an Hour to Teach It</div>
+<div class="post-card-desc">AI feels like magic, but it was taught — partly by ghost workers earning less than your coffee. How AI actually learns, who trains it, the wages behind it, and why the smartest AI in the world may be one you're never allowed to use.</div>
+<span class="post-card-read">Read article →</span>
+</a>
+
+<a class="post-card" href="/pages/blog/spacex-ipo-spcx-ai-predictions/">
+<div class="post-card-meta">
+<span class="post-tag">AI Comparison</span>
+<span class="post-date">June 4, 2026</span>
+</div>
+<div class="post-card-title">SpaceX IPO (SPCX): What 5 AI Models Predicted the Week Before the $135 Debut</div>
+<div class="post-card-desc">One week before the largest IPO on record, we asked ChatGPT, Claude, Gemini, Copilot, and Grok to project SPCX from its $135 offer. Three copied the sample, two went their own way — and a time capsule was born.</div>
+<span class="post-card-read">Read article →</span>
+</a>
+
+<a class="post-card" href="/pages/blog/why-home-insurance-is-so-expensive/">
+<div class="post-card-meta">
+<span class="post-tag">Insurance</span>
+<span class="post-date">June 4, 2026</span>
+</div>
+<div class="post-card-title">Why Home Insurance Is So Expensive (and Why Some Places Can't Get It at Any Price)</div>
+<div class="post-card-desc">Your premium went up, a neighbor got dropped, and whole towns can't buy coverage. It's not greed — it's the math. FAIR plans, the war exclusion, why flood and quake aren't in your policy, and who really pays when a last-resort plan runs dry.</div>
+<span class="post-card-read">Read article →</span>
+</a>
+
+<a class="post-card" href="/pages/blog/does-perplexity-pay-openai/">
+<div class="post-card-meta">
+<span class="post-tag">AI Tools</span>
+<span class="post-date">June 3, 2026</span>
+</div>
+<div class="post-card-title">Does Perplexity Pay OpenAI? How AI Search Engines Pay for Models and Content</div>
+<div class="post-card-desc">When you ask Perplexity or ChatGPT a question, up to three separate bills get paid behind the scenes — compute, model access, and content. Here's who pays for what, and why the content bill is the one ending up in court.</div>
+<span class="post-card-read">Read article →</span>
+</a>
+
+<a class="post-card" href="/pages/blog/how-to-submit-an-app-to-apple-and-google/">
+<div class="post-card-meta">
+<span class="post-tag">Developer Tools</span>
+<span class="post-date">June 3, 2026</span>
+</div>
+<div class="post-card-title">How to Submit an App to Apple and Google: The Big-Picture Guide for 2026</div>
+<div class="post-card-desc">Fees, D-U-N-S numbers, the 12-tester rule, who got grandfathered in 2023, and the EU deadlines that quietly remove apps — the full big-picture map for publishing on the App Store and Google Play.</div>
+<span class="post-card-read">Read article →</span>
+</a>
+
+<a class="post-card" href="/pages/blog/death-of-open-web-ai-bot-lockdown/">
+<div class="post-card-meta">
+<span class="post-tag">AI Trends</span>
+<span class="post-date">June 3, 2026</span>
+</div>
+<div class="post-card-title">The Death of the Open Web: How AI Bots Are Forcing a Total Internet Lockdown</div>
+<div class="post-card-desc">The era of the free, easily scrapeable internet is officially coming to an end. As aggressive AI web crawlers pillage independent websites for training data, the digital landscape is rapidly morphing into a fortress of aggressive paywalls and digital checkpoints.</div>
+<span class="post-card-read">Read article →</span>
+</a>
+
+<a class="post-card" href="/pages/blog/ubuntu-4-digit-pin-login/">
+<div class="post-card-meta">
+<span class="post-tag">Linux</span>
+<span class="post-date">June 1, 2026</span>
+</div>
+<div class="post-card-title">How to Set a 4-Digit PIN on Ubuntu — The Script That Actually Works</div>
+<div class="post-card-desc">Every guide says edit pwquality.conf and run passwd. It doesn't work. Here's why Ubuntu keeps rejecting your short PIN — and a free script that fixes it for real.</div>
+<span class="post-card-read">Read article →</span>
+</a>
+
+<a class="post-card" href="/pages/blog/why-coffee-is-so-expensive-2026/">
+<div class="post-card-meta">
+<span class="post-tag">Consumer Prices</span>
+<span class="post-date">June 1, 2026</span>
+</div>
+<div class="post-card-title">Why Is Coffee So Expensive Right Now? The Real Reasons in 2026</div>
+<div class="post-card-desc">A 25.9oz can of Folgers hit $16.99 at Kroger in 2025. Two years ago it was half that. Here's exactly why coffee prices are so high — with real shelf prices, dates, and what comes next.</div>
+<span class="post-card-read">Read article →</span>
+</a>
+
+<nav class="blog-pagination" aria-label="Blog pages">
+<a href="/pages/blog/">← Newer posts</a>
+<span class="current-page">Page 2 of 3</span>
+<a href="/pages/blog/page-3/">Older posts →</a>
+</nav>
+
+</div>
+</main>
+</body>
+</html>

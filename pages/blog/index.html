@@ -73,6 +73,11 @@ body {
 @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
 .main { animation: fadeUp 0.6s ease both; }
 @media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } .post-card { padding: 20px; } }
+
+.blog-pagination { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 28px; flex-wrap: wrap; }
+.blog-pagination a, .blog-pagination span { font-size: 0.78rem; font-weight: 600; text-decoration: none; border: 1px solid var(--border); background: var(--surface); color: var(--ink-muted); border-radius: 999px; padding: 9px 14px; }
+.blog-pagination a:hover { color: var(--accent); border-color: rgba(79,70,229,0.30); background: var(--accent-light); }
+.blog-pagination .current-page { color: var(--accent); background: var(--accent-light); border-color: rgba(79,70,229,0.22); }
 </style>
 </head>
 <body>
@@ -85,7 +90,6 @@ body {
 </div>
 <div class="post-list">
 
-
 <a class="post-card" href="/pages/blog/browser-cache-ruined-my-day/">
 <div class="post-card-meta">
 <span class="post-tag">Developer Tools</span>
@@ -95,7 +99,6 @@ body {
 <div class="post-card-desc">Ctrl+Shift+R doesn't always work. Here's why browser cache costs developers hours every week — and how NukeRefresh's five escalating strategies actually fix it.</div>
 <span class="post-card-read">Read article →</span>
 </a>
-
 
 <a class="post-card" href="/pages/blog/search-field-2036/">
 <div class="post-card-meta">
@@ -107,7 +110,6 @@ body {
 <span class="post-card-read">Read article →</span>
 </a>
 
-
 <a class="post-card" href="/pages/blog/why-chatgpt-atlas-feels-so-good/">
 <div class="post-card-meta">
 <span class="post-tag">AI Tools</span>
@@ -117,7 +119,6 @@ body {
 <div class="post-card-desc">ChatGPT Atlas feels different because it is not just an AI extension. It is a browser built around the assistant, with Chromium underneath and Agent mode inside the workflow.</div>
 <span class="post-card-read">Read article →</span>
 </a>
-
 
 <a class="post-card" href="/pages/blog/the-kill-switch-and-the-price-war/">
 <div class="post-card-meta">
@@ -129,7 +130,6 @@ body {
 <span class="post-card-read">Read article →</span>
 </a>
 
-
 <a class="post-card" href="/pages/blog/tiny-text-files-that-taught-the-internet-manners/">
 <div class="post-card-meta">
 <span class="post-tag">Tech</span>
@@ -140,8 +140,7 @@ body {
 <span class="post-card-read">Read article →</span>
 </a>
 
-
-    <a class="post-card" href="/pages/blog/machine-readable-web-ai-bots/">
+<a class="post-card" href="/pages/blog/machine-readable-web-ai-bots/">
 <div class="post-card-meta">
 <span class="post-tag">AI Trends</span>
 <span class="post-date">June 20, 2026</span>
@@ -150,15 +149,7 @@ body {
 <div class="post-card-desc">The web already has machine-readable layers for search engines, apps, crawlers, and now AI assistants. Here is why the boring version of a page may be the most important one.</div>
 <span class="post-card-read">Read article →</span>
 </a>
-<a class="post-card" href="/pages/blog/why-youtube-still-knows-you-logged-out/">
-<div class="post-card-meta">
-<span class="post-tag">Privacy</span>
-<span class="post-date">June 20, 2026</span>
-</div>
-<div class="post-card-title">Why YouTube Still Knows You, Even When You're "Logged Out"</div>
-<div class="post-card-desc">Signed out of YouTube but the recommendations still look personal? The real explanation isn't paranoia — it's shared browser sessions and device fingerprinting working together, and only one of them is fixed by clearing cookies.</div>
-<span class="post-card-read">Read article →</span>
-</a>
+
 <a class="post-card" href="/pages/blog/why-shopify-won-ecommerce-dominance-2026/">
 <div class="post-card-meta">
 <span class="post-tag">Tech</span>
@@ -168,6 +159,17 @@ body {
 <div class="post-card-desc">How Shopify went from a snowboard shop hack to powering millions of stores while old-school self-hosted platforms faded. Plus why specialists like Cloudflare dominate their lane without trying to do everything.</div>
 <span class="post-card-read">Read article →</span>
 </a>
+
+<a class="post-card" href="/pages/blog/why-youtube-still-knows-you-logged-out/">
+<div class="post-card-meta">
+<span class="post-tag">Privacy</span>
+<span class="post-date">June 20, 2026</span>
+</div>
+<div class="post-card-title">Why YouTube Still Knows You, Even When You're "Logged Out"</div>
+<div class="post-card-desc">Signed out of YouTube but the recommendations still look personal? The real explanation isn't paranoia — it's shared browser sessions and device fingerprinting working together, and only one of them is fixed by clearing cookies.</div>
+<span class="post-card-read">Read article →</span>
+</a>
+
 <a class="post-card" href="/pages/blog/seo-keyword-doorway-pages-google-spam/">
 <div class="post-card-meta">
 <span class="post-tag">Tech</span>
@@ -177,6 +179,7 @@ body {
 <div class="post-card-desc">A plain-English history of SEO from keyword stuffing and doorway pages to AI spam, Maps ads, human click farms, and the boring tactics that still win.</div>
 <span class="post-card-read">Read article →</span>
 </a>
+
 <a class="post-card" href="/pages/blog/your-iphone-cant-check-in/">
 <div class="post-card-meta">
 <span class="post-tag">Tech</span>
@@ -186,6 +189,7 @@ body {
 <div class="post-card-desc">Android lets third-party apps ping home on a schedule. Apple doesn't — unless it's Apple's own app. Here's what that gap means when someone's safety depends on it, and why the hiker with an Android gets rescued first.</div>
 <span class="post-card-read">Read article →</span>
 </a>
+
 <a class="post-card" href="/pages/blog/the-bot-tax-is-coming/">
 <div class="post-card-meta">
 <span class="post-tag">AI Trends</span>
@@ -195,6 +199,7 @@ body {
 <div class="post-card-desc">AI companies have been scraping the web for free for years. Cloudflare, Akamai, and others are quietly building a toll road — and site owners may finally get a cut. Here's how it works and why it matters.</div>
 <span class="post-card-read">Read article →</span>
 </a>
+
 <a class="post-card" href="/pages/blog/why-your-address-change-doesnt-stick/">
 <div class="post-card-meta">
 <span class="post-tag">Tech</span>
@@ -204,6 +209,7 @@ body {
 <div class="post-card-desc">You updated your address on Amazon, fixed your email on Fidelity, changed your phone number on eBay. A month later, the old one's back. This isn't a glitch — it's a decades-old structural problem that billion-dollar companies still haven't solved, and the reason why is more embarrassing than you'd expect.</div>
 <span class="post-card-read">Read article →</span>
 </a>
+
 <a class="post-card" href="/pages/blog/how-ai-knows-he-or-she/">
 <div class="post-card-meta">
 <span class="post-tag">AI Trends</span>
@@ -213,6 +219,7 @@ body {
 <div class="post-card-desc">Picking the right pronoun sounds trivial — until you're the software that has to do it. From baby-name lists to grammar sieves to billion-parameter models, here's how machines learned to read gender from text, the brain-teaser that used to stump them, and why the smartest systems are learning to just ask instead.</div>
 <span class="post-card-read">Read article →</span>
 </a>
+
 <a class="post-card" href="/pages/blog/what-is-a-bot/">
 <div class="post-card-meta">
 <span class="post-tag">Tech</span>
@@ -222,6 +229,7 @@ body {
 <div class="post-card-desc">Half the internet's traffic isn't human anymore. What a bot actually is, the good and bad kinds, whether "agent" is just a smarter word for it, who really builds them, where they come from, what they're paid in besides money, and how the fight is fought — from your robots.txt to Cloudflare's AI maze.</div>
 <span class="post-card-read">Read article →</span>
 </a>
+
 <a class="post-card" href="/pages/blog/how-ai-actually-searches-the-web/">
 <div class="post-card-meta">
 <span class="post-tag">AI Trends</span>
@@ -231,6 +239,7 @@ body {
 <div class="post-card-desc">There are now two species of AI searching the web: the kind baked into Google, which owns the map, and assistants like Claude, which only borrow it. How each one hunts, what it trusts, how it handles VINs and tracking codes — and why the ten blue links are quietly dying.</div>
 <span class="post-card-read">Read article →</span>
 </a>
+
 <a class="post-card" href="/pages/blog/ai-export-controls-crypto-wars/">
 <div class="post-card-meta">
 <span class="post-tag">AI Trends</span>
@@ -240,6 +249,7 @@ body {
 <div class="post-card-desc">Washington just pulled Anthropic's two most powerful models under export controls — the same legal weapon it once aimed at encryption. The 1990s parallel, the real dispute behind the headline, and why a model takedown sets a precedent every AI lab should worry about.</div>
 <span class="post-card-read">Read article →</span>
 </a>
+
 <a class="post-card" href="/pages/blog/claude-in-chrome-what-to-expect/">
 <div class="post-card-meta">
 <span class="post-tag">AI Tools</span>
@@ -249,6 +259,7 @@ body {
 <div class="post-card-desc">An AI that clicks, types, and fills forms in your real browser — while you watch. What the confusing "plan" step actually means, where the stop button lives, what it's smart and dumb at, and how ChatGPT, Gemini, and Perplexity compare.</div>
 <span class="post-card-read">Read article →</span>
 </a>
+
 <a class="post-card" href="/pages/blog/ai-handoff-file/">
 <div class="post-card-meta">
 <span class="post-tag">AI Tools</span>
@@ -258,189 +269,14 @@ body {
 <div class="post-card-desc">Every AI session forgets everything the moment it ends. A handoff file is how you cheat that amnesia — why .md won the job, what happens without one, and whether a cheap model can use notes written by a smart one.</div>
 <span class="post-card-read">Read article →</span>
 </a>
-<a class="post-card" href="/pages/blog/crude-oil-futures-price-manipulation/">
-<div class="post-card-meta">
-<span class="post-tag">Energy</span>
-<span class="post-date">June 9, 2026</span>
+
+<nav class="blog-pagination" aria-label="Blog pages">
+<span aria-hidden="true">&nbsp;</span>
+<span class="current-page">Page 1 of 3</span>
+<a href="/pages/blog/page-2/">Older posts →</a>
+</nav>
+
 </div>
-<div class="post-card-title">Why Oil Futures Don't Tell You the Truth</div>
-<div class="post-card-desc">Crude oil and Brent futures are shaped by politics, leverage, and coordinated messaging as much as supply and demand. Here is what they are, why they lag reality, who benefits from keeping prices low, and what the real timeline looks like.</div>
-<span class="post-card-read">Read article →</span>
-</a>
-<a class="post-card" href="/pages/blog/why-ai-customer-service-is-so-bad/">
-<div class="post-card-meta">
-<span class="post-tag">AI Trends</span>
-<span class="post-date">June 9, 2026</span>
-</div>
-<div class="post-card-title">Why AI Customer Service Still Feels Like It Was Designed by Your Enemy</div>
-<div class="post-card-desc">Phone robots and chatbots are not always broken by accident. Here is why customer-service AI feels hostile, what companies are optimizing for, and where the technology actually works.</div>
-<span class="post-card-read">Read article →</span>
-</a>
-<a class="post-card" href="/pages/blog/self-driving-cars-trucks-can-be-fooled/">
-<div class="post-card-meta">
-<span class="post-tag">AI Trends</span>
-<span class="post-date">June 8, 2026</span>
-</div>
-<div class="post-card-title">Self-Driving Cars Can See Everything — Except the Trick</div>
-<div class="post-card-desc">Self-driving cars and trucks do not just need better AI. They need to survive a world where the road itself can lie — through spoofed sensors, fake scenes, confused maps, cargo scams, and people who discover that making a robot stop can be profitable.</div>
-<span class="post-card-read">Read article →</span>
-</a>
-<a class="post-card" href="/pages/blog/truth-machine-ai-disinformation/">
-<div class="post-card-meta">
-<span class="post-tag">AI Trends</span>
-<span class="post-date">June 8, 2026</span>
-</div>
-<div class="post-card-title">The Truth Machine Nobody Wants to Build</div>
-<div class="post-card-desc">An AI that finds truth sounds obvious. The problem is that truth is not just a search result — and disinformation actors know exactly how to exploit the machines that pretend it is.</div>
-<span class="post-card-read">Read article →</span>
-</a>
-<a class="post-card" href="/pages/blog/github-action-inject-code-all-html-pages/">
-<div class="post-card-meta">
-<span class="post-tag">Developer Tools</span>
-<span class="post-date">June 8, 2026</span>
-</div>
-<div class="post-card-title">The Three-Minute GitHub Action That Injects Code Into Every Page You'll Ever Deploy</div>
-<div class="post-card-desc">You set it up once. Then every HTML file you push — now and forever — automatically gets your analytics snippet, cookie banner, or any other code injected before deployment. No templates. No manual edits. No forgetting.</div>
-<span class="post-card-read">Read article →</span>
-</a>
-<a class="post-card" href="/pages/blog/asic-vs-gpu-mining-versatility/">
-<div class="post-card-meta">
-<span class="post-tag">Tech</span>
-<span class="post-date">June 8, 2026</span>
-</div>
-<div class="post-card-title">ASIC Miners vs GPUs: The Specialist vs. the Generalist</div>
-<div class="post-card-desc">One does one thing at extraordinary speed and becomes a pricey paperweight when that thing stops paying. The other mines crypto, trains AI, renders 3D scenes, and heats your house. A plain-English breakdown of both — and which actually holds value long-term.</div>
-<span class="post-card-read">Read article →</span>
-</a>
-<a class="post-card" href="/pages/blog/displayport-vs-hdmi/">
-<div class="post-card-meta">
-<span class="post-tag">Tech</span>
-<span class="post-date">June 8, 2026</span>
-</div>
-<div class="post-card-title">DisplayPort vs HDMI: Which Cable Actually Wins in 2026?</div>
-<div class="post-card-desc">You're staring at the back of a monitor with two ports that look nearly identical. There's actually a billion-dollar standards war behind that choice — and a right answer that depends on what you're doing.</div>
-<span class="post-card-read">Read article →</span>
-</a>
-<a class="post-card" href="/pages/blog/strait-of-hormuz-oil-crisis-rationing-timeline/">
-<div class="post-card-meta">
-<span class="post-tag">Energy</span>
-<span class="post-date">June 6, 2026</span>
-</div>
-<div class="post-card-title">The Strait of Hormuz Oil Crisis: How Close Are We to Rationing?</div>
-<div class="post-card-desc">A fifth of the world's oil flows through one narrow strait — and it's been shut for three months. Where supply actually stands, who's already rationing fuel, when the U.S. feels it, which states get hit first, and how bad it could get.</div>
-<span class="post-card-read">Read article →</span>
-</a>
-<a class="post-card" href="/pages/blog/deepseek-ai-china-openai-future/">
-<div class="post-card-meta">
-<span class="post-tag">AI Trends</span>
-<span class="post-date">June 5, 2026</span>
-</div>
-<div class="post-card-title">DeepSeek, OpenAI, and the New AI Cold War: Is China's Cheaper AI the Future?</div>
-<div class="post-card-desc">A Chinese AI company most people had never heard of suddenly made Silicon Valley look over its shoulder. DeepSeek, OpenAI, copying claims, security risks, cheaper models, and who may win the next phase of AI.</div>
-<span class="post-card-read">Read article →</span>
-</a>
-<a class="post-card" href="/pages/blog/openai-anthropic-ipo-outcomes-spacex/">
-<div class="post-card-meta">
-<span class="post-tag">AI Markets</span>
-<span class="post-date">June 5, 2026</span>
-</div>
-<div class="post-card-title">OpenAI vs. Anthropic IPOs: Possible Outcomes, Probable Winners, and the SpaceX Shadow</div>
-<div class="post-card-desc">OpenAI vs Anthropic IPO outlook: possible outcomes, valuation risks, AI bubble fears, and how SpaceX changes the market story.</div>
-<span class="post-card-read">Read article →</span>
-</a>
-<a class="post-card" href="/pages/blog/why-home-insurance-is-so-expensive/">
-<div class="post-card-meta">
-<span class="post-tag">Insurance</span>
-<span class="post-date">June 4, 2026</span>
-</div>
-<div class="post-card-title">Why Home Insurance Is So Expensive (and Why Some Places Can't Get It at Any Price)</div>
-<div class="post-card-desc">Your premium went up, a neighbor got dropped, and whole towns can't buy coverage. It's not greed — it's the math. FAIR plans, the war exclusion, why flood and quake aren't in your policy, and who really pays when a last-resort plan runs dry.</div>
-<span class="post-card-read">Read article →</span>
-</a>
-<a class="post-card" href="/pages/blog/how-ai-really-learns-human-trainers/">
-<div class="post-card-meta">
-<span class="post-tag">AI Trends</span>
-<span class="post-date">June 4, 2026</span>
-</div>
-<div class="post-card-title">How AI Really Learns — and the Hidden Humans Paid $2 an Hour to Teach It</div>
-<div class="post-card-desc">AI feels like magic, but it was taught — partly by ghost workers earning less than your coffee. How AI actually learns, who trains it, the wages behind it, and why the smartest AI in the world may be one you're never allowed to use.</div>
-<span class="post-card-read">Read article →</span>
-</a>
-<a class="post-card" href="/pages/blog/spacex-ipo-spcx-ai-predictions/">
-<div class="post-card-meta">
-<span class="post-tag">AI Comparison</span>
-<span class="post-date">June 4, 2026</span>
-</div>
-<div class="post-card-title">SpaceX IPO (SPCX): What 5 AI Models Predicted the Week Before the $135 Debut</div>
-<div class="post-card-desc">One week before the largest IPO on record, we asked ChatGPT, Claude, Gemini, Copilot, and Grok to project SPCX from its $135 offer. Three copied the sample, two went their own way — and a time capsule was born.</div>
-<span class="post-card-read">Read article →</span>
-</a>
-<a class="post-card" href="/pages/blog/death-of-open-web-ai-bot-lockdown/">
-<div class="post-card-meta">
-<span class="post-tag">AI Trends</span>
-<span class="post-date">June 3, 2026</span>
-</div>
-<div class="post-card-title">The Death of the Open Web: How AI Bots Are Forcing a Total Internet Lockdown</div>
-<div class="post-card-desc">The era of the free, easily scrapeable internet is officially coming to an end. As aggressive AI web crawlers pillage independent websites for training data, the digital landscape is rapidly morphing into a fortress of aggressive paywalls and digital checkpoints.</div>
-<span class="post-card-read">Read article →</span>
-</a>
-<a class="post-card" href="/pages/blog/does-perplexity-pay-openai/">
-<div class="post-card-meta">
-<span class="post-tag">AI Tools</span>
-<span class="post-date">June 3, 2026</span>
-</div>
-<div class="post-card-title">Does Perplexity Pay OpenAI? How AI Search Engines Pay for Models and Content</div>
-<div class="post-card-desc">When you ask Perplexity or ChatGPT a question, up to three separate bills get paid behind the scenes — compute, model access, and content. Here's who pays for what, and why the content bill is the one ending up in court.</div>
-<span class="post-card-read">Read article →</span>
-</a>
-<a class="post-card" href="/pages/blog/how-to-submit-an-app-to-apple-and-google/">
-<div class="post-card-meta">
-<span class="post-tag">Developer Tools</span>
-<span class="post-date">June 3, 2026</span>
-</div>
-<div class="post-card-title">How to Submit an App to Apple and Google: The Big-Picture Guide for 2026</div>
-<div class="post-card-desc">Fees, D-U-N-S numbers, the 12-tester rule, who got grandfathered in 2023, and the EU deadlines that quietly remove apps — the full big-picture map for publishing on the App Store and Google Play.</div>
-<span class="post-card-read">Read article →</span>
-</a>
-<a class="post-card" href="/pages/blog/why-coffee-is-so-expensive-2026/">
-<div class="post-card-meta">
-<span class="post-tag">Consumer Prices</span>
-<span class="post-date">June 1, 2026</span>
-</div>
-<div class="post-card-title">Why Is Coffee So Expensive Right Now? The Real Reasons in 2026</div>
-<div class="post-card-desc">A 25.9oz can of Folgers hit $16.99 at Kroger in 2025. Two years ago it was half that. Here's exactly why coffee prices are so high — with real shelf prices, dates, and what comes next.</div>
-<span class="post-card-read">Read article →</span>
-</a>
-<a class="post-card" href="/pages/blog/ubuntu-4-digit-pin-login/">
-<div class="post-card-meta">
-<span class="post-tag">Linux</span>
-<span class="post-date">June 1, 2026</span>
-</div>
-<div class="post-card-title">How to Set a 4-Digit PIN on Ubuntu — The Script That Actually Works</div>
-<div class="post-card-desc">Every guide says edit pwquality.conf and run passwd. It doesn't work. Here's why Ubuntu keeps rejecting your short PIN — and a free script that fixes it for real.</div>
-<span class="post-card-read">Read article →</span>
-</a>
-<a class="post-card" href="/pages/blog/google-drive-vs-onedrive-file-transfer-developers/">
-<div class="post-card-meta">
-<span class="post-tag">Developer Tools</span>
-<span class="post-date">May 31, 2026</span>
-</div>
-<div class="post-card-title">Google Drive vs OneDrive for Developers: Which Is Better for Sending Files to Yourself?</div>
-<div class="post-card-desc">Google Drive vs OneDrive for developers: blocked file types, privacy, security, corporate adoption, and which one is better for sending files to yourself.</div>
-<span class="post-card-read">Read article →</span>
-</a>
-<a class="post-card" href="/pages/blog/why-new-catastrophe-adjusters-struggle-real-goal/">
-<div class="post-card-meta">
-<span class="post-tag">Insurance Work</span>
-<span class="post-date">May 31, 2026</span>
-</div>
-<div class="post-card-title">Why New Catastrophe Adjusters Struggle: They Don't Know the Real Goal</div>
-<div class="post-card-desc">Most new catastrophe adjusters do not fail because they lack another Xactimate certificate. They struggle because nobody tells them the real goal: close the claim by producing the right documents cleanly.</div>
-<span class="post-card-read">Read article →</span>
-</a>
-<a class="post-card" href="/pages/blog/why-websites-make-you-prove-youre-human/">
-<div class="post-card-meta">
-<span class="post-tag">Privacy</span>
-<span class="post-date">May 31, 2026</span>
-</div>
-<div class="post-card-title">Why websites make you prove you're human — and what that checkbox really
+</main>
+</body>
+</html>

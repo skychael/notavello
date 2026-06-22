@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Export — Page 3 | Notavello</title>
+<meta content="Older Notavello posts from The Export, page 3 of 3." name="description"/>
+<meta content="index, follow" name="robots"/>
+<link href="https://notavello.com/pages/blog/page-3/" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="https://notavello.com/pages/blog/page-3/" property="og:url"/>
+<meta content="The Export — Page 3 | Notavello" property="og:title"/>
+<meta content="Older Notavello posts from The Export, page 3 of 3." property="og:description"/>
+<meta content="Notavello" property="og:site_name"/>
+<meta content="https://notavello.com/og-image.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="The Export — Page 3 | Notavello" name="twitter:title"/>
+<meta content="https://notavello.com/og-image.png" name="twitter:image"/>
+<link href="/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&amp;family=Lora:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet"/>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+.main { max-width: 720px; margin: 0 auto; padding: 64px 24px 100px; }
+.blog-header { margin-bottom: 56px; }
+.blog-byline { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); margin-bottom: 12px; }
+.blog-title { font-family: 'Lora', serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 600; color: var(--ink); line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 16px; }
+.blog-title em { font-style: italic; color: var(--accent); }
+.blog-desc { font-size: 1rem; color: var(--ink-muted); line-height: 1.7; }
+.post-list { display: flex; flex-direction: column; gap: 2px; }
+.post-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px 32px; text-decoration: none; color: inherit; display: block; transition: box-shadow 0.2s, border-color 0.2s; }
+.post-card:hover { box-shadow: 0 4px 24px rgba(79,70,229,0.10); border-color: rgba(79,70,229,0.25); }
+.post-card + .post-card { margin-top: 12px; }
+.post-card-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; }
+.post-tag { font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 3px 9px; border-radius: 20px; }
+.post-date { font-size: 0.75rem; color: var(--ink-faint); }
+.post-card-title { font-family: 'Lora', serif; font-size: 1.15rem; font-weight: 600; color: var(--ink); line-height: 1.35; margin-bottom: 8px; letter-spacing: -0.01em; }
+.post-card-desc { font-size: 0.85rem; color: var(--ink-muted); line-height: 1.65; margin-bottom: 14px; }
+.post-card-read { font-size: 0.78rem; font-weight: 600; color: var(--accent); }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } .post-card { padding: 20px; } }
+
+.blog-pagination { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 28px; flex-wrap: wrap; }
+.blog-pagination a, .blog-pagination span { font-size: 0.78rem; font-weight: 600; text-decoration: none; border: 1px solid var(--border); background: var(--surface); color: var(--ink-muted); border-radius: 999px; padding: 9px 14px; }
+.blog-pagination a:hover { color: var(--accent); border-color: rgba(79,70,229,0.30); background: var(--accent-light); }
+.blog-pagination .current-page { color: var(--accent); background: var(--accent-light); border-color: rgba(79,70,229,0.22); }
+</style>
+</head>
+<body>
+<!--HEADER-->
+<main class="main">
+<div class="blog-header">
+<p class="blog-byline">By Notavello</p>
+<h1 class="blog-title">The <em>Export</em></h1>
+<p class="blog-desc">Honest tips, hidden quirks, and practical insights about AI tools — from the people who use them all day.</p>
+</div>
+<div class="post-list">
+
+<a class="post-card" href="/pages/blog/github-is-a-safety-net/">
+<div class="post-card-meta">
+<span class="post-tag">Developer Tools</span>
+<span class="post-date">May 31, 2026</span>
+</div>
+<div class="post-card-title">GitHub is a safety net — and that&#x27;s the part the forums keep missing</div>
+<div class="post-card-desc">Reddit calls GitHub overkill for small sites. They&#x27;re answering a different question — and missing the real point: it&#x27;s your undo button when things break.</div>
+<span class="post-card-read">Read article →</span>
+</a>
+
+<a class="post-card" href="/pages/blog/google-drive-vs-onedrive-file-transfer-developers/">
+<div class="post-card-meta">
+<span class="post-tag">Developer Tools</span>
+<span class="post-date">May 31, 2026</span>
+</div>
+<div class="post-card-title">Google Drive vs OneDrive for Developers: Which Is Better for Sending Files to Yourself?</div>
+<div class="post-card-desc">Google Drive vs OneDrive for developers: blocked file types, privacy, security, corporate adoption, and which one is better for sending files to yourself.</div>
+<span class="post-card-read">Read article →</span>
+</a>
+
+<a class="post-card" href="/pages/blog/why-new-catastrophe-adjusters-struggle-real-goal/">
+<div class="post-card-meta">
+<span class="post-tag">Insurance Work</span>
+<span class="post-date">May 31, 2026</span>
+</div>
+<div class="post-card-title">Why New Catastrophe Adjusters Struggle: They Don't Know the Real Goal</div>
+<div class="post-card-desc">Most new catastrophe adjusters do not fail because they lack another Xactimate certificate. They struggle because nobody tells them the real goal: close the claim by producing the right documents cleanly.</div>
+<span class="post-card-read">Read article →</span>
+</a>
+
+<a class="post-card" href="/pages/blog/why-websites-make-you-prove-youre-human/">
+<div class="post-card-meta">
+<span class="post-tag">Privacy</span>
+<span class="post-date">May 31, 2026</span>
+</div>
+<div class="post-card-title">Why websites make you prove you&#x27;re human — and what that checkbox really does</div>
+<div class="post-card-desc">That &#x27;I&#x27;m not a robot&#x27; box isn&#x27;t testing your clicks — it&#x27;s reading you. How human verification really works, why it&#x27;s breaking, and what&#x27;s next.</div>
+<span class="post-card-read">Read article →</span>
+</a>
+
+<a class="post-card" href="/pages/blog/why-website-changes-dont-show-up/">
+<div class="post-card-meta">
+<span class="post-tag">Developer Tools</span>
+<span class="post-date">May 31, 2026</span>
+</div>
+<div class="post-card-title">Why Your Website Changes Won&#x27;t Show Up — and How to Find the Real Cause</div>
+<div class="post-card-desc">You edit a page but the old version won&#x27;t budge. A plain-English guide to cache, redirects, and 404s — and the quick tests that find the real cause.</div>
+<span class="post-card-read">Read article →</span>
+</a>
+
+<a class="post-card" href="/pages/blog/how-ai-helps-you-build-android-apps/">
+<div class="post-card-meta">
+<span class="post-tag">AI Tools</span>
+<span class="post-date">May 30, 2026</span>
+</div>
+<div class="post-card-title">How AI Can Help You Build Your First Android App</div>
+<div class="post-card-desc">AI tools like Gemini inside Android Studio make building your first app easier than ever — even if you&#x27;ve never coded. Here&#x27;s the full path from idea to app store.</div>
+<span class="post-card-read">Read article →</span>
+</a>
+
+<a class="post-card" href="/pages/blog/how-to-guide-claude-through-file-edits/">
+<div class="post-card-meta">
+<span class="post-tag">AI Tools</span>
+<span class="post-date">May 30, 2026</span>
+</div>
+<div class="post-card-title">How to Guide Claude Through File Edits Without Losing Control</div>
+<div class="post-card-desc">Claude is fast at editing your files — but it can&#x27;t see outside your site. Here&#x27;s how to stay in control: check external links, catch silent changes, and avoid context meltdown.</div>
+<span class="post-card-read">Read article →</span>
+</a>
+
+<a class="post-card" href="/pages/blog/chrome-firefox-chromium-privacy-comparison/">
+<div class="post-card-meta">
+<span class="post-tag">Privacy</span>
+<span class="post-date">May 29, 2026</span>
+</div>
+<div class="post-card-title">Chrome, Firefox, and Chromium — What Your Browser Actually Knows About You</div>
+<div class="post-card-desc">Chrome, Chromium, and Firefox side by side — what each one collects, what it shares, and which one actually respects your privacy. In plain English.</div>
+<span class="post-card-read">Read article →</span>
+</a>
+
+<a class="post-card" href="/pages/blog/claude-max-model-power-guide/">
+<div class="post-card-meta">
+<span class="post-tag">AI Tools</span>
+<span class="post-date">May 29, 2026</span>
+</div>
+<div class="post-card-title">Claude at Full Power — What the Highest AI Tier Actually Does</div>
+<div class="post-card-desc">What Claude&#x27;s top-tier model actually does that others don&#x27;t: live file processing, real code execution, completed file output, and why your usage bar matters more than you think.</div>
+<span class="post-card-read">Read article →</span>
+</a>
+
+<a class="post-card" href="/pages/blog/github-web-ui-limits-command-line-vs-desktop/">
+<div class="post-card-meta">
+<span class="post-tag">Developer Tools</span>
+<span class="post-date">May 29, 2026</span>
+</div>
+<div class="post-card-title">The GitHub Wall Nobody Warns You About — And What To Do When You Hit It</div>
+<div class="post-card-desc">Most people hit the GitHub web UI wall by accident. Here&#x27;s what it is, why it happens, and an honest comparison of the two ways out — command line versus GitHub Desktop.</div>
+<span class="post-card-read">Read article →</span>
+</a>
+
+<a class="post-card" href="/pages/blog/what-is-github-in-plain-english/">
+<div class="post-card-meta">
+<span class="post-tag">Developer Tools</span>
+<span class="post-date">May 29, 2026</span>
+</div>
+<div class="post-card-title">What Is GitHub — And Why Do Developers Keep Talking About It?</div>
+<div class="post-card-desc">GitHub explained without the jargon. What it actually is, why developers use it, and why it matters even if you&#x27;ve never written a line of code.</div>
+<span class="post-card-read">Read article →</span>
+</a>
+
+<a class="post-card" href="/pages/blog/claude-vs-copilot-for-coding-honest-comparison/">
+<div class="post-card-meta">
+<span class="post-tag">AI Comparison</span>
+<span class="post-date">May 28, 2026</span>
+</div>
+<div class="post-card-title">Two Weeks With Claude, One Day With Copilot — Why I Think Claude Wins at Coding</div>
+<div class="post-card-desc">An honest comparison of Claude vs Microsoft Copilot for real coding work. Which one actually helps you ship? Spoiler: I&#x27;m a paid Claude user and I&#x27;m telling you anyway.</div>
+<span class="post-card-read">Read article →</span>
+</a>
+
+<a class="post-card" href="/pages/blog/why-copilot-silently-cuts-off-your-code/">
+<div class="post-card-meta">
+<span class="post-tag">AI Tools</span>
+<span class="post-date">May 28, 2026</span>
+</div>
+<div class="post-card-title">Why Copilot Silently Cuts Off Your Code</div>
+<div class="post-card-desc">Microsoft Copilot has an output limit it won&#x27;t tell you about. Most developers discover it the hard way — broken code, no warning. Here&#x27;s what&#x27;s happening and what to do.</div>
+<span class="post-card-read">Read article →</span>
+</a>
+
+<nav class="blog-pagination" aria-label="Blog pages">
+<a href="/pages/blog/page-2/">← Newer posts</a>
+<span class="current-page">Page 3 of 3</span>
+<span aria-hidden="true">&nbsp;</span>
+</nav>
+
+</div>
+</main>
+</body>
+</html>
