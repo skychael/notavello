@@ -1,0 +1,153 @@
+<!-- Notavello DesktopCorral placeholder-0.1 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>DesktopCorral — Notavello</title>
+<meta name="description" content="DesktopCorral page placeholder."/>
+<meta name="robots" content="noindex, follow"/>
+<link rel="canonical" href="https://notavello.com/tools/desktopcorral/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://notavello.com/tools/desktopcorral/"/>
+<meta property="og:title" content="DesktopCorral — Notavello"/>
+<meta property="og:description" content="DesktopCorral page placeholder."/>
+<meta property="og:site_name" content="Notavello"/>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --border: #E2E8F0; --radius: 24px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+body {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Sora', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header {
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  padding: 16px 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.03em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+.logo-icon {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.85rem;
+  box-shadow: 0 2px 8px rgba(79,70,229,0.35);
+}
+.logo span { color: var(--accent); }
+.header-login {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+  padding: 7px 18px;
+  border: 1.5px solid rgba(79,70,229,0.3);
+  border-radius: 8px;
+  background: var(--accent-light);
+}
+.main {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 72px 24px 100px;
+}
+.placeholder-card {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: clamp(32px, 6vw, 56px);
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+.kicker {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--ink-faint);
+  margin-bottom: 14px;
+}
+h1 {
+  font-family: 'Lora', serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 14px;
+}
+p {
+  color: var(--ink-muted);
+  line-height: 1.7;
+  max-width: 520px;
+  margin: 0 auto 24px;
+}
+.back-link {
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: none;
+}
+.back-link:hover { text-decoration: underline; }
+@media (max-width: 640px) {
+  .header { padding: 14px 20px; }
+  .main { padding: 48px 16px 80px; }
+  .placeholder-card { text-align: left; }
+  p { margin-left: 0; }
+}
+</style>
+</head>
+<body>
+<header class="header">
+  <a class="logo" href="/">
+    <span class="logo-icon">▣</span>
+    <span>Nota</span>vello
+  </a>
+  <a class="header-login" href="/login/">Log In</a>
+</header>
+
+<main class="main">
+  <section class="placeholder-card">
+    <div class="kicker">DesktopCorral</div>
+    <h1>DesktopCorral</h1>
+    <p>This page is a placeholder for the DesktopCorral download and details page.</p>
+    <a class="back-link" href="/tools/">Back to tools →</a>
+  </section>
+</main>
+
+<script data-goatcounter="https://notavello.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
