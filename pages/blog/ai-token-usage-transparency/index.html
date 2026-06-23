@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>The AI Meter Is Running. Who’s Checking It? — The Export | Notavello</title>
+<meta name="description" content="AI tools sell access through tokens, prompts, and rolling limits. Who audits the meter when usage changes?"/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/blog/ai-token-usage-transparency/"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://notavello.com/pages/blog/ai-token-usage-transparency/"/>
+<meta property="og:title" content="The AI Meter Is Running. Who’s Checking It?"/>
+<meta property="og:description" content="AI tools sell access through tokens, prompts, and rolling limits. Who audits the meter when usage changes?"/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="The AI Meter Is Running. Who’s Checking It?"/>
+<meta name="twitter:description" content="AI tools sell access through tokens, prompts, and rolling limits. Who audits the meter when usage changes?"/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "The AI Meter Is Running. Who’s Checking It?",
+  "description": "AI tools sell access through tokens, prompts, and rolling limits. Who audits the meter when usage changes?",
+  "url": "https://notavello.com/pages/blog/ai-token-usage-transparency/",
+  "datePublished": "2026-06-23",
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
+.back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; color: var(--ink-muted); text-decoration: none; margin-bottom: 40px; transition: color 0.15s; }
+.back-link:hover { color: var(--accent); }
+.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
+.post-date { font-size: 0.78rem; color: var(--ink-faint); }
+.post-title { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; color: var(--ink); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
+.post-lede { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+.post-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink); }
+.post-body h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 44px 0 16px; letter-spacing: -0.01em; }
+.post-body p { margin-bottom: 20px; color: var(--ink-muted); }
+.post-body p strong { color: var(--ink); font-weight: 600; }
+.post-body ul { margin: 0 0 20px 20px; color: var(--ink-muted); }
+.post-body ul li { margin-bottom: 8px; line-height: 1.7; }
+.callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 32px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.7; }
+.post-footer { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.post-footer-label { font-size: 0.8rem; color: var(--ink-faint); }
+.btn-export { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: opacity 0.2s; }
+.btn-export:hover { opacity: 0.9; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } }
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+
+  <a class="back-link" href="/pages/blog/">← The Export</a>
+
+  <div class="post-meta">
+    <span class="post-tag">AI Trends</span>
+    <span class="post-date">June 23, 2026</span>
+  </div>
+
+  <h1 class="post-title">The AI Meter Is Running. Who’s Checking It?</h1>
+
+  <p class="post-lede">AI tools do not run on magic. They run on compute, tokens, GPUs, queues, and limits. The strange part is not that paid plans have caps. The strange part is how little users can see.</p>
+
+  <div class="post-body">
+
+    <h2>The paid plan is not really unlimited</h2>
+    <p>Most AI subscriptions are sold in soft language: more access, higher limits, priority usage, faster models, better tools. That sounds clean until a paid user hits the wall and discovers the wall moves.</p>
+
+    <p>OpenAI, Anthropic, Google, and other AI companies are not pretending compute is free. Their public help pages describe message caps, rolling reset windows, model-specific limits, feature limits, usage restrictions, and capacity management. Anthropic says Claude Pro usage varies based on message length, attachments, conversation length, model, and feature, and that it may limit usage in other ways to manage capacity and fair access. Google says Gemini Apps limits are compute-based and factor in prompt complexity, model and feature use, and chat length. OpenAI describes Pro tiers largely by usage allowance and says guardrails may sometimes trigger temporary usage restrictions.</p>
+
+    <p>That is not automatically scandalous. A frontier model is expensive to run. GPUs do not accept exposure as payment. The problem is that the user usually cannot see the actual meter.</p>
+
+    <div class="callout">
+      <strong>The problem is not limits.</strong> The problem is invisible limits sold with friendly language. If a product is metered, users deserve to see the meter.
+    </div>
+
+    <h2>Tokens are the meter, but users rarely get the receipt</h2>
+    <p>In plain English, a token is a small piece of text. AI systems count input tokens, output tokens, tool calls, files, images, code execution, web searches, and sometimes the hidden work a model performs before answering. The exact accounting differs by product and feature.</p>
+
+    <p>In API products, this is usually clearer. Developers can see token counts, rate limits, usage dashboards, invoices, and line items. That does not make cloud billing simple, but at least the bill has plumbing behind it. Consumer AI apps are different. A user may pay for a monthly plan and receive a vague message like, “You’ve reached your limit. Try again later.” That is not a receipt. That is a locked door with a polite doormat.</p>
+
+    <p>This gets even messier when tools are involved. A short prompt can be cheap. A short prompt plus a large file, a long conversation, web search, code execution, image generation, or deep reasoning can be expensive. Users feel like they sent one message. The company may count it as a much larger event.</p>
+
+    <p>That matters for Notavello readers because the whole point of exporting, saving, and reviewing AI work is accountability. If someone is trying to understand <a href="/pages/blog/how-ai-actually-searches-the-web/">how an AI assistant actually searches the web</a>, they should also be able to understand what that search cost inside the product they paid for.</p>
+
+    <h2>The company is both seller and meter reader</h2>
+    <p>Here is the uncomfortable part: the AI company sells the plan, defines the allowance, measures the usage, decides what counts, changes the model mix, manages peak demand, detects abuse, enforces restrictions, and explains the result to the customer.</p>
+
+    <p>That is a lot of trust to put in one party.</p>
+
+    <p>Imagine a power company that sold “generous electricity,” refused to show kilowatt-hours, changed the number of “generous units” during hot afternoons, and then told customers to check back in five hours. Nobody would call that a mature utility market. They would call it a hearing.</p>
+
+    <p>AI is not electricity. The product is younger, the costs move faster, and the workload is harder to standardize. Still, the comparison is useful because it shows what consumers eventually demand when a private meter becomes central to everyday life: visible usage, stable terms, meaningful notice, and a way to dispute mistakes.</p>
+
+    <h2>Can they change usage during a subscription?</h2>
+    <p>Often, yes. Most consumer tech terms give companies room to change features, availability, limits, and abuse protections. AI companies also have a legitimate capacity problem. If everyone starts generating long reports at the same time, the service has to protect itself somehow.</p>
+
+    <p>The harder question is not whether limits can ever change. The harder question is whether the change is material enough that a paying user should receive clear notice, a refund option, or at least a public change log.</p>
+
+    <p>If a company sells “higher limits” and later quietly lowers the practical amount of useful work a subscriber can do, the user may never know whether the issue was abuse prevention, peak demand, a new model costing more to run, a temporary outage, a product downgrade, or ordinary exhaustion of their allowance. Those are very different things. The current interface often treats them like the same thing.</p>
+
+    <h2>How many times have limits changed?</h2>
+    <p>That should be an easy question. It is not.</p>
+
+    <p>The major AI companies publish help pages, pricing pages, release notes, and occasional plan updates. Some pages announce upcoming changes. Some mention that usage varies by demand, model, feature, or account. But there is no standard public ledger that says: this plan’s effective allowance changed on these dates, by this much, for these reasons.</p>
+
+    <p>That missing history is the story. If a mobile carrier changes a data plan, the customer expects plan terms. If a cloud provider changes pricing, the customer expects a billing page. If an AI company changes a practical usage ceiling, the customer may get a vague banner and a shrug from the future.</p>
+
+    <div class="callout">
+      <strong>The missing document:</strong> AI plans need a usage-change log. Not a marketing post. A boring table with dates, plans, models, limits, and reasons. Boring is how trust gets built.
+    </div>
+
+    <h2>Is this legal?</h2>
+    <p>This is not legal advice, but the basic consumer-protection issue is straightforward: limits are usually legal when they are disclosed clearly. Deception is the danger zone.</p>
+
+    <p>In the United States, the Federal Trade Commission Act gives the FTC authority over unfair or deceptive acts or practices in commerce, and the FTC says advertising claims must be truthful and not misleading. That does not mean every annoying AI limit is unlawful. It means the marketing promise matters. The checkout page matters. The plan description matters. The tiny “subject to availability” language matters too, but it does not magically excuse every surprise.</p>
+
+    <p>A company that says “unlimited” while heavily throttling ordinary users has a different problem than a company that plainly says, “This plan includes rolling usage limits that vary by model, demand, feature, and safety restrictions.” One version invites enforcement. The other at least tells the buyer what kind of fog they are walking into.</p>
+
+    <p>The legal question is not “Can an AI company ever manage capacity?” Of course it can. The question is whether the consumer was given a fair, clear picture of what they were buying.</p>
+
+    <h2>Peak demand is real. So is the conflict of interest.</h2>
+    <p>AI companies have a reasonable defense: demand spikes, abuse exists, models differ, and expensive features cannot be handed out infinitely for a flat monthly price. That is all true.</p>
+
+    <p>It is also true that the same company benefits financially when it makes limits harder to compare. A transparent meter lets users decide whether a plan is worth it. A blurry meter turns the decision into vibes. Vibes are great for restaurants with candles. They are less charming on a billing page.</p>
+
+    <p>Peak-time adjustment can be appropriate when the alternative is degraded service for everyone. But “we adjust limits during peak demand” should not mean “we can redefine your subscription whenever the GPUs get sweaty.” If dynamic access is part of the deal, the dynamic part should be visible before purchase and understandable after the limit is reached.</p>
+
+    <h2>Other industries already learned this lesson</h2>
+    <p>Telecom is the closest consumer comparison. Internet plans can include data allowances, speed tiers, throttling, and overage rules. The FCC’s broadband labels require providers to disclose key information such as prices, data allowances, and speeds. The label does not make every plan generous. It at least makes the tradeoff visible.</p>
+
+    <p>Cloud computing is the business comparison. AWS Cost and Usage Reports track usage and estimated charges with line items by service, usage type, and operation. Developers still complain about cloud bills, because some traditions must be preserved. But the serious customer can audit what happened.</p>
+
+    <p>Streaming is the cultural comparison. A service can change catalogs, raise prices, add ads, or alter tiers. Consumers hate it, but they understand the shape of the change. AI access is stranger because the catalog, the theater, the projection system, and the ticket scanner can all change at once.</p>
+
+    <p>Airlines and hotels are the dynamic-pricing comparison. Prices change constantly, but usually before the purchase. AI subscriptions raise a different concern: the user buys a month, then discovers the practical amount of work that month can vary depending on invisible capacity decisions.</p>
+
+    <h2>Is oversight coming?</h2>
+    <p>Broad AI oversight is coming, especially in Europe. The EU’s General-Purpose AI Code of Practice is designed to help companies comply with AI Act obligations around transparency, copyright, safety, and security for general-purpose AI models. NIST’s AI Risk Management Framework in the United States also treats accountability and transparency as characteristics of trustworthy AI systems.</p>
+
+    <p>But that is not the same as a consumer token-meter rule. Current AI regulation is more focused on model risk, safety, copyright, discrimination, security, and disclosure when people interact with AI. The boring billing question — “How much did I use, who counted it, and did my plan change?” — is still underdeveloped.</p>
+
+    <p>That gap will probably not last forever. Once AI subscriptions become normal business infrastructure, customers will ask the same questions they ask about cloud, telecom, payroll, and payment processing. What was used? Who used it? What did it cost? What changed? Where is the report?</p>
+
+    <h2>What honest AI usage would look like</h2>
+    <p>An honest consumer AI plan would not need to reveal trade secrets. It would just give users a few basics:</p>
+
+    <ul>
+      <li>A visible usage meter by model and feature.</li>
+      <li>A plain-English explanation of what counts against the limit.</li>
+      <li>A reset timer that is accurate and easy to find.</li>
+      <li>A public change log when plan limits materially change.</li>
+      <li>A distinction between normal usage exhaustion, safety restrictions, outages, and peak-demand throttling.</li>
+      <li>A way to export usage history, especially for business users.</li>
+    </ul>
+
+    <p>None of that would make AI cheap. It would make the deal legible.</p>
+
+    <h2>Can the companies be trusted?</h2>
+    <p>Trust should not mean “believe the company because the landing page has gradients.” Trust should mean the user can verify the important parts.</p>
+
+    <p>AI companies are not automatically dishonest because they manage capacity. They are not automatically trustworthy because they publish a help page. The right standard sits in the middle: clear claims, visible meters, stable terms, honest notices, and enough history for users to compare what they bought with what they received.</p>
+
+    <p>The AI industry likes to talk about alignment. Fine. Start with the billing page.</p>
+
+    <h2>The bottom line</h2>
+    <p>The future of AI access may include subscriptions, credits, priority queues, usage-based pricing, enterprise contracts, and dynamic capacity controls. That is not necessarily bad. It may even be unavoidable.</p>
+
+    <p>But a product that behaves like a utility needs utility-grade transparency. A product that bills like cloud software needs cloud-grade reporting. A product that changes like a streaming service needs clear notice when the deal changes.</p>
+
+    <p>Until then, the AI meter is running. The user just has to trust the company holding it.</p>
+
+
+    <h2>Sources and further reading</h2>
+    <ul>
+      <li><a href="https://help.openai.com/en/articles/9793128-about-chatgpt-pro-tiers">OpenAI Help Center: About ChatGPT Pro tiers</a></li>
+      <li><a href="https://support.claude.com/en/articles/8325606-what-is-the-pro-plan">Claude Help Center: What is the Pro plan?</a></li>
+      <li><a href="https://support.claude.com/en/articles/11647753-how-do-usage-and-length-limits-work">Claude Help Center: How do usage and length limits work?</a></li>
+      <li><a href="https://support.google.com/gemini/answer/16275805?hl=en">Google Gemini Apps Help: Limits and upgrades for Google AI subscribers</a></li>
+      <li><a href="https://www.ftc.gov/legal-library/browse/statutes/federal-trade-commission-act">Federal Trade Commission Act</a></li>
+      <li><a href="https://www.ftc.gov/news-events/topics/truth-advertising">FTC: Truth in Advertising</a></li>
+      <li><a href="https://www.fcc.gov/broadbandlabels">FCC: Broadband Consumer Labels</a></li>
+      <li><a href="https://docs.aws.amazon.com/cur/latest/userguide/what-is-cur.html">AWS Documentation: Cost and Usage Reports</a></li>
+      <li><a href="https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai">European Commission: General-Purpose AI Code of Practice</a></li>
+      <li><a href="https://airc.nist.gov/airmf-resources/airmf/3-sec-characteristics/">NIST AI RMF: AI risks and trustworthiness</a></li>
+    </ul>
+
+  </div>
+
+  <div class="post-footer">
+    <span class="post-footer-label">Looking for more AI tools?</span>
+    <a class="btn-export" href="/tools/">See our free AI tools →</a>
+  </div>
+
+</main>
+
+<!--FOOTER-->
+
+<script data-goatcounter="https://notavello.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script></body>
+</html>
+
