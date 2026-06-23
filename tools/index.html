@@ -1,24 +1,24 @@
-<!-- Notavello tools-1.5 | added SearchClear, NukeRefresh, PocketCreds extension cards -->
+<!-- Notavello tools-1.6 | responsive mobile cards + DesktopCorral download card -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Free AI Tools — Notavello</title>
-<meta name="description" content="Free tools for AI users. Detect AI-written text, export conversations to PDF, and more — no sign-up required."/>
+<meta name="description" content="Free tools for AI users. Detect AI-written text, export conversations to PDF, download small utilities, and more — no sign-up required."/>
 <meta name="robots" content="index, follow"/>
 <link rel="canonical" href="https://notavello.com/tools/"/>
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://notavello.com/tools/"/>
 <meta property="og:title" content="Free AI Tools — Notavello"/>
-<meta property="og:description" content="Free tools for AI users. Detect AI-written text, export conversations to PDF, and more — no sign-up required."/>
+<meta property="og:description" content="Free tools for AI users. Detect AI-written text, export conversations to PDF, download small utilities, and more — no sign-up required."/>
 <meta property="og:site_name" content="Notavello"/>
 <meta property="og:image" content="https://notavello.com/og-image.png"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="Free AI Tools — Notavello"/>
-<meta name="twitter:description" content="Free tools for AI users. Detect AI-written text, export conversations to PDF, and more."/>
+<meta name="twitter:description" content="Free tools for AI users. Detect AI-written text, export conversations to PDF, download small utilities, and more."/>
 <meta name="twitter:image" content="https://notavello.com/og-image.png"/>
 <script type="application/ld+json">
 {
@@ -26,7 +26,7 @@
   "@type": "CollectionPage",
   "name": "Free AI Tools — Notavello",
   "url": "https://notavello.com/tools/",
-  "description": "Free tools for AI users. Detect AI-written text, export conversations to PDF, and more.",
+  "description": "Free tools for AI users. Detect AI-written text, export conversations to PDF, download small utilities, and more.",
   "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" }
 }
 </script>
@@ -109,21 +109,62 @@ body {
 
 /* DOWNLOADS SECTION */
 .downloads-section { margin-bottom: 64px; }
-.downloads-table { width: 100%; border: 1.5px solid var(--border); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); background: var(--surface); border-collapse: collapse; }
-.downloads-table thead tr { background: var(--surface2); border-bottom: 1.5px solid var(--border); }
-.downloads-table th { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); padding: 10px 20px; text-align: left; }
-.downloads-table td { padding: 14px 20px; vertical-align: middle; border-bottom: 1px solid var(--border); font-size: 0.82rem; }
-.downloads-table tr:last-child td { border-bottom: none; }
-.downloads-table tr:hover td { background: var(--surface2); }
-.dl-name { font-weight: 700; color: var(--ink); letter-spacing: -0.01em; }
-.dl-name a { color: inherit; text-decoration: none; }
-.dl-name a:hover { color: var(--accent); text-decoration: underline; }
-.dl-desc { color: var(--ink-muted); line-height: 1.5; }
-.dl-platform { font-size: 0.72rem; font-weight: 600; color: var(--ink-faint); font-family: 'Sora', monospace; white-space: nowrap; }
-.dl-links { display: flex; gap: 10px; align-items: center; white-space: nowrap; }
-.dl-links a { font-size: 0.75rem; font-weight: 600; color: var(--accent); text-decoration: none; }
-.dl-links a:hover { text-decoration: underline; }
-.dl-links-sep { color: var(--border); font-size: 0.75rem; }
+.downloads-list {
+  width: 100%;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  background: var(--surface);
+}
+.download-card {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 22px 24px;
+  display: grid;
+  grid-template-columns: 170px minmax(0, 1fr) 140px 170px;
+  gap: 22px;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+.download-card:last-child { border-bottom: none; }
+.download-card:hover { background: var(--surface2); }
+.download-card--featured {
+  background: linear-gradient(135deg, rgba(79,70,229,0.08), rgba(124,58,237,0.04)), var(--surface);
+}
+.download-card--featured:hover {
+  background: linear-gradient(135deg, rgba(79,70,229,0.12), rgba(124,58,237,0.07)), var(--surface);
+}
+.download-name {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+.download-name a { color: inherit; text-decoration: none; }
+.download-name a:hover { color: var(--accent); text-decoration: underline; }
+.download-desc { color: var(--ink-muted); line-height: 1.55; font-size: 0.82rem; min-width: 0; }
+.download-desc code { font-size: 0.76rem; background: var(--accent-light); color: var(--accent); padding: 1px 5px; border-radius: 6px; }
+.download-platform { font-size: 0.74rem; font-weight: 700; color: var(--ink-faint); white-space: nowrap; }
+.download-actions { display: flex; gap: 10px; align-items: center; justify-content: flex-end; flex-wrap: wrap; }
+.download-actions a {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--accent);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.download-actions a:hover { text-decoration: underline; }
+.download-actions .download-primary {
+  background: var(--accent);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 999px;
+  box-shadow: 0 6px 16px rgba(79,70,229,0.18);
+}
+.download-actions .download-primary:hover { text-decoration: none; background: #4338CA; }
 
 /* FOOTER */
 .site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
@@ -142,12 +183,49 @@ body {
 @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.85); } }
 
-@media (max-width: 640px) {
-  .header { padding: 14px 20px; }
-  .main { padding: 48px 16px 80px; }
-  .tool-card-desc { display: none; }
-  .blog-card { flex-direction: column; align-items: flex-start; }
+@media (max-width: 760px) {
+  .header { padding: 14px 18px; }
+  .logo { font-size: 1.08rem; }
+  .logo-icon { width: 30px; height: 30px; }
+  .header-login { padding: 7px 14px; }
+  .main { max-width: none; padding: 46px 16px 80px; }
+  .page-header { margin-bottom: 44px; }
+  .page-header h1 { font-size: clamp(2rem, 11vw, 2.75rem); line-height: 1.1; }
+  .hero-break { display: none; }
+  .page-header p { font-size: 0.95rem; line-height: 1.65; }
+  .tool-card {
+    display: grid;
+    grid-template-columns: 42px minmax(0, 1fr);
+    align-items: start;
+    gap: 12px;
+    padding: 18px 18px;
+  }
+  .tool-card-icon { width: 42px; height: 42px; }
+  .tool-card-name { font-size: 0.95rem; line-height: 1.25; }
+  .tool-card-desc { display: block; white-space: normal; overflow: visible; text-overflow: unset; font-size: 0.78rem; line-height: 1.5; margin-top: 3px; }
+  .tool-card-footer { grid-column: 2; justify-content: flex-start; flex-wrap: wrap; margin-top: 2px; }
+  .blog-card { flex-direction: column; align-items: flex-start; padding: 24px 20px; }
+  .blog-card-left { align-items: flex-start; gap: 14px; }
   .blog-card-right { align-self: flex-start; }
+  .download-card {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 22px 20px;
+  }
+  .download-name { font-size: 1rem; }
+  .download-desc { font-size: 0.9rem; line-height: 1.6; }
+  .download-platform { font-size: 0.76rem; }
+  .download-actions { justify-content: flex-start; gap: 12px; margin-top: 4px; }
+  .site-footer { padding: 28px 20px; }
+}
+
+@media (max-width: 420px) {
+  .header { padding: 12px 14px; }
+  .header-login { font-size: 0.78rem; padding: 7px 12px; }
+  .main { padding-left: 14px; padding-right: 14px; }
+  .page-header h1 { font-size: 2rem; }
+  .tool-grid, .downloads-list, .blog-card { border-radius: 16px; }
+  .tool-card-link, .download-actions a { font-size: 0.74rem; }
 }
 </style>
 </head>
@@ -159,8 +237,8 @@ body {
 
   <div class="page-header">
     <p class="page-header-label">Free tools</p>
-    <h1>Everything you need to work<br>with <em>AI smarter</em></h1>
-    <p>Simple, free tools built for people who use AI every day. No sign-up, no install, no fuss.</p>
+    <h1>Everything you need to work<span class="hero-break"><br></span>with <em>AI smarter</em></h1>
+    <p>Simple, free tools and small utilities built for people who use AI every day. No sign-up, no fuss.</p>
   </div>
 
   <!-- TOOLS -->
@@ -258,37 +336,40 @@ body {
   <!-- DOWNLOADS -->
   <p class="section-label">Downloads &amp; Utilities</p>
   <div class="downloads-section">
-    <table class="downloads-table">
-      <thead>
-        <tr>
-          <th style="width:22%">Name</th>
-          <th style="width:46%">What it does</th>
-          <th style="width:14%">Platform</th>
-          <th style="width:18%">Links</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="dl-name"><a href="/pages/blog/ubuntu-4-digit-pin-login/">Ubuntu PIN4 Tool</a></td>
-          <td class="dl-desc">Shell script that sets a 4-digit numeric login PIN on Ubuntu — patches the password rules that normally block it and writes the PIN via <code>chpasswd</code> so it actually sticks. Includes backup and one-command restore.</td>
-          <td class="dl-platform">Linux · Ubuntu</td>
-          <td class="dl-links">
-            <a href="/pages/blog/ubuntu-4-digit-pin-login/">Guide</a>
-            <span class="dl-links-sep">·</span>
-            <a href="https://github.com/skychael/ubuntu-pin4-tool" target="_blank" rel="noopener">GitHub ↗</a>
-          </td>
-        </tr>
-        <tr>
-          <td class="dl-name">USB Disconnect Logger</td>
-          <td class="dl-desc">PowerShell script that timestamps every USB device connect and disconnect in real time — useful for diagnosing monitor standby drop-offs, phantom disconnects, and USB hub power cycling. Logs to your Desktop as <code>usb-disconnect-log.txt</code>. No install required.</td>
-          <td class="dl-platform">Windows · PowerShell</td>
-          <td class="dl-links">
-            <a href="https://github.com/skychael/usb-disconnect-logger" target="_blank" rel="noopener">GitHub ↗</a>
-          </td>
-        </tr>
-        <!-- ADD NEW UTILITIES BELOW THIS LINE -->
-      </tbody>
-    </table>
+    <div class="downloads-list">
+
+      <article class="download-card download-card--featured">
+        <div class="download-name"><a href="/tools/desktopcorral/">DesktopCorral</a></div>
+        <div class="download-desc">Windows tray utility that keeps windows corralled into left and right desktop zones, with smarter drag switching, hotkeys, startup support, and a normal Windows installer.</div>
+        <div class="download-platform">Windows</div>
+        <div class="download-actions">
+          <a href="/tools/desktopcorral/">Details →</a>
+          <a class="download-primary" href="/downloads/DesktopCorralSetup_v2.2.0.exe">Download →</a>
+        </div>
+      </article>
+
+      <article class="download-card">
+        <div class="download-name"><a href="/pages/blog/ubuntu-4-digit-pin-login/">Ubuntu PIN4 Tool</a></div>
+        <div class="download-desc">Shell script that sets a 4-digit numeric login PIN on Ubuntu — patches the password rules that normally block it and writes the PIN via <code>chpasswd</code> so it actually sticks. Includes backup and one-command restore.</div>
+        <div class="download-platform">Linux · Ubuntu</div>
+        <div class="download-actions">
+          <a href="/pages/blog/ubuntu-4-digit-pin-login/">Guide →</a>
+          <a href="https://github.com/skychael/ubuntu-pin4-tool" target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
+      </article>
+
+      <article class="download-card">
+        <div class="download-name">USB Disconnect Logger</div>
+        <div class="download-desc">PowerShell script that timestamps every USB device connect and disconnect in real time — useful for diagnosing monitor standby drop-offs, phantom disconnects, and USB hub power cycling. Logs to your Desktop as <code>usb-disconnect-log.txt</code>. No install required.</div>
+        <div class="download-platform">Windows · PowerShell</div>
+        <div class="download-actions">
+          <a href="https://github.com/skychael/usb-disconnect-logger" target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
+      </article>
+
+      <!-- ADD NEW UTILITIES BELOW THIS LINE — copy a download-card block above -->
+
+    </div>
   </div>
 
   <!-- BLOG -->
