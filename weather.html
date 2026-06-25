@@ -157,7 +157,7 @@
 
     .topbar {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-start;
       align-items: center;
       gap: 18px;
       margin-bottom: 26px;
@@ -824,10 +824,6 @@
         <div class="brand-mark">🌦️</div>
         <div>Weather Center</div>
       </div>
-      <div class="status-pill">
-        <span class="status-dot"></span>
-        <span>Powered by your Cloudflare Worker</span>
-      </div>
     </div>
 
     <section class="hero">
@@ -857,11 +853,6 @@
             <div class="error-msg" id="errorMsg"></div>
             <p class="hint">Tip: try “Tokyo”, “Seattle”, “New York”, or a 5-digit ZIP.</p>
           </div>
-        </div>
-
-        <div class="empty-state">
-          Your API key stays private because this page only talks to your Worker:
-          <strong>weather-worker.mikekoga.workers.dev</strong>
         </div>
       </div>
 
