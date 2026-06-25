@@ -1,0 +1,24 @@
+{
+  "name": "notavello",
+  "version": "1.0.0",
+  "description": "Create AI chat script",
+  "main": "_worker.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skychael/notavello.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/skychael/notavello/issues"
+  },
+  "homepage": "https://github.com/skychael/notavello#readme",
+  "dependencies": {
+    "openai": "^6.45.0"
+  }
+}
