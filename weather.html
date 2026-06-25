@@ -206,7 +206,7 @@
 
     .hero {
       display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(360px, 0.85fr);
+      grid-template-columns: minmax(0, 1fr) minmax(300px, 360px);
       gap: 20px;
       align-items: stretch;
     }
@@ -221,11 +221,12 @@
     }
 
     .search-panel {
-      padding: clamp(24px, 5vw, 42px);
-      min-height: 410px;
+      order: 2;
+      padding: 20px;
+      min-height: auto;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: flex-start;
     }
 
     .eyebrow {
@@ -402,6 +403,7 @@
     }
 
     .current-panel {
+      order: 1;
       min-height: 410px;
       padding: 26px;
       display: flex;
@@ -733,13 +735,57 @@
       border: 1px dashed rgba(255,255,255,0.22);
     }
 
+
+    .search-panel h1 {
+      font-size: 1.55rem;
+      line-height: 1.08;
+      letter-spacing: -0.055em;
+    }
+
+    .search-panel .hero-copy {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .search-panel .search-card {
+      margin-top: 18px;
+    }
+
+    .search-panel .input-row {
+      grid-template-columns: 1fr;
+    }
+
+    .search-panel .search-btn,
+    .search-panel .geo-btn {
+      height: 48px;
+      border-radius: 15px;
+    }
+
+    .search-panel #cityInput {
+      height: 48px;
+      border-radius: 15px;
+    }
+
+    .remember-note {
+      color: var(--text-soft);
+      font-size: 0.76rem;
+      line-height: 1.45;
+      margin-top: 10px;
+    }
+
     @media (max-width: 940px) {
       .hero,
       .content-grid {
         grid-template-columns: 1fr;
       }
 
+      .search-panel {
+        order: 1;
+      }
+
       .current-panel {
+        order: 2;
         min-height: auto;
       }
     }
@@ -829,11 +875,10 @@
     <section class="hero">
       <div class="panel search-panel">
         <div>
-          <div class="eyebrow">Live local forecast</div>
-          <h1>Weather that feels finished.</h1>
+          <div class="eyebrow">Location</div>
+          <h1>Change forecast</h1>
           <p class="hero-copy">
-            Search any city or ZIP code for current conditions, hourly outlook, daily forecast,
-            sunrise and sunset, wind, humidity, visibility, and more.
+            Pick a city once and this page will remember it on this browser.
           </p>
 
           <div class="search-card">
@@ -852,6 +897,7 @@
             <button class="geo-btn" id="geoBtn" type="button">Use my current location</button>
             <div class="error-msg" id="errorMsg"></div>
             <p class="hint">Tip: try “Tokyo”, “Seattle”, “New York”, or a 5-digit ZIP.</p>
+            <p class="remember-note">Your last location is saved only in this browser.</p>
           </div>
         </div>
       </div>
@@ -966,6 +1012,7 @@
 
   <script>
     const WORKER = 'https://weather-worker.mikekoga.workers.dev';
+    const STORAGE_KEY = 'weatherCenterLastLocation';
 
     let useFahrenheit = true;
     let lastWeatherRaw = null;
@@ -1019,7 +1066,7 @@
         async position => {
           try {
             input.value = 'Current location';
-            await fetchWeatherByCoords(position.coords.latitude, position.coords.longitude);
+            await fetchWeatherByCoords(position.coords.latitude, position.coords.longitude, 'Current location');
           } catch (err) {
             showError(err.message || 'Could not load weather for your location.');
           } finally {
@@ -1159,12 +1206,12 @@
         if (pendingCoords) {
           const coords = pendingCoords;
           pendingCoords = null;
-          await fetchWeatherByCoords(coords.lat, coords.lon);
+          await fetchWeatherByCoords(coords.lat, coords.lon, query);
         } else if (/^\d{5}(-\d{4})?$/.test(query)) {
           await fetchWeatherByZip(query);
         } else {
           const coords = await geocodeLookup(query);
-          await fetchWeatherByCoords(coords.lat, coords.lon);
+          await fetchWeatherByCoords(coords.lat, coords.lon, query);
         }
       } catch (err) {
         showError(err.message || 'Something went wrong.');
@@ -1199,10 +1246,10 @@
       }
 
       if (!data.coord) throw new Error(`ZIP "${zip}" not found.`);
-      await fetchWeatherByCoords(data.coord.lat, data.coord.lon);
+      await fetchWeatherByCoords(data.coord.lat, data.coord.lon, zip);
     }
 
-    async function fetchWeatherByCoords(lat, lon) {
+    async function fetchWeatherByCoords(lat, lon, label = '', shouldSave = true) {
       const [currentRes, forecastRes] = await Promise.all([
         fetch(`${WORKER}/weather?lat=${lat}&lon=${lon}`),
         fetch(`${WORKER}/forecast?lat=${lat}&lon=${lon}`)
@@ -1221,6 +1268,11 @@
 
       lastWeatherRaw = current;
       lastForecastRaw = forecast;
+
+      if (shouldSave) {
+        saveLastLocation(lat, lon, label || current.name || input.value.trim());
+      }
+
       renderAll();
     }
 
@@ -1367,6 +1419,39 @@
       return Object.values(map).slice(0, 6);
     }
 
+
+    function saveLastLocation(lat, lon, label) {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify({
+          lat: Number(lat),
+          lon: Number(lon),
+          label: label || '',
+          savedAt: Date.now()
+        }));
+      } catch {
+        // If private browsing or storage restrictions block localStorage, the page still works.
+      }
+    }
+
+    async function restoreLastLocation() {
+      try {
+        const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null');
+        if (!saved || !Number.isFinite(saved.lat) || !Number.isFinite(saved.lon)) return;
+
+        if (saved.label) {
+          input.value = saved.label;
+          clearBtn.classList.add('visible');
+        }
+
+        showLoader(true);
+        await fetchWeatherByCoords(saved.lat, saved.lon, saved.label || '', false);
+      } catch {
+        localStorage.removeItem(STORAGE_KEY);
+      } finally {
+        showLoader(false);
+      }
+    }
+
     function setUnit(fahrenheit) {
       useFahrenheit = fahrenheit;
       updateUnitButtons();
@@ -1449,6 +1534,8 @@
         .replaceAll('"', '&quot;')
         .replaceAll("'", '&#039;');
     }
+
+    restoreLastLocation();
   </script>
-<script data-goatcounter="https://notavello.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script></body>
+</body>
 </html>
