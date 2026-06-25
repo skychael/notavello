@@ -206,9 +206,9 @@
 
     .hero {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(300px, 360px);
-      gap: 20px;
-      align-items: stretch;
+      grid-template-columns: minmax(0, 1fr) 270px;
+      gap: 18px;
+      align-items: start;
     }
 
     .panel {
@@ -222,11 +222,13 @@
 
     .search-panel {
       order: 2;
-      padding: 20px;
+      align-self: start;
+      padding: 14px;
       min-height: auto;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
+      border-radius: 22px;
     }
 
     .eyebrow {
@@ -774,9 +776,82 @@
       margin-top: 10px;
     }
 
+
+    .search-panel .eyebrow {
+      font-size: 0.6rem;
+      letter-spacing: 0.14em;
+      margin-bottom: 6px;
+    }
+
+    .search-panel h1 {
+      font-size: 1.02rem;
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+    }
+
+    .search-panel .hero-copy {
+      display: none;
+    }
+
+    .search-panel .search-card {
+      margin-top: 10px;
+    }
+
+    .search-panel #cityInput {
+      height: 40px;
+      padding-left: 38px;
+      padding-right: 34px;
+      border-radius: 13px;
+      font-size: 0.9rem;
+    }
+
+    .search-panel .search-icon {
+      left: 13px;
+      width: 16px;
+      height: 16px;
+    }
+
+    .search-panel .search-btn,
+    .search-panel .geo-btn {
+      height: 40px;
+      border-radius: 13px;
+      font-size: 0.86rem;
+    }
+
+    .search-panel .geo-btn {
+      margin-top: 8px;
+    }
+
+    .search-panel .hint,
+    .search-panel .remember-note {
+      display: none;
+    }
+
+    .search-panel #suggestions {
+      border-radius: 13px;
+    }
+
+    .search-panel .suggestion-item {
+      padding: 10px 12px;
+      font-size: 0.86rem;
+    }
+
     @media (max-width: 940px) {
-      .hero,
+      .hero {
+        grid-template-columns: minmax(0, 1fr) 250px;
+      }
+
       .content-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .current-panel {
+        min-height: auto;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .hero {
         grid-template-columns: 1fr;
       }
 
@@ -786,7 +861,6 @@
 
       .current-panel {
         order: 2;
-        min-height: auto;
       }
     }
 
@@ -1308,7 +1382,7 @@
       els.vis.textContent = visibility;
       els.sunrise.textContent = sunrise;
       els.sunset.textContent = sunset;
-      els.pressure.textContent = data.main?.pressure ? `${data.main.pressure} hPa` : '—';
+      els.pressure.textContent = data.main?.pressure ? `${(data.main.pressure * 0.029529983071445).toFixed(2)} inHg` : '—';
       els.clouds.textContent = data.clouds?.all != null ? `${data.clouds.all}%` : '—';
       els.precip.textContent = precip;
       els.detailsPlace.textContent = data.name || '—';
