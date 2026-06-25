@@ -837,84 +837,71 @@
     }
 
 
-    .weather-layout {
+    .dashboard-grid {
       display: grid;
       grid-template-columns: minmax(0, 1fr) 310px;
       gap: 18px;
       align-items: start;
     }
 
-    .main-column,
-    .right-column {
+    .dashboard-main,
+    .dashboard-side {
       display: grid;
       gap: 18px;
+      min-width: 0;
       align-items: start;
     }
 
-    .right-column {
-      position: sticky;
-      top: 18px;
-    }
-
-    .right-column .search-panel {
+    .dashboard-grid .current-panel,
+    .dashboard-grid .search-panel,
+    .dashboard-grid .details-panel,
+    .dashboard-grid .hourly-panel,
+    .dashboard-grid .forecast-panel {
       order: 0;
       width: 100%;
+      position: static;
     }
 
-    .right-column .details-panel {
-      order: 1;
-      width: 100%;
+    .dashboard-grid .search-panel {
+      padding: 14px;
+      min-height: 0;
+      border-radius: 22px;
     }
 
-    .main-column .hourly-panel,
-    .main-column .forecast-panel {
-      width: 100%;
-    }
-
-    .right-column .details-panel {
+    .dashboard-grid .details-panel {
       padding: 20px;
     }
 
-    .right-column .details-grid {
+    .dashboard-grid .details-grid {
       gap: 10px;
     }
 
-    .right-column .detail-card {
+    .dashboard-grid .detail-card {
       padding: 14px;
     }
 
+    .dashboard-grid .current-panel {
+      min-height: 410px;
+    }
+
     @media (max-width: 980px) {
-      .weather-layout {
+      .dashboard-grid {
         grid-template-columns: 1fr;
       }
 
-      .right-column {
-        position: static;
-        grid-template-columns: minmax(250px, 0.8fr) minmax(0, 1fr);
-        order: 2;
-      }
-
-      .main-column {
-        order: 1;
+      .dashboard-side {
+        grid-template-columns: minmax(240px, 300px) minmax(0, 1fr);
       }
     }
 
-    @media (max-width: 760px) {
-      .right-column {
+    @media (max-width: 720px) {
+      .dashboard-side {
         grid-template-columns: 1fr;
       }
     }
 
 
     @media (max-width: 940px) {
-      .hero {
-        grid-template-columns: minmax(0, 1fr) 250px;
-      }
-
-      .content-grid {
-        grid-template-columns: 1fr;
-      }
-
       .current-panel {
         min-height: auto;
       }
@@ -1016,8 +1003,8 @@
       </div>
     </div>
 
-    <section class="weather-layout">
-      <div class="main-column">
+    <section class="dashboard-grid">
+      <div class="dashboard-main">
         <aside class="panel current-panel" id="currentPanel">
         <div class="current-top">
           <div>
@@ -1086,7 +1073,7 @@
         </section>
       </div>
 
-      <aside class="right-column">
+      <div class="dashboard-side">
         <div class="panel search-panel">
         <div>
           <div class="eyebrow">Location</div>
@@ -1150,7 +1137,7 @@
           </div>
         </div>
       </aside>
-      </aside>
+      </div>
     </section>
   </main>
 
