@@ -836,6 +836,76 @@
       font-size: 0.86rem;
     }
 
+
+    .weather-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 310px;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .main-column,
+    .right-column {
+      display: grid;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .right-column {
+      position: sticky;
+      top: 18px;
+    }
+
+    .right-column .search-panel {
+      order: 0;
+      width: 100%;
+    }
+
+    .right-column .details-panel {
+      order: 1;
+      width: 100%;
+    }
+
+    .main-column .hourly-panel,
+    .main-column .forecast-panel {
+      width: 100%;
+    }
+
+    .right-column .details-panel {
+      padding: 20px;
+    }
+
+    .right-column .details-grid {
+      gap: 10px;
+    }
+
+    .right-column .detail-card {
+      padding: 14px;
+    }
+
+    @media (max-width: 980px) {
+      .weather-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .right-column {
+        position: static;
+        grid-template-columns: minmax(250px, 0.8fr) minmax(0, 1fr);
+        order: 2;
+      }
+
+      .main-column {
+        order: 1;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .right-column {
+        grid-template-columns: 1fr;
+      }
+    }
+
+
     @media (max-width: 940px) {
       .hero {
         grid-template-columns: minmax(0, 1fr) 250px;
@@ -946,37 +1016,9 @@
       </div>
     </div>
 
-    <section class="hero">
-      <div class="panel search-panel">
-        <div>
-          <div class="eyebrow">Location</div>
-          <h1>Change forecast</h1>
-          <p class="hero-copy">
-            Pick a city once and this page will remember it on this browser.
-          </p>
-
-          <div class="search-card">
-            <div class="input-row">
-              <div class="input-wrap">
-                <svg class="search-icon" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="11" cy="11" r="8"></circle>
-                  <path d="m21 21-4.35-4.35"></path>
-                </svg>
-                <input id="cityInput" type="text" placeholder="Search city, state, or ZIP…" autocomplete="off" spellcheck="false">
-                <button id="clearBtn" type="button" aria-label="Clear search">✕</button>
-                <div id="suggestions"></div>
-              </div>
-              <button class="search-btn" id="searchBtn" type="button">Search</button>
-            </div>
-            <button class="geo-btn" id="geoBtn" type="button">Use my current location</button>
-            <div class="error-msg" id="errorMsg"></div>
-            <p class="hint">Tip: try “Tokyo”, “Seattle”, “New York”, or a 5-digit ZIP.</p>
-            <p class="remember-note">Your last location is saved only in this browser.</p>
-          </div>
-        </div>
-      </div>
-
-      <aside class="panel current-panel" id="currentPanel">
+    <section class="weather-layout">
+      <div class="main-column">
+        <aside class="panel current-panel" id="currentPanel">
         <div class="current-top">
           <div>
             <div class="label">Current conditions</div>
@@ -1022,10 +1064,7 @@
           </div>
         </div>
       </aside>
-    </section>
 
-    <section class="content-grid">
-      <div>
         <section class="panel hourly-panel" id="hourlyPanel">
           <div class="panel-title">
             <h2>Hourly outlook</h2>
@@ -1036,7 +1075,7 @@
           </div>
         </section>
 
-        <section class="panel forecast-panel" style="margin-top: 20px;" id="forecastPanel">
+        <section class="panel forecast-panel" id="forecastPanel">
           <div class="panel-title">
             <h2>Daily forecast</h2>
             <span>Up to 5 days from OpenWeather</span>
@@ -1047,7 +1086,37 @@
         </section>
       </div>
 
-      <aside class="panel details-panel">
+      <aside class="right-column">
+        <div class="panel search-panel">
+        <div>
+          <div class="eyebrow">Location</div>
+          <h1>Change forecast</h1>
+          <p class="hero-copy">
+            Pick a city once and this page will remember it on this browser.
+          </p>
+
+          <div class="search-card">
+            <div class="input-row">
+              <div class="input-wrap">
+                <svg class="search-icon" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <path d="m21 21-4.35-4.35"></path>
+                </svg>
+                <input id="cityInput" type="text" placeholder="Search city, state, or ZIP…" autocomplete="off" spellcheck="false">
+                <button id="clearBtn" type="button" aria-label="Clear search">✕</button>
+                <div id="suggestions"></div>
+              </div>
+              <button class="search-btn" id="searchBtn" type="button">Search</button>
+            </div>
+            <button class="geo-btn" id="geoBtn" type="button">Use my current location</button>
+            <div class="error-msg" id="errorMsg"></div>
+            <p class="hint">Tip: try “Tokyo”, “Seattle”, “New York”, or a 5-digit ZIP.</p>
+            <p class="remember-note">Your last location is saved only in this browser.</p>
+          </div>
+        </div>
+      </div>
+
+        <aside class="panel details-panel">
         <div class="panel-title">
           <h2>Weather details</h2>
           <span id="detailsPlace">—</span>
@@ -1080,6 +1149,7 @@
             <div class="big" id="wPrecip">—</div>
           </div>
         </div>
+      </aside>
       </aside>
     </section>
   </main>
@@ -1611,5 +1681,5 @@
 
     restoreLastLocation();
   </script>
-<script data-goatcounter="https://notavello.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script></body>
+</body>
 </html>
