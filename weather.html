@@ -306,17 +306,17 @@
     }
 
     .dashboard {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 320px;
-      gap: 16px;
-      align-items: start;
+      display: block;
     }
 
-    .main-stack,
-    .side-stack {
+    .main-stack {
       display: grid;
       gap: 16px;
       min-width: 0;
+    }
+
+    .side-stack {
+      display: none;
     }
 
     .current-card {
@@ -663,13 +663,47 @@
       to { transform: rotate(360deg); }
     }
 
-    @media (max-width: 980px) {
-      .dashboard {
+
+    .main-stack .details-card {
+      width: 100%;
+      position: static;
+      transform: none;
+      inset: auto;
+      z-index: auto;
+    }
+
+    .main-stack .details-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .main-stack .sun-row {
+      display: contents;
+    }
+
+    @media (max-width: 900px) {
+      .main-stack .details-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 560px) {
+      .main-stack .details-grid {
         grid-template-columns: 1fr;
       }
 
-      .side-stack {
-        grid-template-columns: minmax(260px, 340px) minmax(0, 1fr);
+      .main-stack .sun-row {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+    }
+
+
+    @media (max-width: 980px) {
+      .dashboard {
+        display: block;
       }
     }
 
@@ -831,28 +865,6 @@
           </div>
         </section>
 
-        <section class="panel section">
-          <div class="section-title">
-            <h2>Hourly outlook</h2>
-            <span>Next forecast slots</span>
-          </div>
-          <div class="hourly" id="hourlyList">
-            <div class="empty-state">Search for a location to load hourly weather.</div>
-          </div>
-        </section>
-
-        <section class="panel section">
-          <div class="section-title">
-            <h2>Daily forecast</h2>
-            <span>Up to 5 days</span>
-          </div>
-          <div class="daily" id="dailyList">
-            <div class="empty-state">Daily forecast cards will show here after a search.</div>
-          </div>
-        </section>
-      </div>
-
-      <aside class="side-stack">
         <section class="panel details-card">
           <div class="section-title">
             <h2>Weather details</h2>
@@ -887,7 +899,27 @@
             </div>
           </div>
         </section>
-      </aside>
+
+        <section class="panel section">
+          <div class="section-title">
+            <h2>Hourly outlook</h2>
+            <span>Next forecast slots</span>
+          </div>
+          <div class="hourly" id="hourlyList">
+            <div class="empty-state">Search for a location to load hourly weather.</div>
+          </div>
+        </section>
+
+        <section class="panel section">
+          <div class="section-title">
+            <h2>Daily forecast</h2>
+            <span>Up to 5 days</span>
+          </div>
+          <div class="daily" id="dailyList">
+            <div class="empty-state">Daily forecast cards will show here after a search.</div>
+          </div>
+        </section>
+      </div>
     </section>
   </main>
 
