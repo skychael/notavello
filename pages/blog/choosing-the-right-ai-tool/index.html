@@ -1,0 +1,203 @@
+<!-- ⚠️ ALL %% PLACEHOLDERS MUST BE REPLACED — they feed SEO meta tags, OG, Twitter, and schema -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Which AI Should You Use? A Plain-English Guide to Picking the Right One — The Export | Notavello</title>
+<meta name="description" content="ChatGPT, Claude, Gemini, Copilot, Perplexity, Grok and DeepSeek compared in plain English: strengths, coding, live-web access, what a token is, and real cost."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/blog/choosing-the-right-ai-tool/"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://notavello.com/pages/blog/choosing-the-right-ai-tool/"/>
+<meta property="og:title" content="Which AI Should You Use? A Plain-English Guide to Picking the Right One"/>
+<meta property="og:description" content="ChatGPT, Claude, Gemini, Copilot, Perplexity, Grok and DeepSeek compared in plain English: strengths, coding, live-web access, what a token is, and real cost."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Which AI Should You Use? A Plain-English Guide to Picking the Right One"/>
+<meta name="twitter:description" content="ChatGPT, Claude, Gemini, Copilot, Perplexity, Grok and DeepSeek compared in plain English: strengths, coding, live-web access, what a token is, and real cost."/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Which AI Should You Use? A Plain-English Guide to Picking the Right One",
+  "description": "ChatGPT, Claude, Gemini, Copilot, Perplexity, Grok and DeepSeek compared in plain English: strengths, coding, live-web access, what a token is, and real cost.",
+  "url": "https://notavello.com/pages/blog/choosing-the-right-ai-tool/",
+  "datePublished": "2026-06-28",
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
+.back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; color: var(--ink-muted); text-decoration: none; margin-bottom: 40px; transition: color 0.15s; }
+.back-link:hover { color: var(--accent); }
+.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
+.post-date { font-size: 0.78rem; color: var(--ink-faint); }
+.post-title { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; color: var(--ink); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
+.post-lede { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+.post-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink); }
+.post-body h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 44px 0 16px; letter-spacing: -0.01em; }
+.post-body p { margin-bottom: 20px; color: var(--ink-muted); }
+.post-body p strong { color: var(--ink); font-weight: 600; }
+.post-body ul { margin: 0 0 20px 20px; color: var(--ink-muted); }
+.post-body ul li { margin-bottom: 8px; line-height: 1.7; }
+.callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 32px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.7; }
+.post-footer { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.post-footer-label { font-size: 0.8rem; color: var(--ink-faint); }
+.btn-export { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: opacity 0.2s; }
+.btn-export:hover { opacity: 0.9; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+.compare-wrap { overflow-x: auto; margin: 28px 0; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--surface); }
+.compare-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; min-width: 640px; }
+.compare-table th, .compare-table td { text-align: left; padding: 11px 14px; border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.5; }
+.compare-table thead th { background: var(--accent-light); color: var(--accent); font-weight: 600; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; white-space: nowrap; }
+.compare-table tbody td:first-child { font-weight: 600; color: var(--ink); white-space: nowrap; }
+.compare-table tbody tr:last-child td { border-bottom: none; }
+.compare-table td.yes { color: var(--green); font-weight: 600; }
+.compare-note { font-size: 0.78rem; color: var(--ink-faint); margin: -12px 0 28px; }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } }
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+
+  <a class="back-link" href="/pages/blog/">← The Export</a>
+
+  <div class="post-meta">
+    <span class="post-tag">AI Comparison</span>
+    <span class="post-date">June 28, 2026</span>
+  </div>
+
+  <h1 class="post-title">Which AI Should You Use? A Plain-English Guide to Picking the Right One</h1>
+
+  <p class="post-lede">Seven big AI assistants, seven different personalities, and a pile of confusing pricing. Here's which one to reach for depending on the job — plus a clear answer to the question nobody explains: what exactly are you paying for?</p>
+
+  <div class="post-body">
+
+    <h2>There is no "best" AI — only the best one for the task</h2>
+    <p>The most common question people ask is "which AI is the best?" It is the wrong question. Asking which assistant is best is like asking which vehicle is best: a pickup truck and a sports car are both excellent, and which one is right depends entirely on whether you are hauling lumber or chasing a winding road. The same is true here. One assistant is brilliant at writing code, another lives inside your email and documents, another reads the live web before it answers. Pick by the job, not by the brand.</p>
+    <p>Here is the short version of who does what well, in plain terms, before the details.</p>
+
+    <h2>The seven names worth knowing</h2>
+    <p><strong>ChatGPT (OpenAI).</strong> The famous all-rounder. It writes, codes, makes images and video, and handles almost any everyday task competently. It is the safe default when you are not sure which to use, and its free tier covers a lot. The paid Plus plan runs about $20 a month.</p>
+    <p><strong>Claude (Anthropic).</strong> Known for careful writing, thinking through long documents, and especially for coding — many developers reach for it first when the work is technical or the document is long. It is also the assistant powering this very blog. The Pro plan is around $20 a month, with heavier "Max" tiers above that.</p>
+    <p><strong>Gemini (Google).</strong> Being Google is a real advantage. Gemini is woven into Gmail, Docs, Android and Search, handles images and video natively, and can hold an enormous amount of text in mind at once. If you live in Google's apps, it is the natural fit. Google AI Pro is about $20 a month, with a cheaper entry plan and a generous free tier.</p>
+    <p><strong>Copilot (Microsoft).</strong> Microsoft's assistant, built on OpenAI's models and stitched directly into Windows and Microsoft 365 — Word, Excel, Outlook, Teams. If your day happens inside Office, Copilot is right there in the sidebar. Copilot Pro is about $20 a month, with a free tier too.</p>
+    <p><strong>Perplexity.</strong> Less a chatbot, more an answer engine. Its whole job is to search the live web and hand back a sourced, cited answer — so it is the one to use for research, fact-checking, and "what's the latest on…" questions. Pro is about $20 a month, and the free tier is genuinely useful.</p>
+    <p><strong>Grok (xAI).</strong> Elon Musk's assistant, built into X (formerly Twitter). Its standout trait is real-time access to X itself, so it is unusually good at "what are people saying right now" and breaking conversation. It also searches the wider web. A standalone SuperGrok plan is about $30 a month, though basic Grok comes bundled with an $8 X Premium subscription.</p>
+    <p><strong>DeepSeek.</strong> The budget champion. It is an open model with a free chat interface and famously cheap pay-as-you-go pricing for developers — processing an entire book's worth of text can cost a few cents. It is a favorite of cost-sensitive technical users, and surprisingly strong at coding for the price.</p>
+    <p>A few others worth a nod: <strong>Meta AI</strong> (free, built into WhatsApp and Instagram) and <strong>Mistral</strong> (a European option with its own Le Chat assistant) round out the field for everyday use.</p>
+
+    <h2>Why some AIs can't tell you today's news</h2>
+    <p>This trips up almost everyone. An AI model is trained up to a certain date and then frozen — its built-in knowledge stops at that "cutoff," so on its own it genuinely does not know what happened yesterday. The fix is live web search: most assistants now look things up in real time before answering, which is why ChatGPT, Claude, Gemini and Copilot can all discuss current events despite their frozen training. Perplexity and Grok go further and are built around live data from the start. (For a deeper, plain-English look at why this matters, see <a href="/pages/blog/ai-knowledge-cutoff-real-time-search/">our breakdown of knowledge cutoffs versus real-time search</a>.)</p>
+    <p>The practical takeaway: if current accuracy is the whole point — prices, news, scores, recent releases — lean on a tool built for live search rather than trusting a model's memory.</p>
+
+    <h2>What's a token, and do you actually need to care?</h2>
+    <p>Here is the idea most pricing pages skip. AI doesn't read in words — it reads in <strong>tokens</strong>, which are small chunks of text. A token is roughly three-quarters of a word on average; short common words are one token, longer ones split into two or three. As a rule of thumb, <strong>one million tokens is about 750,000 words</strong> — roughly ten paperback novels. Both what you send in and what the AI sends back count toward the meter.</p>
+    <p>The easy way to picture it: a token is a syllable-sized bite of language, and using an AI is like a taxi meter that ticks for every bite — both your question and its answer. Who actually pays by the token? Mostly <strong>developers</strong> building apps on top of these models. If you are a regular person on a flat $20-a-month plan, you almost never see tokens at all — the subscription hides the meter behind a fixed fee and a usage cap. Tokens become real money the moment you use a raw developer interface instead of the friendly app. (We've written before about how opaque that meter can be in <a href="/pages/blog/ai-token-usage-transparency/">who's checking the AI meter</a>.)</p>
+
+    <h2>The quick comparison</h2>
+    <div class="compare-wrap">
+      <table class="compare-table">
+        <thead>
+          <tr><th>Tool</th><th>Best for</th><th>Coding</th><th>Everyday use</th><th>Current news</th><th>Cost</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>ChatGPT</td><td>All-rounder; creative work, images, video</td><td>Excellent</td><td>Excellent</td><td class="yes">Yes (searches web)</td><td>~$20/mo · free tier</td></tr>
+          <tr><td>Claude</td><td>Coding, long documents, careful writing</td><td>Excellent</td><td>Excellent</td><td class="yes">Yes (searches web)</td><td>~$20/mo · free tier</td></tr>
+          <tr><td>Gemini</td><td>Google apps, huge context, multimodal</td><td>Strong</td><td>Excellent</td><td class="yes">Yes (Google search)</td><td>~$20/mo · free tier</td></tr>
+          <tr><td>Copilot</td><td>Microsoft Office &amp; Windows workflows</td><td>Strong</td><td>Good</td><td class="yes">Yes (Bing search)</td><td>~$20/mo · free tier</td></tr>
+          <tr><td>Perplexity</td><td>Research with cited, sourced answers</td><td>Good</td><td>Good</td><td class="yes">Built-in (its job)</td><td>~$20/mo · free tier</td></tr>
+          <tr><td>Grok</td><td>Real-time X/Twitter, blunt tone</td><td>Strong</td><td>Good</td><td class="yes">Yes (X + web)</td><td>~$30/mo · $8 via X</td></tr>
+          <tr><td>DeepSeek</td><td>Lowest cost, open model, developer-friendly</td><td>Strong</td><td>Good</td><td>Limited (cutoff)</td><td>Free chat · pay-per-token</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="compare-note">Prices are US individual plans as of June 2026 and change often. Free tiers exist for every tool except DeepSeek's API.</p>
+
+    <h2>When the bill is measured in tokens instead of months</h2>
+    <p>Most tools above charge a flat monthly fee. A few — DeepSeek especially, and the developer versions of all of them — charge per token instead. To make that comparable, here is the rough monthly cost of a fairly heavy personal user running about one million tokens a month (that's roughly 750,000 words of questions and answers combined), paying per token rather than a flat fee.</p>
+    <div class="compare-wrap">
+      <table class="compare-table">
+        <thead>
+          <tr><th>Pay-per-token tool</th><th>Approx. cost at ~1M tokens/month</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>DeepSeek</td><td>Under $1 — less than a coffee</td></tr>
+          <tr><td>Perplexity (Sonar)</td><td>About $1–2</td></tr>
+          <tr><td>Grok</td><td>About $2–4</td></tr>
+          <tr><td>Gemini</td><td>About $5–7</td></tr>
+          <tr><td>Claude</td><td>About $13–15</td></tr>
+          <tr><td>ChatGPT</td><td>About $15–18</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="compare-note">Rough illustration only; real cost swings with how much you send and receive.</p>
+    <p>Two things jump out. First, for a light or technical user, <strong>pay-per-token can be dramatically cheaper</strong> than any $20 subscription — DeepSeek in particular is almost free at personal scale. Second, the flagship models' token pricing creeps right up toward that same $20 once you use them heavily, and the flat subscription also buys you the polished app, the image tools, and the usage caps that keep a runaway bill from happening. For most people, the flat fee is the saner choice; tokens are a builder's concern.</p>
+
+    <div class="callout">
+      <strong>The bottom line:</strong> stop hunting for the single best AI. Use Claude or ChatGPT for writing and code, Gemini or Copilot if you live in Google or Microsoft, Perplexity when you need sourced facts, Grok for the live pulse of X, and DeepSeek when cost is everything. Many people quietly keep two and switch.
+    </div>
+
+    <h2>So which should you pick?</h2>
+    <p>If you want one assistant and a simple bill, start with the free tier of ChatGPT, Claude, or Gemini and upgrade the one you actually reach for. If your work is technical, Claude and DeepSeek punch above their weight on code. If you spend your day in Word and Excel, Copilot is already next to you; if you live in Gmail and Docs, Gemini is. And whenever the answer absolutely must be current and verifiable, send the question to Perplexity or Grok, where live search is the whole design. The right tool isn't the most famous one — it's the one that fits the task in front of you.</p>
+
+  </div>
+
+  <div class="post-footer">
+    <span class="post-footer-label">Looking for more AI tools?</span>
+    <a class="btn-export" href="/tools/">See our free AI tools →</a>
+  </div>
+
+</main>
+
+<!--FOOTER-->
+
+<script data-goatcounter="https://notavello.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script></body>
+</html>
