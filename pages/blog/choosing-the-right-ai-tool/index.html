@@ -670,4 +670,80 @@
         <div class="api-card">
           <div class="api-name">Perplexity Sonar API</div>
           <div class="api-truth">Built for search-backed answers; pricing includes input/output tokens and search/citation costs.</div>
-          <div class="api-caution">⚠️ Don't compare it to a plain chat model without accounting for the search and citation features
+          <div class="api-caution">⚠️ Don't compare it to a plain chat model without accounting for the search and citation features.</div>
+        </div>
+        <div class="api-card">
+          <div class="api-name">OpenAI API</div>
+          <div class="api-truth">Tokens are metered per model, and web search is a separate tool with its own pricing.</div>
+          <div class="api-caution">⚠️ ChatGPT Plus is not the same as the API. The app and API have different billing and features.</div>
+        </div>
+        <div class="api-card">
+          <div class="api-name">Claude API</div>
+          <div class="api-truth">Tokens are billed by model; web search and fetch tools add their own usage.</div>
+          <div class="api-caution">⚠️ Claude Pro's monthly price does not predict API costs for heavy coding or agent workflows.</div>
+        </div>
+        <div class="api-card">
+          <div class="api-name">Gemini API</div>
+          <div class="api-truth">Tokens are billed by model; Google Search grounding may have separate limits or charges.</div>
+          <div class="api-caution">⚠️ The consumer Gemini plan is not the same as developer API pricing.</div>
+        </div>
+        <div class="api-card">
+          <div class="api-name">xAI / Grok API</div>
+          <div class="api-truth">Grok models have per-token API pricing; the consumer Grok app includes real-time web + X search.</div>
+          <div class="api-caution">⚠️ Not every Grok API call includes the same live-search behavior as the consumer app. Check your endpoint.</div>
+        </div>
+      </div>
+      <p class="compare-note">If you are a normal user, start with the app. If you are a developer, price the exact model and workflow you plan to run.</p>
+
+      <div class="callout">
+        <strong>The bottom line:</strong> use ChatGPT or Claude for broad writing and code, Gemini if you live in Google, Copilot if you live in Microsoft, Perplexity when you need sourced web research, Grok for the live pulse of X and web chatter, and DeepSeek when low-cost coding/reasoning matters more than built-in live search.
+      </div>
+
+      <h2>So which should you pick?</h2>
+      <p>If you want one assistant and a simple bill, start with the free tier of ChatGPT, Claude, or Gemini and upgrade only after you know which one you actually use. If your work is mostly research and freshness, try Perplexity first. If your work lives in Office, Copilot makes sense. If your work lives in Gmail, Docs, Drive, and Search, Gemini makes sense. If you want cheap API horsepower, DeepSeek deserves a look.</p>
+      <p>But do not let any AI comparison chart tell you all these tools “see the web” in the same way. They do not. Search, browsing, URL fetching, citations, app integrations, and model memory are separate capabilities. The safest habit is simple: for current facts, ask for sources; for a specific page, provide the URL and ask the tool to open it; for anything important, verify the primary source yourself.</p>
+
+      <h2>Sources used for this update</h2>
+      <ul>
+        <li><a href="https://openai.com/index/introducing-chatgpt-search/" target="_blank" rel="noopener">OpenAI: Introducing ChatGPT Search</a></li>
+        <li><a href="https://help.openai.com/articles/9237897-chatgpt-search" target="_blank" rel="noopener">OpenAI Help: ChatGPT Search</a></li>
+        <li><a href="https://docs.anthropic.com/en/docs/build-with-claude/tool-use/web-search-tool" target="_blank" rel="noopener">Anthropic Docs: Claude Web Search Tool</a></li>
+        <li><a href="https://docs.anthropic.com/en/docs/build-with-claude/tool-use/overview" target="_blank" rel="noopener">Anthropic Docs: Tool use overview, including web fetch</a></li>
+        <li><a href="https://ai.google.dev/gemini-api/docs/google-search" target="_blank" rel="noopener">Google AI Docs: Grounding with Google Search</a></li>
+        <li><a href="https://support.microsoft.com/en-us/microsoft-365-copilot/how-web-search-works-in-microsoft-365-copilot-chat-and-agents" target="_blank" rel="noopener">Microsoft Support: How web search works in Microsoft 365 Copilot Chat and agents</a></li>
+        <li><a href="https://www.perplexity.ai/" target="_blank" rel="noopener">Perplexity: AI-powered answer engine</a></li>
+        <li><a href="https://x.ai/pricing" target="_blank" rel="noopener">xAI: Grok plans and real-time web + X search</a></li>
+        <li><a href="https://api-docs.deepseek.com/quick_start/pricing" target="_blank" rel="noopener">DeepSeek API Docs: Models and pricing</a></li>
+        <li><a href="https://chatgpt.com/pricing/" target="_blank" rel="noopener">ChatGPT pricing</a>, <a href="https://claude.com/pricing" target="_blank" rel="noopener">Claude pricing</a>, <a href="https://gemini.google/subscriptions/" target="_blank" rel="noopener">Google AI subscriptions</a>, and <a href="https://www.perplexity.ai/pro" target="_blank" rel="noopener">Perplexity Pro</a></li>
+      </ul>
+    </div>
+
+    <div class="post-footer">
+      <span class="post-footer-label">Looking for more AI tools?</span>
+      <a class="btn-export" href="/tools/">See our free AI tools →</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="footer-nav">
+        <span class="footer-nav-label">The Export</span>
+        <a href="/pages/blog/">All articles</a>
+        <span class="footer-nav-divider">·</span>
+        <a href="/tools/">Free tools</a>
+        <span class="footer-nav-divider">·</span>
+        <a href="/about/">About</a>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copy">© 2026 Notavello</span>
+        <div class="footer-legal">
+          <a href="/privacy/">Privacy</a>
+          <a href="/terms/">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script data-goatcounter="https://notavello.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
