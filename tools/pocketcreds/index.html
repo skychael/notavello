@@ -27,6 +27,7 @@
   "browserRequirements": "Requires Google Chrome",
   "description": "PocketCreds keeps IDs, addresses, codes, notes, and reference images one click away in Chrome. Stored locally in your browser.",
   "url": "https://notavello.com/tools/pocketcreds/",
+  "installUrl": "https://chromewebstore.google.com/detail/pocketcreds-instant-credential/dkaighfcbohpodegfjibcfhobdjkggegb",
   "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" },
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
 }
@@ -374,6 +375,10 @@ a { color: inherit; }
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
 }
+.install-card {
+  grid-column: 1 / -1;
+  background: radial-gradient(circle at 14% 0%, rgba(34,197,94,0.16), transparent 32%), rgba(15,23,42,0.78);
+}
 .card {
   background: rgba(15,23,42,0.72);
   border: 1.5px solid var(--card-border);
@@ -595,10 +600,10 @@ a { color: inherit; }
       <h1>Your everyday details, <em>one click away.</em></h1>
       <p class="hero-lede">PocketCreds is a private quick-access clipboard for the little pieces of information you type, paste, and look up constantly — IDs, addresses, codes, reference notes, and images.</p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="#install">How it works →</a>
-        <a class="btn btn-secondary" href="#privacy">Privacy first</a>
+        <a class="btn btn-primary" href="https://chromewebstore.google.com/detail/pocketcreds-instant-credential/dkaighfcbohpodegfjibcfhobdjkggegb" target="_blank" rel="noopener">Install from Chrome Web Store →</a>
+        <a class="btn btn-secondary" href="#install">How it works</a>
       </div>
-      <p class="install-note">Built for Chrome. No account required. Saved items stay in your browser using local extension storage.</p>
+      <p class="install-note">Built for Chrome. No account required. The Chrome Web Store link will become publicly usable after the listing is approved.</p>
     </div>
 
     <div class="product-stage" aria-label="PocketCreds extension preview">
@@ -630,8 +635,16 @@ a { color: inherit; }
   </section>
 
   <section class="section" id="install">
-    <p class="section-label">What it does</p>
+    <p class="section-label">Install & workflow</p>
     <div class="grid-3">
+
+    <article class="card install-card">
+      <div class="card-icon">🧩</div>
+      <h2>Install from the Chrome Web Store</h2>
+      <p>Use the official Chrome Web Store listing when it is approved and published. Before approval, the link may not open publicly yet.</p>
+      <p style="margin-top:14px;"><a class="btn btn-primary" href="https://chromewebstore.google.com/detail/pocketcreds-instant-credential/dkaighfcbohpodegfjibcfhobdjkggegb" target="_blank" rel="noopener">Open Chrome Web Store listing →</a></p>
+    </article>
+
       <article class="card">
         <div class="card-icon">⚡</div>
         <h2>One-click copying</h2>
@@ -704,7 +717,7 @@ a { color: inherit; }
   <section class="support" id="support">
     <h2>Support for PocketCreds</h2>
     <p>If something is not working, note your Chrome version, operating system, and the steps that caused the issue. PocketCreds is built to keep data local, so avoid sending private saved items in support messages.</p>
-    <a class="btn btn-primary" href="/tools/">See more Notavello tools →</a>
+    <a class="btn btn-primary" href="https://chromewebstore.google.com/detail/pocketcreds-instant-credential/dkaighfcbohpodegfjibcfhobdjkggegb" target="_blank" rel="noopener">Install from Chrome Web Store →</a>
   </section>
 
 </main>
