@@ -1,245 +1,639 @@
-<!-- ⚠️ ALL %% PLACEHOLDERS MUST BE REPLACED — they feed SEO meta tags, OG, Twitter, and schema -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Which AI Should You Use? A Plain-English Guide to Picking the Right One — The Export | Notavello</title>
-<meta name="description" content="ChatGPT, Claude, Gemini, Copilot, Perplexity, Grok and DeepSeek compared honestly: strengths, coding, live web access, URL reality, tokens, and cost."/>
-<meta name="robots" content="index, follow"/>
-<link rel="canonical" href="https://notavello.com/pages/blog/choosing-the-right-ai-tool/"/>
-<meta property="og:type" content="article"/>
-<meta property="og:url" content="https://notavello.com/pages/blog/choosing-the-right-ai-tool/"/>
-<meta property="og:title" content="Which AI Should You Use? A Plain-English Guide to Picking the Right One"/>
-<meta property="og:description" content="ChatGPT, Claude, Gemini, Copilot, Perplexity, Grok and DeepSeek compared honestly: strengths, coding, live web access, URL reality, tokens, and cost."/>
-<meta property="og:site_name" content="Notavello"/>
-<meta property="og:image" content="https://notavello.com/og-image.png"/>
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="Which AI Should You Use? A Plain-English Guide to Picking the Right One"/>
-<meta name="twitter:description" content="ChatGPT, Claude, Gemini, Copilot, Perplexity, Grok and DeepSeek compared honestly: strengths, coding, live web access, URL reality, tokens, and cost."/>
-<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Which AI Should You Use? A Plain-English Guide to Picking the Right One",
-  "description": "ChatGPT, Claude, Gemini, Copilot, Perplexity, Grok and DeepSeek compared honestly: strengths, coding, live web access, URL reality, tokens, and cost.",
-  "url": "https://notavello.com/pages/blog/choosing-the-right-ai-tool/",
-  "datePublished": "2026-06-28",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Notavello",
-    "url": "https://notavello.com"
-  },
-  "dateModified": "2026-06-28"
-}
-</script>
-<link rel="icon" type="image/x-icon" href="/favicon.ico">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-<style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-:root {
-  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
-  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
-  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
-  --green: #059669; --green-light: #D1FAE5;
-  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
-  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
-}
-html { scroll-behavior: smooth; }
-body {
-  background: var(--bg); color: var(--ink);
-  font-family: 'Sora', sans-serif; min-height: 100vh;
-  -webkit-font-smoothing: antialiased;
-  background-image:
-    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
-}
-.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
-.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
-.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
-.logo span { color: var(--accent); }
-.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
-.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
-.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
-.back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; color: var(--ink-muted); text-decoration: none; margin-bottom: 40px; transition: color 0.15s; }
-.back-link:hover { color: var(--accent); }
-.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
-.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
-.post-date { font-size: 0.78rem; color: var(--ink-faint); }
-.post-title { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; color: var(--ink); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
-.post-lede { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
-.post-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink); }
-.post-body h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 44px 0 16px; letter-spacing: -0.01em; }
-.post-body p { margin-bottom: 20px; color: var(--ink-muted); }
-.post-body p strong { color: var(--ink); font-weight: 600; }
-.post-body ul { margin: 0 0 20px 20px; color: var(--ink-muted); }
-.post-body ul li { margin-bottom: 8px; line-height: 1.7; }
-.callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 32px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.7; }
-.post-footer { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
-.post-footer-label { font-size: 0.8rem; color: var(--ink-faint); }
-.btn-export { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: opacity 0.2s; }
-.btn-export:hover { opacity: 0.9; }
-.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
-.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
-.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
-.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
-.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
-.footer-nav a:hover { color: var(--accent); }
-.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
-.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
-.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
-.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
-.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
-.footer-legal a:hover { color: var(--accent); }
-.compare-wrap { overflow-x: auto; margin: 28px 0; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--surface); }
-.compare-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; min-width: 640px; }
-.compare-table th, .compare-table td { text-align: left; padding: 11px 14px; border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.5; }
-.compare-table thead th { background: var(--accent-light); color: var(--accent); font-weight: 600; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; white-space: nowrap; }
-.compare-table tbody td:first-child { font-weight: 600; color: var(--ink); white-space: nowrap; }
-.compare-table tbody tr:last-child td { border-bottom: none; }
-.compare-table td.yes { color: var(--green); font-weight: 600; }
-.compare-note { font-size: 0.78rem; color: var(--ink-faint); margin: -12px 0 28px; }
-@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
-.main { animation: fadeUp 0.6s ease both; }
-@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>Which AI Should You Use? A Plain-English Guide to Picking the Right One — The Export | Notavello</title>
+  <meta name="description" content="ChatGPT, Claude, Gemini, Copilot, Perplexity, Grok and DeepSeek compared honestly: strengths, coding, live web access, URL reality, tokens, and cost.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://notavello.com/pages/blog/choosing-the-right-ai-tool/">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://notavello.com/pages/blog/choosing-the-right-ai-tool/">
+  <meta property="og:title" content="Which AI Should You Use? A Plain-English Guide to Picking the Right One">
+  <meta property="og:description" content="ChatGPT, Claude, Gemini, Copilot, Perplexity, Grok and DeepSeek compared honestly: strengths, coding, live web access, URL reality, tokens, and cost.">
+  <meta property="og:site_name" content="Notavello">
+  <meta property="og:image" content="https://notavello.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Which AI Should You Use? A Plain-English Guide to Picking the Right One">
+  <meta name="twitter:description" content="ChatGPT, Claude, Gemini, Copilot, Perplexity, Grok and DeepSeek compared honestly: strengths, coding, live web access, URL reality, tokens, and cost.">
+  <meta name="twitter:image" content="https://notavello.com/og-image.png">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Which AI Should You Use? A Plain-English Guide to Picking the Right One",
+      "description": "ChatGPT, Claude, Gemini, Copilot, Perplexity, Grok and DeepSeek compared honestly: strengths, coding, live web access, URL reality, tokens, and cost.",
+      "url": "https://notavello.com/pages/blog/choosing-the-right-ai-tool/",
+      "datePublished": "2026-06-28",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Notavello",
+        "url": "https://notavello.com"
+      },
+      "dateModified": "2026-06-28"
+    }
+  </script>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    :root {
+      --bg: #F0F4FF;
+      --surface: #FFFFFF;
+      --surface2: #F8FAFF;
+      --ink: #0F172A;
+      --ink-muted: #475569;
+      --ink-faint: #94A3B8;
+      --accent: #4F46E5;
+      --accent2: #7C3AED;
+      --accent-light: #EEF2FF;
+      --green: #059669;
+      --green-light: #D1FAE5;
+      --border: #E2E8F0;
+      --radius: 20px;
+      --radius-sm: 12px;
+      --shadow: 0 2px 8px rgba(15, 23, 42, 0.06), 0 8px 32px rgba(15, 23, 42, 0.08);
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Sora', sans-serif;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      background-image: radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79, 70, 229, 0.12) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124, 58, 237, 0.08) 0%, transparent 60%);
+      padding: 0 0 40px;
+    }
+    .header {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo {
+      font-family: 'Sora', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--ink);
+      letter-spacing: -0.03em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+    }
+    .logo-icon {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 0.85rem;
+      box-shadow: 0 2px 8px rgba(79, 70, 229, 0.35);
+      flex-shrink: 0;
+    }
+    .logo span {
+      color: var(--accent);
+    }
+    .header-login {
+      font-family: 'Sora', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 6px 14px;
+      border: 1.5px solid rgba(79, 70, 229, 0.3);
+      border-radius: 8px;
+      background: var(--accent-light);
+      transition: background 0.15s;
+      white-space: nowrap;
+    }
+    .header-login:hover {
+      background: #e0e7ff;
+      border-color: var(--accent);
+    }
+    .main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 40px 20px 60px;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.8rem;
+      color: var(--ink-muted);
+      text-decoration: none;
+      margin-bottom: 28px;
+      transition: color 0.15s;
+    }
+    .back-link:hover {
+      color: var(--accent);
+    }
+    .post-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    .post-tag {
+      font-size: 0.6rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      background: var(--accent-light);
+      color: var(--accent);
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+    .post-date {
+      font-size: 0.75rem;
+      color: var(--ink-faint);
+    }
+    .post-title {
+      font-family: 'Lora', serif;
+      font-size: clamp(1.6rem, 4.5vw, 2.4rem);
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+    .post-lede {
+      font-size: 1rem;
+      color: var(--ink-muted);
+      line-height: 1.7;
+      margin-bottom: 32px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--border);
+    }
+    .post-body {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: var(--ink);
+    }
+    .post-body h2 {
+      font-family: 'Lora', serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin: 40px 0 14px;
+      letter-spacing: -0.01em;
+    }
+    .post-body p {
+      margin-bottom: 18px;
+      color: var(--ink-muted);
+    }
+    .post-body p strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+    .post-body ul {
+      margin: 0 0 20px 20px;
+      color: var(--ink-muted);
+    }
+    .post-body ul li {
+      margin-bottom: 6px;
+      line-height: 1.7;
+    }
+    .callout {
+      background: var(--accent-light);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 16px 20px;
+      margin: 28px 0;
+      font-size: 0.9rem;
+      color: var(--ink);
+      line-height: 1.7;
+    }
+    .post-footer {
+      margin-top: 48px;
+      padding-top: 28px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .post-footer-label {
+      font-size: 0.8rem;
+      color: var(--ink-faint);
+    }
+    .btn-export {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 22px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: white;
+      font-family: 'Sora', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(79, 70, 229, 0.3);
+      transition: opacity 0.2s;
+    }
+    .btn-export:hover {
+      opacity: 0.9;
+    }
+    .site-footer {
+      border-top: 1px solid var(--border);
+      padding: 24px 20px;
+      margin-top: 32px;
+      background: var(--surface);
+    }
+    .site-footer-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .footer-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 18px;
+      align-items: center;
+    }
+    .footer-nav-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--ink-faint);
+      width: 100%;
+      margin-bottom: 2px;
+    }
+    .footer-nav a {
+      font-size: 0.75rem;
+      color: var(--ink-muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .footer-nav a:hover {
+      color: var(--accent);
+    }
+    .footer-nav-divider {
+      color: var(--border);
+      font-size: 0.7rem;
+    }
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 6px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+    }
+    .footer-copy {
+      font-size: 0.7rem;
+      color: var(--ink-faint);
+    }
+    .footer-legal {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .footer-legal a {
+      font-size: 0.7rem;
+      color: var(--ink-faint);
+      text-decoration: none;
+    }
+    .footer-legal a:hover {
+      color: var(--accent);
+    }
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(14px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .main {
+      animation: fadeUp 0.6s ease both;
+    }
+
+    /* ----- new comparison cards (replaces broken table) ----- */
+    .compare-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 24px 0 12px;
+    }
+    .compare-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px 16px;
+      transition: box-shadow 0.1s;
+      box-shadow: var(--shadow);
+    }
+    .compare-card:hover {
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+    }
+    .compare-card .tool-name {
+      font-weight: 600;
+      color: var(--ink);
+      min-width: 80px;
+      font-size: 0.95rem;
+    }
+    .compare-card .tool-badge {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 12px;
+      flex: 1 1 200px;
+      font-size: 0.8rem;
+      color: var(--ink-muted);
+    }
+    .compare-card .tool-badge span {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: var(--surface2);
+      padding: 2px 10px 2px 8px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      font-size: 0.7rem;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .compare-card .tool-badge .yes {
+      color: var(--green);
+      background: var(--green-light);
+      border-color: #a7f3d0;
+    }
+    .compare-card .tool-badge .no {
+      color: var(--ink-faint);
+      background: #f1f5f9;
+      border-color: #e2e8f0;
+    }
+    .compare-card .tool-note {
+      font-size: 0.75rem;
+      color: var(--ink-faint);
+      flex: 1 1 100%;
+      margin-top: 4px;
+      border-top: 1px dashed var(--border);
+      padding-top: 6px;
+    }
+    @media (max-width: 480px) {
+      .compare-card .tool-name {
+        min-width: 70px;
+        font-size: 0.85rem;
+      }
+      .compare-card .tool-badge span {
+        font-size: 0.65rem;
+        padding: 1px 8px 1px 6px;
+      }
+      .compare-card {
+        padding: 12px 14px;
+      }
+    }
+
+    /* quick comparison grid (second table replacement) */
+    .quick-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 20px 0 12px;
+    }
+    .quick-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 12px 16px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px 14px;
+      box-shadow: var(--shadow);
+    }
+    .quick-card .q-name {
+      font-weight: 600;
+      color: var(--ink);
+      min-width: 80px;
+      font-size: 0.9rem;
+    }
+    .quick-card .q-desc {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px 12px;
+      font-size: 0.75rem;
+      color: var(--ink-muted);
+      flex: 1 1 180px;
+    }
+    .quick-card .q-desc span {
+      background: var(--surface2);
+      padding: 1px 8px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      white-space: nowrap;
+    }
+    .quick-card .q-desc .highlight {
+      background: var(--accent-light);
+      border-color: var(--accent);
+      color: var(--accent);
+      font-weight: 500;
+    }
+    @media (max-width: 480px) {
+      .quick-card .q-name {
+        min-width: 70px;
+        font-size: 0.8rem;
+      }
+      .quick-card .q-desc span {
+        font-size: 0.65rem;
+      }
+    }
+
+    /* third table replacement (API truth) */
+    .api-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 20px 0 12px;
+    }
+    .api-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 12px 16px;
+      box-shadow: var(--shadow);
+    }
+    .api-card .api-name {
+      font-weight: 600;
+      color: var(--ink);
+      font-size: 0.9rem;
+      margin-bottom: 4px;
+    }
+    .api-card .api-truth {
+      font-size: 0.8rem;
+      color: var(--ink-muted);
+      margin-bottom: 2px;
+    }
+    .api-card .api-caution {
+      font-size: 0.75rem;
+      color: var(--ink-faint);
+      border-top: 1px dashed var(--border);
+      padding-top: 4px;
+      margin-top: 4px;
+    }
+    .compare-note {
+      font-size: 0.78rem;
+      color: var(--ink-faint);
+      margin: 6px 0 24px;
+    }
+    .post-body ul a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s;
+    }
+    .post-body ul a:hover {
+      border-bottom-color: var(--accent);
+    }
+    @media (max-width: 600px) {
+      .header {
+        padding: 12px 16px;
+      }
+      .main {
+        padding: 28px 16px 50px;
+      }
+      .post-title {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<!--HEADER-->
+  <!-- HEADER -->
+  <header class="header">
+    <a class="logo" href="/">
+      <span class="logo-icon">N</span>
+      Notavello<span>.</span>
+    </a>
+    <a class="header-login" href="/login">Sign in</a>
+  </header>
 
-<main class="main">
+  <main class="main">
+    <a class="back-link" href="/pages/blog/">← The Export</a>
 
-  <a class="back-link" href="/pages/blog/">← The Export</a>
-
-  <div class="post-meta">
-    <span class="post-tag">AI Comparison</span>
-    <span class="post-date">June 28, 2026</span>
-  </div>
-
-  <h1 class="post-title">Which AI Should You Use? A Plain-English Guide to Picking the Right One</h1>
-
-  <p class="post-lede">Seven big AI assistants, seven different personalities, and a lot of bad comparison charts. Here is the honest version: which tool fits which job, which ones can really use the live web, when a pasted URL is not the same thing as reading a page, and why token pricing is easy to misrepresent.</p>
-
-  <div class="post-body">
-
-    <h2>There is no “best” AI — only the best one for the task</h2>
-    <p>The most common question people ask is “which AI is the best?” It is the wrong question. Asking which assistant is best is like asking which vehicle is best: a pickup truck and a sports car are both useful, but the right choice depends on whether you are hauling lumber or chasing a winding road.</p>
-    <p>The same is true here. Some assistants are better for writing. Some are better for coding. Some are better inside Gmail, Word, Excel, or Windows. Some are built around searching the live web. Pick by the job, not by the logo.</p>
-
-    <div class="callout">
-      <strong>Plain truth:</strong> an AI model is not automatically looking at the internet. A chatbot may have a search tool, a web-fetch tool, or neither. If it does not clearly search, cite, quote, or fetch the page, assume it is answering from memory and from what you pasted into the chat.
+    <div class="post-meta">
+      <span class="post-tag">AI Comparison</span>
+      <span class="post-date">June 28, 2026</span>
     </div>
 
-    <h2>The seven names worth knowing</h2>
-    <p><strong>ChatGPT (OpenAI).</strong> The broad all-rounder. Good for writing, coding, explaining, brainstorming, image work, and general problem solving. It can search the web in ChatGPT when search is used, but that does not mean it automatically read every URL mentioned in a prompt.</p>
-    <p><strong>Claude (Anthropic).</strong> Strong for careful writing, coding, long documents, and structured reasoning. Claude has web search and web-fetch capabilities in supported products/API setups, but access depends on the product, plan, settings, and tool availability. Without those tools, Claude is not reading the live web.</p>
-    <p><strong>Gemini (Google).</strong> Strong fit for people already living inside Google Search, Gmail, Docs, Drive, Android, and other Google products. Gemini can be grounded with Google Search, but you should still look for citations or source links before treating an answer as current.</p>
-    <p><strong>Copilot (Microsoft).</strong> Best when your work happens inside Windows, Edge, Word, Excel, Outlook, Teams, or Microsoft 365. Copilot can use Bing/web search when enabled, and Microsoft says Copilot can generate a query and send it to Bing to improve an answer. That is different from magically reading every webpage you mention.</p>
-    <p><strong>Perplexity.</strong> The most search-native tool on this list. It is built as an answer engine that searches, summarizes, and cites sources. It is often the cleanest choice for “what is true right now?” questions, but even Perplexity sources should be checked for accuracy and quality.</p>
-    <p><strong>Grok (xAI).</strong> Best known for access to X/Twitter conversation and real-time web/X search in Grok products. It is useful for the live pulse of the internet, especially what people are saying on X, but it should not be treated as a final source of record.</p>
-    <p><strong>DeepSeek.</strong> The cost-conscious technical option. DeepSeek’s chat and API can be very cheap compared with many competitors, and the models can be strong for coding and reasoning. But the core DeepSeek API is not automatically a live-web search engine. If you need current facts, pair it with search/RAG or use a product interface that explicitly provides web search.</p>
+    <h1 class="post-title">Which AI Should You Use? A Plain-English Guide to Picking the Right One</h1>
 
-    <h2>The part most AI charts get wrong: URLs and live web access</h2>
-    <p>A model’s training data is not the same thing as the internet. Training gives the model a memory of patterns up to a cutoff. Web search gives it a way to look up new information. Web fetch gives it a way to retrieve a specific page or PDF. Those are separate things.</p>
-    <p>This matters because people paste a URL into a chatbot and assume the AI has read the page. Sometimes it has. Sometimes it has not. Sometimes the assistant only sees the URL text and guesses from the slug. The honest rule is simple: <strong>if the answer depends on a webpage, ask the tool to open/search that page, require citations, or paste the actual page text yourself.</strong></p>
+    <p class="post-lede">Seven big AI assistants, seven different personalities, and a lot of bad comparison charts. Here is the honest version: which tool fits which job, which ones can really use the live web, when a pasted URL is not the same thing as reading a page, and why token pricing is easy to misrepresent.</p>
 
-    <div class="compare-wrap">
-      <table class="compare-table">
-        <thead>
-          <tr><th>Tool</th><th>Live search?</th><th>Can it use a specific URL?</th><th>Bare-truth caveat</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>ChatGPT</td><td class="yes">Yes, when ChatGPT Search/browsing is used</td><td>Sometimes, if the product/tools fetch or search it</td><td>Do not assume it read a URL just because you typed one. Ask it to open/search the page or paste the content.</td></tr>
-          <tr><td>Claude</td><td class="yes">Yes, where web search is available</td><td>Yes in supported setups with web fetch/search tools</td><td>Claude is not automatically reading arbitrary URLs in every chat. Tool availability matters.</td></tr>
-          <tr><td>Gemini</td><td class="yes">Yes, through Google Search grounding/features</td><td>Depends on the Gemini product and mode</td><td>Google integration helps, but still check whether the answer is grounded and cited.</td></tr>
-          <tr><td>Copilot</td><td class="yes">Yes, through Bing/web search when enabled</td><td>Depends on Copilot surface and permissions</td><td>Microsoft 365 Copilot may send a generated search query to Bing; that is not the same as reading every URL you paste.</td></tr>
-          <tr><td>Perplexity</td><td class="yes">Yes — this is its main job</td><td class="yes">Usually yes, with source links/citations</td><td>Best default for sourced web research, but citations can still be incomplete, weak, or wrong.</td></tr>
-          <tr><td>Grok</td><td class="yes">Yes, real-time web + X search in Grok products</td><td>Depends on product and prompt</td><td>Useful for X/current chatter. Verify important claims against primary sources.</td></tr>
-          <tr><td>DeepSeek</td><td>Not by default in the core API/model</td><td>Only if paired with search/RAG or a UI that provides web search</td><td>Great for low-cost reasoning/coding. Do not use it as a live-news tool unless web search is explicitly enabled.</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="compare-note">This is the part to keep honest: “can search the web” and “has actually read this URL” are not the same claim.</p>
+    <div class="post-body">
 
-    <h2>What’s a token, and do you actually need to care?</h2>
-    <p>AI services do not bill their raw developer APIs by “pages” or “questions.” They count <strong>tokens</strong>, which are chunks of text. A token can be a character, a short word, a piece of a long word, or punctuation depending on the tokenizer. Your prompt counts. The answer counts. Tools, documents, code, images, and web-search results can add more tokens too.</p>
-    <p>Regular users on a flat monthly plan usually do not see token billing directly. Developers do. Token pricing matters when you build an app, run large batches, analyze long documents, or connect an AI model to search, files, tools, or agents.</p>
+      <h2>There is no “best” AI — only the best one for the task</h2>
+      <p>The most common question people ask is “which AI is the best?” It is the wrong question. Asking which assistant is best is like asking which vehicle is best: a pickup truck and a sports car are both useful, but the right choice depends on whether you are hauling lumber or chasing a winding road.</p>
+      <p>The same is true here. Some assistants are better for writing. Some are better for coding. Some are better inside Gmail, Word, Excel, or Windows. Some are built around searching the live web. Pick by the job, not by the logo.</p>
 
-    <h2>The quick comparison</h2>
-    <div class="compare-wrap">
-      <table class="compare-table">
-        <thead>
-          <tr><th>Tool</th><th>Best for</th><th>Coding</th><th>Everyday use</th><th>Web/current info</th><th>Typical cost</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>ChatGPT</td><td>General all-rounder; writing, coding, images, brainstorming</td><td>Excellent</td><td>Excellent</td><td class="yes">Yes, via ChatGPT Search when used</td><td>Free/Go; Plus around $20/mo; higher Pro tiers</td></tr>
-          <tr><td>Claude</td><td>Careful writing, code, long documents, structured thinking</td><td>Excellent</td><td>Excellent</td><td class="yes">Yes, where web search/fetch is available</td><td>Free; Pro around $20/mo; Max tiers higher</td></tr>
-          <tr><td>Gemini</td><td>Google apps, search grounding, huge context, multimodal work</td><td>Strong</td><td>Excellent</td><td class="yes">Yes, through Google Search grounding/features</td><td>Free; Google AI Plus/Pro/Ultra tiers vary</td></tr>
-          <tr><td>Copilot</td><td>Microsoft 365, Windows, Edge, Word, Excel, Outlook</td><td>Strong</td><td>Good</td><td class="yes">Yes, through Bing/web search when enabled</td><td>Free and Microsoft 365/Copilot plans vary</td></tr>
-          <tr><td>Perplexity</td><td>Research with citations and source links</td><td>Good</td><td>Good</td><td class="yes">Yes — search is the product</td><td>Free; Pro around $20/mo; API separate</td></tr>
-          <tr><td>Grok</td><td>Real-time X/Twitter pulse, web chatter, blunt style</td><td>Strong</td><td>Good</td><td class="yes">Yes, web + X search in Grok products</td><td>Free/SuperGrok tiers; X-bundled access varies</td></tr>
-          <tr><td>DeepSeek</td><td>Low-cost coding/reasoning and developer API use</td><td>Strong</td><td>Good</td><td>Not by default; needs search/tooling</td><td>Free chat; very low-cost API pricing</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="compare-note">Snapshot as of June 2026. Prices, plans, regions, and model access change constantly; check the official pricing pages before buying.</p>
+      <div class="callout">
+        <strong>Plain truth:</strong> an AI model is not automatically looking at the internet. A chatbot may have a search tool, a web-fetch tool, or neither. If it does not clearly search, cite, quote, or fetch the page, assume it is answering from memory and from what you pasted into the chat.
+      </div>
 
-    <h2>When the bill is measured in tokens instead of months</h2>
-    <p>The old version of this article made token costs look more exact than they really are. That is misleading. A fair token-cost comparison has to specify the exact model, input/output split, caching, tools, web-search calls, reasoning tokens, and whether you are using the consumer app or developer API.</p>
-    <p>The honest comparison is not “one million tokens costs X.” The honest comparison is: <strong>API prices are metered and can be cheap or expensive depending on the model and tools; consumer subscriptions hide that meter behind usage limits.</strong></p>
+      <h2>The seven names worth knowing</h2>
+      <p><strong>ChatGPT (OpenAI).</strong> The broad all-rounder. Good for writing, coding, explaining, brainstorming, image work, and general problem solving. It can search the web in ChatGPT when search is used, but that does not mean it automatically read every URL mentioned in a prompt.</p>
+      <p><strong>Claude (Anthropic).</strong> Strong for careful writing, coding, long documents, and structured reasoning. Claude has web search and web-fetch capabilities in supported products/API setups, but access depends on the product, plan, settings, and tool availability. Without those tools, Claude is not reading the live web.</p>
+      <p><strong>Gemini (Google).</strong> Strong fit for people already living inside Google Search, Gmail, Docs, Drive, Android, and other Google products. Gemini can be grounded with Google Search, but you should still look for citations or source links before treating an answer as current.</p>
+      <p><strong>Copilot (Microsoft).</strong> Best when your work happens inside Windows, Edge, Word, Excel, Outlook, Teams, or Microsoft 365. Copilot can use Bing/web search when enabled, and Microsoft says Copilot can generate a query and send it to Bing to improve an answer. That is different from magically reading every webpage you mention.</p>
+      <p><strong>Perplexity.</strong> The most search-native tool on this list. It is built as an answer engine that searches, summarizes, and cites sources. It is often the cleanest choice for “what is true right now?” questions, but even Perplexity sources should be checked for accuracy and quality.</p>
+      <p><strong>Grok (xAI).</strong> Best known for access to X/Twitter conversation and real-time web/X search in Grok products. It is useful for the live pulse of the internet, especially what people are saying on X, but it should not be treated as a final source of record.</p>
+      <p><strong>DeepSeek.</strong> The cost-conscious technical option. DeepSeek’s chat and API can be very cheap compared with many competitors, and the models can be strong for coding and reasoning. But the core DeepSeek API is not automatically a live-web search engine. If you need current facts, pair it with search/RAG or use a product interface that explicitly provides web search.</p>
 
-    <div class="compare-wrap">
-      <table class="compare-table">
-        <thead>
-          <tr><th>API/tool</th><th>What is true</th><th>What not to assume</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>DeepSeek API</td><td>Official API pricing is extremely low compared with many frontier APIs.</td><td>Cheap tokens do not automatically include live web search. You still need search/RAG if current facts matter.</td></tr>
-          <tr><td>Perplexity Sonar API</td><td>Designed for search-backed answers; pricing can include input/output tokens and search/citation-related charges depending on model.</td><td>Do not compare it to a plain chat model without accounting for search and citations.</td></tr>
-          <tr><td>OpenAI API</td><td>Model tokens are metered, and web search is a separate tool with its own pricing.</td><td>Do not treat ChatGPT Plus as the same thing as API usage. The app and API bill differently.</td></tr>
-          <tr><td>Claude API</td><td>Tokens are billed by model, and web search/fetch tools add their own usage considerations.</td><td>Do not assume Claude Pro’s monthly price predicts API cost for heavy coding or agent workflows.</td></tr>
-          <tr><td>Gemini API</td><td>Tokens are billed by model; Google Search grounding can have separate limits/charges.</td><td>Do not assume Gemini’s consumer plan equals developer API pricing.</td></tr>
-          <tr><td>xAI/Grok API</td><td>Grok models have per-token API pricing; Grok products advertise real-time web + X search.</td><td>Do not assume every Grok API call includes the same behavior as the consumer Grok app.</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="compare-note">If you are a normal user, start with the app. If you are a developer, price the exact model and workflow you plan to run.</p>
+      <h2>The part most AI charts get wrong: URLs and live web access</h2>
+      <p>A model’s training data is not the same thing as the internet. Training gives the model a memory of patterns up to a cutoff. Web search gives it a way to look up new information. Web fetch gives it a way to retrieve a specific page or PDF. Those are separate things.</p>
+      <p>This matters because people paste a URL into a chatbot and assume the AI has read the page. Sometimes it has. Sometimes it has not. Sometimes the assistant only sees the URL text and guesses from the slug. The honest rule is simple: <strong>if the answer depends on a webpage, ask the tool to open/search that page, require citations, or paste the actual page text yourself.</strong></p>
 
-    <div class="callout">
-      <strong>The bottom line:</strong> use ChatGPT or Claude for broad writing and code, Gemini if you live in Google, Copilot if you live in Microsoft, Perplexity when you need sourced web research, Grok for the live pulse of X and web chatter, and DeepSeek when low-cost coding/reasoning matters more than built-in live search.
-    </div>
+      <!-- REPLACED TABLE 1: live search + URL + caveat -->
+      <div class="compare-grid">
+        <div class="compare-card"><span class="tool-name">ChatGPT</span><div class="tool-badge"><span class="yes">✔ Live search</span><span>URL: sometimes</span></div><div class="tool-note">Do not assume it read a URL just because you typed one. Ask it to open/search the page or paste the content.</div></div>
+        <div class="compare-card"><span class="tool-name">Claude</span><div class="tool-badge"><span class="yes">✔ Live search</span><span>URL: sometimes</span></div><div class="tool-note">Tool availability matters. Claude is not automatically reading arbitrary URLs in every chat.</div></div>
+        <div class="compare-card"><span class="tool-name">Gemini</span><div class="tool-badge"><span class="yes">✔ Live search</span><span>URL: depends</span></div><div class="tool-note">Google integration helps, but still check whether the answer is grounded and cited.</div></div>
+        <div class="compare-card"><span class="tool-name">Copilot</span><div class="tool-badge"><span class="yes">✔ Live search</span><span>URL: depends</span></div><div class="tool-note">May send a generated search query to Bing; that is not the same as reading every URL you paste.</div></div>
+        <div class="compare-card"><span class="tool-name">Perplexity</span><div class="tool-badge"><span class="yes">✔ Live search</span><span class="yes">✔ URL: usually</span></div><div class="tool-note">Best default for sourced web research, but citations can still be incomplete or wrong.</div></div>
+        <div class="compare-card"><span class="tool-name">Grok</span><div class="tool-badge"><span class="yes">✔ Live search</span><span>URL: depends</span></div><div class="tool-note">Useful for X/current chatter. Verify important claims against primary sources.</div></div>
+        <div class="compare-card"><span class="tool-name">DeepSeek</span><div class="tool-badge"><span class="no">✘ Not by default</span><span>URL: only with RAG</span></div><div class="tool-note">Great for low-cost reasoning/coding. Do not use it as a live-news tool unless web search is explicitly enabled.</div></div>
+      </div>
+      <p class="compare-note">This is the part to keep honest: “can search the web” and “has actually read this URL” are not the same claim.</p>
 
-    <h2>So which should you pick?</h2>
-    <p>If you want one assistant and a simple bill, start with the free tier of ChatGPT, Claude, or Gemini and upgrade only after you know which one you actually use. If your work is mostly research and freshness, try Perplexity first. If your work lives in Office, Copilot makes sense. If your work lives in Gmail, Docs, Drive, and Search, Gemini makes sense. If you want cheap API horsepower, DeepSeek deserves a look.</p>
-    <p>But do not let any AI comparison chart tell you all these tools “see the web” in the same way. They do not. Search, browsing, URL fetching, citations, app integrations, and model memory are separate capabilities. The safest habit is simple: for current facts, ask for sources; for a specific page, provide the URL and ask the tool to open it; for anything important, verify the primary source yourself.</p>
+      <h2>What’s a token, and do you actually need to care?</h2>
+      <p>AI services do not bill their raw developer APIs by “pages” or “questions.” They count <strong>tokens</strong>, which are chunks of text. A token can be a character, a short word, a piece of a long word, or punctuation depending on the tokenizer. Your prompt counts. The answer counts. Tools, documents, code, images, and web-search results can add more tokens too.</p>
+      <p>Regular users on a flat monthly plan usually do not see token billing directly. Developers do. Token pricing matters when you build an app, run large batches, analyze long documents, or connect an AI model to search, files, tools, or agents.</p>
 
-    <h2>Sources used for this update</h2>
-    <ul>
-      <li><a href="https://openai.com/index/introducing-chatgpt-search/" target="_blank" rel="noopener">OpenAI: Introducing ChatGPT Search</a></li>
-      <li><a href="https://help.openai.com/articles/9237897-chatgpt-search" target="_blank" rel="noopener">OpenAI Help: ChatGPT Search</a></li>
-      <li><a href="https://docs.anthropic.com/en/docs/build-with-claude/tool-use/web-search-tool" target="_blank" rel="noopener">Anthropic Docs: Claude Web Search Tool</a></li>
-      <li><a href="https://docs.anthropic.com/en/docs/build-with-claude/tool-use/overview" target="_blank" rel="noopener">Anthropic Docs: Tool use overview, including web fetch</a></li>
-      <li><a href="https://ai.google.dev/gemini-api/docs/google-search" target="_blank" rel="noopener">Google AI Docs: Grounding with Google Search</a></li>
-      <li><a href="https://support.microsoft.com/en-us/microsoft-365-copilot/how-web-search-works-in-microsoft-365-copilot-chat-and-agents" target="_blank" rel="noopener">Microsoft Support: How web search works in Microsoft 365 Copilot Chat and agents</a></li>
-      <li><a href="https://www.perplexity.ai/" target="_blank" rel="noopener">Perplexity: AI-powered answer engine</a></li>
-      <li><a href="https://x.ai/pricing" target="_blank" rel="noopener">xAI: Grok plans and real-time web + X search</a></li>
-      <li><a href="https://api-docs.deepseek.com/quick_start/pricing" target="_blank" rel="noopener">DeepSeek API Docs: Models and pricing</a></li>
-      <li><a href="https://chatgpt.com/pricing/" target="_blank" rel="noopener">ChatGPT pricing</a>, <a href="https://claude.com/pricing" target="_blank" rel="noopener">Claude pricing</a>, <a href="https://gemini.google/subscriptions/" target="_blank" rel="noopener">Google AI subscriptions</a>, and <a href="https://www.perplexity.ai/pro" target="_blank" rel="noopener">Perplexity Pro</a></li>
-    </ul>
+      <h2>The quick comparison</h2>
+      <!-- REPLACED TABLE 2: quick comparison -->
+      <div class="quick-grid">
+        <div class="quick-card"><span class="q-name">ChatGPT</span><div class="q-desc"><span>General all-rounder</span><span class="highlight">Coding ★</span><span>Web: yes</span><span>~$20/mo</span></div></div>
+        <div class="quick-card"><span class="q-name">Claude</span><div class="q-desc"><span>Writing / long docs</span><span class="highlight">Coding ★</span><span>Web: yes</span><span>~$20/mo</span></div></div>
+        <div class="quick-card"><span class="q-name">Gemini</span><div class="q-desc"><span>Google apps</span><span>Strong coding</span><span>Web: yes</span><span>varies</span></div></div>
+        <div class="quick-card"><span class="q-name">Copilot</span><div class="q-desc"><span>Microsoft 365</span><span>Strong coding</span><span>Web: yes</span><span>free / plans</span></div></div>
+        <div class="quick-card"><span class="q-name">Perplexity</span><div class="q-desc"><span>Research / citations</span><span>Good coding</span><span class="highlight">Web: native</span><span>~$20/mo</span></div></div>
+        <div class="quick-card"><span class="q-name">Grok</span><div class="q-desc"><span>X / real-time</span><span>Strong coding</span><span>Web: yes</span><span>free / X plans</span></div></div>
+        <div class="quick-card"><span class="q-name">DeepSeek</span><div class="q-desc"><span>Low-cost / API</span><span class="highlight">Coding ★</span><span>Web: no (default)</span><span>very low API</span></div></div>
+      </div>
+      <p class="compare-note">Snapshot as of June 2026. Prices, plans, regions, and model access change constantly; check the official pricing pages before buying.</p>
 
-  </div>
+      <h2>When the bill is measured in tokens instead of months</h2>
+      <p>The old version of this article made token costs look more exact than they really are. That is misleading. A fair token-cost comparison has to specify the exact model, input/output split, caching, tools, web-search calls, reasoning tokens, and whether you are using the consumer app or developer API.</p>
+      <p>The honest comparison is not “one million tokens costs X.” The honest comparison is: <strong>API prices are metered and can be cheap or expensive depending on the model and tools; consumer subscriptions hide that meter behind usage limits.</strong></p>
 
-  <div class="post-footer">
-    <span class="post-footer-label">Looking for more AI tools?</span>
-    <a class="btn-export" href="/tools/">See our free AI tools →</a>
-  </div>
+      <!-- REPLACED TABLE 3: API truth -->
+      <div class="api-grid">
+        <div class="api-card"><div class="api-name">DeepSeek API</div><div class="api-truth">Official API pricing is extremely low compared with many frontier APIs.</div><div class="api-caution">Cheap tokens do not automatically include live web search. You still need search/RAG if current facts matter.</div></div>
+        <div class="api-card"><div class="api-name">Perplexity Sonar API</div><div class="api-truth">Designed for search-backed answers; pricing can include input/output tokens and search/citation-related charges depending on model.</div><div class="api-caution">Do not compare it to a plain chat model without accounting for search and citations.</div></div>
+        <div class="api-card"><div class="api-name">OpenAI API</div><div class="api-truth">Model tokens are metered, and web search is a separate tool with its own pricing.</div><div class="api-caution">Do not treat ChatGPT Plus as the same thing as API usage. The app and API bill differently.</div></div>
+        <div class="api-card"><div class="api-name">Claude API</div><div class="api-truth">Tokens are billed by model, and web search/fetch tools add their own usage considerations.</div><div class="api-caution">Do not assume Claude Pro’s monthly price predicts API cost for heavy coding or agent workflows.</div></div>
+        <div class="api-card"><div class="api-name">Gemini API</div><div class="api-truth">Tokens are billed by model; Google Search grounding can have separate limits/charges.</div><div class="api-caution">Do not assume Gemini’s consumer plan equals developer API pricing.</div></div>
+        <div class="api-card"><div class="api-name">xAI / Grok API</div><div class="api-truth">Grok models have per-token API pricing; Grok products advertise real-time web + X search.</div><div class="api-caution">Do not assume every Grok API call includes the same behavior as the consumer Grok app.</div></div>
+      </div>
+      <p class="compare-note">If you are a normal user, start with the app. If you are a developer, price the exact model and workflow you plan to run.</p>
 
-</main>
+      <div class="callout">
+        <strong>The bottom line:</strong> use ChatGPT or Claude for broad writing and code, Gemini if you live in Google, Copilot if you live in Microsoft, Perplexity when you need sourced web research, Grok for the live pulse of X and web chatter, and DeepSeek when low-cost coding/reasoning matters more than built-in live search.
+      </div>
 
-<!--FOOTER-->
+      <h2>So which should you pick?</h2>
+      <p>If you want one assistant and a simple bill, start with the free tier of ChatGPT, Claude, or Gemini and upgrade only after you know which one you actually use. If your work is mostly research and freshness, try Perplexity first. If your work lives in Office, Copilot makes sense. If your work lives in Gmail, Docs, Drive, and Search, Gemini makes sense. If you want cheap API horsepower, DeepSeek deserves a look.</p>
+      <p>But do not let any AI comparison chart tell you all these tools “see the web” in the same way. They do not. Search, browsing, URL fetching, citations, app integrations, and model memory are separate capabilities. The safest habit is simple: for current facts, ask for sources; for a specific page, provide the URL and ask the tool to open it; for anything important, verify the primary source yourself.</p>
 
-<script data-goatcounter="https://notavello.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script></body>
-</html>
+      <h2>Sources used for this update</h2>
+      <ul>
+        <li><a href="https://openai.com/index/introducing-chatgpt-search/" target="_blank" rel="noopener">OpenAI: Introducing ChatGPT Search</a></li>
+        <li><a href="https://help.openai.com/articles/9237897-chatgpt-search" target="_blank" rel="noopener">OpenAI Help: ChatGPT Search</a></li>
+        <li><a href="https://docs.anthropic.com/en/docs/build-with-claude/tool-use/web-search-tool" target="_blank" rel="noopener">Anthropic Docs: Claude Web Search Tool</a></li>
+        <li><a href="https://docs.anthropic.com/en/docs/build-with-claude/tool-use/overview" target="_blank" rel="noopener">Anthropic Docs
