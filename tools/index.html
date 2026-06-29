@@ -1,404 +1,719 @@
-<!-- Notavello tools-1.7 | responsive mobile cards + DesktopCorral GitHub Release download link -->
+<!-- Notavello root-2.0 | generated 00:00:00 UTC | fix CTA + style structure -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Free AI Tools — Notavello</title>
-<meta name="description" content="Free tools for AI users. Detect AI-written text, export conversations to PDF, download small utilities, and more — no sign-up required."/>
+<title>Export AI Conversations to PDF — ChatGPT, Claude, Gemini & More | Notavello</title>
+<meta name="description" content="Turn your Claude, ChatGPT, Gemini, Copilot, Grok, or Perplexity conversations into clean, color-coded PDFs. Paste your chat, get a professionally formatted document instantly. Free to use."/>
 <meta name="robots" content="index, follow"/>
-<link rel="canonical" href="https://notavello.com/tools/"/>
+<link rel="canonical" href="https://notavello.com/"/>
+
+<!-- Open Graph -->
 <meta property="og:type" content="website"/>
-<meta property="og:url" content="https://notavello.com/tools/"/>
-<meta property="og:title" content="Free AI Tools — Notavello"/>
-<meta property="og:description" content="Free tools for AI users. Detect AI-written text, export conversations to PDF, download small utilities, and more — no sign-up required."/>
+<meta property="og:url" content="https://notavello.com/"/>
+<meta property="og:title" content="Export AI Conversations to PDF — Notavello"/>
+<meta property="og:description" content="Turn your Claude, ChatGPT, Gemini, Copilot, Grok, or Perplexity conversations into clean, color-coded PDFs. Free to use. No sign-up required."/>
 <meta property="og:site_name" content="Notavello"/>
 <meta property="og:image" content="https://notavello.com/og-image.png"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
+
+<!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="Free AI Tools — Notavello"/>
-<meta name="twitter:description" content="Free tools for AI users. Detect AI-written text, export conversations to PDF, download small utilities, and more."/>
+<meta name="twitter:title" content="Export AI Conversations to PDF — Notavello"/>
+<meta name="twitter:description" content="Turn your Claude, ChatGPT, Gemini, Copilot, Grok, or Perplexity conversations into clean, color-coded PDFs. Free to use. No sign-up required."/>
 <meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+
+<!-- Structured Data -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  "name": "Free AI Tools — Notavello",
-  "url": "https://notavello.com/tools/",
-  "description": "Free tools for AI users. Detect AI-written text, export conversations to PDF, download small utilities, and more.",
-  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" }
+  "@type": "WebApplication",
+  "name": "Notavello",
+  "url": "https://notavello.com/",
+  "description": "Export AI conversations from ChatGPT, Claude, Gemini, Copilot, Grok, and Perplexity as clean, color-coded PDFs. Free to use, no sign-up required.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
 }
 </script>
+
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
 :root {
-  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
-  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
-  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
-  --green: #059669; --green-light: #D1FAE5;
-  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --bg: #F0F4FF;
+  --surface: #FFFFFF;
+  --surface2: #F8FAFF;
+  --ink: #0F172A;
+  --ink-muted: #64748B;
+  --ink-faint: #94A3B8;
+  --accent: #4F46E5;
+  --accent2: #7C3AED;
+  --accent-light: #EEF2FF;
+  --green: #059669;
+  --green-light: #D1FAE5;
+  --border: #E2E8F0;
+  --radius: 20px;
+  --radius-sm: 12px;
   --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
   --shadow-lg: 0 4px 16px rgba(79,70,229,0.12), 0 16px 48px rgba(15,23,42,0.12);
 }
+
 html { scroll-behavior: smooth; }
+
 body {
-  background: var(--bg); color: var(--ink);
-  font-family: 'Sora', sans-serif; min-height: 100vh;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Sora', sans-serif;
+  min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   background-image:
     radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
     radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
 }
-.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
-.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
-.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+
+/* ── HEADER ── */
+.header {
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  padding: 16px 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-family: 'Sora', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.03em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.logo-icon {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.85rem;
+  box-shadow: 0 2px 8px rgba(79,70,229,0.35);
+}
+
 .logo span { color: var(--accent); }
-.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
-.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
 
-.main { max-width: 860px; margin: 0 auto; padding: 72px 24px 100px; animation: fadeUp 0.6s ease both; }
+/* ── MAIN ── */
+.screen-ui {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 72px 24px 100px;
+}
 
-/* PAGE HEADER */
-.page-header { text-align: center; margin-bottom: 64px; }
-.page-header-label { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.14em; color: var(--ink-faint); margin-bottom: 14px; }
-.page-header h1 { font-family: 'Lora', serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 600; color: var(--ink); line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 16px; }
-.page-header h1 em { font-style: italic; background: linear-gradient(135deg, var(--accent), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-.page-header p { font-size: 1rem; color: var(--ink-muted); line-height: 1.75; max-width: 480px; margin: 0 auto; }
+/* ── HERO ── */
+.hero {
+  text-align: center;
+  margin-bottom: 60px;
+  animation: fadeUp 0.6s ease both;
+}
 
-/* SECTION LABEL */
-.section-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--ink-faint); margin-bottom: 16px; }
+.hero-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  padding: 6px 16px 6px 10px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--ink-muted);
+  margin-bottom: 24px;
+  box-shadow: 0 1px 4px rgba(15,23,42,0.06);
+}
 
-/* TOOL LIST */
-.tool-grid { display: flex; flex-direction: column; gap: 2px; margin-bottom: 48px; border: 1.5px solid var(--border); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+.hero-pill-dot {
+  width: 7px;
+  height: 7px;
+  background: var(--green);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
 
-.tool-card { background: var(--surface); border: none; border-bottom: 1px solid var(--border); padding: 18px 24px; text-decoration: none; color: inherit; display: flex; align-items: center; gap: 16px; transition: background 0.15s; }
-.tool-card:last-child { border-bottom: none; }
-.tool-card:hover { background: var(--surface2); }
+.hero h1 {
+  font-family: 'Lora', serif;
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--ink);
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
+}
 
-.tool-card-icon { width: 38px; height: 38px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
-.tool-card-icon--detector { background: linear-gradient(135deg, #FEF3C7, #FDE68A); }
-.tool-card-icon--exporter { background: linear-gradient(135deg, #EEF2FF, #DDD6FE); }
-.tool-card-icon--pwa      { background: linear-gradient(135deg, #FCE7F3, #FBCFE8); }
-.tool-card-icon--blog      { background: linear-gradient(135deg, #D1FAE5, #A7F3D0); }
-.tool-card-icon--extension { background: linear-gradient(135deg, #FFF7ED, #FED7AA); }
+.hero h1 em {
+  font-style: italic;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
 
-.tool-card-body { flex: 1; min-width: 0; }
-.tool-card-name { font-size: 0.92rem; font-weight: 700; color: var(--ink); letter-spacing: -0.01em; margin-bottom: 2px; }
-.tool-card-desc { font-size: 0.78rem; color: var(--ink-muted); line-height: 1.5; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.hero p {
+  font-size: 1.05rem;
+  color: var(--ink-muted);
+  max-width: 520px;
+  margin: 0 auto 32px;
+  line-height: 1.75;
+  font-weight: 400;
+}
 
-.tool-card-footer { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
-.tool-card-status { display: inline-flex; align-items: center; gap: 5px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 3px 8px; border-radius: 20px; }
-.tool-card-status--live { background: var(--green-light); color: var(--green); }
-.tool-card-status--new  { background: var(--accent-light); color: var(--accent); }
-.tool-card-status-dot { width: 5px; height: 5px; border-radius: 50%; background: currentColor; animation: pulse 2s infinite; }
-.tool-card-link { font-size: 0.78rem; font-weight: 600; color: var(--accent); white-space: nowrap; }
+/* ── AI CARDS ── */
+.ai-cards-label {
+  text-align: center;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--ink-faint);
+  margin-bottom: 20px;
+}
 
-/* BLOG SECTION */
-.blog-section { margin-bottom: 64px; }
-.blog-card { background: var(--surface); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 32px; text-decoration: none; color: inherit; display: flex; align-items: center; justify-content: space-between; gap: 24px; box-shadow: var(--shadow); transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s; }
-.blog-card:hover { border-color: var(--accent); box-shadow: var(--shadow-lg); transform: translateY(-2px); }
-.blog-card-left { display: flex; align-items: center; gap: 20px; }
-.blog-card-icon { width: 48px; height: 48px; border-radius: 14px; background: linear-gradient(135deg, #D1FAE5, #A7F3D0); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0; }
-.blog-card-name { font-size: 1rem; font-weight: 700; color: var(--ink); letter-spacing: -0.02em; margin-bottom: 5px; }
-.blog-card-desc { font-size: 0.83rem; color: var(--ink-muted); line-height: 1.55; }
-.blog-card-right { font-size: 0.85rem; font-weight: 600; color: var(--accent); white-space: nowrap; }
+.ai-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 64px;
+  animation: fadeUp 0.6s 0.1s ease both;
+  opacity: 0;
+}
 
-/* DOWNLOADS SECTION */
-.downloads-section { margin-bottom: 64px; }
-.downloads-list {
-  width: 100%;
+.ai-card {
+  background: var(--surface);
   border: 1.5px solid var(--border);
   border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: var(--shadow);
-  background: var(--surface);
-}
-.download-card {
-  background: var(--surface);
-  border-bottom: 1px solid var(--border);
-  padding: 22px 24px;
-  display: grid;
-  grid-template-columns: 170px minmax(0, 1fr) 140px 170px;
-  gap: 22px;
-  align-items: center;
+  padding: 28px 24px;
+  text-align: center;
   text-decoration: none;
   color: inherit;
+  box-shadow: var(--shadow);
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
 }
-.download-card:last-child { border-bottom: none; }
-.download-card:hover { background: var(--surface2); }
-.download-card--featured {
-  background: linear-gradient(135deg, rgba(79,70,229,0.08), rgba(124,58,237,0.04)), var(--surface);
+
+.ai-card--live:hover {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
 }
-.download-card--featured:hover {
-  background: linear-gradient(135deg, rgba(79,70,229,0.12), rgba(124,58,237,0.07)), var(--surface);
+
+.ai-card--soon {
+  opacity: 0.55;
+  cursor: default;
+  pointer-events: none;
 }
-.download-name {
-  font-size: 0.92rem;
-  font-weight: 800;
+
+.ai-card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.ai-card-icon--claude     { background: linear-gradient(135deg, #EEF2FF, #DDD6FE); }
+.ai-card-icon--chatgpt   { background: linear-gradient(135deg, #D1FAE5, #A7F3D0); }
+.ai-card-icon--gemini    { background: linear-gradient(135deg, #FEF3C7, #FDE68A); }
+.ai-card-icon--copilot   { background: linear-gradient(135deg, #DBEAFE, #BFDBFE); }
+.ai-card-icon--grok      { background: linear-gradient(135deg, #F1F5F9, #E2E8F0); }
+.ai-card-icon--perplexity{ background: linear-gradient(135deg, #F0FDF4, #BBF7D0); }
+
+.ai-card--other {
+  grid-column: 1 / -1;
+  flex-direction: row;
+  justify-content: center;
+  padding: 18px 24px;
+  border-style: dashed;
+  border-color: var(--ink-faint);
+  opacity: 0.75;
+  gap: 14px;
+}
+.ai-card--other:hover {
+  opacity: 1;
+  border-color: var(--accent);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-1px);
+}
+.ai-card--other .ai-card-icon {
+  width: 36px;
+  height: 36px;
+  font-size: 1rem;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #F5F3FF, #EDE9FE);
+  flex-shrink: 0;
+}
+.ai-card--other .ai-card-name { font-size: 0.9rem; }
+.ai-card--other .ai-card-desc { font-size: 0.78rem; text-align: left; }
+
+.ai-other-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: var(--accent-light);
+  color: var(--accent);
+  padding: 3px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.ai-card-name {
+  font-size: 1rem;
+  font-weight: 700;
   color: var(--ink);
   letter-spacing: -0.02em;
-  line-height: 1.25;
 }
-.download-name a { color: inherit; text-decoration: none; }
-.download-name a:hover { color: var(--accent); text-decoration: underline; }
-.download-desc { color: var(--ink-muted); line-height: 1.55; font-size: 0.82rem; min-width: 0; }
-.download-desc code { font-size: 0.76rem; background: var(--accent-light); color: var(--accent); padding: 1px 5px; border-radius: 6px; }
-.download-platform { font-size: 0.74rem; font-weight: 700; color: var(--ink-faint); white-space: nowrap; }
-.download-actions { display: flex; gap: 10px; align-items: center; justify-content: flex-end; flex-wrap: wrap; }
-.download-actions a {
-  font-size: 0.75rem;
-  font-weight: 800;
-  color: var(--accent);
-  text-decoration: none;
-  white-space: nowrap;
-}
-.download-actions a:hover { text-decoration: underline; }
-.download-actions .download-primary {
-  background: var(--accent);
-  color: #fff;
-  padding: 8px 12px;
-  border-radius: 999px;
-  box-shadow: 0 6px 16px rgba(79,70,229,0.18);
-}
-.download-actions .download-primary:hover { text-decoration: none; background: #4338CA; }
 
-/* FOOTER */
-.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
-.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.ai-card-desc {
+  font-size: 0.8rem;
+  color: var(--ink-muted);
+  line-height: 1.5;
+}
+
+.ai-card-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  border-radius: 20px;
+  margin-top: 4px;
+}
+
+.ai-card-status--live { background: var(--green-light); color: var(--green); }
+.ai-card-status--soon { background: var(--border); color: var(--ink-faint); }
+
+.ai-card-status-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.ai-card-status--live .ai-card-status-dot { animation: pulse 2s infinite; }
+
+/* ── HOW IT WORKS ── */
+.how-section {
+  animation: fadeUp 0.6s 0.2s ease both;
+  opacity: 0;
+  margin-bottom: 64px;
+}
+
+.section-label {
+  text-align: center;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--ink-faint);
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-family: 'Lora', serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--ink);
+  margin-bottom: 36px;
+  letter-spacing: -0.02em;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.step-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 22px;
+  box-shadow: var(--shadow);
+}
+
+.step-num {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(79,70,229,0.3);
+}
+
+.step-card h3 { font-size: 0.95rem; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
+.step-card p { font-size: 0.83rem; color: var(--ink-muted); line-height: 1.6; }
+
+/* ── WHY SECTION ── */
+.why-section {
+  animation: fadeUp 0.6s 0.3s ease both;
+  opacity: 0;
+  margin-bottom: 64px;
+}
+
+.perks {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.perk-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 22px 20px;
+  box-shadow: var(--shadow);
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.perk-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 2px; }
+.perk-card h3 { font-size: 0.9rem; font-weight: 600; color: var(--ink); margin-bottom: 5px; }
+.perk-card p { font-size: 0.8rem; color: var(--ink-muted); line-height: 1.55; }
+
+/* ── CTA ── */
+.cta-section {
+  text-align: center;
+  animation: fadeUp 0.6s 0.4s ease both;
+  opacity: 0;
+  background: var(--surface);
+  border: 1.5px solid rgba(79,70,229,0.2);
+  border-radius: var(--radius);
+  padding: 52px 40px;
+  box-shadow: var(--shadow-lg);
+  margin-bottom: 64px;
+}
+
+.cta-section h2 {
+  font-family: 'Lora', serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+
+.cta-section p {
+  font-size: 0.95rem;
+  color: var(--ink-muted);
+  margin-bottom: 28px;
+  line-height: 1.65;
+}
+
+.btn-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 44px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: white;
+  font-family: 'Sora', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: opacity 0.2s, box-shadow 0.2s, transform 0.15s;
+  box-shadow: 0 4px 16px rgba(79,70,229,0.35);
+  letter-spacing: -0.01em;
+}
+
+.btn-cta:hover { opacity: 0.92; transform: translateY(-1px); box-shadow: 0 6px 24px rgba(79,70,229,0.45); }
+
+.cta-note { font-size: 0.78rem; color: var(--ink-faint); margin-top: 14px; }
+
+/* ── FOOTER ── */
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 32px 36px;
+  margin-top: 48px;
+  background: var(--surface);
+}
+
+.site-footer-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
-.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+
+.footer-nav-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink-faint);
+  width: 100%;
+  margin-bottom: 4px;
+}
+
 .footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
 .footer-nav a:hover { color: var(--accent); }
 .footer-nav-divider { color: var(--border); font-size: 0.8rem; }
-.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
 .footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
 .footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
-.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; transition: color 0.15s; }
 .footer-legal a:hover { color: var(--accent); }
 
-@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.85); } }
-
-@media (max-width: 760px) {
-  .header { padding: 14px 18px; }
-  .logo { font-size: 1.08rem; }
-  .logo-icon { width: 30px; height: 30px; }
-  .header-login { padding: 7px 14px; }
-  .main { max-width: none; padding: 46px 16px 80px; }
-  .page-header { margin-bottom: 44px; }
-  .page-header h1 { font-size: clamp(2rem, 11vw, 2.75rem); line-height: 1.1; }
-  .hero-break { display: none; }
-  .page-header p { font-size: 0.95rem; line-height: 1.65; }
-  .tool-card {
-    display: grid;
-    grid-template-columns: 42px minmax(0, 1fr);
-    align-items: start;
-    gap: 12px;
-    padding: 18px 18px;
-  }
-  .tool-card-icon { width: 42px; height: 42px; }
-  .tool-card-name { font-size: 0.95rem; line-height: 1.25; }
-  .tool-card-desc { display: block; white-space: normal; overflow: visible; text-overflow: unset; font-size: 0.78rem; line-height: 1.5; margin-top: 3px; }
-  .tool-card-footer { grid-column: 2; justify-content: flex-start; flex-wrap: wrap; margin-top: 2px; }
-  .blog-card { flex-direction: column; align-items: flex-start; padding: 24px 20px; }
-  .blog-card-left { align-items: flex-start; gap: 14px; }
-  .blog-card-right { align-self: flex-start; }
-  .download-card {
-    grid-template-columns: 1fr;
-    gap: 10px;
-    padding: 22px 20px;
-  }
-  .download-name { font-size: 1rem; }
-  .download-desc { font-size: 0.9rem; line-height: 1.6; }
-  .download-platform { font-size: 0.76rem; }
-  .download-actions { justify-content: flex-start; gap: 12px; margin-top: 4px; }
-  .site-footer { padding: 28px 20px; }
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-@media (max-width: 420px) {
-  .header { padding: 12px 14px; }
-  .header-login { font-size: 0.78rem; padding: 7px 12px; }
-  .main { padding-left: 14px; padding-right: 14px; }
-  .page-header h1 { font-size: 2rem; }
-  .tool-grid, .downloads-list, .blog-card { border-radius: 16px; }
-  .tool-card-link, .download-actions a { font-size: 0.74rem; }
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(0.85); }
+}
+
+/* ── MOBILE ── */
+@media (max-width: 640px) {
+  .header { padding: 14px 20px; }
+  .screen-ui { padding: 48px 16px 80px; }
+  .ai-cards { grid-template-columns: repeat(2, 1fr); }
+  .steps { grid-template-columns: 1fr; }
+  .perks { grid-template-columns: 1fr; }
+  .cta-section { padding: 36px 24px; }
 }
 </style>
+
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3d7e9187685d42d382a04d6929aecc82"}'></script><!-- End Cloudflare Web Analytics -->
 </head>
 <body>
 
-<!--HEADER-->
-
-<main class="main">
-
-  <div class="page-header">
-    <p class="page-header-label">Free tools</p>
-    <h1>Everything you need to work<span class="hero-break"><br></span>with <em>AI smarter</em></h1>
-    <p>Simple, free tools and small utilities built for people who use AI every day. No sign-up, no fuss.</p>
-  </div>
-
-  <!-- TOOLS -->
-  <p class="section-label">Tools</p>
-  <div class="tool-grid">
-
-    <a class="tool-card" href="/tools/aidetector/">
-      <div class="tool-card-icon tool-card-icon--detector">🔍</div>
-      <div class="tool-card-body">
-        <div class="tool-card-name">AI Detector</div>
-        <div class="tool-card-desc">Paste any text and find out if it was written by an AI. Fast, free, no account needed.</div>
-      </div>
-      <div class="tool-card-footer">
-        <span class="tool-card-status tool-card-status--live"><span class="tool-card-status-dot"></span> Live</span>
-        <span class="tool-card-link">Try it →</span>
-      </div>
-    </a>
-
-    <a class="tool-card" href="/">
-      <div class="tool-card-icon tool-card-icon--exporter">📄</div>
-      <div class="tool-card-body">
-        <div class="tool-card-name">AI to PDF Exporter</div>
-        <div class="tool-card-desc">Export ChatGPT, Claude, Gemini, Grok, Copilot, and Perplexity conversations to clean PDFs.</div>
-      </div>
-      <div class="tool-card-footer">
-        <span class="tool-card-status tool-card-status--live"><span class="tool-card-status-dot"></span> Live</span>
-        <span class="tool-card-link">Export now →</span>
-      </div>
-    </a>
-
-    <a class="tool-card" href="/app/">
-      <div class="tool-card-icon tool-card-icon--pwa">📲</div>
-      <div class="tool-card-body">
-        <div class="tool-card-name">Notavello App</div>
-        <div class="tool-card-desc">Install Notavello on your phone or desktop — no app store required.</div>
-      </div>
-      <div class="tool-card-footer">
-        <span class="tool-card-status tool-card-status--new"><span class="tool-card-status-dot"></span> New</span>
-        <span class="tool-card-link">Install →</span>
-      </div>
-    </a>
-
-    <!-- ADD NEW TOOLS BELOW THIS LINE — copy a tool-card block above -->
-
-
-    <a class="tool-card" href="/tools/pocketcreds/">
-      <div class="tool-card-icon tool-card-icon--extension">🪪</div>
-      <div class="tool-card-body">
-        <div class="tool-card-name">Chrome Extension — PocketCreds</div>
-        <div class="tool-card-desc">Keep IDs, addresses, codes, notes, and reference images one click away in Chrome. Stored locally.</div>
-      </div>
-      <div class="tool-card-footer">
-        <span class="tool-card-status tool-card-status--new"><span class="tool-card-status-dot"></span> New</span>
-        <span class="tool-card-link">View page →</span>
-      </div>
-    </a>
-
-    <a class="tool-card" href="https://addons.mozilla.org/en-US/firefox/addon/notavello-chatgpt-to-pdf/" target="_blank" rel="noopener">
-      <div class="tool-card-icon tool-card-icon--extension">🦊</div>
-      <div class="tool-card-body">
-        <div class="tool-card-name">Firefox Extension — Export ChatGPT to PDF</div>
-        <div class="tool-card-desc">One-click export of any ChatGPT conversation to a clean, color-coded PDF. Runs locally — nothing uploaded.</div>
-      </div>
-      <div class="tool-card-footer">
-        <span class="tool-card-status tool-card-status--new"><span class="tool-card-status-dot"></span> New</span>
-        <span class="tool-card-link">Get it →</span>
-      </div>
-    </a>
-
-    <a class="tool-card" href="https://addons.mozilla.org/en-US/firefox/addon/searchclear/" target="_blank" rel="noopener">
-      <div class="tool-card-icon tool-card-icon--extension">🦊</div>
-      <div class="tool-card-body">
-        <div class="tool-card-name">Firefox Extension — SearchClear</div>
-        <div class="tool-card-desc">Cuts ads, affiliate spam, Pinterest, Reddit/Quora flood, and AI filler from Google results with a one-click filter bar. No tracking, nothing sent anywhere.</div>
-      </div>
-      <div class="tool-card-footer">
-        <span class="tool-card-status tool-card-status--new"><span class="tool-card-status-dot"></span> New</span>
-        <span class="tool-card-link">Get it →</span>
-      </div>
-    </a>
-
-    <a class="tool-card" href="https://addons.mozilla.org/en-US/firefox/addon/nukerefresh-hard-reload-page/" target="_blank" rel="noopener">
-      <div class="tool-card-icon tool-card-icon--extension">🦊</div>
-      <div class="tool-card-body">
-        <div class="tool-card-name">Firefox Extension — NukeRefresh</div>
-        <div class="tool-card-desc">Five escalating hard-refresh strategies for when Ctrl+Shift+R isn't enough — from cache-bust URLs to a full cache nuke. No data collected.</div>
-      </div>
-      <div class="tool-card-footer">
-        <span class="tool-card-status tool-card-status--new"><span class="tool-card-status-dot"></span> New</span>
-        <span class="tool-card-link">Get it →</span>
-      </div>
-    </a>
-
-    <a class="tool-card" href="https://addons.mozilla.org/en-US/firefox/addon/pocketcreds-clipboard-manager/" target="_blank" rel="noopener">
-      <div class="tool-card-icon tool-card-icon--extension">🦊</div>
-      <div class="tool-card-body">
-        <div class="tool-card-name">Firefox Extension — PocketCreds</div>
-        <div class="tool-card-desc">Keeps the things you paste constantly — IDs, license numbers, addresses, images — one click away in labeled slots. Stored locally, nothing synced.</div>
-      </div>
-      <div class="tool-card-footer">
-        <span class="tool-card-status tool-card-status--new"><span class="tool-card-status-dot"></span> New</span>
-        <span class="tool-card-link">Get it →</span>
-      </div>
-    </a>
-
-  </div>
-
-  <!-- DOWNLOADS -->
-  <p class="section-label">Downloads &amp; Utilities</p>
-  <div class="downloads-section">
-    <div class="downloads-list">
-
-      <article class="download-card download-card--featured">
-        <div class="download-name"><a href="/tools/desktopcorral/">DesktopCorral</a></div>
-        <div class="download-desc">Windows tray utility that keeps windows corralled into left and right desktop zones, with smarter drag switching, hotkeys, startup support, and a normal Windows installer.</div>
-        <div class="download-platform">Windows</div>
-        <div class="download-actions">
-          <a href="/tools/desktopcorral/">Details →</a>
-          <a class="download-primary" href="https://github.com/skychael/notavello/releases/download/desktopcorral-v2.2.0/DesktopCorralSetup_v2.2.0.exe">Download →</a>
-        </div>
-      </article>
-
-      <article class="download-card">
-        <div class="download-name"><a href="/pages/blog/ubuntu-4-digit-pin-login/">Ubuntu PIN4 Tool</a></div>
-        <div class="download-desc">Shell script that sets a 4-digit numeric login PIN on Ubuntu — patches the password rules that normally block it and writes the PIN via <code>chpasswd</code> so it actually sticks. Includes backup and one-command restore.</div>
-        <div class="download-platform">Linux · Ubuntu</div>
-        <div class="download-actions">
-          <a href="/pages/blog/ubuntu-4-digit-pin-login/">Guide →</a>
-          <a href="https://github.com/skychael/ubuntu-pin4-tool" target="_blank" rel="noopener">GitHub →</a>
-        </div>
-      </article>
-
-      <article class="download-card">
-        <div class="download-name">USB Disconnect Logger</div>
-        <div class="download-desc">PowerShell script that timestamps every USB device connect and disconnect in real time — useful for diagnosing monitor standby drop-offs, phantom disconnects, and USB hub power cycling. Logs to your Desktop as <code>usb-disconnect-log.txt</code>. No install required.</div>
-        <div class="download-platform">Windows · PowerShell</div>
-        <div class="download-actions">
-          <a href="https://github.com/skychael/usb-disconnect-logger" target="_blank" rel="noopener">GitHub →</a>
-        </div>
-      </article>
-
-      <!-- ADD NEW UTILITIES BELOW THIS LINE — copy a download-card block above -->
-
+<header class="header">
+  <a href="/" class="logo">
+    <div class="logo-icon">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
     </div>
+    Nota<span>vello</span>
+  </a>
+  <div id="liveBadge" style="font-size:0.68rem;font-weight:600;background:linear-gradient(135deg,var(--accent-light),#F5F3FF);color:var(--accent);padding:5px 14px;border-radius:20px;letter-spacing:0.06em;text-transform:uppercase;border:1px solid rgba(79,70,229,0.2);">
+    ROOT-2.0 · --:--:-- UTC
+  </div>
+<script>
+(function(){
+  const n=new Date();
+  const t=[n.getUTCHours(),n.getUTCMinutes(),n.getUTCSeconds()].map(v=>String(v).padStart(2,'0')).join(':');
+  document.getElementById('liveBadge').textContent='ROOT-2.0 · '+t+' UTC';
+})();
+</script>
+</header>
+
+<main class="screen-ui">
+
+  <section class="hero">
+    <div class="hero-pill">
+      <div class="hero-pill-dot"></div>
+      Searchable PDFs in seconds
+    </div>
+    <h1>Export AI conversations to<br><em>beautiful PDFs</em></h1>
+    <p>ChatGPT, Claude, Gemini, Copilot, Grok, Perplexity, and more — paste your chat and get a clean, color-coded PDF instantly. Searchable, shareable, and professionally formatted.</p>
+  </section>
+
+  <div class="ai-cards-label">Choose your AI to get started</div>
+  <div class="ai-cards">
+
+    <a href="/exporters/chatgpt/" class="ai-card ai-card--live">
+      <div class="ai-card-icon ai-card-icon--chatgpt">💬</div>
+      <div class="ai-card-name">ChatGPT</div>
+      <div class="ai-card-desc">Export ChatGPT conversations by OpenAI as color-coded PDFs</div>
+      <div class="ai-card-status ai-card-status--live">
+        <div class="ai-card-status-dot"></div>
+        Live now
+      </div>
+    </a>
+
+    <a href="/exporters/gemini/" class="ai-card ai-card--live">
+      <div class="ai-card-icon ai-card-icon--gemini">✨</div>
+      <div class="ai-card-name">Gemini</div>
+      <div class="ai-card-desc">Export Gemini conversations by Google as color-coded PDFs</div>
+      <div class="ai-card-status ai-card-status--live">
+        <div class="ai-card-status-dot"></div>
+        Live now
+      </div>
+    </a>
+
+    <a href="/exporters/copilot/" class="ai-card ai-card--live">
+      <div class="ai-card-icon ai-card-icon--copilot">🪟</div>
+      <div class="ai-card-name">Copilot</div>
+      <div class="ai-card-desc">Export Copilot conversations by Microsoft as color-coded PDFs</div>
+      <div class="ai-card-status ai-card-status--live">
+        <div class="ai-card-status-dot"></div>
+        Live now
+      </div>
+    </a>
+
+    <a href="/exporters/claude/" class="ai-card ai-card--live">
+      <div class="ai-card-icon ai-card-icon--claude">🤖</div>
+      <div class="ai-card-name">Claude</div>
+      <div class="ai-card-desc">Export Claude conversations by Anthropic as color-coded PDFs</div>
+      <div class="ai-card-status ai-card-status--live">
+        <div class="ai-card-status-dot"></div>
+        Live now
+      </div>
+    </a>
+
+    <a href="/exporters/grok/" class="ai-card ai-card--live">
+      <div class="ai-card-icon ai-card-icon--grok">𝕏</div>
+      <div class="ai-card-name">Grok</div>
+      <div class="ai-card-desc">Export Grok conversations by xAI as color-coded PDFs</div>
+      <div class="ai-card-status ai-card-status--live">
+        <div class="ai-card-status-dot"></div>
+        Live now
+      </div>
+    </a>
+
+    <a href="/exporters/perplexity/" class="ai-card ai-card--live">
+      <div class="ai-card-icon ai-card-icon--perplexity">🔍</div>
+      <div class="ai-card-name">Perplexity</div>
+      <div class="ai-card-desc">Export Perplexity conversations as color-coded PDFs</div>
+      <div class="ai-card-status ai-card-status--live">
+        <div class="ai-card-status-dot"></div>
+        Live now
+      </div>
+    </a>
+
+    <a href="/exporters/other/" class="ai-card ai-card--live ai-card--other">
+      <div class="ai-card-icon ai-card-icon--other">•••</div>
+      <div>
+        <div class="ai-card-name">Other AI</div>
+        <div class="ai-card-desc">Mistral, DeepSeek, Llama, Le Chat, and more — works with most AI tools</div>
+      </div>
+      <div class="ai-other-badge">Try it</div>
+    </a>
+
   </div>
 
-  <!-- BLOG -->
-  <p class="section-label">From the blog</p>
-  <div class="blog-section">
-    <a class="blog-card" href="/pages/blog/">
-      <div class="blog-card-left">
-        <div class="blog-card-icon">✍️</div>
+  <section class="how-section">
+    <div class="section-label">How it works</div>
+    <h2 class="section-title">Three steps to a professional PDF</h2>
+    <div class="steps">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <h3>Choose your AI</h3>
+        <p>Select which AI assistant you used — ChatGPT, Gemini, Copilot, Claude, Grok, Perplexity, or any other AI tool.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <h3>Copy your chat</h3>
+        <p>Open your conversation, press Ctrl+A to select all, then Ctrl+C to copy.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <h3>Paste &amp; download</h3>
+        <p>Paste into Notavello and get a color-coded, formatted PDF instantly.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="why-section">
+    <div class="section-label">Why Notavello</div>
+    <h2 class="section-title">Built for people who use AI seriously</h2>
+    <div class="perks">
+      <div class="perk-card">
+        <div class="perk-icon">🎨</div>
         <div>
-          <div class="blog-card-name">The Export</div>
-          <div class="blog-card-desc">Honest tips, hidden quirks, and practical insights about AI tools — from the people who use them all day.</div>
+          <h3>Color-coded speakers</h3>
+          <p>Your messages appear in blue, AI responses in plain text — instantly clear at a glance.</p>
         </div>
       </div>
-      <span class="blog-card-right">Read the blog →</span>
-    </a>
+      <div class="perk-card">
+        <div class="perk-icon">📄</div>
+        <div>
+          <h3>Professional formatting</h3>
+          <p>Clean typography, proper page breaks, and a document header — ready to share or file.</p>
+        </div>
+      </div>
+      <div class="perk-card">
+        <div class="perk-icon">🔒</div>
+        <div>
+          <h3>Auto-redaction</h3>
+          <p>API keys, emails, SSNs, and phone numbers are automatically redacted before export.</p>
+        </div>
+      </div>
+      <div class="perk-card">
+        <div class="perk-icon">⚡</div>
+        <div>
+          <h3>No sign-up, no install</h3>
+          <p>Works entirely in your browser. Paste, preview, download. Nothing stored on our servers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div style="text-align:center; margin-bottom: 64px; display:flex; justify-content:center; gap:28px; flex-wrap:wrap;">
+    <a href="/pages/pricing/" style="font-size:0.88rem; color:var(--accent); text-decoration:none; font-weight:600; border-bottom: 1.5px solid rgba(79,70,229,0.3); padding-bottom:2px;">See pricing →</a>
+    <a href="/pages/faq/" style="font-size:0.88rem; color:var(--ink-muted); text-decoration:none; font-weight:500; border-bottom: 1.5px solid var(--border); padding-bottom:2px;">Read the FAQ →</a>
+    <a href="/pages/sample/" style="font-size:0.88rem; color:var(--ink-muted); text-decoration:none; font-weight:500; border-bottom: 1.5px solid var(--border); padding-bottom:2px;">View sample PDF →</a>
   </div>
+
+  <section class="cta-section">
+    <h2>Ready to save your first conversation?</h2>
+    <p>Pick your AI and get a clean, color-coded PDF in seconds — free, no sign-up required.</p>
+    <a href="/exporters/chatgpt/" class="btn-cta">Get started free →</a>
+    <p class="cta-note">Free export available · Pro removes watermark · $5/month</p>
+  </section>
 
 </main>
 
