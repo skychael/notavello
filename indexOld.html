@@ -1,0 +1,723 @@
+<!-- Notavello root-2.0 | generated 00:00:00 UTC | fix CTA + style structure -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Export AI Conversations to PDF — ChatGPT, Claude, Gemini & More | Notavello</title>
+<meta name="description" content="Turn your Claude, ChatGPT, Gemini, Copilot, Grok, or Perplexity conversations into clean, color-coded PDFs. Paste your chat, get a professionally formatted document instantly. Free to use."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/"/>
+
+<!-- Open Graph -->
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://notavello.com/"/>
+<meta property="og:title" content="Export AI Conversations to PDF — Notavello"/>
+<meta property="og:description" content="Turn your Claude, ChatGPT, Gemini, Copilot, Grok, or Perplexity conversations into clean, color-coded PDFs. Free to use. No sign-up required."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Export AI Conversations to PDF — Notavello"/>
+<meta name="twitter:description" content="Turn your Claude, ChatGPT, Gemini, Copilot, Grok, or Perplexity conversations into clean, color-coded PDFs. Free to use. No sign-up required."/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Notavello",
+  "url": "https://notavello.com/",
+  "description": "Export AI conversations from ChatGPT, Claude, Gemini, Copilot, Grok, and Perplexity as clean, color-coded PDFs. Free to use, no sign-up required.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #F0F4FF;
+  --surface: #FFFFFF;
+  --surface2: #F8FAFF;
+  --ink: #0F172A;
+  --ink-muted: #64748B;
+  --ink-faint: #94A3B8;
+  --accent: #4F46E5;
+  --accent2: #7C3AED;
+  --accent-light: #EEF2FF;
+  --green: #059669;
+  --green-light: #D1FAE5;
+  --border: #E2E8F0;
+  --radius: 20px;
+  --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+  --shadow-lg: 0 4px 16px rgba(79,70,229,0.12), 0 16px 48px rgba(15,23,42,0.12);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Sora', sans-serif;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+
+/* ── HEADER ── */
+.header {
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  padding: 16px 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-family: 'Sora', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.03em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.logo-icon {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.85rem;
+  box-shadow: 0 2px 8px rgba(79,70,229,0.35);
+}
+
+.logo span { color: var(--accent); }
+
+/* ── MAIN ── */
+.screen-ui {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 72px 24px 100px;
+}
+
+/* ── HERO ── */
+.hero {
+  text-align: center;
+  margin-bottom: 60px;
+  animation: fadeUp 0.6s ease both;
+}
+
+.hero-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  padding: 6px 16px 6px 10px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--ink-muted);
+  margin-bottom: 24px;
+  box-shadow: 0 1px 4px rgba(15,23,42,0.06);
+}
+
+.hero-pill-dot {
+  width: 7px;
+  height: 7px;
+  background: var(--green);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+.hero h1 {
+  font-family: 'Lora', serif;
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--ink);
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
+}
+
+.hero h1 em {
+  font-style: italic;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero p {
+  font-size: 1.05rem;
+  color: var(--ink-muted);
+  max-width: 520px;
+  margin: 0 auto 32px;
+  line-height: 1.75;
+  font-weight: 400;
+}
+
+/* ── AI CARDS ── */
+.ai-cards-label {
+  text-align: center;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--ink-faint);
+  margin-bottom: 20px;
+}
+
+.ai-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 64px;
+  animation: fadeUp 0.6s 0.1s ease both;
+  opacity: 0;
+}
+
+.ai-card {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: var(--shadow);
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.ai-card--live:hover {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.ai-card--soon {
+  opacity: 0.55;
+  cursor: default;
+  pointer-events: none;
+}
+
+.ai-card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.ai-card-icon--claude     { background: linear-gradient(135deg, #EEF2FF, #DDD6FE); }
+.ai-card-icon--chatgpt   { background: linear-gradient(135deg, #D1FAE5, #A7F3D0); }
+.ai-card-icon--gemini    { background: linear-gradient(135deg, #FEF3C7, #FDE68A); }
+.ai-card-icon--copilot   { background: linear-gradient(135deg, #DBEAFE, #BFDBFE); }
+.ai-card-icon--grok      { background: linear-gradient(135deg, #F1F5F9, #E2E8F0); }
+.ai-card-icon--perplexity{ background: linear-gradient(135deg, #F0FDF4, #BBF7D0); }
+
+.ai-card--other {
+  grid-column: 1 / -1;
+  flex-direction: row;
+  justify-content: center;
+  padding: 18px 24px;
+  border-style: dashed;
+  border-color: var(--ink-faint);
+  opacity: 0.75;
+  gap: 14px;
+}
+.ai-card--other:hover {
+  opacity: 1;
+  border-color: var(--accent);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-1px);
+}
+.ai-card--other .ai-card-icon {
+  width: 36px;
+  height: 36px;
+  font-size: 1rem;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #F5F3FF, #EDE9FE);
+  flex-shrink: 0;
+}
+.ai-card--other .ai-card-name { font-size: 0.9rem; }
+.ai-card--other .ai-card-desc { font-size: 0.78rem; text-align: left; }
+
+.ai-other-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: var(--accent-light);
+  color: var(--accent);
+  padding: 3px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.ai-card-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+
+.ai-card-desc {
+  font-size: 0.8rem;
+  color: var(--ink-muted);
+  line-height: 1.5;
+}
+
+.ai-card-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  border-radius: 20px;
+  margin-top: 4px;
+}
+
+.ai-card-status--live { background: var(--green-light); color: var(--green); }
+.ai-card-status--soon { background: var(--border); color: var(--ink-faint); }
+
+.ai-card-status-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.ai-card-status--live .ai-card-status-dot { animation: pulse 2s infinite; }
+
+/* ── HOW IT WORKS ── */
+.how-section {
+  animation: fadeUp 0.6s 0.2s ease both;
+  opacity: 0;
+  margin-bottom: 64px;
+}
+
+.section-label {
+  text-align: center;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--ink-faint);
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-family: 'Lora', serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--ink);
+  margin-bottom: 36px;
+  letter-spacing: -0.02em;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.step-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 22px;
+  box-shadow: var(--shadow);
+}
+
+.step-num {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(79,70,229,0.3);
+}
+
+.step-card h3 { font-size: 0.95rem; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
+.step-card p { font-size: 0.83rem; color: var(--ink-muted); line-height: 1.6; }
+
+/* ── WHY SECTION ── */
+.why-section {
+  animation: fadeUp 0.6s 0.3s ease both;
+  opacity: 0;
+  margin-bottom: 64px;
+}
+
+.perks {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.perk-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 22px 20px;
+  box-shadow: var(--shadow);
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.perk-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 2px; }
+.perk-card h3 { font-size: 0.9rem; font-weight: 600; color: var(--ink); margin-bottom: 5px; }
+.perk-card p { font-size: 0.8rem; color: var(--ink-muted); line-height: 1.55; }
+
+/* ── CTA ── */
+.cta-section {
+  text-align: center;
+  animation: fadeUp 0.6s 0.4s ease both;
+  opacity: 0;
+  background: var(--surface);
+  border: 1.5px solid rgba(79,70,229,0.2);
+  border-radius: var(--radius);
+  padding: 52px 40px;
+  box-shadow: var(--shadow-lg);
+  margin-bottom: 64px;
+}
+
+.cta-section h2 {
+  font-family: 'Lora', serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+
+.cta-section p {
+  font-size: 0.95rem;
+  color: var(--ink-muted);
+  margin-bottom: 28px;
+  line-height: 1.65;
+}
+
+.btn-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 44px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: white;
+  font-family: 'Sora', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: opacity 0.2s, box-shadow 0.2s, transform 0.15s;
+  box-shadow: 0 4px 16px rgba(79,70,229,0.35);
+  letter-spacing: -0.01em;
+}
+
+.btn-cta:hover { opacity: 0.92; transform: translateY(-1px); box-shadow: 0 6px 24px rgba(79,70,229,0.45); }
+
+.cta-note { font-size: 0.78rem; color: var(--ink-faint); margin-top: 14px; }
+
+/* ── FOOTER ── */
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 32px 36px;
+  margin-top: 48px;
+  background: var(--surface);
+}
+
+.site-footer-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+
+.footer-nav-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink-faint);
+  width: 100%;
+  margin-bottom: 4px;
+}
+
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; transition: color 0.15s; }
+.footer-legal a:hover { color: var(--accent); }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(0.85); }
+}
+
+/* ── MOBILE ── */
+@media (max-width: 640px) {
+  .header { padding: 14px 20px; }
+  .screen-ui { padding: 48px 16px 80px; }
+  .ai-cards { grid-template-columns: repeat(2, 1fr); }
+  .steps { grid-template-columns: 1fr; }
+  .perks { grid-template-columns: 1fr; }
+  .cta-section { padding: 36px 24px; }
+}
+</style>
+
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3d7e9187685d42d382a04d6929aecc82"}'></script><!-- End Cloudflare Web Analytics -->
+</head>
+<body>
+
+<header class="header">
+  <a href="/" class="logo">
+    <div class="logo-icon">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+    </div>
+    Nota<span>vello</span>
+  </a>
+  <div id="liveBadge" style="font-size:0.68rem;font-weight:600;background:linear-gradient(135deg,var(--accent-light),#F5F3FF);color:var(--accent);padding:5px 14px;border-radius:20px;letter-spacing:0.06em;text-transform:uppercase;border:1px solid rgba(79,70,229,0.2);">
+    ROOT-2.0 · --:--:-- UTC
+  </div>
+<script>
+(function(){
+  const n=new Date();
+  const t=[n.getUTCHours(),n.getUTCMinutes(),n.getUTCSeconds()].map(v=>String(v).padStart(2,'0')).join(':');
+  document.getElementById('liveBadge').textContent='ROOT-2.0 · '+t+' UTC';
+})();
+</script>
+</header>
+
+<main class="screen-ui">
+
+  <section class="hero">
+    <div class="hero-pill">
+      <div class="hero-pill-dot"></div>
+      Searchable PDFs in seconds
+    </div>
+    <h1>Export AI conversations to<br><em>beautiful PDFs</em></h1>
+    <p>ChatGPT, Claude, Gemini, Copilot, Grok, Perplexity, and more — paste your chat and get a clean, color-coded PDF instantly. Searchable, shareable, and professionally formatted.</p>
+  </section>
+
+  <div class="ai-cards-label">Choose your AI to get started</div>
+  <div class="ai-cards">
+
+    <a href="/exporters/chatgpt/" class="ai-card ai-card--live">
+      <div class="ai-card-icon ai-card-icon--chatgpt">💬</div>
+      <div class="ai-card-name">ChatGPT</div>
+      <div class="ai-card-desc">Export ChatGPT conversations by OpenAI as color-coded PDFs</div>
+      <div class="ai-card-status ai-card-status--live">
+        <div class="ai-card-status-dot"></div>
+        Live now
+      </div>
+    </a>
+
+    <a href="/exporters/gemini/" class="ai-card ai-card--live">
+      <div class="ai-card-icon ai-card-icon--gemini">✨</div>
+      <div class="ai-card-name">Gemini</div>
+      <div class="ai-card-desc">Export Gemini conversations by Google as color-coded PDFs</div>
+      <div class="ai-card-status ai-card-status--live">
+        <div class="ai-card-status-dot"></div>
+        Live now
+      </div>
+    </a>
+
+    <a href="/exporters/copilot/" class="ai-card ai-card--live">
+      <div class="ai-card-icon ai-card-icon--copilot">🪟</div>
+      <div class="ai-card-name">Copilot</div>
+      <div class="ai-card-desc">Export Copilot conversations by Microsoft as color-coded PDFs</div>
+      <div class="ai-card-status ai-card-status--live">
+        <div class="ai-card-status-dot"></div>
+        Live now
+      </div>
+    </a>
+
+    <a href="/exporters/claude/" class="ai-card ai-card--live">
+      <div class="ai-card-icon ai-card-icon--claude">🤖</div>
+      <div class="ai-card-name">Claude</div>
+      <div class="ai-card-desc">Export Claude conversations by Anthropic as color-coded PDFs</div>
+      <div class="ai-card-status ai-card-status--live">
+        <div class="ai-card-status-dot"></div>
+        Live now
+      </div>
+    </a>
+
+    <a href="/exporters/grok/" class="ai-card ai-card--live">
+      <div class="ai-card-icon ai-card-icon--grok">𝕏</div>
+      <div class="ai-card-name">Grok</div>
+      <div class="ai-card-desc">Export Grok conversations by xAI as color-coded PDFs</div>
+      <div class="ai-card-status ai-card-status--live">
+        <div class="ai-card-status-dot"></div>
+        Live now
+      </div>
+    </a>
+
+    <a href="/exporters/perplexity/" class="ai-card ai-card--live">
+      <div class="ai-card-icon ai-card-icon--perplexity">🔍</div>
+      <div class="ai-card-name">Perplexity</div>
+      <div class="ai-card-desc">Export Perplexity conversations as color-coded PDFs</div>
+      <div class="ai-card-status ai-card-status--live">
+        <div class="ai-card-status-dot"></div>
+        Live now
+      </div>
+    </a>
+
+    <a href="/exporters/other/" class="ai-card ai-card--live ai-card--other">
+      <div class="ai-card-icon ai-card-icon--other">•••</div>
+      <div>
+        <div class="ai-card-name">Other AI</div>
+        <div class="ai-card-desc">Mistral, DeepSeek, Llama, Le Chat, and more — works with most AI tools</div>
+      </div>
+      <div class="ai-other-badge">Try it</div>
+    </a>
+
+  </div>
+
+  <section class="how-section">
+    <div class="section-label">How it works</div>
+    <h2 class="section-title">Three steps to a professional PDF</h2>
+    <div class="steps">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <h3>Choose your AI</h3>
+        <p>Select which AI assistant you used — ChatGPT, Gemini, Copilot, Claude, Grok, Perplexity, or any other AI tool.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <h3>Copy your chat</h3>
+        <p>Open your conversation, press Ctrl+A to select all, then Ctrl+C to copy.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <h3>Paste &amp; download</h3>
+        <p>Paste into Notavello and get a color-coded, formatted PDF instantly.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="why-section">
+    <div class="section-label">Why Notavello</div>
+    <h2 class="section-title">Built for people who use AI seriously</h2>
+    <div class="perks">
+      <div class="perk-card">
+        <div class="perk-icon">🎨</div>
+        <div>
+          <h3>Color-coded speakers</h3>
+          <p>Your messages appear in blue, AI responses in plain text — instantly clear at a glance.</p>
+        </div>
+      </div>
+      <div class="perk-card">
+        <div class="perk-icon">📄</div>
+        <div>
+          <h3>Professional formatting</h3>
+          <p>Clean typography, proper page breaks, and a document header — ready to share or file.</p>
+        </div>
+      </div>
+      <div class="perk-card">
+        <div class="perk-icon">🔒</div>
+        <div>
+          <h3>Auto-redaction</h3>
+          <p>API keys, emails, SSNs, and phone numbers are automatically redacted before export.</p>
+        </div>
+      </div>
+      <div class="perk-card">
+        <div class="perk-icon">⚡</div>
+        <div>
+          <h3>No sign-up, no install</h3>
+          <p>Works entirely in your browser. Paste, preview, download. Nothing stored on our servers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div style="text-align:center; margin-bottom: 64px; display:flex; justify-content:center; gap:28px; flex-wrap:wrap;">
+    <a href="/pages/pricing/" style="font-size:0.88rem; color:var(--accent); text-decoration:none; font-weight:600; border-bottom: 1.5px solid rgba(79,70,229,0.3); padding-bottom:2px;">See pricing →</a>
+    <a href="/pages/faq/" style="font-size:0.88rem; color:var(--ink-muted); text-decoration:none; font-weight:500; border-bottom: 1.5px solid var(--border); padding-bottom:2px;">Read the FAQ →</a>
+    <a href="/pages/sample/" style="font-size:0.88rem; color:var(--ink-muted); text-decoration:none; font-weight:500; border-bottom: 1.5px solid var(--border); padding-bottom:2px;">View sample PDF →</a>
+  </div>
+
+  <section class="cta-section">
+    <h2>Ready to save your first conversation?</h2>
+    <p>Pick your AI and get a clean, color-coded PDF in seconds — free, no sign-up required.</p>
+    <a href="/exporters/chatgpt/" class="btn-cta">Get started free →</a>
+    <p class="cta-note">Free export available · Pro removes watermark · $5/month</p>
+  </section>
+
+</main>
+
+<!--FOOTER-->
+
+<script data-goatcounter="https://notavello.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script></body>
+</html>
