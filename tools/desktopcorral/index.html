@@ -1,124 +1,592 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-	<title>DesktopCorral — Split-Screen Workspace for AI Work | Notavello</title>
-	<meta name="generator" content="LibreOffice 26.2.4.2 (Windows)"/>
-	<meta name="created" content="00:00:00"/>
-	<meta name="changed" content="2026-06-29T13:00:36.785674400"/>
-	<meta name="description" content="DesktopCorral keeps your AI assistant and browser side by side so screenshots, research, comparison, and everyday AI work stay organized."/>
-	<meta name="" content=""/>
-	<meta name="robots" content="index, follow"/>
-	<meta name="twitter:card" content="summary_large_image"/>
-	<meta name="twitter:description" content="A small Windows tray utility for keeping AI work organized across left and right desktop zones."/>
-	<meta name="twitter:image" content="https://notavello.com/assets/images/desktopCorralScreenshot.png"/>
-	<meta name="twitter:title" content="DesktopCorral — Split-Screen Workspace for AI Work"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<meta name="" content="website">
-	<meta name="" content="https://notavello.com/tools/desktopcorral/">
-	<meta name="" content="DesktopCorral — Split-Screen Workspace for AI Work">
-	<meta name="" content="Keep ChatGPT on one side and your browser on the other. DesktopCorral makes AI research, screenshots, and comparison work feel less chaotic.">
-	<meta name="" content="Notavello">
-	<meta name="" content="https://notavello.com/assets/images/desktopCorralScreenshot.png">
-	<style type="text/css">
-		h1 { orphans: 100 }
-		h1.cjk { font-family: "Sora", sans-serif }
-		h1.ctl { font-family: "Sora", sans-serif }
-		p { font-family: "Sora", sans-serif; orphans: 100 }
-		p.hero-lede { font-family: "Sora", sans-serif; line-height: 175%; margin-bottom: 0.29in }
-		p.install-note { font-family: "Sora", sans-serif; line-height: 155% }
-		h2 { orphans: 100 }
-		h3 { orphans: 100 }
-	</style>
-</head>
-<body lang="en-US" dir="ltr"><p style="margin-bottom: 0.35in"><span style="display: inline-block; border: none; padding: 0in"><font color="#ffffff"><span style="text-decoration: none"><a href="//./">▣</a></a></a></span></font></span><a href="//./"><span style="text-decoration: none">
-</span><span style="text-decoration: none"><b>Nota vello </b></span></a><span style="display: inline-block; border-top: 1px solid #4f46e5; border-bottom: 1px solid #4f46e5; border-left: 1px solid #4f46e5; border-right: none; padding-top: 0.08in; padding-bottom: 0.08in; padding-left: 0.19in; padding-right: 0in"><a href="/tools/"><span style="text-decoration: none"><b>Tools</b></span></a></span>
-<a href="/tools/"><span style="text-decoration: none">← </span><span style="text-decoration: none"><b>Back
-to tools</b></span></a> 
-</p>
-<p style="margin-bottom: 0.23in; text-transform: uppercase"><span style="display: inline-block; border-top: 1px solid #4f46e5; border-bottom: 1px solid #4f46e5; border-left: 1px solid #4f46e5; border-right: none; padding-top: 0.08in; padding-bottom: 0.08in; padding-left: 0.13in; padding-right: 0in"><b><span style="background: #4f46e5">Windows
-utility</span></b></span></p>
-<h1 class="western">Keep AI work <em>side by side.</em></h1>
-<p class="hero-lede">AI Desktop Corral keeps your assistant on one
-side and your browser on the other, so screenshots, research,
-comparison, and everyday AI work stop turning into window chaos.</p>
-<p style="margin-bottom: 0.21in"><a href="https://github.com/skychael/notavello/releases/download/desktopcorral-v2.2.0/DesktopCorralSetup_v2.2.0.exe">Download
-for Windows →</a> <a href="#how-it-helps">How it helps</a> 
-</p>
-<p class="install-note">Windows installer. Tray utility. Built for a
-clean left/right workflow with ChatGPT, browsers, docs, and
-screenshots.</p>
-<p><img src="/assets/images/desktopCorralScreenshot.png" name="Image1" alt="DesktopCorral showing ChatGPT and a browser arranged side by side on a Windows desktop" align="bottom" width="76" height="38" border="0"/>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>DesktopCorral — Split-Screen Workspace for AI Work | Notavello</title>
+<meta name="description" content="DesktopCorral keeps your AI assistant and browser side by side so screenshots, research, comparison, and everyday AI work stay organized."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/tools/desktopcorral/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://notavello.com/tools/desktopcorral/"/>
+<meta property="og:title" content="DesktopCorral — Split-Screen Workspace for AI Work"/>
+<meta property="og:description" content="Keep ChatGPT on one side and your browser on the other. DesktopCorral makes AI research, screenshots, and comparison work feel less chaotic."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/assets/images/desktopCorralScreenshot.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="DesktopCorral — Split-Screen Workspace for AI Work"/>
+<meta name="twitter:description" content="A small Windows tray utility for keeping AI work organized across left and right desktop zones."/>
+<meta name="twitter:image" content="https://notavello.com/assets/images/desktopCorralScreenshot.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "DesktopCorral",
+  "operatingSystem": "Windows",
+  "applicationCategory": "ProductivityApplication",
+  "description": "DesktopCorral keeps your AI assistant and browser side by side so screenshots, research, comparison, and everyday AI work stay organized.",
+  "url": "https://notavello.com/tools/desktopcorral/",
+  "downloadUrl": "https://notavello.comhttps://github.com/skychael/notavello/releases/download/desktopcorral-v2.2.0/DesktopCorralSetup_v2.2.0.exe",
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF;
+  --surface: #FFFFFF;
+  --surface2: #F8FAFF;
+  --ink: #0F172A;
+  --ink-muted: #64748B;
+  --ink-faint: #94A3B8;
+  --accent: #4F46E5;
+  --accent2: #7C3AED;
+  --accent3: #06B6D4;
+  --accent-light: #EEF2FF;
+  --border: #E2E8F0;
+  --radius: 24px;
+  --radius-sm: 14px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 18px 56px rgba(15,23,42,0.12);
+  --shadow-lg: 0 16px 42px rgba(79,70,229,0.18), 0 24px 70px rgba(15,23,42,0.16);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Sora', sans-serif;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.13) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 85% 105%, rgba(6,182,212,0.11) 0%, transparent 60%);
+}
+.header {
+  background: rgba(255,255,255,0.86);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  padding: 16px 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.logo {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: -0.04em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+.logo-icon {
+  width: 34px;
+  height: 34px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  border-radius: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 14px rgba(79,70,229,0.35);
+}
+.logo span { color: var(--accent); }
+.header-login {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-decoration: none;
+  padding: 8px 18px;
+  border: 1.5px solid rgba(79,70,229,0.3);
+  border-radius: 10px;
+  background: var(--accent-light);
+}
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
 
-</p>
-<p>Why it helps</p>
-<p>▥</p>
-<h2>Two stable work zones</h2>
-<p>Keep ChatGPT, Claude, or another assistant on one side while your
-browser, document, or app stays visible on the other.</p>
-<p>⌖</p>
-<h2>Cleaner screenshots</h2>
-<p>When the source window stays put, it is easier to capture the
-right window or rectangle without dragging half your desktop around
-first.</p>
-<p>↔</p>
-<h2>Smarter drag switching</h2>
-<p>Move a window across the divider and DesktopCorral can reassign it
-to the other side instead of snapping it back.</p>
-<h2>Browser extensions are useful. They are not the whole workspace.</h2>
-<p>Extensions are great for one-click actions, but serious AI work
-often needs a full browser window, a full assistant window, file
-uploads, image uploads, and the exact page state visible at the same
-time.</p>
-<p>AI Desktop Corral gives that work a stable shape: assistant on the
-left, source material on the right, fewer floating panels, fewer
-disappearing windows, and less screenshot waste.</p>
-<ul>
-	<li><p style="margin-bottom: 0in">Useful for research, comparison,
-	writing, debugging, and design review. 
-	</p></li>
-	<li><p style="margin-bottom: 0in">Works as a small tray utility
-	instead of another giant dashboard. 
-	</p></li>
-	<li><p>Designed around the way people actually use AI all day:
-	looking, asking, capturing, and revising. 
-	</p></li>
-</ul>
-<h2>Download AI Desktop Corral</h2>
-<p>Install it, launch it, and keep your desktop split into clean left
-and right zones. It is intentionally small because the point is to
-get out of the way.</p>
-<h3>DesktopCorralSetup_v2.2.0.exe</h3>
-<p>Windows setup installer. Because this is a direct download,
-Windows may show a trust warning until the app is code-signed or
-distributed through a store.</p>
-<p><a href="https://github.com/skychael/notavello/releases/download/desktopcorral-v2.2.0/DesktopCorralSetup_v2.2.0.exe">Download
-installer →</a> 
-</p>
-<p>The installer is hosted on GitHub Releases so it stays outside the
-website deploy and avoids static-site file size limits.</p>
-<p>Simple workflow</p>
-<p style="margin-bottom: 0in"><strong>Put the assistant on the left.</strong>
-Keep the conversation, notes, and prompts visible without covering
-the page you are asking about. 
-</p>
-<p style="margin-bottom: 0in"><strong>Keep the browser on the right.</strong>
-Research, read, compare, test, or troubleshoot while the assistant
-remains ready beside it. 
-</p>
-<p><strong>Capture exactly what matters.</strong> Use a window or
-rectangle screenshot with less clutter, less cropping, and fewer
-“wait, that moved” moments. 
-</p>
-<h2>A small utility for a very real AI problem.</h2>
-<p>The assistant can be brilliant, but the desktop can still be a
-mess. DesktopCorral keeps the workspace calm enough for the AI to
-actually help.</p>
-<p style="margin-bottom: 0in"><a href="https://github.com/skychael/notavello/releases/download/desktopcorral-v2.2.0/DesktopCorralSetup_v2.2.0.exe">Download
-AI Desktop Corral →</a> 
-</p>
-<p style="margin-bottom: 0in">© Notavello <a href="/tools/">Tools</a>
-· <a href="/pages/blog/">The Export</a> 
-</p>
+.main {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 72px 24px 96px;
+  animation: fadeUp 0.55s ease both;
+}
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--ink-muted);
+  text-decoration: none;
+  font-size: 0.86rem;
+  font-weight: 600;
+  margin-bottom: 34px;
+}
+.back-link:hover { color: var(--accent); }
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(460px, 1.25fr);
+  gap: 42px;
+  align-items: center;
+  margin-bottom: 72px;
+}
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  background: rgba(79,70,229,0.1);
+  border: 1px solid rgba(79,70,229,0.14);
+  padding: 8px 12px;
+  border-radius: 999px;
+  margin-bottom: 22px;
+}
+.eyebrow-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent3));
+}
+.hero h1 {
+  font-family: 'Lora', serif;
+  font-size: clamp(2.35rem, 5vw, 4.45rem);
+  line-height: 1.02;
+  letter-spacing: -0.055em;
+  margin-bottom: 22px;
+}
+.hero h1 em {
+  font-style: italic;
+  background: linear-gradient(135deg, var(--accent), var(--accent2), var(--accent3));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-lede {
+  font-size: 1.08rem;
+  line-height: 1.75;
+  color: var(--ink-muted);
+  margin-bottom: 28px;
+  max-width: 540px;
+}
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 12px 20px;
+  border-radius: 14px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 800;
+  transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn-primary {
+  color: white;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  box-shadow: 0 10px 24px rgba(79,70,229,0.28);
+}
+.btn-secondary {
+  color: var(--accent);
+  background: rgba(255,255,255,0.76);
+  border: 1.5px solid rgba(79,70,229,0.24);
+}
+.install-note {
+  color: var(--ink-faint);
+  font-size: 0.78rem;
+  line-height: 1.55;
+}
+.hero-media {
+  position: relative;
+}
+.hero-media::before {
+  content: "";
+  position: absolute;
+  inset: -18px;
+  border-radius: 34px;
+  background: linear-gradient(135deg, rgba(79,70,229,0.23), rgba(6,182,212,0.16), rgba(124,58,237,0.14));
+  filter: blur(22px);
+  opacity: 0.85;
+  z-index: 0;
+}
+.hero-shot {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  display: block;
+  border-radius: 24px;
+  border: 1px solid rgba(226,232,240,0.95);
+  box-shadow: var(--shadow-lg);
+  background: #111827;
+}
+.section {
+  margin-bottom: 64px;
+}
+.section-label {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--ink-faint);
+  margin-bottom: 18px;
+}
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+.card {
+  background: rgba(255,255,255,0.84);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 26px;
+}
+.card-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--accent-light), #E0F2FE);
+  color: var(--accent);
+  font-size: 1.35rem;
+  margin-bottom: 18px;
+}
+.card h2, .card h3 {
+  font-size: 1.02rem;
+  letter-spacing: -0.025em;
+  margin-bottom: 10px;
+}
+.card p {
+  color: var(--ink-muted);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+.split {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 24px;
+  align-items: stretch;
+}
+.panel {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 32px;
+}
+.panel h2 {
+  font-family: 'Lora', serif;
+  font-size: 1.65rem;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  margin-bottom: 14px;
+}
+.panel p {
+  color: var(--ink-muted);
+  line-height: 1.78;
+  font-size: 0.96rem;
+  margin-bottom: 16px;
+}
+.check-list {
+  list-style: none;
+  display: grid;
+  gap: 12px;
+  margin-top: 22px;
+}
+.check-list li {
+  color: var(--ink-muted);
+  line-height: 1.6;
+  font-size: 0.92rem;
+  padding-left: 30px;
+  position: relative;
+}
+.check-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--accent-light);
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.download-panel {
+  background:
+    radial-gradient(circle at 12% 12%, rgba(79,70,229,0.16), transparent 32%),
+    linear-gradient(135deg, #FFFFFF, #F8FAFF);
+}
+.download-box {
+  margin-top: 22px;
+  padding: 22px;
+  border-radius: 20px;
+  background: #0F172A;
+  color: white;
+  box-shadow: 0 18px 44px rgba(15,23,42,0.18);
+}
+.download-box h3 {
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+}
+.download-box p {
+  color: #CBD5E1;
+  font-size: 0.86rem;
+  margin-bottom: 18px;
+}
+.download-box .btn-primary {
+  width: 100%;
+  min-height: 50px;
+}
+.small-note {
+  margin-top: 14px;
+  color: var(--ink-faint);
+  font-size: 0.76rem;
+  line-height: 1.6;
+}
+.steps {
+  counter-reset: steps;
+  display: grid;
+  gap: 14px;
+}
+.step {
+  counter-increment: steps;
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  gap: 14px;
+  align-items: start;
+  background: rgba(255,255,255,0.78);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 18px;
+}
+.step::before {
+  content: counter(steps);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.86rem;
+}
+.step strong {
+  display: block;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.step span {
+  color: var(--ink-muted);
+  line-height: 1.65;
+  font-size: 0.9rem;
+}
+.footer-cta {
+  text-align: center;
+  background: linear-gradient(135deg, rgba(79,70,229,0.1), rgba(6,182,212,0.09));
+  border: 1.5px solid rgba(79,70,229,0.16);
+  border-radius: 28px;
+  padding: 38px 24px;
+}
+.footer-cta h2 {
+  font-family: 'Lora', serif;
+  font-size: clamp(1.55rem, 4vw, 2.25rem);
+  letter-spacing: -0.03em;
+  margin-bottom: 12px;
+}
+.footer-cta p {
+  color: var(--ink-muted);
+  line-height: 1.7;
+  max-width: 620px;
+  margin: 0 auto 22px;
+}
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 32px 36px;
+  background: var(--surface);
+}
+.site-footer-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  color: var(--ink-faint);
+  font-size: 0.76rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.site-footer a { color: var(--ink-muted); text-decoration: none; }
+.site-footer a:hover { color: var(--accent); }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+  .hero-media { order: -1; }
+  .grid-3, .split { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .header { padding: 14px 20px; }
+  .logo { font-size: 1.16rem; }
+  .logo-icon { width: 32px; height: 32px; }
+  .main { padding: 42px 16px 76px; }
+  .hero h1 { font-size: clamp(2.25rem, 12vw, 3.1rem); }
+  .hero-lede { font-size: 1rem; }
+  .hero-shot { border-radius: 18px; }
+  .hero-media::before { inset: -10px; border-radius: 24px; }
+  .card, .panel { padding: 24px 22px; }
+  .hero-actions .btn { width: 100%; }
+  .site-footer { padding: 28px 20px; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <a class="logo" href="/">
+    <span class="logo-icon">▣</span>
+    Nota <span>vello</span>
+  </a>
+  <a class="header-login" href="/tools/">Tools</a>
+</header>
+
+<main class="main">
+
+  <a class="back-link" href="/tools/">← Back to tools</a>
+
+  <section class="hero">
+    <div>
+      <div class="eyebrow"><span class="eyebrow-dot"></span> Windows utility</div>
+      <h1>Keep AI work <em>side by side.</em></h1>
+      <p class="hero-lede">DesktopCorral keeps your assistant on one side and your browser on the other, so screenshots, research, comparison, and everyday AI work stop turning into window chaos.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://github.com/skychael/notavello/releases/download/desktopcorral-v2.2.0/DesktopCorralSetup_v2.2.0.exe">Download for Windows →</a>
+        <a class="btn btn-secondary" href="#how-it-helps">How it helps</a>
+      </div>
+      <p class="install-note">Windows installer. Tray utility. Built for a clean left/right workflow with ChatGPT, browsers, docs, and screenshots.</p>
+    </div>
+
+    <div class="hero-media">
+      <img class="hero-shot" src="/assets/images/desktopCorralScreenshot.png" alt="DesktopCorral showing ChatGPT and a browser arranged side by side on a Windows desktop">
+    </div>
+  </section>
+
+  <section class="section" id="how-it-helps">
+    <p class="section-label">Why it helps</p>
+    <div class="grid-3">
+      <article class="card">
+        <div class="card-icon">▥</div>
+        <h2>Two stable work zones</h2>
+        <p>Keep ChatGPT, Claude, or another assistant on one side while your browser, document, or app stays visible on the other.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon">⌖</div>
+        <h2>Cleaner screenshots</h2>
+        <p>When the source window stays put, it is easier to capture the right window or rectangle without dragging half your desktop around first.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon">↔</div>
+        <h2>Smarter drag switching</h2>
+        <p>Move a window across the divider and DesktopCorral can reassign it to the other side instead of snapping it back.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section split">
+    <div class="panel">
+      <h2>Browser extensions are useful. They are not the whole workspace.</h2>
+      <p>Extensions are great for one-click actions, but serious AI work often needs a full browser window, a full assistant window, file uploads, image uploads, and the exact page state visible at the same time.</p>
+      <p>DesktopCorral gives that work a stable shape: assistant on the left, source material on the right, fewer floating panels, fewer disappearing windows, and less screenshot waste.</p>
+      <ul class="check-list">
+        <li>Useful for research, comparison, writing, debugging, and design review.</li>
+        <li>Works as a small tray utility instead of another giant dashboard.</li>
+        <li>Designed around the way people actually use AI all day: looking, asking, capturing, and revising.</li>
+      </ul>
+    </div>
+
+    <div class="panel download-panel">
+      <h2>Download DesktopCorral</h2>
+      <p>Install it, launch it, and keep your desktop split into clean left and right zones. It is intentionally small because the point is to get out of the way.</p>
+      <div class="download-box">
+        <h3>DesktopCorralSetup_v2.2.0.exe</h3>
+        <p>Windows setup installer. Because this is a direct download, Windows may show a trust warning until the app is code-signed or distributed through a store.</p>
+        <a class="btn btn-primary" href="https://github.com/skychael/notavello/releases/download/desktopcorral-v2.2.0/DesktopCorralSetup_v2.2.0.exe">Download installer →</a>
+      </div>
+      <p class="small-note">The installer is hosted on GitHub Releases so it stays outside the website deploy and avoids static-site file size limits.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <p class="section-label">Simple workflow</p>
+    <div class="steps">
+      <div class="step">
+        <div>
+          <strong>Put the assistant on the left.</strong>
+          <span>Keep the conversation, notes, and prompts visible without covering the page you are asking about.</span>
+        </div>
+      </div>
+      <div class="step">
+        <div>
+          <strong>Keep the browser on the right.</strong>
+          <span>Research, read, compare, test, or troubleshoot while the assistant remains ready beside it.</span>
+        </div>
+      </div>
+      <div class="step">
+        <div>
+          <strong>Capture exactly what matters.</strong>
+          <span>Use a window or rectangle screenshot with less clutter, less cropping, and fewer “wait, that moved” moments.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="footer-cta">
+    <h2>A small utility for a very real AI problem.</h2>
+    <p>The assistant can be brilliant, but the desktop can still be a mess. DesktopCorral keeps the workspace calm enough for the AI to actually help.</p>
+    <a class="btn btn-primary" href="https://github.com/skychael/notavello/releases/download/desktopcorral-v2.2.0/DesktopCorralSetup_v2.2.0.exe">Download DesktopCorral →</a>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <span>© Notavello</span>
+    <span><a href="/tools/">Tools</a> · <a href="/pages/blog/">The Export</a></span>
+  </div>
+</footer>
+
+<script data-goatcounter="https://notavello.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
