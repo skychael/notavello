@@ -1,0 +1,278 @@
+<!-- ⚠️ ALL %% PLACEHOLDERS MUST BE REPLACED — they feed SEO meta tags, OG, Twitter, and schema -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Google Turned On Passkeys Without Asking. Here's How to Clean Up the Mess. — The Export | Notavello</title>
+<meta name="description" content="Google silently created passkeys on your old Android phones. Here is why your login broke and the exact steps to fix it."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/blog/google-passkey-cleanup/"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://notavello.com/pages/blog/google-passkey-cleanup/"/>
+<meta property="og:title" content="Google Turned On Passkeys Without Asking. Here's How to Clean Up the Mess."/>
+<meta property="og:description" content="Google silently created passkeys on your old Android phones. Here is why your login broke and the exact steps to fix it."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Google Turned On Passkeys Without Asking. Here's How to Clean Up the Mess."/>
+<meta name="twitter:description" content="Google silently created passkeys on your old Android phones. Here is why your login broke and the exact steps to fix it."/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Google Turned On Passkeys Without Asking. Here's How to Clean Up the Mess.",
+  "description": "Google silently created passkeys on your old Android phones. Here is why your login broke and the exact steps to fix it.",
+  "url": "https://notavello.com/pages/blog/google-passkey-cleanup/",
+  "datePublished": "2026-06-29",
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
+.back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; color: var(--ink-muted); text-decoration: none; margin-bottom: 40px; transition: color 0.15s; }
+.back-link:hover { color: var(--accent); }
+.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
+.post-date { font-size: 0.78rem; color: var(--ink-faint); }
+.post-title { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; color: var(--ink); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
+.post-lede { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+.post-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink); }
+.post-body h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 44px 0 16px; letter-spacing: -0.01em; }
+.post-body p { margin-bottom: 20px; color: var(--ink-muted); }
+.post-body p strong { color: var(--ink); font-weight: 600; }
+.post-body ul { margin: 0 0 20px 20px; color: var(--ink-muted); }
+.post-body ul li { margin-bottom: 8px; line-height: 1.7; }
+.callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 32px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.7; }
+.post-footer { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.post-footer-label { font-size: 0.8rem; color: var(--ink-faint); }
+.btn-export { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: opacity 0.2s; }
+.btn-export:hover { opacity: 0.9; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } }
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+
+  <a class="back-link" href="/pages/blog/">← The Export</a>
+
+  <div class="post-meta">
+    <span class="post-tag">Privacy</span>
+    <span class="post-date">June 29, 2026</span>
+  </div>
+
+  <h1 class="post-title">Google Turned On Passkeys Without Asking. Here's How to Clean Up the Mess.</h1>
+
+  <p class="post-lede">You tried to log into Gmail on your Linux machine. Instead of a password prompt you got a weird short URL, a list of phones you haven't touched in two years, and a prompt asking you to approve the login on a Samsung Galaxy you sold in 2023. Congratulations — Google quietly enrolled you in passkeys, and it brought all your old devices with it.</p>
+
+  <div class="post-body">
+
+    <h2>What Google Did Without Telling You</h2>
+    <p><p>Starting in 2023, Google began automatically creating passkeys on any Android device where you were signed in. No opt-in. No announcement you would have noticed. Just a quiet background process that registered your phone as a trusted authentication device.</p>
+<p>The result: every Android phone that ever had your Google account on it — including devices you traded in, gave away, or forgot about — got registered as a passkey device. When you try to log in from a new machine, Google offers these phantom phones as verification options. Since they are no longer in your possession or are simply off in a drawer, the "approve on your phone" prompt goes nowhere.</p>
+<p>This is not a security breach. It is Google aggressively pushing a transition to passwordless login in a way that created real friction for millions of normal users — especially anyone with multiple devices, old Android phones, or a habit of logging in from Linux machines.</p></p>
+
+    <div class="callout">
+      <strong>The root cause:</strong> Google's "Skip password when possible" setting was silently turned on for most accounts, which redirects the login flow away from your password and toward passkeys and device prompts — even when those devices are years out of date.
+    </div>
+
+    <h2>Why Linux Gets Hit the Hardest</h2>
+    <p><p>On Windows or Mac with Chrome, Google can often verify you silently through the browser itself. On Linux, especially in Firefox or a non-Google browser, there is no such shortcut. Google falls back to its registered 2-step options — and if the top options are three old Android phones, you are stuck cycling through dead ends until you find something that works.</p>
+<p>The "remember this device" checkbox does not help much either. Google's trusted device memory is tied to browser cookies and can expire or reset unexpectedly, especially after browser updates or cache clears. So even after you successfully log in, the next session may start the whole dance over again.</p>
+<p>This also explains why your iPhone eventually saved you — Google's mobile app can detect a login attempt on a nearby device through its standard Google prompt system, which still works even when the passkey flow fails. It is a more reliable fallback, just not an obvious one.</p></p>
+
+    <h2>The Exact Steps to Clean It Up</h2>
+    <p><p>This takes about ten minutes and makes a meaningful difference. Do it from any device where you are already logged into Google.</p>
+<p><strong>Step 1 — Remove old passkeys.</strong> Go to <strong>myaccount.google.com/security</strong> and click <strong>Passkeys and security keys</strong>. You will likely see Android devices listed as "Created automatically by Android." Click each device name and delete every passkey tied to a phone you no longer use regularly. Keep your current phone if it is listed.</p>
+<p><strong>Step 2 — Sign out old devices.</strong> Go to <strong>myaccount.google.com/device-activity</strong> or navigate to Security → Your devices. Click each old Android phone, old session, or unknown device and choose <strong>Sign out</strong>. Pay attention to anything marked "48 minutes ago" or recently active that you do not recognize — that is a device still holding a live session.</p>
+<p><strong>Step 3 — Remove old phones from Google prompt.</strong> Back on the Security page, click <strong>Google prompt</strong>. Remove every device that is not your current primary phone. This stops old phones from appearing as 2FA options during login.</p>
+<p><strong>Step 4 — Turn off Skip password when possible.</strong> On the Security page, find <strong>Skip password when possible</strong> and turn it <strong>Off</strong>. This forces Google back to a standard password prompt instead of routing you through the passkey flow. It is the single most impactful change for anyone who just wants a normal login experience.</p>
+<p><strong>Step 5 — Set your preferred 2-step method.</strong> Under <strong>2-Step Verification phones</strong>, confirm your current phone number is listed. Remove any numbers that belong to old phones. Now when Google asks for a second step, it will text your actual phone — not offer you a carousel of dead Galaxies.</p>
+<p>After these changes, logging in from Linux should behave like it did years ago: email, password, then a text message code. Boring. Reliable. Exactly what you want.</p></p>
+
+
+    <h2>Should You Use Passkeys at All?</h2>
+    <p>Passkeys are genuinely more secure than passwords in theory — they cannot be phished, they cannot be leaked in a data breach, and they do not require you to remember anything. The problem is the transition is messy, the device-dependency creates real access problems, and Google's implementation has been aggressive enough to confuse people who were perfectly happy with what they had.</p>
+    <p>If you use one device, keep it with you, and mostly access Google through Chrome — passkeys probably work fine for you. If you work across Linux, Mac, Windows, and mobile, or if you have a history of Android phones, the current passkey experience is not ready for you. Turning off "Skip password when possible" is not giving up on security. It is choosing a login flow that actually works for how you live.</p>
+    <p>It is also worth noting that just because Google turned off a visible layer does not mean your account is less protected. You still have 2-step verification. Your password is still there. The account is not weaker — just less annoying.</p>
+
+    <h2>One More Thing Worth Checking</h2>
+    <p>While you are in the security settings, it is worth reviewing <strong>Linked apps</strong> in the left sidebar. Over the years, dozens of services accumulate OAuth access to your Google account — apps you signed into once and never used again. Each one is a potential surface for a breach. Revoking access from anything unfamiliar takes thirty seconds and is a reasonable habit to get into once a year. Google's account security is a lot like a browser's stored cookies — <a href="/pages/blog/why-youtube-still-knows-you-logged-out/">the data accumulates quietly until it causes a problem you did not expect.</a></p>
+
+
+  </div>
+
+  <div class="post-footer">
+    <span class="post-footer-label">Looking for more AI tools?</span>
+    <a class="btn-export" href="/tools/">See our free AI tools →</a>
+  </div>
+
+</main>
+
+<!--FOOTER-->
+
+<script data-goatcounter="https://notavello.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script></body>
+</html>
+
+<!--
+=== ⚠️ NOTE TO FUTURE CLAUDES — READ BEFORE TOUCHING THIS FILE ===
+DO NOT edit, modify, or update this template without first explicitly asking Mike
+and receiving clear approval in the conversation. Even if asked to "update the
+template" or "clean up the template" as part of a larger task — STOP and confirm
+with Mike first. This file is intentionally locked to manual review.
+===
+
+=== WORKFLOW FOR EACH NEW POST ===
+
+STEP 1 — RESEARCH
+Research the topic before writing. Use web search if needed for current facts,
+stats, or market data. Accuracy matters more than speed.
+
+STEP 2 — DETERMINE SLUG
+Slug format: lowercase, hyphenated, descriptive, SEO-friendly.
+Example: displayport-vs-hdmi
+The post will live at: https://notavello.com/pages/blog/google-passkey-cleanup/
+The output HTML filename should match the slug: e.g. displayport-vs-hdmi.html
+Tell Mike the folder/slug before delivering files.
+
+STEP 3 — REPLACE ALL %% PLACEHOLDERS
+Google Turned On Passkeys Without Asking. Here's How to Clean Up the Mess.         → Full post title (used in <title>, OG, Twitter, h1, schema)
+Google silently created passkeys on your old Android phones. Here is why your login broke and the exact steps to fix it.   → 150 char max. Punchy, keyword-rich. No quotes inside.
+google-passkey-cleanup               → URL slug e.g. displayport-vs-hdmi (no trailing slash in tag)
+2026-06-29           → ISO date e.g. 2026-06-08 (schema only)
+June 29, 2026       → Human date e.g. June 8, 2026 (shown on page)
+Privacy                → Category tag. Current tags in use:
+                          AI Tools | AI Comparison | AI Trends | AI Markets |
+                          Developer Tools | Privacy | Energy | Insurance | Tech
+                          (Add new tags sparingly; check index.html for consistency)
+You tried to log into Gmail on your Linux machine. Instead of a password prompt you got a weird short URL, a list of phones you haven't touched in two years, and a prompt asking you to approve the login on a Samsung Galaxy you sold in 2023. Congratulations — Google quietly enrolled you in passkeys, and it brought all your old devices with it.               → Hook paragraph. 1-2 sentences. Make the dry interesting.
+%%SECTION_X_HEADING%%  → h2 subheadings. Aim for 4-8 sections per post.
+%%SECTION_X_BODY%%     → One or more <p> tags per section. Use <strong> for emphasis.
+                          Optional: <ul><li> lists, extra callout blocks, tables.
+The root cause:      → Bold intro label e.g. "The bottom line:" or "Watch out:"
+Google's "Skip password when possible" setting was silently turned on for most accounts, which redirects the login flow away from your password and toward passkeys and device prompts — even when those devices are years out of date.       → Callout body. 1-3 sentences. Punchy.
+
+=== INTERNAL LINKING / BACKLINKS TO NOTAVELLO (SEO) ===
+IMPORTANT: Every new post must make a best-effort attempt to include at least
+one contextual internal backlink to ANY other page on notavello.com. This is not
+optional to check. It is only optional to include if there is truly no relevant
+Notavello page to link to. The goal is to keep readers moving through the site —
+so ANY internal page counts equally, and the right target is whichever page a
+reader of that sentence would most genuinely want to visit next. Do not weight
+toward any page type.
+
+What counts (any of these — none is more "correct" than another):
+- A specific exporter page, e.g. /exporters/chatgpt/ /exporters/gemini/ /exporters/claude/
+- /tools/ or a specific tool page, e.g. /tools/ai-detector/
+- A product/info page, e.g. /pages/pricing/ /pages/faq/ /pages/sample/ /pages/about/
+- Another Notavello blog post, e.g. /pages/blog/what-is-a-bot/
+
+Choose whichever page a reader of this sentence would most genuinely want to
+visit next — the one that is relevant AND that a real visitor would actually want
+to click. Judge relevance from the reader's interest, not from what the page
+sells. Do not favor a page because it is a blog post, and do not favor a page
+because it makes money. Never force a link; if no page would genuinely interest
+the reader here, add none.
+
+Required workflow before writing:
+1. Skim index.html's post-list for related titles/slugs.
+2. Pick 1-3 genuinely relevant Notavello pages.
+3. Add the link inline inside the article body, usually inside a <p>.
+4. If no internal link is included, state in the final response: "No internal
+   Notavello link was added because no relevant existing page fit naturally."
+
+Guidelines:
+- Include at least 1 internal Notavello backlink whenever a relevant page exists.
+- Aim for roughly 1 internal link per 400-600 words where relevant, but never
+  force irrelevant links just to hit a number.
+- Link the relevant phrase inline within a <p>, not as a standalone "see also" line.
+  Good: "...you can <a href="/exporters/chatgpt/">export the whole ChatGPT
+  conversation to a clean PDF</a> in one click, ..."
+  Bad: "Click here for another article."
+- Anchor text should be descriptive and natural, not generic.
+- Do not link the same target more than once per post.
+- External links do not satisfy this requirement. The link must point to notavello.com
+  or use a root-relative internal path like /pages/blog/example-slug/.
+
+STEP 4 — ADD CARD TO INDEX
+Insert a new <a class="post-card"> block at the TOP of <div class="post-list">
+in /pages/blog/index.html. Newest post always first.
+Card structure:
+  - post-tag: match Privacy exactly
+  - post-date: match June 29, 2026 exactly
+  - post-card-title: match Google Turned On Passkeys Without Asking. Here's How to Clean Up the Mess. exactly
+  - post-card-desc: 1-2 sentence teaser (can differ from You tried to log into Gmail on your Linux machine. Instead of a password prompt you got a weird short URL, a list of phones you haven't touched in two years, and a prompt asking you to approve the login on a Samsung Galaxy you sold in 2023. Congratulations — Google quietly enrolled you in passkeys, and it brought all your old devices with it.)
+  - href: /pages/blog/google-passkey-cleanup/
+
+STEP 5 — DELIVER FILES
+Return both files for download:
+  1. google-passkey-cleanup.html  (the new post)
+  2. index.html     (updated with new card)
+And return the updated blog-post-template.html if it was modified.
+
+STEP 6 — TELL MIKE THE URL
+State the live URL clearly: https://notavello.com/pages/blog/google-passkey-cleanup/
+
+=== FOOTER CTA — NEVER ALTER ===
+The post footer CTA is locked. Always:
+  Label:  "Looking for more AI tools?"
+  Button: "See our free AI tools →"  linking to /tools/
+Do not change the text, link, or structure.
+
+=== STYLE NOTES ===
+- Tone: Confident, plain-English, occasionally dry wit. Not corporate.
+- Voice/POV: Always write about AI in the THIRD PERSON. Refer to AI assistants as
+  "an assistant like Claude," "it," or "they" — NEVER in the first person as if the
+  AI is narrating the post (no "I search," "let me," "on my end," "AI like me").
+  Second person ("you") to address the reader is fine and encouraged.
+- Headers: Use Lora serif h2s. Be specific — avoid generic headings like "Overview."
+- Callout blocks: Use sparingly (1-2 per post). Best for warnings, bottom lines, gotchas.
+- Tables: Fine to add inside .post-body for comparisons. Use inline styles or add a
+  .compare-table class if needed (see displayport-vs-hdmi.html for example).
+- Length: 800-1800 words is the sweet spot. Don't pad; don't truncate good info.
+-->
