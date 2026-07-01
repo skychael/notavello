@@ -1,0 +1,54 @@
+name: Generate Daily Blog Post
+
+on:
+  schedule:
+    # 01:30 UTC daily = 6:30 PM Pacific Daylight Time (roughly Mar-Nov)
+    # = 5:30 PM Pacific Standard Time the rest of the year, since GitHub's
+    # cron is fixed UTC and does not shift for daylight saving.
+    - cron: '30 1 * * *'
+  workflow_dispatch: {}   # lets you trigger it manually from the Actions tab too
+
+jobs:
+  generate-post:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install openai
+
+      - name: Generate today's post
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: node blog-automation/generate-daily-post.js
+
+      - name: Configure git identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Commit and push (with retry)
+        run: |
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to commit -- nothing was generated or written."
+            exit 0
+          fi
+          git commit -m "Auto: daily blog post $(date -u +%Y-%m-%d)"
+
+          n=0
+          until [ $n -ge 5 ]
+          do
+            git pull --rebase origin main && git push origin main && break
+            n=$((n+1))
+            echo "Push attempt $n failed, retrying in 5s..."
+            sleep 5
+          done
