@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>AI Coding Agents Need A Network Receipt — The Export | Notavello</title>
+<meta name="description" content="AI coding agents can edit your repo and call APIs. They should show exactly what leaves your machine."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/blog/ai-coding-agents-network-receipt/"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://notavello.com/pages/blog/ai-coding-agents-network-receipt/"/>
+<meta property="og:title" content="AI Coding Agents Need A Network Receipt"/>
+<meta property="og:description" content="AI coding agents can edit your repo and call APIs. They should show exactly what leaves your machine."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="AI Coding Agents Need A Network Receipt"/>
+<meta name="twitter:description" content="AI coding agents can edit your repo and call APIs. They should show exactly what leaves your machine."/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "AI Coding Agents Need A Network Receipt",
+  "description": "AI coding agents can edit your repo and call APIs. They should show exactly what leaves your machine.",
+  "url": "https://notavello.com/pages/blog/ai-coding-agents-network-receipt/",
+  "datePublished": "2026-07-01",
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
+.back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; color: var(--ink-muted); text-decoration: none; margin-bottom: 40px; transition: color 0.15s; }
+.back-link:hover { color: var(--accent); }
+.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
+.post-date { font-size: 0.78rem; color: var(--ink-faint); }
+.post-title { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; color: var(--ink); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
+.post-lede { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+.post-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink); }
+.post-body h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 44px 0 16px; letter-spacing: -0.01em; }
+.post-body p { margin-bottom: 20px; color: var(--ink-muted); }
+.post-body p strong { color: var(--ink); font-weight: 600; }
+.post-body ul { margin: 0 0 20px 20px; color: var(--ink-muted); }
+.post-body ul li { margin-bottom: 8px; line-height: 1.7; }
+.callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 32px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.7; }
+.post-footer { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.post-footer-label { font-size: 0.8rem; color: var(--ink-faint); }
+.btn-export { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: opacity 0.2s; }
+.btn-export:hover { opacity: 0.9; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } }
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+
+  <a class="back-link" href="/pages/blog/">← The Export</a>
+
+  <div class="post-meta">
+    <span class="post-tag">Developer Tools</span>
+    <span class="post-date">July 1, 2026</span>
+  </div>
+
+  <h1 class="post-title">AI Coding Agents Need A Network Receipt</h1>
+
+  <p class="post-lede">A coding agent with repo access is not just another chatbot. It is a local developer tool with a network connection, and that means it needs receipts.</p>
+
+  <div class="post-body">
+
+    <h2>The Fight Is Not Really About One Marker</h2>
+    <p>On June 30, 2026, a reverse-engineering post claimed that Claude Code 2.1.196 could alter the date string in its system context when a custom API base URL was configured, using nearly invisible punctuation and date separator changes as request markers. On July 1, Golem also covered the report, describing the behavior as barely visible prompt marking. That is the fact pattern being argued about, not a settled courtroom finding and not a reason to declare every coding assistant malware before lunch.</p><p>The more useful lesson is simpler: AI coding agents need better network transparency. Anthropic’s own <a href='https://code.claude.com/docs/en/data-usage'>Claude Code data usage documentation</a> says the tool runs locally but sends user prompts and model outputs over the network to interact with the model. The same docs describe operational metrics, optional feedback uploads, retention differences by account type, and ways to disable some telemetry. The <a href='https://code.claude.com/docs/en/env-vars'>environment variable reference</a> also documents <strong>ANTHROPIC_BASE_URL</strong> as a way to route requests through a proxy or gateway.</p><p>That is all normal developer-tool territory. Proxies are normal. Abuse detection is normal. API providers wanting to know whether traffic is coming through an unofficial reseller is also normal. The part that makes developers itchy is when request behavior is only visible after someone reverse-engineers a binary. That is not a great look for a tool that asks to read source code, run shell commands, and push changes. Subtle, yes. Boring, no. Developer trust prefers boring.</p>
+
+    <div class="callout">
+      <strong>The bottom line:</strong> AI coding tools should not make developers guess what leaves the machine. Every request should have a readable receipt: destination, payload class, metadata, retention path, and telemetry status.
+    </div>
+
+    <h2>A Coding Agent Is Not A Chat Window</h2>
+    <p>A normal chatbot gets a prompt and returns text. That can still leak sensitive information, but the boundary is obvious: you typed something into a website or app. A coding agent lives in a much stranger place. It may see files, dependency manifests, internal comments, environment names, test logs, branch names, issue titles, and whatever else the user drops into context. If tools are enabled, it may run commands, call MCP servers, open URLs, edit files, and prepare commits.</p><p>That makes the request envelope matter. Not just the user’s visible prompt. The whole envelope: system text, tool descriptions, repo summaries, file snippets, hidden routing fields, headers, trace IDs, plugin data, feature flags, and telemetry toggles. Developers already review code diffs because the final patch matters. They should be able to review the network diff because the outgoing request matters too.</p><p>This is the same principle behind keeping a paper trail for AI-assisted code changes. A previous Notavello post on <a href='/pages/blog/ai-written-pull-requests-need-a-paper-trail/'>AI-written pull requests</a> argued that teams need provenance without turning every PR into a courtroom exhibit. Network receipts are the same idea one layer earlier. They do not need drama. They need enough detail that a competent developer can answer, “What did this tool just send?” without attaching a debugger like it is 2009 and everyone has trust issues. Which, to be fair, they do.</p>
+
+    <h2>What A Network Receipt Should Show</h2>
+    <p>A network receipt should be a local, readable record of each model request and each non-model call the agent makes. It should not require packet capture. It should not require a paid enterprise dashboard. It should not require believing that the vendor would never do anything surprising because the landing page uses the word “secure” eleven times.</p><p>At minimum, every serious AI coding agent should expose these fields:</p><ul><li><strong>Destination:</strong> the exact provider, host, and route class, such as direct API, vendor gateway, enterprise proxy, Bedrock, Vertex, or local model router.</li><li><strong>Identity used:</strong> whether the request used a personal subscription, an API key, an org-managed credential, SSO, or a shared gateway key.</li><li><strong>Model and mode:</strong> the model ID, agent mode, fast mode, extended thinking setting, context window assumptions, and fallback model behavior.</li><li><strong>Prompt envelope summary:</strong> system messages, tool definitions, repo summaries, attached file list, and whether hidden or generated system context was included.</li><li><strong>Content scope:</strong> which files, snippets, terminal output, images, or tool results were sent, ideally with paths and hashes when full text is too sensitive to display by default.</li><li><strong>Metadata:</strong> request headers, feature flags, trace IDs, proxy hints, cache settings, client version, and any provider-specific fields added to the request body.</li><li><strong>Telemetry status:</strong> whether usage metrics, error reporting, surveys, feedback bundles, or OpenTelemetry exports were enabled for that session.</li><li><strong>Retention path:</strong> the applicable retention policy or a link to the account-level setting that controls it.</li></ul><p>This does not mean dumping raw secrets into a pretty log file. A good receipt should redact API keys, tokens, cookies, and known secret formats by default. It should still tell the truth about categories and routing. “Sent 4 files from /billing and 712 lines of terminal output to provider X through proxy Y” is useful. “Trust us” is a scented candle.</p>
+
+    <h2>The Proxy Problem Is Real, Hiding It Is Still Dumb</h2>
+    <p>There are legitimate reasons for AI companies to inspect routing behavior. Providers have to enforce account terms, detect quota resale, stop credential abuse, investigate scraping-style usage, and defend against model distillation attempts. A custom base URL can be a strong signal that traffic is not flowing through the default path. Enterprises also use custom gateways for completely boring reasons: cost tracking, data loss prevention, audit logging, model routing, regional controls, and centralized key management.</p><p>That is exactly why hidden behavior is the wrong answer. The same signal can mean “unauthorized reseller” or “large company doing responsible platform engineering.” If a tool treats gateway users as suspicious by default, it should say so. If a feature is disabled behind a proxy, say so. If extra classification metadata is sent when a custom endpoint is used, say so. Put it in the receipt, the docs, the admin console, and the changelog. There, fixed. No invisible punctuation required.</p><p>Vendors sometimes act as if transparency gives attackers a free playbook. That argument has a shelf life of about twelve seconds in developer tools. Attackers can reverse-engineer binaries, patch clients, change hostnames, strip headers, and route through fresh infrastructure. The people most affected by obscure behavior are usually the honest ones: internal platform teams, security reviewers, researchers, and developers debugging why the official tool behaves differently behind the company gateway.</p>
+
+    <h2>How To Audit Your Own Setup This Week</h2>
+    <p>You do not need to become a full-time reverse engineer to get a handle on AI coding agent traffic. Start with the boring checks. They catch most of the expensive surprises.</p><ul><li><strong>Print the environment:</strong> check variables such as <strong>ANTHROPIC_BASE_URL</strong>, provider-specific base URLs, proxy settings, telemetry flags, OpenTelemetry settings, and custom headers before launching the agent.</li><li><strong>Use a clean shell profile:</strong> run the agent once from a minimal environment so old exports, shell aliases, and forgotten proxy variables cannot quietly change behavior.</li><li><strong>Check the vendor status command:</strong> if the tool has a status, config, doctor, or diagnostics command, capture it before and after authentication.</li><li><strong>Turn on local logging where available:</strong> prefer logs that summarize request categories and file lists without storing raw secrets forever.</li><li><strong>Review gateway logs:</strong> if traffic flows through LiteLLM, Kong, an internal proxy, Bedrock, Vertex, or another gateway, compare what the agent says it sent with what the gateway saw.</li><li><strong>Disable nonessential telemetry for sensitive repos:</strong> use the documented controls, then verify with logs or the gateway that the setting did what it claimed.</li><li><strong>Separate experiments from production work:</strong> do not test plugins, MCP servers, remote control, or new agent modes inside the repo that contains payroll exports and prod credentials. This should not need saying. It does.</li></ul><p>The goal is not paranoia. The goal is repeatability. A team should be able to say, “This agent can read these directories, call these tools, send this kind of context, through this gateway, under this retention policy.” If that sentence cannot be completed, the setup is not production-ready. It is a demo with a company badge.</p>
+
+    <h2>What Tool Vendors Should Ship Next</h2>
+    <p>The best fix is not another privacy page with a stock photo of a lock. AI coding tools should ship a request transparency layer as part of the product. A local “request preview” command would let developers inspect the next model call before it leaves the machine. A session receipt would summarize what actually happened after the fact. An admin policy could require receipts for managed repos, CI agents, and gateway-routed sessions.</p><p>The receipt should be exportable as JSON for security teams and readable as plain text for normal humans. It should have stable field names, versioned schemas, and a clear distinction between user content, tool content, generated system context, routing metadata, telemetry, and provider controls. If a tool adds a hidden system line, it belongs in the receipt. If a tool injects today’s date, user email, repo metadata, plugin instructions, or a trace context, it belongs in the receipt. If the model provider receives it, the developer should not have to guess.</p><p>There is also room for a small industry convention here. Developer tools already understand lockfiles, ignore files, environment variables, and OpenTelemetry. A simple <strong>ai-request-receipt.json</strong> schema would be more useful than another round of “responsible AI” PDFs. Put the machine-readable truth next to the work. Let teams diff it. Let gateways validate it. Let security tools alert on surprising destinations or new metadata categories.</p>
+
+    <h2>Trust Lives In The Boring Layer</h2>
+    <p>The funny thing about developer trust is that it is rarely won by the impressive demo. The demo gets the install. Trust comes later, when the tool behaves predictably during the ugly parts: auth failure, proxy routing, telemetry opt-out, log redaction, billing limits, file permissions, and network calls.</p><p>AI coding agents are becoming part of the development stack. That means they need the same boring transparency developers expect from package managers, CI systems, cloud SDKs, and database clients. Show the endpoint. Show the payload class. Show the metadata. Show the retention path. Show what changed between versions.</p><p>The Claude Code marker debate will eventually fade into the usual archive of internet arguments: hot takes, screenshots, partial reproductions, and people being wrong in high definition. The durable rule should remain. When a coding agent can see the repo and speak to the network, it owes the developer a receipt.</p>
+
+  </div>
+
+  <div class="post-footer">
+    <span class="post-footer-label">Looking for more AI tools?</span>
+    <a class="btn-export" href="/">See our free AI tools →</a>
+  </div>
+
+</main>
+
+<!--FOOTER-->
+
+<script data-goatcounter="https://notavello.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script></body>
+</html>
