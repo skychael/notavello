@@ -5,6 +5,9 @@
   Run from repo root:
     node blog-automation\generate-daily-post.js --topic "AI browser workspaces"
 
+  Or let it pick its own topic, seeded by what's active on Hacker News today:
+    node blog-automation\generate-daily-post.js
+
   Then it writes:
     pages/blog/<slug>/index.html
 
@@ -14,6 +17,18 @@
   Required:
     npm install openai
     set OPENAI_API_KEY=your_key
+
+  Optional (Hacker News topic seeding -- no signup, no API key, nothing to
+  configure. Uses the public Algolia HN Search API):
+
+    --hn-query "ai agents"   (optional keyword filter; default: HN front page)
+    --no-hn                  (skip Hacker News entirely, old behavior)
+
+  IMPORTANT: Hacker News threads are used ONLY as a signal that a topic is
+  being actively discussed. The model is explicitly instructed not to treat
+  any claim inside an HN title as a verified fact -- it must independently
+  confirm real facts via web_search before writing about anything sourced
+  from Hacker News. See HN_VERIFICATION_RULE below.
 */
 
 const fs = require("fs");
@@ -40,6 +55,9 @@ const MODEL = argValue("--model", process.env.OPENAI_MODEL || "gpt-5.5");
 const DRY_RUN = args.includes("--dry-run");
 const SKIP_SPLIT = args.includes("--skip-split");
 const NO_WEB = args.includes("--no-web") || process.env.NO_WEB_SEARCH === "1";
+
+const HN_QUERY = argValue("--hn-query", process.env.HN_QUERY || "");
+const NO_HN = args.includes("--no-hn");
 
 function fail(message) {
   console.error("\nERROR: " + message);
@@ -116,6 +134,44 @@ function extractExistingPostSummary(indexHtml) {
     const tag = stripTags((card.match(/<span\s+class=["']post-tag["']>([\s\S]*?)<\/span>/i) || [])[1] || "");
     return `- ${title} | ${tag} | ${href} | ${desc}`;
   }).join("\n");
+}
+
+// --- Hacker News topic seeding --------------------------------------------
+// No auth, no signup, no keys -- the public Algolia HN Search API. Pulls
+// today's front page (or a keyword-filtered search) to use ONLY as a signal
+// of what's being actively discussed -- never as a source of facts. Any
+// failure here (network error, bad response) is non-fatal: the script falls
+// back to the old self-directed topic selection instead of stopping.
+
+async function fetchHnTopicSeeds() {
+  if (NO_HN) return "";
+
+  try {
+    const url = HN_QUERY
+      ? `https://hn.algolia.com/api/v1/search?query=${encodeURIComponent(HN_QUERY)}&tags=story&hitsPerPage=15`
+      : `https://hn.algolia.com/api/v1/search?tags=front_page&hitsPerPage=15`;
+
+    const res = await fetch(url, {
+      headers: { "User-Agent": "notavello-blog-automation/1.0 (script for notavello.com)" }
+    });
+
+    if (!res.ok) {
+      console.warn(`WARNING: Could not fetch Hacker News (HTTP ${res.status}). Continuing without HN topic seeds.`);
+      return "";
+    }
+
+    const data = await res.json();
+    const hits = (data && data.hits) || [];
+    const lines = hits
+      .filter(h => h && h.title)
+      .map(h => `- [HN, ${h.points ?? "?"} points, ${h.num_comments ?? "?"} comments] ${h.title}`);
+
+    return lines.join("\n");
+  } catch (error) {
+    console.warn("WARNING: Hacker News fetch failed. Continuing without HN topic seeds.");
+    console.warn(String(error && error.message ? error.message : error));
+    return "";
+  }
 }
 
 function extractJson(text) {
@@ -199,11 +255,29 @@ function buildPostHtml(template, post, dateIso, dateDisplay) {
     `<div class="post-body">\n\n${body}  </div>\n\n  <div class="post-footer">`
   );
 
-  if (html.includes("%%")) {
-    fail("Unreplaced %% placeholder remains in generated HTML.");
+  // Strip dev-only content that must never ship in a published post:
+  // 1) the leading "ALL %% PLACEHOLDERS MUST BE REPLACED" warning comment
+  // 2) everything after the closing </html> tag (the "NOTE TO FUTURE CLAUDES"
+  //    workflow instructions block, meant only for whoever edits the template
+  //    by hand -- never for a generated, published post).
+  html = html.replace(/^<!--[\s\S]*?-->\s*(?=<!DOCTYPE)/i, "");
+  html = html.replace(/(<\/html>)[\s\S]*$/i, "$1\n");
+
+  const htmlWithoutComments = html.replace(/<!--[\s\S]*?-->/g, "");
+  const strayPlaceholder = htmlWithoutComments.match(/%%[A-Z0-9_]+%%/);
+  if (strayPlaceholder) {
+    const idx = htmlWithoutComments.indexOf(strayPlaceholder[0]);
+    const context = htmlWithoutComments.slice(Math.max(0, idx - 80), idx + 80);
+    console.error("\nDEBUG: Found stray placeholder here:\n---\n" + context + "\n---");
+    fail(`Unreplaced placeholder remains in generated HTML: ${strayPlaceholder[0]}`);
   }
 
-  if (!html.includes('Looking for more AI tools?') || !html.includes('href="/tools/"')) {
+  if (!html.includes('Looking for more AI tools?') || !html.includes('href="/"')) {
+    const footerIdx = html.search(/<div\s+class=["']post-footer["']>/i);
+    const footerContext = footerIdx === -1
+      ? "(Could not even find <div class=\"post-footer\"> in the output.)"
+      : html.slice(footerIdx, footerIdx + 500);
+    console.error("\nDEBUG: Footer area found in generated HTML:\n---\n" + footerContext + "\n---");
     fail("Locked footer CTA appears to be missing or changed.");
   }
 
@@ -231,9 +305,37 @@ async function generatePost() {
   const existingSummary = extractExistingPostSummary(indexHtml);
   const { dateIso, dateDisplay } = todayParts();
 
+  const hnSeeds = await fetchHnTopicSeeds();
+
+  if (hnSeeds && NO_WEB) {
+    console.warn(
+      "\nWARNING: Hacker News topic seeding is on but --no-web disables the model's " +
+      "ability to verify any claim it draws from those threads. Either drop " +
+      "--no-web or pass --no-hn so a topic isn't sourced from HN with " +
+      "no way to fact-check it."
+    );
+  }
+
   const topicInstruction = TOPIC
     ? `Write today's post about this topic: ${TOPIC}`
-    : "Pick one strong, non-duplicate topic for today's Notavello post. Prefer practical AI/tooling/web/software topics with search intent.";
+    : hnSeeds
+      ? "Pick one strong, non-duplicate topic for today's Notavello post. Use today's Hacker News activity below as a signal of what people are actively discussing right now -- prefer a topic grounded in that activity if a good one fits. Prefer practical AI/tooling/web/software topics with search intent."
+      : "Pick one strong, non-duplicate topic for today's Notavello post. Prefer practical AI/tooling/web/software topics with search intent.";
+
+  const hnBlock = hnSeeds
+    ? `
+Today's Hacker News activity (topic signal ONLY):
+${hnSeeds}
+
+HN_VERIFICATION_RULE: The list above tells you what the tech community is
+actively discussing right now -- nothing more. Do not treat any title, number,
+or claim in that list as true. If you draw a topic from it, you must
+independently confirm the real underlying facts using web search before
+writing anything. If you cannot verify a claim implied by an HN post, do not
+repeat it -- either drop that angle or state plainly that it is an unverified
+claim being discussed online.
+`
+    : "";
 
   const prompt = `
 You are writing one production-ready Notavello blog post.
@@ -244,7 +346,7 @@ Date:
 
 Topic:
 ${topicInstruction}
-
+${hnBlock}
 Use this Notavello voice:
 - confident, plain-English, occasionally dry
 - not corporate
@@ -265,6 +367,7 @@ SEO and site rules:
 - Do not include footnotes.
 - External links are allowed only when they genuinely support a claim.
 - Do not make up facts, product launches, prices, legal claims, or dates.
+- If any part of today's topic was sourced from Hacker News activity above, you must have independently verified the real facts via web search before stating them -- never present unverified forum claims as established fact.
 
 Recent existing posts to avoid duplicating:
 ${existingSummary || "(No existing post cards found.)"}

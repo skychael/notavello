@@ -1,0 +1,270 @@
+<!-- ⚠️ ALL %% PLACEHOLDERS MUST BE REPLACED — they feed SEO meta tags, OG, Twitter, and schema -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>AI-Written Pull Requests Need a Paper Trail — The Export | Notavello</title>
+<meta name="description" content="A practical policy for accepting AI-assisted code without turning every pull request into a provenance mess."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/blog/ai-written-pull-requests-need-a-paper-trail/"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://notavello.com/pages/blog/ai-written-pull-requests-need-a-paper-trail/"/>
+<meta property="og:title" content="AI-Written Pull Requests Need a Paper Trail"/>
+<meta property="og:description" content="A practical policy for accepting AI-assisted code without turning every pull request into a provenance mess."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="AI-Written Pull Requests Need a Paper Trail"/>
+<meta name="twitter:description" content="A practical policy for accepting AI-assisted code without turning every pull request into a provenance mess."/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "AI-Written Pull Requests Need a Paper Trail",
+  "description": "A practical policy for accepting AI-assisted code without turning every pull request into a provenance mess.",
+  "url": "https://notavello.com/pages/blog/ai-written-pull-requests-need-a-paper-trail/",
+  "datePublished": "2026-07-01",
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
+.back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; color: var(--ink-muted); text-decoration: none; margin-bottom: 40px; transition: color 0.15s; }
+.back-link:hover { color: var(--accent); }
+.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
+.post-date { font-size: 0.78rem; color: var(--ink-faint); }
+.post-title { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; color: var(--ink); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
+.post-lede { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+.post-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink); }
+.post-body h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 44px 0 16px; letter-spacing: -0.01em; }
+.post-body p { margin-bottom: 20px; color: var(--ink-muted); }
+.post-body p strong { color: var(--ink); font-weight: 600; }
+.post-body ul { margin: 0 0 20px 20px; color: var(--ink-muted); }
+.post-body ul li { margin-bottom: 8px; line-height: 1.7; }
+.callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 32px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.7; }
+.post-footer { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.post-footer-label { font-size: 0.8rem; color: var(--ink-faint); }
+.btn-export { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: opacity 0.2s; }
+.btn-export:hover { opacity: 0.9; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } }
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+
+  <a class="back-link" href="/pages/blog/">← The Export</a>
+
+  <div class="post-meta">
+    <span class="post-tag">Developer Tools</span>
+    <span class="post-date">July 1, 2026</span>
+  </div>
+
+  <h1 class="post-title">AI-Written Pull Requests Need a Paper Trail</h1>
+
+  <p class="post-lede">AI-generated code is not automatically bad code. The problem is that nobody wants to merge a mystery blob with a confident commit message.</p>
+
+  <div class="post-body">
+
+    <h2>The Problem Is Not the Code. It Is Provenance.</h2>
+    <p>AI coding assistants have made it easy to produce a pull request that looks finished before anyone understands where it came from. That is the new maintenance problem. Not magic. Not doom. Just provenance.</p><p>A maintainer reviewing a normal pull request can ask familiar questions: did the contributor write this, copy it from another project, adapt it from docs, or generate it from a tool? With AI-assisted code, that answer often gets fuzzy. The contributor may not know which training examples influenced the output. The assistant may produce code that resembles public code. The patch may work today but carry assumptions nobody can explain.</p><p>That matters because open source is not just a code exchange. It is a trust system. Maintainers need to know that contributors have the right to submit the code, that the code is maintainable, and that someone understands it well enough to fix it later. A green test suite is nice. A green test suite attached to a drive-by blob is less nice.</p><p>The right policy is not to treat every use of an AI assistant as contamination. That is unrealistic in 2026. The right policy is to separate <strong>AI-assisted development</strong> from <strong>AI-dumped code</strong>. One can fit into a healthy workflow. The other is unpaid janitorial work for maintainers.</p>
+
+    <div class="callout">
+      <strong>The bottom line:</strong> Open source projects do not need panic bans or blind trust. They need disclosure, review, tests, and a contributor who accepts responsibility for the code.
+    </div>
+
+    <h2>A Sane Rule: Assisted Is Allowed, Dumping Is Not</h2>
+    <p>The cleanest project policy is simple: contributors may use AI tools, but they remain fully responsible for the result. If they cannot explain the code, test it, and certify that they have the right to contribute it, it should not be merged.</p><p>That sounds obvious, which is why it is useful. Good policies are usually boring. A repository can say:</p><ul><li><strong>AI-assisted code is allowed</strong> when the contributor reviews, edits, tests, and understands it.</li><li><strong>AI-generated bulk submissions are not allowed</strong> when the contributor cannot explain the design or verify the origin.</li><li><strong>Disclosure is required</strong> for meaningful AI assistance, especially new modules, large rewrites, generated tests, or copied-looking snippets.</li><li><strong>The contributor is still the author of record</strong> for project purposes and accepts responsibility for licensing, security, and correctness.</li><li><strong>Maintainers may reject code on provenance grounds</strong> even if it compiles.</li></ul><p>This avoids the fake binary of “ban every assistant” versus “merge whatever the robot says.” Most professional developers already use autocomplete, search, documentation, Stack Overflow, snippets, and internal examples. AI assistants are another source of suggestions. The difference is that they can generate larger chunks with less visible provenance. So the policy needs to make that provenance visible again.</p>
+
+    <h2>What Contributors Should Disclose</h2>
+    <p>A disclosure does not need to be a confession booth. Nobody needs a 900-word essay about which chatbot suggested a for-loop. The useful version is short and practical.</p><p>For a small change, a pull request can say: <strong>“Used an AI assistant to draft tests; reviewed and edited manually.”</strong> For a larger change, it should be more specific: <strong>“Used an AI assistant to prototype the parser structure. Final implementation was rewritten, tested against the existing fixture suite, and checked for similarity to known implementations.”</strong></p><p>A good disclosure answers four questions:</p><ul><li><strong>What was generated?</strong> Examples: tests, comments, migration script, parser, refactor plan, documentation.</li><li><strong>What was manually reviewed?</strong> The contributor should say what they checked, not just that they “looked at it.”</li><li><strong>What evidence exists?</strong> Tests, benchmarks, screenshots, links to issues, reproduction steps, or design notes.</li><li><strong>Can the contributor explain it?</strong> If a maintainer asks why the code is structured that way, the answer cannot be “the assistant did it.”</li></ul><p>This is not about shaming people for using tools. It is about preventing a project from inheriting code with no accountable human attached. The machine does not maintain the repository. People do.</p>
+
+    <h2>Licensing Still Needs a Human Signature</h2>
+    <p>Many open source projects already rely on contributor promises. The most common lightweight mechanism is the <a href='https://developercertificate.org/' rel='nofollow'>Developer Certificate of Origin</a>, which asks contributors to certify that they have the right to submit the work under the project license. AI assistance does not make that requirement disappear. If anything, it makes the contributor’s certification more important.</p><p>The uncomfortable truth is that an AI assistant usually cannot provide a reliable chain of title for a generated snippet. Some developer tools offer public-code matching or reference filters, and those features can help. GitHub, for example, documents options for code suggestions that match public code in its <a href='https://docs.github.com/en/copilot' rel='nofollow'>Copilot documentation</a>. But a similarity warning is not the same thing as legal provenance, and the absence of a warning is not a clean bill of health.</p><p>That means maintainers should not accept “the AI wrote it” as a licensing answer. The contributor should still be able to certify that the contribution is theirs to submit. If they cannot, the safest answer is boring and correct: do not merge it.</p><p>This is especially important for code that implements standard algorithms, protocol handlers, file format parsers, compatibility layers, or anything that looks suspiciously like an existing project. A ten-line helper is rarely the problem. A 700-line subsystem arriving fully formed from a first-time contributor deserves a raised eyebrow. Possibly two.</p>
+
+    <h2>What Maintainers Should Check Before Merging</h2>
+    <p>Maintainers do not need to become forensic AI detectives. They do need a repeatable review checklist. The goal is to catch the obvious disasters without turning every pull request into litigation cosplay.</p><ul><li><strong>Ask for disclosure on meaningful changes.</strong> Add a checkbox to the pull request template: “Did you use an AI coding assistant to generate or substantially modify this code?”</li><li><strong>Require explanation, not vibes.</strong> If the contributor cannot explain the implementation, request changes or close the pull request.</li><li><strong>Prefer small patches.</strong> AI-assisted work should be easier to review, not harder. Large generated rewrites are where risk hides.</li><li><strong>Demand tests that prove behavior.</strong> Generated code often looks plausible. Tests make it earn its keep.</li><li><strong>Watch for alien style.</strong> Sudden naming conventions, error handling patterns, dependency choices, or architecture that do not match the project are warning signs.</li><li><strong>Reject unnecessary dependencies.</strong> Assistants love adding packages. Maintainers get to live with them forever.</li><li><strong>Use normal security review.</strong> Input validation, auth boundaries, secrets handling, deserialization, shell calls, and network access still matter.</li></ul><p>The best rule is: if AI assistance makes the maintainer’s job harder, the contributor has not done enough work yet. A pull request should arrive smaller, clearer, and better tested because an assistant helped. If it arrives as a giant tarball of optimism, close it with a polite note and go outside for five minutes.</p>
+
+    <h2>Where AI Actually Helps in a Healthy Workflow</h2>
+    <p>There are good uses for AI coding tools in open source. They are just not always the flashy ones. An assistant can help draft unit tests, explain a confusing function, propose edge cases, generate fixture data, translate an error message into a reproduction checklist, or sketch a migration plan. Those uses leave the human contributor in control.</p><p>The risky pattern is outsourcing judgment. “Write this feature” is a weaker prompt than “list edge cases for this parser” or “suggest tests for this bug.” The first produces code that may or may not fit the project. The second produces material a contributor can verify.</p><p>If you use multiple assistants for research, coding, and documentation, it also helps to keep the workflow visible instead of scattered across random browser tabs. Notavello’s <a href='/tools/'>AI tools directory</a> is built around that practical reality: people compare tools, use more than one, and need to understand what each is good at before trusting it with real work.</p><p>For open source maintainers, the same principle applies at the repository level. Do not ask whether a tool was involved and then stop thinking. Ask whether the contributor used the tool in a way that improved the submission. Better tests? Clearer docs? Smaller patch? Good. Mystery code? No.</p>
+
+    <h2>A Repository Policy You Can Paste Today</h2>
+    <p>Here is a practical starting point for a project policy. Adjust the strictness based on the size, risk, and license sensitivity of the project.</p><p><strong>AI-assisted contributions policy:</strong></p><ul><li>Contributors may use AI coding assistants, but they are fully responsible for all submitted code, documentation, tests, and configuration.</li><li>Contributors must disclose meaningful AI assistance in the pull request description, including what was generated or substantially modified.</li><li>Contributors must be able to explain the submitted code and the design choices behind it.</li><li>Contributors must certify that they have the right to submit the contribution under this project’s license.</li><li>Large generated changes, unexplained rewrites, or submissions with unclear provenance may be rejected even if they pass tests.</li><li>Maintainers may request smaller patches, additional tests, or manual rewrites before review continues.</li></ul><p>That policy will not answer every edge case. No policy does. But it gives maintainers something better than vibes and contributors something better than guessing.</p><p>The future of AI-assisted open source will not be decided by whether someone used autocomplete with a larger vocabulary. It will be decided by whether projects preserve accountability. Code can be generated quickly now. Trust still has to be earned the slow way.</p>
+
+  </div>
+
+  <div class="post-footer">
+    <span class="post-footer-label">Looking for more AI tools?</span>
+    <a class="btn-export" href="/">See our free AI tools →</a>
+  </div>
+
+</main>
+
+<!--FOOTER-->
+
+<script data-goatcounter="https://notavello.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script></body>
+</html>
+
+<!--
+=== ⚠️ NOTE TO FUTURE CLAUDES — READ BEFORE TOUCHING THIS FILE ===
+DO NOT edit, modify, or update this template without first explicitly asking Mike
+and receiving clear approval in the conversation. Even if asked to "update the
+template" or "clean up the template" as part of a larger task — STOP and confirm
+with Mike first. This file is intentionally locked to manual review.
+===
+
+=== WORKFLOW FOR EACH NEW POST ===
+
+STEP 1 — RESEARCH
+Research the topic before writing. Use web search if needed for current facts,
+stats, or market data. Accuracy matters more than speed.
+
+STEP 2 — DETERMINE SLUG
+Slug format: lowercase, hyphenated, descriptive, SEO-friendly.
+Example: displayport-vs-hdmi
+The post will live at: https://notavello.com/pages/blog/ai-written-pull-requests-need-a-paper-trail/
+The output HTML filename should match the slug: e.g. displayport-vs-hdmi.html
+Tell Mike the folder/slug before delivering files.
+
+STEP 3 — REPLACE ALL %% PLACEHOLDERS
+AI-Written Pull Requests Need a Paper Trail         → Full post title (used in <title>, OG, Twitter, h1, schema)
+A practical policy for accepting AI-assisted code without turning every pull request into a provenance mess.   → 150 char max. Punchy, keyword-rich. No quotes inside.
+ai-written-pull-requests-need-a-paper-trail               → URL slug e.g. displayport-vs-hdmi (no trailing slash in tag)
+2026-07-01           → ISO date e.g. 2026-06-08 (schema only)
+July 1, 2026       → Human date e.g. June 8, 2026 (shown on page)
+Developer Tools                → Category tag. Current tags in use:
+                          AI Tools | AI Comparison | AI Trends | AI Markets |
+                          Developer Tools | Privacy | Energy | Insurance | Tech
+                          (Add new tags sparingly; check index.html for consistency)
+AI-generated code is not automatically bad code. The problem is that nobody wants to merge a mystery blob with a confident commit message.               → Hook paragraph. 1-2 sentences. Make the dry interesting.
+%%SECTION_X_HEADING%%  → h2 subheadings. Aim for 4-8 sections per post.
+%%SECTION_X_BODY%%     → One or more <p> tags per section. Use <strong> for emphasis.
+                          Optional: <ul><li> lists, extra callout blocks, tables.
+The bottom line:      → Bold intro label e.g. "The bottom line:" or "Watch out:"
+Open source projects do not need panic bans or blind trust. They need disclosure, review, tests, and a contributor who accepts responsibility for the code.       → Callout body. 1-3 sentences. Punchy.
+
+=== INTERNAL LINKING / BACKLINKS TO NOTAVELLO (SEO) ===
+IMPORTANT: Every new post must make a best-effort attempt to include at least
+one contextual internal backlink to ANY other page on notavello.com. This is not
+optional to check. It is only optional to include if there is truly no relevant
+Notavello page to link to. The goal is to keep readers moving through the site —
+so ANY internal page counts equally, and the right target is whichever page a
+reader of that sentence would most genuinely want to visit next. Do not weight
+toward any page type.
+
+What counts (any of these — none is more "correct" than another):
+- A specific exporter page, e.g. /exporters/chatgpt/ /exporters/gemini/ /exporters/claude/
+- /tools/ or a specific tool page, e.g. /tools/ai-detector/
+- A product/info page, e.g. /pages/pricing/ /pages/faq/ /pages/sample/ /pages/about/
+- Another Notavello blog post, e.g. /pages/blog/what-is-a-bot/
+
+Choose whichever page a reader of this sentence would most genuinely want to
+visit next — the one that is relevant AND that a real visitor would actually want
+to click. Judge relevance from the reader's interest, not from what the page
+sells. Do not favor a page because it is a blog post, and do not favor a page
+because it makes money. Never force a link; if no page would genuinely interest
+the reader here, add none.
+
+Required workflow before writing:
+1. Skim index.html's post-list for related titles/slugs.
+2. Pick 1-3 genuinely relevant Notavello pages.
+3. Add the link inline inside the article body, usually inside a <p>.
+4. If no internal link is included, state in the final response: "No internal
+   Notavello link was added because no relevant existing page fit naturally."
+
+Guidelines:
+- Include at least 1 internal Notavello backlink whenever a relevant page exists.
+- Aim for roughly 1 internal link per 400-600 words where relevant, but never
+  force irrelevant links just to hit a number.
+- Link the relevant phrase inline within a <p>, not as a standalone "see also" line.
+  Good: "...you can <a href="/exporters/chatgpt/">export the whole ChatGPT
+  conversation to a clean PDF</a> in one click, ..."
+  Bad: "Click here for another article."
+- Anchor text should be descriptive and natural, not generic.
+- Do not link the same target more than once per post.
+- External links do not satisfy this requirement. The link must point to notavello.com
+  or use a root-relative internal path like /pages/blog/example-slug/.
+
+STEP 4 — ADD CARD TO INDEX
+Insert a new <a class="post-card"> block at the TOP of <div class="post-list">
+in /pages/blog/index.html. Newest post always first.
+Card structure:
+  - post-tag: match Developer Tools exactly
+  - post-date: match July 1, 2026 exactly
+  - post-card-title: match AI-Written Pull Requests Need a Paper Trail exactly
+  - post-card-desc: 1-2 sentence teaser (can differ from AI-generated code is not automatically bad code. The problem is that nobody wants to merge a mystery blob with a confident commit message.)
+  - href: /pages/blog/ai-written-pull-requests-need-a-paper-trail/
+
+STEP 5 — DELIVER FILES
+Return both files for download:
+  1. ai-written-pull-requests-need-a-paper-trail.html  (the new post)
+  2. index.html     (updated with new card)
+And return the updated blog-post-template.html if it was modified.
+
+STEP 6 — TELL MIKE THE URL
+State the live URL clearly: https://notavello.com/pages/blog/ai-written-pull-requests-need-a-paper-trail/
+
+=== FOOTER CTA — NEVER ALTER ===
+The post footer CTA is locked. Always:
+  Label:  "Looking for more AI tools?"
+  Button: "See our free AI tools →"  linking to /
+Do not change the text, link, or structure.
+
+=== STYLE NOTES ===
+- Tone: Confident, plain-English, occasionally dry wit. Not corporate.
+- Voice/POV: Always write about AI in the THIRD PERSON. Refer to AI assistants as
+  "an assistant like Claude," "it," or "they" — NEVER in the first person as if the
+  AI is narrating the post (no "I search," "let me," "on my end," "AI like me").
+  Second person ("you") to address the reader is fine and encouraged.
+- Headers: Use Lora serif h2s. Be specific — avoid generic headings like "Overview."
+- Callout blocks: Use sparingly (1-2 per post). Best for warnings, bottom lines, gotchas.
+- Tables: Fine to add inside .post-body for comparisons. Use inline styles or add a
+  .compare-table class if needed (see displayport-vs-hdmi.html for example).
+- Length: 800-1800 words is the sweet spot. Don't pad; don't truncate good info.
+-->
