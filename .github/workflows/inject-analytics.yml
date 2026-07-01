@@ -10,6 +10,10 @@ on:
       - '**/*.html'
   workflow_dispatch:
 
+# The job needs write access so it can commit the injected snippet back.
+permissions:
+  contents: write
+
 jobs:
   inject-analytics:
     runs-on: ubuntu-latest
