@@ -281,14 +281,43 @@ function buildPostHtml(template, post, dateIso, dateDisplay) {
     fail("Locked footer CTA appears to be missing or changed.");
   }
 
+  return { slug, title, html };
+}
+
+function buildInternalTargets() {
+  const staticTargets = [
+    "/", "/tools/", "/app/",
+    "/exporters/chatgpt/", "/exporters/claude/", "/exporters/gemini/",
+    "/exporters/grok/", "/exporters/copilot/", "/exporters/perplexity/", "/exporters/other/",
+    "/pages/pricing/", "/pages/sample/", "/pages/faq/", "/pages/about/", "/pages/blog/"
+  ];
+  let blogTargets = [];
+  try {
+    blogTargets = fs.readdirSync(BLOG_DIR, { withFileTypes: true })
+      .filter(d => d.isDirectory() && !d.name.startsWith("_") && !d.name.startsWith("page-"))
+      .filter(d => fs.existsSync(path.join(BLOG_DIR, d.name, "index.html")))
+      .map(d => `/pages/blog/${d.name}/`);
+  } catch (_) { /* whitelist still works with static targets only */ }
+  return { set: new Set([...staticTargets, ...blogTargets]), list: [...staticTargets, ...blogTargets] };
+}
+
+function auditPostLinks(html, allowedInternal) {
   const postBodyMatch = html.match(/<div\s+class=["']post-body["']>([\s\S]*?)<\/div>\s*<div\s+class=["']post-footer["']>/i);
   const postBody = postBodyMatch ? postBodyMatch[1] : "";
-  if (!/<a\s+[^>]*href=["']\/[^"']+["']/i.test(postBody)) {
-    console.warn("\nWARNING: No contextual internal root-relative Notavello link found inside .post-body.");
-    console.warn("Review the post before publishing. The template asks for at least one natural internal link when possible.");
-  }
+  const hrefs = [...postBody.matchAll(/<a\s+[^>]*href=["']([^"']+)["']/gi)].map(m => m[1]);
 
-  return { slug, title, html };
+  const internal = hrefs.filter(h => h.startsWith("/"));
+  const external = hrefs.filter(h => /^https?:\/\//i.test(h) && !/^https?:\/\/(www\.)?notavello\.com/i.test(h));
+  const badInternal = internal.filter(h => {
+    const normalized = h.endsWith("/") ? h : h + "/";
+    return !allowedInternal.has(normalized) && !allowedInternal.has(h);
+  });
+
+  const problems = [];
+  if (internal.length === 0) problems.push("MISSING: no internal Notavello link (root-relative href) in the article body.");
+  if (external.length === 0) problems.push("MISSING: no external https:// source link in the article body.");
+  if (badInternal.length > 0) problems.push(`BROKEN: internal link(s) point to pages that do not exist: ${badInternal.join(", ")}. Only use targets from the allowed list.`);
+  return { ok: problems.length === 0, problems };
 }
 
 async function generatePost() {
@@ -306,6 +335,9 @@ async function generatePost() {
   const { dateIso, dateDisplay } = todayParts();
 
   const hnSeeds = await fetchHnTopicSeeds();
+
+  const targets = buildInternalTargets();
+  const internalTargets = targets.list.join("\n");
 
   if (hnSeeds && NO_WEB) {
     console.warn(
@@ -361,16 +393,19 @@ SEO and site rules:
 - Return a lowercase hyphenated slug.
 - Meta description max 150 characters, no quotes.
 - Use one tag from: AI Tools, AI Comparison, AI Trends, AI Markets, Developer Tools, Privacy, Energy, Insurance, Tech.
-- Include at least one contextual internal Notavello link in the article body if it fits naturally.
-- Use root-relative Notavello links, for example /tools/ or /exporters/chatgpt/ or /pages/blog/what-is-a-bot/.
-- Do not link the same internal target more than once.
 - Do not include footnotes.
-- External links are allowed only when they genuinely support a claim.
 - Do not make up facts, product launches, prices, legal claims, or dates.
 - If any part of today's topic was sourced from Hacker News activity above, you must have independently verified the real facts via web search before stating them -- never present unverified forum claims as established fact.
 
 Recent existing posts to avoid duplicating:
 ${existingSummary || "(No existing post cards found.)"}
+
+LINK REQUIREMENTS -- MANDATORY. The local script machine-checks these and REJECTS the post if any fail. A rejected post is regenerated, wasting the run. These are not stylistic suggestions:
+1. The article body MUST contain at least one internal Notavello link (root-relative <a href="...">).
+2. The article body MUST contain at least one external link (full https:// URL) to a reputable source that supports a specific claim you make.
+3. Internal links may ONLY point to targets on this list -- any other internal URL is rejected as a broken link:
+${internalTargets}
+4. Do not link the same internal target more than once. Anchor text must read naturally in the sentence.
 
 Return ONLY valid JSON with this exact shape:
 {
@@ -392,35 +427,61 @@ Return ONLY valid JSON with this exact shape:
 
 The sections array must contain 4 to 7 sections.
 Each section.html must be valid HTML fragments using <p>, <ul>, <li>, <strong>, <a>, or simple tables only.
+Across all sections combined, the LINK REQUIREMENTS above must be satisfied: at least one internal link from the allowed list AND at least one external https:// source link. Posts without both are rejected.
 Do not include a full HTML document in JSON. The local script will place the content into the locked template.
 `.trim();
 
   const client = new OpenAI();
 
-  async function request(useWeb) {
+  async function request(useWeb, inputPrompt) {
     return client.responses.create({
       model: MODEL,
       tools: useWeb ? [{ type: "web_search" }] : undefined,
-      input: prompt
+      input: inputPrompt
     });
   }
 
-  let response;
-  try {
-    response = await request(!NO_WEB);
-  } catch (error) {
-    if (!NO_WEB) {
-      console.warn("\nWARNING: Web search request failed. Retrying without web_search.");
-      console.warn(String(error && error.message ? error.message : error));
-      response = await request(false);
-    } else {
-      throw error;
-    }
-  }
+  const MAX_ATTEMPTS = 3;
+  let built = null;
 
-  const outputText = response.output_text || "";
-  const postJson = extractJson(outputText);
-  const built = buildPostHtml(template, postJson, dateIso, dateDisplay);
+  for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
+    let attemptPrompt = prompt;
+    if (attempt > 1 && built && built.audit) {
+      attemptPrompt = prompt + `
+
+PREVIOUS ATTEMPT WAS REJECTED by the link validator for these reasons:
+${built.audit.problems.map(p => "- " + p).join("\n")}
+Fix every listed problem. The LINK REQUIREMENTS above are machine-enforced.`;
+    }
+
+    let response;
+    try {
+      response = await request(!NO_WEB, attemptPrompt);
+    } catch (error) {
+      if (!NO_WEB) {
+        console.warn("\nWARNING: Web search request failed. Retrying without web_search.");
+        console.warn(String(error && error.message ? error.message : error));
+        response = await request(false, attemptPrompt);
+      } else {
+        throw error;
+      }
+    }
+
+    const outputText = response.output_text || "";
+    const postJson = extractJson(outputText);
+    const candidate = buildPostHtml(template, postJson, dateIso, dateDisplay);
+    const audit = auditPostLinks(candidate.html, targets.set);
+    built = { ...candidate, audit };
+
+    if (audit.ok) break;
+
+    console.warn(`\nAttempt ${attempt}/${MAX_ATTEMPTS} rejected by link validator:`);
+    audit.problems.forEach(p => console.warn("  - " + p));
+    if (attempt === MAX_ATTEMPTS) {
+      fail("All attempts failed the mandatory link requirements. No post was published.");
+    }
+    console.warn("Regenerating with corrective feedback...");
+  }
 
   const postDir = path.join(BLOG_DIR, built.slug);
   const outPath = path.join(postDir, "index.html");
