@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>AI Desktop Corral for Mac — Split-Screen Window Manager | Notavello</title>
+<meta name="description" content="AI Desktop Corral for Mac keeps your windows in two clean side-by-side zones. Drag a window to the edge and it snaps into place — one side for your AI assistant, one for your work."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/tools/desktopcorral/mac/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://notavello.com/tools/desktopcorral/mac/"/>
+<meta property="og:title" content="AI Desktop Corral for Mac — Split-Screen Window Manager"/>
+<meta property="og:description" content="Keep your Mac windows in two clean zones. Drag to the edge to snap — AI on one side, your work on the other."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/assets/images/desktopCorralMacScreenshot.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="AI Desktop Corral for Mac — Split-Screen Window Manager"/>
+<meta name="twitter:description" content="Keep your Mac windows in two clean zones. Drag to the edge to snap."/>
+<meta name="twitter:image" content="https://notavello.com/assets/images/desktopCorralMacScreenshot.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "AI Desktop Corral for Mac",
+  "operatingSystem": "macOS",
+  "applicationCategory": "ProductivityApplication",
+  "description": "AI Desktop Corral for Mac keeps your windows in two clean side-by-side zones. Drag a window to the screen edge and it snaps into place, so your AI assistant and your work stay arranged the way you set them.",
+  "url": "https://notavello.com/tools/desktopcorral/mac/",
+  "downloadUrl": "https://github.com/skychael/notavello/releases/download/aidesktopcorral-mac-v1.0/AIDesktopCorral-Mac-1.0.zip",
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF;
+  --surface: #FFFFFF;
+  --surface2: #F8FAFF;
+  --ink: #0F172A;
+  --ink-muted: #64748B;
+  --ink-faint: #94A3B8;
+  --accent: #4F46E5;
+  --accent2: #7C3AED;
+  --accent3: #06B6D4;
+  --accent-light: #EEF2FF;
+  --border: #E2E8F0;
+  --radius: 24px;
+  --radius-sm: 14px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 18px 56px rgba(15,23,42,0.12);
+  --shadow-lg: 0 16px 42px rgba(79,70,229,0.18), 0 24px 70px rgba(15,23,42,0.16);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Sora', sans-serif;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.13) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 85% 105%, rgba(6,182,212,0.11) 0%, transparent 60%);
+}
+.header {
+  background: rgba(255,255,255,0.86);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  padding: 16px 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.logo {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: -0.04em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+.logo-icon {
+  width: 34px;
+  height: 34px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  border-radius: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 14px rgba(79,70,229,0.35);
+}
+.logo span { color: var(--accent); }
+.header-login {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-decoration: none;
+  padding: 8px 18px;
+  border: 1.5px solid rgba(79,70,229,0.3);
+  border-radius: 10px;
+  background: var(--accent-light);
+}
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+
+.main {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 72px 24px 96px;
+  animation: fadeUp 0.55s ease both;
+}
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--ink-muted);
+  text-decoration: none;
+  font-size: 0.86rem;
+  font-weight: 600;
+  margin-bottom: 34px;
+}
+.back-link:hover { color: var(--accent); }
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(460px, 1.25fr);
+  gap: 42px;
+  align-items: center;
+  margin-bottom: 72px;
+}
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  background: rgba(79,70,229,0.1);
+  border: 1px solid rgba(79,70,229,0.14);
+  padding: 8px 12px;
+  border-radius: 999px;
+  margin-bottom: 22px;
+}
+.eyebrow-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent3));
+}
+.hero h1 {
+  font-family: 'Lora', serif;
+  font-size: clamp(2.35rem, 5vw, 4.45rem);
+  line-height: 1.02;
+  letter-spacing: -0.055em;
+  margin-bottom: 22px;
+}
+.hero h1 em {
+  font-style: italic;
+  background: linear-gradient(135deg, var(--accent), var(--accent2), var(--accent3));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-lede {
+  font-size: 1.08rem;
+  line-height: 1.75;
+  color: var(--ink-muted);
+  margin-bottom: 28px;
+  max-width: 540px;
+}
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 12px 20px;
+  border-radius: 14px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 800;
+  transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn-primary {
+  color: white;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  box-shadow: 0 10px 24px rgba(79,70,229,0.28);
+}
+.btn-secondary {
+  color: var(--accent);
+  background: rgba(255,255,255,0.76);
+  border: 1.5px solid rgba(79,70,229,0.24);
+}
+.install-note {
+  color: var(--ink-faint);
+  font-size: 0.78rem;
+  line-height: 1.55;
+}
+.hero-media {
+  position: relative;
+}
+.hero-media::before {
+  content: "";
+  position: absolute;
+  inset: -18px;
+  border-radius: 34px;
+  background: linear-gradient(135deg, rgba(79,70,229,0.23), rgba(6,182,212,0.16), rgba(124,58,237,0.14));
+  filter: blur(22px);
+  opacity: 0.85;
+  z-index: 0;
+}
+.hero-shot {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  display: block;
+  border-radius: 24px;
+  border: 1px solid rgba(226,232,240,0.95);
+  box-shadow: var(--shadow-lg);
+  background: #111827;
+}
+.section {
+  margin-bottom: 64px;
+}
+.section-label {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--ink-faint);
+  margin-bottom: 18px;
+}
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+.card {
+  background: rgba(255,255,255,0.84);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 26px;
+}
+.card-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--accent-light), #E0F2FE);
+  color: var(--accent);
+  font-size: 1.35rem;
+  margin-bottom: 18px;
+}
+.card h2, .card h3 {
+  font-size: 1.02rem;
+  letter-spacing: -0.025em;
+  margin-bottom: 10px;
+}
+.card p {
+  color: var(--ink-muted);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+.split {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 24px;
+  align-items: stretch;
+}
+.panel {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 32px;
+}
+.panel h2 {
+  font-family: 'Lora', serif;
+  font-size: 1.65rem;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  margin-bottom: 14px;
+}
+.panel p {
+  color: var(--ink-muted);
+  line-height: 1.78;
+  font-size: 0.96rem;
+  margin-bottom: 16px;
+}
+.check-list {
+  list-style: none;
+  display: grid;
+  gap: 12px;
+  margin-top: 22px;
+}
+.check-list li {
+  color: var(--ink-muted);
+  line-height: 1.6;
+  font-size: 0.92rem;
+  padding-left: 30px;
+  position: relative;
+}
+.check-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--accent-light);
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.download-panel {
+  background:
+    radial-gradient(circle at 12% 12%, rgba(79,70,229,0.16), transparent 32%),
+    linear-gradient(135deg, #FFFFFF, #F8FAFF);
+}
+.download-box {
+  margin-top: 22px;
+  padding: 22px;
+  border-radius: 20px;
+  background: #0F172A;
+  color: white;
+  box-shadow: 0 18px 44px rgba(15,23,42,0.18);
+}
+.download-box h3 {
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+}
+.download-box p {
+  color: #CBD5E1;
+  font-size: 0.86rem;
+  margin-bottom: 18px;
+}
+.download-box .btn-primary {
+  width: 100%;
+  min-height: 50px;
+}
+.small-note {
+  margin-top: 14px;
+  color: var(--ink-faint);
+  font-size: 0.76rem;
+  line-height: 1.6;
+}
+.steps {
+  counter-reset: steps;
+  display: grid;
+  gap: 14px;
+}
+.step {
+  counter-increment: steps;
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  gap: 14px;
+  align-items: start;
+  background: rgba(255,255,255,0.78);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 18px;
+}
+.step::before {
+  content: counter(steps);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.86rem;
+}
+.step strong {
+  display: block;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.step span {
+  color: var(--ink-muted);
+  line-height: 1.65;
+  font-size: 0.9rem;
+}
+.footer-cta {
+  text-align: center;
+  background: linear-gradient(135deg, rgba(79,70,229,0.1), rgba(6,182,212,0.09));
+  border: 1.5px solid rgba(79,70,229,0.16);
+  border-radius: 28px;
+  padding: 38px 24px;
+}
+.footer-cta h2 {
+  font-family: 'Lora', serif;
+  font-size: clamp(1.55rem, 4vw, 2.25rem);
+  letter-spacing: -0.03em;
+  margin-bottom: 12px;
+}
+.footer-cta p {
+  color: var(--ink-muted);
+  line-height: 1.7;
+  max-width: 620px;
+  margin: 0 auto 22px;
+}
+.platform-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  font-size: 0.82rem;
+  color: var(--ink-muted);
+}
+.platform-switch a { color: var(--accent); font-weight: 700; text-decoration: none; }
+.platform-switch a:hover { text-decoration: underline; }
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 32px 36px;
+  background: var(--surface);
+}
+.site-footer-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  color: var(--ink-faint);
+  font-size: 0.76rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.site-footer a { color: var(--ink-muted); text-decoration: none; }
+.site-footer a:hover { color: var(--accent); }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+  .hero-media { order: -1; }
+  .grid-3, .split { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .header { padding: 14px 20px; }
+  .logo { font-size: 1.16rem; }
+  .logo-icon { width: 32px; height: 32px; }
+  .main { padding: 42px 16px 76px; }
+  .hero h1 { font-size: clamp(2.25rem, 12vw, 3.1rem); }
+  .hero-lede { font-size: 1rem; }
+  .hero-shot { border-radius: 18px; }
+  .hero-media::before { inset: -10px; border-radius: 24px; }
+  .card, .panel { padding: 24px 22px; }
+  .hero-actions .btn { width: 100%; }
+  .site-footer { padding: 28px 20px; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <a class="logo" href="/">
+    <span class="logo-icon">▣</span>
+    Nota <span>vello</span>
+  </a>
+  <a class="header-login" href="/">Tools</a>
+</header>
+
+<main class="main">
+
+  <a class="back-link" href="/">← Back to tools</a>
+
+  <section class="hero">
+    <div>
+      <div class="eyebrow"><span class="eyebrow-dot"></span> macOS utility</div>
+      <h1>Two zones. <em>Zero drift.</em></h1>
+      <p class="hero-lede">AI Desktop Corral keeps your Mac's windows in two clean side-by-side zones. Drag a window to the left or right edge and it snaps into place — your AI assistant on one side, your work on the other — and stays where you put it.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://github.com/skychael/notavello/releases/download/aidesktopcorral-mac-v1.0/AIDesktopCorral-Mac-1.0.zip">Download for Mac →</a>
+        <a class="btn btn-secondary" href="#how-it-helps">How it helps</a>
+      </div>
+      <p class="install-note">Free menu-bar utility for macOS. Universal — runs on Apple Silicon and Intel. Notarized by Apple.</p>
+    </div>
+
+    <div class="hero-media">
+      <img class="hero-shot" src="/assets/images/desktopCorralMacScreenshot.png" alt="AI Desktop Corral arranging two windows into left and right zones on a Mac desktop">
+    </div>
+  </section>
+
+  <section class="section" id="how-it-helps">
+    <p class="section-label">Why it helps</p>
+    <div class="grid-3">
+      <article class="card">
+        <div class="card-icon">⇥</div>
+        <h2>Drag-to-edge snapping</h2>
+        <p>Drag any window toward the left or right edge and it snaps into that zone. No hotkeys to memorize, no menus to hunt through — just drag and let go.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon">▥</div>
+        <h2>Two stable work zones</h2>
+        <p>Your AI assistant stays on one side, your browser or doc on the other. Choose the split — 50/50, 60/40, 70/30 — and the layout holds.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon">⌨</div>
+        <h2>Keyboard shortcuts, menu bar</h2>
+        <p>Send the active window left (⌃⌥←), right (⌃⌥→), or fill its zone (⌃⌥M). Lives quietly in the menu bar — no Dock clutter.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section split">
+    <div class="panel">
+      <h2>Arranging windows by hand gets old fast.</h2>
+      <p>You drag a window to one side. You resize it. You line up the next one. Then something opens off-center and the whole layout drifts, and you do it all again.</p>
+      <p>AI Desktop Corral holds a clean two-zone split for you. Drag a window to an edge and it snaps into that zone at the exact size you set. Your AI stays put on one side, your work on the other, and the arrangement stops fighting you.</p>
+      <ul class="check-list">
+        <li>Adjustable split ratios from the menu bar.</li>
+        <li>Runs as a lightweight menu-bar app — no dashboard, no bloat.</li>
+        <li>Notarized by Apple and universal for Apple Silicon and Intel.</li>
+      </ul>
+    </div>
+
+    <div class="panel download-panel">
+      <h2>Download AI Desktop Corral for Mac</h2>
+      <p>Install it, grant Accessibility once, and keep your desktop split into clean left and right zones. It is intentionally small because the point is to get out of the way.</p>
+      <div class="download-box">
+        <h3>AIDesktopCorral-Mac-1.0.zip</h3>
+        <p>Universal macOS app, notarized by Apple. On first launch macOS shows a confirmation because it's a downloaded app — click Open.</p>
+        <a class="btn btn-primary" href="https://github.com/skychael/notavello/releases/download/aidesktopcorral-mac-v1.0/AIDesktopCorral-Mac-1.0.zip">Download for Mac →</a>
+      </div>
+      <p class="small-note">Hosted on GitHub Releases so it stays outside the website deploy. Requires macOS 26.5 or later and Accessibility permission (the app prompts you on first launch).</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <p class="section-label">Getting started</p>
+    <div class="steps">
+      <div class="step">
+        <div>
+          <strong>Download and drag to Applications.</strong>
+          <span>Unzip the download and drag AI Desktop Corral into your Applications folder, then open it.</span>
+        </div>
+      </div>
+      <div class="step">
+        <div>
+          <strong>Grant Accessibility once.</strong>
+          <span>macOS asks for Accessibility permission — this is what lets the app move windows. Turn it on in System Settings and relaunch.</span>
+        </div>
+      </div>
+      <div class="step">
+        <div>
+          <strong>Drag windows into place.</strong>
+          <span>Drag a window to the left or right edge to snap it, or use the keyboard shortcuts. Your zones hold while you work.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="footer-cta">
+    <h2>Keep your windows where you put them.</h2>
+    <p>Two clean zones, drag to snap, and a layout that holds. Free macOS menu-bar utility, no account required.</p>
+    <a class="btn btn-primary" href="https://github.com/skychael/notavello/releases/download/aidesktopcorral-mac-v1.0/AIDesktopCorral-Mac-1.0.zip">Download AI Desktop Corral for Mac →</a>
+    <div class="platform-switch">On Windows? <a href="/tools/desktopcorral/">Get the Windows version →</a></div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <span>© Notavello</span>
+    <span><a href="/">Tools</a> · <a href="/pages/blog/">The Export</a> · <a href="/tools/desktopcorral/privacy/">Privacy</a></span>
+  </div>
+</footer>
+
+<script data-goatcounter="https://notavello.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
