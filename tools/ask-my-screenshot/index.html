@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Ask My Screenshot — Turn Screenshots into Better AI Questions | Notavello</title>
+<meta name="description" content="Ask My Screenshot helps you turn screenshots into clear prompts for ChatGPT, Claude, and Perplexity. Your screenshot stays on your phone until you choose to attach it."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/tools/ask-my-screenshot/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://notavello.com/tools/ask-my-screenshot/"/>
+<meta property="og:title" content="Ask My Screenshot — Turn Screenshots into Better AI Questions"/>
+<meta property="og:description" content="Create a clean AI prompt from a screenshot, then open ChatGPT, Claude, or Perplexity with your question ready."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Ask My Screenshot — Turn Screenshots into Better AI Questions"/>
+<meta name="twitter:description" content="A simple iPhone helper for asking better questions about screenshots."/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Ask My Screenshot",
+  "operatingSystem": "iOS",
+  "applicationCategory": "ProductivityApplication",
+  "description": "Ask My Screenshot helps users turn screenshots into clear prompts for ChatGPT, Claude, and Perplexity. Screenshots stay on the user's device until they choose to attach them.",
+  "url": "https://notavello.com/tools/ask-my-screenshot/",
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #07111f;
+  --surface: #0f172a;
+  --surface2: #111c2f;
+  --surface3: #172033;
+  --ink: #f8fafc;
+  --ink-soft: #dbeafe;
+  --ink-muted: #94a3b8;
+  --ink-faint: #64748b;
+  --blue: #38bdf8;
+  --blue2: #2563eb;
+  --violet: #8b5cf6;
+  --violet2: #7c3aed;
+  --yellow: #facc15;
+  --yellow-soft: rgba(250,204,21,0.14);
+  --border: rgba(148,163,184,0.22);
+  --card-border: rgba(148,163,184,0.18);
+  --radius: 26px;
+  --radius-sm: 16px;
+  --shadow: 0 24px 80px rgba(0,0,0,0.42);
+}
+html { scroll-behavior: smooth; }
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 16% 0%, rgba(37,99,235,0.30), transparent 34%),
+    radial-gradient(circle at 86% 8%, rgba(139,92,246,0.24), transparent 36%),
+    radial-gradient(circle at 72% 92%, rgba(250,204,21,0.12), transparent 34%),
+    linear-gradient(180deg, #07111f 0%, #0b1220 44%, #111827 100%);
+  color: var(--ink);
+  font-family: 'Sora', system-ui, -apple-system, Segoe UI, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+.header {
+  background: rgba(7,17,31,0.76);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--border);
+  padding: 16px 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.logo {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: -0.04em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+.logo-icon {
+  width: 34px;
+  height: 34px;
+  background: linear-gradient(135deg, var(--blue), var(--violet));
+  border-radius: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #07111f;
+  font-size: 0.9rem;
+  box-shadow: 0 8px 24px rgba(56,189,248,0.25);
+}
+.logo span { color: var(--blue); }
+.header-login {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #dbeafe;
+  text-decoration: none;
+  padding: 8px 18px;
+  border: 1.5px solid rgba(56,189,248,0.34);
+  border-radius: 999px;
+  background: rgba(56,189,248,0.10);
+}
+.header-login:hover { border-color: var(--blue); background: rgba(56,189,248,0.16); }
+.main {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 70px 24px 92px;
+  animation: fadeUp 0.55s ease both;
+}
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--ink-muted);
+  text-decoration: none;
+  font-size: 0.86rem;
+  font-weight: 700;
+  margin-bottom: 34px;
+}
+.back-link:hover { color: #dbeafe; }
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(420px, 0.95fr);
+  gap: 52px;
+  align-items: center;
+  margin-bottom: 72px;
+}
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  color: #dbeafe;
+  background: rgba(56,189,248,0.11);
+  border: 1px solid rgba(56,189,248,0.18);
+  padding: 8px 12px;
+  border-radius: 999px;
+  margin-bottom: 22px;
+}
+.eyebrow-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--blue);
+  box-shadow: 0 0 0 6px rgba(56,189,248,0.12);
+}
+.hero h1 {
+  font-family: 'Lora', serif;
+  font-size: clamp(2.55rem, 5.3vw, 4.85rem);
+  line-height: 0.98;
+  letter-spacing: -0.06em;
+  margin-bottom: 24px;
+}
+.hero h1 em {
+  font-style: italic;
+  background: linear-gradient(135deg, #dbeafe, var(--blue), var(--violet));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-lede {
+  font-size: 1.08rem;
+  line-height: 1.78;
+  color: var(--ink-muted);
+  max-width: 570px;
+  margin-bottom: 28px;
+}
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 18px;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 20px;
+  border-radius: 14px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 900;
+  transition: transform 0.15s, box-shadow 0.15s, background 0.15s, border-color 0.15s;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn-primary {
+  color: #06101f;
+  background: linear-gradient(135deg, #bae6fd, var(--blue));
+  box-shadow: 0 14px 30px rgba(56,189,248,0.22);
+}
+.btn-secondary {
+  color: #dbeafe;
+  background: rgba(15,23,42,0.62);
+  border: 1.5px solid rgba(148,163,184,0.24);
+}
+.btn-secondary:hover { border-color: rgba(56,189,248,0.44); }
+.install-note {
+  color: var(--ink-faint);
+  font-size: 0.78rem;
+  line-height: 1.6;
+  max-width: 560px;
+}
+.product-stage {
+  position: relative;
+  min-height: 580px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.glow-ring {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: conic-gradient(from 120deg, rgba(56,189,248,0.46), rgba(139,92,246,0.32), rgba(250,204,21,0.18), rgba(56,189,248,0.46));
+  filter: blur(36px);
+  opacity: 0.48;
+}
+.phone {
+  position: relative;
+  width: min(100%, 378px);
+  border-radius: 46px;
+  background: linear-gradient(180deg, #1e293b, #020617);
+  border: 1px solid rgba(226,232,240,0.22);
+  box-shadow: var(--shadow);
+  padding: 14px;
+}
+.phone-screen {
+  border-radius: 34px;
+  overflow: hidden;
+  background: #07111f;
+  border: 1px solid rgba(148,163,184,0.18);
+}
+.app-top {
+  padding: 28px 22px 20px;
+  background:
+    radial-gradient(circle at 80% 0%, rgba(56,189,248,0.22), transparent 36%),
+    linear-gradient(180deg, rgba(15,23,42,0.98), rgba(7,17,31,0.98));
+}
+.app-badge {
+  width: 68px;
+  height: 68px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #1d4ed8, #7c3aed);
+  display: grid;
+  place-items: center;
+  color: white;
+  font-size: 2rem;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.24), 0 16px 32px rgba(37,99,235,0.24);
+  margin-bottom: 18px;
+}
+.app-title {
+  font-size: 1.45rem;
+  font-weight: 900;
+  letter-spacing: -0.045em;
+  margin-bottom: 6px;
+}
+.app-subtitle {
+  color: var(--ink-muted);
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+.result-card {
+  margin: 16px;
+  padding: 18px;
+  border-radius: 22px;
+  background: rgba(15,23,42,0.88);
+  border: 1px solid rgba(148,163,184,0.20);
+}
+.result-label {
+  color: #bfdbfe;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 900;
+  margin-bottom: 12px;
+}
+.prompt-line {
+  height: 12px;
+  border-radius: 999px;
+  background: rgba(148,163,184,0.30);
+  margin-bottom: 10px;
+}
+.prompt-line.one { width: 92%; }
+.prompt-line.two { width: 76%; }
+.prompt-line.three { width: 86%; }
+.provider-row {
+  display: grid;
+  gap: 10px;
+  padding: 0 16px 18px;
+}
+.provider {
+  display: grid;
+  grid-template-columns: 36px 1fr auto;
+  gap: 11px;
+  align-items: center;
+  padding: 13px;
+  border-radius: 16px;
+  background: rgba(15,23,42,0.78);
+  border: 1px solid rgba(148,163,184,0.18);
+}
+.provider-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 11px;
+  display: grid;
+  place-items: center;
+  background: rgba(56,189,248,0.13);
+  color: #bae6fd;
+}
+.provider strong {
+  display: block;
+  font-size: 0.84rem;
+}
+.provider span {
+  color: var(--ink-faint);
+  font-size: 0.72rem;
+}
+.provider small {
+  color: #fde68a;
+  font-weight: 900;
+  font-size: 0.7rem;
+}
+.float-card {
+  position: absolute;
+  border-radius: 18px;
+  background: rgba(15,23,42,0.82);
+  border: 1px solid rgba(148,163,184,0.18);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.34);
+  padding: 16px;
+  color: var(--ink-muted);
+  backdrop-filter: blur(14px);
+}
+.float-card strong { color: var(--ink); display: block; font-size: 0.9rem; margin-bottom: 4px; }
+.float-card span { font-size: 0.76rem; line-height: 1.45; }
+.float-card.one { left: 2px; top: 96px; width: 175px; }
+.float-card.two { right: 0; bottom: 86px; width: 198px; }
+.section { margin-bottom: 66px; }
+.section-label {
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--ink-faint);
+  margin-bottom: 18px;
+}
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+.install-card {
+  grid-column: 1 / -1;
+  background: radial-gradient(circle at 14% 0%, rgba(56,189,248,0.16), transparent 32%), rgba(15,23,42,0.78);
+}
+.card {
+  background: rgba(15,23,42,0.72);
+  border: 1.5px solid var(--card-border);
+  border-radius: var(--radius);
+  box-shadow: 0 14px 48px rgba(0,0,0,0.18);
+  padding: 26px;
+}
+.card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 15px;
+  display: grid;
+  place-items: center;
+  background: rgba(56,189,248,0.12);
+  color: #dbeafe;
+  font-size: 1.35rem;
+  margin-bottom: 18px;
+}
+.card h2, .card h3 {
+  font-size: 1.02rem;
+  letter-spacing: -0.025em;
+  margin-bottom: 10px;
+}
+.card p {
+  color: var(--ink-muted);
+  font-size: 0.9rem;
+  line-height: 1.72;
+}
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  align-items: stretch;
+}
+.panel {
+  background: rgba(15,23,42,0.72);
+  border: 1.5px solid var(--card-border);
+  border-radius: var(--radius);
+  box-shadow: 0 14px 48px rgba(0,0,0,0.18);
+  padding: 32px;
+}
+.panel h2 {
+  font-family: 'Lora', serif;
+  font-size: 1.75rem;
+  line-height: 1.16;
+  letter-spacing: -0.035em;
+  margin-bottom: 14px;
+}
+.panel p {
+  color: var(--ink-muted);
+  line-height: 1.78;
+  font-size: 0.96rem;
+  margin-bottom: 16px;
+}
+.check-list {
+  list-style: none;
+  display: grid;
+  gap: 12px;
+  margin-top: 22px;
+}
+.check-list li {
+  color: var(--ink-muted);
+  line-height: 1.62;
+  font-size: 0.92rem;
+  padding-left: 30px;
+  position: relative;
+}
+.check-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(56,189,248,0.14);
+  color: #bae6fd;
+  font-size: 0.75rem;
+  font-weight: 900;
+  display: grid;
+  place-items: center;
+}
+.privacy-box {
+  margin-top: 22px;
+  padding: 22px;
+  border-radius: 20px;
+  background: rgba(2,6,23,0.72);
+  border: 1px solid rgba(56,189,248,0.16);
+}
+.privacy-box h3 { margin-bottom: 9px; }
+.privacy-box p {
+  color: #cbd5e1;
+  font-size: 0.88rem;
+  margin-bottom: 0;
+}
+.steps {
+  counter-reset: steps;
+  display: grid;
+  gap: 14px;
+}
+.step {
+  counter-increment: steps;
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  gap: 14px;
+  align-items: start;
+  background: rgba(15,23,42,0.72);
+  border: 1px solid var(--card-border);
+  border-radius: 18px;
+  padding: 18px;
+}
+.step::before {
+  content: counter(steps);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #bae6fd, var(--blue));
+  color: #06101f;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  font-size: 0.86rem;
+}
+.step strong {
+  display: block;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.step span {
+  color: var(--ink-muted);
+  line-height: 1.65;
+  font-size: 0.9rem;
+}
+.support {
+  text-align: center;
+  background:
+    radial-gradient(circle at 24% 0%, rgba(56,189,248,0.16), transparent 32%),
+    rgba(15,23,42,0.72);
+  border: 1.5px solid rgba(56,189,248,0.16);
+  border-radius: 28px;
+  padding: 38px 24px;
+}
+.support h2 {
+  font-family: 'Lora', serif;
+  font-size: clamp(1.55rem, 4vw, 2.25rem);
+  letter-spacing: -0.03em;
+  margin-bottom: 12px;
+}
+.support p {
+  color: var(--ink-muted);
+  line-height: 1.7;
+  max-width: 680px;
+  margin: 0 auto 20px;
+}
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 32px 36px;
+  background: rgba(7,17,31,0.82);
+}
+.site-footer-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  color: var(--ink-faint);
+  font-size: 0.76rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.site-footer a { color: var(--ink-muted); text-decoration: none; }
+.site-footer a:hover { color: #dbeafe; }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (max-width: 960px) {
+  .hero { grid-template-columns: 1fr; gap: 32px; }
+  .product-stage { min-height: auto; padding: 22px 0; }
+  .float-card { display: none; }
+  .grid-3, .split { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .header { padding: 14px 20px; }
+  .logo { font-size: 1.16rem; }
+  .logo-icon { width: 32px; height: 32px; }
+  .main { padding: 42px 16px 76px; }
+  .hero h1 { font-size: clamp(2.25rem, 12vw, 3.2rem); }
+  .hero-lede { font-size: 1rem; }
+  .hero-actions .btn { width: 100%; }
+  .phone { width: 100%; }
+  .card, .panel { padding: 24px 22px; }
+  .site-footer { padding: 28px 20px; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <a class="logo" href="/">
+    <span class="logo-icon">?</span>
+    Nota <span>vello</span>
+  </a>
+  <a class="header-login" href="/">Tools</a>
+</header>
+
+<main class="main">
+
+  <a class="back-link" href="/">← Back to tools</a>
+
+  <section class="hero">
+    <div>
+      <div class="eyebrow"><span class="eyebrow-dot"></span> iPhone app</div>
+      <h1>Ask better questions about <em>any screenshot.</em></h1>
+      <p class="hero-lede">Ask My Screenshot turns a screenshot into a clear, ready-to-use prompt for ChatGPT, Claude, or Perplexity. It helps you explain what you want without retyping everything on the screen.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#support">Coming soon to TestFlight →</a>
+        <a class="btn btn-secondary" href="/tools/ask-my-screenshot/privacy/">Privacy policy</a>
+        <a class="btn btn-secondary" href="#how-it-works">How it works</a>
+      </div>
+      <p class="install-note">Built for iPhone. No account required inside Ask My Screenshot. You choose which AI service to open, and you attach the screenshot yourself from Photos.</p>
+    </div>
+
+    <div class="product-stage" aria-label="Ask My Screenshot app preview">
+      <div class="glow-ring"></div>
+      <div class="float-card one"><strong>Clean prompt</strong><span>Turn visual context into a question an AI assistant can understand.</span></div>
+      <div class="float-card two"><strong>You stay in control</strong><span>Your screenshot stays on your phone until you choose to attach it.</span></div>
+
+      <div class="phone">
+        <div class="phone-screen">
+          <div class="app-top">
+            <div class="app-badge">?</div>
+            <div class="app-title">Ask My Screenshot</div>
+            <div class="app-subtitle">Pick a screenshot, choose the kind of help you want, then open your AI assistant.</div>
+          </div>
+
+          <div class="result-card">
+            <div class="result-label">Prompt ready</div>
+            <div class="prompt-line one"></div>
+            <div class="prompt-line two"></div>
+            <div class="prompt-line three"></div>
+          </div>
+
+          <div class="provider-row">
+            <div class="provider">
+              <div class="provider-icon">◎</div>
+              <div><strong>ChatGPT</strong><span>Open with question ready</span></div>
+              <small>+ Photos</small>
+            </div>
+            <div class="provider">
+              <div class="provider-icon">◇</div>
+              <div><strong>Claude</strong><span>Prefill prompt</span></div>
+              <small>Attach</small>
+            </div>
+            <div class="provider">
+              <div class="provider-icon">⌕</div>
+              <div><strong>Perplexity</strong><span>Search with prompt</span></div>
+              <small>Attach</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="how-it-works">
+    <p class="section-label">Workflow</p>
+    <div class="grid-3">
+
+      <article class="card install-card">
+        <div class="card-icon">📱</div>
+        <h2>Made for the moment you get stuck on a screenshot</h2>
+        <p>Use it when you have an error message, app screen, form, chart, receipt, webpage, settings screen, or anything else that would be easier to ask about with visual context.</p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🖼️</div>
+        <h2>Start with a screenshot</h2>
+        <p>Choose a screenshot from your iPhone. Ask My Screenshot helps build the text prompt around what you want help understanding, fixing, summarizing, or replying to.</p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">✍️</div>
+        <h2>Get a better prompt</h2>
+        <p>The app creates a structured prompt so you do not have to explain the context from scratch or type out every detail visible in the image.</p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🚀</div>
+        <h2>Open your AI assistant</h2>
+        <p>Open ChatGPT, Claude, or Perplexity with the question ready. To include the screenshot, tap the plus button in the AI app or website and choose it from Photos.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section split" id="privacy">
+    <div class="panel">
+      <h2>A helper app, not another account.</h2>
+      <p>Ask My Screenshot is designed to be a lightweight bridge between your screenshots and the AI tools you already use.</p>
+      <p>It does not answer the question itself, run a cloud AI model, or require you to create a Notavello account.</p>
+      <ul class="check-list">
+        <li>Useful for troubleshooting, explaining screens, drafting replies, summarizing visual information, and asking clearer questions.</li>
+        <li>Works with existing AI services such as ChatGPT, Claude, and Perplexity.</li>
+        <li>Keeps the workflow focused: screenshot, prompt, open AI, attach from Photos.</li>
+      </ul>
+    </div>
+
+    <div class="panel">
+      <h2>Privacy starts with device control.</h2>
+      <p>Your screenshots remain on your iPhone unless you choose to send or attach them somewhere else. Ask My Screenshot prepares text and opens your chosen AI provider.</p>
+      <div class="privacy-box">
+        <h3>Important note</h3>
+        <p>When you open an outside AI provider, that provider’s own app, website, account, and privacy terms apply. Ask My Screenshot does not control those third-party services.</p>
+      </div>
+      <ul class="check-list">
+        <li>No Notavello account required.</li>
+        <li>No built-in advertising profile or user tracking inside the app.</li>
+        <li>No screenshot is sent to Notavello by the app.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <p class="section-label">Simple workflow</p>
+    <div class="steps">
+      <div class="step">
+        <div>
+          <strong>Choose a screenshot.</strong>
+          <span>Start from a screenshot already saved on your iPhone.</span>
+        </div>
+      </div>
+      <div class="step">
+        <div>
+          <strong>Pick what kind of help you want.</strong>
+          <span>Create a clear prompt for troubleshooting, explanation, reply help, summarizing, or general questions.</span>
+        </div>
+      </div>
+      <div class="step">
+        <div>
+          <strong>Open your AI tool and attach the screenshot.</strong>
+          <span>The question is ready. To add the image, tap + in the AI app or website and choose the screenshot from Photos.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="support" id="support">
+    <h2>Support for Ask My Screenshot</h2>
+    <p>If something is not working, include your iPhone model, iOS version, the AI provider you selected, and what happened after tapping Open AI App or Website. Do not send private screenshots unless they are necessary for support.</p>
+    <a class="btn btn-primary" href="mailto:support@notavello.com?subject=Ask%20My%20Screenshot%20Support">Email support →</a>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <span>© Notavello</span>
+    <span><a href="/">Tools</a> · <a href="/tools/ask-my-screenshot/privacy/">Ask My Screenshot Privacy</a> · <a href="/pages/blog/">The Export</a></span>
+  </div>
+</footer>
+
+<script data-goatcounter="https://notavello.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
