@@ -62,8 +62,13 @@ body {
 .header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
 .header-login:hover { background: #e0e7ff; border-color: var(--accent); }
 .main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
-.back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; color: var(--ink-muted); text-decoration: none; margin-bottom: 40px; transition: color 0.15s; }
-.back-link:hover { color: var(--accent); }
+.post-nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; row-gap: 8px; }
+.post-nav-top { margin-bottom: 40px; }
+.post-nav-bottom { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--border); }
+.post-nav a { display: inline-flex; align-items: center; gap: 6px; font-size: 0.92rem; font-weight: 600; color: var(--ink-muted); text-decoration: none; padding: 12px 14px; border-radius: var(--radius-sm); white-space: nowrap; transition: color 0.15s, background 0.15s; }
+.post-nav a:hover { color: var(--accent); background: var(--accent-light); }
+.post-nav a:first-child { padding-left: 0; }
+.post-nav a:last-child { padding-right: 0; justify-content: flex-end; }
 .post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
 .post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
 .post-date { font-size: 0.78rem; color: var(--ink-faint); }
@@ -94,7 +99,7 @@ body {
 .footer-legal a:hover { color: var(--accent); }
 @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
 .main { animation: fadeUp 0.6s ease both; }
-@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } .post-nav a { padding: 12px 8px; font-size: 0.88rem; } }
 </style>
 </head>
 <body>
@@ -103,7 +108,11 @@ body {
 
 <main class="main">
 
-  <a class="back-link" href="/pages/blog/">← The Export</a>
+  <nav class="post-nav post-nav-top">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="%%OLDER_POST_URL%%">Older Posts →</a>
+  </nav>
 
   <div class="post-meta">
     <span class="post-tag">%%TAG%%</span>
@@ -137,6 +146,12 @@ body {
     <span class="post-footer-label">Looking for more AI tools?</span>
     <a class="btn-export" href="/">See our free AI tools →</a>
   </div>
+
+  <nav class="post-nav post-nav-bottom">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="%%OLDER_POST_URL%%">Older Posts →</a>
+  </nav>
 
 </main>
 
@@ -182,6 +197,18 @@ STEP 3 — REPLACE ALL %% PLACEHOLDERS
                           Optional: <ul><li> lists, extra callout blocks, tables.
 %%CALLOUT_LABEL%%      → Bold intro label e.g. "The bottom line:" or "Watch out:"
 %%CALLOUT_TEXT%%       → Callout body. 1-3 sentences. Punchy.
+%%OLDER_POST_URL%%     → URL of the next-older post, e.g. /pages/blog/some-older-slug/
+                          Find it by checking which post currently sits directly
+                          below this one's planned position in index.html's post-list.
+                          If this is the oldest post on the site, point it at
+                          /pages/blog/all-posts/ instead.
+
+=== TOP/BOTTOM NAV BAR ===
+Every post has the same 3-link nav bar at both the top and bottom
+(class="post-nav"): "← The Export" (back to blog index), "All Posts" (the
+title-only archive at /pages/blog/all-posts/), and "Older Posts →"
+(%%OLDER_POST_URL%%, filled in per-post). These two links are static —
+only %%OLDER_POST_URL%% needs to be set per post.
 
 === INTERNAL LINKING / BACKLINKS TO NOTAVELLO (SEO) ===
 IMPORTANT: Every new post must make a best-effort attempt to include at least
