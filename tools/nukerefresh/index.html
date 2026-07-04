@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>NukeRefresh — Hard Reload Any Page in Chrome | Notavello</title>
+<meta name="description" content="NukeRefresh hard-refreshes stubborn pages with five escalating strategies, from an API-level cache bypass up to a full cache nuke. For when Ctrl+Shift+R isn't enough."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/tools/nukerefresh/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://notavello.com/tools/nukerefresh/"/>
+<meta property="og:title" content="NukeRefresh — Hard Reload Any Page in Chrome"/>
+<meta property="og:description" content="Five escalating hard-reload strategies for Chrome, from a quiet cache bypass up to a full cascade. For pages that won't give up their cache."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="NukeRefresh — Hard Reload Any Page in Chrome"/>
+<meta name="twitter:description" content="Five escalating hard-reload strategies for Chrome. For when Ctrl+Shift+R doesn't cut it."/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "NukeRefresh",
+  "operatingSystem": "ChromeOS, Windows, macOS, Linux",
+  "applicationCategory": "BrowserApplication",
+  "browserRequirements": "Requires Google Chrome",
+  "description": "NukeRefresh hard-refreshes stubborn pages with five escalating strategies, from an API-level cache bypass up to a full cache nuke.",
+  "url": "https://notavello.com/tools/nukerefresh/",
+  "installUrl": "https://chromewebstore.google.com/detail/nukerefresh-hard-reload-any/PENDING_LISTING_ID",
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #0f0906;
+  --surface: #181109;
+  --surface2: #1c130c;
+  --surface3: #241a10;
+  --ink: #f8fafc;
+  --ink-soft: #fde8dc;
+  --ink-muted: #a89484;
+  --ink-faint: #6b5b4f;
+  --accent: #ff4f1f;
+  --accent2: #ff7a50;
+  --accent-soft: rgba(255,79,31,0.14);
+  --blue: #38bdf8;
+  --gold: #f0a830;
+  --border: rgba(255,153,102,0.18);
+  --card-border: rgba(255,153,102,0.14);
+  --radius: 26px;
+  --radius-sm: 16px;
+  --shadow: 0 24px 80px rgba(0,0,0,0.5);
+  --mono: 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+}
+html { scroll-behavior: smooth; }
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 16% 0%, rgba(255,79,31,0.22), transparent 34%),
+    radial-gradient(circle at 86% 8%, rgba(56,189,248,0.12), transparent 36%),
+    radial-gradient(circle at 74% 94%, rgba(240,168,48,0.14), transparent 36%),
+    linear-gradient(180deg, #0d0906 0%, #120c08 42%, #17110c 100%);
+  color: var(--ink);
+  font-family: 'Sora', system-ui, -apple-system, Segoe UI, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+.header {
+  background: rgba(15,9,6,0.78);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--border);
+  padding: 16px 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.logo {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: -0.04em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+.logo-icon {
+  width: 34px;
+  height: 34px;
+  background: linear-gradient(135deg, var(--accent), var(--gold));
+  border-radius: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1a0d05;
+  font-size: 0.9rem;
+  box-shadow: 0 8px 24px rgba(255,79,31,0.3);
+}
+.logo span { color: var(--accent2); }
+.header-login {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #ffd9c2;
+  text-decoration: none;
+  padding: 8px 18px;
+  border: 1.5px solid rgba(255,79,31,0.34);
+  border-radius: 999px;
+  background: rgba(255,79,31,0.10);
+}
+.header-login:hover { border-color: var(--accent); background: rgba(255,79,31,0.16); }
+
+.main {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 70px 24px 92px;
+  animation: fadeUp 0.55s ease both;
+}
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--ink-muted);
+  text-decoration: none;
+  font-size: 0.86rem;
+  font-weight: 700;
+  margin-bottom: 34px;
+}
+.back-link:hover { color: #ffd9c2; }
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(420px, 0.95fr);
+  gap: 52px;
+  align-items: center;
+  margin-bottom: 72px;
+}
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  color: #ffd9c2;
+  background: rgba(255,79,31,0.12);
+  border: 1px solid rgba(255,79,31,0.2);
+  padding: 8px 12px;
+  border-radius: 999px;
+  margin-bottom: 22px;
+}
+.eyebrow-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 6px rgba(255,79,31,0.14);
+}
+.hero h1 {
+  font-family: 'Lora', serif;
+  font-size: clamp(2.55rem, 5.3vw, 4.85rem);
+  line-height: 0.98;
+  letter-spacing: -0.06em;
+  margin-bottom: 24px;
+}
+.hero h1 em {
+  font-style: italic;
+  background: linear-gradient(135deg, #ffd9c2, var(--accent), var(--gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-lede {
+  font-size: 1.08rem;
+  line-height: 1.78;
+  color: var(--ink-muted);
+  max-width: 570px;
+  margin-bottom: 28px;
+}
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 18px;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 20px;
+  border-radius: 14px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 900;
+  transition: transform 0.15s, box-shadow 0.15s, background 0.15s, border-color 0.15s;
+  border: none;
+  cursor: pointer;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn-primary {
+  color: #1a0d05;
+  background: linear-gradient(135deg, #ff9466, var(--accent));
+  box-shadow: 0 14px 30px rgba(255,79,31,0.28);
+}
+.btn-secondary {
+  color: var(--ink-soft);
+  background: rgba(255,153,102,0.08);
+  border: 1.5px solid var(--border);
+}
+.btn-secondary:hover { border-color: rgba(255,153,102,0.4); background: rgba(255,153,102,0.14); }
+.install-note { font-size: 0.82rem; color: var(--ink-faint); }
+
+.product-stage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 420px;
+}
+.glow-ring {
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,79,31,0.28), transparent 68%);
+  filter: blur(6px);
+}
+.float-card {
+  position: absolute;
+  background: rgba(24,17,9,0.92);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 12px 14px;
+  max-width: 190px;
+  font-size: 0.76rem;
+  line-height: 1.5;
+  box-shadow: var(--shadow);
+  z-index: 3;
+}
+.float-card strong { display: block; font-size: 0.82rem; margin-bottom: 3px; color: #ffd9c2; }
+.float-card span { color: var(--ink-muted); }
+.float-card.one { top: 8px; left: -10px; }
+.float-card.two { bottom: 24px; right: -14px; }
+
+.popup {
+  position: relative;
+  z-index: 2;
+  width: 300px;
+  background: #0f1117;
+  border: 1px solid #252a38;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  font-size: 13px;
+  color: #e8ecf0;
+}
+.popup-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 16px 13px;
+  border-bottom: 1px solid #252a38;
+}
+.popup-logo {
+  width: 28px;
+  height: 28px;
+  background: #ff4f1f;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  flex-shrink: 0;
+}
+.popup-title strong { display: block; font-family: var(--mono); font-size: 13px; letter-spacing: 0.04em; }
+.popup-title span { font-size: 10px; color: #6b7589; }
+.url-strip {
+  padding: 8px 16px;
+  background: #181c27;
+  border-bottom: 1px solid #252a38;
+  font-family: var(--mono);
+  font-size: 10px;
+  color: #6b7589;
+}
+.section-label-mini {
+  padding: 10px 16px 6px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #6b7589;
+}
+.strategies { display: flex; flex-direction: column; gap: 6px; padding: 0 12px 14px; }
+.strategy-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 10px;
+  background: #181c27;
+  border: 1px solid #252a38;
+  border-radius: 8px;
+}
+.strategy-row.active { border-color: #ff4f1f; background: rgba(255,79,31,0.08); }
+.strategy-icon { font-size: 15px; width: 20px; text-align: center; flex-shrink: 0; }
+.strategy-body { flex: 1; min-width: 0; }
+.strategy-name { font-weight: 600; font-size: 11.5px; }
+.strategy-desc { font-size: 9.5px; color: #6b7589; margin-top: 1px; line-height: 1.3; }
+.strategy-badge { font-family: var(--mono); font-size: 8.5px; padding: 2px 5px; border-radius: 3px; flex-shrink: 0; }
+.badge-mild { background: #1e3328; color: #3ddc84; }
+.badge-medium { background: #2a2010; color: #f0a830; }
+.badge-hot { background: #2a1010; color: #ff7a50; }
+.badge-nuke { background: #ff4f1f; color: #fff; font-weight: 700; }
+
+.section { margin-bottom: 64px; }
+.section-label {
+  font-size: 0.74rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  color: #ffd9c2;
+  margin-bottom: 18px;
+}
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.card {
+  background: rgba(24,17,9,0.55);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-sm);
+  padding: 28px 24px;
+}
+.card-icon { font-size: 1.6rem; margin-bottom: 14px; }
+.card h2 { font-size: 1.08rem; margin-bottom: 8px; letter-spacing: -0.01em; }
+.card p { font-size: 0.9rem; line-height: 1.65; color: var(--ink-muted); }
+.install-card { grid-column: span 1; border-color: rgba(255,79,31,0.3); background: rgba(255,79,31,0.06); }
+
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.panel {
+  background: rgba(24,17,9,0.55);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 34px 30px;
+}
+.panel h2 { font-family: 'Lora', serif; font-size: 1.5rem; letter-spacing: -0.02em; margin-bottom: 14px; }
+.panel p { color: var(--ink-muted); line-height: 1.75; margin-bottom: 12px; }
+.check-list { list-style: none; margin-top: 14px; }
+.check-list li {
+  position: relative;
+  padding-left: 24px;
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  line-height: 1.7;
+  margin-bottom: 8px;
+}
+.check-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--accent2);
+  font-weight: 900;
+}
+.privacy-box {
+  background: rgba(255,79,31,0.07);
+  border: 1.5px solid rgba(255,79,31,0.22);
+  border-radius: var(--radius-sm);
+  padding: 18px 20px;
+  margin: 16px 0;
+}
+.privacy-box h3 { font-size: 0.88rem; margin-bottom: 6px; color: #ffd9c2; }
+.privacy-box p { font-size: 0.85rem; margin-bottom: 0; }
+
+.steps { display: flex; flex-direction: column; gap: 14px; }
+.step {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  background: rgba(24,17,9,0.4);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-sm);
+  padding: 20px 22px;
+  counter-increment: step;
+}
+.steps { counter-reset: step; }
+.step::before {
+  content: counter(step);
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--gold));
+  color: #1a0d05;
+  font-weight: 900;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.step strong { display: block; font-size: 0.96rem; margin-bottom: 4px; }
+.step span { font-size: 0.86rem; color: var(--ink-muted); line-height: 1.6; }
+
+.strategy-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+}
+.strategy-table th, .strategy-table td {
+  text-align: left;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--card-border);
+  font-size: 0.86rem;
+}
+.strategy-table th { color: var(--ink-faint); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 800; }
+.strategy-table td { color: var(--ink-muted); }
+.strategy-table td:first-child { color: var(--ink-soft); font-weight: 700; }
+.level-pill { display: inline-block; padding: 2px 9px; border-radius: 999px; font-size: 0.7rem; font-weight: 800; }
+.level-mild { background: #1e3328; color: #3ddc84; }
+.level-medium { background: #2a2010; color: #f0a830; }
+.level-hot { background: #2a1010; color: #ff7a50; }
+.level-nuke { background: rgba(255,79,31,0.18); color: #ff9466; }
+
+.support {
+  text-align: center;
+  background: linear-gradient(180deg, rgba(255,79,31,0.09), rgba(255,79,31,0.02));
+  border: 1.5px solid rgba(255,79,31,0.16);
+  border-radius: 28px;
+  padding: 38px 24px;
+}
+.support h2 {
+  font-family: 'Lora', serif;
+  font-size: clamp(1.55rem, 4vw, 2.25rem);
+  letter-spacing: -0.03em;
+  margin-bottom: 12px;
+}
+.support p {
+  color: var(--ink-muted);
+  line-height: 1.7;
+  max-width: 680px;
+  margin: 0 auto 20px;
+}
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 32px 36px;
+  background: rgba(15,9,6,0.85);
+}
+.site-footer-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  color: var(--ink-faint);
+  font-size: 0.76rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.site-footer a { color: var(--ink-muted); text-decoration: none; }
+.site-footer a:hover { color: #ffd9c2; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 960px) {
+  .hero { grid-template-columns: 1fr; gap: 32px; }
+  .product-stage { min-height: auto; padding: 22px 0; }
+  .float-card { display: none; }
+  .grid-3, .split { grid-template-columns: 1fr; }
+  .strategy-table { font-size: 0.8rem; }
+}
+@media (max-width: 640px) {
+  .header { padding: 14px 20px; }
+  .logo { font-size: 1.16rem; }
+  .logo-icon { width: 32px; height: 32px; }
+  .main { padding: 42px 16px 76px; }
+  .hero h1 { font-size: clamp(2.25rem, 12vw, 3.2rem); }
+  .hero-lede { font-size: 1rem; }
+  .hero-actions .btn { width: 100%; }
+  .popup-head { padding: 14px; }
+  .card, .panel { padding: 24px 22px; }
+  .site-footer { padding: 28px 20px; }
+  .strategy-table th:nth-child(3), .strategy-table td:nth-child(3) { display: none; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <a class="logo" href="/">
+    <span class="logo-icon">▣</span>
+    Nota <span>vello</span>
+  </a>
+  <a class="header-login" href="/">Tools</a>
+</header>
+
+<main class="main">
+
+  <a class="back-link" href="/">← Back to tools</a>
+
+  <section class="hero">
+    <div>
+      <div class="eyebrow"><span class="eyebrow-dot"></span> Chrome extension</div>
+      <h1>Hard reload, <em>by any means necessary.</em></h1>
+      <p class="hero-lede">NukeRefresh gives you five escalating ways to force a page to actually reload — from a quiet API-level cache bypass to a full cache-clearing cascade. For the pages that shrug off Ctrl+Shift+R.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://chromewebstore.google.com/detail/nukerefresh-hard-reload-any/PENDING_LISTING_ID" target="_blank" rel="noopener">Install from Chrome Web Store →</a>
+        <a class="btn btn-secondary" href="/tools/nukerefresh/privacy/">Privacy policy</a>
+        <a class="btn btn-secondary" href="#strategies">See the strategies</a>
+      </div>
+      <p class="install-note">Built for Chrome. No account required. The Chrome Web Store link will become publicly usable after the listing is approved.</p>
+    </div>
+
+    <div class="product-stage" aria-label="NukeRefresh extension preview">
+      <div class="glow-ring"></div>
+      <div class="float-card one"><strong>One click, five options</strong><span>Pick the level of force the page actually needs.</span></div>
+      <div class="float-card two"><strong>Or just hit Alt+Shift+N</strong><span>Runs the default strategy without opening the popup.</span></div>
+
+      <div class="popup">
+        <div class="popup-head">
+          <div class="popup-logo">💥</div>
+          <div class="popup-title">
+            <strong>NUKE_REFRESH</strong>
+            <span>Hard reload by any means necessary</span>
+          </div>
+        </div>
+        <div class="url-strip">example.com/dashboard</div>
+        <div class="section-label-mini">Choose your weapon</div>
+        <div class="strategies">
+          <div class="strategy-row">
+            <span class="strategy-icon">⚡</span>
+            <div class="strategy-body">
+              <div class="strategy-name">Bypass Cache Reload</div>
+              <div class="strategy-desc">API-level hard reload</div>
+            </div>
+            <span class="strategy-badge badge-mild">MILD</span>
+          </div>
+          <div class="strategy-row">
+            <span class="strategy-icon">🧹</span>
+            <div class="strategy-body">
+              <div class="strategy-name">Clear Site Cache</div>
+              <div class="strategy-desc">Wipes this domain, then reloads</div>
+            </div>
+            <span class="strategy-badge badge-medium">MEDIUM</span>
+          </div>
+          <div class="strategy-row active">
+            <span class="strategy-icon">☢️</span>
+            <div class="strategy-body">
+              <div class="strategy-name">Full Cascade</div>
+              <div class="strategy-desc">Recommended — runs everything</div>
+            </div>
+            <span class="strategy-badge badge-nuke">NUKE</span>
+          </div>
+          <div class="strategy-row">
+            <span class="strategy-icon">🗑️</span>
+            <div class="strategy-body">
+              <div class="strategy-name">Clear ALL Cache</div>
+              <div class="strategy-desc">Every site, then reload</div>
+            </div>
+            <span class="strategy-badge badge-hot">HOT</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="install">
+    <p class="section-label">Install & workflow</p>
+    <div class="grid-3">
+
+      <article class="card install-card">
+        <div class="card-icon">🧩</div>
+        <h2>Install from the Chrome Web Store</h2>
+        <p>Use the official Chrome Web Store listing when it is approved and published. Before approval, the link may not open publicly yet.</p>
+        <p style="margin-top:14px;"><a class="btn btn-primary" href="https://chromewebstore.google.com/detail/nukerefresh-hard-reload-any/PENDING_LISTING_ID" target="_blank" rel="noopener">Open Chrome Web Store listing →</a></p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">⚡</div>
+        <h2>One click or one shortcut</h2>
+        <p>Open the toolbar popup and pick a strategy, or press Alt+Shift+N (MacCtrl+Shift+N on Mac) to run the default cascade instantly.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon">☢️</div>
+        <h2>Five escalating strategies</h2>
+        <p>Start mild with an API-level bypass, or go straight to a full cache nuke when a page is really stuck on stale content.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon">🔗</div>
+        <h2>Cache-bust URLs</h2>
+        <p>Append a timestamp query string to force the server itself to treat the request as brand new — useful behind aggressive CDNs.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon">🧹</div>
+        <h2>Per-site or global</h2>
+        <p>Clear just the current domain's cache, or reach for the nuclear option and clear every site's cache in one confirmed step.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon">🖥️</div>
+        <h2>Built for developers</h2>
+        <p>Made for anyone who fights stale caches all day — devs, QA, support staff, and admins checking whether a fix actually shipped.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="strategies">
+    <p class="section-label">The five strategies</p>
+    <div class="panel">
+      <table class="strategy-table">
+        <thead>
+          <tr>
+            <th>Strategy</th>
+            <th>What it does</th>
+            <th>Level</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Bypass Cache Reload</td>
+            <td>Reloads the tab via the browser API with the cache bypassed — the same effect as Ctrl+Shift+R, but it works even when that shortcut gets intercepted by a page or extension.</td>
+            <td><span class="level-pill level-mild">Mild</span></td>
+          </tr>
+          <tr>
+            <td>Clear Site Cache</td>
+            <td>Wipes cached files for the current domain only, then reloads. Leaves every other site's cache untouched.</td>
+            <td><span class="level-pill level-medium">Medium</span></td>
+          </tr>
+          <tr>
+            <td>Cache-Bust URL</td>
+            <td>Appends a <code>?_cb=timestamp</code> parameter to the address, forcing the server to treat it as a brand-new request instead of serving a cached response.</td>
+            <td><span class="level-pill level-medium">Medium</span></td>
+          </tr>
+          <tr>
+            <td>Full Cascade <em style="opacity:.6;font-style:normal;">(default)</em></td>
+            <td>Runs the site cache clear, injects no-cache headers, and performs the API-level reload together in one pass. The recommended option for most stuck pages.</td>
+            <td><span class="level-pill level-nuke">Nuke</span></td>
+          </tr>
+          <tr>
+            <td>Clear ALL Cache</td>
+            <td>Clears the entire browser cache across every site, not just the current one, then reloads. Asks for confirmation first since it's the most disruptive option.</td>
+            <td><span class="level-pill level-hot">Hot</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section split" id="privacy">
+    <div class="panel">
+      <h2>Built for one job: forcing a real reload.</h2>
+      <p>NukeRefresh doesn't manage bookmarks, block trackers, or try to be a general-purpose toolbar. It does one thing — get a stuck page to actually reload from the source — and gives you five ways to do it depending on how stubborn the page is being.</p>
+      <p>Trigger it from the toolbar popup or the Alt+Shift+N keyboard shortcut, and it's done in a second or two.</p>
+      <ul class="check-list">
+        <li>Useful for developers, QA, support staff, and anyone checking whether a deploy actually went live.</li>
+        <li>Works without creating an account or signing in to a separate service.</li>
+        <li>The default cascade covers most stuck-cache situations without any configuration.</li>
+      </ul>
+    </div>
+
+    <div class="panel">
+      <h2>Privacy-focused by design.</h2>
+      <p>NukeRefresh reads only the active tab's URL to show it in the popup and to know what to reload or clear. It does not read page content, track your browsing history, or send anything to a remote server.</p>
+      <div class="privacy-box">
+        <h3>Important note</h3>
+        <p>The "Clear ALL Cache" strategy clears cached files for every site in the browser, not just the current one. NukeRefresh always asks for confirmation before running it.</p>
+      </div>
+      <ul class="check-list">
+        <li>No account required.</li>
+        <li>No analytics or tracking built into the extension.</li>
+        <li>No data collected, stored remotely, or sold by NukeRefresh.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <p class="section-label">Simple workflow</p>
+    <div class="steps">
+      <div class="step">
+        <div>
+          <strong>Land on a page that won't update.</strong>
+          <span>A deploy went out, a CDN is holding onto an old asset, or a shortcut just isn't cutting through the cache.</span>
+        </div>
+      </div>
+      <div class="step">
+        <div>
+          <strong>Open NukeRefresh from the toolbar, or hit Alt+Shift+N.</strong>
+          <span>Pick a strategy that matches how stubborn the page is being, from a quiet bypass to a full cascade.</span>
+        </div>
+      </div>
+      <div class="step">
+        <div>
+          <strong>Watch the status line, then get back to work.</strong>
+          <span>The popup confirms what ran and closes itself once the reload is done.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="support" id="support">
+    <h2>Support for NukeRefresh</h2>
+    <p>If something isn't working, note your Chrome version, operating system, the site you were on, and which strategy you ran. NukeRefresh doesn't collect any data itself, so there's nothing private to worry about sharing in a bug report.</p>
+    <a class="btn btn-primary" href="https://chromewebstore.google.com/detail/nukerefresh-hard-reload-any/PENDING_LISTING_ID" target="_blank" rel="noopener">Install from Chrome Web Store →</a>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <span>© Notavello</span>
+    <span><a href="/">Tools</a> · <a href="/tools/nukerefresh/privacy/">NukeRefresh Privacy</a> · <a href="/pages/blog/">The Export</a></span>
+  </div>
+</footer>
+
+<script data-goatcounter="https://notavello.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

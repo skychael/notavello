@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>NukeRefresh Privacy Policy | Notavello</title>
+<meta name="description" content="NukeRefresh privacy policy: what the Chrome extension accesses, what it never collects, and why each permission is needed."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/tools/nukerefresh/privacy/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://notavello.com/tools/nukerefresh/privacy/"/>
+<meta property="og:title" content="NukeRefresh Privacy Policy"/>
+<meta property="og:description" content="What NukeRefresh accesses, what it never collects, and why each Chrome permission is needed."/>
+<meta property="og:site_name" content="Notavello"/>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #0f0906;
+  --ink: #f8fafc;
+  --ink-soft: #fde8dc;
+  --ink-muted: #a89484;
+  --ink-faint: #6b5b4f;
+  --accent: #ff4f1f;
+  --accent2: #ff7a50;
+  --gold: #f0a830;
+  --border: rgba(255,153,102,0.18);
+  --card-border: rgba(255,153,102,0.14);
+  --radius: 22px;
+  --radius-sm: 14px;
+}
+html { scroll-behavior: smooth; }
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 16% 0%, rgba(255,79,31,0.18), transparent 34%),
+    radial-gradient(circle at 86% 8%, rgba(56,189,248,0.10), transparent 36%),
+    linear-gradient(180deg, #0d0906 0%, #120c08 42%, #17110c 100%);
+  color: var(--ink);
+  font-family: 'Sora', system-ui, -apple-system, Segoe UI, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent2); }
+a:hover { color: #ffb38c; }
+.header {
+  background: rgba(15,9,6,0.78);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--border);
+  padding: 16px 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.logo {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: -0.04em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+.logo-icon {
+  width: 34px;
+  height: 34px;
+  background: linear-gradient(135deg, var(--accent), var(--gold));
+  border-radius: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1a0d05;
+  font-size: 0.9rem;
+  box-shadow: 0 8px 24px rgba(255,79,31,0.3);
+}
+.logo span { color: var(--accent2); }
+.header-login {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #ffd9c2;
+  text-decoration: none;
+  padding: 8px 18px;
+  border: 1.5px solid rgba(255,79,31,0.34);
+  border-radius: 999px;
+  background: rgba(255,79,31,0.10);
+}
+.header-login:hover { border-color: var(--accent); background: rgba(255,79,31,0.16); }
+
+.main {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 64px 24px 100px;
+  animation: fadeUp 0.5s ease both;
+}
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--ink-muted);
+  text-decoration: none;
+  font-size: 0.86rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+.back-link:hover { color: #ffd9c2; }
+
+h1 {
+  font-family: 'Lora', serif;
+  font-size: clamp(2rem, 5vw, 2.7rem);
+  letter-spacing: -0.03em;
+  margin-bottom: 10px;
+}
+.updated { color: var(--ink-faint); font-size: 0.85rem; margin-bottom: 40px; }
+
+.summary-box {
+  background: rgba(255,79,31,0.08);
+  border: 1.5px solid rgba(255,79,31,0.24);
+  border-radius: var(--radius);
+  padding: 24px 26px;
+  margin-bottom: 44px;
+}
+.summary-box h2 { font-size: 1.05rem; margin-bottom: 10px; color: #ffd9c2; }
+.summary-box p { color: var(--ink-soft); line-height: 1.7; font-size: 0.94rem; }
+.summary-box p + p { margin-top: 10px; }
+
+section.policy-section { margin-bottom: 40px; }
+section.policy-section h2 {
+  font-size: 1.2rem;
+  letter-spacing: -0.01em;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--card-border);
+}
+section.policy-section p {
+  color: var(--ink-muted);
+  line-height: 1.8;
+  font-size: 0.95rem;
+  margin-bottom: 14px;
+}
+section.policy-section ul, section.policy-section ol {
+  margin: 0 0 14px 1.2rem;
+  color: var(--ink-muted);
+  line-height: 1.8;
+  font-size: 0.95rem;
+}
+section.policy-section li { margin-bottom: 6px; }
+section.policy-section li strong { color: var(--ink-soft); }
+code {
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+  background: rgba(255,153,102,0.1);
+  padding: 2px 6px;
+  border-radius: 5px;
+  font-size: 0.88em;
+  color: #ffd9c2;
+}
+
+.perm-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8px 0 14px;
+}
+.perm-table th, .perm-table td {
+  text-align: left;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--card-border);
+  font-size: 0.87rem;
+  vertical-align: top;
+}
+.perm-table th { color: var(--ink-faint); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 800; }
+.perm-table td:first-child { color: #ffd9c2; font-weight: 700; white-space: nowrap; font-family: 'SFMono-Regular', Consolas, monospace; font-size: 0.82rem; }
+.perm-table td { color: var(--ink-muted); }
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 32px 36px;
+  background: rgba(15,9,6,0.85);
+}
+.site-footer-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  color: var(--ink-faint);
+  font-size: 0.76rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.site-footer a { color: var(--ink-muted); }
+.site-footer a:hover { color: #ffd9c2; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (max-width: 640px) {
+  .header { padding: 14px 20px; }
+  .main { padding: 40px 18px 80px; }
+  .perm-table { font-size: 0.8rem; }
+  .perm-table th:nth-child(1), .perm-table td:nth-child(1) { white-space: normal; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <a class="logo" href="/">
+    <span class="logo-icon">▣</span>
+    Nota <span>vello</span>
+  </a>
+  <a class="header-login" href="/">Tools</a>
+</header>
+
+<main class="main">
+
+  <a class="back-link" href="/tools/nukerefresh/">← Back to NukeRefresh</a>
+
+  <h1>NukeRefresh Privacy Policy</h1>
+  <p class="updated">Last updated: July 3, 2026</p>
+
+  <div class="summary-box">
+    <h2>The short version</h2>
+    <p>NukeRefresh does not collect, store, or transmit any personal data. There is no account, no remote server, no analytics, and no tracking built into the extension. Everything it does happens locally, inside your own browser, in response to you clicking a button or pressing a shortcut.</p>
+    <p>The rest of this page explains exactly what each Chrome permission is used for, so there's nothing left to guess at.</p>
+  </div>
+
+  <section class="policy-section">
+    <h2>What NukeRefresh does</h2>
+    <p>NukeRefresh is a Chrome extension that forces a hard reload of the current tab using one of five strategies you choose: an API-level cache bypass, a per-site cache clear, a cache-busting URL parameter, a combined "cascade" of those methods, or a full browser-wide cache clear. You trigger it from the toolbar popup or the <code>Alt+Shift+N</code> keyboard shortcut (<code>MacCtrl+Shift+N</code> on macOS).</p>
+  </section>
+
+  <section class="policy-section">
+    <h2>Data we collect</h2>
+    <p>None. NukeRefresh does not collect analytics, does not create a user profile, does not use cookies or a backend database, and does not send any information to Notavello or to any third party. There is nothing to sign up for, nothing to sync, and nothing stored outside your own machine.</p>
+  </section>
+
+  <section class="policy-section">
+    <h2>Permissions and why each one is needed</h2>
+    <p>Chrome requires extensions to declare permissions up front. Here is what NukeRefresh requests and what each one is actually used for:</p>
+    <table class="perm-table">
+      <thead>
+        <tr><th>Permission</th><th>Why it's needed</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>activeTab</td>
+          <td>Lets the extension see and act on the tab you're currently viewing only when you open the popup or use the shortcut — not any other open tab.</td>
+        </tr>
+        <tr>
+          <td>tabs</td>
+          <td>Used to read the current tab's URL (shown in the popup for confirmation) and to trigger the actual reload on that tab.</td>
+        </tr>
+        <tr>
+          <td>browsingData</td>
+          <td>Used to clear cached files, either for the current site only or for the entire browser, depending on which strategy you pick. Nothing is cleared unless you click a button — the full-browser option additionally asks you to confirm first.</td>
+        </tr>
+        <tr>
+          <td>scripting</td>
+          <td>Used to inject the no-cache request headers that the "Cascade" strategy relies on, so the server is forced to return a fresh copy of the page instead of a cached one.</td>
+        </tr>
+        <tr>
+          <td>storage</td>
+          <td>Used only to remember lightweight local preferences, such as your default strategy, inside Chrome's own extension storage on your device. This data never leaves your browser.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>NukeRefresh never reads page content, form data, passwords, or browsing history, and none of these permissions are used to track what you do across sites.</p>
+  </section>
+
+  <section class="policy-section">
+    <h2>Third parties</h2>
+    <p>NukeRefresh does not integrate with any third-party service, analytics provider, or advertising network. It does not share, sell, or transfer any data, because it does not collect any in the first place.</p>
+  </section>
+
+  <section class="policy-section">
+    <h2>Children's privacy</h2>
+    <p>NukeRefresh is a general-purpose browser utility and does not knowingly collect information from anyone, including children, since it does not collect information from any user at all.</p>
+  </section>
+
+  <section class="policy-section">
+    <h2>Changes to this policy</h2>
+    <p>If this policy changes, the updated version will be posted on this page with a new "Last updated" date. Continued use of NukeRefresh after a change means you accept the revised policy.</p>
+  </section>
+
+  <section class="policy-section">
+    <h2>Contact</h2>
+    <p>Questions about this policy or how NukeRefresh works can be sent through the support link on the <a href="/tools/nukerefresh/">NukeRefresh page</a> or via the Chrome Web Store listing's developer contact once it is live.</p>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <span>© Notavello</span>
+    <span><a href="/tools/nukerefresh/">NukeRefresh</a> · <a href="/">Tools</a> · <a href="/pages/blog/">The Export</a></span>
+  </div>
+</footer>
+
+<script data-goatcounter="https://notavello.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
