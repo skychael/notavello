@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /*
-  Notavello safe blog splitter v4
+  Notavello safe blog splitter v5
   --------------------------------
   Goal:
   - Preserve the existing Notavello blog design from pages/blog/index.html
@@ -8,6 +8,12 @@
   - Reuse existing card HTML when possible
   - Generate missing cards from each post's index.html metadata
   - Split the list into pages/blog/index.html, pages/blog/page-2/index.html, etc.
+  - Regenerate the title-only All Posts archive list in
+    pages/blog/all-posts/index.html (list contents only -- the page shell,
+    styles, and nav in that file are hand-editable and never touched)
+
+  No local backups are made: git history is the safety net. If a run goes
+  wrong, restore with git (e.g. git checkout -- pages/blog/) before committing.
 
   Safe first run:
     node blog-automation\split-blog-index.js --dry-run
@@ -22,6 +28,7 @@ const path = require('path');
 const ROOT = process.cwd();
 const BLOG_DIR = path.join(ROOT, 'pages', 'blog');
 const BLOG_INDEX = path.join(BLOG_DIR, 'index.html');
+const ALL_POSTS_PATH = path.join(BLOG_DIR, 'all-posts', 'index.html');
 const PER_PAGE = 18;
 
 const args = new Set(process.argv.slice(2));
@@ -218,6 +225,7 @@ function shouldIgnoreDir(name) {
   if (lower === 'drafts') return true;
   if (lower === 'topics') return true;
   if (lower === 'archive') return true;
+  if (lower === 'all-posts') return true;
   if (lower === 'assets') return true;
   if (lower === 'css') return true;
   if (lower === 'js') return true;
@@ -297,7 +305,7 @@ function getPostListParts(indexHtml) {
   // Last-resort safety path: some existing index files are valid enough for a
   // browser to display, but are missing the final closing tags. In that case,
   // keep the real Notavello head/style/header and create a clean ending.
-  console.log('\nWARNING: Could not find a closing </div> for .post-list. v4 will add clean closing tags.');
+  console.log('\nWARNING: Could not find a closing </div> for .post-list. v5 will add clean closing tags.');
   return { before, after: '\n</div>\n</main>\n</body>\n</html>\n' };
 }
 
@@ -328,6 +336,50 @@ ${older}
 </nav>`;
 }
 
+// --- All Posts archive (title-only list at /pages/blog/all-posts/) ---------
+// The all-posts/index.html file is the SHELL: its head, styles, nav, and
+// footer are Mike's to edit freely and are never touched here. This script
+// owns ONLY the contents of <ul class="all-posts-list"> and regenerates that
+// list (every post, newest first, short dates) on each --write run.
+
+function shortDate(post) {
+  if (post.time) {
+    return new Intl.DateTimeFormat('en-US', {
+      month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC'
+    }).format(new Date(post.time));
+  }
+  return post.date || '';
+}
+
+function buildAllPostsHtml(posts) {
+  if (!fs.existsSync(ALL_POSTS_PATH)) {
+    console.log('\nNOTE: pages/blog/all-posts/index.html not found. Skipping the All Posts archive.');
+    console.log('      Create that page once and this script will keep its list updated automatically.');
+    return null;
+  }
+
+  const shell = readText(ALL_POSTS_PATH);
+
+  // Anchor on the opening tag followed by a line break so a mention of the
+  // tag inside an HTML comment can never match (that exact false match once
+  // destroyed a page head during manual editing -- do not loosen this).
+  const listRegex = /(<ul\s+class=["']all-posts-list["']\s*>)\s*?\n[\s\S]*?(\n\s*<\/ul>)/i;
+  if (!listRegex.test(shell)) {
+    console.log('\nWARNING: Could not find the all-posts list <ul> in all-posts/index.html. Archive NOT updated.');
+    return null;
+  }
+
+  const items = posts.map(p =>
+    `    <li><a href="${escapeHtml(p.href)}"><span>${escapeHtml(p.title)}</span><span class="all-posts-date">${escapeHtml(shortDate(p))}</span></a></li>`
+  ).join('\n');
+
+  // Replacer FUNCTION, not a replacement string: post titles can contain
+  // dollar amounts ("$2 an hour", "$135 debut"), and in a replacement string
+  // "$1"/"$2" are backreferences that silently inject the captured tags into
+  // the output. A function's return value is always literal.
+  return shell.replace(listRegex, (m, open, close) => `${open}\n${items}${close}`);
+}
+
 function updatePageMeta(html, page, totalPages) {
   const url = page === 1 ? 'https://notavello.com/pages/blog/' : `https://notavello.com/pages/blog/page-${page}/`;
   const title = page === 1
@@ -356,15 +408,6 @@ function makePage(indexHtml, postsForPage, page, totalPages) {
   return `${parts.before}\n\n${cards}\n\n${paginationHtml(page, totalPages)}\n${parts.after}`;
 }
 
-function backupFile(filePath) {
-  if (!fs.existsSync(filePath)) return null;
-  const stamp = new Date().toISOString().replace(/[:.]/g, '-');
-  const parsed = path.parse(filePath);
-  const backup = path.join(parsed.dir, `_backup_${parsed.name}_${stamp}${parsed.ext}`);
-  fs.copyFileSync(filePath, backup);
-  return backup;
-}
-
 function main() {
   if (!fs.existsSync(BLOG_DIR)) fail('Missing pages/blog folder. Run this from C:\\Dev\\apps\\notavello.');
   if (!fs.existsSync(BLOG_INDEX)) fail('Missing pages/blog/index.html.');
@@ -374,7 +417,7 @@ function main() {
   const { posts, ignored } = scanPostFolders(existingCards);
   const totalPages = Math.max(1, Math.ceil(posts.length / PER_PAGE));
 
-  console.log('\nNotavello safe blog splitter v4');
+  console.log('\nNotavello safe blog splitter v5');
   console.log('--------------------------------');
   console.log('Blog folder: pages\\blog');
   console.log(`Existing cards in current index: ${existingCards.size}`);
@@ -399,10 +442,11 @@ function main() {
 
   const missing = posts.filter(p => !p.usedExistingCard);
   if (missing.length) {
-    console.log('\n* = card did not exist in current index, so v4 generated it from the post page metadata.');
+    console.log('\n* = card did not exist in current index, so v5 generated it from the post page metadata.');
   }
 
   if (DRY_RUN && !WRITE) {
+    console.log(`\nAll Posts archive: ${fs.existsSync(ALL_POSTS_PATH) ? 'would update ' + posts.length + '-entry list in pages/blog/all-posts/index.html' : 'pages/blog/all-posts/index.html not found - would skip'}`);
     console.log('\nDry run only. Nothing changed.');
     console.log('To write the pages, run:');
     console.log('  node blog-automation\\split-blog-index.js --write');
@@ -410,8 +454,6 @@ function main() {
   }
 
   console.log('\nWriting blog index pages...');
-  const backup = backupFile(BLOG_INDEX);
-  if (backup) console.log('  backup: ' + path.relative(ROOT, backup));
 
   for (let i = 0; i < totalPages; i++) {
     const page = i + 1;
@@ -420,6 +462,12 @@ function main() {
     const outPath = page === 1 ? BLOG_INDEX : path.join(BLOG_DIR, `page-${page}`, 'index.html');
     writeText(outPath, pageHtml);
     console.log('  wrote: ' + path.relative(ROOT, outPath));
+  }
+
+  const allPostsHtml = buildAllPostsHtml(posts);
+  if (allPostsHtml) {
+    writeText(ALL_POSTS_PATH, allPostsHtml);
+    console.log('  wrote: ' + path.relative(ROOT, ALL_POSTS_PATH) + ` (${posts.length} titles)`);
   }
 
   console.log('\nDone.');

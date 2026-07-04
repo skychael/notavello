@@ -1,8 +1,10 @@
-<!-- ⚠️ This is the title-only "All Posts" archive — a plain, Drudge-Report-style
-     stacked list of every post title, newest first. It is NOT the main blog index
-     (index.html), which keeps its card layout. This is a fast-scanning alternative view.
-     One long list, no pagination — add new posts as a new <li> at the TOP of the
-     <ul class="all-posts-list"> whenever a new post is published. -->
+<!-- ⚠️ Title-only "All Posts" archive — a plain, Drudge-Report-style stacked list
+     of every post title, newest first. It is NOT the main blog index (index.html),
+     which keeps its card layout. This is a fast-scanning alternative view.
+     AUTOMATED: split-blog-index.js regenerates the list items inside the
+     all-posts-list element on every --write run. Edit the page shell (styles,
+     nav, heading) freely — those survive. Do NOT hand-edit the list items;
+     they will be overwritten on the next run. -->
 <!DOCTYPE html>
 <html lang="en">
 <head>

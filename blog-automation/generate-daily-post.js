@@ -13,6 +13,8 @@
 
   And automatically runs:
     node blog-automation\split-blog-index.js --write
+  which rebuilds the paginated blog index AND the title-only All Posts
+  archive at pages/blog/all-posts/index.html.
 
   Required:
     npm install openai
