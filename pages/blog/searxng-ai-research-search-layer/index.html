@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>SearXNG Is The Search Layer Your AI Workflow Is Missing — The Export | Notavello</title>
+<meta name="description" content="How SearXNG can give AI research workflows a cleaner, more private, more controllable search layer."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/blog/searxng-ai-research-search-layer/"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://notavello.com/pages/blog/searxng-ai-research-search-layer/"/>
+<meta property="og:title" content="SearXNG Is The Search Layer Your AI Workflow Is Missing"/>
+<meta property="og:description" content="How SearXNG can give AI research workflows a cleaner, more private, more controllable search layer."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="SearXNG Is The Search Layer Your AI Workflow Is Missing"/>
+<meta name="twitter:description" content="How SearXNG can give AI research workflows a cleaner, more private, more controllable search layer."/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "SearXNG Is The Search Layer Your AI Workflow Is Missing",
+  "description": "How SearXNG can give AI research workflows a cleaner, more private, more controllable search layer.",
+  "url": "https://notavello.com/pages/blog/searxng-ai-research-search-layer/",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://notavello.com/pages/blog/searxng-ai-research-search-layer/" },
+  "image": "https://notavello.com/og-image.png",
+  "datePublished": "2026-07-04",
+  "dateModified": "2026-07-04",
+  "author": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" },
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com", "logo": { "@type": "ImageObject", "url": "https://notavello.com/og-image.png" } }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
+.post-nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; row-gap: 8px; }
+.post-nav-top { margin-bottom: 40px; }
+.post-nav-bottom { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--border); }
+.post-nav a { display: inline-flex; align-items: center; gap: 6px; font-size: 0.92rem; font-weight: 600; color: var(--ink-muted); text-decoration: none; padding: 12px 14px; border-radius: var(--radius-sm); white-space: nowrap; transition: color 0.15s, background 0.15s; }
+.post-nav a:hover { color: var(--accent); background: var(--accent-light); }
+.post-nav a:first-child { padding-left: 0; }
+.post-nav a:last-child { padding-right: 0; justify-content: flex-end; }
+.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
+.post-date { font-size: 0.78rem; color: var(--ink-faint); }
+.post-title { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; color: var(--ink); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
+.post-lede { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+.post-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink); }
+.post-body h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 44px 0 16px; letter-spacing: -0.01em; }
+.post-body p { margin-bottom: 20px; color: var(--ink-muted); }
+.post-body p strong { color: var(--ink); font-weight: 600; }
+.post-body ul { margin: 0 0 20px 20px; color: var(--ink-muted); }
+.post-body ul li { margin-bottom: 8px; line-height: 1.7; }
+.callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 32px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.7; }
+.post-footer { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.post-footer-label { font-size: 0.8rem; color: var(--ink-faint); }
+.btn-export { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: opacity 0.2s; }
+.btn-export:hover { opacity: 0.9; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } .post-nav a { padding: 12px 8px; font-size: 0.88rem; } }
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+
+  <nav class="post-nav post-nav-top">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+  <div class="post-meta">
+    <span class="post-tag">AI Tools</span>
+    <span class="post-date">July 4, 2026</span>
+  </div>
+
+  <h1 class="post-title">SearXNG Is The Search Layer Your AI Workflow Is Missing</h1>
+
+  <p class="post-lede">AI tools are getting better at writing answers. They are still strangely dependent on whatever search layer someone bolted underneath them.</p>
+
+  <div class="post-body">
+
+    <h2>The Search Engine Under The AI Matters</h2>
+    <p>Most people talk about AI research tools as if the model is the whole product. It is not. The model writes, ranks, summarizes, refuses, hallucinates, and occasionally develops the confidence of a guy explaining taxes at a barbecue. But before any of that happens, something has to find the web pages.</p><p>That search layer decides what the AI tool can see. It decides whether the answer starts from official docs, SEO sludge, old forum posts, product pages, or a scraped copy of a scraped copy. If the search layer is weak, the model gets weak inputs. Polished weak inputs are still weak inputs.</p><p>This is why SearXNG is worth paying attention to. According to the official project documentation, SearXNG is a metasearch engine that aggregates results from other search engines while not storing information about its users. It is free, open source, and designed to be self-hosted if you want control instead of another tab full of mystery settings. <a href="https://docs.searxng.org/user/about.html">The SearXNG documentation describes the project this way</a>.</p><p>That does not make SearXNG a miracle privacy cloak. It does not make bad sources good. It does not mean every public instance is trustworthy. But it does make SearXNG a useful, understandable piece of infrastructure for anyone building an AI-assisted research workflow.</p>
+
+    <div class="callout">
+      <strong>The bottom line:</strong> SearXNG is not magic, and it is not a replacement for judgment. It is a practical way to make web research less dependent on one black-box search provider.
+    </div>
+
+    <h2>What SearXNG Actually Does</h2>
+    <p>SearXNG is not a crawler trying to index the entire web by itself. It is a metasearch engine. You send a query to SearXNG, and SearXNG queries multiple configured search services and databases, then returns a combined result page. In plain English: it is a search broker.</p><p>That broker role is the important part. Instead of letting one search provider decide the whole shape of your research, you can configure a layer that pulls from different engines and categories. For a human, that means a cleaner search page. For a developer, it means a component that can sit between a research tool and the wider web.</p><p>The official SearXNG search API supports simple HTTP queries through <strong>/</strong> and <strong>/search</strong>, with GET and POST methods. It can return formats such as JSON, CSV, or RSS when those formats are enabled in the instance settings. The docs also warn that many public instances disable some formats, which is exactly the sort of boring implementation detail that saves hours later. <a href="https://docs.searxng.org/dev/search_api.html">The official Search API docs spell out the supported endpoints and format behavior</a>.</p><p>This matters because AI workflows need boring interfaces. A browser tab is fine for a person. A repeatable research pipeline needs something more stable: query in, structured results out, sources visible, failures debuggable. SearXNG can provide that layer without pretending to be the brain.</p>
+
+    <h2>Why This Fits AI Research Workflows</h2>
+    <p>The obvious use case is simple: use SearXNG as the web-search backend for research tools, note systems, internal assistants, or developer utilities. The AI model can summarize, compare, extract, or draft. SearXNG can gather candidate sources. Those are different jobs. Mixing them together is how software turns into soup.</p><p>If you already use AI tools for research, the failure mode is familiar. The assistant produces a neat answer, but the sources are thin, stale, or oddly narrow. Sometimes the answer is right but under-supported. Sometimes the answer is wrong with excellent punctuation. Sometimes the tool cites a page that does not really support the sentence it just wrote. Very modern. Very annoying.</p><p>A separate search layer helps because it creates a place to inspect the inputs. You can run the same query yourself. You can see which engines were used. You can tune categories. You can disable noisy sources. You can separate “find documents” from “write the conclusion.”</p><p>Notavello has written before about why live search and model memory are not the same thing in <a href="/pages/blog/ai-knowledge-cutoff-real-time-search/">the difference between AI knowledge cutoffs and real-time search</a>. SearXNG belongs in that same mental bucket. It is not intelligence. It is retrieval. Retrieval is less glamorous, so naturally it is where many of the useful gains are hiding.</p>
+
+    <h2>Public Instance Or Self-Hosted Instance?</h2>
+    <p>The fastest way to try SearXNG is to use a public instance. That is also the easiest way to misunderstand the privacy story. A public instance may be run by someone careful, generous, and competent. It may also be run by someone you know nothing about. The software can be privacy-respecting, while the operator remains a human being on the internet. Plan accordingly.</p><p>For casual searching, a reputable public instance may be fine. For work queries, client research, competitive analysis, internal project names, legal topics, medical topics, unpublished product details, or anything that would be awkward in a server log, self-hosting is the cleaner answer.</p><p>The official installation docs currently recommend either the container approach or installation script if you do not have special preferences. The container documentation includes a basic Docker example that runs SearXNG locally and exposes it on port 8888. <a href="https://docs.searxng.org/admin/installation-docker.html">The SearXNG Docker installation page documents the container setup and persistent configuration volumes</a>.</p><p>For most developers, that is the right place to start: local or private-network first, public internet later, if ever. Exposing a search service to the public creates extra work: rate limiting, bot protection, reverse proxy configuration, updates, logs, abuse handling, and the joy of discovering that strangers can automate anything. Self-hosting is control, not a vacation.</p>
+
+    <h2>A Practical Setup For Developers</h2>
+    <p>The cleanest SearXNG setup is boring. That is a compliment. Put it in a container. Keep the configuration in a mounted volume. Keep it behind a private network, VPN, or reverse proxy with authentication. Enable only the result formats you actually need. If a tool needs JSON, enable JSON. If humans are the only users, HTML may be enough.</p><p>Then make a few decisions before connecting it to an AI workflow:</p><ul><li><strong>Decide who can query it.</strong> A personal instance is different from a team instance. A team instance needs rules, monitoring, and maintenance.</li><li><strong>Decide which engines are enabled.</strong> More sources can mean broader coverage, but also slower responses and noisier results.</li><li><strong>Decide whether logs are kept.</strong> If the goal is privacy, do not quietly build a tiny surveillance system in the closet.</li><li><strong>Decide how failures are handled.</strong> Search engines block, throttle, change markup, and fail. The AI layer should know when retrieval failed instead of pretending everything is fine.</li><li><strong>Decide whether the AI tool sees snippets only or full pages.</strong> Search results are not the same thing as source review. Snippets can mislead.</li></ul><p>The most useful pattern is two-step research. First, SearXNG gathers possible sources. Second, a separate fetch-and-read step opens the actual pages and checks whether they support the claim. Then, and only then, should an AI assistant summarize. This adds friction. Good. Friction is what keeps “sounds plausible” from becoming “published as fact.”</p>
+
+    <h2>Where SearXNG Helps, And Where It Does Not</h2>
+    <p>SearXNG helps when you want control over the first mile of research. It helps when you dislike depending on one search provider. It helps when you want a local interface, configurable engines, and an API-shaped surface that can be wired into other tools. It also helps when you want to see what the search layer is doing instead of trusting a closed product’s invisible retrieval system.</p><p>It does not solve source quality by itself. If five bad pages rank well, metasearch may simply give you five bad pages with variety. It does not guarantee anonymity from upstream services in every configuration. It does not remove the need to open sources, read dates, compare claims, or notice when a result is an AI-generated content farm wearing a lab coat.</p><p>There is also a maintenance cost. Search integrations break. Engine behavior changes. Public providers throttle. Docker containers need updates. Configuration files age. Anyone who wants a zero-maintenance tool should probably use a normal search engine and accept the tradeoffs.</p><p>But for developers, researchers, and power users building AI-assisted workflows, SearXNG sits in a useful middle ground. It is more controllable than a consumer search box. It is far easier than building a web index. It is simple enough to reason about, which is increasingly rare in software that touches AI.</p><p>The big lesson is not “everyone must run SearXNG.” The lesson is that AI research tools need inspectable retrieval. A model that writes beautifully on top of murky search results is still standing on mud. SearXNG gives you a way to pour a little concrete before the assistant starts building the house.</p>
+
+  </div>
+
+  <div class="post-footer">
+    <span class="post-footer-label">Looking for more AI tools?</span>
+    <a class="btn-export" href="/">See our free AI tools →</a>
+  </div>
+
+  <nav class="post-nav post-nav-bottom">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+</main>
+
+<!--FOOTER-->
+
+<script data-goatcounter="https://notavello.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script></body>
+</html>
