@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>AI Coding Agents Need Workspace Quarantine — The Export | Notavello</title>
+<meta name="description" content="AI coding agents can mix context through memory, folders, and tools. Treat every project like it needs quarantine."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/blog/ai-coding-agents-workspace-quarantine/"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://notavello.com/pages/blog/ai-coding-agents-workspace-quarantine/"/>
+<meta property="og:title" content="AI Coding Agents Need Workspace Quarantine"/>
+<meta property="og:description" content="AI coding agents can mix context through memory, folders, and tools. Treat every project like it needs quarantine."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="AI Coding Agents Need Workspace Quarantine"/>
+<meta name="twitter:description" content="AI coding agents can mix context through memory, folders, and tools. Treat every project like it needs quarantine."/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "AI Coding Agents Need Workspace Quarantine",
+  "description": "AI coding agents can mix context through memory, folders, and tools. Treat every project like it needs quarantine.",
+  "url": "https://notavello.com/pages/blog/ai-coding-agents-workspace-quarantine/",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://notavello.com/pages/blog/ai-coding-agents-workspace-quarantine/" },
+  "image": "https://notavello.com/og-image.png",
+  "datePublished": "2026-07-05",
+  "dateModified": "2026-07-05",
+  "author": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" },
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com", "logo": { "@type": "ImageObject", "url": "https://notavello.com/og-image.png" } }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
+.post-nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; row-gap: 8px; }
+.post-nav-top { margin-bottom: 40px; }
+.post-nav-bottom { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--border); }
+.post-nav a { display: inline-flex; align-items: center; gap: 6px; font-size: 0.92rem; font-weight: 600; color: var(--ink-muted); text-decoration: none; padding: 12px 14px; border-radius: var(--radius-sm); white-space: nowrap; transition: color 0.15s, background 0.15s; }
+.post-nav a:hover { color: var(--accent); background: var(--accent-light); }
+.post-nav a:first-child { padding-left: 0; }
+.post-nav a:last-child { padding-right: 0; justify-content: flex-end; }
+.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
+.post-date { font-size: 0.78rem; color: var(--ink-faint); }
+.post-title { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; color: var(--ink); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
+.post-lede { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+.post-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink); }
+.post-body h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 44px 0 16px; letter-spacing: -0.01em; }
+.post-body p { margin-bottom: 20px; color: var(--ink-muted); }
+.post-body p strong { color: var(--ink); font-weight: 600; }
+.post-body ul { margin: 0 0 20px 20px; color: var(--ink-muted); }
+.post-body ul li { margin-bottom: 8px; line-height: 1.7; }
+.callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 32px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.7; }
+.post-footer { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.post-footer-label { font-size: 0.8rem; color: var(--ink-faint); }
+.btn-export { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: opacity 0.2s; }
+.btn-export:hover { opacity: 0.9; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } .post-nav a { padding: 12px 8px; font-size: 0.88rem; } }
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+
+  <nav class="post-nav post-nav-top">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+  <div class="post-meta">
+    <span class="post-tag">Developer Tools</span>
+    <span class="post-date">July 5, 2026</span>
+  </div>
+
+  <h1 class="post-title">AI Coding Agents Need Workspace Quarantine</h1>
+
+  <p class="post-lede">AI coding agents are getting powerful enough to be useful and weird enough to require adult supervision. The next boring discipline is workspace quarantine.</p>
+
+  <div class="post-body">
+
+    <h2>The Bug Report Is Not The Whole Story</h2>
+    <p>On July 4, 2026, a public issue was opened in the Anthropic Claude Code repository titled “Potential session/cache leakage between workspace instances or consumer accounts.” The reporter said an agent session, while authenticated to an Enterprise ZDR workspace, suddenly started talking about Minecraft temple bricks and then recapped that unrelated task as if it belonged to the current session. The issue is still just a report, not confirmed proof of cross-account leakage, but it is filed in the public Claude Code repo and labeled as a security-area bug. That is enough to make it worth reading carefully, not enough to turn it into folklore by lunch. <a href="https://github.com/anthropics/claude-code/issues/74066">The public GitHub issue</a> is the source for that specific report.</p><p>The useful lesson is larger than one vendor and one strange transcript. AI coding agents now sit between your repo, your terminal, your account, your cloud credentials, your project instructions, your shell history, and sometimes your browser. That is a lot of plumbing. Plumbing leaks. Sometimes the leak is server-side. Sometimes it is local context pollution. Sometimes it is a user launching a tool from the wrong folder because Tuesday was already going badly.</p><p>The defensive posture should be the same either way: every serious AI coding workflow needs workspace quarantine.</p>
+
+    <div class="callout">
+      <strong>The bottom line:</strong> Do not treat an AI coding agent session as a clean room just because the chat window is new. Isolate the repo, the account, the memory files, the shell, and the logs.
+    </div>
+
+    <h2>A Fresh Chat Is Not A Fresh Workspace</h2>
+    <p>The old mental model was simple: open a new chat, paste the task, get an answer, close the tab. That model breaks down when the assistant becomes a coding agent. A coding agent is not merely answering. It is reading files, loading project rules, remembering corrections, asking for tool permissions, running commands, editing code, and preserving enough state to remain useful tomorrow.</p><p>Anthropic’s Claude Code documentation says each session begins with a fresh context window, but it also describes two mechanisms that carry knowledge across sessions: CLAUDE.md files and auto memory. The same documentation says these are loaded at the start of every conversation and treated as context rather than hard enforcement. That is the key distinction. Context guides behavior. It does not create a security boundary. <a href="https://docs.anthropic.com/en/docs/claude-code/memory">Anthropic’s memory documentation</a> lays this out directly.</p><p>That is not a criticism of memory. Persistent project instructions are useful. Without them, every agent session starts like a new contractor who has never seen a monorepo, which is a form of punishment. But persistent context also means a project can be contaminated by old instructions, broad user-level preferences, imported files, local notes, or a launch directory that does not match the task.</p><p>A new chat window feels clean. The filesystem may disagree.</p>
+
+    <h2>Where Context Actually Crosses The Line</h2>
+    <p>Most workspace contamination will not look like a dramatic platform breach. It will look boring. Boring is where the bodies are buried.</p><ul><li><strong>Wrong launch directory:</strong> The agent starts in one folder but works in another. Project instructions from the launch path can shape behavior even if the actual task lives elsewhere.</li><li><strong>Shared user memory:</strong> Personal rules stored at the user level can apply across projects. That is convenient for formatting preferences and dangerous for client-specific assumptions.</li><li><strong>Imported instruction files:</strong> A project rule can pull in other files. If those imports are broad, stale, or private, the agent may receive more context than the user realizes.</li><li><strong>Additional directories:</strong> Giving an agent access outside the repo can be necessary for shared libraries or docs, but every extra directory expands the blast radius.</li><li><strong>Tool permissions:</strong> Read-only is one thing. Shell commands, file writes, package installs, and network calls are another thing entirely.</li><li><strong>Compaction and summaries:</strong> Long sessions get compressed. If the summary is wrong, the agent can confidently carry forward a false version of reality. Very software, very cursed.</li></ul><p>Claude Code’s documentation says its memory loading walks up from the current working directory and can include files in that hierarchy. It also describes organization-wide, user-level, project-level, and local instruction locations. That is a powerful setup, but it means the current working directory is not a cosmetic detail. It is part of the prompt supply chain.</p>
+
+    <h2>The Minimum Viable Quarantine Setup</h2>
+    <p>Workspace quarantine does not require a security theater department and a laminated checklist. It does require a few hard habits.</p><ul><li><strong>Launch from the repo root you actually intend to modify.</strong> Do not start the agent from a convenient old folder because it contains useful notes. Move the notes into the correct project or pass them explicitly.</li><li><strong>Keep client and employer work in separate OS users or containers.</strong> Separate browser profiles are nice. Separate home directories are better. Shared home-level agent memory is how ghosts get jobs.</li><li><strong>Use one account per trust boundary.</strong> Personal experiments, open source work, employer code, and client work should not share the same agent identity if the stakes are different.</li><li><strong>Commit project instructions, not secrets.</strong> Put build commands, architecture rules, and test conventions in project files. Do not put tokens, private URLs, customer names, incident details, or credentials in memory files.</li><li><strong>Prefer deny rules for dangerous tools.</strong> If an agent should never touch deployment, production databases, or billing code without a human, enforce that outside the model’s goodwill.</li><li><strong>Reset between unrelated tasks.</strong> End the session, check what memory changed, and start from the correct directory. Yes, it is less magical. Magic is often just missing audit logs.</li></ul><p>This is the same spirit behind <a href="/pages/blog/ai-coding-agents-network-receipt/">requiring AI coding agents to show what leaves your machine</a>. The agent should not get a fog machine just because it writes decent TypeScript.</p>
+
+    <h2>What To Record When The Agent Acts Strange</h2>
+    <p>If an AI coding agent suddenly references a task, file, person, repo, customer, or weirdly specific fact that does not belong in the session, do not just laugh and keep going. Preserve the evidence before the tool overwrites the interesting part.</p><ul><li><strong>Save the transcript immediately.</strong> Include the strange message, the few turns before it, and any compaction summary that may have fed it.</li><li><strong>Record the exact working directory.</strong> The launch path matters. So does the directory where the agent was actually editing files.</li><li><strong>List loaded instruction files.</strong> Check project, local, user-level, and organization-level memory or rules. Look for stale imports and broad shared files.</li><li><strong>Capture account and workspace state.</strong> Note which account, organization, subscription, cloud provider, or enterprise workspace was active.</li><li><strong>Preserve tool logs.</strong> Shell commands, file reads, file writes, network calls, and permission prompts are often more useful than the final answer.</li><li><strong>Search local files for the leaked phrase.</strong> If the phrase exists in a memory file, shell log, README, test fixture, browser scrape, or adjacent repo, the cause may be local contamination rather than server leakage.</li></ul><p>The goal is not to prove a scandal in five minutes. The goal is to separate three categories: the model hallucinated unrelated content, the local workspace supplied hidden context, or the service crossed a boundary it should not cross. Those require different fixes. Treating all three as the same problem is how teams end up with vibes instead of incident response.</p>
+
+    <h2>What Vendors Should Expose</h2>
+    <p>Developers should not need to reverse-engineer an agent’s memory diet. Coding agent vendors should make workspace boundaries visible by default.</p><ul><li><strong>A loaded-context manifest:</strong> Show every memory file, rule file, imported document, additional directory, and system policy included in the session.</li><li><strong>A trust-boundary badge:</strong> Make it obvious whether the agent is using a personal, team, enterprise, Bedrock, Vertex, or other routed identity.</li><li><strong>A session origin panel:</strong> Show launch directory, active repo, git remote, branch, and any directory outside the repo that the agent can read.</li><li><strong>A memory diff:</strong> When auto memory changes, show exactly what was added, changed, or removed before it affects the next session.</li><li><strong>A hard reset button:</strong> Not a new chat. A real clean-room start that excludes prior memory, local rules, cached summaries, and imported files unless the user explicitly re-enables them.</li><li><strong>An incident export:</strong> One button should package transcript, tool calls, memory manifest, permissions, account routing, client version, and timestamps for security review.</li></ul><p>None of this makes AI coding agents less useful. It makes them usable in places where code matters. The industry keeps selling agents as junior developers. Fine. Junior developers do not get invisible cross-project memory, silent tool access, and a production shell without controls either. At least, not twice.</p>
+
+  </div>
+
+  <div class="post-footer">
+    <span class="post-footer-label">Looking for more AI tools?</span>
+    <a class="btn-export" href="/">See our free AI tools →</a>
+  </div>
+
+  <nav class="post-nav post-nav-bottom">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+</main>
+
+<!--FOOTER-->
+
+<script data-goatcounter="https://notavello.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script></body>
+</html>
