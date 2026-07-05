@@ -220,6 +220,22 @@ a { color: inherit; }
   line-height: 1.6;
   max-width: 560px;
 }
+
+.product-image-card {
+  position: relative;
+  width: min(100%, 540px);
+  border-radius: 30px;
+  overflow: hidden;
+  border: 1px solid rgba(148,163,184,0.22);
+  box-shadow: var(--shadow);
+  background: rgba(15,23,42,0.72);
+}
+.product-image-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .product-stage {
   position: relative;
   min-height: 580px;
@@ -597,42 +613,8 @@ a { color: inherit; }
 
     <div class="product-stage" aria-label="Ask My Screenshot app preview">
       <div class="glow-ring"></div>
-      <div class="float-card one"><strong>Clean prompt</strong><span>Turn visual context into a question an AI assistant can understand.</span></div>
-      <div class="float-card two"><strong>You stay in control</strong><span>Your screenshot stays on your phone until you choose to attach it.</span></div>
-
-      <div class="phone">
-        <div class="phone-screen">
-          <div class="app-top">
-            <div class="app-badge">?</div>
-            <div class="app-title">Ask My Screenshot</div>
-            <div class="app-subtitle">Pick a screenshot, choose the kind of help you want, then open your AI assistant.</div>
-          </div>
-
-          <div class="result-card">
-            <div class="result-label">Prompt ready</div>
-            <div class="prompt-line one"></div>
-            <div class="prompt-line two"></div>
-            <div class="prompt-line three"></div>
-          </div>
-
-          <div class="provider-row">
-            <div class="provider">
-              <div class="provider-icon">◎</div>
-              <div><strong>ChatGPT</strong><span>Open with question ready</span></div>
-              <small>+ Photos</small>
-            </div>
-            <div class="provider">
-              <div class="provider-icon">◇</div>
-              <div><strong>Claude</strong><span>Prefill prompt</span></div>
-              <small>Attach</small>
-            </div>
-            <div class="provider">
-              <div class="provider-icon">⌕</div>
-              <div><strong>Perplexity</strong><span>Search with prompt</span></div>
-              <small>Attach</small>
-            </div>
-          </div>
-        </div>
+      <div class="product-image-card">
+        <img src="/assets/images/ask-my-screenshot-preview.png" alt="Ask My Screenshot app preview showing a screenshot prompt workflow on iPhone">
       </div>
     </div>
   </section>
