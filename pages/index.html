@@ -1,0 +1,425 @@
+<!-- Notavello root-home-1.3.1 | Optimizations: System fonts, high-desirability reordering, fixed structural divs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Notavello — Free AI Tools & Utilities</title>
+<meta name="description" content="Notavello is a home for free AI tools, conversation exporters, browser extensions, and small utilities — no sign-up required."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://notavello.com/"/>
+<meta property="og:title" content="Notavello — Free AI Tools & Utilities"/>
+<meta property="og:description" content="Free AI tools, conversation exporters, browser extensions, and small utilities — no sign-up required."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Notavello — Free AI Tools & Utilities"/>
+<meta name="twitter:description" content="Free AI tools, conversation exporters, browser extensions, and small utilities."/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Notavello — Free AI Tools & Utilities",
+  "url": "https://notavello.com/",
+  "description": "Free AI tools, conversation exporters, browser extensions, and small utilities.",
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F8FAFC; --surface: #FFFFFF; --surface2: #F1F5F9;
+  --ink: #0F172A; --ink-muted: #475569; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #16A34A; --green-light: #DCFCE7;
+  --border: #E2E8F0; --radius: 16px; --radius-sm: 8px;
+  --shadow: 0 1px 3px rgba(15,23,42,0.03), 0 4px 12px rgba(15,23,42,0.05);
+  --shadow-lg: 0 10px 25px -5px rgba(79,70,229,0.1), 0 8px 10px -6px rgba(15,23,42,0.05);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  min-height: 100vh; -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 40% at 50% -10%, rgba(79,70,229,0.08) 0%, transparent 50%);
+}
+.header { background: rgba(255,255,255,0.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-size: 1.15rem; font-weight: 800; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 8px; text-decoration: none; }
+.logo-icon { width: 28px; height: 28px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.8rem; box-shadow: 0 2px 6px rgba(79,70,229,0.25); }
+.logo span { color: var(--accent); }
+.header-login { font-size: 0.8rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 6px 14px; border: 1.5px solid rgba(79,70,229,0.25); border-radius: 6px; background: var(--accent-light); transition: all 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+
+.main { max-width: 1024px; margin: 0 auto; padding: 56px 24px 80px; animation: fadeUp 0.4s ease both; }
+
+/* PAGE HEADER */
+.page-header { text-align: center; margin-bottom: 56px; }
+.page-header-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 12px; }
+.page-header h1 { font-size: clamp(2.25rem, 5vw, 3.25rem); font-weight: 800; color: var(--ink); line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 16px; }
+.page-header h1 em { font-style: normal; background: linear-gradient(135deg, var(--accent), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.page-header p { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.6; max-width: 540px; margin: 0 auto; }
+
+/* SECTION TYPOGRAPHY */
+.section-label { font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink); margin: 40px 0 16px; display: flex; align-items: center; gap: 8px; }
+.section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+/* GRID STRUCTURE */
+.card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 16px; margin-bottom: 24px; }
+
+/* RE-ENGINEERED CARDS */
+.tool-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; text-decoration: none; color: inherit; display: flex; flex-direction: column; justify-content: space-between; box-shadow: var(--shadow); transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1); position: relative; }
+.tool-card:hover { border-color: rgba(79,70,229,0.4); transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+
+.card-top { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 16px; }
+.tool-card-icon { width: 42px; height: 42px; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-size: 1.25rem; flex-shrink: 0; background: var(--surface2); }
+
+/* ICON STYLING PRESETS */
+.icon--corral    { background: linear-gradient(135deg, #EEF2FF, #E0E7FF); color: var(--accent); }
+.icon--detector  { background: linear-gradient(135deg, #FEF3C7, #FEF08A); }
+.icon--exporter  { background: linear-gradient(135deg, #F0FDF4, #DCFCE7); }
+.icon--extension { background: linear-gradient(135deg, #F8FAFC, #E2E8F0); }
+.icon--pwa       { background: linear-gradient(135deg, #FDF2F8, #FCE7F3); }
+
+.tool-card-name { font-size: 0.95rem; font-weight: 700; color: var(--ink); letter-spacing: -0.01em; line-height: 1.3; margin-bottom: 4px; }
+.tool-card-desc { font-size: 0.82rem; color: var(--ink-muted); line-height: 1.5; }
+.tool-card-desc code { font-size: 0.75rem; background: var(--surface2); padding: 2px 4px; border-radius: 4px; font-family: monospace; }
+
+.tool-card-meta { display: flex; align-items: center; justify-content: space-between; margin-top: auto; border-top: 1px solid var(--surface2); padding-top: 12px; }
+.platform-badge { font-size: 0.7rem; font-weight: 700; color: var(--ink-muted); background: var(--surface2); padding: 3px 8px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.02em; }
+.action-link { font-size: 0.8rem; font-weight: 700; color: var(--accent); display: flex; align-items: center; gap: 4px; }
+
+/* SPECIAL FEATURED CARD VARIATION */
+.card--featured { border-color: rgba(79,70,229,0.3); background: linear-gradient(180deg, var(--surface) 0%, rgba(79,70,229,0.02) 100%); }
+.card-badge { position: absolute; top: 12px; right: 12px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; background: var(--accent-light); color: var(--accent); padding: 2px 6px; border-radius: 4px; }
+
+/* THE EXPORT BLOG CARD */
+.blog-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; text-decoration: none; color: inherit; display: flex; align-items: center; justify-content: space-between; gap: 24px; box-shadow: var(--shadow); transition: all 0.2s; margin-top: 8px; }
+.blog-card:hover { border-color: var(--accent2); box-shadow: var(--shadow-lg); transform: translateY(-1px); }
+.blog-card-left { display: flex; align-items: center; gap: 16px; }
+.blog-card-icon { width: 44px; height: 44px; border-radius: var(--radius-sm); background: linear-gradient(135deg, #F0FDF4, #DCFCE7); display: flex; align-items: center; justify-content: center; font-size: 1.25rem; }
+.blog-card-name { font-size: 1.05rem; font-weight: 700; color: var(--ink); margin-bottom: 2px; }
+.blog-card-desc { font-size: 0.85rem; color: var(--ink-muted); }
+.blog-card-right { font-size: 0.85rem; font-weight: 700; color: var(--accent); }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+@media (max-width: 640px) {
+  .main { padding: 40px 16px 60px; }
+  .page-header { margin-bottom: 36px; }
+  .card-grid { grid-template-columns: 1fr; gap: 12px; }
+  .blog-card { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .blog-card-right { align-self: flex-end; }
+}
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+
+  <div class="page-header">
+    <p class="page-header-label">Free Utilities</p>
+    <h1>Everything you need to work with <em>AI smarter</em></h1>
+    <p>Simple, free native tools and browser extensions built for daily AI users. No tracking, no profiles, no hassle.</p>
+  </div>
+
+  <!-- SECTION 1: DESKTOP APPS & UTILITIES -->
+  <h2 class="section-label">Featured Desktop Applications</h2>
+  <div class="card-grid">
+
+    <a class="tool-card card--featured" href="/tools/desktopcorral/">
+      <span class="card-badge">Featured</span>
+      <div class="card-top">
+        <div class="tool-card-icon icon--corral">🪟</div>
+        <div>
+          <div class="tool-card-name">AI Desktop Corral</div>
+          <p class="tool-card-desc">Windows tray utility that keeps open application windows perfectly corralled into custom left and right zones with smart hotkeys.</p>
+        </div>
+      </div>
+      <div class="tool-card-meta">
+        <span class="platform-badge">Windows</span>
+        <span class="action-link">Get App →</span>
+      </div>
+    </a>
+
+    <a class="tool-card card--featured" href="/tools/desktopcorral/mac/">
+      <div class="card-top">
+        <div class="tool-card-icon icon--corral">🍏</div>
+        <div>
+          <div class="tool-card-name">AI Desktop Corral for Mac</div>
+          <p class="tool-card-desc">Notarized macOS utility helping you snap open windows cleanly into organized split desktop quadrants. Universal Intel & Silicon build.</p>
+        </div>
+      </div>
+      <div class="tool-card-meta">
+        <span class="platform-badge">macOS</span>
+        <span class="action-link">Get Mac App →</span>
+      </div>
+    </a>
+
+    <a class="tool-card" href="/tools/desk-top-filing-view/">
+      <div class="card-top">
+        <div class="tool-card-icon">🗂️</div>
+        <div>
+          <div class="tool-card-name">Desktop Filing View</div>
+          <p class="tool-card-desc">Transforms cluttered windows folder directories into color-coded flat grid lists with persistent sorting parameters.</p>
+        </div>
+      </div>
+      <div class="tool-card-meta">
+        <span class="platform-badge">Windows</span>
+        <span class="action-link">Download →</span>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- SECTION 2: CORE AI WEB TOOLS & APPS -->
+  <h2 class="section-label">Core Web & Mobile Applications</h2>
+  <div class="card-grid">
+
+    <a class="tool-card" href="/tools/aidetector/">
+      <div class="card-top">
+        <div class="tool-card-icon icon--detector">🔍</div>
+        <div>
+          <div class="tool-card-name">AI Detector</div>
+          <p class="tool-card-desc">Paste any body text string to immediately diagnose machine generation patterns. Always instant, zero limits.</p>
+        </div>
+      </div>
+      <div class="tool-card-meta">
+        <span class="platform-badge">Web App</span>
+        <span class="action-link">Analyze Text →</span>
+      </div>
+    </a>
+
+
+    <a class="tool-card" href="/tools/ask-my-screenshot/">
+      <div class="card-top">
+        <div class="tool-card-icon icon--pwa">❔</div>
+        <div>
+          <div class="tool-card-name">Ask My Screenshot</div>
+          <p class="tool-card-desc">iPhone helper that turns screenshots into clearer prompts for ChatGPT, Claude, and Perplexity, then opens your AI tool with the question ready.</p>
+        </div>
+      </div>
+      <div class="tool-card-meta">
+        <span class="platform-badge">iPhone</span>
+        <span class="action-link">View App →</span>
+      </div>
+    </a>
+
+    <a class="tool-card" href="/exporters/chatgpt/">
+      <div class="card-top">
+        <div class="tool-card-icon icon--exporter">📄</div>
+        <div>
+          <div class="tool-card-name">AI to PDF Exporter</div>
+          <p class="tool-card-desc">Easily extract raw chat data from Claude, ChatGPT, Gemini, and Grok layouts directly into publication-ready documents.</p>
+        </div>
+      </div>
+      <div class="tool-card-meta">
+        <span class="platform-badge">Universal</span>
+        <span class="action-link">Launch Free →</span>
+      </div>
+    </a>
+
+    <a class="tool-card" href="/app/">
+      <div class="card-top">
+        <div class="tool-card-icon icon--pwa">📲</div>
+        <div>
+          <div class="tool-card-name">Notavello Native PWA</div>
+          <p class="tool-card-desc">Install Notavello's tools directly to your mobile home screen panel without tracking hooks or storefront platforms.</p>
+        </div>
+      </div>
+      <div class="tool-card-meta">
+        <span class="platform-badge">iOS · Android</span>
+        <span class="action-link">Install Now →</span>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- SECTION 3: WEB EXTENSIONS (CHROME) -->
+  <h2 class="section-label">Chrome Extensions</h2>
+  <div class="card-grid">
+
+    <a class="tool-card card--featured" href="/tools/nukerefresh/">
+      <span class="card-badge">New</span>
+      <div class="card-top">
+        <div class="tool-card-icon icon--extension">💥</div>
+        <div>
+          <div class="tool-card-name">NukeRefresh</div>
+          <p class="tool-card-desc">Five escalating hard-reload strategies for stuck pages, from a quiet cache bypass to a full cache nuke. For when Ctrl+Shift+R isn't enough.</p>
+        </div>
+      </div>
+      <div class="tool-card-meta">
+        <span class="platform-badge">Chrome Extension</span>
+        <span class="action-link">Add to Chrome →</span>
+      </div>
+    </a>
+
+    <a class="tool-card" href="/tools/chatgpt-to-pdf/">
+      <div class="card-top">
+        <div class="tool-card-icon icon--extension">🧩</div>
+        <div>
+          <div class="tool-card-name">Export ChatGPT to PDF</div>
+          <p class="tool-card-desc">Local client injection adding an export element right inside your target AI thread interfaces. Sanitizes sensitive text lines automatically.</p>
+        </div>
+      </div>
+      <div class="tool-card-meta">
+        <span class="platform-badge">Chrome Extension</span>
+        <span class="action-link">Add to Chrome →</span>
+      </div>
+    </a>
+
+    <a class="tool-card" href="/tools/hide-my-bookmarks/">
+      <div class="card-top">
+        <div class="tool-card-icon icon--extension">🔖</div>
+        <div>
+          <div class="tool-card-name">Hide My Bookmarks Bar</div>
+          <p class="tool-card-desc">Instantly purge custom user bookmarked addresses out of view right before triggering a live screen share session.</p>
+        </div>
+      </div>
+      <div class="tool-card-meta">
+        <span class="platform-badge">Chrome Extension</span>
+        <span class="action-link">Add to Chrome →</span>
+      </div>
+    </a>
+
+    <a class="tool-card" href="/tools/pocketcreds/">
+      <div class="card-top">
+        <div class="tool-card-icon icon--extension">🪪</div>
+        <div>
+          <div class="tool-card-name">PocketCreds Workspace Manager</div>
+          <p class="tool-card-desc">Pin specific keys, API strings, and text sequences to a localized secure access bubble directly inside your window viewport.</p>
+        </div>
+      </div>
+      <div class="tool-card-meta">
+        <span class="platform-badge">Chrome Extension</span>
+        <span class="action-link">Add to Chrome →</span>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- SECTION 4: WEB EXTENSIONS (FIREFOX) -->
+  <h2 class="section-label">Firefox Extensions</h2>
+  <div class="card-grid">
+
+    <a class="tool-card" href="https://addons.mozilla.org/en-US/firefox/addon/notavello-chatgpt-to-pdf/" target="_blank" rel="noopener">
+      <div class="card-top">
+        <div class="tool-card-icon icon--extension">🦊</div>
+        <div>
+          <div class="tool-card-name">Firefox ChatGPT to PDF</div>
+          <p class="tool-card-desc">One-click structural layout generation converting long dialogue trees into clean, indexed desktop text documentation.</p>
+        </div>
+      </div>
+      <div class="tool-card-meta">
+        <span class="platform-badge">Firefox Add-on</span>
+        <span class="action-link">Get Extension →</span>
+      </div>
+    </a>
+
+    <a class="tool-card" href="https://addons.mozilla.org/en-US/firefox/addon/searchclear/" target="_blank" rel="noopener">
+      <div class="card-top">
+        <div class="tool-card-icon icon--extension">🦊</div>
+        <div>
+          <div class="tool-card-name">SearchClear Filter Module</div>
+          <p class="tool-card-desc">Strips out affiliate link blocks, intrusive promotional blocks, and unhelpful forums from modern standard web lookup listings.</p>
+        </div>
+      </div>
+      <div class="tool-card-meta">
+        <span class="platform-badge">Firefox Add-on</span>
+        <span class="action-link">Get Extension →</span>
+      </div>
+    </a>
+
+    <a class="tool-card" href="https://addons.mozilla.org/en-US/firefox/addon/nukerefresh-hard-reload-page/" target="_blank" rel="noopener">
+      <div class="card-top">
+        <div class="tool-card-icon icon--extension">🦊</div>
+        <div>
+          <div class="tool-card-name">NukeRefresh Hard Tool</div>
+          <p class="tool-card-desc">Forces robust clean canvas processing commands past typical deep browser cache constraints instantly.</p>
+        </div>
+      </div>
+      <div class="tool-card-meta">
+        <span class="platform-badge">Firefox Add-on</span>
+        <span class="action-link">Get Extension →</span>
+      </div>
+    </a>
+
+    <a class="tool-card" href="https://addons.mozilla.org/en-US/firefox/addon/pocketcreds-clipboard-manager/" target="_blank" rel="noopener">
+      <div class="card-top">
+        <div class="tool-card-icon icon--extension">🦊</div>
+        <div>
+          <div class="tool-card-name">PocketCreds Clipboard Suite</div>
+          <p class="tool-card-desc">Local storage vault keeping active operational values organized safely without external server configurations.</p>
+        </div>
+      </div>
+      <div class="tool-card-meta">
+        <span class="platform-badge">Firefox Add-on</span>
+        <span class="action-link">Get Extension →</span>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- SECTION 5: ADVANCED SYSTEM ENVIRONMENTS -->
+  <h2 class="section-label">Server & System Utilities</h2>
+  <div class="card-grid">
+
+    <a class="tool-card" href="/pages/blog/ubuntu-4-digit-pin-login/">
+      <div class="card-top">
+        <div class="tool-card-icon">🐧</div>
+        <div>
+          <div class="tool-card-name">Ubuntu PIN4 Management Tool</div>
+          <p class="tool-card-desc">Shell scripts overriding structural password rules to safely inject quick-auth 4-digit short entry codes via <code>chpasswd</code> hooks.</p>
+        </div>
+      </div>
+      <div class="tool-card-meta">
+        <span class="platform-badge">Linux Script</span>
+        <span class="action-link">View Script →</span>
+      </div>
+    </a>
+
+    <a class="tool-card" href="https://github.com/skychael/usb-disconnect-logger" target="_blank" rel="noopener">
+      <div class="card-top">
+        <div class="tool-card-icon">⚡</div>
+        <div>
+          <div class="tool-card-name">USB Real-Time Disconnect Logger</div>
+          <p class="tool-card-desc">Active diagnostic PowerShell process logging device connection drops and hardware bus level cycling anomalies directly.</p>
+        </div>
+      </div>
+      <div class="tool-card-meta">
+        <span class="platform-badge">PowerShell Script</span>
+        <span class="action-link">GitHub Repo →</span>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- BLOG LINKING SECTION -->
+  <h2 class="section-label">Editorial Research</h2>
+  <div class="blog-section">
+    <a class="blog-card" href="/pages/blog/">
+      <div class="blog-card-left">
+        <div class="blog-card-icon">✍️</div>
+        <div>
+          <div class="blog-card-name">The Export</div>
+          <p class="blog-card-desc">Honest, straightforward insights on maximizing small utilities, developer automation, and daily artificial workflow tricks.</p>
+        </div>
+      </div>
+      <span class="blog-card-right">Read Article Feed →</span>
+    </a>
+  </div>
+
+</main>
+
+<!--FOOTER-->
+
+<script data-goatcounter="https://notavello.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script></body>
+</html>
