@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Usage Meter for Claude — Track Claude Limits in Chrome | Notavello</title>
+<meta name="description" content="Usage Meter for Claude shows Claude.ai 5-hour and 7-day usage-limit status from your Chrome toolbar. Unofficial and privacy-forward."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/tools/usage-meter-for-claude/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://notavello.com/tools/usage-meter-for-claude/"/>
+<meta property="og:title" content="Usage Meter for Claude — Track Claude Limits in Chrome"/>
+<meta property="og:description" content="See your Claude.ai 5-hour and weekly usage-limit status from the Chrome toolbar."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Usage Meter for Claude — Track Claude Limits in Chrome"/>
+<meta name="twitter:description" content="A small toolbar meter for Claude.ai usage limits. Unofficial and privacy-forward."/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Usage Meter for Claude",
+  "operatingSystem": "ChromeOS, Windows, macOS, Linux",
+  "applicationCategory": "BrowserApplication",
+  "browserRequirements": "Requires Google Chrome",
+  "description": "Usage Meter for Claude shows Claude.ai 5-hour and 7-day usage-limit status from your Chrome toolbar.",
+  "url": "https://notavello.com/tools/usage-meter-for-claude/",
+  "installUrl": "https://chromewebstore.google.com/detail/usage-meter-for-claude/PENDING_LISTING_ID",
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #161511;
+  --surface: #1f1e1a;
+  --surface2: #27251f;
+  --surface3: #302d25;
+  --ink: #fbfaf7;
+  --ink-soft: #efe7dc;
+  --ink-muted: #b8b1a5;
+  --ink-faint: #746f66;
+  --accent: #d97757;
+  --accent2: #f0a47f;
+  --accent-soft: rgba(217,119,87,0.15);
+  --amber: #e0b341;
+  --red: #e0615a;
+  --blue: #7dd3fc;
+  --border: rgba(240,164,127,0.18);
+  --card-border: rgba(240,164,127,0.14);
+  --radius: 26px;
+  --radius-sm: 16px;
+  --shadow: 0 24px 80px rgba(0,0,0,0.48);
+  --mono: 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+}
+html { scroll-behavior: smooth; }
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(217,119,87,0.22), transparent 34%),
+    radial-gradient(circle at 85% 10%, rgba(224,179,65,0.12), transparent 35%),
+    radial-gradient(circle at 70% 90%, rgba(125,211,252,0.08), transparent 36%),
+    linear-gradient(180deg, #14130f 0%, #191712 44%, #1f1d18 100%);
+  color: var(--ink);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+.header {
+  background: rgba(20,19,15,0.82);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--border);
+  padding: 16px 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.logo {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: -0.04em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+.logo-icon {
+  width: 34px;
+  height: 34px;
+  background: linear-gradient(135deg, var(--accent), var(--amber));
+  border-radius: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1a120c;
+  font-size: 0.9rem;
+  box-shadow: 0 8px 24px rgba(217,119,87,0.28);
+}
+.logo span { color: var(--accent2); }
+.header-login {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #f6c9b7;
+  text-decoration: none;
+  padding: 8px 18px;
+  border: 1.5px solid rgba(217,119,87,0.34);
+  border-radius: 999px;
+  background: rgba(217,119,87,0.10);
+}
+.header-login:hover { border-color: var(--accent); background: rgba(217,119,87,0.16); }
+.main {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 70px 24px 92px;
+  animation: fadeUp 0.55s ease both;
+}
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--ink-muted);
+  text-decoration: none;
+  font-size: 0.86rem;
+  font-weight: 700;
+  margin-bottom: 34px;
+}
+.back-link:hover { color: #f6c9b7; }
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(420px, 0.95fr);
+  gap: 52px;
+  align-items: center;
+  margin-bottom: 72px;
+}
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  color: #f6c9b7;
+  background: rgba(217,119,87,0.12);
+  border: 1px solid rgba(217,119,87,0.22);
+  padding: 8px 12px;
+  border-radius: 999px;
+  margin-bottom: 22px;
+}
+.eyebrow-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 6px rgba(217,119,87,0.14);
+}
+.hero h1 {
+  font-size: clamp(2.55rem, 5.3vw, 4.75rem);
+  line-height: 0.98;
+  letter-spacing: -0.075em;
+  margin-bottom: 24px;
+}
+.hero h1 em {
+  font-style: normal;
+  background: linear-gradient(135deg, #fff1e8, var(--accent2), var(--amber));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-lede {
+  font-size: 1.08rem;
+  line-height: 1.78;
+  color: var(--ink-muted);
+  max-width: 590px;
+  margin-bottom: 28px;
+}
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 18px;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 20px;
+  border-radius: 14px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 900;
+  transition: transform 0.15s, box-shadow 0.15s, background 0.15s, border-color 0.15s;
+  border: none;
+  cursor: pointer;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn-primary {
+  color: #1a120c;
+  background: linear-gradient(135deg, #f2c9b8, var(--accent));
+  box-shadow: 0 14px 30px rgba(217,119,87,0.28);
+}
+.btn-secondary {
+  color: var(--ink-soft);
+  background: rgba(240,164,127,0.08);
+  border: 1.5px solid var(--border);
+}
+.btn-secondary:hover { border-color: rgba(240,164,127,0.4); background: rgba(240,164,127,0.14); }
+.install-note { font-size: 0.82rem; color: var(--ink-faint); }
+.product-stage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 430px;
+}
+.glow-ring {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(217,119,87,0.24), transparent 68%);
+  filter: blur(8px);
+}
+.float-card {
+  position: absolute;
+  background: rgba(31,30,26,0.92);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 12px 14px;
+  max-width: 202px;
+  font-size: 0.76rem;
+  line-height: 1.5;
+  box-shadow: var(--shadow);
+  z-index: 3;
+}
+.float-card strong { display: block; font-size: 0.82rem; margin-bottom: 3px; color: #f6c9b7; }
+.float-card span { color: var(--ink-muted); }
+.float-card.one { top: 10px; left: -12px; }
+.float-card.two { bottom: 24px; right: -16px; }
+.popup {
+  position: relative;
+  z-index: 2;
+  width: 310px;
+  background: #181713;
+  border: 1px solid #34322c;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  color: #f3f1ea;
+}
+.popup-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 16px 13px;
+  border-bottom: 1px solid #34322c;
+}
+.popup-logo {
+  width: 30px;
+  height: 30px;
+  background: linear-gradient(135deg, var(--accent), #f2c9b8);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #211410;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+.popup-title strong { display: block; font-family: var(--mono); font-size: 12.5px; letter-spacing: 0.04em; }
+.popup-title span { font-size: 10px; color: #948f86; }
+.popup-body { padding: 16px; }
+.usage-row { display: flex; align-items: center; gap: 16px; }
+.ring-wrap { width: 110px; height: 110px; position: relative; flex-shrink: 0; }
+.ring { width: 110px; height: 110px; transform: rotate(-90deg); }
+.ring-track { fill: none; stroke: rgba(148,143,134,0.28); stroke-width: 12; }
+.ring-fill { fill: none; stroke: var(--accent); stroke-width: 12; stroke-linecap: round; stroke-dasharray: 326.7; stroke-dashoffset: 225.4; }
+.ring-label { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-weight:900; font-size:1.35rem; }
+.row-title { font-size: 0.96rem; font-weight: 850; margin-bottom: 4px; }
+.row-sub { color: #948f86; font-size: 0.78rem; line-height: 1.45; }
+.divider { height: 1px; background: #34322c; margin: 16px 0; }
+.bar-track { height: 9px; background: rgba(148,143,134,0.24); border-radius: 999px; overflow: hidden; margin: 9px 0 7px; }
+.bar-fill { width: 48%; height: 100%; background: linear-gradient(90deg, var(--accent), var(--amber)); border-radius: 999px; }
+.popup-footer { display:flex; justify-content:space-between; align-items:center; margin-top: 14px; color:#948f86; font-size:0.74rem; }
+.refresh-pill { border:1px solid #34322c; border-radius:999px; padding:5px 8px; color:#f2c9b8; }
+.section { margin-bottom: 64px; }
+.section-label {
+  font-size: 0.74rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  color: #f6c9b7;
+  margin-bottom: 18px;
+}
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.card {
+  background: rgba(31,30,26,0.58);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-sm);
+  padding: 28px 24px;
+}
+.card-icon { font-size: 1.6rem; margin-bottom: 14px; }
+.card h2 { font-size: 1.08rem; margin-bottom: 8px; letter-spacing: -0.01em; }
+.card p { font-size: 0.9rem; line-height: 1.65; color: var(--ink-muted); }
+.install-card { border-color: rgba(217,119,87,0.3); background: rgba(217,119,87,0.06); }
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.panel {
+  background: rgba(31,30,26,0.58);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 34px 30px;
+}
+.panel h2 { font-size: 1.5rem; letter-spacing: -0.04em; margin-bottom: 14px; }
+.panel p { color: var(--ink-muted); line-height: 1.75; margin-bottom: 12px; }
+.check-list { list-style: none; margin-top: 14px; }
+.check-list li {
+  position: relative;
+  padding-left: 24px;
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  line-height: 1.7;
+  margin-bottom: 8px;
+}
+.check-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--accent2);
+  font-weight: 900;
+}
+.privacy-box {
+  background: rgba(217,119,87,0.07);
+  border: 1.5px solid rgba(217,119,87,0.22);
+  border-radius: var(--radius-sm);
+  padding: 18px 20px;
+  margin: 16px 0;
+}
+.privacy-box h3 { font-size: 0.88rem; margin-bottom: 6px; color: #f6c9b7; }
+.privacy-box p { font-size: 0.85rem; margin-bottom: 0; }
+.steps { display: flex; flex-direction: column; gap: 14px; counter-reset: step; }
+.step {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  background: rgba(31,30,26,0.42);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-sm);
+  padding: 20px 22px;
+  counter-increment: step;
+}
+.step::before {
+  content: counter(step);
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--amber));
+  color: #1a120c;
+  font-weight: 900;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.step strong { display: block; font-size: 0.96rem; margin-bottom: 4px; }
+.step span { font-size: 0.86rem; color: var(--ink-muted); line-height: 1.6; }
+.support {
+  text-align: center;
+  background: linear-gradient(180deg, rgba(217,119,87,0.09), rgba(217,119,87,0.02));
+  border: 1.5px solid rgba(217,119,87,0.16);
+  border-radius: 28px;
+  padding: 38px 24px;
+}
+.support h2 { font-size: clamp(1.55rem, 4vw, 2.25rem); letter-spacing: -0.04em; margin-bottom: 12px; }
+.support p { color: var(--ink-muted); line-height: 1.7; max-width: 690px; margin: 0 auto 20px; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; background: rgba(20,19,15,0.88); }
+.site-footer-inner { max-width: 1140px; margin: 0 auto; color: var(--ink-faint); font-size: 0.76rem; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.site-footer a { color: var(--ink-muted); text-decoration: none; }
+.site-footer a:hover { color: #f6c9b7; }
+.legal-page .main { max-width: 900px; }
+.legal-hero { margin-bottom: 26px; }
+.legal-hero h1 { font-size: clamp(2.15rem, 5vw, 3.8rem); line-height: 0.98; letter-spacing: -0.065em; margin-bottom: 16px; }
+.legal-hero p { color: var(--ink-muted); line-height: 1.75; max-width: 720px; }
+.legal-card { background: rgba(31,30,26,0.62); border: 1px solid var(--card-border); border-radius: var(--radius); padding: 30px; margin: 22px 0; }
+.legal-card h2 { font-size: 1.12rem; margin: 28px 0 10px; }
+.legal-card h2:first-child { margin-top: 0; }
+.legal-card p, .legal-card li { color: var(--ink-muted); line-height: 1.72; margin-bottom: 10px; }
+.legal-card ul { padding-left: 20px; }
+code { font-family: var(--mono); background: rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.08); border-radius:6px; padding:2px 5px; }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 960px) { .hero { grid-template-columns: 1fr; gap: 32px; } .product-stage { min-height: auto; padding: 22px 0; } .float-card { display: none; } .grid-3, .split { grid-template-columns: 1fr; } }
+@media (max-width: 640px) { .header { padding: 14px 20px; } .logo { font-size: 1.16rem; } .logo-icon { width: 32px; height: 32px; } .main { padding: 42px 16px 76px; } .hero h1 { font-size: clamp(2.25rem, 12vw, 3.2rem); } .hero-lede { font-size: 1rem; } .hero-actions .btn { width: 100%; } .card, .panel, .legal-card { padding: 24px 22px; } .site-footer { padding: 28px 20px; } .popup { width: min(310px, 100%); } }
+</style>
+</head>
+<body>
+<header class="header">
+  <a class="logo" href="/"><span class="logo-icon">▣</span>Nota <span>vello</span></a>
+  <a class="header-login" href="/">Tools</a>
+</header>
+
+<main class="main">
+  <a class="back-link" href="/">← Back to tools</a>
+
+  <section class="hero">
+    <div>
+      <div class="eyebrow"><span class="eyebrow-dot"></span> Chrome extension</div>
+      <h1>Know your Claude limits <em>before they surprise you.</em></h1>
+      <p class="hero-lede">Usage Meter for Claude adds a compact toolbar popup that shows your current Claude.ai 5-hour and 7-day usage-limit status, including reset timing when Claude provides it.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://chromewebstore.google.com/detail/usage-meter-for-claude/PENDING_LISTING_ID" target="_blank" rel="noopener">Install from Chrome Web Store →</a>
+        <a class="btn btn-secondary" href="/tools/usage-meter-for-claude/privacy/">Privacy policy</a>
+        <a class="btn btn-secondary" href="#overview">See how it works</a>
+      </div>
+      <p class="install-note">Built for Chrome. Uses your existing signed-in claude.ai session. The Chrome Web Store link will work after the listing is approved.</p>
+    </div>
+
+    <div class="product-stage" aria-label="Usage Meter for Claude extension preview">
+      <div class="glow-ring"></div>
+      <div class="float-card one"><strong>5-hour meter</strong><span>See the short-window limit from the toolbar popup and icon ring.</span></div>
+      <div class="float-card two"><strong>Quiet refreshes</strong><span>The toolbar indicator updates periodically in the background.</span></div>
+
+      <div class="popup">
+        <div class="popup-head">
+          <div class="popup-logo">◌</div>
+          <div class="popup-title"><strong>CLAUDE_USAGE</strong><span>Track Claude.ai limits</span></div>
+        </div>
+        <div class="popup-body">
+          <div class="usage-row">
+            <div class="ring-wrap">
+              <svg viewBox="0 0 120 120" class="ring" aria-hidden="true">
+                <circle cx="60" cy="60" r="52" class="ring-track" />
+                <circle cx="60" cy="60" r="52" class="ring-fill" />
+              </svg>
+              <div class="ring-label">31%</div>
+            </div>
+            <div>
+              <div class="row-title">5-hour limit</div>
+              <div class="row-sub">resets in 4d<br>updated just now</div>
+            </div>
+          </div>
+          <div class="divider"></div>
+          <div class="row-title">7-day limit</div>
+          <div class="bar-track"><div class="bar-fill"></div></div>
+          <div class="row-sub">48% · reset timing shown when available</div>
+          <div class="popup-footer"><span>Local browser state only</span><span class="refresh-pill">⟳ Refresh</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="overview">
+    <p class="section-label">Install & overview</p>
+    <div class="grid-3">
+      <article class="card install-card">
+        <div class="card-icon">🧩</div>
+        <h2>Install from the Chrome Web Store</h2>
+        <p>Use the official Chrome Web Store listing after it is approved and published. Until then, the install link contains a placeholder listing ID.</p>
+        <p style="margin-top:14px;"><a class="btn btn-primary" href="https://chromewebstore.google.com/detail/usage-meter-for-claude/PENDING_LISTING_ID" target="_blank" rel="noopener">Open Chrome Web Store listing →</a></p>
+      </article>
+      <article class="card">
+        <div class="card-icon">◌</div>
+        <h2>5-hour usage ring</h2>
+        <p>See the current short-window Claude usage percentage in the popup and on the toolbar icon at a glance.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon">▰</div>
+        <h2>7-day usage bar</h2>
+        <p>Check the longer weekly window from the same popup, including a reset estimate when Claude provides it.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon">⟳</div>
+        <h2>Refresh on demand</h2>
+        <p>Click the refresh button whenever you want a fresh reading instead of waiting for the next background update.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon">☁</div>
+        <h2>Quiet background updates</h2>
+        <p>The toolbar ring refreshes periodically so the last displayed status stays useful without opening the popup.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon">🔐</div>
+        <h2>No separate account</h2>
+        <p>The extension uses your existing signed-in claude.ai session. There is no Notavello login or external service.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section split" id="privacy">
+    <div class="panel">
+      <h2>Designed to answer one question quickly.</h2>
+      <p>When you are planning a long work session, the last thing you want is a surprise usage wall. Usage Meter for Claude keeps the key numbers close by: the current 5-hour window, the 7-day window, and reset timing if it is available.</p>
+      <ul class="check-list">
+        <li>Small toolbar popup with a familiar dark interface.</li>
+        <li>At-a-glance color changes as usage gets higher.</li>
+        <li>Works from the Chrome toolbar while you stay signed in at claude.ai.</li>
+      </ul>
+    </div>
+
+    <div class="panel">
+      <h2>Privacy-forward by default.</h2>
+      <p>The extension does not run a Notavello server, does not sell data, and does not collect prompts, answers, or chat content. It only requests access to claude.ai so it can read the usage-limit information shown to your own account.</p>
+      <div class="privacy-box">
+        <h3>Unofficial companion</h3>
+        <p>Usage Meter for Claude is not affiliated with, endorsed by, or sponsored by Anthropic. It may stop working if Claude changes the usage endpoint.</p>
+      </div>
+      <ul class="check-list">
+        <li>No prompts, chats, or message content collected.</li>
+        <li>No third-party analytics inside the extension.</li>
+        <li>Usage state is kept locally in Chrome storage.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <p class="section-label">Simple workflow</p>
+    <div class="steps">
+      <div class="step"><div><strong>Stay signed in at claude.ai.</strong><span>The extension uses your normal browser session to request your own Claude usage-limit information.</span></div></div>
+      <div class="step"><div><strong>Open the toolbar popup.</strong><span>See your 5-hour and 7-day usage status without digging through account pages or guessing where you stand.</span></div></div>
+      <div class="step"><div><strong>Refresh when needed.</strong><span>Use the refresh control for a fresh reading, while the toolbar ring keeps the most recent state visible between checks.</span></div></div>
+    </div>
+  </section>
+
+  <section class="support" id="support">
+    <h2>Support for Usage Meter for Claude</h2>
+    <p>If something is not working, include your Chrome version, operating system, whether you are signed in at claude.ai, and what the popup displayed. The extension does not collect diagnostics itself.</p>
+    <a class="btn btn-primary" href="https://chromewebstore.google.com/detail/usage-meter-for-claude/PENDING_LISTING_ID" target="_blank" rel="noopener">Install from Chrome Web Store →</a>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <span>© Notavello</span>
+    <span><a href="/">Tools</a> · <a href="/tools/usage-meter-for-claude/privacy/">Usage Meter for Claude Privacy</a> · <a href="/pages/blog/">The Export</a></span>
+  </div>
+</footer>
+<script data-goatcounter="https://notavello.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
