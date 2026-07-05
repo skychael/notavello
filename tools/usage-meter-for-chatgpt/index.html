@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Usage Meter for ChatGPT — Track ChatGPT Limits | Notavello</title>
+<meta name="description" content="Usage Meter for ChatGPT shows your current 5-hour and weekly ChatGPT usage-limit status in one small Chrome toolbar popup."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/tools/usage-meter-for-chatgpt/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://notavello.com/tools/usage-meter-for-chatgpt/"/>
+<meta property="og:title" content="Usage Meter for ChatGPT — Track ChatGPT Limits"/>
+<meta property="og:description" content="A small unofficial Chrome extension that shows 5-hour and weekly ChatGPT usage status in your toolbar."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Usage Meter for ChatGPT — Track ChatGPT Limits"/>
+<meta name="twitter:description" content="See your ChatGPT 5-hour and weekly usage limits in one click."/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Usage Meter for ChatGPT",
+  "operatingSystem": "ChromeOS, Windows, macOS, Linux",
+  "applicationCategory": "BrowserApplication",
+  "browserRequirements": "Requires Google Chrome",
+  "description": "Usage Meter for ChatGPT shows your current 5-hour and weekly ChatGPT usage-limit status in one small Chrome toolbar popup.",
+  "url": "https://notavello.com/tools/usage-meter-for-chatgpt/",
+  "installUrl": "https://chromewebstore.google.com/detail/usage-meter-for-chatgpt/PENDING_LISTING_ID",
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="stylesheet" href="./assets/usage-meter.css">
+</head>
+<body>
+
+<header class="header">
+  <a class="logo" href="/">
+    <span class="logo-icon">▣</span>
+    Nota <span>vello</span>
+  </a>
+  <a class="header-login" href="/">Tools</a>
+</header>
+
+<main class="main">
+
+  <a class="back-link" href="/">← Back to tools</a>
+
+  <section class="hero">
+    <div>
+      <div class="eyebrow"><span class="eyebrow-dot"></span> Chrome extension · unofficial</div>
+      <h1>Know your ChatGPT limits <em>before you hit them.</em></h1>
+      <p class="hero-lede">Usage Meter for ChatGPT adds a quiet toolbar popup that shows your current 5-hour and weekly usage-limit status, including reset timing when available.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://chromewebstore.google.com/detail/usage-meter-for-chatgpt/PENDING_LISTING_ID" target="_blank" rel="noopener">Install from Chrome Web Store →</a>
+        <a class="btn btn-secondary" href="/tools/usage-meter-for-chatgpt/privacy/">Privacy policy</a>
+        <a class="btn btn-secondary" href="#how-it-works">How it works</a>
+      </div>
+      <p class="install-note">Built for Chrome. Works only while you are signed in at chatgpt.com. Not affiliated with, endorsed by, or sponsored by OpenAI.</p>
+    </div>
+
+    <div class="product-stage" aria-label="Usage Meter for ChatGPT extension preview">
+      <div class="glow-ring"></div>
+      <div class="float-card one"><strong>Toolbar status ring</strong><span>The extension icon mirrors your latest 5-hour usage percentage.</span></div>
+      <div class="float-card two"><strong>Weekly status too</strong><span>Open the popup to check the longer usage window and reset estimate.</span></div>
+
+      <div class="popup">
+        <div class="popup-head">
+          <div class="popup-logo"><img src="./assets/icon-128.png" alt="Usage Meter icon"></div>
+          <div class="popup-title">
+            <strong>Usage Meter for ChatGPT</strong>
+            <span>Live usage-limit status</span>
+          </div>
+        </div>
+        <div class="usage-row">
+          <div class="ring-wrap">
+            <svg viewBox="0 0 120 120" class="ring" aria-hidden="true">
+              <circle cx="60" cy="60" r="52" class="ring-track" />
+              <circle cx="60" cy="60" r="52" class="ring-fill" />
+            </svg>
+            <div class="ring-label">68%</div>
+          </div>
+          <div class="row-info">
+            <div class="row-title">5-hour limit</div>
+            <div class="row-sub">resets in 1h 42m</div>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="weekly">
+          <div class="row-title">Weekly limit</div>
+          <div class="bar-track"><div class="bar-fill"></div></div>
+          <div class="row-sub">31% · resets in 4d</div>
+        </div>
+        <div class="popup-footer"><span>Updated just now</span><span class="refresh-dot">⟳</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="install">
+    <p class="section-label">Install & overview</p>
+    <div class="grid-3">
+      <article class="card install-card">
+        <div class="card-icon">🧩</div>
+        <h2>Install from the Chrome Web Store</h2>
+        <p>Use the official listing after it is approved and published. Until then, the link contains a placeholder listing ID.</p>
+        <p style="margin-top:14px;"><a class="btn btn-primary" href="https://chromewebstore.google.com/detail/usage-meter-for-chatgpt/PENDING_LISTING_ID" target="_blank" rel="noopener">Open Chrome Web Store listing →</a></p>
+      </article>
+      <article class="card">
+        <div class="card-icon">⌁</div>
+        <h2>5-hour usage ring</h2>
+        <p>See the current short-window usage percentage in the popup and on the toolbar icon at a glance.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon">▰</div>
+        <h2>Weekly usage bar</h2>
+        <p>Check the longer weekly window from the same popup, including a reset estimate when ChatGPT provides it.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon">⟳</div>
+        <h2>Refresh on demand</h2>
+        <p>Click the refresh button whenever you want a fresh reading instead of waiting for the background update.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon">◌</div>
+        <h2>Quiet background updates</h2>
+        <p>The toolbar ring refreshes periodically so the last displayed status stays useful without opening the popup.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon">🔒</div>
+        <h2>No separate account</h2>
+        <p>The extension uses your existing signed-in chatgpt.com session. There is no Notavello login or external service.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section split" id="how-it-works">
+    <div class="panel">
+      <h2>Designed to answer one question quickly.</h2>
+      <p>When you are planning a long work session, the last thing you want is a surprise usage wall. Usage Meter for ChatGPT keeps the key numbers close by: the current 5-hour window, the weekly window, and the reset timing if it is available.</p>
+      <ul class="check-list">
+        <li>Small toolbar popup with a familiar dark interface.</li>
+        <li>At-a-glance color changes as usage gets higher.</li>
+        <li>Works from the Chrome toolbar while you stay signed in at chatgpt.com.</li>
+      </ul>
+    </div>
+
+    <div class="panel">
+      <h2>Privacy-forward by default.</h2>
+      <p>The extension does not run a Notavello server, does not sell data, and does not collect prompts, answers, or chat content. It only requests access to chatgpt.com so it can read the usage-limit information shown to your own account.</p>
+      <div class="notice-box">
+        <h3>Unofficial companion</h3>
+        <p>Usage Meter for ChatGPT is not affiliated with, endorsed by, or sponsored by OpenAI. It may stop working if ChatGPT changes the usage endpoint.</p>
+      </div>
+      <ul class="check-list">
+        <li>No prompts, chats, or message content collected.</li>
+        <li>No third-party analytics inside the extension.</li>
+        <li>Stores only the last usage percentage locally for the toolbar icon.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="details">
+    <p class="section-label">What it uses</p>
+    <div class="panel">
+      <table class="table">
+        <thead>
+          <tr><th>Permission</th><th>Why it is needed</th><th>Stored?</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>https://chatgpt.com/*</code></td>
+            <td>Allows the extension to request your signed-in ChatGPT usage-limit status from chatgpt.com.</td>
+            <td>No remote storage by Notavello.</td>
+          </tr>
+          <tr>
+            <td><code>storage</code></td>
+            <td>Saves the last displayed 5-hour usage percentage locally so the toolbar icon can keep showing the latest known status.</td>
+            <td>Local browser storage only.</td>
+          </tr>
+          <tr>
+            <td><code>alarms</code></td>
+            <td>Refreshes the toolbar usage ring periodically in the background.</td>
+            <td>No.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section">
+    <p class="section-label">Simple workflow</p>
+    <div class="steps">
+      <div class="step">
+        <div>
+          <strong>Sign in at chatgpt.com.</strong>
+          <span>The extension reads usage-limit status from your existing ChatGPT session. It cannot work if you are signed out.</span>
+        </div>
+      </div>
+      <div class="step">
+        <div>
+          <strong>Click the toolbar icon.</strong>
+          <span>Open the popup to see your 5-hour and weekly usage status, plus reset estimates when available.</span>
+        </div>
+      </div>
+      <div class="step">
+        <div>
+          <strong>Use the ring as a quick signal.</strong>
+          <span>The toolbar icon shows the latest known short-window usage percentage so you can keep working without opening another tab.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="support" id="support">
+    <h2>Support for Usage Meter for ChatGPT</h2>
+    <p>If something is not working, confirm that you are signed in at chatgpt.com, then include your Chrome version, operating system, and what the popup showed. Do not send private chat content.</p>
+    <a class="btn btn-primary" href="https://chromewebstore.google.com/detail/usage-meter-for-chatgpt/PENDING_LISTING_ID" target="_blank" rel="noopener">Install from Chrome Web Store →</a>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <span>© Notavello</span>
+    <span><a href="/">Tools</a> · <a href="/tools/usage-meter-for-chatgpt/privacy/">Usage Meter Privacy</a> · <a href="/pages/blog/">The Export</a></span>
+  </div>
+</footer>
+
+<script data-goatcounter="https://notavello.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
