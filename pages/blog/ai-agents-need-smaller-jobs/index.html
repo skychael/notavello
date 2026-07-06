@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>AI Agents Need Smaller Jobs, Not Bigger Promises — The Export | Notavello</title>
+<meta name="description" content="AI agents fail when they are given vague jobs. Here is how to scope, log, and supervise them without buying the fantasy."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/blog/ai-agents-need-smaller-jobs/"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://notavello.com/pages/blog/ai-agents-need-smaller-jobs/"/>
+<meta property="og:title" content="AI Agents Need Smaller Jobs, Not Bigger Promises"/>
+<meta property="og:description" content="AI agents fail when they are given vague jobs. Here is how to scope, log, and supervise them without buying the fantasy."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="AI Agents Need Smaller Jobs, Not Bigger Promises"/>
+<meta name="twitter:description" content="AI agents fail when they are given vague jobs. Here is how to scope, log, and supervise them without buying the fantasy."/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "AI Agents Need Smaller Jobs, Not Bigger Promises",
+  "description": "AI agents fail when they are given vague jobs. Here is how to scope, log, and supervise them without buying the fantasy.",
+  "url": "https://notavello.com/pages/blog/ai-agents-need-smaller-jobs/",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://notavello.com/pages/blog/ai-agents-need-smaller-jobs/" },
+  "image": "https://notavello.com/og-image.png",
+  "datePublished": "2026-07-06",
+  "dateModified": "2026-07-06",
+  "author": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" },
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com", "logo": { "@type": "ImageObject", "url": "https://notavello.com/og-image.png" } }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
+.post-nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; row-gap: 8px; }
+.post-nav-top { margin-bottom: 40px; }
+.post-nav-bottom { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--border); }
+.post-nav a { display: inline-flex; align-items: center; gap: 6px; font-size: 0.92rem; font-weight: 600; color: var(--ink-muted); text-decoration: none; padding: 12px 14px; border-radius: var(--radius-sm); white-space: nowrap; transition: color 0.15s, background 0.15s; }
+.post-nav a:hover { color: var(--accent); background: var(--accent-light); }
+.post-nav a:first-child { padding-left: 0; }
+.post-nav a:last-child { padding-right: 0; justify-content: flex-end; }
+.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
+.post-date { font-size: 0.78rem; color: var(--ink-faint); }
+.post-title { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; color: var(--ink); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
+.post-lede { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+.post-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink); }
+.post-body h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 44px 0 16px; letter-spacing: -0.01em; }
+.post-body p { margin-bottom: 20px; color: var(--ink-muted); }
+.post-body p strong { color: var(--ink); font-weight: 600; }
+.post-body ul { margin: 0 0 20px 20px; color: var(--ink-muted); }
+.post-body ul li { margin-bottom: 8px; line-height: 1.7; }
+.callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 32px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.7; }
+.post-footer { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.post-footer-label { font-size: 0.8rem; color: var(--ink-faint); }
+.btn-export { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: opacity 0.2s; }
+.btn-export:hover { opacity: 0.9; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } .post-nav a { padding: 12px 8px; font-size: 0.88rem; } }
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+
+  <nav class="post-nav post-nav-top">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+  <div class="post-meta">
+    <span class="post-tag">AI Tools</span>
+    <span class="post-date">July 6, 2026</span>
+  </div>
+
+  <h1 class="post-title">AI Agents Need Smaller Jobs, Not Bigger Promises</h1>
+
+  <p class="post-lede">The agent hype is running into the oldest software problem in the building: vague requirements. An AI agent cannot fix a workflow nobody has bothered to describe.</p>
+
+  <div class="post-body">
+
+    <h2>The Agent Demo Was The Easy Part</h2>
+    <p>AI agents are supposed to do more than answer questions. They are supposed to use tools, make decisions, move between systems, and finish work with less human babysitting. That is the pitch. The reality is less cinematic: the agent gets halfway through a task, hits an ambiguous rule, opens the wrong tab, drafts something almost correct, and then politely creates cleanup work for a human.</p><p>The current signal is not subtle. On July 2, 2026, <a href="https://techcrunch.com/2026/07/02/mark-zuckerberg-tells-staff-that-ai-agents-havent-progressed-as-quickly-as-hed-hoped/">TechCrunch reported</a>, citing Reuters, that Mark Zuckerberg told Meta staff AI agent development had not accelerated as expected. That does not mean agents are dead. It means the gap between demo and deployment is still annoyingly real.</p><p>This is the part the sales deck usually skips. A demo can assume clean inputs, friendly tools, happy paths, and one user watching closely. A business workflow has stale records, duplicate accounts, weird permissions, missing context, half-documented exceptions, and a Slack thread from 2023 that apparently contains the real policy. Good luck, little robot.</p>
+
+    <div class="callout">
+      <strong>The bottom line:</strong> AI agents work best when they are boring, narrow, observable, and easy to stop. The magic demo is not the product. The handoff, logs, permissions, and rollback plan are the product.
+    </div>
+
+    <h2>Agents Fail Where Work Is Implicit</h2>
+    <p>Most companies do not have workflows. They have folklore. Someone knows the customer should be handled differently because of a previous refund. Someone else knows the spreadsheet column called “Status 2” is the only one that matters. A third person knows the CRM field is wrong but the billing system is right. None of that is in the prompt.</p><p>An AI agent can only operate against the context it can see, the tools it can use, and the rules it can follow. If the actual process lives in people’s heads, the agent will improvise. Sometimes that improvisation looks smart. Sometimes it creates a professional-grade mess with timestamps.</p><p>The weak point is rarely one dramatic model failure. It is usually a chain of small uncertainties:</p><ul><li>The agent is asked to “follow up” but not told what counts as resolved.</li><li>The agent can read a system but cannot tell which record is authoritative.</li><li>The agent can draft an email but cannot verify whether the offer is still valid.</li><li>The agent can create a ticket but cannot judge priority without business context.</li><li>The agent can call an API but nobody defined when it should stop.</li></ul><p>This is why “give it more tools” is often the wrong answer. More tools can make the failure mode larger. A confused agent with read-only access is annoying. A confused agent with write access, email access, and payment access is an incident with better branding.</p>
+
+    <h2>Use The Intern Test Before You Use An Agent</h2>
+    <p>Before assigning a task to an AI agent, ask a blunt question: could a smart new intern complete this job with the written instructions available today?</p><p>If the answer is no, the agent is not the problem. The process is. If the intern would need to interrupt five people, guess at missing definitions, inspect three systems manually, and ask whether “urgent” means today or this fiscal quarter, the agent will not magically turn that fog into operations.</p><p>The intern test is useful because it strips away the fantasy. A good agent task should have a clear start, a clear finish, obvious inputs, allowed tools, forbidden actions, and a review path. If those pieces are missing, do not deploy an agent. Write the job down first. Terrible news for everyone who wanted the future to skip documentation.</p><p>A practical agent-ready task looks like this: “Every weekday at 8 a.m., check support tickets tagged billing-refund. For each ticket under $100 with no fraud flag and a customer account older than 90 days, draft a refund approval note and send it to a human reviewer. Do not issue the refund.” That is not glamorous. It is also much closer to something that can work.</p><p>A bad version looks like this: “Handle refund tickets.” That sentence is not automation. It is a lawsuit starter kit in four words.</p>
+
+    <h2>Give The Agent A Contract, Not A Vibe</h2>
+    <p>The best AI agent deployments are not built around personality. They are built around contracts. Not legal contracts, though the lawyers may eventually wander in holding coffee. Operational contracts.</p><p>An agent contract should define what the agent is allowed to do and what it must never do. It should be plain enough that a manager, developer, and support lead can all argue over the same words. That argument is good. It means the hidden rules are finally becoming visible.</p><p>Start with six fields:</p><ul><li><strong>Goal:</strong> the exact outcome the agent is trying to produce.</li><li><strong>Inputs:</strong> the systems, files, queues, or messages it may read.</li><li><strong>Actions:</strong> the tools it may use, especially any write actions.</li><li><strong>Stop conditions:</strong> the point where the agent must pause or escalate.</li><li><strong>Review level:</strong> whether a human must approve the result before it affects a customer, codebase, account, or payment.</li><li><strong>Rollback plan:</strong> how to undo the action if the agent gets it wrong.</li></ul><p>This is also where risk management stops being decorative. NIST’s AI Risk Management Framework is voluntary guidance for managing risks in AI systems across design, development, use, and evaluation, and its basic lesson applies neatly here: trustworthy systems need governance, measurement, and monitoring, not just optimism in a hoodie. See the official <a href="https://www.nist.gov/itl/ai-risk-management-framework">NIST AI Risk Management Framework</a> for the grown-up version.</p>
+
+    <h2>Log What The Agent Saw, Did, And Skipped</h2>
+    <p>If an AI agent performs work and nobody can reconstruct what happened, you do not have automation. You have a haunted workflow.</p><p>Every serious agent needs an activity trail. Not a vague “task completed” message. A useful trail records the input it received, the sources it consulted, the tools it called, the changes it made, the confidence or uncertainty it expressed, and the reason it stopped. If it touched a customer record, opened a pull request, sent a message, or called an external service, that should be visible after the fact.</p><p>This matters even more when agents interact with code or internal systems. A human reviewer should not have to reverse-engineer the agent’s adventure from file diffs and vibes. For development work, the same principle behind an <a href="/pages/blog/ai-coding-agents-network-receipt/">AI coding agent network receipt</a> applies: show what left the machine, what came back, and what changed because of it.</p><p>Good logs also improve the next version of the workflow. When an agent fails, the log tells you whether the model misunderstood the task, lacked context, used the wrong tool, hit a permission problem, or ran into a business rule nobody had written down. That is the difference between “AI is bad” and “the refund policy has three contradictory branches.” The second one can be fixed. The first one is just yelling at weather.</p>
+
+    <h2>The Best Agents Will Look Boring First</h2>
+    <p>The near-term winners will not be the agents that promise to run a whole department. They will be the agents that do one irritating job reliably enough that people stop thinking about it.</p><p>Think smaller: classify inbound requests, prepare first drafts, reconcile obvious records, summarize long case histories, monitor status changes, collect missing fields, generate test scaffolds, flag policy exceptions, or package work for human approval. These jobs are not beneath AI. They are exactly where AI can become useful without pretending the business no longer needs judgment.</p><p>The pattern is simple. Start read-only. Then allow drafts. Then allow low-risk writes. Then allow limited automation with sampling and review. Then, maybe, expand. If an agent cannot succeed under observation in a narrow lane, it has not earned access to the highway.</p><p>This is the more boring version of the AI agent story. It is also the more believable one. Agents are not stuck because autonomy is impossible. They are stuck because autonomy needs rails, and rails require someone to admit how the work actually gets done.</p><p>That is the unglamorous 2026 agent playbook: smaller jobs, clearer rules, better logs, human review where it matters, and fewer promises that a chatbot with tool access is about to become the COO. Honestly, the COO should probably be relieved.</p>
+
+  </div>
+
+  <div class="post-footer">
+    <span class="post-footer-label">Looking for more AI tools?</span>
+    <a class="btn-export" href="/">See our free AI tools →</a>
+  </div>
+
+  <nav class="post-nav post-nav-bottom">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+</main>
+
+<!--FOOTER-->
+
+<script data-goatcounter="https://notavello.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script></body>
+</html>
