@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>SearchClear — Clean Google Results for Chrome | Notavello</title>
+<meta name="description" content="SearchClear adds a one-click filter bar to Google Search so you can cut ads, affiliate spam, Pinterest, AI filler, Reddit/Quora, and news clutter."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/tools/searchclear/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://notavello.com/tools/searchclear/"/>
+<meta property="og:title" content="SearchClear — Clean Google Results for Chrome"/>
+<meta property="og:description" content="A one-click filter bar for cleaner Google results. Cut ads, affiliate spam, Pinterest, AI filler, Reddit/Quora, and news clutter."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/tools/searchclear/assets/images/searchclear-og.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="SearchClear — Clean Google Results for Chrome"/>
+<meta name="twitter:description" content="Filter noisy Google results with one-click controls that work locally in your browser."/>
+<meta name="twitter:image" content="https://notavello.com/tools/searchclear/assets/images/searchclear-og.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "SearchClear",
+  "operatingSystem": "ChromeOS, Windows, macOS, Linux",
+  "applicationCategory": "ProductivityApplication",
+  "browserRequirements": "Requires Google Chrome",
+  "description": "SearchClear adds a filter bar to Google Search so users can reduce ads, affiliate spam, Pinterest, AI filler, Reddit/Quora, news clutter, and jump deeper into result ranges.",
+  "url": "https://notavello.com/tools/searchclear/",
+  "installUrl": "https://chromewebstore.google.com/detail/searchclear/fjfgmnnnpjkkfmmdnbahcjgiihokhfgn",
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #07111f;
+  --surface: rgba(15, 23, 42, 0.76);
+  --surface2: rgba(30, 41, 59, 0.72);
+  --surface3: #111827;
+  --ink: #f8fafc;
+  --ink-soft: #e0f2fe;
+  --ink-muted: #94a3b8;
+  --ink-faint: #64748b;
+  --blue: #1a73e8;
+  --blue2: #60a5fa;
+  --blue-soft: rgba(26,115,232,0.16);
+  --cyan: #38bdf8;
+  --pink: #ec4899;
+  --green: #22c55e;
+  --border: rgba(148,163,184,0.22);
+  --card-border: rgba(148,163,184,0.18);
+  --radius: 26px;
+  --radius-sm: 16px;
+  --shadow: 0 24px 80px rgba(0,0,0,0.42);
+}
+html { scroll-behavior: smooth; }
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 14% -2%, rgba(26,115,232,0.28), transparent 34%),
+    radial-gradient(circle at 88% 6%, rgba(236,72,153,0.16), transparent 34%),
+    radial-gradient(circle at 70% 98%, rgba(34,197,94,0.13), transparent 38%),
+    linear-gradient(180deg, #07111f 0%, #0b1220 45%, #111827 100%);
+  color: var(--ink);
+  font-family: 'Sora', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+.header {
+  background: rgba(7,17,31,0.78);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--border);
+  padding: 16px 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.logo {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: -0.04em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+.logo-icon {
+  width: 34px;
+  height: 34px;
+  background: linear-gradient(135deg, var(--blue), var(--cyan));
+  border-radius: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 0.9rem;
+  box-shadow: 0 8px 24px rgba(26,115,232,0.28);
+}
+.logo span { color: var(--blue2); }
+.header-actions { display: flex; gap: 10px; align-items: center; }
+.header-link {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #dbeafe;
+  text-decoration: none;
+  padding: 8px 18px;
+  border: 1.5px solid rgba(96,165,250,0.34);
+  border-radius: 999px;
+  background: rgba(26,115,232,0.10);
+}
+.header-link:hover { border-color: var(--blue2); background: rgba(26,115,232,0.16); }
+.main {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 70px 24px 92px;
+  animation: fadeUp 0.55s ease both;
+}
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--ink-muted);
+  text-decoration: none;
+  font-size: 0.86rem;
+  font-weight: 700;
+  margin-bottom: 34px;
+}
+.back-link:hover { color: #dbeafe; }
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  color: #dbeafe;
+  background: rgba(26,115,232,0.13);
+  border: 1px solid rgba(96,165,250,0.22);
+  padding: 8px 12px;
+  border-radius: 999px;
+  margin-bottom: 22px;
+}
+.eyebrow-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--blue2);
+  box-shadow: 0 0 0 6px rgba(96,165,250,0.12);
+}
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(420px, 0.95fr);
+  gap: 52px;
+  align-items: center;
+  margin-bottom: 72px;
+}
+.hero h1, .page-title {
+  font-family: 'Lora', Georgia, serif;
+  font-size: clamp(2.55rem, 5.3vw, 4.85rem);
+  line-height: 0.98;
+  letter-spacing: -0.06em;
+  margin-bottom: 24px;
+}
+.hero h1 em, .page-title em {
+  font-style: italic;
+  background: linear-gradient(135deg, #dbeafe, var(--blue2), var(--cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-lede, .page-lede {
+  font-size: 1.08rem;
+  line-height: 1.78;
+  color: var(--ink-muted);
+  max-width: 660px;
+  margin-bottom: 28px;
+}
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 18px;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 20px;
+  border-radius: 14px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 900;
+  transition: transform 0.15s, box-shadow 0.15s, background 0.15s, border-color 0.15s;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn-primary {
+  color: #fff;
+  background: linear-gradient(135deg, #60a5fa, var(--blue));
+  box-shadow: 0 14px 30px rgba(26,115,232,0.28);
+}
+.btn-secondary {
+  color: #dbeafe;
+  background: rgba(15,23,42,0.62);
+  border: 1.5px solid rgba(148,163,184,0.24);
+}
+.btn-secondary:hover { border-color: rgba(96,165,250,0.44); }
+.install-note {
+  color: var(--ink-faint);
+  font-size: 0.78rem;
+  line-height: 1.6;
+  max-width: 600px;
+}
+.product-stage {
+  position: relative;
+  min-height: 580px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.glow-ring {
+  position: absolute;
+  width: 430px;
+  height: 430px;
+  border-radius: 50%;
+  background: conic-gradient(from 120deg, rgba(26,115,232,0.5), rgba(56,189,248,0.24), rgba(236,72,153,0.24), rgba(26,115,232,0.5));
+  filter: blur(38px);
+  opacity: 0.50;
+}
+.hero-card {
+  position: relative;
+  width: min(100%, 520px);
+  border-radius: 28px;
+  background: linear-gradient(180deg, rgba(15,23,42,0.98), rgba(8,13,22,0.98));
+  border: 1px solid rgba(148,163,184,0.24);
+  box-shadow: var(--shadow);
+  padding: 18px;
+  overflow: hidden;
+}
+.browser-bar {
+  height: 46px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid rgba(148,163,184,0.18);
+  margin: -18px -18px 18px;
+  padding: 0 18px;
+  background: rgba(2,6,23,0.38);
+}
+.dot { width: 11px; height: 11px; border-radius: 50%; display: block; }
+.dot.red { background: #ef4444; } .dot.yellow { background: #f59e0b; } .dot.green { background: #22c55e; }
+.address-pill {
+  flex: 1;
+  min-width: 0;
+  margin-left: 8px;
+  color: var(--ink-faint);
+  font-size: 0.75rem;
+  border: 1px solid rgba(148,163,184,0.16);
+  border-radius: 999px;
+  padding: 7px 12px;
+  background: rgba(15,23,42,0.8);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.hero-screenshot {
+  display: block;
+  width: 100%;
+  border-radius: 20px;
+  border: 1px solid rgba(148,163,184,0.16);
+}
+.toolbar-preview {
+  position: absolute;
+  right: -16px;
+  bottom: -26px;
+  width: 235px;
+  max-width: 48vw;
+  border-radius: 18px;
+  border: 1px solid rgba(148,163,184,0.26);
+  box-shadow: 0 24px 70px rgba(0,0,0,0.45);
+}
+.float-card {
+  position: absolute;
+  border-radius: 18px;
+  background: rgba(15,23,42,0.82);
+  border: 1px solid rgba(148,163,184,0.18);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.34);
+  padding: 16px;
+  color: var(--ink-muted);
+  backdrop-filter: blur(14px);
+}
+.float-card strong { color: var(--ink); display: block; font-size: 0.9rem; margin-bottom: 4px; }
+.float-card span { font-size: 0.76rem; line-height: 1.45; }
+.float-card.one { left: -6px; top: 94px; width: 178px; }
+.float-card.two { right: -12px; top: 142px; width: 186px; }
+.section { margin-bottom: 66px; }
+.section-label {
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--ink-faint);
+  margin-bottom: 18px;
+}
+.grid-3, .grid-4 {
+  display: grid;
+  gap: 18px;
+}
+.grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.card {
+  background: rgba(15,23,42,0.72);
+  border: 1.5px solid var(--card-border);
+  border-radius: var(--radius);
+  box-shadow: 0 14px 48px rgba(0,0,0,0.18);
+  padding: 26px;
+}
+.install-card {
+  grid-column: 1 / -1;
+  background: radial-gradient(circle at 14% 0%, rgba(26,115,232,0.18), transparent 32%), rgba(15,23,42,0.78);
+}
+.card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 15px;
+  display: grid;
+  place-items: center;
+  background: rgba(26,115,232,0.15);
+  color: #dbeafe;
+  font-size: 1.35rem;
+  margin-bottom: 18px;
+}
+.card h2, .card h3 {
+  font-size: 1.02rem;
+  letter-spacing: -0.025em;
+  margin-bottom: 10px;
+}
+.card p {
+  color: var(--ink-muted);
+  font-size: 0.9rem;
+  line-height: 1.72;
+}
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  align-items: stretch;
+}
+.panel {
+  background: rgba(15,23,42,0.72);
+  border: 1.5px solid var(--card-border);
+  border-radius: var(--radius);
+  box-shadow: 0 14px 48px rgba(0,0,0,0.18);
+  padding: 32px;
+}
+.panel h2 {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.75rem;
+  line-height: 1.16;
+  letter-spacing: -0.035em;
+  margin-bottom: 14px;
+}
+.panel p, .policy-card p {
+  color: var(--ink-muted);
+  line-height: 1.78;
+  font-size: 0.96rem;
+  margin-bottom: 16px;
+}
+.check-list {
+  list-style: none;
+  display: grid;
+  gap: 12px;
+  margin-top: 22px;
+}
+.check-list li {
+  color: var(--ink-muted);
+  line-height: 1.62;
+  font-size: 0.92rem;
+  padding-left: 30px;
+  position: relative;
+}
+.check-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(26,115,232,0.16);
+  color: #93c5fd;
+  font-size: 0.75rem;
+  font-weight: 900;
+  display: grid;
+  place-items: center;
+}
+.steps { counter-reset: steps; display: grid; gap: 14px; }
+.step {
+  counter-increment: steps;
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  gap: 14px;
+  align-items: start;
+  background: rgba(15,23,42,0.72);
+  border: 1px solid var(--card-border);
+  border-radius: 18px;
+  padding: 18px;
+}
+.step::before {
+  content: counter(steps);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #93c5fd, var(--blue));
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  font-size: 0.86rem;
+}
+.step strong { display: block; color: var(--ink); margin-bottom: 4px; }
+.step span { color: var(--ink-muted); line-height: 1.65; font-size: 0.9rem; }
+.support {
+  text-align: center;
+  background: radial-gradient(circle at 24% 0%, rgba(26,115,232,0.18), transparent 32%), rgba(15,23,42,0.72);
+  border: 1.5px solid rgba(96,165,250,0.16);
+  border-radius: 28px;
+  padding: 38px 24px;
+}
+.support h2 {
+  font-family: 'Lora', Georgia, serif;
+  font-size: clamp(1.55rem, 4vw, 2.25rem);
+  letter-spacing: -0.03em;
+  margin-bottom: 12px;
+}
+.support p { color: var(--ink-muted); line-height: 1.7; max-width: 720px; margin: 0 auto 20px; }
+.policy-wrap { max-width: 860px; }
+.policy-card {
+  background: rgba(15,23,42,0.76);
+  border: 1.5px solid var(--card-border);
+  border-radius: var(--radius);
+  box-shadow: 0 14px 48px rgba(0,0,0,0.18);
+  padding: 34px;
+  margin-bottom: 18px;
+}
+.policy-card h2 {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.62rem;
+  margin-bottom: 12px;
+  letter-spacing: -0.035em;
+}
+.policy-card h3 { font-size: 1rem; margin: 20px 0 8px; }
+.policy-card ul { color: var(--ink-muted); line-height: 1.75; margin: 8px 0 0 22px; }
+.notice {
+  padding: 18px 20px;
+  border-radius: 18px;
+  background: rgba(2,6,23,0.62);
+  border: 1px solid rgba(96,165,250,0.16);
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 32px 36px;
+  background: rgba(7,17,31,0.82);
+}
+.site-footer-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  color: var(--ink-faint);
+  font-size: 0.76rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.site-footer a { color: var(--ink-muted); text-decoration: none; }
+.site-footer a:hover { color: #dbeafe; }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 960px) {
+  .hero { grid-template-columns: 1fr; gap: 32px; }
+  .product-stage { min-height: auto; padding: 22px 0; }
+  .float-card { display: none; }
+  .grid-3, .grid-4, .split { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .header { padding: 14px 20px; }
+  .header-actions { display: none; }
+  .logo { font-size: 1.16rem; }
+  .logo-icon { width: 32px; height: 32px; }
+  .main { padding: 42px 16px 76px; }
+  .hero h1, .page-title { font-size: clamp(2.25rem, 12vw, 3.2rem); }
+  .hero-lede, .page-lede { font-size: 1rem; }
+  .hero-actions .btn { width: 100%; }
+  .toolbar-preview { position: relative; right: auto; bottom: auto; margin: 18px auto 0; display: block; width: min(250px, 100%); }
+  .card, .panel, .policy-card { padding: 24px 22px; }
+  .site-footer { padding: 28px 20px; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <a class="logo" href="/">
+    <span class="logo-icon">🔍</span>
+    Nota <span>vello</span>
+  </a>
+  <div class="header-actions">
+    <a class="header-link" href="/tools/searchclear/privacy/">Privacy</a>
+    <a class="header-link" href="/">Tools</a>
+  </div>
+</header>
+
+<main class="main">
+  <a class="back-link" href="/">← Back to tools</a>
+
+  <section class="hero">
+    <div>
+      <div class="eyebrow"><span class="eyebrow-dot"></span> Chrome extension</div>
+      <h1>Cleaner Google results, <em>one click at a time.</em></h1>
+      <p class="hero-lede">SearchClear adds a slim control strip above Google Search results so you can hide the noise: ads, affiliate spam, Pinterest, AI filler, Reddit/Quora, news sites, stale results, and SEO-gamed pages.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://chromewebstore.google.com/detail/searchclear/fjfgmnnnpjkkfmmdnbahcjgiihokhfgn" target="_blank" rel="noopener">Install from Chrome Web Store →</a>
+        <a class="btn btn-secondary" href="/tools/searchclear/privacy/">Privacy policy</a>
+        <a class="btn btn-secondary" href="#install">How it works</a>
+      </div>
+      <p class="install-note">Built for Chrome. No account required. No tracking built into the extension. The Chrome Web Store link becomes publicly usable after the listing is approved.</p>
+    </div>
+
+    <div class="product-stage" aria-label="SearchClear extension preview">
+      <div class="glow-ring"></div>
+      <div class="float-card one"><strong>Filter noise</strong><span>Turn common result clutter on or off with pill-style controls.</span></div>
+      <div class="float-card two"><strong>Stay local</strong><span>Your filter settings stay in browser storage. No SearchClear account required.</span></div>
+      <div class="hero-card">
+        <div class="browser-bar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><div class="address-pill">google.com/search?q=best answers</div></div>
+        <img class="hero-screenshot" src="assets/images/searchclear-hero.png" alt="SearchClear Chrome Web Store promotional screenshot">
+        <img class="toolbar-preview" src="assets/images/searchclear-toolbar.png" alt="SearchClear toolbar with active search filters">
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="features">
+    <p class="section-label">One-click filters</p>
+    <div class="grid-4">
+      <article class="card">
+        <div class="card-icon">🚫</div>
+        <h2>Hide common clutter</h2>
+        <p>Toggle filters for sponsored results, affiliate-heavy review sites, Pinterest, AI writing tools, Reddit/Quora, and news domains.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon">📅</div>
+        <h2>Time-bound searches</h2>
+        <p>Quickly narrow Google results to the last 24 hours, week, month, or year without digging through Google’s tools menu.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon">#</div>
+        <h2>Jump deeper</h2>
+        <p>Skip straight to deeper result ranges like 51–100 or 101–200 when the first page is too optimized to be useful.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon">📌</div>
+        <h2>Sticky preferences</h2>
+        <p>Save your preferred filters so your setup is ready on your next Google search.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section split" id="privacy">
+    <div class="panel">
+      <h2>Designed for searchers who want control.</h2>
+      <p>SearchClear does not replace Google. It adds a practical layer of controls to the results page and builds cleaner Google search URLs from your choices.</p>
+      <ul class="check-list">
+        <li>Works directly on Google search result pages.</li>
+        <li>Supports custom domains you want to block permanently.</li>
+        <li>Includes an optional context-menu search action for selected text.</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h2>Privacy-focused by default.</h2>
+      <p>The extension stores your SearchClear settings locally through Chrome extension storage. It does not require a SearchClear account, does not send your settings to a SearchClear server, and does not include analytics in the extension.</p>
+      <ul class="check-list">
+        <li>No account required.</li>
+        <li>No extension analytics.</li>
+        <li>No sale or sharing of personal information by SearchClear.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="install">
+    <p class="section-label">Install & workflow</p>
+    <div class="grid-3">
+      <article class="card install-card">
+        <div class="card-icon">🧩</div>
+        <h2>Install from the Chrome Web Store</h2>
+        <p>Install SearchClear from the official listing when the Chrome Web Store review is approved. Before approval, the listing may not be publicly accessible yet.</p>
+        <p style="margin-top:14px;"><a class="btn btn-primary" href="https://chromewebstore.google.com/detail/searchclear/fjfgmnnnpjkkfmmdnbahcjgiihokhfgn" target="_blank" rel="noopener">Open Chrome Web Store listing →</a></p>
+      </article>
+      <article class="card">
+        <div class="card-icon">1</div>
+        <h2>Search Google normally</h2>
+        <p>Open any Google results page. SearchClear places the toolbar above the results where you already work.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon">2</div>
+        <h2>Choose filters</h2>
+        <p>Click the pill controls you want. SearchClear updates the Google search URL with the right exclusions and search parameters.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon">3</div>
+        <h2>Keep searching</h2>
+        <p>Use sticky filters to remember your setup, or reset back to regular results whenever you need to.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <p class="section-label">Simple workflow</p>
+    <div class="steps">
+      <div class="step"><div><strong>Hide the sources you do not want.</strong><span>Block broad categories or add your own custom domain list for repeated exclusions.</span></div></div>
+      <div class="step"><div><strong>Focus by date or source type.</strong><span>Switch between any time, 24 hours, week, month, year, or news-only searches.</span></div></div>
+      <div class="step"><div><strong>Jump past the SEO pileup.</strong><span>Use result range shortcuts to move beyond the first few result pages faster.</span></div></div>
+    </div>
+  </section>
+
+  <section class="support" id="support">
+    <h2>Support for SearchClear</h2>
+    <p>If something is not working, include your Chrome version, operating system, the Google search URL where it happened, and which filters were active. Avoid sending sensitive search terms in support messages.</p>
+    <a class="btn btn-primary" href="https://chromewebstore.google.com/detail/searchclear/fjfgmnnnpjkkfmmdnbahcjgiihokhfgn" target="_blank" rel="noopener">Install from Chrome Web Store →</a>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <span>© Notavello</span>
+    <span><a href="/">Tools</a> · <a href="/tools/searchclear/privacy/">SearchClear Privacy</a> · <a href="/pages/blog/">The Export</a></span>
+  </div>
+</footer>
+</body>
+</html>

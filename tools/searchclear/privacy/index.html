@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>SearchClear Privacy Policy | Notavello</title>
+<meta name="description" content="Privacy policy for the SearchClear Chrome extension by Notavello."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/tools/searchclear/privacy/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://notavello.com/tools/searchclear/privacy/"/>
+<meta property="og:title" content="SearchClear Privacy Policy"/>
+<meta property="og:description" content="SearchClear stores settings locally and does not require an account or include extension analytics."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/tools/searchclear/assets/images/searchclear-og.png"/>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #07111f;
+  --surface: rgba(15, 23, 42, 0.76);
+  --surface2: rgba(30, 41, 59, 0.72);
+  --surface3: #111827;
+  --ink: #f8fafc;
+  --ink-soft: #e0f2fe;
+  --ink-muted: #94a3b8;
+  --ink-faint: #64748b;
+  --blue: #1a73e8;
+  --blue2: #60a5fa;
+  --blue-soft: rgba(26,115,232,0.16);
+  --cyan: #38bdf8;
+  --pink: #ec4899;
+  --green: #22c55e;
+  --border: rgba(148,163,184,0.22);
+  --card-border: rgba(148,163,184,0.18);
+  --radius: 26px;
+  --radius-sm: 16px;
+  --shadow: 0 24px 80px rgba(0,0,0,0.42);
+}
+html { scroll-behavior: smooth; }
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 14% -2%, rgba(26,115,232,0.28), transparent 34%),
+    radial-gradient(circle at 88% 6%, rgba(236,72,153,0.16), transparent 34%),
+    radial-gradient(circle at 70% 98%, rgba(34,197,94,0.13), transparent 38%),
+    linear-gradient(180deg, #07111f 0%, #0b1220 45%, #111827 100%);
+  color: var(--ink);
+  font-family: 'Sora', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+.header {
+  background: rgba(7,17,31,0.78);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--border);
+  padding: 16px 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.logo {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: -0.04em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+.logo-icon {
+  width: 34px;
+  height: 34px;
+  background: linear-gradient(135deg, var(--blue), var(--cyan));
+  border-radius: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 0.9rem;
+  box-shadow: 0 8px 24px rgba(26,115,232,0.28);
+}
+.logo span { color: var(--blue2); }
+.header-actions { display: flex; gap: 10px; align-items: center; }
+.header-link {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #dbeafe;
+  text-decoration: none;
+  padding: 8px 18px;
+  border: 1.5px solid rgba(96,165,250,0.34);
+  border-radius: 999px;
+  background: rgba(26,115,232,0.10);
+}
+.header-link:hover { border-color: var(--blue2); background: rgba(26,115,232,0.16); }
+.main {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 70px 24px 92px;
+  animation: fadeUp 0.55s ease both;
+}
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--ink-muted);
+  text-decoration: none;
+  font-size: 0.86rem;
+  font-weight: 700;
+  margin-bottom: 34px;
+}
+.back-link:hover { color: #dbeafe; }
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  color: #dbeafe;
+  background: rgba(26,115,232,0.13);
+  border: 1px solid rgba(96,165,250,0.22);
+  padding: 8px 12px;
+  border-radius: 999px;
+  margin-bottom: 22px;
+}
+.eyebrow-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--blue2);
+  box-shadow: 0 0 0 6px rgba(96,165,250,0.12);
+}
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(420px, 0.95fr);
+  gap: 52px;
+  align-items: center;
+  margin-bottom: 72px;
+}
+.hero h1, .page-title {
+  font-family: 'Lora', Georgia, serif;
+  font-size: clamp(2.55rem, 5.3vw, 4.85rem);
+  line-height: 0.98;
+  letter-spacing: -0.06em;
+  margin-bottom: 24px;
+}
+.hero h1 em, .page-title em {
+  font-style: italic;
+  background: linear-gradient(135deg, #dbeafe, var(--blue2), var(--cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-lede, .page-lede {
+  font-size: 1.08rem;
+  line-height: 1.78;
+  color: var(--ink-muted);
+  max-width: 660px;
+  margin-bottom: 28px;
+}
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 18px;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 20px;
+  border-radius: 14px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 900;
+  transition: transform 0.15s, box-shadow 0.15s, background 0.15s, border-color 0.15s;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn-primary {
+  color: #fff;
+  background: linear-gradient(135deg, #60a5fa, var(--blue));
+  box-shadow: 0 14px 30px rgba(26,115,232,0.28);
+}
+.btn-secondary {
+  color: #dbeafe;
+  background: rgba(15,23,42,0.62);
+  border: 1.5px solid rgba(148,163,184,0.24);
+}
+.btn-secondary:hover { border-color: rgba(96,165,250,0.44); }
+.install-note {
+  color: var(--ink-faint);
+  font-size: 0.78rem;
+  line-height: 1.6;
+  max-width: 600px;
+}
+.product-stage {
+  position: relative;
+  min-height: 580px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.glow-ring {
+  position: absolute;
+  width: 430px;
+  height: 430px;
+  border-radius: 50%;
+  background: conic-gradient(from 120deg, rgba(26,115,232,0.5), rgba(56,189,248,0.24), rgba(236,72,153,0.24), rgba(26,115,232,0.5));
+  filter: blur(38px);
+  opacity: 0.50;
+}
+.hero-card {
+  position: relative;
+  width: min(100%, 520px);
+  border-radius: 28px;
+  background: linear-gradient(180deg, rgba(15,23,42,0.98), rgba(8,13,22,0.98));
+  border: 1px solid rgba(148,163,184,0.24);
+  box-shadow: var(--shadow);
+  padding: 18px;
+  overflow: hidden;
+}
+.browser-bar {
+  height: 46px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid rgba(148,163,184,0.18);
+  margin: -18px -18px 18px;
+  padding: 0 18px;
+  background: rgba(2,6,23,0.38);
+}
+.dot { width: 11px; height: 11px; border-radius: 50%; display: block; }
+.dot.red { background: #ef4444; } .dot.yellow { background: #f59e0b; } .dot.green { background: #22c55e; }
+.address-pill {
+  flex: 1;
+  min-width: 0;
+  margin-left: 8px;
+  color: var(--ink-faint);
+  font-size: 0.75rem;
+  border: 1px solid rgba(148,163,184,0.16);
+  border-radius: 999px;
+  padding: 7px 12px;
+  background: rgba(15,23,42,0.8);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.hero-screenshot {
+  display: block;
+  width: 100%;
+  border-radius: 20px;
+  border: 1px solid rgba(148,163,184,0.16);
+}
+.toolbar-preview {
+  position: absolute;
+  right: -16px;
+  bottom: -26px;
+  width: 235px;
+  max-width: 48vw;
+  border-radius: 18px;
+  border: 1px solid rgba(148,163,184,0.26);
+  box-shadow: 0 24px 70px rgba(0,0,0,0.45);
+}
+.float-card {
+  position: absolute;
+  border-radius: 18px;
+  background: rgba(15,23,42,0.82);
+  border: 1px solid rgba(148,163,184,0.18);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.34);
+  padding: 16px;
+  color: var(--ink-muted);
+  backdrop-filter: blur(14px);
+}
+.float-card strong { color: var(--ink); display: block; font-size: 0.9rem; margin-bottom: 4px; }
+.float-card span { font-size: 0.76rem; line-height: 1.45; }
+.float-card.one { left: -6px; top: 94px; width: 178px; }
+.float-card.two { right: -12px; top: 142px; width: 186px; }
+.section { margin-bottom: 66px; }
+.section-label {
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--ink-faint);
+  margin-bottom: 18px;
+}
+.grid-3, .grid-4 {
+  display: grid;
+  gap: 18px;
+}
+.grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.card {
+  background: rgba(15,23,42,0.72);
+  border: 1.5px solid var(--card-border);
+  border-radius: var(--radius);
+  box-shadow: 0 14px 48px rgba(0,0,0,0.18);
+  padding: 26px;
+}
+.install-card {
+  grid-column: 1 / -1;
+  background: radial-gradient(circle at 14% 0%, rgba(26,115,232,0.18), transparent 32%), rgba(15,23,42,0.78);
+}
+.card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 15px;
+  display: grid;
+  place-items: center;
+  background: rgba(26,115,232,0.15);
+  color: #dbeafe;
+  font-size: 1.35rem;
+  margin-bottom: 18px;
+}
+.card h2, .card h3 {
+  font-size: 1.02rem;
+  letter-spacing: -0.025em;
+  margin-bottom: 10px;
+}
+.card p {
+  color: var(--ink-muted);
+  font-size: 0.9rem;
+  line-height: 1.72;
+}
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  align-items: stretch;
+}
+.panel {
+  background: rgba(15,23,42,0.72);
+  border: 1.5px solid var(--card-border);
+  border-radius: var(--radius);
+  box-shadow: 0 14px 48px rgba(0,0,0,0.18);
+  padding: 32px;
+}
+.panel h2 {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.75rem;
+  line-height: 1.16;
+  letter-spacing: -0.035em;
+  margin-bottom: 14px;
+}
+.panel p, .policy-card p {
+  color: var(--ink-muted);
+  line-height: 1.78;
+  font-size: 0.96rem;
+  margin-bottom: 16px;
+}
+.check-list {
+  list-style: none;
+  display: grid;
+  gap: 12px;
+  margin-top: 22px;
+}
+.check-list li {
+  color: var(--ink-muted);
+  line-height: 1.62;
+  font-size: 0.92rem;
+  padding-left: 30px;
+  position: relative;
+}
+.check-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(26,115,232,0.16);
+  color: #93c5fd;
+  font-size: 0.75rem;
+  font-weight: 900;
+  display: grid;
+  place-items: center;
+}
+.steps { counter-reset: steps; display: grid; gap: 14px; }
+.step {
+  counter-increment: steps;
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  gap: 14px;
+  align-items: start;
+  background: rgba(15,23,42,0.72);
+  border: 1px solid var(--card-border);
+  border-radius: 18px;
+  padding: 18px;
+}
+.step::before {
+  content: counter(steps);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #93c5fd, var(--blue));
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  font-size: 0.86rem;
+}
+.step strong { display: block; color: var(--ink); margin-bottom: 4px; }
+.step span { color: var(--ink-muted); line-height: 1.65; font-size: 0.9rem; }
+.support {
+  text-align: center;
+  background: radial-gradient(circle at 24% 0%, rgba(26,115,232,0.18), transparent 32%), rgba(15,23,42,0.72);
+  border: 1.5px solid rgba(96,165,250,0.16);
+  border-radius: 28px;
+  padding: 38px 24px;
+}
+.support h2 {
+  font-family: 'Lora', Georgia, serif;
+  font-size: clamp(1.55rem, 4vw, 2.25rem);
+  letter-spacing: -0.03em;
+  margin-bottom: 12px;
+}
+.support p { color: var(--ink-muted); line-height: 1.7; max-width: 720px; margin: 0 auto 20px; }
+.policy-wrap { max-width: 860px; }
+.policy-card {
+  background: rgba(15,23,42,0.76);
+  border: 1.5px solid var(--card-border);
+  border-radius: var(--radius);
+  box-shadow: 0 14px 48px rgba(0,0,0,0.18);
+  padding: 34px;
+  margin-bottom: 18px;
+}
+.policy-card h2 {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.62rem;
+  margin-bottom: 12px;
+  letter-spacing: -0.035em;
+}
+.policy-card h3 { font-size: 1rem; margin: 20px 0 8px; }
+.policy-card ul { color: var(--ink-muted); line-height: 1.75; margin: 8px 0 0 22px; }
+.notice {
+  padding: 18px 20px;
+  border-radius: 18px;
+  background: rgba(2,6,23,0.62);
+  border: 1px solid rgba(96,165,250,0.16);
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 32px 36px;
+  background: rgba(7,17,31,0.82);
+}
+.site-footer-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  color: var(--ink-faint);
+  font-size: 0.76rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.site-footer a { color: var(--ink-muted); text-decoration: none; }
+.site-footer a:hover { color: #dbeafe; }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 960px) {
+  .hero { grid-template-columns: 1fr; gap: 32px; }
+  .product-stage { min-height: auto; padding: 22px 0; }
+  .float-card { display: none; }
+  .grid-3, .grid-4, .split { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .header { padding: 14px 20px; }
+  .header-actions { display: none; }
+  .logo { font-size: 1.16rem; }
+  .logo-icon { width: 32px; height: 32px; }
+  .main { padding: 42px 16px 76px; }
+  .hero h1, .page-title { font-size: clamp(2.25rem, 12vw, 3.2rem); }
+  .hero-lede, .page-lede { font-size: 1rem; }
+  .hero-actions .btn { width: 100%; }
+  .toolbar-preview { position: relative; right: auto; bottom: auto; margin: 18px auto 0; display: block; width: min(250px, 100%); }
+  .card, .panel, .policy-card { padding: 24px 22px; }
+  .site-footer { padding: 28px 20px; }
+}
+</style>
+</head>
+<body>
+<header class="header">
+  <a class="logo" href="/">
+    <span class="logo-icon">🔍</span>
+    Nota <span>vello</span>
+  </a>
+  <div class="header-actions">
+    <a class="header-link" href="/tools/searchclear/">SearchClear</a>
+    <a class="header-link" href="/">Tools</a>
+  </div>
+</header>
+
+<main class="main policy-wrap">
+  <a class="back-link" href="/tools/searchclear/">← Back to SearchClear</a>
+  <div class="eyebrow"><span class="eyebrow-dot"></span> Privacy policy</div>
+  <h1 class="page-title">SearchClear <em>Privacy Policy.</em></h1>
+  <p class="page-lede">This policy explains what the SearchClear Chrome extension stores, what it does not collect, and how its browser permissions are used.</p>
+
+  <section class="policy-card">
+    <h2>Summary</h2>
+    <p>SearchClear is designed to work locally in your browser. The extension does not require a SearchClear account, does not include extension analytics, and does not sell personal information.</p>
+    <div class="notice"><strong>Effective date:</strong> July 6, 2026</div>
+  </section>
+
+  <section class="policy-card">
+    <h2>Information SearchClear stores</h2>
+    <p>SearchClear stores only the preferences needed to make the extension work:</p>
+    <ul>
+      <li>Saved filter settings, such as hide ads, affiliate spam, Pinterest, AI filler, Reddit/Quora, news sites, date range, and result range.</li>
+      <li>Your custom domain blocklist, when you add domains to exclude from search results.</li>
+      <li>Whether sticky filters are enabled.</li>
+      <li>Whether the optional “Force real Google from address bar” setting is enabled.</li>
+    </ul>
+    <p>These settings are stored using Chrome extension storage. Depending on your Chrome settings, Chrome may sync extension storage through your Google account. SearchClear does not operate its own account system or remote sync server.</p>
+  </section>
+
+  <section class="policy-card">
+    <h2>Search queries and browsing activity</h2>
+    <p>SearchClear reads the current Google search URL so it can show the active filter state and build an updated Google search URL when you click a filter.</p>
+    <p>If you turn on the optional address-bar redirect feature, SearchClear may detect search navigations on supported search engines and redirect the query to Google with your saved filters applied. This processing happens in the browser so the extension can update the current tab.</p>
+    <p>SearchClear does not send your search queries, browsing history, or filter settings to a SearchClear server.</p>
+  </section>
+
+  <section class="policy-card">
+    <h2>Information SearchClear does not collect</h2>
+    <ul>
+      <li>No name, email address, or account login is required by the extension.</li>
+      <li>No payment information is collected by the extension.</li>
+      <li>No analytics events are built into the extension.</li>
+      <li>No personal information is sold or shared by SearchClear.</li>
+      <li>No SearchClear server receives your saved filter settings or custom blocklist.</li>
+    </ul>
+  </section>
+
+  <section class="policy-card">
+    <h2>Permissions and why they are used</h2>
+    <h3>storage</h3>
+    <p>Used to save your filter preferences, custom blocklist, sticky-filter setting, and optional redirect setting.</p>
+    <h3>tabs</h3>
+    <p>Used to open or update tabs when SearchClear builds a filtered Google search URL from the popup, context menu, omnibox, or optional redirect feature.</p>
+    <h3>webNavigation</h3>
+    <p>Used only for the optional address-bar redirect feature so SearchClear can recognize supported search-engine result URLs and redirect them to Google with your saved filters.</p>
+    <h3>contextMenus</h3>
+    <p>Used to add a “Search with SearchClear” option when you select text on a page.</p>
+    <h3>Host permissions</h3>
+    <p>Used to run the SearchClear toolbar on Google search result pages and, when the optional redirect feature is enabled, recognize supported search-engine result pages for redirecting to Google.</p>
+  </section>
+
+  <section class="policy-card">
+    <h2>Third parties</h2>
+    <p>SearchClear modifies Google search URLs and opens Google Search pages. Google’s own services are governed by Google’s privacy practices. SearchClear is not affiliated with Google.</p>
+    <p>The extension does not use third-party analytics, advertising SDKs, or external data brokers.</p>
+  </section>
+
+  <section class="policy-card">
+    <h2>Children’s privacy</h2>
+    <p>SearchClear is a general productivity/search utility. It is not directed to children and does not knowingly collect personal information from children.</p>
+  </section>
+
+  <section class="policy-card">
+    <h2>Changes to this policy</h2>
+    <p>This privacy policy may be updated if SearchClear’s features or permissions change. The effective date above will be updated when material changes are made.</p>
+  </section>
+
+  <section class="policy-card">
+    <h2>Contact</h2>
+    <p>For privacy questions or support, use the support contact listed on the Chrome Web Store listing or contact Notavello through the Notavello website.</p>
+    <p><a class="btn btn-primary" href="/tools/searchclear/">Return to SearchClear →</a></p>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <span>© Notavello</span>
+    <span><a href="/">Tools</a> · <a href="/tools/searchclear/">SearchClear</a> · <a href="/pages/blog/">The Export</a></span>
+  </div>
+</footer>
+</body>
+</html>
