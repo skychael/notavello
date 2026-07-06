@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /*
-  Notavello safe blog splitter v5
+  Notavello safe blog splitter v6
   --------------------------------
   Goal:
   - Preserve the existing Notavello blog design from pages/blog/index.html
@@ -118,9 +118,48 @@ function parseDateToTime(dateText) {
   const m = cleaned.match(/\b([A-Za-z]+)\s+(\d{1,2}),\s*(\d{4})\b/);
   if (m) {
     const month = monthNames[m[1].toLowerCase()];
-    if (month !== undefined) return new Date(Number(m[3]), month, Number(m[2])).getTime();
+    if (month !== undefined) return Date.UTC(Number(m[3]), month, Number(m[2]));
   }
   return 0;
+}
+
+function hasTimeComponent(dateText) {
+  const value = decodeBasicHtml(dateText || '').trim();
+  if (!value) return false;
+  // ISO datetimes contain T10:17 or a space before HH:MM. Human visible dates
+  // like "July 6, 2026" intentionally do not count as precise timestamps.
+  return /(?:T|\s)\d{1,2}:\d{2}(?::\d{2})?(?:\.\d+)?(?:Z|[+-]\d{2}:?\d{2})?\b/.test(value);
+}
+
+function getDateKey(time) {
+  if (!time) return '';
+  return new Date(time).toISOString().slice(0, 10);
+}
+
+function getJsonLdValue(html, key) {
+  const scripts = html.match(/<script\b[^>]*type=["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>/gi) || [];
+  for (const script of scripts) {
+    const body = script
+      .replace(/^<script\b[^>]*>/i, '')
+      .replace(/<\/script>$/i, '')
+      .trim();
+    try {
+      const parsed = JSON.parse(body);
+      const items = Array.isArray(parsed) ? parsed : [parsed];
+      for (const item of items) {
+        if (item && typeof item === 'object' && item[key]) return String(item[key]);
+        if (item && item['@graph'] && Array.isArray(item['@graph'])) {
+          const graphMatch = item['@graph'].find(node => node && typeof node === 'object' && node[key]);
+          if (graphMatch) return String(graphMatch[key]);
+        }
+      }
+    } catch (_) {
+      const escaped = key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      const fallback = body.match(new RegExp(`["']${escaped}["']\\s*:\\s*["']([^"']+)["']`, 'i'));
+      if (fallback) return fallback[1];
+    }
+  }
+  return '';
 }
 
 function formatDate(input) {
@@ -132,22 +171,55 @@ function formatDate(input) {
   }).format(new Date(time));
 }
 
-function extractExistingCards(indexHtml) {
+function readExistingBlogIndexPages(firstPageHtml) {
+  const pages = [firstPageHtml];
+
+  for (let page = 2; page < 1000; page++) {
+    const pagePath = path.join(BLOG_DIR, `page-${page}`, 'index.html');
+    if (!fs.existsSync(pagePath)) break;
+    pages.push(readText(pagePath));
+  }
+
+  return pages;
+}
+
+function extractExistingCards(indexPagesHtml) {
   const cards = new Map();
   const cardRegex = /<a\s+class=["']post-card["'][\s\S]*?<\/a>/gi;
-  const matches = indexHtml.match(cardRegex) || [];
+  const pages = Array.isArray(indexPagesHtml) ? indexPagesHtml : [indexPagesHtml];
+  let order = 0;
 
-  for (const html of matches) {
-    const hrefMatch = html.match(/href=["']([^"']+)["']/i);
-    const href = hrefMatch ? hrefMatch[1] : '';
-    const slug = slugFromHref(href);
-    if (!slug) continue;
-    const title = getFirstMatch(html, /<div\s+class=["']post-card-title["']>([\s\S]*?)<\/div>/i);
-    const desc = getFirstMatch(html, /<div\s+class=["']post-card-desc["']>([\s\S]*?)<\/div>/i);
-    const tag = getFirstMatch(html, /<span\s+class=["']post-tag["']>([\s\S]*?)<\/span>/i);
-    const date = getFirstMatch(html, /<span\s+class=["']post-date["']>([\s\S]*?)<\/span>/i);
-    cards.set(slug, { slug, href, title, desc, tag, date, time: parseDateToTime(date), html: html.trim() });
+  for (const pageHtml of pages) {
+    const matches = pageHtml.match(cardRegex) || [];
+    for (const html of matches) {
+      const hrefMatch = html.match(/href=["']([^"']+)["']/i);
+      const href = hrefMatch ? hrefMatch[1] : '';
+      const slug = slugFromHref(href);
+      if (!slug) continue;
+      const title = getFirstMatch(html, /<div\s+class=["']post-card-title["']>([\s\S]*?)<\/div>/i);
+      const desc = getFirstMatch(html, /<div\s+class=["']post-card-desc["']>([\s\S]*?)<\/div>/i);
+      const tag = getFirstMatch(html, /<span\s+class=["']post-tag["']>([\s\S]*?)<\/span>/i);
+      const date = getFirstMatch(html, /<span\s+class=["']post-date["']>([\s\S]*?)<\/span>/i);
+      const openingTag = (html.match(/<a\b[^>]*>/i) || [''])[0];
+      const publishedAt = getAttribute(openingTag, 'data-published-at');
+      const timeSource = publishedAt || date;
+      cards.set(slug, {
+        slug,
+        href,
+        title,
+        desc,
+        tag,
+        date,
+        publishedAt,
+        time: parseDateToTime(timeSource),
+        hasPreciseTime: hasTimeComponent(timeSource),
+        existingOrder: order,
+        html: html.trim()
+      });
+      order += 1;
+    }
   }
+
   return cards;
 }
 
@@ -183,21 +255,25 @@ function extractPostMetadata(slug, postHtml, postIndexPath, existing) {
     (existing && existing.tag) ||
     'Tech';
 
-  let date =
+  const rawDate =
+    getMeta(postHtml, 'notavello:published_at') ||
     getMeta(postHtml, 'article:published_time') ||
     getMeta(postHtml, 'date') ||
     getMeta(postHtml, 'publish_date') ||
+    getJsonLdValue(postHtml, 'datePublished') ||
     getFirstMatch(postHtml, /<time[^>]*(?:datetime=["']([^"']+)["'])[^>]*>/i) ||
     getFirstMatch(postHtml, /<time[^>]*>([\s\S]*?)<\/time>/i) ||
     getFirstMatch(postHtml, /<span[^>]*class=["'][^"']*(?:post-date|date|published)[^"']*["'][^>]*>([\s\S]*?)<\/span>/i) ||
     findDateText(postHtml) ||
-    (existing && existing.date) ||
+    (existing && (existing.publishedAt || existing.date)) ||
     '';
 
-  date = formatDate(date);
-  const time = parseDateToTime(date) || fs.statSync(postIndexPath).mtime.getTime();
+  const date = formatDate(rawDate);
+  const time = parseDateToTime(rawDate) || (existing && existing.time) || 0;
+  const hasPreciseTime = hasTimeComponent(rawDate) || Boolean(existing && existing.hasPreciseTime);
+  const existingOrder = Number.isInteger(existing && existing.existingOrder) ? existing.existingOrder : Number.MAX_SAFE_INTEGER;
 
-  return { slug, href, title, desc, tag, date, time };
+  return { slug, href, title, desc, tag, date, publishedAt: rawDate, time, hasPreciseTime, existingOrder };
 }
 
 function findDateText(html) {
@@ -207,7 +283,8 @@ function findDateText(html) {
 }
 
 function makeCardHtml(post) {
-  return `<a class="post-card" href="${escapeHtml(post.href)}">
+  const publishedAttr = post.publishedAt ? ` data-published-at="${escapeHtml(post.publishedAt)}"` : '';
+  return `<a class="post-card" href="${escapeHtml(post.href)}"${publishedAttr}>
 <div class="post-card-meta">
 <span class="post-tag">${escapeHtml(post.tag || 'Tech')}</span>
 <span class="post-date">${escapeHtml(post.date || '')}</span>
@@ -259,7 +336,17 @@ function scanPostFolders(existingCards) {
   }
 
   posts.sort((a, b) => {
+    // Primary sort: newest real publish timestamp first. Generated posts now
+    // include this timestamp in their HTML, so future same-day posts rise to
+    // the top instead of sorting by title.
     if (b.time !== a.time) return b.time - a.time;
+
+    // If both posts are date-only entries from the existing index, keep their
+    // current relative order. This avoids reshuffling old same-day posts when
+    // git checkout/pull changes filesystem modified times.
+    if (a.existingOrder !== b.existingOrder) return a.existingOrder - b.existingOrder;
+
+    // Final deterministic fallback for brand-new legacy/malformed posts only.
     return a.title.localeCompare(b.title);
   });
 
@@ -305,7 +392,7 @@ function getPostListParts(indexHtml) {
   // Last-resort safety path: some existing index files are valid enough for a
   // browser to display, but are missing the final closing tags. In that case,
   // keep the real Notavello head/style/header and create a clean ending.
-  console.log('\nWARNING: Could not find a closing </div> for .post-list. v5 will add clean closing tags.');
+  console.log('\nWARNING: Could not find a closing </div> for .post-list. v6 will add clean closing tags.');
   return { before, after: '\n</div>\n</main>\n</body>\n</html>\n' };
 }
 
@@ -413,11 +500,11 @@ function main() {
   if (!fs.existsSync(BLOG_INDEX)) fail('Missing pages/blog/index.html.');
 
   const indexHtml = readText(BLOG_INDEX);
-  const existingCards = extractExistingCards(indexHtml);
+  const existingCards = extractExistingCards(readExistingBlogIndexPages(indexHtml));
   const { posts, ignored } = scanPostFolders(existingCards);
   const totalPages = Math.max(1, Math.ceil(posts.length / PER_PAGE));
 
-  console.log('\nNotavello safe blog splitter v5');
+  console.log('\nNotavello safe blog splitter v6');
   console.log('--------------------------------');
   console.log('Blog folder: pages\\blog');
   console.log(`Existing cards in current index: ${existingCards.size}`);

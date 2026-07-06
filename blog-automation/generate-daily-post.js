@@ -128,13 +128,14 @@ function escapeHtml(value) {
 function todayParts() {
   const now = new Date();
   const dateIso = now.toISOString().slice(0, 10);
+  const publishedAtIso = now.toISOString();
   const dateDisplay = new Intl.DateTimeFormat("en-US", {
     month: "long",
     day: "numeric",
     year: "numeric",
     timeZone: "UTC"
   }).format(now);
-  return { dateIso, dateDisplay };
+  return { dateIso, publishedAtIso, dateDisplay };
 }
 
 function extractExistingPostSummary(indexHtml) {
@@ -217,7 +218,7 @@ function normalizeSectionHtml(html) {
   return `<p>${escapeHtml(value)}</p>`;
 }
 
-function buildPostHtml(template, post, dateIso, dateDisplay) {
+function buildPostHtml(template, post, dateIso, publishedAtIso, dateDisplay) {
   const slug = slugify(post.slug || post.post_title || post.title);
   const title = String(post.post_title || post.title || "").trim();
   const meta = String(post.meta_description || "").replace(/"/g, "").trim().slice(0, 150);
@@ -255,7 +256,7 @@ function buildPostHtml(template, post, dateIso, dateDisplay) {
     .replaceAll("%%POST_TITLE%%", escapeHtml(title))
     .replaceAll("%%META_DESCRIPTION%%", escapeHtml(meta))
     .replaceAll("%%SLUG%%", slug)
-    .replaceAll("%%DATE_ISO%%", dateIso)
+    .replaceAll("%%DATE_ISO%%", publishedAtIso || dateIso)
     .replaceAll("%%DATE_DISPLAY%%", dateDisplay)
     .replaceAll("%%TAG%%", escapeHtml(tag))
     .replaceAll("%%LEDE%%", escapeHtml(lede))
@@ -266,6 +267,18 @@ function buildPostHtml(template, post, dateIso, dateDisplay) {
     /<div\s+class=["']post-body["']>\s*[\s\S]*?\s*<\/div>\s*\n\s*<div\s+class=["']post-footer["']>/i,
     `<div class="post-body">\n\n${body}  </div>\n\n  <div class="post-footer">`
   );
+
+  // Give generated posts a precise, machine-readable publish timestamp.
+  // The visible blog date stays human-friendly, but the splitter can use this
+  // timestamp so same-day posts appear newest-first instead of alphabetically
+  // or by unreliable filesystem modified times.
+  const publishedAtMeta = escapeHtml(publishedAtIso || dateIso);
+  if (!/<meta\s+[^>]*(?:name|property)=["']article:published_time["']/i.test(html)) {
+    html = html.replace(
+      /<meta\s+property=["']og:type["']\s+content=["']article["']\s*\/>/i,
+      match => `${match}\n<meta property="article:published_time" content="${publishedAtMeta}"/>\n<meta property="article:modified_time" content="${publishedAtMeta}"/>\n<meta name="notavello:published_at" content="${publishedAtMeta}"/>`
+    );
+  }
 
   // Strip dev-only content that must never ship in a published post:
   // 1) the leading "ALL %% PLACEHOLDERS MUST BE REPLACED" warning comment
@@ -344,7 +357,7 @@ async function generatePost() {
   const template = readText(templatePath);
   const indexHtml = readText(INDEX_PATH);
   const existingSummary = extractExistingPostSummary(indexHtml);
-  const { dateIso, dateDisplay } = todayParts();
+  const { dateIso, publishedAtIso, dateDisplay } = todayParts();
 
   const customSourceContext = String(SOURCE_CONTEXT || "").trim();
   const hnSeeds = customSourceContext ? "" : await fetchHnTopicSeeds();
@@ -402,6 +415,7 @@ You are writing one production-ready Notavello blog post.
 
 Date:
 - ISO: ${dateIso}
+- Published timestamp: ${publishedAtIso}
 - Display: ${dateDisplay}
 
 Topic:
@@ -498,7 +512,7 @@ Fix every listed problem. The LINK REQUIREMENTS above are machine-enforced.`;
 
     const outputText = response.output_text || "";
     const postJson = extractJson(outputText);
-    const candidate = buildPostHtml(template, postJson, dateIso, dateDisplay);
+    const candidate = buildPostHtml(template, postJson, dateIso, publishedAtIso, dateDisplay);
     const audit = auditPostLinks(candidate.html, targets.set);
     built = { ...candidate, audit };
 
