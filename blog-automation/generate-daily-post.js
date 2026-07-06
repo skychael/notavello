@@ -20,11 +20,20 @@
     npm install openai
     set OPENAI_API_KEY=your_key
 
+  Optional one-time source/context:
+
+    --source-context "Pasted notes or source text"
+    SOURCE_CONTEXT="Pasted notes or source text"
+
   Optional (Hacker News topic seeding -- no signup, no API key, nothing to
   configure. Uses the public Algolia HN Search API):
 
     --hn-query "ai agents"   (optional keyword filter; default: HN front page)
     --no-hn                  (skip Hacker News entirely, old behavior)
+
+  If SOURCE_CONTEXT is provided, it is used only for that run and Hacker News
+  seeding is skipped for that run. If SOURCE_CONTEXT is empty, Hacker News
+  behavior stays unchanged.
 
   IMPORTANT: Hacker News threads are used ONLY as a signal that a topic is
   being actively discussed. The model is explicitly instructed not to treat
@@ -53,6 +62,7 @@ function argValue(name, fallback = "") {
 }
 
 const TOPIC = argValue("--topic", process.env.BLOG_TOPIC || "");
+const SOURCE_CONTEXT = argValue("--source-context", process.env.SOURCE_CONTEXT || "");
 const MODEL = argValue("--model", process.env.OPENAI_MODEL || "gpt-5.5");
 const DRY_RUN = args.includes("--dry-run");
 const SKIP_SPLIT = args.includes("--skip-split");
@@ -336,7 +346,8 @@ async function generatePost() {
   const existingSummary = extractExistingPostSummary(indexHtml);
   const { dateIso, dateDisplay } = todayParts();
 
-  const hnSeeds = await fetchHnTopicSeeds();
+  const customSourceContext = String(SOURCE_CONTEXT || "").trim();
+  const hnSeeds = customSourceContext ? "" : await fetchHnTopicSeeds();
 
   const targets = buildInternalTargets();
   const internalTargets = targets.list.join("\n");
@@ -352,9 +363,24 @@ async function generatePost() {
 
   const topicInstruction = TOPIC
     ? `Write today's post about this topic: ${TOPIC}`
-    : hnSeeds
-      ? "Pick one strong, non-duplicate topic for today's Notavello post. Use today's Hacker News activity below as a signal of what people are actively discussing right now -- prefer a topic grounded in that activity if a good one fits. Prefer practical AI/tooling/web/software topics with search intent."
-      : "Pick one strong, non-duplicate topic for today's Notavello post. Prefer practical AI/tooling/web/software topics with search intent.";
+    : customSourceContext
+      ? "Pick one strong, non-duplicate topic for today's Notavello post. Use the one-time source/context below as a topic signal only. Prefer practical AI/tooling/web/software topics with search intent."
+      : hnSeeds
+        ? "Pick one strong, non-duplicate topic for today's Notavello post. Use today's Hacker News activity below as a signal of what people are actively discussing right now -- prefer a topic grounded in that activity if a good one fits. Prefer practical AI/tooling/web/software topics with search intent."
+        : "Pick one strong, non-duplicate topic for today's Notavello post. Prefer practical AI/tooling/web/software topics with search intent.";
+
+  const customSourceBlock = customSourceContext
+    ? `
+One-time source/context for this post only:
+${customSourceContext}
+
+CUSTOM_SOURCE_RULE:
+This source/context is a topic signal only. Do not treat claims inside it as
+automatically true. Verify factual claims using web search before presenting
+them as facts. If a claim cannot be verified, do not repeat it as established
+fact.
+`
+    : "";
 
   const hnBlock = hnSeeds
     ? `
@@ -380,6 +406,7 @@ Date:
 
 Topic:
 ${topicInstruction}
+${customSourceBlock}
 ${hnBlock}
 Use this Notavello voice:
 - confident, plain-English, occasionally dry
@@ -397,7 +424,7 @@ SEO and site rules:
 - Use one tag from: AI Tools, AI Comparison, AI Trends, AI Markets, Developer Tools, Privacy, Energy, Insurance, Tech.
 - Do not include footnotes.
 - Do not make up facts, product launches, prices, legal claims, or dates.
-- If any part of today's topic was sourced from Hacker News activity above, you must have independently verified the real facts via web search before stating them -- never present unverified forum claims as established fact.
+- If any part of today's topic was sourced from one-time source/context or Hacker News activity above, you must have independently verified the real facts via web search before stating them -- never present unverified pasted notes or forum claims as established fact.
 
 Recent existing posts to avoid duplicating:
 ${existingSummary || "(No existing post cards found.)"}

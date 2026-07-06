@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Blog Generator | Notavello Admin</title>
+<meta name="robots" content="noindex, nofollow"/>
+<style>
+  :root {
+    color-scheme: light dark;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: #f5f3ef;
+    color: #181512;
+    display: grid;
+    place-items: center;
+    padding: 32px 16px;
+  }
+
+  main {
+    width: min(720px, 100%);
+    background: #fffaf2;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 22px;
+    box-shadow: 0 18px 60px rgba(0, 0, 0, 0.08);
+    padding: 28px;
+  }
+
+  h1 {
+    margin: 0 0 6px;
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    letter-spacing: -0.04em;
+  }
+
+  p {
+    margin: 0 0 24px;
+    color: #5d564f;
+    line-height: 1.5;
+  }
+
+  label {
+    display: block;
+    font-weight: 700;
+    margin: 18px 0 8px;
+  }
+
+  input,
+  textarea,
+  select,
+  button {
+    font: inherit;
+  }
+
+  input,
+  textarea,
+  select {
+    box-sizing: border-box;
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.16);
+    border-radius: 14px;
+    padding: 12px 14px;
+    background: #fff;
+    color: #181512;
+  }
+
+  textarea {
+    min-height: 180px;
+    resize: vertical;
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: 1fr 180px;
+    gap: 16px;
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    margin-top: 22px;
+  }
+
+  button {
+    border: 0;
+    border-radius: 999px;
+    background: #181512;
+    color: #fff;
+    padding: 12px 18px;
+    font-weight: 800;
+    cursor: pointer;
+  }
+
+  button:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+  }
+
+  .hint {
+    font-size: 0.92rem;
+    color: #6d655d;
+    margin-top: 8px;
+  }
+
+  .status {
+    margin-top: 18px;
+    border-radius: 14px;
+    padding: 12px 14px;
+    background: rgba(0, 0, 0, 0.06);
+    white-space: pre-wrap;
+    min-height: 24px;
+  }
+
+  .status[data-state="ok"] {
+    background: #e8f6ec;
+  }
+
+  .status[data-state="error"] {
+    background: #fde8e8;
+  }
+
+  @media (max-width: 640px) {
+    main { padding: 22px; }
+    .row { grid-template-columns: 1fr; }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body { background: #14110f; color: #fff9ef; }
+    main { background: #211d19; border-color: rgba(255, 255, 255, 0.12); }
+    p, .hint { color: #c9bfb3; }
+    input, textarea, select { background: #161311; color: #fff9ef; border-color: rgba(255, 255, 255, 0.18); }
+    button { background: #fff9ef; color: #181512; }
+    .status { background: rgba(255, 255, 255, 0.08); }
+    .status[data-state="ok"] { background: rgba(63, 146, 84, 0.25); }
+    .status[data-state="error"] { background: rgba(203, 73, 73, 0.28); }
+  }
+</style>
+</head>
+<body>
+<main>
+  <h1>Notavello Blog Generator</h1>
+  <p>Trigger the existing GitHub Actions blog workflow without opening the terminal. Dry run is the default.</p>
+
+  <form id="generator-form">
+    <label for="admin-token">Admin password/token</label>
+    <input id="admin-token" name="admin-token" type="password" autocomplete="current-password" required />
+    <div class="hint">This is checked by the Cloudflare Worker. It is never stored in the page code.</div>
+
+    <label for="topic">Topic</label>
+    <input id="topic" name="topic" type="text" maxlength="200" placeholder="best AI tools for organizing research" />
+    <div class="hint">Leave blank to let the generator use its normal topic selection.</div>
+
+    <label for="source-context">One-time source/context</label>
+    <textarea id="source-context" name="source-context" maxlength="12000" placeholder="Optional pasted notes, links, or source text for this run only."></textarea>
+    <div class="hint">When this box is used, Hacker News seeding is skipped for this run.</div>
+
+    <div class="row">
+      <div>
+        <label for="mode">Mode</label>
+        <select id="mode" name="mode">
+          <option value="true" selected>Dry run first</option>
+          <option value="false">Generate and publish</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button id="submit-button" type="submit">Generate Blog</button>
+      <span class="hint">Publishing commits generated files to GitHub and lets Cloudflare redeploy.</span>
+    </div>
+  </form>
+
+  <div id="status" class="status" role="status" aria-live="polite">Ready.</div>
+</main>
+
+<script>
+  const form = document.getElementById('generator-form');
+  const button = document.getElementById('submit-button');
+  const statusBox = document.getElementById('status');
+  const tokenInput = document.getElementById('admin-token');
+
+  tokenInput.value = sessionStorage.getItem('notavelloBlogGeneratorToken') || '';
+
+  function setStatus(message, state) {
+    statusBox.textContent = message;
+    statusBox.dataset.state = state || '';
+  }
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    const token = tokenInput.value.trim();
+    const topic = document.getElementById('topic').value.trim();
+    const sourceContext = document.getElementById('source-context').value.trim();
+    const dryRun = document.getElementById('mode').value === 'true';
+
+    if (!token) {
+      setStatus('Enter the admin password/token first.', 'error');
+      return;
+    }
+
+    sessionStorage.setItem('notavelloBlogGeneratorToken', token);
+    button.disabled = true;
+    setStatus('Sending request to GitHub Actions…');
+
+    try {
+      const response = await fetch('/api/generate-blog', {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+          'x-notavello-admin-token': token,
+        },
+        body: JSON.stringify({
+          topic,
+          source_context: sourceContext,
+          dry_run: dryRun,
+        }),
+      });
+
+      const data = await response.json().catch(() => ({}));
+
+      if (!response.ok || !data.ok) {
+        const details = data.details ? `\n\n${data.details}` : '';
+        throw new Error((data.error || `Request failed with HTTP ${response.status}.`) + details);
+      }
+
+      setStatus(data.message || 'Workflow started in GitHub Actions.', 'ok');
+    } catch (error) {
+      setStatus(error.message || String(error), 'error');
+    } finally {
+      button.disabled = false;
+    }
+  });
+</script>
+</body>
+</html>

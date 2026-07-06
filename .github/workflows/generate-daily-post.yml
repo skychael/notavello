@@ -6,7 +6,27 @@ on:
     # = 5:30 PM Pacific Standard Time the rest of the year, since GitHub's
     # cron is fixed UTC and does not shift for daylight saving.
     - cron: '30 1 * * *'
-  workflow_dispatch: {}   # lets you trigger it manually from the Actions tab too
+  workflow_dispatch:
+    inputs:
+      topic:
+        description: "Blog topic"
+        required: false
+        type: string
+      source_context:
+        description: "Optional one-time source/context for this post only"
+        required: false
+        type: string
+      dry_run:
+        description: "Dry run only"
+        required: false
+        default: "true"
+        type: choice
+        options:
+          - "true"
+          - "false"
+
+permissions:
+  contents: write
 
 jobs:
   generate-post:
@@ -28,27 +48,40 @@ jobs:
       - name: Generate today's post
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-        run: node blog-automation/generate-daily-post.js
+          BLOG_TOPIC: ${{ github.event.inputs.topic || '' }}
+          SOURCE_CONTEXT: ${{ github.event.inputs.source_context || '' }}
+          DRY_RUN: ${{ github.event.inputs.dry_run || 'false' }}
+        run: |
+          if [ "$GITHUB_EVENT_NAME" = "workflow_dispatch" ] && [ "$DRY_RUN" = "true" ]; then
+            node blog-automation/generate-daily-post.js --dry-run
+          else
+            node blog-automation/generate-daily-post.js
+          fi
 
       - name: Configure git identity
+        if: ${{ github.event_name != 'workflow_dispatch' || github.event.inputs.dry_run == 'false' }}
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "notavello-blog-bot"
+          git config user.email "actions@github.com"
 
       - name: Commit and push (with retry)
+        if: ${{ github.event_name != 'workflow_dispatch' || github.event.inputs.dry_run == 'false' }}
         run: |
-          git add -A
+          git add pages/blog
           if git diff --cached --quiet; then
             echo "No changes to commit -- nothing was generated or written."
             exit 0
           fi
-          git commit -m "Auto: daily blog post $(date -u +%Y-%m-%d)"
+          git commit -m "Generate blog post $(date -u +%Y-%m-%d)"
 
           n=0
           until [ $n -ge 5 ]
           do
-            git pull --rebase origin main && git push origin main && break
+            git pull --rebase origin main && git push origin main && exit 0
             n=$((n+1))
             echo "Push attempt $n failed, retrying in 5s..."
             sleep 5
           done
+
+          echo "Push failed after 5 attempts."
+          exit 1
