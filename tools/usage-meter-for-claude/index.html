@@ -384,10 +384,72 @@ a { color: inherit; }
 }
 .support h2 { font-size: clamp(1.55rem, 4vw, 2.25rem); letter-spacing: -0.04em; margin-bottom: 12px; }
 .support p { color: var(--ink-muted); line-height: 1.7; max-width: 690px; margin: 0 auto 20px; }
-.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; background: rgba(20,19,15,0.88); }
-.site-footer-inner { max-width: 1140px; margin: 0 auto; color: var(--ink-faint); font-size: 0.76rem; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
-.site-footer a { color: var(--ink-muted); text-decoration: none; }
-.site-footer a:hover { color: #f6c9b7; }
+/* Enhanced Notavello navigation footer */
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 36px 36px;
+  margin-top: 48px;
+  background: rgba(20,19,15,0.92);
+}
+.site-footer-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  color: var(--ink-faint);
+  font-size: 0.76rem;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  align-items: center;
+}
+.footer-nav-label {
+  width: 100%;
+  font-size: 0.7rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #f6c9b7;
+  margin-bottom: 2px;
+}
+.footer-nav a {
+  color: var(--ink-muted);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.footer-nav a:hover { color: #f6c9b7; }
+.footer-nav-divider {
+  color: rgba(240,164,127,0.28);
+}
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+}
+.footer-copy {
+  color: var(--ink-faint);
+}
+.footer-legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+.footer-legal a {
+  color: var(--ink-faint);
+  text-decoration: none;
+}
+.footer-legal a:hover { color: #f6c9b7; }
+@media (max-width: 640px) {
+  .site-footer { padding: 28px 20px; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; }
+}
 .legal-page .main { max-width: 900px; }
 .legal-hero { margin-bottom: 26px; }
 .legal-hero h1 { font-size: clamp(2.15rem, 5vw, 3.8rem); line-height: 0.98; letter-spacing: -0.065em; margin-bottom: 16px; }
@@ -540,8 +602,66 @@ code { font-family: var(--mono); background: rgba(255,255,255,0.06); border:1px 
 
 <footer class="site-footer">
   <div class="site-footer-inner">
-    <span>© Notavello</span>
-    <span><a href="/">Tools</a> · <a href="/tools/usage-meter-for-claude/privacy/">Usage Meter for Claude Privacy</a> · <a href="/pages/blog/">The Export</a></span>
+    <nav class="footer-nav" aria-label="Usage meter pages">
+      <div class="footer-nav-label">Usage Meters</div>
+      <a href="/tools/usage-meter-for-claude/">Claude Usage Meter</a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/tools/usage-meter-for-claude/privacy/">Claude Privacy</a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/tools/usage-meter-for-chatgpt/">ChatGPT Usage Meter</a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/tools/usage-meter-for-chatgpt/privacy/">ChatGPT Privacy</a>
+    </nav>
+
+    <nav class="footer-nav" aria-label="Chrome extensions">
+      <div class="footer-nav-label">Chrome Extensions</div>
+      <a href="/tools/nukerefresh/">NukeRefresh</a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/tools/chatgpt-to-pdf/">Export ChatGPT to PDF</a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/tools/hide-my-bookmarks/">Hide My Bookmarks Bar</a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/tools/pocketcreds/">PocketCreds</a>
+    </nav>
+
+    <nav class="footer-nav" aria-label="AI conversation exporters">
+      <div class="footer-nav-label">Export AI Conversations</div>
+      <a href="/exporters/chatgpt/">ChatGPT</a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/exporters/claude/">Claude</a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/exporters/gemini/">Gemini</a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/exporters/copilot/">Copilot</a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/exporters/grok/">Grok</a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/exporters/perplexity/">Perplexity</a>
+    </nav>
+
+    <nav class="footer-nav" aria-label="Notavello site links">
+      <div class="footer-nav-label">Notavello</div>
+      <a href="/">Home</a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/tools/">Tools</a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/pages/blog/">The Export</a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/pages/faq/">FAQ</a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/pages/sitemap/">Sitemap</a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/pages/about/">About</a>
+    </nav>
+
+    <div class="footer-bottom">
+      <div class="footer-copy">&copy; 2026 Notavello.</div>
+      <div class="footer-legal">
+        <a href="/pages/privacy/">Privacy Policy</a>
+        <a href="/pages/terms/">Terms of Service</a>
+        <a href="/pages/contact/">Contact</a>
+      </div>
+    </div>
   </div>
 </footer>
 <script data-goatcounter="https://notavello.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>

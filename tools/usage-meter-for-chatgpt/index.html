@@ -680,10 +680,141 @@ code { font-family: var(--mono); font-size: 0.88em; color: #dffbf3; background: 
 
 <footer class="site-footer">
   <div class="site-footer-inner">
-    <span>© Notavello</span>
-    <span><a href="/">Tools</a> · <a href="/tools/usage-meter-for-chatgpt/privacy/">Usage Meter Privacy</a> · <a href="/pages/blog/">The Export</a></span>
+    <nav class="footer-nav" aria-label="Usage meter pages">
+      <div class="footer-nav-label">Usage Meters</div>
+      <a href="/tools/usage-meter-for-chatgpt/">ChatGPT Usage Meter</a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/tools/usage-meter-for-chatgpt/privacy/">ChatGPT Privacy</a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/tools/usage-meter-for-claude/">Claude Usage Meter</a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/tools/usage-meter-for-claude/privacy/">Claude Privacy</a>
+    </nav>
+
+    <nav class="footer-nav" aria-label="Chrome extensions">
+      <div class="footer-nav-label">Chrome Extensions</div>
+      <a href="/tools/nukerefresh/">NukeRefresh</a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/tools/chatgpt-to-pdf/">Export ChatGPT to PDF</a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/tools/hide-my-bookmarks/">Hide My Bookmarks</a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/tools/pocketcreds/">PocketCreds</a>
+    </nav>
+
+    <nav class="footer-nav" aria-label="Export AI conversations">
+      <div class="footer-nav-label">Export AI Conversations</div>
+      <a href="/exporters/chatgpt/">ChatGPT</a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/exporters/claude/">Claude</a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/exporters/gemini/">Gemini</a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/exporters/copilot/">Copilot</a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/exporters/grok/">Grok</a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/exporters/perplexity/">Perplexity</a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/exporters/other/">Other AI</a>
+    </nav>
+
+    <nav class="footer-nav" aria-label="Site navigation">
+      <div class="footer-nav-label">Notavello</div>
+      <a href="/">Home</a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/tools/">Tools</a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/tools/aidetector/">AI Detector</a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/pages/pricing/">Pricing</a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/pages/faq/">FAQ</a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/pages/blog/">The Export</a>
+      <span class="footer-nav-divider">·</span>
+      <a href="/pages/sitemap/">Sitemap</a>
+    </nav>
+
+    <div class="footer-bottom">
+      <div class="footer-copy">&copy; 2026 Notavello.</div>
+      <div class="footer-legal">
+        <a href="/pages/privacy/">Privacy Policy</a>
+        <a href="/pages/terms/">Terms of Service</a>
+        <a href="/pages/contact/">Contact</a>
+      </div>
+    </div>
   </div>
 </footer>
+<style>
+.site-footer {
+  border-top: 1px solid var(--border, rgba(255,255,255,0.12));
+  padding: 34px 36px;
+  margin-top: 48px;
+  background: rgba(16,16,16,0.88);
+}
+.site-footer-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  align-items: center;
+}
+.footer-nav-label {
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--ink-faint, #7d7d85);
+  width: 100%;
+  margin-bottom: 3px;
+}
+.footer-nav a {
+  font-size: 0.82rem;
+  color: var(--ink-muted, #b4b4b8);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.footer-nav a:hover { color: #dffbf3; }
+.footer-nav-divider {
+  color: var(--border, rgba(255,255,255,0.12));
+  font-size: 0.8rem;
+}
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border, rgba(255,255,255,0.12));
+}
+.footer-copy {
+  font-size: 0.76rem;
+  color: var(--ink-faint, #7d7d85);
+}
+.footer-legal {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.footer-legal a {
+  font-size: 0.76rem;
+  color: var(--ink-faint, #7d7d85);
+  text-decoration: none;
+}
+.footer-legal a:hover { color: #dffbf3; }
+@media (max-width: 640px) {
+  .site-footer { padding: 26px 20px; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; gap: 12px; }
+}
+</style>
 
 <script data-goatcounter="https://notavello.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
