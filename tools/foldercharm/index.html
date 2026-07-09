@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>FolderCharm — Change Folder Colors & Add Badge Icons on Windows | Notavello</title>
+<meta name="description" content="FolderCharm is a simple Windows folder color changer and folder badge app. Customize folder icons on Windows 10 and 11 with colors, badges, and easy reset."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/tools/foldercharm/"/>
+
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://notavello.com/tools/foldercharm/"/>
+<meta property="og:title" content="FolderCharm — Change Folder Colors & Add Badge Icons on Windows"/>
+<meta property="og:description" content="Customize Windows folders with colors and badge icons. A simple folder icon changer for Windows 10 and 11."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/assets/images/foldercharm/foldercharm-og.png"/>
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="FolderCharm — Change Folder Colors & Add Badge Icons on Windows"/>
+<meta name="twitter:description" content="A simple Windows app for folder colors, folder badges, and custom folder icons."/>
+<meta name="twitter:image" content="https://notavello.com/assets/images/foldercharm/foldercharm-og.png"/>
+
+<link rel="icon" type="image/x-icon" href="/favicon.ico"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "FolderCharm",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Windows 10, Windows 11",
+  "description": "FolderCharm is a Windows app that lets you change folder colors and add optional badge icons to folders.",
+  "url": "https://notavello.com/tools/foldercharm/",
+  "downloadUrl": "https://github.com/skychael/notavello/releases/download/foldercharm-v1.0.0/FolderCharm-Setup-1.0.0.exe",
+  "image": "https://notavello.com/assets/images/foldercharm/foldercharm-og.png",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Notavello",
+    "url": "https://notavello.com"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {
+      "@type":"Question",
+      "name":"What does FolderCharm do?",
+      "acceptedAnswer":{"@type":"Answer","text":"FolderCharm lets you change folder colors and optionally add badge icons to folders on Windows."}
+    },
+    {
+      "@type":"Question",
+      "name":"Does FolderCharm work on Windows 11?",
+      "acceptedAnswer":{"@type":"Answer","text":"Yes. FolderCharm is built for Windows 10 and Windows 11."}
+    },
+    {
+      "@type":"Question",
+      "name":"Can I reset a folder back to normal?",
+      "acceptedAnswer":{"@type":"Answer","text":"Yes. FolderCharm includes a reset option that restores the selected folder to its normal appearance."}
+    },
+    {
+      "@type":"Question",
+      "name":"Does FolderCharm install a shell extension?",
+      "acceptedAnswer":{"@type":"Answer","text":"No. FolderCharm does not install a shell extension."}
+    }
+  ]
+}
+</script>
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F8FBFF;
+  --surface: #FFFFFF;
+  --surface-soft: #F2F6FF;
+  --ink: #14213D;
+  --muted: #61718E;
+  --faint: #8B99B1;
+  --border: #DCE6F4;
+  --accent: #6D4AFF;
+  --accent2: #2F80ED;
+  --gold: #F8C943;
+  --green: #22C55E;
+  --radius: 28px;
+  --shadow: 0 18px 48px rgba(20,33,61,0.10);
+  --shadow-soft: 0 8px 26px rgba(20,33,61,0.07);
+}
+html { scroll-behavior: smooth; }
+body {
+  min-height: 100vh;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 8% -8%, rgba(109,74,255,0.14), transparent 34%),
+    radial-gradient(circle at 100% 8%, rgba(47,128,237,0.11), transparent 30%),
+    radial-gradient(circle at 92% 90%, rgba(248,201,67,0.16), transparent 28%),
+    var(--bg);
+  font-family: 'Sora', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(248,251,255,0.88);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(220,230,244,0.9);
+}
+.nav {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 16px 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+}
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  font-size: 1.08rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+.logo-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #FFD85C, #F5B51F);
+  box-shadow: 0 10px 22px rgba(248,201,67,0.32);
+  position: relative;
+}
+.logo-icon::before {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 7px;
+  width: 18px;
+  height: 9px;
+  border-radius: 5px 5px 2px 2px;
+  background: #F1AA19;
+}
+.logo-icon::after {
+  content: "★";
+  position: absolute;
+  right: -5px;
+  bottom: -5px;
+  width: 22px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), #8B5CF6);
+  color: white;
+  font-size: 0.68rem;
+  border: 2px solid white;
+}
+.logo span:last-child { color: var(--accent); }
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.nav-links a {
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 9px 12px;
+  border-radius: 999px;
+}
+.nav-links a:hover { color: var(--accent); background: rgba(109,74,255,0.06); }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 13px 20px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 0.93rem;
+  border: 1px solid transparent;
+  transition: transform .16s ease, box-shadow .16s ease, background .16s ease;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn-primary {
+  color: white;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  box-shadow: 0 14px 30px rgba(109,74,255,0.25);
+}
+.btn-secondary {
+  color: var(--accent);
+  background: white;
+  border-color: var(--border);
+}
+.main {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 38px 22px 84px;
+}
+.back-link {
+  display: inline-flex;
+  text-decoration: none;
+  color: var(--muted);
+  font-size: .86rem;
+  font-weight: 700;
+  margin-bottom: 28px;
+}
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, .94fr) minmax(0, 1.06fr);
+  gap: 38px;
+  align-items: center;
+  margin-bottom: 70px;
+}
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--accent);
+  background: rgba(109,74,255,0.08);
+  border: 1px solid rgba(109,74,255,0.14);
+  border-radius: 999px;
+  padding: 9px 13px;
+  font-size: .74rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.eyebrow::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+}
+h1 {
+  font-size: clamp(2.35rem, 5vw, 4.7rem);
+  line-height: 1.02;
+  letter-spacing: -0.06em;
+  margin-bottom: 20px;
+}
+h1 span { color: var(--accent); }
+.lede {
+  color: var(--muted);
+  font-size: 1.06rem;
+  line-height: 1.78;
+  max-width: 630px;
+  margin-bottom: 26px;
+}
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+.note {
+  color: var(--faint);
+  font-size: .82rem;
+  line-height: 1.6;
+}
+.hero-points {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 12px;
+}
+.point {
+  background: rgba(255,255,255,.78);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 15px;
+  box-shadow: var(--shadow-soft);
+}
+.point strong {
+  display: block;
+  font-size: .86rem;
+  margin-bottom: 6px;
+}
+.point span {
+  display: block;
+  color: var(--muted);
+  font-size: .8rem;
+  line-height: 1.55;
+}
+.media-card {
+  background: rgba(255,255,255,.84);
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  padding: 14px;
+  box-shadow: var(--shadow);
+  position: relative;
+}
+.media-card::before {
+  content: "";
+  position: absolute;
+  inset: -14px;
+  border-radius: 38px;
+  background: linear-gradient(135deg, rgba(109,74,255,.13), rgba(47,128,237,.10), rgba(248,201,67,.16));
+  filter: blur(18px);
+  z-index: -1;
+}
+.media-card img, .image-frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 20px;
+}
+.section { margin-bottom: 68px; }
+.section-header {
+  max-width: 790px;
+  margin-bottom: 26px;
+}
+.section-label {
+  color: var(--accent);
+  font-size: .75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .13em;
+  margin-bottom: 11px;
+}
+h2 {
+  font-size: clamp(1.85rem, 4vw, 2.9rem);
+  line-height: 1.1;
+  letter-spacing: -0.05em;
+  margin-bottom: 12px;
+}
+.section-copy {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 18px;
+}
+.card {
+  background: rgba(255,255,255,.82);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: var(--shadow-soft);
+}
+.card-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 15px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, rgba(109,74,255,.13), rgba(47,128,237,.12));
+  color: var(--accent);
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+}
+.card h3 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+.card p {
+  color: var(--muted);
+  font-size: .92rem;
+  line-height: 1.72;
+}
+.showcase {
+  display: grid;
+  grid-template-columns: minmax(0,1.08fr) minmax(0,.92fr);
+  gap: 26px;
+  align-items: center;
+}
+.image-frame {
+  background: rgba(255,255,255,.82);
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  padding: 14px;
+  box-shadow: var(--shadow);
+}
+.bullets {
+  display: grid;
+  gap: 14px;
+}
+.bullet {
+  display: flex;
+  gap: 14px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+}
+.bullet:last-child { border-bottom: 0; }
+.bullet-mark {
+  flex: 0 0 32px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: white;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  font-weight: 800;
+  font-size: .83rem;
+}
+.bullet strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: .96rem;
+}
+.bullet span {
+  color: var(--muted);
+  line-height: 1.68;
+  font-size: .91rem;
+}
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0,1fr));
+  gap: 18px;
+}
+.step {
+  background: rgba(255,255,255,.82);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: var(--shadow-soft);
+}
+.step-num {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: white;
+  background: linear-gradient(135deg, var(--accent), #8B5CF6);
+  font-weight: 800;
+  margin-bottom: 14px;
+}
+.step h3 { font-size: 1rem; margin-bottom: 8px; }
+.step p { color: var(--muted); line-height: 1.68; font-size: .91rem; }
+.download-box {
+  background: linear-gradient(135deg, rgba(109,74,255,.10), rgba(47,128,237,.09)), rgba(255,255,255,.9);
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  box-shadow: var(--shadow);
+  padding: 34px;
+  display: grid;
+  grid-template-columns: minmax(0,1fr) auto;
+  gap: 22px;
+  align-items: center;
+}
+.download-box p {
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 760px;
+}
+.download-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 18px;
+}
+.faq {
+  background: rgba(255,255,255,.82);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 22px;
+  box-shadow: var(--shadow-soft);
+}
+.faq h3 { font-size: 1rem; margin-bottom: 9px; }
+.faq p { color: var(--muted); line-height: 1.72; font-size: .92rem; }
+#footer-root { margin-top: 56px; }
+@media (max-width: 980px) {
+  .hero, .showcase, .download-box { grid-template-columns: 1fr; }
+  .grid-3, .steps, .hero-points { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .download-actions { justify-content: flex-start; }
+}
+@media (max-width: 680px) {
+  .nav-links { display: none; }
+  .main { padding: 28px 18px 70px; }
+  .grid-3, .steps, .hero-points, .faq-grid { grid-template-columns: 1fr; }
+  .hero-actions .btn, .download-actions .btn { width: 100%; }
+  .media-card, .image-frame, .download-box { border-radius: 24px; }
+}
+</style>
+</head>
+
+<body>
+<header class="header">
+  <nav class="nav">
+    <a class="logo" href="/" aria-label="Notavello home">
+      <span class="logo-icon" aria-hidden="true"></span>
+      <span>Folder<span>Charm</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="/tools/">More Tools</a>
+      <a href="#features">Features</a>
+      <a href="#how-it-works">How it Works</a>
+      <a class="btn btn-primary" href="https://github.com/skychael/notavello/releases/download/foldercharm-v1.0.0/FolderCharm-Setup-1.0.0.exe">Download</a>
+    </div>
+  </nav>
+</header>
+
+<main class="main">
+  <a class="back-link" href="/tools/">← Back to tools</a>
+
+  <section class="hero">
+    <div>
+      <div class="eyebrow">Windows folder icon changer</div>
+      <h1>Make folders easier to spot with <span>colors and badges.</span></h1>
+      <p class="lede">FolderCharm is a simple Windows app for changing folder colors and adding optional badge icons. Organize projects, clients, finance folders, private folders, favorites, and more with clean custom folder icons.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://github.com/skychael/notavello/releases/download/foldercharm-v1.0.0/FolderCharm-Setup-1.0.0.exe">Download FolderCharm</a>
+        <a class="btn btn-secondary" href="https://github.com/skychael/notavello/releases/tag/foldercharm-v1.0.0" target="_blank" rel="noopener">View GitHub Release</a>
+      </div>
+      <p class="note">Windows 10 and Windows 11. Lightweight installer. No shell extension required.</p>
+
+      <div class="hero-points">
+        <div class="point"><strong>Folder colors</strong><span>Pick colors that make folders easier to scan.</span></div>
+        <div class="point"><strong>Badge icons</strong><span>Add check, star, lock, warning, heart, info, and more.</span></div>
+        <div class="point"><strong>Easy reset</strong><span>Restore the selected folder back to normal anytime.</span></div>
+      </div>
+    </div>
+
+    <div class="media-card">
+      <img src="/assets/images/foldercharm/foldercharm-app-ui.png" alt="FolderCharm Windows app interface showing folder colors, badge options, and apply button">
+    </div>
+  </section>
+
+  <section class="section" id="features">
+    <div class="section-header">
+      <div class="section-label">Features</div>
+      <h2>A clean folder color changer for Windows</h2>
+      <p class="section-copy">FolderCharm helps you visually organize folders without clutter, complicated settings, or shell extensions.</p>
+    </div>
+
+    <div class="grid-3">
+      <article class="card">
+        <div class="card-icon">🎨</div>
+        <h3>Change folder colors</h3>
+        <p>Customize selected folders with practical colors like blue, green, red, purple, gray, black, white, yellow, and more.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon">★</div>
+        <h3>Add badge icons</h3>
+        <p>Mark folders as important, complete, private, high priority, informational, client-related, finance-related, or favorites.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon">↺</div>
+        <h3>Reset anytime</h3>
+        <p>Undo custom folder icons and return the selected folder to its normal Windows appearance.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon">🪟</div>
+        <h3>Made for Windows</h3>
+        <p>Designed as a Windows-first desktop app for Windows 10 and Windows 11.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon">⚡</div>
+        <h3>Simple workflow</h3>
+        <p>Choose a folder, pick a folder color, optionally choose a badge icon and badge color, then apply.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon">🧩</div>
+        <h3>No shell extension</h3>
+        <p>FolderCharm keeps the app lightweight and avoids adding right-click shell integration.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="showcase">
+      <div class="image-frame">
+        <img src="/assets/images/foldercharm/foldercharm-overview.png" alt="FolderCharm overview showing examples, before and after folder icons, and app workflow">
+      </div>
+
+      <div>
+        <div class="section-label">Use cases</div>
+        <h2>Organize folders visually at a glance</h2>
+        <div class="bullets">
+          <div class="bullet"><div class="bullet-mark">1</div><div><strong>Projects and clients</strong><span>Make active projects, client folders, and work folders stand out instantly.</span></div></div>
+          <div class="bullet"><div class="bullet-mark">2</div><div><strong>Finance and private folders</strong><span>Use lock, dollar, warning, and info badges to mark folders by purpose.</span></div></div>
+          <div class="bullet"><div class="bullet-mark">3</div><div><strong>Favorites and priorities</strong><span>Add stars, hearts, checks, and warning badges so the right folder is easier to find.</span></div></div>
+          <div class="bullet"><div class="bullet-mark">4</div><div><strong>Cleaner desktop organization</strong><span>Use color and badges instead of relying only on folder names.</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="how-it-works">
+    <div class="section-header">
+      <div class="section-label">How it works</div>
+      <h2>Customize a folder in four steps</h2>
+      <p class="section-copy">FolderCharm is intentionally simple, so you can customize folders without learning a complicated icon editor.</p>
+    </div>
+
+    <div class="steps">
+      <article class="step"><div class="step-num">1</div><h3>Select folder</h3><p>Choose the folder you want to customize.</p></article>
+      <article class="step"><div class="step-num">2</div><h3>Pick color</h3><p>Choose a folder color and folder style.</p></article>
+      <article class="step"><div class="step-num">3</div><h3>Add badge</h3><p>Optionally add a badge icon and badge color.</p></article>
+      <article class="step"><div class="step-num">4</div><h3>Apply</h3><p>Apply the new folder icon or reset it back to normal.</p></article>
+    </div>
+  </section>
+
+  <section class="section download-box" id="download">
+    <div>
+      <div class="section-label">Download</div>
+      <h2>Download FolderCharm for Windows</h2>
+      <p>Install FolderCharm and start customizing Windows folders with colors and badge icons. The installer is hosted on GitHub Releases for a clean, versioned download.</p>
+    </div>
+    <div class="download-actions">
+      <a class="btn btn-primary" href="https://github.com/skychael/notavello/releases/download/foldercharm-v1.0.0/FolderCharm-Setup-1.0.0.exe">Download Installer</a>
+      <a class="btn btn-secondary" href="https://github.com/skychael/notavello/releases/tag/foldercharm-v1.0.0" target="_blank" rel="noopener">Release Page</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <div class="section-label">FAQ</div>
+      <h2>FolderCharm questions</h2>
+    </div>
+
+    <div class="faq-grid">
+      <article class="faq"><h3>What does FolderCharm do?</h3><p>It changes selected Windows folder icons by applying a custom folder color and optional badge icon.</p></article>
+      <article class="faq"><h3>Does it work on Windows 11?</h3><p>Yes. FolderCharm is built for Windows 10 and Windows 11.</p></article>
+      <article class="faq"><h3>Can I undo a custom icon?</h3><p>Yes. Use reset to restore the selected folder back to normal.</p></article>
+      <article class="faq"><h3>Does it install a shell extension?</h3><p>No. FolderCharm avoids shell extensions and right-click integration.</p></article>
+    </div>
+  </section>
+
+  <div id="footer-root"></div>
+</main>
+
+<script>
+fetch('/_footer.html')
+  .then(response => response.ok ? response.text() : '')
+  .then(html => { document.getElementById('footer-root').innerHTML = html; })
+  .catch(() => { document.getElementById('footer-root').innerHTML = ''; });
+</script>
+<script data-goatcounter="https://notavello.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
