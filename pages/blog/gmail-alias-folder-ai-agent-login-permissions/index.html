@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Set Up Gmail For AI Agent Logins Without Handing Over Your Life — The Export | Notavello</title>
+<meta name="description" content="A practical Gmail setup for AI agent logins, aliases, labels, permissions, schedules, screenshots, and limits."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/blog/gmail-alias-folder-ai-agent-login-permissions/"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2026-07-09T23:54:31.108Z"/>
+<meta property="article:modified_time" content="2026-07-09T23:54:31.108Z"/>
+<meta name="notavello:published_at" content="2026-07-09T23:54:31.108Z"/>
+<meta property="og:url" content="https://notavello.com/pages/blog/gmail-alias-folder-ai-agent-login-permissions/"/>
+<meta property="og:title" content="Set Up Gmail For AI Agent Logins Without Handing Over Your Life"/>
+<meta property="og:description" content="A practical Gmail setup for AI agent logins, aliases, labels, permissions, schedules, screenshots, and limits."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Set Up Gmail For AI Agent Logins Without Handing Over Your Life"/>
+<meta name="twitter:description" content="A practical Gmail setup for AI agent logins, aliases, labels, permissions, schedules, screenshots, and limits."/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Set Up Gmail For AI Agent Logins Without Handing Over Your Life",
+  "description": "A practical Gmail setup for AI agent logins, aliases, labels, permissions, schedules, screenshots, and limits.",
+  "url": "https://notavello.com/pages/blog/gmail-alias-folder-ai-agent-login-permissions/",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://notavello.com/pages/blog/gmail-alias-folder-ai-agent-login-permissions/" },
+  "image": "https://notavello.com/og-image.png",
+  "datePublished": "2026-07-09T23:54:31.108Z",
+  "dateModified": "2026-07-09T23:54:31.108Z",
+  "author": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" },
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com", "logo": { "@type": "ImageObject", "url": "https://notavello.com/og-image.png" } }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
+.post-nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; row-gap: 8px; }
+.post-nav-top { margin-bottom: 40px; }
+.post-nav-bottom { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--border); }
+.post-nav a { display: inline-flex; align-items: center; gap: 6px; font-size: 0.92rem; font-weight: 600; color: var(--ink-muted); text-decoration: none; padding: 12px 14px; border-radius: var(--radius-sm); white-space: nowrap; transition: color 0.15s, background 0.15s; }
+.post-nav a:hover { color: var(--accent); background: var(--accent-light); }
+.post-nav a:first-child { padding-left: 0; }
+.post-nav a:last-child { padding-right: 0; justify-content: flex-end; }
+.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
+.post-date { font-size: 0.78rem; color: var(--ink-faint); }
+.post-title { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; color: var(--ink); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
+.post-lede { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+.post-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink); }
+.post-body h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 44px 0 16px; letter-spacing: -0.01em; }
+.post-body p { margin-bottom: 20px; color: var(--ink-muted); }
+.post-body p strong { color: var(--ink); font-weight: 600; }
+.post-body ul { margin: 0 0 20px 20px; color: var(--ink-muted); }
+.post-body ul li { margin-bottom: 8px; line-height: 1.7; }
+.callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 32px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.7; }
+.post-footer { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.post-footer-label { font-size: 0.8rem; color: var(--ink-faint); }
+.btn-export { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: opacity 0.2s; }
+.btn-export:hover { opacity: 0.9; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } .post-nav a { padding: 12px 8px; font-size: 0.88rem; } }
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+
+  <nav class="post-nav post-nav-top">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+  <div class="post-meta">
+    <span class="post-tag">Privacy</span>
+    <span class="post-date">July 9, 2026</span>
+  </div>
+
+  <h1 class="post-title">Set Up Gmail For AI Agent Logins Without Handing Over Your Life</h1>
+
+  <p class="post-lede">If an AI agent needs an email address, do not give it your main inbox and hope for the best. Give it a fenced-off Gmail setup with aliases, labels, permissions, logs, and limits.</p>
+
+  <div class="post-body">
+
+    <h2>Start With A Separate Gmail Account, Not Your Main Inbox</h2>
+    <p>The cleanest setup is boring: create a dedicated Gmail account for AI-agent activity. Not your personal account. Not the account with bank alerts, tax PDFs, medical portals, family arguments, job offers, and that one receipt from 2017 you still somehow need.</p><p>Use a name that makes the purpose obvious, like <strong>yourname.agent@gmail.com</strong> or <strong>company.agentops@gmail.com</strong>. If this is for work, use whatever account policy your company already has instead of improvising a shadow IT mailbox in the corner. Improvisation is how audits become meetings.</p><p>The point is separation. An AI agent may need email for account confirmations, login codes, receipt collection, scheduled-task results, support tickets, or screenshots. That does not mean it needs your entire identity. A separate account gives you a kill switch: revoke access, rotate passwords, archive the mailbox, or delete the experiment without untangling your real life.</p><p>This is the same basic discipline covered in <a href="/pages/blog/ai-agents-need-smaller-jobs/">AI agents need smaller jobs</a>: scope the job before granting tools. Email is not one tool. Email is identity, recovery, search history, contacts, files, calendar invites, and a memory palace of bad decisions.</p>
+
+    <div class="callout">
+      <strong>The bottom line:</strong> Treat an AI agent like a fast intern with bad judgment and perfect recall. Give it a narrow inbox, a clear alias, a calendar boundary, and nowhere near your real password.
+    </div>
+
+    <h2>Use Gmail Aliases For Routing, Not Security</h2>
+    <p>Gmail supports plus-style aliases. If your account is <strong>agentdesk@gmail.com</strong>, mail sent to <strong>agentdesk+login@gmail.com</strong>, <strong>agentdesk+screenshots@gmail.com</strong>, or <strong>agentdesk+receipts@gmail.com</strong> can arrive in the same inbox. Google’s own Gmail help describes using aliases like this to sort messages with filters, and it also notes that Gmail can send mail from other addresses you own. See Google’s guidance on aliases here: <a href="https://support.google.com/mail/answer/22370" target="_blank" rel="noopener">https://support.google.com/mail/answer/22370</a>.</p><p>Use aliases as routing tags, not as secret addresses. They are useful because they let you create simple lanes:</p><ul><li><strong>agentdesk+login@gmail.com</strong> for verification codes and account signups.</li><li><strong>agentdesk+schedule@gmail.com</strong> for calendar confirmations and task reports.</li><li><strong>agentdesk+screenshots@gmail.com</strong> for visual logs.</li><li><strong>agentdesk+billing@gmail.com</strong> for receipts, but only if the agent truly needs purchase confirmations.</li><li><strong>agentdesk+support@gmail.com</strong> for vendor tickets and replies.</li></ul><p>Do not confuse this with access control. If someone can read the inbox, they can read every alias that lands there. Aliases organize mail. They do not create separate mailboxes, separate passwords, or separate blast doors.</p><p>Also, dots are not a separate identity in personal Gmail addresses. Google says dots do not matter in Gmail usernames, so <strong>agent.desk@gmail.com</strong> and <strong>agentdesk@gmail.com</strong> route to the same account. That is handy, but it is not a permission system. It is mostly a trivia question with consequences.</p>
+
+    <h2>Create Labels That Behave Like Folders</h2>
+    <p>Gmail does not really use folders the way old desktop email clients did. It uses labels. A single message can have multiple labels, and deleting the message removes it from the inbox and every label attached to it. Google’s Gmail help says labels are different from folders and explains how to create them here: <a href="https://support.google.com/mail/answer/118708" target="_blank" rel="noopener">https://support.google.com/mail/answer/118708</a>.</p><p>For an AI-agent inbox, create labels before the agent starts touching anything. A good starter set:</p><ul><li><strong>Agent/Login</strong> for sign-in links, verification codes, and account confirmations.</li><li><strong>Agent/Scheduled Tasks</strong> for daily or weekly task output.</li><li><strong>Agent/Screenshots</strong> for screenshots and visual proof.</li><li><strong>Agent/Receipts</strong> for purchases or subscription notices.</li><li><strong>Agent/Errors</strong> for failed logins, bounced mail, blocked attachments, and vendor complaints.</li><li><strong>Agent/Needs Human Review</strong> for anything the agent must not resolve alone.</li></ul><p>Then create Gmail filters. Filter messages sent to <strong>agentdesk+login@gmail.com</strong> into <strong>Agent/Login</strong>. Filter <strong>agentdesk+screenshots@gmail.com</strong> into <strong>Agent/Screenshots</strong>. Filter known vendors into their own labels if needed. Gmail filters can automatically apply labels, archive, delete, star, or forward messages, according to Google’s filter help: <a href="https://support.google.com/mail/answer/6579" target="_blank" rel="noopener">https://support.google.com/mail/answer/6579</a>.</p><p>The practical rule: every automated email should land somewhere predictable. If the inbox becomes a junk drawer, the AI agent will eventually treat a password reset, a calendar update, and a marketing coupon as morally equivalent. That is funny until it is not.</p>
+
+    <h2>Permissions: Never Hand Over The Main Password</h2>
+    <p>The safest pattern is OAuth or “Sign in with Google” where the app requests specific access and you can later review or revoke it. Google’s account help says third-party apps can request access to Google services such as Gmail, Drive, Calendar, Photos, and Contacts, and that you should review what information and permissions are requested before granting access: <a href="https://support.google.com/accounts/answer/14012355" target="_blank" rel="noopener">https://support.google.com/accounts/answer/14012355</a>.</p><p>Do not paste the Gmail password into an AI agent, browser automation script, random extension, or “temporary” tool. Temporary tools have a majestic way of becoming permanent. If an app only supports username-and-password login, that is a warning, not a charming retro feature.</p><p>If an older app absolutely requires an app password, Google says app passwords are 16-digit passcodes for less secure apps or devices and require 2-Step Verification. Google also says app passwords are not recommended in most cases and suggests using Sign in with Google when available: <a href="https://support.google.com/accounts/answer/185833" target="_blank" rel="noopener">https://support.google.com/accounts/answer/185833</a>. If you use one anyway, name it clearly, store it like a secret, and revoke it when the experiment ends.</p><p>Review connected apps on a schedule. Once a week at first, then monthly if the setup is stable. Remove anything the agent no longer needs. If a tool asked for Gmail read/write access just to send one notification email, that tool is either lazy, greedy, or both.</p><p>Gmail delegation is another option, but it is not a tidy folder-level permission model. Google says a Gmail delegate can read, send, and delete email in the account, while a delegate cannot change the account password. Google also says personal Gmail accounts can add up to 10 delegates. That may be useful for a human assistant. For an AI agent, it is usually too broad unless the whole mailbox exists only for that agent.</p>
+
+    <h2>Scheduling Tasks Without Letting The Calendar Become A Trap Door</h2>
+    <p>If the AI agent needs to schedule tasks, use a dedicated calendar or a narrowly scoped calendar connection. Do not give calendar access just because the agent needs to send a daily status email. Email and calendar are separate capabilities, and the setup should keep them that way.</p><p>A practical pattern looks like this:</p><ul><li>Create a calendar named <strong>AI Agent Tasks</strong>.</li><li>Put only agent-related events on that calendar.</li><li>Use clear event titles, such as <strong>Run weekly vendor check</strong> or <strong>Send Friday screenshot report</strong>.</li><li>Require the agent to email a completion note to <strong>agentdesk+schedule@gmail.com</strong>.</li><li>Route those notes to the <strong>Agent/Scheduled Tasks</strong> label.</li></ul><p>If the agent can create or modify calendar events, require human confirmation for anything involving external guests, payment deadlines, legal deadlines, client meetings, travel, medical appointments, or account recovery. In other words, all the items that create actual trouble when mishandled. Letting an AI agent reschedule a dentist appointment is one thing. Letting it move a contract deadline because it inferred “probably flexible” is how grown adults develop eye twitches.</p><p>For repeating work, prefer scheduled reports over silent action. A good report says what the agent did, what it changed, what failed, what needs review, and where the evidence is. If screenshots are included, they should be attached or linked in a predictable way.</p>
+
+    <h2>Screenshots Are Useful Logs, But They Leak Everything</h2>
+    <p>Screenshots are excellent receipts. They show what the AI agent saw, what button it clicked, what confirmation page appeared, and whether the task actually finished. They also capture names, email addresses, browser tabs, account balances, customer data, API keys, recovery codes, and embarrassing bookmarks. Screenshots are evidence with a privacy problem.</p><p>Set rules before screenshots start flowing:</p><ul><li>Capture only the active window when possible, not the full desktop.</li><li>Blur or crop passwords, tokens, recovery codes, personal data, and payment details.</li><li>Send screenshots to <strong>agentdesk+screenshots@gmail.com</strong>.</li><li>Apply the <strong>Agent/Screenshots</strong> label automatically.</li><li>Use filenames with timestamps and task names, not vague names like <strong>final-final-2.png</strong>.</li><li>Delete old screenshots on a retention schedule if they contain sensitive information.</li></ul><p>Gmail also has attachment limits and blocked file rules. Google says personal Gmail accounts have a 25 MB attachment limit, and larger files may be handled through Google Drive links: <a href="https://support.google.com/mail/answer/6584" target="_blank" rel="noopener">https://support.google.com/mail/answer/6584</a>. Google also blocks certain file types that may spread malware, including executable files and some archived content: <a href="https://support.google.com/mail/answer/6590" target="_blank" rel="noopener">https://support.google.com/mail/answer/6590</a>.</p><p>For screenshots, PNG or JPG is usually fine. Do not let the agent zip a pile of screenshots with scripts, logs, and mystery binaries unless there is a specific reason. Email is a good notification layer. It is not a forensic storage system, no matter how many labels you lovingly create.</p>
+
+    <h2>The Limits You Should Write Down</h2>
+    <p>The setup only works if the agent has written limits. Put them in a short operating note and keep it in the inbox, a shared doc, or the agent’s project folder. The note should say exactly what the agent may do and what requires human approval.</p><p>Use limits like these:</p><ul><li><strong>Login:</strong> The agent may receive verification emails for approved services only.</li><li><strong>Password resets:</strong> The agent may not initiate or complete password resets without approval.</li><li><strong>Purchases:</strong> The agent may not buy, upgrade, renew, or cancel services unless specifically instructed.</li><li><strong>Calendar:</strong> The agent may create internal task reminders but may not invite external guests without review.</li><li><strong>Email sending:</strong> The agent may send templated status reports, not freeform promises to customers or vendors.</li><li><strong>Screenshots:</strong> The agent must avoid capturing secrets and must label every screenshot task.</li><li><strong>Escalation:</strong> Anything involving money, legal terms, account recovery, personal data, or a failed login loop goes to <strong>Agent/Needs Human Review</strong>.</li></ul><p>The goal is not to make Gmail magical. Gmail is just the inbox, alias router, label system, and evidence trail. The real safety comes from making the AI agent’s job small, visible, and reversible.</p><p>If the agent needs more than that, pause before adding permissions. More access is not automation maturity. Sometimes it is just a bigger broom for knocking things off higher shelves.</p>
+
+  </div>
+
+  <div class="post-footer">
+    <span class="post-footer-label">Looking for more AI tools?</span>
+    <a class="btn-export" href="/">See our free AI tools →</a>
+  </div>
+
+  <nav class="post-nav post-nav-bottom">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+</main>
+
+<!--FOOTER-->
+
+<script data-goatcounter="https://notavello.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script></body>
+</html>
