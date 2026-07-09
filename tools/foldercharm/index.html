@@ -214,6 +214,44 @@ a { color: inherit; }
   margin: 0 auto;
   padding: 38px 22px 84px;
 }
+
+.page-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 30px;
+}
+.page-logo {
+  background: rgba(255,255,255,0.68);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 10px 14px;
+  box-shadow: var(--shadow-soft);
+}
+.page-nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.page-nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 9px 12px;
+  border-radius: 999px;
+}
+.page-nav a:hover {
+  color: var(--accent);
+  background: rgba(109,74,255,0.06);
+}
+@media (max-width: 680px) {
+  .page-top { align-items: flex-start; flex-direction: column; }
+  .page-nav { display: none; }
+}
+
 .back-link {
   display: inline-flex;
   text-decoration: none;
@@ -503,21 +541,21 @@ h2 {
 </head>
 
 <body>
-<header class="header">
-  <nav class="nav">
-    <a class="logo" href="/" aria-label="Notavello home">
+
+<main class="main">
+
+  <div class="page-top">
+    <a class="logo page-logo" href="/" aria-label="Notavello home">
       <span class="logo-icon" aria-hidden="true"></span>
       <span>Folder<span>Charm</span></span>
     </a>
-    <div class="nav-links">
+    <div class="page-nav">
       <a href="/tools/">More Tools</a>
       <a href="#features">Features</a>
       <a href="#how-it-works">How it Works</a>
     </div>
-  </nav>
-</header>
+  </div>
 
-<main class="main">
   <a class="back-link" href="/tools/">← Back to tools</a>
 
   <section class="hero">
