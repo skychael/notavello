@@ -28,6 +28,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: notavello-main-writes
+  cancel-in-progress: false
+
 jobs:
   generate-post:
     runs-on: ubuntu-latest
@@ -43,7 +47,7 @@ jobs:
           node-version: '20'
 
       - name: Install dependencies
-        run: npm install openai
+        run: npm install --no-save --package-lock=false openai
 
       - name: Generate today's post
         env:
@@ -73,6 +77,10 @@ jobs:
             exit 0
           fi
           git commit -m "Generate blog post $(date -u +%Y-%m-%d)"
+
+          # Remove any leftover changes from npm install or generated temp files before rebasing/pushing.
+          git reset --hard HEAD
+          git clean -fd
 
           n=0
           until [ $n -ge 5 ]
