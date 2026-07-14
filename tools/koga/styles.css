@@ -39,7 +39,6 @@ a {
 }
 
 .topbar,
-.hero,
 .section,
 footer {
   width: min(1120px, calc(100% - 40px));
@@ -83,12 +82,15 @@ footer a:hover {
 }
 
 .hero {
+  width: min(1320px, calc(100% - 40px));
+  margin-inline: auto;
   min-height: 680px;
   padding: 70px 0 96px;
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
+  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
   align-items: center;
-  gap: 64px;
+  gap: clamp(40px, 4vw, 64px);
+  isolation: isolate;
 }
 
 .eyebrow {
@@ -129,7 +131,7 @@ h3 {
 }
 
 .lede {
-  max-width: 620px;
+  max-width: 100%;
   margin-bottom: 30px;
   color: var(--muted);
   font-size: clamp(1.12rem, 2vw, 1.35rem);
@@ -182,10 +184,12 @@ h3 {
 .phone-card {
   display: flex;
   justify-content: center;
+  min-width: 0;
 }
 
 .hero-product {
-  width: min(680px, 52vw);
+  width: min(760px, 100%);
+  max-width: 100%;
   height: auto;
   display: block;
 }
@@ -294,6 +298,11 @@ h3 {
   gap: 28px 22px;
 }
 
+.shot-grid figure {
+  display: flex;
+  flex-direction: column;
+}
+
 .shot-link {
   border-radius: 28px;
   display: block;
@@ -326,6 +335,7 @@ h3 {
 }
 
 .overview-shot {
+  width: min(920px, 86%);
   margin-inline: auto;
 }
 
@@ -450,6 +460,11 @@ footer > p {
   .feature-grid,
   .shot-grid {
     grid-template-columns: 1fr;
+  }
+
+  .wide-shot,
+  .overview-shot {
+    width: 100%;
   }
 
   .shot-grid {

@@ -22,6 +22,7 @@ https://notavello.com/tools/koga/
 - `assets/icons/koga-mark.svg` — Koga mark
 - `assets/screenshots/koga-hero.webp` — 1600 × 1100 hero composition
 - `assets/screenshots/koga-browsing.webp` — 900 × 1100 compact browsing feature
+- `assets/screenshots/koga-address.webp` — 900 × 1100 address controls feature
 - `assets/screenshots/koga-tabs.webp` — 900 × 1100 tabs feature
 - `assets/screenshots/koga-bookmarks.webp` — 900 × 1100 bookmarks feature
 - `assets/screenshots/koga-landscape.webp` — 1400 × 850 landscape feature

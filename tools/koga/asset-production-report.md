@@ -2,7 +2,7 @@
 
 ## Production approach
 
-All app UI pixels come directly from the four approved screenshots in `assets-raw/fresh`. The compositions use deterministic cropping, resizing, device framing, shadows, and a generated neutral abstract background. No controls, webpage content, or app features were moved, redrawn, replaced, or invented.
+All app UI pixels come directly from the five approved screenshots in `assets-raw/fresh`. The compositions use deterministic cropping, resizing, device framing, shadows, and a generated neutral abstract background. No controls, webpage content, or app features were moved, redrawn, replaced, or invented.
 
 Android status bars were cropped from the marketing compositions. Source images remain unchanged.
 
@@ -11,6 +11,7 @@ Android status bars were cropped from the marketing compositions. Source images 
 | Source | Original dimensions | Used for |
 |---|---:|---|
 | `assets-raw/fresh/koga-final-portrait-browsing.png` | 720 × 1604 | Hero, browsing feature, overview collage |
+| `assets-raw/fresh/koga-final-portrait-go.png` | 720 × 1604 | Address controls feature |
 | `assets-raw/fresh/koga-final-tabs-002.png` | 720 × 1604 | Tabs feature, overview collage |
 | `assets-raw/fresh/koga-final-bookmarks.png` | 720 × 1604 | Bookmarks feature, overview collage |
 | `assets-raw/fresh/koga-final-landscape-002.png` | 1604 × 720 | Landscape feature, overview collage |
@@ -21,6 +22,7 @@ Android status bars were cropped from the marketing compositions. Source images 
 |---|---:|---|---:|
 | `assets/screenshots/koga-hero.webp` | 1600 × 1100 | Status-bar crop, large centered portrait device frame, soft shadow, minimal neutral background, WebP optimization | 34,992 bytes |
 | `assets/screenshots/koga-browsing.webp` | 900 × 1100 | Status-bar crop, enlarged centered portrait device frame, reduced outer background, soft shadow, neutral background, WebP optimization | 33,842 bytes |
+| `assets/screenshots/koga-address.webp` | 900 × 1100 | Status-bar crop, enlarged centered portrait device frame, reduced outer background, soft shadow, neutral background, WebP optimization | 30,590 bytes |
 | `assets/screenshots/koga-tabs.webp` | 900 × 1100 | Status-bar crop, enlarged centered portrait device frame, reduced outer background, soft shadow, neutral background, WebP optimization | 30,464 bytes |
 | `assets/screenshots/koga-bookmarks.webp` | 900 × 1100 | Status-bar crop, enlarged centered portrait device frame, reduced outer background, soft shadow, neutral background, WebP optimization | 45,390 bytes |
 | `assets/screenshots/koga-landscape.webp` | 1400 × 850 | Status-bar crop, centered landscape device frame, soft shadow, neutral background, WebP optimization | 40,548 bytes |
@@ -29,7 +31,7 @@ Android status bars were cropped from the marketing compositions. Source images 
 ## Website integration
 
 - Replaced the synthetic hero placeholder with `koga-hero.webp`.
-- Replaced all screenshot placeholders with browsing, tabs, and bookmarks promotional images.
+- Replaced all screenshot placeholders with browsing, address controls, tabs, and bookmarks promotional images.
 - Added landscape and overview presentations using live HTML captions.
 - Added descriptive alt text and intrinsic image dimensions.
 - Retained responsive single-column behavior on narrow screens.
