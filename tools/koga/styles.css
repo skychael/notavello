@@ -290,8 +290,18 @@ h3 {
 
 .shot-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px 22px;
+}
+
+.shot-link {
+  border-radius: 28px;
+  display: block;
+}
+
+.shot-link:focus-visible {
+  outline: 3px solid #6b50b6;
+  outline-offset: 4px;
 }
 
 .shot-grid img,
@@ -308,6 +318,11 @@ h3 {
 .wide-shot,
 .overview-shot {
   margin-top: 56px;
+}
+
+.wide-shot {
+  width: min(980px, 92%);
+  margin-inline: auto;
 }
 
 .overview-shot {

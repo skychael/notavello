@@ -21,9 +21,9 @@ https://notavello.com/tools/koga/
 - `script.js` — disabled release-button behavior
 - `assets/icons/koga-mark.svg` — Koga mark
 - `assets/screenshots/koga-hero.webp` — 1600 × 1100 hero composition
-- `assets/screenshots/koga-browsing.webp` — 1200 × 900 compact browsing feature
-- `assets/screenshots/koga-tabs.webp` — 1200 × 900 tabs feature
-- `assets/screenshots/koga-bookmarks.webp` — 1200 × 900 bookmarks feature
+- `assets/screenshots/koga-browsing.webp` — 900 × 1100 compact browsing feature
+- `assets/screenshots/koga-tabs.webp` — 900 × 1100 tabs feature
+- `assets/screenshots/koga-bookmarks.webp` — 900 × 1100 bookmarks feature
 - `assets/screenshots/koga-landscape.webp` — 1400 × 850 landscape feature
 - `assets/screenshots/koga-overview.webp` — 1600 × 1000 multi-screen overview
 

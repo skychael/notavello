@@ -20,9 +20,9 @@ Android status bars were cropped from the marketing compositions. Source images 
 | Output | Dimensions | Processing | File size |
 |---|---:|---|---:|
 | `assets/screenshots/koga-hero.webp` | 1600 × 1100 | Status-bar crop, large centered portrait device frame, soft shadow, minimal neutral background, WebP optimization | 34,992 bytes |
-| `assets/screenshots/koga-browsing.webp` | 1200 × 900 | Status-bar crop, centered portrait device frame, soft shadow, neutral background, WebP optimization | 27,048 bytes |
-| `assets/screenshots/koga-tabs.webp` | 1200 × 900 | Status-bar crop, centered portrait device frame, soft shadow, neutral background, WebP optimization | 24,872 bytes |
-| `assets/screenshots/koga-bookmarks.webp` | 1200 × 900 | Status-bar crop, centered portrait device frame, soft shadow, neutral background, WebP optimization | 36,114 bytes |
+| `assets/screenshots/koga-browsing.webp` | 900 × 1100 | Status-bar crop, enlarged centered portrait device frame, reduced outer background, soft shadow, neutral background, WebP optimization | 33,842 bytes |
+| `assets/screenshots/koga-tabs.webp` | 900 × 1100 | Status-bar crop, enlarged centered portrait device frame, reduced outer background, soft shadow, neutral background, WebP optimization | 30,464 bytes |
+| `assets/screenshots/koga-bookmarks.webp` | 900 × 1100 | Status-bar crop, enlarged centered portrait device frame, reduced outer background, soft shadow, neutral background, WebP optimization | 45,390 bytes |
 | `assets/screenshots/koga-landscape.webp` | 1400 × 850 | Status-bar crop, centered landscape device frame, soft shadow, neutral background, WebP optimization | 40,548 bytes |
 | `assets/screenshots/koga-overview.webp` | 1600 × 1000 | Three real portrait screens and one real landscape screen arranged as a device collage, soft shadows, neutral background, WebP optimization | 97,652 bytes |
 

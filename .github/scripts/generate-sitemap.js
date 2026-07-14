@@ -27,12 +27,15 @@ const EXCLUDE_DIRS = new Set([
   'node_modules',
   'admin',     // Decap CMS, not a public page
   'versions',  // changelog / internal
+  'assets-raw', // ignored source assets and local browser-review profiles
 ]);
 
 // Standalone .html pages that are real pages but aren't named index.html.
 // Map:  file path in repo  ->  clean URL path on the live site.
 const EXTRA_PAGES = {
   'login.html': '/login/',
+  'tools/koga/privacy.html': '/tools/koga/privacy.html',
+  'tools/koga/support.html': '/tools/koga/support.html',
 };
 
 const root = process.cwd();
