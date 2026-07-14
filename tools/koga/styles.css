@@ -441,6 +441,83 @@ footer > p {
   margin-top: 8px;
 }
 
+.tabs-visual {
+  width: min(360px, 100%);
+  margin: 26px 0 0;
+}
+
+.tabs-panel {
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: #f0f0ed;
+}
+
+.tabs-panel-header {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.05rem;
+}
+
+.settings-callout {
+  width: 38px;
+  height: 38px;
+  border: 2px solid #6b50b6;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #3f2b75;
+  background: #eee8ff;
+  box-shadow: 0 0 0 4px rgba(107, 80, 182, 0.12);
+}
+
+.settings-gear {
+  width: 21px;
+  height: 21px;
+  fill: currentColor;
+}
+
+.sample-tab {
+  min-width: 0;
+  padding: 11px 12px;
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  overflow: hidden;
+  background: var(--surface);
+  font-size: 0.88rem;
+}
+
+.sample-tab + .sample-tab {
+  margin-top: 8px;
+}
+
+.tab-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #6b50b6;
+}
+
+.tab-close {
+  color: var(--muted);
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.tabs-visual figcaption {
+  padding: 10px 2px 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
 @media (max-width: 860px) {
   .topbar {
     grid-template-columns: 1fr auto;
