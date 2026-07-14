@@ -34,6 +34,7 @@ const EXCLUDE_DIRS = new Set([
 // Map:  file path in repo  ->  clean URL path on the live site.
 const EXTRA_PAGES = {
   'login.html': '/login/',
+  'tools/koga/help.html': '/tools/koga/help.html',
   'tools/koga/privacy.html': '/tools/koga/privacy.html',
   'tools/koga/support.html': '/tools/koga/support.html',
 };
