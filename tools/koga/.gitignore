@@ -1,0 +1,7 @@
+# Raw or private source images
+assets-raw/
+assets/private/
+
+# OS files
+.DS_Store
+Thumbs.db
