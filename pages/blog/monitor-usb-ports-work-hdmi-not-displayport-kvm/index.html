@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>The Hidden KVM Problem: Why My Monitor’s USB Ports Work With HDMI But Not DisplayPort — The Export | Notavello</title>
+<meta name="description" content="If DisplayPort video works but monitor USB dies, the KVM pairing may be sending your keyboard to the wrong computer."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/blog/monitor-usb-ports-work-hdmi-not-displayport-kvm/"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2026-07-13T02:11:32.998Z"/>
+<meta property="article:modified_time" content="2026-07-13T02:11:32.998Z"/>
+<meta name="notavello:published_at" content="2026-07-13T02:11:32.998Z"/>
+<meta property="og:url" content="https://notavello.com/pages/blog/monitor-usb-ports-work-hdmi-not-displayport-kvm/"/>
+<meta property="og:title" content="The Hidden KVM Problem: Why My Monitor’s USB Ports Work With HDMI But Not DisplayPort"/>
+<meta property="og:description" content="If DisplayPort video works but monitor USB dies, the KVM pairing may be sending your keyboard to the wrong computer."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="The Hidden KVM Problem: Why My Monitor’s USB Ports Work With HDMI But Not DisplayPort"/>
+<meta name="twitter:description" content="If DisplayPort video works but monitor USB dies, the KVM pairing may be sending your keyboard to the wrong computer."/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "The Hidden KVM Problem: Why My Monitor’s USB Ports Work With HDMI But Not DisplayPort",
+  "description": "If DisplayPort video works but monitor USB dies, the KVM pairing may be sending your keyboard to the wrong computer.",
+  "url": "https://notavello.com/pages/blog/monitor-usb-ports-work-hdmi-not-displayport-kvm/",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://notavello.com/pages/blog/monitor-usb-ports-work-hdmi-not-displayport-kvm/" },
+  "image": "https://notavello.com/og-image.png",
+  "datePublished": "2026-07-13T02:11:32.998Z",
+  "dateModified": "2026-07-13T02:11:32.998Z",
+  "author": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" },
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com", "logo": { "@type": "ImageObject", "url": "https://notavello.com/og-image.png" } }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
+.post-nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; row-gap: 8px; }
+.post-nav-top { margin-bottom: 40px; }
+.post-nav-bottom { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--border); }
+.post-nav a { display: inline-flex; align-items: center; gap: 6px; font-size: 0.92rem; font-weight: 600; color: var(--ink-muted); text-decoration: none; padding: 12px 14px; border-radius: var(--radius-sm); white-space: nowrap; transition: color 0.15s, background 0.15s; }
+.post-nav a:hover { color: var(--accent); background: var(--accent-light); }
+.post-nav a:first-child { padding-left: 0; }
+.post-nav a:last-child { padding-right: 0; justify-content: flex-end; }
+.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
+.post-date { font-size: 0.78rem; color: var(--ink-faint); }
+.post-title { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; color: var(--ink); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
+.post-lede { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+.post-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink); }
+.post-body h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 44px 0 16px; letter-spacing: -0.01em; }
+.post-body p { margin-bottom: 20px; color: var(--ink-muted); }
+.post-body p strong { color: var(--ink); font-weight: 600; }
+.post-body ul { margin: 0 0 20px 20px; color: var(--ink-muted); }
+.post-body ul li { margin-bottom: 8px; line-height: 1.7; }
+.callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 32px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.7; }
+.post-footer { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.post-footer-label { font-size: 0.8rem; color: var(--ink-faint); }
+.btn-export { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: opacity 0.2s; }
+.btn-export:hover { opacity: 0.9; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } .post-nav a { padding: 12px 8px; font-size: 0.88rem; } }
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+
+  <nav class="post-nav post-nav-top">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+  <div class="post-meta">
+    <span class="post-tag">Tech</span>
+    <span class="post-date">July 13, 2026</span>
+  </div>
+
+  <h1 class="post-title">The Hidden KVM Problem: Why My Monitor’s USB Ports Work With HDMI But Not DisplayPort</h1>
+
+  <p class="post-lede">Your monitor can show the right computer while sending your keyboard and mouse to the wrong one. That is not magic. It is usually a hidden KVM setting being deeply committed to ruining your afternoon.</p>
+
+  <div class="post-body">
+
+    <h2>The Setup That Looks Like It Should Work</h2>
+    <p>Here is the familiar mess: one monitor, two computers, one keyboard, one mouse, and just enough cables behind the desk to make you question your life choices.</p><p>The Mac is connected to the monitor over USB-C. The Windows PC is also connected to the same monitor. Originally, the Windows PC used DisplayPort on the computer, then a DisplayPort-to-HDMI adapter, then HDMI into the monitor. The keyboard and mouse are plugged into the monitor’s USB ports. A separate USB upstream cable runs from the Windows PC to the monitor, because the monitor’s USB hub needs a data path back to the PC.</p><p>So far, this is normal. Monitor USB ports are usually downstream ports. They are convenient places to plug in a keyboard, mouse, webcam, flash drive, or receiver. But for the computer to actually see those devices, the monitor must also have an upstream USB connection back to that computer. Dell’s support documentation says the same thing plainly: when a monitor is connected by HDMI or DisplayPort, the USB downstream ports require a USB upstream cable between the monitor and computer to work. <a href='https://www.dell.com/support/kbdoc/en-us/000189810/usb-downstream-ports-on-a-dell-monitor-do-not-work' rel='nofollow'>Dell explains the upstream USB requirement for monitor USB ports here</a>.</p><p>The weird part is not that Windows needs the USB upstream cable. That part is expected. The weird part is this: Windows works fine when the monitor is using its HDMI input, but when the same Windows PC is connected directly to the monitor’s DisplayPort input, the video works and the keyboard and mouse vanish.</p><p>That makes DisplayPort look guilty. It probably is not.</p>
+
+    <div class="callout">
+      <strong>The bottom line:</strong> The DisplayPort picture is working. The monitor’s USB traffic is simply following the wrong computer.
+    </div>
+
+    <h2>DisplayPort Is Probably Not The USB Problem</h2>
+    <p>The most important thing to separate is video from USB. HDMI and DisplayPort are display connections. In a normal desktop monitor setup, they carry the picture, and sometimes audio. They are not the usual path your USB keyboard and mouse take back to the computer.</p><p>Your keyboard and mouse data are supposed to travel through the monitor’s USB hub, then out through the monitor’s USB upstream cable, then into the Windows PC. That is why the keyboard and mouse do not work with Windows unless the upstream cable is connected. The HDMI cable was not secretly carrying your mouse clicks like a tiny courier in a blazer.</p><p>USB-C is where this gets more confusing, because a USB-C connection can carry video and USB data at the same time if the monitor and computer support it. That is why the Mac side may feel cleaner: one cable can be doing several jobs. But the Windows DisplayPort cable is still mainly a display cable. The separate USB upstream cable is the path that matters for the keyboard and mouse.</p><p>So if DisplayPort video works, the graphics side of the connection is alive. Windows is sending a picture. The monitor is accepting that picture. The screen is doing screen things. The failure is more likely inside the monitor’s USB routing: the built-in hub, the built-in KVM switch, or the monitor’s input-to-USB-source pairing.</p><p>This is the kind of problem that feels like a cable problem because you changed a cable and something broke. But the real change may be that the monitor switched from one video input profile to another. HDMI had the right USB pairing. DisplayPort may not.</p>
+
+    <h2>The Hidden Map Inside The Monitor</h2>
+    <p>Many modern monitors with built-in USB hubs and KVM features keep an internal map. It is not always obvious, and it is rarely named in a way that makes a normal person smile.</p><p>The map says something like this:</p><ul><li><strong>USB-C video input</strong> should use the USB-C data connection from the Mac.</li><li><strong>HDMI input</strong> should use the USB-B or USB-C upstream cable from the Windows PC.</li><li><strong>DisplayPort input</strong> should use whichever upstream port the monitor has been told to use.</li></ul><p>That last line is where the trap lives. Your monitor may have remembered that HDMI belongs to the Windows USB upstream connection. When you move Windows to DisplayPort, the monitor may not automatically move the USB hub with it. It may leave the keyboard and mouse routed to the Mac. It may route them to another upstream port. It may route them to no upstream port at all, which is not so much routing as abandoning them in a field.</p><p>This is how a monitor can show video from one computer while sending keyboard and mouse input to another computer. Think of it as changing the television channel correctly, but forwarding the remote-control commands to the other room. The picture is right. The control path is wrong.</p><p>Manufacturers use different names for this setting. Look for menu items called <strong>KVM</strong>, <strong>USB Switch</strong>, <strong>USB Source</strong>, <strong>USB Upstream</strong>, <strong>DP USB Selection</strong>, <strong>Input Pairing</strong>, <strong>Auto KVM</strong>, or <strong>USB-C Priority</strong>. BenQ’s KVM setup guidance, for example, describes setups where HDMI or DisplayPort video is paired with a USB upstream connection, and some models require manual KVM input selection for the second source. <a href='https://www.benq.com/en-us/support/downloads-faq/faq/product/application/monitor-faq-kn-00084.html' rel='nofollow'>BenQ’s KVM setup page shows this video-plus-USB-upstream arrangement</a>.</p><p>If you want the broader version of monitor hub chaos, the related Notavello post <a href='/pages/blog/keyboard-mouse-monitor-usb-hub-problems/'>Why Your Keyboard And Mouse Hate Your Monitor USB Hub</a> covers the general failure modes. This case is narrower: the hub works, but it is probably paired to the wrong input.</p>
+
+    <h2>The Likely Fix: Pair DisplayPort With The Windows USB Upstream Port</h2>
+    <p>The likely fix is not a new DisplayPort cable, a different keyboard, or a ritual sacrifice of the HDMI adapter. The likely fix is to tell the monitor that its DisplayPort input belongs to the USB upstream connection coming from the Windows PC.</p><p>On many monitors, this means opening the on-screen display menu with the buttons or joystick on the monitor itself. Then you hunt through the settings until you find the KVM or USB routing section. The exact words vary by brand and model, because apparently the industry met and agreed that consistency would be too helpful.</p><p>You are looking for a setting that lets you assign a video input to a USB upstream input. It may look like this:</p><ul><li><strong>DisplayPort → USB-B Upstream</strong></li><li><strong>DisplayPort → USB Upstream 1</strong></li><li><strong>DP → USB-C Data Upstream</strong></li><li><strong>USB-C → USB-C</strong> for the Mac</li><li><strong>HDMI → USB-B</strong> for the Windows PC, if you go back to HDMI</li></ul><p>If the Windows PC is connected to the monitor by DisplayPort for video and USB-B for data, then the monitor needs to know that <strong>DisplayPort equals Windows USB upstream</strong>. The Mac, meanwhile, should usually stay assigned to USB-C if that one cable is carrying the Mac’s video and USB data.</p><p>Some monitors include two upstream USB connections. One might be a USB-B upstream port. Another might be a USB-C upstream port. Some USB-C ports carry video and data. Some are data-only. Some downstream-looking USB-C ports are only for devices or charging. Yes, this is annoying. No, the port labels are not always as clear as they should be.</p><p>That is why the manual matters. Search the PDF for terms like <strong>KVM</strong>, <strong>USB upstream</strong>, <strong>USB source</strong>, <strong>input manager</strong>, or <strong>USB selection</strong>. Do not just search for DisplayPort. The DisplayPort section may only describe resolution and refresh rate, while the USB routing instructions are hiding in the KVM chapter like a raccoon in the attic.</p>
+
+    <h2>A Practical Troubleshooting Checklist</h2>
+    <p>Work through this in order. The goal is to prove whether the monitor is routing USB to the wrong computer, not to randomly rearrange cables until morale improves.</p><ul><li><strong>1. Open the monitor’s on-screen menu.</strong> Use the physical buttons, joystick, or monitor control software if your model supports it.</li><li><strong>2. Find the KVM or USB source settings.</strong> Look for KVM, USB Switch, USB Source, USB Upstream, DP USB Selection, Input Pairing, Auto KVM, or USB-C Priority.</li><li><strong>3. Assign DisplayPort to the Windows USB upstream port.</strong> If the Windows PC uses DisplayPort for video and USB-B for the hub, pair DisplayPort with USB-B or the named upstream port connected to Windows.</li><li><strong>4. Assign USB-C to the Mac.</strong> If the Mac uses USB-C for both video and USB data, keep the USB-C input paired with the Mac’s USB-C connection.</li><li><strong>5. Disable automatic USB switching temporarily and test manual switching.</strong> Auto KVM can be useful, but it can also hide what is happening. Manual mode makes the test clearer.</li><li><strong>6. Check whether the monitor has a second upstream USB port.</strong> A second upstream port can mean a second possible destination for the keyboard and mouse. Make sure Windows is connected to the one you selected in the menu.</li><li><strong>7. Confirm in Windows Device Manager that the monitor’s USB hub appears.</strong> Open Device Manager and check under USB controllers or Human Interface Devices. If switching the monitor’s USB source makes devices appear or disappear, you have found the routing problem.</li><li><strong>8. Test the keyboard and mouse directly in the Windows PC.</strong> This rules out dead batteries, bad receivers, weird hubs, or the classic “the mouse was off the whole time” incident.</li><li><strong>9. Check the monitor manual for input-to-USB pairing instructions.</strong> The setting may be model-specific. The manual may describe exactly which upstream port can be paired with HDMI, DisplayPort, or USB-C.</li><li><strong>10. Check for monitor firmware updates if the settings are correct but the problem remains.</strong> Firmware will not fix every routing issue, but for monitors with KVM logic, it is worth checking the manufacturer’s support page.</li></ul><p>After changing the pairing, switch the monitor to DisplayPort and test the keyboard and mouse in Windows. If they work, the case is closed. DisplayPort was standing near the crime scene, but the KVM did it.</p>
+
+    <h2>Why The HDMI Adapter Made Everything Look More Mysterious</h2>
+    <p>The DisplayPort-to-HDMI adapter is the red herring. When the Windows PC used that adapter, the monitor saw the Windows machine as an HDMI input. If the monitor had HDMI paired to the Windows USB upstream cable, the keyboard and mouse worked. Nothing about that proves HDMI is better for USB. It only proves that the HDMI input had the correct USB assignment.</p><p>When you removed the adapter and connected Windows directly to DisplayPort, the monitor saw a different input. The picture still worked because DisplayPort was doing its job. But the monitor may have applied a different USB rule for DisplayPort. That rule may have pointed to the Mac’s USB-C connection, another upstream port, or nowhere useful.</p><p>This is why the symptom is so irritating: the same Windows computer, same keyboard, same mouse, same monitor, same USB upstream cable, but different result. The monitor did not lose the USB cable. It may have stopped associating that USB cable with the active video input.</p><p>If there is one sentence to keep in mind, it is this: <strong>the monitor can switch video and USB separately unless its KVM settings explicitly link them together.</strong></p><p>Once you think of the monitor as two devices in one box—a display plus a USB switch—the problem stops being supernatural. The display half selected Windows over DisplayPort. The USB half may still be listening to the Mac. Classic office politics, but with cables.</p>
+
+  </div>
+
+  <div class="post-footer">
+    <span class="post-footer-label">Looking for more AI tools?</span>
+    <a class="btn-export" href="/">See our free AI tools →</a>
+  </div>
+
+  <nav class="post-nav post-nav-bottom">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+</main>
+
+<!--FOOTER-->
+
+<script data-goatcounter="https://notavello.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script></body>
+</html>

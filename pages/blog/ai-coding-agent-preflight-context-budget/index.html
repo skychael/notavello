@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>AI Coding Agents Need A Preflight Context Budget — The Export | Notavello</title>
+<meta name="description" content="Before an AI coding agent reads half your repo, give it a context budget, file list, and receipt trail."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/blog/ai-coding-agent-preflight-context-budget/"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2026-07-13T05:01:27.418Z"/>
+<meta property="article:modified_time" content="2026-07-13T05:01:27.418Z"/>
+<meta name="notavello:published_at" content="2026-07-13T05:01:27.418Z"/>
+<meta property="og:url" content="https://notavello.com/pages/blog/ai-coding-agent-preflight-context-budget/"/>
+<meta property="og:title" content="AI Coding Agents Need A Preflight Context Budget"/>
+<meta property="og:description" content="Before an AI coding agent reads half your repo, give it a context budget, file list, and receipt trail."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="AI Coding Agents Need A Preflight Context Budget"/>
+<meta name="twitter:description" content="Before an AI coding agent reads half your repo, give it a context budget, file list, and receipt trail."/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "AI Coding Agents Need A Preflight Context Budget",
+  "description": "Before an AI coding agent reads half your repo, give it a context budget, file list, and receipt trail.",
+  "url": "https://notavello.com/pages/blog/ai-coding-agent-preflight-context-budget/",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://notavello.com/pages/blog/ai-coding-agent-preflight-context-budget/" },
+  "image": "https://notavello.com/og-image.png",
+  "datePublished": "2026-07-13T05:01:27.418Z",
+  "dateModified": "2026-07-13T05:01:27.418Z",
+  "author": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" },
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com", "logo": { "@type": "ImageObject", "url": "https://notavello.com/og-image.png" } }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
+.post-nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; row-gap: 8px; }
+.post-nav-top { margin-bottom: 40px; }
+.post-nav-bottom { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--border); }
+.post-nav a { display: inline-flex; align-items: center; gap: 6px; font-size: 0.92rem; font-weight: 600; color: var(--ink-muted); text-decoration: none; padding: 12px 14px; border-radius: var(--radius-sm); white-space: nowrap; transition: color 0.15s, background 0.15s; }
+.post-nav a:hover { color: var(--accent); background: var(--accent-light); }
+.post-nav a:first-child { padding-left: 0; }
+.post-nav a:last-child { padding-right: 0; justify-content: flex-end; }
+.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
+.post-date { font-size: 0.78rem; color: var(--ink-faint); }
+.post-title { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; color: var(--ink); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
+.post-lede { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+.post-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink); }
+.post-body h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 44px 0 16px; letter-spacing: -0.01em; }
+.post-body p { margin-bottom: 20px; color: var(--ink-muted); }
+.post-body p strong { color: var(--ink); font-weight: 600; }
+.post-body ul { margin: 0 0 20px 20px; color: var(--ink-muted); }
+.post-body ul li { margin-bottom: 8px; line-height: 1.7; }
+.callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 32px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.7; }
+.post-footer { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.post-footer-label { font-size: 0.8rem; color: var(--ink-faint); }
+.btn-export { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: opacity 0.2s; }
+.btn-export:hover { opacity: 0.9; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } .post-nav a { padding: 12px 8px; font-size: 0.88rem; } }
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+
+  <nav class="post-nav post-nav-top">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+  <div class="post-meta">
+    <span class="post-tag">Developer Tools</span>
+    <span class="post-date">July 13, 2026</span>
+  </div>
+
+  <h1 class="post-title">AI Coding Agents Need A Preflight Context Budget</h1>
+
+  <p class="post-lede">AI coding agents are getting very good at sounding busy. The harder question is still boring: what did the agent read, what did it send, and why?</p>
+
+  <div class="post-body">
+
+    <h2>The New Problem Is Not The Prompt</h2>
+    <p>The old AI coding workflow was simple: paste a bug, paste a file, ask for help, copy the answer, regret one variable name. The new workflow is different. A coding agent can inspect a project, read files, run commands, edit code, and sometimes continue across multiple steps while you supervise from a suspicious distance.</p><p>That is useful. It is also how a small request quietly turns into a large context upload. The prompt may say, “fix this auth test.” The agent may decide it needs the auth module, routing, package config, test helpers, previous errors, project instructions, and a few files that looked emotionally relevant at the time. Now the job is no longer just “write code.” It is “select and transmit context.”</p><p>That selection step deserves a preflight budget. Before the agent starts, it should be clear how much context it is allowed to gather, which folders are in bounds, which files are off limits, and what evidence it must leave behind. Without that, you are not really delegating a coding task. You are giving a very fast intern a badge, a corporate card, and the keys to the document closet.</p>
+
+    <div class="callout">
+      <strong>The bottom line:</strong> Do not start an AI coding session with a blank prompt and a repo-sized invitation. Give the agent a file budget, a token budget, and a receipt requirement before it begins wandering.
+    </div>
+
+    <h2>A Context Budget Is A Real Engineering Control</h2>
+    <p>A context budget is not a motivational poster about being concise. It is a concrete limit on what an AI coding agent may read or send before it asks for approval. Good budgets usually include four things: file scope, token scope, command scope, and time scope.</p><ul><li><strong>File scope:</strong> the exact directories or files the agent may inspect first.</li><li><strong>Token scope:</strong> the approximate input budget for the investigation phase.</li><li><strong>Command scope:</strong> the read-only commands it may run without asking, such as tests, grep, type checks, or dependency inspection.</li><li><strong>Time scope:</strong> the point where the agent must stop exploring and summarize what it found.</li></ul><p>Claude Code, for example, documents token usage as an OpenTelemetry metric and describes audit events for tool calls, MCP activity, permission decisions, Bash commands, and file edits when monitoring is configured. That matters because token use and tool use are not vibes; they can be measured and reviewed in real systems. <a href="https://code.claude.com/docs/en/monitoring-usage">Anthropic’s Claude Code monitoring documentation</a> is a good example of the kind of operational surface teams should expect from coding agents.</p><p>The practical move is to make the preflight instruction boring and repeatable: “First inspect only these files. Spend no more than about 8,000 input tokens before reporting. Do not read secrets, generated files, build artifacts, lockfiles, logs, screenshots, or environment files unless asked. Run only read-only diagnostics. Then produce a context receipt.” This will not make the agent perfect. It will make the session reviewable, which is the actual bar.</p>
+
+    <h2>The Receipt Should Say What The Agent Read</h2>
+    <p>The output you want before edits is not a poem about the codebase. It is a receipt. A useful context receipt should name the files read, commands run, assumptions made, and missing information. It should also say what the agent chose not to read.</p><p>That last part is important. “I did not inspect billing, production secrets, analytics exports, or unrelated admin pages” is more useful than a heroic summary of everything the agent noticed. A receipt turns context selection into something you can challenge. If the agent read the wrong files, you can stop early. If it skipped the file that obviously matters, you can redirect it before it starts manufacturing confidence out of lint dust.</p><p>Here is a simple receipt format worth reusing:</p><ul><li><strong>Task understood:</strong> one sentence restating the requested change.</li><li><strong>Files inspected:</strong> exact paths, not “the auth layer.”</li><li><strong>Commands run:</strong> exact commands and whether they changed state.</li><li><strong>Context not inspected:</strong> sensitive, generated, unrelated, or blocked areas.</li><li><strong>Likely edit targets:</strong> the smallest set of files the agent expects to modify.</li><li><strong>Approval request:</strong> what it wants to read or change next.</li></ul><p>This is also where Notavello’s broader AI coding advice connects. If the agent can edit files, run tools, and pass context between systems, it belongs inside a controlled workflow, not a casual chat tab. For the larger supply-chain angle, see <a href="/pages/blog/ai-coding-cli-supply-chain/">AI coding CLIs as supply chain tools</a>.</p>
+
+    <h2>Do Not Let Project Memory Become A Junk Drawer</h2>
+    <p>Many coding agents support project instructions, memory files, rules files, skills, or similar mechanisms. These are helpful when they contain sharp constraints: “use pnpm,” “never edit generated API clients,” “tests live under this directory,” “production migrations require a separate review.” They become harmful when they turn into a junk drawer of stale preferences, abandoned architecture notes, and seven paragraphs about how the previous team felt about semicolons.</p><p>A bloated project memory file creates two problems. First, it burns context before the task has even started. Second, it can outrank the actual job. The agent may follow an old instruction because it was loaded automatically, not because it still reflects the project. That is a delightful way to preserve yesterday’s bug in tomorrow’s pull request.</p><p>Keep project instructions short enough that a human reviewer would actually read them. Put hard rules at the top. Mark optional preferences as optional. Delete old migration notes when the migration is over. If a rule only applies to one folder, keep it near that folder instead of forcing every session to inhale it.</p><p>The preflight budget should include these memory files by name. If the agent automatically loads a project instruction file, the receipt should say so. Hidden context is still context. “It was in memory” is not a satisfying incident report.</p>
+
+    <h2>Separate Exploration From Execution</h2>
+    <p>The safest agent workflow has two phases: exploration and execution. In exploration, the agent reads limited context, runs read-only checks, and proposes a plan. In execution, it edits files, runs tests, and reports diffs. Mixing those phases is where sessions get messy.</p><p>Plan-first mode is not just for nervous teams. It is a speed feature. A short investigation often reveals that the requested change is underspecified, the failing test is stale, or the bug lives in a different layer than expected. Better to find that out before the agent edits six files and leaves behind a confident explanation of a wrong theory.</p><p>A good plan should include the smallest credible change. If the agent proposes a broad refactor for a narrow bug, make it justify the blast radius. If it wants to read more files, ask which files and why. If it wants to run commands that touch external services, package registries, containers, or databases, require a separate approval. Nobody needs a surprise integration test against production because the robot was feeling thorough.</p><p>This is where local policy beats vendor promises. Different agents expose different permission modes, logs, and privacy controls. Some tools are open source. Some are hosted. Some connect to several model providers. OpenCode, for instance, describes itself as an open source coding agent for terminal, IDE, or desktop use, while hosted tools may have their own telemetry, account, and provider behavior. The control you need is not a brand preference. It is a repeatable boundary around context and actions.</p>
+
+    <h2>A Practical Preflight Template</h2>
+    <p>Use a saved prompt. Do not improvise this every time. The point is to make the default session safer without turning every bug fix into a governance festival.</p><p><strong>Preflight prompt:</strong> “Before editing anything, inspect only the files I list plus directly imported local files if necessary. Do not read .env files, secrets, generated files, build artifacts, logs, vendor folders, screenshots, exports, or unrelated directories. Keep the investigation under roughly 8,000 input tokens unless you ask first. Run only read-only commands. Then provide a context receipt with files read, commands run, assumptions, files not inspected, and the smallest proposed edit plan. Wait for approval before making changes.”</p><p>For a tiny bug, lower the budget. For a large migration, raise it and split the work into phases. For sensitive repos, require allowlisted paths only. For enterprise teams, pipe agent events into normal logging, not a separate mystery dashboard that only one platform engineer remembers exists.</p><p>The budget should also appear in pull request notes when AI materially helped. Not because anyone needs theater. Because reviewers need to know whether the agent inspected the right area, ignored the risky area, and tested the actual change. “AI assisted” is too vague. “Agent read these five files, changed these two, ran these commands, and did not inspect secrets or production config” is usable.</p>
+
+    <h2>The Best Agent Is The One You Can Interrupt</h2>
+    <p>Fast coding agents make bad defaults expensive. If the agent can read too much, it can leak too much context. If it can run too much, it can mutate the workspace before the human understands the plan. If it can spend too many tokens, it can turn a cheap question into a surprisingly large bill with a beautifully formatted explanation attached.</p><p>The fix is not to stop using AI coding agents. The fix is to stop treating the first prompt as a magic spell. Treat it like a job ticket. Define the scope. Cap the context. Require a receipt. Separate planning from edits. Review what happened.</p><p>That sounds less glamorous than “agentic software engineering.” Good. Glamour is how teams end up with a bot reading half the monorepo to rename a button. A preflight context budget is dull, enforceable, and easy to teach. In developer tooling, that is usually what adulthood looks like.</p>
+
+  </div>
+
+  <div class="post-footer">
+    <span class="post-footer-label">Looking for more AI tools?</span>
+    <a class="btn-export" href="/">See our free AI tools →</a>
+  </div>
+
+  <nav class="post-nav post-nav-bottom">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+</main>
+
+<!--FOOTER-->
+
+<script data-goatcounter="https://notavello.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script></body>
+</html>
