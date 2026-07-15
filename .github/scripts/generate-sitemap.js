@@ -39,6 +39,11 @@ const EXTRA_PAGES = {
   'tools/koga/support.html': '/tools/koga/support.html',
 };
 
+// Key nested pages whose canonical generated URLs should never regress.
+const REQUIRED_INDEX_PAGES = {
+  'tools/koga/start/index.html': '/tools/koga/start/',
+};
+
 const root = process.cwd();
 const pages = [];
 
@@ -69,6 +74,17 @@ walk(root);
 for (const [file, url] of Object.entries(EXTRA_PAGES)) {
   if (fs.existsSync(path.join(root, file))) {
     pages.push({ url });
+  }
+}
+
+// Fail the workflow if a required index page is missing or loses its
+// canonical trailing-slash URL during future generator changes.
+for (const [file, url] of Object.entries(REQUIRED_INDEX_PAGES)) {
+  if (!fs.existsSync(path.join(root, file))) {
+    throw new Error(`Required sitemap page is missing: ${file}`);
+  }
+  if (!pages.some((page) => page.url === url)) {
+    throw new Error(`Required sitemap URL was not generated: ${url}`);
   }
 }
 
