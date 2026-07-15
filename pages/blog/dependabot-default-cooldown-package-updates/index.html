@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Dependabot’s Default Cooldown Makes Package Updates Less Reckless — The Export | Notavello</title>
+<meta name="description" content="Dependabot now waits before opening version update PRs. Here is how teams should use cooldowns without delaying security fixes."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/blog/dependabot-default-cooldown-package-updates/"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2026-07-15T04:28:24.460Z"/>
+<meta property="article:modified_time" content="2026-07-15T04:28:24.460Z"/>
+<meta name="notavello:published_at" content="2026-07-15T04:28:24.460Z"/>
+<meta property="og:url" content="https://notavello.com/pages/blog/dependabot-default-cooldown-package-updates/"/>
+<meta property="og:title" content="Dependabot’s Default Cooldown Makes Package Updates Less Reckless"/>
+<meta property="og:description" content="Dependabot now waits before opening version update PRs. Here is how teams should use cooldowns without delaying security fixes."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Dependabot’s Default Cooldown Makes Package Updates Less Reckless"/>
+<meta name="twitter:description" content="Dependabot now waits before opening version update PRs. Here is how teams should use cooldowns without delaying security fixes."/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Dependabot’s Default Cooldown Makes Package Updates Less Reckless",
+  "description": "Dependabot now waits before opening version update PRs. Here is how teams should use cooldowns without delaying security fixes.",
+  "url": "https://notavello.com/pages/blog/dependabot-default-cooldown-package-updates/",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://notavello.com/pages/blog/dependabot-default-cooldown-package-updates/" },
+  "image": "https://notavello.com/og-image.png",
+  "datePublished": "2026-07-15T04:28:24.460Z",
+  "dateModified": "2026-07-15T04:28:24.460Z",
+  "author": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" },
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com", "logo": { "@type": "ImageObject", "url": "https://notavello.com/og-image.png" } }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
+.post-nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; row-gap: 8px; }
+.post-nav-top { margin-bottom: 40px; }
+.post-nav-bottom { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--border); }
+.post-nav a { display: inline-flex; align-items: center; gap: 6px; font-size: 0.92rem; font-weight: 600; color: var(--ink-muted); text-decoration: none; padding: 12px 14px; border-radius: var(--radius-sm); white-space: nowrap; transition: color 0.15s, background 0.15s; }
+.post-nav a:hover { color: var(--accent); background: var(--accent-light); }
+.post-nav a:first-child { padding-left: 0; }
+.post-nav a:last-child { padding-right: 0; justify-content: flex-end; }
+.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
+.post-date { font-size: 0.78rem; color: var(--ink-faint); }
+.post-title { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; color: var(--ink); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
+.post-lede { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+.post-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink); }
+.post-body h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 44px 0 16px; letter-spacing: -0.01em; }
+.post-body p { margin-bottom: 20px; color: var(--ink-muted); }
+.post-body p strong { color: var(--ink); font-weight: 600; }
+.post-body ul { margin: 0 0 20px 20px; color: var(--ink-muted); }
+.post-body ul li { margin-bottom: 8px; line-height: 1.7; }
+.callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 32px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.7; }
+.post-footer { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.post-footer-label { font-size: 0.8rem; color: var(--ink-faint); }
+.btn-export { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: opacity 0.2s; }
+.btn-export:hover { opacity: 0.9; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } .post-nav a { padding: 12px 8px; font-size: 0.88rem; } }
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+
+  <nav class="post-nav post-nav-top">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+  <div class="post-meta">
+    <span class="post-tag">Developer Tools</span>
+    <span class="post-date">July 15, 2026</span>
+  </div>
+
+  <h1 class="post-title">Dependabot’s Default Cooldown Makes Package Updates Less Reckless</h1>
+
+  <p class="post-lede">Fresh package updates are not always good package updates. Dependabot’s new default cooldown is a small change with a very useful message: stop merging code the minute it appears.</p>
+
+  <div class="post-body">
+
+    <h2>The New Default Is A Three-Day Pause</h2>
+    <p>On July 14, 2026, GitHub announced that Dependabot version updates now wait until a new release has been available in its registry for at least three days before opening a version update pull request. GitHub says the default applies to version updates, requires no configuration on github.com, and does not delay security updates. That last sentence matters, because otherwise this would be a very fancy way to make teams nervous. <a href="https://github.blog/changelog/2026-07-14-dependabot-version-updates-introduce-default-package-cooldown/">GitHub’s changelog explains the new default cooldown</a>.</p><p>This is a quiet but sensible correction to the way dependency automation often behaves. For years, many repositories treated “newer” as nearly synonymous with “better.” A bot opened a pull request, CI went green, someone clicked merge, and everyone pretended that a green test suite meant the package ecosystem had been audited by the gods. It had not. It had merely installed.</p><p>The cooldown does not make supply-chain risk disappear. It does not prove that a package is safe. It simply creates time for obvious problems to surface: broken releases, pulled packages, compromised maintainer accounts, angry issue threads, emergency patches, and the familiar “please do not install this version” note that appears after half the internet already installed it.</p>
+
+    <div class="callout">
+      <strong>The bottom line:</strong> Dependabot’s three-day wait is not laziness. It is a supply-chain buffer. Keep it, tune it, and make urgent security updates take a different lane.
+    </div>
+
+    <h2>Speed Was Never The Whole Dependency Strategy</h2>
+    <p>Dependency bots solved one real problem and created another. The solved problem: humans are bad at manually checking hundreds of packages across multiple ecosystems. The created problem: once the bot exists, teams start using pull request presence as a proxy for importance. If Dependabot opens it, it feels official. If CI passes, it feels finished. If the diff is mostly a lockfile, it feels boring. Boring changes are where people get lazy.</p><p>A three-day wait is useful because ordinary version updates are rarely emergencies. A patch release for a UI helper, a minor release for a formatter, or a new version of a test fixture package usually does not need to land eleven minutes after publication. If it does, that is not a Dependabot problem. That is a release management problem wearing a little robot hat.</p><p>The better mental model is simple: dependency updates need lanes. Security fixes get the fast lane. Routine version updates get the normal lane. Major upgrades get the scheduled-work lane. Experimental packages get the suspicious little side road with traffic cones and a person holding a clipboard.</p><p>This is the same reason AI coding agents need boundaries before they touch real projects. Automation is useful when it narrows the job and leaves receipts. It is dangerous when it turns “something changed” into “something should be merged.” If your team already treats coding automation as part of the software supply chain, the dependency bot belongs in that same conversation. Notavello has covered the broader pattern in <a href="/pages/blog/ai-coding-cli-supply-chain/">AI coding CLIs as supply chain tools</a>.</p>
+
+    <h2>Do Not Disable The Cooldown Just Because It Is Annoying</h2>
+    <p>The first bad reaction will be predictable: someone will notice that Dependabot is “late,” then discover the cooldown, then turn it off because the dashboard looks less fresh. This is how teams accidentally optimize for inbox neatness instead of production safety.</p><p>The default three-day delay is a reasonable baseline for normal version updates. For many projects, it may even be too short. If you run a serious production app, a longer delay for major upgrades is usually sane. Major versions are where APIs move, defaults change, transitive dependencies shift, and migration guides are written in the gentle tone of someone who knows they ruined your Thursday.</p><p>GitHub’s Dependabot documentation says the cooldown option can be configured in dependabot.yml, including separate cooldown periods for default, major, minor, and patch updates where the package manager supports semantic versioning. It also supports include and exclude lists, which means teams can apply stricter rules to risky dependencies and let boring internal tooling move faster. <a href="https://docs.github.com/en/code-security/reference/supply-chain-security/dependabot-options-reference#cooldown">GitHub’s Dependabot options reference documents the cooldown settings</a>.</p><p>The point is not to worship the default. The point is to make the delay intentional. If a dependency is low risk and you want it updated immediately, exclude it deliberately. If a package sits near authentication, payments, build tooling, deployment, cryptography, serialization, or code execution, give it more time and more review. A package manager is not a moral authority. It is a vending machine with global write access.</p>
+
+    <h2>Separate Security Updates From Version Churn</h2>
+    <p>The most important operational detail is that Dependabot’s default cooldown is for version updates, not security updates. That distinction should also exist in your review process.</p><ul><li><strong>Security update:</strong> a known vulnerability is being fixed. The question is how fast you can safely patch, test, and deploy.</li><li><strong>Routine patch or minor update:</strong> a package has changed. The question is whether the change is useful enough to merge now.</li><li><strong>Major update:</strong> the dependency contract may have changed. The question is whether this belongs in planned engineering time.</li><li><strong>Build or deployment dependency update:</strong> the change may affect how your software is produced, not just how it runs. Treat it with extra suspicion.</li></ul><p>This split prevents a common failure mode: teams get so many routine bot PRs that security PRs become just another tile in the wall. That is backwards. Security updates should be more visible, not buried under twenty lockfile bumps for packages nobody can pronounce.</p><p>A good dependency process makes the bot boring without making the review meaningless. Group low-risk updates. Schedule routine updates for a predictable day. Require stronger review for major upgrades. Keep security updates separate. If the team cannot explain why an update matters, that update probably should not be merged during a coffee break.</p>
+
+    <h2>A Practical Cooldown Policy For Small Teams</h2>
+    <p>If you do not already have a policy, start with something plain. You do not need a security committee, a 47-page document, or a meeting called “Dependency Governance Sync.” Please do not invent that meeting.</p><table><tr><th>Update Type</th><th>Suggested Handling</th></tr><tr><td>Security updates</td><td>Review immediately, test quickly, deploy through the normal emergency or fast-track path.</td></tr><tr><td>Patch updates</td><td>Let the default cooldown run, then group and merge after tests and changelog review.</td></tr><tr><td>Minor updates</td><td>Use a longer cooldown if the dependency is production-critical or close to infrastructure.</td></tr><tr><td>Major updates</td><td>Treat as planned work, not routine bot cleanup.</td></tr><tr><td>Build, CI, deployment, auth, payment, and crypto packages</td><td>Add extra review even when the diff looks tiny.</td></tr></table><p>For many repositories, a weekly dependency window is better than a constant stream. Let Dependabot collect safe candidates, then review them in one focused pass. This reduces alert fatigue and makes it easier to spot the one update that deserves actual attention.</p><p>Also keep a short rollback path. Dependency updates should be easy to revert, especially grouped ones. If a grouped pull request updates twelve packages and production catches fire, you do not want to spend the next hour discovering which package brought matches.</p>
+
+    <h2>The Real Win Is Slower Automation With Better Receipts</h2>
+    <p>The larger lesson is not about Dependabot alone. It is about automation growing up. The first generation of developer automation chased speed: open the PR faster, autocomplete the code faster, run the tool faster, merge the update faster. The next generation needs to care more about context, timing, and evidence.</p><p>A dependency bot should not just say “new version available.” It should help answer: how old is the release, what changed, who published it, whether the package was yanked or republished, whether similar projects are reporting breakage, whether the update touches runtime code or only development tooling, and whether the project has enough tests to notice the difference. Some of that still requires human judgment. Annoying, but reality has persisted despite several attempts to deprecate it.</p><p>Dependabot’s cooldown is a small feature, but it nudges teams toward the right habit: do not treat the newest package as the safest package. Fresh releases need air. Maintainers need time to spot mistakes. Users need time to report breakage. Security researchers need time to notice patterns. Your CI pipeline needs time to be more than a ceremonial green check.</p><p>Keep the cooldown. Tune it where needed. Make security updates urgent without making every version bump urgent. The best dependency process is not the one that merges fastest. It is the one that lets automation do the boring work while humans still notice when the boring work is carrying a knife.</p>
+
+  </div>
+
+  <div class="post-footer">
+    <span class="post-footer-label">Looking for more AI tools?</span>
+    <a class="btn-export" href="/">See our free AI tools →</a>
+  </div>
+
+  <nav class="post-nav post-nav-bottom">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+</main>
+
+<!--FOOTER-->
+
+<script data-goatcounter="https://notavello.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script></body>
+</html>
