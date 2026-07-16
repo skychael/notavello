@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "notavello-pages-dev",
+      "runtimeExecutable": "wrangler",
+      "runtimeArgs": ["pages", "dev", ".", "--port", "8788", "--compatibility-date=2026-06-02"],
+      "port": 8788
+    }
+  ]
+}
