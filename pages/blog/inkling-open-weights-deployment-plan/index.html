@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Inkling Shows Open Weights Still Need A Deployment Plan — The Export | Notavello</title>
+<meta name="description" content="Inkling is open-weight, but that does not make it plug-and-play. Here is how teams should evaluate, host, fine-tune, and govern it."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/blog/inkling-open-weights-deployment-plan/"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2026-07-16T04:40:22.642Z"/>
+<meta property="article:modified_time" content="2026-07-16T04:40:22.642Z"/>
+<meta name="notavello:published_at" content="2026-07-16T04:40:22.642Z"/>
+<meta property="og:url" content="https://notavello.com/pages/blog/inkling-open-weights-deployment-plan/"/>
+<meta property="og:title" content="Inkling Shows Open Weights Still Need A Deployment Plan"/>
+<meta property="og:description" content="Inkling is open-weight, but that does not make it plug-and-play. Here is how teams should evaluate, host, fine-tune, and govern it."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Inkling Shows Open Weights Still Need A Deployment Plan"/>
+<meta name="twitter:description" content="Inkling is open-weight, but that does not make it plug-and-play. Here is how teams should evaluate, host, fine-tune, and govern it."/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Inkling Shows Open Weights Still Need A Deployment Plan",
+  "description": "Inkling is open-weight, but that does not make it plug-and-play. Here is how teams should evaluate, host, fine-tune, and govern it.",
+  "url": "https://notavello.com/pages/blog/inkling-open-weights-deployment-plan/",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://notavello.com/pages/blog/inkling-open-weights-deployment-plan/" },
+  "image": "https://notavello.com/og-image.png",
+  "datePublished": "2026-07-16T04:40:22.642Z",
+  "dateModified": "2026-07-16T04:40:22.642Z",
+  "author": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" },
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com", "logo": { "@type": "ImageObject", "url": "https://notavello.com/og-image.png" } }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
+.post-nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; row-gap: 8px; }
+.post-nav-top { margin-bottom: 40px; }
+.post-nav-bottom { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--border); }
+.post-nav a { display: inline-flex; align-items: center; gap: 6px; font-size: 0.92rem; font-weight: 600; color: var(--ink-muted); text-decoration: none; padding: 12px 14px; border-radius: var(--radius-sm); white-space: nowrap; transition: color 0.15s, background 0.15s; }
+.post-nav a:hover { color: var(--accent); background: var(--accent-light); }
+.post-nav a:first-child { padding-left: 0; }
+.post-nav a:last-child { padding-right: 0; justify-content: flex-end; }
+.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
+.post-date { font-size: 0.78rem; color: var(--ink-faint); }
+.post-title { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; color: var(--ink); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
+.post-lede { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+.post-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink); }
+.post-body h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 44px 0 16px; letter-spacing: -0.01em; }
+.post-body p { margin-bottom: 20px; color: var(--ink-muted); }
+.post-body p strong { color: var(--ink); font-weight: 600; }
+.post-body ul { margin: 0 0 20px 20px; color: var(--ink-muted); }
+.post-body ul li { margin-bottom: 8px; line-height: 1.7; }
+.callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 32px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.7; }
+.post-footer { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.post-footer-label { font-size: 0.8rem; color: var(--ink-faint); }
+.btn-export { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: opacity 0.2s; }
+.btn-export:hover { opacity: 0.9; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } .post-nav a { padding: 12px 8px; font-size: 0.88rem; } }
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+
+  <nav class="post-nav post-nav-top">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+  <div class="post-meta">
+    <span class="post-tag">AI Tools</span>
+    <span class="post-date">July 16, 2026</span>
+  </div>
+
+  <h1 class="post-title">Inkling Shows Open Weights Still Need A Deployment Plan</h1>
+
+  <p class="post-lede">Thinking Machines released Inkling as an open-weight model, which is useful. It is also a reminder that open weights are not the same thing as easy deployment.</p>
+
+  <div class="post-body">
+
+    <h2>Open Weights Are Control, Not Convenience</h2>
+    <p>Thinking Machines announced Inkling on July 15, 2026 as its first open-weight model. The company describes it as a mixture-of-experts transformer with 975B total parameters, 41B active parameters, support for up to a 1M-token context window, and training across text, images, audio, and video. Those are serious numbers, and the release is worth paying attention to because it pushes the open-weight conversation back toward customization instead of just leaderboard theater. The official announcement is here: <a href="https://thinkingmachines.ai/news/introducing-inkling/">Thinking Machines introducing Inkling</a>.</p><p>But the phrase <strong>open weights</strong> is doing a lot of work. It means developers can access model weights under the release terms and build around them. It does not mean the model is small, cheap, private by default, safe by default, or easy to run on the spare box under your desk. That distinction matters because many teams hear open-weight and immediately translate it into local, free, and under control. Two of those might be true after engineering work. None of them are guaranteed on day one.</p><p>The practical question is not whether Inkling is interesting. It is. The practical question is whether your team has the deployment discipline to turn an open-weight model into a reliable system.</p>
+
+    <div class="callout">
+      <strong>The bottom line:</strong> Open weights give you control. They do not magically give you cheap inference, safe outputs, clean licensing, or a working product.
+    </div>
+
+    <h2>The First Decision Is Hosted Fine-Tuning Or Self-Hosting</h2>
+    <p>Inkling is positioned around customization. Thinking Machines says Inkling is available for fine-tuning on Tinker, and the company also points to full weights. That gives teams two very different paths.</p><ul><li><strong>Hosted fine-tuning:</strong> faster to start, less infrastructure pain, easier for experiments, and usually better for teams that want model behavior changes without becoming an inference platform.</li><li><strong>Self-hosting:</strong> more control over deployment, data flow, latency architecture, logging, and cost structure, but also more responsibility for serving, monitoring, security, upgrades, and incident response.</li></ul><p>This is where the sales brochure version of open AI gets a little sweaty. A model with open weights can still be operationally expensive. Thinking Machines’ model card says the BF16 checkpoint requires a GPU cluster with at least 2 TB of aggregated VRAM, while the NVFP4 checkpoint reduces that aggregated VRAM requirement to at least 600 GB. That is not a Raspberry Pi project unless the Raspberry Pi is wearing a fake mustache and secretly owns a data center. The details are in the <a href="https://thinkingmachines.ai/model-card/inkling/">Inkling model card</a>.</p><p>For most product teams, the sane first move is to test the model through a managed path, define the use case, measure the gain from customization, and only then decide whether self-hosting is worth the engineering and hardware bill.</p>
+
+    <h2>Do Not Fine-Tune Until The Base Model Has Failed A Real Test</h2>
+    <p>Fine-tuning is attractive because it feels like ownership. Upload the right examples, press the expensive button, and the model becomes yours. Lovely story. Also incomplete.</p><p>Before fine-tuning Inkling, or any similar open-weight model, run the base model against a fixed evaluation set that looks like the actual job. Not vibes. Not five prompts in Slack. A small, boring test suite with expected behavior.</p><ul><li>Twenty to fifty real user tasks.</li><li>Examples of good answers and unacceptable answers.</li><li>Edge cases where the model should refuse, ask a follow-up question, or cite uncertainty.</li><li>Latency and cost targets, not just answer quality.</li><li>A human grading rubric simple enough that two reviewers can mostly agree.</li></ul><p>If the base model already performs well, you may only need retrieval, prompt routing, tool access, or a thinner instruction layer. Fine-tuning should solve a specific gap: tone, domain format, classification consistency, structured output, tool-call discipline, or specialized reasoning patterns. Fine-tuning should not be used as a fog machine for an unclear product requirement.</p><p>This is especially true for agentic coding and document workflows. If a model is editing files, calling tools, or making changes across a repository, the surrounding process matters as much as the model. Notavello has covered this from the workflow side in <a href="/pages/blog/ai-coding-agent-preflight-context-budget/">AI coding agent preflight context budgets</a>: constrain the job before the model starts wandering through the house with root access and confidence.</p>
+
+    <h2>Open-Weight Safety Is An Application Layer Problem</h2>
+    <p>The Inkling model card is unusually direct about the need for defense in depth. It says downstream developers should use safeguards such as content filtering, rate limiting, monitoring, and human oversight for high-stakes or safety-critical contexts. That is the right framing. Open-weight models are not self-governing appliances. They are components.</p><p>A production deployment should have separate controls around the model:</p><ul><li><strong>Input filtering:</strong> detect obvious abuse, prompt injection attempts, and unsafe requests before the model spends tokens on them.</li><li><strong>Output filtering:</strong> classify generated responses before they reach users, especially in consumer-facing tools.</li><li><strong>Tool permissions:</strong> give the model narrow capabilities instead of broad access to files, APIs, browsers, or terminals.</li><li><strong>Receipts:</strong> log prompts, retrieved context, tool calls, model versions, safety decisions, and final outputs.</li><li><strong>Fallback behavior:</strong> define when the app should ask for clarification, refuse, escalate to a human, or switch models.</li></ul><p>The mistake is treating safety as a personality trait of the model. It is not. Safety is a system property. A safer model helps, but the product still needs rails, logs, and rollback. Otherwise the team is just trusting a very large autocomplete engine to also be the compliance department. Bold choice. Not a good one.</p>
+
+    <h2>Use Inkling Where Customization Has Leverage</h2>
+    <p>The best use cases for a model like Inkling are not necessarily the flashiest. They are the cases where a general model gets close but misses important local rules.</p><ul><li><strong>Internal assistants</strong> that need company-specific terminology, policies, and document structure.</li><li><strong>Support triage</strong> where consistent classification matters more than charming prose.</li><li><strong>Codebase helpers</strong> that need to follow a team’s architecture, naming conventions, and review rules.</li><li><strong>Document generation</strong> where format compliance matters: summaries, reports, claims notes, compliance drafts, or structured briefs.</li><li><strong>Synthetic data generation</strong> where the model must imitate a domain-specific pattern at scale.</li></ul><p>Do not use a heavyweight open-weight model just because it is fashionable this week. If a smaller hosted model, a local small model, a search layer, or a rule-based pipeline solves the problem, use that. Open weights are valuable when control and customization produce measurable gains. They are wasteful when they become infrastructure cosplay.</p><p>A useful rule: if you cannot name the behavior you want to change, you are not ready to fine-tune. If you cannot measure whether that behavior changed, you are definitely not ready.</p>
+
+    <h2>The Production Checklist Before Anyone Gets Excited</h2>
+    <p>Before building a product around Inkling or another open-weight model, write the deployment plan. Not a grand AI strategy deck. A concrete plan that answers the annoying questions early.</p><ul><li><strong>Model source:</strong> Which exact checkpoint, version, quantization, and license terms are being used?</li><li><strong>Hosting path:</strong> Managed API, managed fine-tuning, private cloud, on-prem cluster, or hybrid?</li><li><strong>Data boundary:</strong> What user data reaches the model, what is stored, and what is excluded?</li><li><strong>Evaluation:</strong> What test set decides whether the model is better than the current option?</li><li><strong>Cost target:</strong> What is the maximum acceptable cost per task, including context, retries, tools, and moderation?</li><li><strong>Latency target:</strong> What response time is acceptable for the actual user workflow?</li><li><strong>Safety layer:</strong> What filters, rate limits, refusals, and human review paths exist outside the model?</li><li><strong>Change control:</strong> Who can update prompts, adapters, checkpoints, retrieval sources, and tool permissions?</li><li><strong>Rollback:</strong> How does the team revert if a fine-tune gets worse in production?</li></ul><p>This checklist is not glamorous. That is why it works. Open-weight AI becomes useful when teams stop treating model access as the finish line. It is only the starting line. The product is everything wrapped around it: evaluations, data boundaries, serving, safety, cost controls, and boring operational hygiene.</p><p>Inkling makes the open-weight market more interesting. It does not remove the need for judgment. If anything, it increases it, because more control means more decisions. Teams that want the benefit should take the whole bargain.</p>
+
+  </div>
+
+  <div class="post-footer">
+    <span class="post-footer-label">Looking for more AI tools?</span>
+    <a class="btn-export" href="/">See our free AI tools →</a>
+  </div>
+
+  <nav class="post-nav post-nav-bottom">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+</main>
+
+<!--FOOTER-->
+
+<script data-goatcounter="https://notavello.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script></body>
+</html>
