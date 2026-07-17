@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Gemini Notebook Turns AI Research Into Source Management — The Export | Notavello</title>
+<meta name="description" content="Gemini Notebook is more than a rename. Treat AI research notebooks like source-controlled project files, not magical folders."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/blog/gemini-notebook-ai-research-source-management/"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2026-07-17T04:42:45.387Z"/>
+<meta property="article:modified_time" content="2026-07-17T04:42:45.387Z"/>
+<meta name="notavello:published_at" content="2026-07-17T04:42:45.387Z"/>
+<meta property="og:url" content="https://notavello.com/pages/blog/gemini-notebook-ai-research-source-management/"/>
+<meta property="og:title" content="Gemini Notebook Turns AI Research Into Source Management"/>
+<meta property="og:description" content="Gemini Notebook is more than a rename. Treat AI research notebooks like source-controlled project files, not magical folders."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Gemini Notebook Turns AI Research Into Source Management"/>
+<meta name="twitter:description" content="Gemini Notebook is more than a rename. Treat AI research notebooks like source-controlled project files, not magical folders."/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Gemini Notebook Turns AI Research Into Source Management",
+  "description": "Gemini Notebook is more than a rename. Treat AI research notebooks like source-controlled project files, not magical folders.",
+  "url": "https://notavello.com/pages/blog/gemini-notebook-ai-research-source-management/",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://notavello.com/pages/blog/gemini-notebook-ai-research-source-management/" },
+  "image": "https://notavello.com/og-image.png",
+  "datePublished": "2026-07-17T04:42:45.387Z",
+  "dateModified": "2026-07-17T04:42:45.387Z",
+  "author": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" },
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com", "logo": { "@type": "ImageObject", "url": "https://notavello.com/og-image.png" } }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
+.post-nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; row-gap: 8px; }
+.post-nav-top { margin-bottom: 40px; }
+.post-nav-bottom { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--border); }
+.post-nav a { display: inline-flex; align-items: center; gap: 6px; font-size: 0.92rem; font-weight: 600; color: var(--ink-muted); text-decoration: none; padding: 12px 14px; border-radius: var(--radius-sm); white-space: nowrap; transition: color 0.15s, background 0.15s; }
+.post-nav a:hover { color: var(--accent); background: var(--accent-light); }
+.post-nav a:first-child { padding-left: 0; }
+.post-nav a:last-child { padding-right: 0; justify-content: flex-end; }
+.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
+.post-date { font-size: 0.78rem; color: var(--ink-faint); }
+.post-title { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; color: var(--ink); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
+.post-lede { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+.post-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink); }
+.post-body h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 44px 0 16px; letter-spacing: -0.01em; }
+.post-body p { margin-bottom: 20px; color: var(--ink-muted); }
+.post-body p strong { color: var(--ink); font-weight: 600; }
+.post-body ul { margin: 0 0 20px 20px; color: var(--ink-muted); }
+.post-body ul li { margin-bottom: 8px; line-height: 1.7; }
+.callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 32px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.7; }
+.post-footer { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.post-footer-label { font-size: 0.8rem; color: var(--ink-faint); }
+.btn-export { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: opacity 0.2s; }
+.btn-export:hover { opacity: 0.9; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } .post-nav a { padding: 12px 8px; font-size: 0.88rem; } }
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+
+  <nav class="post-nav post-nav-top">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+  <div class="post-meta">
+    <span class="post-tag">AI Tools</span>
+    <span class="post-date">July 17, 2026</span>
+  </div>
+
+  <h1 class="post-title">Gemini Notebook Turns AI Research Into Source Management</h1>
+
+  <p class="post-lede">NotebookLM becoming Gemini Notebook is not just a branding shuffle. It is a useful reminder that AI research tools are becoming workspaces, and workspaces need rules.</p>
+
+  <div class="post-body">
+
+    <h2>The Rename Is The Boring Part</h2>
+    <p>Google announced on July 16, 2026 that NotebookLM is being renamed Gemini Notebook. The company says it remains a standalone research product, with the new name and logo rolling out across interfaces over the next several weeks. Google also says existing shared notebooks and user links will continue through automatic redirects, so this is not a burn-the-house-down migration. It is a rename with ecosystem gravity attached. The official announcement is here: <a href="https://workspaceupdates.googleblog.com/2026/07/notebooklm-now-gemini-notebook.html">Google Workspace Updates on NotebookLM becoming Gemini Notebook</a>.</p><p>The interesting part is not the logo. The interesting part is what the name admits. A notebook is no longer just a place to paste PDFs and ask for a summary. It is becoming a project container: sources, chats, generated artifacts, analysis, maybe code execution, and eventually more hooks into the rest of the Google stack. That is convenient. It is also how small research messes become large research messes with better typography.</p><p>If you use Gemini Notebook casually, fine. Upload a manual, ask questions, make a study guide, move on with your life. But if you use it for work, client research, compliance reading, product planning, hiring packets, academic material, sales enablement, or anything where being wrong costs money, the notebook needs operating rules.</p>
+
+    <div class="callout">
+      <strong>The bottom line:</strong> Gemini Notebook will be useful only if you treat each notebook like a project file with sources, scope, owners, and review. Otherwise it becomes another confident junk drawer.
+    </div>
+
+    <h2>A Notebook Is A Boundary, Not A Bucket</h2>
+    <p>The easiest way to ruin an AI research notebook is to treat it like cloud storage with a chat box. Throw in meeting notes, web pages, PDFs, scraped snippets, copied Slack messages, a pricing sheet from six months ago, and a half-finished draft. Then ask for “the answer.” Congratulations, you have built a blender.</p><p>A useful notebook has a boundary. One project. One decision. One audience. One time window. If the question changes, create a new notebook. If the audience changes, create a new notebook. If old sources are no longer authoritative, archive them or remove them. The assistant can only reason over the pile it is given. If the pile is stale, contradictory, or politically curated by whoever uploaded last, the output will look smarter than it deserves.</p><p>Good notebook names should be boring and searchable. Use names like “2026 Q3 vendor evaluation - endpoint backup” or “Arizona payroll tax research - July 2026.” Bad names include “Research,” “Important,” “Client stuff,” and “final final.” Software cannot save you from naming things like a raccoon packed your Drive folder at 2 a.m.</p>
+
+    <h2>Write A Source Policy Before Uploading Files</h2>
+    <p>Before the first upload, decide what belongs in the notebook. This sounds bureaucratic because it is. Bureaucracy is sometimes just memory with shoes on.</p><ul><li><strong>Primary sources first:</strong> contracts, official docs, statutes, product pages, internal requirements, meeting transcripts, approved research notes.</li><li><strong>Secondary sources second:</strong> reputable analysis, news coverage, blog posts, analyst summaries, benchmark writeups.</li><li><strong>No mystery paste:</strong> if nobody can say where a paragraph came from, it should not become evidence.</li><li><strong>Date everything:</strong> a great source from 2024 may be useless for a 2026 pricing, policy, or API decision.</li><li><strong>Separate opinion from fact:</strong> customer complaints, Reddit threads, sales notes, and internal hunches can be useful, but they should not sit beside official sources without labels.</li></ul><p>This is where teams should steal habits from software development. A notebook source list is not that different from a dependency list. You need to know what went in, why it went in, who added it, and whether it is still valid. Not because anyone enjoys process. Because later, when someone asks why the recommendation changed, “the AI said so” is not an answer. It is a confession.</p>
+
+    <h2>Make Every Answer Show Its Receipts</h2>
+    <p>The best use of Gemini Notebook is not “write the final answer.” The best use is “show the path to the answer.” Ask for claims, supporting sources, missing evidence, contradictions, and confidence levels. If the tool cannot point back to the material that supports a claim, the claim should not move forward as fact.</p><p>A practical prompt is simple: “List the five strongest claims supported by these sources. For each claim, cite the source, quote the shortest relevant passage, and explain what would weaken the claim.” That last part matters. AI tools are very good at polishing the case you already want to make. They are less naturally good at telling you the case is thin unless you explicitly ask.</p><p>For work that leaves the notebook, build a review step. A human should open the cited source, confirm the passage, and check whether the wording survived the trip. This is especially important with policy, pricing, medical, legal, security, and financial material. The assistant can help organize evidence. It should not be treated as the evidence.</p>
+
+    <h2>Separate Research From Drafting</h2>
+    <p>One notebook should not do everything. Research and drafting are different jobs. Research collects sources, extracts claims, compares evidence, and identifies unknowns. Drafting turns approved findings into a memo, proposal, post, brief, script, or slide deck. Mixing them too early creates fluent mush.</p><p>A better workflow looks like this: collect sources, generate a claims table, review the claims, mark what is approved, then create a separate drafting prompt using only the approved findings. If the draft needs a new fact, send that fact back through research instead of letting the draft invent connective tissue. The boring loop is the safety feature.</p><p>Notavello has covered a similar pattern for AI work handoffs: keep the context explicit, portable, and reviewable instead of trapped inside a chat trail. If you are building repeatable workflows, use a plain handoff record like the one described in <a href="/pages/blog/ai-handoff-file/">the AI handoff file approach</a>. Gemini Notebook can be the research room. The handoff file is the receipt you can carry out of the room.</p>
+
+    <h2>The Team Setup That Actually Works</h2>
+    <p>For a team, Gemini Notebook needs ownership. Every serious notebook should have one owner, one purpose statement, and a short source log. The owner does not need to be a manager. The owner just needs to be the person responsible for cleaning the thing up when it starts collecting barnacles.</p><p>Use a simple operating pattern:</p><ul><li><strong>Purpose:</strong> one sentence describing the decision or deliverable.</li><li><strong>Source rules:</strong> what can be uploaded, what cannot, and what needs approval.</li><li><strong>Freshness rule:</strong> which sources expire and when they must be rechecked.</li><li><strong>Output rule:</strong> what the notebook may produce: summaries, claim tables, draft memos, FAQs, slide outlines, or source maps.</li><li><strong>Review rule:</strong> who verifies citations before anything is sent outside the team.</li></ul><p>This does not slow down serious work. It speeds up the second week, which is where most AI workflows quietly die. The first day feels magical because the assistant produces something fast. The second week reveals whether anyone can reproduce, verify, update, or defend it. That is the difference between a demo and a workflow.</p>
+
+    <h2>What To Watch During The Rollout</h2>
+    <p>Because the new name and logo are rolling out over several weeks, do not overreact if different users see different branding for a while. Check account type, Workspace settings, mobile app updates, and shared-link behavior before assuming something broke. Google says the rename affects Workspace customers, Workspace Individual subscribers, and personal Google accounts with access to NotebookLM, but feature availability can still vary by plan, admin policy, region, and rollout stage.</p><p>The bigger thing to watch is how tightly Gemini Notebook becomes tied to the rest of Gemini. Deeper integration can reduce friction, but it also makes source discipline more important. When research notebooks sync across tools, context can travel farther than expected. That is useful when the context is clean. It is dangerous when the context is a soup of outdated PDFs, half-truths, and someone’s “quick notes” from a sales call.</p><p>Gemini Notebook should make research easier. It should not make verification optional. Treat each notebook like a small knowledge base with a job to do, not a magic drawer that turns uploads into truth. The tool is getting more capable. Your source hygiene has to keep up. Annoying, yes. Cheaper than explaining later why the beautiful answer was built on the wrong document.</p>
+
+  </div>
+
+  <div class="post-footer">
+    <span class="post-footer-label">Looking for more AI tools?</span>
+    <a class="btn-export" href="/">See our free AI tools →</a>
+  </div>
+
+  <nav class="post-nav post-nav-bottom">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+</main>
+
+<!--FOOTER-->
+
+<script data-goatcounter="https://notavello.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script></body>
+</html>
