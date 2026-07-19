@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>GR00T 1.7’s Sim-to-Jetson Stack Still Omits Latency and Safety — The Export | Notavello</title>
+<meta name="description" content="NVIDIA Isaac GR00T 1.7 and its platform combine simulation, teleoperation, training, and deployment for humanoid robot policies on a single stack."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/blog/gr00t-1-7-unifies-humanoid-policy-development/"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2026-07-18T19:51:51.214Z"/>
+<meta property="article:modified_time" content="2026-07-18T19:51:51.214Z"/>
+<meta name="notavello:published_at" content="2026-07-18T19:51:51.214Z"/>
+<meta name="syndication-origin-site" content="toysforbots"/>
+<meta name="syndication-origin-id" content="toysforbots:gr00t-1-7-unifies-humanoid-policy-development"/>
+<meta name="syndication-origin-slug" content="gr00t-1-7-unifies-humanoid-policy-development"/>
+<meta name="syndication-origin-url" content="https://toysforbots.com/blog/gr00t-1-7-unifies-humanoid-policy-development/"/>
+<meta name="syndication-source-format" content="toysforbots-syndication-v1"/>
+<meta property="og:url" content="https://notavello.com/pages/blog/gr00t-1-7-unifies-humanoid-policy-development/"/>
+<meta property="og:title" content="GR00T 1.7’s Sim-to-Jetson Stack Still Omits Latency and Safety"/>
+<meta property="og:description" content="NVIDIA Isaac GR00T 1.7 and its platform combine simulation, teleoperation, training, and deployment for humanoid robot policies on a single stack."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="GR00T 1.7’s Sim-to-Jetson Stack Still Omits Latency and Safety"/>
+<meta name="twitter:description" content="NVIDIA Isaac GR00T 1.7 and its platform combine simulation, teleoperation, training, and deployment for humanoid robot policies on a single stack."/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "GR00T 1.7’s Sim-to-Jetson Stack Still Omits Latency and Safety",
+  "description": "NVIDIA Isaac GR00T 1.7 and its platform combine simulation, teleoperation, training, and deployment for humanoid robot policies on a single stack.",
+  "url": "https://notavello.com/pages/blog/gr00t-1-7-unifies-humanoid-policy-development/",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://notavello.com/pages/blog/gr00t-1-7-unifies-humanoid-policy-development/" },
+  "image": "https://notavello.com/og-image.png",
+  "datePublished": "2026-07-18T19:51:51.214Z",
+  "dateModified": "2026-07-18T19:51:51.214Z",
+  "author": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" },
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com", "logo": { "@type": "ImageObject", "url": "https://notavello.com/og-image.png" } }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
+.post-nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; row-gap: 8px; }
+.post-nav-top { margin-bottom: 40px; }
+.post-nav-bottom { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--border); }
+.post-nav a { display: inline-flex; align-items: center; gap: 6px; font-size: 0.92rem; font-weight: 600; color: var(--ink-muted); text-decoration: none; padding: 12px 14px; border-radius: var(--radius-sm); white-space: nowrap; transition: color 0.15s, background 0.15s; }
+.post-nav a:hover { color: var(--accent); background: var(--accent-light); }
+.post-nav a:first-child { padding-left: 0; }
+.post-nav a:last-child { padding-right: 0; justify-content: flex-end; }
+.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
+.post-date { font-size: 0.78rem; color: var(--ink-faint); }
+.post-title { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; color: var(--ink); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
+.post-lede { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+.post-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink); }
+.post-body h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 44px 0 16px; letter-spacing: -0.01em; }
+.post-body p { margin-bottom: 20px; color: var(--ink-muted); }
+.post-body p strong { color: var(--ink); font-weight: 600; }
+.post-body ul { margin: 0 0 20px 20px; color: var(--ink-muted); }
+.post-body ul li { margin-bottom: 8px; line-height: 1.7; }
+.callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 32px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.7; }
+.post-footer { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.post-footer-label { font-size: 0.8rem; color: var(--ink-faint); }
+.btn-export { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: opacity 0.2s; }
+.btn-export:hover { opacity: 0.9; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } .post-nav a { padding: 12px 8px; font-size: 0.88rem; } }
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+
+  <nav class="post-nav post-nav-top">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+  <div class="post-meta">
+    <span class="post-tag">Robotics</span>
+    <span class="post-date">July 18, 2026</span>
+  </div>
+
+  <h1 class="post-title">GR00T 1.7’s Sim-to-Jetson Stack Still Omits Latency and Safety</h1>
+
+  <p class="post-lede">Humanoid robot development has long required stitching together separate tools for simulation, data collection, training, and hardware deployment, creating friction that slows iteration.</p>
+
+  <div class="post-body">
+
+<h2>Fragmented Toolchains Slow Humanoid Progress</h2>
+<p>Robotics teams working on humanoids typically manage multiple environments for different stages of policy creation. Simulation setup might use one framework, teleoperated data collection another, training scripts a third, and deployment code a fourth. Each handoff introduces format conversions, version mismatches, and debugging overhead that consumes engineering time without advancing the actual robot behavior.</p>
+<p>The GR00T Development Platform addresses this by providing a single validated sequence that begins with Isaac Lab-Arena for scene creation and ends with deployment via Isaac ROS on Jetson Thor hardware. Because every stage shares compatible data structures and evaluation tools, a change made during data collection can be tested in the same arena environment used for final policy checks. This continuity reduces the risk that a policy performs well in isolation but fails when moved to the next step.</p>
+<p>Developers who previously spent substantial effort aligning outputs from separate simulators and training libraries can now focus on task design and data quality instead. The platform therefore lowers the entry cost for groups that lack large dedicated infrastructure teams while still supporting the scale needed by established robotics companies.</p><div class="callout"><strong>Key workflow outcome:</strong> A single modular stack now covers setup through on-device export, but measured latency, safety behaviors, and minimum data needs are not yet documented.</div>
+<h2>Model Scale and Pretraining Mix</h2>
+<p>GR00T 1.7 is a 3-billion-parameter vision-language-action model released under the Apache 2.0 license. It accepts language instructions and image observations, then produces action outputs suitable for cross-embodiment control. The backbone uses Cosmos-Reason2-2B, which encodes images at their native aspect ratios without padding, preserving spatial detail that would otherwise be lost.</p>
+<p>Pretraining combined roughly 32,000 hours of real human demonstration and egocentric video with about 8,000 hours of simulated rollouts drawn from BEHAVIOR, RoboCasa, and Simulated GR-1 environments. This mixture supplies both the diversity of real-world motion and the volume of controlled simulation needed for long-horizon reasoning. The resulting checkpoint serves as a starting point that teams can further adapt with their own data.</p>
+<p>Because the model is open and commercially usable, organizations can inspect weights, modify training scripts, and redistribute fine-tuned versions. This openness contrasts with closed models that restrict inspection or require cloud inference, giving teams direct control over where computation occurs and how data is handled.</p>
+<h2>Recording and Converting Demonstrations</h2>
+<p>A practical workflow begins when a developer creates a pick-and-place scene inside Isaac Lab-Arena. Using Isaac Teleop and a supported VR headset, the operator records demonstrations while AGILE WBC maintains balance on the simulated robot. The recorded trajectories are then converted to LeRobot format so they can be ingested by the GR00T training scripts. The platform documentation indicates that this conversion step exists, yet it does not list the exact intermediate file formats or command-line options required to perform the mapping.</p>
+<p>After conversion, the data enters post-training. The training process applies task- and subtask-level decomposition to improve long-horizon reasoning. A developer can therefore train on demonstrations for a specific manipulation sequence and have the model break the sequence into reusable components rather than treating every step as an opaque whole. How many demonstrations are required before generalization becomes reliable is not stated in the source material.</p>
+<p>Once training completes, the checkpoint loads into a GR00T server for closed-loop evaluation inside the same Arena environment. Only after evaluation passes does the pipeline export the policy as a LEAPP bundle ready for Jetson Thor. The sequence keeps all intermediate artifacts inside one ecosystem, which simplifies version tracking and rollback when a training run underperforms.</p>
+<h2>Measured Gains and Remaining Unknowns</h2>
+<p>Relative to the prior N1.6 release, GR00T 1.7 shows benchmark improvements of 10 percent on DROID-F0, 61 percent on DROID-F6, 5 percent on SimplerEnv Bridge, and 2 percent on SimplerEnv Fractal. These deltas indicate better handling of both real-world datasets and simulated environments. The release pairs those gains with a new backbone architecture and an expanded pretraining mixture.</p>
+<p>Export pipelines now include full ONNX and TensorRT paths that support higher-frequency updates and improved runtime reliability. Teams can therefore move a trained policy to edge hardware without rewriting inference code for each new model iteration. The availability of base checkpoints on GitHub and Hugging Face further shortens the time between downloading the model and running an initial evaluation.</p>
+<p>Despite these advances, the source material supplies no quantitative data on end-to-end latency when the exported policy runs on Jetson Thor, nor does it report success rates achieved on physical robots. Similarly, no figures describe the compute cost of post-training or the minimum number of demonstrations needed before generalization becomes reliable. These omissions leave teams without clear guidance on hardware sizing or data-collection budgets.</p>
+<h2>Adoption Patterns and Safety Considerations</h2>
+<p>Companies including 1X, Agility, ANYBotics, and NEURA Robotics already use the platform, as do research groups at Stanford, CMU, and ETH Zurich. Their adoption shows that the unified workflow is already in active use even while certain performance numbers remain unpublished. The source material does not state what drove each adopter’s decision or how they weighed missing latency data.</p>
+<p>The platform description does not detail how safety constraints or recovery behaviors are implemented during real-world execution. No information is given on whether the exported policy includes explicit collision avoidance, force limits, or fallback recovery routines, or whether those behaviors must be added by the integrator after deployment. Developers therefore need to plan additional layers of monitoring and override logic when moving policies from simulation to physical hardware.</p>
+<p>Because cross-embodiment claims rest primarily on the listed benchmark improvements, teams targeting novel robot morphologies should expect to collect their own validation data rather than assume zero-shot transfer. The absence of documented failure modes on physical platforms reinforces the need for staged testing that begins in simulation and progresses only after consistent Arena results.</p>
+<h2>Practical Next Steps for Interested Teams</h2>
+<p>A team considering GR00T 1.7 should first replicate the published pick-and-place example inside Isaac Lab-Arena to confirm that their local setup matches the documented workflow. Once that baseline runs, they can substitute their own robot model and begin recording demonstrations through Isaac Teleop. The conversion to LeRobot format then becomes the first custom integration point that requires verification against the training scripts.</p>
+<p>After post-training, evaluation inside Arena provides the only quantitative feedback currently available before hardware deployment. Teams should treat this evaluation as a gate rather than a final proof, because real-robot transfer results are not supplied. Budgeting time for additional safety wrappers and latency measurements on Jetson Thor is therefore prudent even though those steps sit outside the core platform.</p>
+<p>The open weights and modular design make it feasible to experiment without large upfront commitments, yet the missing details on latency, safety, and minimum data volumes mean that production timelines remain difficult to estimate. Organizations that need those numbers before committing resources may need to generate them through internal testing or direct engagement with NVIDIA.</p><h2>Sources</h2><ul><li><a href="https://developer.nvidia.com/blog/develop-humanoid-robot-policies-end-to-end-with-nvidia-isaac-gr00t/" rel="noopener noreferrer">Develop Humanoid Robot Policies End-to-End with NVIDIA Isaac GR00T | NVIDIA Technical Blog</a></li><li><a href="https://blogs.nvidia.com/blog/jetson-thor-robotics-edge-ai-agent/" rel="noopener noreferrer">NVIDIA Introduces New Jetson Thor Computers to Advance Mainstream Robotics and Edge AI | NVIDIA Blog</a></li><li><a href="https://blogs.nvidia.com/blog/hugging-face-lerobot-models-frameworks-open-robotics/" rel="noopener noreferrer">NVIDIA and Hugging Face Bring New Models and Frameworks to LeRobot for the Open Robotics Community | NVIDIA Blog</a></li></ul>
+
+  </div>
+
+  <div class="post-footer">
+    <span class="post-footer-label">Looking for more AI tools?</span>
+    <a class="btn-export" href="/">See our free AI tools →</a>
+  </div>
+
+  <nav class="post-nav post-nav-bottom">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+</main>
+
+<!--FOOTER-->
+
+<script data-goatcounter="https://notavello.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script></body>
+</html>
