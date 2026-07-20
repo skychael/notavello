@@ -25,7 +25,9 @@ jobs:
           node-version: '20'
 
       - name: Generate sitemap.xml
-        run: node .github/scripts/generate-sitemap.js
+        run: |
+          node .github/scripts/generate-sitemap.js
+          node scripts/seo-audit.js --check
 
       - name: Commit if changed
         run: |

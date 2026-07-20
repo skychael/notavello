@@ -1,0 +1,27 @@
+{
+  "generatedAt": "2026-07-20T14:50:21.873Z",
+  "baseUrl": "https://notavello.com",
+  "checked": 294,
+  "failures": [
+    {
+      "type": "live-status",
+      "page": "https://notavello.com/pages/blog/google-passkey-cleanup/",
+      "detail": "Googlebot: 404"
+    },
+    {
+      "type": "live-rendering",
+      "page": "https://notavello.com/pages/blog/google-passkey-cleanup/",
+      "detail": "Googlebot: article content absent/short"
+    },
+    {
+      "type": "live-status",
+      "page": "https://notavello.com/pages/blog/google-passkey-cleanup/",
+      "detail": "notavello-seo-audit/1.0: 404"
+    },
+    {
+      "type": "live-rendering",
+      "page": "https://notavello.com/pages/blog/google-passkey-cleanup/",
+      "detail": "notavello-seo-audit/1.0: article content absent/short"
+    }
+  ]
+}

@@ -314,7 +314,7 @@ function buildInternalTargets() {
     "/", "/tools/", "/app/",
     "/exporters/chatgpt/", "/exporters/claude/", "/exporters/gemini/",
     "/exporters/grok/", "/exporters/copilot/", "/exporters/perplexity/", "/exporters/other/",
-    "/pages/pricing/", "/pages/sample/", "/pages/faq/", "/pages/about/", "/pages/blog/"
+    "/pages/pricing", "/pages/sample", "/pages/faq", "/pages/about", "/pages/blog/"
   ];
   let blogTargets = [];
   try {

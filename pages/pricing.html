@@ -6,9 +6,9 @@
 <title>Pricing — Notavello</title>
 <meta name="description" content="Notavello is free to use. Export unlimited AI conversations as PDFs with a watermark. Remove the watermark for $5/month. Cancel anytime."/>
 <meta name="robots" content="index, follow"/>
-<link rel="canonical" href="https://notavello.com/pages/pricing/"/>
+<link rel="canonical" href="https://notavello.com/pages/pricing"/>
 <meta property="og:type" content="website"/>
-<meta property="og:url" content="https://notavello.com/pages/pricing/"/>
+<meta property="og:url" content="https://notavello.com/pages/pricing"/>
 <meta property="og:title" content="Pricing — Notavello"/>
 <meta property="og:description" content="Free to use. Remove the watermark for $5/month. Cancel anytime."/>
 <meta property="og:site_name" content="Notavello"/>
@@ -276,14 +276,14 @@ async function startCheckout(btn) {
   const params = new URLSearchParams(window.location.search);
   if (params.get('paid') === 'true') {
     localStorage.setItem('notavello_paid', 'true');
-    window.history.replaceState({}, '', '/pages/pricing/');
+    window.history.replaceState({}, '', '/pages/pricing');
     const msg = document.createElement('div');
     msg.style.cssText = 'position:fixed;top:24px;left:50%;transform:translateX(-50%);background:#059669;color:white;padding:14px 28px;border-radius:12px;font-size:0.95rem;font-weight:600;z-index:9999;box-shadow:0 4px 20px rgba(5,150,105,0.4);';
     msg.textContent = '✓ Payment confirmed — watermark removed, unlimited exports unlocked!';
     document.body.appendChild(msg);
     setTimeout(() => msg.remove(), 5000);
   } else if (params.get('paid') === 'cancelled') {
-    window.history.replaceState({}, '', '/pages/pricing/');
+    window.history.replaceState({}, '', '/pages/pricing');
   }
 })();
 </script>
