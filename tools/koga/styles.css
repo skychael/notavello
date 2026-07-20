@@ -376,6 +376,49 @@ code {
   color: #bdbdb8;
 }
 
+.manual-install {
+  margin-bottom: 80px;
+  padding: 58px;
+  border: 1px solid var(--border);
+  border-radius: 32px;
+  background: var(--surface);
+}
+
+.manual-install-copy {
+  max-width: 760px;
+}
+
+.manual-install-copy > p:not(.eyebrow) {
+  color: var(--muted);
+}
+
+.download-safety {
+  margin: 24px 0 0;
+  font-size: 0.92rem;
+}
+
+.install-steps {
+  max-width: 760px;
+  margin-top: 30px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+
+.install-steps summary {
+  cursor: pointer;
+  font-weight: 750;
+}
+
+.install-steps ol {
+  margin: 18px 0 0;
+  padding-left: 1.35rem;
+  color: var(--muted);
+}
+
+.install-steps li + li {
+  margin-top: 8px;
+}
+
 footer {
   min-height: 112px;
   padding: 30px 0;
@@ -569,6 +612,10 @@ footer > p {
 
   .cta {
     padding: 46px 28px;
+  }
+
+  .manual-install {
+    padding: 42px 28px;
   }
 
   footer {
