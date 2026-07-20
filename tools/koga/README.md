@@ -31,3 +31,13 @@ https://notavello.com/tools/koga/
 ## Release state
 
 The page is intentionally published as “Coming soon.” Download buttons remain disabled until a verified public download or Play Store URL is available. No package manager or build step is required.
+
+## iPhone branch
+
+A separate iPhone website branch is available at:
+
+```text
+https://notavello.com/tools/koga/ios/
+```
+
+Its release buttons are configured in `ios/release-links.js`. Leave values empty until verified App Store or TestFlight URLs are available. The iPhone privacy page remains a noindex draft until checked against the Xcode project and App Store privacy disclosures.

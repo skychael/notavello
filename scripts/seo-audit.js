@@ -18,6 +18,9 @@ const EXTRA_PAGES = new Map([
   ['pages/terms.html', '/pages/terms'],
   ['weather.html', '/weather'],
   ['tools/koga/help.html', '/tools/koga/help'],
+  ['tools/koga/ios/help.html', '/tools/koga/ios/help'],
+  ['tools/koga/ios/privacy.html', '/tools/koga/ios/privacy'],
+  ['tools/koga/ios/support.html', '/tools/koga/ios/support'],
   ['tools/koga/privacy.html', '/tools/koga/privacy'],
   ['tools/koga/support.html', '/tools/koga/support'],
 ]);

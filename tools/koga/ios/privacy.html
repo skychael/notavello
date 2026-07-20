@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Draft privacy information for Koga Browser for iPhone.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://notavello.com/tools/koga/ios/privacy">
+  <meta name="theme-color" content="#f4f5f8">
+  <title>Privacy — Koga Browser for iPhone</title>
+  <link rel="icon" href="../assets/icons/koga-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="back-link" href="../../../">← Notavello Tools</a>
+    <a class="brand" href="./"><img src="../assets/icons/koga-mark.svg" alt="" width="34" height="34"><span>Koga</span></a>
+    <nav aria-label="Koga iPhone navigation"><a href="./">Overview</a><a href="help.html">Help</a><a href="support.html">Support</a><a href="../privacy.html">Android privacy</a></nav>
+  </header>
+
+  <main class="page section">
+    <div class="page-copy">
+      <p class="eyebrow">Koga for iPhone</p>
+      <h1>Privacy</h1>
+      <p class="lede">A platform-specific draft for the iPhone build.</p>
+      <p><strong>Status: verify against the Xcode project and App Store privacy answers before publishing.</strong></p>
+    </div>
+
+    <div class="notice"><strong>Do not publish unchanged:</strong> the supplied files do not include the iOS source, entitlements, analytics configuration, privacy manifest, or App Store Connect privacy responses.</div>
+
+    <section class="content-card">
+      <h2>Information kept by Koga</h2>
+      <p>Koga includes features such as tabs, bookmarks, appearance preferences, and a saved homepage. Information needed for those features may be stored locally on the iPhone. The final policy must identify the exact storage technologies, retention behavior, and whether any of this information leaves the device.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>Websites and WebKit</h2>
+      <p>Koga displays websites using Apple web technology. When you visit a website, requests and information you submit are sent to that website and its service providers. Cookies, scripts, forms, advertising, analytics, and privacy practices on a visited website are controlled by that website and the relevant Apple components.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>Files and permissions</h2>
+      <p>A website may ask you to choose a file or grant a device permission. The final policy must describe which permissions Koga can request, why each permission is needed, and how selected files are handled. Confirm this from the app’s Info.plist, entitlements, privacy manifest, and tested release behavior.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>Analytics, diagnostics, and crash reports</h2>
+      <p>The supplied website archive does not establish whether the iPhone app uses analytics, diagnostics, crash reporting, advertising identifiers, or third-party SDKs. Add an accurate disclosure only after reviewing the dependency list and runtime network activity.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>App Store privacy information</h2>
+      <p>The App Store listing should use privacy answers that match the released binary. Any change to data collection, linked data, tracking, SDKs, or account behavior requires the website policy and App Store disclosures to be reviewed together.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>Website analytics</h2>
+      <p>The Notavello pages may use their own privacy-friendly traffic measurement. This website behavior is separate from data handling inside the Koga iPhone app and should be covered by the applicable Notavello website policy.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>Contact</h2>
+      <p>Privacy questions can be sent through the <a href="/pages/contact.html">Notavello contact page</a>.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-brand"><img src="../assets/icons/koga-mark.svg" alt="" width="28" height="28"><strong>Koga for iPhone</strong></div>
+    <p><a href="./">← Back to overview</a></p>
+    <nav class="footer-links"><a href="help.html">Help</a><a href="support.html">Support</a></nav>
+  </footer>
+  <script data-goatcounter="https://notavello.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
