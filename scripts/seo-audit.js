@@ -171,6 +171,7 @@ function audit() {
   function resolveRoute(route) {
     if (byRoute.has(route)) return route;
     if (route === '/login' && fs.existsSync(path.join(ROOT, 'login.html'))) return null;
+    if (route.endsWith('/') && byRoute.has(route.slice(0, -1))) return route.slice(0, -1);
     if (route.endsWith('/') && byRoute.has(route.slice(0, -1) + '.html')) return route.slice(0, -1) + '.html';
     return null;
   }
