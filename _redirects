@@ -3,14 +3,19 @@
 # Format: /old-url/   /new-url/   301
 
 # Marketing pages → /pages/
-/about/         /pages/about/       301
-/faq/           /pages/faq/         301
-/pricing/       /pages/pricing/     301
-/contact/       /pages/contact/     301
-/privacy/       /pages/privacy/     301
-/terms/         /pages/terms/       301
-/sitemap/       /pages/sitemap/     301
-/sample/        /pages/sample/      301
+/about/         /pages/about        301
+/faq/           /pages/faq          301
+/pricing/       /pages/pricing      301
+/contact/       /pages/contact      301
+/privacy/       /pages/privacy      301
+/terms/         /pages/terms        301
+/sitemap/       /pages/sitemap      301
+/sample/        /pages/sample       301
+
+# Noncanonical duplicate directories
+/pages/         /                    301
+/tools/         /                    301
+/pages/blog/pages-blog-google-passkey-cleanup/ /pages/blog/google-passkey-cleanup/ 301
 
 # AI exporters → /exporters/
 /claude/        /exporters/claude/      301

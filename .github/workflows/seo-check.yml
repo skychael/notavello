@@ -1,0 +1,25 @@
+name: SEO crawlability check
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  seo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Verify generated sitemap is current
+        run: |
+          node .github/scripts/generate-sitemap.js
+          git diff --exit-code -- sitemap.xml
+      - name: Audit crawlability
+        run: node scripts/seo-audit.js --check

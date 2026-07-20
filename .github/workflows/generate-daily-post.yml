@@ -73,6 +73,12 @@ jobs:
         if: ${{ github.event_name != 'workflow_dispatch' || github.event.inputs.dry_run == 'false' }}
         run: node blog-automation/syndication/export-latest.js
 
+      - name: Generate and validate SEO inventory
+        if: ${{ github.event_name != 'workflow_dispatch' || github.event.inputs.dry_run == 'false' }}
+        run: |
+          node .github/scripts/generate-sitemap.js
+          node scripts/seo-audit.js --check
+
       - name: Remove temporary syndication files
         if: ${{ github.event_name != 'workflow_dispatch' || github.event.inputs.dry_run == 'false' }}
         run: find pages/blog syndication -type f -name '*.tmp' -delete
@@ -86,7 +92,7 @@ jobs:
       - name: Commit and push (with retry)
         if: ${{ github.event_name != 'workflow_dispatch' || github.event.inputs.dry_run == 'false' }}
         run: |
-          git add pages/blog syndication/latest.json
+          git add pages/blog syndication/latest.json sitemap.xml reports/seo
           if git diff --cached --quiet; then
             echo "No changes to commit -- nothing was generated or written."
             exit 0
