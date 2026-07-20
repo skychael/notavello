@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Search the web and open useful sites from the Koga Browser for iPhone start page.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://notavello.com/tools/koga/ios/start/">
+  <meta name="theme-color" content="#f5f5f2">
+  <title>Koga Start for iPhone</title>
+  <link rel="icon" href="../../assets/icons/koga-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="start-page">
+    <header class="masthead">
+      <a class="brand" href="../" aria-label="Koga Browser for iPhone home">
+        <img src="../../assets/icons/koga-mark.svg" alt="" width="42" height="42">
+        <span>Koga</span>
+      </a>
+
+      <fieldset class="appearance" aria-label="Appearance">
+        <legend>Appearance</legend>
+        <div class="appearance-options">
+          <button type="button" data-theme="light" aria-pressed="false">Light</button>
+          <button type="button" data-theme="dark" aria-pressed="false">Dark</button>
+          <button type="button" data-theme="system" aria-pressed="true">System</button>
+        </div>
+      </fieldset>
+    </header>
+
+    <section class="welcome" aria-labelledby="welcome-title">
+      <p class="eyebrow">Koga for iPhone</p>
+      <h1 id="welcome-title">Where would you like to go?</h1>
+      <form class="search" action="https://duckduckgo.com/" method="get" role="search">
+        <label for="web-search">Search the web with DuckDuckGo</label>
+        <div class="search-row">
+          <input id="web-search" name="q" type="search" inputmode="search" autocomplete="off" enterkeyhint="search" placeholder="Search the web" required>
+          <button type="submit">Search</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="section" aria-labelledby="quick-links-title">
+      <div class="section-heading"><p class="eyebrow">Quick links</p><h2 id="quick-links-title">A few useful places</h2></div>
+      <nav class="quick-links" aria-label="Quick links">
+        <a href="https://www.wikipedia.org/"><span class="link-mark" aria-hidden="true">W</span><span>Wikipedia</span></a>
+        <a href="https://www.youtube.com/"><span class="link-mark" aria-hidden="true">▶</span><span>YouTube</span></a>
+        <a href="https://www.reddit.com/"><span class="link-mark" aria-hidden="true">r/</span><span>Reddit</span></a>
+        <a href="https://www.google.com/maps"><span class="link-mark" aria-hidden="true">⌖</span><span>Maps</span></a>
+      </nav>
+    </section>
+
+    <section class="section" aria-labelledby="tips-title">
+      <div class="section-heading"><p class="eyebrow">Browser tips</p><h2 id="tips-title">Make Koga yours</h2></div>
+      <div class="tips">
+        <article><span class="tip-number" aria-hidden="true">01</span><div><h3>Use the bottom toolbar</h3><p>Move through pages, return home, share, reload, open tabs, or enter Settings.</p></div></article>
+        <article><span class="tip-number" aria-hidden="true">02</span><div><h3>Tabs and bookmarks together</h3><p>Open the Tabs sheet and switch to Bookmarks with the segmented control.</p></div></article>
+        <article><span class="tip-number" aria-hidden="true">03</span><div><h3>Start here every time</h3><p>Enter this page address in Settings and save it as the page opened by Home.</p></div></article>
+      </div>
+      <a class="help-link" href="../help.html">Read Koga for iPhone help <span aria-hidden="true">→</span></a>
+    </section>
+
+    <aside class="sponsored" aria-labelledby="sponsored-title">
+      <div><p class="eyebrow" id="sponsored-title">Sponsored</p><p>Reserved for a future clearly labeled sponsored link.</p></div>
+      <span class="placeholder-label">Placeholder</span>
+    </aside>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span>© Koga Browser</span>
+      <nav aria-label="Koga for iPhone information"><a href="../privacy.html">Privacy</a><a href="../help.html">Help</a><a href="../support.html">Support</a></nav>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script data-goatcounter="https://notavello.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

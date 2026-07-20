@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-07-20T14:50:08.065Z",
+  "generatedAt": "2026-07-20T22:48:03.223Z",
   "totals": {
-    "pages": 150,
-    "indexable": 147,
+    "pages": 155,
+    "indexable": 151,
     "articles": 95,
-    "sitemap": 147,
+    "sitemap": 151,
     "errors": 0,
     "warnings": 44
   },
@@ -240,9 +240,9 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 150,
+      "incomingLinks": 155,
       "lastmod": "2026-07-14",
-      "bodyWords": 690
+      "bodyWords": 691
     },
     {
       "route": "/app/",
@@ -253,7 +253,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-06-12",
+      "lastmod": "2026-07-20",
       "bodyWords": 135
     },
     {
@@ -264,7 +264,7 @@
       "canonical": "https://notavello.com/exporters/chatgpt/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 150,
+      "incomingLinks": 155,
       "lastmod": "2026-06-07",
       "bodyWords": 242
     },
@@ -276,7 +276,7 @@
       "canonical": "https://notavello.com/exporters/claude/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 150,
+      "incomingLinks": 155,
       "lastmod": "2026-06-07",
       "bodyWords": 399
     },
@@ -288,7 +288,7 @@
       "canonical": "https://notavello.com/exporters/copilot/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 150,
+      "incomingLinks": 155,
       "lastmod": "2026-06-07",
       "bodyWords": 281
     },
@@ -300,7 +300,7 @@
       "canonical": "https://notavello.com/exporters/gemini/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 150,
+      "incomingLinks": 155,
       "lastmod": "2026-06-07",
       "bodyWords": 447
     },
@@ -312,7 +312,7 @@
       "canonical": "https://notavello.com/exporters/grok/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 150,
+      "incomingLinks": 155,
       "lastmod": "2026-06-07",
       "bodyWords": 281
     },
@@ -324,7 +324,7 @@
       "canonical": "https://notavello.com/exporters/other/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 150,
+      "incomingLinks": 155,
       "lastmod": "2026-06-07",
       "bodyWords": 301
     },
@@ -336,7 +336,7 @@
       "canonical": "https://notavello.com/exporters/perplexity/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 150,
+      "incomingLinks": 155,
       "lastmod": "2026-06-07",
       "bodyWords": 281
     },
@@ -360,8 +360,8 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 150,
-      "lastmod": "2026-06-07",
+      "incomingLinks": 155,
+      "lastmod": "2026-07-20",
       "bodyWords": 355
     },
     {
@@ -372,7 +372,7 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 150,
+      "incomingLinks": 155,
       "lastmod": "2026-07-20",
       "bodyWords": 679
     },
@@ -541,7 +541,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 4,
-      "lastmod": "2026-07-01",
+      "lastmod": "2026-07-20",
       "bodyWords": 1574
     },
     {
@@ -637,7 +637,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-06-28",
+      "lastmod": "2026-07-20",
       "bodyWords": 2049
     },
     {
@@ -709,7 +709,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-06-07",
+      "lastmod": "2026-07-20",
       "bodyWords": 732
     },
     {
@@ -721,7 +721,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-06-07",
+      "lastmod": "2026-07-20",
       "bodyWords": 2155
     },
     {
@@ -853,7 +853,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-06-07",
+      "lastmod": "2026-07-20",
       "bodyWords": 2623
     },
     {
@@ -865,7 +865,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": null,
+      "lastmod": "2026-07-20",
       "bodyWords": 1059
     },
     {
@@ -925,7 +925,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-06-07",
+      "lastmod": "2026-07-20",
       "bodyWords": 1616
     },
     {
@@ -961,7 +961,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-06-07",
+      "lastmod": "2026-07-20",
       "bodyWords": 972
     },
     {
@@ -1345,7 +1345,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-06-20",
+      "lastmod": "2026-07-20",
       "bodyWords": 1942
     },
     {
@@ -1596,8 +1596,8 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 150,
-      "lastmod": "2026-06-07",
+      "incomingLinks": 155,
+      "lastmod": "2026-07-20",
       "bodyWords": 117
     },
     {
@@ -1608,8 +1608,8 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 150,
-      "lastmod": "2026-06-07",
+      "incomingLinks": 155,
+      "lastmod": "2026-07-20",
       "bodyWords": 509
     },
     {
@@ -1620,8 +1620,8 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 150,
-      "lastmod": "2026-06-07",
+      "incomingLinks": 155,
+      "lastmod": "2026-07-20",
       "bodyWords": 219
     },
     {
@@ -1632,8 +1632,8 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 150,
-      "lastmod": "2026-06-07",
+      "incomingLinks": 155,
+      "lastmod": "2026-07-20",
       "bodyWords": 320
     },
     {
@@ -1644,8 +1644,8 @@
       "canonical": "https://notavello.com/pages/sample",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 150,
-      "lastmod": "2026-06-07",
+      "incomingLinks": 155,
+      "lastmod": "2026-07-20",
       "bodyWords": 141
     },
     {
@@ -1656,8 +1656,8 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 150,
-      "lastmod": "2026-07-15",
+      "incomingLinks": 155,
+      "lastmod": "2026-07-20",
       "bodyWords": 479
     },
     {
@@ -1668,8 +1668,8 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 150,
-      "lastmod": "2026-06-07",
+      "incomingLinks": 155,
+      "lastmod": "2026-07-20",
       "bodyWords": 277
     },
     {
@@ -1680,8 +1680,8 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 150,
-      "lastmod": "2026-06-29",
+      "incomingLinks": 155,
+      "lastmod": "2026-07-20",
       "bodyWords": 313
     },
     {
@@ -1692,8 +1692,8 @@
       "canonical": "https://notavello.com/tools/aidetector/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 150,
-      "lastmod": "2026-07-01",
+      "incomingLinks": 155,
+      "lastmod": "2026-07-20",
       "bodyWords": 270
     },
     {
@@ -1729,7 +1729,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 7,
-      "lastmod": "2026-07-09",
+      "lastmod": "2026-07-20",
       "bodyWords": 596
     },
     {
@@ -1740,7 +1740,7 @@
       "canonical": "https://notavello.com/tools/chatgpt-to-pdf/privacy/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 0,
+      "incomingLinks": 1,
       "lastmod": "2026-07-02",
       "bodyWords": 642
     },
@@ -1789,7 +1789,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-07-03",
+      "lastmod": "2026-07-20",
       "bodyWords": 289
     },
     {
@@ -1848,9 +1848,9 @@
       "canonical": "https://notavello.com/tools/koga/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 7,
-      "lastmod": "2026-07-19",
-      "bodyWords": 286
+      "incomingLinks": 8,
+      "lastmod": "2026-07-20",
+      "bodyWords": 290
     },
     {
       "route": "/tools/koga/help",
@@ -1861,8 +1861,68 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-07-14",
+      "lastmod": "2026-07-20",
       "bodyWords": 256
+    },
+    {
+      "route": "/tools/koga/ios/",
+      "file": "tools/koga/ios/index.html",
+      "title": "Koga Browser for iPhone — Simple, Focused Browsing",
+      "description": "Koga is a focused web browser for iPhone with tabs, bookmarks, appearance controls, sharing, and a customizable homepage.",
+      "canonical": "https://notavello.com/tools/koga/ios/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 6,
+      "lastmod": null,
+      "bodyWords": 307
+    },
+    {
+      "route": "/tools/koga/ios/help",
+      "file": "tools/koga/ios/help.html",
+      "title": "Help — Koga Browser for iPhone",
+      "description": "Learn how to use Koga Browser for iPhone, including navigation, tabs, bookmarks, sharing, appearance, and homepage settings.",
+      "canonical": "https://notavello.com/tools/koga/ios/help",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 0,
+      "lastmod": null,
+      "bodyWords": 335
+    },
+    {
+      "route": "/tools/koga/ios/privacy",
+      "file": "tools/koga/ios/privacy.html",
+      "title": "Privacy — Koga Browser for iPhone",
+      "description": "Draft privacy information for Koga Browser for iPhone.",
+      "canonical": "https://notavello.com/tools/koga/ios/privacy",
+      "robots": "noindex, follow",
+      "inSitemap": false,
+      "incomingLinks": 0,
+      "lastmod": null,
+      "bodyWords": 327
+    },
+    {
+      "route": "/tools/koga/ios/start/",
+      "file": "tools/koga/ios/start/index.html",
+      "title": "Koga Start for iPhone",
+      "description": "Search the web and open useful sites from the Koga Browser for iPhone start page.",
+      "canonical": "https://notavello.com/tools/koga/ios/start/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 1,
+      "lastmod": null,
+      "bodyWords": 109
+    },
+    {
+      "route": "/tools/koga/ios/support",
+      "file": "tools/koga/ios/support.html",
+      "title": "Support — Koga Browser for iPhone",
+      "description": "Get support for Koga Browser for iPhone and learn what to include in a bug report.",
+      "canonical": "https://notavello.com/tools/koga/ios/support",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 0,
+      "lastmod": null,
+      "bodyWords": 159
     },
     {
       "route": "/tools/koga/privacy",
@@ -1873,7 +1933,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-07-14",
+      "lastmod": "2026-07-20",
       "bodyWords": 213
     },
     {
@@ -1884,8 +1944,8 @@
       "canonical": "https://notavello.com/tools/koga/start/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 1,
-      "lastmod": "2026-07-15",
+      "incomingLinks": 2,
+      "lastmod": "2026-07-20",
       "bodyWords": 112
     },
     {
@@ -1897,7 +1957,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-07-14",
+      "lastmod": "2026-07-20",
       "bodyWords": 50
     },
     {
@@ -1933,7 +1993,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 8,
-      "lastmod": "2026-07-15",
+      "lastmod": "2026-07-20",
       "bodyWords": 499
     },
     {
@@ -1957,7 +2017,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 5,
-      "lastmod": "2026-07-15",
+      "lastmod": "2026-07-20",
       "bodyWords": 480
     },
     {
@@ -1969,7 +2029,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 4,
-      "lastmod": "2026-07-15",
+      "lastmod": "2026-07-20",
       "bodyWords": 543
     },
     {
@@ -1981,7 +2041,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 5,
-      "lastmod": "2026-07-09",
+      "lastmod": "2026-07-20",
       "bodyWords": 596
     },
     {
@@ -2005,7 +2065,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 5,
-      "lastmod": "2026-07-06",
+      "lastmod": "2026-07-20",
       "bodyWords": 534
     },
     {
@@ -2017,7 +2077,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-07-05",
+      "lastmod": "2026-07-20",
       "bodyWords": 250
     },
     {
@@ -2028,8 +2088,8 @@
       "canonical": "https://notavello.com/weather",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 0,
-      "lastmod": "2026-06-25",
+      "incomingLinks": 155,
+      "lastmod": "2026-07-20",
       "bodyWords": 93
     }
   ]
