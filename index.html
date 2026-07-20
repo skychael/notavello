@@ -96,6 +96,10 @@ body {
 .tool-card-meta { display: flex; align-items: center; justify-content: space-between; margin-top: auto; border-top: 1px solid var(--surface2); padding-top: 12px; }
 .platform-badge { font-size: 0.7rem; font-weight: 700; color: var(--ink-muted); background: var(--surface2); padding: 3px 8px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.02em; }
 .action-link { font-size: 0.8rem; font-weight: 700; color: var(--accent); display: flex; align-items: center; gap: 4px; }
+.platform-options { justify-content: flex-start; gap: 8px; flex-wrap: wrap; }
+.platform-option { padding: 6px 9px; border-radius: 9px; display: inline-flex; align-items: center; gap: 6px; color: var(--accent); background: var(--surface2); font-size: 0.78rem; font-weight: 700; text-decoration: none; }
+.platform-option:hover { background: var(--accent-light); }
+.platform-option .platform-badge { padding: 0; background: transparent; }
 
 /* SPECIAL FEATURED CARD VARIATION */
 .card--featured { border-color: rgba(79,70,229,0.3); background: linear-gradient(180deg, var(--surface) 0%, rgba(79,70,229,0.02) 100%); }
@@ -201,20 +205,20 @@ body {
   <h2 class="section-label">Core Web & Mobile Applications</h2>
   <div class="card-grid">
 
-    <a class="tool-card card--featured" href="/tools/koga/">
+    <article class="tool-card card--featured">
       <span class="card-badge">Coming soon</span>
       <div class="card-top">
         <div class="tool-card-icon"><img src="tools/koga/assets/icons/koga-mark.svg" alt="" width="30" height="30"></div>
         <div>
           <div class="tool-card-name">Koga Browser</div>
-          <p class="tool-card-desc">A simple, minimalist browser for Android and iPhone with tabs, bookmarks, dark mode, and a customizable homepage.</p>
+          <p class="tool-card-desc">A simple, minimalist browser with tabs, bookmarks, dark mode, and a customizable homepage. The iPhone version is available through its dedicated product page.</p>
         </div>
       </div>
-      <div class="tool-card-meta">
-        <span class="platform-badge">Android</span>
-        <span class="action-link">Preview →</span>
+      <div class="tool-card-meta platform-options" aria-label="Choose a Koga platform">
+        <a class="platform-option" href="/tools/koga/"><span class="platform-badge">Android</span><span>Preview →</span></a>
+        <a class="platform-option" href="/tools/koga/ios/"><span class="platform-badge">iPhone</span><span>Product page →</span></a>
       </div>
-    </a>
+    </article>
 
     <a class="tool-card card--featured" href="/tools/pdf-ocr/">
       <span class="card-badge">New</span>
