@@ -515,6 +515,30 @@ body {
 .footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; transition: color 0.15s; }
 .footer-legal a:hover { color: var(--accent); }
 
+/* ── MORE NOTAVELLO TOOLS ── */
+.featured-tool {
+  margin-bottom: 64px;
+  padding: 30px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 20px;
+  color: inherit;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  text-decoration: none;
+  transition: transform .15s, box-shadow .2s, border-color .2s;
+}
+.featured-tool:hover { transform: translateY(-2px); border-color: var(--accent); box-shadow: var(--shadow-lg); }
+.featured-tool:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+.featured-tool-icon { width: 48px; height: 48px; border: 3px solid var(--ink); border-radius: 50%; position: relative; }
+.featured-tool-icon::after { content: ""; width: 16px; height: 3px; border-radius: 2px; background: var(--ink); position: absolute; right: -12px; bottom: -2px; transform: rotate(45deg); transform-origin: left center; }
+.featured-tool-copy strong { display: block; margin-bottom: 4px; font-size: 1rem; }
+.featured-tool-copy span { color: var(--ink-muted); font-size: .84rem; line-height: 1.5; }
+.featured-tool-arrow { color: var(--accent); font-weight: 700; }
+
 /* ── ANIMATIONS ── */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(14px); }
@@ -534,6 +558,8 @@ body {
   .steps { grid-template-columns: 1fr; }
   .perks { grid-template-columns: 1fr; }
   .cta-section { padding: 36px 24px; }
+  .featured-tool { grid-template-columns: auto 1fr; padding: 24px 20px; }
+  .featured-tool-arrow { grid-column: 2; }
 }
 </style>
 
@@ -701,6 +727,12 @@ body {
       </div>
     </div>
   </section>
+
+  <a class="featured-tool" href="/tools/koga-lens/" aria-label="Learn about Koga Lens">
+    <span class="featured-tool-icon" aria-hidden="true"></span>
+    <span class="featured-tool-copy"><strong>Koga Lens</strong><span>A separate Windows extension that lets Claude inspect one application window you explicitly select and approve.</span></span>
+    <span class="featured-tool-arrow">Explore →</span>
+  </a>
 
   <div style="text-align:center; margin-bottom: 64px; display:flex; justify-content:center; gap:28px; flex-wrap:wrap;">
     <a href="/pages/pricing" style="font-size:0.88rem; color:var(--accent); text-decoration:none; font-weight:600; border-bottom: 1.5px solid rgba(79,70,229,0.3); padding-bottom:2px;">See pricing →</a>

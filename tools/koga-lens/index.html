@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Koga Lens lets Claude inspect one Windows application window that you explicitly select and approve.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://notavello.com/tools/koga-lens/">
+  <meta name="theme-color" content="#171717">
+  <title>Koga Lens — A Private, User-Approved View for Claude</title>
+  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="back-link" href="../">← Notavello Tools</a>
+    <a class="brand" href="./" aria-label="Koga Lens home"><span class="lens-mark" aria-hidden="true"></span><span>Koga Lens</span></a>
+    <nav aria-label="Koga Lens navigation">
+      <a href="#how-it-works">How it works</a><a href="docs/">Docs</a><a href="privacy.html">Privacy</a><a href="/pages/contact.html">Support</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">A Windows extension for Claude Desktop</p>
+        <h1>Share one window. Keep control.</h1>
+        <p class="lede">Koga Lens lets Claude inspect the latest frame from one Windows application that you explicitly select and approve. Capture stays local until the frame is handed to Claude Desktop.</p>
+        <div class="actions">
+          <a class="button primary" href="docs/">Read the documentation</a>
+          <a class="button secondary" href="privacy.html">Review privacy</a>
+        </div>
+        <p class="release-note">Requires Windows 10 or 11 and Claude Desktop. Current verified build: Koga Lens 0.2.7. No public download is offered on this page.</p>
+      </div>
+      <div class="view-card" aria-label="Illustration of a user-approved Koga Lens sharing session">
+        <div class="window-bar"><span class="window-dot"></span><span class="window-dot"></span><span class="window-dot"></span><span class="window-title">User-approved Windows application</span></div>
+        <div class="view-body"><div><strong>Only this window</strong><p>The user selects the source through the Windows capture picker. Claude cannot silently choose another window, process, file, or path.</p></div></div>
+        <div class="status-row"><span class="status">Sharing</span><span>Latest frame only · explicit state</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="how-it-works">
+      <div class="section-heading"><p class="eyebrow">Designed around consent</p><h2>A narrow view, with visible boundaries.</h2><p>Koga Lens exposes one parameter-free tool, <code>GetCurrentView</code>. The user—not Claude—chooses the approved window.</p></div>
+      <div class="feature-grid">
+        <article><h3>One approved window</h3><p>Windows presents the capture picker and the user approves a specific application window. Switching sources requires a new approval.</p></article>
+        <article><h3>Local capture</h3><p>Koga Lens has no cloud relay, telemetry, or upload of its own. The current frame is processed locally before being returned through Claude Desktop.</p></article>
+        <article><h3>Latest frame only</h3><p>Frames older than the two-second maximum age return <code>FRAME_STALE</code> with no image, rather than being presented as current.</p></article>
+        <article><h3>Visible state</h3><p>Sharing, Paused, Stopped, SourceLost, and stale conditions are explicit so the absence of a current view is not ambiguous.</p></article>
+        <article><h3>Verifiable bytes</h3><p>The diagnostic panel previews the exact decoded image bytes returned in the most recent response and compares hashes across the response and audit record.</p></article>
+        <article><h3>No automatic saving</h3><p>The latest frame is transient and in memory. Saving the exact returned bytes requires a deliberate user action and a user-chosen path.</p></article>
+      </div>
+    </section>
+
+    <section class="section distinction" aria-labelledby="not-browser">
+      <p class="eyebrow">Two different products</p><h2 id="not-browser">Koga Lens is not Koga Browser.</h2>
+      <p>They share the Koga name and Notavello home, but they solve different problems on different platforms.</p>
+      <div class="comparison-grid">
+        <div><strong>Koga Lens</strong><span>A Windows application and Claude Desktop MCP extension for inspecting one user-approved window.</span></div>
+        <div><strong>Koga Browser</strong><span>A separate minimalist web browser available for mobile platforms.</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading"><p class="eyebrow">Documentation</p><h2>Review the evidence and boundaries.</h2><p>The documentation separates verified behavior, security posture, and remaining submission work.</p></div>
+      <div class="doc-grid">
+        <article class="doc-card"><h3>Submission readiness</h3><p>Current status, remaining gaps, distribution options, and the ordered path toward a directory submission.</p><a href="docs/submission-readiness.html">Read submission readiness →</a></article>
+        <article class="doc-card"><h3>Security review</h3><p>Consent, trust boundaries, stale-frame protection, diagnostic provenance, and prompt-injection posture.</p><a href="docs/security-review.html">Read the security review →</a></article>
+        <article class="doc-card"><h3>Live verification</h3><p>Observed 0.2.7 results across Notepad and browser windows, including frozen-frame regressions.</p><a href="docs/live-verification.html">Read live verification →</a></article>
+        <article class="doc-card"><h3>Privacy</h3><p>What Koga Lens captures, retains, sends, and what changes after a frame reaches Claude Desktop.</p><a href="privacy.html">Read the privacy policy →</a></article>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="footer-brand"><span class="lens-mark" aria-hidden="true"></span><strong>Koga Lens</strong></div><p>Part of <a href="../">Notavello</a>.</p><nav class="footer-links" aria-label="Koga Lens footer navigation"><a href="docs/">Docs</a><a href="privacy.html">Privacy</a><a href="/pages/contact.html">Support &amp; contact</a><a href="/tools/koga/">Koga Browser</a></nav></footer>
+  <script data-goatcounter="https://notavello.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
