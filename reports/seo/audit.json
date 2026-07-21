@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-07-20T23:30:27.892Z",
+  "generatedAt": "2026-07-21T04:49:39.380Z",
   "totals": {
-    "pages": 155,
-    "indexable": 151,
-    "articles": 95,
-    "sitemap": 151,
+    "pages": 157,
+    "indexable": 153,
+    "articles": 97,
+    "sitemap": 153,
     "errors": 0,
-    "warnings": 44
+    "warnings": 46
   },
   "errors": [],
   "warnings": [
@@ -87,6 +87,11 @@
     },
     {
       "type": "template-pattern",
+      "page": "/pages/blog/gemini-robotics-er-1-6-preview-developer-workflow/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "template-pattern",
       "page": "/pages/blog/gemini-robotics-er-1-6-preview-robotics-integration/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
@@ -123,6 +128,11 @@
     {
       "type": "template-pattern",
       "page": "/pages/blog/keyboard-mouse-monitor-usb-hub-problems/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/kimi-work-desktop-ai-agent-permissions/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
     {
@@ -240,7 +250,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 155,
+      "incomingLinks": 157,
       "lastmod": "2026-07-20",
       "bodyWords": 701
     },
@@ -264,7 +274,7 @@
       "canonical": "https://notavello.com/exporters/chatgpt/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 155,
+      "incomingLinks": 157,
       "lastmod": "2026-06-07",
       "bodyWords": 242
     },
@@ -276,7 +286,7 @@
       "canonical": "https://notavello.com/exporters/claude/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 155,
+      "incomingLinks": 157,
       "lastmod": "2026-06-07",
       "bodyWords": 399
     },
@@ -288,7 +298,7 @@
       "canonical": "https://notavello.com/exporters/copilot/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 155,
+      "incomingLinks": 157,
       "lastmod": "2026-06-07",
       "bodyWords": 281
     },
@@ -300,7 +310,7 @@
       "canonical": "https://notavello.com/exporters/gemini/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 155,
+      "incomingLinks": 157,
       "lastmod": "2026-06-07",
       "bodyWords": 447
     },
@@ -312,7 +322,7 @@
       "canonical": "https://notavello.com/exporters/grok/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 155,
+      "incomingLinks": 157,
       "lastmod": "2026-06-07",
       "bodyWords": 281
     },
@@ -324,7 +334,7 @@
       "canonical": "https://notavello.com/exporters/other/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 155,
+      "incomingLinks": 157,
       "lastmod": "2026-06-07",
       "bodyWords": 301
     },
@@ -336,7 +346,7 @@
       "canonical": "https://notavello.com/exporters/perplexity/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 155,
+      "incomingLinks": 157,
       "lastmod": "2026-06-07",
       "bodyWords": 281
     },
@@ -360,7 +370,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 155,
+      "incomingLinks": 157,
       "lastmod": "2026-07-20",
       "bodyWords": 355
     },
@@ -372,9 +382,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 155,
+      "incomingLinks": 157,
       "lastmod": "2026-07-20",
-      "bodyWords": 679
+      "bodyWords": 671
     },
     {
       "route": "/pages/blog/ai-advice-needs-an-i-dont-know-step/",
@@ -432,7 +442,7 @@
       "canonical": "https://notavello.com/pages/blog/ai-coding-agent-preflight-context-budget/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 4,
+      "incomingLinks": 5,
       "lastmod": "2026-07-13",
       "bodyWords": 1656
     },
@@ -552,9 +562,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 34,
+      "incomingLinks": 36,
       "lastmod": "2026-07-20",
-      "bodyWords": 1304
+      "bodyWords": 1328
     },
     {
       "route": "/pages/blog/apple-speechanalyzer-local-transcription-apps/",
@@ -785,6 +795,18 @@
       "bodyWords": 295
     },
     {
+      "route": "/pages/blog/gemini-robotics-er-1-6-preview-developer-workflow/",
+      "file": "pages/blog/gemini-robotics-er-1-6-preview-developer-workflow/index.html",
+      "title": "Gemini Robotics-ER 1.6 Preview: Sentence to Robot Task Sequence — The Export | Notavello",
+      "description": "Switch to the Gemini Robotics-ER 1.6 preview for natural-language commands that return spatial coordinates and task sequences, while planning consent flows",
+      "canonical": "https://notavello.com/pages/blog/gemini-robotics-er-1-6-preview-developer-workflow/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-07-20",
+      "bodyWords": 1090
+    },
+    {
       "route": "/pages/blog/gemini-robotics-er-1-6-preview-robotics-integration/",
       "file": "pages/blog/gemini-robotics-er-1-6-preview-robotics-integration/index.html",
       "title": "Gemini Robotics-ER 1.6 Preview for Physical Robotics Tasks — The Export | Notavello",
@@ -1001,6 +1023,18 @@
       "bodyWords": 1832
     },
     {
+      "route": "/pages/blog/kimi-work-desktop-ai-agent-permissions/",
+      "file": "pages/blog/kimi-work-desktop-ai-agent-permissions/index.html",
+      "title": "Kimi Work Makes Desktop AI Permissions The Real Feature — The Export | Notavello",
+      "description": "Kimi Work shows why desktop AI agents need folders, logs, approvals, and export paths before teams trust them.",
+      "canonical": "https://notavello.com/pages/blog/kimi-work-desktop-ai-agent-permissions/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-07-21",
+      "bodyWords": 1514
+    },
+    {
       "route": "/pages/blog/local-ai-toys-privacy-first-esp32-builds/",
       "file": "pages/blog/local-ai-toys-privacy-first-esp32-builds/index.html",
       "title": "Local AI Toys on ESP32: Zero-Cloud Voice Companions — The Export | Notavello",
@@ -1166,7 +1200,7 @@
       "inSitemap": true,
       "incomingLinks": 2,
       "lastmod": "2026-07-20",
-      "bodyWords": 685
+      "bodyWords": 689
     },
     {
       "route": "/pages/blog/page-3/",
@@ -1178,7 +1212,7 @@
       "inSitemap": true,
       "incomingLinks": 2,
       "lastmod": "2026-07-20",
-      "bodyWords": 777
+      "bodyWords": 759
     },
     {
       "route": "/pages/blog/page-4/",
@@ -1190,7 +1224,7 @@
       "inSitemap": true,
       "incomingLinks": 2,
       "lastmod": "2026-07-20",
-      "bodyWords": 824
+      "bodyWords": 837
     },
     {
       "route": "/pages/blog/page-5/",
@@ -1202,7 +1236,7 @@
       "inSitemap": true,
       "incomingLinks": 2,
       "lastmod": "2026-07-20",
-      "bodyWords": 871
+      "bodyWords": 859
     },
     {
       "route": "/pages/blog/page-6/",
@@ -1214,7 +1248,7 @@
       "inSitemap": true,
       "incomingLinks": 1,
       "lastmod": "2026-07-20",
-      "bodyWords": 278
+      "bodyWords": 371
     },
     {
       "route": "/pages/blog/search-field-2036/",
@@ -1596,7 +1630,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 155,
+      "incomingLinks": 157,
       "lastmod": "2026-07-20",
       "bodyWords": 117
     },
@@ -1608,7 +1642,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 155,
+      "incomingLinks": 157,
       "lastmod": "2026-07-20",
       "bodyWords": 509
     },
@@ -1620,7 +1654,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 155,
+      "incomingLinks": 157,
       "lastmod": "2026-07-20",
       "bodyWords": 219
     },
@@ -1632,7 +1666,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 155,
+      "incomingLinks": 157,
       "lastmod": "2026-07-20",
       "bodyWords": 320
     },
@@ -1644,7 +1678,7 @@
       "canonical": "https://notavello.com/pages/sample",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 155,
+      "incomingLinks": 157,
       "lastmod": "2026-07-20",
       "bodyWords": 141
     },
@@ -1656,7 +1690,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 155,
+      "incomingLinks": 157,
       "lastmod": "2026-07-20",
       "bodyWords": 520
     },
@@ -1668,7 +1702,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 155,
+      "incomingLinks": 157,
       "lastmod": "2026-07-20",
       "bodyWords": 277
     },
@@ -1680,7 +1714,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 155,
+      "incomingLinks": 157,
       "lastmod": "2026-07-20",
       "bodyWords": 313
     },
@@ -1692,7 +1726,7 @@
       "canonical": "https://notavello.com/tools/aidetector/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 155,
+      "incomingLinks": 157,
       "lastmod": "2026-07-20",
       "bodyWords": 270
     },
@@ -2088,7 +2122,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 155,
+      "incomingLinks": 157,
       "lastmod": "2026-07-20",
       "bodyWords": 93
     }

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Gemini Robotics-ER 1.6 Preview: Sentence to Robot Task Sequence — The Export | Notavello</title>
+<meta name="description" content="Switch to the Gemini Robotics-ER 1.6 preview for natural-language commands that return spatial coordinates and task sequences, while planning consent flows"/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/blog/gemini-robotics-er-1-6-preview-developer-workflow/"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2026-07-20T11:17:38.181Z"/>
+<meta property="article:modified_time" content="2026-07-20T11:17:38.181Z"/>
+<meta name="notavello:published_at" content="2026-07-20T11:17:38.181Z"/>
+<meta name="syndication-origin-site" content="toysforbots"/>
+<meta name="syndication-origin-id" content="toysforbots:gemini-robotics-er-1-6-preview-developer-workflow"/>
+<meta name="syndication-origin-slug" content="gemini-robotics-er-1-6-preview-developer-workflow"/>
+<meta name="syndication-origin-url" content="https://toysforbots.com/blog/gemini-robotics-er-1-6-preview-developer-workflow/"/>
+<meta name="syndication-source-format" content="toysforbots-syndication-v1"/>
+<meta property="og:url" content="https://notavello.com/pages/blog/gemini-robotics-er-1-6-preview-developer-workflow/"/>
+<meta property="og:title" content="Gemini Robotics-ER 1.6 Preview: Sentence to Robot Task Sequence"/>
+<meta property="og:description" content="Switch to the Gemini Robotics-ER 1.6 preview for natural-language commands that return spatial coordinates and task sequences, while planning consent flows"/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Gemini Robotics-ER 1.6 Preview: Sentence to Robot Task Sequence"/>
+<meta name="twitter:description" content="Switch to the Gemini Robotics-ER 1.6 preview for natural-language commands that return spatial coordinates and task sequences, while planning consent flows"/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Gemini Robotics-ER 1.6 Preview: Sentence to Robot Task Sequence",
+  "description": "Switch to the Gemini Robotics-ER 1.6 preview for natural-language commands that return spatial coordinates and task sequences, while planning consent flows",
+  "url": "https://notavello.com/pages/blog/gemini-robotics-er-1-6-preview-developer-workflow/",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://notavello.com/pages/blog/gemini-robotics-er-1-6-preview-developer-workflow/" },
+  "image": "https://notavello.com/og-image.png",
+  "datePublished": "2026-07-20T11:17:38.181Z",
+  "dateModified": "2026-07-20T11:17:38.181Z",
+  "author": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" },
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com", "logo": { "@type": "ImageObject", "url": "https://notavello.com/og-image.png" } }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
+.post-nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; row-gap: 8px; }
+.post-nav-top { margin-bottom: 40px; }
+.post-nav-bottom { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--border); }
+.post-nav a { display: inline-flex; align-items: center; gap: 6px; font-size: 0.92rem; font-weight: 600; color: var(--ink-muted); text-decoration: none; padding: 12px 14px; border-radius: var(--radius-sm); white-space: nowrap; transition: color 0.15s, background 0.15s; }
+.post-nav a:hover { color: var(--accent); background: var(--accent-light); }
+.post-nav a:first-child { padding-left: 0; }
+.post-nav a:last-child { padding-right: 0; justify-content: flex-end; }
+.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
+.post-date { font-size: 0.78rem; color: var(--ink-faint); }
+.post-title { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; color: var(--ink); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
+.post-lede { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+.post-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink); }
+.post-body h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 44px 0 16px; letter-spacing: -0.01em; }
+.post-body p { margin-bottom: 20px; color: var(--ink-muted); }
+.post-body p strong { color: var(--ink); font-weight: 600; }
+.post-body ul { margin: 0 0 20px 20px; color: var(--ink-muted); }
+.post-body ul li { margin-bottom: 8px; line-height: 1.7; }
+.callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 32px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.7; }
+.post-footer { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.post-footer-label { font-size: 0.8rem; color: var(--ink-faint); }
+.btn-export { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: opacity 0.2s; }
+.btn-export:hover { opacity: 0.9; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } .post-nav a { padding: 12px 8px; font-size: 0.88rem; } }
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+
+  <nav class="post-nav post-nav-top">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+  <div class="post-meta">
+    <span class="post-tag">Robotics</span>
+    <span class="post-date">July 20, 2026</span>
+  </div>
+
+  <h1 class="post-title">Gemini Robotics-ER 1.6 Preview: Sentence to Robot Task Sequence</h1>
+
+  <p class="post-lede">Developers who once wrote line-by-line motion commands now face a different bottleneck: turning a single sentence into reliable robot behavior while staying inside the constraints of a preview API.</p>
+
+  <div class="post-body">
+
+<h2>Switching Model Identifiers Requires One Line Change</h2>
+<p>Teams already calling the Gemini API can move from the prior version to the 1.6 preview by updating a single string in their client code. The new identifier is gemini-robotics-er-1.6-preview. All other request parameters remain compatible, so existing authentication, retry logic, and streaming handlers continue to work without modification.</p>
+<p>The change immediately unlocks normalized 2-D coordinate outputs and built-in task decomposition. Developers who previously received only text descriptions now receive JSON arrays containing point and label fields that map directly to pixel locations in the supplied image. This single identifier swap therefore alters both the format and the usefulness of every subsequent response.</p>
+<p>Because the preview carries an explicit warning against production-critical use, teams should isolate the new calls behind a feature flag. That flag lets them compare outputs from the older model against the 1.6 results on the same inputs before any robot hardware moves.</p><div class="callout"><strong>Practical starting point:</strong> Replace the model identifier, register one callable function for your robot controller, and add a consent check before any camera stream begins.</div>
+<h2>Registering Existing Robot Controllers as Callable Tools</h2>
+<p>The model supports function calling, so developers expose their current robot API as a tool the model can invoke. A minimal registration includes the function name, a short description of what the function does, and the expected parameter schema. Once registered, the model can decide when to call the function and with which arguments during task decomposition.</p>
+<p>For example, a developer might register a function named move_to that accepts normalized x and y values. When the user prompt is put the apple in the bowl, the model first returns coordinates for both objects, then issues a function call to move_to with the bowl location, followed by another call that grips and releases at the apple location. The developer never rewrites the low-level motion code; the model simply orchestrates the existing functions.</p>
+<p>Teams that already maintain a vision-language-action model can wrap it the same way. The wrapper accepts the structured output from Gemini Robotics-ER 1.6 and forwards the generated sequence to the lower-level controller, preserving any safety checks already present in the robot stack.</p>
+<h2>Consent Workflow Before Camera or Microphone Use</h2>
+<p>The privacy notice requires explicit consent whenever video or audio may capture identifiable people. In practice this means the application must surface a clear notice and obtain affirmative confirmation before the first frame reaches the model. Logging the consent timestamp and the exact prompt used provides an audit trail if questions arise later.</p>
+<p>A practical implementation displays the notice on the operator interface rather than on the robot itself. The operator confirms once per session or per task type. After confirmation the camera stream opens and the first image is sent. If consent is withdrawn, the stream closes immediately and any buffered frames are discarded.</p>
+<p>Minimizing collection is equally important. The workflow can crop frames to the workspace area before transmission, drop audio entirely when it is not required, and limit resolution to the minimum the model needs for reliable coordinate output. These steps reduce both privacy exposure and token consumption.</p>
+<h2>Sizing the Thinking Budget for Detection Versus Planning</h2>
+<p>The adjustable thinking budget controls how many internal reasoning tokens the model spends before producing output. For simple object-location prompts such as find the banana, a low budget keeps latency under one second on typical hardware while still returning accurate normalized points. Higher budgets add little value and increase cost.</p>
+<p>Multi-step tasks such as put the apple in the bowl benefit from a medium budget. The extra tokens allow the model to verify spatial relationships, sequence grip and release actions, and insert conditional checks before emitting function calls. Teams measure end-to-end success rate on a small validation set to decide the exact setting rather than guessing.</p>
+<p>Very high budgets are reserved for ambiguous scenes or novel objects. In those cases the model may explore alternative decompositions internally, but response time and token cost rise sharply. Monitoring actual spend per request helps teams set per-task caps that protect both budget and robot uptime.</p>
+<h2>Current Deployment Remains API-Bound</h2>
+<p>No export path or edge runtime is documented for the 1.6 preview. All inference occurs through the Gemini API, which imposes the 131,072 input and 65,536 output token limits and requires continuous network access. Teams that need on-robot execution must therefore keep a lightweight client on the robot that forwards images and receives coordinate lists or function calls.</p>
+<p>Latency scales with image resolution, number of objects, and chosen thinking budget. A single high-resolution frame plus a complex planning prompt can exceed acceptable cycle times for real-time control loops. Developers therefore downsample frames or batch non-urgent planning steps to stay within robot timing constraints.</p>
+<p>Because the model can hallucinate coordinates or invent nonexistent objects, every returned plan requires validation against the robot&#039;s own sensors before execution. A simple bounding-box overlap check or a second low-budget verification call catches many errors without adding substantial delay.</p>
+<h2>Tradeoffs That Shape Adoption Decisions</h2>
+<p>The shift from low-level coding to high-level orchestration reduces development time for new tasks, yet it introduces new failure modes that teams must test explicitly. Prompt clarity becomes a first-class engineering concern; small wording changes can alter the generated sequence or the coordinate accuracy. Maintaining a library of validated prompts helps, but each new environment still requires fresh testing.</p>
+<p>Resource costs also change. Instead of fixed compute on the robot, teams pay per token and must budget for both successful runs and the verification calls that catch hallucinations. In high-volume settings these costs can exceed the savings from faster task authoring.</p>
+<p>Preview status further limits long-term planning. API behavior, coordinate formats, and available tools may change, so any production pipeline must isolate the model behind an abstraction layer that can be swapped later. Teams that treat the current capabilities as a stable foundation risk rework when the preview ends.</p><h2>Sources</h2><ul><li><a href="https://ai.google.dev/gemini-api/docs/robotics-overview" rel="noopener noreferrer">Gemini Robotics-ER 1.6  |  Gemini API  |  Google AI for Developers</a></li><li><a href="https://developer.nvidia.com/blog/develop-humanoid-robot-policies-end-to-end-with-nvidia-isaac-gr00t/" rel="noopener noreferrer">Develop Humanoid Robot Policies End-to-End with NVIDIA Isaac GR00T | NVIDIA Technical Blog</a></li><li><a href="https://blogs.nvidia.com/blog/hugging-face-lerobot-models-frameworks-open-robotics/" rel="noopener noreferrer">NVIDIA and Hugging Face Bring New Models and Frameworks to LeRobot for the Open Robotics Community | NVIDIA Blog</a></li></ul>
+
+  </div>
+
+  <div class="post-footer">
+    <span class="post-footer-label">Looking for more AI tools?</span>
+    <a class="btn-export" href="/">See our free AI tools →</a>
+  </div>
+
+  <nav class="post-nav post-nav-bottom">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+</main>
+
+<!--FOOTER-->
+
+<script data-goatcounter="https://notavello.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script></body>
+</html>
