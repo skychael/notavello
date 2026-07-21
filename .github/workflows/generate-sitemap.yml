@@ -3,6 +3,7 @@ name: Generate sitemap
 # Runs on every push to main, EXCEPT pushes that only change sitemap.xml
 # (that prevents the bot's own commit from triggering another run).
 on:
+  workflow_dispatch:
   push:
     branches: [main]
     paths-ignore:
@@ -24,10 +25,19 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Rebase onto the latest main
+        run: |
+          git fetch origin main
+          git rebase origin/main
+
       - name: Generate sitemap.xml
         run: |
           node .github/scripts/generate-sitemap.js
           node scripts/seo-audit.js --check
+
+          # The audit writes timestamped reports. This workflow owns only the
+          # sitemap, so discard those generated report changes before rebasing.
+          git restore --worktree -- reports/seo
 
       - name: Commit if changed
         run: |
@@ -42,11 +52,13 @@ jobs:
           git add sitemap.xml
           git commit -m "Auto-update sitemap [skip ci]"
 
-          # Safety net: if the version-bump workflow committed at the same
-          # moment, pull its change in and stack ours on top, then push.
+          # Safety net: if another workflow committed after our initial rebase,
+          # fetch it and stack the already-committed sitemap change on top.
           # Retry a couple of times in case of a near-simultaneous push.
           for attempt in 1 2 3; do
-            if git pull --rebase origin main && git push; then
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then
               echo "Pushed on attempt $attempt."
               exit 0
             fi
