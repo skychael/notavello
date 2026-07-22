@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-07-21T21:34:17.454Z",
+  "generatedAt": "2026-07-22T04:49:12.437Z",
   "totals": {
-    "pages": 159,
-    "indexable": 155,
-    "articles": 97,
-    "sitemap": 155,
+    "pages": 161,
+    "indexable": 157,
+    "articles": 99,
+    "sitemap": 157,
     "errors": 0,
-    "warnings": 46
+    "warnings": 48
   },
   "errors": [],
   "warnings": [
@@ -33,6 +33,11 @@
     {
       "type": "template-pattern",
       "page": "/pages/blog/ai-coding-cli-supply-chain/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/ai-model-evaluation-sandbox-security-checklist/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
     {
@@ -113,6 +118,11 @@
     {
       "type": "template-pattern",
       "page": "/pages/blog/gr00t-1-7-unifies-humanoid-policy-development/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/how-to-debug-an-ai-prompt-that-gives-inconsistent-answers/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
     {
@@ -245,14 +255,14 @@
     {
       "route": "/",
       "file": "index.html",
-      "title": "Notavello — Free AI Tools & Utilities",
-      "description": "Notavello is a home for free AI tools, Windows desktop utilities, scanned PDF text conversion, conversation exporters, browser extensions, and small utilities — no sign-up required.",
+      "title": "Notavello — Free AI Tools, Claude Extensions & Utilities",
+      "description": "Notavello offers free AI tools, a Claude Desktop extension for Windows, desktop utilities, scanned PDF text conversion, conversation exporters, browser extensions, and small utilities — no sign-up required.",
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 159,
-      "lastmod": null,
-      "bodyWords": 701
+      "incomingLinks": 161,
+      "lastmod": "2026-07-21",
+      "bodyWords": 735
     },
     {
       "route": "/app/",
@@ -263,7 +273,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": null,
+      "lastmod": "2026-07-20",
       "bodyWords": 135
     },
     {
@@ -274,8 +284,8 @@
       "canonical": "https://notavello.com/exporters/chatgpt/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 159,
-      "lastmod": null,
+      "incomingLinks": 161,
+      "lastmod": "2026-06-07",
       "bodyWords": 242
     },
     {
@@ -286,8 +296,8 @@
       "canonical": "https://notavello.com/exporters/claude/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 159,
-      "lastmod": null,
+      "incomingLinks": 161,
+      "lastmod": "2026-06-07",
       "bodyWords": 399
     },
     {
@@ -298,8 +308,8 @@
       "canonical": "https://notavello.com/exporters/copilot/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 159,
-      "lastmod": null,
+      "incomingLinks": 161,
+      "lastmod": "2026-06-07",
       "bodyWords": 281
     },
     {
@@ -310,8 +320,8 @@
       "canonical": "https://notavello.com/exporters/gemini/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 159,
-      "lastmod": null,
+      "incomingLinks": 161,
+      "lastmod": "2026-06-07",
       "bodyWords": 447
     },
     {
@@ -322,8 +332,8 @@
       "canonical": "https://notavello.com/exporters/grok/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 159,
-      "lastmod": null,
+      "incomingLinks": 161,
+      "lastmod": "2026-06-07",
       "bodyWords": 281
     },
     {
@@ -334,8 +344,8 @@
       "canonical": "https://notavello.com/exporters/other/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 159,
-      "lastmod": null,
+      "incomingLinks": 161,
+      "lastmod": "2026-06-07",
       "bodyWords": 301
     },
     {
@@ -346,8 +356,8 @@
       "canonical": "https://notavello.com/exporters/perplexity/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 159,
-      "lastmod": null,
+      "incomingLinks": 161,
+      "lastmod": "2026-06-07",
       "bodyWords": 281
     },
     {
@@ -359,7 +369,7 @@
       "robots": "index, follow",
       "inSitemap": false,
       "incomingLinks": 0,
-      "lastmod": null,
+      "lastmod": "2026-07-04",
       "bodyWords": 514
     },
     {
@@ -370,8 +380,8 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 159,
-      "lastmod": null,
+      "incomingLinks": 161,
+      "lastmod": "2026-07-20",
       "bodyWords": 355
     },
     {
@@ -382,9 +392,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 159,
-      "lastmod": null,
-      "bodyWords": 671
+      "incomingLinks": 161,
+      "lastmod": "2026-07-21",
+      "bodyWords": 662
     },
     {
       "route": "/pages/blog/ai-advice-needs-an-i-dont-know-step/",
@@ -407,7 +417,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 5,
-      "lastmod": null,
+      "lastmod": "2026-07-06",
       "bodyWords": 1427
     },
     {
@@ -455,7 +465,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 6,
-      "lastmod": null,
+      "lastmod": "2026-07-01",
       "bodyWords": 1759
     },
     {
@@ -466,8 +476,8 @@
       "canonical": "https://notavello.com/pages/blog/ai-coding-agents-workspace-quarantine/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 2,
-      "lastmod": null,
+      "incomingLinks": 3,
+      "lastmod": "2026-07-05",
       "bodyWords": 1460
     },
     {
@@ -491,7 +501,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": null,
+      "lastmod": "2026-06-13",
       "bodyWords": 1112
     },
     {
@@ -503,7 +513,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": null,
+      "lastmod": "2026-06-10",
       "bodyWords": 1469
     },
     {
@@ -515,8 +525,20 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 4,
-      "lastmod": null,
+      "lastmod": "2026-06-27",
       "bodyWords": 596
+    },
+    {
+      "route": "/pages/blog/ai-model-evaluation-sandbox-security-checklist/",
+      "file": "pages/blog/ai-model-evaluation-sandbox-security-checklist/index.html",
+      "title": "AI Model Evaluations Need A Real Sandbox — The Export | Notavello",
+      "description": "An AI model evaluation sandbox checklist for teams testing agents, cyber tools, and benchmark harnesses safely.",
+      "canonical": "https://notavello.com/pages/blog/ai-model-evaluation-sandbox-security-checklist/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-07-22",
+      "bodyWords": 1894
     },
     {
       "route": "/pages/blog/ai-token-usage-transparency/",
@@ -527,7 +549,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 5,
-      "lastmod": null,
+      "lastmod": "2026-06-23",
       "bodyWords": 1981
     },
     {
@@ -539,7 +561,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": null,
+      "lastmod": "2026-07-06",
       "bodyWords": 1440
     },
     {
@@ -551,7 +573,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 4,
-      "lastmod": null,
+      "lastmod": "2026-07-20",
       "bodyWords": 1574
     },
     {
@@ -562,9 +584,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 36,
-      "lastmod": null,
-      "bodyWords": 1328
+      "incomingLinks": 38,
+      "lastmod": "2026-07-21",
+      "bodyWords": 1351
     },
     {
       "route": "/pages/blog/apple-speechanalyzer-local-transcription-apps/",
@@ -587,7 +609,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": null,
+      "lastmod": "2026-06-08",
       "bodyWords": 2224
     },
     {
@@ -611,7 +633,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 4,
-      "lastmod": null,
+      "lastmod": "2026-07-03",
       "bodyWords": 1467
     },
     {
@@ -623,7 +645,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": null,
+      "lastmod": "2026-06-22",
       "bodyWords": 1661
     },
     {
@@ -635,7 +657,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": null,
+      "lastmod": "2026-06-23",
       "bodyWords": 1646
     },
     {
@@ -647,7 +669,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": null,
+      "lastmod": "2026-07-20",
       "bodyWords": 2049
     },
     {
@@ -659,7 +681,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": null,
+      "lastmod": "2026-06-07",
       "bodyWords": 969
     },
     {
@@ -671,7 +693,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": null,
+      "lastmod": "2026-06-10",
       "bodyWords": 1470
     },
     {
@@ -683,7 +705,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": null,
+      "lastmod": "2026-06-07",
       "bodyWords": 1520
     },
     {
@@ -695,7 +717,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": null,
+      "lastmod": "2026-06-07",
       "bodyWords": 1196
     },
     {
@@ -707,7 +729,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": null,
+      "lastmod": "2026-06-09",
       "bodyWords": 2207
     },
     {
@@ -719,7 +741,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": null,
+      "lastmod": "2026-07-20",
       "bodyWords": 732
     },
     {
@@ -731,7 +753,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": null,
+      "lastmod": "2026-07-20",
       "bodyWords": 2155
     },
     {
@@ -755,7 +777,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": null,
+      "lastmod": "2026-06-08",
       "bodyWords": 1596
     },
     {
@@ -767,7 +789,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": null,
+      "lastmod": "2026-06-07",
       "bodyWords": 1143
     },
     {
@@ -827,7 +849,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": null,
+      "lastmod": "2026-06-08",
       "bodyWords": 1984
     },
     {
@@ -839,7 +861,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": null,
+      "lastmod": "2026-06-07",
       "bodyWords": 688
     },
     {
@@ -851,7 +873,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": null,
+      "lastmod": "2026-06-07",
       "bodyWords": 1064
     },
     {
@@ -875,7 +897,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": null,
+      "lastmod": "2026-07-20",
       "bodyWords": 2623
     },
     {
@@ -887,7 +909,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": null,
+      "lastmod": "2026-07-20",
       "bodyWords": 1059
     },
     {
@@ -935,7 +957,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 4,
-      "lastmod": null,
+      "lastmod": "2026-06-14",
       "bodyWords": 2076
     },
     {
@@ -947,7 +969,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": null,
+      "lastmod": "2026-07-20",
       "bodyWords": 1616
     },
     {
@@ -959,7 +981,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": null,
+      "lastmod": "2026-06-16",
       "bodyWords": 1377
     },
     {
@@ -971,8 +993,20 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": null,
+      "lastmod": "2026-06-07",
       "bodyWords": 1831
+    },
+    {
+      "route": "/pages/blog/how-to-debug-an-ai-prompt-that-gives-inconsistent-answers/",
+      "file": "pages/blog/how-to-debug-an-ai-prompt-that-gives-inconsistent-answers/index.html",
+      "title": "How to Debug an AI Prompt That Gives Inconsistent Answers — The Export | Notavello",
+      "description": "A practical process for isolating ambiguous instructions, missing context, and unstable output requirements when AI prompts produce varying results.",
+      "canonical": "https://notavello.com/pages/blog/how-to-debug-an-ai-prompt-that-gives-inconsistent-answers/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-07-21",
+      "bodyWords": 854
     },
     {
       "route": "/pages/blog/how-to-guide-claude-through-file-edits/",
@@ -983,7 +1017,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": null,
+      "lastmod": "2026-07-20",
       "bodyWords": 972
     },
     {
@@ -995,7 +1029,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": null,
+      "lastmod": "2026-06-07",
       "bodyWords": 2199
     },
     {
@@ -1055,7 +1089,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": null,
+      "lastmod": "2026-07-04",
       "bodyWords": 1878
     },
     {
@@ -1079,7 +1113,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 4,
-      "lastmod": null,
+      "lastmod": "2026-06-20",
       "bodyWords": 1438
     },
     {
@@ -1103,7 +1137,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": null,
+      "lastmod": "2026-07-06",
       "bodyWords": 1562
     },
     {
@@ -1163,7 +1197,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": null,
+      "lastmod": "2026-07-06",
       "bodyWords": 1418
     },
     {
@@ -1175,7 +1209,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": null,
+      "lastmod": "2026-06-07",
       "bodyWords": 1810
     },
     {
@@ -1199,8 +1233,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": null,
-      "bodyWords": 689
+      "lastmod": "2026-07-21",
+      "bodyWords": 694
     },
     {
       "route": "/pages/blog/page-3/",
@@ -1211,8 +1245,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": null,
-      "bodyWords": 759
+      "lastmod": "2026-07-21",
+      "bodyWords": 757
     },
     {
       "route": "/pages/blog/page-4/",
@@ -1223,8 +1257,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": null,
-      "bodyWords": 837
+      "lastmod": "2026-07-21",
+      "bodyWords": 824
     },
     {
       "route": "/pages/blog/page-5/",
@@ -1235,8 +1269,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": null,
-      "bodyWords": 859
+      "lastmod": "2026-07-21",
+      "bodyWords": 847
     },
     {
       "route": "/pages/blog/page-6/",
@@ -1247,8 +1281,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": null,
-      "bodyWords": 371
+      "lastmod": "2026-07-21",
+      "bodyWords": 470
     },
     {
       "route": "/pages/blog/search-field-2036/",
@@ -1259,7 +1293,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": null,
+      "lastmod": "2026-06-21",
       "bodyWords": 1273
     },
     {
@@ -1271,7 +1305,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": null,
+      "lastmod": "2026-07-04",
       "bodyWords": 1499
     },
     {
@@ -1283,7 +1317,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": null,
+      "lastmod": "2026-06-08",
       "bodyWords": 2553
     },
     {
@@ -1295,7 +1329,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": null,
+      "lastmod": "2026-06-18",
       "bodyWords": 1792
     },
     {
@@ -1307,7 +1341,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": null,
+      "lastmod": "2026-06-07",
       "bodyWords": 1297
     },
     {
@@ -1319,7 +1353,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": null,
+      "lastmod": "2026-06-07",
       "bodyWords": 2042
     },
     {
@@ -1343,7 +1377,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": null,
+      "lastmod": "2026-06-17",
       "bodyWords": 1051
     },
     {
@@ -1355,7 +1389,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": null,
+      "lastmod": "2026-06-30",
       "bodyWords": 738
     },
     {
@@ -1367,7 +1401,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": null,
+      "lastmod": "2026-06-20",
       "bodyWords": 1557
     },
     {
@@ -1379,7 +1413,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": null,
+      "lastmod": "2026-07-20",
       "bodyWords": 1942
     },
     {
@@ -1391,7 +1425,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": null,
+      "lastmod": "2026-06-08",
       "bodyWords": 1972
     },
     {
@@ -1403,7 +1437,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 4,
-      "lastmod": null,
+      "lastmod": "2026-06-07",
       "bodyWords": 904
     },
     {
@@ -1415,7 +1449,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": null,
+      "lastmod": "2026-07-03",
       "bodyWords": 1757
     },
     {
@@ -1427,7 +1461,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": null,
+      "lastmod": "2026-06-15",
       "bodyWords": 1885
     },
     {
@@ -1439,7 +1473,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": null,
+      "lastmod": "2026-06-07",
       "bodyWords": 923
     },
     {
@@ -1451,7 +1485,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": null,
+      "lastmod": "2026-06-09",
       "bodyWords": 2269
     },
     {
@@ -1463,7 +1497,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": null,
+      "lastmod": "2026-06-21",
       "bodyWords": 1720
     },
     {
@@ -1475,7 +1509,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": null,
+      "lastmod": "2026-06-07",
       "bodyWords": 1493
     },
     {
@@ -1487,7 +1521,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": null,
+      "lastmod": "2026-06-07",
       "bodyWords": 595
     },
     {
@@ -1499,7 +1533,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": null,
+      "lastmod": "2026-07-13",
       "bodyWords": 1651
     },
     {
@@ -1511,7 +1545,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": null,
+      "lastmod": "2026-06-07",
       "bodyWords": 2224
     },
     {
@@ -1523,7 +1557,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": null,
+      "lastmod": "2026-07-03",
       "bodyWords": 1675
     },
     {
@@ -1535,7 +1569,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": null,
+      "lastmod": "2026-06-07",
       "bodyWords": 1068
     },
     {
@@ -1547,7 +1581,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": null,
+      "lastmod": "2026-06-19",
       "bodyWords": 596
     },
     {
@@ -1559,7 +1593,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": null,
+      "lastmod": "2026-06-07",
       "bodyWords": 1318
     },
     {
@@ -1571,7 +1605,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": null,
+      "lastmod": "2026-06-07",
       "bodyWords": 1573
     },
     {
@@ -1583,7 +1617,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": null,
+      "lastmod": "2026-06-17",
       "bodyWords": 1219
     },
     {
@@ -1595,7 +1629,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 5,
-      "lastmod": null,
+      "lastmod": "2026-06-20",
       "bodyWords": 1033
     },
     {
@@ -1607,7 +1641,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": null,
+      "lastmod": "2026-07-02",
       "bodyWords": 1651
     },
     {
@@ -1619,7 +1653,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": null,
+      "lastmod": "2026-06-18",
       "bodyWords": 1441
     },
     {
@@ -1630,8 +1664,8 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 159,
-      "lastmod": null,
+      "incomingLinks": 161,
+      "lastmod": "2026-07-20",
       "bodyWords": 117
     },
     {
@@ -1642,8 +1676,8 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 159,
-      "lastmod": null,
+      "incomingLinks": 161,
+      "lastmod": "2026-07-20",
       "bodyWords": 509
     },
     {
@@ -1654,8 +1688,8 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 159,
-      "lastmod": null,
+      "incomingLinks": 161,
+      "lastmod": "2026-07-20",
       "bodyWords": 219
     },
     {
@@ -1666,8 +1700,8 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 159,
-      "lastmod": null,
+      "incomingLinks": 161,
+      "lastmod": "2026-07-20",
       "bodyWords": 320
     },
     {
@@ -1678,8 +1712,8 @@
       "canonical": "https://notavello.com/pages/sample",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 159,
-      "lastmod": null,
+      "incomingLinks": 161,
+      "lastmod": "2026-07-20",
       "bodyWords": 141
     },
     {
@@ -1690,8 +1724,8 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 159,
-      "lastmod": null,
+      "incomingLinks": 161,
+      "lastmod": "2026-07-21",
       "bodyWords": 592
     },
     {
@@ -1702,8 +1736,8 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 159,
-      "lastmod": null,
+      "incomingLinks": 161,
+      "lastmod": "2026-07-20",
       "bodyWords": 277
     },
     {
@@ -1714,8 +1748,8 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 159,
-      "lastmod": null,
+      "incomingLinks": 161,
+      "lastmod": "2026-07-21",
       "bodyWords": 333
     },
     {
@@ -1726,8 +1760,8 @@
       "canonical": "https://notavello.com/tools/aidetector/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 159,
-      "lastmod": null,
+      "incomingLinks": 161,
+      "lastmod": "2026-07-20",
       "bodyWords": 270
     },
     {
@@ -1739,7 +1773,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 4,
-      "lastmod": null,
+      "lastmod": "2026-07-04",
       "bodyWords": 485
     },
     {
@@ -1751,7 +1785,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": null,
+      "lastmod": "2026-07-04",
       "bodyWords": 679
     },
     {
@@ -1763,7 +1797,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 7,
-      "lastmod": null,
+      "lastmod": "2026-07-20",
       "bodyWords": 596
     },
     {
@@ -1775,7 +1809,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": null,
+      "lastmod": "2026-07-02",
       "bodyWords": 642
     },
     {
@@ -1787,7 +1821,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 4,
-      "lastmod": null,
+      "lastmod": "2026-07-01",
       "bodyWords": 520
     },
     {
@@ -1799,7 +1833,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 7,
-      "lastmod": null,
+      "lastmod": "2026-07-01",
       "bodyWords": 423
     },
     {
@@ -1811,7 +1845,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 4,
-      "lastmod": null,
+      "lastmod": "2026-07-03",
       "bodyWords": 486
     },
     {
@@ -1823,7 +1857,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": null,
+      "lastmod": "2026-07-20",
       "bodyWords": 289
     },
     {
@@ -1835,7 +1869,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 4,
-      "lastmod": null,
+      "lastmod": "2026-07-09",
       "bodyWords": 472
     },
     {
@@ -1847,7 +1881,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": null,
+      "lastmod": "2026-07-09",
       "bodyWords": 573
     },
     {
@@ -1859,7 +1893,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 6,
-      "lastmod": null,
+      "lastmod": "2026-07-01",
       "bodyWords": 254
     },
     {
@@ -1871,7 +1905,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": null,
+      "lastmod": "2026-06-30",
       "bodyWords": 388
     },
     {
@@ -1882,8 +1916,8 @@
       "canonical": "https://notavello.com/tools/koga-lens/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 4,
-      "lastmod": null,
+      "incomingLinks": 5,
+      "lastmod": "2026-07-21",
       "bodyWords": 422
     },
     {
@@ -1895,7 +1929,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": null,
+      "lastmod": "2026-07-21",
       "bodyWords": 97
     },
     {
@@ -1907,7 +1941,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 9,
-      "lastmod": null,
+      "lastmod": "2026-07-20",
       "bodyWords": 290
     },
     {
@@ -1919,7 +1953,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": null,
+      "lastmod": "2026-07-20",
       "bodyWords": 256
     },
     {
@@ -1931,7 +1965,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 8,
-      "lastmod": null,
+      "lastmod": "2026-07-20",
       "bodyWords": 307
     },
     {
@@ -1943,7 +1977,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": null,
+      "lastmod": "2026-07-20",
       "bodyWords": 335
     },
     {
@@ -1955,7 +1989,7 @@
       "robots": "noindex, follow",
       "inSitemap": false,
       "incomingLinks": 1,
-      "lastmod": null,
+      "lastmod": "2026-07-20",
       "bodyWords": 327
     },
     {
@@ -1967,7 +2001,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": null,
+      "lastmod": "2026-07-20",
       "bodyWords": 109
     },
     {
@@ -1979,7 +2013,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": null,
+      "lastmod": "2026-07-20",
       "bodyWords": 159
     },
     {
@@ -1991,7 +2025,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": null,
+      "lastmod": "2026-07-20",
       "bodyWords": 213
     },
     {
@@ -2003,7 +2037,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": null,
+      "lastmod": "2026-07-20",
       "bodyWords": 112
     },
     {
@@ -2015,7 +2049,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": null,
+      "lastmod": "2026-07-20",
       "bodyWords": 50
     },
     {
@@ -2027,7 +2061,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 7,
-      "lastmod": null,
+      "lastmod": "2026-07-09",
       "bodyWords": 771
     },
     {
@@ -2039,7 +2073,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": null,
+      "lastmod": "2026-07-03",
       "bodyWords": 540
     },
     {
@@ -2051,7 +2085,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 8,
-      "lastmod": null,
+      "lastmod": "2026-07-20",
       "bodyWords": 499
     },
     {
@@ -2063,7 +2097,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": null,
+      "lastmod": "2026-06-28",
       "bodyWords": 550
     },
     {
@@ -2075,7 +2109,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 5,
-      "lastmod": null,
+      "lastmod": "2026-07-20",
       "bodyWords": 480
     },
     {
@@ -2087,7 +2121,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 4,
-      "lastmod": null,
+      "lastmod": "2026-07-20",
       "bodyWords": 543
     },
     {
@@ -2099,7 +2133,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 5,
-      "lastmod": null,
+      "lastmod": "2026-07-20",
       "bodyWords": 596
     },
     {
@@ -2111,7 +2145,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": null,
+      "lastmod": "2026-07-05",
       "bodyWords": 591
     },
     {
@@ -2123,7 +2157,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 5,
-      "lastmod": null,
+      "lastmod": "2026-07-20",
       "bodyWords": 534
     },
     {
@@ -2135,7 +2169,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": null,
+      "lastmod": "2026-07-20",
       "bodyWords": 250
     },
     {
@@ -2146,8 +2180,8 @@
       "canonical": "https://notavello.com/weather",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 159,
-      "lastmod": null,
+      "incomingLinks": 161,
+      "lastmod": "2026-07-20",
       "bodyWords": 93
     }
   ]
