@@ -1,56 +1,68 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Get support for Koga Browser and find the information needed to report an issue.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://notavello.com/tools/koga/support">
-  <meta name="theme-color" content="#171717">
-  <title>Support — Koga Browser</title>
-  <link rel="icon" href="assets/icons/koga-mark.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css">
-<script>
+const fs = require('fs');
+const path = require('path');
+
+const root = path.resolve(__dirname, '..');
+const ignoredDirectories = new Set(['.git', 'node_modules']);
+const excludedFiles = new Set([
+  'admin/blog-generator.html',
+  'admin/index.html',
+  'login.html',
+  'pages/blog/blog-post-template.html',
+  'phonewatch-panel-mockup.html',
+  'yandex_661668d20012fbbf.html',
+]);
+const marker = "posthog.init('phc_Da42RaejuPDp7aaSe8ay5ek3Pz3Aqur4etrHaxYKzgQf'";
+const snippet = `<script>
     !function(t,e){var o,n,p,r;e.__SV||(window.posthog && window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="Ji Yi init fn mn Hr pn bn cn capture calculateEventProperties Sn register register_once register_for_session unregister unregister_for_session Tn getFeatureFlag getFeatureFlagPayload getFeatureFlagResult getAllFeatureFlags isFeatureEnabled reloadFeatureFlags updateFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey cancelPendingSurvey canRenderSurvey canRenderSurveyAsync Mn identify setPersonProperties unsetPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset shutdown setIdentity clearIdentity get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException addExceptionStep captureLog startExceptionAutocapture stopExceptionAutocapture loadToolbar get_property getSessionProperty Cn xn createPersonProfile setInternalOrTestUser In hn Pn opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing debug Ur wt getPageViewId captureTraceFeedback captureTraceMetric an".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
     posthog.init('phc_Da42RaejuPDp7aaSe8ay5ek3Pz3Aqur4etrHaxYKzgQf', {
         api_host: 'https://us.i.posthog.com',
         defaults: '2026-05-30',
         person_profiles: 'identified_only', // or 'always' to create profiles for anonymous users as well
     })
-</script>
-</head>
-<body>
-  <header class="topbar">
-    <a class="back-link" href="../../">← Notavello Tools</a>
-    <a class="brand" href="./">
-      <img src="assets/icons/koga-mark.svg" alt="" width="34" height="34">
-      <span>Koga</span>
-    </a>
-  </header>
+</script>`;
 
-  <main class="page section">
-    <div class="page-copy">
-      <p class="eyebrow">Koga Browser</p>
-      <h1>Support</h1>
-      <p class="lede">Koga is currently in pre-release. Questions and feedback are welcome through Notavello.</p>
-    </div>
+function htmlFiles(directory) {
+  return fs.readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
+    if (entry.isDirectory()) {
+      return ignoredDirectories.has(entry.name) ? [] : htmlFiles(path.join(directory, entry.name));
+    }
+    return entry.isFile() && entry.name.endsWith('.html') ? [path.join(directory, entry.name)] : [];
+  });
+}
 
-    <section class="content-card">
-      <h2>Contact</h2>
-      <p>Use the <a href="/pages/contact.html">Notavello contact page</a> for Koga questions, feedback, or support requests.</p>
-    </section>
+function withoutPostHog(html) {
+  const markerIndex = html.indexOf(marker);
+  if (markerIndex === -1) return html;
+  const start = html.lastIndexOf('<script>', markerIndex);
+  const end = html.indexOf('</script>', markerIndex);
+  if (start === -1 || end === -1) throw new Error('Malformed PostHog snippet');
+  return html.slice(0, start) + html.slice(end + '</script>'.length).replace(/^\r?\n/, '');
+}
 
-    <section class="content-card">
-      <h2>Include with a report</h2>
-      <p>
-        Please include your Android version, device model, Koga version if available,
-        and a short description of what happened.
-      </p>
-    </section>
-  </main>
+function withoutLegacyAnalytics(html) {
+  return html
+    .replace(/<script\b[^>]*data-goatcounter=["'][^"']*["'][^>]*>[\s\S]*?<\/script>/gi, '')
+    .replace(/\sdata-goatcounter-click(?:=["'][^"']*["'])?/gi, '');
+}
 
-  <footer>
-    <a href="./">← Back to Koga</a>
-  </footer>
-</body>
-</html>
+for (const file of htmlFiles(root)) {
+  let html = fs.readFileSync(file, 'utf8');
+  html = withoutLegacyAnalytics(html);
+  const relativeFile = path.relative(root, file).replace(/\\/g, '/');
+  const excluded = excludedFiles.has(relativeFile) || relativeFile.includes('/assets-raw/');
+
+  if (excluded) {
+    const cleaned = withoutPostHog(html);
+    if (cleaned !== fs.readFileSync(file, 'utf8')) fs.writeFileSync(file, cleaned);
+    continue;
+  }
+
+  if (!/<head(?:\s[^>]*)?>/i.test(html)) continue;
+
+  if (!html.includes(marker)) {
+    if (!/<\/head>/i.test(html)) throw new Error(`Unclosed <head>: ${path.relative(root, file)}`);
+    html = html.replace(/<\/head>/i, `${snippet}\n</head>`);
+  }
+
+  fs.writeFileSync(file, html);
+}

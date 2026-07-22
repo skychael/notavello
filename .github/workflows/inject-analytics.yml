@@ -21,20 +21,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Inject GoatCounter snippet
-        run: |
-          SNIPPET='<script data-goatcounter="https://notavello.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>'
-          find . -name "*.html" \
-            -not -path "./.git/*" \
-            -not -path "./node_modules/*" \
-            | while read file; do
-              if grep -q "goatcounter" "$file"; then
-                echo "Already has snippet: $file"
-              else
-                sed -i "s|</body>|$SNIPPET</body>|g" "$file"
-                echo "Injected: $file"
-              fi
-            done
+      - name: Inject PostHog snippet
+        run: node scripts/inject-posthog.js
 
       - name: Commit changes
         run: |
@@ -45,7 +33,7 @@ jobs:
             echo "Nothing to commit."
             exit 0
           fi
-          git commit -m "chore: inject GoatCounter analytics"
+          git commit -m "chore: inject PostHog analytics"
 
           # Safety net: if version-bump or generate-sitemap committed at the
           # same moment, pull their change in and stack ours on top, then
