@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>AI-Editable HTML Documents Need Plain Data — The Export | Notavello</title>
+<meta name="description" content="Single-file HTML documents make AI edits easier to inspect, diff, save, and repair than opaque office files."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/blog/ai-editable-html-documents-plain-data/"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2026-07-23T04:53:20.286Z"/>
+<meta property="article:modified_time" content="2026-07-23T04:53:20.286Z"/>
+<meta name="notavello:published_at" content="2026-07-23T04:53:20.286Z"/>
+<meta property="og:url" content="https://notavello.com/pages/blog/ai-editable-html-documents-plain-data/"/>
+<meta property="og:title" content="AI-Editable HTML Documents Need Plain Data"/>
+<meta property="og:description" content="Single-file HTML documents make AI edits easier to inspect, diff, save, and repair than opaque office files."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="AI-Editable HTML Documents Need Plain Data"/>
+<meta name="twitter:description" content="Single-file HTML documents make AI edits easier to inspect, diff, save, and repair than opaque office files."/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "AI-Editable HTML Documents Need Plain Data",
+  "description": "Single-file HTML documents make AI edits easier to inspect, diff, save, and repair than opaque office files.",
+  "url": "https://notavello.com/pages/blog/ai-editable-html-documents-plain-data/",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://notavello.com/pages/blog/ai-editable-html-documents-plain-data/" },
+  "image": "https://notavello.com/og-image.png",
+  "datePublished": "2026-07-23T04:53:20.286Z",
+  "dateModified": "2026-07-23T04:53:20.286Z",
+  "author": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" },
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com", "logo": { "@type": "ImageObject", "url": "https://notavello.com/og-image.png" } }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
+.post-nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; row-gap: 8px; }
+.post-nav-top { margin-bottom: 40px; }
+.post-nav-bottom { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--border); }
+.post-nav a { display: inline-flex; align-items: center; gap: 6px; font-size: 0.92rem; font-weight: 600; color: var(--ink-muted); text-decoration: none; padding: 12px 14px; border-radius: var(--radius-sm); white-space: nowrap; transition: color 0.15s, background 0.15s; }
+.post-nav a:hover { color: var(--accent); background: var(--accent-light); }
+.post-nav a:first-child { padding-left: 0; }
+.post-nav a:last-child { padding-right: 0; justify-content: flex-end; }
+.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
+.post-date { font-size: 0.78rem; color: var(--ink-faint); }
+.post-title { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; color: var(--ink); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
+.post-lede { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+.post-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink); }
+.post-body h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 44px 0 16px; letter-spacing: -0.01em; }
+.post-body p { margin-bottom: 20px; color: var(--ink-muted); }
+.post-body p strong { color: var(--ink); font-weight: 600; }
+.post-body ul { margin: 0 0 20px 20px; color: var(--ink-muted); }
+.post-body ul li { margin-bottom: 8px; line-height: 1.7; }
+.callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 32px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.7; }
+.post-footer { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.post-footer-label { font-size: 0.8rem; color: var(--ink-faint); }
+.btn-export { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: opacity 0.2s; }
+.btn-export:hover { opacity: 0.9; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } .post-nav a { padding: 12px 8px; font-size: 0.88rem; } }
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+
+  <nav class="post-nav post-nav-top">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+  <div class="post-meta">
+    <span class="post-tag">Developer Tools</span>
+    <span class="post-date">July 23, 2026</span>
+  </div>
+
+  <h1 class="post-title">AI-Editable HTML Documents Need Plain Data</h1>
+
+  <p class="post-lede">The interesting part of a single-file HTML slide deck is not that it can replace PowerPoint. It is that the document becomes readable enough for humans, browsers, and AI tools to argue over the same file.</p>
+
+  <div class="post-body">
+
+    <h2>The Old Office File Problem Is Getting Worse</h2>
+    <p>Office documents were built for people clicking buttons, not for software agents making careful edits under review. That was fine when the workflow was one person nudging a text box at 11:47 p.m. before a meeting. It is less fine when an AI tool is asked to rewrite a pricing slide, update a chart, add speaker notes, and leave behind a useful paper trail.</p><p>The practical problem is not that PowerPoint, Keynote, Google Slides, or PDFs are bad. They are very good at being office products. The problem is that they hide too much state. The visible slide is only part of the document. Layout rules, embedded media, charts, comments, transitions, fonts, speaker notes, and metadata are scattered through formats that are often hard to inspect casually.</p><p>That matters because AI-generated changes need review. A useful AI document workflow should answer boring questions quickly: what changed, where did it change, can the edit be reversed, and did the assistant touch anything it was not supposed to touch? If the only answer is “open the file and look around,” congratulations, the robot has recreated the intern problem with better capitalization.</p>
+
+    <div class="callout">
+      <strong>The bottom line:</strong> If AI is going to edit office documents, the file format matters. Plain, inspectable document state beats mystery blobs and silent cloud saves.
+    </div>
+
+    <h2>Bento Is Interesting Because The File Is The Surface Area</h2>
+    <p>Bento Slides is a useful signal here. Its public documentation describes a deck as a single <strong>.bento.html</strong> file that acts as the document, viewer, and editor at once; the product page says the document data is kept as readable JSON inside the HTML file. That is the important bit, not the marketing sparkle. A deck that contains its own editing interface and its own inspectable data gives an AI tool a simpler target than a conventional binary-ish office bundle. See Bento's own description at <a href="https://bento.page/">bento.page</a>.</p><p>This is not an entirely new idea. Web-native slide tools have existed for years. <a href="https://revealjs.com/">reveal.js</a>, for example, describes itself as an open source HTML presentation framework and supports features such as Markdown, speaker notes, PDF export, and browser-based presentation. The difference with the Bento-style pattern is the packaging: the document and the machinery for viewing or editing it can travel together in one file.</p><p>That packaging changes the AI workflow. Instead of asking an assistant to reverse-engineer a proprietary office file, you can hand it a text-adjacent artifact with structured document state. The AI tool can propose edits to JSON, CSS, text, and layout instructions. A human can inspect those edits with ordinary developer habits: search, diff, commit, revert.</p>
+
+    <h2>Plain Document State Makes AI Edits Reviewable</h2>
+    <p>The killer feature is not “AI can make slides.” AI tools have been able to make mediocre slides for a while. The killer feature is that the document can expose enough structure for review.</p><p>A good AI-editable document should make these things obvious:</p><ul><li><strong>Content changes:</strong> the title changed, three bullets were removed, one paragraph was rewritten.</li><li><strong>Data changes:</strong> a chart now points at different rows or a table now has different numbers.</li><li><strong>Layout changes:</strong> an element moved, resized, changed color, or changed animation.</li><li><strong>Hidden changes:</strong> speaker notes, comments, scripts, external resources, or collaboration metadata changed.</li><li><strong>Provenance:</strong> the edit came from a specific prompt, model, user, or automation step.</li></ul><p>That list sounds obvious until you try to reconstruct it from a normal presentation file after several AI-assisted revisions. This is where plain data wins. If a document stores its meaningful state in readable JSON, the review process becomes less mystical. You can diff before and after. You can validate schema. You can reject edits that touch forbidden fields. You can run a linter. You can build a preview from the same source being reviewed.</p><p>This is the same reason Notavello keeps pushing exportable AI work instead of trapped conversations. If your team is already saving research, prompts, and decisions, <a href="/tools/">Notavello's AI export tools</a> are a better habit than leaving the only useful version inside a chat sidebar. Documents should be portable. So should the reasoning that produced them.</p>
+
+    <h2>The Browser Can Do More Than People Think, But It Has Edges</h2>
+    <p>Single-file web documents are possible because the browser is now a serious application runtime. Compression, local file handling, offline execution, canvas rendering, media, cryptography, and structured storage are all available in some form. That is why an HTML file can be more than a web page. It can be a small app with a document embedded inside it.</p><p>But this is where product teams need to stay awake. Browser APIs are not equally available everywhere. MDN marks <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/showSaveFilePicker">showSaveFilePicker()</a> as limited availability and experimental, and notes that it requires secure contexts in supporting browsers. That matters if a single-file editor depends on rewriting itself or saving directly back to disk. The fallback might be a download. That may be acceptable for a deck. It may be annoying for a daily document editor.</p><p>Other APIs are more settled. MDN describes <a href="https://developer.mozilla.org/en-US/docs/Web/API/DecompressionStream">DecompressionStream</a> as widely available and says it has been available across browsers since May 2023. That makes compressed self-contained payloads more realistic. Still, the practical rule is simple: if the document must work for clients, schools, government users, or locked-down enterprises, test the boring browser matrix before celebrating.</p><p>There is also a security tradeoff. A self-contained HTML document can include executable JavaScript. That is powerful. It is also exactly why some organizations will treat it like software, not like a harmless attachment. If the file can edit, render, collaborate, and run scripts, then it needs the same suspicion you would apply to any local app.</p>
+
+    <h2>A Sensible AI Document Workflow</h2>
+    <p>If your team wants AI-editable documents without chaos, start with the workflow before falling in love with the format. The format should support the controls. Not the other way around.</p><p>Use this checklist for any HTML-file, Markdown-file, JSON-file, or “AI-native” document system:</p><ul><li><strong>Keep the canonical content readable.</strong> The main text, tables, chart data, image references, and notes should be inspectable without launching a proprietary editor.</li><li><strong>Separate content from behavior.</strong> The AI tool should usually edit document state, not application code. If it changes scripts, that should require special review.</li><li><strong>Require diffs for AI edits.</strong> No silent overwrites. The assistant should produce a before-and-after patch or a clear change summary.</li><li><strong>Validate the schema.</strong> If the file stores JSON, run validation before accepting edits. Broken slides are bad. Broken slides five minutes before a board meeting are performance art.</li><li><strong>Preserve revision history.</strong> Save snapshots or commit changes to version control. A single file is convenient, but convenience is not backup.</li><li><strong>Watch external assets.</strong> Fonts, images, video, scripts, and remote URLs can create privacy, availability, and security problems.</li><li><strong>Make export boring.</strong> A useful deck still needs PDF, image, or static web export for people who do not want your clever editor file.</li></ul><p>The most important habit is to treat AI edits as proposed changes, not as final truth. The document format should make review cheap enough that people actually do it.</p>
+
+    <h2>This Pattern Is Bigger Than Slide Decks</h2>
+    <p>Slides are just the visible example. The same pattern applies to reports, product specs, notebooks, invoices, dashboards, diagrams, and lightweight databases. The next useful office format may not look like a traditional office suite at all. It may look like a portable web app with a readable data block and strict rules about what the AI tool is allowed to touch.</p><p>That would be a healthier direction than dumping more AI features into opaque editors. If an assistant writes a report, the report should be easy to diff. If an assistant changes a spreadsheet-like model, the changed formulas and source data should be obvious. If an assistant redesigns a pitch deck, the human reviewer should not need to click through thirty slides hunting for weirdness.</p><p>The web already has many of the pieces: HTML for structure, CSS for presentation, JavaScript for interaction, JSON for state, browser APIs for local behavior, and version control for review. The missing piece is discipline. A document that can execute code, store data, and invite AI edits needs boundaries.</p><p>So the Bento-style lesson is not “PowerPoint is dead.” PowerPoint is annoyingly alive, like every durable office habit. The better lesson is this: AI tools work best on documents that are inspectable, portable, and boring underneath. When the file tells the truth about itself, humans can finally review the robot's work without becoming archaeologists.</p>
+
+  </div>
+
+  <div class="post-footer">
+    <span class="post-footer-label">Looking for more AI tools?</span>
+    <a class="btn-export" href="/">See our free AI tools →</a>
+  </div>
+
+  <nav class="post-nav post-nav-bottom">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+</main>
+
+<!--FOOTER-->
+
+</body>
+</html>
