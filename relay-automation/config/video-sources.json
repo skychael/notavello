@@ -1,121 +1,73 @@
 {
-  "schema_version": "1.1",
-  "description": "Approved YouTube channels and collection settings for Relay. Set YOUTUBE_API_KEY in the environment, then run: node relay-automation/update-videos.js",
+  "schema_version": "2.0",
+  "description": "Approved YouTube channels and collection settings for Relay. This is a tightly curated specialist whitelist: the channel list itself is the primary relevance filter, not keyword or topic matching. Set YOUTUBE_API_KEY in the environment, then run: node relay-automation/update-videos.js",
   "check_interval_minutes": 180,
-  "maximum_items": 12,
+  "maximum_items": 6,
   "lookback_hours": 720,
-  "max_per_channel": 2,
-  "max_per_topic": 2,
+  "max_per_channel": 1,
   "approved_channels": [
     {
-      "id": "cisa",
-      "channel_name": "CISA",
-      "channel_id": "UCxyq9roe-npgzrVwbpoAy0A",
-      "channel_url": "https://www.youtube.com/channel/UCxyq9roe-npgzrVwbpoAy0A",
+      "id": "geologyhub",
+      "channel_name": "GeologyHub",
+      "channel_id": "UCYeGh5VML5XPr5jYnzh3J6g",
+      "channel_url": "https://www.youtube.com/channel/UCYeGh5VML5XPr5jYnzh3J6g",
       "enabled": true,
       "priority": 10,
-      "topics": [
-        "cybersecurity-communications",
-        "infrastructure-utilities",
-        "government-regulation-legal"
-      ],
-      "notes": "Official Cybersecurity and Infrastructure Security Agency channel."
+      "notes": "Volcanologist-run channel covering active earthquakes and volcanic eruptions. Verified via linked YouTube icon on the creator's Patreon page. Reviewed latest 15 uploads: 14/15 suitable (event-driven earthquake/volcano/landslide updates), 1 unsuitable (personal/pets video)."
     },
     {
-      "id": "national-hurricane-center",
-      "channel_name": "NOAA/NWS National Hurricane Center",
-      "channel_id": "UCv0qlvvLtEuCxAoEitAuoFg",
-      "channel_url": "https://www.youtube.com/channel/UCv0qlvvLtEuCxAoEitAuoFg",
+      "id": "tropical-tidbits",
+      "channel_name": "Tropical Tidbits",
+      "channel_id": "UCrFIk7g_riIm2G2Vi90pxDA",
+      "channel_url": "https://www.youtube.com/channel/UCrFIk7g_riIm2G2Vi90pxDA",
       "enabled": true,
       "priority": 10,
-      "topics": [
-        "severe-weather-hazards",
-        "infrastructure-utilities",
-        "local-early-warning"
-      ],
-      "notes": "Official National Hurricane Center channel linked by NOAA."
+      "notes": "Dr. Levi Cowan's tropical-cyclone forecast channel. Verified via the YouTube link on tropicaltidbits.com. Reviewed latest 15 uploads: 14/15 suitable (named-storm updates), 1 borderline (season-opener outlook). Goes quiet outside active tropical periods, which is expected."
     },
     {
-      "id": "usgs",
-      "channel_name": "USGS",
-      "channel_id": "UCeXH8GZyV3sVqAr45AvupOA",
-      "channel_url": "https://www.youtube.com/channel/UCeXH8GZyV3sVqAr45AvupOA",
+      "id": "wgow-shipping",
+      "channel_name": "What's Going on With Shipping?",
+      "channel_id": "UCT_yBgKSiwb3WP4ACPnF5nA",
+      "channel_url": "https://www.youtube.com/channel/UCT_yBgKSiwb3WP4ACPnF5nA",
       "enabled": true,
       "priority": 9,
-      "topics": [
-        "severe-weather-hazards",
-        "infrastructure-utilities",
-        "local-early-warning"
-      ],
-      "notes": "Official U.S. Geological Survey channel."
+      "notes": "Sal Mercogliano's maritime-industry and shipping-disruption channel. Verified via the channel's own self-description and cross-referenced independent reporting. Reviewed latest 15 uploads: ~12/15 suitable (Hormuz/Black Sea/tariff and casualty coverage), a few retrospective/history or feature pieces unsuitable."
     },
     {
-      "id": "fda",
-      "channel_name": "U.S. Food and Drug Administration",
-      "channel_id": "UC_giJ3xlEL9jUF1YfJdzzuQ",
-      "channel_url": "https://www.youtube.com/channel/UC_giJ3xlEL9jUF1YfJdzzuQ",
-      "enabled": true,
-      "priority": 9,
-      "topics": [
-        "public-health",
-        "food-agriculture",
-        "government-regulation-legal"
-      ],
-      "notes": "Official FDA channel linked from fda.gov."
-    },
-    {
-      "id": "nifa-usda",
-      "channel_name": "NIFA USDA",
-      "channel_id": "UCfdDfqYSXZ5daqILCmX7-VA",
-      "channel_url": "https://www.youtube.com/channel/UCfdDfqYSXZ5daqILCmX7-VA",
+      "id": "force-thirteen",
+      "channel_name": "Force Thirteen",
+      "channel_id": "UCr7wmRGObn4Mmiuk_MmgeTQ",
+      "channel_url": "https://www.youtube.com/channel/UCr7wmRGObn4Mmiuk_MmgeTQ",
       "enabled": true,
       "priority": 8,
-      "topics": [
-        "food-agriculture",
-        "government-regulation-legal"
-      ],
-      "notes": "Official USDA National Institute of Food and Agriculture channel."
+      "notes": "Tropical-cyclone tracking channel, launched 2011. Verified via the channel's own self-description matching independent sourcing. Reviewed latest 15 uploads: 9/15 suitable (active-storm updates), 6/15 unsuitable ('Top 10' retrospective countdowns and old-season animations, filtered by the retrospective rule)."
     },
     {
-      "id": "freightwaves",
-      "channel_name": "FreightWaves",
-      "channel_id": "UC36dglNLPZNKuSp30JVP5yg",
-      "channel_url": "https://www.youtube.com/channel/UC36dglNLPZNKuSp30JVP5yg",
+      "id": "tamitha-skov",
+      "channel_name": "Dr. Tamitha Skov (Space Weather Woman)",
+      "channel_id": "UCkXjdDQ-db0xz8f4PKgKsag",
+      "channel_url": "https://www.youtube.com/channel/UCkXjdDQ-db0xz8f4PKgKsag",
       "enabled": true,
       "priority": 8,
-      "topics": [
-        "shipping-supply-chains",
-        "industry-manufacturing",
-        "economy-finance"
-      ],
-      "notes": "Freight and logistics trade-publication channel."
+      "notes": "Credentialed space-weather forecaster. Verified via the YouTube link on spaceweatherwoman.com. Reviewed latest 15 uploads: 15/15 suitable (solar flare/storm forecasts). Upload cadence is roughly biweekly, so this channel will often contribute nothing on a given run."
     },
     {
-      "id": "canary-media",
-      "channel_name": "Canary Media",
-      "channel_id": "UCAkVWXKsmZ3EuAaj-3yxFYA",
-      "channel_url": "https://www.youtube.com/channel/UCAkVWXKsmZ3EuAaj-3yxFYA",
-      "enabled": true,
-      "priority": 8,
-      "topics": [
-        "energy",
-        "infrastructure-utilities",
-        "government-regulation-legal"
-      ],
-      "notes": "Specialist clean-energy newsroom channel."
+      "id": "ryan-hall-yall",
+      "channel_name": "Ryan Hall, Y'all",
+      "channel_id": "UCJHAT3Uvv-g3I8H3GhHWV7w",
+      "channel_url": "https://www.youtube.com/channel/UCJHAT3Uvv-g3I8H3GhHWV7w",
+      "enabled": false,
+      "priority": 6,
+      "notes": "MANUAL REVIEW HOLD, not automatic. Verified authentic (3.3M subscribers, cross-referenced independent analytics). Content is genuinely current severe-weather coverage, but the latest 15 titles are uniformly vague clickbait (e.g. 'Something INSANE Is About To Happen...') with no named storm or location, which conflicts with preserving original titles as meaningful headlines. Left disabled pending a human decision; enable only after reviewing further uploads."
     },
     {
-      "id": "securityweek",
-      "channel_name": "SecurityWeek",
-      "channel_id": "UCmzBgSoDOeMJVI1m_yMR4og",
-      "channel_url": "https://www.youtube.com/channel/UCmzBgSoDOeMJVI1m_yMR4og",
-      "enabled": true,
-      "priority": 8,
-      "topics": [
-        "cybersecurity-communications",
-        "infrastructure-utilities"
-      ],
-      "notes": "Cybersecurity trade-publication channel."
+      "id": "max-velocity-weather",
+      "channel_name": "Max Velocity Weather",
+      "channel_id": "UCvBVK2ymNzPLRJrgip2GeQQ",
+      "channel_url": "https://www.youtube.com/channel/UCvBVK2ymNzPLRJrgip2GeQQ",
+      "enabled": false,
+      "priority": 6,
+      "notes": "MANUAL REVIEW HOLD, not automatic. Verified via the channel's own handle referenced from maxvelocitywx.com search results. Same issue as Ryan Hall, Y'all: legitimate severe-weather content, but all 15 reviewed titles are vague clickbait (e.g. 'Nobody Saw This Massive Storm Coming...'). Left disabled pending a human decision."
     }
   ]
 }

@@ -5,11 +5,14 @@ const path = require("path");
 
 const ROOT = path.resolve(__dirname, "..");
 const CONFIG_PATH = path.join(__dirname, "config", "video-sources.json");
-const TOPICS_PATH = path.join(__dirname, "config", "topics.json");
 const EXCLUSIONS_PATH = path.join(__dirname, "config", "exclusions.json");
 const DATA_PATH = path.join(ROOT, "pages", "relay", "video-data.json");
 const FETCH_TIMEOUT_MS = 15000;
 const YOUTUBE_SEARCH_ENDPOINT = "https://www.googleapis.com/youtube/v3/search";
+const YOUTUBE_VIDEOS_ENDPOINT = "https://www.googleapis.com/youtube/v3/videos";
+const CHANNEL_ID_PATTERN = /^UC[A-Za-z0-9_-]{22}$/;
+const VIDEO_ID_PATTERN = /^[A-Za-z0-9_-]{11}$/;
+const SHORTS_MAX_DURATION_SECONDS = 60;
 
 const EXCLUSION_TERMS = {
   "ufo-alien-claims": ["ufo", "ufos", "alien", "aliens", "extraterrestrial"],
@@ -30,32 +33,21 @@ const EXCLUSION_TERMS = {
   "affiliate-only-pages": ["affiliate link", "buy now with code"]
 };
 
-const EVENT_SIGNAL_TERMS = [
-  "warning", "advisory", "alert", "emergency", "disruption", "hazard",
-  "investigation", "outage", "shortage", "closure", "shutdown", "recall",
-  "contamination", "contaminated", "vulnerability", "breach",
-  "cyber incident", "cyberattack", "ransomware", "data breach",
-  "active exploitation", "exploited vulnerability", "severe weather",
-  "hurricane", "tropical storm", "tornado", "wildfire", "flooding",
-  "flash flood", "flood advisory", "flood warning", "earthquake",
-  "magnitude", "eruption", "volcano", "drought", "extreme heat",
-  "heat wave", "infrastructure failure", "power outage", "power shutoff",
-  "grid emergency", "energy emergency", "fuel shortage", "crop failure",
-  "livestock disease", "plant disease", "food recall", "outbreak",
-  "health emergency", "public health alert", "port closure", "port delay",
-  "shipping disruption", "vessel collision", "collision", "grounding",
-  "rail derailment", "derailment", "government advisory", "evacuation",
-  "emergency declaration", "state of emergency", "explosion", "collapse",
-  "boil water advisory", "water system", "service interruption"
+// Basic, bounded, deterministic content-format exclusions requested by the
+// editorial model: channel announcements, merchandise, fundraising,
+// retrospectives, and tutorials that are not tied to a current event. This
+// is a small fixed list of format/category markers, not a positive
+// relevance vocabulary — the approved channel list itself is the relevance
+// filter.
+const NON_EVENT_CONTENT_TERMS = [
+  "channel announcement", "programming note", "housekeeping", "site update",
+  "merch", "merchandise", "shop now", "use code", "storefront",
+  "patreon", "donate", "donation", "fundraiser", "gofundme",
+  "support the channel", "membership perk",
+  "top 10", "top ten", "year in review", "retrospective", "looking back",
+  "best of", "throwback", "anniversary special", "season animation",
+  "tutorial", "how to use", "beginner's guide", "getting started guide"
 ];
-
-const STOP_WORDS = new Set([
-  "about", "action", "affected", "affecting", "against", "broad", "change",
-  "clear", "conditions", "coverage", "developing", "effect", "government",
-  "impact", "including", "major", "other", "potential", "reports", "selected",
-  "services", "stories", "system", "systems", "their", "these", "through",
-  "warning", "wider", "with"
-]);
 
 function decodeHtmlEntities(value) {
   const named = { amp: "&", apos: "'", gt: ">", lt: "<", quot: "\"" };
@@ -80,34 +72,14 @@ function normalizeText(value) {
     .trim();
 }
 
-function phraseMatches(text, phrase) {
+function containsPhrase(text, phrase) {
   const normalizedPhrase = normalizeText(phrase);
   if (!normalizedPhrase) return false;
-  if (text.includes(normalizedPhrase)) return true;
-  const words = normalizedPhrase
-    .split(" ")
-    .filter((word) => word.length >= 5 && !STOP_WORDS.has(word));
-  return words.length >= 2 && words.filter((word) => text.includes(word)).length >= 2;
+  return ` ${text} `.includes(` ${normalizedPhrase} `);
 }
 
-function matchedTopics(text, channel, topics) {
-  const allowed = new Set(channel.topics);
-  return topics
-    .filter((topic) => topic.enabled && allowed.has(topic.id))
-    .filter((topic) => {
-      const signals = [
-        topic.name,
-        ...topic.include_terms,
-        ...topic.priority_signals
-      ];
-      return signals.some((signal) => phraseMatches(text, signal));
-    })
-    .map((topic) => topic.id);
-}
-
-function hasEventSignal(text, terms = EVENT_SIGNAL_TERMS) {
-  const padded = ` ${text} `;
-  return terms.some((term) => padded.includes(` ${normalizeText(term)} `));
+function hasNonEventContentSignal(text) {
+  return NON_EVENT_CONTENT_TERMS.some((term) => containsPhrase(text, term));
 }
 
 function isHardExcluded(text, exclusions) {
@@ -115,6 +87,15 @@ function isHardExcluded(text, exclusions) {
     .filter((rule) => rule.enabled)
     .some((rule) => (EXCLUSION_TERMS[rule.id] || [])
       .some((term) => normalizeText(text).includes(normalizeText(term))));
+}
+
+function parseIso8601DurationSeconds(duration) {
+  const match = /^PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?$/.exec(duration || "");
+  if (!match) return null;
+  const hours = Number(match[1] || 0);
+  const minutes = Number(match[2] || 0);
+  const seconds = Number(match[3] || 0);
+  return hours * 3600 + minutes * 60 + seconds;
 }
 
 function sanitizeError(error, apiKey) {
@@ -167,21 +148,28 @@ async function fetchChannelVideos(channel, publishedAfter, apiKey, fetchImpl) {
   return data.items || [];
 }
 
-function relevantTopicIds(searchableText, channel, topics, titleHasEventSignal) {
-  const matched = matchedTopics(searchableText, channel, topics);
-  if (matched.length > 0) return matched;
-  if (!titleHasEventSignal) return [];
-  // An official-agency title can carry a genuine, strongly event-specific
-  // signal without repeating topics.json's exact curated wording. In that
-  // case, trust the channel's own pre-approved topic scope as supporting
-  // context rather than rejecting the video outright.
-  const enabledIds = new Set(topics.filter((topic) => topic.enabled).map((topic) => topic.id));
-  return channel.topics.filter((id) => enabledIds.has(id));
+async function fetchVideoDetails(videoIds, apiKey, fetchImpl) {
+  const detailsById = new Map();
+  if (videoIds.length === 0) return detailsById;
+  const query = new URLSearchParams({
+    part: "contentDetails,liveStreamingDetails",
+    id: videoIds.join(","),
+    key: apiKey
+  });
+  const data = await fetchJson(`${YOUTUBE_VIDEOS_ENDPOINT}?${query}`, fetchImpl);
+  for (const item of data.items || []) {
+    detailsById.set(item.id, {
+      durationSeconds: parseIso8601DurationSeconds(item.contentDetails?.duration),
+      wasLivestream: Boolean(item.liveStreamingDetails)
+    });
+  }
+  return detailsById;
 }
 
-function evaluateCandidate(searchItem, channel, topics, exclusions, cutoff, now) {
+function evaluateCandidate(searchItem, channel, exclusions, videoDetailsById, cutoff, now) {
   const videoId = searchItem.id?.videoId;
-  if (!/^[A-Za-z0-9_-]{11}$/.test(videoId || "")) return { status: "malformed" };
+  if (!VIDEO_ID_PATTERN.test(videoId || "")) return { status: "malformed" };
+  if (!CHANNEL_ID_PATTERN.test(channel.channel_id || "")) return { status: "malformed" };
 
   const publishedAt = new Date(searchItem.snippet?.publishedAt);
   if (!Number.isFinite(publishedAt.getTime()) || publishedAt < cutoff || publishedAt > now) {
@@ -192,17 +180,18 @@ function evaluateCandidate(searchItem, channel, topics, exclusions, cutoff, now)
   const description = decodeHtmlEntities(searchItem.snippet?.description);
   if (!title) return { status: "malformed" };
 
-  const titleText = normalizeText(title);
   const searchableText = normalizeText(`${title} ${description}`);
   if (isHardExcluded(searchableText, exclusions)) return { status: "excluded" };
 
-  // The title is weighted more strongly than the description: a video is
-  // only accepted when the TITLE itself carries the event signal, so
-  // boilerplate that appears only in the description can never qualify it.
-  const titleHasEventSignal = hasEventSignal(titleText);
-  const topicIds = relevantTopicIds(searchableText, channel, topics, titleHasEventSignal);
-  if (topicIds.length === 0) return { status: "no_topic" };
-  if (!titleHasEventSignal) return { status: "no_event" };
+  const liveBroadcastContent = searchItem.snippet?.liveBroadcastContent || "none";
+  if (liveBroadcastContent !== "none") return { status: "livestream_placeholder" };
+
+  if (hasNonEventContentSignal(searchableText)) return { status: "non_event_content" };
+
+  const details = videoDetailsById.get(videoId);
+  if (details?.durationSeconds != null && details.durationSeconds <= SHORTS_MAX_DURATION_SECONDS) {
+    return { status: "short" };
+  }
 
   const url = `https://www.youtube.com/watch?v=${videoId}`;
   try {
@@ -221,38 +210,21 @@ function evaluateCandidate(searchItem, channel, topics, exclusions, cutoff, now)
       channel_name: channel.channel_name,
       channel_id: channel.channel_id,
       published_at: publishedAt.toISOString(),
-      matched_topic_ids: topicIds,
       source_priority: channel.priority,
+      is_livestream_replay: Boolean(details?.wasLivestream),
       status: "ok"
     }
   };
 }
 
-function normalizeVideo(searchItem, channel, topics, exclusions, cutoff, now) {
-  return evaluateCandidate(searchItem, channel, topics, exclusions, cutoff, now).video || null;
-}
-
-function primaryTopicId(item, topicWeightById) {
-  let bestId = null;
-  let bestWeight = -Infinity;
-  for (const id of item.matched_topic_ids) {
-    const weight = topicWeightById.get(id) ?? 0;
-    if (weight > bestWeight) {
-      bestWeight = weight;
-      bestId = id;
-    }
-  }
-  return bestId;
-}
-
-function deduplicateAndRank(items, { maximumItems, maxPerChannel, maxPerTopic, topicWeightById }) {
+function deduplicateAndRank(items, { maximumItems, maxPerChannel }) {
   const seenIds = new Set();
   const seenUrls = new Set();
   const ranked = items
     .sort((left, right) =>
       right.source_priority - left.source_priority
+      || Number(left.is_livestream_replay) - Number(right.is_livestream_replay)
       || new Date(right.published_at) - new Date(left.published_at)
-      || right.matched_topic_ids.length - left.matched_topic_ids.length
       || left.video_id.localeCompare(right.video_id)
     )
     .filter((item) => {
@@ -263,18 +235,13 @@ function deduplicateAndRank(items, { maximumItems, maxPerChannel, maxPerTopic, t
     });
 
   const channelCounts = new Map();
-  const topicCounts = new Map();
   const selected = [];
   for (const item of ranked) {
     if (selected.length >= maximumItems) break;
     const channelCount = channelCounts.get(item.channel_id) || 0;
     if (channelCount >= maxPerChannel) continue;
-    const topicId = primaryTopicId(item, topicWeightById);
-    const topicCount = topicCounts.get(topicId) || 0;
-    if (topicCount >= maxPerTopic) continue;
     selected.push(item);
     channelCounts.set(item.channel_id, channelCount + 1);
-    topicCounts.set(topicId, topicCount + 1);
   }
   return selected;
 }
@@ -286,12 +253,13 @@ function logDiagnostics(diagnostics, candidateCount, items) {
       + `candidates=${stats.candidates_returned} `
       + `rejected_malformed_or_outside_lookback=${stats.rejected_malformed_or_outside_lookback} `
       + `rejected_exclusions=${stats.rejected_exclusions} `
-      + `rejected_no_topic=${stats.rejected_no_topic} `
-      + `rejected_no_event=${stats.rejected_no_event} `
+      + `rejected_livestream_placeholder=${stats.rejected_livestream_placeholder} `
+      + `rejected_non_event_content=${stats.rejected_non_event_content} `
+      + `rejected_short=${stats.rejected_short} `
       + `accepted=${stats.accepted}`
     );
   }
-  console.log(`Video source diagnostics: rejected_by_channel_or_topic_caps=${candidateCount - items.length}`);
+  console.log(`Video source diagnostics: rejected_by_channel_cap_or_duplicate=${candidateCount - items.length}`);
   console.log(`Video source diagnostics: final_selected_count=${items.length}`);
   for (const item of items) {
     console.log(`Video source diagnostics: selected channel="${item.channel_name}" title="${item.title}"`);
@@ -300,7 +268,6 @@ function logDiagnostics(diagnostics, candidateCount, items) {
 
 async function buildVideoData({
   config,
-  topics,
   exclusions,
   previousData,
   fetchImpl = fetch,
@@ -312,19 +279,22 @@ async function buildVideoData({
   const publishedAfter = cutoff.toISOString();
 
   const results = await Promise.all(enabledChannels.map(async (channel) => {
+    if (!CHANNEL_ID_PATTERN.test(channel.channel_id || "")) {
+      console.error(`Video source failed: channel=${channel.id} provider=youtube error=malformed channel id`);
+      return { channel, searchItems: [], videoDetailsById: new Map(), status: "failed" };
+    }
     try {
-      const searchItems = await fetchChannelVideos(
-        channel,
-        publishedAfter,
-        apiKey,
-        fetchImpl
-      );
-      return { channel, searchItems, status: "ok" };
+      const searchItems = await fetchChannelVideos(channel, publishedAfter, apiKey, fetchImpl);
+      const videoIds = searchItems
+        .map((item) => item.id?.videoId)
+        .filter((id) => VIDEO_ID_PATTERN.test(id || ""));
+      const videoDetailsById = await fetchVideoDetails(videoIds, apiKey, fetchImpl);
+      return { channel, searchItems, videoDetailsById, status: "ok" };
     } catch (error) {
       console.error(
         `Video source failed: channel=${channel.id} provider=youtube error=${sanitizeError(error, apiKey)}`
       );
-      return { channel, searchItems: [], status: "failed" };
+      return { channel, searchItems: [], videoDetailsById: new Map(), status: "failed" };
     }
   }));
 
@@ -336,8 +306,9 @@ async function buildVideoData({
       candidates_returned: result.searchItems.length,
       rejected_malformed_or_outside_lookback: 0,
       rejected_exclusions: 0,
-      rejected_no_topic: 0,
-      rejected_no_event: 0,
+      rejected_livestream_placeholder: 0,
+      rejected_non_event_content: 0,
+      rejected_short: 0,
       accepted: 0
     };
     if (result.status === "ok") {
@@ -345,8 +316,8 @@ async function buildVideoData({
         const evaluation = evaluateCandidate(
           searchItem,
           result.channel,
-          topics.topics,
           exclusions,
+          result.videoDetailsById,
           cutoff,
           now
         );
@@ -358,11 +329,14 @@ async function buildVideoData({
           case "excluded":
             stats.rejected_exclusions += 1;
             break;
-          case "no_topic":
-            stats.rejected_no_topic += 1;
+          case "livestream_placeholder":
+            stats.rejected_livestream_placeholder += 1;
             break;
-          case "no_event":
-            stats.rejected_no_event += 1;
+          case "non_event_content":
+            stats.rejected_non_event_content += 1;
+            break;
+          case "short":
+            stats.rejected_short += 1;
             break;
           case "accepted":
             stats.accepted += 1;
@@ -380,12 +354,9 @@ async function buildVideoData({
     diagnostics.push(stats);
   }
 
-  const topicWeightById = new Map(topics.topics.map((topic) => [topic.id, topic.weight]));
   const items = deduplicateAndRank(candidates, {
     maximumItems: config.maximum_items,
-    maxPerChannel: config.max_per_channel ?? 2,
-    maxPerTopic: config.max_per_topic ?? 2,
-    topicWeightById
+    maxPerChannel: config.max_per_channel ?? 1
   });
   logDiagnostics(diagnostics, candidates.length, items);
 
@@ -432,13 +403,12 @@ async function run() {
   console.log(process.env.YOUTUBE_API_KEY
     ? "YOUTUBE_API_KEY is present"
     : "YOUTUBE_API_KEY is missing");
-  const [config, topics, exclusions, previousData] = await Promise.all([
+  const [config, exclusions, previousData] = await Promise.all([
     readJson(CONFIG_PATH),
-    readJson(TOPICS_PATH),
     readJson(EXCLUSIONS_PATH),
     readJson(DATA_PATH, { items: [] })
   ]);
-  const data = await buildVideoData({ config, topics, exclusions, previousData });
+  const data = await buildVideoData({ config, exclusions, previousData });
   await writeJsonAtomic(DATA_PATH, data);
   console.log(`Videos updated: status=${data.status} items=${data.items.length}`);
 }
@@ -455,12 +425,9 @@ module.exports = {
   decodeHtmlEntities,
   deduplicateAndRank,
   evaluateCandidate,
-  hasEventSignal,
+  hasNonEventContentSignal,
   isHardExcluded,
-  matchedTopics,
-  normalizeVideo,
-  primaryTopicId,
-  relevantTopicIds,
+  parseIso8601DurationSeconds,
   sanitizeError,
   writeJsonAtomic
 };
