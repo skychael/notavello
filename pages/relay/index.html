@@ -40,7 +40,7 @@ body {
 .relay-header { border-bottom: 1px solid var(--border); margin-bottom: 10px; padding-bottom: 24px; }
 .relay-title { color: var(--accent); font-family: var(--font-rounded); font-size: clamp(2rem, 5vw, 2.8rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 12px; }
 .relay-intro { color: var(--ink-muted); font-family: var(--font-system); font-size: 0.9rem; line-height: 1.65; }
-.relay-grid { display: grid; gap: 32px; grid-template-columns: minmax(0, 1fr) 220px; }
+.relay-grid { display: grid; gap: 28px; grid-template-columns: minmax(0, 1fr) 240px; align-items: start; }
 .headline-list { list-style: none; }
 .headline-item { border-bottom: 1px solid var(--border); font-family: var(--font-system); font-size: 1rem; line-height: 1.5; padding: 11px 0; }
 .headline-item a { color: var(--ink); font-family: var(--font-system); font-weight: 600; text-decoration: none; }
@@ -55,19 +55,20 @@ body {
 .pulse-list a { color: var(--ink-muted); font-family: var(--font-system); font-size: 0.78rem; font-weight: 600; text-decoration: none; }
 .pulse-value { color: var(--ink); font-family: var(--font-system); font-size: 0.78rem; font-variant-numeric: tabular-nums; font-weight: 600; text-align: right; }
 .pulse-status { color: var(--ink-faint); font-family: var(--font-system); font-size: 0.65rem; line-height: 1.4; margin-top: 18px; }
-.relay-more { display: grid; gap: 32px; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 32px; }
+.videos-section { border-top: 1px solid var(--border); margin-top: 24px; padding-top: 20px; min-width: 0; }
 .coming-soon { color: var(--ink-faint); font-family: var(--font-system); font-size: 0.78rem; margin-top: 8px; }
-.video-list { list-style: none; margin-top: 6px; }
-.video-list li { line-height: 1.4; padding: 5px 0; }
-.video-list a { color: var(--ink); font-family: var(--font-system); font-size: 0.82rem; font-weight: 600; text-decoration: none; }
+.video-list { list-style: none; margin-top: 6px; min-width: 0; }
+.video-list li { line-height: 1.4; min-width: 0; overflow-wrap: anywhere; word-break: break-word; padding: 5px 0; }
+.video-list a { color: var(--ink); display: inline-block; font-family: var(--font-system); font-size: 0.82rem; font-weight: 600; max-width: 100%; text-decoration: none; }
 .video-list a:hover { color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
-.video-channel { color: var(--ink-faint); font-family: var(--font-system); font-size: 0.68rem; white-space: nowrap; }
+.video-channel { color: var(--ink-faint); display: block; font-family: var(--font-system); font-size: 0.68rem; margin-top: 2px; white-space: normal; }
 .video-disclaimer { color: var(--ink-faint); font-family: var(--font-system); font-size: 0.65rem; line-height: 1.45; margin-top: 12px; }
 @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
 @media (max-width: 700px) {
   .main { padding: 40px 16px 72px; }
-  .relay-grid, .relay-more { grid-template-columns: 1fr; }
+  .relay-grid { grid-template-columns: 1fr; }
   .pulse { border-left: 0; border-top: 1px solid var(--border); padding-left: 0; padding-top: 24px; }
+  .videos-section { margin-top: 20px; padding-top: 18px; }
   .headline-item { font-size: 0.96rem; }
 }
 </style>
@@ -157,18 +158,12 @@ body {
     </aside>
   </div>
 
-  <div class="relay-more">
-    <section aria-labelledby="videos-title">
-      <h2 class="section-title" id="videos-title">Videos</h2>
-      <ul class="video-list" data-video-list></ul>
-      <p class="coming-soon" data-video-empty>Coming soon</p>
-      <p class="video-disclaimer" data-video-disclaimer hidden>Third-party posts and videos are selected for relevance; inclusion is not verification or endorsement.</p>
-    </section>
-    <section aria-labelledby="x-title">
-      <h2 class="section-title" id="x-title">On X</h2>
-      <p class="coming-soon">Coming soon</p>
-    </section>
-  </div>
+  <section class="videos-section" aria-labelledby="videos-title">
+    <h2 class="section-title" id="videos-title">Videos</h2>
+    <ul class="video-list" data-video-list></ul>
+    <p class="coming-soon" data-video-empty>Coming soon</p>
+    <p class="video-disclaimer" data-video-disclaimer hidden>Third-party posts and videos are selected for relevance; inclusion is not verification or endorsement.</p>
+  </section>
 </main>
 
 <!--FOOTER-->
