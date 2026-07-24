@@ -3,7 +3,9 @@
   "description": "Approved YouTube channels and collection settings for Relay. Set YOUTUBE_API_KEY in the environment, then run: node relay-automation/update-videos.js",
   "check_interval_minutes": 180,
   "maximum_items": 12,
-  "lookback_hours": 168,
+  "lookback_hours": 720,
+  "max_per_channel": 2,
+  "max_per_topic": 2,
   "approved_channels": [
     {
       "id": "cisa",

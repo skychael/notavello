@@ -30,6 +30,22 @@ const EXCLUSION_TERMS = {
   "affiliate-only-pages": ["affiliate link", "buy now with code"]
 };
 
+const EVENT_SIGNAL_TERMS = [
+  "warning", "advisory", "disruption", "hazard", "investigation", "outage",
+  "shortage", "closure", "recall", "contamination", "contaminated",
+  "cyber incident", "cyberattack", "ransomware", "data breach",
+  "active exploitation", "exploited vulnerability", "severe weather",
+  "hurricane", "tornado", "wildfire", "flooding", "flash flood",
+  "earthquake", "drought", "extreme heat", "infrastructure failure",
+  "power outage", "grid emergency", "energy emergency", "fuel shortage",
+  "crop failure", "livestock disease", "plant disease", "food recall",
+  "outbreak", "health emergency", "public health alert", "port closure",
+  "shipping disruption", "vessel collision", "rail derailment",
+  "government advisory", "evacuation", "emergency declaration",
+  "state of emergency", "explosion", "collapse", "boil water advisory",
+  "water system", "service interruption"
+];
+
 const STOP_WORDS = new Set([
   "about", "action", "affected", "affecting", "against", "broad", "change",
   "clear", "conditions", "coverage", "developing", "effect", "government",
@@ -84,6 +100,11 @@ function matchedTopics(text, channel, topics) {
       return signals.some((signal) => phraseMatches(text, signal));
     })
     .map((topic) => topic.id);
+}
+
+function hasEventSignal(text, terms = EVENT_SIGNAL_TERMS) {
+  const padded = ` ${text} `;
+  return terms.some((term) => padded.includes(` ${normalizeText(term)} `));
 }
 
 function isHardExcluded(text, exclusions) {
@@ -159,6 +180,7 @@ function normalizeVideo(searchItem, channel, topics, exclusions, cutoff, now) {
 
   const topicIds = matchedTopics(searchableText, channel, topics);
   if (topicIds.length === 0) return null;
+  if (!hasEventSignal(searchableText)) return null;
 
   const url = `https://www.youtube.com/watch?v=${videoId}`;
   try {
@@ -181,10 +203,23 @@ function normalizeVideo(searchItem, channel, topics, exclusions, cutoff, now) {
   };
 }
 
-function deduplicateAndRank(items, maximumItems) {
+function primaryTopicId(item, topicWeightById) {
+  let bestId = null;
+  let bestWeight = -Infinity;
+  for (const id of item.matched_topic_ids) {
+    const weight = topicWeightById.get(id) ?? 0;
+    if (weight > bestWeight) {
+      bestWeight = weight;
+      bestId = id;
+    }
+  }
+  return bestId;
+}
+
+function deduplicateAndRank(items, { maximumItems, maxPerChannel, maxPerTopic, topicWeightById }) {
   const seenIds = new Set();
   const seenUrls = new Set();
-  return items
+  const ranked = items
     .sort((left, right) =>
       right.source_priority - left.source_priority
       || new Date(right.published_at) - new Date(left.published_at)
@@ -196,8 +231,23 @@ function deduplicateAndRank(items, maximumItems) {
       seenIds.add(item.video_id);
       seenUrls.add(item.url);
       return true;
-    })
-    .slice(0, maximumItems);
+    });
+
+  const channelCounts = new Map();
+  const topicCounts = new Map();
+  const selected = [];
+  for (const item of ranked) {
+    if (selected.length >= maximumItems) break;
+    const channelCount = channelCounts.get(item.channel_id) || 0;
+    if (channelCount >= maxPerChannel) continue;
+    const topicId = primaryTopicId(item, topicWeightById);
+    const topicCount = topicCounts.get(topicId) || 0;
+    if (topicCount >= maxPerTopic) continue;
+    selected.push(item);
+    channelCounts.set(item.channel_id, channelCount + 1);
+    topicCounts.set(topicId, topicCount + 1);
+  }
+  return selected;
 }
 
 async function buildVideoData({
@@ -253,7 +303,13 @@ async function buildVideoData({
     }
   }
 
-  const items = deduplicateAndRank(candidates, config.maximum_items);
+  const topicWeightById = new Map(topics.topics.map((topic) => [topic.id, topic.weight]));
+  const items = deduplicateAndRank(candidates, {
+    maximumItems: config.maximum_items,
+    maxPerChannel: config.max_per_channel ?? 2,
+    maxPerTopic: config.max_per_topic ?? 2,
+    topicWeightById
+  });
   const successfulChannels = results.filter((result) => result.status === "ok").length;
   const staleItems = items.filter((item) => item.status === "stale").length;
   return {
@@ -319,9 +375,11 @@ module.exports = {
   buildVideoData,
   decodeHtmlEntities,
   deduplicateAndRank,
+  hasEventSignal,
   isHardExcluded,
   matchedTopics,
   normalizeVideo,
+  primaryTopicId,
   sanitizeError,
   writeJsonAtomic
 };
