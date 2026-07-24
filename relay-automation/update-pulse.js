@@ -29,11 +29,37 @@ async function fetchJson(url, fetchImpl) {
       headers: { "User-Agent": "Notavello Relay Pulse/1.0" },
       signal: controller.signal
     });
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    if (!response.ok) {
+      let detail = "";
+      try {
+        const body = await response.json();
+        detail = body.error_message || body.message || body.error || "";
+      } catch {
+        detail = "";
+      }
+      const error = new Error(detail || "Request failed");
+      error.httpStatus = response.status;
+      throw error;
+    }
     return await response.json();
   } finally {
     clearTimeout(timeout);
   }
+}
+
+function sanitizeSourceError(error, fredApiKey) {
+  let message = error?.message || "Unknown source error";
+  if (fredApiKey) message = message.split(fredApiKey).join("[REDACTED]");
+  message = message
+    .replace(/api_key=([^&\s]+)/gi, "api_key=[REDACTED]")
+    .replace(/https?:\/\/\S+/gi, "[request URL redacted]");
+  return error?.httpStatus ? `HTTP ${error.httpStatus}: ${message}` : message;
+}
+
+function logFredKeyPresence(fredApiKey = process.env.FRED_API_KEY) {
+  console.log(fredApiKey
+    ? "FRED_API_KEY is present"
+    : "FRED_API_KEY is missing");
 }
 
 async function fetchFred(item, fetchImpl, fredApiKey) {
@@ -138,6 +164,9 @@ async function buildPulseData({
         units: item.units
       };
     } catch (error) {
+      console.error(
+        `Pulse source failed: item=${item.id} provider=${item.provider} error=${sanitizeSourceError(error, fredApiKey)}`
+      );
       const previous = previousItems.get(item.id);
       if (previous?.raw_value !== null && Number.isFinite(previous?.raw_value)) {
         return {
@@ -197,6 +226,7 @@ async function readJson(filePath, fallback = null) {
 }
 
 async function run() {
+  logFredKeyPresence();
   const config = await readJson(CONFIG_PATH);
   const previousData = await readJson(DATA_PATH, { items: [] });
   const data = await buildPulseData({ config, previousData });
@@ -220,5 +250,7 @@ if (require.main === module) {
 module.exports = {
   buildPulseData,
   formatValue,
+  logFredKeyPresence,
+  sanitizeSourceError,
   writeJsonAtomic
 };
