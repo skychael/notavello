@@ -1,7 +1,63 @@
 {
   "schema_version": "1.0",
-  "checked_at": "2026-07-24T19:56:16.000Z",
-  "latest_success_at": "2026-07-24T19:51:00.640Z",
+  "checked_at": "2026-07-24T20:30:57.790Z",
+  "latest_success_at": "2026-07-24T20:30:57.790Z",
   "status": "ok",
-  "items": []
+  "items": [
+    {
+      "video_id": "NZTDNcjFUHw",
+      "title": "Texas Earthquake Update; M5.0 Earthquake Strikes the Panhandle",
+      "url": "https://www.youtube.com/watch?v=NZTDNcjFUHw",
+      "channel_name": "GeologyHub",
+      "channel_id": "UCYeGh5VML5XPr5jYnzh3J6g",
+      "published_at": "2026-07-24T19:00:27.000Z",
+      "source_priority": 10,
+      "is_livestream_replay": false,
+      "status": "ok"
+    },
+    {
+      "video_id": "pfxxKyvHWgw",
+      "title": "[Tuesday] Tropical Storm Bertha Approaching the Central Gulf Coast",
+      "url": "https://www.youtube.com/watch?v=pfxxKyvHWgw",
+      "channel_name": "Tropical Tidbits",
+      "channel_id": "UCrFIk7g_riIm2G2Vi90pxDA",
+      "published_at": "2026-07-21T15:40:43.000Z",
+      "source_priority": 10,
+      "is_livestream_replay": false,
+      "status": "ok"
+    },
+    {
+      "video_id": "vEKVjninWiI",
+      "title": "Guardians of the Strait? The New Reality in Hormuz",
+      "url": "https://www.youtube.com/watch?v=vEKVjninWiI",
+      "channel_name": "What's Going on With Shipping?",
+      "channel_id": "UCT_yBgKSiwb3WP4ACPnF5nA",
+      "published_at": "2026-07-22T08:04:56.000Z",
+      "source_priority": 9,
+      "is_livestream_replay": false,
+      "status": "ok"
+    },
+    {
+      "video_id": "uFTDpsZSrLs",
+      "title": "Tropical Storm Noul Making a Close Pass to the Philippines",
+      "url": "https://www.youtube.com/watch?v=uFTDpsZSrLs",
+      "channel_name": "Force Thirteen",
+      "channel_id": "UCr7wmRGObn4Mmiuk_MmgeTQ",
+      "published_at": "2026-07-24T04:26:56.000Z",
+      "source_priority": 8,
+      "is_livestream_replay": false,
+      "status": "ok"
+    },
+    {
+      "video_id": "jco1yfMTJo8",
+      "title": "The Sun Peppers Earth in Storms and Flares | Solar Storm Forecast 23 July 2026",
+      "url": "https://www.youtube.com/watch?v=jco1yfMTJo8",
+      "channel_name": "Dr. Tamitha Skov (Space Weather Woman)",
+      "channel_id": "UCkXjdDQ-db0xz8f4PKgKsag",
+      "published_at": "2026-07-23T16:13:10.000Z",
+      "source_priority": 8,
+      "is_livestream_replay": false,
+      "status": "ok"
+    }
+  ]
 }
