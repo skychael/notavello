@@ -1,0 +1,114 @@
+{
+  "schema_version": "1.0",
+  "description": "Editable exclusion, deprioritization, and duplicate-handling rules for future Relay selection. These rules guide later scoring and editorial review.",
+  "hard_exclusions": [
+    {
+      "id": "ufo-alien-claims",
+      "name": "UFO and alien claims",
+      "enabled": true,
+      "description": "Exclude UFO, alien, extraterrestrial, and unexplained-object claims."
+    },
+    {
+      "id": "archaeology-ancient-discoveries",
+      "name": "Archaeology and ancient-discovery stories",
+      "enabled": true,
+      "description": "Exclude archaeology, ancient artifacts, tombs, ruins, and historical discovery stories."
+    },
+    {
+      "id": "celebrity-entertainment",
+      "name": "Celebrity and entertainment coverage",
+      "enabled": true,
+      "description": "Exclude celebrity, film, television, music, awards, and entertainment-industry coverage."
+    },
+    {
+      "id": "sports-results",
+      "name": "Sports results",
+      "enabled": true,
+      "description": "Exclude game results, standings, player transactions, and routine sports coverage."
+    },
+    {
+      "id": "pornographic-material",
+      "name": "Pornographic material",
+      "enabled": true,
+      "description": "Exclude pornographic and sexually explicit material."
+    },
+    {
+      "id": "obvious-spam",
+      "name": "Obvious spam",
+      "enabled": true,
+      "description": "Exclude keyword-stuffed, deceptive, automatically generated, or otherwise obvious spam pages."
+    },
+    {
+      "id": "fabricated-news-sites",
+      "name": "Fabricated-news sites",
+      "enabled": true,
+      "description": "Exclude sources known to publish fabricated stories while presenting them as factual news."
+    },
+    {
+      "id": "affiliate-only-pages",
+      "name": "Affiliate-only pages",
+      "enabled": true,
+      "description": "Exclude pages whose primary purpose is affiliate sales rather than original reporting."
+    },
+    {
+      "id": "exact-duplicate-links",
+      "name": "Exact duplicate links",
+      "enabled": true,
+      "description": "Exclude a link when the same normalized article URL has already been retained."
+    }
+  ],
+  "deprioritized_topics": [
+    {
+      "id": "routine-partisan-commentary",
+      "name": "Routine partisan commentary",
+      "enabled": true
+    },
+    {
+      "id": "ordinary-crime",
+      "name": "Ordinary crime with no wider consequence",
+      "enabled": true
+    },
+    {
+      "id": "routine-product-announcements",
+      "name": "Routine product announcements",
+      "enabled": true
+    },
+    {
+      "id": "general-lifestyle",
+      "name": "General lifestyle coverage",
+      "enabled": true
+    },
+    {
+      "id": "sensational-only",
+      "name": "Stories selected only because they are sensational",
+      "enabled": true
+    }
+  ],
+  "deprioritization_override": "A deprioritized story may still qualify when it has a meaningful effect on infrastructure, public safety, supply chains, essential services, health, finance, or a wider region.",
+  "duplicate_rules": {
+    "normalized_url_matching": {
+      "enabled": true,
+      "description": "Compare canonicalized URLs after normalizing host, path, trailing slash, and other harmless URL variations."
+    },
+    "tracking_parameter_removal": {
+      "enabled": true,
+      "description": "Remove common analytics, campaign, referral, and social tracking parameters before duplicate comparison."
+    },
+    "similar_headline_detection": {
+      "enabled": true,
+      "description": "Flag strongly similar headlines for review instead of assuming they are different stories."
+    },
+    "same_event_clustering": {
+      "enabled": true,
+      "description": "Group coverage of the same event so the board does not fill with repeated versions of one development."
+    },
+    "prefer_original_reporting": {
+      "enabled": true,
+      "description": "Prefer the source that performed or first published the original reporting over rewrites and aggregations."
+    },
+    "retain_confirming_source": {
+      "enabled": true,
+      "description": "Allow one important independent confirming source when it adds verification, local detail, official context, or a materially different perspective."
+    }
+  }
+}

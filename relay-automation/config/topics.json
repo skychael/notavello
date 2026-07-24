@@ -1,0 +1,270 @@
+{
+  "schema_version": "1.0",
+  "description": "Editable topic definitions and scoring signals for future Relay article selection. Terms and signals will contribute to scoring but will not decide selection by themselves.",
+  "topics": [
+    {
+      "id": "infrastructure-utilities",
+      "name": "Infrastructure and utilities",
+      "enabled": true,
+      "weight": 10,
+      "description": "Water, power, transportation, public works, and other systems required for daily life.",
+      "include_terms": [
+        "power grid",
+        "water system",
+        "wastewater",
+        "public works",
+        "infrastructure failure",
+        "utility outage"
+      ],
+      "priority_signals": [
+        "service interruption",
+        "capacity warning",
+        "major repair or closure",
+        "risk to essential services",
+        "regional impact"
+      ]
+    },
+    {
+      "id": "energy",
+      "name": "Energy",
+      "enabled": true,
+      "weight": 9,
+      "description": "Electricity, fuels, generation, transmission, storage, markets, and energy security.",
+      "include_terms": [
+        "electricity demand",
+        "grid reliability",
+        "fuel shortage",
+        "power generation",
+        "transmission",
+        "energy prices"
+      ],
+      "priority_signals": [
+        "supply constraint",
+        "price shock",
+        "outage risk",
+        "critical facility impact",
+        "large demand change"
+      ]
+    },
+    {
+      "id": "food-agriculture",
+      "name": "Food and agriculture",
+      "enabled": true,
+      "weight": 10,
+      "description": "Crops, livestock, food production, contamination, agricultural disease, and food availability.",
+      "include_terms": [
+        "crop conditions",
+        "food recall",
+        "livestock disease",
+        "plant disease",
+        "harvest",
+        "food shortage"
+      ],
+      "priority_signals": [
+        "contamination warning",
+        "production loss",
+        "disease spread",
+        "recall expansion",
+        "supply or price impact"
+      ]
+    },
+    {
+      "id": "shipping-supply-chains",
+      "name": "Shipping and supply chains",
+      "enabled": true,
+      "weight": 10,
+      "description": "Ports, freight, rail, trucking, warehousing, logistics, and material flows.",
+      "include_terms": [
+        "port congestion",
+        "freight disruption",
+        "rail slowdown",
+        "trucking capacity",
+        "shipping delay",
+        "supply chain"
+      ],
+      "priority_signals": [
+        "route closure",
+        "capacity loss",
+        "major delay",
+        "cargo interruption",
+        "cascading supply effect"
+      ]
+    },
+    {
+      "id": "economy-finance",
+      "name": "Economy and finance",
+      "enabled": true,
+      "weight": 7,
+      "description": "Economic conditions, financial stability, credit, prices, employment, and systemic market risks.",
+      "include_terms": [
+        "inflation",
+        "credit conditions",
+        "bank failure",
+        "employment",
+        "commodity prices",
+        "financial stability"
+      ],
+      "priority_signals": [
+        "systemic risk",
+        "sudden price movement",
+        "broad employment impact",
+        "credit disruption",
+        "regional economic shock"
+      ]
+    },
+    {
+      "id": "public-health",
+      "name": "Public health",
+      "enabled": true,
+      "weight": 8,
+      "description": "Outbreaks, healthcare capacity, medicines, environmental health, and population-level risks.",
+      "include_terms": [
+        "outbreak",
+        "public health alert",
+        "hospital capacity",
+        "drug shortage",
+        "disease surveillance",
+        "health emergency"
+      ],
+      "priority_signals": [
+        "rapid case growth",
+        "multi-state impact",
+        "healthcare capacity warning",
+        "official alert",
+        "shortage of essential treatment"
+      ]
+    },
+    {
+      "id": "cybersecurity-communications",
+      "name": "Cybersecurity and communications",
+      "enabled": true,
+      "weight": 9,
+      "description": "Cyber incidents and communications failures, especially those affecting essential services.",
+      "include_terms": [
+        "critical infrastructure cyberattack",
+        "communications outage",
+        "ransomware",
+        "actively exploited vulnerability",
+        "network disruption",
+        "data breach"
+      ],
+      "priority_signals": [
+        "essential service affected",
+        "active exploitation",
+        "widespread outage",
+        "government advisory",
+        "operational disruption"
+      ]
+    },
+    {
+      "id": "severe-weather-hazards",
+      "name": "Severe weather and natural hazards",
+      "enabled": true,
+      "weight": 8,
+      "description": "Severe storms, floods, fires, earthquakes, drought, heat, and other natural hazards.",
+      "include_terms": [
+        "severe weather",
+        "flash flood",
+        "wildfire",
+        "earthquake",
+        "drought",
+        "extreme heat"
+      ],
+      "priority_signals": [
+        "official warning",
+        "evacuation",
+        "infrastructure threat",
+        "rapid intensification",
+        "multi-county impact"
+      ]
+    },
+    {
+      "id": "conflict-geopolitics",
+      "name": "Conflict and geopolitics",
+      "enabled": true,
+      "weight": 7,
+      "description": "Conflict and international developments with consequences for people, trade, energy, or security.",
+      "include_terms": [
+        "armed conflict",
+        "sanctions",
+        "trade route",
+        "border closure",
+        "geopolitical risk",
+        "shipping security"
+      ],
+      "priority_signals": [
+        "civilian impact",
+        "trade disruption",
+        "energy supply effect",
+        "regional escalation",
+        "government action"
+      ]
+    },
+    {
+      "id": "government-regulation-legal",
+      "name": "Government, regulation, and legal action",
+      "enabled": true,
+      "weight": 7,
+      "description": "Government decisions, regulation, enforcement, and legal action with broad practical consequences.",
+      "include_terms": [
+        "new regulation",
+        "enforcement action",
+        "court ruling",
+        "government order",
+        "public safety rule",
+        "regulatory investigation"
+      ],
+      "priority_signals": [
+        "immediate compliance effect",
+        "essential sector affected",
+        "major enforcement action",
+        "nationwide or regional scope",
+        "operational consequence"
+      ]
+    },
+    {
+      "id": "industry-manufacturing",
+      "name": "Industry and manufacturing",
+      "enabled": true,
+      "weight": 8,
+      "description": "Factories, industrial production, materials, plant closures, recalls, and manufacturing capacity.",
+      "include_terms": [
+        "factory closure",
+        "manufacturing disruption",
+        "production halt",
+        "industrial accident",
+        "material shortage",
+        "plant capacity"
+      ],
+      "priority_signals": [
+        "production stopped",
+        "large workforce affected",
+        "critical material shortage",
+        "safety incident",
+        "downstream supply impact"
+      ]
+    },
+    {
+      "id": "local-early-warning",
+      "name": "Local early-warning reports",
+      "enabled": true,
+      "weight": 10,
+      "description": "Credible local reporting that may reveal a developing regional or wider problem before national coverage.",
+      "include_terms": [
+        "local closure",
+        "service interruption",
+        "boil water advisory",
+        "evacuation notice",
+        "local shortage",
+        "emergency declaration"
+      ],
+      "priority_signals": [
+        "first credible report",
+        "official local confirmation",
+        "potential to spread",
+        "essential service affected",
+        "clear regional consequence"
+      ]
+    }
+  ]
+}

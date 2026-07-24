@@ -1,0 +1,178 @@
+{
+  "schema_version": "1.0",
+  "description": "Editable registry of public sources that future Relay tooling may review. An empty feed_url means a reliable public feed has not yet been confirmed.",
+  "supported_source_types": [
+    "rss",
+    "atom",
+    "government",
+    "local-news",
+    "trade-publication",
+    "major-news",
+    "independent",
+    "research",
+    "manual"
+  ],
+  "sources": [
+    {
+      "id": "cisa",
+      "name": "Cybersecurity and Infrastructure Security Agency",
+      "enabled": true,
+      "type": "government",
+      "url": "https://www.cisa.gov/news-events/cybersecurity-advisories",
+      "feed_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
+      "region": "United States",
+      "topics": [
+        "cybersecurity-communications",
+        "infrastructure-utilities",
+        "government-regulation-legal"
+      ],
+      "priority": 10,
+      "notes": "Official advisories and alerts, with special value when essential services or actively exploited vulnerabilities are involved."
+    },
+    {
+      "id": "usgs-earthquakes",
+      "name": "U.S. Geological Survey Earthquake Hazards Program",
+      "enabled": true,
+      "type": "atom",
+      "url": "https://earthquake.usgs.gov/earthquakes/",
+      "feed_url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_month.atom",
+      "region": "Global",
+      "topics": [
+        "severe-weather-hazards",
+        "infrastructure-utilities",
+        "local-early-warning"
+      ],
+      "priority": 10,
+      "notes": "Official significant-earthquake feed. Future scoring should consider location, magnitude, damage, and population exposure."
+    },
+    {
+      "id": "noaa",
+      "name": "National Oceanic and Atmospheric Administration",
+      "enabled": true,
+      "type": "government",
+      "url": "https://www.noaa.gov/news",
+      "feed_url": "",
+      "region": "United States",
+      "topics": [
+        "severe-weather-hazards",
+        "infrastructure-utilities",
+        "food-agriculture"
+      ],
+      "priority": 9,
+      "notes": "Official weather, climate, ocean, and hazard information. Confirm the appropriate public feed before automated ingestion."
+    },
+    {
+      "id": "fda-recalls",
+      "name": "U.S. Food and Drug Administration Recalls",
+      "enabled": true,
+      "type": "government",
+      "url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts",
+      "feed_url": "",
+      "region": "United States",
+      "topics": [
+        "food-agriculture",
+        "public-health",
+        "industry-manufacturing"
+      ],
+      "priority": 10,
+      "notes": "Official recalls, market withdrawals, and safety alerts. Prioritize broad distribution, severe hazards, and expanding recalls."
+    },
+    {
+      "id": "usda",
+      "name": "U.S. Department of Agriculture",
+      "enabled": true,
+      "type": "government",
+      "url": "https://www.usda.gov/about-usda/news",
+      "feed_url": "",
+      "region": "United States",
+      "topics": [
+        "food-agriculture",
+        "economy-finance",
+        "government-regulation-legal"
+      ],
+      "priority": 9,
+      "notes": "Official agricultural news, reports, policy, and food-system information."
+    },
+    {
+      "id": "canary-media",
+      "name": "Canary Media",
+      "enabled": true,
+      "type": "independent",
+      "url": "https://www.canarymedia.com/",
+      "feed_url": "",
+      "region": "United States",
+      "topics": [
+        "energy",
+        "infrastructure-utilities",
+        "government-regulation-legal"
+      ],
+      "priority": 8,
+      "notes": "Independent reporting focused on energy systems, utilities, electrification, and the grid."
+    },
+    {
+      "id": "freightwaves",
+      "name": "FreightWaves",
+      "enabled": true,
+      "type": "trade-publication",
+      "url": "https://www.freightwaves.com/news",
+      "feed_url": "",
+      "region": "North America",
+      "topics": [
+        "shipping-supply-chains",
+        "economy-finance",
+        "industry-manufacturing"
+      ],
+      "priority": 8,
+      "notes": "Trade reporting on trucking, rail, ports, air cargo, freight markets, and logistics."
+    },
+    {
+      "id": "supply-chain-dive",
+      "name": "Supply Chain Dive",
+      "enabled": true,
+      "type": "trade-publication",
+      "url": "https://www.supplychaindive.com/",
+      "feed_url": "",
+      "region": "Global",
+      "topics": [
+        "shipping-supply-chains",
+        "industry-manufacturing",
+        "economy-finance"
+      ],
+      "priority": 8,
+      "notes": "Trade reporting on sourcing, logistics, manufacturing, procurement, and supply-chain risk."
+    },
+    {
+      "id": "securityweek",
+      "name": "SecurityWeek",
+      "enabled": true,
+      "type": "trade-publication",
+      "url": "https://www.securityweek.com/",
+      "feed_url": "",
+      "region": "Global",
+      "topics": [
+        "cybersecurity-communications",
+        "infrastructure-utilities",
+        "government-regulation-legal"
+      ],
+      "priority": 8,
+      "notes": "Cybersecurity reporting with useful coverage of critical infrastructure, vulnerabilities, and threat activity."
+    },
+    {
+      "id": "inside-climate-news",
+      "name": "Inside Climate News",
+      "enabled": true,
+      "type": "independent",
+      "url": "https://insideclimatenews.org/",
+      "feed_url": "",
+      "region": "United States",
+      "topics": [
+        "energy",
+        "infrastructure-utilities",
+        "severe-weather-hazards",
+        "government-regulation-legal"
+      ],
+      "priority": 8,
+      "notes": "Nonprofit reporting on climate, energy, environmental health, infrastructure, and regulation."
+    }
+  ]
+}
