@@ -99,6 +99,26 @@ function isHardExcluded(text, exclusions) {
 }
 
 function isSourceSpecificReject(sourceId, text) {
+  const normalizedText = normalizeText(text);
+
+  if (sourceId === "food-safety-news") {
+    if (/^visit fsn\b/.test(normalizedText)) return true;
+    if (/\biafp\b/.test(normalizedText)) return true;
+  }
+
+  if (sourceId === "stat") {
+    if (/\badvisory panel\b/.test(normalizedText)) return true;
+    if (/\bcommittee meeting\b/.test(normalizedText)) return true;
+    if (/\bcomings and goings\b/.test(normalizedText)) return true;
+    if (/\bup and down the ladder\b/.test(normalizedText)) return true;
+  }
+
+  if (sourceId === "securityweek") {
+    if (/^in other news\b/.test(normalizedText)) return true;
+    if (/\bindustry reactions\b/.test(normalizedText)) return true;
+    if (/\bfeedback friday\b/.test(normalizedText)) return true;
+  }
+
   const terms = [...UNIVERSAL_REJECT_TERMS, ...(PUBLISHER_SPECIFIC_REJECT_TERMS[sourceId] || [])];
   return terms.some((term) => containsPhrase(text, term));
 }

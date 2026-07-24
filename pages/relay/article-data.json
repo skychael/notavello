@@ -1,7 +1,88 @@
 {
   "schema_version": "1.0",
-  "checked_at": "2026-07-24T20:00:00.000Z",
-  "latest_success_at": null,
-  "status": "unavailable",
-  "items": []
+  "checked_at": "2026-07-24T21:39:34.987Z",
+  "latest_success_at": "2026-07-24T21:39:34.987Z",
+  "status": "ok",
+  "items": [
+    {
+      "title": "\"Negligible\" microbial risk from Dutch meat firm’s products",
+      "url": "https://www.foodsafetynews.com/2026/07/negligible-microbial-risk-from-dutch-meat-firms-products",
+      "publisher": "Food Safety News",
+      "published_at": "2026-07-24T04:02:00.000Z",
+      "source_id": "food-safety-news",
+      "status": "ok"
+    },
+    {
+      "title": "FDA continues special enforcement of import laws against seafood, mushrooms",
+      "url": "https://www.foodsafetynews.com/2026/07/fda-continues-special-enforcement-of-import-laws-against-seafood-mushrooms",
+      "publisher": "Food Safety News",
+      "published_at": "2026-07-24T04:01:42.000Z",
+      "source_id": "food-safety-news",
+      "status": "ok"
+    },
+    {
+      "title": "OnTrac notifies customers of data breach after network hack",
+      "url": "https://www.bleepingcomputer.com/news/security/ontrac-notifies-customers-of-data-breach-after-network-hack",
+      "publisher": "BleepingComputer News",
+      "published_at": "2026-07-24T19:55:01.000Z",
+      "source_id": "bleepingcomputer",
+      "status": "ok"
+    },
+    {
+      "title": "Hermes AI agent used to automate attack on Thai Finance Ministry",
+      "url": "https://www.bleepingcomputer.com/news/security/hermes-ai-agent-used-to-automate-attack-on-thai-finance-ministry",
+      "publisher": "BleepingComputer News",
+      "published_at": "2026-07-24T19:09:09.000Z",
+      "source_id": "bleepingcomputer",
+      "status": "ok"
+    },
+    {
+      "title": "There are already more U.S. measles cases this year than in all of 2025",
+      "url": "https://www.statnews.com/2026/07/24/measles-cases-surpass-2025-total-national-vaccination-rate-now-below-key-threshold",
+      "publisher": "STAT",
+      "published_at": "2026-07-24T16:13:00.000Z",
+      "source_id": "stat",
+      "status": "ok"
+    },
+    {
+      "title": "M5.0 earthquake joins small group of major Texas Panhandle events",
+      "url": "https://watchers.news/2026/07/24/m5-0-earthquake-joins-small-group-of-major-texas-panhandle-events",
+      "publisher": "The Watchers",
+      "published_at": "2026-07-24T15:31:22.000Z",
+      "source_id": "the-watchers",
+      "status": "ok"
+    },
+    {
+      "title": "Spanish government assumes command of wildfire response after declaring national emergency in Madrid region and Ávila",
+      "url": "https://watchers.news/2026/07/24/spanish-government-assumes-command-of-wildfire-response-after-declaring-national-emergency-in-madrid-region-and-avila",
+      "publisher": "The Watchers",
+      "published_at": "2026-07-24T13:36:17.000Z",
+      "source_id": "the-watchers",
+      "status": "ok"
+    },
+    {
+      "title": "A new, separate outbreak of the diarrhea-causing parasite",
+      "url": "https://www.statnews.com/2026/07/24/health-news-new-separate-cyclospora-diarrhea-outbreak",
+      "publisher": "STAT",
+      "published_at": "2026-07-24T11:59:27.000Z",
+      "source_id": "stat",
+      "status": "ok"
+    },
+    {
+      "title": "Data Breach Confirmed After Australian Energy Giant Origin Is Hacked",
+      "url": "https://www.securityweek.com/data-breach-confirmed-after-australian-energy-giant-origin-is-hacked",
+      "publisher": "SecurityWeek",
+      "published_at": "2026-07-24T05:52:31.000Z",
+      "source_id": "securityweek",
+      "status": "ok"
+    },
+    {
+      "title": "OpenAI Fixes ChatGPT Agent Flaw That Could Let Attackers Forge an AI Insider",
+      "url": "https://www.securityweek.com/openai-fixes-chatgpt-agent-flaw-that-could-let-attackers-forge-an-ai-insider",
+      "publisher": "SecurityWeek",
+      "published_at": "2026-07-23T15:09:59.000Z",
+      "source_id": "securityweek",
+      "status": "ok"
+    }
+  ]
 }

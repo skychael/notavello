@@ -350,6 +350,29 @@ test("18. rejects evergreen explainers", () => {
   assert.equal(unsuitableTitleCheck("Explainer: How Ransomware Works").status, "unsuitable_content");
 });
 
+test("18b. rejects the exact real Relay article titles requested for editorial filtering", () => {
+  const source = makeSource({ id: "food-safety-news", publisher_name: "Food Safety News", feed_url: "https://www.foodsafetynews.com/feed/", homepage_url: "https://www.foodsafetynews.com/" });
+  const approved = deriveApprovedHostnames(source.homepage_url);
+  const foodSafetyEntry = { title: "Visit FSN at IAFP in New Orleans", link: "https://www.foodsafetynews.com/2026/07/visit-fsn-at-iafp-in-new-orleans", published: NOW.toISOString() };
+  assert.equal(evaluateArticleCandidate(foodSafetyEntry, source, exclusions, approved, CUTOFF, NOW).status, "unsuitable_content");
+
+  const statSource = makeSource({ id: "stat", publisher_name: "STAT", feed_url: "https://www.statnews.com/feed/", homepage_url: "https://www.statnews.com/" });
+  const statApproved = deriveApprovedHostnames(statSource.homepage_url);
+  const statEntry = { title: "FDA advisory panel narrowly rejects compounding of one peptide, backs two others", link: "https://www.statnews.com/2026/07/24/fda-peptide-compounding-panel-backs-epitalon-rejects-emideltide", published: NOW.toISOString() };
+  assert.equal(evaluateArticleCandidate(statEntry, statSource, exclusions, statApproved, CUTOFF, NOW).status, "unsuitable_content");
+
+  const staffingEntry = { title: "STAT+: Up and down the ladder: The latest comings and goings", link: "https://www.statnews.com/pharmalot/2026/07/24/up-and-down-the-ladder-rigel-sanofi-pharma-jobs", published: NOW.toISOString() };
+  assert.equal(evaluateArticleCandidate(staffingEntry, statSource, exclusions, statApproved, CUTOFF, NOW).status, "unsuitable_content");
+
+  const securitySource = makeSource({ id: "securityweek", publisher_name: "SecurityWeek", feed_url: "https://www.securityweek.com/feed/", homepage_url: "https://www.securityweek.com/" });
+  const securityApproved = deriveApprovedHostnames(securitySource.homepage_url);
+  const securityEntry = { title: "In Other News: Dolphin X AI-Powered Malware, Car Anti-Theft Device Hack, 400 Linux Kernel Flaws", link: "https://www.securityweek.com/in-other-news-dolphin-x-ai-powered-malware-car-anti-theft-device-hack-400-linux-kernel-flaws", published: NOW.toISOString() };
+  assert.equal(evaluateArticleCandidate(securityEntry, securitySource, exclusions, securityApproved, CUTOFF, NOW).status, "unsuitable_content");
+
+  const reactionEntry = { title: "Industry Reactions to OpenAI Models Hacking Hugging Face: Feedback Friday", link: "https://www.securityweek.com/industry-reactions-to-openai-models-hacking-hugging-face-feedback-friday", published: NOW.toISOString() };
+  assert.equal(evaluateArticleCandidate(reactionEntry, securitySource, exclusions, securityApproved, CUTOFF, NOW).status, "unsuitable_content");
+});
+
 test("does not reject a genuine concrete event mentioning a press conference", () => {
   // Regression guard: bare "conference" was deliberately excluded from the
   // reject list because it would misfire on real news like this.

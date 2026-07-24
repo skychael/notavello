@@ -1,0 +1,102 @@
+name: Update Relay Articles
+
+on:
+  schedule:
+    - cron: '17 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-relay-articles-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+          ref: ${{ github.ref_name }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          package-manager-cache: false
+
+      - name: Rebase onto latest main
+        run: |
+          git fetch origin main
+          git rebase origin/main
+
+      - name: Run article collector tests
+        run: node --test relay-automation/update-articles.test.js
+
+      - name: Update Relay article data
+        run: node relay-automation/update-articles.js
+
+      - name: Validate Relay article data
+        run: |
+          node --check relay-automation/update-articles.js
+          node -e '
+            const fs = require("fs");
+            const file = "pages/relay/article-data.json";
+            if (!fs.existsSync(file)) throw new Error(`${file} does not exist`);
+            const data = JSON.parse(fs.readFileSync(file, "utf8"));
+            if (!(["ok", "partial"].includes(data.status))) throw new Error(`Unexpected status: ${data.status}`);
+            if (!Array.isArray(data.items)) throw new Error("items must be an array");
+            if (data.items.length < 1 || data.items.length > 10) throw new Error(`Unexpected item count: ${data.items.length}`);
+            const seen = new Set();
+            const publisherCounts = new Map();
+            for (const item of data.items) {
+              if (!item || typeof item !== "object") throw new Error("Each item must be an object");
+              for (const key of ["title", "url", "publisher", "published_at", "source_id", "status"]) {
+                if (!(key in item)) throw new Error(`Missing field ${key}`);
+              }
+              const url = new URL(item.url);
+              if (url.protocol !== "https:") throw new Error(`Non-HTTPS URL: ${item.url}`);
+              if (seen.has(item.url)) throw new Error(`Duplicate URL: ${item.url}`);
+              seen.add(item.url);
+              publisherCounts.set(item.publisher, (publisherCounts.get(item.publisher) || 0) + 1);
+            }
+            for (const count of publisherCounts.values()) {
+              if (count > 2) throw new Error(`Publisher exceeds two-item limit: ${count}`);
+            }
+            console.log(`Valid Relay article data: ${data.items.length} items`);
+          '
+
+      - name: Check whitespace
+        run: git diff --check
+
+      - name: Commit updated data
+        run: |
+          if git diff --quiet -- pages/relay/article-data.json; then
+            echo "Relay article data is unchanged."
+            exit 0
+          fi
+
+          unexpected="$(git status --porcelain | awk '{print $2}' | grep -v '^pages/relay/article-data.json$' || true)"
+          if [ -n "$unexpected" ]; then
+            echo "Unexpected changed files:"
+            echo "$unexpected"
+            exit 1
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- pages/relay/article-data.json
+          git commit -m "Update Relay article data"
+
+      - name: Rebase and push
+        run: |
+          if git diff --quiet origin/main..HEAD -- pages/relay/article-data.json; then
+            echo "No Relay article data commit to push."
+            exit 0
+          fi
+          git fetch origin main
+          git rebase origin/main
+          git push origin HEAD:main
