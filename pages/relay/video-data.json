@@ -1,7 +1,68 @@
 {
   "schema_version": "1.0",
-  "checked_at": "2026-07-24T19:28:39.976Z",
-  "latest_success_at": "2026-07-24T19:28:39.976Z",
+  "checked_at": "2026-07-24T19:51:00.640Z",
+  "latest_success_at": "2026-07-24T19:51:00.640Z",
   "status": "ok",
-  "items": []
+  "items": [
+    {
+      "video_id": "DXtiYX-KqZ8",
+      "title": "July 22 - Last Update on Tropical Storm Bertha #bertha",
+      "url": "https://www.youtube.com/watch?v=DXtiYX-KqZ8",
+      "channel_name": "NOAA/NWS National Hurricane Center",
+      "channel_id": "UCv0qlvvLtEuCxAoEitAuoFg",
+      "published_at": "2026-07-22T19:09:43.000Z",
+      "matched_topic_ids": [
+        "severe-weather-hazards",
+        "infrastructure-utilities",
+        "local-early-warning"
+      ],
+      "source_priority": 10,
+      "status": "ok"
+    },
+    {
+      "video_id": "-n434RPEjxA",
+      "title": "Last update on Tropical Storm Bertha from the NHC in Miami, FL (July 22, 2026)",
+      "url": "https://www.youtube.com/watch?v=-n434RPEjxA",
+      "channel_name": "NOAA/NWS National Hurricane Center",
+      "channel_id": "UCv0qlvvLtEuCxAoEitAuoFg",
+      "published_at": "2026-07-22T16:14:33.000Z",
+      "matched_topic_ids": [
+        "severe-weather-hazards",
+        "infrastructure-utilities",
+        "local-early-warning"
+      ],
+      "source_priority": 10,
+      "status": "ok"
+    },
+    {
+      "video_id": "DhDC0DAYdBI",
+      "title": "July 23, 2026 Meeting of the Pharmacy Compounding Advisory Committee (PCAC)",
+      "url": "https://www.youtube.com/watch?v=DhDC0DAYdBI",
+      "channel_name": "U.S. Food and Drug Administration",
+      "channel_id": "UC_giJ3xlEL9jUF1YfJdzzuQ",
+      "published_at": "2026-07-23T23:59:18.000Z",
+      "matched_topic_ids": [
+        "public-health",
+        "food-agriculture",
+        "government-regulation-legal"
+      ],
+      "source_priority": 9,
+      "status": "ok"
+    },
+    {
+      "video_id": "xXM5ecHxlMU",
+      "title": "July 24, 2026 Meeting of the Pharmacy Compounding Advisory Committee (PCAC)",
+      "url": "https://www.youtube.com/watch?v=xXM5ecHxlMU",
+      "channel_name": "U.S. Food and Drug Administration",
+      "channel_id": "UC_giJ3xlEL9jUF1YfJdzzuQ",
+      "published_at": "2026-07-13T18:30:30.000Z",
+      "matched_topic_ids": [
+        "public-health",
+        "food-agriculture",
+        "government-regulation-legal"
+      ],
+      "source_priority": 9,
+      "status": "ok"
+    }
+  ]
 }
