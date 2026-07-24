@@ -1,7 +1,8 @@
 {
-  "schema_version": "1.0",
-  "description": "Static public reference links shown in the Relay Pulse sidebar. These destinations do not provide live data to Notavello.",
+  "schema_version": "1.1",
+  "description": "Public reference links and server-side data sources for the Relay Pulse sidebar.",
   "enabled": true,
+  "manual_update_command": "Set FRED_API_KEY in the environment, then run: node relay-automation/update-pulse.js",
   "groups": [
     {
       "id": "markets",
@@ -11,25 +12,45 @@
           "id": "sp-500",
           "name": "S&P 500",
           "url": "https://fred.stlouisfed.org/series/SP500",
-          "source": "FRED"
+          "source": "FRED",
+          "provider": "fred",
+          "series_id": "SP500",
+          "frequency": "Daily",
+          "units": "Index",
+          "format": "number"
         },
         {
           "id": "nasdaq-composite",
           "name": "Nasdaq Composite",
           "url": "https://fred.stlouisfed.org/series/NASDAQCOM",
-          "source": "FRED"
+          "source": "FRED",
+          "provider": "fred",
+          "series_id": "NASDAQCOM",
+          "frequency": "Daily",
+          "units": "Index",
+          "format": "number"
         },
         {
           "id": "dow-jones-industrial-average",
           "name": "Dow Jones Industrial Average",
           "url": "https://fred.stlouisfed.org/series/DJIA",
-          "source": "FRED"
+          "source": "FRED",
+          "provider": "fred",
+          "series_id": "DJIA",
+          "frequency": "Daily",
+          "units": "Index",
+          "format": "number"
         },
         {
           "id": "vix",
           "name": "VIX",
           "url": "https://fred.stlouisfed.org/series/VIXCLS",
-          "source": "FRED"
+          "source": "FRED",
+          "provider": "fred",
+          "series_id": "VIXCLS",
+          "frequency": "Daily",
+          "units": "Index",
+          "format": "number"
         }
       ]
     },
@@ -41,19 +62,34 @@
           "id": "us-10-year-treasury-yield",
           "name": "U.S. 10-Year Treasury yield",
           "url": "https://fred.stlouisfed.org/series/DGS10",
-          "source": "FRED"
+          "source": "FRED",
+          "provider": "fred",
+          "series_id": "DGS10",
+          "frequency": "Daily",
+          "units": "Percent",
+          "format": "percent"
         },
         {
-          "id": "us-dollar-index",
-          "name": "U.S. Dollar Index",
+          "id": "broad-us-dollar-index",
+          "name": "Broad U.S. Dollar Index",
           "url": "https://fred.stlouisfed.org/series/DTWEXBGS",
-          "source": "FRED"
+          "source": "FRED",
+          "provider": "fred",
+          "series_id": "DTWEXBGS",
+          "frequency": "Daily",
+          "units": "Index, January 2006 = 100",
+          "format": "number"
         },
         {
           "id": "high-yield-credit-spread",
           "name": "High-yield credit spread",
           "url": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2",
-          "source": "FRED"
+          "source": "FRED",
+          "provider": "fred",
+          "series_id": "BAMLH0A0HYM2",
+          "frequency": "Daily",
+          "units": "Percentage points",
+          "format": "percent"
         }
       ]
     },
@@ -65,25 +101,45 @@
           "id": "brent-crude-oil",
           "name": "Brent crude oil",
           "url": "https://www.eia.gov/dnav/pet/hist/RBRTED.htm",
-          "source": "U.S. Energy Information Administration"
+          "source": "FRED",
+          "provider": "fred",
+          "series_id": "DCOILBRENTEU",
+          "frequency": "Daily",
+          "units": "U.S. dollars per barrel",
+          "format": "currency"
         },
         {
           "id": "gold",
-          "name": "Gold",
+          "name": "Gold futures",
           "url": "https://www.cmegroup.com/markets/metals/precious/gold.html",
-          "source": "CME Group"
+          "source": "Yahoo Finance / COMEX",
+          "provider": "yahoo-finance",
+          "symbol": "GC=F",
+          "frequency": "Intraday, delayed",
+          "units": "U.S. dollars per troy ounce",
+          "format": "currency"
         },
         {
           "id": "copper",
-          "name": "Copper",
+          "name": "Copper futures",
           "url": "https://www.cmegroup.com/markets/metals/base/copper.html",
-          "source": "CME Group"
+          "source": "Yahoo Finance / COMEX",
+          "provider": "yahoo-finance",
+          "symbol": "HG=F",
+          "frequency": "Intraday, delayed",
+          "units": "U.S. dollars per pound",
+          "format": "currency"
         },
         {
           "id": "natural-gas",
           "name": "Natural gas",
           "url": "https://www.eia.gov/dnav/ng/hist/rngwhhdD.htm",
-          "source": "U.S. Energy Information Administration"
+          "source": "FRED",
+          "provider": "fred",
+          "series_id": "DHHNGSP",
+          "frequency": "Daily",
+          "units": "U.S. dollars per million BTU",
+          "format": "currency"
         }
       ]
     },
@@ -95,7 +151,12 @@
           "id": "bitcoin",
           "name": "Bitcoin",
           "url": "https://www.coinbase.com/price/bitcoin",
-          "source": "Coinbase"
+          "source": "Coinbase",
+          "provider": "coinbase",
+          "product_id": "BTC-USD",
+          "frequency": "Current spot quote",
+          "units": "U.S. dollars per bitcoin",
+          "format": "currency-whole"
         }
       ]
     }

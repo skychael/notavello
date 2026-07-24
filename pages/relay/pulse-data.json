@@ -1,0 +1,141 @@
+{
+  "schema_version": "1.0",
+  "description": "Last-known-good normalized values for the Relay Pulse sidebar.",
+  "checked_at": "2026-07-24T17:41:27.444Z",
+  "latest_success_at": "2026-07-24T17:41:27.444Z",
+  "status": "partial",
+  "items": [
+    {
+      "id": "sp-500",
+      "raw_value": null,
+      "formatted_value": "—",
+      "observation_date": null,
+      "fetched_at": null,
+      "source": "FRED",
+      "status": "unavailable",
+      "frequency": "Daily",
+      "units": "Index"
+    },
+    {
+      "id": "nasdaq-composite",
+      "raw_value": null,
+      "formatted_value": "—",
+      "observation_date": null,
+      "fetched_at": null,
+      "source": "FRED",
+      "status": "unavailable",
+      "frequency": "Daily",
+      "units": "Index"
+    },
+    {
+      "id": "dow-jones-industrial-average",
+      "raw_value": null,
+      "formatted_value": "—",
+      "observation_date": null,
+      "fetched_at": null,
+      "source": "FRED",
+      "status": "unavailable",
+      "frequency": "Daily",
+      "units": "Index"
+    },
+    {
+      "id": "vix",
+      "raw_value": null,
+      "formatted_value": "—",
+      "observation_date": null,
+      "fetched_at": null,
+      "source": "FRED",
+      "status": "unavailable",
+      "frequency": "Daily",
+      "units": "Index"
+    },
+    {
+      "id": "us-10-year-treasury-yield",
+      "raw_value": null,
+      "formatted_value": "—",
+      "observation_date": null,
+      "fetched_at": null,
+      "source": "FRED",
+      "status": "unavailable",
+      "frequency": "Daily",
+      "units": "Percent"
+    },
+    {
+      "id": "broad-us-dollar-index",
+      "raw_value": null,
+      "formatted_value": "—",
+      "observation_date": null,
+      "fetched_at": null,
+      "source": "FRED",
+      "status": "unavailable",
+      "frequency": "Daily",
+      "units": "Index, January 2006 = 100"
+    },
+    {
+      "id": "high-yield-credit-spread",
+      "raw_value": null,
+      "formatted_value": "—",
+      "observation_date": null,
+      "fetched_at": null,
+      "source": "FRED",
+      "status": "unavailable",
+      "frequency": "Daily",
+      "units": "Percentage points"
+    },
+    {
+      "id": "brent-crude-oil",
+      "raw_value": null,
+      "formatted_value": "—",
+      "observation_date": null,
+      "fetched_at": null,
+      "source": "FRED",
+      "status": "unavailable",
+      "frequency": "Daily",
+      "units": "U.S. dollars per barrel"
+    },
+    {
+      "id": "gold",
+      "raw_value": 4072.5,
+      "formatted_value": "$4,072.50",
+      "observation_date": "2026-07-24",
+      "fetched_at": "2026-07-24T17:41:27.444Z",
+      "source": "Yahoo Finance / COMEX",
+      "status": "ok",
+      "frequency": "Intraday, delayed",
+      "units": "U.S. dollars per troy ounce"
+    },
+    {
+      "id": "copper",
+      "raw_value": 6.3595,
+      "formatted_value": "$6.36",
+      "observation_date": "2026-07-24",
+      "fetched_at": "2026-07-24T17:41:27.444Z",
+      "source": "Yahoo Finance / COMEX",
+      "status": "ok",
+      "frequency": "Intraday, delayed",
+      "units": "U.S. dollars per pound"
+    },
+    {
+      "id": "natural-gas",
+      "raw_value": null,
+      "formatted_value": "—",
+      "observation_date": null,
+      "fetched_at": null,
+      "source": "FRED",
+      "status": "unavailable",
+      "frequency": "Daily",
+      "units": "U.S. dollars per million BTU"
+    },
+    {
+      "id": "bitcoin",
+      "raw_value": 64088.775,
+      "formatted_value": "$64,089",
+      "observation_date": "2026-07-24",
+      "fetched_at": "2026-07-24T17:41:27.444Z",
+      "source": "Coinbase",
+      "status": "ok",
+      "frequency": "Current spot quote",
+      "units": "U.S. dollars per bitcoin"
+    }
+  ]
+}

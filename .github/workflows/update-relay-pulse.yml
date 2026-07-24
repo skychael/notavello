@@ -1,0 +1,66 @@
+name: Update Relay Pulse
+
+on:
+  schedule:
+    - cron: '17 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: relay-pulse-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Rebase onto latest main
+        run: |
+          git fetch origin main
+          git rebase origin/main
+
+      - name: Update Pulse data
+        env:
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+        run: node relay-automation/update-pulse.js
+
+      - name: Validate Relay JSON and JavaScript
+        run: |
+          node --check relay-automation/update-pulse.js
+          node -e "const fs=require('fs'); const files=fs.readdirSync('relay-automation/config').filter((file)=>file.endsWith('.json')).map((file)=>'relay-automation/config/'+file).concat('pages/relay/pulse-data.json'); for(const file of files){JSON.parse(fs.readFileSync(file,'utf8')); console.log('valid JSON:',file)}"
+
+      - name: Check whitespace
+        run: git diff --check
+
+      - name: Commit updated data
+        run: |
+          if git diff --quiet -- pages/relay/pulse-data.json; then
+            echo "Pulse data is unchanged."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- pages/relay/pulse-data.json
+          git commit -m "Update Relay Pulse data [skip ci]"
+
+      - name: Rebase and push
+        run: |
+          if git diff --quiet origin/main..HEAD -- pages/relay/pulse-data.json; then
+            echo "No Pulse data commit to push."
+            exit 0
+          fi
+          git fetch origin main
+          git rebase origin/main
+          git push origin HEAD:main

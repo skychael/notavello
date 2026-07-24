@@ -51,8 +51,10 @@ body {
 .pulse-group { margin-top: 18px; }
 .pulse-group-title { color: var(--ink-faint); font-family: var(--font-system); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
 .pulse-list { list-style: none; margin-top: 5px; }
-.pulse-list li { line-height: 1.35; padding: 4px 0; }
+.pulse-list li { align-items: baseline; display: grid; gap: 12px; grid-template-columns: minmax(0, 1fr) auto; line-height: 1.35; padding: 4px 0; }
 .pulse-list a { color: var(--ink-muted); font-family: var(--font-system); font-size: 0.78rem; font-weight: 600; text-decoration: none; }
+.pulse-value { color: var(--ink); font-family: var(--font-system); font-size: 0.78rem; font-variant-numeric: tabular-nums; font-weight: 600; text-align: right; }
+.pulse-status { color: var(--ink-faint); font-family: var(--font-system); font-size: 0.65rem; line-height: 1.4; margin-top: 18px; }
 .relay-more { display: grid; gap: 32px; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 32px; }
 .coming-soon { color: var(--ink-faint); font-family: var(--font-system); font-size: 0.78rem; margin-top: 8px; }
 @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
@@ -115,35 +117,36 @@ body {
       <section class="pulse-group" aria-labelledby="pulse-markets">
         <h3 class="pulse-group-title" id="pulse-markets">Markets</h3>
         <ul class="pulse-list">
-          <li><a href="https://fred.stlouisfed.org/series/SP500" target="_blank" rel="noopener noreferrer">S&amp;P 500</a></li>
-          <li><a href="https://fred.stlouisfed.org/series/NASDAQCOM" target="_blank" rel="noopener noreferrer">Nasdaq Composite</a></li>
-          <li><a href="https://fred.stlouisfed.org/series/DJIA" target="_blank" rel="noopener noreferrer">Dow Jones Industrial Average</a></li>
-          <li><a href="https://fred.stlouisfed.org/series/VIXCLS" target="_blank" rel="noopener noreferrer">VIX</a></li>
+          <li><a href="https://fred.stlouisfed.org/series/SP500" target="_blank" rel="noopener noreferrer">S&amp;P 500</a><span class="pulse-value" data-pulse-id="sp-500">—</span></li>
+          <li><a href="https://fred.stlouisfed.org/series/NASDAQCOM" target="_blank" rel="noopener noreferrer">Nasdaq Composite</a><span class="pulse-value" data-pulse-id="nasdaq-composite">—</span></li>
+          <li><a href="https://fred.stlouisfed.org/series/DJIA" target="_blank" rel="noopener noreferrer">Dow Jones Industrial Average</a><span class="pulse-value" data-pulse-id="dow-jones-industrial-average">—</span></li>
+          <li><a href="https://fred.stlouisfed.org/series/VIXCLS" target="_blank" rel="noopener noreferrer">VIX</a><span class="pulse-value" data-pulse-id="vix">—</span></li>
         </ul>
       </section>
       <section class="pulse-group" aria-labelledby="pulse-rates">
         <h3 class="pulse-group-title" id="pulse-rates">Rates and credit</h3>
         <ul class="pulse-list">
-          <li><a href="https://fred.stlouisfed.org/series/DGS10" target="_blank" rel="noopener noreferrer">U.S. 10-Year Treasury yield</a></li>
-          <li><a href="https://fred.stlouisfed.org/series/DTWEXBGS" target="_blank" rel="noopener noreferrer">U.S. Dollar Index</a></li>
-          <li><a href="https://fred.stlouisfed.org/series/BAMLH0A0HYM2" target="_blank" rel="noopener noreferrer">High-yield credit spread</a></li>
+          <li><a href="https://fred.stlouisfed.org/series/DGS10" target="_blank" rel="noopener noreferrer">U.S. 10-Year Treasury yield</a><span class="pulse-value" data-pulse-id="us-10-year-treasury-yield">—</span></li>
+          <li><a href="https://fred.stlouisfed.org/series/DTWEXBGS" target="_blank" rel="noopener noreferrer">Broad U.S. Dollar Index</a><span class="pulse-value" data-pulse-id="broad-us-dollar-index">—</span></li>
+          <li><a href="https://fred.stlouisfed.org/series/BAMLH0A0HYM2" target="_blank" rel="noopener noreferrer">High-yield credit spread</a><span class="pulse-value" data-pulse-id="high-yield-credit-spread">—</span></li>
         </ul>
       </section>
       <section class="pulse-group" aria-labelledby="pulse-commodities">
         <h3 class="pulse-group-title" id="pulse-commodities">Commodities</h3>
         <ul class="pulse-list">
-          <li><a href="https://www.eia.gov/dnav/pet/hist/RBRTED.htm" target="_blank" rel="noopener noreferrer">Brent crude oil</a></li>
-          <li><a href="https://www.cmegroup.com/markets/metals/precious/gold.html" target="_blank" rel="noopener noreferrer">Gold</a></li>
-          <li><a href="https://www.cmegroup.com/markets/metals/base/copper.html" target="_blank" rel="noopener noreferrer">Copper</a></li>
-          <li><a href="https://www.eia.gov/dnav/ng/hist/rngwhhdD.htm" target="_blank" rel="noopener noreferrer">Natural gas</a></li>
+          <li><a href="https://www.eia.gov/dnav/pet/hist/RBRTED.htm" target="_blank" rel="noopener noreferrer">Brent crude oil</a><span class="pulse-value" data-pulse-id="brent-crude-oil">—</span></li>
+          <li><a href="https://www.cmegroup.com/markets/metals/precious/gold.html" target="_blank" rel="noopener noreferrer">Gold futures</a><span class="pulse-value" data-pulse-id="gold">—</span></li>
+          <li><a href="https://www.cmegroup.com/markets/metals/base/copper.html" target="_blank" rel="noopener noreferrer">Copper futures</a><span class="pulse-value" data-pulse-id="copper">—</span></li>
+          <li><a href="https://www.eia.gov/dnav/ng/hist/rngwhhdD.htm" target="_blank" rel="noopener noreferrer">Natural gas</a><span class="pulse-value" data-pulse-id="natural-gas">—</span></li>
         </ul>
       </section>
       <section class="pulse-group" aria-labelledby="pulse-crypto">
         <h3 class="pulse-group-title" id="pulse-crypto">Crypto</h3>
         <ul class="pulse-list">
-          <li><a href="https://www.coinbase.com/price/bitcoin" target="_blank" rel="noopener noreferrer">Bitcoin</a></li>
+          <li><a href="https://www.coinbase.com/price/bitcoin" target="_blank" rel="noopener noreferrer">Bitcoin</a><span class="pulse-value" data-pulse-id="bitcoin">—</span></li>
         </ul>
       </section>
+      <p class="pulse-status" data-pulse-checked>Latest available data · Checked —</p>
     </aside>
   </div>
 
@@ -161,5 +164,39 @@ body {
 
 <!--FOOTER-->
 
+<script>
+(() => {
+  const dataUrl = "/pages/relay/pulse-data.json";
+  fetch(dataUrl, { credentials: "same-origin" })
+    .then((response) => {
+      if (!response.ok) throw new Error(`Pulse data returned ${response.status}`);
+      return response.json();
+    })
+    .then((data) => {
+      for (const item of data.items || []) {
+        const value = document.querySelector(`[data-pulse-id="${item.id}"]`);
+        if (value && typeof item.formatted_value === "string") {
+          value.textContent = item.formatted_value;
+          value.dataset.status = item.status;
+        }
+      }
+
+      if (data.checked_at) {
+        const checked = new Intl.DateTimeFormat("en-US", {
+          month: "short",
+          day: "numeric",
+          year: "numeric",
+          hour: "numeric",
+          minute: "2-digit",
+          timeZone: "UTC",
+          timeZoneName: "short"
+        }).format(new Date(data.checked_at));
+        const status = document.querySelector("[data-pulse-checked]");
+        if (status) status.textContent = `Latest available data · Checked ${checked}`;
+      }
+    })
+    .catch(() => {});
+})();
+</script>
 </body>
 </html>
