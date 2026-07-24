@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-07-23T04:54:18.365Z",
+  "generatedAt": "2026-07-24T04:50:26.794Z",
   "totals": {
-    "pages": 163,
-    "indexable": 159,
-    "articles": 101,
-    "sitemap": 159,
+    "pages": 165,
+    "indexable": 161,
+    "articles": 103,
+    "sitemap": 161,
     "errors": 0,
-    "warnings": 50
+    "warnings": 52
   },
   "errors": [],
   "warnings": [
@@ -38,6 +38,11 @@
     {
       "type": "template-pattern",
       "page": "/pages/blog/ai-editable-html-documents-plain-data/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/ai-evals-need-network-receipts/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
     {
@@ -128,6 +133,11 @@
     {
       "type": "template-pattern",
       "page": "/pages/blog/how-to-debug-an-ai-prompt-that-gives-inconsistent-answers/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/how-to-prepare-files-for-a-useful-ai-assisted-review/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
     {
@@ -270,7 +280,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 163,
+      "incomingLinks": 165,
       "lastmod": "2026-07-22",
       "bodyWords": 735
     },
@@ -294,7 +304,7 @@
       "canonical": "https://notavello.com/exporters/chatgpt/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 163,
+      "incomingLinks": 165,
       "lastmod": "2026-07-22",
       "bodyWords": 242
     },
@@ -306,7 +316,7 @@
       "canonical": "https://notavello.com/exporters/claude/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 163,
+      "incomingLinks": 165,
       "lastmod": "2026-07-22",
       "bodyWords": 399
     },
@@ -318,7 +328,7 @@
       "canonical": "https://notavello.com/exporters/copilot/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 163,
+      "incomingLinks": 165,
       "lastmod": "2026-07-22",
       "bodyWords": 281
     },
@@ -330,7 +340,7 @@
       "canonical": "https://notavello.com/exporters/gemini/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 163,
+      "incomingLinks": 165,
       "lastmod": "2026-07-22",
       "bodyWords": 447
     },
@@ -342,7 +352,7 @@
       "canonical": "https://notavello.com/exporters/grok/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 163,
+      "incomingLinks": 165,
       "lastmod": "2026-07-22",
       "bodyWords": 281
     },
@@ -354,7 +364,7 @@
       "canonical": "https://notavello.com/exporters/other/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 163,
+      "incomingLinks": 165,
       "lastmod": "2026-07-22",
       "bodyWords": 301
     },
@@ -366,7 +376,7 @@
       "canonical": "https://notavello.com/exporters/perplexity/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 163,
+      "incomingLinks": 165,
       "lastmod": "2026-07-22",
       "bodyWords": 281
     },
@@ -390,7 +400,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 163,
+      "incomingLinks": 165,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -402,9 +412,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 163,
-      "lastmod": "2026-07-22",
-      "bodyWords": 653
+      "incomingLinks": 165,
+      "lastmod": "2026-07-23",
+      "bodyWords": 648
     },
     {
       "route": "/pages/blog/ai-advice-needs-an-i-dont-know-step/",
@@ -515,6 +525,18 @@
       "bodyWords": 1480
     },
     {
+      "route": "/pages/blog/ai-evals-need-network-receipts/",
+      "file": "pages/blog/ai-evals-need-network-receipts/index.html",
+      "title": "AI Evals Need Network Receipts — The Export | Notavello",
+      "description": "After the OpenAI-Hugging Face incident, AI evals need network receipts, egress controls, and boring audit trails.",
+      "canonical": "https://notavello.com/pages/blog/ai-evals-need-network-receipts/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-07-24",
+      "bodyWords": 1611
+    },
+    {
       "route": "/pages/blog/ai-export-controls-crypto-wars/",
       "file": "pages/blog/ai-export-controls-crypto-wars/index.html",
       "title": "The Crypto Wars Are Back — This Time the Munition Is a Model — The Export | Notavello",
@@ -558,7 +580,7 @@
       "canonical": "https://notavello.com/pages/blog/ai-model-evaluation-sandbox-security-checklist/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 2,
+      "incomingLinks": 3,
       "lastmod": "2026-07-22",
       "bodyWords": 1894
     },
@@ -606,9 +628,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 40,
-      "lastmod": "2026-07-22",
-      "bodyWords": 1370
+      "incomingLinks": 42,
+      "lastmod": "2026-07-23",
+      "bodyWords": 1390
     },
     {
       "route": "/pages/blog/apple-speechanalyzer-local-transcription-apps/",
@@ -1043,6 +1065,18 @@
       "bodyWords": 972
     },
     {
+      "route": "/pages/blog/how-to-prepare-files-for-a-useful-ai-assisted-review/",
+      "file": "pages/blog/how-to-prepare-files-for-a-useful-ai-assisted-review/index.html",
+      "title": "How to prepare files for a useful AI-assisted review — The Export | Notavello",
+      "description": "Scope files tightly, use consistent naming, and supply supporting context to make AI document and code reviews more reliable and actionable.",
+      "canonical": "https://notavello.com/pages/blog/how-to-prepare-files-for-a-useful-ai-assisted-review/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-07-23",
+      "bodyWords": 796
+    },
+    {
       "route": "/pages/blog/how-to-submit-an-app-to-apple-and-google/",
       "file": "pages/blog/how-to-submit-an-app-to-apple-and-google/index.html",
       "title": "How to Submit an App to Apple and Google: The Big-Picture Guide for 2026 — The Export | Notavello",
@@ -1255,8 +1289,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-07-22",
-      "bodyWords": 697
+      "lastmod": "2026-07-23",
+      "bodyWords": 700
     },
     {
       "route": "/pages/blog/page-3/",
@@ -1267,8 +1301,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-07-22",
-      "bodyWords": 731
+      "lastmod": "2026-07-23",
+      "bodyWords": 709
     },
     {
       "route": "/pages/blog/page-4/",
@@ -1279,8 +1313,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-07-22",
-      "bodyWords": 837
+      "lastmod": "2026-07-23",
+      "bodyWords": 842
     },
     {
       "route": "/pages/blog/page-5/",
@@ -1291,8 +1325,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-07-22",
-      "bodyWords": 840
+      "lastmod": "2026-07-23",
+      "bodyWords": 837
     },
     {
       "route": "/pages/blog/page-6/",
@@ -1303,8 +1337,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": "2026-07-22",
-      "bodyWords": 557
+      "lastmod": "2026-07-23",
+      "bodyWords": 646
     },
     {
       "route": "/pages/blog/search-field-2036/",
@@ -1698,7 +1732,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 163,
+      "incomingLinks": 165,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -1710,7 +1744,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 163,
+      "incomingLinks": 165,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -1722,7 +1756,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 163,
+      "incomingLinks": 165,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -1734,7 +1768,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 163,
+      "incomingLinks": 165,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -1746,7 +1780,7 @@
       "canonical": "https://notavello.com/pages/sample",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 163,
+      "incomingLinks": 165,
       "lastmod": "2026-07-22",
       "bodyWords": 141
     },
@@ -1758,7 +1792,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 163,
+      "incomingLinks": 165,
       "lastmod": "2026-07-22",
       "bodyWords": 592
     },
@@ -1770,7 +1804,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 163,
+      "incomingLinks": 165,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -1782,7 +1816,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 163,
+      "incomingLinks": 165,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -1794,7 +1828,7 @@
       "canonical": "https://notavello.com/tools/aidetector/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 163,
+      "incomingLinks": 165,
       "lastmod": "2026-07-22",
       "bodyWords": 270
     },
@@ -2214,7 +2248,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 163,
+      "incomingLinks": 165,
       "lastmod": "2026-07-22",
       "bodyWords": 93
     }
