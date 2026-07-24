@@ -57,6 +57,12 @@ body {
 .pulse-status { color: var(--ink-faint); font-family: var(--font-system); font-size: 0.65rem; line-height: 1.4; margin-top: 18px; }
 .relay-more { display: grid; gap: 32px; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 32px; }
 .coming-soon { color: var(--ink-faint); font-family: var(--font-system); font-size: 0.78rem; margin-top: 8px; }
+.video-list { list-style: none; margin-top: 6px; }
+.video-list li { line-height: 1.4; padding: 5px 0; }
+.video-list a { color: var(--ink); font-family: var(--font-system); font-size: 0.82rem; font-weight: 600; text-decoration: none; }
+.video-list a:hover { color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.video-channel { color: var(--ink-faint); font-family: var(--font-system); font-size: 0.68rem; white-space: nowrap; }
+.video-disclaimer { color: var(--ink-faint); font-family: var(--font-system); font-size: 0.65rem; line-height: 1.45; margin-top: 12px; }
 @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
 @media (max-width: 700px) {
   .main { padding: 40px 16px 72px; }
@@ -153,7 +159,9 @@ body {
   <div class="relay-more">
     <section aria-labelledby="videos-title">
       <h2 class="section-title" id="videos-title">Videos</h2>
-      <p class="coming-soon">Coming soon</p>
+      <ul class="video-list" data-video-list></ul>
+      <p class="coming-soon" data-video-empty>Coming soon</p>
+      <p class="video-disclaimer" data-video-disclaimer hidden>Third-party posts and videos are selected for relevance; inclusion is not verification or endorsement.</p>
     </section>
     <section aria-labelledby="x-title">
       <h2 class="section-title" id="x-title">On X</h2>
@@ -193,6 +201,44 @@ body {
         }).format(new Date(data.checked_at));
         const status = document.querySelector("[data-pulse-checked]");
         if (status) status.textContent = `Latest available data · Checked ${checked}`;
+      }
+    })
+    .catch(() => {});
+})();
+</script>
+<script>
+(() => {
+  const videoDataUrl = "/pages/relay/video-data.json";
+  fetch(videoDataUrl, { credentials: "same-origin" })
+    .then((response) => {
+      if (!response.ok) throw new Error(`Video data returned ${response.status}`);
+      return response.json();
+    })
+    .then((data) => {
+      if (!Array.isArray(data.items) || data.items.length === 0) return;
+      const list = document.querySelector("[data-video-list]");
+      const empty = document.querySelector("[data-video-empty]");
+      const disclaimer = document.querySelector("[data-video-disclaimer]");
+      if (!list) return;
+
+      for (const item of data.items) {
+        if (!item.title || !item.url || !item.channel_name) continue;
+        const row = document.createElement("li");
+        const link = document.createElement("a");
+        link.href = item.url;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        link.textContent = item.title;
+        const channel = document.createElement("span");
+        channel.className = "video-channel";
+        channel.textContent = ` — ${item.channel_name}`;
+        row.append(link, channel);
+        list.append(row);
+      }
+
+      if (list.children.length > 0) {
+        if (empty) empty.hidden = true;
+        if (disclaimer) disclaimer.hidden = false;
       }
     })
     .catch(() => {});

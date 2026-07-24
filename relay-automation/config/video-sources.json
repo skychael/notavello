@@ -1,30 +1,119 @@
 {
-  "schema_version": "1.0",
-  "description": "Future Relay video-source settings. No collection or publishing is enabled by this file.",
+  "schema_version": "1.1",
+  "description": "Approved YouTube channels and collection settings for Relay. Set YOUTUBE_API_KEY in the environment, then run: node relay-automation/update-videos.js",
   "check_interval_minutes": 180,
   "maximum_items": 12,
-  "platforms": [
+  "lookback_hours": 168,
+  "approved_channels": [
     {
-      "id": "youtube",
-      "name": "YouTube",
+      "id": "cisa",
+      "channel_name": "CISA",
+      "channel_id": "UCxyq9roe-npgzrVwbpoAy0A",
+      "channel_url": "https://www.youtube.com/channel/UCxyq9roe-npgzrVwbpoAy0A",
       "enabled": true,
-      "primary": true,
-      "approved_channels": []
+      "priority": 10,
+      "topics": [
+        "cybersecurity-communications",
+        "infrastructure-utilities",
+        "government-regulation-legal"
+      ],
+      "notes": "Official Cybersecurity and Infrastructure Security Agency channel."
     },
     {
-      "id": "rumble",
-      "name": "Rumble",
-      "enabled": false,
-      "primary": false,
-      "approved_channels_only": true,
-      "approved_channels": []
+      "id": "national-hurricane-center",
+      "channel_name": "NOAA/NWS National Hurricane Center",
+      "channel_id": "UCv0qlvvLtEuCxAoEitAuoFg",
+      "channel_url": "https://www.youtube.com/channel/UCv0qlvvLtEuCxAoEitAuoFg",
+      "enabled": true,
+      "priority": 10,
+      "topics": [
+        "severe-weather-hazards",
+        "infrastructure-utilities",
+        "local-early-warning"
+      ],
+      "notes": "Official National Hurricane Center channel linked by NOAA."
     },
     {
-      "id": "bitchute",
-      "name": "BitChute",
-      "enabled": false,
-      "primary": false,
-      "approved_channels": []
+      "id": "usgs",
+      "channel_name": "USGS",
+      "channel_id": "UCeXH8GZyV3sVqAr45AvupOA",
+      "channel_url": "https://www.youtube.com/channel/UCeXH8GZyV3sVqAr45AvupOA",
+      "enabled": true,
+      "priority": 9,
+      "topics": [
+        "severe-weather-hazards",
+        "infrastructure-utilities",
+        "local-early-warning"
+      ],
+      "notes": "Official U.S. Geological Survey channel."
+    },
+    {
+      "id": "fda",
+      "channel_name": "U.S. Food and Drug Administration",
+      "channel_id": "UC_giJ3xlEL9jUF1YfJdzzuQ",
+      "channel_url": "https://www.youtube.com/channel/UC_giJ3xlEL9jUF1YfJdzzuQ",
+      "enabled": true,
+      "priority": 9,
+      "topics": [
+        "public-health",
+        "food-agriculture",
+        "government-regulation-legal"
+      ],
+      "notes": "Official FDA channel linked from fda.gov."
+    },
+    {
+      "id": "nifa-usda",
+      "channel_name": "NIFA USDA",
+      "channel_id": "UCfdDfqYSXZ5daqILCmX7-VA",
+      "channel_url": "https://www.youtube.com/channel/UCfdDfqYSXZ5daqILCmX7-VA",
+      "enabled": true,
+      "priority": 8,
+      "topics": [
+        "food-agriculture",
+        "government-regulation-legal"
+      ],
+      "notes": "Official USDA National Institute of Food and Agriculture channel."
+    },
+    {
+      "id": "freightwaves",
+      "channel_name": "FreightWaves",
+      "channel_id": "UC36dglNLPZNKuSp30JVP5yg",
+      "channel_url": "https://www.youtube.com/channel/UC36dglNLPZNKuSp30JVP5yg",
+      "enabled": true,
+      "priority": 8,
+      "topics": [
+        "shipping-supply-chains",
+        "industry-manufacturing",
+        "economy-finance"
+      ],
+      "notes": "Freight and logistics trade-publication channel."
+    },
+    {
+      "id": "canary-media",
+      "channel_name": "Canary Media",
+      "channel_id": "UCAkVWXKsmZ3EuAaj-3yxFYA",
+      "channel_url": "https://www.youtube.com/channel/UCAkVWXKsmZ3EuAaj-3yxFYA",
+      "enabled": true,
+      "priority": 8,
+      "topics": [
+        "energy",
+        "infrastructure-utilities",
+        "government-regulation-legal"
+      ],
+      "notes": "Specialist clean-energy newsroom channel."
+    },
+    {
+      "id": "securityweek",
+      "channel_name": "SecurityWeek",
+      "channel_id": "UCmzBgSoDOeMJVI1m_yMR4og",
+      "channel_url": "https://www.youtube.com/channel/UCmzBgSoDOeMJVI1m_yMR4og",
+      "enabled": true,
+      "priority": 8,
+      "topics": [
+        "cybersecurity-communications",
+        "infrastructure-utilities"
+      ],
+      "notes": "Cybersecurity trade-publication channel."
     }
   ]
 }
