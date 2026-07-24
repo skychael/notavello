@@ -1,7 +1,73 @@
 {
   "schema_version": "1.0",
-  "checked_at": null,
-  "latest_success_at": null,
-  "status": "unavailable",
-  "items": []
+  "checked_at": "2026-07-24T18:44:32.318Z",
+  "latest_success_at": "2026-07-24T18:44:32.318Z",
+  "status": "ok",
+  "items": [
+    {
+      "video_id": "8SjBFyxUHzM",
+      "title": "Staging a Freight Crash Could Soon Cost You 20 Years in Prison",
+      "url": "https://www.youtube.com/watch?v=8SjBFyxUHzM",
+      "channel_name": "FreightWaves",
+      "channel_id": "UC36dglNLPZNKuSp30JVP5yg",
+      "published_at": "2026-07-24T15:30:20.000Z",
+      "matched_topic_ids": [
+        "shipping-supply-chains"
+      ],
+      "source_priority": 8,
+      "status": "ok"
+    },
+    {
+      "video_id": "6UBYvjJ60gM",
+      "title": "Freight Rates: Are they rising because of DEMAND or CAPACITY?",
+      "url": "https://www.youtube.com/watch?v=6UBYvjJ60gM",
+      "channel_name": "FreightWaves",
+      "channel_id": "UC36dglNLPZNKuSp30JVP5yg",
+      "published_at": "2026-07-23T17:15:23.000Z",
+      "matched_topic_ids": [
+        "shipping-supply-chains"
+      ],
+      "source_priority": 8,
+      "status": "ok"
+    },
+    {
+      "video_id": "EVVgBnFTzwg",
+      "title": "J.B. Hunt on Freight Recession & Rate Hikes: What's Next?",
+      "url": "https://www.youtube.com/watch?v=EVVgBnFTzwg",
+      "channel_name": "FreightWaves",
+      "channel_id": "UC36dglNLPZNKuSp30JVP5yg",
+      "published_at": "2026-07-23T16:59:29.000Z",
+      "matched_topic_ids": [
+        "shipping-supply-chains"
+      ],
+      "source_priority": 8,
+      "status": "ok"
+    },
+    {
+      "video_id": "opIdIhas30A",
+      "title": "Is This Trucking Market Different? Why Capacity Won't Flood Back In",
+      "url": "https://www.youtube.com/watch?v=opIdIhas30A",
+      "channel_name": "FreightWaves",
+      "channel_id": "UC36dglNLPZNKuSp30JVP5yg",
+      "published_at": "2026-07-22T18:27:58.000Z",
+      "matched_topic_ids": [
+        "shipping-supply-chains"
+      ],
+      "source_priority": 8,
+      "status": "ok"
+    },
+    {
+      "video_id": "XjiCYzm-6QU",
+      "title": "Zebra's \"Physical AI\" Transforms Supply Chain Operations",
+      "url": "https://www.youtube.com/watch?v=XjiCYzm-6QU",
+      "channel_name": "FreightWaves",
+      "channel_id": "UC36dglNLPZNKuSp30JVP5yg",
+      "published_at": "2026-07-22T17:20:50.000Z",
+      "matched_topic_ids": [
+        "shipping-supply-chains"
+      ],
+      "source_priority": 8,
+      "status": "ok"
+    }
+  ]
 }
