@@ -1,178 +1,108 @@
 {
-  "schema_version": "1.0",
-  "description": "Editable registry of public sources that future Relay tooling may review. An empty feed_url means a reliable public feed has not yet been confirmed.",
-  "supported_source_types": [
-    "rss",
-    "atom",
-    "government",
-    "local-news",
-    "trade-publication",
-    "major-news",
-    "independent",
-    "research",
-    "manual"
-  ],
-  "sources": [
+  "schema_version": "2.0",
+  "description": "Approved article sources for Relay. This is a tightly curated specialist whitelist, mirroring the Relay Videos source-first approach: the publisher list itself is the primary relevance filter, not a large keyword or scoring system. Set enabled:true only after a source's configured feed URL passes: node relay-automation/update-articles.js --verify-feeds",
+  "check_interval_minutes": 60,
+  "lookback_hours": 72,
+  "maximum_items": 10,
+  "maximum_items_per_source": 2,
+  "automatic_sources": [
     {
-      "id": "cisa",
-      "name": "Cybersecurity and Infrastructure Security Agency",
+      "id": "the-watchers",
+      "publisher_name": "The Watchers",
+      "feed_url": "https://watchers.news/feed/",
+      "homepage_url": "https://watchers.news/",
       "enabled": true,
-      "type": "government",
-      "url": "https://www.cisa.gov/news-events/cybersecurity-advisories",
-      "feed_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
-      "region": "United States",
-      "topics": [
-        "cybersecurity-communications",
-        "infrastructure-utilities",
-        "government-regulation-legal"
-      ],
-      "priority": 10,
-      "notes": "Official advisories and alerts, with special value when essential services or actively exploited vulnerabilities are involved."
+      "priority": 8,
+      "content_focus": "Severe weather, floods, tropical cyclones, earthquakes, volcanoes, space-weather hazards, and concrete warnings or disruptions.",
+      "exclusion_notes": "Reject generic explainers, historical retrospectives, unrelated astronomy content, promotional material, and duplicate versions of the same event.",
+      "verification_status": "verified",
+      "verification_notes": "node relay-automation/update-articles.js --verify-feeds (2026-07-24): status=valid http_status=200 format=rss entries=10, approved-hostname links confirmed."
     },
     {
-      "id": "usgs-earthquakes",
-      "name": "U.S. Geological Survey Earthquake Hazards Program",
+      "id": "food-safety-news",
+      "publisher_name": "Food Safety News",
+      "feed_url": "https://www.foodsafetynews.com/feed/",
+      "homepage_url": "https://www.foodsafetynews.com/",
       "enabled": true,
-      "type": "atom",
-      "url": "https://earthquake.usgs.gov/earthquakes/",
-      "feed_url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_month.atom",
-      "region": "Global",
-      "topics": [
-        "severe-weather-hazards",
-        "infrastructure-utilities",
-        "local-early-warning"
-      ],
-      "priority": 10,
-      "notes": "Official significant-earthquake feed. Future scoring should consider location, magnitude, damage, and population exposure."
-    },
-    {
-      "id": "noaa",
-      "name": "National Oceanic and Atmospheric Administration",
-      "enabled": true,
-      "type": "government",
-      "url": "https://www.noaa.gov/news",
-      "feed_url": "",
-      "region": "United States",
-      "topics": [
-        "severe-weather-hazards",
-        "infrastructure-utilities",
-        "food-agriculture"
-      ],
       "priority": 9,
-      "notes": "Official weather, climate, ocean, and hazard information. Confirm the appropriate public feed before automated ingestion."
-    },
-    {
-      "id": "fda-recalls",
-      "name": "U.S. Food and Drug Administration Recalls",
-      "enabled": true,
-      "type": "government",
-      "url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts",
-      "feed_url": "",
-      "region": "United States",
-      "topics": [
-        "food-agriculture",
-        "public-health",
-        "industry-manufacturing"
-      ],
-      "priority": 10,
-      "notes": "Official recalls, market withdrawals, and safety alerts. Prioritize broad distribution, severe hazards, and expanding recalls."
-    },
-    {
-      "id": "usda",
-      "name": "U.S. Department of Agriculture",
-      "enabled": true,
-      "type": "government",
-      "url": "https://www.usda.gov/about-usda/news",
-      "feed_url": "",
-      "region": "United States",
-      "topics": [
-        "food-agriculture",
-        "economy-finance",
-        "government-regulation-legal"
-      ],
-      "priority": 9,
-      "notes": "Official agricultural news, reports, policy, and food-system information."
-    },
-    {
-      "id": "canary-media",
-      "name": "Canary Media",
-      "enabled": true,
-      "type": "independent",
-      "url": "https://www.canarymedia.com/",
-      "feed_url": "",
-      "region": "United States",
-      "topics": [
-        "energy",
-        "infrastructure-utilities",
-        "government-regulation-legal"
-      ],
-      "priority": 8,
-      "notes": "Independent reporting focused on energy systems, utilities, electrification, and the grid."
-    },
-    {
-      "id": "freightwaves",
-      "name": "FreightWaves",
-      "enabled": true,
-      "type": "trade-publication",
-      "url": "https://www.freightwaves.com/news",
-      "feed_url": "",
-      "region": "North America",
-      "topics": [
-        "shipping-supply-chains",
-        "economy-finance",
-        "industry-manufacturing"
-      ],
-      "priority": 8,
-      "notes": "Trade reporting on trucking, rail, ports, air cargo, freight markets, and logistics."
-    },
-    {
-      "id": "supply-chain-dive",
-      "name": "Supply Chain Dive",
-      "enabled": true,
-      "type": "trade-publication",
-      "url": "https://www.supplychaindive.com/",
-      "feed_url": "",
-      "region": "Global",
-      "topics": [
-        "shipping-supply-chains",
-        "industry-manufacturing",
-        "economy-finance"
-      ],
-      "priority": 8,
-      "notes": "Trade reporting on sourcing, logistics, manufacturing, procurement, and supply-chain risk."
+      "content_focus": "Recalls, outbreaks, contamination, investigations, enforcement, government warnings, and foodborne illness.",
+      "exclusion_notes": "Reject opinion, recipes, general guidance, evergreen explainers, sponsored material, and event promotion.",
+      "verification_status": "verified",
+      "verification_notes": "node relay-automation/update-articles.js --verify-feeds (2026-07-24): status=valid http_status=200 format=rss entries=15, approved-hostname links confirmed."
     },
     {
       "id": "securityweek",
-      "name": "SecurityWeek",
+      "publisher_name": "SecurityWeek",
+      "feed_url": "https://www.securityweek.com/feed/",
+      "homepage_url": "https://www.securityweek.com/",
       "enabled": true,
-      "type": "trade-publication",
-      "url": "https://www.securityweek.com/",
-      "feed_url": "",
-      "region": "Global",
-      "topics": [
-        "cybersecurity-communications",
-        "infrastructure-utilities",
-        "government-regulation-legal"
-      ],
       "priority": 8,
-      "notes": "Cybersecurity reporting with useful coverage of critical infrastructure, vulnerabilities, and threat activity."
+      "content_focus": "Cyberattacks, ransomware, active exploitation, confirmed breaches, infrastructure attacks, ICS/OT incidents, and major government cyber warnings.",
+      "exclusion_notes": "Reject funding, acquisitions, appointments, product launches, webinars, podcasts, opinion, generic advice, and conference promotion.",
+      "verification_status": "verified",
+      "verification_notes": "node relay-automation/update-articles.js --verify-feeds (2026-07-24): status=valid http_status=200 format=rss entries=10, approved-hostname links confirmed. (Previously existed in sources.json with an empty feed_url.)"
+    },
+    {
+      "id": "stat",
+      "publisher_name": "STAT",
+      "feed_url": "https://www.statnews.com/feed/",
+      "homepage_url": "https://www.statnews.com/",
+      "enabled": true,
+      "priority": 8,
+      "content_focus": "Outbreaks, public-health emergencies, contamination, government health warnings, hospital-system disruption, and concrete disease or safety developments.",
+      "exclusion_notes": "Reject First Opinion, podcasts, events, routine pharmaceutical business news, investor news, appointments, wellness content, and evergreen explainers.",
+      "verification_status": "verified",
+      "verification_notes": "node relay-automation/update-articles.js --verify-feeds (2026-07-24): status=valid http_status=200 format=rss entries=20, approved-hostname links confirmed."
+    },
+    {
+      "id": "canary-media",
+      "publisher_name": "Canary Media",
+      "feed_url": "https://www.canarymedia.com/feed",
+      "homepage_url": "https://www.canarymedia.com/",
+      "enabled": true,
+      "priority": 7,
+      "content_focus": "Grid problems, utility emergencies, outages, shutoffs, electricity shortages, infrastructure failures, concrete energy disruptions, and reliability warnings.",
+      "exclusion_notes": "Reject broad policy analysis without a current event, product announcements, funding stories, general explainers, profiles, and opinion.",
+      "verification_status": "verified",
+      "verification_notes": "node relay-automation/update-articles.js --verify-feeds (2026-07-24): status=valid http_status=200 format=rss entries=100, approved-hostname links confirmed. (Previously existed in sources.json with an empty feed_url.)"
+    },
+    {
+      "id": "bleepingcomputer",
+      "publisher_name": "BleepingComputer News",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "homepage_url": "https://www.bleepingcomputer.com/",
+      "enabled": true,
+      "priority": 8,
+      "content_focus": "Ransomware, major breaches, active exploitation, operational outages, critical vulnerabilities, infrastructure incidents, major malware campaigns, and government or vendor warnings.",
+      "exclusion_notes": "Reject tutorials, how-to guides, downloads, deals, product promotion, forum posts, and general software advice.",
+      "verification_status": "verified",
+      "verification_notes": "node relay-automation/update-articles.js --verify-feeds (2026-07-24): status=valid http_status=200 format=rss entries=15, approved-hostname links confirmed."
+    }
+  ],
+  "manual_only_sources": [
+    {
+      "id": "supply-chain-dive",
+      "publisher_name": "Supply Chain Dive",
+      "homepage_url": "https://www.supplychaindive.com/",
+      "enabled": false,
+      "mode": "manual-only",
+      "notes": "Trade reporting on sourcing, logistics, manufacturing, procurement, and supply-chain risk. Kept manual-only per editorial decision; not fetched by the automatic collector."
     },
     {
       "id": "inside-climate-news",
-      "name": "Inside Climate News",
-      "enabled": true,
-      "type": "independent",
-      "url": "https://insideclimatenews.org/",
-      "feed_url": "",
-      "region": "United States",
-      "topics": [
-        "energy",
-        "infrastructure-utilities",
-        "severe-weather-hazards",
-        "government-regulation-legal"
-      ],
-      "priority": 8,
-      "notes": "Nonprofit reporting on climate, energy, environmental health, infrastructure, and regulation."
+      "publisher_name": "Inside Climate News",
+      "homepage_url": "https://insideclimatenews.org/",
+      "enabled": false,
+      "mode": "manual-only",
+      "notes": "Nonprofit reporting on climate, energy, environmental health, infrastructure, and regulation. Kept manual-only per editorial decision; not fetched by the automatic collector."
+    },
+    {
+      "id": "successful-farming",
+      "publisher_name": "Successful Farming",
+      "homepage_url": "https://www.agriculture.com/",
+      "enabled": false,
+      "mode": "manual-only",
+      "notes": "Agricultural markets and production reporting, now published under the Successful Farming brand at agriculture.com (homepage confirmed from the existing static link already in pages/relay/index.html). Kept manual-only per editorial decision; not fetched by the automatic collector."
     }
   ]
 }

@@ -91,7 +91,7 @@ body {
   </header>
 
   <div class="relay-grid">
-    <ol class="headline-list" data-max-items="60" aria-label="Relay headlines">
+    <ol class="headline-list" data-max-items="60" aria-label="Relay headlines" data-article-list>
       <li class="headline-item">
         <a href="https://www.canarymedia.com/articles/utilities/ohioans-getting-power-shut-off" target="_blank" rel="noopener noreferrer">More Ohioans are getting their power shut off as energy costs surge</a>
         <span class="headline-publisher"> — Canary Media</span>
@@ -117,6 +117,7 @@ body {
         <span class="headline-publisher"> — SecurityWeek</span>
       </li>
     </ol>
+    <p class="coming-soon" data-articles-empty hidden>No new selected articles.</p>
 
     <aside class="pulse" aria-labelledby="pulse-title">
       <h2 class="section-title" id="pulse-title">Pulse</h2>
@@ -240,6 +241,65 @@ body {
         if (empty) empty.hidden = true;
         if (disclaimer) disclaimer.hidden = false;
       }
+    })
+    .catch(() => {});
+})();
+</script>
+<script>
+(() => {
+  const articleDataUrl = "/pages/relay/article-data.json";
+  const list = document.querySelector("[data-article-list]");
+  const emptyMessage = document.querySelector("[data-articles-empty]");
+  if (!list) return;
+
+  fetch(articleDataUrl, { credentials: "same-origin" })
+    .then((response) => {
+      if (!response.ok) throw new Error(`Article data returned ${response.status}`);
+      return response.json();
+    })
+    .then((data) => {
+      if (!Array.isArray(data.items)) throw new Error("Article data items is not an array");
+      const status = typeof data.status === "string" ? data.status : "";
+
+      const fragment = document.createDocumentFragment();
+      for (const item of data.items) {
+        if (!item.title || !item.url || !item.publisher) continue;
+        const row = document.createElement("li");
+        row.className = "headline-item";
+        const link = document.createElement("a");
+        link.href = item.url;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        link.textContent = item.title;
+        const publisher = document.createElement("span");
+        publisher.className = "headline-publisher";
+        publisher.textContent = ` — ${item.publisher}`;
+        row.append(link, publisher);
+        fragment.append(row);
+      }
+
+      // Valid collected items exist (including preserved stale items):
+      // render them regardless of status.
+      if (fragment.children.length > 0) {
+        list.hidden = false;
+        list.textContent = "";
+        list.append(fragment);
+        return;
+      }
+
+      // No items were rendered. Only explicitly known successful statuses
+      // (a genuine successful-empty selection, or a partial success that
+      // happened to select nothing) count as a real empty result. Anything
+      // else — "unavailable" (complete failure, no previous data), a
+      // "stale" fallback with no preserved items, or an unrecognized
+      // status — keeps the static fallback links rather than presenting an
+      // empty selection as if it were genuine.
+      const successfulEmptyStatuses = new Set(["ok", "ok_empty", "partial"]);
+      if (!successfulEmptyStatuses.has(status)) return;
+
+      list.hidden = true;
+      list.textContent = "";
+      if (emptyMessage) emptyMessage.hidden = false;
     })
     .catch(() => {});
 })();
