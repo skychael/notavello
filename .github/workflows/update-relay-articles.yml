@@ -36,12 +36,20 @@ jobs:
       - name: Run article collector tests
         run: node --test relay-automation/update-articles.test.js
 
+      - name: Run archive generator tests
+        run: node --test relay-automation/update-relay-archive.test.js
+
       - name: Update Relay article data
         run: node relay-automation/update-articles.js
+
+      - name: Update Relay daily archive
+        run: node relay-automation/update-relay-archive.js
 
       - name: Validate Relay article data
         run: |
           node --check relay-automation/update-articles.js
+          node --check relay-automation/update-relay-archive.js
+          node --check relay-automation/update-relay-archive.test.js
           node -e '
             const fs = require("fs");
             const file = "pages/relay/article-data.json";
@@ -88,13 +96,13 @@ jobs:
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -- pages/relay/article-data.json
-          git commit -m "Update Relay article data"
+          git add -- pages/relay/article-data.json pages/relay/archive/ sitemap.xml
+          git commit -m "Update Relay article data and archive"
 
       - name: Rebase and push
         run: |
-          if git diff --quiet origin/main..HEAD -- pages/relay/article-data.json; then
-            echo "No Relay article data commit to push."
+          if git diff --quiet origin/main..HEAD -- pages/relay/article-data.json pages/relay/archive/ sitemap.xml; then
+            echo "No Relay article data or archive changes to push."
             exit 0
           fi
           git fetch origin main
