@@ -1,0 +1,98 @@
+name: Update Relay Videos
+
+on:
+  schedule:
+    - cron: '43 */3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-relay-videos
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+          ref: ${{ github.ref_name }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          package-manager-cache: false
+
+      - name: Rebase onto latest branch
+        run: |
+          git fetch origin "$GITHUB_REF_NAME"
+          git rebase "origin/$GITHUB_REF_NAME"
+
+      - name: Verify YouTube API key
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: |
+          if [ -z "${YOUTUBE_API_KEY:-}" ]; then
+            echo "YOUTUBE_API_KEY is missing" >&2
+            exit 1
+          fi
+          echo "YOUTUBE_API_KEY is present"
+
+      - name: Update Relay video data
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: node relay-automation/update-videos.js
+
+      - name: Validate collector and video data
+        run: |
+          node --check relay-automation/update-videos.js
+          node -e '
+            const fs = require("fs");
+            const file = "pages/relay/video-data.json";
+            if (!fs.existsSync(file)) throw new Error(`${file} does not exist`);
+            const data = JSON.parse(fs.readFileSync(file, "utf8"));
+            if (!Array.isArray(data.items)) throw new Error("items must be an array");
+            if (data.items.length > 12) throw new Error("items exceeds the 12-item limit");
+            for (const item of data.items) {
+              const url = new URL(item.url);
+              if (
+                url.protocol !== "https:"
+                || url.hostname !== "www.youtube.com"
+                || url.pathname !== "/watch"
+                || !/^[A-Za-z0-9_-]{11}$/.test(url.searchParams.get("v") || "")
+              ) {
+                throw new Error(`Invalid YouTube URL for video ${item.video_id || "unknown"}`);
+              }
+            }
+            console.log(`Valid Relay video data: ${data.items.length} items`);
+          '
+
+      - name: Check whitespace
+        run: git diff --check
+
+      - name: Commit and push updated data
+        run: |
+          if git diff --quiet -- pages/relay/video-data.json; then
+            echo "Relay video data is unchanged."
+            exit 0
+          fi
+
+          unexpected="$(git status --porcelain | awk '{print $2}' | grep -v '^pages/relay/video-data.json$' || true)"
+          if [ -n "$unexpected" ]; then
+            echo "Unexpected changed files:"
+            echo "$unexpected"
+            exit 1
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- pages/relay/video-data.json
+          git commit -m "Update Relay video data [skip ci]"
+          git fetch origin "$GITHUB_REF_NAME"
+          git rebase "origin/$GITHUB_REF_NAME"
+          git push origin "HEAD:$GITHUB_REF_NAME"
