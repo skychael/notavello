@@ -1,0 +1,103 @@
+{
+  "schema_version": "1.0",
+  "description": "Static public reference links shown in the Relay Pulse sidebar. These destinations do not provide live data to Notavello.",
+  "enabled": true,
+  "groups": [
+    {
+      "id": "markets",
+      "name": "Markets",
+      "links": [
+        {
+          "id": "sp-500",
+          "name": "S&P 500",
+          "url": "https://fred.stlouisfed.org/series/SP500",
+          "source": "FRED"
+        },
+        {
+          "id": "nasdaq-composite",
+          "name": "Nasdaq Composite",
+          "url": "https://fred.stlouisfed.org/series/NASDAQCOM",
+          "source": "FRED"
+        },
+        {
+          "id": "dow-jones-industrial-average",
+          "name": "Dow Jones Industrial Average",
+          "url": "https://fred.stlouisfed.org/series/DJIA",
+          "source": "FRED"
+        },
+        {
+          "id": "vix",
+          "name": "VIX",
+          "url": "https://fred.stlouisfed.org/series/VIXCLS",
+          "source": "FRED"
+        }
+      ]
+    },
+    {
+      "id": "rates-credit",
+      "name": "Rates and credit",
+      "links": [
+        {
+          "id": "us-10-year-treasury-yield",
+          "name": "U.S. 10-Year Treasury yield",
+          "url": "https://fred.stlouisfed.org/series/DGS10",
+          "source": "FRED"
+        },
+        {
+          "id": "us-dollar-index",
+          "name": "U.S. Dollar Index",
+          "url": "https://fred.stlouisfed.org/series/DTWEXBGS",
+          "source": "FRED"
+        },
+        {
+          "id": "high-yield-credit-spread",
+          "name": "High-yield credit spread",
+          "url": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2",
+          "source": "FRED"
+        }
+      ]
+    },
+    {
+      "id": "commodities",
+      "name": "Commodities",
+      "links": [
+        {
+          "id": "brent-crude-oil",
+          "name": "Brent crude oil",
+          "url": "https://www.eia.gov/dnav/pet/hist/RBRTED.htm",
+          "source": "U.S. Energy Information Administration"
+        },
+        {
+          "id": "gold",
+          "name": "Gold",
+          "url": "https://www.cmegroup.com/markets/metals/precious/gold.html",
+          "source": "CME Group"
+        },
+        {
+          "id": "copper",
+          "name": "Copper",
+          "url": "https://www.cmegroup.com/markets/metals/base/copper.html",
+          "source": "CME Group"
+        },
+        {
+          "id": "natural-gas",
+          "name": "Natural gas",
+          "url": "https://www.eia.gov/dnav/ng/hist/rngwhhdD.htm",
+          "source": "U.S. Energy Information Administration"
+        }
+      ]
+    },
+    {
+      "id": "crypto",
+      "name": "Crypto",
+      "links": [
+        {
+          "id": "bitcoin",
+          "name": "Bitcoin",
+          "url": "https://www.coinbase.com/price/bitcoin",
+          "source": "Coinbase"
+        }
+      ]
+    }
+  ]
+}

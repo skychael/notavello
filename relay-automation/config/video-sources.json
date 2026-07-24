@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "description": "Future Relay video-source settings. No collection or publishing is enabled by this file.",
+  "check_interval_minutes": 180,
+  "maximum_items": 12,
+  "platforms": [
+    {
+      "id": "youtube",
+      "name": "YouTube",
+      "enabled": true,
+      "primary": true,
+      "approved_channels": []
+    },
+    {
+      "id": "rumble",
+      "name": "Rumble",
+      "enabled": false,
+      "primary": false,
+      "approved_channels_only": true,
+      "approved_channels": []
+    },
+    {
+      "id": "bitchute",
+      "name": "BitChute",
+      "enabled": false,
+      "primary": false,
+      "approved_channels": []
+    }
+  ]
+}

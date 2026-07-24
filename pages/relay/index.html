@@ -36,19 +36,30 @@ body {
     radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
     radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
 }
-.main { max-width: 680px; margin: 0 auto; padding: 56px 24px 88px; animation: fadeUp 0.5s ease both; }
+.main { max-width: 980px; margin: 0 auto; padding: 56px 24px 88px; animation: fadeUp 0.5s ease both; }
 .relay-header { border-bottom: 1px solid var(--border); margin-bottom: 10px; padding-bottom: 24px; }
 .relay-title { color: var(--accent); font-family: var(--font-rounded); font-size: clamp(2rem, 5vw, 2.8rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 12px; }
 .relay-intro { color: var(--ink-muted); font-family: var(--font-system); font-size: 0.9rem; line-height: 1.65; }
-.relay-updated { color: var(--ink-faint); font-family: var(--font-system); font-size: 0.7rem; margin-top: 10px; }
+.relay-grid { display: grid; gap: 32px; grid-template-columns: minmax(0, 1fr) 220px; }
 .headline-list { list-style: none; }
 .headline-item { border-bottom: 1px solid var(--border); font-family: var(--font-system); font-size: 1rem; line-height: 1.5; padding: 11px 0; }
 .headline-item a { color: var(--ink); font-family: var(--font-system); font-weight: 600; text-decoration: none; }
-.headline-item a:hover { color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.headline-item a:hover, .pulse-list a:hover { color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
 .headline-publisher { color: var(--ink-faint); font-family: var(--font-system); font-size: 0.7rem; white-space: nowrap; }
+.pulse { border-left: 1px solid var(--border); padding-left: 24px; }
+.section-title { color: var(--ink); font-family: var(--font-system); font-size: 0.92rem; font-weight: 700; letter-spacing: -0.01em; }
+.pulse-group { margin-top: 18px; }
+.pulse-group-title { color: var(--ink-faint); font-family: var(--font-system); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
+.pulse-list { list-style: none; margin-top: 5px; }
+.pulse-list li { line-height: 1.35; padding: 4px 0; }
+.pulse-list a { color: var(--ink-muted); font-family: var(--font-system); font-size: 0.78rem; font-weight: 600; text-decoration: none; }
+.relay-more { display: grid; gap: 32px; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 32px; }
+.coming-soon { color: var(--ink-faint); font-family: var(--font-system); font-size: 0.78rem; margin-top: 8px; }
 @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .main { padding: 40px 16px 72px; }
+  .relay-grid, .relay-more { grid-template-columns: 1fr; }
+  .pulse { border-left: 0; border-top: 1px solid var(--border); padding-left: 0; padding-top: 24px; }
   .headline-item { font-size: 0.96rem; }
 }
 </style>
@@ -69,36 +80,83 @@ body {
   <header class="relay-header">
     <h1 class="relay-title">Relay</h1>
     <p class="relay-intro">Selected links to reporting hosted by publishers across the web.</p>
-    <p class="relay-updated">Last updated July 24, 2026</p>
   </header>
 
-  <ol class="headline-list" data-max-items="60" aria-label="Relay headlines">
-    <li class="headline-item">
-      <a href="https://www.canarymedia.com/articles/utilities/ohioans-getting-power-shut-off" target="_blank" rel="noopener noreferrer">More Ohioans are getting their power shut off as energy costs surge</a>
-      <span class="headline-publisher"> — Canary Media</span>
-    </li>
-    <li class="headline-item">
-      <a href="https://insideclimatenews.org/news/23072026/inside-clean-energy-data-center-forecasts/" target="_blank" rel="noopener noreferrer">Data Center Forecasts Keep Climbing and So Does Public Opposition. Something Has to Give.</a>
-      <span class="headline-publisher"> — Inside Climate News</span>
-    </li>
-    <li class="headline-item">
-      <a href="https://www.agriculture.com/partners-rabobank-expects-brazil-s-2026-27-soybean-crop-to-fall-amid-pause-in-area-growth-12025037" target="_blank" rel="noopener noreferrer">Rabobank Expects Brazil’s 2026/27 Soybean Crop to Fall Amid Pause in Area Growth</a>
-      <span class="headline-publisher"> — Successful Farming</span>
-    </li>
-    <li class="headline-item">
-      <a href="https://www.supplychaindive.com/news/logistics-resiliency-is-critical-as-disruptions-pile-up-in-2026/825655/" target="_blank" rel="noopener noreferrer">Logistics resiliency is critical as disruptions pile up in 2026</a>
-      <span class="headline-publisher"> — Supply Chain Dive</span>
-    </li>
-    <li class="headline-item">
-      <a href="https://www.statnews.com/2026/07/15/why-cyclospora-source-remains-unknown-epidemiologist-explains/" target="_blank" rel="noopener noreferrer">Why we still don’t know what foods are the source of the cyclospora outbreak</a>
-      <span class="headline-publisher"> — STAT</span>
-    </li>
-    <li class="headline-item">
-      <a href="https://www.securityweek.com/us-allies-warn-of-russian-cyberattacks-targeting-critical-infrastructure-routers/" target="_blank" rel="noopener noreferrer">US, Allies Warn of Russian Cyberattacks Targeting Critical Infrastructure Routers</a>
-      <span class="headline-publisher"> — SecurityWeek</span>
-    </li>
-  </ol>
+  <div class="relay-grid">
+    <ol class="headline-list" data-max-items="60" aria-label="Relay headlines">
+      <li class="headline-item">
+        <a href="https://www.canarymedia.com/articles/utilities/ohioans-getting-power-shut-off" target="_blank" rel="noopener noreferrer">More Ohioans are getting their power shut off as energy costs surge</a>
+        <span class="headline-publisher"> — Canary Media</span>
+      </li>
+      <li class="headline-item">
+        <a href="https://insideclimatenews.org/news/23072026/inside-clean-energy-data-center-forecasts/" target="_blank" rel="noopener noreferrer">Data Center Forecasts Keep Climbing and So Does Public Opposition. Something Has to Give.</a>
+        <span class="headline-publisher"> — Inside Climate News</span>
+      </li>
+      <li class="headline-item">
+        <a href="https://www.agriculture.com/partners-rabobank-expects-brazil-s-2026-27-soybean-crop-to-fall-amid-pause-in-area-growth-12025037" target="_blank" rel="noopener noreferrer">Rabobank Expects Brazil’s 2026/27 Soybean Crop to Fall Amid Pause in Area Growth</a>
+        <span class="headline-publisher"> — Successful Farming</span>
+      </li>
+      <li class="headline-item">
+        <a href="https://www.supplychaindive.com/news/logistics-resiliency-is-critical-as-disruptions-pile-up-in-2026/825655/" target="_blank" rel="noopener noreferrer">Logistics resiliency is critical as disruptions pile up in 2026</a>
+        <span class="headline-publisher"> — Supply Chain Dive</span>
+      </li>
+      <li class="headline-item">
+        <a href="https://www.statnews.com/2026/07/15/why-cyclospora-source-remains-unknown-epidemiologist-explains/" target="_blank" rel="noopener noreferrer">Why we still don’t know what foods are the source of the cyclospora outbreak</a>
+        <span class="headline-publisher"> — STAT</span>
+      </li>
+      <li class="headline-item">
+        <a href="https://www.securityweek.com/us-allies-warn-of-russian-cyberattacks-targeting-critical-infrastructure-routers/" target="_blank" rel="noopener noreferrer">US, Allies Warn of Russian Cyberattacks Targeting Critical Infrastructure Routers</a>
+        <span class="headline-publisher"> — SecurityWeek</span>
+      </li>
+    </ol>
 
+    <aside class="pulse" aria-labelledby="pulse-title">
+      <h2 class="section-title" id="pulse-title">Pulse</h2>
+      <section class="pulse-group" aria-labelledby="pulse-markets">
+        <h3 class="pulse-group-title" id="pulse-markets">Markets</h3>
+        <ul class="pulse-list">
+          <li><a href="https://fred.stlouisfed.org/series/SP500" target="_blank" rel="noopener noreferrer">S&amp;P 500</a></li>
+          <li><a href="https://fred.stlouisfed.org/series/NASDAQCOM" target="_blank" rel="noopener noreferrer">Nasdaq Composite</a></li>
+          <li><a href="https://fred.stlouisfed.org/series/DJIA" target="_blank" rel="noopener noreferrer">Dow Jones Industrial Average</a></li>
+          <li><a href="https://fred.stlouisfed.org/series/VIXCLS" target="_blank" rel="noopener noreferrer">VIX</a></li>
+        </ul>
+      </section>
+      <section class="pulse-group" aria-labelledby="pulse-rates">
+        <h3 class="pulse-group-title" id="pulse-rates">Rates and credit</h3>
+        <ul class="pulse-list">
+          <li><a href="https://fred.stlouisfed.org/series/DGS10" target="_blank" rel="noopener noreferrer">U.S. 10-Year Treasury yield</a></li>
+          <li><a href="https://fred.stlouisfed.org/series/DTWEXBGS" target="_blank" rel="noopener noreferrer">U.S. Dollar Index</a></li>
+          <li><a href="https://fred.stlouisfed.org/series/BAMLH0A0HYM2" target="_blank" rel="noopener noreferrer">High-yield credit spread</a></li>
+        </ul>
+      </section>
+      <section class="pulse-group" aria-labelledby="pulse-commodities">
+        <h3 class="pulse-group-title" id="pulse-commodities">Commodities</h3>
+        <ul class="pulse-list">
+          <li><a href="https://www.eia.gov/dnav/pet/hist/RBRTED.htm" target="_blank" rel="noopener noreferrer">Brent crude oil</a></li>
+          <li><a href="https://www.cmegroup.com/markets/metals/precious/gold.html" target="_blank" rel="noopener noreferrer">Gold</a></li>
+          <li><a href="https://www.cmegroup.com/markets/metals/base/copper.html" target="_blank" rel="noopener noreferrer">Copper</a></li>
+          <li><a href="https://www.eia.gov/dnav/ng/hist/rngwhhdD.htm" target="_blank" rel="noopener noreferrer">Natural gas</a></li>
+        </ul>
+      </section>
+      <section class="pulse-group" aria-labelledby="pulse-crypto">
+        <h3 class="pulse-group-title" id="pulse-crypto">Crypto</h3>
+        <ul class="pulse-list">
+          <li><a href="https://www.coinbase.com/price/bitcoin" target="_blank" rel="noopener noreferrer">Bitcoin</a></li>
+        </ul>
+      </section>
+    </aside>
+  </div>
+
+  <div class="relay-more">
+    <section aria-labelledby="videos-title">
+      <h2 class="section-title" id="videos-title">Videos</h2>
+      <p class="coming-soon">Coming soon</p>
+    </section>
+    <section aria-labelledby="x-title">
+      <h2 class="section-title" id="x-title">On X</h2>
+      <p class="coming-soon">Coming soon</p>
+    </section>
+  </div>
 </main>
 
 <!--FOOTER-->

@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0",
+  "description": "Future Relay X-source settings. No discovery or publishing is enabled by this file.",
+  "check_interval_minutes": 60,
+  "maximum_items": 18,
+  "discovery_provider": {
+    "id": "xai-grok",
+    "name": "Grok/xAI",
+    "status": "planned"
+  },
+  "approved_accounts": []
+}
