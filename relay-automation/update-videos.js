@@ -31,19 +31,22 @@ const EXCLUSION_TERMS = {
 };
 
 const EVENT_SIGNAL_TERMS = [
-  "warning", "advisory", "disruption", "hazard", "investigation", "outage",
-  "shortage", "closure", "recall", "contamination", "contaminated",
+  "warning", "advisory", "alert", "emergency", "disruption", "hazard",
+  "investigation", "outage", "shortage", "closure", "shutdown", "recall",
+  "contamination", "contaminated", "vulnerability", "breach",
   "cyber incident", "cyberattack", "ransomware", "data breach",
   "active exploitation", "exploited vulnerability", "severe weather",
-  "hurricane", "tornado", "wildfire", "flooding", "flash flood",
-  "earthquake", "drought", "extreme heat", "infrastructure failure",
-  "power outage", "grid emergency", "energy emergency", "fuel shortage",
-  "crop failure", "livestock disease", "plant disease", "food recall",
-  "outbreak", "health emergency", "public health alert", "port closure",
-  "shipping disruption", "vessel collision", "rail derailment",
-  "government advisory", "evacuation", "emergency declaration",
-  "state of emergency", "explosion", "collapse", "boil water advisory",
-  "water system", "service interruption"
+  "hurricane", "tropical storm", "tornado", "wildfire", "flooding",
+  "flash flood", "flood advisory", "flood warning", "earthquake",
+  "magnitude", "eruption", "volcano", "drought", "extreme heat",
+  "heat wave", "infrastructure failure", "power outage", "power shutoff",
+  "grid emergency", "energy emergency", "fuel shortage", "crop failure",
+  "livestock disease", "plant disease", "food recall", "outbreak",
+  "health emergency", "public health alert", "port closure", "port delay",
+  "shipping disruption", "vessel collision", "collision", "grounding",
+  "rail derailment", "derailment", "government advisory", "evacuation",
+  "emergency declaration", "state of emergency", "explosion", "collapse",
+  "boil water advisory", "water system", "service interruption"
 ];
 
 const STOP_WORDS = new Set([
@@ -164,43 +167,69 @@ async function fetchChannelVideos(channel, publishedAfter, apiKey, fetchImpl) {
   return data.items || [];
 }
 
-function normalizeVideo(searchItem, channel, topics, exclusions, cutoff, now) {
+function relevantTopicIds(searchableText, channel, topics, titleHasEventSignal) {
+  const matched = matchedTopics(searchableText, channel, topics);
+  if (matched.length > 0) return matched;
+  if (!titleHasEventSignal) return [];
+  // An official-agency title can carry a genuine, strongly event-specific
+  // signal without repeating topics.json's exact curated wording. In that
+  // case, trust the channel's own pre-approved topic scope as supporting
+  // context rather than rejecting the video outright.
+  const enabledIds = new Set(topics.filter((topic) => topic.enabled).map((topic) => topic.id));
+  return channel.topics.filter((id) => enabledIds.has(id));
+}
+
+function evaluateCandidate(searchItem, channel, topics, exclusions, cutoff, now) {
   const videoId = searchItem.id?.videoId;
-  if (!/^[A-Za-z0-9_-]{11}$/.test(videoId || "")) return null;
+  if (!/^[A-Za-z0-9_-]{11}$/.test(videoId || "")) return { status: "malformed" };
 
   const publishedAt = new Date(searchItem.snippet?.publishedAt);
   if (!Number.isFinite(publishedAt.getTime()) || publishedAt < cutoff || publishedAt > now) {
-    return null;
+    return { status: "outside_lookback" };
   }
 
   const title = decodeHtmlEntities(searchItem.snippet?.title);
   const description = decodeHtmlEntities(searchItem.snippet?.description);
-  const searchableText = normalizeText(`${title} ${description}`);
-  if (!title || isHardExcluded(searchableText, exclusions)) return null;
+  if (!title) return { status: "malformed" };
 
-  const topicIds = matchedTopics(searchableText, channel, topics);
-  if (topicIds.length === 0) return null;
-  if (!hasEventSignal(searchableText)) return null;
+  const titleText = normalizeText(title);
+  const searchableText = normalizeText(`${title} ${description}`);
+  if (isHardExcluded(searchableText, exclusions)) return { status: "excluded" };
+
+  // The title is weighted more strongly than the description: a video is
+  // only accepted when the TITLE itself carries the event signal, so
+  // boilerplate that appears only in the description can never qualify it.
+  const titleHasEventSignal = hasEventSignal(titleText);
+  const topicIds = relevantTopicIds(searchableText, channel, topics, titleHasEventSignal);
+  if (topicIds.length === 0) return { status: "no_topic" };
+  if (!titleHasEventSignal) return { status: "no_event" };
 
   const url = `https://www.youtube.com/watch?v=${videoId}`;
   try {
     const parsed = new URL(url);
-    if (parsed.hostname !== "www.youtube.com" || parsed.pathname !== "/watch") return null;
+    if (parsed.hostname !== "www.youtube.com" || parsed.pathname !== "/watch") return { status: "malformed" };
   } catch {
-    return null;
+    return { status: "malformed" };
   }
 
   return {
-    video_id: videoId,
-    title,
-    url,
-    channel_name: channel.channel_name,
-    channel_id: channel.channel_id,
-    published_at: publishedAt.toISOString(),
-    matched_topic_ids: topicIds,
-    source_priority: channel.priority,
-    status: "ok"
+    status: "accepted",
+    video: {
+      video_id: videoId,
+      title,
+      url,
+      channel_name: channel.channel_name,
+      channel_id: channel.channel_id,
+      published_at: publishedAt.toISOString(),
+      matched_topic_ids: topicIds,
+      source_priority: channel.priority,
+      status: "ok"
+    }
   };
+}
+
+function normalizeVideo(searchItem, channel, topics, exclusions, cutoff, now) {
+  return evaluateCandidate(searchItem, channel, topics, exclusions, cutoff, now).video || null;
 }
 
 function primaryTopicId(item, topicWeightById) {
@@ -250,6 +279,25 @@ function deduplicateAndRank(items, { maximumItems, maxPerChannel, maxPerTopic, t
   return selected;
 }
 
+function logDiagnostics(diagnostics, candidateCount, items) {
+  for (const stats of diagnostics) {
+    console.log(
+      `Video source diagnostics: channel=${stats.channel_name} `
+      + `candidates=${stats.candidates_returned} `
+      + `rejected_malformed_or_outside_lookback=${stats.rejected_malformed_or_outside_lookback} `
+      + `rejected_exclusions=${stats.rejected_exclusions} `
+      + `rejected_no_topic=${stats.rejected_no_topic} `
+      + `rejected_no_event=${stats.rejected_no_event} `
+      + `accepted=${stats.accepted}`
+    );
+  }
+  console.log(`Video source diagnostics: rejected_by_channel_or_topic_caps=${candidateCount - items.length}`);
+  console.log(`Video source diagnostics: final_selected_count=${items.length}`);
+  for (const item of items) {
+    console.log(`Video source diagnostics: selected channel="${item.channel_name}" title="${item.title}"`);
+  }
+}
+
 async function buildVideoData({
   config,
   topics,
@@ -281,10 +329,20 @@ async function buildVideoData({
   }));
 
   const candidates = [];
+  const diagnostics = [];
   for (const result of results) {
+    const stats = {
+      channel_name: result.channel.channel_name,
+      candidates_returned: result.searchItems.length,
+      rejected_malformed_or_outside_lookback: 0,
+      rejected_exclusions: 0,
+      rejected_no_topic: 0,
+      rejected_no_event: 0,
+      accepted: 0
+    };
     if (result.status === "ok") {
       for (const searchItem of result.searchItems) {
-        const video = normalizeVideo(
+        const evaluation = evaluateCandidate(
           searchItem,
           result.channel,
           topics.topics,
@@ -292,7 +350,25 @@ async function buildVideoData({
           cutoff,
           now
         );
-        if (video) candidates.push(video);
+        switch (evaluation.status) {
+          case "malformed":
+          case "outside_lookback":
+            stats.rejected_malformed_or_outside_lookback += 1;
+            break;
+          case "excluded":
+            stats.rejected_exclusions += 1;
+            break;
+          case "no_topic":
+            stats.rejected_no_topic += 1;
+            break;
+          case "no_event":
+            stats.rejected_no_event += 1;
+            break;
+          case "accepted":
+            stats.accepted += 1;
+            candidates.push(evaluation.video);
+            break;
+        }
       }
     } else {
       for (const previous of previousData?.items || []) {
@@ -301,6 +377,7 @@ async function buildVideoData({
         }
       }
     }
+    diagnostics.push(stats);
   }
 
   const topicWeightById = new Map(topics.topics.map((topic) => [topic.id, topic.weight]));
@@ -310,6 +387,8 @@ async function buildVideoData({
     maxPerTopic: config.max_per_topic ?? 2,
     topicWeightById
   });
+  logDiagnostics(diagnostics, candidates.length, items);
+
   const successfulChannels = results.filter((result) => result.status === "ok").length;
   const staleItems = items.filter((item) => item.status === "stale").length;
   return {
@@ -375,11 +454,13 @@ module.exports = {
   buildVideoData,
   decodeHtmlEntities,
   deduplicateAndRank,
+  evaluateCandidate,
   hasEventSignal,
   isHardExcluded,
   matchedTopics,
   normalizeVideo,
   primaryTopicId,
+  relevantTopicIds,
   sanitizeError,
   writeJsonAtomic
 };

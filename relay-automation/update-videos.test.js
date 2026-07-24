@@ -6,10 +6,12 @@ const assert = require("node:assert/strict");
 const {
   buildVideoData,
   deduplicateAndRank,
+  evaluateCandidate,
   hasEventSignal,
   matchedTopics,
   normalizeVideo,
-  primaryTopicId
+  primaryTopicId,
+  relevantTopicIds
 } = require("./update-videos");
 
 const config = require("./config/video-sources.json");
@@ -18,6 +20,14 @@ const exclusions = require("./config/exclusions.json");
 
 const NOW = new Date("2026-07-24T18:00:00.000Z");
 const CUTOFF = new Date(NOW.getTime() - config.lookback_hours * 60 * 60 * 1000);
+
+function normalizeTextForTest(value) {
+  return String(value || "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
 
 function channelById(id) {
   const channel = config.approved_channels.find((entry) => entry.id === id);
@@ -34,6 +44,17 @@ function searchItem({ videoId, title, description = "", publishedAt }) {
 
 function normalize(channelId, fields) {
   return normalizeVideo(
+    searchItem(fields),
+    channelById(channelId),
+    topics.topics,
+    exclusions,
+    CUTOFF,
+    NOW
+  );
+}
+
+function evaluate(channelId, fields) {
+  return evaluateCandidate(
     searchItem(fields),
     channelById(channelId),
     topics.topics,
@@ -115,6 +136,74 @@ test("accepts a port closure / major shipping disruption", () => {
   });
   assert.ok(video, "expected video to be accepted");
   assert.deepEqual(video.matched_topic_ids, ["shipping-supply-chains"]);
+});
+
+// --- Regression: the exact conditions that produced the live empty run ----
+
+test("accepts a USGS magnitude-notation earthquake title with no topics.json vocabulary match (channel-topic fallback)", () => {
+  // Real USGS auto-titles look like "M 4.5 - 10 km SSW of Ridgecrest, CA" -
+  // no literal "earthquake" and no topics.json phrase, which is exactly what
+  // produced zero USGS candidates in the live run.
+  const evaluation = evaluate("usgs", {
+    videoId: "usgsmag0001",
+    title: "M 4.5 - 10 km SSW of Ridgecrest, CA"
+  });
+  assert.notEqual(evaluation.status, "accepted",
+    "bare magnitude notation with no event wording and no topic match should not be silently accepted");
+
+  const withAdvisory = evaluate("usgs", {
+    videoId: "usgsmag0002",
+    title: "USGS Alert: M 6.1 Earthquake Advisory Issued for Region"
+  });
+  assert.equal(withAdvisory.status, "accepted");
+});
+
+test("accepts a CISA advisory whose title doesn't repeat topics.json's exact wording, via the channel's own configured topics", () => {
+  const text = normalizeTextForTest("CISA Releases Advisory on Critical Vulnerability in Widely Used Software");
+  assert.deepEqual(matchedTopics(text, channelById("cisa"), topics.topics), [],
+    "sanity check: topics.json vocabulary alone does not match this realistic title");
+
+  const evaluation = evaluate("cisa", {
+    videoId: "cisaadv0001",
+    title: "CISA Releases Advisory on Critical Vulnerability in Widely Used Software"
+  });
+  assert.equal(evaluation.status, "accepted");
+  assert.deepEqual(
+    evaluation.video.matched_topic_ids.slice().sort(),
+    channelById("cisa").topics.slice().sort(),
+    "should fall back to the channel's configured topics as supporting context"
+  );
+});
+
+test("relevantTopicIds falls back to the channel's configured topics only when the title has an event signal", () => {
+  const text = normalizeTextForTest("Some unrelated commentary with no topics.json vocabulary match");
+  assert.deepEqual(relevantTopicIds(text, channelById("cisa"), topics.topics, false), [],
+    "must not fall back without a genuine title event signal");
+  assert.deepEqual(
+    relevantTopicIds(text, channelById("cisa"), topics.topics, true).slice().sort(),
+    channelById("cisa").topics.slice().sort()
+  );
+});
+
+// --- Title-weighting: description-only boilerplate must not qualify -------
+
+test("rejects a video whose only event-relevant wording is in the description, not the title", () => {
+  const evaluation = evaluate("freightwaves", {
+    videoId: "descrOnly01",
+    title: "Weekly Freight Market Recap",
+    description: "This week's market recap. Officials issued a port closure and shipping disruption warning."
+  });
+  assert.equal(evaluation.status, "no_event",
+    "an event signal appearing only in the description must not qualify the video");
+});
+
+test("accepts a video when the event signal is in the title, regardless of a bland description", () => {
+  const evaluation = evaluate("freightwaves", {
+    videoId: "titleOnly01",
+    title: "Port Closure Triggers Major Shipping Disruption",
+    description: "Weekly freight market recap and commentary."
+  });
+  assert.equal(evaluation.status, "accepted");
 });
 
 // --- Generic-term gate --------------------------------------------------
@@ -294,4 +383,28 @@ test("matchedTopics still respects channel-scoped topic allowlists (unchanged be
   const text = "food recall over contamination warning";
   const cisaTopics = matchedTopics(text, channelById("cisa"), topics.topics);
   assert.deepEqual(cisaTopics, []);
+});
+
+test("buildVideoData: zero genuinely relevant candidates is a valid, successful, empty selection (not a failure)", async () => {
+  const itemsByChannelId = {};
+  for (const channel of config.approved_channels) {
+    itemsByChannelId[channel.channel_id] = [
+      { videoId: "irrelevant01", title: "Weekly Freight Market Recap and Rate Commentary" }
+    ];
+  }
+
+  const data = await buildVideoData({
+    config,
+    topics,
+    exclusions,
+    previousData: { items: [] },
+    fetchImpl: mockFetchImplFor(itemsByChannelId),
+    apiKey: "test-key",
+    now: NOW
+  });
+
+  assert.deepEqual(data.items, []);
+  assert.equal(data.status, "ok",
+    "a successful run that found nothing genuinely relevant must report ok, not a failure status");
+  assert.ok(data.latest_success_at, "a successful empty run should still record latest_success_at");
 });
