@@ -6,6 +6,7 @@ const path = require("path");
 const ROOT = path.resolve(__dirname, "..");
 const CONFIG_PATH = path.join(__dirname, "config", "sources.json");
 const EXCLUSIONS_PATH = path.join(__dirname, "config", "exclusions.json");
+const TOPICS_PATH = path.join(__dirname, "config", "topics.json");
 const DATA_PATH = path.join(ROOT, "pages", "relay", "article-data.json");
 const FETCH_TIMEOUT_MS = 15000;
 
@@ -36,6 +37,7 @@ const EXCLUSION_TERMS = {
 // relevance filter.
 const UNIVERSAL_REJECT_TERMS = [
   "opinion", "op-ed", "first opinion",
+  "sponsored post", "underwritten by",
   "podcast", "webinar", "newsletter", "sponsored content", "advertorial",
   "explainer", "evergreen explainer", "everything you need to know", "guide to",
   "general guidance", "general advice", "generic advice",
@@ -52,6 +54,11 @@ const UNIVERSAL_REJECT_TERMS = [
 // Small per-publisher supplements for the few reject categories not already
 // covered by the universal list above.
 const PUBLISHER_SPECIFIC_REJECT_TERMS = {
+  "oilprice": ["press release", "stock to watch", "investment opportunity"],
+  "gcaptain": ["career", "jobs", "cruise vacation", "cruise review"],
+  "maritime-executive": ["corporate news", "luxury cruise", "drug seizure", "cocaine shipment"],
+  "breaking-defense": ["photo roundup", "airshow photos", "sponsored post"],
+  "twz": ["car review", "automotive", "classic car"],
   "the-watchers": ["stargazing", "night sky this week", "meteor shower viewing guide", "best telescopes"],
   "food-safety-news": ["recipe", "recipes"],
   "securityweek": [],
@@ -121,6 +128,52 @@ function isSourceSpecificReject(sourceId, text) {
 
   const terms = [...UNIVERSAL_REJECT_TERMS, ...(PUBLISHER_SPECIFIC_REJECT_TERMS[sourceId] || [])];
   return terms.some((term) => containsPhrase(text, term));
+}
+
+function escapeRegExp(value) {
+  return String(value).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function matchesTopicTerm(normalizedText, rawTerm) {
+  const term = normalizeText(rawTerm);
+  if (!term) return false;
+  if (containsPhrase(normalizedText, term)) return true;
+
+  // Permit common English inflections for one-word topic terms while keeping
+  // word boundaries, so "attacks" can match "attack" without allowing the
+  // short term "war" to misfire inside an unrelated word such as "toward".
+  if (!term.includes(" ") && term.length >= 4) {
+    const pattern = new RegExp(`(?:^| )${escapeRegExp(term)}(?:s|es|ed|ing)?(?: |$)`);
+    return pattern.test(normalizedText);
+  }
+  return false;
+}
+
+function scoreArticleText(text, topicsConfig) {
+  if (!topicsConfig || !Array.isArray(topicsConfig.topics)) {
+    return { score: 0, matched_topic_ids: [] };
+  }
+
+  const normalizedText = normalizeText(text);
+  let score = 0;
+  const matchedTopicIds = [];
+
+  for (const topic of topicsConfig.topics) {
+    if (!topic?.enabled || !Array.isArray(topic.include_terms)) continue;
+    const matchCount = topic.include_terms.reduce(
+      (count, term) => count + (matchesTopicTerm(normalizedText, term) ? 1 : 0),
+      0
+    );
+    if (matchCount === 0) continue;
+
+    // A topic's weight is the main signal. Up to three additional matching
+    // terms add a small specificity bonus without letting keyword stuffing
+    // overwhelm the editorial topic weights.
+    score += Number(topic.weight || 0) + Math.min(matchCount - 1, 3);
+    matchedTopicIds.push(topic.id);
+  }
+
+  return { score, matched_topic_ids: matchedTopicIds };
 }
 
 function sanitizeError(error) {
@@ -274,7 +327,16 @@ function getFeedUrls(source) {
 
 // --- Candidate evaluation -----------------------------------------------------
 
-function evaluateArticleCandidate(entry, source, exclusions, approvedHostnames, cutoff, now) {
+function evaluateArticleCandidate(
+  entry,
+  source,
+  exclusions,
+  approvedHostnames,
+  cutoff,
+  now,
+  topicsConfig = null,
+  minimumTopicScore = 0
+) {
   const title = decodeHtmlEntities(entry.title || "").trim();
   if (!title) return { status: "malformed" };
   if (!entry.link) return { status: "malformed" };
@@ -296,6 +358,9 @@ function evaluateArticleCandidate(entry, source, exclusions, approvedHostnames, 
   if (isHardExcluded(searchableText, exclusions)) return { status: "excluded" };
   if (isSourceSpecificReject(source.id, searchableText)) return { status: "unsuitable_content" };
 
+  const topicMatch = scoreArticleText(searchableText, topicsConfig);
+  if (topicsConfig && topicMatch.score < minimumTopicScore) return { status: "off_topic" };
+
   return {
     status: "accepted",
     article: {
@@ -304,7 +369,9 @@ function evaluateArticleCandidate(entry, source, exclusions, approvedHostnames, 
       publisher: source.publisher_name,
       published_at: publishedAt.toISOString(),
       source_id: source.id,
-      status: "ok"
+      status: "ok",
+      selection_score: topicMatch.score,
+      matched_topic_ids: topicMatch.matched_topic_ids
     }
   };
 }
@@ -318,11 +385,20 @@ function emptySourceStats(source) {
     rejected_duplicate: 0,
     rejected_hard_exclusions: 0,
     rejected_unsuitable_content: 0,
+    rejected_off_topic: 0,
     accepted: 0
   };
 }
 
-async function collectSourceCandidates(source, exclusions, cutoff, now, fetchImpl) {
+async function collectSourceCandidates(
+  source,
+  exclusions,
+  cutoff,
+  now,
+  fetchImpl,
+  topicsConfig = null,
+  minimumTopicScore = 0
+) {
   const feedUrls = getFeedUrls(source);
   const approvedHostnames = deriveApprovedHostnames(source.homepage_url);
   const stats = emptySourceStats(source);
@@ -334,7 +410,16 @@ async function collectSourceCandidates(source, exclusions, cutoff, now, fetchImp
     const { entries } = parseFeed(xmlText);
     stats.entries_returned += entries.length;
     for (const entry of entries) {
-      const evaluation = evaluateArticleCandidate(entry, source, exclusions, approvedHostnames, cutoff, now);
+      const evaluation = evaluateArticleCandidate(
+        entry,
+        source,
+        exclusions,
+        approvedHostnames,
+        cutoff,
+        now,
+        topicsConfig,
+        minimumTopicScore
+      );
       switch (evaluation.status) {
         case "malformed":
         case "non_https":
@@ -348,6 +433,9 @@ async function collectSourceCandidates(source, exclusions, cutoff, now, fetchImp
           break;
         case "unsuitable_content":
           stats.rejected_unsuitable_content += 1;
+          break;
+        case "off_topic":
+          stats.rejected_off_topic += 1;
           break;
         case "accepted":
           if (seenUrls.has(evaluation.article.url)) {
@@ -371,7 +459,8 @@ function rankAndSelect(candidates, { maximumItems, maximumItemsPerSource, source
   const seenUrls = new Set();
   const ranked = candidates
     .sort((left, right) =>
-      (sourcePriorityById.get(right.source_id) ?? 0) - (sourcePriorityById.get(left.source_id) ?? 0)
+      (right.selection_score ?? 0) - (left.selection_score ?? 0)
+      || (sourcePriorityById.get(right.source_id) ?? 0) - (sourcePriorityById.get(left.source_id) ?? 0)
       || new Date(right.published_at) - new Date(left.published_at)
       || left.url.localeCompare(right.url)
     )
@@ -403,13 +492,18 @@ function logArticleDiagnostics(statsList, candidateCount, items) {
       + `rejected_duplicate=${stats.rejected_duplicate} `
       + `rejected_hard_exclusions=${stats.rejected_hard_exclusions} `
       + `rejected_unsuitable_content=${stats.rejected_unsuitable_content} `
+      + `rejected_off_topic=${stats.rejected_off_topic} `
       + `accepted=${stats.accepted}`
     );
   }
   console.log(`Article source diagnostics: rejected_by_publisher_cap=${candidateCount - items.length}`);
   console.log(`Article source diagnostics: final_selected_count=${items.length}`);
   for (const item of items) {
-    console.log(`Article source diagnostics: selected publisher="${item.publisher}" title="${item.title}"`);
+    console.log(
+      `Article source diagnostics: selected score=${item.selection_score ?? 0} `
+      + `topics=${(item.matched_topic_ids || []).join(",") || "none"} `
+      + `publisher="${item.publisher}" title="${item.title}"`
+    );
   }
 }
 
@@ -419,6 +513,7 @@ async function buildArticleData({
   config,
   exclusions,
   previousData,
+  topics = null,
   fetchImpl = fetch,
   now = new Date()
 }) {
@@ -427,7 +522,15 @@ async function buildArticleData({
 
   const results = await Promise.all(enabledSources.map(async (source) => {
     try {
-      const { stats, accepted } = await collectSourceCandidates(source, exclusions, cutoff, now, fetchImpl);
+      const { stats, accepted } = await collectSourceCandidates(
+        source,
+        exclusions,
+        cutoff,
+        now,
+        fetchImpl,
+        topics,
+        Number(topics?.minimum_topic_score || 0)
+      );
       return { source, stats, accepted, status: "ok" };
     } catch (error) {
       console.error(`Article source failed: source=${source.id} error=${sanitizeError(error)}`);
@@ -464,7 +567,7 @@ async function buildArticleData({
       latestSuccessAt = previousData?.latest_success_at || null;
     }
   } else {
-    finalItems = items;
+    finalItems = items.map(({ selection_score, matched_topic_ids, ...item }) => item);
     latestSuccessAt = now.toISOString();
     status = finalItems.length === 0
       ? "ok_empty"
@@ -590,11 +693,12 @@ async function run() {
     return;
   }
 
-  const [exclusions, previousData] = await Promise.all([
+  const [exclusions, topics, previousData] = await Promise.all([
     readJson(EXCLUSIONS_PATH),
+    readJson(TOPICS_PATH),
     readJson(DATA_PATH, { items: [] })
   ]);
-  const data = await buildArticleData({ config, exclusions, previousData });
+  const data = await buildArticleData({ config, exclusions, topics, previousData });
   await writeJsonAtomic(DATA_PATH, data);
   console.log(`Articles updated: status=${data.status} items=${data.items.length}`);
 }
@@ -620,6 +724,7 @@ module.exports = {
   parseFeed,
   rankAndSelect,
   sanitizeError,
+  scoreArticleText,
   verifyFeeds,
   writeJsonAtomic
 };

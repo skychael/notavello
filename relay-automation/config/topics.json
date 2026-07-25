@@ -1,270 +1,138 @@
 {
-  "schema_version": "1.0",
-  "description": "Editable topic definitions and scoring signals for future Relay article selection. Terms and signals will contribute to scoring but will not decide selection by themselves.",
+  "schema_version": "2.0",
+  "description": "Active Relay article-selection topics. Enabled topics are scored against each RSS headline, summary, and category. Articles below minimum_topic_score are rejected before ranking.",
+  "minimum_topic_score": 7,
   "topics": [
     {
-      "id": "infrastructure-utilities",
-      "name": "Infrastructure and utilities",
+      "id": "war-military-escalation",
+      "name": "War and military escalation",
       "enabled": true,
-      "weight": 10,
-      "description": "Water, power, transportation, public works, and other systems required for daily life.",
+      "weight": 12,
+      "description": "Combat, military deployments, strikes, attacks, weapons, and rapidly worsening confrontations.",
       "include_terms": [
-        "power grid",
-        "water system",
-        "wastewater",
-        "public works",
-        "infrastructure failure",
-        "utility outage"
+        "war", "warfare", "military", "armed forces", "troops", "deployment", "mobilization",
+        "airstrike", "air strike", "strike", "attack", "bombing", "shelling", "invasion",
+        "missile", "ballistic missile", "cruise missile", "drone attack", "combat drone",
+        "fighter jet", "bomber", "warship", "naval forces", "submarine", "air defense",
+        "pentagon", "centcom", "nato", "irgc", "houthi", "hezbollah"
       ],
       "priority_signals": [
-        "service interruption",
-        "capacity warning",
-        "major repair or closure",
-        "risk to essential services",
-        "regional impact"
+        "active fighting", "new military deployment", "retaliatory action", "major weapons movement",
+        "regional escalation", "threat to civilians or infrastructure"
       ]
     },
     {
-      "id": "energy",
-      "name": "Energy",
+      "id": "oil-gas-energy-shock",
+      "name": "Oil, gas, and energy shocks",
+      "enabled": true,
+      "weight": 12,
+      "description": "Oil and gas supply, refineries, pipelines, prices, production, and disruptions tied to conflict or shortages.",
+      "include_terms": [
+        "oil", "crude", "brent", "wti", "petroleum", "fuel", "diesel", "gasoline",
+        "natural gas", "lng", "refinery", "pipeline", "oil field", "oilfield", "drilling",
+        "opec", "opec+", "energy supply", "fuel supply", "energy crisis", "fuel shortage",
+        "production cut", "supply disruption", "price shock", "oil prices", "gas prices"
+      ],
+      "priority_signals": [
+        "supply interruption", "price spike", "refinery outage", "pipeline damage",
+        "shipping interruption", "strategic reserve action"
+      ]
+    },
+    {
+      "id": "strategic-shipping-chokepoints",
+      "name": "Strategic shipping and chokepoints",
+      "enabled": true,
+      "weight": 11,
+      "description": "Threats to tankers, ports, sea lanes, canals, and major global trade chokepoints.",
+      "include_terms": [
+        "tanker", "oil tanker", "cargo ship", "commercial shipping", "shipping route", "sea lane",
+        "red sea", "strait of hormuz", "hormuz", "bab el-mandeb", "suez canal", "black sea",
+        "persian gulf", "south china sea", "port closure", "port attack", "blockade", "embargo",
+        "piracy", "ship seized", "vessel seized", "maritime security", "war risk premium"
+      ],
+      "priority_signals": [
+        "route closure", "ship attack", "tanker disruption", "port shutdown",
+        "insurance shock", "global trade interruption"
+      ]
+    },
+    {
+      "id": "geopolitical-crisis-sanctions",
+      "name": "Geopolitical crisis and sanctions",
       "enabled": true,
       "weight": 9,
-      "description": "Electricity, fuels, generation, transmission, storage, markets, and energy security.",
+      "description": "International crises, sanctions, border actions, diplomatic breakdowns, and government emergency measures.",
       "include_terms": [
-        "electricity demand",
-        "grid reliability",
-        "fuel shortage",
-        "power generation",
-        "transmission",
-        "energy prices"
+        "geopolitical", "sanctions", "embargo", "ultimatum", "ceasefire", "peace talks",
+        "border closure", "state of emergency", "emergency declaration", "evacuation order",
+        "diplomatic crisis", "retaliation", "escalation", "regional conflict", "proxy war",
+        "iran", "israel", "russia", "ukraine", "china", "taiwan", "north korea", "yemen", "syria"
       ],
       "priority_signals": [
-        "supply constraint",
-        "price shock",
-        "outage risk",
-        "critical facility impact",
-        "large demand change"
+        "new sanctions", "government warning", "diplomatic rupture", "cross-border action",
+        "regional spillover", "trade or energy consequence"
       ]
     },
     {
-      "id": "food-agriculture",
-      "name": "Food and agriculture",
+      "id": "nuclear-strategic-threats",
+      "name": "Nuclear and strategic threats",
       "enabled": true,
       "weight": 10,
-      "description": "Crops, livestock, food production, contamination, agricultural disease, and food availability.",
+      "description": "Nuclear facilities, weapons, strategic deterrence, radiation events, and high-consequence military threats.",
       "include_terms": [
-        "crop conditions",
-        "food recall",
-        "livestock disease",
-        "plant disease",
-        "harvest",
-        "food shortage"
+        "nuclear", "nuclear weapon", "nuclear facility", "nuclear plant", "reactor",
+        "radiation", "radiological", "atomic", "uranium", "enrichment", "warhead",
+        "intercontinental ballistic missile", "icbm", "strategic bomber", "deterrence",
+        "doomsday", "chemical weapon", "biological weapon"
       ],
       "priority_signals": [
-        "contamination warning",
-        "production loss",
-        "disease spread",
-        "recall expansion",
-        "supply or price impact"
+        "nuclear warning", "facility attack", "weapons test", "radiation release",
+        "strategic force movement", "official threat"
       ]
     },
     {
-      "id": "shipping-supply-chains",
-      "name": "Shipping and supply chains",
-      "enabled": true,
-      "weight": 10,
-      "description": "Ports, freight, rail, trucking, warehousing, logistics, and material flows.",
-      "include_terms": [
-        "port congestion",
-        "freight disruption",
-        "rail slowdown",
-        "trucking capacity",
-        "shipping delay",
-        "supply chain"
-      ],
-      "priority_signals": [
-        "route closure",
-        "capacity loss",
-        "major delay",
-        "cargo interruption",
-        "cascading supply effect"
-      ]
-    },
-    {
-      "id": "economy-finance",
-      "name": "Economy and finance",
-      "enabled": true,
-      "weight": 7,
-      "description": "Economic conditions, financial stability, credit, prices, employment, and systemic market risks.",
-      "include_terms": [
-        "inflation",
-        "credit conditions",
-        "bank failure",
-        "employment",
-        "commodity prices",
-        "financial stability"
-      ],
-      "priority_signals": [
-        "systemic risk",
-        "sudden price movement",
-        "broad employment impact",
-        "credit disruption",
-        "regional economic shock"
-      ]
-    },
-    {
-      "id": "public-health",
-      "name": "Public health",
+      "id": "critical-infrastructure-disruption",
+      "name": "Critical infrastructure disruption",
       "enabled": true,
       "weight": 8,
-      "description": "Outbreaks, healthcare capacity, medicines, environmental health, and population-level risks.",
+      "description": "Blackouts, grid failures, utility attacks, communications outages, and attacks on essential systems.",
       "include_terms": [
-        "outbreak",
-        "public health alert",
-        "hospital capacity",
-        "drug shortage",
-        "disease surveillance",
-        "health emergency"
+        "power grid", "grid failure", "blackout", "power outage", "utility outage",
+        "communications outage", "internet outage", "critical infrastructure",
+        "infrastructure attack", "substation", "power plant", "electricity shortage",
+        "water system", "dam attack", "pipeline attack", "cyberattack on infrastructure"
       ],
       "priority_signals": [
-        "rapid case growth",
-        "multi-state impact",
-        "healthcare capacity warning",
-        "official alert",
-        "shortage of essential treatment"
+        "large outage", "essential service interrupted", "attack on utilities",
+        "regional impact", "cascading failure"
       ]
     },
     {
-      "id": "cybersecurity-communications",
-      "name": "Cybersecurity and communications",
-      "enabled": true,
-      "weight": 9,
-      "description": "Cyber incidents and communications failures, especially those affecting essential services.",
-      "include_terms": [
-        "critical infrastructure cyberattack",
-        "communications outage",
-        "ransomware",
-        "actively exploited vulnerability",
-        "network disruption",
-        "data breach"
-      ],
-      "priority_signals": [
-        "essential service affected",
-        "active exploitation",
-        "widespread outage",
-        "government advisory",
-        "operational disruption"
-      ]
-    },
-    {
-      "id": "severe-weather-hazards",
-      "name": "Severe weather and natural hazards",
-      "enabled": true,
-      "weight": 8,
-      "description": "Severe storms, floods, fires, earthquakes, drought, heat, and other natural hazards.",
-      "include_terms": [
-        "severe weather",
-        "flash flood",
-        "wildfire",
-        "earthquake",
-        "drought",
-        "extreme heat"
-      ],
-      "priority_signals": [
-        "official warning",
-        "evacuation",
-        "infrastructure threat",
-        "rapid intensification",
-        "multi-county impact"
-      ]
-    },
-    {
-      "id": "conflict-geopolitics",
-      "name": "Conflict and geopolitics",
+      "id": "severe-natural-hazards",
+      "name": "Severe natural hazards",
       "enabled": true,
       "weight": 7,
-      "description": "Conflict and international developments with consequences for people, trade, energy, or security.",
+      "description": "Major earthquakes, volcanic eruptions, extreme storms, floods, fires, and other high-impact hazards.",
       "include_terms": [
-        "armed conflict",
-        "sanctions",
-        "trade route",
-        "border closure",
-        "geopolitical risk",
-        "shipping security"
+        "major earthquake", "strong earthquake", "volcanic eruption", "eruption",
+        "tsunami", "tropical cyclone", "hurricane", "super typhoon", "catastrophic flood",
+        "flash flood emergency", "major wildfire", "mass evacuation", "extreme heat emergency",
+        "geomagnetic storm", "solar storm"
       ],
       "priority_signals": [
-        "civilian impact",
-        "trade disruption",
-        "energy supply effect",
-        "regional escalation",
-        "government action"
+        "official warning", "mass evacuation", "major infrastructure damage",
+        "rapid intensification", "multiple regions affected"
       ]
     },
     {
-      "id": "government-regulation-legal",
-      "name": "Government, regulation, and legal action",
-      "enabled": true,
-      "weight": 7,
-      "description": "Government decisions, regulation, enforcement, and legal action with broad practical consequences.",
+      "id": "routine-health-food-tech",
+      "name": "Routine health, food, and consumer technology",
+      "enabled": false,
+      "weight": 0,
+      "description": "Disabled because Relay is being refocused away from routine health, food-safety, software, and consumer-technology stories.",
       "include_terms": [
-        "new regulation",
-        "enforcement action",
-        "court ruling",
-        "government order",
-        "public safety rule",
-        "regulatory investigation"
+        "food recall", "wellness", "drug approval", "software update", "consumer gadget"
       ],
-      "priority_signals": [
-        "immediate compliance effect",
-        "essential sector affected",
-        "major enforcement action",
-        "nationwide or regional scope",
-        "operational consequence"
-      ]
-    },
-    {
-      "id": "industry-manufacturing",
-      "name": "Industry and manufacturing",
-      "enabled": true,
-      "weight": 8,
-      "description": "Factories, industrial production, materials, plant closures, recalls, and manufacturing capacity.",
-      "include_terms": [
-        "factory closure",
-        "manufacturing disruption",
-        "production halt",
-        "industrial accident",
-        "material shortage",
-        "plant capacity"
-      ],
-      "priority_signals": [
-        "production stopped",
-        "large workforce affected",
-        "critical material shortage",
-        "safety incident",
-        "downstream supply impact"
-      ]
-    },
-    {
-      "id": "local-early-warning",
-      "name": "Local early-warning reports",
-      "enabled": true,
-      "weight": 10,
-      "description": "Credible local reporting that may reveal a developing regional or wider problem before national coverage.",
-      "include_terms": [
-        "local closure",
-        "service interruption",
-        "boil water advisory",
-        "evacuation notice",
-        "local shortage",
-        "emergency declaration"
-      ],
-      "priority_signals": [
-        "first credible report",
-        "official local confirmation",
-        "potential to spread",
-        "essential service affected",
-        "clear regional consequence"
-      ]
+      "priority_signals": []
     }
   ]
 }

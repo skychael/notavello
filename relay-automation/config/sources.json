@@ -1,58 +1,82 @@
 {
-  "schema_version": "2.0",
-  "description": "Approved article sources for Relay. This is a tightly curated specialist whitelist, mirroring the Relay Videos source-first approach: the publisher list itself is the primary relevance filter, not a large keyword or scoring system. Set enabled:true only after a source's configured feed URL passes: node relay-automation/update-articles.js --verify-feeds",
+  "schema_version": "3.0",
+  "description": "Approved article sources for Relay's war, oil, energy-security, military, geopolitical-crisis, strategic-shipping, and major-hazard focus. Source priority is combined with active topic scoring from config/topics.json. Routine health, food-safety, and general technology publishers are no longer automatically selected.",
   "check_interval_minutes": 60,
   "lookback_hours": 72,
   "maximum_items": 10,
   "maximum_items_per_source": 2,
   "automatic_sources": [
     {
+      "id": "oilprice",
+      "publisher_name": "OilPrice.com",
+      "feed_url": "https://oilprice.com/rss/main",
+      "homepage_url": "https://oilprice.com/",
+      "enabled": true,
+      "priority": 10,
+      "content_focus": "Oil and gas markets, conflict-driven energy shocks, pipelines, refineries, sanctions, OPEC, fuel supply, and geopolitical consequences for energy.",
+      "exclusion_notes": "Reject generic clean-energy explainers, investment promotion, sponsored releases, corporate earnings without a supply consequence, and unrelated technology commentary.",
+      "verification_status": "web-confirmed",
+      "verification_notes": "Feed endpoint was reachable and returned current OilPrice headlines on 2026-07-25. Run node relay-automation/update-articles.js --verify-feeds from a networked checkout before deployment for the repository's full parser and hostname check."
+    },
+    {
+      "id": "gcaptain",
+      "publisher_name": "gCaptain",
+      "feed_url": "https://gcaptain.com/feed/",
+      "homepage_url": "https://gcaptain.com/",
+      "enabled": true,
+      "priority": 10,
+      "content_focus": "Tanker attacks, Red Sea and Hormuz disruptions, naval incidents, offshore energy, sanctions, ports, strategic shipping, and global trade threats.",
+      "exclusion_notes": "Reject sponsored posts, careers, routine cruise coverage, ship-product promotion, and accidents with no broader strategic, energy, or supply-chain consequence.",
+      "verification_status": "web-confirmed",
+      "verification_notes": "Official RSS endpoint was present and reachable on 2026-07-25. Run --verify-feeds from a networked checkout before deployment for full parser and hostname validation."
+    },
+    {
+      "id": "maritime-executive",
+      "publisher_name": "The Maritime Executive",
+      "feed_url": "https://maritime-executive.com/articles.rss",
+      "homepage_url": "https://maritime-executive.com/",
+      "enabled": true,
+      "priority": 9,
+      "content_focus": "Military and geopolitical shipping threats, tanker and port disruptions, blockades, piracy, sanctions, naval operations, and strategic trade-route risk.",
+      "exclusion_notes": "Reject cruise-industry promotion, routine corporate announcements, opinion, podcasts, drug seizures, and local vessel accidents without broader consequences.",
+      "verification_status": "web-confirmed",
+      "verification_notes": "The publisher's robots.txt identifies /articles.rss as its RSS feed and the endpoint was reachable on 2026-07-25. Run --verify-feeds from a networked checkout before deployment."
+    },
+    {
+      "id": "breaking-defense",
+      "publisher_name": "Breaking Defense",
+      "feed_url": "https://breakingdefense.com/feed/",
+      "homepage_url": "https://breakingdefense.com/",
+      "enabled": true,
+      "priority": 9,
+      "content_focus": "Current military operations, weapons, force deployments, air and naval warfare, Pentagon decisions, strategic threats, and international defense developments.",
+      "exclusion_notes": "Reject opinion, sponsored posts, webinars, conference promotion, photo roundups, executive appointments, and defense-industry business stories without an operational consequence.",
+      "verification_status": "web-confirmed",
+      "verification_notes": "The official site exposes an RSS feed and the endpoint was reachable on 2026-07-25. Run --verify-feeds from a networked checkout before deployment."
+    },
+    {
+      "id": "twz",
+      "publisher_name": "TWZ (The War Zone)",
+      "feed_url": "https://www.twz.com/feed",
+      "homepage_url": "https://www.twz.com/",
+      "enabled": true,
+      "priority": 9,
+      "content_focus": "Military technology, active conflicts, force movements, missile and drone threats, air and naval operations, strategy, and geopolitics.",
+      "exclusion_notes": "Reject historical retrospectives, photo-only posts, unrelated automotive coverage, and technical features with no current military or geopolitical consequence.",
+      "verification_status": "web-confirmed",
+      "verification_notes": "The official feed endpoint was reachable on 2026-07-25. Run --verify-feeds from a networked checkout before deployment for full parser and hostname validation."
+    },
+    {
       "id": "the-watchers",
       "publisher_name": "The Watchers",
       "feed_url": "https://watchers.news/feed/",
       "homepage_url": "https://watchers.news/",
       "enabled": true,
-      "priority": 8,
-      "content_focus": "Severe weather, floods, tropical cyclones, earthquakes, volcanoes, space-weather hazards, and concrete warnings or disruptions.",
-      "exclusion_notes": "Reject generic explainers, historical retrospectives, unrelated astronomy content, promotional material, and duplicate versions of the same event.",
+      "priority": 6,
+      "content_focus": "Major earthquakes, volcanic eruptions, tropical cyclones, floods, fires, space-weather hazards, mass evacuations, and concrete high-impact warnings.",
+      "exclusion_notes": "Reject generic explainers, historical retrospectives, unrelated astronomy, minor local weather, promotional material, and duplicate versions of the same event.",
       "verification_status": "verified",
       "verification_notes": "node relay-automation/update-articles.js --verify-feeds (2026-07-24): status=valid http_status=200 format=rss entries=10, approved-hostname links confirmed."
-    },
-    {
-      "id": "food-safety-news",
-      "publisher_name": "Food Safety News",
-      "feed_url": "https://www.foodsafetynews.com/feed/",
-      "homepage_url": "https://www.foodsafetynews.com/",
-      "enabled": true,
-      "priority": 9,
-      "content_focus": "Recalls, outbreaks, contamination, investigations, enforcement, government warnings, and foodborne illness.",
-      "exclusion_notes": "Reject opinion, recipes, general guidance, evergreen explainers, sponsored material, and event promotion.",
-      "verification_status": "verified",
-      "verification_notes": "node relay-automation/update-articles.js --verify-feeds (2026-07-24): status=valid http_status=200 format=rss entries=15, approved-hostname links confirmed."
-    },
-    {
-      "id": "securityweek",
-      "publisher_name": "SecurityWeek",
-      "feed_url": "https://www.securityweek.com/feed/",
-      "homepage_url": "https://www.securityweek.com/",
-      "enabled": true,
-      "priority": 8,
-      "content_focus": "Cyberattacks, ransomware, active exploitation, confirmed breaches, infrastructure attacks, ICS/OT incidents, and major government cyber warnings.",
-      "exclusion_notes": "Reject funding, acquisitions, appointments, product launches, webinars, podcasts, opinion, generic advice, and conference promotion.",
-      "verification_status": "verified",
-      "verification_notes": "node relay-automation/update-articles.js --verify-feeds (2026-07-24): status=valid http_status=200 format=rss entries=10, approved-hostname links confirmed. (Previously existed in sources.json with an empty feed_url.)"
-    },
-    {
-      "id": "stat",
-      "publisher_name": "STAT",
-      "feed_url": "https://www.statnews.com/feed/",
-      "homepage_url": "https://www.statnews.com/",
-      "enabled": true,
-      "priority": 8,
-      "content_focus": "Outbreaks, public-health emergencies, contamination, government health warnings, hospital-system disruption, and concrete disease or safety developments.",
-      "exclusion_notes": "Reject First Opinion, podcasts, events, routine pharmaceutical business news, investor news, appointments, wellness content, and evergreen explainers.",
-      "verification_status": "verified",
-      "verification_notes": "node relay-automation/update-articles.js --verify-feeds (2026-07-24): status=valid http_status=200 format=rss entries=20, approved-hostname links confirmed."
     },
     {
       "id": "canary-media",
@@ -60,33 +84,53 @@
       "feed_url": "https://www.canarymedia.com/feed",
       "homepage_url": "https://www.canarymedia.com/",
       "enabled": true,
-      "priority": 7,
-      "content_focus": "Grid problems, utility emergencies, outages, shutoffs, electricity shortages, infrastructure failures, concrete energy disruptions, and reliability warnings.",
-      "exclusion_notes": "Reject broad policy analysis without a current event, product announcements, funding stories, general explainers, profiles, and opinion.",
+      "priority": 5,
+      "content_focus": "Grid emergencies, blackouts, utility failures, electricity shortages, infrastructure attacks, shutoffs, and energy-security warnings.",
+      "exclusion_notes": "Reject broad climate-policy analysis, profiles, product announcements, funding, opinion, and clean-energy explainers without a current disruption or security consequence.",
       "verification_status": "verified",
-      "verification_notes": "node relay-automation/update-articles.js --verify-feeds (2026-07-24): status=valid http_status=200 format=rss entries=100, approved-hostname links confirmed. (Previously existed in sources.json with an empty feed_url.)"
+      "verification_notes": "node relay-automation/update-articles.js --verify-feeds (2026-07-24): status=valid http_status=200 format=rss entries=100, approved-hostname links confirmed."
+    }
+  ],
+  "manual_only_sources": [
+    {
+      "id": "food-safety-news",
+      "publisher_name": "Food Safety News",
+      "homepage_url": "https://www.foodsafetynews.com/",
+      "enabled": false,
+      "mode": "manual-only",
+      "notes": "Removed from automatic selection because routine food-safety stories do not match Relay's war, oil, military, and geopolitical-crisis focus."
+    },
+    {
+      "id": "stat",
+      "publisher_name": "STAT",
+      "homepage_url": "https://www.statnews.com/",
+      "enabled": false,
+      "mode": "manual-only",
+      "notes": "Removed from automatic selection because routine health and pharmaceutical coverage does not match Relay's refocused subject matter."
+    },
+    {
+      "id": "securityweek",
+      "publisher_name": "SecurityWeek",
+      "homepage_url": "https://www.securityweek.com/",
+      "enabled": false,
+      "mode": "manual-only",
+      "notes": "Removed from automatic selection. A major cyberattack affecting war, energy, communications, or critical infrastructure may still be added manually."
     },
     {
       "id": "bleepingcomputer",
       "publisher_name": "BleepingComputer News",
-      "feed_url": "https://www.bleepingcomputer.com/feed/",
       "homepage_url": "https://www.bleepingcomputer.com/",
-      "enabled": true,
-      "priority": 8,
-      "content_focus": "Ransomware, major breaches, active exploitation, operational outages, critical vulnerabilities, infrastructure incidents, major malware campaigns, and government or vendor warnings.",
-      "exclusion_notes": "Reject tutorials, how-to guides, downloads, deals, product promotion, forum posts, and general software advice.",
-      "verification_status": "verified",
-      "verification_notes": "node relay-automation/update-articles.js --verify-feeds (2026-07-24): status=valid http_status=200 format=rss entries=15, approved-hostname links confirmed."
-    }
-  ],
-  "manual_only_sources": [
+      "enabled": false,
+      "mode": "manual-only",
+      "notes": "Removed from automatic selection to prevent routine software and vulnerability coverage from crowding out war, oil, and crisis reporting."
+    },
     {
       "id": "supply-chain-dive",
       "publisher_name": "Supply Chain Dive",
       "homepage_url": "https://www.supplychaindive.com/",
       "enabled": false,
       "mode": "manual-only",
-      "notes": "Trade reporting on sourcing, logistics, manufacturing, procurement, and supply-chain risk. Kept manual-only per editorial decision; not fetched by the automatic collector."
+      "notes": "Use manually for unusually consequential logistics, port, freight, or trade-route disruptions."
     },
     {
       "id": "inside-climate-news",
@@ -94,7 +138,7 @@
       "homepage_url": "https://insideclimatenews.org/",
       "enabled": false,
       "mode": "manual-only",
-      "notes": "Nonprofit reporting on climate, energy, environmental health, infrastructure, and regulation. Kept manual-only per editorial decision; not fetched by the automatic collector."
+      "notes": "Use manually for major energy-infrastructure or environmental emergencies, not routine climate-policy coverage."
     },
     {
       "id": "successful-farming",
@@ -102,7 +146,7 @@
       "homepage_url": "https://www.agriculture.com/",
       "enabled": false,
       "mode": "manual-only",
-      "notes": "Agricultural markets and production reporting, now published under the Successful Farming brand at agriculture.com (homepage confirmed from the existing static link already in pages/relay/index.html). Kept manual-only per editorial decision; not fetched by the automatic collector."
+      "notes": "Use manually for severe crop, fertilizer, fuel, export, or war-related food-supply disruptions."
     }
   ]
 }

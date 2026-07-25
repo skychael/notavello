@@ -16,12 +16,14 @@ const {
   isSourceSpecificReject,
   parseFeed,
   rankAndSelect,
+  scoreArticleText,
   verifyFeeds,
   writeJsonAtomic
 } = require("./update-articles");
 
 const config = require("./config/sources.json");
 const exclusions = require("./config/exclusions.json");
+const topics = require("./config/topics.json");
 
 const NOW = new Date("2026-07-24T18:00:00.000Z");
 const CUTOFF = new Date(NOW.getTime() - 72 * 60 * 60 * 1000);
@@ -87,9 +89,9 @@ function pubDateHoursAgo(hours) {
 
 // --- Config sanity -----------------------------------------------------------
 
-test("config: six automatic sources and three manual-only sources with required fields", () => {
-  assert.equal(config.automatic_sources.length, 6);
-  assert.equal(config.manual_only_sources.length, 3);
+test("config: seven crisis-focused automatic sources and seven manual-only sources with required fields", () => {
+  assert.equal(config.automatic_sources.length, 7);
+  assert.equal(config.manual_only_sources.length, 7);
   for (const source of config.automatic_sources) {
     assert.ok(source.id);
     assert.ok(source.publisher_name);
@@ -107,9 +109,17 @@ test("config: six automatic sources and three manual-only sources with required 
     assert.equal(source.enabled, false);
     assert.equal(source.mode, "manual-only");
   }
+  const automaticIds = new Set(config.automatic_sources.map((source) => source.id));
+  for (const removedId of ["food-safety-news", "stat", "securityweek", "bleepingcomputer"]) {
+    assert.equal(automaticIds.has(removedId), false, `${removedId} must not be automatically selected`);
+  }
+  for (const requiredId of ["oilprice", "gcaptain", "maritime-executive", "breaking-defense", "twz"]) {
+    assert.equal(automaticIds.has(requiredId), true, `${requiredId} must be an automatic source`);
+  }
   assert.equal(config.maximum_items, 10);
   assert.equal(config.maximum_items_per_source, 2);
   assert.equal(config.lookback_hours, 72);
+  assert.equal(topics.minimum_topic_score, 7);
 });
 
 // --- 1. RSS parsing -----------------------------------------------------------
@@ -378,6 +388,71 @@ test("does not reject a genuine concrete event mentioning a press conference", (
   // reject list because it would misfire on real news like this.
   const result = unsuitableTitleCheck("Officials Hold Press Conference on Ransomware Attack Response");
   assert.equal(result.status, "accepted");
+});
+
+// --- 18c-e: active topic scoring and filtering -------------------------------------------
+
+test("18c. topic scoring strongly favors war, oil, shipping, and geopolitical-crisis stories", () => {
+  const crisis = scoreArticleText(
+    "Houthi missile attack on oil tanker near Strait of Hormuz sends Brent crude higher",
+    topics
+  );
+  const routine = scoreArticleText(
+    "FDA approves a new wellness treatment after advisory committee meeting",
+    topics
+  );
+  assert.ok(crisis.score >= 30, `expected a strong crisis score, got ${crisis.score}`);
+  assert.equal(routine.score, 0);
+  assert.ok(crisis.matched_topic_ids.includes("war-military-escalation"));
+  assert.ok(crisis.matched_topic_ids.includes("oil-gas-energy-shock"));
+  assert.ok(crisis.matched_topic_ids.includes("strategic-shipping-chokepoints"));
+});
+
+test("18d. active topic filtering rejects routine health or technology and accepts war/oil coverage", () => {
+  const source = makeSource();
+  const approved = deriveApprovedHostnames(source.homepage_url);
+  const routineEntry = {
+    title: "New Consumer Software Update Adds Health Dashboard",
+    link: "https://example-publisher.test/routine",
+    published: NOW.toISOString(),
+    summary: "A routine product update for consumers."
+  };
+  const crisisEntry = {
+    title: "Drone Attack Damages Oil Refinery as Regional War Escalates",
+    link: "https://example-publisher.test/crisis",
+    published: NOW.toISOString(),
+    summary: "Fuel supplies and crude exports may be disrupted."
+  };
+
+  assert.equal(
+    evaluateArticleCandidate(routineEntry, source, exclusions, approved, CUTOFF, NOW, topics, topics.minimum_topic_score).status,
+    "off_topic"
+  );
+  const accepted = evaluateArticleCandidate(
+    crisisEntry,
+    source,
+    exclusions,
+    approved,
+    CUTOFF,
+    NOW,
+    topics,
+    topics.minimum_topic_score
+  );
+  assert.equal(accepted.status, "accepted");
+  assert.ok(accepted.article.selection_score >= topics.minimum_topic_score);
+});
+
+test("18e. ranking uses topic score before source priority and recency", () => {
+  const items = [
+    { title: "routine", url: "https://x.test/routine", publisher: "P", published_at: "2026-07-24T12:00:00.000Z", source_id: "high-priority", status: "ok", selection_score: 8 },
+    { title: "war-oil", url: "https://x.test/war-oil", publisher: "Q", published_at: "2026-07-24T10:00:00.000Z", source_id: "lower-priority", status: "ok", selection_score: 30 }
+  ];
+  const selected = rankAndSelect(items, {
+    maximumItems: 10,
+    maximumItemsPerSource: 2,
+    sourcePriorityById: new Map([["high-priority", 10], ["lower-priority", 5]])
+  });
+  assert.equal(selected[0].title, "war-oil");
 });
 
 // --- 19. two-items-per-publisher cap -----------------------------------------------------
