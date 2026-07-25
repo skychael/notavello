@@ -82,12 +82,33 @@ jobs:
 
       - name: Commit updated data
         run: |
-          if git diff --quiet -- pages/relay/article-data.json; then
-            echo "Relay article data is unchanged."
+          expected_paths=(
+            "pages/relay/article-data.json"
+            "pages/relay/archive/"
+            "pages/relay/index.html"
+            "sitemap.xml"
+          )
+
+          if git diff --quiet -- "${expected_paths[@]}" && \
+             [ -z "$(git ls-files --others --exclude-standard -- "${expected_paths[@]}")" ]; then
+            echo "Relay article data and archive are unchanged."
             exit 0
           fi
 
-          unexpected="$(git status --porcelain | awk '{print $2}' | grep -v '^pages/relay/article-data.json$' || true)"
+          unexpected="$(
+            git status --porcelain --untracked-files=all |
+            while IFS= read -r line; do
+              path="${line:3}"
+              case "$path" in
+                pages/relay/article-data.json|pages/relay/index.html|sitemap.xml|pages/relay/archive/*)
+                  ;;
+                *)
+                  printf '%s\n' "$path"
+                  ;;
+              esac
+            done
+          )"
+
           if [ -n "$unexpected" ]; then
             echo "Unexpected changed files:"
             echo "$unexpected"
@@ -96,15 +117,23 @@ jobs:
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -- pages/relay/article-data.json pages/relay/archive/ sitemap.xml
+          git add -- "${expected_paths[@]}"
           git commit -m "Update Relay article data and archive"
 
       - name: Rebase and push
         run: |
-          if git diff --quiet origin/main..HEAD -- pages/relay/article-data.json pages/relay/archive/ sitemap.xml; then
+          expected_paths=(
+            "pages/relay/article-data.json"
+            "pages/relay/archive/"
+            "pages/relay/index.html"
+            "sitemap.xml"
+          )
+
+          if git diff --quiet origin/main..HEAD -- "${expected_paths[@]}"; then
             echo "No Relay article data or archive changes to push."
             exit 0
           fi
+
           git fetch origin main
           git rebase origin/main
           git push origin HEAD:main
