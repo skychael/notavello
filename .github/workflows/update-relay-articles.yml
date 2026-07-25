@@ -117,7 +117,7 @@ jobs:
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -- "${expected_paths[@]}"
+          git add -- pages/relay/article-data.json pages/relay/archive/ sitemap.xml pages/relay/index.html
           git commit -m "Update Relay article data and archive"
 
       - name: Rebase and push
