@@ -1,39 +1,63 @@
 {
   "schema_version": "1.0",
-  "checked_at": "2026-07-24T21:39:34.987Z",
-  "latest_success_at": "2026-07-24T21:39:34.987Z",
+  "checked_at": "2026-07-25T14:33:55.676Z",
+  "latest_success_at": "2026-07-25T14:33:55.676Z",
   "status": "ok",
   "items": [
     {
-      "title": "\"Negligible\" microbial risk from Dutch meat firm’s products",
-      "url": "https://www.foodsafetynews.com/2026/07/negligible-microbial-risk-from-dutch-meat-firms-products",
+      "title": "Two bacon brands recalled for lack of reinspection at the Canadian border",
+      "url": "https://www.foodsafetynews.com/2026/07/two-bacon-brands-recalled-for-lack-of-reinspection-at-the-canadian-border",
       "publisher": "Food Safety News",
-      "published_at": "2026-07-24T04:02:00.000Z",
+      "published_at": "2026-07-25T02:23:34.000Z",
       "source_id": "food-safety-news",
       "status": "ok"
     },
     {
-      "title": "FDA continues special enforcement of import laws against seafood, mushrooms",
-      "url": "https://www.foodsafetynews.com/2026/07/fda-continues-special-enforcement-of-import-laws-against-seafood-mushrooms",
+      "title": "CDC, FDA say Cyclospora outbreak more widespread that originally thought",
+      "url": "https://www.foodsafetynews.com/2026/07/cdc-fda-say-cyclospora-outbreak-more-widespread-that-originally-thought",
       "publisher": "Food Safety News",
-      "published_at": "2026-07-24T04:01:42.000Z",
+      "published_at": "2026-07-25T02:08:23.000Z",
       "source_id": "food-safety-news",
       "status": "ok"
     },
     {
-      "title": "OnTrac notifies customers of data breach after network hack",
-      "url": "https://www.bleepingcomputer.com/news/security/ontrac-notifies-customers-of-data-breach-after-network-hack",
+      "title": "ShinyHunters data leaks fuel $2,000 sextortion email scam",
+      "url": "https://www.bleepingcomputer.com/news/security/shinyhunters-data-leaks-fuel-2-000-sextortion-email-scam",
       "publisher": "BleepingComputer News",
-      "published_at": "2026-07-24T19:55:01.000Z",
+      "published_at": "2026-07-25T14:16:26.000Z",
       "source_id": "bleepingcomputer",
       "status": "ok"
     },
     {
-      "title": "Hermes AI agent used to automate attack on Thai Finance Ministry",
-      "url": "https://www.bleepingcomputer.com/news/security/hermes-ai-agent-used-to-automate-attack-on-thai-finance-ministry",
+      "title": "The Weekly Volcanic Activity Report: July 16-22, 2026",
+      "url": "https://watchers.news/2026/07/25/the-weekly-volcanic-activity-report-july-16-22-2026",
+      "publisher": "The Watchers",
+      "published_at": "2026-07-25T12:51:00.000Z",
+      "source_id": "the-watchers",
+      "status": "ok"
+    },
+    {
+      "title": "Two dead in Upshur County due to catastrophic flooding in West Virginia",
+      "url": "https://watchers.news/2026/07/25/two-dead-in-upshur-county-due-to-catastrophic-flooding-in-west-virginia",
+      "publisher": "The Watchers",
+      "published_at": "2026-07-25T09:50:39.000Z",
+      "source_id": "the-watchers",
+      "status": "ok"
+    },
+    {
+      "title": "OpenAI confirms ChatGPT is down worldwide",
+      "url": "https://www.bleepingcomputer.com/news/artificial-intelligence/openai-confirms-chatgpt-is-down-worldwide",
       "publisher": "BleepingComputer News",
-      "published_at": "2026-07-24T19:09:09.000Z",
+      "published_at": "2026-07-25T09:31:09.000Z",
       "source_id": "bleepingcomputer",
+      "status": "ok"
+    },
+    {
+      "title": "Rockwell Patches Code Execution Flaws in Arena Simulation Software",
+      "url": "https://www.securityweek.com/rockwell-patches-code-execution-flaws-in-arena-simulation-software",
+      "publisher": "SecurityWeek",
+      "published_at": "2026-07-25T08:30:00.000Z",
+      "source_id": "securityweek",
       "status": "ok"
     },
     {
@@ -42,22 +66,6 @@
       "publisher": "STAT",
       "published_at": "2026-07-24T16:13:00.000Z",
       "source_id": "stat",
-      "status": "ok"
-    },
-    {
-      "title": "M5.0 earthquake joins small group of major Texas Panhandle events",
-      "url": "https://watchers.news/2026/07/24/m5-0-earthquake-joins-small-group-of-major-texas-panhandle-events",
-      "publisher": "The Watchers",
-      "published_at": "2026-07-24T15:31:22.000Z",
-      "source_id": "the-watchers",
-      "status": "ok"
-    },
-    {
-      "title": "Spanish government assumes command of wildfire response after declaring national emergency in Madrid region and Ávila",
-      "url": "https://watchers.news/2026/07/24/spanish-government-assumes-command-of-wildfire-response-after-declaring-national-emergency-in-madrid-region-and-avila",
-      "publisher": "The Watchers",
-      "published_at": "2026-07-24T13:36:17.000Z",
-      "source_id": "the-watchers",
       "status": "ok"
     },
     {
@@ -73,14 +81,6 @@
       "url": "https://www.securityweek.com/data-breach-confirmed-after-australian-energy-giant-origin-is-hacked",
       "publisher": "SecurityWeek",
       "published_at": "2026-07-24T05:52:31.000Z",
-      "source_id": "securityweek",
-      "status": "ok"
-    },
-    {
-      "title": "OpenAI Fixes ChatGPT Agent Flaw That Could Let Attackers Forge an AI Insider",
-      "url": "https://www.securityweek.com/openai-fixes-chatgpt-agent-flaw-that-could-let-attackers-forge-an-ai-insider",
-      "publisher": "SecurityWeek",
-      "published_at": "2026-07-23T15:09:59.000Z",
       "source_id": "securityweek",
       "status": "ok"
     }
