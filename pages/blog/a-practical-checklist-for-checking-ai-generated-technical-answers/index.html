@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>A practical checklist for checking AI-generated technical answers — The Export | Notavello</title>
+<meta name="description" content="Separate verifiable claims, assumptions, tests, and source checks before reusing AI-generated technical answers."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/blog/a-practical-checklist-for-checking-ai-generated-technical-answers/"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2026-07-24T10:31:28.771Z"/>
+<meta property="article:modified_time" content="2026-07-24T10:31:28.771Z"/>
+<meta name="notavello:published_at" content="2026-07-24T10:31:28.771Z"/>
+<meta name="syndication-origin-site" content="toysforbots"/>
+<meta name="syndication-origin-id" content="toysforbots:a-practical-checklist-for-checking-ai-generated-technical-answers"/>
+<meta name="syndication-origin-slug" content="a-practical-checklist-for-checking-ai-generated-technical-answers"/>
+<meta name="syndication-origin-url" content="https://toysforbots.com/blog/a-practical-checklist-for-checking-ai-generated-technical-answers/"/>
+<meta name="syndication-source-format" content="toysforbots-syndication-v1"/>
+<meta property="og:url" content="https://notavello.com/pages/blog/a-practical-checklist-for-checking-ai-generated-technical-answers/"/>
+<meta property="og:title" content="A practical checklist for checking AI-generated technical answers"/>
+<meta property="og:description" content="Separate verifiable claims, assumptions, tests, and source checks before reusing AI-generated technical answers."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="A practical checklist for checking AI-generated technical answers"/>
+<meta name="twitter:description" content="Separate verifiable claims, assumptions, tests, and source checks before reusing AI-generated technical answers."/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "A practical checklist for checking AI-generated technical answers",
+  "description": "Separate verifiable claims, assumptions, tests, and source checks before reusing AI-generated technical answers.",
+  "url": "https://notavello.com/pages/blog/a-practical-checklist-for-checking-ai-generated-technical-answers/",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://notavello.com/pages/blog/a-practical-checklist-for-checking-ai-generated-technical-answers/" },
+  "image": "https://notavello.com/og-image.png",
+  "datePublished": "2026-07-24T10:31:28.771Z",
+  "dateModified": "2026-07-24T10:31:28.771Z",
+  "author": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" },
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com", "logo": { "@type": "ImageObject", "url": "https://notavello.com/og-image.png" } }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
+.post-nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; row-gap: 8px; }
+.post-nav-top { margin-bottom: 40px; }
+.post-nav-bottom { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--border); }
+.post-nav a { display: inline-flex; align-items: center; gap: 6px; font-size: 0.92rem; font-weight: 600; color: var(--ink-muted); text-decoration: none; padding: 12px 14px; border-radius: var(--radius-sm); white-space: nowrap; transition: color 0.15s, background 0.15s; }
+.post-nav a:hover { color: var(--accent); background: var(--accent-light); }
+.post-nav a:first-child { padding-left: 0; }
+.post-nav a:last-child { padding-right: 0; justify-content: flex-end; }
+.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
+.post-date { font-size: 0.78rem; color: var(--ink-faint); }
+.post-title { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; color: var(--ink); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
+.post-lede { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+.post-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink); }
+.post-body h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 44px 0 16px; letter-spacing: -0.01em; }
+.post-body p { margin-bottom: 20px; color: var(--ink-muted); }
+.post-body p strong { color: var(--ink); font-weight: 600; }
+.post-body ul { margin: 0 0 20px 20px; color: var(--ink-muted); }
+.post-body ul li { margin-bottom: 8px; line-height: 1.7; }
+.callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 32px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.7; }
+.post-footer { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.post-footer-label { font-size: 0.8rem; color: var(--ink-faint); }
+.btn-export { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: opacity 0.2s; }
+.btn-export:hover { opacity: 0.9; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } .post-nav a { padding: 12px 8px; font-size: 0.88rem; } }
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+
+  <nav class="post-nav post-nav-top">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+  <div class="post-meta">
+    <span class="post-tag">Practical AI</span>
+    <span class="post-date">July 24, 2026</span>
+  </div>
+
+  <h1 class="post-title">A practical checklist for checking AI-generated technical answers</h1>
+
+  <p class="post-lede">Technical answers from large language models often blend correct statements with untested assumptions and outdated details. A short, repeatable checklist helps teams isolate claims that can be checked, flag assumptions that need testing, and confirm sources before reuse.</p>
+
+  <div class="post-body">
+
+<h2>Separate claims from the rest of the output</h2>
+<p>Start by copying the AI response into a document and highlighting every factual statement. Mark sentences that assert a specific result, number, behavior, or relationship. Leave opinions, suggestions, and filler unmarked.</p>
+<p>This separation step prevents mixing solid information with speculative language. It also creates a clear map of what later steps must address. Teams can then focus effort only on the highlighted material rather than the entire response.</p>
+<p>The process works best when done in a single pass without immediate judgment. Returning later to re-read the unmarked text can reveal overlooked assertions that were initially treated as filler.</p><ul><li>Underline numbers, dates, version numbers, and performance claims.</li><li>Circle any statement that could be checked against documentation or code.</li><li>Ignore hedging language such as &#039;usually&#039; or &#039;often&#039; for the first pass.</li><li>Record the line number or paragraph location of each highlighted item for easy reference in later steps.</li></ul><div class="callout"><strong>Before you ship</strong> Never treat an AI answer as settled until every claim, assumption, test, and source has been examined.</div>
+<h2>List every assumption the answer relies on</h2>
+<p>Read the highlighted claims again and write down what must be true for each one to hold. These hidden requirements are the assumptions. Common examples include &#039;the library version is current&#039; or &#039;the input data matches the training distribution.&#039;</p>
+<p>Making assumptions explicit turns vague concerns into concrete items that can be tested or accepted. It also surfaces dependencies that may differ across environments or teams.</p>
+<p>When an assumption cannot be stated clearly, the related claim should be treated as unverifiable until more context is available. This prevents carrying forward statements whose conditions remain unknown.</p><ul><li>Write each assumption as a short declarative sentence.</li><li>Note any assumption that depends on unstated context such as hardware or environment.</li><li>If an assumption cannot be stated clearly, mark the claim as unverifiable for now.</li><li>Group related assumptions together so that testing one item can address several claims at once.</li></ul>
+<h2>Design quick tests for the claims that matter</h2>
+<p>For each claim that affects correctness or safety, create a minimal test. The test can be a code snippet, a query against official documentation, or a small experiment. Record the expected result before running the test.</p>
+<p>Keeping tests small reduces the chance that the verification step itself introduces new errors. It also makes it easier to repeat the check later if the answer is reused in a different setting.</p>
+<p>Documenting both the test and its outcome next to the original claim creates an audit trail. Future reviewers can see exactly what was checked and what result was obtained without re-deriving the test.</p><ul><li>Keep tests small enough to run in under five minutes.</li><li>Use the exact versions or conditions stated in the answer.</li><li>Log both the test and its outcome next to the original claim.</li><li>If a test cannot be completed quickly, note the reason and schedule a separate verification task.</li></ul>
+<h2>Verify sources with primary references</h2>
+<p>Trace every cited fact back to an official source. Prefer vendor documentation, standards bodies, and peer-reviewed papers over secondary summaries. When the AI names a source, open it and confirm the exact statement appears.</p>
+<p>Primary references reduce the risk of propagating errors that appear in summaries or forum posts. They also provide the most current wording and any qualifying conditions that may have been omitted.</p>
+<p>When a source is missing or the link is broken, the claim should be marked for further research rather than accepted on the strength of the AI output alone.</p><ul><li>Check publication dates against the AI&#039;s knowledge cutoff if known.</li><li>Confirm that any quoted numbers or limits match the current documentation.</li><li>Note when a source is missing or the link is broken.</li><li>Keep a copy of the exact source text that supports each verified claim for later reference.</li></ul>
+<h2>Decide what can be reused and what needs human review</h2>
+<p>After the checks, tag each claim as verified, assumed, or rejected. Only reuse sections where every supporting claim is verified and every assumption has been tested or explicitly accepted by the team. Rejected claims require rewriting or further research.</p>
+<p>A short log of verified claims and their sources makes future audits faster. It also helps new team members understand which parts of the answer have already been examined.</p>
+<p>If more than one critical assumption remains untested, treat the whole answer as provisional. This conservative approach prevents partial verification from creating a false sense of completeness.</p><ul><li>Keep a short log of verified claims and their sources.</li><li>Flag any remaining assumptions for the next reviewer.</li><li>If more than one critical assumption remains untested, treat the whole answer as provisional.</li><li>Schedule a follow-up review when new documentation or test results become available.</li></ul><h2>Sources</h2><ul><li><a href="https://arxiv.org/html/2603.15914v1" rel="noopener noreferrer">arxiv.org</a></li><li><a href="https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing" rel="noopener noreferrer">en.wikipedia.org</a></li></ul>
+
+  </div>
+
+  <div class="post-footer">
+    <span class="post-footer-label">Looking for more AI tools?</span>
+    <a class="btn-export" href="/">See our free AI tools →</a>
+  </div>
+
+  <nav class="post-nav post-nav-bottom">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+</main>
+
+<!--FOOTER-->
+
+</body>
+</html>
