@@ -420,8 +420,11 @@ async function updateRelayArchive({ rootDir = ROOT, now = new Date() } = {}) {
   if (archiveRoot) {
     const relayHtml = await fs.readFile(relayIndexPath, "utf8").catch(() => "<html><body><h1>Relay</h1></body></html>");
     const archiveLinkHtml = '<p class="relay-intro"><a href="/pages/relay/archive/" style="color: var(--accent); text-decoration: none;">Daily archive</a></p>';
-    const archiveLinkPattern = /<p class="relay-intro"><a href="\/pages\/relay\/archive\/"[^>]*>Daily archive<\/a><\/p>/g;
-    let updatedRelayHtml = relayHtml.replace(archiveLinkPattern, "").replace(/\n{3,}/g, "\n\n");
+    const archiveLinkPattern = /^[ \t]*<p class="relay-intro"><a href="\/pages\/relay\/archive\/"[^>]*>Daily archive<\/a><\/p>[ \t]*\r?\n?/gm;
+    let updatedRelayHtml = relayHtml
+      .replace(archiveLinkPattern, "")
+      .replace(/[ \t]+$/gm, "")
+      .replace(/\n{3,}/g, "\n\n");
     if (updatedRelayHtml.includes("</header>")) {
       updatedRelayHtml = updatedRelayHtml.replace("</header>", `</header>\n    ${archiveLinkHtml}`);
     } else if (updatedRelayHtml.includes("</body>")) {
