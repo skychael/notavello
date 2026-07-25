@@ -2,7 +2,7 @@
   "schema_version": 1,
   "archive_date": "2026-07-25",
   "created_at": "2026-07-25T14:33:55.966Z",
-  "updated_at": "2026-07-25T22:12:28.412Z",
+  "updated_at": "2026-07-25T23:15:42.056Z",
   "articles": [
     {
       "title": "Houthis Fire On Saudi Red Sea Oil Sites",
@@ -82,6 +82,15 @@
       "publisher": "SecurityWeek",
       "published_at": "2026-07-25T08:30:00.000Z",
       "source_id": "securityweek",
+      "first_seen_at": "2026-07-25T14:33:55.966Z",
+      "status": "ok"
+    },
+    {
+      "title": "U.S. Forces Strike Another Iran-Linked Tanker in Strait of Hormuz",
+      "url": "https://maritime-executive.com/article/u-s-forces-strike-another-iran-linked-tanker-in-strait-of-hormuz",
+      "publisher": "The Maritime Executive",
+      "published_at": "2026-07-25T03:55:58.000Z",
+      "source_id": "maritime-executive",
       "first_seen_at": "2026-07-25T14:33:55.966Z",
       "status": "ok"
     },
@@ -190,6 +199,15 @@
       "publisher": "SecurityWeek",
       "published_at": "2026-07-24T05:52:31.000Z",
       "source_id": "securityweek",
+      "first_seen_at": "2026-07-25T14:33:55.966Z",
+      "status": "ok"
+    },
+    {
+      "title": "EA-37Bs Arrive At RAF Fairford As Iran Threatens To Attack The UK Air Base",
+      "url": "https://www.twz.com/air/ea-37bs-arrive-at-raf-fairford-as-iran-threatens-to-attack-the-uk-air-base",
+      "publisher": "TWZ (The War Zone)",
+      "published_at": "2026-07-23T19:31:23.000Z",
+      "source_id": "twz",
       "first_seen_at": "2026-07-25T14:33:55.966Z",
       "status": "ok"
     },
