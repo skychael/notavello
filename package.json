@@ -7,7 +7,8 @@
     "seo:generate": "node .github/scripts/generate-sitemap.js",
     "seo:audit": "node scripts/seo-audit.js",
     "seo:check": "node scripts/seo-audit.js --check",
-    "test": "npm run seo:generate && npm run seo:check"
+    "test:footer": "node --test scripts/footer-navigation.test.js",
+    "test": "npm run test:footer && npm run seo:generate && npm run seo:check"
   },
   "repository": {
     "type": "git",
