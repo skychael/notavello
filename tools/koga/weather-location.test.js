@@ -53,11 +53,14 @@ test("start page writes the handoff during normal link activation before navigat
 });
 
 test("Weather Center validates and automatically loads handoff while preserving manual entry", async () => {
-  const html = await fs.readFile(path.join(__dirname, "..", "..", "weather.html"), "utf8");
-  assert.ok(html.indexOf("/tools/koga/weather-location.js") < html.indexOf("const WORKER"));
-  assert.match(html, /normalizeWeatherLocation\(stored\)/);
-  assert.match(html, /await fetchWeatherByCoords\(saved\.lat, saved\.lon/);
-  assert.match(html, /searchBtn\.addEventListener\('click', startSearch\)/);
-  assert.match(html, /input\.addEventListener\('keydown'/);
-  assert.doesNotMatch(html, /removeItem\(STORAGE_KEY\)/);
+  const [html, script] = await Promise.all([
+    fs.readFile(path.join(__dirname, "..", "..", "weather.html"), "utf8"),
+    fs.readFile(path.join(__dirname, "weather-page.js"), "utf8")
+  ]);
+  assert.ok(html.indexOf("/tools/koga/weather-location.js") < html.indexOf("/tools/koga/weather-page.js"));
+  assert.match(script, /const saved = normalizeLocation\(raw\)/);
+  assert.match(script, /await loadWeather\(saved\)/);
+  assert.match(script, /locationForm\.addEventListener\('submit', submitSearch\)/);
+  assert.match(script, /locationInput\.addEventListener\('keydown'/);
+  assert.doesNotMatch(script, /removeItem\(LOCATION_KEY\)/);
 });
