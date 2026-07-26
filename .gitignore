@@ -3,3 +3,4 @@
 *.zip
 .wrangler/
 node_modules/.mf/
+.claude/settings.local.json
