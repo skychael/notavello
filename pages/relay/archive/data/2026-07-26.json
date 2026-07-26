@@ -2,8 +2,17 @@
   "schema_version": 1,
   "archive_date": "2026-07-26",
   "created_at": "2026-07-26T00:17:32.345Z",
-  "updated_at": "2026-07-26T22:15:41.554Z",
+  "updated_at": "2026-07-26T23:16:32.931Z",
   "articles": [
+    {
+      "title": "Standard Chartered: Oil Markets Must Now Price Two Middle East Chokepoints",
+      "url": "https://oilprice.com/Energy/Crude-Oil/Standard-Chartered-Oil-Markets-Must-Now-Price-Two-Middle-East-Chokepoints.html",
+      "publisher": "OilPrice.com",
+      "published_at": "2026-07-26T23:00:00.000Z",
+      "source_id": "oilprice",
+      "first_seen_at": "2026-07-26T00:17:32.345Z",
+      "status": "ok"
+    },
     {
       "title": "As Diplomacy Picks Up, Iran Claims Mine Strike on Ship in Strait of Hormuz",
       "url": "https://maritime-executive.com/article/as-diplomacy-picks-up-iran-claims-mine-strike-on-ship-in-strait-of-hormuz",
@@ -55,6 +64,15 @@
       "publisher": "The Maritime Executive",
       "published_at": "2026-07-25T03:15:22.000Z",
       "source_id": "maritime-executive",
+      "first_seen_at": "2026-07-26T00:17:32.345Z",
+      "status": "ok"
+    },
+    {
+      "title": "U.S. Coast Guard Seeking Technology To Hunt And Kill Uncrewed Underwater Vehicles",
+      "url": "https://www.twz.com/sea/u-s-coast-guard-seeking-technology-to-hunt-and-kill-uncrewed-underwater-vehicles",
+      "publisher": "TWZ (The War Zone)",
+      "published_at": "2026-07-24T20:34:34.000Z",
+      "source_id": "twz",
       "first_seen_at": "2026-07-26T00:17:32.345Z",
       "status": "ok"
     },
