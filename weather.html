@@ -933,6 +933,7 @@
     </section>
   </main>
 
+  <script src="/tools/koga/weather-location.js"></script>
   <script>
     const WORKER = 'https://weather-worker.mikekoga.workers.dev';
     const STORAGE_KEY = 'weatherCenterLastLocation';
@@ -1216,7 +1217,7 @@
       const timezoneOffset = data.timezone || 0;
 
       els.city.textContent = data.name || 'Current weather';
-      els.region.textContent = [data.sys?.country, coordText(data.coord)].filter(Boolean).join(' · ');
+      els.region.textContent = data.sys?.country || '';
       els.updated.textContent = `Updated ${formatTime(data.dt, timezoneOffset)} local time`;
       els.icon.textContent = toEmoji(weather.id);
       els.temp.textContent = Number.isFinite(temp) ? Math.round(temp) : '--';
@@ -1355,11 +1356,6 @@
       });
     }
 
-    function coordText(coord) {
-      if (!coord?.lat || !coord?.lon) return '';
-      return `${Number(coord.lat).toFixed(2)}, ${Number(coord.lon).toFixed(2)}`;
-    }
-
     function getPrecipText(data) {
       const rain = data.rain?.['1h'] || data.rain?.['3h'];
       const snow = data.snow?.['1h'] || data.snow?.['3h'];
@@ -1397,31 +1393,36 @@
 
     function saveLastLocation(lat, lon, label) {
       try {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify({
+        const location = window.KogaWeatherLocation.normalizeWeatherLocation({
           lat: Number(lat),
           lon: Number(lon),
           label: label || '',
           savedAt: Date.now()
-        }));
+        });
+        if (location) localStorage.setItem(STORAGE_KEY, JSON.stringify(location));
       } catch {
         // Storage can fail in strict/private browsing. The weather app still works.
       }
     }
 
     async function restoreLastLocation() {
+      let saved;
       try {
-        const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null');
-        if (!saved || !Number.isFinite(saved.lat) || !Number.isFinite(saved.lon)) return;
-
-        if (saved.label) {
-          input.value = saved.label;
-          clearBtn.classList.add('visible');
-        }
-
-        showLoader(true);
-        await fetchWeatherByCoords(saved.lat, saved.lon, saved.label || '', false);
+        const stored = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null');
+        saved = window.KogaWeatherLocation.normalizeWeatherLocation(stored);
       } catch {
-        try { localStorage.removeItem(STORAGE_KEY); } catch {}
+        return;
+      }
+      if (!saved) return;
+      if (saved.label) {
+        input.value = saved.label;
+        clearBtn.classList.add('visible');
+      }
+      showLoader(true);
+      try {
+        await fetchWeatherByCoords(saved.lat, saved.lon, saved.label || '', false);
+      } catch (err) {
+        showError(err.message || 'Could not refresh weather for your saved location.');
       } finally {
         showLoader(false);
       }

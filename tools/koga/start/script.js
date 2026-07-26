@@ -315,7 +315,38 @@
   const weatherStatus = document.querySelector("[data-weather-status]");
   const clearWeather = document.querySelector("[data-clear-weather]");
   const useLocation = document.querySelector("[data-use-location]");
+  const fullForecastLink = document.querySelector("[data-full-forecast]");
   let weatherRequestId = 0;
+  let activeWeatherLocation = null;
+
+  function normalizedWeatherLocation(value) {
+    return window.KogaWeatherLocation?.normalizeWeatherLocation(value) || null;
+  }
+
+  function locationFromWeatherData(data, base = {}) {
+    const current = data?.current || {};
+    return normalizedWeatherLocation({
+      ...base,
+      lat: base.lat ?? current.coord?.lat,
+      lon: base.lon ?? current.coord?.lon,
+      label: base.label || data?.label || current.name || "",
+      city: base.city || current.name || "",
+      country: base.country || current.sys?.country || "",
+      timezone: base.timezone ?? current.timezone,
+      savedAt: base.savedAt
+    });
+  }
+
+  function syncWeatherCenterLocation() {
+    const cached = storageGet(WEATHER_CACHE_KEY);
+    const normalized = activeWeatherLocation ||
+      normalizedWeatherLocation(storageGet(WEATHER_KEY)) ||
+      locationFromWeatherData(cached?.data, cached?.data?.location || {}) ||
+      normalizedWeatherLocation(storageGet(WEATHER_CENTER_KEY));
+    if (normalized) storageSet(WEATHER_CENTER_KEY, normalized);
+  }
+
+  fullForecastLink?.addEventListener("click", syncWeatherCenterLocation);
 
   function weatherEmoji(code) {
     if (code >= 200 && code < 300) return "⛈️";
@@ -356,9 +387,11 @@
     clearWeather.hidden = false;
     const updated = formatWeatherTimestamp(current.dt, current.timezone);
     weatherStatus.textContent = updated ? `${stale ? "Saved weather" : "Updated"} ${updated} local time` : "";
+    const renderedLocation = locationFromWeatherData(data, data.location || {});
+    if (renderedLocation) activeWeatherLocation = renderedLocation;
   }
 
-  async function loadWeather(lat, lon, label, saveLocation, requestId) {
+  async function loadWeather(lat, lon, label, saveLocation, requestId, locationDetails = {}) {
     if (requestId !== weatherRequestId) return;
     weatherStatus.textContent = "Loading weather…";
     const [currentResult, forecastResult] = await Promise.allSettled([
@@ -373,25 +406,47 @@
     if (!current || typeof current !== "object" || !current.main || !Number.isFinite(current.dt)) {
       throw new Error("Weather data was incomplete.");
     }
-    const data = { current, forecast, label };
+    const location = locationFromWeatherData({ current, label }, { ...locationDetails, lat, lon, label });
+    const data = { current, forecast, label, location };
     renderWeather(data, false);
     storageSet(WEATHER_CACHE_KEY, { savedAt: Date.now(), data });
     // Coordinates and a human-readable label are stored only for weather reuse, never analytics.
-    if (saveLocation) storageSet(WEATHER_KEY, { lat: Number(lat), lon: Number(lon), label, savedAt: Date.now() });
+    if (saveLocation && location) storageSet(WEATHER_KEY, location);
   }
 
   async function findCoordinates(query) {
     if (/^\d{5}(-\d{4})?$/.test(query)) {
       const zip = await fetchJson(`${WORKER}/zip?zip=${encodeURIComponent(query)}`);
       if (!zip.coord) throw new Error("That ZIP code was not found.");
-      return zip.coord;
+      return {
+        lat: zip.coord.lat,
+        lon: zip.coord.lon,
+        zip: query,
+        postalCode: query,
+        city: zip.name,
+        country: zip.country
+      };
     }
     const geo = await fetchJson(`${WORKER}/geocode?text=${encodeURIComponent(query)}`);
     const first = (geo.results || [])[0];
-    if (first) return { lat: first.lat, lon: first.lon };
+    if (first) return {
+      lat: first.lat,
+      lon: first.lon,
+      city: first.city || first.county || first.name,
+      state: first.state_code || first.state,
+      region: first.state || first.region,
+      country: first.country_code || first.country,
+      postalCode: first.postcode || first.postalCode
+    };
     const fallback = await fetchJson(`${WORKER}/owmgeo?q=${encodeURIComponent(query)}`);
     if (!Array.isArray(fallback) || !fallback[0]) throw new Error("That location was not found.");
-    return { lat: fallback[0].lat, lon: fallback[0].lon };
+    return {
+      lat: fallback[0].lat,
+      lon: fallback[0].lon,
+      city: fallback[0].name,
+      state: fallback[0].state,
+      country: fallback[0].country
+    };
   }
 
   weatherForm.addEventListener("submit", async (event) => {
@@ -402,7 +457,7 @@
     weatherStatus.textContent = "Finding location…";
     try {
       const coords = await findCoordinates(query);
-      await loadWeather(coords.lat, coords.lon, query, true, requestId);
+      await loadWeather(coords.lat, coords.lon, query, true, requestId, coords);
     } catch (error) {
       if (requestId === weatherRequestId) {
         weatherStatus.textContent = error.name === "AbortError" ? "Weather request timed out." : (error.message || "Weather is unavailable.");
@@ -430,10 +485,12 @@
     weatherRequestId += 1;
     try {
       localStorage.removeItem(WEATHER_KEY);
+      localStorage.removeItem(WEATHER_CENTER_KEY);
       localStorage.removeItem(WEATHER_CACHE_KEY);
     } catch (_error) { /* The visible state can still be cleared. */ }
     weatherSummary.innerHTML = '<span class="weather-icon" aria-hidden="true">🌤️</span><div><strong>Set your location</strong><p>Get a quick look at today’s weather.</p></div>';
     weatherInput.value = "";
+    activeWeatherLocation = null;
     weatherStatus.textContent = "Saved start-page location cleared.";
     clearWeather.hidden = true;
   });
@@ -442,10 +499,19 @@
   if (cachedWeather?.data) renderWeather(cachedWeather.data, true);
   // Prefer Koga Start coordinates, then reuse Weather Center coordinates without copying them.
   const savedLocation = storageGet(WEATHER_KEY) || storageGet(WEATHER_CENTER_KEY);
-  if (savedLocation && Number.isFinite(savedLocation.lat) && Number.isFinite(savedLocation.lon)) {
-    if (savedLocation.label) weatherInput.value = savedLocation.label;
+  const normalizedSavedLocation = normalizedWeatherLocation(savedLocation);
+  if (normalizedSavedLocation) {
+    if (!activeWeatherLocation) activeWeatherLocation = normalizedSavedLocation;
+    if (normalizedSavedLocation.label) weatherInput.value = normalizedSavedLocation.label;
     const requestId = ++weatherRequestId;
-    loadWeather(savedLocation.lat, savedLocation.lon, savedLocation.label || "Saved location", false, requestId)
+    loadWeather(
+      normalizedSavedLocation.lat,
+      normalizedSavedLocation.lon,
+      normalizedSavedLocation.label || "Saved location",
+      false,
+      requestId,
+      normalizedSavedLocation
+    )
       .catch(() => {
         if (requestId === weatherRequestId && !cachedWeather?.data) {
           weatherStatus.textContent = "Weather is unavailable. Your saved location is still here.";
