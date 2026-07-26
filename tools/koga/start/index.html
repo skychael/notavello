@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Search the web and open useful sites from the Koga Browser start page.">
+  <meta name="description" content="Search the web and check headlines, markets, and local weather from the Koga Browser start page.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://notavello.com/tools/koga/start/">
-  <meta name="theme-color" content="#f5f5f2">
+  <meta name="theme-color" content="#f4f3f8">
   <title>Koga Start</title>
   <link rel="icon" href="../assets/icons/koga-mark.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
 <script>
-    !function(t,e){var o,n,p,r;e.__SV||(window.posthog && window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="Ji Yi init fn mn Hr pn bn cn capture calculateEventProperties Sn register register_once register_for_session unregister unregister_for_session Tn getFeatureFlag getFeatureFlagPayload getFeatureFlagResult getAllFeatureFlags isFeatureEnabled reloadFeatureFlags updateFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey cancelPendingSurvey canRenderSurvey canRenderSurveyAsync Mn identify setPersonProperties unsetPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset shutdown setIdentity clearIdentity get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException addExceptionStep captureLog startExceptionAutocapture stopExceptionAutocapture loadToolbar get_property getSessionProperty Cn xn createPersonProfile setInternalOrTestUser In hn Pn opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing debug Ur wt getPageViewId captureTraceFeedback captureTraceMetric an".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog && window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="Ji Yi init fn mn Hr pn bn cn capture calculateEventProperties Sn register register_once register_for_session unregister unregister_for_session Tn getFeatureFlag getFeatureFlagPayload getFeatureFlagResult getAllFeatureFlags isFeatureEnabled reloadFeatureFlags updateFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey cancelPendingSurvey canRenderSurvey canRenderSurveyAsync Mn identify setPersonProperties unsetPersonProperties group resetGroups setPersonPropertiesForFlags resetGroupPropertiesForFlags reset shutdown setIdentity clearIdentity get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException addExceptionStep captureLog startExceptionAutocapture stopExceptionAutocapture loadToolbar get_property getSessionProperty Cn xn createPersonProfile setInternalOrTestUser In hn Pn opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing debug Ur wt getPageViewId captureTraceFeedback captureTraceMetric an".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
     posthog.init('phc_Da42RaejuPDp7aaSe8ay5ek3Pz3Aqur4etrHaxYKzgQf', {
         api_host: 'https://us.i.posthog.com',
         defaults: '2026-05-30',
-        person_profiles: 'identified_only', // or 'always' to create profiles for anonymous users as well
+        person_profiles: 'identified_only',
     })
 </script>
 </head>
@@ -23,10 +23,10 @@
   <main class="start-page">
     <header class="masthead">
       <a class="brand" href="../" aria-label="Koga Browser home">
-        <img src="../assets/icons/koga-mark.svg" alt="" width="42" height="42">
+        <img src="../assets/icons/koga-mark.svg" alt="" width="34" height="34">
         <span>Koga</span>
       </a>
-
+      <p class="today" data-today></p>
       <fieldset class="appearance" aria-label="Appearance">
         <legend>Appearance</legend>
         <div class="appearance-options">
@@ -37,98 +37,112 @@
       </fieldset>
     </header>
 
-    <section class="welcome" aria-labelledby="welcome-title">
-      <p class="eyebrow">Koga Browser</p>
-      <h1 id="welcome-title">Where would you like to go?</h1>
+    <section class="market-strip" aria-labelledby="markets-title">
+      <div class="strip-heading">
+        <h2 id="markets-title">Markets</h2>
+        <p data-pulse-checked>Latest available values</p>
+      </div>
+      <div class="ticker" role="list" aria-label="Latest market values" tabindex="0">
+        <div class="ticker-cell" role="listitem" data-pulse-id="sp-500"><span>S&amp;P 500</span><strong>—</strong></div>
+        <div class="ticker-cell" role="listitem" data-pulse-id="nasdaq-composite"><span>Nasdaq</span><strong>—</strong></div>
+        <div class="ticker-cell" role="listitem" data-pulse-id="dow-jones-industrial-average"><span>Dow</span><strong>—</strong></div>
+        <div class="ticker-cell" role="listitem" data-pulse-id="vix"><span>VIX</span><strong>—</strong></div>
+        <div class="ticker-cell" role="listitem" data-pulse-id="brent-crude-oil"><span>Brent</span><strong>—</strong></div>
+        <div class="ticker-cell" role="listitem" data-pulse-id="gold"><span>Gold</span><strong>—</strong></div>
+        <div class="ticker-cell" role="listitem" data-pulse-id="bitcoin"><span>Bitcoin</span><strong>—</strong></div>
+      </div>
+    </section>
 
+    <section class="welcome" aria-labelledby="welcome-title">
+      <h1 id="welcome-title">Start here</h1>
       <form class="search" action="https://duckduckgo.com/" method="get" role="search">
-        <label for="web-search">Search the web with DuckDuckGo</label>
+        <label class="visually-hidden" for="web-search">Search the web with DuckDuckGo</label>
         <div class="search-row">
+          <span aria-hidden="true">⌕</span>
           <input id="web-search" name="q" type="search" inputmode="search" autocomplete="off" enterkeyhint="search" placeholder="Search the web" required>
           <button type="submit">Search</button>
         </div>
       </form>
     </section>
 
-    <section class="section" aria-labelledby="quick-links-title">
-      <div class="section-heading">
-        <p class="eyebrow">Quick links</p>
-        <h2 id="quick-links-title">A few useful places</h2>
-      </div>
+    <div class="dashboard-grid">
+      <section class="card headlines-card" aria-labelledby="headlines-title">
+        <div class="card-heading">
+          <div><p class="eyebrow">From around the web</p><h2 id="headlines-title">Relay Headlines</h2></div>
+          <a href="/pages/relay/">View all</a>
+        </div>
+        <ol class="headline-list" data-headline-list>
+          <li><a href="/pages/relay/">Selected reporting from across the web</a><small>Notavello Relay</small></li>
+          <li><a href="/pages/relay/archive/">Browse the Relay daily archive</a><small>Notavello Relay</small></li>
+        </ol>
+        <div class="headline-controls" hidden data-headline-controls>
+          <button type="button" data-headline-prev aria-label="Previous headlines">←</button>
+          <span data-headline-page aria-live="polite"></span>
+          <button type="button" data-headline-next aria-label="Next headlines">→</button>
+        </div>
+        <p class="data-note" hidden data-headline-note></p>
+      </section>
 
-      <nav class="quick-links" aria-label="Quick links">
-        <a href="https://www.wikipedia.org/">
-          <span class="link-mark" aria-hidden="true">W</span>
-          <span>Wikipedia</span>
-        </a>
-        <a href="https://www.youtube.com/">
-          <span class="link-mark" aria-hidden="true">▶</span>
-          <span>YouTube</span>
-        </a>
-        <a href="https://www.reddit.com/">
-          <span class="link-mark" aria-hidden="true">r/</span>
-          <span>Reddit</span>
-        </a>
-        <a href="https://www.google.com/maps">
-          <span class="link-mark" aria-hidden="true">⌖</span>
-          <span>Maps</span>
-        </a>
-      </nav>
+      <section class="card weather-card" aria-labelledby="weather-title">
+        <div class="card-heading">
+          <div><p class="eyebrow">Local outlook</p><h2 id="weather-title">Weather</h2></div>
+          <a href="/weather.html">Full forecast</a>
+        </div>
+        <div class="weather-summary" data-weather-summary>
+          <span class="weather-icon" aria-hidden="true">🌤️</span>
+          <div>
+            <strong>Set your location</strong>
+            <p>Get a quick look at today’s weather.</p>
+          </div>
+        </div>
+        <form class="weather-form" data-weather-form>
+          <label class="visually-hidden" for="weather-location">City or ZIP code</label>
+          <input id="weather-location" type="text" placeholder="City or ZIP code" autocomplete="postal-code">
+          <button type="submit">Go</button>
+        </form>
+        <div class="weather-actions">
+          <button type="button" class="text-button" data-use-location>Use my location</button>
+          <button type="button" class="text-button" data-clear-weather hidden>Clear saved location</button>
+        </div>
+        <p class="data-note" role="status" data-weather-status></p>
+      </section>
+
+      <section class="card quick-card" aria-labelledby="quick-links-title">
+        <div class="card-heading"><div><p class="eyebrow">One tap away</p><h2 id="quick-links-title">Quick links</h2></div></div>
+        <nav class="quick-links" aria-label="Quick links">
+          <a href="https://www.wikipedia.org/"><span aria-hidden="true">W</span>Wikipedia</a>
+          <a href="https://www.youtube.com/"><span aria-hidden="true">▶</span>YouTube</a>
+          <a href="https://www.google.com/maps"><span aria-hidden="true">⌖</span>Maps</a>
+          <a href="https://www.reddit.com/"><span aria-hidden="true">r/</span>Reddit</a>
+        </nav>
+      </section>
+
+      <section class="card history-card" aria-labelledby="history-title">
+        <div class="card-heading"><div><p class="eyebrow">A look back</p><h2 id="history-title">On This Day</h2></div></div>
+        <p class="history-date" data-history-date></p>
+        <p class="history-copy">Explore notable events, births, and discoveries from this date.</p>
+        <a class="inline-link" data-history-link href="https://en.wikipedia.org/wiki/Wikipedia:Selected_anniversaries">Explore today on Wikipedia <span aria-hidden="true">→</span></a>
+        <p class="data-note">No live third-party feed is loaded on this start page.</p>
+      </section>
+
+      <aside class="card future-card" aria-label="Future Koga features">
+        <div aria-hidden="true">✦</div>
+        <div><p class="eyebrow">Coming later</p><h2>Ask AI</h2><p>A thoughtful space for new Koga tools, without pretending they’re ready yet.</p></div>
+      </aside>
+    </div>
+
+    <section class="daily-tip" aria-labelledby="tip-title">
+      <div><p class="eyebrow">Koga tip</p><h2 id="tip-title">Keep favorites close</h2><p>Open Bookmarks to save the page you’re viewing and return to it in a tap.</p></div>
+      <a href="../help.html">More help <span aria-hidden="true">→</span></a>
     </section>
-
-    <section class="section" aria-labelledby="tips-title">
-      <div class="section-heading">
-        <p class="eyebrow">Browser tips</p>
-        <h2 id="tips-title">Make Koga yours</h2>
-      </div>
-
-      <div class="tips">
-        <article>
-          <span class="tip-number" aria-hidden="true">01</span>
-          <div>
-            <h3>Find Settings in Tabs</h3>
-            <p>Open <strong>Tabs</strong>, then tap the gear to adjust Koga’s appearance and homepage.</p>
-          </div>
-        </article>
-        <article>
-          <span class="tip-number" aria-hidden="true">02</span>
-          <div>
-            <h3>Keep favorites close</h3>
-            <p>Open <strong>Bookmarks</strong> and save the current page so you can return to it in a tap.</p>
-          </div>
-        </article>
-        <article>
-          <span class="tip-number" aria-hidden="true">03</span>
-          <div>
-            <h3>Start here every time</h3>
-            <p>Choose this page as your homepage in Koga Settings to use it whenever you open a new tab.</p>
-          </div>
-        </article>
-      </div>
-
-      <a class="help-link" href="../help.html">Read all Koga help <span aria-hidden="true">→</span></a>
-    </section>
-
-    <aside class="sponsored" aria-labelledby="sponsored-title">
-      <div>
-        <p class="eyebrow" id="sponsored-title">Sponsored</p>
-        <p>Reserved for a future sponsored link.</p>
-      </div>
-      <span class="placeholder-label">Placeholder</span>
-    </aside>
   </main>
 
   <footer>
     <div class="footer-inner">
       <span>© Koga Browser</span>
-      <nav aria-label="Koga information">
-        <a href="../privacy.html">Privacy</a>
-        <a href="../help.html">Help</a>
-        <a href="../support.html">Support</a>
-      </nav>
+      <nav aria-label="Koga information"><a href="../privacy.html">Privacy</a><a href="../help.html">Help</a><a href="../support.html">Support</a></nav>
     </div>
   </footer>
-
   <script src="script.js"></script>
 </body>
 </html>
