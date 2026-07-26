@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-07-25T04:47:54.371Z",
+  "generatedAt": "2026-07-26T05:00:59.134Z",
   "totals": {
-    "pages": 169,
-    "indexable": 165,
-    "articles": 105,
-    "sitemap": 165,
+    "pages": 171,
+    "indexable": 167,
+    "articles": 107,
+    "sitemap": 167,
     "errors": 0,
-    "warnings": 54
+    "warnings": 56
   },
   "errors": [],
   "warnings": [
@@ -38,6 +38,11 @@
     {
       "type": "template-pattern",
       "page": "/pages/blog/ai-coding-cli-supply-chain/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/ai-contribution-policies-need-maintainer-receipts/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
     {
@@ -241,6 +246,11 @@
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
     {
+      "type": "template-pattern",
+      "page": "/pages/blog/when-structured-ai-output-is-more-reliable-than-free-form-text/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
       "type": "topic-review",
       "page": "/pages/blog/why-coffee-is-so-expensive-2026/",
       "detail": "title/description lacks a clear AI, software, or computing connection"
@@ -290,7 +300,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 169,
+      "incomingLinks": 171,
       "lastmod": "2026-07-24",
       "bodyWords": 750
     },
@@ -314,7 +324,7 @@
       "canonical": "https://notavello.com/exporters/chatgpt/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 169,
+      "incomingLinks": 171,
       "lastmod": "2026-07-22",
       "bodyWords": 242
     },
@@ -326,7 +336,7 @@
       "canonical": "https://notavello.com/exporters/claude/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 169,
+      "incomingLinks": 171,
       "lastmod": "2026-07-22",
       "bodyWords": 399
     },
@@ -338,7 +348,7 @@
       "canonical": "https://notavello.com/exporters/copilot/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 169,
+      "incomingLinks": 171,
       "lastmod": "2026-07-22",
       "bodyWords": 281
     },
@@ -350,7 +360,7 @@
       "canonical": "https://notavello.com/exporters/gemini/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 169,
+      "incomingLinks": 171,
       "lastmod": "2026-07-22",
       "bodyWords": 447
     },
@@ -362,7 +372,7 @@
       "canonical": "https://notavello.com/exporters/grok/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 169,
+      "incomingLinks": 171,
       "lastmod": "2026-07-22",
       "bodyWords": 281
     },
@@ -374,7 +384,7 @@
       "canonical": "https://notavello.com/exporters/other/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 169,
+      "incomingLinks": 171,
       "lastmod": "2026-07-22",
       "bodyWords": 301
     },
@@ -386,7 +396,7 @@
       "canonical": "https://notavello.com/exporters/perplexity/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 169,
+      "incomingLinks": 171,
       "lastmod": "2026-07-22",
       "bodyWords": 281
     },
@@ -410,7 +420,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 169,
+      "incomingLinks": 171,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -422,9 +432,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 169,
-      "lastmod": "2026-07-24",
-      "bodyWords": 642
+      "incomingLinks": 171,
+      "lastmod": "2026-07-25",
+      "bodyWords": 639
     },
     {
       "route": "/pages/blog/a-practical-checklist-for-checking-ai-generated-technical-answers/",
@@ -434,7 +444,7 @@
       "canonical": "https://notavello.com/pages/blog/a-practical-checklist-for-checking-ai-generated-technical-answers/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 2,
+      "incomingLinks": 3,
       "lastmod": "2026-07-24",
       "bodyWords": 860
     },
@@ -533,6 +543,18 @@
       "incomingLinks": 5,
       "lastmod": "2026-07-12",
       "bodyWords": 1749
+    },
+    {
+      "route": "/pages/blog/ai-contribution-policies-need-maintainer-receipts/",
+      "file": "pages/blog/ai-contribution-policies-need-maintainer-receipts/index.html",
+      "title": "AI Contribution Policies Need Maintainer Receipts — The Export | Notavello",
+      "description": "AI-assisted code needs disclosure, review ownership, privacy rules, and maintainer receipts before it belongs in serious projects.",
+      "canonical": "https://notavello.com/pages/blog/ai-contribution-policies-need-maintainer-receipts/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-07-26",
+      "bodyWords": 1520
     },
     {
       "route": "/pages/blog/ai-editable-html-documents-plain-data/",
@@ -650,9 +672,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 44,
-      "lastmod": "2026-07-24",
-      "bodyWords": 1414
+      "incomingLinks": 46,
+      "lastmod": "2026-07-25",
+      "bodyWords": 1436
     },
     {
       "route": "/pages/blog/apple-speechanalyzer-local-transcription-apps/",
@@ -1323,8 +1345,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-07-24",
-      "bodyWords": 700
+      "lastmod": "2026-07-25",
+      "bodyWords": 686
     },
     {
       "route": "/pages/blog/page-3/",
@@ -1335,8 +1357,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-07-24",
-      "bodyWords": 709
+      "lastmod": "2026-07-25",
+      "bodyWords": 699
     },
     {
       "route": "/pages/blog/page-4/",
@@ -1347,8 +1369,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-07-24",
-      "bodyWords": 817
+      "lastmod": "2026-07-25",
+      "bodyWords": 812
     },
     {
       "route": "/pages/blog/page-5/",
@@ -1359,8 +1381,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-07-24",
-      "bodyWords": 835
+      "lastmod": "2026-07-25",
+      "bodyWords": 841
     },
     {
       "route": "/pages/blog/page-6/",
@@ -1371,8 +1393,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": "2026-07-24",
-      "bodyWords": 745
+      "lastmod": "2026-07-25",
+      "bodyWords": 837
     },
     {
       "route": "/pages/blog/search-field-2036/",
@@ -1579,6 +1601,18 @@
       "bodyWords": 923
     },
     {
+      "route": "/pages/blog/when-structured-ai-output-is-more-reliable-than-free-form-text/",
+      "file": "pages/blog/when-structured-ai-output-is-more-reliable-than-free-form-text/index.html",
+      "title": "When Structured AI Output Is More Reliable Than Free-Form Text — The Export | Notavello",
+      "description": "Structured AI output using schemas and validation improves reliability for automation tasks compared to free-form text responses.",
+      "canonical": "https://notavello.com/pages/blog/when-structured-ai-output-is-more-reliable-than-free-form-text/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-07-25",
+      "bodyWords": 763
+    },
+    {
       "route": "/pages/blog/why-ai-customer-service-is-so-bad/",
       "file": "pages/blog/why-ai-customer-service-is-so-bad/index.html",
       "title": "Why AI Customer Service Still Feels Hostile — The Export | Notavello",
@@ -1766,7 +1800,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 169,
+      "incomingLinks": 171,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -1778,7 +1812,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 169,
+      "incomingLinks": 171,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -1790,7 +1824,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 169,
+      "incomingLinks": 171,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -1802,7 +1836,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 169,
+      "incomingLinks": 171,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -1815,8 +1849,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-07-24",
-      "bodyWords": 180
+      "lastmod": "2026-07-25",
+      "bodyWords": 170
     },
     {
       "route": "/pages/relay/archive/",
@@ -1827,8 +1861,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": "2026-07-24",
-      "bodyWords": 23
+      "lastmod": "2026-07-26",
+      "bodyWords": 35
     },
     {
       "route": "/pages/sample",
@@ -1838,7 +1872,7 @@
       "canonical": "https://notavello.com/pages/sample",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 169,
+      "incomingLinks": 171,
       "lastmod": "2026-07-22",
       "bodyWords": 141
     },
@@ -1850,7 +1884,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 169,
+      "incomingLinks": 171,
       "lastmod": "2026-07-24",
       "bodyWords": 601
     },
@@ -1862,7 +1896,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 169,
+      "incomingLinks": 171,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -1874,7 +1908,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 169,
+      "incomingLinks": 171,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -1886,7 +1920,7 @@
       "canonical": "https://notavello.com/tools/aidetector/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 169,
+      "incomingLinks": 171,
       "lastmod": "2026-07-22",
       "bodyWords": 270
     },
@@ -2067,8 +2101,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 9,
-      "lastmod": "2026-07-22",
-      "bodyWords": 290
+      "lastmod": "2026-07-25",
+      "bodyWords": 292
     },
     {
       "route": "/tools/koga/help",
@@ -2306,7 +2340,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 169,
+      "incomingLinks": 171,
       "lastmod": "2026-07-22",
       "bodyWords": 93
     }
