@@ -12,7 +12,17 @@
   const LOCATION_KEY = 'weatherCenterLastLocation';
   const CACHE_KEY = 'weatherCenterForecastCache';
   const HEADLINES_URL = '/pages/relay/article-data.json';
-  const WEATHER_HEADLINE_PATTERN = /\b(weather forecast|severe weather|tropical storm|hurricane|typhoon|cyclone|tornado|thunderstorm|flash flood|flooding|blizzard|snowstorm|extreme heat|heat wave|wildfire|fire weather|smoke plume|drought|hail|lightning|atmospheric river|damaging winds?)\b/i;
+  const WEATHER_TOPICS = [
+    { label: 'Hurricane', symbol: '🌀', pattern: /\b(hurricane|tropical storm|typhoon|cyclone)\b/i },
+    { label: 'Flooding', symbol: '🌊', pattern: /\b(flash flood|flooding|atmospheric river)\b/i },
+    { label: 'Wildfire', symbol: '🔥', pattern: /\b(wildfire|wildfire smoke|fire weather)\b/i },
+    { label: 'Air quality', symbol: '◌', pattern: /\b(air quality alert|smoke plume)\b/i },
+    { label: 'Heat', symbol: '☀', pattern: /\b(extreme heat|heat wave)\b/i },
+    { label: 'Snow', symbol: '❄', pattern: /\b(blizzard|snowstorm)\b/i },
+    { label: 'Severe weather', symbol: '⚡', pattern: /\b(tornado|severe thunderstorm|severe storm|hail|lightning|damaging winds?|major weather warning)\b/i },
+    { label: 'Weather', symbol: '☂', pattern: /\b(weather forecast|severe weather)\b/i },
+    { label: 'Weather', symbol: '☂', pattern: /\bdrought\b/i }
+  ];
   const MAX_SUGGESTIONS = 6;
   const MAX_HOURS = 24;
 
@@ -76,6 +86,25 @@
 
   function cleanText(value, maxLength = 120) {
     return typeof value === 'string' ? value.trim().slice(0, maxLength) : '';
+  }
+
+  function safeHttpUrl(value) {
+    try {
+      const url = new URL(value);
+      return url.protocol === 'https:' || url.protocol === 'http:' ? url.href : '';
+    } catch {
+      return '';
+    }
+  }
+
+  function storyTopic(title) {
+    const text = cleanText(title, 300);
+    return WEATHER_TOPICS.find((topic) => topic.pattern.test(text)) || null;
+  }
+
+  function storyImageUrl(item) {
+    if (!item || typeof item !== 'object') return '';
+    return safeHttpUrl(item.image_url || item.image || item.thumbnail_url || item.thumbnail);
   }
 
   function locationLabel(location, current) {
@@ -187,15 +216,7 @@
 
   function filterWeatherHeadlines(payload) {
     if (!payload || !Array.isArray(payload.items)) return [];
-    return payload.items.filter((item) => {
-      if (!item || !WEATHER_HEADLINE_PATTERN.test(cleanText(item.title, 300))) return false;
-      try {
-        const url = new URL(item.url);
-        return url.protocol === 'https:' || url.protocol === 'http:';
-      } catch {
-        return false;
-      }
-    }).slice(0, 3);
+    return payload.items.filter((item) => item && storyTopic(item.title) && safeHttpUrl(item.url)).slice(0, 3);
   }
 
   function formatAge(value, now = Date.now()) {
@@ -598,16 +619,33 @@
         const items = filterWeatherHeadlines(payload);
         clear(els.headlineList);
         items.forEach((item) => {
-          const row = element('li');
-          const link = element('a', '', cleanText(item.title, 240));
-          link.href = item.url;
-          link.rel = 'noopener';
-          const publisher = cleanText(item.publisher, 80);
+          const topic = storyTopic(item.title);
+          const link = element('a', 'story-card');
+          link.href = safeHttpUrl(item.url);
+          link.target = '_blank';
+          link.rel = 'noopener noreferrer';
+          const visual = element('span', 'story-visual');
+          visual.append(element('span', 'story-fallback', topic.symbol));
+          const imageUrl = storyImageUrl(item);
+          if (imageUrl) {
+            const image = element('img');
+            image.src = imageUrl;
+            image.alt = '';
+            image.loading = 'lazy';
+            image.addEventListener('error', () => image.remove());
+            visual.append(image);
+          }
+          const copy = element('span', 'story-copy');
+          copy.append(
+            element('span', 'story-badge', topic.label),
+            element('span', 'story-title', cleanText(item.title, 240))
+          );
+          const publisher = cleanText(item.publisher || item.source || item.source_id, 80);
           const age = formatAge(item.published_at);
           const meta = [publisher, age].filter(Boolean).join(' · ');
-          if (meta) link.append(element('span', 'headline-meta', meta));
-          row.append(link);
-          els.headlineList.append(row);
+          if (meta) copy.append(element('span', 'story-meta', meta));
+          link.append(visual, copy, element('span', 'external-arrow', '↗'));
+          els.headlineList.append(link);
         });
         els.headlinesSection.hidden = !items.length;
       } catch {
@@ -680,6 +718,9 @@
     groupDaily,
     summaryForForecast,
     filterWeatherHeadlines,
+    safeHttpUrl,
+    storyTopic,
+    storyImageUrl,
     formatAge,
     weatherSymbol,
     compass,

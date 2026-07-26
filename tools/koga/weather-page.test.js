@@ -168,6 +168,21 @@ test('weather headlines include only relevant safe links', () => {
   assert.deepEqual(items.map((item) => item.title), ['Severe weather moves toward the coast']);
 });
 
+test('qualifying weather stories receive intentional topic cards', () => {
+  assert.equal(weather.storyTopic('Tornado warning issued for three counties').label, 'Severe weather');
+  assert.equal(weather.storyTopic('Tornado warning issued for three counties').symbol, '⚡');
+  assert.equal(weather.storyTopic('Hurricane reaches the coast').label, 'Hurricane');
+  assert.equal(weather.storyTopic('Air quality alert remains active').label, 'Air quality');
+  assert.match(pageScript, /element\('a', 'story-card'\)/);
+});
+
+test('weather stories are hidden when none qualify', () => {
+  assert.deepEqual(weather.filterWeatherHeadlines({ items: [
+    { title: 'Local team wins', url: 'https://example.com/sports' }
+  ] }), []);
+  assert.match(pageScript, /headlinesSection\.hidden = !items\.length/);
+});
+
 test('weather headlines are capped at three', () => {
   const payload = { items: Array.from({ length: 5 }, (_, index) => ({
     title: `Severe weather forecast ${index}`,
@@ -190,6 +205,37 @@ test('headline ages are shown only when reliable and recent', () => {
   assert.equal(weather.formatAge('2026-07-26T10:00:00Z', now), '2h ago');
   assert.equal(weather.formatAge('2026-07-01T10:00:00Z', now), '');
   assert.equal(weather.formatAge('not-a-date', now), '');
+});
+
+test('publisher and reliable age metadata are combined without invented values', () => {
+  assert.match(pageScript, /const meta = \[publisher, age\]\.filter\(Boolean\)\.join\(' · '\)/);
+  assert.equal(weather.formatAge(undefined), '');
+});
+
+test('missing image fields use the topic fallback', () => {
+  assert.equal(weather.storyImageUrl({ title: 'Flash flood warning' }), '');
+  assert.match(pageScript, /story-fallback/);
+});
+
+test('safe story image URLs are accepted', () => {
+  assert.equal(weather.storyImageUrl({ thumbnail_url: 'https://images.example.com/storm.jpg' }),
+    'https://images.example.com/storm.jpg');
+});
+
+test('unsafe and malformed story image URLs are rejected', () => {
+  assert.equal(weather.storyImageUrl({ image: 'javascript:alert(1)' }), '');
+  assert.equal(weather.storyImageUrl({ image: 'data:image/png;base64,AA==' }), '');
+  assert.equal(weather.storyImageUrl({ image: 'blob:https://example.com/id' }), '');
+  assert.equal(weather.storyImageUrl({ image: 'not a url' }), '');
+});
+
+test('broken images remove only the image and retain the story', () => {
+  assert.match(pageScript, /image\.addEventListener\('error', \(\) => image\.remove\(\)\)/);
+});
+
+test('story links use safe external-link attributes', () => {
+  assert.match(pageScript, /link\.target = '_blank'/);
+  assert.match(pageScript, /link\.rel = 'noopener noreferrer'/);
 });
 
 test('weather symbols cover key condition groups', () => {
@@ -265,4 +311,25 @@ test('official external links do not include location data', () => {
   const urls = [...pageHtml.matchAll(/href="(https:\/\/[^"]+)"/g)].map((match) => match[1]);
   assert.ok(urls.length >= 5);
   urls.forEach((url) => assert.doesNotMatch(url, /[?&](?:lat|lon|zip)=/));
+});
+
+test('all five official weather tools render as cards', () => {
+  const cards = [...pageHtml.matchAll(/class="resource-card"/g)];
+  assert.equal(cards.length, 5);
+  [
+    'Current weather alerts',
+    'National radar',
+    'Storm outlooks',
+    'Hurricane center',
+    'Fire and smoke map'
+  ].forEach((title) => assert.match(pageHtml, new RegExp(title)));
+});
+
+test('official tool cards use safe external-link attributes', () => {
+  const cards = [...pageHtml.matchAll(/<a class="resource-card"[^>]+>/g)].map((match) => match[0]);
+  assert.equal(cards.length, 5);
+  cards.forEach((card) => {
+    assert.match(card, /target="_blank"/);
+    assert.match(card, /rel="noopener noreferrer"/);
+  });
 });

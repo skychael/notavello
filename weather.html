@@ -80,18 +80,38 @@
     </section>
 
     <section class="forecast-section" id="headlinesSection" aria-labelledby="headlinesHeading" hidden>
-      <div class="section-heading"><h2 id="headlinesHeading">Weather headlines</h2></div>
-      <ul class="headline-list" id="headlineList"></ul>
+      <div class="section-heading"><h2 id="headlinesHeading">Weather stories</h2></div>
+      <div class="story-grid" id="headlineList"></div>
     </section>
 
     <section class="resources-section" aria-labelledby="resourcesHeading">
-      <h2 id="resourcesHeading">Live official resources</h2>
-      <div class="resource-links">
-        <a href="https://www.weather.gov/alerts" rel="noopener">Current weather alerts <span aria-hidden="true">↗</span></a>
-        <a href="https://radar.weather.gov/" rel="noopener">National radar <span aria-hidden="true">↗</span></a>
-        <a href="https://www.spc.noaa.gov/products/outlook/" rel="noopener">Storm outlooks <span aria-hidden="true">↗</span></a>
-        <a href="https://www.nhc.noaa.gov/" rel="noopener">Hurricane center <span aria-hidden="true">↗</span></a>
-        <a href="https://fire.airnow.gov/" rel="noopener">Fire and smoke map <span aria-hidden="true">↗</span></a>
+      <div class="section-heading"><h2 id="resourcesHeading">Official weather tools</h2></div>
+      <div class="resource-grid">
+        <a class="resource-card" href="https://www.weather.gov/alerts" target="_blank" rel="noopener noreferrer">
+          <span class="resource-icon" aria-hidden="true">!</span>
+          <span class="resource-copy"><strong>Current weather alerts</strong><span>Active watches, warnings, and advisories</span></span>
+          <span class="external-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="resource-card" href="https://radar.weather.gov/" target="_blank" rel="noopener noreferrer">
+          <span class="resource-icon" aria-hidden="true">◎</span>
+          <span class="resource-copy"><strong>National radar</strong><span>Live precipitation across the United States</span></span>
+          <span class="external-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="resource-card" href="https://www.spc.noaa.gov/products/outlook/" target="_blank" rel="noopener noreferrer">
+          <span class="resource-icon resource-icon-text" aria-hidden="true">SPC</span>
+          <span class="resource-copy"><strong>Storm outlooks</strong><span>Severe-weather risk and storm reports</span></span>
+          <span class="external-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="resource-card" href="https://www.nhc.noaa.gov/" target="_blank" rel="noopener noreferrer">
+          <span class="resource-icon resource-icon-text" aria-hidden="true">NHC</span>
+          <span class="resource-copy"><strong>Hurricane center</strong><span>Atlantic and Pacific tropical systems</span></span>
+          <span class="external-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="resource-card" href="https://fire.airnow.gov/" target="_blank" rel="noopener noreferrer">
+          <span class="resource-icon" aria-hidden="true">♨</span>
+          <span class="resource-copy"><strong>Fire and smoke map</strong><span>Wildfire smoke and air-quality conditions</span></span>
+          <span class="external-arrow" aria-hidden="true">↗</span>
+        </a>
       </div>
     </section>
 

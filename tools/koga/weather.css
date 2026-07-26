@@ -355,14 +355,125 @@ input {
 
 .daily-detail p { margin: 4px 0 0; }
 
-.headline-list { margin: 0; padding: 0; list-style: none; }
-.headline-list li + li { border-top: 1px solid var(--border); }
-.headline-list a { display: block; min-height: 44px; padding: 10px 0; color: var(--text); font-weight: 700; text-decoration: none; }
-.headline-meta { display: block; margin-top: 2px; color: var(--muted); font-size: 12px; font-weight: 500; }
+.story-grid {
+  display: grid;
+  gap: 9px;
+}
 
-.resources-section h2 { margin-bottom: 8px; }
-.resource-links { display: grid; grid-template-columns: 1fr; }
-.resource-links a { display: flex; justify-content: space-between; align-items: center; min-height: 44px; border-top: 1px solid var(--border); color: var(--accent-strong); font-weight: 700; text-decoration: none; }
+.story-card {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr) 18px;
+  align-items: stretch;
+  min-height: 92px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface-soft);
+  color: var(--text);
+  text-decoration: none;
+}
+
+.story-card:hover,
+.story-card:focus-visible,
+.resource-card:hover,
+.resource-card:focus-visible {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--surface-soft) 78%, var(--accent) 22%);
+}
+
+.story-visual {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 4 / 5;
+  min-height: 90px;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--surface-soft) 70%, var(--accent) 30%);
+  color: var(--accent-strong);
+  font-size: 28px;
+}
+
+.story-visual > * { grid-area: 1 / 1; }
+.story-fallback { align-self: center; justify-self: center; }
+
+.story-visual img {
+  width: 100%;
+  height: 100%;
+  min-height: 90px;
+  object-fit: cover;
+}
+
+.story-copy {
+  min-width: 0;
+  padding: 10px;
+}
+
+.story-badge {
+  display: inline-flex;
+  margin-bottom: 4px;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--accent-strong);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.story-title {
+  display: block;
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.story-meta {
+  display: block;
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.story-card > .external-arrow {
+  align-self: center;
+  padding-right: 8px;
+  color: var(--accent-strong);
+}
+
+.resource-grid {
+  display: grid;
+  gap: 8px;
+}
+
+.resource-card {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr) 20px;
+  align-items: center;
+  gap: 10px;
+  min-height: 72px;
+  padding: 9px 10px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface-soft);
+  color: var(--text);
+  text-decoration: none;
+}
+
+.resource-icon {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--accent-strong);
+  font-size: 22px;
+  font-weight: 850;
+}
+
+.resource-icon-text { font-size: 11px; letter-spacing: .02em; }
+.resource-copy { min-width: 0; }
+.resource-copy strong { display: block; font-size: 15px; line-height: 1.25; }
+.resource-copy span { display: block; margin-top: 2px; color: var(--muted); font-size: 14px; line-height: 1.3; }
+.resource-card .external-arrow { color: var(--accent-strong); font-size: 17px; text-align: right; }
 
 footer { padding: 18px 8px 0; color: var(--muted); font-size: 13px; }
 
@@ -377,7 +488,10 @@ footer { padding: 18px 8px 0; color: var(--muted); font-size: 13px; }
     grid-template-areas: "day icon condition pop temps chevron";
     grid-template-columns: 76px 34px minmax(130px, 1fr) 54px auto 20px;
   }
-  .resource-links { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 22px; }
+  .story-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .story-card:last-child:nth-child(odd) { grid-column: 1 / -1; }
+  .resource-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .resource-card:last-child:nth-child(odd) { grid-column: 1 / -1; }
 }
 
 @media (prefers-color-scheme: dark) {
