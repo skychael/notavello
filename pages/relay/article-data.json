@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "checked_at": "2026-07-26T17:19:23.532Z",
-  "latest_success_at": "2026-07-26T17:19:23.532Z",
+  "checked_at": "2026-07-26T19:37:47.515Z",
+  "latest_success_at": "2026-07-26T19:37:47.515Z",
   "status": "ok",
   "items": [
     {
@@ -18,6 +18,14 @@
       "publisher": "OilPrice.com",
       "published_at": "2026-07-24T18:00:00.000Z",
       "source_id": "oilprice",
+      "status": "ok"
+    },
+    {
+      "title": "As Diplomacy Picks Up, Iran Claims Mine Strike on Ship in Strait of Hormuz",
+      "url": "https://maritime-executive.com/article/as-diplomacy-picks-up-iran-claims-mine-strike-on-ship-in-strait-of-hormuz",
+      "publisher": "The Maritime Executive",
+      "published_at": "2026-07-26T18:04:00.000Z",
+      "source_id": "maritime-executive",
       "status": "ok"
     },
     {
@@ -45,26 +53,10 @@
       "status": "ok"
     },
     {
-      "title": "U.S. Forces Strike Another Iran-Linked Tanker in Strait of Hormuz",
-      "url": "https://maritime-executive.com/article/u-s-forces-strike-another-iran-linked-tanker-in-strait-of-hormuz",
-      "publisher": "The Maritime Executive",
-      "published_at": "2026-07-25T03:55:58.000Z",
-      "source_id": "maritime-executive",
-      "status": "ok"
-    },
-    {
       "title": "Evidence Of Ukraine Using Dutch Ruta Block 1 Cruise Missiles Emerges",
       "url": "https://www.twz.com/news-features/evidence-of-ukraine-using-dutch-ruta-block-1-cruise-missiles-emerges",
       "publisher": "TWZ (The War Zone)",
       "published_at": "2026-07-24T16:46:44.000Z",
-      "source_id": "twz",
-      "status": "ok"
-    },
-    {
-      "title": "EA-37Bs Arrive At RAF Fairford As Iran Threatens To Attack The UK Air Base",
-      "url": "https://www.twz.com/air/ea-37bs-arrive-at-raf-fairford-as-iran-threatens-to-attack-the-uk-air-base",
-      "publisher": "TWZ (The War Zone)",
-      "published_at": "2026-07-23T19:31:23.000Z",
       "source_id": "twz",
       "status": "ok"
     },
@@ -82,6 +74,14 @@
       "publisher": "Breaking Defense",
       "published_at": "2026-07-24T14:29:36.000Z",
       "source_id": "breaking-defense",
+      "status": "ok"
+    },
+    {
+      "title": "Helicopters Just Took Center Stage In Rim Of The Pacific Sinking Exercises",
+      "url": "https://www.twz.com/news-features/helicopters-just-took-center-stage-in-rim-of-the-pacific-sinking-exercises",
+      "publisher": "TWZ (The War Zone)",
+      "published_at": "2026-07-23T22:34:33.000Z",
+      "source_id": "twz",
       "status": "ok"
     }
   ]
