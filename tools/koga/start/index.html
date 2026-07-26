@@ -54,7 +54,7 @@
     </section>
 
     <section class="welcome" aria-labelledby="welcome-title">
-      <h1 id="welcome-title">Start here</h1>
+      <h1 id="welcome-title">Search the web</h1>
       <form class="search" action="https://duckduckgo.com/" method="get" role="search">
         <label class="visually-hidden" for="web-search">Search the web with DuckDuckGo</label>
         <div class="search-row">
@@ -66,7 +66,8 @@
     </section>
 
     <div class="dashboard-grid">
-      <section class="card headlines-card" aria-labelledby="headlines-title">
+      <div class="dashboard-column">
+        <section class="card headlines-card" aria-labelledby="headlines-title">
         <div class="card-heading">
           <div><p class="eyebrow">From around the web</p><h2 id="headlines-title">Relay Headlines</h2></div>
           <a href="/pages/relay/">View all</a>
@@ -81,9 +82,21 @@
           <button type="button" data-headline-next aria-label="Next headlines">→</button>
         </div>
         <p class="data-note" hidden data-headline-note></p>
-      </section>
+        </section>
 
-      <section class="card weather-card" aria-labelledby="weather-title">
+        <section class="card quick-card" aria-labelledby="quick-links-title">
+          <div class="card-heading"><div><p class="eyebrow">One tap away</p><h2 id="quick-links-title">Quick links</h2></div></div>
+          <nav class="quick-links" aria-label="Quick links">
+            <a href="https://www.wikipedia.org/"><span aria-hidden="true">W</span>Wikipedia</a>
+            <a href="https://www.youtube.com/"><span aria-hidden="true">▶</span>YouTube</a>
+            <a href="https://www.google.com/maps"><span aria-hidden="true">⌖</span>Maps</a>
+            <a href="https://www.reddit.com/"><span aria-hidden="true">r/</span>Reddit</a>
+          </nav>
+        </section>
+      </div>
+
+      <div class="dashboard-column">
+        <section class="card weather-card" aria-labelledby="weather-title">
         <div class="card-heading">
           <div><p class="eyebrow">Local outlook</p><h2 id="weather-title">Weather</h2></div>
           <a href="/weather.html">Full forecast</a>
@@ -105,30 +118,22 @@
           <button type="button" class="text-button" data-clear-weather hidden>Clear saved location</button>
         </div>
         <p class="data-note" role="status" data-weather-status></p>
-      </section>
+        </section>
 
-      <section class="card quick-card" aria-labelledby="quick-links-title">
-        <div class="card-heading"><div><p class="eyebrow">One tap away</p><h2 id="quick-links-title">Quick links</h2></div></div>
-        <nav class="quick-links" aria-label="Quick links">
-          <a href="https://www.wikipedia.org/"><span aria-hidden="true">W</span>Wikipedia</a>
-          <a href="https://www.youtube.com/"><span aria-hidden="true">▶</span>YouTube</a>
-          <a href="https://www.google.com/maps"><span aria-hidden="true">⌖</span>Maps</a>
-          <a href="https://www.reddit.com/"><span aria-hidden="true">r/</span>Reddit</a>
-        </nav>
-      </section>
+        <section class="card history-card" aria-labelledby="history-title">
+          <div class="card-heading"><div><p class="eyebrow">A look back</p><h2 id="history-title">On This Day</h2></div></div>
+          <p class="history-date" data-history-date></p>
+          <ol class="history-list" data-history-list hidden></ol>
+          <p class="history-copy" data-history-fallback>Explore notable events, births, and discoveries from this date.</p>
+          <p class="history-attribution" data-history-attribution hidden>From Wikipedia</p>
+          <a class="inline-link" data-history-link href="https://en.wikipedia.org/wiki/Wikipedia:Selected_anniversaries">More events <span aria-hidden="true">→</span></a>
+        </section>
 
-      <section class="card history-card" aria-labelledby="history-title">
-        <div class="card-heading"><div><p class="eyebrow">A look back</p><h2 id="history-title">On This Day</h2></div></div>
-        <p class="history-date" data-history-date></p>
-        <p class="history-copy">Explore notable events, births, and discoveries from this date.</p>
-        <a class="inline-link" data-history-link href="https://en.wikipedia.org/wiki/Wikipedia:Selected_anniversaries">Explore today on Wikipedia <span aria-hidden="true">→</span></a>
-        <p class="data-note">No live third-party feed is loaded on this start page.</p>
-      </section>
-
-      <aside class="card future-card" aria-label="Future Koga features">
-        <div aria-hidden="true">✦</div>
-        <div><p class="eyebrow">Coming later</p><h2>Ask AI</h2><p>A thoughtful space for new Koga tools, without pretending they’re ready yet.</p></div>
-      </aside>
+        <aside class="card future-card" aria-label="Future Koga features">
+          <div aria-hidden="true">✦</div>
+          <div><p class="eyebrow">Coming later</p><h2>Ask AI</h2><p>A thoughtful space for new Koga tools, without pretending they’re ready yet.</p></div>
+        </aside>
+      </div>
     </div>
 
     <section class="daily-tip" aria-labelledby="tip-title">

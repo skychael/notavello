@@ -20,6 +20,33 @@ function formatValue(value, format) {
   return number;
 }
 
+function finiteNumber(value) {
+  if (typeof value === "number") return Number.isFinite(value) ? value : null;
+  if (typeof value !== "string" || !value.trim()) return null;
+  const numericValue = Number(value);
+  return Number.isFinite(numericValue) ? numericValue : null;
+}
+
+function movementFields(currentValue, previousValue, observationTime, previousObservationTime, comparisonBasis) {
+  const canCompare = Number.isFinite(currentValue) && Number.isFinite(previousValue);
+  const change = canCompare ? currentValue - previousValue : null;
+  const changePercent = canCompare && previousValue !== 0
+    ? (change / previousValue) * 100
+    : null;
+  const direction = !canCompare || change === 0
+    ? "neutral"
+    : change > 0 ? "up" : "down";
+  return {
+    previous_numeric_value: canCompare ? previousValue : null,
+    change,
+    change_percent: changePercent,
+    direction,
+    observation_time: observationTime || null,
+    previous_observation_time: previousObservationTime || null,
+    comparison_basis: canCompare ? comparisonBasis || null : null
+  };
+}
+
 async function fetchJson(url, fetchImpl) {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
@@ -75,12 +102,19 @@ async function fetchFred(item, fetchImpl, fredApiKey) {
     `https://api.stlouisfed.org/fred/series/observations?${query}`,
     fetchImpl
   );
-  const observation = data.observations?.find((entry) => entry.value !== ".");
+  const observations = (data.observations || [])
+    .map((entry) => ({ ...entry, numericValue: finiteNumber(entry.value) }))
+    .filter((entry) => entry.value !== "." && Number.isFinite(entry.numericValue));
+  const [observation, previousObservation] = observations;
   if (!observation) throw new Error("No numeric FRED observation returned");
 
   return {
-    rawValue: Number(observation.value),
-    observationDate: observation.date
+    rawValue: observation.numericValue,
+    previousRawValue: previousObservation?.numericValue ?? null,
+    observationDate: observation.date,
+    observationTime: `${observation.date}T00:00:00.000Z`,
+    previousObservationTime: previousObservation ? `${previousObservation.date}T00:00:00.000Z` : null,
+    comparisonBasis: "previous_observation"
   };
 }
 
@@ -95,23 +129,49 @@ async function fetchYahooFinance(item, fetchImpl) {
     throw new Error("No numeric Yahoo Finance quote returned");
   }
 
+  const marketTime = finiteNumber(meta.regularMarketTime);
+  const previousClose = finiteNumber(meta.chartPreviousClose);
   return {
     rawValue: meta.regularMarketPrice,
-    observationDate: new Date(meta.regularMarketTime * 1000).toISOString().slice(0, 10)
+    previousRawValue: previousClose > 0 ? previousClose : null,
+    observationDate: Number.isFinite(marketTime)
+      ? new Date(marketTime * 1000).toISOString().slice(0, 10)
+      : null,
+    observationTime: Number.isFinite(marketTime)
+      ? new Date(marketTime * 1000).toISOString()
+      : null,
+    previousObservationTime: null,
+    comparisonBasis: "previous_close"
   };
 }
 
 async function fetchCoinbase(item, fetchImpl, now) {
-  const data = await fetchJson(
+  const spotData = await fetchJson(
     `https://api.coinbase.com/v2/prices/${item.product_id}/spot`,
     fetchImpl
   );
-  const rawValue = Number(data.data?.amount);
+  const rawValue = finiteNumber(spotData.data?.amount);
   if (!Number.isFinite(rawValue)) throw new Error("No numeric Coinbase spot price returned");
+
+  let previousRawValue = null;
+  try {
+    const statsData = await fetchJson(
+      `https://api.exchange.coinbase.com/products/${item.product_id}/stats`,
+      fetchImpl
+    );
+    const open = finiteNumber(statsData.open);
+    if (open > 0) previousRawValue = open;
+  } catch {
+    // The current spot value remains usable when optional 24-hour stats fail.
+  }
 
   return {
     rawValue,
-    observationDate: now.toISOString().slice(0, 10)
+    previousRawValue,
+    observationDate: now.toISOString().slice(0, 10),
+    observationTime: now.toISOString(),
+    previousObservationTime: null,
+    comparisonBasis: "rolling_24_hour_open"
   };
 }
 
@@ -126,6 +186,13 @@ function unavailableRecord(item) {
   return {
     id: item.id,
     raw_value: null,
+    previous_numeric_value: null,
+    change: null,
+    change_percent: null,
+    direction: "neutral",
+    observation_time: null,
+    previous_observation_time: null,
+    comparison_basis: null,
     formatted_value: "—",
     observation_date: null,
     fetched_at: null,
@@ -144,7 +211,7 @@ async function buildPulseData({
   now = new Date()
 }) {
   const previousItems = new Map(
-    (previousData?.items || []).map((item) => [item.id, item])
+    (Array.isArray(previousData?.items) ? previousData.items : []).map((item) => [item.id, item])
   );
   const configuredItems = config.groups.flatMap((group) => group.links);
 
@@ -156,6 +223,13 @@ async function buildPulseData({
         id: item.id,
         raw_value: result.rawValue,
         formatted_value: formatValue(result.rawValue, item.format),
+        ...movementFields(
+          result.rawValue,
+          result.previousRawValue,
+          result.observationTime,
+          result.previousObservationTime,
+          result.comparisonBasis
+        ),
         observation_date: result.observationDate,
         fetched_at: now.toISOString(),
         source: item.source,
@@ -171,6 +245,13 @@ async function buildPulseData({
       if (previous?.raw_value !== null && Number.isFinite(previous?.raw_value)) {
         return {
           ...previous,
+          ...movementFields(
+            previous.raw_value,
+            finiteNumber(previous.previous_numeric_value),
+            previous.observation_time,
+            previous.previous_observation_time,
+            previous.comparison_basis
+          ),
           source: item.source,
           status: "stale",
           frequency: item.frequency,
@@ -189,7 +270,7 @@ async function buildPulseData({
     .sort()
     .at(-1) || previousData?.latest_success_at || null;
   return {
-    schema_version: "1.0",
+    schema_version: "1.1",
     description: "Last-known-good normalized values for the Relay Pulse sidebar.",
     checked_at: now.toISOString(),
     latest_success_at: latestSuccessAt,
@@ -249,7 +330,12 @@ if (require.main === module) {
 
 module.exports = {
   buildPulseData,
+  fetchCoinbase,
+  fetchFred,
+  fetchYahooFinance,
+  finiteNumber,
   formatValue,
+  movementFields,
   logFredKeyPresence,
   sanitizeSourceError,
   writeJsonAtomic

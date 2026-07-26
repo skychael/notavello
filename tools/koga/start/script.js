@@ -8,7 +8,10 @@
   const WEATHER_CACHE_KEY = "kogaStartWeatherCache";
   const HEADLINE_CACHE_KEY = "kogaStartRelayCache";
   const PULSE_CACHE_KEY = "kogaStartPulseCache";
+  const HISTORY_CACHE_KEY = "kogaStartOnThisDayCache";
   const WORKER = "https://weather-worker.mikekoga.workers.dev";
+  // Wikimedia is gradually deprecating this feed; keep its URL centralized for replacement.
+  const ON_THIS_DAY_ENDPOINT = "https://en.wikipedia.org/api/rest_v1/feed/onthisday/events";
   const validThemes = new Set(["light", "dark", "system"]);
   const themeColor = document.querySelector('meta[name="theme-color"]');
   const themeButtons = document.querySelectorAll("[data-theme]");
@@ -77,12 +80,37 @@
   }
 
   const pulseIds = new Set(["sp-500", "nasdaq-composite", "dow-jones-industrial-average", "vix", "brent-crude-oil", "gold", "bitcoin"]);
+  const validDirections = new Set(["up", "down", "neutral"]);
   function renderPulse(data, stale) {
     const items = Array.isArray(data?.items) ? data.items : [];
     items.forEach((item) => {
       if (!pulseIds.has(item.id) || typeof item.formatted_value !== "string") return;
-      const value = document.querySelector(`[data-pulse-id="${item.id}"] strong`);
-      if (value) value.textContent = item.formatted_value;
+      const cell = document.querySelector(`[data-pulse-id="${item.id}"]`);
+      const value = cell?.querySelector("strong");
+      if (!cell || !value) return;
+      value.textContent = item.formatted_value;
+      cell.querySelector(".ticker-change")?.remove();
+      const direction = validDirections.has(item.direction) ? item.direction : "neutral";
+      const percent = item.change_percent;
+      const basisLabels = {
+        previous_observation: "since previous observation",
+        previous_close: "since previous close",
+        rolling_24_hour_open: "over 24 hours"
+      };
+      const basisLabel = basisLabels[item.comparison_basis] || "";
+      const directionMatchesPercent = (direction === "up" && percent > 0) || (direction === "down" && percent < 0);
+      const hasChange = typeof percent === "number" && Number.isFinite(percent) && directionMatchesPercent && Boolean(basisLabel);
+      const compactBasis = item.comparison_basis === "rolling_24_hour_open" ? " 24h" : "";
+      const change = document.createElement("span");
+      change.className = "ticker-change";
+      change.dataset.direction = hasChange ? direction : "neutral";
+      change.textContent = hasChange
+        ? `${direction === "up" ? "↑" : "↓"} ${Math.abs(percent).toFixed(2)}%${compactBasis}`
+        : "No change data";
+      change.setAttribute("aria-label", hasChange
+        ? `${direction === "up" ? "Up" : "Down"} ${Math.abs(percent).toFixed(2)} percent${basisLabel ? ` ${basisLabel}` : ""}`
+        : "Change unavailable");
+      cell.append(change);
     });
     const checked = formatLocalTimestamp(data.checked_at);
     document.querySelector("[data-pulse-checked]").textContent = checked
@@ -97,6 +125,97 @@
     storageSet(PULSE_CACHE_KEY, { savedAt: Date.now(), data });
   }).catch(() => {
     if (!cachedPulse?.data) document.querySelector("[data-pulse-checked]").textContent = "Values unavailable";
+  });
+
+  const historyList = document.querySelector("[data-history-list]");
+  const historyFallback = document.querySelector("[data-history-fallback]");
+  const historyAttribution = document.querySelector("[data-history-attribution]");
+  const historyDateKey = `${String(now.getMonth() + 1).padStart(2, "0")}/${String(now.getDate()).padStart(2, "0")}`;
+
+  function wikipediaPageUrl(page) {
+    const candidate = page?.content_urls?.desktop?.page || page?.content_urls?.mobile?.page;
+    if (typeof candidate !== "string") return "";
+    try {
+      const url = new URL(candidate);
+      const isWikipedia = url.hostname === "wikipedia.org" || url.hostname.endsWith(".wikipedia.org");
+      return url.protocol === "https:" && isWikipedia ? url.href : "";
+    } catch (_error) {
+      return "";
+    }
+  }
+
+  function safeHistoryUrl(candidate) {
+    if (typeof candidate !== "string") return "";
+    try {
+      const url = new URL(candidate);
+      const isWikipedia = url.hostname === "wikipedia.org" || url.hostname.endsWith(".wikipedia.org");
+      return url.protocol === "https:" && isWikipedia ? url.href : "";
+    } catch (_error) {
+      return "";
+    }
+  }
+
+  function selectHistoryEvents(data) {
+    const seen = new Set();
+    const valid = [];
+    for (const event of Array.isArray(data?.events) ? data.events : []) {
+      const pageUrl = (Array.isArray(event.pages) ? event.pages : []).map(wikipediaPageUrl).find(Boolean);
+      if (!Number.isInteger(event.year) || typeof event.text !== "string" || !event.text.trim() || !pageUrl || seen.has(pageUrl)) continue;
+      seen.add(pageUrl);
+      valid.push({ year: event.year, text: event.text.trim(), url: pageUrl });
+    }
+    if (valid.length <= 3) return valid;
+    const selected = [];
+    const start = ((now.getMonth() + 1) * 31 + now.getDate()) % valid.length;
+    const step = Math.max(1, Math.floor(valid.length / 3));
+    for (let offset = 0; selected.length < 3 && offset < valid.length; offset += step) {
+      const event = valid[(start + offset) % valid.length];
+      if (!selected.includes(event)) selected.push(event);
+    }
+    return selected;
+  }
+
+  function safeCachedHistoryEvents(items) {
+    return (Array.isArray(items) ? items : []).flatMap((event) => {
+      const url = safeHistoryUrl(event?.url);
+      return Number.isInteger(event?.year) && typeof event?.text === "string" && event.text.trim() && url
+        ? [{ year: event.year, text: event.text.trim(), url }]
+        : [];
+    }).slice(0, 3);
+  }
+
+  function renderHistory(events) {
+    if (events.length < 3) return false;
+    const fragment = document.createDocumentFragment();
+    events.slice(0, 3).forEach((event) => {
+      const row = document.createElement("li");
+      const year = document.createElement("strong");
+      const link = document.createElement("a");
+      year.textContent = String(event.year);
+      link.href = event.url;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.textContent = event.text;
+      row.append(year, link);
+      fragment.append(row);
+    });
+    historyList.replaceChildren(fragment);
+    historyList.hidden = false;
+    historyFallback.hidden = true;
+    historyAttribution.hidden = false;
+    return true;
+  }
+
+  const cachedHistory = storageGet(HISTORY_CACHE_KEY);
+  const cachedHistoryEvents = cachedHistory?.date === historyDateKey
+    ? safeCachedHistoryEvents(cachedHistory.events)
+    : [];
+  fetchJson(`${ON_THIS_DAY_ENDPOINT}/${historyDateKey}`, 7000).then((data) => {
+    const events = selectHistoryEvents(data);
+    if (!renderHistory(events)) throw new Error("No usable historical events");
+    storageSet(HISTORY_CACHE_KEY, { date: historyDateKey, savedAt: Date.now(), events });
+  }).catch(() => {
+    renderHistory(cachedHistoryEvents);
   });
 
   const headlineList = document.querySelector("[data-headline-list]");
