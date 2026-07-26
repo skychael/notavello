@@ -15,12 +15,13 @@ const {
 } = require("./update-today-history");
 const { validateTodayData } = require("../tools/koga/start/history-data");
 
-function item(year, text, title, suffix = title) {
+function item(year, text, title, suffix = title, description = "") {
   return {
     year,
     text,
     pages: [{
       titles: { normalized: title },
+      description,
       content_urls: { desktop: { page: `https://en.wikipedia.org/wiki/${encodeURIComponent(suffix).replace(/%20/g, "_")}` } }
     }]
   };
@@ -120,8 +121,56 @@ test("deterministic fallback returns exactly three diverse, unique items", () =>
   assert.equal(first.length, 3);
   assert.equal(new Set(first.map((entry) => entry.url)).size, 3);
   assert.ok(first.some((entry) => entry.type === "event"));
-  assert.ok(first.some((entry) => entry.type === "birth"));
   assert.ok(new Set(first.map((entry) => entry.category)).size >= 2);
+});
+
+test("fallback favors recognizable recent history without forcing an obscure birth", () => {
+  const editorialEvents = {
+    events: [
+      item(1971, "Apollo 15 launches on a mission to the Moon using the first Lunar Roving Vehicle.", "Apollo 15"),
+      item(1944, "World War II: Allied forces land in Normandy on D-Day.", "Normandy landings"),
+      item(1986, "The Chernobyl nuclear disaster releases radioactive contamination across Europe.", "Chernobyl disaster"),
+      item(1581, "The States General signs the Act of Abjuration during a diplomatic dispute.", "Act of Abjuration"),
+      item(1953, "A minor official receives a ceremonial appointment.", "Ceremonial appointment"),
+      item(1965, "A local council creates a new administrative district.", "Administrative district")
+    ]
+  };
+  const editorialBirths = {
+    births: [
+      item(1958, "A world-famous singer and pop superstar is born.", "Famous singer", undefined, "Globally recognized music icon"),
+      item(1720, "An obscure historic cleric and academic is born.", "Obscure cleric")
+    ]
+  };
+  const candidates = normalizeCandidates(editorialEvents, editorialBirths);
+  const selected = deterministicSelection(candidates);
+  const titles = selected.map((entry) => entry.article_title);
+  assert.ok(titles.includes("Apollo 15"));
+  assert.ok(titles.includes("Chernobyl disaster"));
+  assert.ok(titles.includes("Famous singer"));
+  assert.equal(titles.includes("Act of Abjuration"), false);
+  assert.equal(titles.includes("Obscure cleric"), false);
+  assert.ok(selected.filter((entry) => entry.year >= 1900).length >= 2);
+  assert.deepEqual(selected, deterministicSelection(candidates));
+  assert.equal(new Set(selected.map((entry) => entry.candidate_id)).size, 3);
+});
+
+test("fallback permits three strong events and keeps an iconic older event competitive", () => {
+  const candidates = normalizeCandidates({
+    events: [
+      item(1971, "Apollo 15 launches on a mission to the Moon.", "Apollo 15"),
+      item(1944, "World War II: Allied forces invade Normandy on D-Day.", "Normandy landings"),
+      item(1876, "Alexander Graham Bell makes the first successful telephone call, a landmark technology invention.", "Invention of the telephone"),
+      item(1581, "The Act of Abjuration is signed after a diplomatic meeting.", "Act of Abjuration"),
+      item(1960, "A minor official receives a ceremonial appointment.", "Minor appointment")
+    ]
+  }, {
+    births: [item(1720, "An obscure historic academic is born.", "Obscure academic")]
+  });
+  const selected = deterministicSelection(candidates);
+  assert.equal(selected.every((entry) => entry.type === "event"), true);
+  assert.ok(selected.some((entry) => entry.article_title === "Invention of the telephone"));
+  assert.ok(selected.filter((entry) => entry.year >= 1900).length >= 2);
+  assert.equal(selected.some((entry) => entry.article_title === "Act of Abjuration"), false);
 });
 
 test("AI network failure makes one AI request then writes fallback output", async () => {
@@ -164,6 +213,12 @@ test("valid AI response writes AI-selected output using a single AI request", as
   assert.equal(aiCalls[0].model, "test-model");
   assert.equal("temperature" in aiCalls[0], false);
   assert.equal(aiCalls[0].max_output_tokens, 500);
+  assert.match(aiCalls[0].input[0].content, /mass appeal/);
+  assert.match(aiCalls[0].input[0].content, /at least two post-1900/);
+  assert.match(aiCalls[0].input[0].content, /three events are acceptable/);
+  assert.match(aiCalls[0].input[1].content, /1950-present/);
+  assert.match(aiCalls[0].input[1].content, /Do not force a birth/);
+  assert.match(aiCalls[0].input[1].content, /ordinary readers/);
 });
 
 test("missing AI configuration fails clearly before any network request", async () => {
