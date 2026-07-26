@@ -2,20 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Search the web and open useful sites from the Koga Browser for iPhone start page.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Search, check local weather, read headlines, follow markets, and explore history from Koga Browser for iPhone.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://notavello.com/tools/koga/ios/start/">
-  <meta name="theme-color" content="#f5f5f2">
+  <meta name="theme-color" content="#f3f4f7">
   <title>Koga Start for iPhone</title>
   <link rel="icon" href="../../assets/icons/koga-mark.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20260726-2">
 <script>
     !function(t,e){var o,n,p,r;e.__SV||(window.posthog && window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="Ji Yi init fn mn Hr pn bn cn capture calculateEventProperties Sn register register_once register_for_session unregister unregister_for_session Tn getFeatureFlag getFeatureFlagPayload getFeatureFlagResult getAllFeatureFlags isFeatureEnabled reloadFeatureFlags updateFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey cancelPendingSurvey canRenderSurvey canRenderSurveyAsync Mn identify setPersonProperties unsetPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset shutdown setIdentity clearIdentity get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException addExceptionStep captureLog startExceptionAutocapture stopExceptionAutocapture loadToolbar get_property getSessionProperty Cn xn createPersonProfile setInternalOrTestUser In hn Pn opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing debug Ur wt getPageViewId captureTraceFeedback captureTraceMetric an".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
     posthog.init('phc_Da42RaejuPDp7aaSe8ay5ek3Pz3Aqur4etrHaxYKzgQf', {
         api_host: 'https://us.i.posthog.com',
         defaults: '2026-05-30',
-        person_profiles: 'identified_only', // or 'always' to create profiles for anonymous users as well
+        person_profiles: 'identified_only',
     })
 </script>
 </head>
@@ -23,66 +23,118 @@
   <main class="start-page">
     <header class="masthead">
       <a class="brand" href="../" aria-label="Koga Browser for iPhone home">
-        <img src="../../assets/icons/koga-mark.svg" alt="" width="42" height="42">
-        <span>Koga</span>
+        <img src="../../assets/icons/koga-mark.svg" alt="" width="34" height="34">
+        <span>Koga Start</span>
       </a>
-
-      <fieldset class="appearance" aria-label="Appearance">
-        <legend>Appearance</legend>
-        <div class="appearance-options">
+      <p class="today" data-today></p>
+      <details class="appearance" data-appearance>
+        <summary aria-label="Choose appearance">Aa</summary>
+        <div class="appearance-menu" role="group" aria-label="Appearance">
+          <button type="button" data-theme="system" aria-pressed="true">System</button>
           <button type="button" data-theme="light" aria-pressed="false">Light</button>
           <button type="button" data-theme="dark" aria-pressed="false">Dark</button>
-          <button type="button" data-theme="system" aria-pressed="true">System</button>
         </div>
-      </fieldset>
+      </details>
     </header>
 
-    <section class="welcome" aria-labelledby="welcome-title">
-      <p class="eyebrow">Koga for iPhone</p>
-      <h1 id="welcome-title">Where would you like to go?</h1>
+    <section class="search-section" aria-labelledby="search-title">
+      <h1 id="search-title">Search the web</h1>
       <form class="search" action="https://duckduckgo.com/" method="get" role="search">
-        <label for="web-search">Search the web with DuckDuckGo</label>
-        <div class="search-row">
-          <input id="web-search" name="q" type="search" inputmode="search" autocomplete="off" enterkeyhint="search" placeholder="Search the web" required>
-          <button type="submit">Search</button>
-        </div>
+        <label class="visually-hidden" for="web-search">Search the web with DuckDuckGo</label>
+        <span class="search-mark" aria-hidden="true">⌕</span>
+        <input id="web-search" name="q" type="search" inputmode="search" autocomplete="off"
+          enterkeyhint="search" placeholder="Search with DuckDuckGo" required data-ph-no-capture>
+        <button type="submit">Go</button>
       </form>
     </section>
 
-    <section class="section" aria-labelledby="quick-links-title">
-      <div class="section-heading"><p class="eyebrow">Quick links</p><h2 id="quick-links-title">A few useful places</h2></div>
+    <section class="dashboard-card weather-card" aria-labelledby="weather-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">Local outlook</p><h2 id="weather-title">Weather</h2></div>
+        <a href="/weather" data-full-forecast>Full forecast</a>
+      </div>
+      <div class="weather-summary" data-weather-summary>
+        <span class="weather-icon" aria-hidden="true" data-weather-icon>🌤️</span>
+        <div class="weather-copy">
+          <span class="weather-place" data-weather-place>Choose a location</span>
+          <strong data-weather-temperature>—</strong>
+          <p data-weather-condition>Current conditions and today’s outlook</p>
+          <p class="weather-range" data-weather-range></p>
+        </div>
+      </div>
+      <form class="weather-form" data-weather-form>
+        <label class="visually-hidden" for="weather-location">City or ZIP code</label>
+        <input id="weather-location" type="search" placeholder="City or ZIP code" autocomplete="postal-code"
+          enterkeyhint="search" data-ph-no-capture>
+        <button type="submit">Go</button>
+      </form>
+      <div class="weather-actions">
+        <button type="button" class="text-button" data-use-location>◎ Use my location</button>
+      </div>
+      <p class="data-note" role="status" aria-live="polite" data-weather-status></p>
+    </section>
+
+    <section class="dashboard-card headlines-card" aria-labelledby="headlines-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">Selected reporting</p><h2 id="headlines-title">Relay headlines</h2></div>
+        <a href="/pages/relay/">View all</a>
+      </div>
+      <ol class="headline-list" data-headline-list>
+        <li><a href="/pages/relay/">Open Notavello Relay</a><small>Latest selected reporting</small></li>
+      </ol>
+      <p class="data-note" hidden data-headline-note></p>
+    </section>
+
+    <section class="dashboard-card markets-card" aria-labelledby="markets-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">Latest available</p><h2 id="markets-title">Markets</h2></div>
+        <span class="section-meta" data-pulse-checked>Loading values…</span>
+      </div>
+      <div class="market-rail" role="list" aria-label="Latest market values" tabindex="0" data-market-rail></div>
+    </section>
+
+    <section class="dashboard-card history-card" aria-labelledby="history-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">A look back</p><h2 id="history-title">Today in History</h2></div>
+        <span class="section-meta" data-history-date></span>
+      </div>
+      <ol class="history-list" data-history-list hidden></ol>
+      <p class="history-fallback" data-history-fallback>Historical selections are temporarily unavailable.</p>
+      <p class="data-note" data-history-attribution hidden>From Wikipedia</p>
+      <a class="inline-link" data-history-link href="https://en.wikipedia.org/wiki/Wikipedia:Selected_anniversaries"
+        target="_blank" rel="noopener noreferrer">More events <span aria-hidden="true">→</span></a>
+    </section>
+
+    <section class="quick-section" aria-labelledby="quick-links-title">
+      <div class="section-heading"><div><p class="eyebrow">One tap away</p><h2 id="quick-links-title">Quick links</h2></div></div>
       <nav class="quick-links" aria-label="Quick links">
-        <a href="https://www.wikipedia.org/"><span class="link-mark" aria-hidden="true">W</span><span>Wikipedia</span></a>
-        <a href="https://www.youtube.com/"><span class="link-mark" aria-hidden="true">▶</span><span>YouTube</span></a>
-        <a href="https://www.reddit.com/"><span class="link-mark" aria-hidden="true">r/</span><span>Reddit</span></a>
-        <a href="https://www.google.com/maps"><span class="link-mark" aria-hidden="true">⌖</span><span>Maps</span></a>
+        <a href="https://www.wikipedia.org/"><span aria-hidden="true">W</span><small>Wikipedia</small></a>
+        <a href="https://www.youtube.com/"><span aria-hidden="true">▶</span><small>YouTube</small></a>
+        <a href="https://www.reddit.com/"><span aria-hidden="true">r/</span><small>Reddit</small></a>
+        <a href="https://www.google.com/maps"><span aria-hidden="true">⌖</span><small>Maps</small></a>
       </nav>
     </section>
 
-    <section class="section" aria-labelledby="tips-title">
-      <div class="section-heading"><p class="eyebrow">Browser tips</p><h2 id="tips-title">Make Koga yours</h2></div>
-      <div class="tips">
-        <article><span class="tip-number" aria-hidden="true">01</span><div><h3>Use the bottom toolbar</h3><p>Move through pages, return home, share, reload, open tabs, or enter Settings.</p></div></article>
-        <article><span class="tip-number" aria-hidden="true">02</span><div><h3>Tabs and bookmarks together</h3><p>Open the Tabs sheet and switch to Bookmarks with the segmented control.</p></div></article>
-        <article><span class="tip-number" aria-hidden="true">03</span><div><h3>Start here every time</h3><p>Enter this page address in Settings and save it as the page opened by Home.</p></div></article>
-      </div>
-      <a class="help-link" href="../help.html">Read Koga for iPhone help <span aria-hidden="true">→</span></a>
-    </section>
-
-    <aside class="sponsored" aria-labelledby="sponsored-title">
-      <div><p class="eyebrow" id="sponsored-title">Sponsored</p><p>Reserved for a future clearly labeled sponsored link.</p></div>
-      <span class="placeholder-label">Placeholder</span>
+    <aside class="tip-card" aria-labelledby="tip-title">
+      <span class="tip-symbol" aria-hidden="true">✦</span>
+      <div><p class="eyebrow">Koga tip</p><h2 id="tip-title">Keep favorites close</h2><p>Use Bookmarks from the bottom toolbar to save a page for later.</p></div>
+      <a href="/tools/koga/ios/help">Help <span aria-hidden="true">→</span></a>
     </aside>
   </main>
 
   <footer>
     <div class="footer-inner">
       <span>© Koga Browser</span>
-      <nav aria-label="Koga for iPhone information"><a href="../privacy.html">Privacy</a><a href="../help.html">Help</a><a href="../support.html">Support</a></nav>
+      <nav aria-label="Koga for iPhone information">
+        <a href="/tools/koga/ios/privacy">Privacy</a>
+        <a href="/tools/koga/ios/help">Help</a>
+        <a href="/tools/koga/ios/support">Support</a>
+      </nav>
     </div>
   </footer>
 
-  <script src="script.js"></script>
-  
+  <script src="../../weather-location.js?v=20260726-2"></script>
+  <script src="../../start/history-data.js?v=20260726-2"></script>
+  <script src="script.js?v=20260726-3"></script>
 </body>
 </html>
