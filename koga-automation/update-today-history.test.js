@@ -162,7 +162,7 @@ test("valid AI response writes AI-selected output using a single AI request", as
   assert.equal(data.display_date, "July 26");
   assert.equal(aiCalls.length, 1);
   assert.equal(aiCalls[0].model, "test-model");
-  assert.equal(aiCalls[0].temperature, 0.1);
+  assert.equal("temperature" in aiCalls[0], false);
   assert.equal(aiCalls[0].max_output_tokens, 500);
 });
 

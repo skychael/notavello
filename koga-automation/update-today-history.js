@@ -181,7 +181,6 @@ async function requestAiSelection({ fetchImpl, apiKey, model, candidates, aiClie
   const client = aiClient || new OpenAI({ apiKey, fetch: fetchImpl, timeout: 12000, maxRetries: 0 });
   const data = await client.responses.create({
     model,
-    temperature: 0.1,
     max_output_tokens: 500,
     input: [
       {
