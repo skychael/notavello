@@ -1,0 +1,74 @@
+name: Update Koga Today in History
+
+on:
+  schedule:
+    # GitHub cron is fixed UTC: 08:15 is 12:15 AM PDT / 1:15 AM PST.
+    - cron: '15 8 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: notavello-main-writes
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Rebase onto latest main
+        run: |
+          git fetch origin main
+          git rebase origin/main
+
+      - name: Generate Today in History data
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
+        run: node koga-automation/update-today-history.js
+
+      - name: Validate implementation and output
+        run: |
+          node --check koga-automation/update-today-history.js
+          node --check koga-automation/update-today-history.test.js
+          node --check tools/koga/start/history-data.js
+          node --check tools/koga/start/script.js
+          node --test koga-automation/update-today-history.test.js
+          node -e "const data=require('./tools/koga/start/today-data.json'); const {validateTodayData}=require('./tools/koga/start/history-data'); const {pacificDateParts}=require('./koga-automation/update-today-history'); const expected=pacificDateParts().dateKey; if(!validateTodayData(data,expected)) throw new Error('Invalid or wrong-date Today in History output');"
+          git diff --check
+
+      - name: Commit updated data
+        run: |
+          if git diff --quiet -- tools/koga/start/today-data.json; then
+            echo "Today in History data is unchanged."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- tools/koga/start/today-data.json
+          git commit -m "Update Koga Today in History"
+
+      - name: Rebase and push
+        run: |
+          if git diff --quiet origin/main..HEAD -- tools/koga/start/today-data.json; then
+            echo "No Today in History data commit to push."
+            exit 0
+          fi
+          git fetch origin main
+          git rebase origin/main
+          git push origin HEAD:main

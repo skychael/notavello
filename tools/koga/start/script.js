@@ -9,6 +9,7 @@
   const HEADLINE_CACHE_KEY = "kogaStartRelayCache";
   const PULSE_CACHE_KEY = "kogaStartPulseCache";
   const HISTORY_CACHE_KEY = "kogaStartOnThisDayCache";
+  const TODAY_HISTORY_DATA_URL = "/tools/koga/start/today-data.json";
   const WORKER = "https://weather-worker.mikekoga.workers.dev";
   // Wikimedia is gradually deprecating this feed; keep its URL centralized for replacement.
   const ON_THIS_DAY_ENDPOINT = "https://en.wikipedia.org/api/rest_v1/feed/onthisday/events";
@@ -55,10 +56,10 @@
   const historyLink = document.querySelector("[data-history-link]");
   historyLink.href = `https://en.wikipedia.org/wiki/${encodeURIComponent(new Intl.DateTimeFormat("en-US", { month: "long", day: "numeric" }).format(now)).replace("%20", "_")}`;
 
-  function fetchJson(url, timeout = 8000) {
+  function fetchJson(url, timeout = 8000, options = {}) {
     const controller = new AbortController();
     const timer = setTimeout(() => controller.abort(), timeout);
-    return fetch(url, { credentials: "same-origin", signal: controller.signal })
+    return fetch(url, { credentials: "same-origin", ...options, signal: controller.signal })
       .then((response) => {
         if (!response.ok) throw new Error(`Request returned ${response.status}`);
         return response.json();
@@ -131,6 +132,7 @@
   const historyFallback = document.querySelector("[data-history-fallback]");
   const historyAttribution = document.querySelector("[data-history-attribution]");
   const historyDateKey = `${String(now.getMonth() + 1).padStart(2, "0")}/${String(now.getDate()).padStart(2, "0")}`;
+  const staticHistoryDateKey = historyDateKey.replace("/", "-");
 
   function wikipediaPageUrl(page) {
     const candidate = page?.content_urls?.desktop?.page || page?.content_urls?.mobile?.page;
@@ -206,17 +208,24 @@
     return true;
   }
 
-  const cachedHistory = storageGet(HISTORY_CACHE_KEY);
-  const cachedHistoryEvents = cachedHistory?.date === historyDateKey
-    ? safeCachedHistoryEvents(cachedHistory.events)
-    : [];
-  fetchJson(`${ON_THIS_DAY_ENDPOINT}/${historyDateKey}`, 7000).then((data) => {
-    const events = selectHistoryEvents(data);
-    if (!renderHistory(events)) throw new Error("No usable historical events");
-    storageSet(HISTORY_CACHE_KEY, { date: historyDateKey, savedAt: Date.now(), events });
-  }).catch(() => {
-    renderHistory(cachedHistoryEvents);
-  });
+  function loadLiveHistoryFallback() {
+    const cachedHistory = storageGet(HISTORY_CACHE_KEY);
+    const cachedHistoryEvents = cachedHistory?.date === historyDateKey
+      ? safeCachedHistoryEvents(cachedHistory.events)
+      : [];
+    return fetchJson(`${ON_THIS_DAY_ENDPOINT}/${historyDateKey}`, 7000).then((data) => {
+      const events = selectHistoryEvents(data);
+      if (!renderHistory(events)) throw new Error("No usable historical events");
+      storageSet(HISTORY_CACHE_KEY, { date: historyDateKey, savedAt: Date.now(), events });
+    }).catch(() => {
+      renderHistory(cachedHistoryEvents);
+    });
+  }
+
+  fetchJson(`${TODAY_HISTORY_DATA_URL}?date=${staticHistoryDateKey}`, 4000, { cache: "no-store" }).then((data) => {
+    const events = window.KogaHistoryData?.validateTodayData(data, staticHistoryDateKey);
+    if (!events || !renderHistory(events)) throw new Error("Daily history data is unavailable");
+  }).catch(loadLiveHistoryFallback);
 
   const headlineList = document.querySelector("[data-headline-list]");
   const headlineControls = document.querySelector("[data-headline-controls]");
