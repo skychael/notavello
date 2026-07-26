@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0",
+  "lookback_hours": 48,
+  "continuing_event_hours": 168,
+  "maximum_items": 3,
+  "sources": [
+    {
+      "id": "nws-active-alerts",
+      "publisher_name": "National Weather Service",
+      "feed_url": "https://api.weather.gov/alerts/active.atom?region_type=land",
+      "homepage_url": "https://api.weather.gov/",
+      "enabled": true,
+      "priority": 10,
+      "trusted_images": false,
+      "verification_status": "verified",
+      "verification_notes": "Official NWS active-alert Atom endpoint returned HTTP 200 application/atom+xml on 2026-07-26."
+    },
+    {
+      "id": "nhc-atlantic",
+      "publisher_name": "National Hurricane Center",
+      "feed_url": "https://www.nhc.noaa.gov/index-at.xml",
+      "homepage_url": "https://www.nhc.noaa.gov/",
+      "enabled": true,
+      "priority": 10,
+      "trusted_images": false,
+      "verification_status": "verified",
+      "verification_notes": "Official NHC Atlantic tropical-cyclone RSS endpoint returned HTTP 200 text/xml on 2026-07-26."
+    },
+    {
+      "id": "nhc-eastern-pacific",
+      "publisher_name": "National Hurricane Center",
+      "feed_url": "https://www.nhc.noaa.gov/index-ep.xml",
+      "homepage_url": "https://www.nhc.noaa.gov/",
+      "enabled": true,
+      "priority": 10,
+      "trusted_images": false,
+      "verification_status": "verified",
+      "verification_notes": "Official NHC eastern Pacific tropical-cyclone RSS endpoint returned HTTP 200 text/xml on 2026-07-26."
+    },
+    {
+      "id": "spc",
+      "publisher_name": "Storm Prediction Center",
+      "feed_url": "https://www.spc.noaa.gov/products/spcrss.xml",
+      "homepage_url": "https://www.spc.noaa.gov/",
+      "enabled": true,
+      "priority": 9,
+      "trusted_images": false,
+      "verification_status": "verified",
+      "verification_notes": "Official SPC RSS endpoint returned HTTP 200 text/xml on 2026-07-26."
+    },
+    {
+      "id": "the-watchers-weather",
+      "publisher_name": "The Watchers",
+      "feed_url": "https://watchers.news/feed/",
+      "homepage_url": "https://watchers.news/",
+      "enabled": true,
+      "priority": 6,
+      "trusted_images": true,
+      "verification_status": "verified",
+      "verification_notes": "Established public hazard-news RSS endpoint returned HTTP 200 application/rss+xml on 2026-07-26."
+    }
+  ]
+}

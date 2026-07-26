@@ -36,11 +36,17 @@ jobs:
       - name: Run article collector tests
         run: node --test relay-automation/update-articles.test.js
 
+      - name: Run weather collector tests
+        run: node --test relay-automation/update-weather.test.js
+
       - name: Run archive generator tests
         run: node --test relay-automation/update-relay-archive.test.js
 
       - name: Update Relay article data
         run: node relay-automation/update-articles.js
+
+      - name: Update dedicated weather data
+        run: node relay-automation/update-weather.js
 
       - name: Update Relay daily archive
         run: node relay-automation/update-relay-archive.js
@@ -48,6 +54,8 @@ jobs:
       - name: Validate Relay article data
         run: |
           node --check relay-automation/update-articles.js
+          node --check relay-automation/update-weather.js
+          node --check relay-automation/update-weather.test.js
           node --check relay-automation/update-relay-archive.js
           node --check relay-automation/update-relay-archive.test.js
           node -e '
@@ -76,6 +84,22 @@ jobs:
             }
             console.log(`Valid Relay article data: ${data.items.length} items`);
           '
+          node -e '
+            const fs = require("fs");
+            const file = "pages/relay/weather-data.json";
+            if (!fs.existsSync(file)) throw new Error(`${file} does not exist`);
+            const data = JSON.parse(fs.readFileSync(file, "utf8"));
+            if (!["ok", "ok_empty", "partial"].includes(data.status)) throw new Error(`Unexpected weather status: ${data.status}`);
+            if (!Array.isArray(data.items) || data.items.length > 3) throw new Error("Weather items must contain at most three entries");
+            for (const item of data.items) {
+              for (const key of ["id", "title", "url", "publisher", "published_at", "topic", "status"]) {
+                if (!(key in item)) throw new Error(`Missing weather field ${key}`);
+              }
+              const url = new URL(item.url);
+              if (!["http:", "https:"].includes(url.protocol)) throw new Error(`Unsafe weather URL: ${item.url}`);
+            }
+            console.log(`Valid Relay weather data: ${data.items.length} items`);
+          '
 
       - name: Check whitespace
         run: git diff --check
@@ -84,6 +108,7 @@ jobs:
         run: |
           expected_paths=(
             "pages/relay/article-data.json"
+            "pages/relay/weather-data.json"
             "pages/relay/archive/"
             "pages/relay/index.html"
             "sitemap.xml"
@@ -100,7 +125,7 @@ jobs:
             while IFS= read -r line; do
               path="${line:3}"
               case "$path" in
-                pages/relay/article-data.json|pages/relay/index.html|sitemap.xml|pages/relay/archive/*)
+                pages/relay/article-data.json|pages/relay/weather-data.json|pages/relay/index.html|sitemap.xml|pages/relay/archive/*)
                   ;;
                 *)
                   printf '%s\n' "$path"
@@ -117,13 +142,14 @@ jobs:
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -- pages/relay/article-data.json pages/relay/archive/ sitemap.xml pages/relay/index.html
+          git add -- pages/relay/article-data.json pages/relay/weather-data.json pages/relay/archive/ sitemap.xml pages/relay/index.html
           git commit -m "Update Relay article data and archive"
 
       - name: Rebase and push
         run: |
           expected_paths=(
             "pages/relay/article-data.json"
+            "pages/relay/weather-data.json"
             "pages/relay/archive/"
             "pages/relay/index.html"
             "sitemap.xml"

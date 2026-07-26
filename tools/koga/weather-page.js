@@ -11,6 +11,7 @@
   const WORKER = 'https://weather-worker.mikekoga.workers.dev';
   const LOCATION_KEY = 'weatherCenterLastLocation';
   const CACHE_KEY = 'weatherCenterForecastCache';
+  const WEATHER_STORIES_URL = '/pages/relay/weather-data.json';
   const HEADLINES_URL = '/pages/relay/article-data.json';
   const WEATHER_TOPICS = [
     { label: 'Hurricane', symbol: '🌀', pattern: /\b(hurricane|tropical storm|typhoon|cyclone)\b/i },
@@ -100,6 +101,14 @@
   function storyTopic(title) {
     const text = cleanText(title, 300);
     return WEATHER_TOPICS.find((topic) => topic.pattern.test(text)) || null;
+  }
+
+  function storyTopicForItem(item) {
+    const fromTitle = storyTopic(item && item.title);
+    if (fromTitle) return fromTitle;
+    const label = cleanText(item && item.topic, 50);
+    const configured = WEATHER_TOPICS.find((topic) => topic.label.toLowerCase() === label.toLowerCase());
+    return configured || { label: label || 'Weather', symbol: '☂' };
   }
 
   function storyImageUrl(item) {
@@ -217,6 +226,27 @@
   function filterWeatherHeadlines(payload) {
     if (!payload || !Array.isArray(payload.items)) return [];
     return payload.items.filter((item) => item && storyTopic(item.title) && safeHttpUrl(item.url)).slice(0, 3);
+  }
+
+  function validDedicatedWeatherFeed(payload) {
+    const allowedStatuses = new Set(['ok', 'ok_empty', 'partial']);
+    return Boolean(payload
+      && payload.schema_version === '1.0'
+      && allowedStatuses.has(payload.status)
+      && Number.isFinite(Date.parse(payload.generated_at))
+      && Array.isArray(payload.items)
+      && payload.items.length <= 3
+      && payload.items.every((item) => item
+        && cleanText(item.title, 300)
+        && cleanText(item.publisher, 100)
+        && cleanText(item.topic, 50)
+        && safeHttpUrl(item.url)
+        && Number.isFinite(Date.parse(item.published_at))));
+  }
+
+  function chooseStoryItems(dedicatedPayload, generalPayload) {
+    if (validDedicatedWeatherFeed(dedicatedPayload)) return dedicatedPayload.items;
+    return filterWeatherHeadlines(generalPayload);
   }
 
   function formatAge(value, now = Date.now()) {
@@ -614,12 +644,22 @@
     }
 
     async function loadHeadlines() {
+      let items;
       try {
-        const payload = await fetchJson(HEADLINES_URL);
-        const items = filterWeatherHeadlines(payload);
+        const dedicatedPayload = await fetchJson(WEATHER_STORIES_URL);
+        if (!validDedicatedWeatherFeed(dedicatedPayload)) throw new Error('Invalid dedicated weather feed');
+        items = dedicatedPayload.items;
+      } catch {
+        try {
+          items = filterWeatherHeadlines(await fetchJson(HEADLINES_URL));
+        } catch {
+          items = [];
+        }
+      }
+      try {
         clear(els.headlineList);
         items.forEach((item) => {
-          const topic = storyTopic(item.title);
+          const topic = storyTopicForItem(item);
           const link = element('a', 'story-card');
           link.href = safeHttpUrl(item.url);
           link.target = '_blank';
@@ -706,6 +746,7 @@
     WORKER,
     LOCATION_KEY,
     CACHE_KEY,
+    WEATHER_STORIES_URL,
     safeParse,
     safeStorageRead,
     safeStorageWrite,
@@ -718,8 +759,11 @@
     groupDaily,
     summaryForForecast,
     filterWeatherHeadlines,
+    validDedicatedWeatherFeed,
+    chooseStoryItems,
     safeHttpUrl,
     storyTopic,
+    storyTopicForItem,
     storyImageUrl,
     formatAge,
     weatherSymbol,

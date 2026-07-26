@@ -244,6 +244,20 @@ function extractAtomLink(block) {
   return fallback;
 }
 
+function extractImageUrl(block) {
+  const patterns = [
+    /<media:content\b[^>]*\burl=["']([^"']+)["'][^>]*>/i,
+    /<media:thumbnail\b[^>]*\burl=["']([^"']+)["'][^>]*>/i,
+    /<enclosure\b(?=[^>]*\btype=["']image\/[^"']+["'])[^>]*\burl=["']([^"']+)["'][^>]*>/i,
+    /<enclosure\b(?=[^>]*\burl=["']([^"']+)["'])(?=[^>]*\btype=["']image\/[^"']+["'])[^>]*>/i
+  ];
+  for (const pattern of patterns) {
+    const match = pattern.exec(block);
+    if (match) return decodeHtmlEntities(match[1]).trim() || null;
+  }
+  return null;
+}
+
 function stripHtml(value) {
   return String(value || "").replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim();
 }
@@ -266,7 +280,8 @@ function parseFeed(xmlText) {
       published: extractTagText(block, "published") || extractTagText(block, "updated"),
       category: extractTagText(block, "category"),
       author: extractTagText(block, "name"),
-      summary: stripHtml(extractTagText(block, "summary") || extractTagText(block, "content") || "")
+      summary: stripHtml(extractTagText(block, "summary") || extractTagText(block, "content") || ""),
+      image: extractImageUrl(block)
     }));
     return { format, entries };
   }
@@ -278,7 +293,8 @@ function parseFeed(xmlText) {
     published: extractTagText(block, "pubDate"),
     category: extractTagText(block, "category"),
     author: extractTagText(block, "author") || extractTagText(block, "dc:creator"),
-    summary: stripHtml(extractTagText(block, "description") || "")
+    summary: stripHtml(extractTagText(block, "description") || ""),
+    image: extractImageUrl(block)
   }));
   return { format, entries };
 }

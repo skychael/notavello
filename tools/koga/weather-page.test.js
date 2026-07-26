@@ -333,3 +333,66 @@ test('official tool cards use safe external-link attributes', () => {
     assert.match(card, /rel="noopener noreferrer"/);
   });
 });
+
+test('Weather Center loads the dedicated weather feed before general Relay', () => {
+  assert.equal(weather.WEATHER_STORIES_URL, '/pages/relay/weather-data.json');
+  assert.ok(pageScript.indexOf('fetchJson(WEATHER_STORIES_URL)') < pageScript.indexOf('fetchJson(HEADLINES_URL)'));
+});
+
+test('valid dedicated weather feed is accepted', () => {
+  assert.equal(weather.validDedicatedWeatherFeed({
+    schema_version: '1.0',
+    generated_at: '2026-07-26T16:00:00.000Z',
+    status: 'ok',
+    items: [{
+      id: 'a',
+      title: 'Hurricane Ada remains active',
+      url: 'https://example.com/ada',
+      publisher: 'Official Weather',
+      published_at: '2026-07-26T15:00:00.000Z',
+      topic: 'Hurricane',
+      status: 'ok'
+    }]
+  }), true);
+});
+
+test('valid empty dedicated feed does not fall back to general Relay', () => {
+  const selected = weather.chooseStoryItems({
+    schema_version: '1.0',
+    generated_at: '2026-07-26T16:00:00.000Z',
+    status: 'ok_empty',
+    items: []
+  }, {
+    items: [{ title: 'Severe weather warning', url: 'https://example.com/general' }]
+  });
+  assert.deepEqual(selected, []);
+});
+
+test('unavailable or malformed dedicated feed uses filtered general Relay fallback', () => {
+  const general = {
+    items: [{ title: 'Severe weather warning', url: 'https://example.com/general' }]
+  };
+  assert.equal(weather.chooseStoryItems(null, general).length, 1);
+  assert.equal(weather.chooseStoryItems({ schema_version: 'bad', items: [] }, general).length, 1);
+});
+
+test('dedicated weather feed rejects unsafe URLs and invalid timestamps', () => {
+  const base = {
+    schema_version: '1.0',
+    generated_at: '2026-07-26T16:00:00.000Z',
+    status: 'ok'
+  };
+  assert.equal(weather.validDedicatedWeatherFeed({
+    ...base,
+    items: [{ title: 'Storm', publisher: 'P', topic: 'Weather', published_at: '2026-07-26T15:00:00Z', url: 'javascript:alert(1)' }]
+  }), false);
+  assert.equal(weather.validDedicatedWeatherFeed({
+    ...base,
+    items: [{ title: 'Storm', publisher: 'P', topic: 'Weather', published_at: 'bad', url: 'https://example.com' }]
+  }), false);
+});
+
+test('weather-story loading remains isolated from forecast loading', () => {
+  assert.match(pageScript, /loadHeadlines\(\);\s+const raw = safeStorageRead/);
+  assert.doesNotMatch(pageScript, /await loadHeadlines\(\)/);
+});

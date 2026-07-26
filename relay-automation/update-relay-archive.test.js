@@ -317,7 +317,10 @@ test("30. workflow runs the archive tests", async () => {
 
 test("31. workflow stages only intended paths", async () => {
   const workflow = await fs.readFile(path.join(__dirname, "..", ".github", "workflows", "update-relay-articles.yml"), "utf8");
-  assert.match(workflow, /git add -- pages\/relay\/article-data\.json pages\/relay\/archive\/ sitemap\.xml/);
+  assert.match(
+    workflow,
+    /git add -- pages\/relay\/article-data\.json pages\/relay\/weather-data\.json pages\/relay\/archive\/ sitemap\.xml/
+  );
 });
 
 test("32. unchanged repeated runs are idempotent", async () => {
