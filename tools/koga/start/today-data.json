@@ -2,18 +2,18 @@
   "schema_version": "1.0",
   "date_key": "07-26",
   "display_date": "July 26",
-  "generated_at": "2026-07-26T15:27:35.868Z",
+  "generated_at": "2026-07-26T15:45:05.298Z",
   "source": "Wikimedia On This Day",
-  "selection_method": "ai",
+  "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-eda17d4d71b97ef6ff489ba0",
+      "candidate_id": "event-02863c5e8f2e46d3366ad36a",
       "type": "event",
-      "year": 1581,
-      "text": "Plakkaat van Verlatinghe (Act of Abjuration): The northern Low Countries declare their independence from the Spanish king, Philip II.",
-      "article_title": "Act of Abjuration",
-      "url": "https://en.wikipedia.org/wiki/Act_of_Abjuration",
-      "category": "World history"
+      "year": 2005,
+      "text": "Space Shuttle program: STS-114 Mission: Launch of Discovery, NASA's first scheduled flight mission after the Columbia Disaster in 2003.",
+      "article_title": "Space Shuttle program",
+      "url": "https://en.wikipedia.org/wiki/Space_Shuttle_program",
+      "category": "Science and technology"
     },
     {
       "candidate_id": "event-80027c23a865a7b693d68127",
@@ -22,16 +22,16 @@
       "text": "Apollo program: Launch of Apollo 15 on the first Apollo \"J-Mission\", and first use of a Lunar Roving Vehicle.",
       "article_title": "Apollo program",
       "url": "https://en.wikipedia.org/wiki/Apollo_program",
-      "category": "Science and technology"
+      "category": "World history"
     },
     {
-      "candidate_id": "birth-eacc990ec7ae69c51453f3a6",
-      "type": "birth",
-      "year": 1856,
-      "text": "George Bernard Shaw, Irish playwright and critic, Nobel Prize laureate (died 1950)",
-      "article_title": "George Bernard Shaw",
-      "url": "https://en.wikipedia.org/wiki/George_Bernard_Shaw",
-      "category": "Culture and notable people"
+      "candidate_id": "event-df45532e1c3ec8ad00060ab4",
+      "type": "event",
+      "year": 2016,
+      "text": "Solar Impulse 2 becomes the first solar-powered aircraft to circumnavigate the Earth.",
+      "article_title": "Solar Impulse",
+      "url": "https://en.wikipedia.org/wiki/Solar_Impulse",
+      "category": "World history"
     }
   ]
 }
