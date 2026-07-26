@@ -2,36 +2,36 @@
   "schema_version": "1.0",
   "date_key": "07-26",
   "display_date": "July 26",
-  "generated_at": "2026-07-26T15:13:21.358Z",
+  "generated_at": "2026-07-26T15:27:35.868Z",
   "source": "Wikimedia On This Day",
-  "selection_method": "deterministic_fallback",
+  "selection_method": "ai",
   "items": [
     {
-      "candidate_id": "event-ebdadcac3dc388ced947a660",
+      "candidate_id": "event-eda17d4d71b97ef6ff489ba0",
       "type": "event",
-      "year": 1945,
-      "text": "World War II: The Potsdam Declaration is signed in Potsdam, Germany.",
-      "article_title": "Potsdam Declaration",
-      "url": "https://en.wikipedia.org/wiki/Potsdam_Declaration",
+      "year": 1581,
+      "text": "Plakkaat van Verlatinghe (Act of Abjuration): The northern Low Countries declare their independence from the Spanish king, Philip II.",
+      "article_title": "Act of Abjuration",
+      "url": "https://en.wikipedia.org/wiki/Act_of_Abjuration",
       "category": "World history"
     },
     {
-      "candidate_id": "birth-ba85d7553ba22503de11a675",
-      "type": "birth",
-      "year": 1880,
-      "text": "Volodymyr Vynnychenko, Ukrainian playwright and politician, 1st Prime Minister of Ukrainian People's Republic (died 1951)",
-      "article_title": "Volodymyr Vynnychenko",
-      "url": "https://en.wikipedia.org/wiki/Volodymyr_Vynnychenko",
-      "category": "Culture and notable people"
+      "candidate_id": "event-80027c23a865a7b693d68127",
+      "type": "event",
+      "year": 1971,
+      "text": "Apollo program: Launch of Apollo 15 on the first Apollo \"J-Mission\", and first use of a Lunar Roving Vehicle.",
+      "article_title": "Apollo program",
+      "url": "https://en.wikipedia.org/wiki/Apollo_program",
+      "category": "Science and technology"
     },
     {
-      "candidate_id": "event-02863c5e8f2e46d3366ad36a",
-      "type": "event",
-      "year": 2005,
-      "text": "Space Shuttle program: STS-114 Mission: Launch of Discovery, NASA's first scheduled flight mission after the Columbia Disaster in 2003.",
-      "article_title": "Space Shuttle program",
-      "url": "https://en.wikipedia.org/wiki/Space_Shuttle_program",
-      "category": "Science and technology"
+      "candidate_id": "birth-eacc990ec7ae69c51453f3a6",
+      "type": "birth",
+      "year": 1856,
+      "text": "George Bernard Shaw, Irish playwright and critic, Nobel Prize laureate (died 1950)",
+      "article_title": "George Bernard Shaw",
+      "url": "https://en.wikipedia.org/wiki/George_Bernard_Shaw",
+      "category": "Culture and notable people"
     }
   ]
 }
