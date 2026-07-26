@@ -7,6 +7,7 @@ const path = require('node:path');
 const weather = require('./weather-page.js');
 const pageScript = fs.readFileSync(path.join(__dirname, 'weather-page.js'), 'utf8');
 const pageHtml = fs.readFileSync(path.join(__dirname, '..', '..', 'weather.html'), 'utf8');
+const pageCss = fs.readFileSync(path.join(__dirname, 'weather.css'), 'utf8');
 
 function period(overrides = {}) {
   return {
@@ -302,9 +303,71 @@ test('geolocation remains available with bounded privacy-conscious options', () 
   assert.match(pageScript, /enableHighAccuracy: false/);
 });
 
-test('daily disclosures are native buttons with exclusive expansion', () => {
-  assert.match(pageScript, /button\.setAttribute\('aria-expanded', 'false'\)/);
-  assert.match(pageScript, /querySelectorAll\('\.daily-toggle'\)/);
+test('mobile daily forecast uses native day-selection cards and a shared panel', () => {
+  assert.match(pageScript, /element\('button', 'daily-card'\)/);
+  assert.match(pageScript, /rail\.setAttribute\('role', 'tablist'\)/);
+  assert.match(pageScript, /detail\.setAttribute\('role', 'tabpanel'\)/);
+  assert.match(pageCss, /\.daily-card\s*\{[\s\S]*flex:\s*0 0 116px/);
+  assert.match(pageCss, /scroll-snap-type:\s*x mandatory/);
+});
+
+test('exactly one daily card is initially selected', () => {
+  assert.match(pageScript, /button\.setAttribute\('aria-selected', String\(index === 0\)\)/);
+  assert.match(pageScript, /selectDay\(rail\.children\[0\], days\[0\]\)/);
+  assert.match(pageScript, /other\.setAttribute\('aria-selected', String\(selected\)\)/);
+});
+
+test('selecting and keyboard navigation update one shared daily panel', () => {
+  assert.match(pageScript, /button\.addEventListener\('click', \(\) => selectDay\(button, day\)\)/);
+  assert.match(pageScript, /clear\(detail\)/);
+  assert.match(pageScript, /\['ArrowLeft', 'ArrowRight', 'Home', 'End'\]/);
+  assert.match(pageScript, /buttons\[targetIndex\]\.click\(\)/);
+});
+
+test('daily details omit unavailable optional fields', () => {
+  const day = {
+    high: 81,
+    low: 62,
+    pop: null,
+    gust: null,
+    humidity: null,
+    representative: {
+      weather: [{ description: 'clear sky' }],
+      wind: {}
+    }
+  };
+  assert.deepEqual(weather.dailyDetailItems(day), ['clear sky', 'High 81° / Low 62°']);
+  assert.doesNotMatch(weather.dailyAriaLabel(day, 0), /precipitation/);
+});
+
+test('daily card labels expose genuine condition, temperatures, and precipitation', () => {
+  const day = {
+    weekday: 'Sat',
+    high: 81,
+    low: 62,
+    pop: .4,
+    representative: { weather: [{ description: 'light rain' }] }
+  };
+  assert.equal(weather.dailyAriaLabel(day, 1),
+    'Sat, light rain, high 81 degrees, low 62 degrees, 40 percent precipitation');
+});
+
+test('desktop daily rows remain available above the mobile breakpoint', () => {
+  assert.match(pageCss, /@media \(min-width: 560px\)[\s\S]*\.daily-rail\s*\{[\s\S]*display:\s*block/);
+  assert.match(pageCss, /grid-template-areas:\s*"day icon condition pop temps"/);
+});
+
+test('mobile story cards use a compact unified visual tile', () => {
+  assert.match(pageCss, /\.story-card\s*\{[\s\S]*grid-template-columns:\s*60px minmax\(0, 1fr\)/);
+  assert.match(pageCss, /\.story-visual\s*\{[\s\S]*width:\s*60px;[\s\S]*height:\s*60px/);
+  assert.doesNotMatch(pageCss, /\.story-visual\s*\{[\s\S]*?min-height:\s*90px/);
+});
+
+test('story titles reserve arrow space and cannot create horizontal overflow', () => {
+  assert.match(pageCss, /\.story-card\s*\{[\s\S]*padding:\s*10px 38px 10px 10px/);
+  assert.match(pageCss, /\.story-card > \.external-arrow\s*\{[\s\S]*position:\s*absolute/);
+  assert.match(pageCss, /\.story-title\s*\{[\s\S]*overflow-wrap:\s*anywhere/);
+  assert.match(pageCss, /-webkit-line-clamp:\s*4/);
 });
 
 test('official external links do not include location data', () => {

@@ -28,6 +28,7 @@
   const MAX_HOURS = 24;
 
   function finite(value) {
+    if (value === null || value === undefined || value === '') return null;
     const number = Number(value);
     return Number.isFinite(number) ? number : null;
   }
@@ -223,6 +224,37 @@
     return '';
   }
 
+  function dailyDetailItems(day) {
+    if (!day || !day.representative) return [];
+    const weather = Array.isArray(day.representative.weather) ? day.representative.weather[0] : null;
+    const description = cleanText(weather && weather.description) || cleanText(weather && weather.main);
+    const items = [];
+    if (description) items.push(description);
+    if (finite(day.high) !== null && finite(day.low) !== null) {
+      items.push(`High ${Math.round(day.high)}° / Low ${Math.round(day.low)}°`);
+    }
+    if (finite(day.pop) !== null) items.push(`Rain up to ${Math.round(day.pop * 100)}%`);
+    if (finite(day.gust) !== null) items.push(`Gusts up to ${Math.round(day.gust)} mph`);
+    if (finite(day.humidity) !== null) items.push(`Humidity ${Math.round(day.humidity)}%`);
+    const windSpeed = finite(day.representative.wind && day.representative.wind.speed);
+    if (windSpeed !== null) items.push(`Wind near ${Math.round(windSpeed)} mph`);
+    return items;
+  }
+
+  function dailyAriaLabel(day, index) {
+    const weather = Array.isArray(day && day.representative && day.representative.weather)
+      ? day.representative.weather[0]
+      : null;
+    const parts = [
+      index === 0 ? 'Today' : cleanText(day && day.weekday),
+      cleanText(weather && (weather.description || weather.main)) || 'Forecast',
+      finite(day && day.high) === null ? '' : `high ${Math.round(day.high)} degrees`,
+      finite(day && day.low) === null ? '' : `low ${Math.round(day.low)} degrees`,
+      finite(day && day.pop) === null ? '' : `${Math.round(day.pop * 100)} percent precipitation`
+    ].filter(Boolean);
+    return parts.join(', ');
+  }
+
   function filterWeatherHeadlines(payload) {
     if (!payload || !Array.isArray(payload.items)) return [];
     return payload.items.filter((item) => item && storyTopic(item.title) && safeHttpUrl(item.url)).slice(0, 3);
@@ -397,44 +429,62 @@
       clear(els.dailyForecast);
       const days = groupDaily(forecast.list, offset);
       els.dailyRange.textContent = days.length ? `${days.length} available days` : '';
+      const rail = element('div', 'daily-rail');
+      const detail = element('div', 'daily-detail');
+      const detailId = 'daily-selected-detail';
+      rail.setAttribute('role', 'tablist');
+      rail.setAttribute('aria-label', 'Daily forecast days');
+      detail.id = detailId;
+      detail.setAttribute('role', 'tabpanel');
+
+      function selectDay(button, day) {
+        rail.querySelectorAll('.daily-card').forEach((other) => {
+          const selected = other === button;
+          other.setAttribute('aria-selected', String(selected));
+          other.tabIndex = selected ? 0 : -1;
+        });
+        clear(detail);
+        dailyDetailItems(day).forEach((item) => detail.append(element('p', '', item)));
+        detail.setAttribute('aria-labelledby', button.id);
+      }
+
       days.forEach((day, index) => {
-        const wrapper = element('div', 'daily-item');
-        const button = element('button', 'daily-toggle');
-        const detail = element('div', 'daily-detail');
-        const detailId = `daily-detail-${index}`;
+        const button = element('button', 'daily-card');
         button.type = 'button';
-        button.setAttribute('aria-expanded', 'false');
+        button.id = `daily-day-${index}`;
+        button.setAttribute('role', 'tab');
+        button.setAttribute('aria-selected', String(index === 0));
         button.setAttribute('aria-controls', detailId);
-        detail.id = detailId;
-        detail.hidden = true;
+        button.setAttribute('aria-label', dailyAriaLabel(day, index));
+        button.tabIndex = index === 0 ? 0 : -1;
         button.append(
           element('span', 'daily-day', index === 0 ? 'Today' : day.weekday),
           element('span', 'daily-icon', weatherSymbol(day.representative.weather[0].id, day.representative.sys && day.representative.sys.pod)),
           element('span', 'daily-condition', cleanText(day.representative.weather[0].description) || 'Forecast'),
           element('span', 'daily-pop', day.pop === null ? '' : `💧 ${Math.round(day.pop * 100)}%`),
-          element('span', 'daily-temps', `${Math.round(day.high)}° `),
-          element('span', 'daily-chevron', '⌄')
+          element('span', 'daily-temps', `${Math.round(day.high)}° `)
         );
         button.children[4].append(element('span', 'daily-low', `/ ${Math.round(day.low)}°`));
-        detail.append(element('p', '', cleanText(day.representative.weather[0].description) || 'Forecast conditions'));
-        if (day.pop !== null) detail.append(element('p', '', `Precipitation chance up to ${Math.round(day.pop * 100)}%`));
-        if (day.gust !== null) detail.append(element('p', '', `Forecast gusts up to ${Math.round(day.gust)} mph`));
-        if (day.humidity !== null) detail.append(element('p', '', `Humidity up to ${Math.round(day.humidity)}%`));
-        const windSpeed = finite(day.representative.wind && day.representative.wind.speed);
-        if (windSpeed !== null) detail.append(element('p', '', `Wind near ${Math.round(windSpeed)} mph`));
-        button.addEventListener('click', () => {
-          const opening = button.getAttribute('aria-expanded') !== 'true';
-          els.dailyForecast.querySelectorAll('.daily-toggle').forEach((other) => {
-            other.setAttribute('aria-expanded', 'false');
-            const controlled = doc.getElementById(other.getAttribute('aria-controls'));
-            if (controlled) controlled.hidden = true;
-          });
-          button.setAttribute('aria-expanded', String(opening));
-          detail.hidden = !opening;
+        button.addEventListener('click', () => selectDay(button, day));
+        button.addEventListener('keydown', (event) => {
+          if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+          event.preventDefault();
+          const buttons = Array.from(rail.querySelectorAll('.daily-card'));
+          const currentIndex = buttons.indexOf(button);
+          const targetIndex = event.key === 'Home'
+            ? 0
+            : event.key === 'End'
+              ? buttons.length - 1
+              : (currentIndex + (event.key === 'ArrowRight' ? 1 : -1) + buttons.length) % buttons.length;
+          buttons[targetIndex].focus();
+          buttons[targetIndex].click();
         });
-        wrapper.append(button, detail);
-        els.dailyForecast.append(wrapper);
+        rail.append(button);
       });
+      if (days.length) {
+        els.dailyForecast.append(rail, detail);
+        selectDay(rail.children[0], days[0]);
+      }
       els.dailySection.hidden = !days.length;
     }
 
@@ -757,6 +807,8 @@
     validCache,
     forecastPeriods,
     groupDaily,
+    dailyDetailItems,
+    dailyAriaLabel,
     summaryForForecast,
     filterWeatherHeadlines,
     validDedicatedWeatherFeed,
