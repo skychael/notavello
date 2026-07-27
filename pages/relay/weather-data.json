@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-27T04:55:16.858Z",
-  "latest_success_at": "2026-07-27T04:55:16.858Z",
-  "status": "ok",
+  "generated_at": "2026-07-27T08:48:56.122Z",
+  "latest_success_at": "2026-07-27T08:48:56.122Z",
+  "status": "partial",
   "items": [
     {
       "id": "43e200b298919ff4",
@@ -23,11 +23,11 @@
       "status": "ok"
     },
     {
-      "id": "cf7d46cd49213ee2",
-      "title": "Hurricane Genevieve Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep2+shtml/032748.shtml?cone=",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-07-27T03:27:48.000Z",
+      "id": "f2bc3e5729017844",
+      "title": "SPC Jul 27, 2026 0600 UTC Day 2 Convective Outlook",
+      "url": "https://www.spc.noaa.gov/products/outlook/day2otlk_0600.html",
+      "publisher": "Storm Prediction Center",
+      "published_at": "2026-07-27T05:55:19.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
