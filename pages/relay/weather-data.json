@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-27T01:02:03.052Z",
-  "latest_success_at": "2026-07-27T01:02:03.052Z",
+  "generated_at": "2026-07-27T04:55:16.858Z",
+  "latest_success_at": "2026-07-27T04:55:16.858Z",
   "status": "ok",
   "items": [
     {
@@ -23,11 +23,11 @@
       "status": "ok"
     },
     {
-      "id": "ee8e390990a944fc",
-      "title": "Eastern North Pacific Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
+      "id": "cf7d46cd49213ee2",
+      "title": "Hurricane Genevieve Graphics",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep2+shtml/032748.shtml?cone=",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-07-26T23:10:58.000Z",
+      "published_at": "2026-07-27T03:27:48.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
