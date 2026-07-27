@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "07-26",
-  "display_date": "July 26",
-  "generated_at": "2026-07-26T15:45:05.298Z",
+  "date_key": "07-27",
+  "display_date": "July 27",
+  "generated_at": "2026-07-27T11:40:53.218Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-02863c5e8f2e46d3366ad36a",
+      "candidate_id": "event-c995863dbbd2b9228eb87410",
       "type": "event",
-      "year": 2005,
-      "text": "Space Shuttle program: STS-114 Mission: Launch of Discovery, NASA's first scheduled flight mission after the Columbia Disaster in 2003.",
-      "article_title": "Space Shuttle program",
-      "url": "https://en.wikipedia.org/wiki/Space_Shuttle_program",
+      "year": 1949,
+      "text": "Initial flight of the de Havilland Comet, the first jet-powered airliner.",
+      "article_title": "De Havilland Comet",
+      "url": "https://en.wikipedia.org/wiki/De_Havilland_Comet",
+      "category": "World history"
+    },
+    {
+      "candidate_id": "event-d7337a5b0dbd8fff8edc1e78",
+      "type": "event",
+      "year": 2002,
+      "text": "Ukraine airshow disaster: A Sukhoi Su-27 fighter crashes during an air show at Lviv, Ukraine killing 77 and injuring more than 500 others, making it the deadliest air show disaster in history.",
+      "article_title": "Sknyliv air show disaster",
+      "url": "https://en.wikipedia.org/wiki/Sknyliv_air_show_disaster",
+      "category": "Disasters and exploration"
+    },
+    {
+      "candidate_id": "event-211b55ae11e3f26b4bd89b84",
+      "type": "event",
+      "year": 1955,
+      "text": "El Al Flight 402 is shot down by two fighter jets after straying into Bulgarian air space. All 58 people on board are killed.",
+      "article_title": "El Al Flight 402",
+      "url": "https://en.wikipedia.org/wiki/El_Al_Flight_402",
       "category": "Science and technology"
-    },
-    {
-      "candidate_id": "event-80027c23a865a7b693d68127",
-      "type": "event",
-      "year": 1971,
-      "text": "Apollo program: Launch of Apollo 15 on the first Apollo \"J-Mission\", and first use of a Lunar Roving Vehicle.",
-      "article_title": "Apollo program",
-      "url": "https://en.wikipedia.org/wiki/Apollo_program",
-      "category": "World history"
-    },
-    {
-      "candidate_id": "event-df45532e1c3ec8ad00060ab4",
-      "type": "event",
-      "year": 2016,
-      "text": "Solar Impulse 2 becomes the first solar-powered aircraft to circumnavigate the Earth.",
-      "article_title": "Solar Impulse",
-      "url": "https://en.wikipedia.org/wiki/Solar_Impulse",
-      "category": "World history"
     }
   ]
 }
