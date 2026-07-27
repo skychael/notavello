@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-27T08:48:56.122Z",
-  "latest_success_at": "2026-07-27T08:48:56.122Z",
-  "status": "partial",
+  "generated_at": "2026-07-27T12:38:27.803Z",
+  "latest_success_at": "2026-07-27T12:38:27.803Z",
+  "status": "ok",
   "items": [
     {
       "id": "43e200b298919ff4",
@@ -14,20 +14,20 @@
       "status": "ok"
     },
     {
-      "id": "da0ffef2833022b9",
-      "title": "Two dead in Upshur County due to catastrophic flooding in West Virginia",
-      "url": "https://watchers.news/2026/07/25/two-dead-in-upshur-county-due-to-catastrophic-flooding-in-west-virginia",
-      "publisher": "The Watchers",
-      "published_at": "2026-07-25T09:50:39.000Z",
-      "topic": "Flooding",
+      "id": "b5ad93019d019ede",
+      "title": "Atlantic Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-07-27T11:25:36.000Z",
+      "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "f2bc3e5729017844",
-      "title": "SPC Jul 27, 2026 0600 UTC Day 2 Convective Outlook",
-      "url": "https://www.spc.noaa.gov/products/outlook/day2otlk_0600.html",
-      "publisher": "Storm Prediction Center",
-      "published_at": "2026-07-27T05:55:19.000Z",
+      "id": "bc39acc4b836cbce",
+      "title": "Hurricane Genevieve Graphics",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep2+shtml/092836.shtml?cone=",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-07-27T09:28:36.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
