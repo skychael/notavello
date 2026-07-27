@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "checked_at": "2026-07-27T15:54:48.917Z",
-  "latest_success_at": "2026-07-27T15:54:48.917Z",
+  "checked_at": "2026-07-27T17:57:47.123Z",
+  "latest_success_at": "2026-07-27T17:57:47.123Z",
   "status": "ok",
   "items": [
     {
@@ -9,14 +9,6 @@
       "url": "https://oilprice.com/Latest-Energy-News/World-News/Red-Sea-Tanker-Traffic-Falls-to-Multi-Month-Low-After-Houthi-Threats.html",
       "publisher": "OilPrice.com",
       "published_at": "2026-07-27T09:40:00.000Z",
-      "source_id": "oilprice",
-      "status": "ok"
-    },
-    {
-      "title": "Standard Chartered: Oil Markets Must Now Price Two Middle East Chokepoints",
-      "url": "https://oilprice.com/Energy/Crude-Oil/Standard-Chartered-Oil-Markets-Must-Now-Price-Two-Middle-East-Chokepoints.html",
-      "publisher": "OilPrice.com",
-      "published_at": "2026-07-26T23:00:00.000Z",
       "source_id": "oilprice",
       "status": "ok"
     },
@@ -29,6 +21,22 @@
       "status": "ok"
     },
     {
+      "title": "Russia’s Novorossiysk Resumed Crude Loadings After Days of Halt",
+      "url": "https://gcaptain.com/russias-novorossiysk-resumed-crude-loadings-after-days-of-halt",
+      "publisher": "gCaptain",
+      "published_at": "2026-07-27T15:53:55.000Z",
+      "source_id": "gcaptain",
+      "status": "ok"
+    },
+    {
+      "title": "India Flags Attack on LPG Tanker in Iran Waters, Says Crew Safe",
+      "url": "https://gcaptain.com/india-flags-attack-on-lpg-tanker-in-iran-waters-says-crew-safe",
+      "publisher": "gCaptain",
+      "published_at": "2026-07-27T15:55:42.000Z",
+      "source_id": "gcaptain",
+      "status": "ok"
+    },
+    {
       "title": "Chinese South Pacific Missile Test Unites Opposition",
       "url": "https://maritime-executive.com/article/chinese-south-pacific-missile-test-unites-opposition",
       "publisher": "The Maritime Executive",
@@ -37,35 +45,11 @@
       "status": "ok"
     },
     {
-      "title": "Asia-Bound Tanker Exits Red Sea Via Suez as Others Risk Strait",
-      "url": "https://gcaptain.com/asia-bound-tanker-exits-red-sea-via-suez-as-others-risk-strait",
-      "publisher": "gCaptain",
-      "published_at": "2026-07-27T10:37:03.000Z",
-      "source_id": "gcaptain",
-      "status": "ok"
-    },
-    {
-      "title": "Red Sea Shipping Slows After Houthi Attack On Saudi Arabia",
-      "url": "https://gcaptain.com/red-sea-shipping-slows-after-houthi-attack-on-saudi-arabia",
-      "publisher": "gCaptain",
-      "published_at": "2026-07-27T01:58:25.000Z",
-      "source_id": "gcaptain",
-      "status": "ok"
-    },
-    {
-      "title": "Evidence Of Ukraine Using Dutch Ruta Block 1 Cruise Missiles Emerges",
-      "url": "https://www.twz.com/news-features/evidence-of-ukraine-using-dutch-ruta-block-1-cruise-missiles-emerges",
-      "publisher": "TWZ (The War Zone)",
-      "published_at": "2026-07-24T16:46:44.000Z",
-      "source_id": "twz",
-      "status": "ok"
-    },
-    {
-      "title": "Pentagon eyes November to demo ground-launched, precision strike weapons",
-      "url": "https://breakingdefense.com/2026/07/pentagon-eyes-november-to-demo-ground-launched-precision-strike-weapons",
-      "publisher": "Breaking Defense",
-      "published_at": "2026-07-24T16:05:14.000Z",
-      "source_id": "breaking-defense",
+      "title": "Houthi Threats Force Saudi Crude Tanker Onto Suez Route To Asia",
+      "url": "https://oilprice.com/Latest-Energy-News/World-News/Houthi-Threats-Force-Saudi-Crude-Tanker-Onto-Suez-Route-To-Asia.html",
+      "publisher": "OilPrice.com",
+      "published_at": "2026-07-27T12:30:00.000Z",
+      "source_id": "oilprice",
       "status": "ok"
     },
     {
@@ -77,11 +61,27 @@
       "status": "ok"
     },
     {
+      "title": "America’s fighter force is running out of margin: Rep. Biggs",
+      "url": "https://breakingdefense.com/2026/07/americas-fighter-force-is-running-out-of-margin-rep-biggs",
+      "publisher": "Breaking Defense",
+      "published_at": "2026-07-27T17:00:00.000Z",
+      "source_id": "breaking-defense",
+      "status": "ok"
+    },
+    {
       "title": "U.S. Coast Guard Seeking Technology To Hunt And Kill Uncrewed Underwater Vehicles",
       "url": "https://www.twz.com/sea/u-s-coast-guard-seeking-technology-to-hunt-and-kill-uncrewed-underwater-vehicles",
       "publisher": "TWZ (The War Zone)",
       "published_at": "2026-07-24T20:34:34.000Z",
       "source_id": "twz",
+      "status": "ok"
+    },
+    {
+      "title": "US factories are struggling to get cleaner heat. These ideas may help.",
+      "url": "https://www.canarymedia.com/articles/clean-energy-manufacturing/factories-cleaner-heat-ideas",
+      "publisher": "Canary Media",
+      "published_at": "2026-07-27T07:30:00.000Z",
+      "source_id": "canary-media",
       "status": "ok"
     }
   ]
