@@ -1,17 +1,9 @@
 {
   "schema_version": "1.0",
-  "checked_at": "2026-07-27T12:38:26.297Z",
-  "latest_success_at": "2026-07-27T12:38:26.297Z",
+  "checked_at": "2026-07-27T15:54:48.917Z",
+  "latest_success_at": "2026-07-27T15:54:48.917Z",
   "status": "ok",
   "items": [
-    {
-      "title": "Oil Market's Glut Narrative Just Blew Up",
-      "url": "https://oilprice.com/Energy/Crude-Oil/Oil-Markets-Glut-Narrative-Just-Blew-Up.html",
-      "publisher": "OilPrice.com",
-      "published_at": "2026-07-26T16:00:00.000Z",
-      "source_id": "oilprice",
-      "status": "ok"
-    },
     {
       "title": "Red Sea Tanker Traffic Falls to Multi-Month Low After Houthi Threats",
       "url": "https://oilprice.com/Latest-Energy-News/World-News/Red-Sea-Tanker-Traffic-Falls-to-Multi-Month-Low-After-Houthi-Threats.html",
@@ -21,19 +13,19 @@
       "status": "ok"
     },
     {
+      "title": "Standard Chartered: Oil Markets Must Now Price Two Middle East Chokepoints",
+      "url": "https://oilprice.com/Energy/Crude-Oil/Standard-Chartered-Oil-Markets-Must-Now-Price-Two-Middle-East-Chokepoints.html",
+      "publisher": "OilPrice.com",
+      "published_at": "2026-07-26T23:00:00.000Z",
+      "source_id": "oilprice",
+      "status": "ok"
+    },
+    {
       "title": "As Diplomacy Picks Up, Iran Claims Mine Strike on Ship in Strait of Hormuz",
       "url": "https://maritime-executive.com/article/as-diplomacy-picks-up-iran-claims-mine-strike-on-ship-in-strait-of-hormuz",
       "publisher": "The Maritime Executive",
       "published_at": "2026-07-26T18:04:00.000Z",
       "source_id": "maritime-executive",
-      "status": "ok"
-    },
-    {
-      "title": "Houthis Fire On Saudi Red Sea Oil Sites",
-      "url": "https://gcaptain.com/houthis-fire-on-saudi-red-sea-oil-sites",
-      "publisher": "gCaptain",
-      "published_at": "2026-07-25T18:08:45.000Z",
-      "source_id": "gcaptain",
       "status": "ok"
     },
     {
@@ -49,6 +41,14 @@
       "url": "https://gcaptain.com/asia-bound-tanker-exits-red-sea-via-suez-as-others-risk-strait",
       "publisher": "gCaptain",
       "published_at": "2026-07-27T10:37:03.000Z",
+      "source_id": "gcaptain",
+      "status": "ok"
+    },
+    {
+      "title": "Red Sea Shipping Slows After Houthi Attack On Saudi Arabia",
+      "url": "https://gcaptain.com/red-sea-shipping-slows-after-houthi-attack-on-saudi-arabia",
+      "publisher": "gCaptain",
+      "published_at": "2026-07-27T01:58:25.000Z",
       "source_id": "gcaptain",
       "status": "ok"
     },
