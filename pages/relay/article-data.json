@@ -1,17 +1,9 @@
 {
   "schema_version": "1.0",
-  "checked_at": "2026-07-27T17:57:47.123Z",
-  "latest_success_at": "2026-07-27T17:57:47.123Z",
+  "checked_at": "2026-07-27T19:58:18.884Z",
+  "latest_success_at": "2026-07-27T19:58:18.884Z",
   "status": "ok",
   "items": [
-    {
-      "title": "Red Sea Tanker Traffic Falls to Multi-Month Low After Houthi Threats",
-      "url": "https://oilprice.com/Latest-Energy-News/World-News/Red-Sea-Tanker-Traffic-Falls-to-Multi-Month-Low-After-Houthi-Threats.html",
-      "publisher": "OilPrice.com",
-      "published_at": "2026-07-27T09:40:00.000Z",
-      "source_id": "oilprice",
-      "status": "ok"
-    },
     {
       "title": "As Diplomacy Picks Up, Iran Claims Mine Strike on Ship in Strait of Hormuz",
       "url": "https://maritime-executive.com/article/as-diplomacy-picks-up-iran-claims-mine-strike-on-ship-in-strait-of-hormuz",
@@ -53,6 +45,14 @@
       "status": "ok"
     },
     {
+      "title": "Kazakhstan Restarts CPC Oil Exports After Week-Long Black Sea Shutdown",
+      "url": "https://oilprice.com/Latest-Energy-News/World-News/Kazakhstan-Restarts-CPC-Oil-Exports-After-Week-Long-Black-Sea-Shutdown.html",
+      "publisher": "OilPrice.com",
+      "published_at": "2026-07-27T17:30:00.000Z",
+      "source_id": "oilprice",
+      "status": "ok"
+    },
+    {
       "title": "Pentagon’s special ops office hosts first Shark Tank-style Accelerator Event",
       "url": "https://breakingdefense.com/2026/07/pentagons-special-ops-office-hosts-first-shark-tank-style-accelerator-event",
       "publisher": "Breaking Defense",
@@ -61,11 +61,19 @@
       "status": "ok"
     },
     {
-      "title": "America’s fighter force is running out of margin: Rep. Biggs",
-      "url": "https://breakingdefense.com/2026/07/americas-fighter-force-is-running-out-of-margin-rep-biggs",
+      "title": "Army picks GM Defense, Ford and BC Customs to build nine ISV-Heavy prototypes",
+      "url": "https://breakingdefense.com/2026/07/army-picks-gm-defense-ford-and-bc-customs-to-build-nine-isv-heavy-prototypes",
       "publisher": "Breaking Defense",
-      "published_at": "2026-07-27T17:00:00.000Z",
+      "published_at": "2026-07-27T19:32:00.000Z",
       "source_id": "breaking-defense",
+      "status": "ok"
+    },
+    {
+      "title": "Aerostar High-Altitude Balloons Being Turned Into Drone Motherships",
+      "url": "https://www.twz.com/news-features/aerostar-high-altitude-balloons-being-turned-into-drone-motherships",
+      "publisher": "TWZ (The War Zone)",
+      "published_at": "2026-07-27T17:59:33.000Z",
+      "source_id": "twz",
       "status": "ok"
     },
     {
@@ -74,14 +82,6 @@
       "publisher": "TWZ (The War Zone)",
       "published_at": "2026-07-24T20:34:34.000Z",
       "source_id": "twz",
-      "status": "ok"
-    },
-    {
-      "title": "US factories are struggling to get cleaner heat. These ideas may help.",
-      "url": "https://www.canarymedia.com/articles/clean-energy-manufacturing/factories-cleaner-heat-ideas",
-      "publisher": "Canary Media",
-      "published_at": "2026-07-27T07:30:00.000Z",
-      "source_id": "canary-media",
       "status": "ok"
     }
   ]

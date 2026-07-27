@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-27T17:57:47.863Z",
-  "latest_success_at": "2026-07-27T17:57:47.863Z",
+  "generated_at": "2026-07-27T19:58:19.531Z",
+  "latest_success_at": "2026-07-27T19:58:19.531Z",
   "status": "ok",
   "items": [
     {
@@ -14,20 +14,20 @@
       "status": "ok"
     },
     {
+      "id": "dda1164796d8293d",
+      "title": "High Surf Warning issued July 27 at 9:04AM HST until July 29 at 6:00PM HST by NWS Honolulu HI",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.94bdd312361153e4adb4dc4049882eb10cbde8e0.001.2.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-07-27T19:04:00.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
       "id": "b5ad93019d019ede",
       "title": "Atlantic Tropical Weather Outlook",
       "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
       "publisher": "National Hurricane Center",
       "published_at": "2026-07-27T17:24:10.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "9b355d38a5437c29",
-      "title": "Hurricane Genevieve Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep2+shtml/152840.shtml?cone=",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-07-27T15:28:40.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
