@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-28T12:15:51.671Z",
-  "latest_success_at": "2026-07-28T12:15:51.671Z",
+  "generated_at": "2026-07-28T14:45:07.515Z",
+  "latest_success_at": "2026-07-28T14:45:07.515Z",
   "status": "ok",
   "items": [
     {
@@ -14,20 +14,20 @@
       "status": "ok"
     },
     {
-      "id": "ee8e390990a944fc",
-      "title": "Eastern North Pacific Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
+      "id": "016be733d8d15224",
+      "title": "Hurricane Genevieve Graphics",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep2+shtml/143902.shtml?cone=",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-07-28T11:38:00.000Z",
+      "published_at": "2026-07-28T14:39:02.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "ed8d130e40e5dad1",
-      "title": "Hurricane Genevieve Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep2+shtml/092827.shtml?cone=",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-07-28T09:28:27.000Z",
+      "id": "826fdf76c918a964",
+      "title": "Flash Flood Warning issued July 28 at 9:24AM EDT until July 28 at 11:30AM EDT by NWS State College PA",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.cf822d6aeb29d538aeda56287495572b6457882f.001.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-07-28T13:24:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
