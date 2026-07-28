@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-28T06:43:26.015Z",
-  "latest_success_at": "2026-07-28T06:43:26.015Z",
+  "generated_at": "2026-07-28T09:57:47.771Z",
+  "latest_success_at": "2026-07-28T09:57:47.771Z",
   "status": "ok",
   "items": [
     {
@@ -14,20 +14,20 @@
       "status": "ok"
     },
     {
+      "id": "ed8d130e40e5dad1",
+      "title": "Hurricane Genevieve Graphics",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep2+shtml/092827.shtml?cone=",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-07-28T09:28:27.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
       "id": "f2bc3e5729017844",
       "title": "SPC Jul 28, 2026 0600 UTC Day 2 Convective Outlook",
       "url": "https://www.spc.noaa.gov/products/outlook/day2otlk_0600.html",
       "publisher": "Storm Prediction Center",
       "published_at": "2026-07-28T05:42:05.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "e6e96c079d2d43d5",
-      "title": "Special Weather Statement issued July 28 at 1:41AM EDT by NWS State College PA",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b288f212b3a957bcfe9fff632b366babbba86c1c.001.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-07-28T05:41:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
