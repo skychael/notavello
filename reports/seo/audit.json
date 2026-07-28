@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-07-27T05:13:46.594Z",
+  "generatedAt": "2026-07-28T04:44:52.745Z",
   "totals": {
-    "pages": 175,
-    "indexable": 171,
-    "articles": 109,
-    "sitemap": 171,
+    "pages": 176,
+    "indexable": 172,
+    "articles": 110,
+    "sitemap": 172,
     "errors": 0,
-    "warnings": 58
+    "warnings": 59
   },
   "errors": [],
   "warnings": [
@@ -221,6 +221,11 @@
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
     {
+      "type": "template-pattern",
+      "page": "/pages/blog/rootless-containers-ai-service-boundary/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
       "type": "topic-review",
       "page": "/pages/blog/self-driving-cars-trucks-can-be-fooled/",
       "detail": "title/description lacks a clear AI, software, or computing connection"
@@ -310,7 +315,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 175,
+      "incomingLinks": 176,
       "lastmod": "2026-07-24",
       "bodyWords": 750
     },
@@ -334,7 +339,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 175,
+      "incomingLinks": 176,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -442,7 +447,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 175,
+      "incomingLinks": 176,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -454,9 +459,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 175,
-      "lastmod": "2026-07-26",
-      "bodyWords": 644
+      "incomingLinks": 176,
+      "lastmod": "2026-07-27",
+      "bodyWords": 642
     },
     {
       "route": "/pages/blog/a-practical-checklist-for-checking-ai-generated-technical-answers/",
@@ -646,7 +651,7 @@
       "canonical": "https://notavello.com/pages/blog/ai-model-evaluation-sandbox-security-checklist/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 3,
+      "incomingLinks": 4,
       "lastmod": "2026-07-22",
       "bodyWords": 1894
     },
@@ -694,9 +699,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 48,
-      "lastmod": "2026-07-26",
-      "bodyWords": 1462
+      "incomingLinks": 49,
+      "lastmod": "2026-07-27",
+      "bodyWords": 1474
     },
     {
       "route": "/pages/blog/apple-speechanalyzer-local-transcription-apps/",
@@ -1379,8 +1384,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-07-26",
-      "bodyWords": 686
+      "lastmod": "2026-07-27",
+      "bodyWords": 689
     },
     {
       "route": "/pages/blog/page-3/",
@@ -1391,8 +1396,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-07-26",
-      "bodyWords": 678
+      "lastmod": "2026-07-27",
+      "bodyWords": 681
     },
     {
       "route": "/pages/blog/page-4/",
@@ -1403,8 +1408,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-07-26",
-      "bodyWords": 810
+      "lastmod": "2026-07-27",
+      "bodyWords": 794
     },
     {
       "route": "/pages/blog/page-5/",
@@ -1415,8 +1420,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-07-26",
-      "bodyWords": 837
+      "lastmod": "2026-07-27",
+      "bodyWords": 838
     },
     {
       "route": "/pages/blog/page-6/",
@@ -1427,8 +1432,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-07-26",
-      "bodyWords": 890
+      "lastmod": "2026-07-27",
+      "bodyWords": 883
     },
     {
       "route": "/pages/blog/page-7/",
@@ -1439,8 +1444,20 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": null,
-      "bodyWords": 75
+      "lastmod": "2026-07-27",
+      "bodyWords": 128
+    },
+    {
+      "route": "/pages/blog/rootless-containers-ai-service-boundary/",
+      "file": "pages/blog/rootless-containers-ai-service-boundary/index.html",
+      "title": "Rootless Containers Are The AI Service Boundary Worth Using — The Export | Notavello",
+      "description": "Run AI services with rootless containers to reduce blast radius, isolate risky workloads, and avoid fake security theater.",
+      "canonical": "https://notavello.com/pages/blog/rootless-containers-ai-service-boundary/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-07-28",
+      "bodyWords": 1219
     },
     {
       "route": "/pages/blog/search-field-2036/",
@@ -1858,7 +1875,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 175,
+      "incomingLinks": 176,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -1870,7 +1887,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 175,
+      "incomingLinks": 176,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -1882,7 +1899,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 175,
+      "incomingLinks": 176,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -1894,7 +1911,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 175,
+      "incomingLinks": 176,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -1906,7 +1923,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 175,
+      "incomingLinks": 176,
       "lastmod": "2026-07-25",
       "bodyWords": 170
     },
@@ -1919,8 +1936,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-07-27",
-      "bodyWords": 41
+      "lastmod": "2026-07-28",
+      "bodyWords": 47
     },
     {
       "route": "/pages/sample",
@@ -1942,7 +1959,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 175,
+      "incomingLinks": 176,
       "lastmod": "2026-07-26",
       "bodyWords": 688
     },
@@ -1954,7 +1971,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 175,
+      "incomingLinks": 176,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -1966,7 +1983,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 175,
+      "incomingLinks": 176,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -2398,7 +2415,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 175,
+      "incomingLinks": 176,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }
