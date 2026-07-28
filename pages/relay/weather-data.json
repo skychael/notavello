@@ -1,15 +1,15 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-28T20:36:07.004Z",
-  "latest_success_at": "2026-07-28T20:36:07.004Z",
+  "generated_at": "2026-07-28T22:18:32.723Z",
+  "latest_success_at": "2026-07-28T22:18:32.723Z",
   "status": "ok",
   "items": [
     {
-      "id": "ce70c1746299edd1",
-      "title": "Severe Thunderstorm Warning issued July 28 at 1:25PM MST until July 28 at 2:00PM MST by NWS Flagstaff AZ",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.5179eca503de3094fea61b99c6af0221a1b464c8.001.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-07-28T20:25:00.000Z",
+      "id": "345df2dcad66b662",
+      "title": "Hurricane Genevieve Graphics",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep2+shtml/203819.shtml?cone=",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-07-28T20:38:19.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
