@@ -1,15 +1,15 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-28T16:52:59.199Z",
-  "latest_success_at": "2026-07-28T16:52:59.199Z",
+  "generated_at": "2026-07-28T18:49:43.296Z",
+  "latest_success_at": "2026-07-28T18:49:43.296Z",
   "status": "ok",
   "items": [
     {
-      "id": "43e200b298919ff4",
-      "title": "Over 20 000 evacuated as Typhoon Noul approaches Guangdong, up to 600 mm (24 inches) of rain forecast, China",
-      "url": "https://watchers.news/2026/07/25/over-20-000-evacuated-as-typhoon-noul-approaches-guangdong-up-to-600-mm-24-inches-of-rain-forecast-china",
-      "publisher": "The Watchers",
-      "published_at": "2026-07-25T14:40:08.000Z",
+      "id": "ee8e390990a944fc",
+      "title": "Eastern North Pacific Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-07-28T17:31:11.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
@@ -23,11 +23,11 @@
       "status": "ok"
     },
     {
-      "id": "4c58e9789b538f76",
-      "title": "Flood Warning issued July 28 at 11:21AM EDT until July 28 at 1:15PM EDT by NWS State College PA",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2ee2b051afecd3acd29a51d7e8139321e3229f5d.001.1.cap",
+      "id": "f49fbc184e2cfdee",
+      "title": "High Surf Warning issued July 28 at 3:20AM HST until July 29 at 6:00PM HST by NWS Honolulu HI",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.af181d9d3be9b126efb3a0ff83f4ac649906c6fa.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-07-28T15:21:00.000Z",
+      "published_at": "2026-07-28T13:20:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
