@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-29T06:47:21.338Z",
-  "latest_success_at": "2026-07-29T06:47:21.338Z",
+  "generated_at": "2026-07-29T09:59:37.609Z",
+  "latest_success_at": "2026-07-29T09:59:37.609Z",
   "status": "ok",
   "items": [
+    {
+      "id": "74b1ff20a998ffad",
+      "title": "Hurricane Genevieve Graphics",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep2+shtml/092828.shtml?cone=",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-07-29T09:28:28.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "91e5697961c0d7ba",
+      "title": "SPC Jul 29, 2026 0730 UTC Day 3 Severe Thunderstorm Outlook",
+      "url": "https://www.spc.noaa.gov/products/outlook/day3otlk_0730.html",
+      "publisher": "Storm Prediction Center",
+      "published_at": "2026-07-29T07:27:40.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
     {
       "id": "b5ad93019d019ede",
       "title": "Atlantic Tropical Weather Outlook",
       "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
       "publisher": "National Hurricane Center",
       "published_at": "2026-07-29T05:11:14.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "1ec656fd05c8e1a2",
-      "title": "Hurricane Genevieve Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep2+shtml/032832.shtml?cone=",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-07-29T03:28:32.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "02f61dc0252d5b6e",
-      "title": "High Surf Warning issued July 28 at 3:31PM HST until July 29 at 6:00PM HST by NWS Honolulu HI",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.395a7a1587802ff3cc68d1c1b6817df74d620618.001.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-07-29T01:31:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
