@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "07-27",
-  "display_date": "July 27",
-  "generated_at": "2026-07-27T11:40:53.218Z",
+  "date_key": "07-29",
+  "display_date": "July 29",
+  "generated_at": "2026-07-29T10:49:07.798Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-c995863dbbd2b9228eb87410",
+      "candidate_id": "event-6274153c2092e2ee122b1808",
       "type": "event",
-      "year": 1949,
-      "text": "Initial flight of the de Havilland Comet, the first jet-powered airliner.",
-      "article_title": "De Havilland Comet",
-      "url": "https://en.wikipedia.org/wiki/De_Havilland_Comet",
-      "category": "World history"
+      "year": 1958,
+      "text": "U.S. President Dwight D. Eisenhower signs into law the National Aeronautics and Space Act, which creates the National Aeronautics and Space Administration (NASA).",
+      "article_title": "Dwight D. Eisenhower",
+      "url": "https://en.wikipedia.org/wiki/Dwight_D._Eisenhower",
+      "category": "Science and technology"
     },
     {
-      "candidate_id": "event-d7337a5b0dbd8fff8edc1e78",
+      "candidate_id": "event-e4ae8e6134be11bc8c513745",
       "type": "event",
-      "year": 2002,
-      "text": "Ukraine airshow disaster: A Sukhoi Su-27 fighter crashes during an air show at Lviv, Ukraine killing 77 and injuring more than 500 others, making it the deadliest air show disaster in history.",
-      "article_title": "Sknyliv air show disaster",
-      "url": "https://en.wikipedia.org/wiki/Sknyliv_air_show_disaster",
+      "year": 1967,
+      "text": "Vietnam War: Off the coast of North Vietnam the USS Forrestal catches on fire in the worst U.S. naval disaster since World War II, killing 134.",
+      "article_title": "North Vietnam",
+      "url": "https://en.wikipedia.org/wiki/North_Vietnam",
       "category": "Disasters and exploration"
     },
     {
-      "candidate_id": "event-211b55ae11e3f26b4bd89b84",
+      "candidate_id": "event-5f1bbe3db4dfa1d57699b1fc",
       "type": "event",
-      "year": 1955,
-      "text": "El Al Flight 402 is shot down by two fighter jets after straying into Bulgarian air space. All 58 people on board are killed.",
-      "article_title": "El Al Flight 402",
-      "url": "https://en.wikipedia.org/wiki/El_Al_Flight_402",
-      "category": "Science and technology"
+      "year": 2015,
+      "text": "The first piece of suspected debris from Malaysia Airlines Flight 370 is discovered on Réunion Island.",
+      "article_title": "Malaysia Airlines Flight 370",
+      "url": "https://en.wikipedia.org/wiki/Malaysia_Airlines_Flight_370",
+      "category": "World history"
     }
   ]
 }
