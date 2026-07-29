@@ -1,15 +1,24 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-29T15:21:59.251Z",
-  "latest_success_at": "2026-07-29T15:21:59.251Z",
+  "generated_at": "2026-07-29T17:41:04.339Z",
+  "latest_success_at": "2026-07-29T17:41:04.339Z",
   "status": "ok",
   "items": [
     {
-      "id": "4b86c398a119756f",
-      "title": "Hurricane Genevieve Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep2+shtml/144723.shtml?cone=",
+      "id": "b5ad93019d019ede",
+      "title": "Atlantic Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-07-29T14:47:23.000Z",
+      "published_at": "2026-07-29T17:22:37.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "61811b9d870a0bd2",
+      "title": "Hurricane Genevieve Graphics",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep2+shtml/152902.shtml?cone=",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-07-29T15:29:02.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
@@ -19,15 +28,6 @@
       "url": "https://watchers.news/2026/07/29/dangerous-surf-to-impact-east-facing-shores-as-tropical-depression-fausto-weakens-north-of-hawaii",
       "publisher": "The Watchers",
       "published_at": "2026-07-29T12:00:57.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "ee8e390990a944fc",
-      "title": "Eastern North Pacific Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-07-29T11:35:17.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
