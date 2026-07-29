@@ -2,8 +2,26 @@
   "schema_version": 1,
   "archive_date": "2026-07-29",
   "created_at": "2026-07-29T00:11:48.326Z",
-  "updated_at": "2026-07-29T17:41:09.334Z",
+  "updated_at": "2026-07-29T19:47:16.288Z",
   "articles": [
+    {
+      "title": "Ukraine’s Attack on Iranian Cargo Ship Links Two Wars",
+      "url": "https://oilprice.com/Energy/Energy-General/Ukraines-Attack-on-Iranian-Cargo-Ship-Links-Two-Wars.html",
+      "publisher": "OilPrice.com",
+      "published_at": "2026-07-29T18:00:00.000Z",
+      "source_id": "oilprice",
+      "first_seen_at": "2026-07-29T00:11:48.326Z",
+      "status": "ok"
+    },
+    {
+      "title": "Middle East War Expands to Mediterranean With Drone Strike at Key Egypt LNG Terminal",
+      "url": "https://gcaptain.com/middle-east-war-expands-to-mediterranean-with-drone-strike-at-key-egypt-lng-terminal",
+      "publisher": "gCaptain",
+      "published_at": "2026-07-29T17:13:05.000Z",
+      "source_id": "gcaptain",
+      "first_seen_at": "2026-07-29T00:11:48.326Z",
+      "status": "ok"
+    },
     {
       "title": "Ukraine, NATO launch new funding program to counter Russian drones",
       "url": "https://breakingdefense.com/2026/07/ukraine-nato-launch-new-funding-program-to-counter-russian-drones",
@@ -109,6 +127,15 @@
       "publisher": "gCaptain",
       "published_at": "2026-07-28T21:10:08.000Z",
       "source_id": "gcaptain",
+      "first_seen_at": "2026-07-29T00:11:48.326Z",
+      "status": "ok"
+    },
+    {
+      "title": "Saudi Tanker Hit by Houthi Missiles in the Red Sea",
+      "url": "https://maritime-executive.com/article/saudi-tanker-hit-by-houthi-missiles-in-the-red-sea",
+      "publisher": "The Maritime Executive",
+      "published_at": "2026-07-28T18:53:00.000Z",
+      "source_id": "maritime-executive",
       "first_seen_at": "2026-07-29T00:11:48.326Z",
       "status": "ok"
     },
