@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "checked_at": "2026-07-29T12:23:26.303Z",
-  "latest_success_at": "2026-07-29T12:23:26.303Z",
+  "checked_at": "2026-07-29T15:21:58.442Z",
+  "latest_success_at": "2026-07-29T15:21:58.442Z",
   "status": "ok",
   "items": [
     {
@@ -9,6 +9,14 @@
       "url": "https://oilprice.com/Latest-Energy-News/World-News/Houthis-Claim-Attack-on-Saudi-Oil-Tanker-in-Red-Sea.html",
       "publisher": "OilPrice.com",
       "published_at": "2026-07-29T10:30:00.000Z",
+      "source_id": "oilprice",
+      "status": "ok"
+    },
+    {
+      "title": "Oil Jumps 7% As Trump Threatens Iran Hours Before Fed Decision",
+      "url": "https://oilprice.com/Latest-Energy-News/World-News/Oil-Jumps-7-As-Trump-Threatens-Iran-Hours-Before-Fed-Decision.html",
+      "publisher": "OilPrice.com",
+      "published_at": "2026-07-29T13:34:08.000Z",
       "source_id": "oilprice",
       "status": "ok"
     },
@@ -21,14 +29,6 @@
       "status": "ok"
     },
     {
-      "title": "Iran Rejects Oman’s Proposal to Evenly Divide Hormuz Control",
-      "url": "https://oilprice.com/Latest-Energy-News/World-News/Iran-Rejects-Omans-Proposal-to-Evenly-Divide-Hormuz-Control.html",
-      "publisher": "OilPrice.com",
-      "published_at": "2026-07-29T11:30:00.000Z",
-      "source_id": "oilprice",
-      "status": "ok"
-    },
-    {
       "title": "Chinese South Pacific Missile Test Unites Opposition",
       "url": "https://maritime-executive.com/article/chinese-south-pacific-missile-test-unites-opposition",
       "publisher": "The Maritime Executive",
@@ -37,18 +37,18 @@
       "status": "ok"
     },
     {
-      "title": "Houthis Claim Fourth Attack on Saudi Tanker as Red Sea Blockade Intensifies",
-      "url": "https://gcaptain.com/houthis-claim-fourth-attack-on-saudi-tanker-as-red-sea-blockade-intensifies",
+      "title": "Hormuz Tensions Flare After U.S.-Saudi Strikes, Iran Claims Attacks on Tankers",
+      "url": "https://gcaptain.com/hormuz-tensions-flare-after-u-s-saudi-strikes-iran-claims-attacks-on-tankers",
       "publisher": "gCaptain",
-      "published_at": "2026-07-28T21:10:08.000Z",
+      "published_at": "2026-07-29T12:21:48.000Z",
       "source_id": "gcaptain",
       "status": "ok"
     },
     {
-      "title": "Russia Sends First Conventional LNG Carrier to Arctic LNG 2 as Oil Tankers Gather for NSR Push",
-      "url": "https://gcaptain.com/russia-sends-first-conventional-lng-carrier-to-arctic-lng-2-as-oil-tankers-gather-for-nsr-push",
+      "title": "Houthis Claim Fourth Attack on Saudi Tanker as Red Sea Blockade Intensifies",
+      "url": "https://gcaptain.com/houthis-claim-fourth-attack-on-saudi-tanker-as-red-sea-blockade-intensifies",
       "publisher": "gCaptain",
-      "published_at": "2026-07-29T10:28:33.000Z",
+      "published_at": "2026-07-28T21:10:08.000Z",
       "source_id": "gcaptain",
       "status": "ok"
     },
@@ -69,7 +69,7 @@
       "status": "ok"
     },
     {
-      "title": "How DARPA plans to get nuclear power in the size of ‘AA battery’",
+      "title": "How DARPA plans to get nuclear power in the size of a ‘AA battery’",
       "url": "https://breakingdefense.com/2026/07/how-darpa-plans-to-get-nuclear-power-in-the-size-of-aa-battery",
       "publisher": "Breaking Defense",
       "published_at": "2026-07-29T12:00:00.000Z",
@@ -77,10 +77,10 @@
       "status": "ok"
     },
     {
-      "title": "Air Force mulls ‘maybe’ pulling B-52s from retirement",
-      "url": "https://breakingdefense.com/2026/07/air-force-eyes-maybe-pulling-b-52s-from-retirement",
+      "title": "Pentagon weighing options to license Patriot production to Ukraine: DoD official",
+      "url": "https://breakingdefense.com/2026/07/pentagon-weighing-options-to-license-patriot-production-to-ukraine-dod-official",
       "publisher": "Breaking Defense",
-      "published_at": "2026-07-28T15:48:00.000Z",
+      "published_at": "2026-07-29T13:32:49.000Z",
       "source_id": "breaking-defense",
       "status": "ok"
     }
