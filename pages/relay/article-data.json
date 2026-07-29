@@ -1,22 +1,22 @@
 {
   "schema_version": "1.0",
-  "checked_at": "2026-07-29T19:47:14.942Z",
-  "latest_success_at": "2026-07-29T19:47:14.942Z",
+  "checked_at": "2026-07-29T21:14:21.456Z",
+  "latest_success_at": "2026-07-29T21:14:21.456Z",
   "status": "ok",
   "items": [
-    {
-      "title": "Houthis Claim Attack on Saudi Oil Tanker in Red Sea",
-      "url": "https://oilprice.com/Latest-Energy-News/World-News/Houthis-Claim-Attack-on-Saudi-Oil-Tanker-in-Red-Sea.html",
-      "publisher": "OilPrice.com",
-      "published_at": "2026-07-29T10:30:00.000Z",
-      "source_id": "oilprice",
-      "status": "ok"
-    },
     {
       "title": "Ukraine’s Attack on Iranian Cargo Ship Links Two Wars",
       "url": "https://oilprice.com/Energy/Energy-General/Ukraines-Attack-on-Iranian-Cargo-Ship-Links-Two-Wars.html",
       "publisher": "OilPrice.com",
       "published_at": "2026-07-29T18:00:00.000Z",
+      "source_id": "oilprice",
+      "status": "ok"
+    },
+    {
+      "title": "Oil Jumps 7% As Trump Threatens Iran Hours Before Fed Decision",
+      "url": "https://oilprice.com/Latest-Energy-News/World-News/Oil-Jumps-7-As-Trump-Threatens-Iran-Hours-Before-Fed-Decision.html",
+      "publisher": "OilPrice.com",
+      "published_at": "2026-07-29T13:34:08.000Z",
       "source_id": "oilprice",
       "status": "ok"
     },
@@ -29,14 +29,6 @@
       "status": "ok"
     },
     {
-      "title": "Middle East War Expands to Mediterranean With Drone Strike at Key Egypt LNG Terminal",
-      "url": "https://gcaptain.com/middle-east-war-expands-to-mediterranean-with-drone-strike-at-key-egypt-lng-terminal",
-      "publisher": "gCaptain",
-      "published_at": "2026-07-29T17:13:05.000Z",
-      "source_id": "gcaptain",
-      "status": "ok"
-    },
-    {
       "title": "Hormuz Tensions Flare After U.S.-Saudi Strikes, Iran Claims Attacks on Tankers",
       "url": "https://gcaptain.com/hormuz-tensions-flare-after-u-s-saudi-strikes-iran-claims-attacks-on-tankers",
       "publisher": "gCaptain",
@@ -45,11 +37,19 @@
       "status": "ok"
     },
     {
-      "title": "Saudi Tanker Hit by Houthi Missiles in the Red Sea",
-      "url": "https://maritime-executive.com/article/saudi-tanker-hit-by-houthi-missiles-in-the-red-sea",
+      "title": "LNG Tankers Struck in Apparent Drone Attack on Egypt's Port of Damietta",
+      "url": "https://maritime-executive.com/article/lng-tankers-struck-in-apparent-drone-attack-on-egypt-s-port-of-damietta",
       "publisher": "The Maritime Executive",
-      "published_at": "2026-07-28T18:53:00.000Z",
+      "published_at": "2026-07-29T20:14:27.000Z",
       "source_id": "maritime-executive",
+      "status": "ok"
+    },
+    {
+      "title": "Middle East War Expands With Reported Drone Attack on U.S.-Owned FSRU in Egypt",
+      "url": "https://gcaptain.com/middle-east-war-expands-to-mediterranean-with-drone-strike-at-key-egypt-lng-terminal",
+      "publisher": "gCaptain",
+      "published_at": "2026-07-29T17:13:05.000Z",
+      "source_id": "gcaptain",
       "status": "ok"
     },
     {
