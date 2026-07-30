@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-07-29T04:49:39.034Z",
+  "generatedAt": "2026-07-30T04:37:51.988Z",
   "totals": {
-    "pages": 178,
-    "indexable": 174,
-    "articles": 112,
-    "sitemap": 174,
+    "pages": 180,
+    "indexable": 176,
+    "articles": 114,
+    "sitemap": 176,
     "errors": 0,
-    "warnings": 63
+    "warnings": 66
   },
   "errors": [],
   "warnings": [
@@ -202,6 +202,11 @@
     },
     {
       "type": "template-pattern",
+      "page": "/pages/blog/local-ai-memory-claims-need-receipts/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "template-pattern",
       "page": "/pages/blog/local-ai-toys-privacy-first-esp32-builds/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
@@ -277,6 +282,16 @@
     },
     {
       "type": "template-pattern",
+      "page": "/pages/blog/what-clearing-an-application-cache-really-does/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/what-clearing-an-application-cache-really-does/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
       "page": "/pages/blog/when-a-clean-reinstall-fixes-software-problems-and-when-it-does-not/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
@@ -335,7 +350,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 178,
+      "incomingLinks": 180,
       "lastmod": "2026-07-24",
       "bodyWords": 750
     },
@@ -359,7 +374,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 178,
+      "incomingLinks": 180,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -467,7 +482,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 178,
+      "incomingLinks": 180,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -479,9 +494,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 178,
-      "lastmod": "2026-07-28",
-      "bodyWords": 646
+      "incomingLinks": 180,
+      "lastmod": "2026-07-29",
+      "bodyWords": 640
     },
     {
       "route": "/pages/blog/a-practical-checklist-for-checking-ai-generated-technical-answers/",
@@ -491,7 +506,7 @@
       "canonical": "https://notavello.com/pages/blog/a-practical-checklist-for-checking-ai-generated-technical-answers/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 5,
+      "incomingLinks": 6,
       "lastmod": "2026-07-24",
       "bodyWords": 860
     },
@@ -719,9 +734,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 51,
-      "lastmod": "2026-07-28",
-      "bodyWords": 1499
+      "incomingLinks": 53,
+      "lastmod": "2026-07-29",
+      "bodyWords": 1518
     },
     {
       "route": "/pages/blog/apple-speechanalyzer-local-transcription-apps/",
@@ -1264,6 +1279,18 @@
       "bodyWords": 1514
     },
     {
+      "route": "/pages/blog/local-ai-memory-claims-need-receipts/",
+      "file": "pages/blog/local-ai-memory-claims-need-receipts/index.html",
+      "title": "Local AI Memory Claims Need Receipts — The Export | Notavello",
+      "description": "How to evaluate local AI memory claims before you trust a tiny-RAM demo on a Mac or developer workstation.",
+      "canonical": "https://notavello.com/pages/blog/local-ai-memory-claims-need-receipts/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-07-30",
+      "bodyWords": 1410
+    },
+    {
       "route": "/pages/blog/local-ai-toys-privacy-first-esp32-builds/",
       "file": "pages/blog/local-ai-toys-privacy-first-esp32-builds/index.html",
       "title": "Local AI Toys on ESP32: Zero-Cloud Voice Companions — The Export | Notavello",
@@ -1428,8 +1455,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-07-28",
-      "bodyWords": 690
+      "lastmod": "2026-07-29",
+      "bodyWords": 677
     },
     {
       "route": "/pages/blog/page-3/",
@@ -1440,8 +1467,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-07-28",
-      "bodyWords": 680
+      "lastmod": "2026-07-29",
+      "bodyWords": 693
     },
     {
       "route": "/pages/blog/page-4/",
@@ -1452,8 +1479,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-07-28",
-      "bodyWords": 779
+      "lastmod": "2026-07-29",
+      "bodyWords": 767
     },
     {
       "route": "/pages/blog/page-5/",
@@ -1464,8 +1491,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-07-28",
-      "bodyWords": 830
+      "lastmod": "2026-07-29",
+      "bodyWords": 824
     },
     {
       "route": "/pages/blog/page-6/",
@@ -1476,8 +1503,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-07-28",
-      "bodyWords": 872
+      "lastmod": "2026-07-29",
+      "bodyWords": 871
     },
     {
       "route": "/pages/blog/page-7/",
@@ -1488,8 +1515,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": "2026-07-28",
-      "bodyWords": 230
+      "lastmod": "2026-07-29",
+      "bodyWords": 322
     },
     {
       "route": "/pages/blog/rootless-containers-ai-service-boundary/",
@@ -1682,6 +1709,18 @@
       "incomingLinks": 2,
       "lastmod": "2026-07-22",
       "bodyWords": 758
+    },
+    {
+      "route": "/pages/blog/what-clearing-an-application-cache-really-does/",
+      "file": "pages/blog/what-clearing-an-application-cache-really-does/index.html",
+      "title": "What clearing an application cache really does — The Export | Notavello",
+      "description": "Learn what an application cache stores, how to clear it safely, and the problems a cache reset cannot solve.",
+      "canonical": "https://notavello.com/pages/blog/what-clearing-an-application-cache-really-does/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-07-29",
+      "bodyWords": 777
     },
     {
       "route": "/pages/blog/what-is-a-bot/",
@@ -1919,7 +1958,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 178,
+      "incomingLinks": 180,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -1931,7 +1970,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 178,
+      "incomingLinks": 180,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -1943,7 +1982,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 178,
+      "incomingLinks": 180,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -1955,7 +1994,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 178,
+      "incomingLinks": 180,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -1967,7 +2006,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 178,
+      "incomingLinks": 180,
       "lastmod": "2026-07-25",
       "bodyWords": 170
     },
@@ -1980,8 +2019,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-07-29",
-      "bodyWords": 53
+      "lastmod": "2026-07-30",
+      "bodyWords": 59
     },
     {
       "route": "/pages/sample",
@@ -2003,7 +2042,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 178,
+      "incomingLinks": 180,
       "lastmod": "2026-07-26",
       "bodyWords": 688
     },
@@ -2015,7 +2054,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 178,
+      "incomingLinks": 180,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -2027,7 +2066,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 178,
+      "incomingLinks": 180,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -2459,7 +2498,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 178,
+      "incomingLinks": 180,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }
