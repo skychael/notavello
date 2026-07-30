@@ -1,6 +1,3 @@
-/* Replace empty values only after the public URLs exist. */
 window.KOGA_IOS_RELEASE_LINKS = {
-  appStore: "",
-  testFlight: "",
-  webDistribution: ""
+  appStore: "https://apps.apple.com/app/id6792873649"
 };
