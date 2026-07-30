@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Local AI Memory Claims Need Receipts — The Export | Notavello</title>
+<meta name="description" content="How to evaluate local AI memory claims before you trust a tiny-RAM demo on a Mac or developer workstation."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/blog/local-ai-memory-claims-need-receipts/"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2026-07-30T04:36:38.218Z"/>
+<meta property="article:modified_time" content="2026-07-30T04:36:38.218Z"/>
+<meta name="notavello:published_at" content="2026-07-30T04:36:38.218Z"/>
+<meta property="og:url" content="https://notavello.com/pages/blog/local-ai-memory-claims-need-receipts/"/>
+<meta property="og:title" content="Local AI Memory Claims Need Receipts"/>
+<meta property="og:description" content="How to evaluate local AI memory claims before you trust a tiny-RAM demo on a Mac or developer workstation."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Local AI Memory Claims Need Receipts"/>
+<meta name="twitter:description" content="How to evaluate local AI memory claims before you trust a tiny-RAM demo on a Mac or developer workstation."/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Local AI Memory Claims Need Receipts",
+  "description": "How to evaluate local AI memory claims before you trust a tiny-RAM demo on a Mac or developer workstation.",
+  "url": "https://notavello.com/pages/blog/local-ai-memory-claims-need-receipts/",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://notavello.com/pages/blog/local-ai-memory-claims-need-receipts/" },
+  "image": "https://notavello.com/og-image.png",
+  "datePublished": "2026-07-30T04:36:38.218Z",
+  "dateModified": "2026-07-30T04:36:38.218Z",
+  "author": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" },
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com", "logo": { "@type": "ImageObject", "url": "https://notavello.com/og-image.png" } }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
+.post-nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; row-gap: 8px; }
+.post-nav-top { margin-bottom: 40px; }
+.post-nav-bottom { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--border); }
+.post-nav a { display: inline-flex; align-items: center; gap: 6px; font-size: 0.92rem; font-weight: 600; color: var(--ink-muted); text-decoration: none; padding: 12px 14px; border-radius: var(--radius-sm); white-space: nowrap; transition: color 0.15s, background 0.15s; }
+.post-nav a:hover { color: var(--accent); background: var(--accent-light); }
+.post-nav a:first-child { padding-left: 0; }
+.post-nav a:last-child { padding-right: 0; justify-content: flex-end; }
+.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
+.post-date { font-size: 0.78rem; color: var(--ink-faint); }
+.post-title { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; color: var(--ink); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
+.post-lede { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+.post-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink); }
+.post-body h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 44px 0 16px; letter-spacing: -0.01em; }
+.post-body p { margin-bottom: 20px; color: var(--ink-muted); }
+.post-body p strong { color: var(--ink); font-weight: 600; }
+.post-body ul { margin: 0 0 20px 20px; color: var(--ink-muted); }
+.post-body ul li { margin-bottom: 8px; line-height: 1.7; }
+.callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 32px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.7; }
+.post-footer { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.post-footer-label { font-size: 0.8rem; color: var(--ink-faint); }
+.btn-export { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: opacity 0.2s; }
+.btn-export:hover { opacity: 0.9; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } .post-nav a { padding: 12px 8px; font-size: 0.88rem; } }
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+
+  <nav class="post-nav post-nav-top">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+  <div class="post-meta">
+    <span class="post-tag">AI Tools</span>
+    <span class="post-date">July 30, 2026</span>
+  </div>
+
+  <h1 class="post-title">Local AI Memory Claims Need Receipts</h1>
+
+  <p class="post-lede">Local AI demos keep promising bigger models in smaller boxes. The useful question is not whether the demo is exciting; it is whether you can reproduce the memory math on your own machine.</p>
+
+  <div class="post-body">
+
+    <h2>The New Local AI Flex Is Memory, Not Model Size</h2>
+    <p>Local AI has moved past the old question of whether a laptop can run a useful model at all. It can. The better question is what trade was made to make the model fit.</p><p>That trade is usually hiding in the details: quantization, context length, cache compression, CPU offload, speculative decoding, sparse activation, or a backend that is doing something clever with Apple silicon. None of those are bad. Some are excellent. But they are not the same thing as saying a full large model simply “runs in 2 GB RAM” in the way a normal reader would understand it.</p><p>Apple silicon makes these demos especially tempting because the memory story is genuinely different. The CPU and GPU are not fighting over separate pools in the same way a desktop PC with a discrete graphics card does. Apple’s Metal documentation exposes unified-memory capability for devices, and Apple’s MLX project is explicitly built for machine learning on Apple silicon. That matters. It does not repeal arithmetic. <a href='https://developer.apple.com/documentation/metal/mtldevice/hasunifiedmemory'>Apple documents unified memory at the Metal device level</a>, and <a href='https://opensource.apple.com/projects/mlx/'>MLX is described by Apple as an array framework for Apple silicon</a>.</p><p>So yes, local AI on Macs is getting better. Also yes, a screenshot and a punchy headline are not a capacity plan.</p>
+
+    <div class="callout">
+      <strong>The bottom line:</strong> A local model claim without memory receipts is a magic trick. Ask for model format, quantization, context length, backend, peak memory, and tokens per second before you believe it.
+    </div>
+
+    <h2>Model Parameters Are Not The Memory Requirement</h2>
+    <p>The first trap is treating the parameter count as the whole memory bill. It is only the most visible line item.</p><p>A model with 26 billion parameters does not always activate every parameter for every token if it uses a mixture-of-experts design. A 4-bit quantized file is much smaller than a bfloat16 checkpoint. A long context can eat memory through the KV cache even when the weights fit comfortably. A backend can offload some work to CPU, stream pieces, compress cache data, or use custom kernels. The result can be real and still be narrower than the marketing sentence makes it sound.</p><p>Google’s Gemma documentation is a useful example because it publishes model variants and memory-oriented deployment details instead of relying on vibes. The Gemma 4 model overview lists multiple sizes, including a 26B A4B mixture-of-experts variant, and shows that precision and deployment format change the memory picture materially. <a href='https://ai.google.dev/gemma/docs/core'>Google’s Gemma model documentation</a> is the kind of source you want next to any local inference claim.</p><p>That does not mean every third-party benchmark using Gemma is wrong. It means the words need units. “Runs” can mean one-token proof of life. It can mean slow CPU fallback. It can mean a tiny context. It can mean useful interactive speed. Those are different products wearing the same jacket.</p>
+
+    <h2>The Six Receipts Every Local AI Demo Should Provide</h2>
+    <p>If a tool claims a large model fits into surprisingly little memory, the right response is not cynicism. It is a checklist.</p><ul><li><strong>Exact model identifier:</strong> The base model name is not enough. You need the specific checkpoint, revision, and whether it is instruction-tuned, distilled, merged, or modified.</li><li><strong>File format and quantization:</strong> GGUF, MLX, safetensors, 2-bit, 3-bit, 4-bit, 8-bit, mixed precision, and custom formats all change the answer.</li><li><strong>Context length used in the demo:</strong> A model that fits at 2K context may not behave the same way at 32K, 128K, or 256K. Long context is where many tidy claims go to quietly die.</li><li><strong>Peak resident memory:</strong> Startup memory is less useful than peak memory during prefill and generation. If the demo only reports file size, keep your wallet in your pocket.</li><li><strong>Backend and acceleration path:</strong> MLX, llama.cpp with Metal, Core ML, custom Metal kernels, CPU fallback, and hybrid execution are not interchangeable.</li><li><strong>Throughput and prompt shape:</strong> Tokens per second should include prompt processing and generation. A short chat prompt is not the same as summarizing a 70-page document.</li></ul><p>This is the same discipline teams already need when evaluating AI answers. If a result will affect code, operations, or money, ask what was measured and how. Notavello’s <a href='/pages/blog/a-practical-checklist-for-checking-ai-generated-technical-answers/'>checklist for checking AI-generated technical answers</a> uses the same principle: separate the claim from the proof before reusing it.</p>
+
+    <h2>Why Apple Silicon Makes The Claim Plausible Enough To Test</h2>
+    <p>The reason these demos keep happening on M-series Macs is not just fan culture. Apple silicon is a good local inference target because unified memory gives the GPU access to a large shared pool, and because frameworks such as MLX and Metal-aware inference engines can avoid some of the awkwardness of moving data between CPU RAM and dedicated VRAM.</p><p>That architecture is useful for developers. A Mac with enough unified memory can be a practical local AI workstation: private drafts, offline coding help, local document search, embeddings, quick evals, and experiments that do not need a cloud bill. It is also pleasant in the most boring way: one laptop, one power cable, no driver séance.</p><p>But unified memory also creates a measurement trap. People often say “RAM” when they mean file size, available memory, resident memory, GPU-allocated memory, memory pressure, or compressed memory. macOS can make a workload look survivable right until it starts swapping, throttling, or crawling. A demo that technically completes is not necessarily a demo you would want inside a daily workflow.</p><p>The practical rule is simple: if the model is supposed to be interactive, measure it while doing the actual job. Ask it to summarize your real document length. Ask it to edit a real code file. Ask it to run for 20 minutes, not 20 seconds. Local AI that only works under stage lighting is still stage lighting.</p>
+
+    <h2>What To Test Before You Build Around A Tiny-RAM Claim</h2>
+    <p>Before adopting a local model setup, create a small acceptance test. This does not need to be academic. It needs to match your work.</p><ul><li><strong>Cold start:</strong> Time how long the model takes to load after a reboot.</li><li><strong>Short prompt speed:</strong> Send a normal chat-sized request and record tokens per second.</li><li><strong>Long prompt prefill:</strong> Paste or load the kind of source material you actually use.</li><li><strong>Peak memory:</strong> Watch memory pressure, process memory, and swap during the heaviest request.</li><li><strong>Thermal behavior:</strong> Run repeated prompts long enough for the machine to heat up.</li><li><strong>Quality at the chosen quantization:</strong> Ask domain-specific questions where you know the answer.</li><li><strong>Failure mode:</strong> Deliberately exceed the context or memory budget and see whether the tool errors clearly or produces nonsense.</li></ul><p>The last one matters more than people admit. A local AI tool that fails loudly is usable. A local AI tool that silently drops context is a bug generator with a chat box.</p><p>For teams, save the test prompt, model hash, launch command, and results in a plain text note inside the project. Future you will not remember whether the good result came from the 4-bit build, the 8-bit build, the smaller context, the old backend, or the day the laptop was not also running fifty browser tabs. Future you is unreliable. Write it down.</p>
+
+    <h2>The Honest Promise Of Local AI</h2>
+    <p>The point of local AI is not to beat every frontier cloud model. That is the wrong contest. The point is to make certain work private, cheap at the margin, scriptable, offline-capable, and fast enough without sending every prompt across the internet.</p><p>That is a strong promise. It does not need miracle memory claims to be useful. A smaller model that reliably handles local search, draft cleanup, code explanation, test generation, log triage, or structured extraction can be more valuable than a huge model squeezed through a straw.</p><p>So treat bold local inference demos as leads, not conclusions. If someone shows a large model running in a shockingly small memory footprint, be interested. Then ask for the receipts. The real breakthrough is not the headline number. The real breakthrough is a setup you can reproduce on Thursday afternoon, while your actual work is open, without the machine turning into a hand warmer with opinions.</p>
+
+  </div>
+
+  <div class="post-footer">
+    <span class="post-footer-label">Looking for more AI tools?</span>
+    <a class="btn-export" href="/">See our free AI tools →</a>
+  </div>
+
+  <nav class="post-nav post-nav-bottom">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+</main>
+
+<!--FOOTER-->
+
+</body>
+</html>

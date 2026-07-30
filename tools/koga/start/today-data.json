@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "07-29",
-  "display_date": "July 29",
-  "generated_at": "2026-07-29T10:49:07.798Z",
+  "date_key": "07-30",
+  "display_date": "July 30",
+  "generated_at": "2026-07-30T10:34:25.183Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-6274153c2092e2ee122b1808",
+      "candidate_id": "event-1830401367884719afb6bfd6",
       "type": "event",
-      "year": 1958,
-      "text": "U.S. President Dwight D. Eisenhower signs into law the National Aeronautics and Space Act, which creates the National Aeronautics and Space Administration (NASA).",
-      "article_title": "Dwight D. Eisenhower",
-      "url": "https://en.wikipedia.org/wiki/Dwight_D._Eisenhower",
-      "category": "Science and technology"
-    },
-    {
-      "candidate_id": "event-e4ae8e6134be11bc8c513745",
-      "type": "event",
-      "year": 1967,
-      "text": "Vietnam War: Off the coast of North Vietnam the USS Forrestal catches on fire in the worst U.S. naval disaster since World War II, killing 134.",
-      "article_title": "North Vietnam",
-      "url": "https://en.wikipedia.org/wiki/North_Vietnam",
-      "category": "Disasters and exploration"
-    },
-    {
-      "candidate_id": "event-5f1bbe3db4dfa1d57699b1fc",
-      "type": "event",
-      "year": 2015,
-      "text": "The first piece of suspected debris from Malaysia Airlines Flight 370 is discovered on Réunion Island.",
-      "article_title": "Malaysia Airlines Flight 370",
-      "url": "https://en.wikipedia.org/wiki/Malaysia_Airlines_Flight_370",
+      "year": 1971,
+      "text": "Apollo program: On Apollo 15, David Scott and James Irwin in the Apollo Lunar Module Falcon land on the Moon with the first Lunar Rover.",
+      "article_title": "Apollo program",
+      "url": "https://en.wikipedia.org/wiki/Apollo_program",
       "category": "World history"
+    },
+    {
+      "candidate_id": "event-b1498e6386bd149b3a640034",
+      "type": "event",
+      "year": 1945,
+      "text": "World War II: Japanese submarine I-58 sinks the USS Indianapolis, killing 883 seamen. Most die during the following four days, until an aircraft notices the survivors.",
+      "article_title": "World War II",
+      "url": "https://en.wikipedia.org/wiki/World_War_II",
+      "category": "World history"
+    },
+    {
+      "candidate_id": "event-4294f614b908857c5d3e2aa7",
+      "type": "event",
+      "year": 2025,
+      "text": "A magnitude 8.8 earthquake hits Russia, causing tsunamis over the Pacific Ocean.",
+      "article_title": "2025 Kamchatka earthquake",
+      "url": "https://en.wikipedia.org/wiki/2025_Kamchatka_earthquake",
+      "category": "Disasters and exploration"
     }
   ]
 }
