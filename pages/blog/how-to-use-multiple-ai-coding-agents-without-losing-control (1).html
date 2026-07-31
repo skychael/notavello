@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>How to Use Multiple AI Coding Agents Without Losing Control — The Export | Notavello</title>
+<meta name="description" content="Run multiple AI coding agents safely with ZIP workspaces, clear roles, restart handoffs, Git isolation, and realistic OpenHands tradeoffs."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/blog/how-to-use-multiple-ai-coding-agents-without-losing-control/"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://notavello.com/pages/blog/how-to-use-multiple-ai-coding-agents-without-losing-control/"/>
+<meta property="og:title" content="How to Use Multiple AI Coding Agents Without Losing Control"/>
+<meta property="og:description" content="Run multiple AI coding agents safely with ZIP workspaces, clear roles, restart handoffs, Git isolation, and realistic OpenHands tradeoffs."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="How to Use Multiple AI Coding Agents Without Losing Control"/>
+<meta name="twitter:description" content="Run multiple AI coding agents safely with ZIP workspaces, clear roles, restart handoffs, Git isolation, and realistic OpenHands tradeoffs."/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "How to Use Multiple AI Coding Agents Without Losing Control",
+  "description": "Run multiple AI coding agents safely with ZIP workspaces, clear roles, restart handoffs, Git isolation, and realistic OpenHands tradeoffs.",
+  "url": "https://notavello.com/pages/blog/how-to-use-multiple-ai-coding-agents-without-losing-control/",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://notavello.com/pages/blog/how-to-use-multiple-ai-coding-agents-without-losing-control/" },
+  "image": "https://notavello.com/og-image.png",
+  "datePublished": "2026-07-31",
+  "dateModified": "2026-07-31",
+  "author": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" },
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com", "logo": { "@type": "ImageObject", "url": "https://notavello.com/og-image.png" } }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
+.post-nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; row-gap: 8px; }
+.post-nav-top { margin-bottom: 40px; }
+.post-nav-bottom { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--border); }
+.post-nav a { display: inline-flex; align-items: center; gap: 6px; font-size: 0.92rem; font-weight: 600; color: var(--ink-muted); text-decoration: none; padding: 12px 14px; border-radius: var(--radius-sm); white-space: nowrap; transition: color 0.15s, background 0.15s; }
+.post-nav a:hover { color: var(--accent); background: var(--accent-light); }
+.post-nav a:first-child { padding-left: 0; }
+.post-nav a:last-child { padding-right: 0; justify-content: flex-end; }
+.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
+.post-date { font-size: 0.78rem; color: var(--ink-faint); }
+.post-title { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; color: var(--ink); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
+.post-lede { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+.post-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink); }
+.post-body h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 44px 0 16px; letter-spacing: -0.01em; }
+.post-body p { margin-bottom: 20px; color: var(--ink-muted); }
+.post-body p strong { color: var(--ink); font-weight: 600; }
+.post-body ul { margin: 0 0 20px 20px; color: var(--ink-muted); }
+.post-body ul li { margin-bottom: 8px; line-height: 1.7; }
+.callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 32px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.7; }
+.post-footer { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.post-footer-label { font-size: 0.8rem; color: var(--ink-faint); }
+.btn-export { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: opacity 0.2s; }
+.btn-export:hover { opacity: 0.9; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } .post-nav a { padding: 12px 8px; font-size: 0.88rem; } }
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+
+  <nav class="post-nav post-nav-top">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+  <div class="post-meta">
+    <span class="post-tag">Developer Tools</span>
+    <span class="post-date">July 31, 2026</span>
+  </div>
+
+  <h1 class="post-title">How to Use Multiple AI Coding Agents Without Losing Control</h1>
+
+  <p class="post-lede">Multi-agent coding does not have to begin with a complicated orchestration platform. For one developer, the most dependable system may be several separate AI workspaces, a complete project ZIP for each worker, and one person who remains firmly in charge.</p>
+
+  <div class="post-body">
+
+<h2>Start with the surprisingly simple ZIP method</h2>
+<p>The easiest way to run several AI coding agents at once is often not to connect them at all. Give each assistant a <strong>complete ZIP copy of the project</strong> in its own chat or coding workspace. Let it unpack the project, inspect the repository, run the tests, and take possession of that copy on its own turf.</p>
+<p>This works because each worker receives a self-contained world. One assistant can investigate a failing test while another reviews the architecture and a third builds a narrow feature. They do not overwrite one another's files, fight over a shared terminal, or depend on a fragile message bus. The human operator decides which result is accepted and moves only the approved work back into the real repository.</p>
+<p>The ZIP should contain the whole working project, not a random handful of files, unless the task is genuinely isolated. A complete copy lets the assistant follow imports, inspect tests, understand configuration, and discover the assumptions that live outside the file named in the prompt. The same principle appears in Notavello's guide to <a href="/pages/blog/how-to-prepare-files-for-a-useful-ai-assisted-review/">preparing files for a useful AI-assisted review</a>: good results begin with a clean scope and enough surrounding context.</p>
+
+<div class="callout">
+  <strong>The practical trick:</strong> Isolation does not require a platform. Separate chats plus separate ZIP copies already create separate workspaces. The price is that a human must integrate the results.
+</div>
+
+<h2>Use director, supervisor, and worker as roles, not job titles</h2>
+<p>A useful multi-agent structure has three roles, but they do not require three layers of software.</p>
+<ul>
+  <li><strong>The director</strong> owns the product goal, architecture, security boundaries, and final acceptance decision. For an individual developer, this is usually the human.</li>
+  <li><strong>The supervisor</strong> turns a large goal into bounded assignments, checks worker reports, compares diffs, and decides whether a task is ready for integration. A strong AI assistant can help here, but it should not silently approve its own work.</li>
+  <li><strong>The workers</strong> perform narrow jobs inside separate ZIP copies, Git branches, worktrees, containers, or remote sandboxes.</li>
+</ul>
+<p>The important part is authority. Workers may propose changes, but they should not redefine the project. A supervisor may reject incomplete work, but it should not merge around a failing test. The director remains the only role allowed to change the mission or accept a risky compromise.</p>
+<p>Each worker assignment should state the objective, allowed files, forbidden areas, test commands, success criteria, and required completion report. “Improve the app” is not an assignment. “Repair the URL parser without changing navigation behavior; run these four tests; return the changed files, test output, and remaining risks” is.</p>
+
+<h2>Parallel work only helps when the tasks are truly separate</h2>
+<p>Multiple agents are useful for independent work: one can research a bug, one can write tests, and one can review documentation. They are much less useful when all three must edit the same central file. That creates three plausible but incompatible versions and leaves the human with an expensive merge puzzle.</p>
+<p>Before starting workers, divide the work by boundary rather than by vague topic. Good boundaries include a module, platform, test suite, migration step, or read-only forensic review. When changes must touch the same code, run them sequentially or assign one worker to implement and another to review the finished diff.</p>
+<p>Git branches and worktrees are better than ZIP files when the assistants can operate directly on the same machine and the operator is comfortable with Git. ZIP copies are better when the agents live in separate browser chats, different services, or machines that cannot safely share a repository. Both methods solve the same problem: <strong>no two workers should be casually editing the same live working tree.</strong></p>
+
+<h2>Plan for the moment an agent stops cold</h2>
+<p>Long AI coding sessions can end for reasons unrelated to the code. A service may reach a usage allowance, a tool session may expire, the context may become unwieldy, or a browser workspace may simply stop responding. Claude is a common example: <a href="https://support.anthropic.com/en/articles/11647753-understanding-usage-and-length-limits">Anthropic explains that usage limits</a> determine how long a person can work with Claude or Claude Code before waiting for a reset, and on Pro and Max plans the two products draw from shared usage limits.</p>
+<p>To the user, the result can feel like a worker walking off the job without warning. The repair is not a clever prompt. It is a restart package. Every substantial task should maintain a small handoff containing:</p>
+<ul>
+  <li>the exact project and branch or ZIP version;</li>
+  <li>what was completed and what remains;</li>
+  <li>files changed and files intentionally untouched;</li>
+  <li>commands already run and their results;</li>
+  <li>the next safe command or action;</li>
+  <li>known risks, assumptions, and unresolved questions.</li>
+</ul>
+<p>A replacement session can then resume from evidence instead of reconstructing hours of conversation. This is also why a context window is not the same as permanent project memory; Notavello's explanation of <a href="/pages/blog/what-an-ai-context-window-actually-changes/">what an AI context window actually changes</a> is a useful companion to this workflow.</p>
+
+<h2>What OpenHands is trying to provide</h2>
+<p><a href="https://docs.openhands.dev/overview/introduction">OpenHands</a> is an open platform for coding agents. Its current documentation describes a browser-based interface and backend for running agents and automations, along with terminal, cloud, and local options. Its sandbox architecture gives an agent an environment where it can edit files and execute commands rather than merely suggesting code in a chat window.</p>
+<p>That is the attraction. Instead of manually uploading a ZIP, copying commands, collecting results, and keeping several chats organized, OpenHands aims to provide the machinery around the agent: workspace creation, command execution, model configuration, sandboxing, and a persistent interface. For repeated or team-scale work, those capabilities can become valuable.</p>
+<p>Its <a href="https://docs.openhands.dev/openhands/usage/sandboxes/docker">Docker sandbox is the recommended local provider</a>, and the runtime is designed to isolate command execution from the host. That is a meaningful capability, not decoration. An agent that can run arbitrary project commands needs a boundary, and a real sandbox is safer than pointing an autonomous tool at a person's ordinary home directory. Notavello's <a href="/pages/blog/ai-model-evaluation-sandbox-security-checklist/">AI sandbox security checklist</a> explains why the boundary deserves attention.</p>
+
+<h2>The setup can become the project</h2>
+<p>The uncomfortable part is that a platform powerful enough to manage autonomous coding work has many more failure points than a ZIP upload. A recent hands-on attempt to self-host OpenHands turned into a long tour through Docker, Linux, container processes, permissions, networking, model credentials, repository mounting, and sandbox startup behavior. At several points, the work was no longer about the application being developed. It was about persuading the agent infrastructure to stay alive.</p>
+<p>The <a href="https://docs.openhands.dev/openhands/usage/run-openhands/local-setup">official setup instructions</a> themselves show why local installation has more moving pieces: Docker must be installed and running; Windows users may be routed through the Windows Subsystem for Linux; Docker socket access may need to be enabled; images must be downloaded; and model or API configuration still has to be correct. OpenHands now offers quicker cloud and packaged paths, so the experience will vary, but self-hosting remains a materially larger undertaking than opening three chats and giving each one a ZIP.</p>
+<p>This does not make OpenHands bad. It means the platform should solve a problem large enough to justify owning the platform. An individual developer who needs two independent reviews this afternoon may lose more time configuring orchestration than the parallel agents could save. A team that runs dozens of repeatable coding jobs may reach the opposite conclusion.</p>
+
+<div class="callout">
+  <strong>Watch the substitution:</strong> It is easy to spend a day building a system that coordinates agents and finish with no progress on the software the agents were supposed to build.
+</div>
+
+<h2>A one-person workflow that survives reality</h2>
+<p>A practical system can be run with ordinary AI chats, ZIP files, and Git:</p>
+<ul>
+  <li><strong>Freeze a known starting point.</strong> Commit the repository or create a clearly dated ZIP.</li>
+  <li><strong>Write the director brief.</strong> Define the goal, constraints, acceptance tests, and decisions workers may not make.</li>
+  <li><strong>Split only independent tasks.</strong> Avoid sending several workers into the same core files.</li>
+  <li><strong>Give each worker a complete copy.</strong> Use a separate chat, branch, worktree, or sandbox.</li>
+  <li><strong>Require evidence.</strong> Ask for diffs, test output, changed-file lists, and a concise handoff.</li>
+  <li><strong>Review before combining.</strong> The supervisor checks claims against the actual files and reruns tests.</li>
+  <li><strong>Integrate one result at a time.</strong> Commit each accepted unit separately so it can be reverted.</li>
+  <li><strong>Prepare for interruption.</strong> Save the handoff before usage limits, context pressure, or a broken session forces a restart.</li>
+</ul>
+<p>Only after this manual system becomes repetitive should the operator consider a heavier orchestrator. By then, the real requirements will be visible: which tasks recur, which permissions are needed, where isolation matters, and which reports are actually useful.</p>
+
+<h2>The best multi-agent system is the lightest one that fails safely</h2>
+<p>Running several AI coding agents at once can accelerate work, but parallelism is not the same as progress. The dependable pattern is mundane: complete project copies, narrow assignments, separate workspaces, test evidence, explicit handoffs, and one human who owns the merge.</p>
+<p>OpenHands and similar platforms can automate more of that loop, especially when the volume of work justifies durable infrastructure. But for many individual developers, the breakthrough is much simpler: hand each agent a full ZIP, let it work independently, and never confuse an impressive agent conversation with an approved change to the real project.</p>
+
+  </div>
+
+  <div class="post-footer">
+    <span class="post-footer-label">Looking for more AI tools?</span>
+    <a class="btn-export" href="/">See our free AI tools →</a>
+  </div>
+
+  <nav class="post-nav post-nav-bottom">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+</main>
+
+<!--FOOTER-->
+
+</body>
+</html>
