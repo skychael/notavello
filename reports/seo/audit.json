@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-07-30T04:37:51.988Z",
+  "generatedAt": "2026-07-31T05:03:13.712Z",
   "totals": {
-    "pages": 180,
-    "indexable": 176,
-    "articles": 114,
-    "sitemap": 176,
+    "pages": 181,
+    "indexable": 177,
+    "articles": 115,
+    "sitemap": 177,
     "errors": 0,
-    "warnings": 66
+    "warnings": 67
   },
   "errors": [],
   "warnings": [
@@ -138,6 +138,11 @@
     {
       "type": "template-pattern",
       "page": "/pages/blog/gemini-robotics-er-1-6-preview-robotics-integration/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/github-stacked-prs-ai-code-review-workflow/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
     {
@@ -350,7 +355,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 180,
+      "incomingLinks": 181,
       "lastmod": "2026-07-24",
       "bodyWords": 750
     },
@@ -374,7 +379,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 180,
+      "incomingLinks": 181,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -482,7 +487,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 180,
+      "incomingLinks": 181,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -494,8 +499,8 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 180,
-      "lastmod": "2026-07-29",
+      "incomingLinks": 181,
+      "lastmod": "2026-07-30",
       "bodyWords": 640
     },
     {
@@ -722,7 +727,7 @@
       "canonical": "https://notavello.com/pages/blog/ai-written-pull-requests-need-a-paper-trail/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 4,
+      "incomingLinks": 5,
       "lastmod": "2026-07-22",
       "bodyWords": 1574
     },
@@ -734,9 +739,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 53,
-      "lastmod": "2026-07-29",
-      "bodyWords": 1518
+      "incomingLinks": 54,
+      "lastmod": "2026-07-30",
+      "bodyWords": 1530
     },
     {
       "route": "/pages/blog/apple-speechanalyzer-local-transcription-apps/",
@@ -1049,6 +1054,18 @@
       "incomingLinks": 2,
       "lastmod": "2026-07-22",
       "bodyWords": 688
+    },
+    {
+      "route": "/pages/blog/github-stacked-prs-ai-code-review-workflow/",
+      "file": "pages/blog/github-stacked-prs-ai-code-review-workflow/index.html",
+      "title": "GitHub Stacked PRs Make AI Code Review Less Miserable — The Export | Notavello",
+      "description": "Use GitHub stacked PRs to turn AI-generated code into smaller, reviewable changes with cleaner CI and clearer ownership.",
+      "canonical": "https://notavello.com/pages/blog/github-stacked-prs-ai-code-review-workflow/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-07-31",
+      "bodyWords": 1555
     },
     {
       "route": "/pages/blog/github-web-ui-limits-command-line-vs-desktop/",
@@ -1455,8 +1472,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-07-29",
-      "bodyWords": 677
+      "lastmod": "2026-07-30",
+      "bodyWords": 674
     },
     {
       "route": "/pages/blog/page-3/",
@@ -1467,8 +1484,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-07-29",
-      "bodyWords": 693
+      "lastmod": "2026-07-30",
+      "bodyWords": 689
     },
     {
       "route": "/pages/blog/page-4/",
@@ -1479,8 +1496,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-07-29",
-      "bodyWords": 767
+      "lastmod": "2026-07-30",
+      "bodyWords": 759
     },
     {
       "route": "/pages/blog/page-5/",
@@ -1491,8 +1508,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-07-29",
-      "bodyWords": 824
+      "lastmod": "2026-07-30",
+      "bodyWords": 837
     },
     {
       "route": "/pages/blog/page-6/",
@@ -1503,8 +1520,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-07-29",
-      "bodyWords": 871
+      "lastmod": "2026-07-30",
+      "bodyWords": 859
     },
     {
       "route": "/pages/blog/page-7/",
@@ -1515,8 +1532,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": "2026-07-29",
-      "bodyWords": 322
+      "lastmod": "2026-07-30",
+      "bodyWords": 371
     },
     {
       "route": "/pages/blog/rootless-containers-ai-service-boundary/",
@@ -1958,7 +1975,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 180,
+      "incomingLinks": 181,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -1970,7 +1987,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 180,
+      "incomingLinks": 181,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -1982,7 +1999,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 180,
+      "incomingLinks": 181,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -1994,7 +2011,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 180,
+      "incomingLinks": 181,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -2006,7 +2023,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 180,
+      "incomingLinks": 181,
       "lastmod": "2026-07-25",
       "bodyWords": 170
     },
@@ -2019,8 +2036,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-07-30",
-      "bodyWords": 59
+      "lastmod": "2026-07-31",
+      "bodyWords": 65
     },
     {
       "route": "/pages/sample",
@@ -2042,7 +2059,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 180,
+      "incomingLinks": 181,
       "lastmod": "2026-07-26",
       "bodyWords": 688
     },
@@ -2054,7 +2071,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 180,
+      "incomingLinks": 181,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -2066,7 +2083,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 180,
+      "incomingLinks": 181,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -2283,8 +2300,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 8,
-      "lastmod": "2026-07-22",
-      "bodyWords": 307
+      "lastmod": "2026-07-30",
+      "bodyWords": 265
     },
     {
       "route": "/tools/koga/ios/help",
@@ -2319,8 +2336,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-07-26",
-      "bodyWords": 106
+      "lastmod": "2026-07-30",
+      "bodyWords": 110
     },
     {
       "route": "/tools/koga/ios/support",
@@ -2331,8 +2348,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-07-22",
-      "bodyWords": 159
+      "lastmod": "2026-07-30",
+      "bodyWords": 131
     },
     {
       "route": "/tools/koga/privacy",
@@ -2355,8 +2372,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-07-26",
-      "bodyWords": 159
+      "lastmod": "2026-07-30",
+      "bodyWords": 163
     },
     {
       "route": "/tools/koga/support",
@@ -2498,7 +2515,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 180,
+      "incomingLinks": 181,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }

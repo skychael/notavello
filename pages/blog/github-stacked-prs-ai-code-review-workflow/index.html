@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>GitHub Stacked PRs Make AI Code Review Less Miserable — The Export | Notavello</title>
+<meta name="description" content="Use GitHub stacked PRs to turn AI-generated code into smaller, reviewable changes with cleaner CI and clearer ownership."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/blog/github-stacked-prs-ai-code-review-workflow/"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2026-07-31T05:02:15.454Z"/>
+<meta property="article:modified_time" content="2026-07-31T05:02:15.454Z"/>
+<meta name="notavello:published_at" content="2026-07-31T05:02:15.454Z"/>
+<meta property="og:url" content="https://notavello.com/pages/blog/github-stacked-prs-ai-code-review-workflow/"/>
+<meta property="og:title" content="GitHub Stacked PRs Make AI Code Review Less Miserable"/>
+<meta property="og:description" content="Use GitHub stacked PRs to turn AI-generated code into smaller, reviewable changes with cleaner CI and clearer ownership."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="GitHub Stacked PRs Make AI Code Review Less Miserable"/>
+<meta name="twitter:description" content="Use GitHub stacked PRs to turn AI-generated code into smaller, reviewable changes with cleaner CI and clearer ownership."/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "GitHub Stacked PRs Make AI Code Review Less Miserable",
+  "description": "Use GitHub stacked PRs to turn AI-generated code into smaller, reviewable changes with cleaner CI and clearer ownership.",
+  "url": "https://notavello.com/pages/blog/github-stacked-prs-ai-code-review-workflow/",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://notavello.com/pages/blog/github-stacked-prs-ai-code-review-workflow/" },
+  "image": "https://notavello.com/og-image.png",
+  "datePublished": "2026-07-31T05:02:15.454Z",
+  "dateModified": "2026-07-31T05:02:15.454Z",
+  "author": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" },
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com", "logo": { "@type": "ImageObject", "url": "https://notavello.com/og-image.png" } }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
+.post-nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; row-gap: 8px; }
+.post-nav-top { margin-bottom: 40px; }
+.post-nav-bottom { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--border); }
+.post-nav a { display: inline-flex; align-items: center; gap: 6px; font-size: 0.92rem; font-weight: 600; color: var(--ink-muted); text-decoration: none; padding: 12px 14px; border-radius: var(--radius-sm); white-space: nowrap; transition: color 0.15s, background 0.15s; }
+.post-nav a:hover { color: var(--accent); background: var(--accent-light); }
+.post-nav a:first-child { padding-left: 0; }
+.post-nav a:last-child { padding-right: 0; justify-content: flex-end; }
+.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
+.post-date { font-size: 0.78rem; color: var(--ink-faint); }
+.post-title { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; color: var(--ink); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
+.post-lede { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+.post-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink); }
+.post-body h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 44px 0 16px; letter-spacing: -0.01em; }
+.post-body p { margin-bottom: 20px; color: var(--ink-muted); }
+.post-body p strong { color: var(--ink); font-weight: 600; }
+.post-body ul { margin: 0 0 20px 20px; color: var(--ink-muted); }
+.post-body ul li { margin-bottom: 8px; line-height: 1.7; }
+.callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 32px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.7; }
+.post-footer { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.post-footer-label { font-size: 0.8rem; color: var(--ink-faint); }
+.btn-export { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: opacity 0.2s; }
+.btn-export:hover { opacity: 0.9; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } .post-nav a { padding: 12px 8px; font-size: 0.88rem; } }
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+
+  <nav class="post-nav post-nav-top">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+  <div class="post-meta">
+    <span class="post-tag">Developer Tools</span>
+    <span class="post-date">July 31, 2026</span>
+  </div>
+
+  <h1 class="post-title">GitHub Stacked PRs Make AI Code Review Less Miserable</h1>
+
+  <p class="post-lede">AI coding tools made it easy to produce a mountain of code. GitHub stacked PRs make it harder to dump that mountain on one unlucky reviewer.</p>
+
+  <div class="post-body">
+
+    <h2>The Real Problem Is Not That AI Writes Code</h2>
+    <p>The problem is that AI-assisted development makes large diffs feel cheap. A developer can ask a coding agent to add a feature, refactor a service, update tests, touch documentation, and clean up types in one run. The agent happily produces one wide patch. Then the team pretends the resulting pull request is reviewable. Very wholesome. Completely fake.</p><p>Large pull requests were already bad before AI coding tools arrived. They mix decisions, hide risky changes behind boring edits, and make review comments expensive because any requested change may ripple through the whole branch. AI just makes the failure mode more common. The code arrives faster than the review process can absorb it.</p><p>That is why GitHub stacked pull requests matter. GitHub describes stacked PRs as a way to break large code changes into a chain of smaller, dependent pull requests that can be reviewed and merged independently, and its docs currently mark the feature as public preview: <a href='https://docs.github.com/en/pull-requests/get-started/about-stacked-prs'>https://docs.github.com/en/pull-requests/get-started/about-stacked-prs</a>.</p><p>For teams using AI coding agents, the interesting part is not the pancake icon. It is the discipline: one task, one layer, one reviewable unit.</p>
+
+    <div class="callout">
+      <strong>The bottom line:</strong> Stacked PRs are not a magic safety feature. They are a workflow for forcing generated or assisted code into smaller, ordered, reviewable units.
+    </div>
+
+    <h2>What A Stacked PR Actually Is</h2>
+    <p>A stacked PR is a set of pull requests where each later PR is based on the branch below it. The bottom PR targets the trunk branch, often <strong>main</strong>. The next PR targets the branch from the first PR. The next one targets the branch from the second. The chain represents dependency order.</p><p>For example, an AI-assisted feature might become this stack:</p><ul><li><strong>PR 1:</strong> Add database fields and migration.</li><li><strong>PR 2:</strong> Add backend service logic that depends on those fields.</li><li><strong>PR 3:</strong> Add API endpoint using the new service.</li><li><strong>PR 4:</strong> Add UI changes consuming that endpoint.</li><li><strong>PR 5:</strong> Add documentation and integration tests.</li></ul><p>That is much better than one 2,500-line pull request titled “implement account exports,” which is developer-speak for “good luck, everyone.”</p><p>GitHub’s docs say stacked PRs can be used through GitHub CLI, the GitHub website, GitHub Mobile, and programmatic surfaces such as webhooks, REST API, and GraphQL. The same docs also note two practical limits: stacked PR branches must be in the same repository, and GitHub Desktop is not supported for stacked PRs at the time of writing.</p><p>The same-repository requirement matters for open source maintainers. If a contributor works from a fork, this may not be the right workflow yet. Inside a company repo, though, it is much easier to standardize.</p>
+
+    <h2>Why This Fits AI Coding Work Better Than One Big Pull Request</h2>
+    <p>AI coding tools are good at continuing. That is useful and dangerous. Once a coding agent has enough context, it may keep editing adjacent files because the next step seems obvious. Sometimes it is obvious. Sometimes it is a confident detour wearing a little hard hat.</p><p>Stacked PRs force a pause between concerns. The developer can ask the tool to produce a foundation change, stop, test it, open a PR, then continue on top of that branch. The result is still AI-assisted code, but the review surface becomes human-sized.</p><p>This pairs well with a policy the team should already have: AI-generated or AI-assisted changes need a paper trail. Not a novel. Just enough context for a reviewer to know what was requested, what files changed, what tests ran, and where the human author took responsibility. Notavello covered that review discipline in <a href='/pages/blog/ai-written-pull-requests-need-a-paper-trail/'>AI-written pull requests need a paper trail</a>.</p><p>The stack becomes that paper trail’s skeleton. Each PR answers one question:</p><ul><li>What does this layer change?</li><li>What earlier layer does it depend on?</li><li>What tests prove this layer works?</li><li>What should the reviewer ignore because it belongs to another layer?</li></ul><p>That last question is underrated. Reviewers waste enormous time separating “this is the actual change” from “this is a dependency I cannot approve yet.” Stacks make the dependency visible instead of implied.</p>
+
+    <h2>The CI Cost Is Real, So Plan For It</h2>
+    <p>Stacked PRs do not make continuous integration cheaper by default. GitHub says workflows for stacked PRs run as if each pull request targets the base of the stack, so a workflow configured for pull requests into <strong>main</strong> runs for every PR in the stack, not just the bottom one: <a href='https://docs.github.com/en/pull-requests/how-tos/merge-and-close-pull-requests/optimizing-ci-for-stacked-pull-requests'>https://docs.github.com/en/pull-requests/how-tos/merge-and-close-pull-requests/optimizing-ci-for-stacked-pull-requests</a>.</p><p>That is the correct safety default. It is also a lovely way to burn CI minutes if the team turns every five-line change into a seven-layer tower.</p><p>The practical answer is to split checks into tiers:</p><ul><li><strong>Every layer:</strong> formatting, linting, type checks, focused unit tests, and cheap security checks.</li><li><strong>Lowest unmerged layer:</strong> checks that prove the next mergeable piece is safe.</li><li><strong>Top layer:</strong> expensive integration tests that need the full combined change.</li><li><strong>Nightly or manual:</strong> slow end-to-end suites, load tests, and non-blocking exploratory scans.</li></ul><p>GitHub exposes stack metadata to workflows, including stack size, position, and base branch. That gives teams enough information to avoid blindly running every expensive job on every layer.</p><p>A simple rule works well: every PR in the stack must be independently understandable, but not every PR must run the most expensive test suite. If a layer changes a README, it does not need the full production-shaped integration circus. The circus can wait for the top of the stack. It has little shoes to polish anyway.</p>
+
+    <h2>How To Split An AI-Assisted Change Into A Useful Stack</h2>
+    <p>The split should follow dependency order, not file type and not whatever order the coding agent happened to edit files. A good stack starts with the lowest-risk foundation and climbs toward user-visible behavior.</p><p>Use this order when it fits:</p><table><tr><td><strong>Layer</strong></td><td><strong>What Goes There</strong></td><td><strong>Reviewer Question</strong></td></tr><tr><td>1</td><td>Schema, types, interfaces, feature flags</td><td>Is the foundation small and compatible?</td></tr><tr><td>2</td><td>Core logic</td><td>Is the behavior correct without UI noise?</td></tr><tr><td>3</td><td>API, adapters, integration code</td><td>Are boundaries and errors handled?</td></tr><tr><td>4</td><td>UI or user-facing surface</td><td>Does the feature behave as expected?</td></tr><tr><td>5</td><td>Docs, cleanup, broader tests</td><td>Does the final package make sense?</td></tr></table><p>Do not create a stack where every layer is “misc cleanup.” That is not a stack. That is a junk drawer with branches.</p><p>Also avoid splitting changes so thinly that reviewers need five tabs open to understand one idea. A stacked PR should be smaller, not microscopic. The target is a pull request that can be reviewed with confidence in one sitting.</p><p>When using an AI coding agent, give it explicit boundaries. For example: “Create only the migration and type changes. Do not update service logic yet.” Then inspect the diff before asking for the next layer. This is slower than letting the agent rip through the repo. It is also how adults ship software.</p>
+
+    <h2>The Review Rules Should Change With The Workflow</h2>
+    <p>Stacked PRs are only useful if the team changes how it reviews them. If reviewers still wait until the entire feature is done, the stack has become decorative branch origami.</p><p>Set a few rules:</p><ul><li><strong>Review bottom-up.</strong> The foundation must be sound before higher layers get serious attention.</li><li><strong>Keep each title boring and specific.</strong> “Add export job status enum” beats “export improvements.”</li><li><strong>Require a short stack summary.</strong> The top PR or tracking issue should explain the full chain.</li><li><strong>Do not hide risky changes in upper layers.</strong> Authentication, permissions, data deletion, billing, and migrations deserve their own obvious PRs.</li><li><strong>Close or rewrite bad stacks early.</strong> A confusing stack is not better than a confusing large PR. It just has more tabs.</li></ul><p>For AI-assisted work, require the author to say which parts were generated, which prompts or tasks were used at a high level, and what manual checks were performed. The reviewer is reviewing the code, not the vibes.</p><p>The biggest benefit is social as much as technical. A stack tells the reviewer, “Here is the path through this change.” That lowers review friction. It also makes it harder for generated code to sneak in as one overwhelming blob.</p>
+
+    <h2>Use Stacked PRs For Big Work, Not Every Work</h2>
+    <p>Not every pull request needs to be stacked. A typo fix does not need dependency choreography. A small bug fix should not become a three-act play. Use stacked PRs when a change is large, dependent, or likely to be generated in phases by an AI coding tool.</p><p>The sweet spot is work that is too connected to split into unrelated pull requests but too large to review honestly as one. That includes refactors that unlock a feature, backend changes followed by UI work, migrations followed by application logic, and agent-generated task sequences.</p><p>GitHub stacked PRs are not a substitute for code ownership, tests, security review, or a human author who understands the patch. They are a better container. And with AI coding tools producing more code than teams can comfortably review, better containers are not a luxury. They are the difference between useful acceleration and a faster mess.</p>
+
+  </div>
+
+  <div class="post-footer">
+    <span class="post-footer-label">Looking for more AI tools?</span>
+    <a class="btn-export" href="/">See our free AI tools →</a>
+  </div>
+
+  <nav class="post-nav post-nav-bottom">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+</main>
+
+<!--FOOTER-->
+
+</body>
+</html>

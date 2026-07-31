@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "07-30",
-  "display_date": "July 30",
-  "generated_at": "2026-07-30T10:34:25.183Z",
+  "date_key": "07-31",
+  "display_date": "July 31",
+  "generated_at": "2026-07-31T11:00:20.375Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-1830401367884719afb6bfd6",
+      "candidate_id": "event-f7a9670c4628713a7b4d3c22",
+      "type": "event",
+      "year": 1992,
+      "text": "China General Aviation Flight 7552 crashes during takeoff from Nanjing Dajiaochang Airport, killing 108.",
+      "article_title": "China General Aviation Flight 7552",
+      "url": "https://en.wikipedia.org/wiki/China_General_Aviation_Flight_7552",
+      "category": "World history"
+    },
+    {
+      "candidate_id": "event-7dbc31c4f3471ae9ca765089",
+      "type": "event",
+      "year": 1964,
+      "text": "Ranger program: Ranger 7 sends back the first close-up photographs of the moon, with images 1,000 times clearer than anything ever seen from earth-bound telescopes.",
+      "article_title": "Ranger program",
+      "url": "https://en.wikipedia.org/wiki/Ranger_program",
+      "category": "World history"
+    },
+    {
+      "candidate_id": "event-297e503605de8fff4a3b1148",
       "type": "event",
       "year": 1971,
-      "text": "Apollo program: On Apollo 15, David Scott and James Irwin in the Apollo Lunar Module Falcon land on the Moon with the first Lunar Rover.",
+      "text": "Apollo program: the Apollo 15 astronauts become the first to ride in a lunar rover.",
       "article_title": "Apollo program",
       "url": "https://en.wikipedia.org/wiki/Apollo_program",
       "category": "World history"
-    },
-    {
-      "candidate_id": "event-b1498e6386bd149b3a640034",
-      "type": "event",
-      "year": 1945,
-      "text": "World War II: Japanese submarine I-58 sinks the USS Indianapolis, killing 883 seamen. Most die during the following four days, until an aircraft notices the survivors.",
-      "article_title": "World War II",
-      "url": "https://en.wikipedia.org/wiki/World_War_II",
-      "category": "World history"
-    },
-    {
-      "candidate_id": "event-4294f614b908857c5d3e2aa7",
-      "type": "event",
-      "year": 2025,
-      "text": "A magnitude 8.8 earthquake hits Russia, causing tsunamis over the Pacific Ocean.",
-      "article_title": "2025 Kamchatka earthquake",
-      "url": "https://en.wikipedia.org/wiki/2025_Kamchatka_earthquake",
-      "category": "Disasters and exploration"
     }
   ]
 }
