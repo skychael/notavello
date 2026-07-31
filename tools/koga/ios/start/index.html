@@ -39,12 +39,21 @@
 
     <section class="search-section" aria-labelledby="search-title">
       <h1 id="search-title">Search the web</h1>
-      <form class="search" action="https://duckduckgo.com/" method="get" role="search">
-        <label class="visually-hidden" for="web-search">Search the web with DuckDuckGo</label>
+      <form class="search" action="https://www.google.com/search" method="get" role="search" data-web-search>
+        <label class="visually-hidden" for="web-search">Search the web</label>
         <span class="search-mark" aria-hidden="true">⌕</span>
         <input id="web-search" name="q" type="search" inputmode="search" autocomplete="off"
-          enterkeyhint="search" placeholder="Search with DuckDuckGo" required data-ph-no-capture>
+          enterkeyhint="search" placeholder="Search the web" required data-ph-no-capture>
         <button type="submit">Go</button>
+        <div class="search-provider">
+          <label for="search-provider">Search with</label>
+          <select id="search-provider" data-search-provider>
+            <option value="google">Google</option>
+            <option value="duckduckgo">DuckDuckGo</option>
+            <option value="bing">Bing</option>
+            <option value="yahoo">Yahoo</option>
+          </select>
+        </div>
       </form>
     </section>
 
@@ -135,6 +144,7 @@
 
   <script src="../../weather-location.js?v=20260726-2"></script>
   <script src="../../start/history-data.js?v=20260726-2"></script>
-  <script src="script.js?v=20260726-3"></script>
+  <script src="../../start/search-provider.js?v=20260730-1"></script>
+  <script src="script.js?v=20260730-1"></script>
 </body>
 </html>

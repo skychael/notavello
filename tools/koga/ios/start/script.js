@@ -312,7 +312,12 @@
 
   function init(win) {
     const doc = win.document;
-    const storage = win.localStorage;
+    let storage = null;
+    try {
+      storage = win.localStorage;
+    } catch (_error) {
+      // Page features retain safe defaults when storage is unavailable.
+    }
     const media = win.matchMedia("(prefers-color-scheme: dark)");
     const themeMeta = doc.querySelector('meta[name="theme-color"]');
     const appearance = doc.querySelector("[data-appearance]");
@@ -349,6 +354,27 @@
     media.addEventListener("change", function () {
       if (savedTheme(storage) === "system") applyTheme("system");
     });
+
+    const searchForm = doc.querySelector("[data-web-search]");
+    const searchInput = doc.querySelector("#web-search");
+    const searchProviderSelect = doc.querySelector("[data-search-provider]");
+    const searchProvider = win.KogaSearchProvider;
+    if (searchForm && searchInput && searchProviderSelect && searchProvider) {
+      searchProviderSelect.value = searchProvider.savedProvider(storage);
+      searchProviderSelect.addEventListener("change", function () {
+        searchProviderSelect.value = searchProvider.saveProvider(
+          storage,
+          searchProviderSelect.value
+        );
+      });
+      searchForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+        if (!searchForm.reportValidity()) return;
+        win.location.assign(
+          searchProvider.searchUrl(searchProviderSelect.value, searchInput.value)
+        );
+      });
+    }
 
     const today = doc.querySelector("[data-today]");
     if (today) {

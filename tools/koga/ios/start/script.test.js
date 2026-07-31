@@ -4,6 +4,7 @@ const path = require("node:path");
 const test = require("node:test");
 
 const dashboard = require("./script.js");
+const searchProvider = require("../../start/search-provider.js");
 const root = path.resolve(__dirname, "../../../..");
 const html = fs.readFileSync(path.join(__dirname, "index.html"), "utf8");
 const css = fs.readFileSync(path.join(__dirname, "styles.css"), "utf8");
@@ -29,10 +30,56 @@ test("appearance defaults to System and preserves supported shared values", () =
   assert.match(script, /querySelectorAll\("\[data-theme\]"\)/);
 });
 
-test("search uses DuckDuckGo with the expected query field", () => {
-  assert.match(html, /action="https:\/\/duckduckgo\.com\/"/);
+test("search defaults to Google and renders all provider choices", () => {
+  assert.match(html, /action="https:\/\/www\.google\.com\/search"/);
   assert.match(html, /name="q"/);
   assert.match(html, /type="search"/);
+  assert.match(html, /<label for="search-provider">Search with<\/label>/);
+  assert.deepEqual(
+    [...html.matchAll(/<option value="([^"]+)">/g)].map((match) => match[1]),
+    ["google", "duckduckgo", "bing", "yahoo"]
+  );
+  assert.match(html, /src="\.\.\/\.\.\/start\/search-provider\.js/);
+});
+
+test("search provider preference uses the shared website storage key", () => {
+  const values = new Map();
+  const localStorage = {
+    getItem(key) { return values.get(key) ?? null; },
+    setItem(key, value) { values.set(key, value); }
+  };
+  assert.equal(searchProvider.STORAGE_KEY, "kogaStartSearchProvider");
+  assert.equal(searchProvider.savedProvider(localStorage), "google");
+  assert.equal(searchProvider.saveProvider(localStorage, "bing"), "bing");
+  assert.equal(searchProvider.savedProvider(localStorage), "bing");
+});
+
+test("search provider falls back safely for invalid or unavailable storage", () => {
+  assert.equal(searchProvider.savedProvider({
+    getItem() { return "unsupported"; }
+  }), "google");
+  assert.equal(searchProvider.savedProvider({
+    getItem() { throw new Error("blocked"); }
+  }), "google");
+  assert.equal(searchProvider.saveProvider({
+    setItem() { throw new Error("blocked"); }
+  }, "yahoo"), "yahoo");
+});
+
+test("search provider URLs use correct parameters and encode queries", () => {
+  const query = "Koga browser & privacy?";
+  assert.equal(searchProvider.searchUrl("google", query), "https://www.google.com/search?q=Koga+browser+%26+privacy%3F");
+  assert.equal(searchProvider.searchUrl("duckduckgo", query), "https://duckduckgo.com/?q=Koga+browser+%26+privacy%3F");
+  assert.equal(searchProvider.searchUrl("bing", query), "https://www.bing.com/search?q=Koga+browser+%26+privacy%3F");
+  assert.equal(searchProvider.searchUrl("yahoo", query), "https://search.yahoo.com/search?p=Koga+browser+%26+privacy%3F");
+  assert.equal(searchProvider.searchUrl("unsupported", "fallback"), "https://www.google.com/search?q=fallback");
+});
+
+test("search form wiring preserves submit and Enter-key behavior", () => {
+  assert.match(script, /searchForm\.addEventListener\("submit"/);
+  assert.match(script, /searchProvider\.saveProvider\(/);
+  assert.match(script, /win\.location\.assign\(/);
+  assert.match(script, /searchProvider\.searchUrl\(searchProviderSelect\.value, searchInput\.value\)/);
 });
 
 test("malformed storage data is ignored safely", () => {
