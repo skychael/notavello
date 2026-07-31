@@ -55,12 +55,21 @@
 
     <section class="welcome" aria-labelledby="welcome-title">
       <h1 id="welcome-title">Search the web</h1>
-      <form class="search" action="https://duckduckgo.com/" method="get" role="search">
-        <label class="visually-hidden" for="web-search">Search the web with DuckDuckGo</label>
+      <form class="search" action="https://www.google.com/search" method="get" role="search" data-web-search>
+        <label class="visually-hidden" for="web-search">Search the web</label>
         <div class="search-row">
           <span aria-hidden="true">⌕</span>
           <input id="web-search" name="q" type="search" inputmode="search" autocomplete="off" enterkeyhint="search" placeholder="Search the web" required>
           <button type="submit">Search</button>
+        </div>
+        <div class="search-provider">
+          <label for="search-provider">Search with</label>
+          <select id="search-provider" data-search-provider>
+            <option value="google">Google</option>
+            <option value="duckduckgo">DuckDuckGo</option>
+            <option value="bing">Bing</option>
+            <option value="yahoo">Yahoo</option>
+          </select>
         </div>
       </form>
     </section>
@@ -150,6 +159,7 @@
   </footer>
   <script src="../weather-location.js"></script>
   <script src="history-data.js"></script>
+  <script src="search-provider.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

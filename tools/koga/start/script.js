@@ -49,6 +49,22 @@
     if (savedTheme() === "system") applyTheme("system", false);
   });
 
+  const searchForm = document.querySelector("[data-web-search]");
+  const searchInput = document.querySelector("#web-search");
+  const searchProviderSelect = document.querySelector("[data-search-provider]");
+  const searchProvider = window.KogaSearchProvider;
+  if (searchForm && searchInput && searchProviderSelect && searchProvider) {
+    searchProviderSelect.value = searchProvider.savedProvider(localStorage);
+    searchProviderSelect.addEventListener("change", () => {
+      searchProviderSelect.value = searchProvider.saveProvider(localStorage, searchProviderSelect.value);
+    });
+    searchForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      if (!searchForm.reportValidity()) return;
+      window.location.assign(searchProvider.searchUrl(searchProviderSelect.value, searchInput.value));
+    });
+  }
+
   const now = new Date();
   const dateText = new Intl.DateTimeFormat(undefined, { weekday: "short", month: "short", day: "numeric" }).format(now);
   document.querySelector("[data-today]").textContent = dateText;
