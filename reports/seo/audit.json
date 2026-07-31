@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-07-31T05:03:13.712Z",
+  "generatedAt": "2026-07-31T14:46:57.494Z",
   "totals": {
-    "pages": 181,
-    "indexable": 177,
-    "articles": 115,
-    "sitemap": 177,
+    "pages": 184,
+    "indexable": 180,
+    "articles": 118,
+    "sitemap": 180,
     "errors": 0,
-    "warnings": 67
+    "warnings": 71
   },
   "errors": [],
   "warnings": [
@@ -167,6 +167,16 @@
     },
     {
       "type": "template-pattern",
+      "page": "/pages/blog/how-to-back-up-application-settings-before-troubleshooting/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/how-to-back-up-application-settings-before-troubleshooting/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
       "page": "/pages/blog/how-to-debug-an-ai-prompt-that-gives-inconsistent-answers/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
@@ -258,6 +268,16 @@
     {
       "type": "topic-review",
       "page": "/pages/blog/self-driving-cars-trucks-can-be-fooled/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/spr-drawdown-buying-time-not-cheap-gas/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/spr-drawdown-buying-time-not-cheap-gas/",
       "detail": "title/description lacks a clear AI, software, or computing connection"
     },
     {
@@ -355,7 +375,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 181,
+      "incomingLinks": 184,
       "lastmod": "2026-07-24",
       "bodyWords": 750
     },
@@ -379,7 +399,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 181,
+      "incomingLinks": 184,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -487,7 +507,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 181,
+      "incomingLinks": 184,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -499,9 +519,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 181,
-      "lastmod": "2026-07-30",
-      "bodyWords": 640
+      "incomingLinks": 184,
+      "lastmod": "2026-07-31",
+      "bodyWords": 652
     },
     {
       "route": "/pages/blog/a-practical-checklist-for-checking-ai-generated-technical-answers/",
@@ -691,7 +711,7 @@
       "canonical": "https://notavello.com/pages/blog/ai-model-evaluation-sandbox-security-checklist/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 4,
+      "incomingLinks": 5,
       "lastmod": "2026-07-22",
       "bodyWords": 1894
     },
@@ -739,9 +759,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 54,
-      "lastmod": "2026-07-30",
-      "bodyWords": 1530
+      "incomingLinks": 57,
+      "lastmod": "2026-07-31",
+      "bodyWords": 1566
     },
     {
       "route": "/pages/blog/apple-speechanalyzer-local-transcription-apps/",
@@ -919,7 +939,7 @@
       "canonical": "https://notavello.com/pages/blog/crude-oil-futures-price-manipulation/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 2,
+      "incomingLinks": 3,
       "lastmod": "2026-07-22",
       "bodyWords": 2207
     },
@@ -1200,6 +1220,18 @@
       "bodyWords": 1831
     },
     {
+      "route": "/pages/blog/how-to-back-up-application-settings-before-troubleshooting/",
+      "file": "pages/blog/how-to-back-up-application-settings-before-troubleshooting/index.html",
+      "title": "How to back up application settings before troubleshooting — The Export | Notavello",
+      "description": "A repeatable method to preserve application configuration files and test clean defaults during troubleshooting on Windows and other platforms.",
+      "canonical": "https://notavello.com/pages/blog/how-to-back-up-application-settings-before-troubleshooting/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-07-31",
+      "bodyWords": 806
+    },
+    {
       "route": "/pages/blog/how-to-debug-an-ai-prompt-that-gives-inconsistent-answers/",
       "file": "pages/blog/how-to-debug-an-ai-prompt-that-gives-inconsistent-answers/index.html",
       "title": "How to Debug an AI Prompt That Gives Inconsistent Answers — The Export | Notavello",
@@ -1231,7 +1263,7 @@
       "canonical": "https://notavello.com/pages/blog/how-to-prepare-files-for-a-useful-ai-assisted-review/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 2,
+      "incomingLinks": 3,
       "lastmod": "2026-07-23",
       "bodyWords": 796
     },
@@ -1258,6 +1290,18 @@
       "incomingLinks": 2,
       "lastmod": "2026-07-22",
       "bodyWords": 2199
+    },
+    {
+      "route": "/pages/blog/how-to-use-multiple-ai-coding-agents-without-losing-control/",
+      "file": "pages/blog/how-to-use-multiple-ai-coding-agents-without-losing-control/index.html",
+      "title": "How to Use Multiple AI Coding Agents Without Losing Control — The Export | Notavello",
+      "description": "Run multiple AI coding agents safely with ZIP workspaces, clear roles, restart handoffs, Git isolation, and realistic OpenHands tradeoffs.",
+      "canonical": "https://notavello.com/pages/blog/how-to-use-multiple-ai-coding-agents-without-losing-control/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-07-31",
+      "bodyWords": 1601
     },
     {
       "route": "/pages/blog/inkling-open-weights-deployment-plan/",
@@ -1472,8 +1516,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-07-30",
-      "bodyWords": 674
+      "lastmod": "2026-07-31",
+      "bodyWords": 664
     },
     {
       "route": "/pages/blog/page-3/",
@@ -1484,8 +1528,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-07-30",
-      "bodyWords": 689
+      "lastmod": "2026-07-31",
+      "bodyWords": 693
     },
     {
       "route": "/pages/blog/page-4/",
@@ -1496,8 +1540,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-07-30",
-      "bodyWords": 759
+      "lastmod": "2026-07-31",
+      "bodyWords": 745
     },
     {
       "route": "/pages/blog/page-5/",
@@ -1508,8 +1552,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-07-30",
-      "bodyWords": 837
+      "lastmod": "2026-07-31",
+      "bodyWords": 831
     },
     {
       "route": "/pages/blog/page-6/",
@@ -1520,8 +1564,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-07-30",
-      "bodyWords": 859
+      "lastmod": "2026-07-31",
+      "bodyWords": 838
     },
     {
       "route": "/pages/blog/page-7/",
@@ -1532,8 +1576,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": "2026-07-30",
-      "bodyWords": 371
+      "lastmod": "2026-07-31",
+      "bodyWords": 516
     },
     {
       "route": "/pages/blog/rootless-containers-ai-service-boundary/",
@@ -1606,6 +1650,18 @@
       "incomingLinks": 2,
       "lastmod": "2026-07-22",
       "bodyWords": 1297
+    },
+    {
+      "route": "/pages/blog/spr-drawdown-buying-time-not-cheap-gas/",
+      "file": "pages/blog/spr-drawdown-buying-time-not-cheap-gas/index.html",
+      "title": "The Oil Reserve Is Buying Time, Not Cheap Gas — The Export | Notavello",
+      "description": "U.S. crude stocks and SPR barrels are falling while gasoline stays costly. The reserve is buying time, not cheap fuel.",
+      "canonical": "https://notavello.com/pages/blog/spr-drawdown-buying-time-not-cheap-gas/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-07-31",
+      "bodyWords": 1333
     },
     {
       "route": "/pages/blog/strait-of-hormuz-oil-crisis-rationing-timeline/",
@@ -1723,7 +1779,7 @@
       "canonical": "https://notavello.com/pages/blog/what-an-ai-context-window-actually-changes/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 2,
+      "incomingLinks": 3,
       "lastmod": "2026-07-22",
       "bodyWords": 758
     },
@@ -1975,7 +2031,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 181,
+      "incomingLinks": 184,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -1987,7 +2043,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 181,
+      "incomingLinks": 184,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -1999,7 +2055,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 181,
+      "incomingLinks": 184,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -2011,7 +2067,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 181,
+      "incomingLinks": 184,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -2023,7 +2079,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 181,
+      "incomingLinks": 184,
       "lastmod": "2026-07-25",
       "bodyWords": 170
     },
@@ -2059,7 +2115,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 181,
+      "incomingLinks": 184,
       "lastmod": "2026-07-26",
       "bodyWords": 688
     },
@@ -2071,7 +2127,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 181,
+      "incomingLinks": 184,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -2083,7 +2139,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 181,
+      "incomingLinks": 184,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -2515,7 +2571,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 181,
+      "incomingLinks": 184,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }
