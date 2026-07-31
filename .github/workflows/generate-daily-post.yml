@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
     inputs:
       topic:
-        description: "Blog topic"
+        description: "Blog topic (blank uses the Iran/energy/food-supply editorial brief)"
         required: false
         type: string
       source_context:
@@ -56,6 +56,39 @@ jobs:
           SOURCE_CONTEXT: ${{ github.event.inputs.source_context || '' }}
           DRY_RUN: ${{ github.event.inputs.dry_run || 'false' }}
         run: |
+          # Blank scheduled/manual runs no longer use Hacker News as their
+          # editorial source. They use Relay's already-curated current signals,
+          # then the OpenAI web-search step independently verifies the facts and
+          # finds stronger sources before writing.
+          if [ -z "$BLOG_TOPIC" ] && [ -z "$SOURCE_CONTEXT" ]; then
+            export BLOG_TOPIC="Choose one strong, current, non-duplicate article angle from this editorial field: the Iran war and its real-world consequences; Strait of Hormuz, Red Sea, Suez, tanker, port, refinery, pipeline, LNG and oil-supply disruptions; Brent and WTI price moves; U.S. Strategic Petroleum Reserve and commercial inventory lows; sanctions and OPEC responses; natural-gas, ammonia, urea and fertilizer scarcity; crop-input, food-price and inflation consequences. Prefer a concrete development with a measurable consequence. Do not write a generic war recap, speculative prediction, routine military-hardware story, or claim a shortage unless current evidence supports it. Use Relay only to discover the angle. For facts and links, prefer Reuters or AP for current reporting and primary data from EIA, IEA, World Bank, USDA, FAO, government maritime notices, or other authoritative sources."
+
+            export SOURCE_CONTEXT="$(node -e '
+              const fs = require("fs");
+              const read = (file) => {
+                try { return JSON.parse(fs.readFileSync(file, "utf8")); }
+                catch { return {}; }
+              };
+              const articles = read("pages/relay/article-data.json");
+              const pulse = read("pages/relay/pulse-data.json");
+              const headlines = (articles.items || []).slice(0, 10).map((item) =>
+                `- ${item.title} | ${item.publisher || item.source_id || "Relay"} | ${item.published_at || "date unavailable"} | ${item.url}`
+              );
+              const energy = (pulse.items || [])
+                .filter((item) => ["brent-crude-oil", "natural-gas"].includes(item.id))
+                .map((item) =>
+                  `- ${item.id}: ${item.formatted_value || "unavailable"}; direction=${item.direction || "unknown"}; observation=${item.observation_date || "unknown"}; source=${item.source || "unknown"}`
+                );
+              console.log([
+                "Current Relay headlines (topic signals only; independently verify every claim):",
+                ...headlines,
+                "",
+                "Current Relay energy indicators (topic signals only; verify against current authoritative data):",
+                ...energy
+              ].join("\n"));
+            ')"
+          fi
+
           if [ "$GITHUB_EVENT_NAME" = "workflow_dispatch" ] && [ "$DRY_RUN" = "true" ]; then
             node blog-automation/generate-daily-post.js --dry-run
           else
