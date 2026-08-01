@@ -1,16 +1,16 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-31T23:17:41.439Z",
-  "latest_success_at": "2026-07-31T23:17:41.439Z",
+  "generated_at": "2026-08-01T03:53:59.382Z",
+  "latest_success_at": "2026-08-01T03:53:59.382Z",
   "status": "ok",
   "items": [
     {
-      "id": "cb2d4cc9863045fa",
-      "title": "Flood Warning issued July 31 at 2:30PM CDT by NWS Corpus Christi TX",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a7baff553c95b209282975fe25e7894797faf8a6.002.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-07-31T19:30:00.000Z",
-      "topic": "Flooding",
+      "id": "fbc4cc60c43f87df",
+      "title": "Tropical Storm Genevieve Graphics",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep2+shtml/032247.shtml?cone=",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-08-01T03:22:47.000Z",
+      "topic": "Hurricane",
       "status": "ok"
     },
     {
@@ -23,11 +23,11 @@
       "status": "ok"
     },
     {
-      "id": "15f14e5082589fdd",
-      "title": "Tropical Storm Genevieve Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep2+shtml/212248.shtml?cone=",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-07-31T21:22:48.000Z",
+      "id": "9c971d9d6531c3f6",
+      "title": "Dangerous surf to impact east-facing shores as Tropical Depression Fausto weakens north of Hawaii",
+      "url": "https://watchers.news/2026/07/29/dangerous-surf-to-impact-east-facing-shores-as-tropical-depression-fausto-weakens-north-of-hawaii",
+      "publisher": "The Watchers",
+      "published_at": "2026-07-29T12:00:57.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
