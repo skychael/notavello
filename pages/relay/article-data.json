@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "checked_at": "2026-08-01T13:58:53.131Z",
-  "latest_success_at": "2026-08-01T13:58:53.131Z",
+  "checked_at": "2026-08-01T15:30:05.034Z",
+  "latest_success_at": "2026-08-01T15:30:05.034Z",
   "status": "ok",
   "items": [
     {
@@ -26,6 +26,14 @@
       "publisher": "OilPrice.com",
       "published_at": "2026-07-31T18:05:13.000Z",
       "source_id": "oilprice",
+      "status": "ok"
+    },
+    {
+      "title": "GasLog LNG Carrier Damaged Exiting Hormuz as UKMTO Reports Two New Attacks",
+      "url": "https://gcaptain.com/gaslog-lng-carrier-damaged-exiting-hormuz-as-ukmto-reports-two-new-attacks",
+      "publisher": "gCaptain",
+      "published_at": "2026-08-01T13:20:01.000Z",
+      "source_id": "gcaptain",
       "status": "ok"
     },
     {
@@ -58,14 +66,6 @@
       "publisher": "Breaking Defense",
       "published_at": "2026-07-30T14:51:23.000Z",
       "source_id": "breaking-defense",
-      "status": "ok"
-    },
-    {
-      "title": "Oil Spill from Shadow Fleet Tanker Spreading Off Oman, Satellite Images Show",
-      "url": "https://gcaptain.com/oil-spill-from-shadow-fleet-tanker-spreading-off-oman-satellite-images-show",
-      "publisher": "gCaptain",
-      "published_at": "2026-07-31T15:05:10.000Z",
-      "source_id": "gcaptain",
       "status": "ok"
     },
     {
