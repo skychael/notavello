@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-07-31T14:46:57.494Z",
+  "generatedAt": "2026-08-01T04:55:06.330Z",
   "totals": {
-    "pages": 184,
-    "indexable": 180,
-    "articles": 118,
-    "sitemap": 180,
+    "pages": 185,
+    "indexable": 181,
+    "articles": 119,
+    "sitemap": 181,
     "errors": 0,
-    "warnings": 71
+    "warnings": 73
   },
   "errors": [],
   "warnings": [
@@ -113,6 +113,16 @@
     {
       "type": "topic-review",
       "page": "/pages/blog/dependabot-default-cooldown-package-updates/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/diesel-is-the-hormuz-tax-you-feel-first/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/diesel-is-the-hormuz-tax-you-feel-first/",
       "detail": "title/description lacks a clear AI, software, or computing connection"
     },
     {
@@ -375,7 +385,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 184,
+      "incomingLinks": 185,
       "lastmod": "2026-07-24",
       "bodyWords": 750
     },
@@ -399,7 +409,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 184,
+      "incomingLinks": 185,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -507,7 +517,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 184,
+      "incomingLinks": 185,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -519,9 +529,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 184,
+      "incomingLinks": 185,
       "lastmod": "2026-07-31",
-      "bodyWords": 652
+      "bodyWords": 656
     },
     {
       "route": "/pages/blog/a-practical-checklist-for-checking-ai-generated-technical-answers/",
@@ -759,9 +769,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 57,
+      "incomingLinks": 58,
       "lastmod": "2026-07-31",
-      "bodyWords": 1566
+      "bodyWords": 1577
     },
     {
       "route": "/pages/blog/apple-speechanalyzer-local-transcription-apps/",
@@ -978,6 +988,18 @@
       "incomingLinks": 2,
       "lastmod": "2026-07-15",
       "bodyWords": 1474
+    },
+    {
+      "route": "/pages/blog/diesel-is-the-hormuz-tax-you-feel-first/",
+      "file": "pages/blog/diesel-is-the-hormuz-tax-you-feel-first/index.html",
+      "title": "Diesel Is The Hormuz Tax You Feel First — The Export | Notavello",
+      "description": "Diesel is the clearest Hormuz price signal now, hitting trucks, farms and construction before the broader oil story reaches shoppers.",
+      "canonical": "https://notavello.com/pages/blog/diesel-is-the-hormuz-tax-you-feel-first/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-08-01",
+      "bodyWords": 1456
     },
     {
       "route": "/pages/blog/displayport-vs-hdmi/",
@@ -1517,7 +1539,7 @@
       "inSitemap": true,
       "incomingLinks": 2,
       "lastmod": "2026-07-31",
-      "bodyWords": 664
+      "bodyWords": 656
     },
     {
       "route": "/pages/blog/page-3/",
@@ -1529,7 +1551,7 @@
       "inSitemap": true,
       "incomingLinks": 2,
       "lastmod": "2026-07-31",
-      "bodyWords": 693
+      "bodyWords": 697
     },
     {
       "route": "/pages/blog/page-4/",
@@ -1541,7 +1563,7 @@
       "inSitemap": true,
       "incomingLinks": 2,
       "lastmod": "2026-07-31",
-      "bodyWords": 745
+      "bodyWords": 731
     },
     {
       "route": "/pages/blog/page-5/",
@@ -1553,7 +1575,7 @@
       "inSitemap": true,
       "incomingLinks": 2,
       "lastmod": "2026-07-31",
-      "bodyWords": 831
+      "bodyWords": 837
     },
     {
       "route": "/pages/blog/page-6/",
@@ -1565,7 +1587,7 @@
       "inSitemap": true,
       "incomingLinks": 2,
       "lastmod": "2026-07-31",
-      "bodyWords": 838
+      "bodyWords": 840
     },
     {
       "route": "/pages/blog/page-7/",
@@ -1577,7 +1599,7 @@
       "inSitemap": true,
       "incomingLinks": 1,
       "lastmod": "2026-07-31",
-      "bodyWords": 516
+      "bodyWords": 557
     },
     {
       "route": "/pages/blog/rootless-containers-ai-service-boundary/",
@@ -1659,7 +1681,7 @@
       "canonical": "https://notavello.com/pages/blog/spr-drawdown-buying-time-not-cheap-gas/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 2,
+      "incomingLinks": 3,
       "lastmod": "2026-07-31",
       "bodyWords": 1333
     },
@@ -2031,7 +2053,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 184,
+      "incomingLinks": 185,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -2043,7 +2065,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 184,
+      "incomingLinks": 185,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -2055,7 +2077,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 184,
+      "incomingLinks": 185,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -2067,7 +2089,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 184,
+      "incomingLinks": 185,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -2079,8 +2101,8 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 184,
-      "lastmod": "2026-07-25",
+      "incomingLinks": 185,
+      "lastmod": "2026-07-31",
       "bodyWords": 170
     },
     {
@@ -2092,8 +2114,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-07-31",
-      "bodyWords": 65
+      "lastmod": "2026-08-01",
+      "bodyWords": 73
     },
     {
       "route": "/pages/sample",
@@ -2115,7 +2137,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 184,
+      "incomingLinks": 185,
       "lastmod": "2026-07-26",
       "bodyWords": 688
     },
@@ -2127,7 +2149,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 184,
+      "incomingLinks": 185,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -2139,7 +2161,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 184,
+      "incomingLinks": 185,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -2571,7 +2593,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 184,
+      "incomingLinks": 185,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }
