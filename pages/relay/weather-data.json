@@ -1,9 +1,18 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-01T09:24:00.737Z",
-  "latest_success_at": "2026-08-01T09:24:00.737Z",
+  "generated_at": "2026-08-01T11:36:30.449Z",
+  "latest_success_at": "2026-08-01T11:36:30.449Z",
   "status": "ok",
   "items": [
+    {
+      "id": "ee8e390990a944fc",
+      "title": "Eastern North Pacific Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-08-01T11:16:02.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
     {
       "id": "754f8c6867efe083",
       "title": "Tropical Storm Genevieve Graphics",
@@ -19,15 +28,6 @@
       "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f5ec3e41bfdad988d82f5de66b14df9cd80b09c5.001.1.cap",
       "publisher": "National Weather Service",
       "published_at": "2026-08-01T07:21:00.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "b5ad93019d019ede",
-      "title": "Atlantic Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-08-01T05:03:19.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
