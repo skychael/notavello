@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
-  "checked_at": "2026-08-01T03:53:58.422Z",
-  "latest_success_at": "2026-08-01T03:53:58.422Z",
-  "status": "ok",
+  "checked_at": "2026-08-01T06:42:33.794Z",
+  "latest_success_at": "2026-08-01T06:42:33.794Z",
+  "status": "partial",
   "items": [
     {
       "title": "Drone Strike On Egyptian Port On Mediterranean Stokes Concerns Iran Conflict Will Widen (Updated)",
@@ -37,22 +37,6 @@
       "status": "ok"
     },
     {
-      "title": "Oil Loading Again Suspended from Caspian Pipeline After Tankers Are Struck",
-      "url": "https://maritime-executive.com/article/oil-loading-again-suspended-from-caspian-pipeline-after-tankers-are-struck",
-      "publisher": "The Maritime Executive",
-      "published_at": "2026-07-30T19:47:21.000Z",
-      "source_id": "maritime-executive",
-      "status": "ok"
-    },
-    {
-      "title": "CENTCOM Denies Iran's Gulf Breakout Claims Saying Danger is Verbal Threats",
-      "url": "https://maritime-executive.com/article/centcom-denies-iran-s-gulf-breakout-claims-saying-danger-is-verbal-threats",
-      "publisher": "The Maritime Executive",
-      "published_at": "2026-07-31T20:10:40.000Z",
-      "source_id": "maritime-executive",
-      "status": "ok"
-    },
-    {
       "title": "Airpower opened Iran’s skies. Why hasn’t it reopened Hormuz?",
       "url": "https://breakingdefense.com/2026/07/airpower-opened-irans-skies-why-hasnt-it-reopened-hormuz",
       "publisher": "Breaking Defense",
@@ -82,6 +66,22 @@
       "publisher": "Breaking Defense",
       "published_at": "2026-07-30T17:43:00.000Z",
       "source_id": "breaking-defense",
+      "status": "ok"
+    },
+    {
+      "title": "Long-duration M1.9 flare produces Earth-directed CME, G1-G2 geomagnetic storm conditions forecast for August 2",
+      "url": "https://watchers.news/2026/07/31/long-duration-m1-9-flare-produces-earth-directed-cme-g1-g2-geomagnetic-storm-conditions-forecast-for-august-2",
+      "publisher": "The Watchers",
+      "published_at": "2026-07-31T14:05:44.000Z",
+      "source_id": "the-watchers",
+      "status": "ok"
+    },
+    {
+      "title": "‘It’ll take more’: CFS nets another $1B to chase nuclear fusion dream",
+      "url": "https://www.canarymedia.com/articles/nuclear/cfs-1billion-nuclear-fusion",
+      "publisher": "Canary Media",
+      "published_at": "2026-07-30T04:01:00.000Z",
+      "source_id": "canary-media",
       "status": "ok"
     }
   ]
