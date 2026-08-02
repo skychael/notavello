@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-01T23:14:26.426Z",
-  "latest_success_at": "2026-08-01T23:14:26.426Z",
+  "generated_at": "2026-08-02T00:16:07.007Z",
+  "latest_success_at": "2026-08-02T00:16:07.007Z",
   "status": "ok",
   "items": [
     {
@@ -14,20 +14,20 @@
       "status": "ok"
     },
     {
-      "id": "79f485c21d6dd185",
-      "title": "Tropical Storm Genevieve Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep2+shtml/212243.shtml?cone=",
+      "id": "ee8e390990a944fc",
+      "title": "Eastern North Pacific Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-08-01T21:22:43.000Z",
+      "published_at": "2026-08-01T23:55:25.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "b4bcce42aee5b24c",
-      "title": "SPC Aug 1, 2026 2000 UTC Day 1 Convective Outlook",
-      "url": "https://www.spc.noaa.gov/products/outlook/day1otlk_2000.html",
+      "id": "11b314844afcf801",
+      "title": "SPC MD 1819",
+      "url": "https://www.spc.noaa.gov/products/md/md1819.html",
       "publisher": "Storm Prediction Center",
-      "published_at": "2026-08-01T19:59:07.000Z",
+      "published_at": "2026-08-01T23:46:04.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
