@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-02T00:16:07.007Z",
-  "latest_success_at": "2026-08-02T00:16:07.007Z",
+  "generated_at": "2026-08-02T04:03:06.287Z",
+  "latest_success_at": "2026-08-02T04:03:06.287Z",
   "status": "ok",
   "items": [
     {
-      "id": "8b5bbb1571cba498",
-      "title": "Flood Warning issued August 1 at 3:19PM CDT by NWS Corpus Christi TX",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.834ebd4dcc1f9da07a1c948db52c7fb5bc91db0a.002.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-08-01T20:19:00.000Z",
-      "topic": "Flooding",
-      "status": "ok"
-    },
-    {
-      "id": "ee8e390990a944fc",
-      "title": "Eastern North Pacific Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
+      "id": "c9981c84f954b6c6",
+      "title": "Tropical Storm Genevieve Graphics",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep2+shtml/032240.shtml?cone=",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-08-01T23:55:25.000Z",
+      "published_at": "2026-08-02T03:22:40.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "11b314844afcf801",
-      "title": "SPC MD 1819",
-      "url": "https://www.spc.noaa.gov/products/md/md1819.html",
-      "publisher": "Storm Prediction Center",
-      "published_at": "2026-08-01T23:46:04.000Z",
+      "id": "b5ad93019d019ede",
+      "title": "Atlantic Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-08-02T00:16:38.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "43e08f52b96349b1",
+      "title": "Rip Current Statement issued August 2 at 2:21AM ChST until August 8 at 4:00PM ChST by NWS Tiyan GU",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9f9040056b0d102e70540da295f669967794c632.001.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-08-01T16:21:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
