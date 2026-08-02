@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-02T04:03:06.287Z",
-  "latest_success_at": "2026-08-02T04:03:06.287Z",
+  "generated_at": "2026-08-02T06:47:35.878Z",
+  "latest_success_at": "2026-08-02T06:47:35.878Z",
   "status": "ok",
   "items": [
     {
-      "id": "c9981c84f954b6c6",
-      "title": "Tropical Storm Genevieve Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep2+shtml/032240.shtml?cone=",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-08-02T03:22:40.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "b5ad93019d019ede",
-      "title": "Atlantic Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-08-02T00:16:38.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "43e08f52b96349b1",
-      "title": "Rip Current Statement issued August 2 at 2:21AM ChST until August 8 at 4:00PM ChST by NWS Tiyan GU",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9f9040056b0d102e70540da295f669967794c632.001.1.cap",
+      "id": "14df7c99c653eb21",
+      "title": "Flash Flood Warning issued August 2 at 12:32AM EDT until August 2 at 8:30AM EDT by NWS Blacksburg VA",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.22a2757feaee6e73217e6baae5a6b174b7422453.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-08-01T16:21:00.000Z",
+      "published_at": "2026-08-02T04:32:00.000Z",
+      "topic": "Flooding",
+      "status": "ok"
+    },
+    {
+      "id": "f2bc3e5729017844",
+      "title": "SPC Aug 2, 2026 0600 UTC Day 2 Convective Outlook",
+      "url": "https://www.spc.noaa.gov/products/outlook/day2otlk_0600.html",
+      "publisher": "Storm Prediction Center",
+      "published_at": "2026-08-02T05:58:17.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "7cb9935bf42b6ff3",
+      "title": "SPC Aug 2, 2026 0600 UTC Day 1 Convective Outlook",
+      "url": "https://www.spc.noaa.gov/products/outlook/day1otlk_1200.html",
+      "publisher": "Storm Prediction Center",
+      "published_at": "2026-08-02T05:57:11.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
