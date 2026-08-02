@@ -1,36 +1,36 @@
 {
   "schema_version": "1.0",
-  "date_key": "08-01",
-  "display_date": "August 1",
-  "generated_at": "2026-08-01T10:10:57.993Z",
+  "date_key": "08-02",
+  "display_date": "August 2",
+  "generated_at": "2026-08-02T10:08:39.077Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-d146f9c231bccb7b7b0bb62b",
+      "candidate_id": "event-31b7d211098e3731ea727746",
       "type": "event",
-      "year": 1801,
-      "text": "First Barbary War: The American schooner USS Enterprise captures the Tripolitan polacca Tripoli in a single-ship action off the coast of modern-day Libya.",
-      "article_title": "First Barbary War",
-      "url": "https://en.wikipedia.org/wiki/First_Barbary_War",
+      "year": 2005,
+      "text": "Air France Flight 358 lands at Toronto Pearson International Airport and runs off the runway, causing the plane to burst into flames, leaving 12 injuries and no fatalities.",
+      "article_title": "Air France Flight 358",
+      "url": "https://en.wikipedia.org/wiki/Air_France_Flight_358",
       "category": "World history"
     },
     {
-      "candidate_id": "event-8489d06f2dd1ca5efd383670",
+      "candidate_id": "event-7d1d0ec8446f4cb4eae5dfa5",
       "type": "event",
-      "year": 2008,
-      "text": "Eleven mountaineers from international expeditions die on K2, the second-highest mountain on Earth, in the worst single accident in the history of K2 mountaineering.",
-      "article_title": "2008 K2 disaster",
-      "url": "https://en.wikipedia.org/wiki/2008_K2_disaster",
+      "year": 1968,
+      "text": "An earthquake hits Casiguran, Aurora, Philippines killing more than 270 people and wounding 261.",
+      "article_title": "1968 Casiguran earthquake",
+      "url": "https://en.wikipedia.org/wiki/1968_Casiguran_earthquake",
       "category": "Disasters and exploration"
     },
     {
-      "candidate_id": "event-dd36099e984b6da78a113a31",
+      "candidate_id": "event-984bd3b2cd3b7d0a25c25612",
       "type": "event",
-      "year": 1984,
-      "text": "Commercial peat-cutters discover the preserved bog body of a man, called Lindow Man, at Lindow Moss, Cheshire, England.",
-      "article_title": "Peat",
-      "url": "https://en.wikipedia.org/wiki/Peat",
+      "year": 1991,
+      "text": "Space Shuttle Atlantis is launched on STS-43 to deploy the TDRS-5 satellite.",
+      "article_title": "Space Shuttle Atlantis",
+      "url": "https://en.wikipedia.org/wiki/Space_Shuttle_Atlantis",
       "category": "Science and technology"
     }
   ]
