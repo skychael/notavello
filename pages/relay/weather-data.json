@@ -1,16 +1,25 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-02T06:47:35.878Z",
-  "latest_success_at": "2026-08-02T06:47:35.878Z",
+  "generated_at": "2026-08-02T09:24:55.636Z",
+  "latest_success_at": "2026-08-02T09:24:55.636Z",
   "status": "ok",
   "items": [
     {
-      "id": "14df7c99c653eb21",
-      "title": "Flash Flood Warning issued August 2 at 12:32AM EDT until August 2 at 8:30AM EDT by NWS Blacksburg VA",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.22a2757feaee6e73217e6baae5a6b174b7422453.001.1.cap",
+      "id": "7103e21bf82b4d5c",
+      "title": "Flash Flood Warning issued August 2 at 4:10AM EDT until August 2 at 8:30AM EDT by NWS Blacksburg VA",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f501a7a5991c4b12af41373497be6b254ac4b30b.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-08-02T04:32:00.000Z",
+      "published_at": "2026-08-02T08:10:00.000Z",
       "topic": "Flooding",
+      "status": "ok"
+    },
+    {
+      "id": "3c2c053c1f91d730",
+      "title": "Tropical Storm Genevieve Graphics",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep2+shtml/092246.shtml?cone=",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-08-02T09:22:46.000Z",
+      "topic": "Hurricane",
       "status": "ok"
     },
     {
@@ -19,15 +28,6 @@
       "url": "https://www.spc.noaa.gov/products/outlook/day2otlk_0600.html",
       "publisher": "Storm Prediction Center",
       "published_at": "2026-08-02T05:58:17.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "7cb9935bf42b6ff3",
-      "title": "SPC Aug 2, 2026 0600 UTC Day 1 Convective Outlook",
-      "url": "https://www.spc.noaa.gov/products/outlook/day1otlk_1200.html",
-      "publisher": "Storm Prediction Center",
-      "published_at": "2026-08-02T05:57:11.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
