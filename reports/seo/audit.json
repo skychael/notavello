@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-01T04:55:06.330Z",
+  "generatedAt": "2026-08-02T04:57:30.440Z",
   "totals": {
-    "pages": 185,
-    "indexable": 181,
-    "articles": 119,
-    "sitemap": 181,
+    "pages": 187,
+    "indexable": 183,
+    "articles": 121,
+    "sitemap": 183,
     "errors": 0,
-    "warnings": 73
+    "warnings": 76
   },
   "errors": [],
   "warnings": [
@@ -177,6 +177,16 @@
     },
     {
       "type": "template-pattern",
+      "page": "/pages/blog/hormuz-fertilizer-shock-farm-costs-food-prices/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/hormuz-fertilizer-shock-farm-costs-food-prices/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
       "page": "/pages/blog/how-to-back-up-application-settings-before-troubleshooting/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
@@ -184,6 +194,11 @@
       "type": "topic-review",
       "page": "/pages/blog/how-to-back-up-application-settings-before-troubleshooting/",
       "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/how-to-collect-a-useful-software-version-and-environment-report/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
     {
       "type": "template-pattern",
@@ -385,7 +400,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 185,
+      "incomingLinks": 187,
       "lastmod": "2026-07-24",
       "bodyWords": 750
     },
@@ -409,7 +424,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 185,
+      "incomingLinks": 187,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -517,7 +532,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 185,
+      "incomingLinks": 187,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -529,9 +544,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 185,
-      "lastmod": "2026-07-31",
-      "bodyWords": 656
+      "incomingLinks": 187,
+      "lastmod": "2026-08-01",
+      "bodyWords": 661
     },
     {
       "route": "/pages/blog/a-practical-checklist-for-checking-ai-generated-technical-answers/",
@@ -769,9 +784,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 58,
-      "lastmod": "2026-07-31",
-      "bodyWords": 1577
+      "incomingLinks": 60,
+      "lastmod": "2026-08-01",
+      "bodyWords": 1604
     },
     {
       "route": "/pages/blog/apple-speechanalyzer-local-transcription-apps/",
@@ -997,7 +1012,7 @@
       "canonical": "https://notavello.com/pages/blog/diesel-is-the-hormuz-tax-you-feel-first/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 2,
+      "incomingLinks": 3,
       "lastmod": "2026-08-01",
       "bodyWords": 1456
     },
@@ -1194,6 +1209,18 @@
       "bodyWords": 1249
     },
     {
+      "route": "/pages/blog/hormuz-fertilizer-shock-farm-costs-food-prices/",
+      "file": "pages/blog/hormuz-fertilizer-shock-farm-costs-food-prices/index.html",
+      "title": "The Hormuz Fertilizer Shock Is Not Over Just Because Urea Fell — The Export | Notavello",
+      "description": "Hormuz fertilizer panic eased, but spring nitrogen costs are still sitting in farm budgets and food inflation risk.",
+      "canonical": "https://notavello.com/pages/blog/hormuz-fertilizer-shock-farm-costs-food-prices/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-08-02",
+      "bodyWords": 1517
+    },
+    {
       "route": "/pages/blog/how-ai-actually-searches-the-web/",
       "file": "pages/blog/how-ai-actually-searches-the-web/index.html",
       "title": "How AI Actually Searches the Web — and Why It's Not the Same as Googling — The Export | Notavello",
@@ -1252,6 +1279,18 @@
       "incomingLinks": 2,
       "lastmod": "2026-07-31",
       "bodyWords": 806
+    },
+    {
+      "route": "/pages/blog/how-to-collect-a-useful-software-version-and-environment-report/",
+      "file": "pages/blog/how-to-collect-a-useful-software-version-and-environment-report/index.html",
+      "title": "How to collect a useful software version and environment report — The Export | Notavello",
+      "description": "Learn which version, platform, dependency, and error details turn vague support requests into actionable diagnostics for software troubleshooting.",
+      "canonical": "https://notavello.com/pages/blog/how-to-collect-a-useful-software-version-and-environment-report/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-08-01",
+      "bodyWords": 878
     },
     {
       "route": "/pages/blog/how-to-debug-an-ai-prompt-that-gives-inconsistent-answers/",
@@ -1538,8 +1577,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-07-31",
-      "bodyWords": 656
+      "lastmod": "2026-08-01",
+      "bodyWords": 651
     },
     {
       "route": "/pages/blog/page-3/",
@@ -1550,8 +1589,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-07-31",
-      "bodyWords": 697
+      "lastmod": "2026-08-01",
+      "bodyWords": 700
     },
     {
       "route": "/pages/blog/page-4/",
@@ -1562,8 +1601,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-07-31",
-      "bodyWords": 731
+      "lastmod": "2026-08-01",
+      "bodyWords": 709
     },
     {
       "route": "/pages/blog/page-5/",
@@ -1574,8 +1613,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-07-31",
-      "bodyWords": 837
+      "lastmod": "2026-08-01",
+      "bodyWords": 842
     },
     {
       "route": "/pages/blog/page-6/",
@@ -1586,8 +1625,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-07-31",
-      "bodyWords": 840
+      "lastmod": "2026-08-01",
+      "bodyWords": 837
     },
     {
       "route": "/pages/blog/page-7/",
@@ -1598,8 +1637,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": "2026-07-31",
-      "bodyWords": 557
+      "lastmod": "2026-08-01",
+      "bodyWords": 646
     },
     {
       "route": "/pages/blog/rootless-containers-ai-service-boundary/",
@@ -2053,7 +2092,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 185,
+      "incomingLinks": 187,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -2065,7 +2104,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 185,
+      "incomingLinks": 187,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -2077,7 +2116,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 185,
+      "incomingLinks": 187,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -2089,7 +2128,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 185,
+      "incomingLinks": 187,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -2101,7 +2140,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 185,
+      "incomingLinks": 187,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -2114,8 +2153,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-08-01",
-      "bodyWords": 73
+      "lastmod": "2026-08-02",
+      "bodyWords": 79
     },
     {
       "route": "/pages/sample",
@@ -2137,7 +2176,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 185,
+      "incomingLinks": 187,
       "lastmod": "2026-07-26",
       "bodyWords": 688
     },
@@ -2149,7 +2188,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 185,
+      "incomingLinks": 187,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -2161,7 +2200,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 185,
+      "incomingLinks": 187,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -2593,7 +2632,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 185,
+      "incomingLinks": 187,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }
