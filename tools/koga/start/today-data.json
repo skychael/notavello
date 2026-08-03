@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "08-02",
-  "display_date": "August 2",
-  "generated_at": "2026-08-02T10:08:39.077Z",
+  "date_key": "08-03",
+  "display_date": "August 3",
+  "generated_at": "2026-08-03T11:44:51.541Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-31b7d211098e3731ea727746",
+      "candidate_id": "event-de2ee0af02dfde8e25250967",
       "type": "event",
-      "year": 2005,
-      "text": "Air France Flight 358 lands at Toronto Pearson International Airport and runs off the runway, causing the plane to burst into flames, leaving 12 injuries and no fatalities.",
-      "article_title": "Air France Flight 358",
-      "url": "https://en.wikipedia.org/wiki/Air_France_Flight_358",
+      "year": 1958,
+      "text": "The world's first nuclear submarine, the USS Nautilus, becomes the first vessel to complete a submerged transit of the geographical North Pole.",
+      "article_title": "USS Nautilus (SSN-571)",
+      "url": "https://en.wikipedia.org/wiki/USS_Nautilus_(SSN-571)",
       "category": "World history"
     },
     {
-      "candidate_id": "event-7d1d0ec8446f4cb4eae5dfa5",
+      "candidate_id": "event-fbc60c8c96dd23efc22ed388",
       "type": "event",
-      "year": 1968,
-      "text": "An earthquake hits Casiguran, Aurora, Philippines killing more than 270 people and wounding 261.",
-      "article_title": "1968 Casiguran earthquake",
-      "url": "https://en.wikipedia.org/wiki/1968_Casiguran_earthquake",
+      "year": 2014,
+      "text": "A 6.1 magnitude earthquake kills at least 617 people and injures more than 2,400 in Yunnan, China.",
+      "article_title": "2014 Ludian earthquake",
+      "url": "https://en.wikipedia.org/wiki/2014_Ludian_earthquake",
       "category": "Disasters and exploration"
     },
     {
-      "candidate_id": "event-984bd3b2cd3b7d0a25c25612",
+      "candidate_id": "event-9d4a40f7710029dd24fccb2a",
       "type": "event",
-      "year": 1991,
-      "text": "Space Shuttle Atlantis is launched on STS-43 to deploy the TDRS-5 satellite.",
-      "article_title": "Space Shuttle Atlantis",
-      "url": "https://en.wikipedia.org/wiki/Space_Shuttle_Atlantis",
-      "category": "Science and technology"
+      "year": 2005,
+      "text": "President of Mauritania Maaouya Ould Sid'Ahmed Taya is overthrown in a military coup while attending the funeral of King Fahd in Saudi Arabia.",
+      "article_title": "List of heads of state of Mauritania",
+      "url": "https://en.wikipedia.org/wiki/List_of_heads_of_state_of_Mauritania",
+      "category": "Politics and society"
     }
   ]
 }
