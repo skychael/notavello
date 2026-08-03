@@ -1,9 +1,18 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-03T11:47:52.916Z",
-  "latest_success_at": "2026-08-03T11:47:52.916Z",
+  "generated_at": "2026-08-03T15:20:19.079Z",
+  "latest_success_at": "2026-08-03T15:20:19.079Z",
   "status": "ok",
   "items": [
+    {
+      "id": "2a77c91a635a591e",
+      "title": "Flash flooding prompts rescues and state of emergency in Georgia, emergency issued in North Carolina",
+      "url": "https://watchers.news/2026/08/03/flash-flooding-prompts-rescues-and-state-of-emergency-in-georgia-emergency-issued-in-north-carolina",
+      "publisher": "The Watchers",
+      "published_at": "2026-08-03T14:25:00.000Z",
+      "topic": "Flooding",
+      "status": "ok"
+    },
     {
       "id": "b5ad93019d019ede",
       "title": "Atlantic Tropical Weather Outlook",
@@ -20,15 +29,6 @@
       "publisher": "National Weather Service",
       "published_at": "2026-08-03T05:56:00.000Z",
       "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "2fa6102efec4b13e",
-      "title": "Spokane wildfires destroy 600 structures, force evacuation of 5 000 homes; wildfire emergency declared for Washington",
-      "url": "https://watchers.news/2026/08/02/spokane-wildfires-destroy-600-structures-force-evacuation-of-5-000-homes-wildfire-emergency-declared-for-washington",
-      "publisher": "The Watchers",
-      "published_at": "2026-08-02T21:43:56.000Z",
-      "topic": "Wildfire",
       "status": "ok"
     }
   ]
