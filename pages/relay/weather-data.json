@@ -1,15 +1,15 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-03T07:51:19.188Z",
-  "latest_success_at": "2026-08-03T07:51:19.188Z",
+  "generated_at": "2026-08-03T11:47:52.916Z",
+  "latest_success_at": "2026-08-03T11:47:52.916Z",
   "status": "ok",
   "items": [
     {
-      "id": "7cb9935bf42b6ff3",
-      "title": "SPC Aug 3, 2026 0600 UTC Day 1 Convective Outlook",
-      "url": "https://www.spc.noaa.gov/products/outlook/day1otlk_1200.html",
-      "publisher": "Storm Prediction Center",
-      "published_at": "2026-08-03T05:57:10.000Z",
+      "id": "b5ad93019d019ede",
+      "title": "Atlantic Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-08-03T11:28:42.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
@@ -23,12 +23,12 @@
       "status": "ok"
     },
     {
-      "id": "b5ad93019d019ede",
-      "title": "Atlantic Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-08-03T05:06:37.000Z",
-      "topic": "Hurricane",
+      "id": "2fa6102efec4b13e",
+      "title": "Spokane wildfires destroy 600 structures, force evacuation of 5 000 homes; wildfire emergency declared for Washington",
+      "url": "https://watchers.news/2026/08/02/spokane-wildfires-destroy-600-structures-force-evacuation-of-5-000-homes-wildfire-emergency-declared-for-washington",
+      "publisher": "The Watchers",
+      "published_at": "2026-08-02T21:43:56.000Z",
+      "topic": "Wildfire",
       "status": "ok"
     }
   ]
