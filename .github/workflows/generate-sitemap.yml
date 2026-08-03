@@ -52,7 +52,7 @@ jobs:
           git config user.name  "sitemap-bot"
           git config user.email "actions@github.com"
           git add sitemap.xml
-          git commit -m "Auto-update sitemap [skip ci]"
+          git commit -m "Auto-update sitemap"
 
           # Safety net: if another workflow committed after our initial rebase,
           # fetch it and stack the already-committed sitemap change on top.
