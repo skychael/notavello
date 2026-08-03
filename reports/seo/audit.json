@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-02T19:28:59.776Z",
+  "generatedAt": "2026-08-03T05:06:49.001Z",
   "totals": {
-    "pages": 187,
-    "indexable": 183,
-    "articles": 121,
-    "sitemap": 183,
+    "pages": 191,
+    "indexable": 187,
+    "articles": 124,
+    "sitemap": 187,
     "errors": 0,
-    "warnings": 76
+    "warnings": 80
   },
   "errors": [],
   "warnings": [
@@ -222,6 +222,16 @@
     },
     {
       "type": "template-pattern",
+      "page": "/pages/blog/how-to-review-browser-site-permissions-without-breaking-everything/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/how-to-write-better-ai-prompts-guardrails-hard-stops/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "template-pattern",
       "page": "/pages/blog/inkling-open-weights-deployment-plan/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
@@ -269,6 +279,16 @@
       "type": "template-pattern",
       "page": "/pages/blog/monitor-usb-ports-work-hdmi-not-displayport-kvm/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/oil-detours-are-the-real-hormuz-price-signal/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/oil-detours-are-the-real-hormuz-price-signal/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
     },
     {
       "type": "template-pattern",
@@ -400,9 +420,9 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 187,
-      "lastmod": "2026-07-24",
-      "bodyWords": 718
+      "incomingLinks": 191,
+      "lastmod": "2026-08-02",
+      "bodyWords": 744
     },
     {
       "route": "/app/",
@@ -424,7 +444,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 187,
+      "incomingLinks": 191,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -532,7 +552,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 187,
+      "incomingLinks": 191,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -544,9 +564,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 187,
+      "incomingLinks": 191,
       "lastmod": "2026-08-02",
-      "bodyWords": 661
+      "bodyWords": 663
     },
     {
       "route": "/pages/blog/a-practical-checklist-for-checking-ai-generated-technical-answers/",
@@ -580,7 +600,7 @@
       "canonical": "https://notavello.com/pages/blog/ai-agents-need-smaller-jobs/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 5,
+      "incomingLinks": 6,
       "lastmod": "2026-07-22",
       "bodyWords": 1427
     },
@@ -640,7 +660,7 @@
       "canonical": "https://notavello.com/pages/blog/ai-coding-agents-workspace-quarantine/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 3,
+      "incomingLinks": 4,
       "lastmod": "2026-07-22",
       "bodyWords": 1460
     },
@@ -724,7 +744,7 @@
       "canonical": "https://notavello.com/pages/blog/ai-knowledge-cutoff-real-time-search/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 4,
+      "incomingLinks": 5,
       "lastmod": "2026-07-22",
       "bodyWords": 596
     },
@@ -784,9 +804,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 60,
+      "incomingLinks": 63,
       "lastmod": "2026-08-02",
-      "bodyWords": 1604
+      "bodyWords": 1640
     },
     {
       "route": "/pages/blog/apple-speechanalyzer-local-transcription-apps/",
@@ -1012,7 +1032,7 @@
       "canonical": "https://notavello.com/pages/blog/diesel-is-the-hormuz-tax-you-feel-first/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 3,
+      "incomingLinks": 4,
       "lastmod": "2026-08-01",
       "bodyWords": 1456
     },
@@ -1324,7 +1344,7 @@
       "canonical": "https://notavello.com/pages/blog/how-to-prepare-files-for-a-useful-ai-assisted-review/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 3,
+      "incomingLinks": 4,
       "lastmod": "2026-07-23",
       "bodyWords": 796
     },
@@ -1339,6 +1359,18 @@
       "incomingLinks": 2,
       "lastmod": "2026-07-28",
       "bodyWords": 797
+    },
+    {
+      "route": "/pages/blog/how-to-review-browser-site-permissions-without-breaking-everything/",
+      "file": "pages/blog/how-to-review-browser-site-permissions-without-breaking-everything/index.html",
+      "title": "How to review browser site permissions without breaking everything — The Export | Notavello",
+      "description": "Manage camera, microphone, location, notification, and storage permissions in Chrome and Firefox.",
+      "canonical": "https://notavello.com/pages/blog/how-to-review-browser-site-permissions-without-breaking-everything/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-08-02",
+      "bodyWords": 726
     },
     {
       "route": "/pages/blog/how-to-submit-an-app-to-apple-and-google/",
@@ -1360,9 +1392,21 @@
       "canonical": "https://notavello.com/pages/blog/how-to-use-multiple-ai-coding-agents-without-losing-control/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 2,
+      "incomingLinks": 3,
       "lastmod": "2026-07-31",
       "bodyWords": 1601
+    },
+    {
+      "route": "/pages/blog/how-to-write-better-ai-prompts-guardrails-hard-stops/",
+      "file": "pages/blog/how-to-write-better-ai-prompts-guardrails-hard-stops/index.html",
+      "title": "How to Write Better AI Prompts Without Creating Hard Stops | Notavello",
+      "description": "Learn how to write better AI prompts, handle knowledge cutoffs, sandboxes and blocked web access, and use multiple AI agents without creating hard stops.",
+      "canonical": "https://notavello.com/pages/blog/how-to-write-better-ai-prompts-guardrails-hard-stops/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-08-02",
+      "bodyWords": 2290
     },
     {
       "route": "/pages/blog/inkling-open-weights-deployment-plan/",
@@ -1509,6 +1553,18 @@
       "bodyWords": 1943
     },
     {
+      "route": "/pages/blog/oil-detours-are-the-real-hormuz-price-signal/",
+      "file": "pages/blog/oil-detours-are-the-real-hormuz-price-signal/index.html",
+      "title": "Oil Detours Are The Real Hormuz Price Signal — The Export | Notavello",
+      "description": "Oil prices fell on truce hopes, but tanker detours through Suez and around Africa keep the Hormuz shock alive.",
+      "canonical": "https://notavello.com/pages/blog/oil-detours-are-the-real-hormuz-price-signal/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-08-03",
+      "bodyWords": 1385
+    },
+    {
       "route": "/pages/blog/open-toys-esp32-firmware-setup-guide/",
       "file": "pages/blog/open-toys-esp32-firmware-setup-guide/index.html",
       "title": "Flashing OpenToys Firmware on ESP32-S3 for Local Voice AI — The Export | Notavello",
@@ -1578,7 +1634,7 @@
       "inSitemap": true,
       "incomingLinks": 2,
       "lastmod": "2026-08-02",
-      "bodyWords": 651
+      "bodyWords": 645
     },
     {
       "route": "/pages/blog/page-3/",
@@ -1590,7 +1646,7 @@
       "inSitemap": true,
       "incomingLinks": 2,
       "lastmod": "2026-08-02",
-      "bodyWords": 700
+      "bodyWords": 696
     },
     {
       "route": "/pages/blog/page-4/",
@@ -1602,7 +1658,7 @@
       "inSitemap": true,
       "incomingLinks": 2,
       "lastmod": "2026-08-02",
-      "bodyWords": 709
+      "bodyWords": 710
     },
     {
       "route": "/pages/blog/page-5/",
@@ -1614,7 +1670,7 @@
       "inSitemap": true,
       "incomingLinks": 2,
       "lastmod": "2026-08-02",
-      "bodyWords": 842
+      "bodyWords": 809
     },
     {
       "route": "/pages/blog/page-6/",
@@ -1638,7 +1694,7 @@
       "inSitemap": true,
       "incomingLinks": 1,
       "lastmod": "2026-08-02",
-      "bodyWords": 646
+      "bodyWords": 789
     },
     {
       "route": "/pages/blog/rootless-containers-ai-service-boundary/",
@@ -2092,7 +2148,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 187,
+      "incomingLinks": 191,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -2104,7 +2160,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 187,
+      "incomingLinks": 191,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -2116,7 +2172,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 187,
+      "incomingLinks": 191,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -2128,7 +2184,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 187,
+      "incomingLinks": 191,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -2140,7 +2196,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 187,
+      "incomingLinks": 191,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -2153,8 +2209,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-08-02",
-      "bodyWords": 79
+      "lastmod": "2026-08-03",
+      "bodyWords": 85
     },
     {
       "route": "/pages/sample",
@@ -2176,8 +2232,8 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 187,
-      "lastmod": "2026-07-26",
+      "incomingLinks": 191,
+      "lastmod": "2026-08-02",
       "bodyWords": 684
     },
     {
@@ -2188,9 +2244,21 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 187,
+      "incomingLinks": 191,
       "lastmod": "2026-07-22",
       "bodyWords": 277
+    },
+    {
+      "route": "/projects/checkonkin/",
+      "file": "projects/checkonkin/index.html",
+      "title": "CheckOnKin — Scheduled Safety Check-ins | Notavello",
+      "description": "CheckOnKin helps families stay connected through scheduled check-ins, missed check-in alerts, and privacy-conscious caregiver support.",
+      "canonical": "https://notavello.com/projects/checkonkin/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 1,
+      "lastmod": "2026-08-02",
+      "bodyWords": 114
     },
     {
       "route": "/tools/",
@@ -2200,7 +2268,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 187,
+      "incomingLinks": 191,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -2585,7 +2653,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-07-26",
+      "lastmod": "2026-08-02",
       "bodyWords": 277
     },
     {
@@ -2597,7 +2665,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-07-26",
+      "lastmod": "2026-08-02",
       "bodyWords": 566
     },
     {
@@ -2632,7 +2700,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 187,
+      "incomingLinks": 191,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }
