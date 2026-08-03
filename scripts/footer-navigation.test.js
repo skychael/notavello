@@ -65,6 +65,42 @@ test('every public HTML page uses at most one shared footer placeholder', () => 
   }
 });
 
+test('every shared-header page includes the structural header styling contract', () => {
+  const sharedHeader = read('_header.html');
+  const requiredDeclarations = {
+    '.header': ['background', 'padding', 'display', 'align-items'],
+    '.logo': ['color', 'display', 'align-items', 'text-decoration'],
+    '.logo-icon': ['width', 'height', 'background', 'display'],
+    '.header-login': ['color', 'text-decoration', 'padding', 'border', 'background'],
+  };
+
+  const declarationsFor = (css, selector) => [...css.matchAll(new RegExp(`${selector.replaceAll('.', '\\.')}\\s*\\{([^}]*)\\}`, 'g'))]
+    .map(match => match[1])
+    .join('\n');
+
+  for (const file of htmlFiles()) {
+    if (file === path.join(ROOT, '_header.html')) continue;
+    const html = fs.readFileSync(file, 'utf8');
+    if (!html.includes('<!--HEADER-->')) continue;
+    const css = `${html}\n${sharedHeader}`;
+    const relative = path.relative(ROOT, file);
+
+    for (const [selector, properties] of Object.entries(requiredDeclarations)) {
+      const declarations = declarationsFor(css, selector);
+      assert.ok(declarations, `${relative}: missing ${selector} styling`);
+      for (const property of properties) {
+        assert.match(declarations, new RegExp(`(?:^|[;\\s])${property}\\s*:`), `${relative}: ${selector} missing ${property}`);
+      }
+    }
+
+    const iconDeclarations = declarationsFor(css, '.logo-icon');
+    const centersWithGrid = /(?:^|[;\s])place-items\s*:/.test(iconDeclarations);
+    const centersWithFlex = /(?:^|[;\s])align-items\s*:/.test(iconDeclarations) && /(?:^|[;\s])justify-content\s*:/.test(iconDeclarations);
+    assert.ok(centersWithGrid || centersWithFlex, `${relative}: .logo-icon is not centered`);
+
+  }
+});
+
 test('sitemaps expose the exporter hub once without an index.html duplicate', () => {
   const human = read('pages/sitemap.html');
   const xml = read('sitemap.xml');
