@@ -1,36 +1,36 @@
 {
   "schema_version": "1.0",
-  "date_key": "08-03",
-  "display_date": "August 3",
-  "generated_at": "2026-08-03T11:44:51.541Z",
+  "date_key": "08-04",
+  "display_date": "August 4",
+  "generated_at": "2026-08-04T10:50:23.341Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-de2ee0af02dfde8e25250967",
+      "candidate_id": "event-0154fc79b4a58bedabbb8577",
       "type": "event",
-      "year": 1958,
-      "text": "The world's first nuclear submarine, the USS Nautilus, becomes the first vessel to complete a submerged transit of the geographical North Pole.",
-      "article_title": "USS Nautilus (SSN-571)",
-      "url": "https://en.wikipedia.org/wiki/USS_Nautilus_(SSN-571)",
+      "year": 1984,
+      "text": "The Ariane 3 rocket is launched for the first time, carrying the Eutelsat I F-2 and Télécom 1A satellites into geosynchronous transfer orbit.",
+      "article_title": "Ariane 3",
+      "url": "https://en.wikipedia.org/wiki/Ariane_3",
       "category": "World history"
     },
     {
-      "candidate_id": "event-fbc60c8c96dd23efc22ed388",
+      "candidate_id": "event-e847817d15753c10b06bcbb1",
       "type": "event",
-      "year": 2014,
-      "text": "A 6.1 magnitude earthquake kills at least 617 people and injures more than 2,400 in Yunnan, China.",
-      "article_title": "2014 Ludian earthquake",
-      "url": "https://en.wikipedia.org/wiki/2014_Ludian_earthquake",
+      "year": 1995,
+      "text": "Operation Storm, the last major battle of the Croatian War of Independence begins.",
+      "article_title": "Operation Storm",
+      "url": "https://en.wikipedia.org/wiki/Operation_Storm",
       "category": "Disasters and exploration"
     },
     {
-      "candidate_id": "event-9d4a40f7710029dd24fccb2a",
+      "candidate_id": "event-67c69e17e226c650f19a8da7",
       "type": "event",
-      "year": 2005,
-      "text": "President of Mauritania Maaouya Ould Sid'Ahmed Taya is overthrown in a military coup while attending the funeral of King Fahd in Saudi Arabia.",
-      "article_title": "List of heads of state of Mauritania",
-      "url": "https://en.wikipedia.org/wiki/List_of_heads_of_state_of_Mauritania",
+      "year": 1983,
+      "text": "Jean-Baptiste Ouédraogo, president of the military government of Upper Volta, is ousted from power in a coup d'état led by Captain Thomas Sankara.",
+      "article_title": "Jean-Baptiste Ouédraogo",
+      "url": "https://en.wikipedia.org/wiki/Jean-Baptiste_Ou%C3%A9draogo",
       "category": "Politics and society"
     }
   ]
