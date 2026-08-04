@@ -1,9 +1,18 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-04T12:20:37.234Z",
-  "latest_success_at": "2026-08-04T12:20:37.234Z",
+  "generated_at": "2026-08-04T15:38:16.426Z",
+  "latest_success_at": "2026-08-04T15:38:16.426Z",
   "status": "ok",
   "items": [
+    {
+      "id": "a98bdced741e9499",
+      "title": "Typhoon Dolphin reintensifies to Category 4 strength, landfall forecast in Okinawa by August 7",
+      "url": "https://watchers.news/2026/08/04/typhoon-dolphin-reintensifies-to-category-4-strength-landfall-forecast-in-okinawa-by-august-7",
+      "publisher": "The Watchers",
+      "published_at": "2026-08-04T13:50:03.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
     {
       "id": "2a77c91a635a591e",
       "title": "Flash flooding prompts rescues and state of emergency in Georgia, emergency issued in North Carolina",
@@ -20,15 +29,6 @@
       "publisher": "National Hurricane Center",
       "published_at": "2026-08-04T11:39:53.000Z",
       "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "2fa6102efec4b13e",
-      "title": "Spokane wildfires destroy 600 structures, force evacuation of 5 000 homes; wildfire emergency declared for Washington",
-      "url": "https://watchers.news/2026/08/02/spokane-wildfires-destroy-600-structures-force-evacuation-of-5-000-homes-wildfire-emergency-declared-for-washington",
-      "publisher": "The Watchers",
-      "published_at": "2026-08-02T21:43:56.000Z",
-      "topic": "Wildfire",
       "status": "ok"
     }
   ]
