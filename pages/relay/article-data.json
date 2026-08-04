@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "checked_at": "2026-08-04T18:05:58.063Z",
-  "latest_success_at": "2026-08-04T18:05:58.063Z",
+  "checked_at": "2026-08-04T19:59:30.337Z",
+  "latest_success_at": "2026-08-04T19:59:30.337Z",
   "status": "ok",
   "items": [
     {
@@ -18,6 +18,14 @@
       "publisher": "The Maritime Executive",
       "published_at": "2026-08-02T17:46:11.000Z",
       "source_id": "maritime-executive",
+      "status": "ok"
+    },
+    {
+      "title": "Brazil’s Oil Output Hits Record as War Drives Up Non-OPEC Supply",
+      "url": "https://gcaptain.com/brazils-oil-output-hits-record-as-war-drives-up-non-opec-supply",
+      "publisher": "gCaptain",
+      "published_at": "2026-08-04T16:35:42.000Z",
+      "source_id": "gcaptain",
       "status": "ok"
     },
     {
@@ -41,14 +49,6 @@
       "url": "https://gcaptain.com/eu-warship-boards-another-sanctioned-russian-shadow-fleet-tanker-in-mediterranean",
       "publisher": "gCaptain",
       "published_at": "2026-08-03T15:55:43.000Z",
-      "source_id": "gcaptain",
-      "status": "ok"
-    },
-    {
-      "title": "Six Saudi Tankers Turn Away From Gulf of Aden, Ship-tracking Data Shows",
-      "url": "https://gcaptain.com/six-saudi-tankers-turn-away-from-gulf-of-aden-ship-tracking-data-shows",
-      "publisher": "gCaptain",
-      "published_at": "2026-08-03T16:56:51.000Z",
       "source_id": "gcaptain",
       "status": "ok"
     },
