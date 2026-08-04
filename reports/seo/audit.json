@@ -1,18 +1,23 @@
 {
-  "generatedAt": "2026-08-03T05:06:49.001Z",
+  "generatedAt": "2026-08-04T04:45:45.495Z",
   "totals": {
-    "pages": 191,
-    "indexable": 187,
-    "articles": 124,
-    "sitemap": 187,
+    "pages": 193,
+    "indexable": 189,
+    "articles": 126,
+    "sitemap": 189,
     "errors": 0,
-    "warnings": 80
+    "warnings": 83
   },
   "errors": [],
   "warnings": [
     {
       "type": "template-pattern",
       "page": "/pages/blog/a-practical-checklist-for-checking-ai-generated-technical-answers/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/a-practical-way-to-audit-app-permissions-on-a-computer/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
     {
@@ -103,6 +108,16 @@
     {
       "type": "topic-review",
       "page": "/pages/blog/crude-oil-futures-price-manipulation/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/cushing-tank-bottom-oil-warning/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/cushing-tank-bottom-oil-warning/",
       "detail": "title/description lacks a clear AI, software, or computing connection"
     },
     {
@@ -420,7 +435,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 191,
+      "incomingLinks": 193,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -444,7 +459,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 191,
+      "incomingLinks": 193,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -552,7 +567,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 191,
+      "incomingLinks": 193,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -564,9 +579,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 191,
-      "lastmod": "2026-08-02",
-      "bodyWords": 663
+      "incomingLinks": 193,
+      "lastmod": "2026-08-03",
+      "bodyWords": 665
     },
     {
       "route": "/pages/blog/a-practical-checklist-for-checking-ai-generated-technical-answers/",
@@ -579,6 +594,18 @@
       "incomingLinks": 6,
       "lastmod": "2026-07-24",
       "bodyWords": 860
+    },
+    {
+      "route": "/pages/blog/a-practical-way-to-audit-app-permissions-on-a-computer/",
+      "file": "pages/blog/a-practical-way-to-audit-app-permissions-on-a-computer/index.html",
+      "title": "A practical way to audit app permissions on a computer — The Export | Notavello",
+      "description": "Audit app permissions on Windows and macOS by focusing on sensitive capabilities like camera, microphone, and files, then revoke access that is no longer",
+      "canonical": "https://notavello.com/pages/blog/a-practical-way-to-audit-app-permissions-on-a-computer/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-08-03",
+      "bodyWords": 1026
     },
     {
       "route": "/pages/blog/ai-advice-needs-an-i-dont-know-step/",
@@ -804,9 +831,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 63,
-      "lastmod": "2026-08-02",
-      "bodyWords": 1640
+      "incomingLinks": 65,
+      "lastmod": "2026-08-03",
+      "bodyWords": 1663
     },
     {
       "route": "/pages/blog/apple-speechanalyzer-local-transcription-apps/",
@@ -984,9 +1011,21 @@
       "canonical": "https://notavello.com/pages/blog/crude-oil-futures-price-manipulation/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 3,
+      "incomingLinks": 4,
       "lastmod": "2026-07-22",
       "bodyWords": 2207
+    },
+    {
+      "route": "/pages/blog/cushing-tank-bottom-oil-warning/",
+      "file": "pages/blog/cushing-tank-bottom-oil-warning/index.html",
+      "title": "Cushing Is The Oil Warning Light Again — The Export | Notavello",
+      "description": "Cushing crude stocks fell to 18.6 million barrels, turning a storage problem into a pump-price warning.",
+      "canonical": "https://notavello.com/pages/blog/cushing-tank-bottom-oil-warning/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-08-04",
+      "bodyWords": 1404
     },
     {
       "route": "/pages/blog/death-of-open-web-ai-bot-lockdown/",
@@ -1633,8 +1672,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-02",
-      "bodyWords": 645
+      "lastmod": "2026-08-03",
+      "bodyWords": 650
     },
     {
       "route": "/pages/blog/page-3/",
@@ -1645,8 +1684,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-02",
-      "bodyWords": 696
+      "lastmod": "2026-08-03",
+      "bodyWords": 683
     },
     {
       "route": "/pages/blog/page-4/",
@@ -1657,8 +1696,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-02",
-      "bodyWords": 710
+      "lastmod": "2026-08-03",
+      "bodyWords": 691
     },
     {
       "route": "/pages/blog/page-5/",
@@ -1669,8 +1708,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-02",
-      "bodyWords": 809
+      "lastmod": "2026-08-03",
+      "bodyWords": 806
     },
     {
       "route": "/pages/blog/page-6/",
@@ -1681,8 +1720,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-02",
-      "bodyWords": 837
+      "lastmod": "2026-08-03",
+      "bodyWords": 842
     },
     {
       "route": "/pages/blog/page-7/",
@@ -1693,8 +1732,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": "2026-08-02",
-      "bodyWords": 789
+      "lastmod": "2026-08-03",
+      "bodyWords": 884
     },
     {
       "route": "/pages/blog/rootless-containers-ai-service-boundary/",
@@ -2148,7 +2187,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 191,
+      "incomingLinks": 193,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -2160,7 +2199,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 191,
+      "incomingLinks": 193,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -2172,7 +2211,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 191,
+      "incomingLinks": 193,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -2184,7 +2223,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 191,
+      "incomingLinks": 193,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -2196,7 +2235,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 191,
+      "incomingLinks": 193,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -2209,8 +2248,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-08-03",
-      "bodyWords": 85
+      "lastmod": "2026-08-04",
+      "bodyWords": 91
     },
     {
       "route": "/pages/sample",
@@ -2232,7 +2271,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 191,
+      "incomingLinks": 193,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -2244,7 +2283,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 191,
+      "incomingLinks": 193,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -2268,7 +2307,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 191,
+      "incomingLinks": 193,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -2700,7 +2739,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 191,
+      "incomingLinks": 193,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }

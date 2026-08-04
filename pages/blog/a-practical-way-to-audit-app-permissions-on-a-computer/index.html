@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>A practical way to audit app permissions on a computer — The Export | Notavello</title>
+<meta name="description" content="Audit app permissions on Windows and macOS by focusing on sensitive capabilities like camera, microphone, and files, then revoke access that is no longer"/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/blog/a-practical-way-to-audit-app-permissions-on-a-computer/"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2026-08-03T13:34:09.390Z"/>
+<meta property="article:modified_time" content="2026-08-03T13:34:09.390Z"/>
+<meta name="notavello:published_at" content="2026-08-03T13:34:09.390Z"/>
+<meta name="syndication-origin-site" content="toysforbots"/>
+<meta name="syndication-origin-id" content="toysforbots:a-practical-way-to-audit-app-permissions-on-a-computer"/>
+<meta name="syndication-origin-slug" content="a-practical-way-to-audit-app-permissions-on-a-computer"/>
+<meta name="syndication-origin-url" content="https://toysforbots.com/blog/a-practical-way-to-audit-app-permissions-on-a-computer/"/>
+<meta name="syndication-source-format" content="toysforbots-syndication-v1"/>
+<meta property="og:url" content="https://notavello.com/pages/blog/a-practical-way-to-audit-app-permissions-on-a-computer/"/>
+<meta property="og:title" content="A practical way to audit app permissions on a computer"/>
+<meta property="og:description" content="Audit app permissions on Windows and macOS by focusing on sensitive capabilities like camera, microphone, and files, then revoke access that is no longer"/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="A practical way to audit app permissions on a computer"/>
+<meta name="twitter:description" content="Audit app permissions on Windows and macOS by focusing on sensitive capabilities like camera, microphone, and files, then revoke access that is no longer"/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "A practical way to audit app permissions on a computer",
+  "description": "Audit app permissions on Windows and macOS by focusing on sensitive capabilities like camera, microphone, and files, then revoke access that is no longer",
+  "url": "https://notavello.com/pages/blog/a-practical-way-to-audit-app-permissions-on-a-computer/",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://notavello.com/pages/blog/a-practical-way-to-audit-app-permissions-on-a-computer/" },
+  "image": "https://notavello.com/og-image.png",
+  "datePublished": "2026-08-03T13:34:09.390Z",
+  "dateModified": "2026-08-03T13:34:09.390Z",
+  "author": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" },
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com", "logo": { "@type": "ImageObject", "url": "https://notavello.com/og-image.png" } }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
+.post-nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; row-gap: 8px; }
+.post-nav-top { margin-bottom: 40px; }
+.post-nav-bottom { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--border); }
+.post-nav a { display: inline-flex; align-items: center; gap: 6px; font-size: 0.92rem; font-weight: 600; color: var(--ink-muted); text-decoration: none; padding: 12px 14px; border-radius: var(--radius-sm); white-space: nowrap; transition: color 0.15s, background 0.15s; }
+.post-nav a:hover { color: var(--accent); background: var(--accent-light); }
+.post-nav a:first-child { padding-left: 0; }
+.post-nav a:last-child { padding-right: 0; justify-content: flex-end; }
+.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
+.post-date { font-size: 0.78rem; color: var(--ink-faint); }
+.post-title { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; color: var(--ink); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
+.post-lede { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+.post-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink); }
+.post-body h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 44px 0 16px; letter-spacing: -0.01em; }
+.post-body p { margin-bottom: 20px; color: var(--ink-muted); }
+.post-body p strong { color: var(--ink); font-weight: 600; }
+.post-body ul { margin: 0 0 20px 20px; color: var(--ink-muted); }
+.post-body ul li { margin-bottom: 8px; line-height: 1.7; }
+.callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 32px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.7; }
+.post-footer { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.post-footer-label { font-size: 0.8rem; color: var(--ink-faint); }
+.btn-export { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: opacity 0.2s; }
+.btn-export:hover { opacity: 0.9; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } .post-nav a { padding: 12px 8px; font-size: 0.88rem; } }
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+
+  <nav class="post-nav post-nav-top">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+  <div class="post-meta">
+    <span class="post-tag">Privacy Basics</span>
+    <span class="post-date">August 3, 2026</span>
+  </div>
+
+  <h1 class="post-title">A practical way to audit app permissions on a computer</h1>
+
+  <p class="post-lede">App permissions control what software can access on your device. Regular audits help limit exposure by keeping only necessary access for camera, microphone, location, files, and other sensitive features.</p>
+
+  <div class="post-body">
+
+<h2>Why audit app permissions</h2>
+<p>Permissions grant apps access to hardware and data. Over time, apps accumulate rights that are no longer required after updates or changes in use. Reviewing these rights regularly prevents unnecessary exposure because an app that once needed camera access for a one-time feature may retain that right indefinitely. The same pattern applies to file access or location data when an app shifts from active use to background operation.</p>
+<p>A focused audit starts by listing every permission category and asking whether the current purpose still matches the original need. This approach reduces the chance that an app holds broad rights simply because it requested them during installation. It also surfaces cases where an app requests access without an obvious ongoing reason, allowing the user to decide whether to keep or remove the permission.</p><ul><li>Reduces the attack surface if an app is compromised</li><li>Limits data collection by apps that no longer need certain features</li><li>Helps identify apps that request broad access without clear purpose</li></ul><div class="callout"><strong>Tip</strong> Start with the most sensitive permissions such as camera, microphone, and full file access, then work through the list of installed apps.</div>
+<h2>Audit steps on Windows</h2>
+<p>Windows provides centralized controls for many permission types through Settings. Desktop apps often bypass these toggles and require separate review. Begin by opening Settings and navigating to Privacy &amp; security. Each category such as Camera, Microphone, Location, and Files shows a list of apps that currently hold access. For every listed app, consider whether the permission still serves a purpose; if not, turn the toggle off. This step-by-step check covers the most common permission types without requiring additional software.</p>
+<p>After reviewing the main categories, examine the App permissions page for details on full file and registry access. Desktop apps that do not appear in the centralized list may still hold rights granted during installation or through manual prompts. In those cases, manual checks inside the app or use of trusted third-party tools can reveal hidden permissions. Repeating the process after any major Windows update ensures that new permission prompts have not reintroduced unnecessary access.</p><ul><li>Open Settings &gt; Privacy &amp; security and review each category such as Camera, Microphone, Location, and Files</li><li>For each permission, turn off access for apps that no longer need it</li><li>Note that desktop apps may not appear in the list and require manual checks or third-party tools</li><li>Review the App permissions page for details on full file and registry access</li></ul>
+<h2>Audit steps on macOS</h2>
+<p>macOS uses System Settings to manage permissions and offers the App Privacy Report for usage details. Open System Settings and select Privacy &amp; Security. Each data type such as Camera, Microphone, Photos, and Files and Folders displays the apps that currently hold access. For each entry, revoke rights that no longer match an active need. This produces a clean baseline before moving to usage monitoring.</p>
+<p>Enable the App Privacy Report to record recent access patterns for location, camera, microphone, and network activity. After several days of normal device use, review the report to identify unexpected entries. An app that accessed the microphone only once during initial setup, for example, can have that permission removed. The report also highlights network activity that may indicate background data sharing, giving additional context for deciding whether to keep or revoke a permission.</p><ul><li>Go to System Settings &gt; Privacy &amp; Security and select each data type such as Camera, Microphone, Photos, and Files and Folders</li><li>Revoke access for apps that no longer require the permission</li><li>Enable App Privacy Report to see recent access patterns for location, camera, microphone, and network activity</li><li>Review the report after several days of normal use to spot unexpected access</li></ul>
+<h2>Prioritize sensitive capabilities</h2>
+<p>Focus first on permissions that can capture personal data or allow broad system changes. Camera and microphone permissions deserve early attention because they enable real-time capture of audio and video. Review each app and remove access for any that do not perform ongoing capture tasks. Location access should be limited to apps that still deliver location-based features the user actively relies on.</p>
+<p>Files and folders permissions often grant broad read or write rights. Restrict full access to only the utilities that genuinely require it, such as backup or file-management tools. Contacts, calendars, and photos permissions should remain narrow; grant them only when an app needs them for its core function and review them whenever the app receives an update. This ordering ensures the highest-risk capabilities are addressed before moving to less sensitive categories.</p><ul><li>Camera and microphone: revoke for apps that do not need real-time capture</li><li>Location: limit to apps that provide location-based features you still use</li><li>Files and folders: restrict full access to only essential utilities</li><li>Contacts, calendars, and photos: keep access narrow and review regularly</li></ul>
+<h2>Limitations and next steps</h2>
+<p>Built-in tools do not cover every desktop app or background process. Some permissions can only be changed inside the app itself. After making changes, test the affected apps to confirm they still function as expected. If an app stops working, restore the minimum permission it requires and note the reason for future reference.</p>
+<p>Revisit the settings every few months or after major app updates to catch new permission requests. Browser site permissions should be checked separately because web-based access often bypasses the system-level controls. When built-in reports prove insufficient, consider third-party audit tools only from trusted sources that clearly document what they inspect. This combination of periodic manual review and selective tool use maintains a practical balance between thoroughness and effort.</p><ul><li>Revisit the settings every few months or after major app updates</li><li>Check browser site permissions separately for web-based access</li><li>Consider third-party audit tools only from trusted sources when built-in reports are insufficient</li></ul><h2>Sources</h2><ul><li><a href="https://support.microsoft.com/en-us/windows/privacy/windows-privacy-settings-that-apps-use" rel="noopener noreferrer">Microsoft Support</a></li><li><a href="https://support.apple.com/en-us/102188" rel="noopener noreferrer">Apple Support</a></li><li><a href="https://support.microsoft.com/en-US/Windows/Apps/app-permissions" rel="noopener noreferrer">Microsoft Support</a></li><li><a href="https://support.apple.com/guide/security/protecting-app-access-to-user-data-secc01781f46/web" rel="noopener noreferrer">Apple Support</a></li></ul>
+
+  </div>
+
+  <div class="post-footer">
+    <span class="post-footer-label">Looking for more AI tools?</span>
+    <a class="btn-export" href="/">See our free AI tools →</a>
+  </div>
+
+  <nav class="post-nav post-nav-bottom">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+</main>
+
+<!--FOOTER-->
+
+</body>
+</html>
