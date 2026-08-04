@@ -2,8 +2,17 @@
   "schema_version": 1,
   "archive_date": "2026-08-04",
   "created_at": "2026-08-04T03:41:48.124Z",
-  "updated_at": "2026-08-04T21:39:14.524Z",
+  "updated_at": "2026-08-04T23:27:48.748Z",
   "articles": [
+    {
+      "title": "Indian Cargo Vessel Sinks After Apparent Attack Near Yemen",
+      "url": "https://gcaptain.com/indian-cargo-vessel-sinks-after-apparent-attack-near-yemen",
+      "publisher": "gCaptain",
+      "published_at": "2026-08-04T21:52:07.000Z",
+      "source_id": "gcaptain",
+      "first_seen_at": "2026-08-04T03:41:48.124Z",
+      "status": "ok"
+    },
     {
       "title": "China's EV Boom Is Quietly Undermining Oil's Biggest Chokepoint",
       "url": "https://oilprice.com/Energy/Energy-General/Chinas-EV-Boom-Is-Quietly-Undermining-Oils-Biggest-Chokepoint.html",
@@ -37,6 +46,15 @@
       "publisher": "Breaking Defense",
       "published_at": "2026-08-04T14:55:00.000Z",
       "source_id": "breaking-defense",
+      "first_seen_at": "2026-08-04T03:41:48.124Z",
+      "status": "ok"
+    },
+    {
+      "title": "India's HPCL Snaps Up Nigerian Crude To Dodge The Hormuz Bottleneck",
+      "url": "https://oilprice.com/Latest-Energy-News/World-News/Indias-HPCL-Snaps-Up-Nigerian-Crude-To-Dodge-The-Hormuz-Bottleneck.html",
+      "publisher": "OilPrice.com",
+      "published_at": "2026-08-04T14:30:00.000Z",
+      "source_id": "oilprice",
       "first_seen_at": "2026-08-04T03:41:48.124Z",
       "status": "ok"
     },
