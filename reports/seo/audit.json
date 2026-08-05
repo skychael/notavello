@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-04T04:45:45.495Z",
+  "generatedAt": "2026-08-05T04:45:20.833Z",
   "totals": {
-    "pages": 193,
-    "indexable": 189,
-    "articles": 126,
-    "sitemap": 189,
+    "pages": 196,
+    "indexable": 192,
+    "articles": 128,
+    "sitemap": 192,
     "errors": 0,
-    "warnings": 83
+    "warnings": 87
   },
   "errors": [],
   "warnings": [
@@ -202,6 +202,16 @@
     },
     {
       "type": "template-pattern",
+      "page": "/pages/blog/hormuz-reopening-is-a-queue-not-a-victory-lap/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/hormuz-reopening-is-a-queue-not-a-victory-lap/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
       "page": "/pages/blog/how-to-back-up-application-settings-before-troubleshooting/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
@@ -377,6 +387,16 @@
     },
     {
       "type": "template-pattern",
+      "page": "/pages/blog/what-metadata-your-shared-files-can-reveal/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/what-metadata-your-shared-files-can-reveal/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
       "page": "/pages/blog/when-a-clean-reinstall-fixes-software-problems-and-when-it-does-not/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
@@ -435,7 +455,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 193,
+      "incomingLinks": 196,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -459,7 +479,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 193,
+      "incomingLinks": 196,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -567,7 +587,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 193,
+      "incomingLinks": 196,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -579,9 +599,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 193,
-      "lastmod": "2026-08-03",
-      "bodyWords": 665
+      "incomingLinks": 196,
+      "lastmod": "2026-08-04",
+      "bodyWords": 670
     },
     {
       "route": "/pages/blog/a-practical-checklist-for-checking-ai-generated-technical-answers/",
@@ -831,9 +851,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 65,
-      "lastmod": "2026-08-03",
-      "bodyWords": 1663
+      "incomingLinks": 67,
+      "lastmod": "2026-08-04",
+      "bodyWords": 1686
     },
     {
       "route": "/pages/blog/apple-speechanalyzer-local-transcription-apps/",
@@ -1280,6 +1300,18 @@
       "bodyWords": 1517
     },
     {
+      "route": "/pages/blog/hormuz-reopening-is-a-queue-not-a-victory-lap/",
+      "file": "pages/blog/hormuz-reopening-is-a-queue-not-a-victory-lap/index.html",
+      "title": "The Hormuz Reopening Is A Queue, Not A Victory Lap — The Export | Notavello",
+      "description": "Hormuz talks could reopen lanes, but oil, LNG and fuel relief depends on ships, insurers and refineries actually moving.",
+      "canonical": "https://notavello.com/pages/blog/hormuz-reopening-is-a-queue-not-a-victory-lap/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-08-05",
+      "bodyWords": 1405
+    },
+    {
       "route": "/pages/blog/how-ai-actually-searches-the-web/",
       "file": "pages/blog/how-ai-actually-searches-the-web/index.html",
       "title": "How AI Actually Searches the Web — and Why It's Not the Same as Googling — The Export | Notavello",
@@ -1599,7 +1631,7 @@
       "canonical": "https://notavello.com/pages/blog/oil-detours-are-the-real-hormuz-price-signal/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 2,
+      "incomingLinks": 3,
       "lastmod": "2026-08-03",
       "bodyWords": 1385
     },
@@ -1667,73 +1699,85 @@
       "route": "/pages/blog/page-2/",
       "file": "pages/blog/page-2/index.html",
       "title": "The Export — Page 2 | Notavello",
-      "description": "Older Notavello posts from The Export, page 2 of 7.",
+      "description": "Older Notavello posts from The Export, page 2 of 8.",
       "canonical": "https://notavello.com/pages/blog/page-2/",
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-03",
-      "bodyWords": 650
+      "lastmod": "2026-08-04",
+      "bodyWords": 645
     },
     {
       "route": "/pages/blog/page-3/",
       "file": "pages/blog/page-3/index.html",
       "title": "The Export — Page 3 | Notavello",
-      "description": "Older Notavello posts from The Export, page 3 of 7.",
+      "description": "Older Notavello posts from The Export, page 3 of 8.",
       "canonical": "https://notavello.com/pages/blog/page-3/",
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-03",
-      "bodyWords": 683
+      "lastmod": "2026-08-04",
+      "bodyWords": 689
     },
     {
       "route": "/pages/blog/page-4/",
       "file": "pages/blog/page-4/index.html",
       "title": "The Export — Page 4 | Notavello",
-      "description": "Older Notavello posts from The Export, page 4 of 7.",
+      "description": "Older Notavello posts from The Export, page 4 of 8.",
       "canonical": "https://notavello.com/pages/blog/page-4/",
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-03",
-      "bodyWords": 691
+      "lastmod": "2026-08-04",
+      "bodyWords": 681
     },
     {
       "route": "/pages/blog/page-5/",
       "file": "pages/blog/page-5/index.html",
       "title": "The Export — Page 5 | Notavello",
-      "description": "Older Notavello posts from The Export, page 5 of 7.",
+      "description": "Older Notavello posts from The Export, page 5 of 8.",
       "canonical": "https://notavello.com/pages/blog/page-5/",
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-03",
-      "bodyWords": 806
+      "lastmod": "2026-08-04",
+      "bodyWords": 794
     },
     {
       "route": "/pages/blog/page-6/",
       "file": "pages/blog/page-6/index.html",
       "title": "The Export — Page 6 | Notavello",
-      "description": "Older Notavello posts from The Export, page 6 of 7.",
+      "description": "Older Notavello posts from The Export, page 6 of 8.",
       "canonical": "https://notavello.com/pages/blog/page-6/",
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-03",
-      "bodyWords": 842
+      "lastmod": "2026-08-04",
+      "bodyWords": 838
     },
     {
       "route": "/pages/blog/page-7/",
       "file": "pages/blog/page-7/index.html",
       "title": "The Export — Page 7 | Notavello",
-      "description": "Older Notavello posts from The Export, page 7 of 7.",
+      "description": "Older Notavello posts from The Export, page 7 of 8.",
       "canonical": "https://notavello.com/pages/blog/page-7/",
       "robots": "index, follow",
       "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-08-04",
+      "bodyWords": 883
+    },
+    {
+      "route": "/pages/blog/page-8/",
+      "file": "pages/blog/page-8/index.html",
+      "title": "The Export — Page 8 | Notavello",
+      "description": "Older Notavello posts from The Export, page 8 of 8.",
+      "canonical": "https://notavello.com/pages/blog/page-8/",
+      "robots": "index, follow",
+      "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": "2026-08-03",
-      "bodyWords": 884
+      "lastmod": null,
+      "bodyWords": 128
     },
     {
       "route": "/pages/blog/rootless-containers-ai-service-boundary/",
@@ -1976,6 +2020,18 @@
       "bodyWords": 923
     },
     {
+      "route": "/pages/blog/what-metadata-your-shared-files-can-reveal/",
+      "file": "pages/blog/what-metadata-your-shared-files-can-reveal/index.html",
+      "title": "What Metadata Your Shared Files Can Reveal — The Export | Notavello",
+      "description": "Common metadata in photos and documents can expose location, device details, editing history, and more. Learn how to inspect files safely before sharing.",
+      "canonical": "https://notavello.com/pages/blog/what-metadata-your-shared-files-can-reveal/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-08-04",
+      "bodyWords": 1074
+    },
+    {
       "route": "/pages/blog/when-a-clean-reinstall-fixes-software-problems-and-when-it-does-not/",
       "file": "pages/blog/when-a-clean-reinstall-fixes-software-problems-and-when-it-does-not/index.html",
       "title": "When a clean reinstall fixes software problems and when it does not — The Export | Notavello",
@@ -2187,7 +2243,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 193,
+      "incomingLinks": 196,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -2199,7 +2255,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 193,
+      "incomingLinks": 196,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -2211,7 +2267,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 193,
+      "incomingLinks": 196,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -2223,7 +2279,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 193,
+      "incomingLinks": 196,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -2235,7 +2291,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 193,
+      "incomingLinks": 196,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -2248,8 +2304,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-08-04",
-      "bodyWords": 91
+      "lastmod": "2026-08-05",
+      "bodyWords": 97
     },
     {
       "route": "/pages/sample",
@@ -2271,7 +2327,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 193,
+      "incomingLinks": 196,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -2283,7 +2339,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 193,
+      "incomingLinks": 196,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -2307,7 +2363,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 193,
+      "incomingLinks": 196,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -2739,7 +2795,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 193,
+      "incomingLinks": 196,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }
