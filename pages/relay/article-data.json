@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "checked_at": "2026-08-05T03:37:16.233Z",
-  "latest_success_at": "2026-08-05T03:37:16.233Z",
+  "checked_at": "2026-08-05T06:44:13.300Z",
+  "latest_success_at": "2026-08-05T06:44:13.300Z",
   "status": "ok",
   "items": [
     {
@@ -9,6 +9,14 @@
       "url": "https://oilprice.com/Energy/Energy-General/Middle-East-War-Triggers-New-Global-Refining-Boom.html",
       "publisher": "OilPrice.com",
       "published_at": "2026-08-05T00:00:00.000Z",
+      "source_id": "oilprice",
+      "status": "ok"
+    },
+    {
+      "title": "Hormuz Tanker Traffic Remains Subdued Despite Reports of Peace Talks",
+      "url": "https://oilprice.com/Latest-Energy-News/World-News/Hormuz-Tanker-Traffic-Remains-Subdued-Despite-Reports-of-Peace-Talks.html",
+      "publisher": "OilPrice.com",
+      "published_at": "2026-08-05T06:00:00.000Z",
       "source_id": "oilprice",
       "status": "ok"
     },
@@ -26,14 +34,6 @@
       "publisher": "gCaptain",
       "published_at": "2026-08-04T16:35:42.000Z",
       "source_id": "gcaptain",
-      "status": "ok"
-    },
-    {
-      "title": "China's EV Boom Is Quietly Undermining Oil's Biggest Chokepoint",
-      "url": "https://oilprice.com/Energy/Energy-General/Chinas-EV-Boom-Is-Quietly-Undermining-Oils-Biggest-Chokepoint.html",
-      "publisher": "OilPrice.com",
-      "published_at": "2026-08-04T20:00:00.000Z",
-      "source_id": "oilprice",
       "status": "ok"
     },
     {
