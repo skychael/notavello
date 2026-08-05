@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "08-04",
-  "display_date": "August 4",
-  "generated_at": "2026-08-04T10:50:23.341Z",
+  "date_key": "08-05",
+  "display_date": "August 5",
+  "generated_at": "2026-08-05T10:46:48.952Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-0154fc79b4a58bedabbb8577",
+      "candidate_id": "event-d51167d18632b29082ec5d14",
       "type": "event",
-      "year": 1984,
-      "text": "The Ariane 3 rocket is launched for the first time, carrying the Eutelsat I F-2 and Télécom 1A satellites into geosynchronous transfer orbit.",
-      "article_title": "Ariane 3",
-      "url": "https://en.wikipedia.org/wiki/Ariane_3",
+      "year": 1964,
+      "text": "Vietnam War: Operation Pierce Arrow: American aircraft from carriers USS Ticonderoga and USS Constellation bomb North Vietnam in retaliation for strikes against U.S. destroyers in the Gulf of Tonkin.",
+      "article_title": "Vietnam War",
+      "url": "https://en.wikipedia.org/wiki/Vietnam_War",
       "category": "World history"
     },
     {
-      "candidate_id": "event-e847817d15753c10b06bcbb1",
+      "candidate_id": "event-9f1bd65e3b8d69969b2760d2",
       "type": "event",
-      "year": 1995,
-      "text": "Operation Storm, the last major battle of the Croatian War of Independence begins.",
-      "article_title": "Operation Storm",
-      "url": "https://en.wikipedia.org/wiki/Operation_Storm",
-      "category": "Disasters and exploration"
+      "year": 1966,
+      "text": "A group of red guards at Experimental High in Beijing, including Deng Rong and Liu Pingping, daughters of Deng Xiaoping and Liu Shaoqi respectively, beat the deputy vice principal, Bian Zhongyun, to death with sticks after accusing her of counter-revolutionary revisionism, producing one of the first fatalities of the Cultural Revolution.",
+      "article_title": "Red Guards",
+      "url": "https://en.wikipedia.org/wiki/Red_Guards",
+      "category": "World history"
     },
     {
-      "candidate_id": "event-67c69e17e226c650f19a8da7",
+      "candidate_id": "event-edefab41fcb8c52c640bdf46",
       "type": "event",
-      "year": 1983,
-      "text": "Jean-Baptiste Ouédraogo, president of the military government of Upper Volta, is ousted from power in a coup d'état led by Captain Thomas Sankara.",
-      "article_title": "Jean-Baptiste Ouédraogo",
-      "url": "https://en.wikipedia.org/wiki/Jean-Baptiste_Ou%C3%A9draogo",
-      "category": "Politics and society"
+      "year": 2015,
+      "text": "The Environmental Protection Agency at Gold King Mine waste water spill releases three million gallons of heavy metal toxin tailings and waste water into the Animas River in Colorado.",
+      "article_title": "2015 Gold King Mine waste water spill",
+      "url": "https://en.wikipedia.org/wiki/2015_Gold_King_Mine_waste_water_spill",
+      "category": "World history"
     }
   ]
 }
