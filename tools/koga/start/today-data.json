@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "08-05",
-  "display_date": "August 5",
-  "generated_at": "2026-08-05T10:46:48.952Z",
+  "date_key": "08-06",
+  "display_date": "August 6",
+  "generated_at": "2026-08-06T10:49:25.253Z",
   "source": "Wikimedia On This Day",
-  "selection_method": "deterministic_fallback",
+  "selection_method": "ai",
   "items": [
     {
-      "candidate_id": "event-d51167d18632b29082ec5d14",
+      "candidate_id": "event-ff1996fd1da5cb2699991407",
       "type": "event",
-      "year": 1964,
-      "text": "Vietnam War: Operation Pierce Arrow: American aircraft from carriers USS Ticonderoga and USS Constellation bomb North Vietnam in retaliation for strikes against U.S. destroyers in the Gulf of Tonkin.",
-      "article_title": "Vietnam War",
-      "url": "https://en.wikipedia.org/wiki/Vietnam_War",
+      "year": 1945,
+      "text": "World War II: Hiroshima, Japan is devastated when the atomic bomb \"Little Boy\" is dropped by the United States B-29 Enola Gay. Around 70,000 people are killed instantly, and some tens of thousands die in subsequent years from burns and radiation poisoning.",
+      "article_title": "World War II",
+      "url": "https://en.wikipedia.org/wiki/World_War_II",
       "category": "World history"
     },
     {
-      "candidate_id": "event-9f1bd65e3b8d69969b2760d2",
+      "candidate_id": "event-86a36217ad7d0b0cef3e0790",
       "type": "event",
-      "year": 1966,
-      "text": "A group of red guards at Experimental High in Beijing, including Deng Rong and Liu Pingping, daughters of Deng Xiaoping and Liu Shaoqi respectively, beat the deputy vice principal, Bian Zhongyun, to death with sticks after accusing her of counter-revolutionary revisionism, producing one of the first fatalities of the Cultural Revolution.",
-      "article_title": "Red Guards",
-      "url": "https://en.wikipedia.org/wiki/Red_Guards",
-      "category": "World history"
+      "year": 1991,
+      "text": "Tim Berners-Lee releases files describing his idea for the World Wide Web. WWW makes its first appearance as a publicly available service on the Internet.",
+      "article_title": "Tim Berners-Lee",
+      "url": "https://en.wikipedia.org/wiki/Tim_Berners-Lee",
+      "category": "Science and technology"
     },
     {
-      "candidate_id": "event-edefab41fcb8c52c640bdf46",
+      "candidate_id": "event-e2ce19dcca358571c4985258",
       "type": "event",
-      "year": 2015,
-      "text": "The Environmental Protection Agency at Gold King Mine waste water spill releases three million gallons of heavy metal toxin tailings and waste water into the Animas River in Colorado.",
-      "article_title": "2015 Gold King Mine waste water spill",
-      "url": "https://en.wikipedia.org/wiki/2015_Gold_King_Mine_waste_water_spill",
-      "category": "World history"
+      "year": 1965,
+      "text": "US President Lyndon B. Johnson signs the Voting Rights Act of 1965 into law.",
+      "article_title": "Lyndon B. Johnson",
+      "url": "https://en.wikipedia.org/wiki/Lyndon_B._Johnson",
+      "category": "Politics and society"
     }
   ]
 }
