@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-05T04:45:20.833Z",
+  "generatedAt": "2026-08-06T04:46:07.290Z",
   "totals": {
-    "pages": 196,
-    "indexable": 192,
-    "articles": 128,
-    "sitemap": 192,
+    "pages": 198,
+    "indexable": 194,
+    "articles": 130,
+    "sitemap": 194,
     "errors": 0,
-    "warnings": 87
+    "warnings": 91
   },
   "errors": [],
   "warnings": [
@@ -267,6 +267,16 @@
     },
     {
       "type": "template-pattern",
+      "page": "/pages/blog/iraq-turkey-pipeline-hormuz-oil-escape-hatch/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/iraq-turkey-pipeline-hormuz-oil-escape-hatch/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
       "page": "/pages/blog/keyboard-mouse-monitor-usb-hub-problems/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
@@ -387,6 +397,16 @@
     },
     {
       "type": "template-pattern",
+      "page": "/pages/blog/what-encrypted-dns-protects-and-what-it-does-not/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/what-encrypted-dns-protects-and-what-it-does-not/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
       "page": "/pages/blog/what-metadata-your-shared-files-can-reveal/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
@@ -455,7 +475,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 196,
+      "incomingLinks": 198,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -479,7 +499,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 196,
+      "incomingLinks": 198,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -587,7 +607,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 196,
+      "incomingLinks": 198,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -599,9 +619,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 196,
-      "lastmod": "2026-08-04",
-      "bodyWords": 670
+      "incomingLinks": 198,
+      "lastmod": "2026-08-05",
+      "bodyWords": 671
     },
     {
       "route": "/pages/blog/a-practical-checklist-for-checking-ai-generated-technical-answers/",
@@ -851,9 +871,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 67,
-      "lastmod": "2026-08-04",
-      "bodyWords": 1686
+      "incomingLinks": 69,
+      "lastmod": "2026-08-05",
+      "bodyWords": 1711
     },
     {
       "route": "/pages/blog/apple-speechanalyzer-local-transcription-apps/",
@@ -1492,6 +1512,18 @@
       "bodyWords": 1383
     },
     {
+      "route": "/pages/blog/iraq-turkey-pipeline-hormuz-oil-escape-hatch/",
+      "file": "pages/blog/iraq-turkey-pipeline-hormuz-oil-escape-hatch/index.html",
+      "title": "Iraq’s Pipeline Detour Is The Oil Market’s New Pressure Valve — The Export | Notavello",
+      "description": "Iraq’s 750,000-barrel pipeline deal with Turkey is a real Hormuz workaround, but not a quick fuel-price cure.",
+      "canonical": "https://notavello.com/pages/blog/iraq-turkey-pipeline-hormuz-oil-escape-hatch/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-08-06",
+      "bodyWords": 1515
+    },
+    {
       "route": "/pages/blog/keyboard-mouse-monitor-usb-hub-problems/",
       "file": "pages/blog/keyboard-mouse-monitor-usb-hub-problems/index.html",
       "title": "Why Your Keyboard And Mouse Hate Your Monitor USB Hub — The Export | Notavello",
@@ -1631,7 +1663,7 @@
       "canonical": "https://notavello.com/pages/blog/oil-detours-are-the-real-hormuz-price-signal/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 3,
+      "incomingLinks": 4,
       "lastmod": "2026-08-03",
       "bodyWords": 1385
     },
@@ -1704,8 +1736,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-04",
-      "bodyWords": 645
+      "lastmod": "2026-08-05",
+      "bodyWords": 649
     },
     {
       "route": "/pages/blog/page-3/",
@@ -1716,8 +1748,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-04",
-      "bodyWords": 689
+      "lastmod": "2026-08-05",
+      "bodyWords": 690
     },
     {
       "route": "/pages/blog/page-4/",
@@ -1728,8 +1760,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-04",
-      "bodyWords": 681
+      "lastmod": "2026-08-05",
+      "bodyWords": 680
     },
     {
       "route": "/pages/blog/page-5/",
@@ -1740,8 +1772,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-04",
-      "bodyWords": 794
+      "lastmod": "2026-08-05",
+      "bodyWords": 779
     },
     {
       "route": "/pages/blog/page-6/",
@@ -1752,8 +1784,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-04",
-      "bodyWords": 838
+      "lastmod": "2026-08-05",
+      "bodyWords": 830
     },
     {
       "route": "/pages/blog/page-7/",
@@ -1764,8 +1796,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-04",
-      "bodyWords": 883
+      "lastmod": "2026-08-05",
+      "bodyWords": 872
     },
     {
       "route": "/pages/blog/page-8/",
@@ -1776,8 +1808,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": null,
-      "bodyWords": 128
+      "lastmod": "2026-08-05",
+      "bodyWords": 230
     },
     {
       "route": "/pages/blog/rootless-containers-ai-service-boundary/",
@@ -1994,6 +2026,18 @@
       "incomingLinks": 2,
       "lastmod": "2026-07-29",
       "bodyWords": 777
+    },
+    {
+      "route": "/pages/blog/what-encrypted-dns-protects-and-what-it-does-not/",
+      "file": "pages/blog/what-encrypted-dns-protects-and-what-it-does-not/index.html",
+      "title": "What encrypted DNS protects and what it does not — The Export | Notavello",
+      "description": "Encrypted DNS hides queries from local networks but leaves resolver operators, authoritative servers, and metadata visible. A clear look at the limits.",
+      "canonical": "https://notavello.com/pages/blog/what-encrypted-dns-protects-and-what-it-does-not/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-08-05",
+      "bodyWords": 848
     },
     {
       "route": "/pages/blog/what-is-a-bot/",
@@ -2243,7 +2287,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 196,
+      "incomingLinks": 198,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -2255,7 +2299,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 196,
+      "incomingLinks": 198,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -2267,7 +2311,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 196,
+      "incomingLinks": 198,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -2279,7 +2323,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 196,
+      "incomingLinks": 198,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -2291,7 +2335,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 196,
+      "incomingLinks": 198,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -2304,8 +2348,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-08-05",
-      "bodyWords": 97
+      "lastmod": "2026-08-06",
+      "bodyWords": 103
     },
     {
       "route": "/pages/sample",
@@ -2327,7 +2371,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 196,
+      "incomingLinks": 198,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -2339,7 +2383,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 196,
+      "incomingLinks": 198,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -2363,7 +2407,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 196,
+      "incomingLinks": 198,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -2795,7 +2839,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 196,
+      "incomingLinks": 198,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }
