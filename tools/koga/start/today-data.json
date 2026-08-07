@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "08-06",
-  "display_date": "August 6",
-  "generated_at": "2026-08-06T10:49:25.253Z",
+  "date_key": "08-07",
+  "display_date": "August 7",
+  "generated_at": "2026-08-07T09:15:57.448Z",
   "source": "Wikimedia On This Day",
-  "selection_method": "ai",
+  "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-ff1996fd1da5cb2699991407",
+      "candidate_id": "event-e43af3dc6994f7385cdc4fd3",
       "type": "event",
-      "year": 1945,
-      "text": "World War II: Hiroshima, Japan is devastated when the atomic bomb \"Little Boy\" is dropped by the United States B-29 Enola Gay. Around 70,000 people are killed instantly, and some tens of thousands die in subsequent years from burns and radiation poisoning.",
-      "article_title": "World War II",
-      "url": "https://en.wikipedia.org/wiki/World_War_II",
+      "year": 1987,
+      "text": "Cold War: Lynne Cox becomes the first person to swim from the United States to the Soviet Union, crossing the Bering Strait from Little Diomede Island in Alaska to Big Diomede in the Soviet Union.",
+      "article_title": "Cold War",
+      "url": "https://en.wikipedia.org/wiki/Cold_War",
       "category": "World history"
     },
     {
-      "candidate_id": "event-86a36217ad7d0b0cef3e0790",
+      "candidate_id": "event-db48f9a487f30b88454e50ef",
       "type": "event",
-      "year": 1991,
-      "text": "Tim Berners-Lee releases files describing his idea for the World Wide Web. WWW makes its first appearance as a publicly available service on the Internet.",
-      "article_title": "Tim Berners-Lee",
-      "url": "https://en.wikipedia.org/wiki/Tim_Berners-Lee",
-      "category": "Science and technology"
+      "year": 1990,
+      "text": "First American soldiers arrive in Saudi Arabia as part of the Gulf War.",
+      "article_title": "Gulf War",
+      "url": "https://en.wikipedia.org/wiki/Gulf_War",
+      "category": "World history"
     },
     {
-      "candidate_id": "event-e2ce19dcca358571c4985258",
+      "candidate_id": "event-3d37e7e0c20ec61230e33aca",
       "type": "event",
-      "year": 1965,
-      "text": "US President Lyndon B. Johnson signs the Voting Rights Act of 1965 into law.",
-      "article_title": "Lyndon B. Johnson",
-      "url": "https://en.wikipedia.org/wiki/Lyndon_B._Johnson",
-      "category": "Politics and society"
+      "year": 1997,
+      "text": "Space Shuttle Program: The Space Shuttle Discovery launches on STS-85 from the Kennedy Space Center in Cape Canaveral, Florida.",
+      "article_title": "Space Shuttle program",
+      "url": "https://en.wikipedia.org/wiki/Space_Shuttle_program",
+      "category": "Science and technology"
     }
   ]
 }
