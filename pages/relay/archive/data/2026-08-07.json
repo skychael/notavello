@@ -2,7 +2,7 @@
   "schema_version": 1,
   "archive_date": "2026-08-07",
   "created_at": "2026-08-07T00:17:51.437Z",
-  "updated_at": "2026-08-07T17:10:51.691Z",
+  "updated_at": "2026-08-07T18:05:08.593Z",
   "articles": [
     {
       "title": "ADNOC Reports 15 Vessel Attacks as Hormuz Risks Mount",
@@ -19,6 +19,15 @@
       "publisher": "gCaptain",
       "published_at": "2026-08-07T11:41:43.000Z",
       "source_id": "gcaptain",
+      "first_seen_at": "2026-08-07T00:17:51.437Z",
+      "status": "ok"
+    },
+    {
+      "title": "Shipping Through Hormuz Drops Sharply as Tensions Rise",
+      "url": "https://oilprice.com/Latest-Energy-News/World-News/Shipping-Through-Hormuz-Drops-Sharply-as-Tensions-Rise.html",
+      "publisher": "OilPrice.com",
+      "published_at": "2026-08-07T09:30:00.000Z",
+      "source_id": "oilprice",
       "first_seen_at": "2026-08-07T00:17:51.437Z",
       "status": "ok"
     },
