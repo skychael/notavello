@@ -2,13 +2,31 @@
   "schema_version": 1,
   "archive_date": "2026-08-07",
   "created_at": "2026-08-07T00:17:51.437Z",
-  "updated_at": "2026-08-07T18:05:08.593Z",
+  "updated_at": "2026-08-07T19:18:40.910Z",
   "articles": [
+    {
+      "title": "ADNOC Says Three Vessels Attacked This Week as Hormuz Shipping Remains Severely Disrupted",
+      "url": "https://gcaptain.com/adnoc-says-three-vessels-attacked-this-week-as-hormuz-shipping-remains-severely-disrupted",
+      "publisher": "gCaptain",
+      "published_at": "2026-08-07T17:25:21.000Z",
+      "source_id": "gcaptain",
+      "first_seen_at": "2026-08-07T00:17:51.437Z",
+      "status": "ok"
+    },
     {
       "title": "ADNOC Reports 15 Vessel Attacks as Hormuz Risks Mount",
       "url": "https://oilprice.com/Latest-Energy-News/World-News/ADNOC-Reports-15-Vessel-Attacks-as-Hormuz-Risks-Mount.html",
       "publisher": "OilPrice.com",
       "published_at": "2026-08-07T15:45:00.000Z",
+      "source_id": "oilprice",
+      "first_seen_at": "2026-08-07T00:17:51.437Z",
+      "status": "ok"
+    },
+    {
+      "title": "Saudi Arabia’s $5 Oil Detour Is Expensive—and Worth It",
+      "url": "https://oilprice.com/Energy/Crude-Oil/Saudi-Arabias-5-Oil-Detour-Is-Expensiveand-Worth-It.html",
+      "publisher": "OilPrice.com",
+      "published_at": "2026-08-07T14:49:00.000Z",
       "source_id": "oilprice",
       "first_seen_at": "2026-08-07T00:17:51.437Z",
       "status": "ok"

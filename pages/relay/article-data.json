@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "checked_at": "2026-08-07T18:05:07.346Z",
-  "latest_success_at": "2026-08-07T18:05:07.346Z",
+  "checked_at": "2026-08-07T19:18:39.701Z",
+  "latest_success_at": "2026-08-07T19:18:39.701Z",
   "status": "ok",
   "items": [
     {
@@ -10,6 +10,14 @@
       "publisher": "OilPrice.com",
       "published_at": "2026-08-07T15:45:00.000Z",
       "source_id": "oilprice",
+      "status": "ok"
+    },
+    {
+      "title": "ADNOC Says Three Vessels Attacked This Week as Hormuz Shipping Remains Severely Disrupted",
+      "url": "https://gcaptain.com/adnoc-says-three-vessels-attacked-this-week-as-hormuz-shipping-remains-severely-disrupted",
+      "publisher": "gCaptain",
+      "published_at": "2026-08-07T17:25:21.000Z",
+      "source_id": "gcaptain",
       "status": "ok"
     },
     {
@@ -29,14 +37,6 @@
       "status": "ok"
     },
     {
-      "title": "Shipping Through Hormuz Drops Sharply as Tensions Rise",
-      "url": "https://oilprice.com/Latest-Energy-News/World-News/Shipping-Through-Hormuz-Drops-Sharply-as-Tensions-Rise.html",
-      "publisher": "OilPrice.com",
-      "published_at": "2026-08-07T09:30:00.000Z",
-      "source_id": "oilprice",
-      "status": "ok"
-    },
-    {
       "title": "UK Targets Arctic LNG Carrier, Five Oil Tankers in Latest Russia Sanctions Package",
       "url": "https://gcaptain.com/uk-targets-arctic-lng-carrier-five-oil-tankers-in-latest-russia-sanctions-package",
       "publisher": "gCaptain",
@@ -53,11 +53,11 @@
       "status": "ok"
     },
     {
-      "title": "UAE’s Adnoc Buys $1.3 Billion of Tankers as Oil Exports Boom",
-      "url": "https://gcaptain.com/uaes-adnoc-buys-1-3-billion-of-tankers-as-oil-exports-boom",
-      "publisher": "gCaptain",
-      "published_at": "2026-08-07T11:41:43.000Z",
-      "source_id": "gcaptain",
+      "title": "Saudi Arabia’s $5 Oil Detour Is Expensive—and Worth It",
+      "url": "https://oilprice.com/Energy/Crude-Oil/Saudi-Arabias-5-Oil-Detour-Is-Expensiveand-Worth-It.html",
+      "publisher": "OilPrice.com",
+      "published_at": "2026-08-07T14:49:00.000Z",
+      "source_id": "oilprice",
       "status": "ok"
     },
     {
