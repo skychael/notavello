@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-06T15:30:41.431Z",
-  "latest_success_at": "2026-08-06T15:30:41.431Z",
+  "generated_at": "2026-08-07T00:17:50.870Z",
+  "latest_success_at": "2026-08-07T00:17:50.870Z",
   "status": "ok",
   "items": [
     {
@@ -14,21 +14,21 @@
       "status": "ok"
     },
     {
-      "id": "2a77c91a635a591e",
-      "title": "Flash flooding prompts rescues and state of emergency in Georgia, emergency issued in North Carolina",
-      "url": "https://watchers.news/2026/08/03/flash-flooding-prompts-rescues-and-state-of-emergency-in-georgia-emergency-issued-in-north-carolina",
-      "publisher": "The Watchers",
-      "published_at": "2026-08-03T14:25:00.000Z",
-      "topic": "Flooding",
-      "status": "ok"
-    },
-    {
       "id": "ee8e390990a944fc",
       "title": "Eastern North Pacific Tropical Weather Outlook",
       "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-08-06T11:40:57.000Z",
+      "published_at": "2026-08-06T23:17:04.000Z",
       "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "231787b4d2698956",
+      "title": "Out-of-control Bradley Creek wildfire burns 2 852 ha and destroys more than 200 structures in British Columbia, Canada",
+      "url": "https://watchers.news/2026/08/06/out-of-control-bradley-creek-wildfire-burns-2-852-ha-and-destroys-more-than-200-structures-in-british-columbia-canada",
+      "publisher": "The Watchers",
+      "published_at": "2026-08-06T11:36:09.000Z",
+      "topic": "Wildfire",
       "status": "ok"
     }
   ]
