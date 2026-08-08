@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "checked_at": "2026-08-08T17:48:28.050Z",
-  "latest_success_at": "2026-08-08T17:48:28.050Z",
+  "checked_at": "2026-08-08T19:01:16.025Z",
+  "latest_success_at": "2026-08-08T19:01:16.025Z",
   "status": "ok",
   "items": [
     {
@@ -9,6 +9,14 @@
       "url": "https://oilprice.com/Latest-Energy-News/World-News/ADNOC-Reports-15-Vessel-Attacks-as-Hormuz-Risks-Mount.html",
       "publisher": "OilPrice.com",
       "published_at": "2026-08-07T15:45:00.000Z",
+      "source_id": "oilprice",
+      "status": "ok"
+    },
+    {
+      "title": "Airlines Scramble for Jet Fuel as Hormuz Disruption Drags On",
+      "url": "https://oilprice.com/Energy/Energy-General/Airlines-Scramble-for-Jet-Fuel-as-Hormuz-Disruption-Drags-On.html",
+      "publisher": "OilPrice.com",
+      "published_at": "2026-08-08T19:00:00.000Z",
       "source_id": "oilprice",
       "status": "ok"
     },
@@ -42,14 +50,6 @@
       "publisher": "The Maritime Executive",
       "published_at": "2026-08-06T17:06:37.000Z",
       "source_id": "maritime-executive",
-      "status": "ok"
-    },
-    {
-      "title": "Iran Says Hormuz Stays Closed Until U.S. Meets Six Sweeping Demands",
-      "url": "https://oilprice.com/Latest-Energy-News/World-News/Iran-Says-Hormuz-Stays-Closed-Until-US-Meets-Six-Sweeping-Demands.html",
-      "publisher": "OilPrice.com",
-      "published_at": "2026-08-08T16:36:03.000Z",
-      "source_id": "oilprice",
       "status": "ok"
     },
     {
