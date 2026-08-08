@@ -1,9 +1,17 @@
 {
   "schema_version": "1.0",
-  "checked_at": "2026-08-08T13:14:45.829Z",
-  "latest_success_at": "2026-08-08T13:14:45.829Z",
-  "status": "partial",
+  "checked_at": "2026-08-08T14:00:49.789Z",
+  "latest_success_at": "2026-08-08T14:00:49.789Z",
+  "status": "ok",
   "items": [
+    {
+      "title": "ADNOC Reports 15 Vessel Attacks as Hormuz Risks Mount",
+      "url": "https://oilprice.com/Latest-Energy-News/World-News/ADNOC-Reports-15-Vessel-Attacks-as-Hormuz-Risks-Mount.html",
+      "publisher": "OilPrice.com",
+      "published_at": "2026-08-07T15:45:00.000Z",
+      "source_id": "oilprice",
+      "status": "ok"
+    },
     {
       "title": "ADNOC Says Three Vessels Attacked This Week as Hormuz Shipping Remains Severely Disrupted",
       "url": "https://gcaptain.com/adnoc-says-three-vessels-attacked-this-week-as-hormuz-shipping-remains-severely-disrupted",
@@ -45,6 +53,14 @@
       "status": "ok"
     },
     {
+      "title": "Saudi Arabia’s $5 Oil Detour Is Expensive—and Worth It",
+      "url": "https://oilprice.com/Energy/Crude-Oil/Saudi-Arabias-5-Oil-Detour-Is-Expensiveand-Worth-It.html",
+      "publisher": "OilPrice.com",
+      "published_at": "2026-08-07T14:49:00.000Z",
+      "source_id": "oilprice",
+      "status": "ok"
+    },
+    {
       "title": "Australia commits to buying secretive AIM-260 JATM missiles, first non-US user",
       "url": "https://breakingdefense.com/2026/08/australian-commits-to-buying-secretive-aim-260-jatm-missiles-first-non-us-user",
       "publisher": "Breaking Defense",
@@ -66,22 +82,6 @@
       "publisher": "Canary Media",
       "published_at": "2026-08-06T21:53:00.000Z",
       "source_id": "canary-media",
-      "status": "ok"
-    },
-    {
-      "title": "Pentagon wants ‘expanding options’ for nuclear weapons, officials say",
-      "url": "https://breakingdefense.com/2026/08/pentagon-wants-expanding-options-for-nuclear-weapons-officials-say",
-      "publisher": "Breaking Defense",
-      "published_at": "2026-08-07T16:21:19.000Z",
-      "source_id": "breaking-defense",
-      "status": "ok"
-    },
-    {
-      "title": "Typhoon Dolphin strengthens near Okinawa, 5 injured as China braces for landfall",
-      "url": "https://watchers.news/2026/08/07/typhoon-dolphin-strengthens-near-okinawa-5-injured-china-braces-for-landfall",
-      "publisher": "The Watchers",
-      "published_at": "2026-08-07T11:38:53.000Z",
-      "source_id": "the-watchers",
       "status": "ok"
     }
   ]
