@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-07T04:13:20.886Z",
+  "generatedAt": "2026-08-08T03:11:45.140Z",
   "totals": {
-    "pages": 200,
-    "indexable": 196,
-    "articles": 132,
-    "sitemap": 196,
+    "pages": 201,
+    "indexable": 197,
+    "articles": 133,
+    "sitemap": 197,
     "errors": 0,
-    "warnings": 94
+    "warnings": 96
   },
   "errors": [],
   "warnings": [
@@ -78,6 +78,16 @@
     {
       "type": "topic-review",
       "page": "/pages/blog/asic-vs-gpu-mining-versatility/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/bab-el-mandeb-hormuz-backup-problem/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/bab-el-mandeb-hormuz-backup-problem/",
       "detail": "title/description lacks a clear AI, software, or computing connection"
     },
     {
@@ -490,7 +500,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 200,
+      "incomingLinks": 201,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -514,7 +524,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 200,
+      "incomingLinks": 201,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -622,7 +632,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 200,
+      "incomingLinks": 201,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -634,9 +644,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 200,
-      "lastmod": "2026-08-06",
-      "bodyWords": 678
+      "incomingLinks": 201,
+      "lastmod": "2026-08-07",
+      "bodyWords": 671
     },
     {
       "route": "/pages/blog/a-practical-checklist-for-checking-ai-generated-technical-answers/",
@@ -886,9 +896,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 71,
-      "lastmod": "2026-08-06",
-      "bodyWords": 1736
+      "incomingLinks": 72,
+      "lastmod": "2026-08-07",
+      "bodyWords": 1747
     },
     {
       "route": "/pages/blog/apple-speechanalyzer-local-transcription-apps/",
@@ -913,6 +923,18 @@
       "incomingLinks": 2,
       "lastmod": "2026-07-22",
       "bodyWords": 2224
+    },
+    {
+      "route": "/pages/blog/bab-el-mandeb-hormuz-backup-problem/",
+      "file": "pages/blog/bab-el-mandeb-hormuz-backup-problem/index.html",
+      "title": "Bab El-Mandeb Is Now The Hormuz Backup Problem — The Export | Notavello",
+      "description": "Houthi attacks are turning Bab el-Mandeb from Hormuz backup route into a second oil and shipping chokepoint.",
+      "canonical": "https://notavello.com/pages/blog/bab-el-mandeb-hormuz-backup-problem/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-08-08",
+      "bodyWords": 1594
     },
     {
       "route": "/pages/blog/best-ai-for-each-job-and-each-quirk/",
@@ -1126,7 +1148,7 @@
       "canonical": "https://notavello.com/pages/blog/diesel-is-the-hormuz-tax-you-feel-first/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 5,
+      "incomingLinks": 6,
       "lastmod": "2026-08-01",
       "bodyWords": 1456
     },
@@ -1775,8 +1797,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-06",
-      "bodyWords": 643
+      "lastmod": "2026-08-07",
+      "bodyWords": 647
     },
     {
       "route": "/pages/blog/page-3/",
@@ -1787,8 +1809,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-06",
-      "bodyWords": 677
+      "lastmod": "2026-08-07",
+      "bodyWords": 674
     },
     {
       "route": "/pages/blog/page-4/",
@@ -1799,8 +1821,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-06",
-      "bodyWords": 693
+      "lastmod": "2026-08-07",
+      "bodyWords": 689
     },
     {
       "route": "/pages/blog/page-5/",
@@ -1811,8 +1833,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-06",
-      "bodyWords": 767
+      "lastmod": "2026-08-07",
+      "bodyWords": 759
     },
     {
       "route": "/pages/blog/page-6/",
@@ -1823,8 +1845,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-06",
-      "bodyWords": 824
+      "lastmod": "2026-08-07",
+      "bodyWords": 837
     },
     {
       "route": "/pages/blog/page-7/",
@@ -1835,8 +1857,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-06",
-      "bodyWords": 871
+      "lastmod": "2026-08-07",
+      "bodyWords": 859
     },
     {
       "route": "/pages/blog/page-8/",
@@ -1847,8 +1869,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": "2026-08-06",
-      "bodyWords": 322
+      "lastmod": "2026-08-07",
+      "bodyWords": 371
     },
     {
       "route": "/pages/blog/rootless-containers-ai-service-boundary/",
@@ -2326,7 +2348,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 200,
+      "incomingLinks": 201,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -2338,7 +2360,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 200,
+      "incomingLinks": 201,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -2350,7 +2372,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 200,
+      "incomingLinks": 201,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -2362,7 +2384,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 200,
+      "incomingLinks": 201,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -2374,7 +2396,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 200,
+      "incomingLinks": 201,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -2387,8 +2409,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-08-07",
-      "bodyWords": 109
+      "lastmod": "2026-08-08",
+      "bodyWords": 115
     },
     {
       "route": "/pages/sample",
@@ -2410,7 +2432,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 200,
+      "incomingLinks": 201,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -2422,7 +2444,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 200,
+      "incomingLinks": 201,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -2446,7 +2468,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 200,
+      "incomingLinks": 201,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -2878,7 +2900,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 200,
+      "incomingLinks": 201,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }
