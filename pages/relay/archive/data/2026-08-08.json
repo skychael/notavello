@@ -2,7 +2,7 @@
   "schema_version": 1,
   "archive_date": "2026-08-08",
   "created_at": "2026-08-08T02:23:44.579Z",
-  "updated_at": "2026-08-08T11:46:53.411Z",
+  "updated_at": "2026-08-08T13:14:46.577Z",
   "articles": [
     {
       "title": "ADNOC Says Three Vessels Attacked This Week as Hormuz Shipping Remains Severely Disrupted",
@@ -10,6 +10,15 @@
       "publisher": "gCaptain",
       "published_at": "2026-08-07T17:25:21.000Z",
       "source_id": "gcaptain",
+      "first_seen_at": "2026-08-08T02:23:44.579Z",
+      "status": "ok"
+    },
+    {
+      "title": "Pentagon wants ‘expanding options’ for nuclear weapons, officials say",
+      "url": "https://breakingdefense.com/2026/08/pentagon-wants-expanding-options-for-nuclear-weapons-officials-say",
+      "publisher": "Breaking Defense",
+      "published_at": "2026-08-07T16:21:19.000Z",
+      "source_id": "breaking-defense",
       "first_seen_at": "2026-08-08T02:23:44.579Z",
       "status": "ok"
     },
@@ -28,6 +37,15 @@
       "publisher": "OilPrice.com",
       "published_at": "2026-08-07T14:49:00.000Z",
       "source_id": "oilprice",
+      "first_seen_at": "2026-08-08T02:23:44.579Z",
+      "status": "ok"
+    },
+    {
+      "title": "Typhoon Dolphin strengthens near Okinawa, 5 injured as China braces for landfall",
+      "url": "https://watchers.news/2026/08/07/typhoon-dolphin-strengthens-near-okinawa-5-injured-china-braces-for-landfall",
+      "publisher": "The Watchers",
+      "published_at": "2026-08-07T11:38:53.000Z",
+      "source_id": "the-watchers",
       "first_seen_at": "2026-08-08T02:23:44.579Z",
       "status": "ok"
     },
