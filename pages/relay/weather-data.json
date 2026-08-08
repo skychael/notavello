@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-08T22:49:49.471Z",
-  "latest_success_at": "2026-08-08T22:49:49.471Z",
+  "generated_at": "2026-08-08T23:47:31.335Z",
+  "latest_success_at": "2026-08-08T23:47:31.335Z",
   "status": "ok",
   "items": [
     {
@@ -18,7 +18,7 @@
       "title": "Atlantic Tropical Weather Outlook",
       "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-08-08T17:50:00.000Z",
+      "published_at": "2026-08-08T23:28:32.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
@@ -27,7 +27,7 @@
       "title": "SPC MD 1868",
       "url": "https://www.spc.noaa.gov/products/md/md1868.html",
       "publisher": "Storm Prediction Center",
-      "published_at": "2026-08-08T22:37:03.000Z",
+      "published_at": "2026-08-08T23:30:11.000Z",
       "topic": "Severe weather",
       "status": "ok"
     }
