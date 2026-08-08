@@ -1,34 +1,34 @@
 {
   "schema_version": "1.0",
-  "date_key": "08-07",
-  "display_date": "August 7",
-  "generated_at": "2026-08-07T09:15:57.448Z",
+  "date_key": "08-08",
+  "display_date": "August 8",
+  "generated_at": "2026-08-08T09:01:38.851Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-e43af3dc6994f7385cdc4fd3",
+      "candidate_id": "event-aa1a71cf50960fd4e59b7d95",
       "type": "event",
-      "year": 1987,
-      "text": "Cold War: Lynne Cox becomes the first person to swim from the United States to the Soviet Union, crossing the Bering Strait from Little Diomede Island in Alaska to Big Diomede in the Soviet Union.",
-      "article_title": "Cold War",
-      "url": "https://en.wikipedia.org/wiki/Cold_War",
+      "year": 1946,
+      "text": "First flight of the nuclear capable Convair B-36, heaviest mass-produced piston-engined aircraft at the time.",
+      "article_title": "Convair B-36 Peacemaker",
+      "url": "https://en.wikipedia.org/wiki/Convair_B-36_Peacemaker",
       "category": "World history"
     },
     {
-      "candidate_id": "event-db48f9a487f30b88454e50ef",
+      "candidate_id": "event-d200600b12c017f4a975f8fe",
       "type": "event",
-      "year": 1990,
-      "text": "First American soldiers arrive in Saudi Arabia as part of the Gulf War.",
-      "article_title": "Gulf War",
-      "url": "https://en.wikipedia.org/wiki/Gulf_War",
-      "category": "World history"
+      "year": 1956,
+      "text": "Marcinelle mining disaster in Belgium. 262 coal miners, including a substantial number of Italian migrant workers, are killed in one of the largest mining accidents in Belgian history.",
+      "article_title": "Marcinelle mining disaster",
+      "url": "https://en.wikipedia.org/wiki/Marcinelle_mining_disaster",
+      "category": "Disasters and exploration"
     },
     {
-      "candidate_id": "event-3d37e7e0c20ec61230e33aca",
+      "candidate_id": "event-6037377d8f7c30a25855f6b1",
       "type": "event",
-      "year": 1997,
-      "text": "Space Shuttle Program: The Space Shuttle Discovery launches on STS-85 from the Kennedy Space Center in Cape Canaveral, Florida.",
+      "year": 1989,
+      "text": "Space Shuttle program: STS-28 Mission: Space Shuttle Columbia takes off on a secret five-day military mission.",
       "article_title": "Space Shuttle program",
       "url": "https://en.wikipedia.org/wiki/Space_Shuttle_program",
       "category": "Science and technology"
