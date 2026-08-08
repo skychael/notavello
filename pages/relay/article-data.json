@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "checked_at": "2026-08-08T14:00:49.789Z",
-  "latest_success_at": "2026-08-08T14:00:49.789Z",
+  "checked_at": "2026-08-08T14:51:23.610Z",
+  "latest_success_at": "2026-08-08T14:51:23.610Z",
   "status": "ok",
   "items": [
     {
@@ -10,6 +10,14 @@
       "publisher": "OilPrice.com",
       "published_at": "2026-08-07T15:45:00.000Z",
       "source_id": "oilprice",
+      "status": "ok"
+    },
+    {
+      "title": "UAE Says Iran Attacked Vessel With Missile In Strait of Hormuz",
+      "url": "https://gcaptain.com/uae-says-iran-attacked-vessel-with-missile-in-strait-of-hormuz",
+      "publisher": "gCaptain",
+      "published_at": "2026-08-08T13:07:44.000Z",
+      "source_id": "gcaptain",
       "status": "ok"
     },
     {
@@ -34,14 +42,6 @@
       "publisher": "The Maritime Executive",
       "published_at": "2026-08-06T17:06:37.000Z",
       "source_id": "maritime-executive",
-      "status": "ok"
-    },
-    {
-      "title": "UK Targets Arctic LNG Carrier, Five Oil Tankers in Latest Russia Sanctions Package",
-      "url": "https://gcaptain.com/uk-targets-arctic-lng-carrier-five-oil-tankers-in-latest-russia-sanctions-package",
-      "publisher": "gCaptain",
-      "published_at": "2026-08-06T20:49:30.000Z",
-      "source_id": "gcaptain",
       "status": "ok"
     },
     {
