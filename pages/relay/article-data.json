@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "checked_at": "2026-08-09T19:50:41.597Z",
-  "latest_success_at": "2026-08-09T19:50:41.597Z",
+  "checked_at": "2026-08-09T20:54:10.536Z",
+  "latest_success_at": "2026-08-09T20:54:10.536Z",
   "status": "ok",
   "items": [
     {
@@ -34,14 +34,6 @@
       "publisher": "gCaptain",
       "published_at": "2026-08-07T17:25:21.000Z",
       "source_id": "gcaptain",
-      "status": "ok"
-    },
-    {
-      "title": "Houthis Stage Large-Scale Attack On Saudi-Aligned Forces In Yemen",
-      "url": "https://www.twz.com/news-features/houthis-stage-large-scale-attack-on-saudi-aligned-forces-in-yemen",
-      "publisher": "TWZ (The War Zone)",
-      "published_at": "2026-08-06T20:42:40.000Z",
-      "source_id": "twz",
       "status": "ok"
     },
     {
@@ -82,6 +74,14 @@
       "publisher": "Breaking Defense",
       "published_at": "2026-08-07T16:21:19.000Z",
       "source_id": "breaking-defense",
+      "status": "ok"
+    },
+    {
+      "title": "New M1A2T Abrams Tanks Guard Taiwan’s Main Airport During Invasion Drill",
+      "url": "https://www.twz.com/news-features/new-m1a2t-abrams-tanks-guard-taiwans-main-airport-during-invasion-drill",
+      "publisher": "TWZ (The War Zone)",
+      "published_at": "2026-08-07T16:36:51.000Z",
+      "source_id": "twz",
       "status": "ok"
     }
   ]
