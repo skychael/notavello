@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-08T03:11:45.140Z",
+  "generatedAt": "2026-08-09T03:18:49.534Z",
   "totals": {
-    "pages": 201,
-    "indexable": 197,
-    "articles": 133,
-    "sitemap": 197,
+    "pages": 202,
+    "indexable": 198,
+    "articles": 134,
+    "sitemap": 198,
     "errors": 0,
-    "warnings": 96
+    "warnings": 98
   },
   "errors": [],
   "warnings": [
@@ -199,6 +199,16 @@
       "type": "template-pattern",
       "page": "/pages/blog/gr00t-1-7-unifies-humanoid-policy-development/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/hormuz-crew-risk-is-now-the-price-signal/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/hormuz-crew-risk-is-now-the-price-signal/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
     },
     {
       "type": "template-pattern",
@@ -500,7 +510,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 201,
+      "incomingLinks": 202,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -524,7 +534,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 201,
+      "incomingLinks": 202,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -632,7 +642,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 201,
+      "incomingLinks": 202,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -644,9 +654,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 201,
-      "lastmod": "2026-08-07",
-      "bodyWords": 671
+      "incomingLinks": 202,
+      "lastmod": "2026-08-08",
+      "bodyWords": 672
     },
     {
       "route": "/pages/blog/a-practical-checklist-for-checking-ai-generated-technical-answers/",
@@ -896,9 +906,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 72,
-      "lastmod": "2026-08-07",
-      "bodyWords": 1747
+      "incomingLinks": 73,
+      "lastmod": "2026-08-08",
+      "bodyWords": 1758
     },
     {
       "route": "/pages/blog/apple-speechanalyzer-local-transcription-apps/",
@@ -1345,6 +1355,18 @@
       "bodyWords": 1249
     },
     {
+      "route": "/pages/blog/hormuz-crew-risk-is-now-the-price-signal/",
+      "file": "pages/blog/hormuz-crew-risk-is-now-the-price-signal/index.html",
+      "title": "Hormuz Crew Risk Is Now The Price Signal — The Export | Notavello",
+      "description": "A new Hormuz vessel strike shows why reopening the strait is about crew risk, insurance, diesel and inventories, not just diplomacy.",
+      "canonical": "https://notavello.com/pages/blog/hormuz-crew-risk-is-now-the-price-signal/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-08-09",
+      "bodyWords": 1327
+    },
+    {
       "route": "/pages/blog/hormuz-fertilizer-shock-farm-costs-food-prices/",
       "file": "pages/blog/hormuz-fertilizer-shock-farm-costs-food-prices/index.html",
       "title": "The Hormuz Fertilizer Shock Is Not Over Just Because Urea Fell — The Export | Notavello",
@@ -1376,7 +1398,7 @@
       "canonical": "https://notavello.com/pages/blog/hormuz-reopening-is-a-queue-not-a-victory-lap/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 2,
+      "incomingLinks": 3,
       "lastmod": "2026-08-05",
       "bodyWords": 1405
     },
@@ -1797,8 +1819,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-07",
-      "bodyWords": 647
+      "lastmod": "2026-08-08",
+      "bodyWords": 645
     },
     {
       "route": "/pages/blog/page-3/",
@@ -1809,8 +1831,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-07",
-      "bodyWords": 674
+      "lastmod": "2026-08-08",
+      "bodyWords": 669
     },
     {
       "route": "/pages/blog/page-4/",
@@ -1821,8 +1843,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-07",
-      "bodyWords": 689
+      "lastmod": "2026-08-08",
+      "bodyWords": 698
     },
     {
       "route": "/pages/blog/page-5/",
@@ -1833,8 +1855,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-07",
-      "bodyWords": 759
+      "lastmod": "2026-08-08",
+      "bodyWords": 755
     },
     {
       "route": "/pages/blog/page-6/",
@@ -1845,8 +1867,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-07",
-      "bodyWords": 837
+      "lastmod": "2026-08-08",
+      "bodyWords": 826
     },
     {
       "route": "/pages/blog/page-7/",
@@ -1857,7 +1879,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-07",
+      "lastmod": "2026-08-08",
       "bodyWords": 859
     },
     {
@@ -1869,8 +1891,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": "2026-08-07",
-      "bodyWords": 371
+      "lastmod": "2026-08-08",
+      "bodyWords": 419
     },
     {
       "route": "/pages/blog/rootless-containers-ai-service-boundary/",
@@ -2348,7 +2370,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 201,
+      "incomingLinks": 202,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -2360,7 +2382,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 201,
+      "incomingLinks": 202,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -2372,7 +2394,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 201,
+      "incomingLinks": 202,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -2384,7 +2406,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 201,
+      "incomingLinks": 202,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -2396,7 +2418,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 201,
+      "incomingLinks": 202,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -2409,8 +2431,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-08-08",
-      "bodyWords": 115
+      "lastmod": "2026-08-09",
+      "bodyWords": 121
     },
     {
       "route": "/pages/sample",
@@ -2432,7 +2454,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 201,
+      "incomingLinks": 202,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -2444,7 +2466,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 201,
+      "incomingLinks": 202,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -2468,7 +2490,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 201,
+      "incomingLinks": 202,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -2900,7 +2922,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 201,
+      "incomingLinks": 202,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }
