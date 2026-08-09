@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-08T23:47:31.335Z",
-  "latest_success_at": "2026-08-08T23:47:31.335Z",
+  "generated_at": "2026-08-09T02:31:43.439Z",
+  "latest_success_at": "2026-08-09T02:31:43.439Z",
   "status": "ok",
   "items": [
     {
@@ -23,12 +23,12 @@
       "status": "ok"
     },
     {
-      "id": "e6592ea5a7d6b8a3",
-      "title": "SPC MD 1868",
-      "url": "https://www.spc.noaa.gov/products/md/md1868.html",
-      "publisher": "Storm Prediction Center",
-      "published_at": "2026-08-08T23:30:11.000Z",
-      "topic": "Severe weather",
+      "id": "022e0e1a28147aaa",
+      "title": "Air Quality Alert issued August 8 at 6:10PM MDT by NWS Denver CO",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9ab4077b31cfbbe48c105eca9e1a53b81d1d8843.001.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-08-09T00:10:00.000Z",
+      "topic": "Wildfire",
       "status": "ok"
     }
   ]
