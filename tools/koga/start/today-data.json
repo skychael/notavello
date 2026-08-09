@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "08-08",
-  "display_date": "August 8",
-  "generated_at": "2026-08-08T09:01:38.851Z",
+  "date_key": "08-09",
+  "display_date": "August 9",
+  "generated_at": "2026-08-09T09:03:32.472Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-aa1a71cf50960fd4e59b7d95",
+      "candidate_id": "event-e0bd4b898db95d5d27a1d153",
       "type": "event",
-      "year": 1946,
-      "text": "First flight of the nuclear capable Convair B-36, heaviest mass-produced piston-engined aircraft at the time.",
-      "article_title": "Convair B-36 Peacemaker",
-      "url": "https://en.wikipedia.org/wiki/Convair_B-36_Peacemaker",
+      "year": 1971,
+      "text": "The Troubles: In Northern Ireland, the British authorities launch Operation Demetrius. The operation involves the mass arrest and internment without trial of individuals suspected of being affiliated with the Irish Republican Army (PIRA). Mass riots follow, and thousands of people flee or are forced out of their homes.",
+      "article_title": "The Troubles",
+      "url": "https://en.wikipedia.org/wiki/The_Troubles",
       "category": "World history"
     },
     {
-      "candidate_id": "event-d200600b12c017f4a975f8fe",
+      "candidate_id": "event-0d7c8425551b2a891bded26a",
       "type": "event",
-      "year": 1956,
-      "text": "Marcinelle mining disaster in Belgium. 262 coal miners, including a substantial number of Italian migrant workers, are killed in one of the largest mining accidents in Belgian history.",
-      "article_title": "Marcinelle mining disaster",
-      "url": "https://en.wikipedia.org/wiki/Marcinelle_mining_disaster",
-      "category": "Disasters and exploration"
+      "year": 1970,
+      "text": "LANSA Flight 502 crashes after takeoff from Alejandro Velasco Astete International Airport in Cusco, Peru, killing 99 of the 100 people on board, as well as two people on the ground.",
+      "article_title": "LANSA Flight 502",
+      "url": "https://en.wikipedia.org/wiki/LANSA_Flight_502",
+      "category": "World history"
     },
     {
-      "candidate_id": "event-6037377d8f7c30a25855f6b1",
+      "candidate_id": "event-5f0bb75e6407b9192ad92194",
       "type": "event",
-      "year": 1989,
-      "text": "Space Shuttle program: STS-28 Mission: Space Shuttle Columbia takes off on a secret five-day military mission.",
-      "article_title": "Space Shuttle program",
-      "url": "https://en.wikipedia.org/wiki/Space_Shuttle_program",
-      "category": "Science and technology"
+      "year": 2006,
+      "text": "At least 21 suspected terrorists are arrested in the 2006 transatlantic aircraft plot that happened in the United Kingdom. The arrests are made in London, Birmingham, and High Wycombe in an overnight operation.",
+      "article_title": "2006 transatlantic aircraft plot",
+      "url": "https://en.wikipedia.org/wiki/2006_transatlantic_aircraft_plot",
+      "category": "World history"
     }
   ]
 }
