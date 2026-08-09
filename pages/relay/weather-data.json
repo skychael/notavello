@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-09T09:05:03.882Z",
-  "latest_success_at": "2026-08-09T09:05:03.882Z",
+  "generated_at": "2026-08-09T09:58:56.337Z",
+  "latest_success_at": "2026-08-09T09:58:56.337Z",
   "status": "ok",
   "items": [
     {
@@ -23,11 +23,11 @@
       "status": "ok"
     },
     {
-      "id": "5c55abdb0b86b89d",
-      "title": "SPC Severe Thunderstorm Watch 545",
-      "url": "https://www.spc.noaa.gov/products/watch/ww0545.html",
+      "id": "37e0a92ebc048f51",
+      "title": "SPC MD 1876",
+      "url": "https://www.spc.noaa.gov/products/md/md1876.html",
       "publisher": "Storm Prediction Center",
-      "published_at": "2026-08-09T08:26:04.000Z",
+      "published_at": "2026-08-09T09:41:03.000Z",
       "topic": "Severe weather",
       "status": "ok"
     }
