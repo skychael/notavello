@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-10T22:58:38.248Z",
-  "latest_success_at": "2026-08-10T22:58:38.248Z",
+  "generated_at": "2026-08-10T23:52:34.654Z",
+  "latest_success_at": "2026-08-10T23:52:34.654Z",
   "status": "ok",
   "items": [
     {
@@ -14,20 +14,20 @@
       "status": "ok"
     },
     {
+      "id": "b5ad93019d019ede",
+      "title": "Atlantic Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-08-10T23:40:59.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
       "id": "a605a4fb70977cb7",
       "title": "SPC Day 2 Fire Weather Outlook",
       "url": "https://www.spc.noaa.gov/products/fire_wx/fwdy2.html",
       "publisher": "Storm Prediction Center",
       "published_at": "2026-08-10T19:42:19.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "b5ad93019d019ede",
-      "title": "Atlantic Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-08-10T17:44:56.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
