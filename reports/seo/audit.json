@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-09T03:18:49.534Z",
+  "generatedAt": "2026-08-10T03:28:59.965Z",
   "totals": {
-    "pages": 202,
-    "indexable": 198,
-    "articles": 134,
-    "sitemap": 198,
+    "pages": 204,
+    "indexable": 200,
+    "articles": 136,
+    "sitemap": 200,
     "errors": 0,
-    "warnings": 98
+    "warnings": 102
   },
   "errors": [],
   "warnings": [
@@ -238,6 +238,26 @@
     {
       "type": "topic-review",
       "page": "/pages/blog/hormuz-reopening-is-a-queue-not-a-victory-lap/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/hormuz-shipping-lane-screening-risk/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/hormuz-shipping-lane-screening-risk/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/how-environment-files-work-and-how-to-keep-secrets-out-of-git/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/how-environment-files-work-and-how-to-keep-secrets-out-of-git/",
       "detail": "title/description lacks a clear AI, software, or computing connection"
     },
     {
@@ -510,7 +530,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 202,
+      "incomingLinks": 204,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -534,7 +554,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 202,
+      "incomingLinks": 204,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -642,7 +662,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 202,
+      "incomingLinks": 204,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -654,9 +674,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 202,
-      "lastmod": "2026-08-08",
-      "bodyWords": 672
+      "incomingLinks": 204,
+      "lastmod": "2026-08-09",
+      "bodyWords": 677
     },
     {
       "route": "/pages/blog/a-practical-checklist-for-checking-ai-generated-technical-answers/",
@@ -906,9 +926,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 73,
-      "lastmod": "2026-08-08",
-      "bodyWords": 1758
+      "incomingLinks": 75,
+      "lastmod": "2026-08-09",
+      "bodyWords": 1785
     },
     {
       "route": "/pages/blog/apple-speechanalyzer-local-transcription-apps/",
@@ -1398,9 +1418,21 @@
       "canonical": "https://notavello.com/pages/blog/hormuz-reopening-is-a-queue-not-a-victory-lap/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 3,
+      "incomingLinks": 4,
       "lastmod": "2026-08-05",
       "bodyWords": 1405
+    },
+    {
+      "route": "/pages/blog/hormuz-shipping-lane-screening-risk/",
+      "file": "pages/blog/hormuz-shipping-lane-screening-risk/index.html",
+      "title": "The New Hormuz Problem Is Who Gets a Lane — The Export | Notavello",
+      "description": "Hormuz traffic is rising, but Iran’s new screening demands keep oil, LNG and freight risk alive.",
+      "canonical": "https://notavello.com/pages/blog/hormuz-shipping-lane-screening-risk/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-08-10",
+      "bodyWords": 1619
     },
     {
       "route": "/pages/blog/how-ai-actually-searches-the-web/",
@@ -1449,6 +1481,18 @@
       "incomingLinks": 2,
       "lastmod": "2026-07-22",
       "bodyWords": 1831
+    },
+    {
+      "route": "/pages/blog/how-environment-files-work-and-how-to-keep-secrets-out-of-git/",
+      "file": "pages/blog/how-environment-files-work-and-how-to-keep-secrets-out-of-git/index.html",
+      "title": "How Environment Files Work and How to Keep Secrets Out of Git — The Export | Notavello",
+      "description": "Learn how .env files manage local configuration, why .env.example files belong in Git, and the rules plus tools that prevent secrets from entering version",
+      "canonical": "https://notavello.com/pages/blog/how-environment-files-work-and-how-to-keep-secrets-out-of-git/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-08-09",
+      "bodyWords": 866
     },
     {
       "route": "/pages/blog/how-to-back-up-application-settings-before-troubleshooting/",
@@ -1819,8 +1863,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-08",
-      "bodyWords": 645
+      "lastmod": "2026-08-09",
+      "bodyWords": 655
     },
     {
       "route": "/pages/blog/page-3/",
@@ -1831,8 +1875,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-08",
-      "bodyWords": 669
+      "lastmod": "2026-08-09",
+      "bodyWords": 664
     },
     {
       "route": "/pages/blog/page-4/",
@@ -1843,8 +1887,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-08",
-      "bodyWords": 698
+      "lastmod": "2026-08-09",
+      "bodyWords": 693
     },
     {
       "route": "/pages/blog/page-5/",
@@ -1855,8 +1899,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-08",
-      "bodyWords": 755
+      "lastmod": "2026-08-09",
+      "bodyWords": 745
     },
     {
       "route": "/pages/blog/page-6/",
@@ -1867,8 +1911,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-08",
-      "bodyWords": 826
+      "lastmod": "2026-08-09",
+      "bodyWords": 831
     },
     {
       "route": "/pages/blog/page-7/",
@@ -1879,8 +1923,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-08",
-      "bodyWords": 859
+      "lastmod": "2026-08-09",
+      "bodyWords": 838
     },
     {
       "route": "/pages/blog/page-8/",
@@ -1891,8 +1935,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": "2026-08-08",
-      "bodyWords": 419
+      "lastmod": "2026-08-09",
+      "bodyWords": 516
     },
     {
       "route": "/pages/blog/rootless-containers-ai-service-boundary/",
@@ -2370,7 +2414,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 202,
+      "incomingLinks": 204,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -2382,7 +2426,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 202,
+      "incomingLinks": 204,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -2394,7 +2438,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 202,
+      "incomingLinks": 204,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -2406,7 +2450,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 202,
+      "incomingLinks": 204,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -2418,7 +2462,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 202,
+      "incomingLinks": 204,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -2431,8 +2475,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-08-09",
-      "bodyWords": 121
+      "lastmod": "2026-08-10",
+      "bodyWords": 127
     },
     {
       "route": "/pages/sample",
@@ -2454,7 +2498,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 202,
+      "incomingLinks": 204,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -2466,7 +2510,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 202,
+      "incomingLinks": 204,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -2490,7 +2534,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 202,
+      "incomingLinks": 204,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -2922,7 +2966,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 202,
+      "incomingLinks": 204,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }
