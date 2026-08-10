@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "08-09",
-  "display_date": "August 9",
-  "generated_at": "2026-08-09T09:03:32.472Z",
+  "date_key": "08-10",
+  "display_date": "August 10",
+  "generated_at": "2026-08-10T09:48:46.752Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-e0bd4b898db95d5d27a1d153",
+      "candidate_id": "event-1aacba44241daebcf3dc397f",
       "type": "event",
-      "year": 1971,
-      "text": "The Troubles: In Northern Ireland, the British authorities launch Operation Demetrius. The operation involves the mass arrest and internment without trial of individuals suspected of being affiliated with the Irish Republican Army (PIRA). Mass riots follow, and thousands of people flee or are forced out of their homes.",
-      "article_title": "The Troubles",
-      "url": "https://en.wikipedia.org/wiki/The_Troubles",
+      "year": 1981,
+      "text": "Murder of Adam Walsh: The head of John Walsh's son is found. This inspires the creation of the television series America's Most Wanted and the National Center for Missing & Exploited Children.",
+      "article_title": "Murder of Adam Walsh",
+      "url": "https://en.wikipedia.org/wiki/Murder_of_Adam_Walsh",
       "category": "World history"
     },
     {
-      "candidate_id": "event-0d7c8425551b2a891bded26a",
+      "candidate_id": "event-4b5a242eac71c28fc685a696",
       "type": "event",
-      "year": 1970,
-      "text": "LANSA Flight 502 crashes after takeoff from Alejandro Velasco Astete International Airport in Cusco, Peru, killing 99 of the 100 people on board, as well as two people on the ground.",
-      "article_title": "LANSA Flight 502",
-      "url": "https://en.wikipedia.org/wiki/LANSA_Flight_502",
+      "year": 1953,
+      "text": "First Indochina War: The French Union withdraws its forces from Operation Camargue against the Viet Minh in central Vietnam.",
+      "article_title": "First Indochina War",
+      "url": "https://en.wikipedia.org/wiki/First_Indochina_War",
       "category": "World history"
     },
     {
-      "candidate_id": "event-5f0bb75e6407b9192ad92194",
+      "candidate_id": "event-859b9167427bb0098089bd79",
       "type": "event",
-      "year": 2006,
-      "text": "At least 21 suspected terrorists are arrested in the 2006 transatlantic aircraft plot that happened in the United Kingdom. The arrests are made in London, Birmingham, and High Wycombe in an overnight operation.",
-      "article_title": "2006 transatlantic aircraft plot",
-      "url": "https://en.wikipedia.org/wiki/2006_transatlantic_aircraft_plot",
-      "category": "World history"
+      "year": 2001,
+      "text": "Space Shuttle program: The Space Shuttle Discovery is launched on STS-105 to the International Space Station, carrying the astronauts of Expedition 3 to replace the crew of Expedition 2.",
+      "article_title": "Space Shuttle program",
+      "url": "https://en.wikipedia.org/wiki/Space_Shuttle_program",
+      "category": "Science and technology"
     }
   ]
 }
