@@ -2,7 +2,7 @@
   "schema_version": 1,
   "archive_date": "2026-08-11",
   "created_at": "2026-08-11T02:29:57.642Z",
-  "updated_at": "2026-08-11T11:59:56.988Z",
+  "updated_at": "2026-08-11T13:45:53.967Z",
   "articles": [
     {
       "title": "Oil Prices Climb as U.S.-Iran Peace Hopes Fade",
@@ -19,6 +19,15 @@
       "publisher": "TWZ (The War Zone)",
       "published_at": "2026-08-11T00:47:58.000Z",
       "source_id": "twz",
+      "first_seen_at": "2026-08-11T02:29:57.642Z",
+      "status": "ok"
+    },
+    {
+      "title": "Iraq’s Oil Lifeline Reopens — But Can Baghdad Trust Turkey for Even One Year?",
+      "url": "https://oilprice.com/Energy/Crude-Oil/Iraqs-Oil-Lifeline-Reopens-But-Can-Baghdad-Trust-Turkey-for-Even-One-Year.html",
+      "publisher": "OilPrice.com",
+      "published_at": "2026-08-10T21:00:00.000Z",
+      "source_id": "oilprice",
       "first_seen_at": "2026-08-11T02:29:57.642Z",
       "status": "ok"
     },
