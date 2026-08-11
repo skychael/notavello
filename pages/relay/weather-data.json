@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-11T04:42:43.166Z",
-  "latest_success_at": "2026-08-11T04:42:43.166Z",
+  "generated_at": "2026-08-11T06:07:12.799Z",
+  "latest_success_at": "2026-08-11T06:07:12.799Z",
   "status": "ok",
   "items": [
     {
@@ -14,21 +14,21 @@
       "status": "ok"
     },
     {
-      "id": "b5ad93019d019ede",
-      "title": "Atlantic Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-08-10T23:40:59.000Z",
-      "topic": "Hurricane",
+      "id": "2d1a8e232d1c7ef5",
+      "title": "Flash Flood Warning issued August 11 at 1:02AM EDT until August 11 at 3:00AM EDT by NWS Charleston WV",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.704feeeea199ac46f4a0d9a077171e0d9683c6cc.001.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-08-11T05:02:00.000Z",
+      "topic": "Flooding",
       "status": "ok"
     },
     {
-      "id": "40ffa5ffefd27474",
-      "title": "B.C. declares provincial emergency as out-of-control Bald Range wildfire grows to over 10 000 ha (25 000 acres)",
-      "url": "https://watchers.news/2026/08/09/b-c-declares-provincial-emergency-as-out-of-control-bald-range-wildfire-grows-to-over-10-000-ha-25-000-acres",
-      "publisher": "The Watchers",
-      "published_at": "2026-08-09T15:18:12.000Z",
-      "topic": "Wildfire",
+      "id": "a345ba9881a18297",
+      "title": "SPC Day 1 Fire Weather Outlook",
+      "url": "https://www.spc.noaa.gov/products/fire_wx/fwdy1.html",
+      "publisher": "Storm Prediction Center",
+      "published_at": "2026-08-11T05:59:28.000Z",
+      "topic": "Hurricane",
       "status": "ok"
     }
   ]
