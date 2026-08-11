@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-10T03:28:59.965Z",
+  "generatedAt": "2026-08-11T03:21:45.489Z",
   "totals": {
-    "pages": 204,
-    "indexable": 200,
-    "articles": 136,
-    "sitemap": 200,
+    "pages": 206,
+    "indexable": 202,
+    "articles": 138,
+    "sitemap": 202,
     "errors": 0,
-    "warnings": 102
+    "warnings": 106
   },
   "errors": [],
   "warnings": [
@@ -307,6 +307,16 @@
     },
     {
       "type": "template-pattern",
+      "page": "/pages/blog/how-to-review-package-lockfile-changes-without-guessing/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/how-to-review-package-lockfile-changes-without-guessing/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
       "page": "/pages/blog/how-to-write-better-ai-prompts-guardrails-hard-stops/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
@@ -413,6 +423,16 @@
     {
       "type": "topic-review",
       "page": "/pages/blog/spr-drawdown-buying-time-not-cheap-gas/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/spr-drawdown-is-now-the-oil-cushion/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/spr-drawdown-is-now-the-oil-cushion/",
       "detail": "title/description lacks a clear AI, software, or computing connection"
     },
     {
@@ -530,7 +550,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 204,
+      "incomingLinks": 206,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -554,7 +574,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 204,
+      "incomingLinks": 206,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -662,7 +682,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 204,
+      "incomingLinks": 206,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -674,9 +694,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 204,
-      "lastmod": "2026-08-09",
-      "bodyWords": 677
+      "incomingLinks": 206,
+      "lastmod": "2026-08-10",
+      "bodyWords": 675
     },
     {
       "route": "/pages/blog/a-practical-checklist-for-checking-ai-generated-technical-answers/",
@@ -926,9 +946,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 75,
-      "lastmod": "2026-08-09",
-      "bodyWords": 1785
+      "incomingLinks": 77,
+      "lastmod": "2026-08-10",
+      "bodyWords": 1807
     },
     {
       "route": "/pages/blog/apple-speechanalyzer-local-transcription-apps/",
@@ -1591,6 +1611,18 @@
       "bodyWords": 726
     },
     {
+      "route": "/pages/blog/how-to-review-package-lockfile-changes-without-guessing/",
+      "file": "pages/blog/how-to-review-package-lockfile-changes-without-guessing/index.html",
+      "title": "How to review package lockfile changes without guessing — The Export | Notavello",
+      "description": "Review npm package-lock.json diffs by linking package.json intent to generated output, running clean installs, and following structured steps that catch",
+      "canonical": "https://notavello.com/pages/blog/how-to-review-package-lockfile-changes-without-guessing/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-08-10",
+      "bodyWords": 906
+    },
+    {
       "route": "/pages/blog/how-to-submit-an-app-to-apple-and-google/",
       "file": "pages/blog/how-to-submit-an-app-to-apple-and-google/index.html",
       "title": "How to Submit an App to Apple and Google: The Big-Picture Guide for 2026 — The Export | Notavello",
@@ -1863,8 +1895,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-09",
-      "bodyWords": 655
+      "lastmod": "2026-08-10",
+      "bodyWords": 657
     },
     {
       "route": "/pages/blog/page-3/",
@@ -1875,8 +1907,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-09",
-      "bodyWords": 664
+      "lastmod": "2026-08-10",
+      "bodyWords": 657
     },
     {
       "route": "/pages/blog/page-4/",
@@ -1887,8 +1919,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-09",
-      "bodyWords": 693
+      "lastmod": "2026-08-10",
+      "bodyWords": 699
     },
     {
       "route": "/pages/blog/page-5/",
@@ -1899,8 +1931,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-09",
-      "bodyWords": 745
+      "lastmod": "2026-08-10",
+      "bodyWords": 715
     },
     {
       "route": "/pages/blog/page-6/",
@@ -1911,8 +1943,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-09",
-      "bodyWords": 831
+      "lastmod": "2026-08-10",
+      "bodyWords": 838
     },
     {
       "route": "/pages/blog/page-7/",
@@ -1923,8 +1955,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-09",
-      "bodyWords": 838
+      "lastmod": "2026-08-10",
+      "bodyWords": 848
     },
     {
       "route": "/pages/blog/page-8/",
@@ -1935,8 +1967,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": "2026-08-09",
-      "bodyWords": 516
+      "lastmod": "2026-08-10",
+      "bodyWords": 599
     },
     {
       "route": "/pages/blog/rootless-containers-ai-service-boundary/",
@@ -2018,9 +2050,21 @@
       "canonical": "https://notavello.com/pages/blog/spr-drawdown-buying-time-not-cheap-gas/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 3,
+      "incomingLinks": 4,
       "lastmod": "2026-07-31",
       "bodyWords": 1333
+    },
+    {
+      "route": "/pages/blog/spr-drawdown-is-now-the-oil-cushion/",
+      "file": "pages/blog/spr-drawdown-is-now-the-oil-cushion/index.html",
+      "title": "The SPR Drawdown Is Now The Oil Cushion — The Export | Notavello",
+      "description": "The latest EIA report shows SPR barrels are masking thin U.S. fuel inventories, keeping relief real but fragile.",
+      "canonical": "https://notavello.com/pages/blog/spr-drawdown-is-now-the-oil-cushion/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-08-11",
+      "bodyWords": 1419
     },
     {
       "route": "/pages/blog/strait-of-hormuz-oil-crisis-rationing-timeline/",
@@ -2414,7 +2458,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 204,
+      "incomingLinks": 206,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -2426,7 +2470,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 204,
+      "incomingLinks": 206,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -2438,7 +2482,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 204,
+      "incomingLinks": 206,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -2450,7 +2494,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 204,
+      "incomingLinks": 206,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -2462,7 +2506,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 204,
+      "incomingLinks": 206,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -2475,8 +2519,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-08-10",
-      "bodyWords": 127
+      "lastmod": "2026-08-11",
+      "bodyWords": 133
     },
     {
       "route": "/pages/sample",
@@ -2498,7 +2542,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 204,
+      "incomingLinks": 206,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -2510,7 +2554,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 204,
+      "incomingLinks": 206,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -2534,7 +2578,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 204,
+      "incomingLinks": 206,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -2966,7 +3010,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 204,
+      "incomingLinks": 206,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }
