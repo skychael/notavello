@@ -1,9 +1,18 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-12T19:29:36.093Z",
-  "latest_success_at": "2026-08-12T19:29:36.093Z",
+  "generated_at": "2026-08-12T21:05:33.926Z",
+  "latest_success_at": "2026-08-12T21:05:33.926Z",
   "status": "ok",
   "items": [
+    {
+      "id": "9ce8c93dca2dbc99",
+      "title": "Flash Flood Warning issued August 12 at 3:58PM EDT until August 12 at 8:15PM EDT by NWS Wilmington OH",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.bd7faff64244bc9ebff8669dd8aed8e74e0c1088.001.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-08-12T19:58:00.000Z",
+      "topic": "Flooding",
+      "status": "ok"
+    },
     {
       "id": "65582e3ef683a08f",
       "title": "Flash Flood Warning issued August 12 at 3:10PM EDT until August 12 at 7:15PM EDT by NWS Wilmington OH",
@@ -14,20 +23,11 @@
       "status": "ok"
     },
     {
-      "id": "50413040bd0c24ae",
-      "title": "Flash Flood Warning issued August 12 at 1:58PM EDT until August 12 at 9:15PM EDT by NWS Indianapolis IN",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6b1e1dac4d1acd815e832997d59747aac159683f.001.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-08-12T17:58:00.000Z",
-      "topic": "Flooding",
-      "status": "ok"
-    },
-    {
-      "id": "ccd55efc0b5c19d4",
-      "title": "Flash Flood Warning issued August 12 at 11:14AM EDT until August 12 at 4:15PM EDT by NWS Wilmington OH",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.31c51b7a80e8cb7444ecc53176efb33e0d964eb6.001.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-08-12T15:14:00.000Z",
+      "id": "cc62a5376ac18276",
+      "title": "Multiple water rescues conducted as severe storms bring 115 km/h (70 mph) wind threat to flood-hit Perry County, Ohio",
+      "url": "https://watchers.news/2026/08/11/multiple-water-rescues-conducted-as-severe-storms-bring-115-km-h-70-mph-wind-threat-to-flood-hit-perry-county-ohio",
+      "publisher": "The Watchers",
+      "published_at": "2026-08-11T17:00:16.000Z",
       "topic": "Flooding",
       "status": "ok"
     }
