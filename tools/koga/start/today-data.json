@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "08-11",
-  "display_date": "August 11",
-  "generated_at": "2026-08-11T09:14:21.539Z",
+  "date_key": "08-12",
+  "display_date": "August 12",
+  "generated_at": "2026-08-12T09:32:11.481Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-3a7b9efbd29a16bcdb1fb3fe",
+      "candidate_id": "event-b5e6ade31fa3a1493101d8e8",
       "type": "event",
-      "year": 1969,
-      "text": "The Apollo 11 astronauts are released from a three-week quarantine following their liftoff from the Moon.",
-      "article_title": "Apollo 11",
-      "url": "https://en.wikipedia.org/wiki/Apollo_11",
-      "category": "World history"
-    },
-    {
-      "candidate_id": "event-531b4091dda21ebf54d77927",
-      "type": "event",
-      "year": 2000,
-      "text": "An air rage incident occurs on board Southwest Airlines Flight 1763 when 19-year-old Jonathan Burton attempts to storm the cockpit, but he is subdued by other passengers and dies from his injuries.",
-      "article_title": "Air rage",
-      "url": "https://en.wikipedia.org/wiki/Air_rage",
+      "year": 1985,
+      "text": "Japan Air Lines Flight 123, a Boeing 747, crashes into Osutaka ridge in Gunma Prefecture, Japan, killing 520, becoming the worst single-plane air disaster.",
+      "article_title": "Japan Air Lines Flight 123",
+      "url": "https://en.wikipedia.org/wiki/Japan_Air_Lines_Flight_123",
       "category": "Disasters and exploration"
     },
     {
-      "candidate_id": "event-f807756f53e230cfc336ea5c",
+      "candidate_id": "event-9e9f9ec8a83413efce0f9e59",
       "type": "event",
-      "year": 1920,
-      "text": "The Latvian–Soviet Peace Treaty, which relinquished Russia's authority and pretenses to Latvia, is signed, ending the Latvian War of Independence.",
-      "article_title": "Latvian–Soviet Peace Treaty",
-      "url": "https://en.wikipedia.org/wiki/Latvian%E2%80%93Soviet_Peace_Treaty",
-      "category": "Politics and society"
+      "year": 1977,
+      "text": "The first free flight of the Space Shuttle Enterprise.",
+      "article_title": "Approach and Landing Tests",
+      "url": "https://en.wikipedia.org/wiki/Approach_and_Landing_Tests",
+      "category": "Science and technology"
+    },
+    {
+      "candidate_id": "event-55e9f9b067b7f6905f7baacf",
+      "type": "event",
+      "year": 2018,
+      "text": "Thirty-nine civilians, including a dozen children, are killed in an explosion at a weapons depot in Sarmada, Syria.",
+      "article_title": "Sarmada",
+      "url": "https://en.wikipedia.org/wiki/Sarmada",
+      "category": "World history"
     }
   ]
 }
