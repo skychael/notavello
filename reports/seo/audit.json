@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-11T03:21:45.489Z",
+  "generatedAt": "2026-08-12T03:40:34.770Z",
   "totals": {
-    "pages": 206,
-    "indexable": 202,
-    "articles": 138,
-    "sitemap": 202,
+    "pages": 208,
+    "indexable": 204,
+    "articles": 140,
+    "sitemap": 204,
     "errors": 0,
-    "warnings": 106
+    "warnings": 109
   },
   "errors": [],
   "warnings": [
@@ -157,6 +157,11 @@
     },
     {
       "type": "template-pattern",
+      "page": "/pages/blog/four-dollar-gas-is-the-hormuz-receipt/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "template-pattern",
       "page": "/pages/blog/gemini-notebook-ai-research-source-management/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
@@ -258,6 +263,16 @@
     {
       "type": "topic-review",
       "page": "/pages/blog/how-environment-files-work-and-how-to-keep-secrets-out-of-git/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/how-semantic-versioning-helps-and-where-it-cannot-protect-you/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/how-semantic-versioning-helps-and-where-it-cannot-protect-you/",
       "detail": "title/description lacks a clear AI, software, or computing connection"
     },
     {
@@ -550,7 +565,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 206,
+      "incomingLinks": 208,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -574,7 +589,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 206,
+      "incomingLinks": 208,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -682,7 +697,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 206,
+      "incomingLinks": 208,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -694,9 +709,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 206,
-      "lastmod": "2026-08-10",
-      "bodyWords": 675
+      "incomingLinks": 208,
+      "lastmod": "2026-08-11",
+      "bodyWords": 684
     },
     {
       "route": "/pages/blog/a-practical-checklist-for-checking-ai-generated-technical-answers/",
@@ -946,9 +961,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 77,
-      "lastmod": "2026-08-10",
-      "bodyWords": 1807
+      "incomingLinks": 79,
+      "lastmod": "2026-08-11",
+      "bodyWords": 1829
     },
     {
       "route": "/pages/blog/apple-speechanalyzer-local-transcription-apps/",
@@ -1198,7 +1213,7 @@
       "canonical": "https://notavello.com/pages/blog/diesel-is-the-hormuz-tax-you-feel-first/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 6,
+      "incomingLinks": 7,
       "lastmod": "2026-08-01",
       "bodyWords": 1456
     },
@@ -1225,6 +1240,18 @@
       "incomingLinks": 2,
       "lastmod": "2026-07-22",
       "bodyWords": 1143
+    },
+    {
+      "route": "/pages/blog/four-dollar-gas-is-the-hormuz-receipt/",
+      "file": "pages/blog/four-dollar-gas-is-the-hormuz-receipt/index.html",
+      "title": "Four-Dollar Gas Is The Hormuz Receipt — The Export | Notavello",
+      "description": "EIA data puts regular gas back above $4 and diesel above $5 as Hormuz flows, gasoline stocks and the SPR stay tight.",
+      "canonical": "https://notavello.com/pages/blog/four-dollar-gas-is-the-hormuz-receipt/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-08-12",
+      "bodyWords": 1390
     },
     {
       "route": "/pages/blog/gemini-notebook-ai-research-source-management/",
@@ -1513,6 +1540,18 @@
       "incomingLinks": 2,
       "lastmod": "2026-08-09",
       "bodyWords": 866
+    },
+    {
+      "route": "/pages/blog/how-semantic-versioning-helps-and-where-it-cannot-protect-you/",
+      "file": "pages/blog/how-semantic-versioning-helps-and-where-it-cannot-protect-you/index.html",
+      "title": "How semantic versioning helps and where it cannot protect you — The Export | Notavello",
+      "description": "Semantic versioning signals intent through major, minor, and patch numbers, but dependency ranges and real-world breaks still require testing and pinning.",
+      "canonical": "https://notavello.com/pages/blog/how-semantic-versioning-helps-and-where-it-cannot-protect-you/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-08-11",
+      "bodyWords": 808
     },
     {
       "route": "/pages/blog/how-to-back-up-application-settings-before-troubleshooting/",
@@ -1895,8 +1934,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-10",
-      "bodyWords": 657
+      "lastmod": "2026-08-11",
+      "bodyWords": 664
     },
     {
       "route": "/pages/blog/page-3/",
@@ -1907,8 +1946,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-10",
-      "bodyWords": 657
+      "lastmod": "2026-08-11",
+      "bodyWords": 646
     },
     {
       "route": "/pages/blog/page-4/",
@@ -1919,8 +1958,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-10",
-      "bodyWords": 699
+      "lastmod": "2026-08-11",
+      "bodyWords": 696
     },
     {
       "route": "/pages/blog/page-5/",
@@ -1931,8 +1970,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-10",
-      "bodyWords": 715
+      "lastmod": "2026-08-11",
+      "bodyWords": 714
     },
     {
       "route": "/pages/blog/page-6/",
@@ -1943,8 +1982,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-10",
-      "bodyWords": 838
+      "lastmod": "2026-08-11",
+      "bodyWords": 832
     },
     {
       "route": "/pages/blog/page-7/",
@@ -1955,8 +1994,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-10",
-      "bodyWords": 848
+      "lastmod": "2026-08-11",
+      "bodyWords": 826
     },
     {
       "route": "/pages/blog/page-8/",
@@ -1967,8 +2006,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": "2026-08-10",
-      "bodyWords": 599
+      "lastmod": "2026-08-11",
+      "bodyWords": 700
     },
     {
       "route": "/pages/blog/rootless-containers-ai-service-boundary/",
@@ -2458,7 +2497,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 206,
+      "incomingLinks": 208,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -2470,7 +2509,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 206,
+      "incomingLinks": 208,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -2482,7 +2521,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 206,
+      "incomingLinks": 208,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -2494,7 +2533,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 206,
+      "incomingLinks": 208,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -2506,7 +2545,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 206,
+      "incomingLinks": 208,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -2519,8 +2558,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-08-11",
-      "bodyWords": 133
+      "lastmod": "2026-08-12",
+      "bodyWords": 139
     },
     {
       "route": "/pages/sample",
@@ -2542,7 +2581,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 206,
+      "incomingLinks": 208,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -2554,7 +2593,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 206,
+      "incomingLinks": 208,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -2578,7 +2617,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 206,
+      "incomingLinks": 208,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -3010,7 +3049,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 206,
+      "incomingLinks": 208,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }

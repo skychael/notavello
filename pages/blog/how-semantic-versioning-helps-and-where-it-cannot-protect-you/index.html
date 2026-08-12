@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>How semantic versioning helps and where it cannot protect you — The Export | Notavello</title>
+<meta name="description" content="Semantic versioning signals intent through major, minor, and patch numbers, but dependency ranges and real-world breaks still require testing and pinning."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/blog/how-semantic-versioning-helps-and-where-it-cannot-protect-you/"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2026-08-11T09:26:05.595Z"/>
+<meta property="article:modified_time" content="2026-08-11T09:26:05.595Z"/>
+<meta name="notavello:published_at" content="2026-08-11T09:26:05.595Z"/>
+<meta name="syndication-origin-site" content="toysforbots"/>
+<meta name="syndication-origin-id" content="toysforbots:how-semantic-versioning-helps-and-where-it-cannot-protect-you"/>
+<meta name="syndication-origin-slug" content="how-semantic-versioning-helps-and-where-it-cannot-protect-you"/>
+<meta name="syndication-origin-url" content="https://toysforbots.com/blog/how-semantic-versioning-helps-and-where-it-cannot-protect-you/"/>
+<meta name="syndication-source-format" content="toysforbots-syndication-v1"/>
+<meta property="og:url" content="https://notavello.com/pages/blog/how-semantic-versioning-helps-and-where-it-cannot-protect-you/"/>
+<meta property="og:title" content="How semantic versioning helps and where it cannot protect you"/>
+<meta property="og:description" content="Semantic versioning signals intent through major, minor, and patch numbers, but dependency ranges and real-world breaks still require testing and pinning."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="How semantic versioning helps and where it cannot protect you"/>
+<meta name="twitter:description" content="Semantic versioning signals intent through major, minor, and patch numbers, but dependency ranges and real-world breaks still require testing and pinning."/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "How semantic versioning helps and where it cannot protect you",
+  "description": "Semantic versioning signals intent through major, minor, and patch numbers, but dependency ranges and real-world breaks still require testing and pinning.",
+  "url": "https://notavello.com/pages/blog/how-semantic-versioning-helps-and-where-it-cannot-protect-you/",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://notavello.com/pages/blog/how-semantic-versioning-helps-and-where-it-cannot-protect-you/" },
+  "image": "https://notavello.com/og-image.png",
+  "datePublished": "2026-08-11T09:26:05.595Z",
+  "dateModified": "2026-08-11T09:26:05.595Z",
+  "author": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" },
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com", "logo": { "@type": "ImageObject", "url": "https://notavello.com/og-image.png" } }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
+.post-nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; row-gap: 8px; }
+.post-nav-top { margin-bottom: 40px; }
+.post-nav-bottom { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--border); }
+.post-nav a { display: inline-flex; align-items: center; gap: 6px; font-size: 0.92rem; font-weight: 600; color: var(--ink-muted); text-decoration: none; padding: 12px 14px; border-radius: var(--radius-sm); white-space: nowrap; transition: color 0.15s, background 0.15s; }
+.post-nav a:hover { color: var(--accent); background: var(--accent-light); }
+.post-nav a:first-child { padding-left: 0; }
+.post-nav a:last-child { padding-right: 0; justify-content: flex-end; }
+.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
+.post-date { font-size: 0.78rem; color: var(--ink-faint); }
+.post-title { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; color: var(--ink); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
+.post-lede { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+.post-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink); }
+.post-body h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 44px 0 16px; letter-spacing: -0.01em; }
+.post-body p { margin-bottom: 20px; color: var(--ink-muted); }
+.post-body p strong { color: var(--ink); font-weight: 600; }
+.post-body ul { margin: 0 0 20px 20px; color: var(--ink-muted); }
+.post-body ul li { margin-bottom: 8px; line-height: 1.7; }
+.callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 32px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.7; }
+.post-footer { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.post-footer-label { font-size: 0.8rem; color: var(--ink-faint); }
+.btn-export { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: opacity 0.2s; }
+.btn-export:hover { opacity: 0.9; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } .post-nav a { padding: 12px 8px; font-size: 0.88rem; } }
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+
+  <nav class="post-nav post-nav-top">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+  <div class="post-meta">
+    <span class="post-tag">Developer Tools</span>
+    <span class="post-date">August 11, 2026</span>
+  </div>
+
+  <h1 class="post-title">How semantic versioning helps and where it cannot protect you</h1>
+
+  <p class="post-lede">Semantic Versioning, often called SemVer, uses a three-part number to communicate how a release might affect dependent code. A version like 2.3.1 tells users that the major number changed, the minor number added features, and the patch fixed bugs. The rules appear on semver.org and are followed by many package ecosystems. When followed, these numbers let developers decide whether an update is safe without reading every changelog. The system works only when the public API stays stable within the declared rules. Major bumps signal breaking changes, minor bumps add compatible features, and patch bumps fix behavior without altering the API. This structure reduces surprise in theory, yet practice shows limits that no version string can remove.</p>
+
+  <div class="post-body">
+
+<h2>How the version numbers work</h2>
+<p>A normal SemVer number follows the form X.Y.Z. X is the major version. Y is the minor version. Z is the patch version. Each part increases only when the corresponding type of change occurs. Major version zero is treated as initial development where anything may change. Once version 1.0.0 is released, the public API is considered stable and the increment rules apply strictly.</p>
+<p>Patch releases fix incorrect behavior without changing the documented API. Minor releases add new functionality in a backward-compatible way or mark existing functionality as deprecated. Major releases introduce changes that break backward compatibility. These definitions come directly from the SemVer specification.</p><ul><li>Increment patch for backward-compatible bug fixes only</li><li>Increment minor for new backward-compatible API features or deprecations</li><li>Increment major for any backward-incompatible API change</li><li>Reset lower numbers to zero after a higher-number bump</li></ul><div class="callout"><strong>Key reminder</strong> SemVer describes intent, not guarantees. Always verify updates with your own tests and pinned lockfiles.</div>
+<h2>Dependency ranges and what they allow</h2>
+<p>Package managers use range operators to decide which versions satisfy a declared dependency. The caret operator ^ allows updates that do not change the leftmost non-zero digit. The tilde operator ~ allows only patch-level changes within the declared minor version. Exact pins require the precise version string. These ranges appear in files such as package.json and are evaluated by tools like npm.</p>
+<p>A dependency declared as ^3.1.0 accepts 3.1.1 and 3.2.0 but rejects 4.0.0. This range works when the upstream project follows SemVer correctly. When the upstream project violates the rules, the range can pull in unexpected breaks.</p><ul><li>^4.17.21 accepts any 4.x release below 5.0.0</li><li>~1.6.0 accepts only 1.6.x releases</li><li>Exact pins such as 4.18.2 accept only that single release</li><li>Wildcards such as 1.x accept any 1.x release</li></ul>
+<h2>Where SemVer cannot protect you</h2>
+<p>SemVer assumes the declared public API matches actual behavior and that maintainers follow the rules. In practice, a patch release can introduce a regression that breaks an application even though the version number suggests safety. A minor release can change undocumented behavior that downstream code relied upon. These situations occur because the specification cannot enforce correct implementation.</p>
+<p>Transitive dependencies add another layer of risk. A direct dependency may stay within its declared range while one of its own dependencies receives a breaking update. The resulting combination can fail even when every direct range appears conservative.</p><ul><li>A patch can still contain a regression that affects your code</li><li>Undocumented behavior can change without a major bump</li><li>Transitive dependencies may break even when direct ranges are respected</li><li>Build metadata and pre-release tags do not affect precedence rules</li></ul>
+<h2>Practical steps that reduce risk</h2>
+<p>Pin exact versions in lockfiles and separate those pins from the broader ranges declared in manifest files. Review lockfile diffs before merging updates. Run the full test suite after any dependency change, including transitive updates. Use tools that surface the complete dependency tree rather than only direct requirements.</p>
+<p>When a new version appears, treat every update as potentially breaking regardless of the version number. Update in a controlled environment first. If tests pass, commit the new pins. If tests fail, investigate the root cause before widening the allowed range.</p><ul><li>Keep manifest ranges separate from lockfile pins</li><li>Review every lockfile change before accepting it</li><li>Run tests that cover the code paths using the dependency</li><li>Document the reason for any manual version choice</li></ul>
+<h2>Testing remains the final safeguard</h2>
+<p>No version scheme replaces verification. Even when every maintainer follows SemVer perfectly, the combination of libraries in a specific project can produce unexpected results. Automated tests, integration checks, and staged deployments catch problems that version numbers cannot signal. Teams that skip these steps eventually encounter breakage that a simple version bump would have avoided.</p>
+<p>The same discipline applies when preparing contributions that others will consume. Clear changelogs, accurate version bumps, and published test results help downstream users decide whether an update is safe for them.</p><h2>Sources</h2><ul><li><a href="https://semver.org/" rel="noopener noreferrer">semver.org</a></li><li><a href="https://hynek.me/articles/semver-will-not-save-you/" rel="noopener noreferrer">hynek.me</a></li></ul>
+
+  </div>
+
+  <div class="post-footer">
+    <span class="post-footer-label">Looking for more AI tools?</span>
+    <a class="btn-export" href="/">See our free AI tools →</a>
+  </div>
+
+  <nav class="post-nav post-nav-bottom">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+</main>
+
+<!--FOOTER-->
+
+</body>
+</html>
