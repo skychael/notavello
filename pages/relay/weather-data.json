@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-12T13:51:08.325Z",
-  "latest_success_at": "2026-08-12T13:51:08.325Z",
+  "generated_at": "2026-08-12T15:16:47.228Z",
+  "latest_success_at": "2026-08-12T15:16:47.228Z",
   "status": "ok",
   "items": [
     {
@@ -14,21 +14,21 @@
       "status": "ok"
     },
     {
-      "id": "cc62a5376ac18276",
-      "title": "Multiple water rescues conducted as severe storms bring 115 km/h (70 mph) wind threat to flood-hit Perry County, Ohio",
-      "url": "https://watchers.news/2026/08/11/multiple-water-rescues-conducted-as-severe-storms-bring-115-km-h-70-mph-wind-threat-to-flood-hit-perry-county-ohio",
-      "publisher": "The Watchers",
-      "published_at": "2026-08-11T17:00:16.000Z",
+      "id": "ccd55efc0b5c19d4",
+      "title": "Flash Flood Warning issued August 12 at 11:14AM EDT until August 12 at 4:15PM EDT by NWS Wilmington OH",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.31c51b7a80e8cb7444ecc53176efb33e0d964eb6.001.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-08-12T15:14:00.000Z",
       "topic": "Flooding",
       "status": "ok"
     },
     {
-      "id": "b5ad93019d019ede",
-      "title": "Atlantic Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-08-12T11:51:22.000Z",
-      "topic": "Hurricane",
+      "id": "5528f2f903d7140c",
+      "title": "Flash Flood Warning issued August 12 at 10:46AM EDT until August 12 at 4:45PM EDT by NWS Indianapolis IN",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.e188d5b9b9fa7668be7bd1705f84eb6a5cc68ba6.001.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-08-12T14:46:00.000Z",
+      "topic": "Flooding",
       "status": "ok"
     }
   ]
