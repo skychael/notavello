@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "checked_at": "2026-08-12T18:11:26.445Z",
-  "latest_success_at": "2026-08-12T18:11:26.445Z",
+  "checked_at": "2026-08-12T19:29:35.352Z",
+  "latest_success_at": "2026-08-12T19:29:35.352Z",
   "status": "ok",
   "items": [
     {
@@ -10,6 +10,14 @@
       "publisher": "OilPrice.com",
       "published_at": "2026-08-12T09:30:00.000Z",
       "source_id": "oilprice",
+      "status": "ok"
+    },
+    {
+      "title": "Ukraine Halts Strikes on Tankers Using Russian Port at U.S. Request",
+      "url": "https://gcaptain.com/ukraine-halts-strikes-on-tankers-using-russian-port-at-u-s-request",
+      "publisher": "gCaptain",
+      "published_at": "2026-08-12T16:44:40.000Z",
+      "source_id": "gcaptain",
       "status": "ok"
     },
     {
@@ -26,14 +34,6 @@
       "publisher": "The Maritime Executive",
       "published_at": "2026-08-10T18:53:38.000Z",
       "source_id": "maritime-executive",
-      "status": "ok"
-    },
-    {
-      "title": "Four Crew Killed in Red Sea Attack While Missile Strike Reported in Gulf",
-      "url": "https://gcaptain.com/four-crew-killed-in-red-sea-attack-while-missile-strike-reported-in-gulf",
-      "publisher": "gCaptain",
-      "published_at": "2026-08-11T16:45:52.000Z",
-      "source_id": "gcaptain",
       "status": "ok"
     },
     {
