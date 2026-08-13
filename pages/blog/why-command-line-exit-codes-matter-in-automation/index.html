@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Why command-line exit codes matter in automation — The Export | Notavello</title>
+<meta name="description" content="Exit codes control success and failure signals in CLI tools and CI pipelines. Learn how to interpret them, handle pipelines, and write reliable checks."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/blog/why-command-line-exit-codes-matter-in-automation/"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2026-08-12T09:35:14.118Z"/>
+<meta property="article:modified_time" content="2026-08-12T09:35:14.118Z"/>
+<meta name="notavello:published_at" content="2026-08-12T09:35:14.118Z"/>
+<meta name="syndication-origin-site" content="toysforbots"/>
+<meta name="syndication-origin-id" content="toysforbots:why-command-line-exit-codes-matter-in-automation"/>
+<meta name="syndication-origin-slug" content="why-command-line-exit-codes-matter-in-automation"/>
+<meta name="syndication-origin-url" content="https://toysforbots.com/blog/why-command-line-exit-codes-matter-in-automation/"/>
+<meta name="syndication-source-format" content="toysforbots-syndication-v1"/>
+<meta property="og:url" content="https://notavello.com/pages/blog/why-command-line-exit-codes-matter-in-automation/"/>
+<meta property="og:title" content="Why command-line exit codes matter in automation"/>
+<meta property="og:description" content="Exit codes control success and failure signals in CLI tools and CI pipelines. Learn how to interpret them, handle pipelines, and write reliable checks."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Why command-line exit codes matter in automation"/>
+<meta name="twitter:description" content="Exit codes control success and failure signals in CLI tools and CI pipelines. Learn how to interpret them, handle pipelines, and write reliable checks."/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Why command-line exit codes matter in automation",
+  "description": "Exit codes control success and failure signals in CLI tools and CI pipelines. Learn how to interpret them, handle pipelines, and write reliable checks.",
+  "url": "https://notavello.com/pages/blog/why-command-line-exit-codes-matter-in-automation/",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://notavello.com/pages/blog/why-command-line-exit-codes-matter-in-automation/" },
+  "image": "https://notavello.com/og-image.png",
+  "datePublished": "2026-08-12T09:35:14.118Z",
+  "dateModified": "2026-08-12T09:35:14.118Z",
+  "author": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" },
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com", "logo": { "@type": "ImageObject", "url": "https://notavello.com/og-image.png" } }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
+.post-nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; row-gap: 8px; }
+.post-nav-top { margin-bottom: 40px; }
+.post-nav-bottom { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--border); }
+.post-nav a { display: inline-flex; align-items: center; gap: 6px; font-size: 0.92rem; font-weight: 600; color: var(--ink-muted); text-decoration: none; padding: 12px 14px; border-radius: var(--radius-sm); white-space: nowrap; transition: color 0.15s, background 0.15s; }
+.post-nav a:hover { color: var(--accent); background: var(--accent-light); }
+.post-nav a:first-child { padding-left: 0; }
+.post-nav a:last-child { padding-right: 0; justify-content: flex-end; }
+.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
+.post-date { font-size: 0.78rem; color: var(--ink-faint); }
+.post-title { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; color: var(--ink); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
+.post-lede { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+.post-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink); }
+.post-body h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 44px 0 16px; letter-spacing: -0.01em; }
+.post-body p { margin-bottom: 20px; color: var(--ink-muted); }
+.post-body p strong { color: var(--ink); font-weight: 600; }
+.post-body ul { margin: 0 0 20px 20px; color: var(--ink-muted); }
+.post-body ul li { margin-bottom: 8px; line-height: 1.7; }
+.callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 32px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.7; }
+.post-footer { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.post-footer-label { font-size: 0.8rem; color: var(--ink-faint); }
+.btn-export { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: opacity 0.2s; }
+.btn-export:hover { opacity: 0.9; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } .post-nav a { padding: 12px 8px; font-size: 0.88rem; } }
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+
+  <nav class="post-nav post-nav-top">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+  <div class="post-meta">
+    <span class="post-tag">Developer Tools</span>
+    <span class="post-date">August 12, 2026</span>
+  </div>
+
+  <h1 class="post-title">Why command-line exit codes matter in automation</h1>
+
+  <p class="post-lede">Command-line programs communicate results through exit codes, small integers returned to the calling process. A value of zero conventionally signals success while any non-zero value indicates failure or an error condition. This simple mechanism underpins automation, CI pipelines, and shell scripting because it allows downstream commands and scripts to decide whether to continue or stop. Without reliable exit codes, pipelines can proceed after errors, producing incorrect outputs or corrupted states. Standards such as POSIX define the basic rules, and tools like Robocopy or PowerShell scripts often require explicit handling to treat certain non-zero values as acceptable. Checking these codes immediately after execution, using variables like $? in shells, ensures scripts react correctly rather than assuming success.</p>
+
+  <div class="post-body">
+
+<h2>How exit status is defined</h2>
+<p>POSIX specifies that the exit status of a command is determined by the last simple command executed unless otherwise stated. Interactive shells may continue after certain errors while non-interactive shells typically exit. The standard table lists conditions such as syntax errors, command-not-found cases, and unrecoverable read errors, each with rules on whether the shell exits and whether a diagnostic message is required.</p>
+<p>In practice, most utilities follow the convention that zero indicates normal completion and values from 1 to 255 report problems. Scripts should treat any non-zero result as a signal to stop or handle an error path.</p><ul><li>Exit status comes from the last command unless the shell uses set -e or similar options.</li><li>Special built-in utilities may cause immediate exit on error in non-interactive mode.</li><li>No size limit exists on commands beyond system constraints such as ARG_MAX.</li></ul><div class="callout"><strong>Core Rule</strong> Zero means success. Any other number means something went wrong. Always test the code right after the command runs.</div>
+<h2>Pipelines and the pipefail option</h2>
+<p>A pipeline connects commands with the | operator. The exit status of the pipeline normally comes from the last command. When the pipefail option is enabled, the pipeline status becomes the exit status of the rightmost command that failed, or zero if all succeeded. The setting active when the pipeline starts governs the result, not any later change.</p>
+<p>The ! reserved word negates the status of the pipeline. These rules matter in automation because a failing early stage can be masked by a later successful command unless pipefail is active.</p><ul><li>Without pipefail, only the final command status is visible.</li><li>With pipefail enabled, any failure in the chain sets a non-zero status.</li><li>The shell records the pipefail setting at pipeline start time.</li></ul>
+<h2>Checking codes reliably in scripts</h2>
+<p>After any command, the special variable $? holds the exit status. Scripts should capture and test this value immediately because subsequent commands overwrite it. In CI systems such as GitLab CI or GitHub Actions, a non-zero exit from any script line fails the job unless the line is explicitly allowed to fail.</p>
+<p>Some utilities return non-zero values that do not represent failure. Robocopy, for example, uses codes 0-7 for success with varying levels of file activity. Scripts must therefore compare against an acceptable range rather than simply checking for zero.</p><ul><li>Capture $? on the line immediately following the command.</li><li>Use if statements or &amp;&amp;/|| operators for concise checks.</li><li>Document any utility-specific ranges that are treated as success.</li></ul>
+<h2>Practical patterns and cautions</h2>
+<p>When a command must succeed for later steps to be valid, combine it with explicit tests or use set -e to exit on the first error. For commands whose non-zero codes are acceptable, wrap the call so the overall script still returns zero. PowerShell and bash examples both show the pattern of running the tool then testing its code against a threshold before deciding the script result.</p>
+<p>Never rely on output text alone to determine success. Logs can be incomplete or misleading when processes are killed or redirected. Exit codes remain the only portable signal recognized by shells and CI runners.</p><ul><li>set -e stops execution on the first non-zero exit in many shells.</li><li>Explicit range checks are required for tools like Robocopy.</li><li>CI jobs fail on any unhandled non-zero code from the script section.</li></ul>
+<h2>Putting it into practice</h2>
+<p>Review existing automation for places where exit codes are ignored or where pipefail is missing. Add immediate checks after critical commands and document any allowed non-zero ranges. Test the updated scripts both interactively and inside the target CI environment to confirm behavior matches expectations.</p>
+<p>Consistent use of exit codes makes failures visible early, reduces debugging time, and prevents downstream steps from operating on bad data.</p><h2>Sources</h2><ul><li><a href="https://pubs.opengroup.org/onlinepubs/9799919799/utilities/V3_chap02.html" rel="noopener noreferrer">pubs.opengroup.org</a></li><li><a href="https://dojofive.com/blog/how-ci-pipeline-scripts-and-exit-codes-interact/" rel="noopener noreferrer">dojofive.com</a></li></ul>
+
+  </div>
+
+  <div class="post-footer">
+    <span class="post-footer-label">Looking for more AI tools?</span>
+    <a class="btn-export" href="/">See our free AI tools →</a>
+  </div>
+
+  <nav class="post-nav post-nav-bottom">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+</main>
+
+<!--FOOTER-->
+
+</body>
+</html>

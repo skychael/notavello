@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-12T03:40:34.770Z",
+  "generatedAt": "2026-08-13T03:43:49.199Z",
   "totals": {
-    "pages": 208,
-    "indexable": 204,
-    "articles": 140,
-    "sitemap": 204,
+    "pages": 210,
+    "indexable": 206,
+    "articles": 142,
+    "sitemap": 206,
     "errors": 0,
-    "warnings": 109
+    "warnings": 113
   },
   "errors": [],
   "warnings": [
@@ -407,6 +407,16 @@
     },
     {
       "type": "template-pattern",
+      "page": "/pages/blog/oman-oil-spill-is-the-shadow-fleet-bill/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/oman-oil-spill-is-the-shadow-fleet-bill/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
       "page": "/pages/blog/open-toys-esp32-firmware-setup-guide/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
@@ -521,6 +531,16 @@
       "detail": "title/description lacks a clear AI, software, or computing connection"
     },
     {
+      "type": "template-pattern",
+      "page": "/pages/blog/why-command-line-exit-codes-matter-in-automation/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/why-command-line-exit-codes-matter-in-automation/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
       "type": "topic-review",
       "page": "/pages/blog/why-everything-turns-into-two-sides/",
       "detail": "title/description lacks a clear AI, software, or computing connection"
@@ -565,7 +585,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 208,
+      "incomingLinks": 210,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -589,7 +609,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 208,
+      "incomingLinks": 210,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -697,7 +717,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 208,
+      "incomingLinks": 210,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -709,9 +729,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 208,
-      "lastmod": "2026-08-11",
-      "bodyWords": 684
+      "incomingLinks": 210,
+      "lastmod": "2026-08-12",
+      "bodyWords": 683
     },
     {
       "route": "/pages/blog/a-practical-checklist-for-checking-ai-generated-technical-answers/",
@@ -961,9 +981,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 79,
-      "lastmod": "2026-08-11",
-      "bodyWords": 1829
+      "incomingLinks": 81,
+      "lastmod": "2026-08-12",
+      "bodyWords": 1850
     },
     {
       "route": "/pages/blog/apple-speechanalyzer-local-transcription-apps/",
@@ -1861,9 +1881,21 @@
       "canonical": "https://notavello.com/pages/blog/oil-detours-are-the-real-hormuz-price-signal/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 4,
+      "incomingLinks": 5,
       "lastmod": "2026-08-03",
       "bodyWords": 1385
+    },
+    {
+      "route": "/pages/blog/oman-oil-spill-is-the-shadow-fleet-bill/",
+      "file": "pages/blog/oman-oil-spill-is-the-shadow-fleet-bill/index.html",
+      "title": "Oman's Oil Spill Is The Shadow Fleet Bill — The Export | Notavello",
+      "description": "A sanctioned tanker spill off Oman shows how war, sanctions and uninsured ships turn oil risk into cleanup costs.",
+      "canonical": "https://notavello.com/pages/blog/oman-oil-spill-is-the-shadow-fleet-bill/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-08-13",
+      "bodyWords": 1253
     },
     {
       "route": "/pages/blog/open-toys-esp32-firmware-setup-guide/",
@@ -1934,8 +1966,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-11",
-      "bodyWords": 664
+      "lastmod": "2026-08-12",
+      "bodyWords": 666
     },
     {
       "route": "/pages/blog/page-3/",
@@ -1946,8 +1978,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-11",
-      "bodyWords": 646
+      "lastmod": "2026-08-12",
+      "bodyWords": 645
     },
     {
       "route": "/pages/blog/page-4/",
@@ -1958,7 +1990,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-11",
+      "lastmod": "2026-08-12",
       "bodyWords": 696
     },
     {
@@ -1970,8 +2002,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-11",
-      "bodyWords": 714
+      "lastmod": "2026-08-12",
+      "bodyWords": 710
     },
     {
       "route": "/pages/blog/page-6/",
@@ -1982,8 +2014,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-11",
-      "bodyWords": 832
+      "lastmod": "2026-08-12",
+      "bodyWords": 809
     },
     {
       "route": "/pages/blog/page-7/",
@@ -1994,8 +2026,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-11",
-      "bodyWords": 826
+      "lastmod": "2026-08-12",
+      "bodyWords": 837
     },
     {
       "route": "/pages/blog/page-8/",
@@ -2006,8 +2038,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": "2026-08-11",
-      "bodyWords": 700
+      "lastmod": "2026-08-12",
+      "bodyWords": 789
     },
     {
       "route": "/pages/blog/rootless-containers-ai-service-boundary/",
@@ -2346,6 +2378,18 @@
       "bodyWords": 1493
     },
     {
+      "route": "/pages/blog/why-command-line-exit-codes-matter-in-automation/",
+      "file": "pages/blog/why-command-line-exit-codes-matter-in-automation/index.html",
+      "title": "Why command-line exit codes matter in automation — The Export | Notavello",
+      "description": "Exit codes control success and failure signals in CLI tools and CI pipelines. Learn how to interpret them, handle pipelines, and write reliable checks.",
+      "canonical": "https://notavello.com/pages/blog/why-command-line-exit-codes-matter-in-automation/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-08-12",
+      "bodyWords": 777
+    },
+    {
       "route": "/pages/blog/why-copilot-silently-cuts-off-your-code/",
       "file": "pages/blog/why-copilot-silently-cuts-off-your-code/index.html",
       "title": "Why Copilot Silently Cuts Off Your Code — The Export | Notavello",
@@ -2497,7 +2541,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 208,
+      "incomingLinks": 210,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -2509,7 +2553,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 208,
+      "incomingLinks": 210,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -2521,7 +2565,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 208,
+      "incomingLinks": 210,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -2533,7 +2577,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 208,
+      "incomingLinks": 210,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -2545,7 +2589,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 208,
+      "incomingLinks": 210,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -2558,8 +2602,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-08-12",
-      "bodyWords": 139
+      "lastmod": "2026-08-13",
+      "bodyWords": 145
     },
     {
       "route": "/pages/sample",
@@ -2581,7 +2625,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 208,
+      "incomingLinks": 210,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -2593,7 +2637,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 208,
+      "incomingLinks": 210,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -2617,7 +2661,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 208,
+      "incomingLinks": 210,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -3049,7 +3093,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 208,
+      "incomingLinks": 210,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }
