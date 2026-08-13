@@ -1,9 +1,27 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-13T13:51:15.640Z",
-  "latest_success_at": "2026-08-13T13:51:15.640Z",
+  "generated_at": "2026-08-13T15:17:42.527Z",
+  "latest_success_at": "2026-08-13T15:17:42.527Z",
   "status": "ok",
   "items": [
+    {
+      "id": "3a50f999d8399ce8",
+      "title": "Tropical Cyclone Local Statement issued August 13 at 5:10AM HST by NWS Honolulu HI",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a987d9ced4f63985eb7244c02f6ee01721f7c7cd.001.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-08-13T15:10:00.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "bec4dd5e6f9de5fb",
+      "title": "Hurricane Watch issued August 13 at 4:54AM HST by NWS Honolulu HI",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.3d09ca090e94a3f08d4d688a64a172d1b385e7d2.001.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-08-13T14:54:00.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
     {
       "id": "cc62a5376ac18276",
       "title": "Multiple water rescues conducted as severe storms bring 115 km/h (70 mph) wind threat to flood-hit Perry County, Ohio",
@@ -11,24 +29,6 @@
       "publisher": "The Watchers",
       "published_at": "2026-08-11T17:00:16.000Z",
       "topic": "Flooding",
-      "status": "ok"
-    },
-    {
-      "id": "ee8e390990a944fc",
-      "title": "Eastern North Pacific Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-08-13T11:26:07.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "ba5b62b1fcad5cf5",
-      "title": "Tropical Storm Hernan Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep3+shtml/093355.shtml?cone=",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-08-13T09:33:55.000Z",
-      "topic": "Hurricane",
       "status": "ok"
     }
   ]
