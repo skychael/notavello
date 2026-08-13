@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-13T10:29:56.559Z",
-  "latest_success_at": "2026-08-13T10:29:56.559Z",
+  "generated_at": "2026-08-13T12:01:56.772Z",
+  "latest_success_at": "2026-08-13T12:01:56.772Z",
   "status": "ok",
   "items": [
     {
@@ -14,20 +14,20 @@
       "status": "ok"
     },
     {
+      "id": "ee8e390990a944fc",
+      "title": "Eastern North Pacific Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-08-13T11:26:07.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
       "id": "ba5b62b1fcad5cf5",
       "title": "Tropical Storm Hernan Graphics",
       "url": "https://www.nhc.noaa.gov/refresh/graphics_ep3+shtml/093355.shtml?cone=",
       "publisher": "National Hurricane Center",
       "published_at": "2026-08-13T09:33:55.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "03a3c42e040ca26c",
-      "title": "Tropical Depression Cristobal Wind Speed Probabilities Number 4",
-      "url": "https://www.nhc.noaa.gov/text/refresh/MIAPWSAT3+shtml/130847.shtml",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-08-13T08:47:34.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
