@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-13T06:48:28.729Z",
-  "latest_success_at": "2026-08-13T06:48:28.729Z",
+  "generated_at": "2026-08-13T08:45:35.898Z",
+  "latest_success_at": "2026-08-13T08:45:35.898Z",
   "status": "ok",
   "items": [
     {
@@ -14,20 +14,20 @@
       "status": "ok"
     },
     {
+      "id": "0ad6bad442aab754",
+      "title": "Tropical Storm Hernan Graphics",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep3+shtml/084104.shtml?cone=",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-08-13T08:41:04.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
       "id": "b5ad93019d019ede",
       "title": "Atlantic Tropical Weather Outlook",
       "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
       "publisher": "National Hurricane Center",
       "published_at": "2026-08-13T05:27:00.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "bd75d751bf130d2e",
-      "title": "Tropical Storm Cristobal Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_at3+shtml/032242.shtml?cone=",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-08-13T03:22:42.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
