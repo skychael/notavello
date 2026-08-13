@@ -1,36 +1,36 @@
 {
   "schema_version": "1.0",
-  "date_key": "08-12",
-  "display_date": "August 12",
-  "generated_at": "2026-08-12T09:32:11.481Z",
+  "date_key": "08-13",
+  "display_date": "August 13",
+  "generated_at": "2026-08-13T09:33:58.058Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-b5e6ade31fa3a1493101d8e8",
+      "candidate_id": "event-db2c277b2f8b8a02560e2afa",
       "type": "event",
-      "year": 1985,
-      "text": "Japan Air Lines Flight 123, a Boeing 747, crashes into Osutaka ridge in Gunma Prefecture, Japan, killing 520, becoming the worst single-plane air disaster.",
-      "article_title": "Japan Air Lines Flight 123",
-      "url": "https://en.wikipedia.org/wiki/Japan_Air_Lines_Flight_123",
-      "category": "Disasters and exploration"
+      "year": 1969,
+      "text": "The Apollo 11 astronauts enjoy a ticker-tape parade in New York City. That evening, at a state dinner in Los Angeles, they are awarded the Presidential Medal of Freedom by U.S. President Richard Nixon.",
+      "article_title": "Apollo 11",
+      "url": "https://en.wikipedia.org/wiki/Apollo_11",
+      "category": "Politics and society"
     },
     {
-      "candidate_id": "event-9e9f9ec8a83413efce0f9e59",
+      "candidate_id": "event-0dca82a333887f1be38d4b08",
       "type": "event",
-      "year": 1977,
-      "text": "The first free flight of the Space Shuttle Enterprise.",
-      "article_title": "Approach and Landing Tests",
-      "url": "https://en.wikipedia.org/wiki/Approach_and_Landing_Tests",
-      "category": "Science and technology"
+      "year": 1900,
+      "text": "The steamer Deutschland of Hamburg America Lines sets a new record for the eastward passage when it docks in Plymouth, England, five days, 11 hours and 45 minutes after sailing from New York, breaking by three hours, six minutes its previous mark in its maiden voyage in July.",
+      "article_title": "SS Deutschland (1900)",
+      "url": "https://en.wikipedia.org/wiki/SS_Deutschland_(1900)",
+      "category": "World history"
     },
     {
-      "candidate_id": "event-55e9f9b067b7f6905f7baacf",
+      "candidate_id": "event-f58533ecd6c3ae470bb177c7",
       "type": "event",
-      "year": 2018,
-      "text": "Thirty-nine civilians, including a dozen children, are killed in an explosion at a weapons depot in Sarmada, Syria.",
-      "article_title": "Sarmada",
-      "url": "https://en.wikipedia.org/wiki/Sarmada",
+      "year": 1973,
+      "text": "Aviaco Flight 118 crashes on approach to A Coruña Airport in A Coruña, Spain, killing all 85 people on the plane and one other one the ground.",
+      "article_title": "Aviaco Flight 118",
+      "url": "https://en.wikipedia.org/wiki/Aviaco_Flight_118",
       "category": "World history"
     }
   ]
