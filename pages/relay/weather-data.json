@@ -1,9 +1,18 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-14T10:19:19.384Z",
-  "latest_success_at": "2026-08-14T10:19:19.384Z",
+  "generated_at": "2026-08-14T11:59:33.001Z",
+  "latest_success_at": "2026-08-14T11:59:33.001Z",
   "status": "ok",
   "items": [
+    {
+      "id": "01e81ff3fc9c4dba",
+      "title": "Hurricane Warning issued for Hawaiʻi Island as Tropical Storm Lala strengthens",
+      "url": "https://watchers.news/2026/08/14/hurricane-warning-issued-for-hawai%ca%bbi-island-as-tropical-storm-lala-strengthens",
+      "publisher": "The Watchers",
+      "published_at": "2026-08-14T11:35:24.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
     {
       "id": "dfc614a6b4364492",
       "title": "Tropical Cyclone Local Statement issued August 13 at 10:50PM HST by NWS Honolulu HI",
@@ -17,15 +26,6 @@
       "id": "097c23c39304eabf",
       "title": "Tropical Storm Watch issued August 13 at 10:40PM HST by NWS Honolulu HI",
       "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.e9e6c8ce62599b964619696af27218622587cd28.001.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-08-14T08:40:00.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "32d27e01eec41586",
-      "title": "Hurricane Warning issued August 13 at 10:40PM HST by NWS Honolulu HI",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.e9e6c8ce62599b964619696af27218622587cd28.020.1.cap",
       "publisher": "National Weather Service",
       "published_at": "2026-08-14T08:40:00.000Z",
       "topic": "Hurricane",
