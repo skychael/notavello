@@ -1,36 +1,36 @@
 {
   "schema_version": "1.0",
-  "date_key": "08-13",
-  "display_date": "August 13",
-  "generated_at": "2026-08-13T09:33:58.058Z",
+  "date_key": "08-14",
+  "display_date": "August 14",
+  "generated_at": "2026-08-14T09:28:14.124Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-db2c277b2f8b8a02560e2afa",
+      "candidate_id": "event-2c387b3c57f4e5d41c38b088",
       "type": "event",
-      "year": 1969,
-      "text": "The Apollo 11 astronauts enjoy a ticker-tape parade in New York City. That evening, at a state dinner in Los Angeles, they are awarded the Presidential Medal of Freedom by U.S. President Richard Nixon.",
-      "article_title": "Apollo 11",
-      "url": "https://en.wikipedia.org/wiki/Apollo_11",
-      "category": "Politics and society"
-    },
-    {
-      "candidate_id": "event-0dca82a333887f1be38d4b08",
-      "type": "event",
-      "year": 1900,
-      "text": "The steamer Deutschland of Hamburg America Lines sets a new record for the eastward passage when it docks in Plymouth, England, five days, 11 hours and 45 minutes after sailing from New York, breaking by three hours, six minutes its previous mark in its maiden voyage in July.",
-      "article_title": "SS Deutschland (1900)",
-      "url": "https://en.wikipedia.org/wiki/SS_Deutschland_(1900)",
+      "year": 1972,
+      "text": "An Ilyushin Il-62 airliner crashes near Königs Wusterhausen, East Germany killing 156 people.",
+      "article_title": "Interflug Flight 450",
+      "url": "https://en.wikipedia.org/wiki/Interflug_Flight_450",
       "category": "World history"
     },
     {
-      "candidate_id": "event-f58533ecd6c3ae470bb177c7",
+      "candidate_id": "event-4a4ae1330c6c5570981750b9",
       "type": "event",
-      "year": 1973,
-      "text": "Aviaco Flight 118 crashes on approach to A Coruña Airport in A Coruña, Spain, killing all 85 people on the plane and one other one the ground.",
-      "article_title": "Aviaco Flight 118",
-      "url": "https://en.wikipedia.org/wiki/Aviaco_Flight_118",
+      "year": 2021,
+      "text": "A magnitude 7.2 earthquake strikes southwestern Haiti, killing at least 2,248 people and causing a humanitarian crisis.",
+      "article_title": "2021 Haiti earthquake",
+      "url": "https://en.wikipedia.org/wiki/2021_Haiti_earthquake",
+      "category": "Disasters and exploration"
+    },
+    {
+      "candidate_id": "event-ea91662e5dd5cea73d2232db",
+      "type": "event",
+      "year": 1933,
+      "text": "Loggers cause a forest fire in the Coast Range of Oregon, later known as the first forest fire of the Tillamook Burn;  destroying 240,000 acres (970 km2) of land.",
+      "article_title": "Wildfire",
+      "url": "https://en.wikipedia.org/wiki/Wildfire",
       "category": "World history"
     }
   ]
