@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-14T00:01:05.365Z",
-  "latest_success_at": "2026-08-14T00:01:05.365Z",
+  "generated_at": "2026-08-14T02:48:48.366Z",
+  "latest_success_at": "2026-08-14T02:48:48.366Z",
   "status": "ok",
   "items": [
     {
@@ -23,11 +23,11 @@
       "status": "ok"
     },
     {
-      "id": "cc62a5376ac18276",
-      "title": "Multiple water rescues conducted as severe storms bring 115 km/h (70 mph) wind threat to flood-hit Perry County, Ohio",
-      "url": "https://watchers.news/2026/08/11/multiple-water-rescues-conducted-as-severe-storms-bring-115-km-h-70-mph-wind-threat-to-flood-hit-perry-county-ohio",
-      "publisher": "The Watchers",
-      "published_at": "2026-08-11T17:00:16.000Z",
+      "id": "0ad1e71898478e3c",
+      "title": "Flash Flood Warning issued August 13 at 9:39PM EDT until August 13 at 11:30PM EDT by NWS Jackson KY",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.1a87e83c57f3bd8f520fbe611fcde7dd41c842ec.001.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-08-14T01:39:00.000Z",
       "topic": "Flooding",
       "status": "ok"
     }
