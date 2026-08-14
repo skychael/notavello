@@ -1,9 +1,18 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-14T16:07:35.899Z",
-  "latest_success_at": "2026-08-14T16:07:35.899Z",
+  "generated_at": "2026-08-14T17:14:23.398Z",
+  "latest_success_at": "2026-08-14T17:14:23.398Z",
   "status": "ok",
   "items": [
+    {
+      "id": "4829802d4e90f948",
+      "title": "Flash Flood Warning issued August 14 at 11:06AM MDT until August 14 at 1:30PM MDT by NWS Salt Lake City UT",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.d101c207b863a7f68c0c6f7dedbd87cc0ca1eed0.001.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-08-14T17:06:00.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
     {
       "id": "560d81805199fb1d",
       "title": "Tropical Cyclone Local Statement issued August 14 at 5:00AM HST by NWS Honolulu HI",
@@ -17,15 +26,6 @@
       "id": "54fec4de5f3ef8c7",
       "title": "Tropical Storm Watch issued August 14 at 4:47AM HST by NWS Honolulu HI",
       "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.d54e039ce4237cf208c078326318db1f1eb49b23.001.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-08-14T14:47:00.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "a1fed7a36349a33b",
-      "title": "Tropical Storm Warning issued August 14 at 4:47AM HST by NWS Honolulu HI",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.d54e039ce4237cf208c078326318db1f1eb49b23.017.1.cap",
       "publisher": "National Weather Service",
       "published_at": "2026-08-14T14:47:00.000Z",
       "topic": "Hurricane",
