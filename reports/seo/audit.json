@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-13T03:43:49.199Z",
+  "generatedAt": "2026-08-14T03:40:51.557Z",
   "totals": {
-    "pages": 210,
-    "indexable": 206,
-    "articles": 142,
-    "sitemap": 206,
+    "pages": 212,
+    "indexable": 208,
+    "articles": 144,
+    "sitemap": 208,
     "errors": 0,
-    "warnings": 113
+    "warnings": 116
   },
   "errors": [],
   "warnings": [
@@ -94,6 +94,16 @@
       "type": "template-pattern",
       "page": "/pages/blog/best-ai-for-each-job-and-each-quirk/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/big-crude-build-not-pump-relief/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/big-crude-build-not-pump-relief/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
     },
     {
       "type": "template-pattern",
@@ -288,6 +298,11 @@
     {
       "type": "template-pattern",
       "page": "/pages/blog/how-to-collect-a-useful-software-version-and-environment-report/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/how-to-create-a-minimal-reproducible-software-bug-report/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
     {
@@ -585,7 +600,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 210,
+      "incomingLinks": 212,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -609,7 +624,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 210,
+      "incomingLinks": 212,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -717,7 +732,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 210,
+      "incomingLinks": 212,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -729,9 +744,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 210,
-      "lastmod": "2026-08-12",
-      "bodyWords": 683
+      "incomingLinks": 212,
+      "lastmod": "2026-08-13",
+      "bodyWords": 685
     },
     {
       "route": "/pages/blog/a-practical-checklist-for-checking-ai-generated-technical-answers/",
@@ -981,9 +996,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 81,
-      "lastmod": "2026-08-12",
-      "bodyWords": 1850
+      "incomingLinks": 83,
+      "lastmod": "2026-08-13",
+      "bodyWords": 1873
     },
     {
       "route": "/pages/blog/apple-speechanalyzer-local-transcription-apps/",
@@ -1044,6 +1059,18 @@
       "incomingLinks": 4,
       "lastmod": "2026-07-22",
       "bodyWords": 1467
+    },
+    {
+      "route": "/pages/blog/big-crude-build-not-pump-relief/",
+      "file": "pages/blog/big-crude-build-not-pump-relief/index.html",
+      "title": "The Big Crude Build Is Not Pump Relief — The Export | Notavello",
+      "description": "A huge U.S. crude build sounds calming, but SPR draws and thin fuel stocks still leave drivers exposed.",
+      "canonical": "https://notavello.com/pages/blog/big-crude-build-not-pump-relief/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-08-14",
+      "bodyWords": 1388
     },
     {
       "route": "/pages/blog/browser-cache-ruined-my-day/",
@@ -1185,7 +1212,7 @@
       "canonical": "https://notavello.com/pages/blog/cushing-tank-bottom-oil-warning/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 2,
+      "incomingLinks": 3,
       "lastmod": "2026-08-04",
       "bodyWords": 1404
     },
@@ -1598,6 +1625,18 @@
       "bodyWords": 878
     },
     {
+      "route": "/pages/blog/how-to-create-a-minimal-reproducible-software-bug-report/",
+      "file": "pages/blog/how-to-create-a-minimal-reproducible-software-bug-report/index.html",
+      "title": "How to create a minimal reproducible software bug report — The Export | Notavello",
+      "description": "Learn how to reduce a bug to clear inputs, reproduction steps, environment details, and expected behavior so others can verify and fix it quickly.",
+      "canonical": "https://notavello.com/pages/blog/how-to-create-a-minimal-reproducible-software-bug-report/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-08-13",
+      "bodyWords": 1007
+    },
+    {
       "route": "/pages/blog/how-to-debug-an-ai-prompt-that-gives-inconsistent-answers/",
       "file": "pages/blog/how-to-debug-an-ai-prompt-that-gives-inconsistent-answers/index.html",
       "title": "How to Debug an AI Prompt That Gives Inconsistent Answers — The Export | Notavello",
@@ -1966,8 +2005,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-12",
-      "bodyWords": 666
+      "lastmod": "2026-08-13",
+      "bodyWords": 668
     },
     {
       "route": "/pages/blog/page-3/",
@@ -1978,8 +2017,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-12",
-      "bodyWords": 645
+      "lastmod": "2026-08-13",
+      "bodyWords": 650
     },
     {
       "route": "/pages/blog/page-4/",
@@ -1990,8 +2029,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-12",
-      "bodyWords": 696
+      "lastmod": "2026-08-13",
+      "bodyWords": 683
     },
     {
       "route": "/pages/blog/page-5/",
@@ -2002,8 +2041,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-12",
-      "bodyWords": 710
+      "lastmod": "2026-08-13",
+      "bodyWords": 691
     },
     {
       "route": "/pages/blog/page-6/",
@@ -2014,8 +2053,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-12",
-      "bodyWords": 809
+      "lastmod": "2026-08-13",
+      "bodyWords": 806
     },
     {
       "route": "/pages/blog/page-7/",
@@ -2026,8 +2065,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-12",
-      "bodyWords": 837
+      "lastmod": "2026-08-13",
+      "bodyWords": 842
     },
     {
       "route": "/pages/blog/page-8/",
@@ -2038,8 +2077,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": "2026-08-12",
-      "bodyWords": 789
+      "lastmod": "2026-08-13",
+      "bodyWords": 884
     },
     {
       "route": "/pages/blog/rootless-containers-ai-service-boundary/",
@@ -2541,7 +2580,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 210,
+      "incomingLinks": 212,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -2553,7 +2592,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 210,
+      "incomingLinks": 212,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -2565,7 +2604,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 210,
+      "incomingLinks": 212,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -2577,7 +2616,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 210,
+      "incomingLinks": 212,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -2589,7 +2628,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 210,
+      "incomingLinks": 212,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -2602,8 +2641,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-08-13",
-      "bodyWords": 145
+      "lastmod": "2026-08-14",
+      "bodyWords": 151
     },
     {
       "route": "/pages/sample",
@@ -2625,7 +2664,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 210,
+      "incomingLinks": 212,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -2637,7 +2676,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 210,
+      "incomingLinks": 212,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -2661,7 +2700,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 210,
+      "incomingLinks": 212,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -3093,7 +3132,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 210,
+      "incomingLinks": 212,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }

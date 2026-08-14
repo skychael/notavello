@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>How to create a minimal reproducible software bug report — The Export | Notavello</title>
+<meta name="description" content="Learn how to reduce a bug to clear inputs, reproduction steps, environment details, and expected behavior so others can verify and fix it quickly."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/blog/how-to-create-a-minimal-reproducible-software-bug-report/"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2026-08-13T09:37:01.736Z"/>
+<meta property="article:modified_time" content="2026-08-13T09:37:01.736Z"/>
+<meta name="notavello:published_at" content="2026-08-13T09:37:01.736Z"/>
+<meta name="syndication-origin-site" content="toysforbots"/>
+<meta name="syndication-origin-id" content="toysforbots:how-to-create-a-minimal-reproducible-software-bug-report"/>
+<meta name="syndication-origin-slug" content="how-to-create-a-minimal-reproducible-software-bug-report"/>
+<meta name="syndication-origin-url" content="https://toysforbots.com/blog/how-to-create-a-minimal-reproducible-software-bug-report/"/>
+<meta name="syndication-source-format" content="toysforbots-syndication-v1"/>
+<meta property="og:url" content="https://notavello.com/pages/blog/how-to-create-a-minimal-reproducible-software-bug-report/"/>
+<meta property="og:title" content="How to create a minimal reproducible software bug report"/>
+<meta property="og:description" content="Learn how to reduce a bug to clear inputs, reproduction steps, environment details, and expected behavior so others can verify and fix it quickly."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="How to create a minimal reproducible software bug report"/>
+<meta name="twitter:description" content="Learn how to reduce a bug to clear inputs, reproduction steps, environment details, and expected behavior so others can verify and fix it quickly."/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "How to create a minimal reproducible software bug report",
+  "description": "Learn how to reduce a bug to clear inputs, reproduction steps, environment details, and expected behavior so others can verify and fix it quickly.",
+  "url": "https://notavello.com/pages/blog/how-to-create-a-minimal-reproducible-software-bug-report/",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://notavello.com/pages/blog/how-to-create-a-minimal-reproducible-software-bug-report/" },
+  "image": "https://notavello.com/og-image.png",
+  "datePublished": "2026-08-13T09:37:01.736Z",
+  "dateModified": "2026-08-13T09:37:01.736Z",
+  "author": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" },
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com", "logo": { "@type": "ImageObject", "url": "https://notavello.com/og-image.png" } }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
+.post-nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; row-gap: 8px; }
+.post-nav-top { margin-bottom: 40px; }
+.post-nav-bottom { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--border); }
+.post-nav a { display: inline-flex; align-items: center; gap: 6px; font-size: 0.92rem; font-weight: 600; color: var(--ink-muted); text-decoration: none; padding: 12px 14px; border-radius: var(--radius-sm); white-space: nowrap; transition: color 0.15s, background 0.15s; }
+.post-nav a:hover { color: var(--accent); background: var(--accent-light); }
+.post-nav a:first-child { padding-left: 0; }
+.post-nav a:last-child { padding-right: 0; justify-content: flex-end; }
+.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
+.post-date { font-size: 0.78rem; color: var(--ink-faint); }
+.post-title { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; color: var(--ink); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
+.post-lede { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+.post-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink); }
+.post-body h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 44px 0 16px; letter-spacing: -0.01em; }
+.post-body p { margin-bottom: 20px; color: var(--ink-muted); }
+.post-body p strong { color: var(--ink); font-weight: 600; }
+.post-body ul { margin: 0 0 20px 20px; color: var(--ink-muted); }
+.post-body ul li { margin-bottom: 8px; line-height: 1.7; }
+.callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 32px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.7; }
+.post-footer { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.post-footer-label { font-size: 0.8rem; color: var(--ink-faint); }
+.btn-export { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: opacity 0.2s; }
+.btn-export:hover { opacity: 0.9; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } .post-nav a { padding: 12px 8px; font-size: 0.88rem; } }
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+
+  <nav class="post-nav post-nav-top">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+  <div class="post-meta">
+    <span class="post-tag">Developer Tools</span>
+    <span class="post-date">August 13, 2026</span>
+  </div>
+
+  <h1 class="post-title">How to create a minimal reproducible software bug report</h1>
+
+  <p class="post-lede">Bug reports that lack a minimal reproducible example waste time for everyone involved. Maintainers cannot diagnose issues when the description is vague or the code is entangled with unrelated parts of a project. The goal is to reduce the failure to its essential elements: the smallest inputs that trigger it, the exact sequence of steps, the precise environment where it occurs, and a clear statement of what should happen versus what actually happens. This approach follows established guidance from major platforms that handle developer questions daily. When you provide only what is needed, responders can focus on the root cause instead of guessing at missing context or trying to set up a complex reproduction themselves.</p>
+
+  <div class="post-body">
+
+<h2>Write a focused title and summary</h2>
+<p>Begin with a title that names the symptom and the component involved. Follow it with a short paragraph that states the expected behavior and the actual outcome in one or two sentences. Avoid phrases such as it does not work. Instead, quote any error messages exactly and note the line or file where they appear. A clear title helps responders locate similar past reports quickly and decide whether they have the right expertise to assist. The summary paragraph then supplies the minimal context needed to understand why the reported outcome matters.</p>
+<p>This focused opening prevents the common problem of responders having to ask clarifying questions before they can even begin investigation. It also sets the stage for the rest of the report by establishing a shared vocabulary for the symptom.</p><ul><li>Include the version of the library or tool that exhibits the problem.</li><li>Mention the operating system and relevant hardware only if the issue is platform-specific.</li></ul><div class="callout"><strong>Core principle</strong> Strip the report until the problem still appears but nothing extra remains. Test the example after every removal to confirm the failure persists.</div>
+<h2>Reduce the code to the smallest working example</h2>
+<p>Create a fresh project or file that contains only the code required to demonstrate the failure. Remove unrelated functions, configuration, and data. Use simple names that describe purpose rather than copying identifiers from the original codebase. If the problem disappears during reduction, restore the last removed piece and test again to isolate the trigger. The process of successive removal forces you to discover exactly which lines participate in the failure and which are incidental.</p>
+<p>A minimal example also makes it easier for responders to copy the code into their own environment without first untangling dependencies or project-specific setup. This reduction step is the heart of turning a vague report into one that can be verified and fixed.</p><ul><li>Place each file in its own code block with a short description of its role.</li><li>Avoid images of code; paste the actual text so it can be copied and run directly.</li></ul>
+<h2>Document the exact environment</h2>
+<p>List the versions of every relevant piece of software, including the runtime, compiler or interpreter, operating system, and any extensions or plugins. Note whether the issue appears only in a specific editor or only after a recent update. This information prevents responders from wasting time on configurations that do not match yours. Environment details also reveal whether the failure is tied to a particular combination of tools that may not be obvious from the code alone.</p>
+<p>When the environment is recorded precisely, responders can decide whether they need to replicate it exactly or whether the problem is likely to appear more broadly. This section therefore saves repeated rounds of clarification.</p><ul><li>Run the standard commands that print version numbers and include their output verbatim.</li><li>Mention any environment variables or configuration files that differ from defaults.</li></ul>
+<h2>Provide numbered reproduction steps</h2>
+<p>Write the sequence of actions required to trigger the bug as a numbered list. Start from a clean state each time you test the list yourself. Include any necessary interaction such as clicking a button or entering specific values. If the problem occurs only after a restart or in a fresh environment, state that requirement explicitly. Numbered steps remove ambiguity about order and prerequisites, allowing responders to follow the same path you took.</p>
+<p>Each step should be short enough that a reader can perform it without additional interpretation. This format also makes it simple to verify later whether a proposed fix actually resolves the reported sequence.</p><ul><li>Keep each step to a single action.</li><li>Note any timing or order dependencies that affect the outcome.</li></ul>
+<h2>State expected versus actual behavior</h2>
+<p>Describe what the code should do according to documentation or common sense. Then describe the precise incorrect result, including any error text, incorrect output, or unexpected state. This contrast tells responders exactly which contract has been broken and helps them verify a fix later. Without an explicit statement of expected behavior, responders may guess at different intended outcomes and therefore test against the wrong target.</p>
+<p>Placing the two behaviors side by side also clarifies the severity of the issue and guides prioritization of the report among other tasks.</p><ul><li>Quote error messages and stack traces in full.</li><li>If output differs, show both the expected and observed values side by side.</li></ul>
+<h2>Verify the example before submission</h2>
+<p>Run the reduced example in a new directory or fresh virtual environment to confirm it still fails. If the problem vanishes during cleanup, the original report contained hidden dependencies. Restart the system or move the files to another machine when intermittent behavior is suspected. Only submit the report once the minimal example reliably reproduces the issue. Verification protects both the reporter and responders from spending effort on a description that no longer matches reality.</p>
+<p>A final check also surfaces any accidental omissions that occurred while trimming the example, ensuring the submitted report remains complete and accurate.</p><ul><li>Delete temporary files and caches before the final test.</li><li>Confirm that no compile-time or lint errors exist unless they are part of the reported problem.</li></ul><h2>Sources</h2><ul><li><a href="https://stackoverflow.com/help/minimal-reproducible-example" rel="noopener noreferrer">Stack Overflow</a></li><li><a href="https://github.com/microsoft/TypeScript/wiki/Providing-Visual-Studio-Repro-Steps" rel="noopener noreferrer">GitHub</a></li></ul>
+
+  </div>
+
+  <div class="post-footer">
+    <span class="post-footer-label">Looking for more AI tools?</span>
+    <a class="btn-export" href="/">See our free AI tools →</a>
+  </div>
+
+  <nav class="post-nav post-nav-bottom">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+</main>
+
+<!--FOOTER-->
+
+</body>
+</html>
