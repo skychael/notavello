@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-14T08:39:16.282Z",
-  "latest_success_at": "2026-08-14T08:39:16.282Z",
+  "generated_at": "2026-08-14T10:19:19.384Z",
+  "latest_success_at": "2026-08-14T10:19:19.384Z",
   "status": "ok",
   "items": [
     {
-      "id": "b3108bb2e1ff8bcb",
-      "title": "Tropical Cyclone Local Statement issued August 13 at 5:06PM HST by NWS Honolulu HI",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.e1fcf84b2366a9614ff56586a876e22c8b964920.001.1.cap",
+      "id": "dfc614a6b4364492",
+      "title": "Tropical Cyclone Local Statement issued August 13 at 10:50PM HST by NWS Honolulu HI",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f1095d1d68f2189131bc79d65b7a98bd360a5b90.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-08-14T03:06:00.000Z",
+      "published_at": "2026-08-14T08:50:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "4b2b916770162216",
-      "title": "Tropical Storm Watch issued August 13 at 4:59PM HST by NWS Honolulu HI",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9ea78cf4dd923432b6956c3dcece53a68a0dbc06.001.1.cap",
+      "id": "097c23c39304eabf",
+      "title": "Tropical Storm Watch issued August 13 at 10:40PM HST by NWS Honolulu HI",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.e9e6c8ce62599b964619696af27218622587cd28.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-08-14T02:59:00.000Z",
+      "published_at": "2026-08-14T08:40:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "81a976f51cd282f7",
-      "title": "Hurricane Warning issued August 13 at 4:59PM HST by NWS Honolulu HI",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9ea78cf4dd923432b6956c3dcece53a68a0dbc06.020.1.cap",
+      "id": "32d27e01eec41586",
+      "title": "Hurricane Warning issued August 13 at 10:40PM HST by NWS Honolulu HI",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.e9e6c8ce62599b964619696af27218622587cd28.020.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-08-14T02:59:00.000Z",
+      "published_at": "2026-08-14T08:40:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
