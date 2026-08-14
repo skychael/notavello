@@ -1,34 +1,34 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-14T02:48:48.366Z",
-  "latest_success_at": "2026-08-14T02:48:48.366Z",
+  "generated_at": "2026-08-14T05:06:52.729Z",
+  "latest_success_at": "2026-08-14T05:06:52.729Z",
   "status": "ok",
   "items": [
     {
-      "id": "72751553d5cfbcfb",
-      "title": "Tropical Cyclone Local Statement issued August 13 at 11:41AM HST by NWS Honolulu HI",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.86024ba3a6af5a23ddb37f97a8a56a343ce49674.001.1.cap",
+      "id": "b3108bb2e1ff8bcb",
+      "title": "Tropical Cyclone Local Statement issued August 13 at 5:06PM HST by NWS Honolulu HI",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.e1fcf84b2366a9614ff56586a876e22c8b964920.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-08-13T21:41:00.000Z",
+      "published_at": "2026-08-14T03:06:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "04d23f606acd91b5",
-      "title": "Hurricane Watch issued August 13 at 11:32AM HST by NWS Honolulu HI",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.edf640a1613ae9ec62036b1d591b3f0a65017bf2.001.1.cap",
+      "id": "4b2b916770162216",
+      "title": "Tropical Storm Watch issued August 13 at 4:59PM HST by NWS Honolulu HI",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9ea78cf4dd923432b6956c3dcece53a68a0dbc06.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-08-13T21:32:00.000Z",
+      "published_at": "2026-08-14T02:59:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "0ad1e71898478e3c",
-      "title": "Flash Flood Warning issued August 13 at 9:39PM EDT until August 13 at 11:30PM EDT by NWS Jackson KY",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.1a87e83c57f3bd8f520fbe611fcde7dd41c842ec.001.1.cap",
+      "id": "81a976f51cd282f7",
+      "title": "Hurricane Warning issued August 13 at 4:59PM HST by NWS Honolulu HI",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9ea78cf4dd923432b6956c3dcece53a68a0dbc06.020.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-08-14T01:39:00.000Z",
-      "topic": "Flooding",
+      "published_at": "2026-08-14T02:59:00.000Z",
+      "topic": "Hurricane",
       "status": "ok"
     }
   ]
