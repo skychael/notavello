@@ -1,9 +1,27 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-15T21:38:12.836Z",
-  "latest_success_at": "2026-08-15T21:38:12.836Z",
+  "generated_at": "2026-08-15T22:40:59.903Z",
+  "latest_success_at": "2026-08-15T22:40:59.903Z",
   "status": "ok",
   "items": [
+    {
+      "id": "5e5cc53399166f78",
+      "title": "Flash Flood Warning issued August 15 at 12:38PM HST until August 15 at 4:00PM HST by NWS Honolulu HI",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.1ede522c4ae4c7faa6c8d38a0a501a0fcb980b9e.001.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-08-15T22:38:00.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "4ffc408e98bb8436",
+      "title": "Tropical Cyclone Local Statement issued August 15 at 11:48AM HST by NWS Honolulu HI",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.5a24895a89b7416638ef735791c9a51d27595d20.001.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-08-15T21:48:00.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
     {
       "id": "f561c8cb124c5139",
       "title": "Tropical Storm Warning issued August 15 at 11:15AM HST by NWS Honolulu HI",
@@ -11,24 +29,6 @@
       "publisher": "National Weather Service",
       "published_at": "2026-08-15T21:15:00.000Z",
       "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "ef1c40416c167d14",
-      "title": "Tropical Cyclone Local Statement issued August 15 at 5:11AM HST by NWS Honolulu HI",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.da1528d72741d87e4aebc4dcad767c8d25001763.001.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-08-15T15:11:00.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "050dc95d9fe4004f",
-      "title": "Record rainfall, floods and outages hit Chiba, leaving at least 8 dead, Japan",
-      "url": "https://watchers.news/2026/08/14/record-rainfall-floods-and-outages-hit-chiba-leaving-at-least-8-dead-japan",
-      "publisher": "The Watchers",
-      "published_at": "2026-08-14T11:04:50.000Z",
-      "topic": "Flooding",
       "status": "ok"
     }
   ]
