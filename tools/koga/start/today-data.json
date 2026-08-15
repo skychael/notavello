@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "08-14",
-  "display_date": "August 14",
-  "generated_at": "2026-08-14T09:28:14.124Z",
+  "date_key": "08-15",
+  "display_date": "August 15",
+  "generated_at": "2026-08-15T08:46:05.193Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-2c387b3c57f4e5d41c38b088",
+      "candidate_id": "event-45418405119ef97db150f3bc",
       "type": "event",
-      "year": 1972,
-      "text": "An Ilyushin Il-62 airliner crashes near Königs Wusterhausen, East Germany killing 156 people.",
-      "article_title": "Interflug Flight 450",
-      "url": "https://en.wikipedia.org/wiki/Interflug_Flight_450",
+      "year": 2013,
+      "text": "At least 27 people are killed and 226 injured in an explosion in southern Beirut near a complex used by Lebanon's militant group Hezbollah in Lebanon. A previously unknown Syrian Sunni group claims responsibility in an online video.",
+      "article_title": "August 2013 Beirut bombing",
+      "url": "https://en.wikipedia.org/wiki/August_2013_Beirut_bombing",
       "category": "World history"
     },
     {
-      "candidate_id": "event-4a4ae1330c6c5570981750b9",
+      "candidate_id": "event-7f654c52074e8da42a19d494",
       "type": "event",
-      "year": 2021,
-      "text": "A magnitude 7.2 earthquake strikes southwestern Haiti, killing at least 2,248 people and causing a humanitarian crisis.",
-      "article_title": "2021 Haiti earthquake",
-      "url": "https://en.wikipedia.org/wiki/2021_Haiti_earthquake",
+      "year": 1939,
+      "text": "Twenty-six Junkers Ju 87 bombers commanded by Walter Sigel meet unexpected ground fog during a dive-bombing demonstration for Luftwaffe generals at Neuhammer. Thirteen of them crash and burn.",
+      "article_title": "Junkers Ju 87",
+      "url": "https://en.wikipedia.org/wiki/Junkers_Ju_87",
       "category": "Disasters and exploration"
     },
     {
-      "candidate_id": "event-ea91662e5dd5cea73d2232db",
+      "candidate_id": "event-c41bdd0c2100ef62724de3a2",
       "type": "event",
-      "year": 1933,
-      "text": "Loggers cause a forest fire in the Coast Range of Oregon, later known as the first forest fire of the Tillamook Burn;  destroying 240,000 acres (970 km2) of land.",
-      "article_title": "Wildfire",
-      "url": "https://en.wikipedia.org/wiki/Wildfire",
-      "category": "World history"
+      "year": 2025,
+      "text": "US president Donald Trump meets with Russian president Vladimir Putin in Alaska, the first such summit since the 2022 Russian invasion of Ukraine.",
+      "article_title": "Donald Trump",
+      "url": "https://en.wikipedia.org/wiki/Donald_Trump",
+      "category": "Politics and society"
     }
   ]
 }
