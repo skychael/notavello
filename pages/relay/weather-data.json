@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-16T09:45:01.712Z",
-  "latest_success_at": "2026-08-16T09:45:01.712Z",
+  "generated_at": "2026-08-16T10:42:37.223Z",
+  "latest_success_at": "2026-08-16T10:42:37.223Z",
   "status": "ok",
   "items": [
     {
@@ -23,11 +23,11 @@
       "status": "ok"
     },
     {
-      "id": "81c7ade08e233395",
-      "title": "Flash Flood Warning issued August 15 at 9:53PM HST until August 16 at 1:00AM HST by NWS Honolulu HI",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.29215418d8d647ef7c8ef5b0474f1f99eace730c.001.1.cap",
+      "id": "76237cb50a597c14",
+      "title": "Flash Flood Warning issued August 15 at 11:44PM HST until August 16 at 1:00AM HST by NWS Honolulu HI",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.20878a6fe9330e16ade6323eeccc2983797e37e2.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-08-16T07:53:00.000Z",
+      "published_at": "2026-08-16T09:44:00.000Z",
       "topic": "Flooding",
       "status": "ok"
     }
