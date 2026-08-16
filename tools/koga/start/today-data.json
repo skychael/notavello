@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "08-15",
-  "display_date": "August 15",
-  "generated_at": "2026-08-15T08:46:05.193Z",
+  "date_key": "08-16",
+  "display_date": "August 16",
+  "generated_at": "2026-08-16T08:48:22.356Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-45418405119ef97db150f3bc",
+      "candidate_id": "event-325a88c71819bf00ed582058",
       "type": "event",
       "year": 2013,
-      "text": "At least 27 people are killed and 226 injured in an explosion in southern Beirut near a complex used by Lebanon's militant group Hezbollah in Lebanon. A previously unknown Syrian Sunni group claims responsibility in an online video.",
-      "article_title": "August 2013 Beirut bombing",
-      "url": "https://en.wikipedia.org/wiki/August_2013_Beirut_bombing",
+      "text": "The ferry St. Thomas Aquinas collides with a cargo ship and sinks at Cebu, Philippines, killing 61 people with 59 others missing.",
+      "article_title": "MV St. Thomas Aquinas",
+      "url": "https://en.wikipedia.org/wiki/MV_St._Thomas_Aquinas",
       "category": "World history"
     },
     {
-      "candidate_id": "event-7f654c52074e8da42a19d494",
+      "candidate_id": "event-3c90f0c87f4fbdfb0a78cc9a",
       "type": "event",
-      "year": 1939,
-      "text": "Twenty-six Junkers Ju 87 bombers commanded by Walter Sigel meet unexpected ground fog during a dive-bombing demonstration for Luftwaffe generals at Neuhammer. Thirteen of them crash and burn.",
-      "article_title": "Junkers Ju 87",
-      "url": "https://en.wikipedia.org/wiki/Junkers_Ju_87",
-      "category": "Disasters and exploration"
+      "year": 1944,
+      "text": "First flight of a jet with forward-swept wings, the Junkers Ju 287.",
+      "article_title": "Forward-swept wing",
+      "url": "https://en.wikipedia.org/wiki/Forward-swept_wing",
+      "category": "World history"
     },
     {
-      "candidate_id": "event-c41bdd0c2100ef62724de3a2",
+      "candidate_id": "event-6cf5d60996dd8f32a85fafcd",
       "type": "event",
-      "year": 2025,
-      "text": "US president Donald Trump meets with Russian president Vladimir Putin in Alaska, the first such summit since the 2022 Russian invasion of Ukraine.",
-      "article_title": "Donald Trump",
-      "url": "https://en.wikipedia.org/wiki/Donald_Trump",
-      "category": "Politics and society"
+      "year": 1960,
+      "text": "Joseph Kittinger parachutes from a balloon over New Mexico, United States, at 102,800 feet (31,300 m), setting three records that held until 2012: High-altitude jump, free fall, and highest speed by a human without an aircraft.",
+      "article_title": "Joseph Kittinger",
+      "url": "https://en.wikipedia.org/wiki/Joseph_Kittinger",
+      "category": "World history"
     }
   ]
 }
