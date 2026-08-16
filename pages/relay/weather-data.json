@@ -1,24 +1,24 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-16T08:49:20.200Z",
-  "latest_success_at": "2026-08-16T08:49:20.200Z",
+  "generated_at": "2026-08-16T09:45:01.712Z",
+  "latest_success_at": "2026-08-16T09:45:01.712Z",
   "status": "ok",
   "items": [
     {
-      "id": "b822bc4f977ebe15",
-      "title": "Tropical Cyclone Local Statement issued August 15 at 8:13PM HST by NWS Honolulu HI",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.0363d2a6555fb7b5cf470a30060d5fc12f562715.001.1.cap",
+      "id": "64ed603782d035d0",
+      "title": "Tropical Cyclone Local Statement issued August 15 at 11:08PM HST by NWS Honolulu HI",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.883f3c4435f6b28b7b35d0a2d1ed0da6880f1472.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-08-16T06:13:00.000Z",
+      "published_at": "2026-08-16T09:08:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "5882184bc5aace19",
-      "title": "Tropical Storm Warning issued August 15 at 8:04PM HST by NWS Honolulu HI",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.4baa81abc0ac9fcdf575b729924258f8b6caa7a5.001.1.cap",
+      "id": "bfc5120ad8f04ee2",
+      "title": "Tropical Storm Warning issued August 15 at 11:00PM HST by NWS Honolulu HI",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.8d62e4da8f3803ebda9c3ff8f6b30469a9c87f28.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-08-16T06:04:00.000Z",
+      "published_at": "2026-08-16T09:00:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
