@@ -1,15 +1,15 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-16T20:41:02.108Z",
-  "latest_success_at": "2026-08-16T20:41:02.108Z",
+  "generated_at": "2026-08-16T21:36:32.747Z",
+  "latest_success_at": "2026-08-16T21:36:32.747Z",
   "status": "ok",
   "items": [
     {
-      "id": "ab99f4cccdb17425",
-      "title": "Tropical Storm Warning issued August 16 at 8:03AM HST by NWS Honolulu HI",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.c70c4d05a4fc55ce5b3425c0291213d049493bc3.001.1.cap",
+      "id": "28edc3ac0650c652",
+      "title": "Tropical Storm Warning issued August 16 at 11:30AM HST by NWS Honolulu HI",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9e1b749f7c925513ac9704bb4bcb141980274d86.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-08-16T18:03:00.000Z",
+      "published_at": "2026-08-16T21:30:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
