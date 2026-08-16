@@ -1,9 +1,18 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-16T04:03:25.766Z",
-  "latest_success_at": "2026-08-16T04:03:25.766Z",
+  "generated_at": "2026-08-16T04:51:46.068Z",
+  "latest_success_at": "2026-08-16T04:51:46.068Z",
   "status": "ok",
   "items": [
+    {
+      "id": "3d9b7e990e57e732",
+      "title": "Flash Flood Warning issued August 15 at 6:49PM HST until August 15 at 10:00PM HST by NWS Honolulu HI",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.7f9b54e541720021bbe546f1b5f56fc0aab08c55.001.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-08-16T04:49:00.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
     {
       "id": "18313de898c62b54",
       "title": "Tropical Cyclone Local Statement issued August 15 at 5:38PM HST by NWS Honolulu HI",
@@ -19,15 +28,6 @@
       "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.e658bb895a6635a8d387340cf9c9b9586fc30dee.001.1.cap",
       "publisher": "National Weather Service",
       "published_at": "2026-08-16T03:28:00.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "53bd79ecda99df15",
-      "title": "Flash Flood Warning issued August 15 at 3:49PM HST until August 15 at 7:00PM HST by NWS Honolulu HI",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.bf8c6a98c7be7ef2ae8db4a7e5b043ac1d0ea828.001.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-08-16T01:49:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
