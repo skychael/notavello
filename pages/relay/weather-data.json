@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-16T03:14:34.521Z",
-  "latest_success_at": "2026-08-16T03:14:34.521Z",
+  "generated_at": "2026-08-16T04:03:25.766Z",
+  "latest_success_at": "2026-08-16T04:03:25.766Z",
   "status": "ok",
   "items": [
+    {
+      "id": "18313de898c62b54",
+      "title": "Tropical Cyclone Local Statement issued August 15 at 5:38PM HST by NWS Honolulu HI",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.929214da868621cef342a03f299f9bf3d1a26bde.001.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-08-16T03:38:00.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "d6fcd1d72c496ba2",
+      "title": "Tropical Storm Warning issued August 15 at 5:28PM HST by NWS Honolulu HI",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.e658bb895a6635a8d387340cf9c9b9586fc30dee.001.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-08-16T03:28:00.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
     {
       "id": "53bd79ecda99df15",
       "title": "Flash Flood Warning issued August 15 at 3:49PM HST until August 15 at 7:00PM HST by NWS Honolulu HI",
       "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.bf8c6a98c7be7ef2ae8db4a7e5b043ac1d0ea828.001.1.cap",
       "publisher": "National Weather Service",
       "published_at": "2026-08-16T01:49:00.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "4ffc408e98bb8436",
-      "title": "Tropical Cyclone Local Statement issued August 15 at 11:48AM HST by NWS Honolulu HI",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.5a24895a89b7416638ef735791c9a51d27595d20.001.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-08-15T21:48:00.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "f561c8cb124c5139",
-      "title": "Tropical Storm Warning issued August 15 at 11:15AM HST by NWS Honolulu HI",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.4e1276a743bb215b2d7b6f94c383dba8ab04b337.001.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-08-15T21:15:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
