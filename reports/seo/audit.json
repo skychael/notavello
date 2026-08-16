@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-15T02:35:24.549Z",
+  "generatedAt": "2026-08-16T02:44:41.450Z",
   "totals": {
-    "pages": 215,
-    "indexable": 211,
-    "articles": 146,
-    "sitemap": 211,
+    "pages": 217,
+    "indexable": 213,
+    "articles": 148,
+    "sitemap": 213,
     "errors": 0,
-    "warnings": 120
+    "warnings": 124
   },
   "errors": [],
   "warnings": [
@@ -19,6 +19,16 @@
       "type": "template-pattern",
       "page": "/pages/blog/a-practical-way-to-audit-app-permissions-on-a-computer/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/a-safe-workflow-for-cleaning-up-old-git-branches/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/a-safe-workflow-for-cleaning-up-old-git-branches/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
     },
     {
       "type": "template-pattern",
@@ -511,6 +521,16 @@
       "detail": "title/description lacks a clear AI, software, or computing connection"
     },
     {
+      "type": "template-pattern",
+      "page": "/pages/blog/suez-detour-oil-bottleneck/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/suez-detour-oil-bottleneck/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
       "type": "topic-review",
       "page": "/pages/blog/ubuntu-4-digit-pin-login/",
       "detail": "title/description lacks a clear AI, software, or computing connection"
@@ -620,7 +640,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 215,
+      "incomingLinks": 217,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -644,7 +664,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 215,
+      "incomingLinks": 217,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -752,7 +772,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 215,
+      "incomingLinks": 217,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -764,9 +784,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 215,
-      "lastmod": "2026-08-14",
-      "bodyWords": 684
+      "incomingLinks": 217,
+      "lastmod": "2026-08-15",
+      "bodyWords": 681
     },
     {
       "route": "/pages/blog/a-practical-checklist-for-checking-ai-generated-technical-answers/",
@@ -791,6 +811,18 @@
       "incomingLinks": 2,
       "lastmod": "2026-08-03",
       "bodyWords": 1026
+    },
+    {
+      "route": "/pages/blog/a-safe-workflow-for-cleaning-up-old-git-branches/",
+      "file": "pages/blog/a-safe-workflow-for-cleaning-up-old-git-branches/index.html",
+      "title": "A safe workflow for cleaning up old Git branches — The Export | Notavello",
+      "description": "Identify merged branches, preserve active work, and safely clean local and remote Git references with this practical workflow.",
+      "canonical": "https://notavello.com/pages/blog/a-safe-workflow-for-cleaning-up-old-git-branches/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-08-15",
+      "bodyWords": 874
     },
     {
       "route": "/pages/blog/ai-advice-needs-an-i-dont-know-step/",
@@ -1016,9 +1048,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 85,
-      "lastmod": "2026-08-14",
-      "bodyWords": 1896
+      "incomingLinks": 87,
+      "lastmod": "2026-08-15",
+      "bodyWords": 1919
     },
     {
       "route": "/pages/blog/apple-speechanalyzer-local-transcription-apps/",
@@ -1052,7 +1084,7 @@
       "canonical": "https://notavello.com/pages/blog/bab-el-mandeb-hormuz-backup-problem/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 2,
+      "incomingLinks": 3,
       "lastmod": "2026-08-08",
       "bodyWords": 1594
     },
@@ -2049,8 +2081,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-14",
-      "bodyWords": 673
+      "lastmod": "2026-08-15",
+      "bodyWords": 674
     },
     {
       "route": "/pages/blog/page-3/",
@@ -2061,8 +2093,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-14",
-      "bodyWords": 645
+      "lastmod": "2026-08-15",
+      "bodyWords": 649
     },
     {
       "route": "/pages/blog/page-4/",
@@ -2073,8 +2105,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-14",
-      "bodyWords": 689
+      "lastmod": "2026-08-15",
+      "bodyWords": 690
     },
     {
       "route": "/pages/blog/page-5/",
@@ -2085,8 +2117,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-14",
-      "bodyWords": 681
+      "lastmod": "2026-08-15",
+      "bodyWords": 680
     },
     {
       "route": "/pages/blog/page-6/",
@@ -2097,8 +2129,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-14",
-      "bodyWords": 794
+      "lastmod": "2026-08-15",
+      "bodyWords": 779
     },
     {
       "route": "/pages/blog/page-7/",
@@ -2109,8 +2141,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-14",
-      "bodyWords": 838
+      "lastmod": "2026-08-15",
+      "bodyWords": 830
     },
     {
       "route": "/pages/blog/page-8/",
@@ -2121,8 +2153,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-14",
-      "bodyWords": 883
+      "lastmod": "2026-08-15",
+      "bodyWords": 872
     },
     {
       "route": "/pages/blog/page-9/",
@@ -2133,8 +2165,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": null,
-      "bodyWords": 128
+      "lastmod": "2026-08-15",
+      "bodyWords": 230
     },
     {
       "route": "/pages/blog/rootless-containers-ai-service-boundary/",
@@ -2255,6 +2287,18 @@
       "incomingLinks": 2,
       "lastmod": "2026-07-11",
       "bodyWords": 1375
+    },
+    {
+      "route": "/pages/blog/suez-detour-oil-bottleneck/",
+      "file": "pages/blog/suez-detour-oil-bottleneck/index.html",
+      "title": "The Suez Detour Is Now The Oil Bottleneck — The Export | Notavello",
+      "description": "Red Sea attacks are pushing oil toward Suez and SUMED, turning a workaround into a freight and fuel-price risk.",
+      "canonical": "https://notavello.com/pages/blog/suez-detour-oil-bottleneck/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-08-16",
+      "bodyWords": 1410
     },
     {
       "route": "/pages/blog/the-bot-tax-is-coming/",
@@ -2636,7 +2680,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 215,
+      "incomingLinks": 217,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -2648,7 +2692,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 215,
+      "incomingLinks": 217,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -2660,7 +2704,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 215,
+      "incomingLinks": 217,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -2672,7 +2716,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 215,
+      "incomingLinks": 217,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -2684,7 +2728,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 215,
+      "incomingLinks": 217,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -2697,8 +2741,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-08-15",
-      "bodyWords": 157
+      "lastmod": "2026-08-16",
+      "bodyWords": 163
     },
     {
       "route": "/pages/sample",
@@ -2720,7 +2764,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 215,
+      "incomingLinks": 217,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -2732,7 +2776,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 215,
+      "incomingLinks": 217,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -2756,7 +2800,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 215,
+      "incomingLinks": 217,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -3188,7 +3232,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 215,
+      "incomingLinks": 217,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }
