@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "checked_at": "2026-08-17T16:48:38.755Z",
-  "latest_success_at": "2026-08-17T16:48:38.755Z",
+  "checked_at": "2026-08-17T17:46:41.139Z",
+  "latest_success_at": "2026-08-17T17:46:41.139Z",
   "status": "ok",
   "items": [
     {
@@ -21,27 +21,27 @@
       "status": "ok"
     },
     {
-      "title": "UAE Says Iran Attacked Another ADNOC Vessel In Hormuz",
-      "url": "https://gcaptain.com/uae-says-iran-attacked-another-adnoc-vessel-in-hormuz",
-      "publisher": "gCaptain",
-      "published_at": "2026-08-15T19:25:07.000Z",
-      "source_id": "gcaptain",
-      "status": "ok"
-    },
-    {
-      "title": "Have Middle East Oil Flows Rebounded to 15 Million Bpd as U.S. Claims?",
-      "url": "https://oilprice.com/Energy/Crude-Oil/Have-Middle-East-Oil-Flows-Rebounded-to-15-Million-Bpd-as-US-Claims.html",
-      "publisher": "OilPrice.com",
-      "published_at": "2026-08-16T23:00:00.000Z",
-      "source_id": "oilprice",
-      "status": "ok"
-    },
-    {
       "title": "Two More Tankers Attacked in the Strait of Hormuz",
       "url": "https://maritime-executive.com/article/two-more-tankers-attacked-in-the-strait-of-hormuz",
       "publisher": "The Maritime Executive",
       "published_at": "2026-08-14T23:04:00.000Z",
       "source_id": "maritime-executive",
+      "status": "ok"
+    },
+    {
+      "title": "Iraq-Syria Oil Pipeline to Bypass Hormuz Is 4 Years and $15 Billion Away",
+      "url": "https://oilprice.com/Latest-Energy-News/World-News/Iraq-Syria-Oil-Pipeline-to-Bypass-Hormuz-Is-4-Years-and-15-Billion-Away.html",
+      "publisher": "OilPrice.com",
+      "published_at": "2026-08-17T14:30:00.000Z",
+      "source_id": "oilprice",
+      "status": "ok"
+    },
+    {
+      "title": "Hormuz Ship Attacks Mount As US Vows To Cripple Iran Economy",
+      "url": "https://gcaptain.com/hormuz-ship-attacks-mount-as-us-vows-to-cripple-iran-economy",
+      "publisher": "gCaptain",
+      "published_at": "2026-08-15T21:38:43.000Z",
+      "source_id": "gcaptain",
       "status": "ok"
     },
     {
@@ -53,6 +53,14 @@
       "status": "ok"
     },
     {
+      "title": "What China’s PLA says it is learning from the Iran war",
+      "url": "https://breakingdefense.com/2026/08/what-chinas-pla-says-it-is-learning-from-the-iran-war",
+      "publisher": "Breaking Defense",
+      "published_at": "2026-08-17T17:19:00.000Z",
+      "source_id": "breaking-defense",
+      "status": "ok"
+    },
+    {
       "title": "America is sailing through the Taiwan Strait less. Does it matter?",
       "url": "https://breakingdefense.com/2026/08/america-is-sailing-through-the-taiwan-strait-less-does-it-matter",
       "publisher": "Breaking Defense",
@@ -61,26 +69,18 @@
       "status": "ok"
     },
     {
-      "title": "Hunt For New Lower-Cost Strike Missile With 1,000-Kilometer Range Underway By U.S. Army",
-      "url": "https://www.twz.com/land/hunt-for-new-lower-cost-strike-missile-with-1000-kilometer-range-underway-by-u-s-army",
-      "publisher": "TWZ (The War Zone)",
-      "published_at": "2026-08-14T16:59:10.000Z",
-      "source_id": "twz",
-      "status": "ok"
-    },
-    {
-      "title": "Trump scales back military exercise with S Korea, calling it ‘costly’ and ‘hostile’ to the North",
-      "url": "https://breakingdefense.com/2026/08/trump-scales-back-military-exercise-with-s-korea-calling-it-costly-and-hostile-to-the-north",
-      "publisher": "Breaking Defense",
-      "published_at": "2026-08-17T16:14:35.000Z",
-      "source_id": "breaking-defense",
-      "status": "ok"
-    },
-    {
       "title": "Major M7.7 earthquake hits Flores region, Indonesia, leaving at least 47 dead",
       "url": "https://watchers.news/2026/08/14/major-m7-7-earthquake-hits-flores-region-indonesia-tsunami-potential-reported",
       "publisher": "The Watchers",
       "published_at": "2026-08-14T22:48:12.000Z",
+      "source_id": "the-watchers",
+      "status": "ok"
+    },
+    {
+      "title": "M6.1 earthquake hits Vanuatu at intermediate depth",
+      "url": "https://watchers.news/2026/08/16/m6-1-earthquake-hits-vanuatu-at-intermediate-depth-3",
+      "publisher": "The Watchers",
+      "published_at": "2026-08-16T06:46:13.000Z",
       "source_id": "the-watchers",
       "status": "ok"
     }
