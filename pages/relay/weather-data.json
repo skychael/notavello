@@ -1,15 +1,24 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-17T01:56:58.875Z",
-  "latest_success_at": "2026-08-17T01:56:58.875Z",
+  "generated_at": "2026-08-17T03:14:33.838Z",
+  "latest_success_at": "2026-08-17T03:14:33.838Z",
   "status": "ok",
   "items": [
     {
-      "id": "b1ec6941ee04300e",
-      "title": "Tropical Storm Warning issued August 16 at 2:00PM HST by NWS Honolulu HI",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.888f9bddc6702f799a619254a76ea234c7fc3b0f.001.1.cap",
+      "id": "8f0e448040cf9a27",
+      "title": "Tropical Cyclone Local Statement issued August 16 at 4:52PM HST by NWS Honolulu HI",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2eb06f5dafa25ee57d007417c80f460e8ccccc28.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-08-17T00:00:00.000Z",
+      "published_at": "2026-08-17T02:52:00.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "f6540eb8eac8b317",
+      "title": "Tropical Storm Warning issued August 16 at 4:45PM HST by NWS Honolulu HI",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.8476b834d2b8e8dd07a236ecd9699e8c87895838.001.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-08-17T02:45:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
@@ -17,15 +26,6 @@
       "id": "41b50973dc70a6ba",
       "title": "Flood Warning issued August 16 at 9:32PM EDT until August 21 at 12:30PM EDT by NWS Indianapolis IN",
       "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2dd7236710678d21796470ea546268c9e26315a8.003.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-08-17T01:32:00.000Z",
-      "topic": "Flooding",
-      "status": "ok"
-    },
-    {
-      "id": "7575f7cf8825dab5",
-      "title": "Flood Warning issued August 16 at 9:32PM EDT until August 21 at 8:51PM EDT by NWS Indianapolis IN",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2dd7236710678d21796470ea546268c9e26315a8.004.1.cap",
       "publisher": "National Weather Service",
       "published_at": "2026-08-17T01:32:00.000Z",
       "topic": "Flooding",
