@@ -1,15 +1,15 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-18T15:48:39.650Z",
-  "latest_success_at": "2026-08-18T15:48:39.650Z",
+  "generated_at": "2026-08-18T16:50:49.999Z",
+  "latest_success_at": "2026-08-18T16:50:49.999Z",
   "status": "ok",
   "items": [
     {
-      "id": "01e81ff3fc9c4dba",
-      "title": "Hurricane Warning issued for Hawaiʻi Island as Tropical Storm Lala strengthens",
-      "url": "https://watchers.news/2026/08/14/hurricane-warning-issued-for-hawai%ca%bbi-island-as-tropical-storm-lala-strengthens",
+      "id": "23645ba11d205148",
+      "title": "Hurricane Lala leaves one dead, more than 100 homes damaged or destroyed in Hawaii",
+      "url": "https://watchers.news/2026/08/18/hurricane-lala-leaves-one-dead-more-than-100-homes-damaged-destroyed-hawaii",
       "publisher": "The Watchers",
-      "published_at": "2026-08-14T11:35:24.000Z",
+      "published_at": "2026-08-18T16:20:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
@@ -23,12 +23,12 @@
       "status": "ok"
     },
     {
-      "id": "2e198abaa92a3204",
-      "title": "Extreme Heat Warning issued August 18 at 9:16AM CDT until August 18 at 8:00PM CDT by NWS Mobile AL",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.5c50450b45755c5fd3b265abad8604293e65ebd2.001.1.cap",
+      "id": "84830b2816d6836f",
+      "title": "Flood Warning issued August 18 at 12:43PM EDT until August 25 at 3:23PM EDT by NWS Indianapolis IN",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.7726b79c7444416d75ba6b98834ca01e4aae351b.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-08-18T14:16:00.000Z",
-      "topic": "Heat",
+      "published_at": "2026-08-18T16:43:00.000Z",
+      "topic": "Flooding",
       "status": "ok"
     }
   ]
