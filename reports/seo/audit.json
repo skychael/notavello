@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-17T02:44:58.290Z",
+  "generatedAt": "2026-08-18T02:39:19.713Z",
   "totals": {
-    "pages": 219,
-    "indexable": 215,
-    "articles": 150,
-    "sitemap": 215,
+    "pages": 221,
+    "indexable": 217,
+    "articles": 152,
+    "sitemap": 217,
     "errors": 0,
-    "warnings": 128
+    "warnings": 130
   },
   "errors": [],
   "warnings": [
@@ -162,6 +162,11 @@
     },
     {
       "type": "template-pattern",
+      "page": "/pages/blog/diesel-exports-are-keeping-the-fuel-bill-hot/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "template-pattern",
       "page": "/pages/blog/diesel-is-the-hormuz-tax-you-feel-first/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
@@ -294,6 +299,11 @@
       "type": "topic-review",
       "page": "/pages/blog/how-environment-files-work-and-how-to-keep-secrets-out-of-git/",
       "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/how-github-actions-dependency-caching-works/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
     {
       "type": "template-pattern",
@@ -660,7 +670,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 219,
+      "incomingLinks": 221,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -684,7 +694,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 219,
+      "incomingLinks": 221,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -792,7 +802,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 219,
+      "incomingLinks": 221,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -804,9 +814,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 219,
-      "lastmod": "2026-08-16",
-      "bodyWords": 683
+      "incomingLinks": 221,
+      "lastmod": "2026-08-17",
+      "bodyWords": 681
     },
     {
       "route": "/pages/blog/a-practical-checklist-for-checking-ai-generated-technical-answers/",
@@ -1068,9 +1078,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 89,
-      "lastmod": "2026-08-16",
-      "bodyWords": 1944
+      "incomingLinks": 91,
+      "lastmod": "2026-08-17",
+      "bodyWords": 1964
     },
     {
       "route": "/pages/blog/apple-speechanalyzer-local-transcription-apps/",
@@ -1323,6 +1333,18 @@
       "incomingLinks": 2,
       "lastmod": "2026-07-15",
       "bodyWords": 1474
+    },
+    {
+      "route": "/pages/blog/diesel-exports-are-keeping-the-fuel-bill-hot/",
+      "file": "pages/blog/diesel-exports-are-keeping-the-fuel-bill-hot/index.html",
+      "title": "Diesel Exports Are Keeping The Fuel Bill Hot — The Export | Notavello",
+      "description": "EIA data shows diesel exports high, inventories thin and diesel above $5, even after crude stocks jumped.",
+      "canonical": "https://notavello.com/pages/blog/diesel-exports-are-keeping-the-fuel-bill-hot/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-08-18",
+      "bodyWords": 1393
     },
     {
       "route": "/pages/blog/diesel-is-the-hormuz-tax-you-feel-first/",
@@ -1671,6 +1693,18 @@
       "incomingLinks": 2,
       "lastmod": "2026-08-09",
       "bodyWords": 866
+    },
+    {
+      "route": "/pages/blog/how-github-actions-dependency-caching-works/",
+      "file": "pages/blog/how-github-actions-dependency-caching-works/index.html",
+      "title": "How GitHub Actions dependency caching works — The Export | Notavello",
+      "description": "Learn how GitHub Actions cache keys, restore keys, and invalidation rules speed up builds while avoiding stale dependency caches.",
+      "canonical": "https://notavello.com/pages/blog/how-github-actions-dependency-caching-works/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-08-17",
+      "bodyWords": 837
     },
     {
       "route": "/pages/blog/how-semantic-versioning-helps-and-where-it-cannot-protect-you/",
@@ -2113,8 +2147,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-16",
-      "bodyWords": 681
+      "lastmod": "2026-08-17",
+      "bodyWords": 675
     },
     {
       "route": "/pages/blog/page-3/",
@@ -2125,8 +2159,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-16",
-      "bodyWords": 643
+      "lastmod": "2026-08-17",
+      "bodyWords": 645
     },
     {
       "route": "/pages/blog/page-4/",
@@ -2137,8 +2171,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-16",
-      "bodyWords": 677
+      "lastmod": "2026-08-17",
+      "bodyWords": 669
     },
     {
       "route": "/pages/blog/page-5/",
@@ -2149,8 +2183,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-16",
-      "bodyWords": 693
+      "lastmod": "2026-08-17",
+      "bodyWords": 698
     },
     {
       "route": "/pages/blog/page-6/",
@@ -2161,8 +2195,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-16",
-      "bodyWords": 767
+      "lastmod": "2026-08-17",
+      "bodyWords": 755
     },
     {
       "route": "/pages/blog/page-7/",
@@ -2173,8 +2207,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-16",
-      "bodyWords": 824
+      "lastmod": "2026-08-17",
+      "bodyWords": 826
     },
     {
       "route": "/pages/blog/page-8/",
@@ -2185,8 +2219,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-16",
-      "bodyWords": 871
+      "lastmod": "2026-08-17",
+      "bodyWords": 859
     },
     {
       "route": "/pages/blog/page-9/",
@@ -2197,8 +2231,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": "2026-08-16",
-      "bodyWords": 322
+      "lastmod": "2026-08-17",
+      "bodyWords": 419
     },
     {
       "route": "/pages/blog/rebase-or-merge-how-to-choose-for-an-ordinary-git-branch/",
@@ -2304,7 +2338,7 @@
       "canonical": "https://notavello.com/pages/blog/spr-drawdown-is-now-the-oil-cushion/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 3,
+      "incomingLinks": 4,
       "lastmod": "2026-08-11",
       "bodyWords": 1419
     },
@@ -2724,7 +2758,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 219,
+      "incomingLinks": 221,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -2736,7 +2770,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 219,
+      "incomingLinks": 221,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -2748,7 +2782,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 219,
+      "incomingLinks": 221,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -2760,7 +2794,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 219,
+      "incomingLinks": 221,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -2772,7 +2806,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 219,
+      "incomingLinks": 221,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -2785,8 +2819,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-08-17",
-      "bodyWords": 169
+      "lastmod": "2026-08-18",
+      "bodyWords": 175
     },
     {
       "route": "/pages/sample",
@@ -2808,7 +2842,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 219,
+      "incomingLinks": 221,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -2820,7 +2854,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 219,
+      "incomingLinks": 221,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -2844,7 +2878,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 219,
+      "incomingLinks": 221,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -3276,7 +3310,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 219,
+      "incomingLinks": 221,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }

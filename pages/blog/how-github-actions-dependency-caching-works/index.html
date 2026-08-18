@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>How GitHub Actions dependency caching works — The Export | Notavello</title>
+<meta name="description" content="Learn how GitHub Actions cache keys, restore keys, and invalidation rules speed up builds while avoiding stale dependency caches."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/blog/how-github-actions-dependency-caching-works/"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2026-08-17T09:05:00.018Z"/>
+<meta property="article:modified_time" content="2026-08-17T09:05:00.018Z"/>
+<meta name="notavello:published_at" content="2026-08-17T09:05:00.018Z"/>
+<meta name="syndication-origin-site" content="toysforbots"/>
+<meta name="syndication-origin-id" content="toysforbots:how-github-actions-dependency-caching-works"/>
+<meta name="syndication-origin-slug" content="how-github-actions-dependency-caching-works"/>
+<meta name="syndication-origin-url" content="https://toysforbots.com/blog/how-github-actions-dependency-caching-works/"/>
+<meta name="syndication-source-format" content="toysforbots-syndication-v1"/>
+<meta property="og:url" content="https://notavello.com/pages/blog/how-github-actions-dependency-caching-works/"/>
+<meta property="og:title" content="How GitHub Actions dependency caching works"/>
+<meta property="og:description" content="Learn how GitHub Actions cache keys, restore keys, and invalidation rules speed up builds while avoiding stale dependency caches."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="How GitHub Actions dependency caching works"/>
+<meta name="twitter:description" content="Learn how GitHub Actions cache keys, restore keys, and invalidation rules speed up builds while avoiding stale dependency caches."/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "How GitHub Actions dependency caching works",
+  "description": "Learn how GitHub Actions cache keys, restore keys, and invalidation rules speed up builds while avoiding stale dependency caches.",
+  "url": "https://notavello.com/pages/blog/how-github-actions-dependency-caching-works/",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://notavello.com/pages/blog/how-github-actions-dependency-caching-works/" },
+  "image": "https://notavello.com/og-image.png",
+  "datePublished": "2026-08-17T09:05:00.018Z",
+  "dateModified": "2026-08-17T09:05:00.018Z",
+  "author": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" },
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com", "logo": { "@type": "ImageObject", "url": "https://notavello.com/og-image.png" } }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
+.post-nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; row-gap: 8px; }
+.post-nav-top { margin-bottom: 40px; }
+.post-nav-bottom { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--border); }
+.post-nav a { display: inline-flex; align-items: center; gap: 6px; font-size: 0.92rem; font-weight: 600; color: var(--ink-muted); text-decoration: none; padding: 12px 14px; border-radius: var(--radius-sm); white-space: nowrap; transition: color 0.15s, background 0.15s; }
+.post-nav a:hover { color: var(--accent); background: var(--accent-light); }
+.post-nav a:first-child { padding-left: 0; }
+.post-nav a:last-child { padding-right: 0; justify-content: flex-end; }
+.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
+.post-date { font-size: 0.78rem; color: var(--ink-faint); }
+.post-title { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; color: var(--ink); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
+.post-lede { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+.post-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink); }
+.post-body h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 44px 0 16px; letter-spacing: -0.01em; }
+.post-body p { margin-bottom: 20px; color: var(--ink-muted); }
+.post-body p strong { color: var(--ink); font-weight: 600; }
+.post-body ul { margin: 0 0 20px 20px; color: var(--ink-muted); }
+.post-body ul li { margin-bottom: 8px; line-height: 1.7; }
+.callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 32px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.7; }
+.post-footer { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.post-footer-label { font-size: 0.8rem; color: var(--ink-faint); }
+.btn-export { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: opacity 0.2s; }
+.btn-export:hover { opacity: 0.9; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } .post-nav a { padding: 12px 8px; font-size: 0.88rem; } }
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+
+  <nav class="post-nav post-nav-top">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+  <div class="post-meta">
+    <span class="post-tag">Git and GitHub</span>
+    <span class="post-date">August 17, 2026</span>
+  </div>
+
+  <h1 class="post-title">How GitHub Actions dependency caching works</h1>
+
+  <p class="post-lede">GitHub Actions dependency caching stores files such as package directories between workflow runs so later jobs avoid repeating slow install steps. The action matches a primary key first; when that key misses, it falls back to restore keys that match a prefix. This design lets teams reuse a recent cache even after small dependency changes, cutting build time without manual intervention. The cache is scoped to the key, version, and branch, with the default branch cache visible to other branches. A repository can hold up to 10 GB of caches; entries untouched for seven days are evicted automatically. Because caches are immutable, any change to the key creates a new entry rather than updating an existing one.</p>
+
+  <div class="post-body">
+
+<h2>How cache keys control exact matches</h2>
+<p>A cache key is an explicit string that identifies a cache entry. You build the key from context values such as runner.os, hashFiles of a lockfile, or commit SHA. When the key matches an existing entry exactly, the action restores the cached files and sets the cache-hit output to true. Subsequent steps can then skip install commands. If the key does not match, the step reports a miss and the workflow continues to the next restore-keys entry or creates a fresh cache at the end of the job.</p><ul><li>Use hashFiles(&#039;**/package-lock.json&#039;) to tie the key to the exact set of dependencies.</li><li>Add runner.os or runner.arch when the same lockfile produces different artifacts on different platforms.</li><li>Avoid github.run_id or github.sha in the primary key unless you intend a new cache on every push.</li></ul><div class="callout"><strong>Note</strong> Assigning different path values for save and restore steps produces a cache miss. Use the same path list in both restore and save actions.</div>
+<h2>Restore keys provide fallback matches</h2>
+<p>Restore keys are an ordered list of prefix strings. When the primary key misses, the action tries each restore key in order and restores the most recent cache whose key begins with the prefix. This mechanism supplies a usable set of dependencies even after a lockfile change, so only the delta needs to be downloaded. The restored cache is still read-only; a new cache is saved only under the original primary key if the job succeeds.</p><ul><li>List the most specific prefix first, then broader prefixes.</li><li>A typical pattern is cache-npm-${{ hashFiles(&#039;**/package-lock.json&#039;) }} followed by cache-npm-.</li><li>The action returns the matched key in the outputs so later steps can decide whether to run install commands.</li></ul>
+<h2>Cache invalidation and updates</h2>
+<p>Because every cache entry is immutable, changing the primary key is the only way to create a new cache. When a lockfile hash changes, the next run uses a new key and saves a fresh cache. If you need to refresh a cache on every commit, generate a unique key with github.run_id and rely on restore keys to pull the previous state. This approach consumes quota quickly but guarantees the latest files are cached. Read-only tokens, common on pull requests from forks, prevent saves while still allowing restores.</p><ul><li>Caches scoped to a feature branch are not visible to the default branch until merged.</li><li>Version mismatches occur when compression settings or runner OS differ; a Windows cache cannot be restored on Ubuntu.</li><li>Use the cache-hit output to exit early or to skip install steps only on exact matches.</li></ul>
+<h2>Common stale-cache mistakes</h2>
+<p>Teams often include volatile values such as github.run_number in the primary key, producing a cache miss on every run. Another frequent error is changing the path list between restore and save steps, which silently creates a new cache instead of reusing the intended one. Overly broad restore keys can pull an ancient cache that no longer contains current transitive dependencies, leading to subtle test failures. Finally, relying on a single job to populate caches for the entire repository can hit rate limits or token restrictions when that job runs from a fork.</p><ul><li>Never embed timestamps or run IDs in the primary key unless you deliberately want a fresh cache each time.</li><li>Keep path lists identical in restore and save actions.</li><li>Test restore-key behavior by temporarily deleting the lockfile hash and confirming the fallback cache is restored.</li></ul>
+<h2>Practical workflow patterns</h2>
+<p>A common pattern restores with a lockfile hash key and a short restore-keys prefix, then installs only on cache miss. Another pattern uses a centralized cache job that runs on the default branch with write permissions while other jobs use read-only tokens. When lockfiles are generated during the build, compute the key inside the save step rather than the restore step. Always place the cache action before any step that needs the cached files.</p><ul><li>Check steps.restore-cache.outputs.cache-hit != &#039;true&#039; before running install commands.</li><li>Store the output of the restore action and pass it to the save action to avoid recomputing the key.</li><li>Limit cache size by excluding unnecessary directories such as node_modules/.cache.</li></ul><h2>Sources</h2><ul><li><a href="https://github.com/actions/cache" rel="noopener noreferrer">actions/cache</a></li><li><a href="https://github.com/actions/cache/blob/main/caching-strategies.md" rel="noopener noreferrer">actions/cache caching-strategies</a></li><li><a href="https://github.com/actions/cache/blob/main/tips-and-workarounds.md" rel="noopener noreferrer">actions/cache tips-and-workarounds</a></li></ul>
+
+  </div>
+
+  <div class="post-footer">
+    <span class="post-footer-label">Looking for more AI tools?</span>
+    <a class="btn-export" href="/">See our free AI tools →</a>
+  </div>
+
+  <nav class="post-nav post-nav-bottom">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+</main>
+
+<!--FOOTER-->
+
+</body>
+</html>
