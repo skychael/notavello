@@ -1,36 +1,36 @@
 {
   "schema_version": "1.0",
-  "date_key": "08-17",
-  "display_date": "August 17",
-  "generated_at": "2026-08-17T09:01:29.131Z",
+  "date_key": "08-18",
+  "display_date": "August 18",
+  "generated_at": "2026-08-18T08:54:08.381Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-1951ae4dad8819c540be4e79",
+      "candidate_id": "event-143045226ac200aea11875ed",
       "type": "event",
-      "year": 1943,
-      "text": "World War II: The Royal Air Force begins Operation Hydra, the first air raid of the Operation Crossbow strategic bombing campaign against Germany's V-weapon program.",
-      "article_title": "Royal Air Force",
-      "url": "https://en.wikipedia.org/wiki/Royal_Air_Force",
+      "year": 1945,
+      "text": "Soviet-Japanese War: Battle of Shumshu: Soviet forces land at Takeda Beach on Shumshu Island and launch the Battle of Shumshu; the Soviet Union's Invasion of the Kuril Islands commences.",
+      "article_title": "Soviet–Japanese War",
+      "url": "https://en.wikipedia.org/wiki/Soviet%E2%80%93Japanese_War",
       "category": "World history"
     },
     {
-      "candidate_id": "event-60d6ac364fef2815d6733c51",
+      "candidate_id": "event-27190b0b18ecdc87f748f6b1",
       "type": "event",
-      "year": 1958,
-      "text": "Pioneer 0, America's first attempt at lunar orbit, is launched using the first Thor-Able rocket and fails. Notable as one of the first attempted launches beyond Earth orbit by any country.",
-      "article_title": "Pioneer 0",
-      "url": "https://en.wikipedia.org/wiki/Pioneer_0",
-      "category": "World history"
+      "year": 2003,
+      "text": "One-year-old Zachary Turner is murdered in Newfoundland by his mother, who was awarded custody despite facing trial for the murder of Zachary's father. The case was documented in the film Dear Zachary and led to reform of Canada's bail laws.",
+      "article_title": "Murders of Andrew Bagby and Zachary Turner",
+      "url": "https://en.wikipedia.org/wiki/Murders_of_Andrew_Bagby_and_Zachary_Turner",
+      "category": "Culture and notable people"
     },
     {
-      "candidate_id": "event-ad6cf3367b330292476029f1",
+      "candidate_id": "event-5b4aee7bfdd4140c66330921",
       "type": "event",
-      "year": 1977,
-      "text": "The Soviet icebreaker Arktika becomes the first surface ship to reach the North Pole.",
-      "article_title": "Arktika (1972 icebreaker)",
-      "url": "https://en.wikipedia.org/wiki/Arktika_(1972_icebreaker)",
+      "year": 1965,
+      "text": "Vietnam War: Operation Starlite begins: United States Marines destroy a Viet Cong stronghold on the Van Tuong peninsula in the first major American ground battle of the war.",
+      "article_title": "Vietnam War",
+      "url": "https://en.wikipedia.org/wiki/Vietnam_War",
       "category": "World history"
     }
   ]
