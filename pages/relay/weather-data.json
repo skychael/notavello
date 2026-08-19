@@ -1,15 +1,15 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-19T04:54:31.834Z",
-  "latest_success_at": "2026-08-19T04:54:31.834Z",
+  "generated_at": "2026-08-19T05:48:40.760Z",
+  "latest_success_at": "2026-08-19T05:48:40.760Z",
   "status": "ok",
   "items": [
     {
-      "id": "ee8e390990a944fc",
-      "title": "Eastern North Pacific Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
+      "id": "b5ad93019d019ede",
+      "title": "Atlantic Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-08-18T23:17:21.000Z",
+      "published_at": "2026-08-19T05:25:58.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
@@ -27,7 +27,7 @@
       "title": "SPC Severe Thunderstorm Watch 598",
       "url": "https://www.spc.noaa.gov/products/watch/ww0598.html",
       "publisher": "Storm Prediction Center",
-      "published_at": "2026-08-19T03:00:04.000Z",
+      "published_at": "2026-08-19T05:41:03.000Z",
       "topic": "Severe weather",
       "status": "ok"
     }
