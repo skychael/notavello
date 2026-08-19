@@ -1,36 +1,36 @@
 {
   "schema_version": "1.0",
-  "date_key": "08-18",
-  "display_date": "August 18",
-  "generated_at": "2026-08-18T08:54:08.381Z",
+  "date_key": "08-19",
+  "display_date": "August 19",
+  "generated_at": "2026-08-19T08:55:10.722Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-143045226ac200aea11875ed",
+      "candidate_id": "event-88e65becd9373294613910ed",
       "type": "event",
-      "year": 1945,
-      "text": "Soviet-Japanese War: Battle of Shumshu: Soviet forces land at Takeda Beach on Shumshu Island and launch the Battle of Shumshu; the Soviet Union's Invasion of the Kuril Islands commences.",
-      "article_title": "Soviet–Japanese War",
-      "url": "https://en.wikipedia.org/wiki/Soviet%E2%80%93Japanese_War",
+      "year": 1960,
+      "text": "Cold War: In Moscow, Russia, Soviet Union, downed American U-2 pilot Francis Gary Powers is sentenced to ten years imprisonment by the Soviet Union for espionage.",
+      "article_title": "Lockheed U-2",
+      "url": "https://en.wikipedia.org/wiki/Lockheed_U-2",
       "category": "World history"
     },
     {
-      "candidate_id": "event-27190b0b18ecdc87f748f6b1",
+      "candidate_id": "event-2853450accaa7c269ab953cf",
       "type": "event",
-      "year": 2003,
-      "text": "One-year-old Zachary Turner is murdered in Newfoundland by his mother, who was awarded custody despite facing trial for the murder of Zachary's father. The case was documented in the film Dear Zachary and led to reform of Canada's bail laws.",
-      "article_title": "Murders of Andrew Bagby and Zachary Turner",
-      "url": "https://en.wikipedia.org/wiki/Murders_of_Andrew_Bagby_and_Zachary_Turner",
-      "category": "Culture and notable people"
+      "year": 1980,
+      "text": "Otłoczyn railway accident: In Poland's worst post-war railway accident, 67 people lose their lives and a further 62 are injured.",
+      "article_title": "Otłoczyn train collision",
+      "url": "https://en.wikipedia.org/wiki/Ot%C5%82oczyn_train_collision",
+      "category": "World history"
     },
     {
-      "candidate_id": "event-5b4aee7bfdd4140c66330921",
+      "candidate_id": "event-297daf9f2aeaa4cbf8f972aa",
       "type": "event",
       "year": 1965,
-      "text": "Vietnam War: Operation Starlite begins: United States Marines destroy a Viet Cong stronghold on the Van Tuong peninsula in the first major American ground battle of the war.",
-      "article_title": "Vietnam War",
-      "url": "https://en.wikipedia.org/wiki/Vietnam_War",
+      "text": "Japanese prime minister Eisaku Satō becomes the first post-World War II sitting prime minister to visit Okinawa Prefecture.",
+      "article_title": "Prime Minister of Japan",
+      "url": "https://en.wikipedia.org/wiki/Prime_Minister_of_Japan",
       "category": "World history"
     }
   ]
