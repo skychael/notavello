@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-19T13:12:21.177Z",
-  "latest_success_at": "2026-08-19T13:12:21.177Z",
+  "generated_at": "2026-08-19T13:59:54.127Z",
+  "latest_success_at": "2026-08-19T13:59:54.127Z",
   "status": "ok",
   "items": [
     {
@@ -23,11 +23,11 @@
       "status": "ok"
     },
     {
-      "id": "dd0b67cd3d888fe8",
-      "title": "Flash Flood Watch issued August 19 at 12:44AM MDT until August 19 at 8:00PM MDT by NWS Pueblo CO",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.5f0949cc72752dd69ddfb1f50c7dbe30344f6f3d.001.1.cap",
+      "id": "932649528141c5e3",
+      "title": "Flash Flood Watch issued August 19 at 7:51AM MDT until August 19 at 8:00PM MDT by NWS Pueblo CO",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.179e6b0dae170634d23d08576211bc42368ea8ae.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-08-19T06:44:00.000Z",
+      "published_at": "2026-08-19T13:51:00.000Z",
       "topic": "Wildfire",
       "status": "ok"
     }
