@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-19T11:43:30.856Z",
-  "latest_success_at": "2026-08-19T11:43:30.856Z",
+  "generated_at": "2026-08-19T13:12:21.177Z",
+  "latest_success_at": "2026-08-19T13:12:21.177Z",
   "status": "ok",
   "items": [
     {
@@ -23,12 +23,12 @@
       "status": "ok"
     },
     {
-      "id": "91e5697961c0d7ba",
-      "title": "SPC Aug 19, 2026 0730 UTC Day 3 Severe Thunderstorm Outlook",
-      "url": "https://www.spc.noaa.gov/products/outlook/day3otlk_0730.html",
-      "publisher": "Storm Prediction Center",
-      "published_at": "2026-08-19T07:38:40.000Z",
-      "topic": "Severe weather",
+      "id": "dd0b67cd3d888fe8",
+      "title": "Flash Flood Watch issued August 19 at 12:44AM MDT until August 19 at 8:00PM MDT by NWS Pueblo CO",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.5f0949cc72752dd69ddfb1f50c7dbe30344f6f3d.001.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-08-19T06:44:00.000Z",
+      "topic": "Wildfire",
       "status": "ok"
     }
   ]
