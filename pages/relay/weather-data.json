@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-18T23:39:52.769Z",
-  "latest_success_at": "2026-08-18T23:39:52.769Z",
+  "generated_at": "2026-08-19T01:55:05.240Z",
+  "latest_success_at": "2026-08-19T01:55:05.240Z",
   "status": "ok",
   "items": [
     {
@@ -23,12 +23,12 @@
       "status": "ok"
     },
     {
-      "id": "84830b2816d6836f",
-      "title": "Flood Warning issued August 18 at 12:43PM EDT until August 25 at 3:23PM EDT by NWS Indianapolis IN",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.7726b79c7444416d75ba6b98834ca01e4aae351b.001.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-08-18T16:43:00.000Z",
-      "topic": "Flooding",
+      "id": "685ba3ea09c9cba4",
+      "title": "SPC Severe Thunderstorm Watch 595",
+      "url": "https://www.spc.noaa.gov/products/watch/ww0595.html",
+      "publisher": "Storm Prediction Center",
+      "published_at": "2026-08-19T00:15:04.000Z",
+      "topic": "Severe weather",
       "status": "ok"
     }
   ]
