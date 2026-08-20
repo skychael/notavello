@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-19T02:42:16.793Z",
+  "generatedAt": "2026-08-20T02:40:09.988Z",
   "totals": {
-    "pages": 223,
-    "indexable": 219,
-    "articles": 154,
-    "sitemap": 219,
+    "pages": 225,
+    "indexable": 221,
+    "articles": 156,
+    "sitemap": 221,
     "errors": 0,
-    "warnings": 134
+    "warnings": 137
   },
   "errors": [],
   "warnings": [
@@ -517,6 +517,16 @@
     },
     {
       "type": "template-pattern",
+      "page": "/pages/blog/refinery-cushion-diesel-warning-light/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/refinery-cushion-diesel-warning-light/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
       "page": "/pages/blog/rootless-containers-ai-service-boundary/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
@@ -631,6 +641,11 @@
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
     {
+      "type": "template-pattern",
+      "page": "/pages/blog/when-to-reset-a-browser-profile-instead-of-reinstalling-the-browser/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
       "type": "topic-review",
       "page": "/pages/blog/why-coffee-is-so-expensive-2026/",
       "detail": "title/description lacks a clear AI, software, or computing connection"
@@ -690,7 +705,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 223,
+      "incomingLinks": 225,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -714,7 +729,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 223,
+      "incomingLinks": 225,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -822,7 +837,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 223,
+      "incomingLinks": 225,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -834,9 +849,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 223,
-      "lastmod": "2026-08-18",
-      "bodyWords": 677
+      "incomingLinks": 225,
+      "lastmod": "2026-08-19",
+      "bodyWords": 671
     },
     {
       "route": "/pages/blog/a-practical-checklist-for-checking-ai-generated-technical-answers/",
@@ -1098,9 +1113,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 93,
-      "lastmod": "2026-08-18",
-      "bodyWords": 1987
+      "incomingLinks": 95,
+      "lastmod": "2026-08-19",
+      "bodyWords": 2011
     },
     {
       "route": "/pages/blog/apple-speechanalyzer-local-transcription-apps/",
@@ -1362,7 +1377,7 @@
       "canonical": "https://notavello.com/pages/blog/diesel-exports-are-keeping-the-fuel-bill-hot/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 2,
+      "incomingLinks": 3,
       "lastmod": "2026-08-18",
       "bodyWords": 1393
     },
@@ -2179,8 +2194,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-18",
-      "bodyWords": 680
+      "lastmod": "2026-08-19",
+      "bodyWords": 678
     },
     {
       "route": "/pages/blog/page-3/",
@@ -2191,8 +2206,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-18",
-      "bodyWords": 655
+      "lastmod": "2026-08-19",
+      "bodyWords": 657
     },
     {
       "route": "/pages/blog/page-4/",
@@ -2203,8 +2218,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-18",
-      "bodyWords": 664
+      "lastmod": "2026-08-19",
+      "bodyWords": 657
     },
     {
       "route": "/pages/blog/page-5/",
@@ -2215,8 +2230,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-18",
-      "bodyWords": 693
+      "lastmod": "2026-08-19",
+      "bodyWords": 699
     },
     {
       "route": "/pages/blog/page-6/",
@@ -2227,8 +2242,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-18",
-      "bodyWords": 745
+      "lastmod": "2026-08-19",
+      "bodyWords": 715
     },
     {
       "route": "/pages/blog/page-7/",
@@ -2239,8 +2254,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-18",
-      "bodyWords": 831
+      "lastmod": "2026-08-19",
+      "bodyWords": 838
     },
     {
       "route": "/pages/blog/page-8/",
@@ -2251,8 +2266,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-18",
-      "bodyWords": 838
+      "lastmod": "2026-08-19",
+      "bodyWords": 848
     },
     {
       "route": "/pages/blog/page-9/",
@@ -2263,8 +2278,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": "2026-08-18",
-      "bodyWords": 516
+      "lastmod": "2026-08-19",
+      "bodyWords": 599
     },
     {
       "route": "/pages/blog/rebase-or-merge-how-to-choose-for-an-ordinary-git-branch/",
@@ -2277,6 +2292,18 @@
       "incomingLinks": 2,
       "lastmod": "2026-08-16",
       "bodyWords": 836
+    },
+    {
+      "route": "/pages/blog/refinery-cushion-diesel-warning-light/",
+      "file": "pages/blog/refinery-cushion-diesel-warning-light/index.html",
+      "title": "The Refinery Cushion Is The Warning Light — The Export | Notavello",
+      "description": "U.S. refineries are running hard, but diesel stocks fell again. That is the fuel-risk number to watch now.",
+      "canonical": "https://notavello.com/pages/blog/refinery-cushion-diesel-warning-light/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-08-20",
+      "bodyWords": 1254
     },
     {
       "route": "/pages/blog/rootless-containers-ai-service-boundary/",
@@ -2603,6 +2630,18 @@
       "bodyWords": 763
     },
     {
+      "route": "/pages/blog/when-to-reset-a-browser-profile-instead-of-reinstalling-the-browser/",
+      "file": "pages/blog/when-to-reset-a-browser-profile-instead-of-reinstalling-the-browser/index.html",
+      "title": "When to Reset a Browser Profile Instead of Reinstalling the Browser — The Export | Notavello",
+      "description": "Learn when resetting a browser profile fixes issues better than a full reinstall.",
+      "canonical": "https://notavello.com/pages/blog/when-to-reset-a-browser-profile-instead-of-reinstalling-the-browser/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-08-19",
+      "bodyWords": 820
+    },
+    {
       "route": "/pages/blog/why-ai-customer-service-is-so-bad/",
       "file": "pages/blog/why-ai-customer-service-is-so-bad/index.html",
       "title": "Why AI Customer Service Still Feels Hostile — The Export | Notavello",
@@ -2802,7 +2841,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 223,
+      "incomingLinks": 225,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -2814,7 +2853,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 223,
+      "incomingLinks": 225,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -2826,7 +2865,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 223,
+      "incomingLinks": 225,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -2838,7 +2877,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 223,
+      "incomingLinks": 225,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -2850,7 +2889,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 223,
+      "incomingLinks": 225,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -2863,8 +2902,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-08-19",
-      "bodyWords": 181
+      "lastmod": "2026-08-20",
+      "bodyWords": 187
     },
     {
       "route": "/pages/sample",
@@ -2886,7 +2925,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 223,
+      "incomingLinks": 225,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -2898,7 +2937,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 223,
+      "incomingLinks": 225,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -2922,7 +2961,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 223,
+      "incomingLinks": 225,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -3354,7 +3393,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 223,
+      "incomingLinks": 225,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }
