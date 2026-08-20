@@ -2,13 +2,22 @@
   "schema_version": 1,
   "archive_date": "2026-08-20",
   "created_at": "2026-08-20T01:54:09.044Z",
-  "updated_at": "2026-08-20T14:57:33.637Z",
+  "updated_at": "2026-08-20T15:50:57.461Z",
   "articles": [
     {
       "title": "Hope Fades, Traders Brace for Extended Oil, LNG Squeeze",
       "url": "https://oilprice.com/Energy/Crude-Oil/Hope-Fades-Traders-Brace-for-Extended-Oil-LNG-Squeeze.html",
       "publisher": "OilPrice.com",
       "published_at": "2026-08-19T23:00:00.000Z",
+      "source_id": "oilprice",
+      "first_seen_at": "2026-08-20T01:54:09.044Z",
+      "status": "ok"
+    },
+    {
+      "title": "Russia’s Fuel Crisis Hits Moscow as Rationing Spreads",
+      "url": "https://oilprice.com/Energy/Energy-General/Russias-Fuel-Crisis-Hits-Moscow-as-Rationing-Spreads.html",
+      "publisher": "OilPrice.com",
+      "published_at": "2026-08-19T22:00:00.000Z",
       "source_id": "oilprice",
       "first_seen_at": "2026-08-20T01:54:09.044Z",
       "status": "ok"
@@ -28,6 +37,15 @@
       "publisher": "OilPrice.com",
       "published_at": "2026-08-19T20:00:00.000Z",
       "source_id": "oilprice",
+      "first_seen_at": "2026-08-20T01:54:09.044Z",
+      "status": "ok"
+    },
+    {
+      "title": "Three Chinese Tankers U-Turn in Hormuz as Risks Remain High",
+      "url": "https://gcaptain.com/three-chinese-tankers-u-turn-in-hormuz-as-risks-remain-high",
+      "publisher": "gCaptain",
+      "published_at": "2026-08-19T17:02:08.000Z",
+      "source_id": "gcaptain",
       "first_seen_at": "2026-08-20T01:54:09.044Z",
       "status": "ok"
     },
