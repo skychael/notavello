@@ -1,9 +1,18 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-20T17:48:00.931Z",
-  "latest_success_at": "2026-08-20T17:48:00.931Z",
+  "generated_at": "2026-08-20T19:03:08.718Z",
+  "latest_success_at": "2026-08-20T19:03:08.718Z",
   "status": "ok",
   "items": [
+    {
+      "id": "b24d80171a37192d",
+      "title": "Rip Current Statement issued August 21 at 4:17AM ChST until August 23 at 3:00PM ChST by NWS Tiyan GU",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.c35ec16a2823802b9478a227fbf39adf5a835594.001.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-08-20T18:17:00.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
     {
       "id": "f574b77700340407",
       "title": "Tropical Storm Watch issued August 21 at 3:31AM ChST by NWS Tiyan GU",
@@ -20,15 +29,6 @@
       "publisher": "National Hurricane Center",
       "published_at": "2026-08-20T17:22:48.000Z",
       "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "c80f4ad5eb12c87d",
-      "title": "Air Quality Alert issued August 20 at 8:47AM MDT by NWS Albuquerque NM",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.bff3df649e4d665a9f1b35f4233ec85c9c0282c0.001.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-08-20T14:47:00.000Z",
-      "topic": "Wildfire",
       "status": "ok"
     }
   ]
