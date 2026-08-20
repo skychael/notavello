@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-20T10:49:44.869Z",
-  "latest_success_at": "2026-08-20T10:49:44.869Z",
+  "generated_at": "2026-08-20T11:45:38.096Z",
+  "latest_success_at": "2026-08-20T11:45:38.096Z",
   "status": "ok",
   "items": [
+    {
+      "id": "ee8e390990a944fc",
+      "title": "Eastern North Pacific Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-08-20T11:37:42.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "0ba6e38bf7c98b60",
+      "title": "Tropical Storm Watch issued August 20 at 9:26PM ChST by NWS Tiyan GU",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.d1a49709913d85759e011c2b0ecd50397fff16af.001.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-08-20T11:26:00.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
     {
       "id": "8867cfa227bcd9b8",
       "title": "Flash Flood Warning issued August 20 at 5:40AM CDT until August 20 at 7:15AM CDT by NWS Nashville TN",
       "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.acc2ad0a221b7f0bfaaacb204ea0d6e67022195b.002.1.cap",
       "publisher": "National Weather Service",
       "published_at": "2026-08-20T10:40:00.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "6f92d1376af3c85f",
-      "title": "Tropical Storm Watch issued August 20 at 7:57PM ChST by NWS Tiyan GU",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b42e0f4d9338aef5b58b8b89342d3995f38d34e5.001.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-08-20T09:57:00.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "ee8e390990a944fc",
-      "title": "Eastern North Pacific Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-08-20T05:29:47.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
