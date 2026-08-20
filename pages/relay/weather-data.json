@@ -1,34 +1,34 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-20T16:53:45.258Z",
-  "latest_success_at": "2026-08-20T16:53:45.258Z",
+  "generated_at": "2026-08-20T17:48:00.931Z",
+  "latest_success_at": "2026-08-20T17:48:00.931Z",
   "status": "ok",
   "items": [
+    {
+      "id": "f574b77700340407",
+      "title": "Tropical Storm Watch issued August 21 at 3:31AM ChST by NWS Tiyan GU",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.bf32fa6abccbed1d63a72fb3a61b66f259937c7a.001.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-08-20T17:31:00.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
     {
       "id": "ee8e390990a944fc",
       "title": "Eastern North Pacific Tropical Weather Outlook",
       "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-08-20T11:37:42.000Z",
+      "published_at": "2026-08-20T17:22:48.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "0ba6e38bf7c98b60",
-      "title": "Tropical Storm Watch issued August 20 at 9:26PM ChST by NWS Tiyan GU",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.d1a49709913d85759e011c2b0ecd50397fff16af.001.1.cap",
+      "id": "c80f4ad5eb12c87d",
+      "title": "Air Quality Alert issued August 20 at 8:47AM MDT by NWS Albuquerque NM",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.bff3df649e4d665a9f1b35f4233ec85c9c0282c0.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-08-20T11:26:00.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "f1d326b5f971f32d",
-      "title": "High Surf Advisory issued August 20 at 2:56PM ChST until August 21 at 3:00AM ChST by NWS Tiyan GU",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.210dbadd7b376b43f0d2019a12e076578482f501.002.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-08-20T04:56:00.000Z",
-      "topic": "Hurricane",
+      "published_at": "2026-08-20T14:47:00.000Z",
+      "topic": "Wildfire",
       "status": "ok"
     }
   ]
