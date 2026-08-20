@@ -1,9 +1,18 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-20T22:47:33.720Z",
-  "latest_success_at": "2026-08-20T22:47:33.720Z",
+  "generated_at": "2026-08-20T23:43:17.278Z",
+  "latest_success_at": "2026-08-20T23:43:17.278Z",
   "status": "ok",
   "items": [
+    {
+      "id": "ee8e390990a944fc",
+      "title": "Eastern North Pacific Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-08-20T23:37:50.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
     {
       "id": "b24d80171a37192d",
       "title": "Rip Current Statement issued August 21 at 4:17AM ChST until August 23 at 3:00PM ChST by NWS Tiyan GU",
@@ -19,15 +28,6 @@
       "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.bf32fa6abccbed1d63a72fb3a61b66f259937c7a.001.1.cap",
       "publisher": "National Weather Service",
       "published_at": "2026-08-20T17:31:00.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "ee8e390990a944fc",
-      "title": "Eastern North Pacific Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-08-20T17:22:48.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
