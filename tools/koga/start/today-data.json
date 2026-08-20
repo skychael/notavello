@@ -1,36 +1,36 @@
 {
   "schema_version": "1.0",
-  "date_key": "08-19",
-  "display_date": "August 19",
-  "generated_at": "2026-08-19T08:55:10.722Z",
+  "date_key": "08-20",
+  "display_date": "August 20",
+  "generated_at": "2026-08-20T08:56:55.677Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-88e65becd9373294613910ed",
+      "candidate_id": "event-2ae67ee317e00df01b6ed4cf",
       "type": "event",
-      "year": 1960,
-      "text": "Cold War: In Moscow, Russia, Soviet Union, downed American U-2 pilot Francis Gary Powers is sentenced to ten years imprisonment by the Soviet Union for espionage.",
-      "article_title": "Lockheed U-2",
-      "url": "https://en.wikipedia.org/wiki/Lockheed_U-2",
+      "year": 1962,
+      "text": "The NS Savannah, the world's first nuclear-powered civilian ship, embarks on its maiden voyage.",
+      "article_title": "NS Savannah",
+      "url": "https://en.wikipedia.org/wiki/NS_Savannah",
       "category": "World history"
     },
     {
-      "candidate_id": "event-2853450accaa7c269ab953cf",
+      "candidate_id": "event-6743cc5a0c0cd80b4c1d41bf",
       "type": "event",
-      "year": 1980,
-      "text": "Otłoczyn railway accident: In Poland's worst post-war railway accident, 67 people lose their lives and a further 62 are injured.",
-      "article_title": "Otłoczyn train collision",
-      "url": "https://en.wikipedia.org/wiki/Ot%C5%82oczyn_train_collision",
-      "category": "World history"
+      "year": 2008,
+      "text": "Spanair Flight 5022, from Madrid, Spain to Gran Canaria, skids off the runway and crashes at Barajas Airport. Of the 172 people on board, 146 die immediately, and eight more later die of injuries sustained in the crash.",
+      "article_title": "Spanair Flight 5022",
+      "url": "https://en.wikipedia.org/wiki/Spanair_Flight_5022",
+      "category": "Disasters and exploration"
     },
     {
-      "candidate_id": "event-297daf9f2aeaa4cbf8f972aa",
+      "candidate_id": "event-eecdfd2251d981879236db1c",
       "type": "event",
-      "year": 1965,
-      "text": "Japanese prime minister Eisaku Satō becomes the first post-World War II sitting prime minister to visit Okinawa Prefecture.",
-      "article_title": "Prime Minister of Japan",
-      "url": "https://en.wikipedia.org/wiki/Prime_Minister_of_Japan",
+      "year": 2011,
+      "text": "First Air Flight 6560 crashes 1 mile (1.6 km) from the Resolute Bay runway, killing 12 of the 15 aboard.",
+      "article_title": "First Air Flight 6560",
+      "url": "https://en.wikipedia.org/wiki/First_Air_Flight_6560",
       "category": "World history"
     }
   ]
