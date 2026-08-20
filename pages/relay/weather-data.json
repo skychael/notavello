@@ -1,24 +1,24 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-20T04:56:04.330Z",
-  "latest_success_at": "2026-08-20T04:56:04.330Z",
+  "generated_at": "2026-08-20T05:48:32.938Z",
+  "latest_success_at": "2026-08-20T05:48:32.938Z",
   "status": "ok",
   "items": [
     {
-      "id": "b5ad93019d019ede",
-      "title": "Atlantic Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
+      "id": "ee8e390990a944fc",
+      "title": "Eastern North Pacific Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-08-19T23:20:37.000Z",
+      "published_at": "2026-08-20T05:29:47.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "9be9b598dbc4221d",
-      "title": "High Surf Advisory issued August 20 at 2:35AM ChST until August 21 at 3:00AM ChST by NWS Tiyan GU",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.59a9fb58e203462288df61d38706d18a1deb81d9.001.1.cap",
+      "id": "f1d326b5f971f32d",
+      "title": "High Surf Advisory issued August 20 at 2:56PM ChST until August 21 at 3:00AM ChST by NWS Tiyan GU",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.210dbadd7b376b43f0d2019a12e076578482f501.002.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-08-19T16:35:00.000Z",
+      "published_at": "2026-08-20T04:56:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
