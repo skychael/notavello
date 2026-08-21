@@ -1,9 +1,18 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-21T17:48:16.019Z",
-  "latest_success_at": "2026-08-21T17:48:16.019Z",
+  "generated_at": "2026-08-21T18:59:02.380Z",
+  "latest_success_at": "2026-08-21T18:59:02.380Z",
   "status": "ok",
   "items": [
+    {
+      "id": "e9c961b7bc41ab2b",
+      "title": "High Surf Advisory issued August 22 at 3:57AM ChST until August 23 at 5:00PM ChST by NWS Tiyan GU",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.560317a01a2822dcb5c3cb3c5043577b273bcb9c.001.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-08-21T17:57:00.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
     {
       "id": "ee8e390990a944fc",
       "title": "Eastern North Pacific Tropical Weather Outlook",
@@ -14,20 +23,11 @@
       "status": "ok"
     },
     {
-      "id": "db7a93ba3ef40fd5",
-      "title": "High Surf Advisory issued August 21 at 9:44PM ChST until August 23 at 5:00PM ChST by NWS Tiyan GU",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f85d622333005d2443936554730c756b23d9b710.001.1.cap",
+      "id": "3d804a52a4e40702",
+      "title": "Fire Warning issued August 21 at 1:33PM CDT by NWS Fort Worth TX",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.150a92b726ce6a33c81c8154858b2a4de57bdbf5.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-08-21T11:44:00.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "34410db11b466a07",
-      "title": "Fire Warning issued August 21 at 11:59AM CDT by NWS Fort Worth TX",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.5716f21f08da5e40f2ef9e5bdd27f7f78aca7bf5.001.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-08-21T16:59:00.000Z",
+      "published_at": "2026-08-21T18:33:00.000Z",
       "topic": "Wildfire",
       "status": "ok"
     }
