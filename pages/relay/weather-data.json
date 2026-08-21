@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-21T09:53:54.105Z",
-  "latest_success_at": "2026-08-21T09:53:54.105Z",
+  "generated_at": "2026-08-21T10:50:10.283Z",
+  "latest_success_at": "2026-08-21T10:50:10.283Z",
   "status": "ok",
   "items": [
     {
@@ -23,11 +23,11 @@
       "status": "ok"
     },
     {
-      "id": "71a94b4074ba4c39",
-      "title": "Flood Warning issued August 20 at 9:03PM EDT until August 22 at 5:00AM EDT by NWS Wilmington OH",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b7d9c14359436426598c3f81eb2a6a10f483fbaf.001.1.cap",
+      "id": "f20542f94cf5f0d8",
+      "title": "Flood Warning issued August 21 at 5:54AM EDT until August 22 at 5:00AM EDT by NWS Wilmington OH",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.11725aecb9c91ddd9b03621a0b74bf290917384e.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-08-21T01:03:00.000Z",
+      "published_at": "2026-08-21T09:54:00.000Z",
       "topic": "Flooding",
       "status": "ok"
     }
