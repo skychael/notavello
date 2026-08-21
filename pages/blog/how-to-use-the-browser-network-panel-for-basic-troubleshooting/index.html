@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>How to Use the Browser Network Panel for Basic Troubleshooting — The Export | Notavello</title>
+<meta name="description" content="Learn to inspect requests, status codes, timing, caching, and failed resources in the browser Network panel using Chrome DevTools and similar tools."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/blog/how-to-use-the-browser-network-panel-for-basic-troubleshooting/"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2026-08-20T09:00:55.529Z"/>
+<meta property="article:modified_time" content="2026-08-20T09:00:55.529Z"/>
+<meta name="notavello:published_at" content="2026-08-20T09:00:55.529Z"/>
+<meta name="syndication-origin-site" content="toysforbots"/>
+<meta name="syndication-origin-id" content="toysforbots:how-to-use-the-browser-network-panel-for-basic-troubleshooting"/>
+<meta name="syndication-origin-slug" content="how-to-use-the-browser-network-panel-for-basic-troubleshooting"/>
+<meta name="syndication-origin-url" content="https://toysforbots.com/blog/how-to-use-the-browser-network-panel-for-basic-troubleshooting/"/>
+<meta name="syndication-source-format" content="toysforbots-syndication-v1"/>
+<meta property="og:url" content="https://notavello.com/pages/blog/how-to-use-the-browser-network-panel-for-basic-troubleshooting/"/>
+<meta property="og:title" content="How to Use the Browser Network Panel for Basic Troubleshooting"/>
+<meta property="og:description" content="Learn to inspect requests, status codes, timing, caching, and failed resources in the browser Network panel using Chrome DevTools and similar tools."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="How to Use the Browser Network Panel for Basic Troubleshooting"/>
+<meta name="twitter:description" content="Learn to inspect requests, status codes, timing, caching, and failed resources in the browser Network panel using Chrome DevTools and similar tools."/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "How to Use the Browser Network Panel for Basic Troubleshooting",
+  "description": "Learn to inspect requests, status codes, timing, caching, and failed resources in the browser Network panel using Chrome DevTools and similar tools.",
+  "url": "https://notavello.com/pages/blog/how-to-use-the-browser-network-panel-for-basic-troubleshooting/",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://notavello.com/pages/blog/how-to-use-the-browser-network-panel-for-basic-troubleshooting/" },
+  "image": "https://notavello.com/og-image.png",
+  "datePublished": "2026-08-20T09:00:55.529Z",
+  "dateModified": "2026-08-20T09:00:55.529Z",
+  "author": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" },
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com", "logo": { "@type": "ImageObject", "url": "https://notavello.com/og-image.png" } }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
+.post-nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; row-gap: 8px; }
+.post-nav-top { margin-bottom: 40px; }
+.post-nav-bottom { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--border); }
+.post-nav a { display: inline-flex; align-items: center; gap: 6px; font-size: 0.92rem; font-weight: 600; color: var(--ink-muted); text-decoration: none; padding: 12px 14px; border-radius: var(--radius-sm); white-space: nowrap; transition: color 0.15s, background 0.15s; }
+.post-nav a:hover { color: var(--accent); background: var(--accent-light); }
+.post-nav a:first-child { padding-left: 0; }
+.post-nav a:last-child { padding-right: 0; justify-content: flex-end; }
+.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
+.post-date { font-size: 0.78rem; color: var(--ink-faint); }
+.post-title { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; color: var(--ink); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
+.post-lede { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+.post-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink); }
+.post-body h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 44px 0 16px; letter-spacing: -0.01em; }
+.post-body p { margin-bottom: 20px; color: var(--ink-muted); }
+.post-body p strong { color: var(--ink); font-weight: 600; }
+.post-body ul { margin: 0 0 20px 20px; color: var(--ink-muted); }
+.post-body ul li { margin-bottom: 8px; line-height: 1.7; }
+.callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 32px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.7; }
+.post-footer { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.post-footer-label { font-size: 0.8rem; color: var(--ink-faint); }
+.btn-export { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: opacity 0.2s; }
+.btn-export:hover { opacity: 0.9; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } .post-nav a { padding: 12px 8px; font-size: 0.88rem; } }
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+
+  <nav class="post-nav post-nav-top">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+  <div class="post-meta">
+    <span class="post-tag">Browsers</span>
+    <span class="post-date">August 20, 2026</span>
+  </div>
+
+  <h1 class="post-title">How to Use the Browser Network Panel for Basic Troubleshooting</h1>
+
+  <p class="post-lede">When a web page fails to load styles, scripts, or data, the browser Network panel shows the raw requests and responses that explain why. It logs every resource fetched, including HTML, CSS, JavaScript, images, and API calls. Developers open the panel to confirm whether a file was requested, what status code it returned, how long each phase took, and whether caching prevented a fresh download. The panel works the same way in Chrome, Edge, and Firefox, though the exact menu paths differ slightly. This guide focuses on the most common inspection tasks using the official Chrome DevTools workflow, which matches the Microsoft Edge implementation and is similar in Firefox.</p>
+
+  <div class="post-body">
+
+<h2>Open the Network panel and capture activity</h2>
+<p>Open DevTools with the keyboard shortcut or the browser menu, then select the Network tab. The panel starts recording once opened. Reload the page to see the initial set of requests. Each row represents one resource. The top row is usually the main HTML document, and later rows show files requested by scripts or stylesheets.</p>
+<p>By default the log clears on reload. Enable the Preserve log checkbox if you need to keep entries across navigations. The panel records activity only while DevTools remains open, so leave it visible during testing.</p><ul><li>Click the record button (red circle) to pause or resume logging if needed.</li><li>Use the filter box to show only XHR/Fetch, JS, CSS, or Img resources.</li><li>Right-click any row and choose Reveal in Sources panel when you need the originating code.</li></ul><div class="callout"><strong>Quick start</strong> Press Control+Shift+J (Windows/Linux) or Command+Option+J (Mac) to open DevTools, then click the Network tab. Reload the page to populate the log.</div>
+<h2>Read status codes and response headers</h2>
+<p>Status codes appear in the Status column. A 200 code means success. 304 indicates the browser used a cached copy. 404 means the file was not found. 500-series codes point to server errors. Red text on a row usually signals a blocked or failed request.</p>
+<p>Click any row to open the detail pane. The Headers tab lists request and response headers. Check Content-Type to confirm the server sent the expected data format. Look for Cache-Control and ETag values when investigating stale content. The Preview tab renders images or basic HTML, while the Response tab shows raw body content.</p><ul><li>Filter the log by typing status:404 or status:500 to surface errors quickly.</li><li>Blocked requests often show a status of (blocked) or (failed) and appear in red.</li><li>CORS preflight OPTIONS requests appear separately before the actual cross-origin call.</li></ul>
+<h2>Examine timing and the request waterfall</h2>
+<p>The Timing tab breaks down each request into phases: queueing, DNS lookup, initial connection, SSL negotiation, request sent, waiting (TTFB), and content download. Long TTFB values usually indicate server processing delays. Large content download times suggest oversized payloads or slow network links.</p>
+<p>The waterfall view shows requests stacked by start time. Overlapping bars reveal parallel downloads limited by browser connection rules. Hovering a bar displays exact millisecond values for each phase.</p><ul><li>Sort the log by the Time column to find the slowest individual requests.</li><li>Enable the waterfall column if it is hidden to see visual timing bars.</li><li>TTFB above a few hundred milliseconds on API calls often points to backend work rather than network latency.</li></ul>
+<h2>Check caching behavior</h2>
+<p>Cached resources show a 304 status or a Size value of (from memory cache) or (from disk cache). When a stylesheet or script fails to update, the cache is the usual culprit. Disable the cache checkbox in the Network panel to force fresh downloads during testing. Response headers such as Cache-Control: no-cache or max-age control how long browsers keep copies.</p>
+<p>Clearing the browser cache through settings removes stored files but does not affect the current DevTools session unless you reload after clearing.</p><ul><li>Use the Size column to distinguish transferred bytes from cached bytes.</li><li>Search the Headers tab for Cache-Control to audit caching policies across resources.</li><li>Service workers can intercept requests and serve their own cached responses; the Initiator column helps trace these.</li></ul>
+<h2>Identify and debug failed or blocked resources</h2>
+<p>Failed requests appear with red status text or a (failed) label. Common causes include incorrect URLs, missing files on the server, CORS policy blocks, or ad blockers. The Initiator column shows which script or stylesheet triggered the request, making it easier to trace the source of an unexpected call.</p>
+<p>Enable request blocking in the panel to simulate missing resources during development. The Search tab lets you scan all headers and response bodies for a string such as an error message or header name.</p><ul><li>Click a blocked row to see the exact blocking reason in the Headers tab.</li><li>Third-party requests can be filtered by enabling the third-party column or using the domain filter.</li><li>WebSocket connections appear with type WS and open a Messages tab for frame inspection.</li></ul>
+<h2>Apply the panel to everyday troubleshooting</h2>
+<p>Start every investigation by reloading the page with the Network panel open. Note the first failing request and its status code. Check timing if the page feels slow. Verify cache headers when content does not update. Use the filter and search tools to narrow the log quickly. The same workflow applies in Firefox Network Monitor and Edge DevTools with only minor UI differences.</p>
+<p>Remember that the panel shows only network activity. Layout, JavaScript, or rendering problems require the Console, Elements, or Performance panels instead.</p><ul><li>Export the HAR file from the panel menu when you need to share a full request log with another developer.</li><li>Keep the panel open while testing form submissions or button clicks to capture runtime requests.</li><li>Close the detail pane when finished to keep the log view uncluttered.</li></ul><h2>Sources</h2><ul><li><a href="https://developer.chrome.com/docs/devtools/network" rel="noopener noreferrer">developer.chrome.com</a></li><li><a href="https://web.dev/articles/codelab-explore-network-panel" rel="noopener noreferrer">web.dev</a></li><li><a href="https://firefox-source-docs.mozilla.org/devtools-user/network_monitor/index.html" rel="noopener noreferrer">firefox-source-docs.mozilla.org</a></li></ul>
+
+  </div>
+
+  <div class="post-footer">
+    <span class="post-footer-label">Looking for more AI tools?</span>
+    <a class="btn-export" href="/">See our free AI tools →</a>
+  </div>
+
+  <nav class="post-nav post-nav-bottom">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+</main>
+
+<!--FOOTER-->
+
+</body>
+</html>

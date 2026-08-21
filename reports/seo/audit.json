@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-20T02:40:09.988Z",
+  "generatedAt": "2026-08-21T02:47:24.801Z",
   "totals": {
-    "pages": 225,
-    "indexable": 221,
-    "articles": 156,
-    "sitemap": 221,
+    "pages": 227,
+    "indexable": 223,
+    "articles": 158,
+    "sitemap": 223,
     "errors": 0,
-    "warnings": 137
+    "warnings": 140
   },
   "errors": [],
   "warnings": [
@@ -397,6 +397,11 @@
     },
     {
       "type": "template-pattern",
+      "page": "/pages/blog/how-to-use-the-browser-network-panel-for-basic-troubleshooting/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "template-pattern",
       "page": "/pages/blog/how-to-write-better-ai-prompts-guardrails-hard-stops/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
@@ -533,6 +538,16 @@
     {
       "type": "topic-review",
       "page": "/pages/blog/self-driving-cars-trucks-can-be-fooled/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/spr-below-300-million-barrels-diesel-price-risk/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/spr-below-300-million-barrels-diesel-price-risk/",
       "detail": "title/description lacks a clear AI, software, or computing connection"
     },
     {
@@ -705,7 +720,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 225,
+      "incomingLinks": 227,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -729,7 +744,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 225,
+      "incomingLinks": 227,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -837,7 +852,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 225,
+      "incomingLinks": 227,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -849,9 +864,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 225,
-      "lastmod": "2026-08-19",
-      "bodyWords": 671
+      "incomingLinks": 227,
+      "lastmod": "2026-08-20",
+      "bodyWords": 668
     },
     {
       "route": "/pages/blog/a-practical-checklist-for-checking-ai-generated-technical-answers/",
@@ -1113,9 +1128,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 95,
-      "lastmod": "2026-08-19",
-      "bodyWords": 2011
+      "incomingLinks": 97,
+      "lastmod": "2026-08-20",
+      "bodyWords": 2034
     },
     {
       "route": "/pages/blog/apple-speechanalyzer-local-transcription-apps/",
@@ -1922,6 +1937,18 @@
       "bodyWords": 1601
     },
     {
+      "route": "/pages/blog/how-to-use-the-browser-network-panel-for-basic-troubleshooting/",
+      "file": "pages/blog/how-to-use-the-browser-network-panel-for-basic-troubleshooting/index.html",
+      "title": "How to Use the Browser Network Panel for Basic Troubleshooting — The Export | Notavello",
+      "description": "Learn to inspect requests, status codes, timing, caching, and failed resources in the browser Network panel using Chrome DevTools and similar tools.",
+      "canonical": "https://notavello.com/pages/blog/how-to-use-the-browser-network-panel-for-basic-troubleshooting/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-08-20",
+      "bodyWords": 972
+    },
+    {
       "route": "/pages/blog/how-to-write-better-ai-prompts-guardrails-hard-stops/",
       "file": "pages/blog/how-to-write-better-ai-prompts-guardrails-hard-stops/index.html",
       "title": "How to Write Better AI Prompts Without Creating Hard Stops | Notavello",
@@ -2194,8 +2221,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-19",
-      "bodyWords": 678
+      "lastmod": "2026-08-20",
+      "bodyWords": 687
     },
     {
       "route": "/pages/blog/page-3/",
@@ -2206,8 +2233,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-19",
-      "bodyWords": 657
+      "lastmod": "2026-08-20",
+      "bodyWords": 664
     },
     {
       "route": "/pages/blog/page-4/",
@@ -2218,8 +2245,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-19",
-      "bodyWords": 657
+      "lastmod": "2026-08-20",
+      "bodyWords": 646
     },
     {
       "route": "/pages/blog/page-5/",
@@ -2230,8 +2257,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-19",
-      "bodyWords": 699
+      "lastmod": "2026-08-20",
+      "bodyWords": 696
     },
     {
       "route": "/pages/blog/page-6/",
@@ -2242,8 +2269,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-19",
-      "bodyWords": 715
+      "lastmod": "2026-08-20",
+      "bodyWords": 714
     },
     {
       "route": "/pages/blog/page-7/",
@@ -2254,8 +2281,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-19",
-      "bodyWords": 838
+      "lastmod": "2026-08-20",
+      "bodyWords": 832
     },
     {
       "route": "/pages/blog/page-8/",
@@ -2266,8 +2293,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-19",
-      "bodyWords": 848
+      "lastmod": "2026-08-20",
+      "bodyWords": 826
     },
     {
       "route": "/pages/blog/page-9/",
@@ -2278,8 +2305,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": "2026-08-19",
-      "bodyWords": 599
+      "lastmod": "2026-08-20",
+      "bodyWords": 700
     },
     {
       "route": "/pages/blog/rebase-or-merge-how-to-choose-for-an-ordinary-git-branch/",
@@ -2378,6 +2405,18 @@
       "bodyWords": 1297
     },
     {
+      "route": "/pages/blog/spr-below-300-million-barrels-diesel-price-risk/",
+      "file": "pages/blog/spr-below-300-million-barrels-diesel-price-risk/index.html",
+      "title": "The SPR Just Lost Its Three Handle — The Export | Notavello",
+      "description": "The U.S. emergency oil reserve fell to 293.4 million barrels while diesel climbed. That cushion is getting thinner.",
+      "canonical": "https://notavello.com/pages/blog/spr-below-300-million-barrels-diesel-price-risk/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-08-21",
+      "bodyWords": 1445
+    },
+    {
       "route": "/pages/blog/spr-drawdown-buying-time-not-cheap-gas/",
       "file": "pages/blog/spr-drawdown-buying-time-not-cheap-gas/index.html",
       "title": "The Oil Reserve Is Buying Time, Not Cheap Gas — The Export | Notavello",
@@ -2385,7 +2424,7 @@
       "canonical": "https://notavello.com/pages/blog/spr-drawdown-buying-time-not-cheap-gas/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 4,
+      "incomingLinks": 5,
       "lastmod": "2026-07-31",
       "bodyWords": 1333
     },
@@ -2841,7 +2880,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 225,
+      "incomingLinks": 227,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -2853,7 +2892,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 225,
+      "incomingLinks": 227,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -2865,7 +2904,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 225,
+      "incomingLinks": 227,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -2877,7 +2916,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 225,
+      "incomingLinks": 227,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -2889,7 +2928,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 225,
+      "incomingLinks": 227,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -2902,8 +2941,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-08-20",
-      "bodyWords": 187
+      "lastmod": "2026-08-21",
+      "bodyWords": 193
     },
     {
       "route": "/pages/sample",
@@ -2925,7 +2964,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 225,
+      "incomingLinks": 227,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -2937,7 +2976,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 225,
+      "incomingLinks": 227,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -2961,7 +3000,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 225,
+      "incomingLinks": 227,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -3393,7 +3432,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 225,
+      "incomingLinks": 227,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }
