@@ -1,9 +1,18 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-21T16:54:05.063Z",
-  "latest_success_at": "2026-08-21T16:54:05.063Z",
+  "generated_at": "2026-08-21T17:48:16.019Z",
+  "latest_success_at": "2026-08-21T17:48:16.019Z",
   "status": "ok",
   "items": [
+    {
+      "id": "ee8e390990a944fc",
+      "title": "Eastern North Pacific Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-08-21T17:39:28.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
     {
       "id": "db7a93ba3ef40fd5",
       "title": "High Surf Advisory issued August 21 at 9:44PM ChST until August 23 at 5:00PM ChST by NWS Tiyan GU",
@@ -14,21 +23,12 @@
       "status": "ok"
     },
     {
-      "id": "ee8e390990a944fc",
-      "title": "Eastern North Pacific Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-08-21T11:23:55.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "d603c259cc3c5505",
-      "title": "Flood Warning issued August 21 at 9:25AM EDT until August 22 at 4:00PM EDT by NWS Wilmington OH",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a39c2d290ed33391d5082373053546a0bedcf40d.001.1.cap",
+      "id": "34410db11b466a07",
+      "title": "Fire Warning issued August 21 at 11:59AM CDT by NWS Fort Worth TX",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.5716f21f08da5e40f2ef9e5bdd27f7f78aca7bf5.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-08-21T13:25:00.000Z",
-      "topic": "Flooding",
+      "published_at": "2026-08-21T16:59:00.000Z",
+      "topic": "Wildfire",
       "status": "ok"
     }
   ]
