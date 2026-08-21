@@ -1,36 +1,36 @@
 {
   "schema_version": "1.0",
-  "date_key": "08-20",
-  "display_date": "August 20",
-  "generated_at": "2026-08-20T08:56:55.677Z",
+  "date_key": "08-21",
+  "display_date": "August 21",
+  "generated_at": "2026-08-21T08:58:50.891Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-2ae67ee317e00df01b6ed4cf",
+      "candidate_id": "event-1538e290ff1ecd691f0606ba",
       "type": "event",
-      "year": 1962,
-      "text": "The NS Savannah, the world's first nuclear-powered civilian ship, embarks on its maiden voyage.",
-      "article_title": "NS Savannah",
-      "url": "https://en.wikipedia.org/wiki/NS_Savannah",
+      "year": 1982,
+      "text": "Lebanese Civil War: The first troops of a multinational force lands in Beirut to oversee the Palestine Liberation Organization's withdrawal from Lebanon.",
+      "article_title": "Lebanese Civil War",
+      "url": "https://en.wikipedia.org/wiki/Lebanese_Civil_War",
       "category": "World history"
     },
     {
-      "candidate_id": "event-6743cc5a0c0cd80b4c1d41bf",
+      "candidate_id": "event-2afa2ac4b8f93d7caafbacde",
       "type": "event",
-      "year": 2008,
-      "text": "Spanair Flight 5022, from Madrid, Spain to Gran Canaria, skids off the runway and crashes at Barajas Airport. Of the 172 people on board, 146 die immediately, and eight more later die of injuries sustained in the crash.",
-      "article_title": "Spanair Flight 5022",
-      "url": "https://en.wikipedia.org/wiki/Spanair_Flight_5022",
+      "year": 1988,
+      "text": "The 6.9 Mw Nepal earthquake shakes the Nepal–India border with a maximum Mercalli intensity of VIII (Severe), leaving 709–1,450 people killed and thousands injured.",
+      "article_title": "1988 Nepal earthquake",
+      "url": "https://en.wikipedia.org/wiki/1988_Nepal_earthquake",
       "category": "Disasters and exploration"
     },
     {
-      "candidate_id": "event-eecdfd2251d981879236db1c",
+      "candidate_id": "event-a4dc97a7db03a6f89b5e8355",
       "type": "event",
-      "year": 2011,
-      "text": "First Air Flight 6560 crashes 1 mile (1.6 km) from the Resolute Bay runway, killing 12 of the 15 aboard.",
-      "article_title": "First Air Flight 6560",
-      "url": "https://en.wikipedia.org/wiki/First_Air_Flight_6560",
+      "year": 1995,
+      "text": "Atlantic Southeast Airlines Flight 529, an Embraer EMB 120 Brasilia, attempts to divert to West Georgia Regional Airport after the left engine fails, but the aircraft crashes in Carroll County near Carrollton, Georgia, killing nine of the 29 people on board.",
+      "article_title": "Atlantic Southeast Airlines Flight 529",
+      "url": "https://en.wikipedia.org/wiki/Atlantic_Southeast_Airlines_Flight_529",
       "category": "World history"
     }
   ]
