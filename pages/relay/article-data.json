@@ -1,22 +1,22 @@
 {
   "schema_version": "1.0",
-  "checked_at": "2026-08-21T11:45:09.061Z",
-  "latest_success_at": "2026-08-21T11:45:09.061Z",
+  "checked_at": "2026-08-21T13:13:21.114Z",
+  "latest_success_at": "2026-08-21T13:13:21.114Z",
   "status": "ok",
   "items": [
-    {
-      "title": "China Is Squeezing India Out of Russia’s Oil Trade",
-      "url": "https://oilprice.com/Latest-Energy-News/World-News/China-Is-Squeezing-India-Out-of-Russias-Oil-Trade.html",
-      "publisher": "OilPrice.com",
-      "published_at": "2026-08-20T18:30:00.000Z",
-      "source_id": "oilprice",
-      "status": "ok"
-    },
     {
       "title": "Houthis Move to Gain Complete Control Over Crucial Bab el-Mandeb Oil Chokepoint",
       "url": "https://oilprice.com/Geopolitics/Middle-East/Houthis-Move-to-Gain-Complete-Control-Over-Crucial-Bab-el-Mandeb-Oil-Chokepoint.html",
       "publisher": "OilPrice.com",
       "published_at": "2026-08-20T23:00:00.000Z",
+      "source_id": "oilprice",
+      "status": "ok"
+    },
+    {
+      "title": "Oil Prices Head for Second Straight Weekly Gain as Iran Risks Mount",
+      "url": "https://oilprice.com/Latest-Energy-News/World-News/Oil-Prices-Head-for-Second-Straight-Weekly-Gain-as-Iran-Risks-Mount.html",
+      "publisher": "OilPrice.com",
+      "published_at": "2026-08-21T05:30:00.000Z",
       "source_id": "oilprice",
       "status": "ok"
     },
@@ -45,14 +45,6 @@
       "status": "ok"
     },
     {
-      "title": "Lightning strike triggers fire in three natural gasoline tanks at Explorer Pipeline facility in Glenpool, Oklahoma",
-      "url": "https://watchers.news/2026/08/19/lightning-strike-triggers-fire-in-three-natural-gasoline-tanks-at-explorer-pipeline-facility-in-glenpool-oklahoma",
-      "publisher": "The Watchers",
-      "published_at": "2026-08-19T09:09:43.000Z",
-      "source_id": "the-watchers",
-      "status": "ok"
-    },
-    {
       "title": "Tankers Stack Up as Venezuela Sells Oil Faster Than Its Ports Can Handle",
       "url": "https://gcaptain.com/tankers-stack-up-as-venezuela-sells-oil-faster-than-its-ports-can-handle",
       "publisher": "gCaptain",
@@ -77,11 +69,19 @@
       "status": "ok"
     },
     {
-      "title": "US-South Korea military drills cut in half after Trump’s broadside",
-      "url": "https://breakingdefense.com/2026/08/us-south-korea-military-drills-cut-in-half-after-trumps-broadside",
+      "title": "‘Hot competition’: NSA deputy sounds alarm on China threat, AI race",
+      "url": "https://breakingdefense.com/2026/08/hot-competition-nsa-deputy-sounds-alarm-on-china-threat-ai-race",
       "publisher": "Breaking Defense",
-      "published_at": "2026-08-19T14:25:43.000Z",
+      "published_at": "2026-08-21T12:58:20.000Z",
       "source_id": "breaking-defense",
+      "status": "ok"
+    },
+    {
+      "title": "Dover declares State of Emergency after tornadoes and severe storms strike parts of Pennsylvania and Delaware",
+      "url": "https://watchers.news/2026/08/21/dover-declares-state-of-emergency-after-tornadoes-and-severe-storms-strike-parts-of-pennsylvania-and-delaware",
+      "publisher": "The Watchers",
+      "published_at": "2026-08-21T10:35:41.000Z",
+      "source_id": "the-watchers",
       "status": "ok"
     }
   ]
