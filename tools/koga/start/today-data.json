@@ -1,36 +1,36 @@
 {
   "schema_version": "1.0",
-  "date_key": "08-21",
-  "display_date": "August 21",
-  "generated_at": "2026-08-21T08:58:50.891Z",
+  "date_key": "08-22",
+  "display_date": "August 22",
+  "generated_at": "2026-08-22T08:48:37.748Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-1538e290ff1ecd691f0606ba",
+      "candidate_id": "event-bb09811ea7bd1b98277e91b2",
       "type": "event",
-      "year": 1982,
-      "text": "Lebanese Civil War: The first troops of a multinational force lands in Beirut to oversee the Palestine Liberation Organization's withdrawal from Lebanon.",
-      "article_title": "Lebanese Civil War",
-      "url": "https://en.wikipedia.org/wiki/Lebanese_Civil_War",
-      "category": "World history"
-    },
-    {
-      "candidate_id": "event-2afa2ac4b8f93d7caafbacde",
-      "type": "event",
-      "year": 1988,
-      "text": "The 6.9 Mw Nepal earthquake shakes the Nepal–India border with a maximum Mercalli intensity of VIII (Severe), leaving 709–1,450 people killed and thousands injured.",
-      "article_title": "1988 Nepal earthquake",
-      "url": "https://en.wikipedia.org/wiki/1988_Nepal_earthquake",
+      "year": 1985,
+      "text": "British Airtours Flight 28M suffers an engine fire during takeoff at Manchester Airport. The pilots abort but due to inefficient evacuation procedures 55 people are killed, mostly from smoke inhalation.",
+      "article_title": "1985 Manchester Airport disaster",
+      "url": "https://en.wikipedia.org/wiki/1985_Manchester_Airport_disaster",
       "category": "Disasters and exploration"
     },
     {
-      "candidate_id": "event-a4dc97a7db03a6f89b5e8355",
+      "candidate_id": "event-e9736ddbfdc55078cdd5f5eb",
       "type": "event",
-      "year": 1995,
-      "text": "Atlantic Southeast Airlines Flight 529, an Embraer EMB 120 Brasilia, attempts to divert to West Georgia Regional Airport after the left engine fails, but the aircraft crashes in Carroll County near Carrollton, Georgia, killing nine of the 29 people on board.",
-      "article_title": "Atlantic Southeast Airlines Flight 529",
-      "url": "https://en.wikipedia.org/wiki/Atlantic_Southeast_Airlines_Flight_529",
+      "year": 1981,
+      "text": "Far Eastern Air Transport Flight 103 disintegrates in mid-air and crashes in Sanyi Township, Miaoli County, Taiwan. All 110 people on board are killed.",
+      "article_title": "Far Eastern Air Transport Flight 103",
+      "url": "https://en.wikipedia.org/wiki/Far_Eastern_Air_Transport_Flight_103",
+      "category": "World history"
+    },
+    {
+      "candidate_id": "event-3fc5e5eb4e5c18d1ce3d2117",
+      "type": "event",
+      "year": 2006,
+      "text": "Pulkovo Aviation Enterprise Flight 612 crashes near the Russian border over eastern Ukraine, killing all 170 people on board.",
+      "article_title": "Pulkovo Aviation Enterprise Flight 612",
+      "url": "https://en.wikipedia.org/wiki/Pulkovo_Aviation_Enterprise_Flight_612",
       "category": "World history"
     }
   ]
