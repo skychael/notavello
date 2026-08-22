@@ -1,9 +1,18 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-22T07:02:08.196Z",
-  "latest_success_at": "2026-08-22T07:02:08.196Z",
+  "generated_at": "2026-08-22T07:47:50.958Z",
+  "latest_success_at": "2026-08-22T07:47:50.958Z",
   "status": "ok",
   "items": [
+    {
+      "id": "aa275531356f4c96",
+      "title": "Special Weather Statement issued August 22 at 5:16PM ChST by NWS Tiyan GU",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a42cfd9d7634ec662a0921a6d61724540f88aeea.001.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-08-22T07:16:00.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
     {
       "id": "f2bc3e5729017844",
       "title": "SPC Aug 22, 2026 0600 UTC Day 2 Convective Outlook",
@@ -19,15 +28,6 @@
       "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
       "publisher": "National Hurricane Center",
       "published_at": "2026-08-22T05:40:10.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "c3bf3cc05bf8c556",
-      "title": "Flood Watch issued August 21 at 2:45PM HST until August 24 at 6:00PM HST by NWS Honolulu HI",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f0fc8dafcb931ae040b1b9fe756dc334aca7034a.001.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-08-22T00:45:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
