@@ -1,15 +1,15 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-22T20:42:14.345Z",
-  "latest_success_at": "2026-08-22T20:42:14.345Z",
+  "generated_at": "2026-08-22T21:39:21.846Z",
+  "latest_success_at": "2026-08-22T21:39:21.846Z",
   "status": "ok",
   "items": [
     {
-      "id": "eb7cf27327ae9ec8",
-      "title": "Severe Thunderstorm Warning issued August 22 at 3:36PM CDT until August 22 at 4:15PM CDT by NWS Little Rock AR",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a23ca4962e60d50e7a3bc0caa39e151d51591e3a.001.1.cap",
+      "id": "8e7ac42920da043d",
+      "title": "Severe Thunderstorm Watch issued August 22 at 4:51PM EDT until August 22 at 9:00PM EDT by NWS Charleston WV",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.4da42380b9edd2d2057e904cc3b814f60e91cdbb.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-08-22T20:36:00.000Z",
+      "published_at": "2026-08-22T20:51:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },

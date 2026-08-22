@@ -2,7 +2,7 @@
   "schema_version": 1,
   "archive_date": "2026-08-22",
   "created_at": "2026-08-22T01:52:37.901Z",
-  "updated_at": "2026-08-22T20:42:14.675Z",
+  "updated_at": "2026-08-22T21:39:22.330Z",
   "articles": [
     {
       "title": "Every Chokepoint That Isn't Hormuz",
@@ -37,6 +37,15 @@
       "publisher": "OilPrice.com",
       "published_at": "2026-08-21T22:00:00.000Z",
       "source_id": "oilprice",
+      "first_seen_at": "2026-08-22T01:52:37.901Z",
+      "status": "ok"
+    },
+    {
+      "title": "Ukraine Situation Report: Kyiv Is Turning Soviet-Era Armor Into Robotic Combat Vehicles",
+      "url": "https://www.twz.com/news-features/ukraine-situation-report-kyiv-is-turning-soviet-era-armor-into-robotic-combat-vehicles",
+      "publisher": "TWZ (The War Zone)",
+      "published_at": "2026-08-21T21:14:45.000Z",
+      "source_id": "twz",
       "first_seen_at": "2026-08-22T01:52:37.901Z",
       "status": "ok"
     },
