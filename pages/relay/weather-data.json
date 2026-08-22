@@ -1,24 +1,24 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-22T22:41:25.769Z",
-  "latest_success_at": "2026-08-22T22:41:25.769Z",
-  "status": "ok",
+  "generated_at": "2026-08-22T23:38:01.589Z",
+  "latest_success_at": "2026-08-22T23:38:01.589Z",
+  "status": "partial",
   "items": [
     {
-      "id": "cc3e9e63906c1249",
-      "title": "Special Weather Statement issued August 22 at 5:25PM CDT by NWS Little Rock AR",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.dca97424df2359a57ff96410791fa306426f19a9.001.1.cap",
+      "id": "9f8d7df36e04e214",
+      "title": "Severe Thunderstorm Watch issued August 22 at 7:36PM EDT until August 22 at 9:00PM EDT by NWS Charleston WV",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.fc41c9c6e6d30e05bf8171ffe88a3c037857e1cf.002.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-08-22T22:25:00.000Z",
+      "published_at": "2026-08-22T23:36:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "8e7ac42920da043d",
-      "title": "Severe Thunderstorm Watch issued August 22 at 4:51PM EDT until August 22 at 9:00PM EDT by NWS Charleston WV",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.4da42380b9edd2d2057e904cc3b814f60e91cdbb.001.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-08-22T20:51:00.000Z",
+      "id": "b5ad93019d019ede",
+      "title": "Atlantic Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-08-22T23:32:51.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
