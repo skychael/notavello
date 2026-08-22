@@ -1,18 +1,9 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-22T18:51:01.780Z",
-  "latest_success_at": "2026-08-22T18:51:01.780Z",
+  "generated_at": "2026-08-22T19:39:09.766Z",
+  "latest_success_at": "2026-08-22T19:39:09.766Z",
   "status": "ok",
   "items": [
-    {
-      "id": "e59138db338364c6",
-      "title": "Special Weather Statement issued August 22 at 2:34PM EDT by NWS Charleston WV",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f9cee5186a34afdcbe094bb2aa6b8b400472b9ee.001.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-08-22T18:34:00.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
     {
       "id": "ea8e62246f3dd473",
       "title": "High Surf Advisory issued August 23 at 4:18AM ChST until August 23 at 4:00PM ChST by NWS Tiyan GU",
@@ -28,6 +19,15 @@
       "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
       "publisher": "National Hurricane Center",
       "published_at": "2026-08-22T17:16:46.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "8e59227894540e43",
+      "title": "Flood Watch issued August 22 at 3:06AM HST until August 24 at 6:00PM HST by NWS Honolulu HI",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.dcce0eecb5019c6dadd7dc3e92890c67aeba378c.001.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-08-22T13:06:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
