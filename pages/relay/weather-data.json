@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-22T13:03:14.230Z",
-  "latest_success_at": "2026-08-22T13:03:14.230Z",
+  "generated_at": "2026-08-22T13:46:19.281Z",
+  "latest_success_at": "2026-08-22T13:46:19.281Z",
   "status": "ok",
   "items": [
+    {
+      "id": "8e59227894540e43",
+      "title": "Flood Watch issued August 22 at 3:06AM HST until August 24 at 6:00PM HST by NWS Honolulu HI",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.dcce0eecb5019c6dadd7dc3e92890c67aeba378c.001.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-08-22T13:06:00.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "0a4db69bba7352c4",
+      "title": "Typhoon Saudel rapidly intensifies, passes close to Agrihan, Northern Mariana Islands",
+      "url": "https://watchers.news/2026/08/22/typhoon-saudel-rapidly-intensifies-passes-close-to-agrihan-northern-mariana-islands",
+      "publisher": "The Watchers",
+      "published_at": "2026-08-22T13:04:54.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
     {
       "id": "ee8e390990a944fc",
       "title": "Eastern North Pacific Tropical Weather Outlook",
       "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
       "publisher": "National Hurricane Center",
       "published_at": "2026-08-22T11:52:12.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "b2225e3a571494c8",
-      "title": "High Surf Advisory issued August 22 at 6:58PM ChST until August 23 at 4:00PM ChST by NWS Tiyan GU",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.61d8ab1de74de020041e8e4b428333a3c0b507ba.001.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-08-22T08:58:00.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "c3bf3cc05bf8c556",
-      "title": "Flood Watch issued August 21 at 2:45PM HST until August 24 at 6:00PM HST by NWS Honolulu HI",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f0fc8dafcb931ae040b1b9fe756dc334aca7034a.001.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-08-22T00:45:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
