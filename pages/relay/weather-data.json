@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-23T05:47:52.274Z",
-  "latest_success_at": "2026-08-23T05:47:52.274Z",
+  "generated_at": "2026-08-23T07:04:24.695Z",
+  "latest_success_at": "2026-08-23T07:04:24.695Z",
   "status": "ok",
   "items": [
     {
@@ -23,11 +23,11 @@
       "status": "ok"
     },
     {
-      "id": "ea8e62246f3dd473",
-      "title": "High Surf Advisory issued August 23 at 4:18AM ChST until August 23 at 4:00PM ChST by NWS Tiyan GU",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.427ca2ca595d2fe1cbe339d9b457b39567ec891a.001.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-08-22T18:18:00.000Z",
+      "id": "0a4db69bba7352c4",
+      "title": "Typhoon Saudel rapidly intensifies, passes close to Agrihan, Northern Mariana Islands",
+      "url": "https://watchers.news/2026/08/22/typhoon-saudel-rapidly-intensifies-passes-close-to-agrihan-northern-mariana-islands",
+      "publisher": "The Watchers",
+      "published_at": "2026-08-22T13:04:54.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
