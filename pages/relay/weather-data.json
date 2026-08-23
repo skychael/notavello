@@ -1,15 +1,15 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-22T23:38:01.589Z",
-  "latest_success_at": "2026-08-22T23:38:01.589Z",
-  "status": "partial",
+  "generated_at": "2026-08-23T02:01:32.464Z",
+  "latest_success_at": "2026-08-23T02:01:32.464Z",
+  "status": "ok",
   "items": [
     {
-      "id": "9f8d7df36e04e214",
-      "title": "Severe Thunderstorm Watch issued August 22 at 7:36PM EDT until August 22 at 9:00PM EDT by NWS Charleston WV",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.fc41c9c6e6d30e05bf8171ffe88a3c037857e1cf.002.1.cap",
+      "id": "f87b266edd4e0280",
+      "title": "Flood Watch issued August 22 at 3:39PM HST until August 24 at 6:00PM HST by NWS Honolulu HI",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.ef4fdec6ea34232ae5f9ad35fb060435a2ba2865.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-08-22T23:36:00.000Z",
+      "published_at": "2026-08-23T01:39:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
