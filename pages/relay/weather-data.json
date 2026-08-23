@@ -1,24 +1,24 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-23T04:54:06.336Z",
-  "latest_success_at": "2026-08-23T04:54:06.336Z",
+  "generated_at": "2026-08-23T05:47:52.274Z",
+  "latest_success_at": "2026-08-23T05:47:52.274Z",
   "status": "ok",
   "items": [
+    {
+      "id": "ee8e390990a944fc",
+      "title": "Eastern North Pacific Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-08-23T05:44:24.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
     {
       "id": "f87b266edd4e0280",
       "title": "Flood Watch issued August 22 at 3:39PM HST until August 24 at 6:00PM HST by NWS Honolulu HI",
       "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.ef4fdec6ea34232ae5f9ad35fb060435a2ba2865.001.1.cap",
       "publisher": "National Weather Service",
       "published_at": "2026-08-23T01:39:00.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "b5ad93019d019ede",
-      "title": "Atlantic Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-08-22T23:32:51.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
