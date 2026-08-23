@@ -1,36 +1,36 @@
 {
   "schema_version": "1.0",
-  "date_key": "08-22",
-  "display_date": "August 22",
-  "generated_at": "2026-08-22T08:48:37.748Z",
+  "date_key": "08-23",
+  "display_date": "August 23",
+  "generated_at": "2026-08-23T08:49:08.703Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-bb09811ea7bd1b98277e91b2",
+      "candidate_id": "event-5b7d38b407037b211462634b",
       "type": "event",
-      "year": 1985,
-      "text": "British Airtours Flight 28M suffers an engine fire during takeoff at Manchester Airport. The pilots abort but due to inefficient evacuation procedures 55 people are killed, mostly from smoke inhalation.",
-      "article_title": "1985 Manchester Airport disaster",
-      "url": "https://en.wikipedia.org/wiki/1985_Manchester_Airport_disaster",
+      "year": 2012,
+      "text": "A hot-air balloon crashes near the Slovenian capital of Ljubljana, killing six people and injuring 28 others.",
+      "article_title": "2012 Ljubljana Marshes hot air balloon crash",
+      "url": "https://en.wikipedia.org/wiki/2012_Ljubljana_Marshes_hot_air_balloon_crash",
       "category": "Disasters and exploration"
     },
     {
-      "candidate_id": "event-e9736ddbfdc55078cdd5f5eb",
+      "candidate_id": "event-69e370d2d49da5142e5207c5",
       "type": "event",
-      "year": 1981,
-      "text": "Far Eastern Air Transport Flight 103 disintegrates in mid-air and crashes in Sanyi Township, Miaoli County, Taiwan. All 110 people on board are killed.",
-      "article_title": "Far Eastern Air Transport Flight 103",
-      "url": "https://en.wikipedia.org/wiki/Far_Eastern_Air_Transport_Flight_103",
+      "year": 1966,
+      "text": "Lunar Orbiter 1 takes the first photograph of Earth from orbit around the Moon.",
+      "article_title": "Lunar Orbiter 1",
+      "url": "https://en.wikipedia.org/wiki/Lunar_Orbiter_1",
       "category": "World history"
     },
     {
-      "candidate_id": "event-3fc5e5eb4e5c18d1ce3d2117",
+      "candidate_id": "event-97418864f9904f28f414d1de",
       "type": "event",
-      "year": 2006,
-      "text": "Pulkovo Aviation Enterprise Flight 612 crashes near the Russian border over eastern Ukraine, killing all 170 people on board.",
-      "article_title": "Pulkovo Aviation Enterprise Flight 612",
-      "url": "https://en.wikipedia.org/wiki/Pulkovo_Aviation_Enterprise_Flight_612",
+      "year": 1954,
+      "text": "The first flight of the Lockheed C-130 multi-role aircraft takes place.",
+      "article_title": "Lockheed C-130 Hercules",
+      "url": "https://en.wikipedia.org/wiki/Lockheed_C-130_Hercules",
       "category": "World history"
     }
   ]
