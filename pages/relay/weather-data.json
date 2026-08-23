@@ -1,24 +1,24 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-23T11:39:19.190Z",
-  "latest_success_at": "2026-08-23T11:39:19.190Z",
+  "generated_at": "2026-08-23T13:04:21.620Z",
+  "latest_success_at": "2026-08-23T13:04:21.620Z",
   "status": "ok",
   "items": [
     {
-      "id": "b5ad93019d019ede",
-      "title": "Atlantic Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-08-23T11:32:25.000Z",
+      "id": "b13b7ca2c174a857",
+      "title": "Hawaiʻi County declares emergency as Tropical Storm Moke raises flood risk on Lala-damaged Big Island",
+      "url": "https://watchers.news/2026/08/23/hawai%ca%bbi-county-declares-emergency-as-tropical-storm-moke-raises-flood-risk-on-lala-damaged-big-island",
+      "publisher": "The Watchers",
+      "published_at": "2026-08-23T12:25:18.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "f87b266edd4e0280",
-      "title": "Flood Watch issued August 22 at 3:39PM HST until August 24 at 6:00PM HST by NWS Honolulu HI",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.ef4fdec6ea34232ae5f9ad35fb060435a2ba2865.001.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-08-23T01:39:00.000Z",
+      "id": "ee8e390990a944fc",
+      "title": "Eastern North Pacific Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-08-23T11:40:26.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
