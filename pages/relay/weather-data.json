@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-23T14:43:02.793Z",
-  "latest_success_at": "2026-08-23T14:43:02.793Z",
+  "generated_at": "2026-08-23T15:40:17.309Z",
+  "latest_success_at": "2026-08-23T15:40:17.309Z",
   "status": "ok",
   "items": [
     {
@@ -14,20 +14,20 @@
       "status": "ok"
     },
     {
+      "id": "471b5a181a1bb274",
+      "title": "Tropical Storm Iselle Graphics",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep4+shtml/153526.shtml?cone=",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-08-23T15:35:26.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
       "id": "ee8e390990a944fc",
       "title": "Eastern North Pacific Tropical Weather Outlook",
       "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
       "publisher": "National Hurricane Center",
       "published_at": "2026-08-23T11:40:26.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "0a4db69bba7352c4",
-      "title": "Typhoon Saudel rapidly intensifies, passes close to Agrihan, Northern Mariana Islands",
-      "url": "https://watchers.news/2026/08/22/typhoon-saudel-rapidly-intensifies-passes-close-to-agrihan-northern-mariana-islands",
-      "publisher": "The Watchers",
-      "published_at": "2026-08-22T13:04:54.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
