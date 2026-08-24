@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-24T22:46:39.881Z",
-  "latest_success_at": "2026-08-24T22:46:39.881Z",
+  "generated_at": "2026-08-24T23:39:58.584Z",
+  "latest_success_at": "2026-08-24T23:39:58.584Z",
   "status": "ok",
   "items": [
     {
@@ -14,20 +14,20 @@
       "status": "ok"
     },
     {
+      "id": "ee8e390990a944fc",
+      "title": "Eastern North Pacific Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-08-24T23:11:17.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
       "id": "a29d98d59cfd622f",
       "title": "Tropical Storm Iselle Graphics",
       "url": "https://www.nhc.noaa.gov/refresh/graphics_ep4+shtml/213411.shtml?cone=",
       "publisher": "National Hurricane Center",
       "published_at": "2026-08-24T21:34:11.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "cec543965d7aa596",
-      "title": "Tropical Depression Ten-E Wind Speed Probabilities Number 1",
-      "url": "https://www.nhc.noaa.gov/text/refresh/MIAPWSEP5+shtml/242033.shtml",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-08-24T20:33:50.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
