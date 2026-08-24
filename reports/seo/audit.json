@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-23T02:47:48.188Z",
+  "generatedAt": "2026-08-24T02:48:56.170Z",
   "totals": {
-    "pages": 231,
-    "indexable": 227,
-    "articles": 162,
-    "sitemap": 227,
+    "pages": 234,
+    "indexable": 230,
+    "articles": 164,
+    "sitemap": 230,
     "errors": 0,
-    "warnings": 146
+    "warnings": 149
   },
   "errors": [],
   "warnings": [
@@ -249,6 +249,16 @@
       "type": "template-pattern",
       "page": "/pages/blog/gr00t-1-7-unifies-humanoid-policy-development/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/half-a-hormuz-is-still-a-fuel-bill/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/half-a-hormuz-is-still-a-fuel-bill/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
     },
     {
       "type": "template-pattern",
@@ -691,6 +701,11 @@
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
     {
+      "type": "template-pattern",
+      "page": "/pages/blog/why-a-web-page-can-stay-stale-after-you-refresh-it/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
       "type": "topic-review",
       "page": "/pages/blog/why-coffee-is-so-expensive-2026/",
       "detail": "title/description lacks a clear AI, software, or computing connection"
@@ -750,7 +765,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 231,
+      "incomingLinks": 234,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -774,7 +789,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 231,
+      "incomingLinks": 234,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -882,7 +897,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 231,
+      "incomingLinks": 234,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -894,9 +909,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 231,
-      "lastmod": "2026-08-22",
-      "bodyWords": 656
+      "incomingLinks": 234,
+      "lastmod": "2026-08-23",
+      "bodyWords": 651
     },
     {
       "route": "/pages/blog/a-practical-checklist-for-checking-ai-generated-technical-answers/",
@@ -1158,9 +1173,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 101,
-      "lastmod": "2026-08-22",
-      "bodyWords": 2075
+      "incomingLinks": 103,
+      "lastmod": "2026-08-23",
+      "bodyWords": 2100
     },
     {
       "route": "/pages/blog/apple-speechanalyzer-local-transcription-apps/",
@@ -1665,6 +1680,18 @@
       "incomingLinks": 2,
       "lastmod": "2026-07-18",
       "bodyWords": 1249
+    },
+    {
+      "route": "/pages/blog/half-a-hormuz-is-still-a-fuel-bill/",
+      "file": "pages/blog/half-a-hormuz-is-still-a-fuel-bill/index.html",
+      "title": "Half A Hormuz Is Still A Fuel Bill — The Export | Notavello",
+      "description": "Hormuz oil flows are improving, but the workaround is still too small to make fuel cheap.",
+      "canonical": "https://notavello.com/pages/blog/half-a-hormuz-is-still-a-fuel-bill/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-08-24",
+      "bodyWords": 1425
     },
     {
       "route": "/pages/blog/hormuz-crew-risk-is-now-the-price-signal/",
@@ -2267,100 +2294,112 @@
       "bodyWords": 339
     },
     {
+      "route": "/pages/blog/page-10/",
+      "file": "pages/blog/page-10/index.html",
+      "title": "The Export — Page 10 | Notavello",
+      "description": "Older Notavello posts from The Export, page 10 of 10.",
+      "canonical": "https://notavello.com/pages/blog/page-10/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 1,
+      "lastmod": null,
+      "bodyWords": 128
+    },
+    {
       "route": "/pages/blog/page-2/",
       "file": "pages/blog/page-2/index.html",
       "title": "The Export — Page 2 | Notavello",
-      "description": "Older Notavello posts from The Export, page 2 of 9.",
+      "description": "Older Notavello posts from The Export, page 2 of 10.",
       "canonical": "https://notavello.com/pages/blog/page-2/",
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-22",
-      "bodyWords": 688
+      "lastmod": "2026-08-23",
+      "bodyWords": 687
     },
     {
       "route": "/pages/blog/page-3/",
       "file": "pages/blog/page-3/index.html",
       "title": "The Export — Page 3 | Notavello",
-      "description": "Older Notavello posts from The Export, page 3 of 9.",
+      "description": "Older Notavello posts from The Export, page 3 of 10.",
       "canonical": "https://notavello.com/pages/blog/page-3/",
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-22",
-      "bodyWords": 668
+      "lastmod": "2026-08-23",
+      "bodyWords": 673
     },
     {
       "route": "/pages/blog/page-4/",
       "file": "pages/blog/page-4/index.html",
       "title": "The Export — Page 4 | Notavello",
-      "description": "Older Notavello posts from The Export, page 4 of 9.",
+      "description": "Older Notavello posts from The Export, page 4 of 10.",
       "canonical": "https://notavello.com/pages/blog/page-4/",
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-22",
-      "bodyWords": 650
+      "lastmod": "2026-08-23",
+      "bodyWords": 645
     },
     {
       "route": "/pages/blog/page-5/",
       "file": "pages/blog/page-5/index.html",
       "title": "The Export — Page 5 | Notavello",
-      "description": "Older Notavello posts from The Export, page 5 of 9.",
+      "description": "Older Notavello posts from The Export, page 5 of 10.",
       "canonical": "https://notavello.com/pages/blog/page-5/",
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-22",
-      "bodyWords": 683
+      "lastmod": "2026-08-23",
+      "bodyWords": 689
     },
     {
       "route": "/pages/blog/page-6/",
       "file": "pages/blog/page-6/index.html",
       "title": "The Export — Page 6 | Notavello",
-      "description": "Older Notavello posts from The Export, page 6 of 9.",
+      "description": "Older Notavello posts from The Export, page 6 of 10.",
       "canonical": "https://notavello.com/pages/blog/page-6/",
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-22",
-      "bodyWords": 691
+      "lastmod": "2026-08-23",
+      "bodyWords": 681
     },
     {
       "route": "/pages/blog/page-7/",
       "file": "pages/blog/page-7/index.html",
       "title": "The Export — Page 7 | Notavello",
-      "description": "Older Notavello posts from The Export, page 7 of 9.",
+      "description": "Older Notavello posts from The Export, page 7 of 10.",
       "canonical": "https://notavello.com/pages/blog/page-7/",
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-22",
-      "bodyWords": 806
+      "lastmod": "2026-08-23",
+      "bodyWords": 794
     },
     {
       "route": "/pages/blog/page-8/",
       "file": "pages/blog/page-8/index.html",
       "title": "The Export — Page 8 | Notavello",
-      "description": "Older Notavello posts from The Export, page 8 of 9.",
+      "description": "Older Notavello posts from The Export, page 8 of 10.",
       "canonical": "https://notavello.com/pages/blog/page-8/",
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-22",
-      "bodyWords": 842
+      "lastmod": "2026-08-23",
+      "bodyWords": 838
     },
     {
       "route": "/pages/blog/page-9/",
       "file": "pages/blog/page-9/index.html",
       "title": "The Export — Page 9 | Notavello",
-      "description": "Older Notavello posts from The Export, page 9 of 9.",
+      "description": "Older Notavello posts from The Export, page 9 of 10.",
       "canonical": "https://notavello.com/pages/blog/page-9/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 1,
-      "lastmod": "2026-08-22",
-      "bodyWords": 884
+      "incomingLinks": 2,
+      "lastmod": "2026-08-23",
+      "bodyWords": 883
     },
     {
       "route": "/pages/blog/rebase-or-merge-how-to-choose-for-an-ordinary-git-branch/",
@@ -2538,7 +2577,7 @@
       "canonical": "https://notavello.com/pages/blog/suez-detour-oil-bottleneck/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 2,
+      "incomingLinks": 3,
       "lastmod": "2026-08-16",
       "bodyWords": 1410
     },
@@ -2759,6 +2798,18 @@
       "bodyWords": 820
     },
     {
+      "route": "/pages/blog/why-a-web-page-can-stay-stale-after-you-refresh-it/",
+      "file": "pages/blog/why-a-web-page-can-stay-stale-after-you-refresh-it/index.html",
+      "title": "Why a web page can stay stale after you refresh it — The Export | Notavello",
+      "description": "Browser caches, validators, service workers, and reload options determine whether a refresh shows fresh content or an old version.",
+      "canonical": "https://notavello.com/pages/blog/why-a-web-page-can-stay-stale-after-you-refresh-it/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-08-23",
+      "bodyWords": 866
+    },
+    {
       "route": "/pages/blog/why-ai-customer-service-is-so-bad/",
       "file": "pages/blog/why-ai-customer-service-is-so-bad/index.html",
       "title": "Why AI Customer Service Still Feels Hostile — The Export | Notavello",
@@ -2958,7 +3009,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 231,
+      "incomingLinks": 234,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -2970,7 +3021,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 231,
+      "incomingLinks": 234,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -2982,7 +3033,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 231,
+      "incomingLinks": 234,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -2994,7 +3045,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 231,
+      "incomingLinks": 234,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -3006,7 +3057,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 231,
+      "incomingLinks": 234,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -3019,8 +3070,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-08-23",
-      "bodyWords": 205
+      "lastmod": "2026-08-24",
+      "bodyWords": 211
     },
     {
       "route": "/pages/sample",
@@ -3042,7 +3093,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 231,
+      "incomingLinks": 234,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -3054,7 +3105,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 231,
+      "incomingLinks": 234,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -3078,7 +3129,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 231,
+      "incomingLinks": 234,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -3510,7 +3561,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 231,
+      "incomingLinks": 234,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }
