@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-24T17:49:22.423Z",
-  "latest_success_at": "2026-08-24T17:49:22.423Z",
+  "generated_at": "2026-08-24T19:02:55.881Z",
+  "latest_success_at": "2026-08-24T19:02:55.881Z",
   "status": "ok",
   "items": [
     {
@@ -14,11 +14,11 @@
       "status": "ok"
     },
     {
-      "id": "ee8e390990a944fc",
-      "title": "Eastern North Pacific Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
+      "id": "b5ad93019d019ede",
+      "title": "Atlantic Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-08-24T17:42:46.000Z",
+      "published_at": "2026-08-24T17:55:45.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
