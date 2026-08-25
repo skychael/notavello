@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-25T19:48:20.335Z",
-  "latest_success_at": "2026-08-25T19:48:20.335Z",
+  "generated_at": "2026-08-25T20:48:36.783Z",
+  "latest_success_at": "2026-08-25T20:48:36.783Z",
   "status": "ok",
   "items": [
     {
@@ -14,20 +14,20 @@
       "status": "ok"
     },
     {
-      "id": "ee8e390990a944fc",
-      "title": "Eastern North Pacific Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
+      "id": "46ad7dc074b84738",
+      "title": "Tropical Storm Iselle Wind Speed Probabilities Number 10",
+      "url": "https://www.nhc.noaa.gov/text/refresh/MIAPWSEP4+shtml/252041.shtml",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-08-25T17:54:28.000Z",
+      "published_at": "2026-08-25T20:41:30.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "0516cb2694a5ce98",
-      "title": "Tropical Storm Julio Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep5+shtml/153413.shtml?cone=",
+      "id": "b7855b85722b0089",
+      "title": "Remnants of Julio Wind Speed Probabilities Number 5",
+      "url": "https://www.nhc.noaa.gov/text/refresh/MIAPWSEP5+shtml/252039.shtml",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-08-25T15:34:13.000Z",
+      "published_at": "2026-08-25T20:39:58.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
