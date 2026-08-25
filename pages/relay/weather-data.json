@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-25T14:08:06.901Z",
-  "latest_success_at": "2026-08-25T14:08:06.901Z",
+  "generated_at": "2026-08-25T15:08:22.191Z",
+  "latest_success_at": "2026-08-25T15:08:22.191Z",
   "status": "ok",
   "items": [
     {
@@ -14,20 +14,20 @@
       "status": "ok"
     },
     {
-      "id": "ee8e390990a944fc",
-      "title": "Eastern North Pacific Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
+      "id": "d86c2fd8c5aaee36",
+      "title": "Tropical Storm Julio Graphics",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep5+shtml/144735.shtml?cone=",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-08-25T11:54:58.000Z",
+      "published_at": "2026-08-25T14:47:35.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "57af42d490fd97f0",
-      "title": "Tropical Storm Julio Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep5+shtml/093944.shtml?cone=",
+      "id": "1daf03c14f03ee2a",
+      "title": "Tropical Storm Iselle Graphics",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep4+shtml/144522.shtml?cone=",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-08-25T09:39:44.000Z",
+      "published_at": "2026-08-25T14:45:22.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
