@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "08-24",
-  "display_date": "August 24",
-  "generated_at": "2026-08-24T09:05:24.907Z",
+  "date_key": "08-25",
+  "display_date": "August 25",
+  "generated_at": "2026-08-25T09:00:49.564Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-df8627f12b5b32eabca51cfc",
+      "candidate_id": "event-6f4c10381188daf47dcd161b",
       "type": "event",
-      "year": 1963,
-      "text": "Buddhist crisis: As a result of the Xá Lợi Pagoda raids, the US State Department cables the United States Embassy, Saigon to encourage Army of the Republic of Vietnam generals to launch a coup against President Ngô Đình Diệm if he did not remove his brother Ngô Đình Nhu.",
-      "article_title": "Buddhist crisis",
-      "url": "https://en.wikipedia.org/wiki/Buddhist_crisis",
-      "category": "Politics and society"
+      "year": 2012,
+      "text": "Voyager 1 spacecraft enters interstellar space, becoming the first man-made object to do so.",
+      "article_title": "Voyager 1",
+      "url": "https://en.wikipedia.org/wiki/Voyager_1",
+      "category": "Science and technology"
     },
     {
-      "candidate_id": "event-e3dec709aa3fb1eb3a3da9ed",
+      "candidate_id": "event-1e9f2cf4901573f056678c21",
       "type": "event",
-      "year": 1998,
-      "text": "First radio-frequency identification (RFID) human implantation tested in the United Kingdom.",
-      "article_title": "Radio-frequency identification",
-      "url": "https://en.wikipedia.org/wiki/Radio-frequency_identification",
+      "year": 1991,
+      "text": "The Battle of Vukovar begins. An 87-day siege of Vukovar by the Yugoslav People's Army (JNA), supported by various Serb paramilitary forces, between August and November 1991 (during the Croatian War of Independence).",
+      "article_title": "Battle of Vukovar",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Vukovar",
       "category": "World history"
     },
     {
-      "candidate_id": "event-7a29b4fac192eab77c2e345c",
+      "candidate_id": "event-3d9d1708c420dd2c3b3451c7",
       "type": "event",
-      "year": 1942,
-      "text": "World War II: The Battle of the Eastern Solomons. Japanese aircraft carrier Ryūjō is sunk, with the loss of seven officers and 113 crewmen. The US carrier USS Enterprise is heavily damaged.",
-      "article_title": "World War II",
-      "url": "https://en.wikipedia.org/wiki/World_War_II",
-      "category": "World history"
+      "year": 2017,
+      "text": "Hurricane Harvey makes landfall in Texas as a powerful Category 4 hurricane, the strongest hurricane to make landfall in the United States since 2004.",
+      "article_title": "Hurricane Harvey",
+      "url": "https://en.wikipedia.org/wiki/Hurricane_Harvey",
+      "category": "Disasters and exploration"
     }
   ]
 }
