@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-24T02:48:56.170Z",
+  "generatedAt": "2026-08-25T02:42:19.978Z",
   "totals": {
-    "pages": 234,
-    "indexable": 230,
-    "articles": 164,
-    "sitemap": 230,
+    "pages": 236,
+    "indexable": 232,
+    "articles": 166,
+    "sitemap": 232,
     "errors": 0,
-    "warnings": 149
+    "warnings": 152
   },
   "errors": [],
   "warnings": [
@@ -189,6 +189,11 @@
       "type": "topic-review",
       "page": "/pages/blog/displayport-vs-hdmi/",
       "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/fertilizer-bill-is-a-pipeline-bill/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
     {
       "type": "template-pattern",
@@ -418,6 +423,16 @@
     {
       "type": "topic-review",
       "page": "/pages/blog/how-to-review-package-lockfile-changes-without-guessing/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/how-to-review-startup-apps-without-disabling-something-important/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/how-to-review-startup-apps-without-disabling-something-important/",
       "detail": "title/description lacks a clear AI, software, or computing connection"
     },
     {
@@ -765,7 +780,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 234,
+      "incomingLinks": 236,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -789,7 +804,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 234,
+      "incomingLinks": 236,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -897,7 +912,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 234,
+      "incomingLinks": 236,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -909,9 +924,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 234,
-      "lastmod": "2026-08-23",
-      "bodyWords": 651
+      "incomingLinks": 236,
+      "lastmod": "2026-08-24",
+      "bodyWords": 652
     },
     {
       "route": "/pages/blog/a-practical-checklist-for-checking-ai-generated-technical-answers/",
@@ -1173,9 +1188,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 103,
-      "lastmod": "2026-08-23",
-      "bodyWords": 2100
+      "incomingLinks": 105,
+      "lastmod": "2026-08-24",
+      "bodyWords": 2123
     },
     {
       "route": "/pages/blog/apple-speechanalyzer-local-transcription-apps/",
@@ -1490,6 +1505,18 @@
       "bodyWords": 1143
     },
     {
+      "route": "/pages/blog/fertilizer-bill-is-a-pipeline-bill/",
+      "file": "pages/blog/fertilizer-bill-is-a-pipeline-bill/index.html",
+      "title": "The Fertilizer Bill Is A Pipeline Bill Now — The Export | Notavello",
+      "description": "USDA’s new ammonia pipeline data shows why fertilizer relief depends on transport, not just Hormuz headlines.",
+      "canonical": "https://notavello.com/pages/blog/fertilizer-bill-is-a-pipeline-bill/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-08-25",
+      "bodyWords": 1699
+    },
+    {
       "route": "/pages/blog/fertilizer-relief-has-an-august-16-deadline/",
       "file": "pages/blog/fertilizer-relief-has-an-august-16-deadline/index.html",
       "title": "Fertilizer Relief Has An August 16 Deadline — The Export | Notavello",
@@ -1713,7 +1740,7 @@
       "canonical": "https://notavello.com/pages/blog/hormuz-fertilizer-shock-farm-costs-food-prices/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 3,
+      "incomingLinks": 4,
       "lastmod": "2026-08-02",
       "bodyWords": 1517
     },
@@ -1992,6 +2019,18 @@
       "incomingLinks": 2,
       "lastmod": "2026-08-10",
       "bodyWords": 906
+    },
+    {
+      "route": "/pages/blog/how-to-review-startup-apps-without-disabling-something-important/",
+      "file": "pages/blog/how-to-review-startup-apps-without-disabling-something-important/index.html",
+      "title": "How to review startup apps without disabling something important — The Export | Notavello",
+      "description": "Learn how to identify the impact of startup apps on Windows and macOS, understand vendor purposes, test changes reversibly, and avoid disabling essential",
+      "canonical": "https://notavello.com/pages/blog/how-to-review-startup-apps-without-disabling-something-important/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-08-24",
+      "bodyWords": 876
     },
     {
       "route": "/pages/blog/how-to-submit-an-app-to-apple-and-google/",
@@ -2302,8 +2341,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": null,
-      "bodyWords": 128
+      "lastmod": "2026-08-24",
+      "bodyWords": 230
     },
     {
       "route": "/pages/blog/page-2/",
@@ -2314,8 +2353,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-23",
-      "bodyWords": 687
+      "lastmod": "2026-08-24",
+      "bodyWords": 684
     },
     {
       "route": "/pages/blog/page-3/",
@@ -2326,8 +2365,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-23",
-      "bodyWords": 673
+      "lastmod": "2026-08-24",
+      "bodyWords": 674
     },
     {
       "route": "/pages/blog/page-4/",
@@ -2338,8 +2377,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-23",
-      "bodyWords": 645
+      "lastmod": "2026-08-24",
+      "bodyWords": 649
     },
     {
       "route": "/pages/blog/page-5/",
@@ -2350,8 +2389,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-23",
-      "bodyWords": 689
+      "lastmod": "2026-08-24",
+      "bodyWords": 690
     },
     {
       "route": "/pages/blog/page-6/",
@@ -2362,8 +2401,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-23",
-      "bodyWords": 681
+      "lastmod": "2026-08-24",
+      "bodyWords": 680
     },
     {
       "route": "/pages/blog/page-7/",
@@ -2374,8 +2413,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-23",
-      "bodyWords": 794
+      "lastmod": "2026-08-24",
+      "bodyWords": 779
     },
     {
       "route": "/pages/blog/page-8/",
@@ -2386,8 +2425,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-23",
-      "bodyWords": 838
+      "lastmod": "2026-08-24",
+      "bodyWords": 830
     },
     {
       "route": "/pages/blog/page-9/",
@@ -2398,8 +2437,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-23",
-      "bodyWords": 883
+      "lastmod": "2026-08-24",
+      "bodyWords": 872
     },
     {
       "route": "/pages/blog/rebase-or-merge-how-to-choose-for-an-ordinary-git-branch/",
@@ -3009,7 +3048,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 234,
+      "incomingLinks": 236,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -3021,7 +3060,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 234,
+      "incomingLinks": 236,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -3033,7 +3072,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 234,
+      "incomingLinks": 236,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -3045,7 +3084,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 234,
+      "incomingLinks": 236,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -3057,7 +3096,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 234,
+      "incomingLinks": 236,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -3070,8 +3109,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-08-24",
-      "bodyWords": 211
+      "lastmod": "2026-08-25",
+      "bodyWords": 217
     },
     {
       "route": "/pages/sample",
@@ -3093,7 +3132,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 234,
+      "incomingLinks": 236,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -3105,7 +3144,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 234,
+      "incomingLinks": 236,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -3129,7 +3168,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 234,
+      "incomingLinks": 236,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -3561,7 +3600,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 234,
+      "incomingLinks": 236,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }
