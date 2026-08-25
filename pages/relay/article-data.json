@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "checked_at": "2026-08-24T23:39:57.681Z",
-  "latest_success_at": "2026-08-24T23:39:57.681Z",
+  "checked_at": "2026-08-25T01:54:38.252Z",
+  "latest_success_at": "2026-08-25T01:54:38.252Z",
   "status": "ok",
   "items": [
     {
@@ -18,6 +18,14 @@
       "publisher": "OilPrice.com",
       "published_at": "2026-08-24T18:27:00.000Z",
       "source_id": "oilprice",
+      "status": "ok"
+    },
+    {
+      "title": "Ship Struck In Strait Of Hormuz Hours After Trump’s “Economic D-Day” Campaign On Iran Unveiled",
+      "url": "https://www.twz.com/news-features/ship-struck-in-strait-of-hormuz-hours-after-trumps-economic-d-day-campaign-on-iran-unveiled",
+      "publisher": "TWZ (The War Zone)",
+      "published_at": "2026-08-25T00:25:25.000Z",
+      "source_id": "twz",
       "status": "ok"
     },
     {
@@ -57,14 +65,6 @@
       "url": "https://www.twz.com/air/storm-shadow-cruise-missile-production-is-coming-to-ukraine",
       "publisher": "TWZ (The War Zone)",
       "published_at": "2026-08-24T17:12:33.000Z",
-      "source_id": "twz",
-      "status": "ok"
-    },
-    {
-      "title": "China’s Next Aircraft Carrier Is Taking Shape",
-      "url": "https://www.twz.com/sea/chinas-next-aircraft-carrier-is-taking-shape",
-      "publisher": "TWZ (The War Zone)",
-      "published_at": "2026-08-22T17:29:15.000Z",
       "source_id": "twz",
       "status": "ok"
     },
