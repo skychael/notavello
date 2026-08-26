@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "checked_at": "2026-08-26T18:05:28.440Z",
-  "latest_success_at": "2026-08-26T18:05:28.440Z",
+  "checked_at": "2026-08-26T20:05:31.164Z",
+  "latest_success_at": "2026-08-26T20:05:31.164Z",
   "status": "ok",
   "items": [
     {
@@ -18,6 +18,14 @@
       "publisher": "OilPrice.com",
       "published_at": "2026-08-26T11:00:00.000Z",
       "source_id": "oilprice",
+      "status": "ok"
+    },
+    {
+      "title": "Oil and Grain Exports Plummet as Ukraine and Russia Attack Shipping",
+      "url": "https://maritime-executive.com/article/oil-and-grain-exports-plummet-as-ukraine-and-russia-attack-shipping",
+      "publisher": "The Maritime Executive",
+      "published_at": "2026-08-26T19:05:59.000Z",
+      "source_id": "maritime-executive",
       "status": "ok"
     },
     {
@@ -53,11 +61,11 @@
       "status": "ok"
     },
     {
-      "title": "In-Depth Suezmax Study Makes CAPEX Case for T-Boss",
-      "url": "https://maritime-executive.com/article/in-depth-suezmax-study-makes-capex-case-for-t-boss-sterntubeless-shaftline-system",
-      "publisher": "The Maritime Executive",
-      "published_at": "2026-08-25T19:15:00.000Z",
-      "source_id": "maritime-executive",
+      "title": "Army taps 5 vendors to move forward with nuclear microreactor prototypes",
+      "url": "https://breakingdefense.com/2026/08/army-taps-5-vendors-to-build-nuclear-microreactors-with-2-2b-pot",
+      "publisher": "Breaking Defense",
+      "published_at": "2026-08-26T20:00:00.000Z",
+      "source_id": "breaking-defense",
       "status": "ok"
     },
     {
@@ -74,14 +82,6 @@
       "publisher": "TWZ (The War Zone)",
       "published_at": "2026-08-24T17:12:33.000Z",
       "source_id": "twz",
-      "status": "ok"
-    },
-    {
-      "title": "M6.9 solar flare produces Earth-directed CME, G2 geomagnetic storm watch issued for August 28",
-      "url": "https://watchers.news/2026/08/26/m6-9-solar-flare-produces-earth-directed-cme-g2-geomagnetic-storm-watch-issued-for-august-28",
-      "publisher": "The Watchers",
-      "published_at": "2026-08-26T14:56:12.000Z",
-      "source_id": "the-watchers",
       "status": "ok"
     }
   ]
