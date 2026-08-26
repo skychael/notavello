@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-26T20:05:32.286Z",
-  "latest_success_at": "2026-08-26T20:05:32.286Z",
+  "generated_at": "2026-08-26T23:40:36.257Z",
+  "latest_success_at": "2026-08-26T23:40:36.257Z",
   "status": "ok",
   "items": [
     {
@@ -14,20 +14,20 @@
       "status": "ok"
     },
     {
-      "id": "ee8e390990a944fc",
-      "title": "Eastern North Pacific Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
+      "id": "b5ad93019d019ede",
+      "title": "Atlantic Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-08-26T17:47:45.000Z",
+      "published_at": "2026-08-26T23:39:47.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "9cff273e1a254ea8",
+      "id": "ad1ec1cb7478ae14",
       "title": "Tropical Storm Iselle Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep4+shtml/152819.shtml?cone=",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep4+shtml/212701.shtml?cone=",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-08-26T15:28:19.000Z",
+      "published_at": "2026-08-26T21:27:01.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
