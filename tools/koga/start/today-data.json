@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "08-25",
-  "display_date": "August 25",
-  "generated_at": "2026-08-25T09:00:49.564Z",
+  "date_key": "08-26",
+  "display_date": "August 26",
+  "generated_at": "2026-08-26T09:03:03.720Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-6f4c10381188daf47dcd161b",
+      "candidate_id": "event-b662872ffd8efacaea5c9acc",
       "type": "event",
-      "year": 2012,
-      "text": "Voyager 1 spacecraft enters interstellar space, becoming the first man-made object to do so.",
-      "article_title": "Voyager 1",
-      "url": "https://en.wikipedia.org/wiki/Voyager_1",
-      "category": "Science and technology"
-    },
-    {
-      "candidate_id": "event-1e9f2cf4901573f056678c21",
-      "type": "event",
-      "year": 1991,
-      "text": "The Battle of Vukovar begins. An 87-day siege of Vukovar by the Yugoslav People's Army (JNA), supported by various Serb paramilitary forces, between August and November 1991 (during the Croatian War of Independence).",
-      "article_title": "Battle of Vukovar",
-      "url": "https://en.wikipedia.org/wiki/Battle_of_Vukovar",
-      "category": "World history"
-    },
-    {
-      "candidate_id": "event-3d9d1708c420dd2c3b3451c7",
-      "type": "event",
-      "year": 2017,
-      "text": "Hurricane Harvey makes landfall in Texas as a powerful Category 4 hurricane, the strongest hurricane to make landfall in the United States since 2004.",
-      "article_title": "Hurricane Harvey",
-      "url": "https://en.wikipedia.org/wiki/Hurricane_Harvey",
+      "year": 1998,
+      "text": "The first flight of the Boeing Delta III ends in disaster 75 seconds after liftoff, resulting in the loss of the Galaxy X  communications satellite.",
+      "article_title": "Delta III",
+      "url": "https://en.wikipedia.org/wiki/Delta_III",
       "category": "Disasters and exploration"
+    },
+    {
+      "candidate_id": "event-541ecf8ac4b4978638a00541",
+      "type": "event",
+      "year": 1969,
+      "text": "Aeroflot Flight 1770 crashes while landing at Vnukovo International Airport, killing 16.",
+      "article_title": "1969 Vnukovo Airport Il-18 crash",
+      "url": "https://en.wikipedia.org/wiki/1969_Vnukovo_Airport_Il-18_crash",
+      "category": "Disasters and exploration"
+    },
+    {
+      "candidate_id": "event-e4958eeb9a2b652d6acd5ddc",
+      "type": "event",
+      "year": 2003,
+      "text": "A Beechcraft 1900 operating as Colgan Air Flight 9446 crashes after taking off from Barnstable Municipal Airport in Yarmouth, Massachusetts, killing both pilots on board.",
+      "article_title": "Beechcraft 1900",
+      "url": "https://en.wikipedia.org/wiki/Beechcraft_1900",
+      "category": "World history"
     }
   ]
 }
