@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-26T02:50:01.096Z",
+  "generatedAt": "2026-08-27T11:53:26.547Z",
   "totals": {
-    "pages": 237,
-    "indexable": 233,
-    "articles": 167,
-    "sitemap": 233,
+    "pages": 239,
+    "indexable": 235,
+    "articles": 169,
+    "sitemap": 235,
     "errors": 0,
-    "warnings": 153
+    "warnings": 156
   },
   "errors": [],
   "warnings": [
@@ -188,6 +188,16 @@
     {
       "type": "topic-review",
       "page": "/pages/blog/displayport-vs-hdmi/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/east-coast-diesel-draw-is-the-next-fuel-bill/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/east-coast-diesel-draw-is-the-next-fuel-bill/",
       "detail": "title/description lacks a clear AI, software, or computing connection"
     },
     {
@@ -393,6 +403,11 @@
     {
       "type": "template-pattern",
       "page": "/pages/blog/how-to-debug-an-ai-prompt-that-gives-inconsistent-answers/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/how-to-investigate-disappearing-disk-space/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
     {
@@ -785,7 +800,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 237,
+      "incomingLinks": 239,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -809,7 +824,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 237,
+      "incomingLinks": 239,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -917,7 +932,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 237,
+      "incomingLinks": 239,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -929,9 +944,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 237,
-      "lastmod": "2026-08-25",
-      "bodyWords": 647
+      "incomingLinks": 239,
+      "lastmod": "2026-08-26",
+      "bodyWords": 658
     },
     {
       "route": "/pages/blog/a-practical-checklist-for-checking-ai-generated-technical-answers/",
@@ -1193,9 +1208,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 106,
-      "lastmod": "2026-08-25",
-      "bodyWords": 2134
+      "incomingLinks": 108,
+      "lastmod": "2026-08-26",
+      "bodyWords": 2156
     },
     {
       "route": "/pages/blog/apple-speechanalyzer-local-transcription-apps/",
@@ -1457,7 +1472,7 @@
       "canonical": "https://notavello.com/pages/blog/diesel-exports-are-keeping-the-fuel-bill-hot/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 3,
+      "incomingLinks": 4,
       "lastmod": "2026-08-18",
       "bodyWords": 1393
     },
@@ -1508,6 +1523,18 @@
       "incomingLinks": 2,
       "lastmod": "2026-07-22",
       "bodyWords": 1143
+    },
+    {
+      "route": "/pages/blog/east-coast-diesel-draw-is-the-next-fuel-bill/",
+      "file": "pages/blog/east-coast-diesel-draw-is-the-next-fuel-bill/index.html",
+      "title": "The East Coast Diesel Draw Is The Next Fuel Bill — The Export | Notavello",
+      "description": "East Coast diesel stocks just fell hard while national diesel hit $5.65. That is a trucking, heating and grocery bill problem.",
+      "canonical": "https://notavello.com/pages/blog/east-coast-diesel-draw-is-the-next-fuel-bill/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-08-27",
+      "bodyWords": 1429
     },
     {
       "route": "/pages/blog/fertilizer-bill-is-a-pipeline-bill/",
@@ -1978,6 +2005,18 @@
       "bodyWords": 972
     },
     {
+      "route": "/pages/blog/how-to-investigate-disappearing-disk-space/",
+      "file": "pages/blog/how-to-investigate-disappearing-disk-space/index.html",
+      "title": "How to investigate disappearing disk space — The Export | Notavello",
+      "description": "Learn how to use built-in Windows and macOS tools to find where disk space is going, review temporary files and app data, and perform safe cleanups.",
+      "canonical": "https://notavello.com/pages/blog/how-to-investigate-disappearing-disk-space/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-08-26",
+      "bodyWords": 860
+    },
+    {
       "route": "/pages/blog/how-to-make-account-recovery-safer-before-you-need-it/",
       "file": "pages/blog/how-to-make-account-recovery-safer-before-you-need-it/index.html",
       "title": "How to make account recovery safer before you need it — The Export | Notavello",
@@ -2358,8 +2397,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": "2026-08-25",
-      "bodyWords": 278
+      "lastmod": "2026-08-26",
+      "bodyWords": 371
     },
     {
       "route": "/pages/blog/page-2/",
@@ -2370,8 +2409,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-25",
-      "bodyWords": 689
+      "lastmod": "2026-08-26",
+      "bodyWords": 688
     },
     {
       "route": "/pages/blog/page-3/",
@@ -2382,8 +2421,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-25",
-      "bodyWords": 678
+      "lastmod": "2026-08-26",
+      "bodyWords": 674
     },
     {
       "route": "/pages/blog/page-4/",
@@ -2394,7 +2433,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-25",
+      "lastmod": "2026-08-26",
       "bodyWords": 647
     },
     {
@@ -2406,8 +2445,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-25",
-      "bodyWords": 682
+      "lastmod": "2026-08-26",
+      "bodyWords": 674
     },
     {
       "route": "/pages/blog/page-6/",
@@ -2418,8 +2457,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-25",
-      "bodyWords": 685
+      "lastmod": "2026-08-26",
+      "bodyWords": 689
     },
     {
       "route": "/pages/blog/page-7/",
@@ -2430,8 +2469,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-25",
-      "bodyWords": 777
+      "lastmod": "2026-08-26",
+      "bodyWords": 759
     },
     {
       "route": "/pages/blog/page-8/",
@@ -2442,8 +2481,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-25",
-      "bodyWords": 824
+      "lastmod": "2026-08-26",
+      "bodyWords": 837
     },
     {
       "route": "/pages/blog/page-9/",
@@ -2454,8 +2493,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-25",
-      "bodyWords": 871
+      "lastmod": "2026-08-26",
+      "bodyWords": 859
     },
     {
       "route": "/pages/blog/rebase-or-merge-how-to-choose-for-an-ordinary-git-branch/",
@@ -3065,7 +3104,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 237,
+      "incomingLinks": 239,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -3077,7 +3116,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 237,
+      "incomingLinks": 239,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -3089,7 +3128,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 237,
+      "incomingLinks": 239,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -3101,7 +3140,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 237,
+      "incomingLinks": 239,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -3113,7 +3152,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 237,
+      "incomingLinks": 239,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -3126,8 +3165,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-08-26",
-      "bodyWords": 223
+      "lastmod": "2026-08-27",
+      "bodyWords": 229
     },
     {
       "route": "/pages/sample",
@@ -3149,7 +3188,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 237,
+      "incomingLinks": 239,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -3161,7 +3200,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 237,
+      "incomingLinks": 239,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -3185,7 +3224,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 237,
+      "incomingLinks": 239,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -3617,7 +3656,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 237,
+      "incomingLinks": 239,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }
