@@ -1,36 +1,36 @@
 {
   "schema_version": "1.0",
-  "date_key": "08-26",
-  "display_date": "August 26",
-  "generated_at": "2026-08-26T09:03:03.720Z",
+  "date_key": "08-27",
+  "display_date": "August 27",
+  "generated_at": "2026-08-27T19:04:55.710Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-b662872ffd8efacaea5c9acc",
+      "candidate_id": "event-92ebb7b62412d320336ca9df",
       "type": "event",
-      "year": 1998,
-      "text": "The first flight of the Boeing Delta III ends in disaster 75 seconds after liftoff, resulting in the loss of the Galaxy X  communications satellite.",
-      "article_title": "Delta III",
-      "url": "https://en.wikipedia.org/wiki/Delta_III",
+      "year": 2006,
+      "text": "Comair Flight 5191 crashes on takeoff from Blue Grass Airport in Lexington, Kentucky, bound for Hartsfield–Jackson Atlanta International Airport in Atlanta. Of the passengers and crew, 49 of 50 are confirmed dead in the hours following the crash.",
+      "article_title": "Comair Flight 5191",
+      "url": "https://en.wikipedia.org/wiki/Comair_Flight_5191",
       "category": "Disasters and exploration"
     },
     {
-      "candidate_id": "event-541ecf8ac4b4978638a00541",
+      "candidate_id": "event-a5bd1abd5f4fd855f5137888",
       "type": "event",
-      "year": 1969,
-      "text": "Aeroflot Flight 1770 crashes while landing at Vnukovo International Airport, killing 16.",
-      "article_title": "1969 Vnukovo Airport Il-18 crash",
-      "url": "https://en.wikipedia.org/wiki/1969_Vnukovo_Airport_Il-18_crash",
-      "category": "Disasters and exploration"
+      "year": 1962,
+      "text": "The Mariner 2 unmanned space mission is launched to Venus by NASA.",
+      "article_title": "Mariner 2",
+      "url": "https://en.wikipedia.org/wiki/Mariner_2",
+      "category": "Science and technology"
     },
     {
-      "candidate_id": "event-e4958eeb9a2b652d6acd5ddc",
+      "candidate_id": "event-616759ad7c11d1da3be74509",
       "type": "event",
-      "year": 2003,
-      "text": "A Beechcraft 1900 operating as Colgan Air Flight 9446 crashes after taking off from Barnstable Municipal Airport in Yarmouth, Massachusetts, killing both pilots on board.",
-      "article_title": "Beechcraft 1900",
-      "url": "https://en.wikipedia.org/wiki/Beechcraft_1900",
+      "year": 1956,
+      "text": "The nuclear power station at Calder Hall in the United Kingdom was connected to the national power grid becoming the world's first commercial nuclear power station to generate electricity on an industrial scale.",
+      "article_title": "Calder Hall nuclear power station",
+      "url": "https://en.wikipedia.org/wiki/Calder_Hall_nuclear_power_station",
       "category": "World history"
     }
   ]
