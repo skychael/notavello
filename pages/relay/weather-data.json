@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-26T23:40:36.257Z",
-  "latest_success_at": "2026-08-26T23:40:36.257Z",
+  "generated_at": "2026-08-27T09:55:31.916Z",
+  "latest_success_at": "2026-08-27T09:55:31.916Z",
   "status": "ok",
   "items": [
     {
@@ -14,20 +14,20 @@
       "status": "ok"
     },
     {
-      "id": "b5ad93019d019ede",
-      "title": "Atlantic Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-08-26T23:39:47.000Z",
+      "id": "a605a4fb70977cb7",
+      "title": "SPC Day 2 Fire Weather Outlook",
+      "url": "https://www.spc.noaa.gov/products/fire_wx/fwdy2.html",
+      "publisher": "Storm Prediction Center",
+      "published_at": "2026-08-27T06:05:42.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "ad1ec1cb7478ae14",
-      "title": "Tropical Storm Iselle Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep4+shtml/212701.shtml?cone=",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-08-26T21:27:01.000Z",
+      "id": "f2bc3e5729017844",
+      "title": "SPC Aug 27, 2026 0600 UTC Day 2 Convective Outlook",
+      "url": "https://www.spc.noaa.gov/products/outlook/day2otlk_0600.html",
+      "publisher": "Storm Prediction Center",
+      "published_at": "2026-08-27T06:02:05.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
