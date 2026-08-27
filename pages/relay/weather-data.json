@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-27T09:55:31.916Z",
-  "latest_success_at": "2026-08-27T09:55:31.916Z",
+  "generated_at": "2026-08-27T20:33:57.915Z",
+  "latest_success_at": "2026-08-27T20:33:57.915Z",
   "status": "ok",
   "items": [
-    {
-      "id": "b13b7ca2c174a857",
-      "title": "Hawaiʻi County declares emergency as Tropical Storm Moke raises flood risk on Lala-damaged Big Island",
-      "url": "https://watchers.news/2026/08/23/hawai%ca%bbi-county-declares-emergency-as-tropical-storm-moke-raises-flood-risk-on-lala-damaged-big-island",
-      "publisher": "The Watchers",
-      "published_at": "2026-08-23T12:25:18.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
     {
       "id": "a605a4fb70977cb7",
       "title": "SPC Day 2 Fire Weather Outlook",
       "url": "https://www.spc.noaa.gov/products/fire_wx/fwdy2.html",
       "publisher": "Storm Prediction Center",
-      "published_at": "2026-08-27T06:05:42.000Z",
+      "published_at": "2026-08-27T19:44:20.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "f2bc3e5729017844",
-      "title": "SPC Aug 27, 2026 0600 UTC Day 2 Convective Outlook",
-      "url": "https://www.spc.noaa.gov/products/outlook/day2otlk_0600.html",
-      "publisher": "Storm Prediction Center",
-      "published_at": "2026-08-27T06:02:05.000Z",
+      "id": "ee8e390990a944fc",
+      "title": "Eastern North Pacific Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-08-27T17:52:17.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "8d709bd26f8a4c1a",
+      "title": "Tropical Storm Dolly forms over central Atlantic, heavy rain forecast for Caribbean islands",
+      "url": "https://watchers.news/2026/08/27/tropical-storm-dolly-forms-over-central-atlantic-heavy-rain-forecast-for-caribbean-islands",
+      "publisher": "The Watchers",
+      "published_at": "2026-08-27T15:50:42.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
