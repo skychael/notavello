@@ -1,15 +1,25 @@
 {
-  "generatedAt": "2026-08-27T11:53:26.547Z",
+  "generatedAt": "2026-08-28T13:16:52.263Z",
   "totals": {
-    "pages": 239,
-    "indexable": 235,
-    "articles": 169,
-    "sitemap": 235,
+    "pages": 241,
+    "indexable": 237,
+    "articles": 171,
+    "sitemap": 237,
     "errors": 0,
-    "warnings": 156
+    "warnings": 160
   },
   "errors": [],
   "warnings": [
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/a-plain-language-guide-to-file-permissions/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/a-plain-language-guide-to-file-permissions/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
     {
       "type": "template-pattern",
       "page": "/pages/blog/a-practical-checklist-for-checking-ai-generated-technical-answers/",
@@ -497,6 +507,16 @@
     },
     {
       "type": "template-pattern",
+      "page": "/pages/blog/labor-day-gasoline-cushion-is-thin/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/labor-day-gasoline-cushion-is-thin/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
       "page": "/pages/blog/local-ai-memory-claims-need-receipts/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
@@ -800,7 +820,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 239,
+      "incomingLinks": 241,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -824,7 +844,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 239,
+      "incomingLinks": 241,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -932,7 +952,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 239,
+      "incomingLinks": 241,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -944,9 +964,21 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 239,
-      "lastmod": "2026-08-26",
-      "bodyWords": 658
+      "incomingLinks": 241,
+      "lastmod": "2026-08-27",
+      "bodyWords": 656
+    },
+    {
+      "route": "/pages/blog/a-plain-language-guide-to-file-permissions/",
+      "file": "pages/blog/a-plain-language-guide-to-file-permissions/index.html",
+      "title": "A Plain-Language Guide to File Permissions — The Export | Notavello",
+      "description": "Learn how file permissions work in operating systems, including owners, groups, read/write/execute rights, and applying least privilege to keep systems secure.",
+      "canonical": "https://notavello.com/pages/blog/a-plain-language-guide-to-file-permissions/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-08-27",
+      "bodyWords": 974
     },
     {
       "route": "/pages/blog/a-practical-checklist-for-checking-ai-generated-technical-answers/",
@@ -1208,9 +1240,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 108,
-      "lastmod": "2026-08-26",
-      "bodyWords": 2156
+      "incomingLinks": 110,
+      "lastmod": "2026-08-27",
+      "bodyWords": 2175
     },
     {
       "route": "/pages/blog/apple-speechanalyzer-local-transcription-apps/",
@@ -1280,7 +1312,7 @@
       "canonical": "https://notavello.com/pages/blog/big-crude-build-not-pump-relief/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 2,
+      "incomingLinks": 3,
       "lastmod": "2026-08-14",
       "bodyWords": 1388
     },
@@ -2185,6 +2217,18 @@
       "bodyWords": 1514
     },
     {
+      "route": "/pages/blog/labor-day-gasoline-cushion-is-thin/",
+      "file": "pages/blog/labor-day-gasoline-cushion-is-thin/index.html",
+      "title": "The Labor Day Gasoline Cushion Is Thin — The Export | Notavello",
+      "description": "Gasoline stocks fell to 206.8 million barrels before Labor Day, keeping pump prices high even as crude inventories rose.",
+      "canonical": "https://notavello.com/pages/blog/labor-day-gasoline-cushion-is-thin/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-08-28",
+      "bodyWords": 1146
+    },
+    {
       "route": "/pages/blog/local-ai-memory-claims-need-receipts/",
       "file": "pages/blog/local-ai-memory-claims-need-receipts/index.html",
       "title": "Local AI Memory Claims Need Receipts — The Export | Notavello",
@@ -2397,8 +2441,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": "2026-08-26",
-      "bodyWords": 371
+      "lastmod": "2026-08-27",
+      "bodyWords": 470
     },
     {
       "route": "/pages/blog/page-2/",
@@ -2409,8 +2453,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-26",
-      "bodyWords": 688
+      "lastmod": "2026-08-27",
+      "bodyWords": 678
     },
     {
       "route": "/pages/blog/page-3/",
@@ -2421,8 +2465,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-26",
-      "bodyWords": 674
+      "lastmod": "2026-08-27",
+      "bodyWords": 684
     },
     {
       "route": "/pages/blog/page-4/",
@@ -2433,8 +2477,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-26",
-      "bodyWords": 647
+      "lastmod": "2026-08-27",
+      "bodyWords": 649
     },
     {
       "route": "/pages/blog/page-5/",
@@ -2445,8 +2489,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-26",
-      "bodyWords": 674
+      "lastmod": "2026-08-27",
+      "bodyWords": 665
     },
     {
       "route": "/pages/blog/page-6/",
@@ -2457,8 +2501,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-26",
-      "bodyWords": 689
+      "lastmod": "2026-08-27",
+      "bodyWords": 694
     },
     {
       "route": "/pages/blog/page-7/",
@@ -2469,8 +2513,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-26",
-      "bodyWords": 759
+      "lastmod": "2026-08-27",
+      "bodyWords": 757
     },
     {
       "route": "/pages/blog/page-8/",
@@ -2481,8 +2525,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-26",
-      "bodyWords": 837
+      "lastmod": "2026-08-27",
+      "bodyWords": 824
     },
     {
       "route": "/pages/blog/page-9/",
@@ -2493,8 +2537,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-26",
-      "bodyWords": 859
+      "lastmod": "2026-08-27",
+      "bodyWords": 847
     },
     {
       "route": "/pages/blog/rebase-or-merge-how-to-choose-for-an-ordinary-git-branch/",
@@ -3104,7 +3148,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 239,
+      "incomingLinks": 241,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -3116,7 +3160,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 239,
+      "incomingLinks": 241,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -3128,7 +3172,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 239,
+      "incomingLinks": 241,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -3140,7 +3184,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 239,
+      "incomingLinks": 241,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -3152,7 +3196,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 239,
+      "incomingLinks": 241,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -3165,8 +3209,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-08-27",
-      "bodyWords": 229
+      "lastmod": "2026-08-28",
+      "bodyWords": 235
     },
     {
       "route": "/pages/sample",
@@ -3188,7 +3232,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 239,
+      "incomingLinks": 241,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -3200,7 +3244,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 239,
+      "incomingLinks": 241,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -3224,7 +3268,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 239,
+      "incomingLinks": 241,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -3656,7 +3700,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 239,
+      "incomingLinks": 241,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }
