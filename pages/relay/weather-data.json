@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-27T20:33:57.915Z",
-  "latest_success_at": "2026-08-27T20:33:57.915Z",
-  "status": "ok",
+  "generated_at": "2026-08-28T05:27:00.782Z",
+  "latest_success_at": "2026-08-28T05:27:00.782Z",
+  "status": "partial",
   "items": [
-    {
-      "id": "a605a4fb70977cb7",
-      "title": "SPC Day 2 Fire Weather Outlook",
-      "url": "https://www.spc.noaa.gov/products/fire_wx/fwdy2.html",
-      "publisher": "Storm Prediction Center",
-      "published_at": "2026-08-27T19:44:20.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
     {
       "id": "ee8e390990a944fc",
       "title": "Eastern North Pacific Tropical Weather Outlook",
       "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-08-27T17:52:17.000Z",
+      "published_at": "2026-08-28T05:19:45.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "8d709bd26f8a4c1a",
-      "title": "Tropical Storm Dolly forms over central Atlantic, heavy rain forecast for Caribbean islands",
-      "url": "https://watchers.news/2026/08/27/tropical-storm-dolly-forms-over-central-atlantic-heavy-rain-forecast-for-caribbean-islands",
-      "publisher": "The Watchers",
-      "published_at": "2026-08-27T15:50:42.000Z",
+      "id": "6533da27b60e6f26",
+      "title": "Tropical Storm Lowell Graphics",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep2+shtml/033748.shtml?cone=",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-08-28T03:37:48.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "6699205a9eab31b1",
+      "title": "Tropical Storm Karina Graphics",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep1+shtml/033219.shtml?cone=",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-08-28T03:32:19.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
