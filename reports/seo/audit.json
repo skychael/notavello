@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-28T13:16:52.263Z",
+  "generatedAt": "2026-08-29T08:13:01.720Z",
   "totals": {
-    "pages": 241,
-    "indexable": 237,
-    "articles": 171,
-    "sitemap": 237,
+    "pages": 243,
+    "indexable": 239,
+    "articles": 173,
+    "sitemap": 239,
     "errors": 0,
-    "warnings": 160
+    "warnings": 163
   },
   "errors": [],
   "warnings": [
@@ -592,6 +592,16 @@
     },
     {
       "type": "template-pattern",
+      "page": "/pages/blog/propane-is-the-rare-fuel-cushion-left/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/propane-is-the-rare-fuel-cushion-left/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
       "page": "/pages/blog/rebase-or-merge-how-to-choose-for-an-ordinary-git-branch/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
@@ -742,6 +752,11 @@
     },
     {
       "type": "template-pattern",
+      "page": "/pages/blog/what-safe-mode-tells-you-about-a-computer-problem/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "template-pattern",
       "page": "/pages/blog/when-a-clean-reinstall-fixes-software-problems-and-when-it-does-not/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
@@ -820,7 +835,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 241,
+      "incomingLinks": 243,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -844,7 +859,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 241,
+      "incomingLinks": 243,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -952,7 +967,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 241,
+      "incomingLinks": 243,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -964,9 +979,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 241,
-      "lastmod": "2026-08-27",
-      "bodyWords": 656
+      "incomingLinks": 243,
+      "lastmod": "2026-08-28",
+      "bodyWords": 667
     },
     {
       "route": "/pages/blog/a-plain-language-guide-to-file-permissions/",
@@ -1240,9 +1255,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 110,
-      "lastmod": "2026-08-27",
-      "bodyWords": 2175
+      "incomingLinks": 112,
+      "lastmod": "2026-08-28",
+      "bodyWords": 2197
     },
     {
       "route": "/pages/blog/apple-speechanalyzer-local-transcription-apps/",
@@ -1564,7 +1579,7 @@
       "canonical": "https://notavello.com/pages/blog/east-coast-diesel-draw-is-the-next-fuel-bill/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 2,
+      "incomingLinks": 3,
       "lastmod": "2026-08-27",
       "bodyWords": 1429
     },
@@ -2441,8 +2456,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": "2026-08-27",
-      "bodyWords": 470
+      "lastmod": "2026-08-28",
+      "bodyWords": 557
     },
     {
       "route": "/pages/blog/page-2/",
@@ -2453,8 +2468,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-27",
-      "bodyWords": 678
+      "lastmod": "2026-08-28",
+      "bodyWords": 675
     },
     {
       "route": "/pages/blog/page-3/",
@@ -2465,8 +2480,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-27",
-      "bodyWords": 684
+      "lastmod": "2026-08-28",
+      "bodyWords": 681
     },
     {
       "route": "/pages/blog/page-4/",
@@ -2477,8 +2492,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-27",
-      "bodyWords": 649
+      "lastmod": "2026-08-28",
+      "bodyWords": 659
     },
     {
       "route": "/pages/blog/page-5/",
@@ -2489,8 +2504,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-27",
-      "bodyWords": 665
+      "lastmod": "2026-08-28",
+      "bodyWords": 656
     },
     {
       "route": "/pages/blog/page-6/",
@@ -2501,8 +2516,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-27",
-      "bodyWords": 694
+      "lastmod": "2026-08-28",
+      "bodyWords": 697
     },
     {
       "route": "/pages/blog/page-7/",
@@ -2513,8 +2528,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-27",
-      "bodyWords": 757
+      "lastmod": "2026-08-28",
+      "bodyWords": 731
     },
     {
       "route": "/pages/blog/page-8/",
@@ -2525,8 +2540,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-27",
-      "bodyWords": 824
+      "lastmod": "2026-08-28",
+      "bodyWords": 837
     },
     {
       "route": "/pages/blog/page-9/",
@@ -2537,8 +2552,20 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-27",
-      "bodyWords": 847
+      "lastmod": "2026-08-28",
+      "bodyWords": 840
+    },
+    {
+      "route": "/pages/blog/propane-is-the-rare-fuel-cushion-left/",
+      "file": "pages/blog/propane-is-the-rare-fuel-cushion-left/index.html",
+      "title": "Propane Is The Rare Fuel Cushion Left — The Export | Notavello",
+      "description": "U.S. propane stocks are 32% above average, giving farms and rural homes a real cushion while diesel and gasoline stay tight.",
+      "canonical": "https://notavello.com/pages/blog/propane-is-the-rare-fuel-cushion-left/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-08-29",
+      "bodyWords": 1513
     },
     {
       "route": "/pages/blog/rebase-or-merge-how-to-choose-for-an-ordinary-git-branch/",
@@ -2901,6 +2928,18 @@
       "bodyWords": 1074
     },
     {
+      "route": "/pages/blog/what-safe-mode-tells-you-about-a-computer-problem/",
+      "file": "pages/blog/what-safe-mode-tells-you-about-a-computer-problem/index.html",
+      "title": "What Safe Mode Tells You About a Computer Problem — The Export | Notavello",
+      "description": "Safe mode limits startup software and drivers to help diagnose whether issues stem from third-party components or core system problems on Mac and Windows.",
+      "canonical": "https://notavello.com/pages/blog/what-safe-mode-tells-you-about-a-computer-problem/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-08-28",
+      "bodyWords": 1005
+    },
+    {
       "route": "/pages/blog/when-a-clean-reinstall-fixes-software-problems-and-when-it-does-not/",
       "file": "pages/blog/when-a-clean-reinstall-fixes-software-problems-and-when-it-does-not/index.html",
       "title": "When a clean reinstall fixes software problems and when it does not — The Export | Notavello",
@@ -3148,7 +3187,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 241,
+      "incomingLinks": 243,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -3160,7 +3199,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 241,
+      "incomingLinks": 243,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -3172,7 +3211,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 241,
+      "incomingLinks": 243,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -3184,7 +3223,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 241,
+      "incomingLinks": 243,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -3196,7 +3235,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 241,
+      "incomingLinks": 243,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -3209,8 +3248,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-08-28",
-      "bodyWords": 235
+      "lastmod": "2026-08-29",
+      "bodyWords": 241
     },
     {
       "route": "/pages/sample",
@@ -3232,7 +3271,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 241,
+      "incomingLinks": 243,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -3244,7 +3283,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 241,
+      "incomingLinks": 243,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -3268,7 +3307,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 241,
+      "incomingLinks": 243,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -3700,7 +3739,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 241,
+      "incomingLinks": 243,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }
