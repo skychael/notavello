@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "08-28",
-  "display_date": "August 28",
-  "generated_at": "2026-08-28T20:12:26.301Z",
+  "date_key": "08-29",
+  "display_date": "August 29",
+  "generated_at": "2026-08-29T13:50:40.893Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-b7cdeffde664bdf0f0fd52ef",
+      "candidate_id": "event-a4c7c9e3e675f933ce6132d0",
       "type": "event",
-      "year": 1988,
-      "text": "Ramstein air show disaster: Three aircraft of the Frecce Tricolori demonstration team collide and the wreckage falls into the crowd. Seventy-five are killed and 346 seriously injured.",
-      "article_title": "Ramstein air show disaster",
-      "url": "https://en.wikipedia.org/wiki/Ramstein_air_show_disaster",
+      "year": 1998,
+      "text": "Eighty people are killed when Cubana de Aviación Flight 389 crashes during a rejected takeoff from the Old Mariscal Sucre International Airport in Quito, Ecuador.",
+      "article_title": "Cubana de Aviación Flight 389",
+      "url": "https://en.wikipedia.org/wiki/Cubana_de_Aviaci%C3%B3n_Flight_389",
+      "category": "World history"
+    },
+    {
+      "candidate_id": "event-c431cd8dbcee2121b9706282",
+      "type": "event",
+      "year": 2005,
+      "text": "Hurricane Katrina devastates much of the U.S. Gulf Coast from Louisiana to the Florida Panhandle, killing up to 1,392 people and causing $125 billion in damage.",
+      "article_title": "Hurricane Katrina",
+      "url": "https://en.wikipedia.org/wiki/Hurricane_Katrina",
       "category": "Disasters and exploration"
     },
     {
-      "candidate_id": "event-f23f9acdf796a57d2914e0e7",
+      "candidate_id": "event-010e601abc871b155147fde5",
       "type": "event",
-      "year": 2016,
-      "text": "The first experimental mission of ISRO's Scramjet Engine towards the realisation of an Air Breathing Propulsion System is successfully conducted from Satish Dhawan Space Centre SHAR, Sriharikota.",
-      "article_title": "ISRO",
-      "url": "https://en.wikipedia.org/wiki/ISRO",
-      "category": "Science and technology"
-    },
-    {
-      "candidate_id": "event-7e81604afb6bfa5446bd36ab",
-      "type": "event",
-      "year": 1993,
-      "text": "NASA's Galileo probe performs a flyby of the asteroid 243 Ida. Astronomers later discover a moon, the first known asteroid moon, in pictures from the flyby and name it Dactyl.",
-      "article_title": "NASA",
-      "url": "https://en.wikipedia.org/wiki/NASA",
-      "category": "Science and technology"
+      "year": 1975,
+      "text": "El Tacnazo:  Francisco Morales Bermúdez, Peruvian Prime Minister carries out a coup d'état in the city of Tacna, forcing the sitting President of Peru, Juan Velasco Alvarado, to resign and assuming his place as the new President.",
+      "article_title": "Tacnazo",
+      "url": "https://en.wikipedia.org/wiki/Tacnazo",
+      "category": "Politics and society"
     }
   ]
 }
