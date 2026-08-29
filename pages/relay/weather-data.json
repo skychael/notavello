@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-28T18:46:56.783Z",
-  "latest_success_at": "2026-08-28T18:46:56.783Z",
+  "generated_at": "2026-08-29T02:14:57.228Z",
+  "latest_success_at": "2026-08-29T02:14:57.228Z",
   "status": "partial",
   "items": [
     {
-      "id": "112b65c948fdb836",
-      "title": "Hydrologic Outlook issued August 28 at 2:15PM AST by NWS San Juan PR",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.7abee5f8b20e850a7e927a9c67837816fd9c2c86.001.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-08-28T18:15:00.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "4c31190a9c521e8a",
-      "title": "SPC Aug 28, 2026 1730 UTC Day 2 Convective Outlook",
-      "url": "https://www.spc.noaa.gov/products/outlook/day2otlk_1730.html",
-      "publisher": "Storm Prediction Center",
-      "published_at": "2026-08-28T17:28:02.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "46a4c42de39a8b1d",
-      "title": "Tropical Storm Lowell Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep2+shtml/153406.shtml?cone=",
+      "id": "ee8e390990a944fc",
+      "title": "Eastern North Pacific Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-08-28T15:34:06.000Z",
+      "published_at": "2026-08-28T23:37:22.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "759bcf3467f7b4c0",
+      "title": "Tropical Storm Lowell Graphics",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep2+shtml/212721.shtml?cone=",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-08-28T21:27:21.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "5019e243bb61b374",
+      "title": "Tropical Storm Karina Graphics",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep1+shtml/212151.shtml?cone=",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-08-28T21:21:51.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
