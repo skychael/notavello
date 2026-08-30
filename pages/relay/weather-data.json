@@ -1,9 +1,18 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-30T12:57:07.770Z",
-  "latest_success_at": "2026-08-30T12:57:07.770Z",
+  "generated_at": "2026-08-30T17:33:10.627Z",
+  "latest_success_at": "2026-08-30T17:33:10.627Z",
   "status": "partial",
   "items": [
+    {
+      "id": "87ddbb5cac45ec48",
+      "title": "Hurricane Karina Graphics",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep1+shtml/152238.shtml?cone=",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-08-30T15:22:38.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
     {
       "id": "b5ad93019d019ede",
       "title": "Atlantic Tropical Weather Outlook",
@@ -14,21 +23,12 @@
       "status": "ok"
     },
     {
-      "id": "abe468d6252c38a0",
-      "title": "Summary for Tropical Storm Lowell (EP2/EP122026)",
-      "url": "https://www.nhc.noaa.gov/text/refresh/MIATCPEP2+shtml/300950.shtml",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-08-30T09:50:35.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "09ac36ff8bfea334",
-      "title": "Hurricane Karina Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep1+shtml/092218.shtml?cone=",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-08-30T09:22:18.000Z",
-      "topic": "Hurricane",
+      "id": "38a1d8630caa0383",
+      "title": "SPC Aug 30, 2026 1630 UTC Day 1 Convective Outlook",
+      "url": "https://www.spc.noaa.gov/products/outlook/day1otlk_1630.html",
+      "publisher": "Storm Prediction Center",
+      "published_at": "2026-08-30T16:32:07.000Z",
+      "topic": "Severe weather",
       "status": "ok"
     }
   ]
