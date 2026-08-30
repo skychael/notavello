@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-29T08:13:01.720Z",
+  "generatedAt": "2026-08-30T07:12:15.407Z",
   "totals": {
-    "pages": 243,
-    "indexable": 239,
-    "articles": 173,
-    "sitemap": 239,
+    "pages": 245,
+    "indexable": 241,
+    "articles": 175,
+    "sitemap": 241,
     "errors": 0,
-    "warnings": 163
+    "warnings": 167
   },
   "errors": [],
   "warnings": [
@@ -129,6 +129,16 @@
       "type": "template-pattern",
       "page": "/pages/blog/browser-privacy-signals-cookie-banner-fix/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/chinas-urea-cargoes-are-the-fertilizer-relief-valve/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/chinas-urea-cargoes-are-the-fertilizer-relief-valve/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
     },
     {
       "type": "template-pattern",
@@ -801,6 +811,16 @@
       "detail": "title/description lacks a clear AI, software, or computing connection"
     },
     {
+      "type": "template-pattern",
+      "page": "/pages/blog/why-incorrect-system-time-breaks-more-than-the-clock/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/why-incorrect-system-time-breaks-more-than-the-clock/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
       "type": "topic-review",
       "page": "/pages/blog/why-macs-suck-for-power-users/",
       "detail": "title/description lacks a clear AI, software, or computing connection"
@@ -835,7 +855,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 243,
+      "incomingLinks": 245,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -859,7 +879,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 243,
+      "incomingLinks": 245,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -967,7 +987,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 243,
+      "incomingLinks": 245,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -979,9 +999,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 243,
-      "lastmod": "2026-08-28",
-      "bodyWords": 667
+      "incomingLinks": 245,
+      "lastmod": "2026-08-29",
+      "bodyWords": 658
     },
     {
       "route": "/pages/blog/a-plain-language-guide-to-file-permissions/",
@@ -1255,9 +1275,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 112,
-      "lastmod": "2026-08-28",
-      "bodyWords": 2197
+      "incomingLinks": 114,
+      "lastmod": "2026-08-29",
+      "bodyWords": 2220
     },
     {
       "route": "/pages/blog/apple-speechanalyzer-local-transcription-apps/",
@@ -1366,6 +1386,18 @@
       "incomingLinks": 2,
       "lastmod": "2026-07-27",
       "bodyWords": 1479
+    },
+    {
+      "route": "/pages/blog/chinas-urea-cargoes-are-the-fertilizer-relief-valve/",
+      "file": "pages/blog/chinas-urea-cargoes-are-the-fertilizer-relief-valve/index.html",
+      "title": "China's Urea Cargoes Are The Fertilizer Relief Valve — The Export | Notavello",
+      "description": "China’s urea shipments to India ease fertilizer panic, but U.S. farm input costs are still high heading into fall.",
+      "canonical": "https://notavello.com/pages/blog/chinas-urea-cargoes-are-the-fertilizer-relief-valve/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-08-30",
+      "bodyWords": 1487
     },
     {
       "route": "/pages/blog/choosing-the-right-ai-tool/",
@@ -1591,7 +1623,7 @@
       "canonical": "https://notavello.com/pages/blog/fertilizer-bill-is-a-pipeline-bill/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 2,
+      "incomingLinks": 3,
       "lastmod": "2026-08-25",
       "bodyWords": 1699
     },
@@ -2456,8 +2488,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": "2026-08-28",
-      "bodyWords": 557
+      "lastmod": "2026-08-29",
+      "bodyWords": 646
     },
     {
       "route": "/pages/blog/page-2/",
@@ -2468,8 +2500,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-28",
-      "bodyWords": 675
+      "lastmod": "2026-08-29",
+      "bodyWords": 674
     },
     {
       "route": "/pages/blog/page-3/",
@@ -2480,7 +2512,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-28",
+      "lastmod": "2026-08-29",
       "bodyWords": 681
     },
     {
@@ -2492,8 +2524,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-28",
-      "bodyWords": 659
+      "lastmod": "2026-08-29",
+      "bodyWords": 664
     },
     {
       "route": "/pages/blog/page-5/",
@@ -2504,8 +2536,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-28",
-      "bodyWords": 656
+      "lastmod": "2026-08-29",
+      "bodyWords": 651
     },
     {
       "route": "/pages/blog/page-6/",
@@ -2516,8 +2548,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-28",
-      "bodyWords": 697
+      "lastmod": "2026-08-29",
+      "bodyWords": 700
     },
     {
       "route": "/pages/blog/page-7/",
@@ -2528,8 +2560,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-28",
-      "bodyWords": 731
+      "lastmod": "2026-08-29",
+      "bodyWords": 709
     },
     {
       "route": "/pages/blog/page-8/",
@@ -2540,8 +2572,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-28",
-      "bodyWords": 837
+      "lastmod": "2026-08-29",
+      "bodyWords": 842
     },
     {
       "route": "/pages/blog/page-9/",
@@ -2552,8 +2584,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-28",
-      "bodyWords": 840
+      "lastmod": "2026-08-29",
+      "bodyWords": 837
     },
     {
       "route": "/pages/blog/propane-is-the-rare-fuel-cushion-left/",
@@ -3072,6 +3104,18 @@
       "bodyWords": 2224
     },
     {
+      "route": "/pages/blog/why-incorrect-system-time-breaks-more-than-the-clock/",
+      "file": "pages/blog/why-incorrect-system-time-breaks-more-than-the-clock/index.html",
+      "title": "Why incorrect system time breaks more than the clock — The Export | Notavello",
+      "description": "Incorrect system time invalidates certificates, breaks Kerberos authentication, and scrambles logs.",
+      "canonical": "https://notavello.com/pages/blog/why-incorrect-system-time-breaks-more-than-the-clock/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-08-29",
+      "bodyWords": 899
+    },
+    {
       "route": "/pages/blog/why-macs-suck-for-power-users/",
       "file": "pages/blog/why-macs-suck-for-power-users/index.html",
       "title": "Why Macs Suck for Power Users: The Bugs We Learned to Ignore — The Export | Notavello",
@@ -3187,7 +3231,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 243,
+      "incomingLinks": 245,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -3199,7 +3243,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 243,
+      "incomingLinks": 245,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -3211,7 +3255,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 243,
+      "incomingLinks": 245,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -3223,7 +3267,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 243,
+      "incomingLinks": 245,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -3235,7 +3279,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 243,
+      "incomingLinks": 245,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -3248,8 +3292,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-08-29",
-      "bodyWords": 241
+      "lastmod": "2026-08-30",
+      "bodyWords": 247
     },
     {
       "route": "/pages/sample",
@@ -3271,7 +3315,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 243,
+      "incomingLinks": 245,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -3283,7 +3327,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 243,
+      "incomingLinks": 245,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -3307,7 +3351,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 243,
+      "incomingLinks": 245,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -3739,7 +3783,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 243,
+      "incomingLinks": 245,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }
