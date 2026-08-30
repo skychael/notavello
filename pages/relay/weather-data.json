@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-30T21:11:31.623Z",
-  "latest_success_at": "2026-08-30T21:11:31.623Z",
+  "generated_at": "2026-08-30T23:33:40.960Z",
+  "latest_success_at": "2026-08-30T23:33:40.960Z",
   "status": "partial",
   "items": [
     {
-      "id": "fec4cc412793b5c1",
+      "id": "ee8e390990a944fc",
+      "title": "Eastern North Pacific Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-08-30T23:17:48.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "14a28ee342d7ab81",
       "title": "Hurricane Karina Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep1+shtml/205137.shtml?cone=",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep1+shtml/212218.shtml?cone=",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-08-30T20:51:37.000Z",
+      "published_at": "2026-08-30T21:22:18.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "b5ad93019d019ede",
-      "title": "Atlantic Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-08-30T18:29:30.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "b4bcce42aee5b24c",
-      "title": "SPC Aug 30, 2026 2000 UTC Day 1 Convective Outlook",
-      "url": "https://www.spc.noaa.gov/products/outlook/day1otlk_2000.html",
+      "id": "c0680933b5981e11",
+      "title": "SPC Severe Thunderstorm Watch 636",
+      "url": "https://www.spc.noaa.gov/products/watch/ww0636.html",
       "publisher": "Storm Prediction Center",
-      "published_at": "2026-08-30T19:49:08.000Z",
+      "published_at": "2026-08-30T23:25:02.000Z",
       "topic": "Severe weather",
       "status": "ok"
     }
