@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-30T06:44:36.505Z",
-  "latest_success_at": "2026-08-30T06:44:36.505Z",
+  "generated_at": "2026-08-30T12:57:07.770Z",
+  "latest_success_at": "2026-08-30T12:57:07.770Z",
   "status": "partial",
   "items": [
     {
-      "id": "ee8e390990a944fc",
-      "title": "Eastern North Pacific Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
+      "id": "b5ad93019d019ede",
+      "title": "Atlantic Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-08-30T05:06:35.000Z",
+      "published_at": "2026-08-30T11:36:17.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "503e52952d726e7f",
-      "title": "Tropical Storm Lowell Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep2+shtml/032728.shtml?cone=",
+      "id": "abe468d6252c38a0",
+      "title": "Summary for Tropical Storm Lowell (EP2/EP122026)",
+      "url": "https://www.nhc.noaa.gov/text/refresh/MIATCPEP2+shtml/300950.shtml",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-08-30T03:27:28.000Z",
+      "published_at": "2026-08-30T09:50:35.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "5997d667238b84f1",
-      "title": "Tropical Storm Karina Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep1+shtml/032155.shtml?cone=",
+      "id": "09ac36ff8bfea334",
+      "title": "Hurricane Karina Graphics",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep1+shtml/092218.shtml?cone=",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-08-30T03:21:55.000Z",
+      "published_at": "2026-08-30T09:22:18.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
