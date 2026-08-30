@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "08-29",
-  "display_date": "August 29",
-  "generated_at": "2026-08-29T13:50:40.893Z",
+  "date_key": "08-30",
+  "display_date": "August 30",
+  "generated_at": "2026-08-30T13:48:44.456Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-a4c7c9e3e675f933ce6132d0",
+      "candidate_id": "event-b8b76b6b76979e5de9c78073",
       "type": "event",
-      "year": 1998,
-      "text": "Eighty people are killed when Cubana de Aviación Flight 389 crashes during a rejected takeoff from the Old Mariscal Sucre International Airport in Quito, Ecuador.",
-      "article_title": "Cubana de Aviación Flight 389",
-      "url": "https://en.wikipedia.org/wiki/Cubana_de_Aviaci%C3%B3n_Flight_389",
+      "year": 1962,
+      "text": "Japan conducts a test of the NAMC YS-11, its first aircraft since World War II and its only successful commercial aircraft from before or after the war.",
+      "article_title": "NAMC YS-11",
+      "url": "https://en.wikipedia.org/wiki/NAMC_YS-11",
       "category": "World history"
     },
     {
-      "candidate_id": "event-c431cd8dbcee2121b9706282",
+      "candidate_id": "event-e629cf074f98f4269fa156f7",
       "type": "event",
-      "year": 2005,
-      "text": "Hurricane Katrina devastates much of the U.S. Gulf Coast from Louisiana to the Florida Panhandle, killing up to 1,392 people and causing $125 billion in damage.",
-      "article_title": "Hurricane Katrina",
-      "url": "https://en.wikipedia.org/wiki/Hurricane_Katrina",
-      "category": "Disasters and exploration"
+      "year": 1983,
+      "text": "STS-8: The Space Shuttle Challenger takes off on the first night launch of the shuttle program. Guion Bluford becomes the first African-American in space on this mission.",
+      "article_title": "STS-8",
+      "url": "https://en.wikipedia.org/wiki/STS-8",
+      "category": "Science and technology"
     },
     {
-      "candidate_id": "event-010e601abc871b155147fde5",
+      "candidate_id": "event-0b58d8969452a11fdee8b7f2",
       "type": "event",
-      "year": 1975,
-      "text": "El Tacnazo:  Francisco Morales Bermúdez, Peruvian Prime Minister carries out a coup d'état in the city of Tacna, forcing the sitting President of Peru, Juan Velasco Alvarado, to resign and assuming his place as the new President.",
-      "article_title": "Tacnazo",
-      "url": "https://en.wikipedia.org/wiki/Tacnazo",
-      "category": "Politics and society"
+      "year": 1983,
+      "text": "Aeroflot Flight 5463 crashes into Dolan Mountain while approaching Almaty International Airport in present-day Kazakhstan, killing all 90 people on board.",
+      "article_title": "Aeroflot Flight 5463",
+      "url": "https://en.wikipedia.org/wiki/Aeroflot_Flight_5463",
+      "category": "World history"
     }
   ]
 }
