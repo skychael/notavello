@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-30T23:33:40.960Z",
-  "latest_success_at": "2026-08-30T23:33:40.960Z",
+  "generated_at": "2026-08-31T05:43:01.464Z",
+  "latest_success_at": "2026-08-31T05:43:01.464Z",
   "status": "partial",
   "items": [
     {
-      "id": "ee8e390990a944fc",
-      "title": "Eastern North Pacific Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
+      "id": "b5ad93019d019ede",
+      "title": "Atlantic Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-08-30T23:17:48.000Z",
+      "published_at": "2026-08-31T05:31:47.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "14a28ee342d7ab81",
+      "id": "81b98ee0d821efe5",
       "title": "Hurricane Karina Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep1+shtml/212218.shtml?cone=",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep1+shtml/032126.shtml?cone=",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-08-30T21:22:18.000Z",
+      "published_at": "2026-08-31T03:21:26.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "c0680933b5981e11",
-      "title": "SPC Severe Thunderstorm Watch 636",
-      "url": "https://www.spc.noaa.gov/products/watch/ww0636.html",
+      "id": "8b47ae60d8cbd9b2",
+      "title": "SPC Aug 31, 2026 0100 UTC Day 1 Convective Outlook",
+      "url": "https://www.spc.noaa.gov/products/outlook/day1otlk_0100.html",
       "publisher": "Storm Prediction Center",
-      "published_at": "2026-08-30T23:25:02.000Z",
+      "published_at": "2026-08-31T01:00:06.000Z",
       "topic": "Severe weather",
       "status": "ok"
     }
