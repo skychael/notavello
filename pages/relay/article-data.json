@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "checked_at": "2026-08-31T13:59:15.355Z",
-  "latest_success_at": "2026-08-31T13:59:15.355Z",
+  "checked_at": "2026-08-31T20:09:28.601Z",
+  "latest_success_at": "2026-08-31T20:09:28.601Z",
   "status": "partial",
   "items": [
     {
@@ -13,10 +13,18 @@
       "status": "ok"
     },
     {
-      "title": "Oil Prices Surge as U.S. and Iran Exchange Strikes",
-      "url": "https://oilprice.com/Energy/Oil-Prices/Oil-Prices-Surge-as-US-and-Iran-Exchange-Strikes.html",
+      "title": "Oil Tankers Make Fortunes During War as Sinokor Dominates",
+      "url": "https://gcaptain.com/oil-tankers-make-fortunes-during-war-as-sinokor-dominates",
+      "publisher": "gCaptain",
+      "published_at": "2026-08-31T16:13:10.000Z",
+      "source_id": "gcaptain",
+      "status": "ok"
+    },
+    {
+      "title": "Europe Gas Prices Jump 5% to Highest Level Since 2023",
+      "url": "https://oilprice.com/Latest-Energy-News/World-News/Europe-Gas-Prices-Jump-5-to-Highest-Level-Since-2023.html",
       "publisher": "OilPrice.com",
-      "published_at": "2026-08-31T02:30:06.000Z",
+      "published_at": "2026-08-31T16:30:00.000Z",
       "source_id": "oilprice",
       "status": "ok"
     },
@@ -69,18 +77,10 @@
       "status": "ok"
     },
     {
-      "title": "US Military Families Ride ‘Roller Coaster Of Emotions’ Over Six Months Of Iran War",
-      "url": "https://gcaptain.com/us-military-families-ride-roller-coaster-of-emotions-over-six-months-of-iran-war",
-      "publisher": "gCaptain",
-      "published_at": "2026-08-29T15:29:33.000Z",
-      "source_id": "gcaptain",
-      "status": "ok"
-    },
-    {
-      "title": "U.S. Expanding B-52 Bomber Capacity At Moron Air Base In Spain",
-      "url": "https://www.twz.com/news-features/u-s-expanding-b-52-bomber-capacity-at-moron-air-base-in-spain",
+      "title": "Japan’s First Dedicated Missile Defense Warship Is A Monster",
+      "url": "https://www.twz.com/news-features/japans-first-dedicated-missile-defense-warship-is-a-monster",
       "publisher": "TWZ (The War Zone)",
-      "published_at": "2026-08-28T17:14:20.000Z",
+      "published_at": "2026-08-31T20:02:08.000Z",
       "source_id": "twz",
       "status": "ok"
     }

@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-31T13:59:16.363Z",
-  "latest_success_at": "2026-08-31T13:59:16.363Z",
+  "generated_at": "2026-08-31T20:09:29.237Z",
+  "latest_success_at": "2026-08-31T20:09:29.237Z",
   "status": "partial",
   "items": [
     {
-      "id": "b5ad93019d019ede",
-      "title": "Atlantic Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-08-31T11:43:58.000Z",
+      "id": "203e258dcbd1cbe9",
+      "title": "Tropical Cyclone Local Statement issued August 31 at 1:11PM CDT by NWS Houston/Galveston TX",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2cbdbeed822c2b898583e7c009741f66c33024ac.001.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-08-31T18:11:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "9189fe25e8bcb981",
-      "title": "Hurricane Karina Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep1+shtml/092159.shtml?cone=",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-08-31T09:21:59.000Z",
+      "id": "57ad4f916e2844f6",
+      "title": "Tropical Storm Warning issued August 31 at 1:04PM CDT by NWS Houston/Galveston TX",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.176fe4f017cd6b8a8128275dcf81d81d3de1b326.001.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-08-31T18:04:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "367a48215cbad27a",
-      "title": "SPC Aug 31, 2026 1300 UTC Day 1 Convective Outlook",
-      "url": "https://www.spc.noaa.gov/products/outlook/day1otlk_1300.html",
+      "id": "b4bcce42aee5b24c",
+      "title": "SPC Aug 31, 2026 2000 UTC Day 1 Convective Outlook",
+      "url": "https://www.spc.noaa.gov/products/outlook/day1otlk_2000.html",
       "publisher": "Storm Prediction Center",
-      "published_at": "2026-08-31T12:43:08.000Z",
+      "published_at": "2026-08-31T19:31:07.000Z",
       "topic": "Severe weather",
       "status": "ok"
     }
