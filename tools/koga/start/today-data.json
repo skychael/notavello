@@ -1,36 +1,36 @@
 {
   "schema_version": "1.0",
-  "date_key": "08-30",
-  "display_date": "August 30",
-  "generated_at": "2026-08-30T13:48:44.456Z",
+  "date_key": "08-31",
+  "display_date": "August 31",
+  "generated_at": "2026-08-31T16:10:31.039Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-b8b76b6b76979e5de9c78073",
+      "candidate_id": "event-1f4141be8c1f82fe51625eb5",
       "type": "event",
-      "year": 1962,
-      "text": "Japan conducts a test of the NAMC YS-11, its first aircraft since World War II and its only successful commercial aircraft from before or after the war.",
-      "article_title": "NAMC YS-11",
-      "url": "https://en.wikipedia.org/wiki/NAMC_YS-11",
-      "category": "World history"
+      "year": 1940,
+      "text": "Pennsylvania Central Airlines Trip 19 crashes near Lovettsville, Virginia. The CAB investigation of the accident is the first investigation to be conducted under the Bureau of Air Commerce act of 1938.",
+      "article_title": "Lovettsville air disaster",
+      "url": "https://en.wikipedia.org/wiki/Lovettsville_air_disaster",
+      "category": "Disasters and exploration"
     },
     {
-      "candidate_id": "event-e629cf074f98f4269fa156f7",
+      "candidate_id": "event-8a74c4d3191826806f6553f3",
       "type": "event",
-      "year": 1983,
-      "text": "STS-8: The Space Shuttle Challenger takes off on the first night launch of the shuttle program. Guion Bluford becomes the first African-American in space on this mission.",
-      "article_title": "STS-8",
-      "url": "https://en.wikipedia.org/wiki/STS-8",
-      "category": "Science and technology"
+      "year": 2024,
+      "text": "A helicopter crashes in Kamchatka Krai in the Russian Far East, killing all 22 occupants.",
+      "article_title": "2024 Kamchatka Mil Mi-8 crash",
+      "url": "https://en.wikipedia.org/wiki/2024_Kamchatka_Mil_Mi-8_crash",
+      "category": "Disasters and exploration"
     },
     {
-      "candidate_id": "event-0b58d8969452a11fdee8b7f2",
+      "candidate_id": "event-93a6c46566e7a5c6e6ece484",
       "type": "event",
-      "year": 1983,
-      "text": "Aeroflot Flight 5463 crashes into Dolan Mountain while approaching Almaty International Airport in present-day Kazakhstan, killing all 90 people on board.",
-      "article_title": "Aeroflot Flight 5463",
-      "url": "https://en.wikipedia.org/wiki/Aeroflot_Flight_5463",
+      "year": 1943,
+      "text": "USS Harmon, the first U.S. Navy ship to be named after a black person, is commissioned.",
+      "article_title": "USS Harmon (DE-678)",
+      "url": "https://en.wikipedia.org/wiki/USS_Harmon_(DE-678)",
       "category": "World history"
     }
   ]
