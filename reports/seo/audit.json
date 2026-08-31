@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-30T07:12:15.407Z",
+  "generatedAt": "2026-08-31T07:26:14.362Z",
   "totals": {
-    "pages": 245,
-    "indexable": 241,
-    "articles": 175,
-    "sitemap": 241,
+    "pages": 247,
+    "indexable": 243,
+    "articles": 177,
+    "sitemap": 243,
     "errors": 0,
-    "warnings": 167
+    "warnings": 170
   },
   "errors": [],
   "warnings": [
@@ -348,6 +348,16 @@
     {
       "type": "topic-review",
       "page": "/pages/blog/hormuz-reopening-is-a-queue-not-a-victory-lap/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/hormuz-rocket-strike-is-a-diesel-bill/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/hormuz-rocket-strike-is-a-diesel-bill/",
       "detail": "title/description lacks a clear AI, software, or computing connection"
     },
     {
@@ -752,6 +762,11 @@
     },
     {
       "type": "template-pattern",
+      "page": "/pages/blog/what-is-inside-a-local-ai-model-download/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "template-pattern",
       "page": "/pages/blog/what-metadata-your-shared-files-can-reveal/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
@@ -855,7 +870,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 245,
+      "incomingLinks": 247,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -879,7 +894,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 245,
+      "incomingLinks": 247,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -987,7 +1002,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 245,
+      "incomingLinks": 247,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -999,9 +1014,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 245,
-      "lastmod": "2026-08-29",
-      "bodyWords": 658
+      "incomingLinks": 247,
+      "lastmod": "2026-08-30",
+      "bodyWords": 664
     },
     {
       "route": "/pages/blog/a-plain-language-guide-to-file-permissions/",
@@ -1275,9 +1290,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 114,
-      "lastmod": "2026-08-29",
-      "bodyWords": 2220
+      "incomingLinks": 116,
+      "lastmod": "2026-08-30",
+      "bodyWords": 2241
     },
     {
       "route": "/pages/blog/apple-speechanalyzer-local-transcription-apps/",
@@ -1904,6 +1919,18 @@
       "bodyWords": 1405
     },
     {
+      "route": "/pages/blog/hormuz-rocket-strike-is-a-diesel-bill/",
+      "file": "pages/blog/hormuz-rocket-strike-is-a-diesel-bill/index.html",
+      "title": "Hormuz Rocket Strike Is A Diesel Bill — The Export | Notavello",
+      "description": "Hormuz fighting is now showing up as a diesel and inventory problem, with U.S. distillate stocks thin and diesel at $5.65.",
+      "canonical": "https://notavello.com/pages/blog/hormuz-rocket-strike-is-a-diesel-bill/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-08-31",
+      "bodyWords": 1522
+    },
+    {
       "route": "/pages/blog/hormuz-shipping-lane-screening-risk/",
       "file": "pages/blog/hormuz-shipping-lane-screening-risk/index.html",
       "title": "The New Hormuz Problem Is Who Gets a Lane — The Export | Notavello",
@@ -2488,8 +2515,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": "2026-08-29",
-      "bodyWords": 646
+      "lastmod": "2026-08-30",
+      "bodyWords": 745
     },
     {
       "route": "/pages/blog/page-2/",
@@ -2500,8 +2527,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-29",
-      "bodyWords": 674
+      "lastmod": "2026-08-30",
+      "bodyWords": 668
     },
     {
       "route": "/pages/blog/page-3/",
@@ -2512,8 +2539,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-29",
-      "bodyWords": 681
+      "lastmod": "2026-08-30",
+      "bodyWords": 686
     },
     {
       "route": "/pages/blog/page-4/",
@@ -2524,8 +2551,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-29",
-      "bodyWords": 664
+      "lastmod": "2026-08-30",
+      "bodyWords": 667
     },
     {
       "route": "/pages/blog/page-5/",
@@ -2536,8 +2563,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-29",
-      "bodyWords": 651
+      "lastmod": "2026-08-30",
+      "bodyWords": 645
     },
     {
       "route": "/pages/blog/page-6/",
@@ -2548,7 +2575,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-29",
+      "lastmod": "2026-08-30",
       "bodyWords": 700
     },
     {
@@ -2560,7 +2587,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-29",
+      "lastmod": "2026-08-30",
       "bodyWords": 709
     },
     {
@@ -2572,8 +2599,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-29",
-      "bodyWords": 842
+      "lastmod": "2026-08-30",
+      "bodyWords": 817
     },
     {
       "route": "/pages/blog/page-9/",
@@ -2584,8 +2611,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-08-29",
-      "bodyWords": 837
+      "lastmod": "2026-08-30",
+      "bodyWords": 835
     },
     {
       "route": "/pages/blog/propane-is-the-rare-fuel-cushion-left/",
@@ -2715,7 +2742,7 @@
       "canonical": "https://notavello.com/pages/blog/spr-below-300-million-barrels-diesel-price-risk/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 2,
+      "incomingLinks": 3,
       "lastmod": "2026-08-21",
       "bodyWords": 1445
     },
@@ -2946,6 +2973,18 @@
       "incomingLinks": 2,
       "lastmod": "2026-07-22",
       "bodyWords": 923
+    },
+    {
+      "route": "/pages/blog/what-is-inside-a-local-ai-model-download/",
+      "file": "pages/blog/what-is-inside-a-local-ai-model-download/index.html",
+      "title": "What Is Inside a Local AI Model Download — The Export | Notavello",
+      "description": "A practical breakdown of the files in a local AI model download, including weights, tokenizers, configuration, and storage tradeoffs for running models offline.",
+      "canonical": "https://notavello.com/pages/blog/what-is-inside-a-local-ai-model-download/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-08-30",
+      "bodyWords": 853
     },
     {
       "route": "/pages/blog/what-metadata-your-shared-files-can-reveal/",
@@ -3231,7 +3270,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 245,
+      "incomingLinks": 247,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -3243,7 +3282,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 245,
+      "incomingLinks": 247,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -3255,7 +3294,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 245,
+      "incomingLinks": 247,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -3267,7 +3306,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 245,
+      "incomingLinks": 247,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -3279,7 +3318,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 245,
+      "incomingLinks": 247,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -3292,8 +3331,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-08-30",
-      "bodyWords": 247
+      "lastmod": "2026-08-31",
+      "bodyWords": 253
     },
     {
       "route": "/pages/sample",
@@ -3315,7 +3354,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 245,
+      "incomingLinks": 247,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -3327,7 +3366,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 245,
+      "incomingLinks": 247,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -3351,7 +3390,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 245,
+      "incomingLinks": 247,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -3783,7 +3822,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 245,
+      "incomingLinks": 247,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }
