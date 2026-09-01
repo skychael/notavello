@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-01T10:13:35.674Z",
-  "latest_success_at": "2026-09-01T10:13:35.674Z",
+  "generated_at": "2026-09-01T14:57:24.729Z",
+  "latest_success_at": "2026-09-01T14:57:24.729Z",
   "status": "partial",
   "items": [
     {
-      "id": "90008b10cc7a4d57",
-      "title": "Tropical Cyclone Local Statement issued September 1 at 4:34AM CDT by NWS Houston/Galveston TX",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.7dfe3e0817447706f47e391f096ba064f76528b0.001.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-09-01T09:34:00.000Z",
+      "id": "ca27d723b59ef081",
+      "title": "Tropical Storm Edouard Public Advisory Number 5",
+      "url": "https://www.nhc.noaa.gov/text/refresh/MIATCPAT5+shtml/011445.shtml",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-09-01T14:45:17.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "22e983fdb851ed07",
-      "title": "Tropical Storm Warning issued September 1 at 4:05AM CDT by NWS Houston/Galveston TX",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.8348993b47e58a3ec9d99e3a0cb40aa7b6d46e70.001.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-09-01T09:05:00.000Z",
+      "id": "367a48215cbad27a",
+      "title": "SPC Sep 1, 2026 1300 UTC Day 1 Convective Outlook",
+      "url": "https://www.spc.noaa.gov/products/outlook/day1otlk_1300.html",
+      "publisher": "Storm Prediction Center",
+      "published_at": "2026-09-01T12:15:10.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "c33462744c8eb530",
-      "title": "Hurricane Watch issued September 1 at 3:57AM CDT by NWS Lake Charles LA",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.93537552deb6372dcd86a80e9188997e2580c6ad.001.1.cap",
+      "id": "7f5bbfffbaea09bf",
+      "title": "Tropical Cyclone Local Statement issued September 1 at 7:01AM CDT by NWS Lake Charles LA",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.600eadd749db164aeca7e4457b3085c4012c3e00.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-09-01T08:57:00.000Z",
+      "published_at": "2026-09-01T12:01:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
