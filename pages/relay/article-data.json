@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "checked_at": "2026-09-01T14:57:24.114Z",
-  "latest_success_at": "2026-09-01T14:57:24.114Z",
+  "checked_at": "2026-09-01T18:35:15.183Z",
+  "latest_success_at": "2026-09-01T18:35:15.183Z",
   "status": "partial",
   "items": [
     {
@@ -13,19 +13,19 @@
       "status": "ok"
     },
     {
-      "title": "Iran War Triggers Billions in New Oil Pipeline and Port Investment",
-      "url": "https://oilprice.com/Energy/Energy-General/Iran-War-Triggers-Billions-in-New-Oil-Pipeline-and-Port-Investment.html",
-      "publisher": "OilPrice.com",
-      "published_at": "2026-08-31T21:00:00.000Z",
-      "source_id": "oilprice",
-      "status": "ok"
-    },
-    {
       "title": "Oil Tankers Make Fortunes During War as Sinokor Dominates",
       "url": "https://gcaptain.com/oil-tankers-make-fortunes-during-war-as-sinokor-dominates",
       "publisher": "gCaptain",
       "published_at": "2026-08-31T16:13:10.000Z",
       "source_id": "gcaptain",
+      "status": "ok"
+    },
+    {
+      "title": "U.S.-Iran Strikes Put $100 Oil Back in Focus",
+      "url": "https://oilprice.com/Energy/Crude-Oil/US-Iran-Strikes-Put-100-Oil-Back-in-Focus.html",
+      "publisher": "OilPrice.com",
+      "published_at": "2026-09-01T15:10:00.000Z",
+      "source_id": "oilprice",
       "status": "ok"
     },
     {
@@ -45,10 +45,10 @@
       "status": "ok"
     },
     {
-      "title": "CENTCOM Says Iran Attempts to Intimidate Shipping with False Reports",
-      "url": "https://maritime-executive.com/article/centcom-says-iran-attempts-to-intimidate-shipping-with-false-reports",
+      "title": "Ukraine Strikes Russia’s Ust-Luga Oil Terminal as Attacks Intensify",
+      "url": "https://maritime-executive.com/article/ukraine-strikes-russia-s-ust-luga-oil-terminal-as-attacks-intensify",
       "publisher": "The Maritime Executive",
-      "published_at": "2026-08-31T20:25:21.000Z",
+      "published_at": "2026-09-01T18:14:38.000Z",
       "source_id": "maritime-executive",
       "status": "ok"
     },
@@ -58,6 +58,14 @@
       "publisher": "TWZ (The War Zone)",
       "published_at": "2026-08-29T19:15:36.000Z",
       "source_id": "twz",
+      "status": "ok"
+    },
+    {
+      "title": "MH-139 helo tasked with nuclear missile escort role is operational, Air Force says",
+      "url": "https://breakingdefense.com/2026/09/mh-139-helo-tasked-with-nuclear-missile-escort-role-is-operational-air-force-says",
+      "publisher": "Breaking Defense",
+      "published_at": "2026-09-01T16:02:03.000Z",
+      "source_id": "breaking-defense",
       "status": "ok"
     },
     {
@@ -74,14 +82,6 @@
       "publisher": "TWZ (The War Zone)",
       "published_at": "2026-08-31T21:44:07.000Z",
       "source_id": "twz",
-      "status": "ok"
-    },
-    {
-      "title": "5 key questions the Army is still working out for its nuclear microreactor plan",
-      "url": "https://breakingdefense.com/2026/08/5-key-questions-the-army-is-still-working-out-for-its-nuclear-microreactor-plan",
-      "publisher": "Breaking Defense",
-      "published_at": "2026-08-31T13:54:22.000Z",
-      "source_id": "breaking-defense",
       "status": "ok"
     }
   ]
