@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>RAM, VRAM, and local AI: what each resource does — The Export | Notavello</title>
+<meta name="description" content="A practical explainer of how model weights, KV cache, and offloading use RAM versus VRAM when running local AI models."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/blog/ram-vram-and-local-ai-what-each-resource-does/"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2026-08-31T16:14:14.085Z"/>
+<meta property="article:modified_time" content="2026-08-31T16:14:14.085Z"/>
+<meta name="notavello:published_at" content="2026-08-31T16:14:14.085Z"/>
+<meta name="syndication-origin-site" content="toysforbots"/>
+<meta name="syndication-origin-id" content="toysforbots:ram-vram-and-local-ai-what-each-resource-does"/>
+<meta name="syndication-origin-slug" content="ram-vram-and-local-ai-what-each-resource-does"/>
+<meta name="syndication-origin-url" content="https://toysforbots.com/blog/ram-vram-and-local-ai-what-each-resource-does/"/>
+<meta name="syndication-source-format" content="toysforbots-syndication-v1"/>
+<meta property="og:url" content="https://notavello.com/pages/blog/ram-vram-and-local-ai-what-each-resource-does/"/>
+<meta property="og:title" content="RAM, VRAM, and local AI: what each resource does"/>
+<meta property="og:description" content="A practical explainer of how model weights, KV cache, and offloading use RAM versus VRAM when running local AI models."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="RAM, VRAM, and local AI: what each resource does"/>
+<meta name="twitter:description" content="A practical explainer of how model weights, KV cache, and offloading use RAM versus VRAM when running local AI models."/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "RAM, VRAM, and local AI: what each resource does",
+  "description": "A practical explainer of how model weights, KV cache, and offloading use RAM versus VRAM when running local AI models.",
+  "url": "https://notavello.com/pages/blog/ram-vram-and-local-ai-what-each-resource-does/",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://notavello.com/pages/blog/ram-vram-and-local-ai-what-each-resource-does/" },
+  "image": "https://notavello.com/og-image.png",
+  "datePublished": "2026-08-31T16:14:14.085Z",
+  "dateModified": "2026-08-31T16:14:14.085Z",
+  "author": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" },
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com", "logo": { "@type": "ImageObject", "url": "https://notavello.com/og-image.png" } }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
+.post-nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; row-gap: 8px; }
+.post-nav-top { margin-bottom: 40px; }
+.post-nav-bottom { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--border); }
+.post-nav a { display: inline-flex; align-items: center; gap: 6px; font-size: 0.92rem; font-weight: 600; color: var(--ink-muted); text-decoration: none; padding: 12px 14px; border-radius: var(--radius-sm); white-space: nowrap; transition: color 0.15s, background 0.15s; }
+.post-nav a:hover { color: var(--accent); background: var(--accent-light); }
+.post-nav a:first-child { padding-left: 0; }
+.post-nav a:last-child { padding-right: 0; justify-content: flex-end; }
+.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
+.post-date { font-size: 0.78rem; color: var(--ink-faint); }
+.post-title { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; color: var(--ink); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
+.post-lede { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+.post-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink); }
+.post-body h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 44px 0 16px; letter-spacing: -0.01em; }
+.post-body p { margin-bottom: 20px; color: var(--ink-muted); }
+.post-body p strong { color: var(--ink); font-weight: 600; }
+.post-body ul { margin: 0 0 20px 20px; color: var(--ink-muted); }
+.post-body ul li { margin-bottom: 8px; line-height: 1.7; }
+.callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 32px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.7; }
+.post-footer { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.post-footer-label { font-size: 0.8rem; color: var(--ink-faint); }
+.btn-export { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: opacity 0.2s; }
+.btn-export:hover { opacity: 0.9; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } .post-nav a { padding: 12px 8px; font-size: 0.88rem; } }
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+
+  <nav class="post-nav post-nav-top">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+  <div class="post-meta">
+    <span class="post-tag">Local AI</span>
+    <span class="post-date">August 31, 2026</span>
+  </div>
+
+  <h1 class="post-title">RAM, VRAM, and local AI: what each resource does</h1>
+
+  <p class="post-lede">Running a local AI model requires two distinct memory pools that serve different jobs. System RAM holds the model file on disk and can act as overflow storage. VRAM on the GPU holds the active weights during inference and the temporary data structures that let the model generate tokens. The split matters because moving data between them costs time and because each pool has hard limits. Model weights are the billions of numbers that define what the model knows. They must be loaded from storage into VRAM before any generation starts. Once there, they stay resident for the entire session. The KV cache is separate working memory that records key and value vectors for every token already processed. It grows linearly with context length and batch size. Runtime buffers hold activations, intermediate results, and small temporary tensors. A final headroom margin prevents out-of-memory errors when these allocations spike. When the combined total exceeds available VRAM, the runtime can move some layers or the KV cache to system RAM. This offloading keeps the model runnable but adds PCIe transfers that reduce speed. The choice between full GPU placement and partial offload therefore depends on measured sizes rather than advertised card capacity.</p>
+
+  <div class="post-body">
+
+<h2>Model weights occupy the largest fixed block</h2>
+<p>The downloaded checkpoint contains the learned parameters plus supporting files such as tokenizer data and configuration. These weights must be copied into VRAM before the first forward pass. On a consumer GPU the transfer occurs over PCIe, so the initial load time is noticeable for models above a few billion parameters. Once resident, the weights remain in VRAM for the life of the session unless the runtime explicitly offloads layers. Keeping the full set on the GPU delivers the highest token rate because no further transfers occur during generation.</p><ul><li>Weights are static after loading and do not grow with context length.</li><li>Partial layer offload moves selected transformer blocks to RAM while keeping others on the GPU.</li><li>Integrated GPUs share a single memory pool, so the same allocation serves both weights and system tasks.</li></ul><div class="callout"><strong>Memory budget rule</strong> Estimate weights first, then add KV cache for the target context, then add runtime buffers and at least 10-20 percent headroom. Only after that calculation decide whether offloading is required.</div>
+<h2>KV cache is the variable working memory</h2>
+<p>During generation each new token attends to all previous tokens. To avoid recomputing attention over the entire history, the model stores key and value vectors in the KV cache. The cache size scales directly with sequence length, number of layers, hidden dimension, and batch size. For a 7-billion-parameter model at 8k context the cache can easily reach several gigabytes. Longer contexts or larger batches increase the requirement further. Because the cache is created and updated on every decode step, it must sit in the fastest memory available. When it no longer fits in VRAM the runtime can move older layers to system RAM, but each transfer adds latency.</p><ul><li>Dynamic cache grows on demand and works with most generation settings.</li><li>Static cache pre-allocates a fixed maximum size and enables torch.compile but wastes space on short sequences.</li><li>Quantized cache lowers precision of the stored vectors to reduce footprint at a small accuracy cost.</li></ul>
+<h2>Runtime buffers and headroom complete the picture</h2>
+<p>Inference runtimes allocate additional memory for activations, output logits, and temporary compute buffers. These allocations vary with model architecture, attention implementation, and batch settings. Flash Attention and similar kernels can reduce peak usage, yet the exact savings depend on the backend. After accounting for weights and KV cache, a practical allowance of 10-20 percent extra VRAM prevents crashes when these buffers expand. Systems that also drive a display or run other GPU workloads need the higher end of that range.</p>
+<h2>Offloading trades speed for capacity</h2>
+<p>When total demand exceeds VRAM, the runtime can keep some layers or the KV cache in system RAM. Only the active layer stays on the GPU during each forward pass. The next layer is prefetched asynchronously while the current layer computes. The approach works for both dynamic and static caches and is exposed through cache_implementation settings or explicit offloading flags. The cost is extra PCIe traffic that lowers tokens per second, especially on long contexts where the KV cache moves frequently. Offloading therefore serves as a deliberate compromise rather than a free upgrade.</p><ul><li>KV offload keeps weights on the GPU while moving only the cache to RAM.</li><li>Layer offload spreads the model itself across both memory pools.</li><li>Systems with unified memory still require budgeting because the single pool serves OS and application needs simultaneously.</li></ul>
+<h2>Cache selection in practice</h2>
+<p>Hugging Face Transformers exposes several cache classes that balance memory and speed. The default DynamicCache grows as needed and supports offloading. StaticCache pre-allocates a fixed size and enables compilation but can waste attention slots on short sequences. QuantizedCache reduces precision to shrink the cache footprint. Offloading is available for both dynamic and static variants through dedicated implementation strings or constructor flags. Users who generate many sequences of similar length benefit most from static allocation, while variable-length workloads usually prefer the dynamic option with selective offloading.</p><ul><li>Enable offloading only after confirming that full GPU placement produces out-of-memory errors.</li><li>Test the exact context length and batch size you plan to use before committing to a cache type.</li><li>Monitor actual allocation in runtime logs rather than relying on theoretical formulas alone.</li></ul>
+<h2>Putting the pieces together</h2>
+<p>A workable local AI setup begins with the model weights, adds the KV cache required by the longest context you expect, then includes runtime buffers and headroom. If the total exceeds available VRAM, decide whether layer offload, KV offload, or a smaller model is the better path. Offloading extends reach on memory-constrained hardware but introduces measurable slowdowns that vary with PCIe bandwidth and context length. Measuring the actual allocations on your hardware remains the only reliable way to set expectations before deployment.</p><h2>Sources</h2><ul><li><a href="https://huggingface.co/docs/transformers/en/kv_cache" rel="noopener noreferrer">Hugging Face</a></li><li><a href="https://ctxwire.com/articles/local-llm-vram-requirements/" rel="noopener noreferrer">Context Wire</a></li></ul>
+
+  </div>
+
+  <div class="post-footer">
+    <span class="post-footer-label">Looking for more AI tools?</span>
+    <a class="btn-export" href="/">See our free AI tools →</a>
+  </div>
+
+  <nav class="post-nav post-nav-bottom">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+</main>
+
+<!--FOOTER-->
+
+</body>
+</html>
