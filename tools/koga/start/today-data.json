@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "08-31",
-  "display_date": "August 31",
-  "generated_at": "2026-08-31T16:10:31.039Z",
+  "date_key": "09-01",
+  "display_date": "September 1",
+  "generated_at": "2026-09-01T13:30:38.161Z",
   "source": "Wikimedia On This Day",
-  "selection_method": "deterministic_fallback",
+  "selection_method": "ai",
   "items": [
     {
-      "candidate_id": "event-1f4141be8c1f82fe51625eb5",
+      "candidate_id": "event-2b947e61d54b507c7cff645f",
       "type": "event",
-      "year": 1940,
-      "text": "Pennsylvania Central Airlines Trip 19 crashes near Lovettsville, Virginia. The CAB investigation of the accident is the first investigation to be conducted under the Bureau of Air Commerce act of 1938.",
-      "article_title": "Lovettsville air disaster",
-      "url": "https://en.wikipedia.org/wiki/Lovettsville_air_disaster",
+      "year": 1985,
+      "text": "The wreck of the Titanic is discovered by an American-French expedition led by Robert Ballard and Jean-Louis Michel.",
+      "article_title": "Titanic",
+      "url": "https://en.wikipedia.org/wiki/Titanic",
       "category": "Disasters and exploration"
     },
     {
-      "candidate_id": "event-8a74c4d3191826806f6553f3",
+      "candidate_id": "event-ffc098b2d50332b3aa8704e4",
       "type": "event",
-      "year": 2024,
-      "text": "A helicopter crashes in Kamchatka Krai in the Russian Far East, killing all 22 occupants.",
-      "article_title": "2024 Kamchatka Mil Mi-8 crash",
-      "url": "https://en.wikipedia.org/wiki/2024_Kamchatka_Mil_Mi-8_crash",
-      "category": "Disasters and exploration"
-    },
-    {
-      "candidate_id": "event-93a6c46566e7a5c6e6ece484",
-      "type": "event",
-      "year": 1943,
-      "text": "USS Harmon, the first U.S. Navy ship to be named after a black person, is commissioned.",
-      "article_title": "USS Harmon (DE-678)",
-      "url": "https://en.wikipedia.org/wiki/USS_Harmon_(DE-678)",
+      "year": 1983,
+      "text": "Cold War: Korean Air Lines Flight 007 is shot down by a Soviet jet fighter after the commercial aircraft strayed into Soviet airspace, killing all 269 on board, including Congressman Lawrence McDonald.",
+      "article_title": "Cold War",
+      "url": "https://en.wikipedia.org/wiki/Cold_War",
       "category": "World history"
+    },
+    {
+      "candidate_id": "event-03e71ae4e2960f37b29b7f92",
+      "type": "event",
+      "year": 2004,
+      "text": "The Beslan school siege begins when armed terrorists take schoolchildren and school staff hostage in North Ossetia, Russia; by the end of the siege, three days later, more than 385 people are dead (including hostages, other civilians, security personnel and terrorists).",
+      "article_title": "Beslan school siege",
+      "url": "https://en.wikipedia.org/wiki/Beslan_school_siege",
+      "category": "Politics and society"
     }
   ]
 }
