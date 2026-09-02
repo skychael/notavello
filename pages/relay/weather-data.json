@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-02T19:49:44.346Z",
-  "latest_success_at": "2026-09-02T19:49:44.346Z",
+  "generated_at": "2026-09-02T22:40:59.634Z",
+  "latest_success_at": "2026-09-02T22:40:59.634Z",
   "status": "partial",
   "items": [
     {
@@ -23,11 +23,11 @@
       "status": "ok"
     },
     {
-      "id": "20010a07739c96ae",
-      "title": "SPC Sep 2, 2026 1930 UTC Day 3 Severe Thunderstorm Outlook",
-      "url": "https://www.spc.noaa.gov/products/outlook/day3otlk_1930.html",
+      "id": "33ea98b81d2d196c",
+      "title": "SPC Day 3-8 Fire Weather Outlook",
+      "url": "https://www.spc.noaa.gov/products/exper/fire_wx",
       "publisher": "Storm Prediction Center",
-      "published_at": "2026-09-02T19:19:44.000Z",
+      "published_at": "2026-09-02T21:36:17.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
