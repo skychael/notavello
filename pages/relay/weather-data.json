@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-02T16:38:53.179Z",
-  "latest_success_at": "2026-09-02T16:38:53.179Z",
+  "generated_at": "2026-09-02T19:49:44.346Z",
+  "latest_success_at": "2026-09-02T19:49:44.346Z",
   "status": "partial",
   "items": [
     {
@@ -23,11 +23,11 @@
       "status": "ok"
     },
     {
-      "id": "1332a58e2a70fb99",
-      "title": "Flood Watch issued September 2 at 11:07AM CDT until September 3 at 1:00PM CDT by NWS Fort Worth TX",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.616c6f840a6005849632394e713a739ca127ad0a.001.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-09-02T16:07:00.000Z",
+      "id": "20010a07739c96ae",
+      "title": "SPC Sep 2, 2026 1930 UTC Day 3 Severe Thunderstorm Outlook",
+      "url": "https://www.spc.noaa.gov/products/outlook/day3otlk_1930.html",
+      "publisher": "Storm Prediction Center",
+      "published_at": "2026-09-02T19:19:44.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
