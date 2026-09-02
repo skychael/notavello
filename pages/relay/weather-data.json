@@ -1,34 +1,34 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-02T00:18:07.273Z",
-  "latest_success_at": "2026-09-02T00:18:07.273Z",
+  "generated_at": "2026-09-02T05:52:57.017Z",
+  "latest_success_at": "2026-09-02T05:52:57.017Z",
   "status": "partial",
   "items": [
     {
-      "id": "a707c1af24fc1129",
-      "title": "Tropical Cyclone Local Statement issued September 1 at 4:18PM CDT by NWS Houston/Galveston TX",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.865d507eed11aae098204cf5b44c77e799a32afc.001.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-09-01T21:18:00.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "87f24ef0a308078b",
+      "id": "0205fce3437e5713",
       "title": "Tropical Storm Warning issued September 1 at 4:02PM CDT by NWS Lake Charles LA",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.86f6b1346c49bf22e7f15dc8386d2dabe1b926ea.001.1.cap",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.86f6b1346c49bf22e7f15dc8386d2dabe1b926ea.004.1.cap",
       "publisher": "National Weather Service",
       "published_at": "2026-09-01T21:02:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "b665e07d1a34affe",
-      "title": "Severe Thunderstorm Warning issued September 1 at 8:17PM EDT until September 1 at 9:15PM EDT by NWS Mount Holly NJ",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9f24f6039feda8c97dda9f9762289b1e6dbcc7a1.001.1.cap",
+      "id": "ee8e390990a944fc",
+      "title": "Eastern North Pacific Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-09-02T05:32:02.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "c8316516747b5a81",
+      "title": "Flood Watch issued September 1 at 11:19PM CDT until September 2 at 7:00PM CDT by NWS Houston/Galveston TX",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.1b184e21b7d9f4fd55f617383aa5c96bf5f3ed18.002.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-09-02T00:17:00.000Z",
-      "topic": "Severe weather",
+      "published_at": "2026-09-02T04:19:00.000Z",
+      "topic": "Hurricane",
       "status": "ok"
     }
   ]
