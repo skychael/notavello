@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "09-01",
-  "display_date": "September 1",
-  "generated_at": "2026-09-01T13:30:38.161Z",
+  "date_key": "09-02",
+  "display_date": "September 2",
+  "generated_at": "2026-09-02T12:47:04.135Z",
   "source": "Wikimedia On This Day",
-  "selection_method": "ai",
+  "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-2b947e61d54b507c7cff645f",
+      "candidate_id": "event-a821eb89a0de84e8114b1d13",
       "type": "event",
-      "year": 1985,
-      "text": "The wreck of the Titanic is discovered by an American-French expedition led by Robert Ballard and Jean-Louis Michel.",
-      "article_title": "Titanic",
-      "url": "https://en.wikipedia.org/wiki/Titanic",
+      "year": 2009,
+      "text": "The Andhra Pradesh, India helicopter crash occurred near Rudrakonda Hill, 40 nautical miles (74 km) from Kurnool, Andhra Pradesh, India. Fatalities included Y. S. Rajasekhara Reddy, the Chief Minister of the Indian state of Andhra Pradesh.",
+      "article_title": "2009 Andhra Pradesh helicopter crash",
+      "url": "https://en.wikipedia.org/wiki/2009_Andhra_Pradesh_helicopter_crash",
       "category": "Disasters and exploration"
     },
     {
-      "candidate_id": "event-ffc098b2d50332b3aa8704e4",
+      "candidate_id": "event-77ad0f24574487b7d89c5bfe",
       "type": "event",
-      "year": 1983,
-      "text": "Cold War: Korean Air Lines Flight 007 is shot down by a Soviet jet fighter after the commercial aircraft strayed into Soviet airspace, killing all 269 on board, including Congressman Lawrence McDonald.",
-      "article_title": "Cold War",
-      "url": "https://en.wikipedia.org/wiki/Cold_War",
-      "category": "World history"
+      "year": 2023,
+      "text": "India's first solar observation mission: The Indian Space Research Organisation (ISRO) successfully launches Aditya-L1 from Satish Dhawan space centre.",
+      "article_title": "Aditya-L1",
+      "url": "https://en.wikipedia.org/wiki/Aditya-L1",
+      "category": "Science and technology"
     },
     {
-      "candidate_id": "event-03e71ae4e2960f37b29b7f92",
+      "candidate_id": "event-86b29375a12449aa8b4e363b",
       "type": "event",
-      "year": 2004,
-      "text": "The Beslan school siege begins when armed terrorists take schoolchildren and school staff hostage in North Ossetia, Russia; by the end of the siege, three days later, more than 385 people are dead (including hostages, other civilians, security personnel and terrorists).",
-      "article_title": "Beslan school siege",
-      "url": "https://en.wikipedia.org/wiki/Beslan_school_siege",
-      "category": "Politics and society"
+      "year": 1923,
+      "text": "Kantō Massacre: Amid rumors that Koreans had been conducting acts of sabotage in the aftermath of the 1923 Great Kantō earthquake, lynch mobs of Japanese begin massacring thousands of civilians over the course of several weeks, mainly ethnic minorities such as Koreans and Chinese.",
+      "article_title": "Kantō Massacre",
+      "url": "https://en.wikipedia.org/wiki/Kant%C5%8D_Massacre",
+      "category": "Disasters and exploration"
     }
   ]
 }
