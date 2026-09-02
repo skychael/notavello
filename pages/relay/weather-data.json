@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-01T21:49:39.402Z",
-  "latest_success_at": "2026-09-01T21:49:39.402Z",
+  "generated_at": "2026-09-02T00:18:07.273Z",
+  "latest_success_at": "2026-09-02T00:18:07.273Z",
   "status": "partial",
   "items": [
     {
@@ -23,12 +23,12 @@
       "status": "ok"
     },
     {
-      "id": "b2f72abf822828a9",
-      "title": "Tropical Storm Marie Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep3+shtml/213919.shtml?cone=",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-09-01T21:39:19.000Z",
-      "topic": "Hurricane",
+      "id": "b665e07d1a34affe",
+      "title": "Severe Thunderstorm Warning issued September 1 at 8:17PM EDT until September 1 at 9:15PM EDT by NWS Mount Holly NJ",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9f24f6039feda8c97dda9f9762289b1e6dbcc7a1.001.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-09-02T00:17:00.000Z",
+      "topic": "Severe weather",
       "status": "ok"
     }
   ]
