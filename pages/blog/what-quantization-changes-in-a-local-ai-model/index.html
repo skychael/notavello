@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>What Quantization Changes in a Local AI Model — The Export | Notavello</title>
+<meta name="description" content="Quantization lowers precision in local AI models to cut memory use and speed inference."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/blog/what-quantization-changes-in-a-local-ai-model/"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2026-09-01T13:33:36.612Z"/>
+<meta property="article:modified_time" content="2026-09-01T13:33:36.612Z"/>
+<meta name="notavello:published_at" content="2026-09-01T13:33:36.612Z"/>
+<meta name="syndication-origin-site" content="toysforbots"/>
+<meta name="syndication-origin-id" content="toysforbots:what-quantization-changes-in-a-local-ai-model"/>
+<meta name="syndication-origin-slug" content="what-quantization-changes-in-a-local-ai-model"/>
+<meta name="syndication-origin-url" content="https://toysforbots.com/blog/what-quantization-changes-in-a-local-ai-model/"/>
+<meta name="syndication-source-format" content="toysforbots-syndication-v1"/>
+<meta property="og:url" content="https://notavello.com/pages/blog/what-quantization-changes-in-a-local-ai-model/"/>
+<meta property="og:title" content="What Quantization Changes in a Local AI Model"/>
+<meta property="og:description" content="Quantization lowers precision in local AI models to cut memory use and speed inference."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="What Quantization Changes in a Local AI Model"/>
+<meta name="twitter:description" content="Quantization lowers precision in local AI models to cut memory use and speed inference."/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "What Quantization Changes in a Local AI Model",
+  "description": "Quantization lowers precision in local AI models to cut memory use and speed inference.",
+  "url": "https://notavello.com/pages/blog/what-quantization-changes-in-a-local-ai-model/",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://notavello.com/pages/blog/what-quantization-changes-in-a-local-ai-model/" },
+  "image": "https://notavello.com/og-image.png",
+  "datePublished": "2026-09-01T13:33:36.612Z",
+  "dateModified": "2026-09-01T13:33:36.612Z",
+  "author": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" },
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com", "logo": { "@type": "ImageObject", "url": "https://notavello.com/og-image.png" } }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
+.post-nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; row-gap: 8px; }
+.post-nav-top { margin-bottom: 40px; }
+.post-nav-bottom { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--border); }
+.post-nav a { display: inline-flex; align-items: center; gap: 6px; font-size: 0.92rem; font-weight: 600; color: var(--ink-muted); text-decoration: none; padding: 12px 14px; border-radius: var(--radius-sm); white-space: nowrap; transition: color 0.15s, background 0.15s; }
+.post-nav a:hover { color: var(--accent); background: var(--accent-light); }
+.post-nav a:first-child { padding-left: 0; }
+.post-nav a:last-child { padding-right: 0; justify-content: flex-end; }
+.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
+.post-date { font-size: 0.78rem; color: var(--ink-faint); }
+.post-title { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; color: var(--ink); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
+.post-lede { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+.post-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink); }
+.post-body h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 44px 0 16px; letter-spacing: -0.01em; }
+.post-body p { margin-bottom: 20px; color: var(--ink-muted); }
+.post-body p strong { color: var(--ink); font-weight: 600; }
+.post-body ul { margin: 0 0 20px 20px; color: var(--ink-muted); }
+.post-body ul li { margin-bottom: 8px; line-height: 1.7; }
+.callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 32px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.7; }
+.post-footer { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.post-footer-label { font-size: 0.8rem; color: var(--ink-faint); }
+.btn-export { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: opacity 0.2s; }
+.btn-export:hover { opacity: 0.9; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } .post-nav a { padding: 12px 8px; font-size: 0.88rem; } }
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+
+  <nav class="post-nav post-nav-top">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+  <div class="post-meta">
+    <span class="post-tag">Local AI</span>
+    <span class="post-date">September 1, 2026</span>
+  </div>
+
+  <h1 class="post-title">What Quantization Changes in a Local AI Model</h1>
+
+  <p class="post-lede">Quantization converts the high-precision numbers that store a model&#039;s learned parameters into lower-precision formats. Standard training often uses 32-bit floating point values. Quantization maps those values to 8-bit or 4-bit integers, or sometimes 8-bit or 16-bit floats. The mapping reduces the number of distinct values each weight or activation can take. Because each number now occupies fewer bytes, the entire model file becomes smaller and the arithmetic operations that run during inference require less memory bandwidth. The same change also limits how accurately the model can represent the patterns it learned during training. The goal is to keep the accuracy loss small enough that the model still performs its intended task while fitting on more modest hardware.</p>
+
+  <div class="post-body">
+
+<h2>How Reduced Precision Works</h2>
+<p>A floating-point number stores a sign bit, exponent, and mantissa. Reducing the bit width shrinks the range or the granularity of representable values. In 8-bit integer quantization, the original 32-bit range is scaled and offset so that the most important values fall into the 256 possible slots of an int8. The scaling factor and zero-point are stored alongside the quantized weights so the values can be restored to an approximate float range during computation.</p>
+<p>Some schemes use symmetric quantization around zero; others use an affine mapping that allows a non-zero zero-point. The choice affects how well the method handles weights that are not centered at zero. Per-tensor quantization applies one scale to an entire tensor, while per-channel quantization uses a separate scale for each output channel. The finer granularity usually preserves more accuracy at the cost of extra metadata.</p><div class="callout"><strong>Caution</strong> Quantization always adds some error. Test outputs on your specific prompts and data before relying on a quantized model for production work.</div>
+<h2>Changes to Model File Size</h2>
+<p>Storing weights in int8 instead of float32 cuts the storage requirement by roughly a factor of four. Moving to int4 halves that size again because two 4-bit values fit inside one 8-bit byte through simple bit packing. The packed format is what actually travels from storage or VRAM into the compute units. Even when the hardware lacks native 4-bit arithmetic, the reduced memory traffic often improves overall speed because memory bandwidth is frequently the limiting factor for large models.</p>
+<p>The saved space also affects download times and the amount of disk space needed to keep several models available locally. Model repositories therefore publish both full-precision and quantized versions so users can choose the size that matches their hardware.</p>
+<h2>Impact on Memory and Compute Resources</h2>
+<p>During inference the model weights must be loaded into memory and the intermediate activations must be computed and stored. Lower-precision weights reduce both the static memory footprint and the dynamic memory needed for the key-value cache in transformer models. On CPUs and GPUs that provide specialized instructions for 8-bit operations, the arithmetic itself can execute faster. On hardware without those instructions the main gain still comes from moving less data.</p>
+<p>Dynamic quantization keeps activations in floating point and only quantizes weights ahead of time. Static quantization also quantizes activations after a calibration pass on representative data. Both approaches lower peak memory use compared with the original float32 model, but they require different preparation steps and may behave differently on the same hardware.</p>
+<h2>Quality Tradeoffs and Error Sources</h2>
+<p>Every time a high-precision value is forced into a smaller set of representable numbers, a small rounding error is introduced. These errors accumulate through the many layers of a neural network. The result can be slightly less coherent text, occasional factual slips, or reduced ability to follow complex instructions. The severity depends on the model architecture, the quantization method, and how sensitive the downstream task is to small perturbations.</p>
+<p>Advanced techniques such as GPTQ and AWQ attempt to minimize the error by choosing scales and rounding decisions that protect the most important weights. Even with these methods, some degradation remains. Users who need the highest possible fidelity therefore keep a full-precision copy for final verification or for tasks where small mistakes are costly.</p>
+<h2>Choosing and Applying Quantization</h2>
+<p>Several libraries expose ready-made quantized models or tools to create them. Hugging Face Transformers supports multiple backends that can load pre-quantized checkpoints or apply quantization on the fly. PyTorch offers dynamic and static post-training quantization plus quantization-aware training. The right choice depends on whether you need maximum ease, maximum accuracy, or compatibility with a particular inference engine.</p>
+<p>After loading a quantized model, it is useful to run a small set of representative prompts and compare outputs against the original version. If the differences are acceptable, the smaller model can replace the larger one for everyday use. If differences appear in critical areas, a higher-bit or differently calibrated version may be needed.</p>
+<h2>Limitations to Keep in Mind</h2>
+<p>Quantization is not a free performance upgrade. The accuracy cost can be noticeable on tasks that require precise reasoning or long context. Some quantization formats also require specific kernels or hardware support to realize the full speed benefit. When those kernels are unavailable, the model still runs but may be slower than expected because of on-the-fly unpacking.</p>
+<p>Finally, quantized models remain subject to the same safety and alignment considerations as their full-precision counterparts. Reducing numeric precision does not remove harmful capabilities or biases that were present in the original training data.</p><h2>Sources</h2><ul><li><a href="https://huggingface.co/docs/transformers/quantization/concept_guide" rel="noopener noreferrer">huggingface.co</a></li><li><a href="https://docs.pytorch.org/docs/2.5/quantization.html" rel="noopener noreferrer">pytorch.org</a></li><li><a href="https://huggingface.co/docs/transformers/quantization/overview" rel="noopener noreferrer">huggingface.co</a></li></ul>
+
+  </div>
+
+  <div class="post-footer">
+    <span class="post-footer-label">Looking for more AI tools?</span>
+    <a class="btn-export" href="/">See our free AI tools →</a>
+  </div>
+
+  <nav class="post-nav post-nav-bottom">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+</main>
+
+<!--FOOTER-->
+
+</body>
+</html>
