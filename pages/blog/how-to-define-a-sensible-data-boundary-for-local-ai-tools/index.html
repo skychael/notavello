@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>How to define a sensible data boundary for local AI tools — The Export | Notavello</title>
+<meta name="description" content="Learn how to set clear data boundaries for local AI tools by deciding what stays on-device, what plugins transmit, and what logs retain while respecting privacy"/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/blog/how-to-define-a-sensible-data-boundary-for-local-ai-tools/"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2026-09-02T12:49:56.773Z"/>
+<meta property="article:modified_time" content="2026-09-02T12:49:56.773Z"/>
+<meta name="notavello:published_at" content="2026-09-02T12:49:56.773Z"/>
+<meta name="syndication-origin-site" content="toysforbots"/>
+<meta name="syndication-origin-id" content="toysforbots:how-to-define-a-sensible-data-boundary-for-local-ai-tools"/>
+<meta name="syndication-origin-slug" content="how-to-define-a-sensible-data-boundary-for-local-ai-tools"/>
+<meta name="syndication-origin-url" content="https://toysforbots.com/blog/how-to-define-a-sensible-data-boundary-for-local-ai-tools/"/>
+<meta name="syndication-source-format" content="toysforbots-syndication-v1"/>
+<meta property="og:url" content="https://notavello.com/pages/blog/how-to-define-a-sensible-data-boundary-for-local-ai-tools/"/>
+<meta property="og:title" content="How to define a sensible data boundary for local AI tools"/>
+<meta property="og:description" content="Learn how to set clear data boundaries for local AI tools by deciding what stays on-device, what plugins transmit, and what logs retain while respecting privacy"/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="How to define a sensible data boundary for local AI tools"/>
+<meta name="twitter:description" content="Learn how to set clear data boundaries for local AI tools by deciding what stays on-device, what plugins transmit, and what logs retain while respecting privacy"/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "How to define a sensible data boundary for local AI tools",
+  "description": "Learn how to set clear data boundaries for local AI tools by deciding what stays on-device, what plugins transmit, and what logs retain while respecting privacy",
+  "url": "https://notavello.com/pages/blog/how-to-define-a-sensible-data-boundary-for-local-ai-tools/",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://notavello.com/pages/blog/how-to-define-a-sensible-data-boundary-for-local-ai-tools/" },
+  "image": "https://notavello.com/og-image.png",
+  "datePublished": "2026-09-02T12:49:56.773Z",
+  "dateModified": "2026-09-02T12:49:56.773Z",
+  "author": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" },
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com", "logo": { "@type": "ImageObject", "url": "https://notavello.com/og-image.png" } }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
+.post-nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; row-gap: 8px; }
+.post-nav-top { margin-bottom: 40px; }
+.post-nav-bottom { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--border); }
+.post-nav a { display: inline-flex; align-items: center; gap: 6px; font-size: 0.92rem; font-weight: 600; color: var(--ink-muted); text-decoration: none; padding: 12px 14px; border-radius: var(--radius-sm); white-space: nowrap; transition: color 0.15s, background 0.15s; }
+.post-nav a:hover { color: var(--accent); background: var(--accent-light); }
+.post-nav a:first-child { padding-left: 0; }
+.post-nav a:last-child { padding-right: 0; justify-content: flex-end; }
+.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
+.post-date { font-size: 0.78rem; color: var(--ink-faint); }
+.post-title { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; color: var(--ink); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
+.post-lede { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+.post-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink); }
+.post-body h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 44px 0 16px; letter-spacing: -0.01em; }
+.post-body p { margin-bottom: 20px; color: var(--ink-muted); }
+.post-body p strong { color: var(--ink); font-weight: 600; }
+.post-body ul { margin: 0 0 20px 20px; color: var(--ink-muted); }
+.post-body ul li { margin-bottom: 8px; line-height: 1.7; }
+.callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 32px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.7; }
+.post-footer { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.post-footer-label { font-size: 0.8rem; color: var(--ink-faint); }
+.btn-export { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: opacity 0.2s; }
+.btn-export:hover { opacity: 0.9; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } .post-nav a { padding: 12px 8px; font-size: 0.88rem; } }
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+
+  <nav class="post-nav post-nav-top">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+  <div class="post-meta">
+    <span class="post-tag">Local AI</span>
+    <span class="post-date">September 2, 2026</span>
+  </div>
+
+  <h1 class="post-title">How to define a sensible data boundary for local AI tools</h1>
+
+  <p class="post-lede">Local AI tools keep models and inference on your device, yet they still touch files, memory stores, plugins, and external connectors. Without explicit boundaries, prompts containing PII, source code, or credentials can travel through vector stores, tool calls, or debug traces. A sensible data boundary starts by mapping every path data can take from prompt entry to output and retention. It then applies minimization, isolation, and short retention rules drawn from established guidance. The result is a practical control surface that limits exposure while preserving useful functionality.</p>
+
+  <div class="post-body">
+
+<h2>Map every data path before setting rules</h2>
+<p>Begin by tracing the full lifecycle of any prompt or file the assistant can access. Record user input length and attachments, local directory reads, clipboard or browser connectors, model call mechanisms (IPC or HTTPS), vector stores, logs, and any third-party plugins. Distinguish encrypted paths from plaintext ones and note where data becomes persistent versus ephemeral.</p>
+<p>This map reveals the highest-risk surfaces. For example, a local model using IPC still risks leakage through shared memory or log files, while a remote fallback over HTTPS adds network exposure. The exercise also identifies human approval points where irreversible actions such as sending email or executing code can be gated.</p><ul><li>List every connector that can push or pull data across application boundaries.</li><li>Note whether logs capture full prompt bodies or only metadata by default.</li><li>Flag any path that writes embeddings or chat history to disk without encryption.</li></ul><div class="callout"><strong>Core Rule</strong> Treat every plugin call, memory write, and log entry as a potential egress point. Only the minimum context required for the task should cross each boundary.</div>
+<h2>Define what must remain strictly local</h2>
+<p>Once paths are visible, classify data by sensitivity. Source code, internal documents, and personal identifiers should never leave the device unless explicitly authorized. System prompts and retrieved context that contain proprietary material also belong inside the local trust boundary.</p>
+<p>Apply the principle of data minimization: send only the fields or passages required for the immediate task. Over-broad context windows flatten trust domains and make it impossible for the model to distinguish trusted instructions from untrusted data. [owasp.org](https://cheatsheetseries.owasp.org/cheatsheets/AI_Agent_Security_Cheat_Sheet.html) highlights this architectural fusion of control and data planes as a primary failure mode.</p><ul><li>Keep raw documents and embeddings on-device when they contain regulated or proprietary content.</li><li>Disable automatic clipboard or email connectors unless a documented business need exists.</li><li>Require explicit user confirmation before any file write-back occurs.</li></ul>
+<h2>Control what plugins and tools may transmit</h2>
+<p>Every tool invocation or sub-agent handoff is an exfiltration boundary. Even benign-looking plugins receive the active conversation context, which may include secrets or attachments. Inventory each integration, record what payload it receives, where data is stored, and the retention period.</p>
+<p>Enforce least privilege by scoping tool permissions to the narrowest set of actions and data fields. Use allowlists and human-in-the-loop approval for high-risk operations. When a plugin must receive context, strip unnecessary fields first and log the exact payload size and destination.</p><ul><li>Maintain a registry of every MCP server or connector with its data-handling policy.</li><li>Default to minimal payload mode; expand only after review.</li><li>Route high-risk actions through an approval step that records the decision ID.</li></ul>
+<h2>Set retention and logging boundaries</h2>
+<p>Debugging often captures full prompts and outputs, creating long-lived copies of sensitive material. Adopt least-logging defaults that record only metadata unless a specific incident requires more detail. Tokenize or redact PII and secrets before any log line is written.</p>
+<p>Apply short time-to-live values to traces, KV caches, and session memory. Delete or anonymize derived assets such as embeddings when the source data is removed. Align these rules with applicable privacy regulations so data-subject requests can be fulfilled with traceable evidence.</p><ul><li>Disable full-body logging by default; enable only with explicit approval.</li><li>Expire debug traces after 30 days or upon case closure, whichever comes first.</li><li>Provide an export and purge workflow for any stored conversation history.</li></ul>
+<h2>Audit and maintain the boundary over time</h2>
+<p>Boundaries degrade when new plugins, model updates, or workflow changes are introduced without review. Schedule periodic re-mapping of data flows and re-validation of plugin permissions. Verify that administrators lack standing broad access to model weights or vector stores.</p>
+<p>Test whether outputs can leak secrets through retrieval reuse or context bleed. Confirm that open-source inference engines and drivers receive patches on a defined cadence. These checks turn the initial boundary definition into an ongoing operational practice rather than a one-time document.</p><ul><li>Re-run the data-flow map after any major model or plugin update.</li><li>Include boundary compliance in change-control reviews.</li><li>Document exceptions with compensating controls and expiration dates.</li></ul><h2>Sources</h2><ul><li><a href="https://cheatsheetseries.owasp.org/cheatsheets/AI_Agent_Security_Cheat_Sheet.html" rel="noopener noreferrer">OWASP AI Agent Security Cheat Sheet</a></li><li><a href="https://matematicsolutions.com/baza-wiedzy/pdf/2026-05-12-owasp-genai-data-security-risks-mitigations-2026.pdf" rel="noopener noreferrer">OWASP GenAI Data Security guidance</a></li></ul>
+
+  </div>
+
+  <div class="post-footer">
+    <span class="post-footer-label">Looking for more AI tools?</span>
+    <a class="btn-export" href="/">See our free AI tools →</a>
+  </div>
+
+  <nav class="post-nav post-nav-bottom">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+</main>
+
+<!--FOOTER-->
+
+</body>
+</html>

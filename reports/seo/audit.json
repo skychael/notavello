@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-02T06:16:42.697Z",
+  "generatedAt": "2026-09-03T06:19:27.051Z",
   "totals": {
-    "pages": 252,
-    "indexable": 248,
-    "articles": 181,
-    "sitemap": 248,
+    "pages": 254,
+    "indexable": 250,
+    "articles": 183,
+    "sitemap": 250,
     "errors": 0,
-    "warnings": 176
+    "warnings": 179
   },
   "errors": [],
   "warnings": [
@@ -437,6 +437,11 @@
     },
     {
       "type": "template-pattern",
+      "page": "/pages/blog/how-to-define-a-sensible-data-boundary-for-local-ai-tools/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "template-pattern",
       "page": "/pages/blog/how-to-investigate-disappearing-disk-space/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
@@ -523,6 +528,16 @@
     {
       "type": "topic-review",
       "page": "/pages/blog/iraq-turkey-pipeline-hormuz-oil-escape-hatch/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/jet-fuel-is-the-hormuz-bill-in-your-airfare/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/jet-fuel-is-the-hormuz-bill-in-your-airfare/",
       "detail": "title/description lacks a clear AI, software, or computing connection"
     },
     {
@@ -900,7 +915,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 252,
+      "incomingLinks": 254,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -924,7 +939,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 252,
+      "incomingLinks": 254,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -1032,7 +1047,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 252,
+      "incomingLinks": 254,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -1044,9 +1059,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 252,
-      "lastmod": "2026-09-01",
-      "bodyWords": 664
+      "incomingLinks": 254,
+      "lastmod": "2026-09-02",
+      "bodyWords": 672
     },
     {
       "route": "/pages/blog/a-plain-language-guide-to-file-permissions/",
@@ -1320,9 +1335,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 120,
-      "lastmod": "2026-09-01",
-      "bodyWords": 2285
+      "incomingLinks": 122,
+      "lastmod": "2026-09-02",
+      "bodyWords": 2311
     },
     {
       "route": "/pages/blog/apple-speechanalyzer-local-transcription-apps/",
@@ -1884,7 +1899,7 @@
       "canonical": "https://notavello.com/pages/blog/hormuz-corridor-deal-is-a-shipping-bottleneck/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 2,
+      "incomingLinks": 3,
       "lastmod": "2026-08-26",
       "bodyWords": 1418
     },
@@ -2129,6 +2144,18 @@
       "bodyWords": 854
     },
     {
+      "route": "/pages/blog/how-to-define-a-sensible-data-boundary-for-local-ai-tools/",
+      "file": "pages/blog/how-to-define-a-sensible-data-boundary-for-local-ai-tools/index.html",
+      "title": "How to define a sensible data boundary for local AI tools — The Export | Notavello",
+      "description": "Learn how to set clear data boundaries for local AI tools by deciding what stays on-device, what plugins transmit, and what logs retain while respecting privacy",
+      "canonical": "https://notavello.com/pages/blog/how-to-define-a-sensible-data-boundary-for-local-ai-tools/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-09-02",
+      "bodyWords": 805
+    },
+    {
       "route": "/pages/blog/how-to-guide-claude-through-file-edits/",
       "file": "pages/blog/how-to-guide-claude-through-file-edits/index.html",
       "title": "How to Guide Claude Through File Edits Without Losing Control — The Export | Notavello",
@@ -2307,6 +2334,18 @@
       "incomingLinks": 2,
       "lastmod": "2026-08-06",
       "bodyWords": 1515
+    },
+    {
+      "route": "/pages/blog/jet-fuel-is-the-hormuz-bill-in-your-airfare/",
+      "file": "pages/blog/jet-fuel-is-the-hormuz-bill-in-your-airfare/index.html",
+      "title": "Jet Fuel Is The Hormuz Bill In Your Airfare — The Export | Notavello",
+      "description": "Jet fuel costs have eased from spring panic, but airline fuel bills are still far above last year.",
+      "canonical": "https://notavello.com/pages/blog/jet-fuel-is-the-hormuz-bill-in-your-airfare/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-09-03",
+      "bodyWords": 1397
     },
     {
       "route": "/pages/blog/keyboard-mouse-monitor-usb-hub-problems/",
@@ -2557,8 +2596,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-01",
-      "bodyWords": 890
+      "lastmod": "2026-09-02",
+      "bodyWords": 889
     },
     {
       "route": "/pages/blog/page-11/",
@@ -2569,8 +2608,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": null,
-      "bodyWords": 75
+      "lastmod": "2026-09-02",
+      "bodyWords": 174
     },
     {
       "route": "/pages/blog/page-2/",
@@ -2581,8 +2620,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-01",
-      "bodyWords": 657
+      "lastmod": "2026-09-02",
+      "bodyWords": 658
     },
     {
       "route": "/pages/blog/page-3/",
@@ -2593,8 +2632,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-01",
-      "bodyWords": 689
+      "lastmod": "2026-09-02",
+      "bodyWords": 684
     },
     {
       "route": "/pages/blog/page-4/",
@@ -2605,8 +2644,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-01",
-      "bodyWords": 672
+      "lastmod": "2026-09-02",
+      "bodyWords": 675
     },
     {
       "route": "/pages/blog/page-5/",
@@ -2617,8 +2656,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-01",
-      "bodyWords": 647
+      "lastmod": "2026-09-02",
+      "bodyWords": 650
     },
     {
       "route": "/pages/blog/page-6/",
@@ -2629,8 +2668,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-01",
-      "bodyWords": 686
+      "lastmod": "2026-09-02",
+      "bodyWords": 687
     },
     {
       "route": "/pages/blog/page-7/",
@@ -2641,8 +2680,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-01",
-      "bodyWords": 678
+      "lastmod": "2026-09-02",
+      "bodyWords": 682
     },
     {
       "route": "/pages/blog/page-8/",
@@ -2653,8 +2692,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-01",
-      "bodyWords": 810
+      "lastmod": "2026-09-02",
+      "bodyWords": 783
     },
     {
       "route": "/pages/blog/page-9/",
@@ -2665,8 +2704,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-01",
-      "bodyWords": 837
+      "lastmod": "2026-09-02",
+      "bodyWords": 830
     },
     {
       "route": "/pages/blog/propane-is-the-rare-fuel-cushion-left/",
@@ -3360,7 +3399,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 252,
+      "incomingLinks": 254,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -3372,7 +3411,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 252,
+      "incomingLinks": 254,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -3384,7 +3423,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 252,
+      "incomingLinks": 254,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -3396,7 +3435,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 252,
+      "incomingLinks": 254,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -3408,7 +3447,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 252,
+      "incomingLinks": 254,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -3421,8 +3460,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-09-02",
-      "bodyWords": 267
+      "lastmod": "2026-09-03",
+      "bodyWords": 273
     },
     {
       "route": "/pages/sample",
@@ -3444,7 +3483,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 252,
+      "incomingLinks": 254,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -3456,7 +3495,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 252,
+      "incomingLinks": 254,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -3480,7 +3519,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 252,
+      "incomingLinks": 254,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -3912,7 +3951,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 252,
+      "incomingLinks": 254,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }
