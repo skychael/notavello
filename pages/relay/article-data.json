@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "checked_at": "2026-09-03T05:52:34.252Z",
-  "latest_success_at": "2026-09-03T05:52:34.252Z",
+  "checked_at": "2026-09-03T11:21:12.817Z",
+  "latest_success_at": "2026-09-03T11:21:12.817Z",
   "status": "partial",
   "items": [
     {
@@ -25,6 +25,14 @@
       "url": "https://gcaptain.com/saudi-oil-exports-dive-as-tankers-at-risk-from-hormuz-to-red-sea",
       "publisher": "gCaptain",
       "published_at": "2026-09-02T17:26:34.000Z",
+      "source_id": "gcaptain",
+      "status": "ok"
+    },
+    {
+      "title": "Japan’s Mitsui OSK Sees Risk to Hormuz Shipping Through Year-End",
+      "url": "https://gcaptain.com/japans-mitsui-osk-sees-risk-to-hormuz-shipping-through-year-end",
+      "publisher": "gCaptain",
+      "published_at": "2026-09-03T07:00:27.000Z",
       "source_id": "gcaptain",
       "status": "ok"
     },
@@ -58,14 +66,6 @@
       "publisher": "TWZ (The War Zone)",
       "published_at": "2026-09-01T22:45:46.000Z",
       "source_id": "twz",
-      "status": "ok"
-    },
-    {
-      "title": "Two Seafarers Killed in Strait of Hormuz Tanker Attack",
-      "url": "https://gcaptain.com/two-seafarers-killed-in-strait-of-hormuz-tanker-attack",
-      "publisher": "gCaptain",
-      "published_at": "2026-09-02T15:45:58.000Z",
-      "source_id": "gcaptain",
       "status": "ok"
     },
     {
