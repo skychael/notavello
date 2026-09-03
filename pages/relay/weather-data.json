@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-03T01:08:43.419Z",
-  "latest_success_at": "2026-09-03T01:08:43.419Z",
+  "generated_at": "2026-09-03T05:52:35.110Z",
+  "latest_success_at": "2026-09-03T05:52:35.110Z",
   "status": "partial",
   "items": [
     {
-      "id": "9eb976086de63fbf",
-      "title": "Flood Watch issued September 2 at 9:55AM CDT until September 3 at 7:00AM CDT by NWS Houston/Galveston TX",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6207ad17c9e0ecb079db498829c0eddb65ba4448.002.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-09-02T14:55:00.000Z",
-      "topic": "Flooding",
-      "status": "ok"
-    },
-    {
-      "id": "8b47ae60d8cbd9b2",
-      "title": "SPC Sep 3, 2026 0100 UTC Day 1 Convective Outlook",
-      "url": "https://www.spc.noaa.gov/products/outlook/day1otlk_0100.html",
-      "publisher": "Storm Prediction Center",
-      "published_at": "2026-09-03T01:02:09.000Z",
+      "id": "ee8e390990a944fc",
+      "title": "Eastern North Pacific Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-09-03T05:29:12.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "16d43ac0727c2265",
-      "title": "Special Weather Statement issued September 2 at 7:53PM CDT by NWS Houston/Galveston TX",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.d8284568cc4bcf76508d32f9e48cffe1f21a162d.001.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-09-03T00:53:00.000Z",
+      "id": "4bc9c1b054d6d178",
+      "title": "Hurricane Marie Graphics",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep3+shtml/033309.shtml?cone=",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-09-03T03:33:09.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "6291e24d9a0b9d66",
+      "title": "Hurricane Karina Graphics",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep1+shtml/032156.shtml?cone=",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-09-03T03:21:56.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
