@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-03T11:21:13.335Z",
-  "latest_success_at": "2026-09-03T11:21:13.335Z",
+  "generated_at": "2026-09-03T16:29:45.834Z",
+  "latest_success_at": "2026-09-03T16:29:45.834Z",
   "status": "partial",
   "items": [
     {
-      "id": "2d4b43d767a4d3dd",
-      "title": "Hurricane Marie Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep3+shtml/093334.shtml?cone=",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-09-03T09:33:34.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "492d41a08cda7db4",
-      "title": "Hurricane Karina Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep1+shtml/092222.shtml?cone=",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-09-03T09:22:22.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "a8abf9e2e082f0bd",
-      "title": "Flood Watch issued September 3 at 12:56AM CDT until September 3 at 1:00PM CDT by NWS Fort Worth TX",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.94bd6ac8d4c79aba40a87d72b97e8013221b28de.001.1.cap",
+      "id": "0c881942287ffe74",
+      "title": "Flood Watch issued September 3 at 9:12AM CDT until September 3 at 7:00PM CDT by NWS Houston/Galveston TX",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.de40576468c0c4c4b98dc69bf850c3b06bff8914.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-09-03T05:56:00.000Z",
+      "published_at": "2026-09-03T14:12:00.000Z",
+      "topic": "Flooding",
+      "status": "ok"
+    },
+    {
+      "id": "45580589f42b11c6",
+      "title": "High Surf Advisory issued September 3 at 5:51AM HST until September 4 at 6:00AM HST by NWS Honolulu HI",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.02318e4018d06254a524e74fdc297a38cb812b48.001.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-09-03T15:51:00.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "8e99a1556e2c9fab",
+      "title": "Hurricane Marie Graphics",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep3+shtml/153508.shtml?cone=",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-09-03T15:35:08.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
