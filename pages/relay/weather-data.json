@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-03T16:29:45.834Z",
-  "latest_success_at": "2026-09-03T16:29:45.834Z",
+  "generated_at": "2026-09-03T19:53:48.763Z",
+  "latest_success_at": "2026-09-03T19:53:48.763Z",
   "status": "partial",
   "items": [
     {
@@ -14,20 +14,20 @@
       "status": "ok"
     },
     {
-      "id": "45580589f42b11c6",
-      "title": "High Surf Advisory issued September 3 at 5:51AM HST until September 4 at 6:00AM HST by NWS Honolulu HI",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.02318e4018d06254a524e74fdc297a38cb812b48.001.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-09-03T15:51:00.000Z",
+      "id": "b5ad93019d019ede",
+      "title": "Atlantic Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-09-03T17:26:50.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "8e99a1556e2c9fab",
-      "title": "Hurricane Marie Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep3+shtml/153508.shtml?cone=",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-09-03T15:35:08.000Z",
+      "id": "4c31190a9c521e8a",
+      "title": "SPC Sep 3, 2026 1730 UTC Day 2 Convective Outlook",
+      "url": "https://www.spc.noaa.gov/products/outlook/day2otlk_1730.html",
+      "publisher": "Storm Prediction Center",
+      "published_at": "2026-09-03T16:58:02.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
