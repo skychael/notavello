@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "09-02",
-  "display_date": "September 2",
-  "generated_at": "2026-09-02T12:47:04.135Z",
+  "date_key": "09-03",
+  "display_date": "September 3",
+  "generated_at": "2026-09-03T12:50:02.767Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-a821eb89a0de84e8114b1d13",
+      "candidate_id": "event-4f43bce666abcf8090e23d93",
       "type": "event",
-      "year": 2009,
-      "text": "The Andhra Pradesh, India helicopter crash occurred near Rudrakonda Hill, 40 nautical miles (74 km) from Kurnool, Andhra Pradesh, India. Fatalities included Y. S. Rajasekhara Reddy, the Chief Minister of the Indian state of Andhra Pradesh.",
-      "article_title": "2009 Andhra Pradesh helicopter crash",
-      "url": "https://en.wikipedia.org/wiki/2009_Andhra_Pradesh_helicopter_crash",
+      "year": 1978,
+      "text": "During the Rhodesian Bush War a group of ZIPRA guerrillas shot down civilian Vickers Viscount aircraft (Air Rhodesia Flight 825) with a Soviet-made SAM Strela-2; of 56 passengers and crew 38 people died in crash, 10 were massacred by the guerrillas at the site.",
+      "article_title": "Rhodesian Bush War",
+      "url": "https://en.wikipedia.org/wiki/Rhodesian_Bush_War",
       "category": "Disasters and exploration"
     },
     {
-      "candidate_id": "event-77ad0f24574487b7d89c5bfe",
+      "candidate_id": "event-e514c3ebbd570bb10b8fef30",
       "type": "event",
-      "year": 2023,
-      "text": "India's first solar observation mission: The Indian Space Research Organisation (ISRO) successfully launches Aditya-L1 from Satish Dhawan space centre.",
-      "article_title": "Aditya-L1",
-      "url": "https://en.wikipedia.org/wiki/Aditya-L1",
-      "category": "Science and technology"
+      "year": 1989,
+      "text": "Cubana de Aviación Flight 9046 crashes into a residential area of Havana shortly after takeoff from José Martí International Airport, killing 150.",
+      "article_title": "Cubana de Aviación Flight 9046",
+      "url": "https://en.wikipedia.org/wiki/Cubana_de_Aviaci%C3%B3n_Flight_9046",
+      "category": "World history"
     },
     {
-      "candidate_id": "event-86b29375a12449aa8b4e363b",
+      "candidate_id": "event-0d32aecdd19201a2ddbed211",
       "type": "event",
-      "year": 1923,
-      "text": "Kantō Massacre: Amid rumors that Koreans had been conducting acts of sabotage in the aftermath of the 1923 Great Kantō earthquake, lynch mobs of Japanese begin massacring thousands of civilians over the course of several weeks, mainly ethnic minorities such as Koreans and Chinese.",
-      "article_title": "Kantō Massacre",
-      "url": "https://en.wikipedia.org/wiki/Kant%C5%8D_Massacre",
-      "category": "Disasters and exploration"
+      "year": 1989,
+      "text": "Varig Flight 254 crashes in the Amazon rainforest near São José do Xingu in Brazil, killing 12.",
+      "article_title": "Varig Flight 254",
+      "url": "https://en.wikipedia.org/wiki/Varig_Flight_254",
+      "category": "World history"
     }
   ]
 }
