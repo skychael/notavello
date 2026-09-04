@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-04T05:58:15.303Z",
-  "latest_success_at": "2026-09-04T05:58:15.303Z",
+  "generated_at": "2026-09-04T11:24:19.784Z",
+  "latest_success_at": "2026-09-04T11:24:19.784Z",
   "status": "partial",
   "items": [
+    {
+      "id": "7271fff3084013c4",
+      "title": "Hurricane Marie Graphics",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep3+shtml/093308.shtml?cone=",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-09-04T09:33:08.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "d3a1f90cdab2e1b1",
+      "title": "Hurricane Karina Graphics",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep1+shtml/092201.shtml?cone=",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-09-04T09:22:01.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
     {
       "id": "ee8e390990a944fc",
       "title": "Eastern North Pacific Tropical Weather Outlook",
       "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
       "publisher": "National Hurricane Center",
       "published_at": "2026-09-04T05:39:03.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "017e993ee311f2ee",
-      "title": "Hurricane Marie Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep3+shtml/033306.shtml?cone=",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-09-04T03:33:06.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "b8cd476e5a15345e",
-      "title": "Hurricane Karina Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep1+shtml/032159.shtml?cone=",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-09-04T03:21:59.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
