@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "09-03",
-  "display_date": "September 3",
-  "generated_at": "2026-09-03T12:50:02.767Z",
+  "date_key": "09-04",
+  "display_date": "September 4",
+  "generated_at": "2026-09-04T12:44:03.121Z",
   "source": "Wikimedia On This Day",
-  "selection_method": "deterministic_fallback",
+  "selection_method": "ai",
   "items": [
     {
-      "candidate_id": "event-4f43bce666abcf8090e23d93",
+      "candidate_id": "event-363f7e8ba8920695890cb6c6",
       "type": "event",
-      "year": 1978,
-      "text": "During the Rhodesian Bush War a group of ZIPRA guerrillas shot down civilian Vickers Viscount aircraft (Air Rhodesia Flight 825) with a Soviet-made SAM Strela-2; of 56 passengers and crew 38 people died in crash, 10 were massacred by the guerrillas at the site.",
-      "article_title": "Rhodesian Bush War",
-      "url": "https://en.wikipedia.org/wiki/Rhodesian_Bush_War",
-      "category": "Disasters and exploration"
+      "year": 1998,
+      "text": "Google is founded by Larry Page and Sergey Brin, two PhD students at Stanford University.",
+      "article_title": "Google",
+      "url": "https://en.wikipedia.org/wiki/Google",
+      "category": "Science and technology"
     },
     {
-      "candidate_id": "event-e514c3ebbd570bb10b8fef30",
+      "candidate_id": "event-30f7b5b8d7d6acbe3e5d55a2",
       "type": "event",
-      "year": 1989,
-      "text": "Cubana de Aviación Flight 9046 crashes into a residential area of Havana shortly after takeoff from José Martí International Airport, killing 150.",
-      "article_title": "Cubana de Aviación Flight 9046",
-      "url": "https://en.wikipedia.org/wiki/Cubana_de_Aviaci%C3%B3n_Flight_9046",
-      "category": "World history"
+      "year": 1957,
+      "text": "American Civil Rights Movement: Little Rock Crisis: The governor of Arkansas calls out the National Guard to prevent African American students from enrolling in Little Rock Central High School, resulting in the lawsuit Cooper v. Aaron the following year.",
+      "article_title": "Civil rights movement",
+      "url": "https://en.wikipedia.org/wiki/Civil_rights_movement",
+      "category": "Politics and society"
     },
     {
-      "candidate_id": "event-0d32aecdd19201a2ddbed211",
-      "type": "event",
-      "year": 1989,
-      "text": "Varig Flight 254 crashes in the Amazon rainforest near São José do Xingu in Brazil, killing 12.",
-      "article_title": "Varig Flight 254",
-      "url": "https://en.wikipedia.org/wiki/Varig_Flight_254",
-      "category": "World history"
+      "candidate_id": "birth-a66a9d77a9f57d07f6601cd7",
+      "type": "birth",
+      "year": 1981,
+      "text": "Beyoncé, American singer-songwriter",
+      "article_title": "Beyoncé",
+      "url": "https://en.wikipedia.org/wiki/Beyonc%C3%A9",
+      "category": "Culture and notable people"
     }
   ]
 }
