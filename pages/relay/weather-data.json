@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-04T16:25:59.411Z",
-  "latest_success_at": "2026-09-04T16:25:59.411Z",
+  "generated_at": "2026-09-04T19:39:20.633Z",
+  "latest_success_at": "2026-09-04T19:39:20.633Z",
   "status": "partial",
   "items": [
     {
-      "id": "850aa329e85d1a92",
-      "title": "Hurricane Marie Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep3+shtml/153527.shtml?cone=",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-09-04T15:35:27.000Z",
+      "id": "20010a07739c96ae",
+      "title": "SPC Sep 4, 2026 1930 UTC Day 3 Severe Thunderstorm Outlook",
+      "url": "https://www.spc.noaa.gov/products/outlook/day3otlk_1930.html",
+      "publisher": "Storm Prediction Center",
+      "published_at": "2026-09-04T19:30:42.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "e80f7a57b5d0f43c",
-      "title": "Hurricane Karina Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep1+shtml/152314.shtml?cone=",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-09-04T15:23:14.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "ac04ec69c6bc5591",
-      "title": "High Surf Advisory issued September 4 at 5:09AM HST until September 5 at 6:00AM HST by NWS Honolulu HI",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.c402d99ecfa9dceefee389993db5178ec5d93f3e.001.1.cap",
+      "id": "8eb303bab9eb1c1f",
+      "title": "Severe Thunderstorm Watch issued September 4 at 2:09PM EDT until September 4 at 9:00PM EDT by NWS Charleston WV",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f9a621b1b94a83bfecc5a06b9669ffff220c7069.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-09-04T15:09:00.000Z",
+      "published_at": "2026-09-04T18:09:00.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "b5ad93019d019ede",
+      "title": "Atlantic Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-09-04T17:14:42.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
