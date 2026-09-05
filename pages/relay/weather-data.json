@@ -1,9 +1,18 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-05T13:53:03.453Z",
-  "latest_success_at": "2026-09-05T13:53:03.453Z",
+  "generated_at": "2026-09-05T16:51:04.350Z",
+  "latest_success_at": "2026-09-05T16:51:04.350Z",
   "status": "partial",
   "items": [
+    {
+      "id": "790c0777f7eed750",
+      "title": "Hurricane Marie Graphics",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep3+shtml/153424.shtml?cone=",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-09-05T15:34:24.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
     {
       "id": "0bf91f512efc7539",
       "title": "High Surf Advisory issued September 5 at 3:29AM HST until September 6 at 6:00PM HST by NWS Honolulu HI",
@@ -19,15 +28,6 @@
       "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
       "publisher": "National Hurricane Center",
       "published_at": "2026-09-05T11:16:17.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "96a30ffcda3f151f",
-      "title": "Hurricane Marie Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep3+shtml/093307.shtml?cone=",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-09-05T09:33:07.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
