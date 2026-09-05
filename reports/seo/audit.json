@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-04T06:26:36.388Z",
+  "generatedAt": "2026-09-05T06:12:05.134Z",
   "totals": {
-    "pages": 255,
-    "indexable": 251,
-    "articles": 184,
-    "sitemap": 251,
+    "pages": 256,
+    "indexable": 252,
+    "articles": 185,
+    "sitemap": 252,
     "errors": 0,
-    "warnings": 181
+    "warnings": 182
   },
   "errors": [],
   "warnings": [
@@ -766,6 +766,11 @@
       "detail": "title/description lacks a clear AI, software, or computing connection"
     },
     {
+      "type": "template-pattern",
+      "page": "/pages/blog/the-oil-report-is-late-the-fuel-bill-is-not/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
       "type": "topic-review",
       "page": "/pages/blog/ubuntu-4-digit-pin-login/",
       "detail": "title/description lacks a clear AI, software, or computing connection"
@@ -925,7 +930,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 255,
+      "incomingLinks": 256,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -949,7 +954,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 255,
+      "incomingLinks": 256,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -1057,7 +1062,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 255,
+      "incomingLinks": 256,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -1069,9 +1074,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 255,
-      "lastmod": "2026-09-03",
-      "bodyWords": 676
+      "incomingLinks": 256,
+      "lastmod": "2026-09-04",
+      "bodyWords": 674
     },
     {
       "route": "/pages/blog/a-plain-language-guide-to-file-permissions/",
@@ -1345,9 +1350,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 123,
-      "lastmod": "2026-09-03",
-      "bodyWords": 2321
+      "incomingLinks": 124,
+      "lastmod": "2026-09-04",
+      "bodyWords": 2334
     },
     {
       "route": "/pages/blog/apple-speechanalyzer-local-transcription-apps/",
@@ -1909,7 +1914,7 @@
       "canonical": "https://notavello.com/pages/blog/hormuz-corridor-deal-is-a-shipping-bottleneck/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 3,
+      "incomingLinks": 4,
       "lastmod": "2026-08-26",
       "bodyWords": 1418
     },
@@ -2618,8 +2623,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-03",
-      "bodyWords": 872
+      "lastmod": "2026-09-04",
+      "bodyWords": 871
     },
     {
       "route": "/pages/blog/page-11/",
@@ -2630,8 +2635,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": "2026-09-03",
-      "bodyWords": 230
+      "lastmod": "2026-09-04",
+      "bodyWords": 278
     },
     {
       "route": "/pages/blog/page-2/",
@@ -2642,8 +2647,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-03",
-      "bodyWords": 655
+      "lastmod": "2026-09-04",
+      "bodyWords": 650
     },
     {
       "route": "/pages/blog/page-3/",
@@ -2654,8 +2659,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-03",
-      "bodyWords": 684
+      "lastmod": "2026-09-04",
+      "bodyWords": 689
     },
     {
       "route": "/pages/blog/page-4/",
@@ -2666,8 +2671,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-03",
-      "bodyWords": 674
+      "lastmod": "2026-09-04",
+      "bodyWords": 678
     },
     {
       "route": "/pages/blog/page-5/",
@@ -2678,8 +2683,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-03",
-      "bodyWords": 649
+      "lastmod": "2026-09-04",
+      "bodyWords": 647
     },
     {
       "route": "/pages/blog/page-6/",
@@ -2690,8 +2695,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-03",
-      "bodyWords": 690
+      "lastmod": "2026-09-04",
+      "bodyWords": 682
     },
     {
       "route": "/pages/blog/page-7/",
@@ -2702,8 +2707,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-03",
-      "bodyWords": 680
+      "lastmod": "2026-09-04",
+      "bodyWords": 685
     },
     {
       "route": "/pages/blog/page-8/",
@@ -2714,8 +2719,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-03",
-      "bodyWords": 779
+      "lastmod": "2026-09-04",
+      "bodyWords": 777
     },
     {
       "route": "/pages/blog/page-9/",
@@ -2726,8 +2731,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-03",
-      "bodyWords": 830
+      "lastmod": "2026-09-04",
+      "bodyWords": 824
     },
     {
       "route": "/pages/blog/propane-is-the-rare-fuel-cushion-left/",
@@ -2980,6 +2985,18 @@
       "incomingLinks": 3,
       "lastmod": "2026-09-01",
       "bodyWords": 1366
+    },
+    {
+      "route": "/pages/blog/the-oil-report-is-late-the-fuel-bill-is-not/",
+      "file": "pages/blog/the-oil-report-is-late-the-fuel-bill-is-not/index.html",
+      "title": "The Oil Report Is Late, The Fuel Bill Is Not — The Export | Notavello",
+      "description": "The next U.S. oil inventory report is delayed while Hormuz risk and diesel prices move faster than official data.",
+      "canonical": "https://notavello.com/pages/blog/the-oil-report-is-late-the-fuel-bill-is-not/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-09-05",
+      "bodyWords": 1574
     },
     {
       "route": "/pages/blog/tiny-text-files-that-taught-the-internet-manners/",
@@ -3421,7 +3438,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 255,
+      "incomingLinks": 256,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -3433,7 +3450,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 255,
+      "incomingLinks": 256,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -3445,7 +3462,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 255,
+      "incomingLinks": 256,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -3457,7 +3474,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 255,
+      "incomingLinks": 256,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -3469,7 +3486,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 255,
+      "incomingLinks": 256,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -3482,8 +3499,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-09-04",
-      "bodyWords": 279
+      "lastmod": "2026-09-05",
+      "bodyWords": 285
     },
     {
       "route": "/pages/sample",
@@ -3505,7 +3522,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 255,
+      "incomingLinks": 256,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -3517,7 +3534,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 255,
+      "incomingLinks": 256,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -3541,7 +3558,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 255,
+      "incomingLinks": 256,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -3973,7 +3990,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 255,
+      "incomingLinks": 256,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }
