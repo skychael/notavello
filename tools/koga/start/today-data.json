@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "09-04",
-  "display_date": "September 4",
-  "generated_at": "2026-09-04T12:44:03.121Z",
+  "date_key": "09-05",
+  "display_date": "September 5",
+  "generated_at": "2026-09-05T11:51:02.210Z",
   "source": "Wikimedia On This Day",
   "selection_method": "ai",
   "items": [
     {
-      "candidate_id": "event-363f7e8ba8920695890cb6c6",
+      "candidate_id": "event-422ce606abef70fb913ff289",
       "type": "event",
-      "year": 1998,
-      "text": "Google is founded by Larry Page and Sergey Brin, two PhD students at Stanford University.",
-      "article_title": "Google",
-      "url": "https://en.wikipedia.org/wiki/Google",
-      "category": "Science and technology"
-    },
-    {
-      "candidate_id": "event-30f7b5b8d7d6acbe3e5d55a2",
-      "type": "event",
-      "year": 1957,
-      "text": "American Civil Rights Movement: Little Rock Crisis: The governor of Arkansas calls out the National Guard to prevent African American students from enrolling in Little Rock Central High School, resulting in the lawsuit Cooper v. Aaron the following year.",
-      "article_title": "Civil rights movement",
-      "url": "https://en.wikipedia.org/wiki/Civil_rights_movement",
+      "year": 1972,
+      "text": "Munich massacre: A Palestinian terrorist group called \"Black September\" attacks and takes hostage 11 Israeli athletes at the Munich Olympic Games. Two die in the attack and nine are murdered the following day.",
+      "article_title": "Munich massacre",
+      "url": "https://en.wikipedia.org/wiki/Munich_massacre",
       "category": "Politics and society"
     },
     {
-      "candidate_id": "birth-a66a9d77a9f57d07f6601cd7",
-      "type": "birth",
-      "year": 1981,
-      "text": "Beyoncé, American singer-songwriter",
-      "article_title": "Beyoncé",
-      "url": "https://en.wikipedia.org/wiki/Beyonc%C3%A9",
-      "category": "Culture and notable people"
+      "candidate_id": "event-dcb9921c8a5a644c2b8c183f",
+      "type": "event",
+      "year": 1977,
+      "text": "Voyager Program: NASA launches the Voyager 1 spacecraft.",
+      "article_title": "Voyager program",
+      "url": "https://en.wikipedia.org/wiki/Voyager_program",
+      "category": "Science and technology"
+    },
+    {
+      "candidate_id": "event-56c0ccede28bc75b3ffe777c",
+      "type": "event",
+      "year": 1960,
+      "text": "Muhammad Ali (then known as Cassius Clay) wins the gold medal in the light heavyweight boxing competition at the Olympic Games in Rome.",
+      "article_title": "Muhammad Ali",
+      "url": "https://en.wikipedia.org/wiki/Muhammad_Ali",
+      "category": "Sports"
     }
   ]
 }
