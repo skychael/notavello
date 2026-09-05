@@ -1,15 +1,15 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-04T22:23:12.382Z",
-  "latest_success_at": "2026-09-04T22:23:12.382Z",
+  "generated_at": "2026-09-05T01:01:53.268Z",
+  "latest_success_at": "2026-09-05T01:01:53.268Z",
   "status": "partial",
   "items": [
     {
-      "id": "65f931d1511bfc0e",
-      "title": "Severe Thunderstorm Watch issued September 4 at 6:15PM EDT until September 4 at 9:00PM EDT by NWS Charleston WV",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.ef9df3117538cda0ee3f51a9f86f5bfa0db5633b.001.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-09-04T22:15:00.000Z",
+      "id": "ee8e390990a944fc",
+      "title": "Eastern North Pacific Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-09-04T23:24:41.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
@@ -23,11 +23,11 @@
       "status": "ok"
     },
     {
-      "id": "20010a07739c96ae",
-      "title": "SPC Sep 4, 2026 1930 UTC Day 3 Severe Thunderstorm Outlook",
-      "url": "https://www.spc.noaa.gov/products/outlook/day3otlk_1930.html",
-      "publisher": "Storm Prediction Center",
-      "published_at": "2026-09-04T19:30:42.000Z",
+      "id": "ac04ec69c6bc5591",
+      "title": "High Surf Advisory issued September 4 at 5:09AM HST until September 5 at 6:00AM HST by NWS Honolulu HI",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.c402d99ecfa9dceefee389993db5178ec5d93f3e.001.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-09-04T15:09:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
