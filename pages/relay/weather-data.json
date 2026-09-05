@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-05T01:01:53.268Z",
-  "latest_success_at": "2026-09-05T01:01:53.268Z",
+  "generated_at": "2026-09-05T05:48:58.229Z",
+  "latest_success_at": "2026-09-05T05:48:58.229Z",
   "status": "partial",
   "items": [
     {
-      "id": "ee8e390990a944fc",
-      "title": "Eastern North Pacific Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
+      "id": "b5ad93019d019ede",
+      "title": "Atlantic Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-09-04T23:24:41.000Z",
+      "published_at": "2026-09-05T05:11:46.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "4dbfad4ad0b62a3d",
+      "id": "75d8b2cd5889972b",
       "title": "Hurricane Marie Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep3+shtml/213327.shtml?cone=",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep3+shtml/033310.shtml?cone=",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-09-04T21:33:27.000Z",
+      "published_at": "2026-09-05T03:33:10.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "ac04ec69c6bc5591",
-      "title": "High Surf Advisory issued September 4 at 5:09AM HST until September 5 at 6:00AM HST by NWS Honolulu HI",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.c402d99ecfa9dceefee389993db5178ec5d93f3e.001.1.cap",
+      "id": "abc45b857fc6b83e",
+      "title": "High Surf Advisory issued September 4 at 3:51PM HST until September 5 at 6:00PM HST by NWS Honolulu HI",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.12d2c35948b1d75dd6d4dfeaa38a7318e797a59c.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-09-04T15:09:00.000Z",
+      "published_at": "2026-09-05T01:51:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
