@@ -1,9 +1,18 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-05T16:51:04.350Z",
-  "latest_success_at": "2026-09-05T16:51:04.350Z",
+  "generated_at": "2026-09-05T19:04:26.467Z",
+  "latest_success_at": "2026-09-05T19:04:26.467Z",
   "status": "partial",
   "items": [
+    {
+      "id": "b5ad93019d019ede",
+      "title": "Atlantic Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-09-05T17:22:54.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
     {
       "id": "790c0777f7eed750",
       "title": "Hurricane Marie Graphics",
@@ -19,15 +28,6 @@
       "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9796dd5e660a25fb709414031fb3ed0f18fdd061.001.1.cap",
       "publisher": "National Weather Service",
       "published_at": "2026-09-05T13:29:00.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "ee8e390990a944fc",
-      "title": "Eastern North Pacific Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-09-05T11:16:17.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
