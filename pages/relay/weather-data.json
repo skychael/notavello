@@ -1,24 +1,24 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-05T19:04:26.467Z",
-  "latest_success_at": "2026-09-05T19:04:26.467Z",
+  "generated_at": "2026-09-05T21:18:28.883Z",
+  "latest_success_at": "2026-09-05T21:18:28.883Z",
   "status": "partial",
   "items": [
+    {
+      "id": "33ea98b81d2d196c",
+      "title": "SPC Day 3-8 Fire Weather Outlook",
+      "url": "https://www.spc.noaa.gov/products/exper/fire_wx",
+      "publisher": "Storm Prediction Center",
+      "published_at": "2026-09-05T20:59:16.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
     {
       "id": "b5ad93019d019ede",
       "title": "Atlantic Tropical Weather Outlook",
       "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
       "publisher": "National Hurricane Center",
       "published_at": "2026-09-05T17:22:54.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "790c0777f7eed750",
-      "title": "Hurricane Marie Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep3+shtml/153424.shtml?cone=",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-09-05T15:34:24.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
