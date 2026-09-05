@@ -1,24 +1,24 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-05T05:48:58.229Z",
-  "latest_success_at": "2026-09-05T05:48:58.229Z",
+  "generated_at": "2026-09-05T10:41:01.160Z",
+  "latest_success_at": "2026-09-05T10:41:01.160Z",
   "status": "partial",
   "items": [
+    {
+      "id": "96a30ffcda3f151f",
+      "title": "Hurricane Marie Graphics",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep3+shtml/093307.shtml?cone=",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-09-05T09:33:07.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
     {
       "id": "b5ad93019d019ede",
       "title": "Atlantic Tropical Weather Outlook",
       "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
       "publisher": "National Hurricane Center",
       "published_at": "2026-09-05T05:11:46.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "75d8b2cd5889972b",
-      "title": "Hurricane Marie Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep3+shtml/033310.shtml?cone=",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-09-05T03:33:10.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
