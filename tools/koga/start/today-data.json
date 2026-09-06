@@ -1,36 +1,36 @@
 {
   "schema_version": "1.0",
-  "date_key": "09-05",
-  "display_date": "September 5",
-  "generated_at": "2026-09-05T11:51:02.210Z",
+  "date_key": "09-06",
+  "display_date": "September 6",
+  "generated_at": "2026-09-06T12:09:23.873Z",
   "source": "Wikimedia On This Day",
-  "selection_method": "ai",
+  "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-422ce606abef70fb913ff289",
+      "candidate_id": "event-f17a9cf59151d7cb7d7dc81c",
+      "type": "event",
+      "year": 1952,
+      "text": "A prototype aircraft crashes at the Farnborough Airshow in Hampshire, England, killing 29 spectators and the two on board.",
+      "article_title": "Farnborough Airshow crash",
+      "url": "https://en.wikipedia.org/wiki/Farnborough_Airshow_crash",
+      "category": "Disasters and exploration"
+    },
+    {
+      "candidate_id": "event-5f59de512ade74d09d4269a0",
+      "type": "event",
+      "year": 2013,
+      "text": "The first Minotaur V rocket is launched from the Mid-Atlantic Regional Spaceport on Wallops Island, carrying NASA's LADEE spacecraft.",
+      "article_title": "Minotaur V",
+      "url": "https://en.wikipedia.org/wiki/Minotaur_V",
+      "category": "World history"
+    },
+    {
+      "candidate_id": "event-1940c89c99d7d6473fdca017",
       "type": "event",
       "year": 1972,
-      "text": "Munich massacre: A Palestinian terrorist group called \"Black September\" attacks and takes hostage 11 Israeli athletes at the Munich Olympic Games. Two die in the attack and nine are murdered the following day.",
+      "text": "Munich massacre: Nine Israeli athletes die (along with a German policeman) at the hands of the Palestinian \"Black September\" terrorist group after being taken hostage at the Munich Olympic Games. Two other Israeli athletes were slain in the initial attack the previous day.",
       "article_title": "Munich massacre",
       "url": "https://en.wikipedia.org/wiki/Munich_massacre",
-      "category": "Politics and society"
-    },
-    {
-      "candidate_id": "event-dcb9921c8a5a644c2b8c183f",
-      "type": "event",
-      "year": 1977,
-      "text": "Voyager Program: NASA launches the Voyager 1 spacecraft.",
-      "article_title": "Voyager program",
-      "url": "https://en.wikipedia.org/wiki/Voyager_program",
-      "category": "Science and technology"
-    },
-    {
-      "candidate_id": "event-56c0ccede28bc75b3ffe777c",
-      "type": "event",
-      "year": 1960,
-      "text": "Muhammad Ali (then known as Cassius Clay) wins the gold medal in the light heavyweight boxing competition at the Olympic Games in Rome.",
-      "article_title": "Muhammad Ali",
-      "url": "https://en.wikipedia.org/wiki/Muhammad_Ali",
       "category": "Sports"
     }
   ]
