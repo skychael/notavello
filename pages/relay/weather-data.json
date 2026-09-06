@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-05T23:56:36.539Z",
-  "latest_success_at": "2026-09-05T23:56:36.539Z",
+  "generated_at": "2026-09-06T04:46:19.670Z",
+  "latest_success_at": "2026-09-06T04:46:19.670Z",
   "status": "partial",
   "items": [
     {
-      "id": "b5ad93019d019ede",
-      "title": "Atlantic Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-09-05T23:14:58.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "d1b041862ac51455",
-      "title": "Hurricane Marie Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep3+shtml/213330.shtml?cone=",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-09-05T21:33:30.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "0bf91f512efc7539",
-      "title": "High Surf Advisory issued September 5 at 3:29AM HST until September 6 at 6:00PM HST by NWS Honolulu HI",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9796dd5e660a25fb709414031fb3ed0f18fdd061.001.1.cap",
+      "id": "f820d6d7cce78978",
+      "title": "Tropical Cyclone Local Statement issued September 5 at 5:24PM HST by NWS Honolulu HI",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.60d2dd855174a7e3c60aee91d2dd54dc5b41b5e4.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-09-05T13:29:00.000Z",
+      "published_at": "2026-09-06T03:24:00.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "a653541cb5264520",
+      "title": "Tropical Storm Watch issued September 5 at 4:38PM HST by NWS Honolulu HI",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.5a8ef6ab90610b8b49e336d526ec7f13c0d13130.001.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-09-06T02:38:00.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "8a8917561657fe37",
+      "title": "Hurricane Marie Graphics",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep3+shtml/033249.shtml?cone=",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-09-06T03:32:49.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
