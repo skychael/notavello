@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-06T19:14:52.985Z",
-  "latest_success_at": "2026-09-06T19:14:52.985Z",
+  "generated_at": "2026-09-06T21:26:24.698Z",
+  "latest_success_at": "2026-09-06T21:26:24.698Z",
   "status": "partial",
   "items": [
     {
-      "id": "b9c334bfe0688589",
-      "title": "Tropical Cyclone Local Statement issued September 6 at 5:05AM HST by NWS Honolulu HI",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.549af006caf8d99831b45f21c25836ddb64dbe4b.001.1.cap",
+      "id": "49c64c4e1c9a212c",
+      "title": "Tropical Cyclone Local Statement issued September 6 at 11:19AM HST by NWS Honolulu HI",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.20f1b7c92de8b9bcd46c5c8ca5e809a75b3e2252.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-09-06T15:05:00.000Z",
+      "published_at": "2026-09-06T21:19:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "0808c4103cbe8900",
-      "title": "Tropical Storm Warning issued September 6 at 4:51AM HST by NWS Honolulu HI",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.44490b7daf7b200c6b86fa11f685b8db848edeb8.001.1.cap",
+      "id": "e163af79bb042d3e",
+      "title": "Tropical Storm Warning issued September 6 at 10:53AM HST by NWS Honolulu HI",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.69a50f77a1090910a1f13efe991f65a49a31d14b.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-09-06T14:51:00.000Z",
+      "published_at": "2026-09-06T20:53:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "a605a4fb70977cb7",
-      "title": "SPC Day 2 Fire Weather Outlook",
-      "url": "https://www.spc.noaa.gov/products/fire_wx/fwdy2.html",
-      "publisher": "Storm Prediction Center",
-      "published_at": "2026-09-06T18:54:20.000Z",
+      "id": "8fd596c36197a459",
+      "title": "Hurricane Marie Graphics",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep3+shtml/203717.shtml?cone=",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-09-06T20:37:17.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
