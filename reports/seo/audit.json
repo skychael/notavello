@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-05T06:12:05.134Z",
+  "generatedAt": "2026-09-06T06:24:11.390Z",
   "totals": {
-    "pages": 256,
-    "indexable": 252,
-    "articles": 185,
-    "sitemap": 252,
+    "pages": 257,
+    "indexable": 253,
+    "articles": 186,
+    "sitemap": 253,
     "errors": 0,
-    "warnings": 182
+    "warnings": 184
   },
   "errors": [],
   "warnings": [
@@ -557,6 +557,16 @@
     },
     {
       "type": "template-pattern",
+      "page": "/pages/blog/kharg-tanker-strikes-are-a-fuel-price-problem/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/kharg-tanker-strikes-are-a-fuel-price-problem/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
       "page": "/pages/blog/kimi-work-desktop-ai-agent-permissions/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
@@ -930,7 +940,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 256,
+      "incomingLinks": 257,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -954,7 +964,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 256,
+      "incomingLinks": 257,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -1062,7 +1072,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 256,
+      "incomingLinks": 257,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -1074,9 +1084,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 256,
-      "lastmod": "2026-09-04",
-      "bodyWords": 674
+      "incomingLinks": 257,
+      "lastmod": "2026-09-05",
+      "bodyWords": 671
     },
     {
       "route": "/pages/blog/a-plain-language-guide-to-file-permissions/",
@@ -1350,9 +1360,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 124,
-      "lastmod": "2026-09-04",
-      "bodyWords": 2334
+      "incomingLinks": 125,
+      "lastmod": "2026-09-05",
+      "bodyWords": 2345
     },
     {
       "route": "/pages/blog/apple-speechanalyzer-local-transcription-apps/",
@@ -1926,7 +1936,7 @@
       "canonical": "https://notavello.com/pages/blog/hormuz-crew-risk-is-now-the-price-signal/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 2,
+      "incomingLinks": 3,
       "lastmod": "2026-08-09",
       "bodyWords": 1327
     },
@@ -2387,6 +2397,18 @@
       "bodyWords": 1832
     },
     {
+      "route": "/pages/blog/kharg-tanker-strikes-are-a-fuel-price-problem/",
+      "file": "pages/blog/kharg-tanker-strikes-are-a-fuel-price-problem/index.html",
+      "title": "Kharg Tanker Strikes Are A Fuel Price Problem — The Export | Notavello",
+      "description": "U.S. tanker strikes near Kharg add a new oil risk: ships, not just sea lanes, are now part of the fuel-price problem.",
+      "canonical": "https://notavello.com/pages/blog/kharg-tanker-strikes-are-a-fuel-price-problem/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-09-06",
+      "bodyWords": 1671
+    },
+    {
       "route": "/pages/blog/kimi-work-desktop-ai-agent-permissions/",
       "file": "pages/blog/kimi-work-desktop-ai-agent-permissions/index.html",
       "title": "Kimi Work Makes Desktop AI Permissions The Real Feature — The Export | Notavello",
@@ -2623,7 +2645,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-04",
+      "lastmod": "2026-09-05",
       "bodyWords": 871
     },
     {
@@ -2635,8 +2657,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": "2026-09-04",
-      "bodyWords": 278
+      "lastmod": "2026-09-05",
+      "bodyWords": 322
     },
     {
       "route": "/pages/blog/page-2/",
@@ -2647,8 +2669,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-04",
-      "bodyWords": 650
+      "lastmod": "2026-09-05",
+      "bodyWords": 657
     },
     {
       "route": "/pages/blog/page-3/",
@@ -2659,8 +2681,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-04",
-      "bodyWords": 689
+      "lastmod": "2026-09-05",
+      "bodyWords": 686
     },
     {
       "route": "/pages/blog/page-4/",
@@ -2671,8 +2693,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-04",
-      "bodyWords": 678
+      "lastmod": "2026-09-05",
+      "bodyWords": 681
     },
     {
       "route": "/pages/blog/page-5/",
@@ -2683,8 +2705,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-04",
-      "bodyWords": 647
+      "lastmod": "2026-09-05",
+      "bodyWords": 643
     },
     {
       "route": "/pages/blog/page-6/",
@@ -2695,8 +2717,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-04",
-      "bodyWords": 682
+      "lastmod": "2026-09-05",
+      "bodyWords": 677
     },
     {
       "route": "/pages/blog/page-7/",
@@ -2707,8 +2729,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-04",
-      "bodyWords": 685
+      "lastmod": "2026-09-05",
+      "bodyWords": 693
     },
     {
       "route": "/pages/blog/page-8/",
@@ -2719,8 +2741,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-04",
-      "bodyWords": 777
+      "lastmod": "2026-09-05",
+      "bodyWords": 767
     },
     {
       "route": "/pages/blog/page-9/",
@@ -2731,7 +2753,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-04",
+      "lastmod": "2026-09-05",
       "bodyWords": 824
     },
     {
@@ -3438,7 +3460,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 256,
+      "incomingLinks": 257,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -3450,7 +3472,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 256,
+      "incomingLinks": 257,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -3462,7 +3484,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 256,
+      "incomingLinks": 257,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -3474,7 +3496,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 256,
+      "incomingLinks": 257,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -3486,7 +3508,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 256,
+      "incomingLinks": 257,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -3499,8 +3521,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-09-05",
-      "bodyWords": 285
+      "lastmod": "2026-09-06",
+      "bodyWords": 291
     },
     {
       "route": "/pages/sample",
@@ -3522,7 +3544,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 256,
+      "incomingLinks": 257,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -3534,7 +3556,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 256,
+      "incomingLinks": 257,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -3558,7 +3580,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 256,
+      "incomingLinks": 257,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -3990,7 +4012,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 256,
+      "incomingLinks": 257,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }
