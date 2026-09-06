@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-06T04:46:19.670Z",
-  "latest_success_at": "2026-09-06T04:46:19.670Z",
+  "generated_at": "2026-09-06T09:28:50.273Z",
+  "latest_success_at": "2026-09-06T09:28:50.273Z",
   "status": "partial",
   "items": [
     {
-      "id": "f820d6d7cce78978",
-      "title": "Tropical Cyclone Local Statement issued September 5 at 5:24PM HST by NWS Honolulu HI",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.60d2dd855174a7e3c60aee91d2dd54dc5b41b5e4.001.1.cap",
+      "id": "d17ebeea3ed4709c",
+      "title": "Tropical Storm Watch issued September 5 at 11:27PM HST by NWS Honolulu HI",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.aa6fc6f7c0657cf7410f70bfa70af6e85e47da37.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-09-06T03:24:00.000Z",
+      "published_at": "2026-09-06T09:27:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "a653541cb5264520",
-      "title": "Tropical Storm Watch issued September 5 at 4:38PM HST by NWS Honolulu HI",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.5a8ef6ab90610b8b49e336d526ec7f13c0d13130.001.1.cap",
+      "id": "3a865715734af266",
+      "title": "Tropical Cyclone Local Statement issued September 5 at 11:12PM HST by NWS Honolulu HI",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.13b56bc53acdd7ea819ad8be95a4c78f193a2600.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-09-06T02:38:00.000Z",
+      "published_at": "2026-09-06T09:12:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "8a8917561657fe37",
+      "id": "a6f5058cd4224cc0",
       "title": "Hurricane Marie Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep3+shtml/033249.shtml?cone=",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep3+shtml/084922.shtml?cone=",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-09-06T03:32:49.000Z",
+      "published_at": "2026-09-06T08:49:22.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
