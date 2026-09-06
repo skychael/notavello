@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "checked_at": "2026-09-06T13:42:10.717Z",
-  "latest_success_at": "2026-09-06T13:42:10.717Z",
+  "checked_at": "2026-09-06T17:06:34.339Z",
+  "latest_success_at": "2026-09-06T17:06:34.339Z",
   "status": "partial",
   "items": [
     {
@@ -10,6 +10,14 @@
       "publisher": "OilPrice.com",
       "published_at": "2026-09-05T23:00:00.000Z",
       "source_id": "oilprice",
+      "status": "ok"
+    },
+    {
+      "title": "Iran, US Trade Tit-for-Tat Tanker Attacks As War Drags On",
+      "url": "https://gcaptain.com/iran-us-trade-tit-for-tat-tanker-attacks-as-war-drags-on",
+      "publisher": "gCaptain",
+      "published_at": "2026-09-06T13:36:51.000Z",
+      "source_id": "gcaptain",
       "status": "ok"
     },
     {
@@ -29,27 +37,11 @@
       "status": "ok"
     },
     {
-      "title": "Korea Paving Way to Send Naval Ship to Hormuz, Reports Say",
-      "url": "https://gcaptain.com/korea-paving-way-to-send-naval-ship-to-hormuz-reports-say",
-      "publisher": "gCaptain",
-      "published_at": "2026-09-04T09:36:45.000Z",
-      "source_id": "gcaptain",
-      "status": "ok"
-    },
-    {
       "title": "Ukrainian Sea Drones Strike Russian Black Sea Resort Town Of Sochi For The First Time",
       "url": "https://www.twz.com/news-features/ukrainian-sea-drones-strike-russian-black-sea-resort-town-of-sochi-for-the-first-time",
       "publisher": "TWZ (The War Zone)",
       "published_at": "2026-09-03T18:31:04.000Z",
       "source_id": "twz",
-      "status": "ok"
-    },
-    {
-      "title": "Red Sea Coastal Battles Intensify Raising New Concerns for Shipping",
-      "url": "https://maritime-executive.com/article/red-sea-coastal-battles-intensify-raising-new-concerns-for-shipping",
-      "publisher": "The Maritime Executive",
-      "published_at": "2026-09-03T14:25:02.000Z",
-      "source_id": "maritime-executive",
       "status": "ok"
     },
     {
@@ -65,6 +57,14 @@
       "url": "https://maritime-executive.com/article/u-s-forces-destroy-one-iranian-tanker-and-damage-two-more",
       "publisher": "The Maritime Executive",
       "published_at": "2026-09-05T15:43:56.000Z",
+      "source_id": "maritime-executive",
+      "status": "ok"
+    },
+    {
+      "title": "Putin Visits Zvezda Shipyard Building Arctic 2 LNG Tankers",
+      "url": "https://maritime-executive.com/article/putin-visits-zvezda-shipyard-building-arctic-2-lng-tankers",
+      "publisher": "The Maritime Executive",
+      "published_at": "2026-09-03T21:48:55.000Z",
       "source_id": "maritime-executive",
       "status": "ok"
     },
