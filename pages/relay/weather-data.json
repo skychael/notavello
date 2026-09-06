@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-06T21:26:24.698Z",
-  "latest_success_at": "2026-09-06T21:26:24.698Z",
+  "generated_at": "2026-09-06T23:58:48.232Z",
+  "latest_success_at": "2026-09-06T23:58:48.232Z",
   "status": "partial",
   "items": [
     {
@@ -23,11 +23,11 @@
       "status": "ok"
     },
     {
-      "id": "8fd596c36197a459",
-      "title": "Hurricane Marie Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep3+shtml/203717.shtml?cone=",
+      "id": "ee8e390990a944fc",
+      "title": "Eastern North Pacific Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-09-06T20:37:17.000Z",
+      "published_at": "2026-09-06T23:22:13.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
