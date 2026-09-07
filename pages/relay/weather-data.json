@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-07T16:30:22.571Z",
-  "latest_success_at": "2026-09-07T16:30:22.571Z",
+  "generated_at": "2026-09-07T20:37:01.464Z",
+  "latest_success_at": "2026-09-07T20:37:01.464Z",
   "status": "partial",
   "items": [
     {
-      "id": "945b398c88d68295",
-      "title": "Tropical Cyclone Local Statement issued September 7 at 5:11AM HST by NWS Honolulu HI",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.aec0977c36ff7277c1347d7a278c0e27d9475742.001.1.cap",
+      "id": "7fc4007d474dd3fc",
+      "title": "Tropical Cyclone Local Statement issued September 7 at 8:03AM HST by NWS Honolulu HI",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.0474a6195f79509001dadc1a6fab655855c7947d.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-09-07T15:11:00.000Z",
+      "published_at": "2026-09-07T18:03:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "0d38de25e57fe0ce",
-      "title": "Hurricane Warning issued September 7 at 5:02AM HST by NWS Honolulu HI",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.398bd8a915d89b7710b21066bd9e87ea569bd672.001.1.cap",
+      "id": "b2773e7b47bb7d47",
+      "title": "Hurricane Warning issued September 7 at 7:54AM HST by NWS Honolulu HI",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2081d8d6c409f77ac23b374cc5d8d88988e34c8e.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-09-07T15:02:00.000Z",
+      "published_at": "2026-09-07T17:54:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "949be1952eeb2d8d",
-      "title": "Tropical Storm Watch issued September 7 at 5:02AM HST by NWS Honolulu HI",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.398bd8a915d89b7710b21066bd9e87ea569bd672.007.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-09-07T15:02:00.000Z",
+      "id": "da624aa5ce80f2fe",
+      "title": "Tropical Storm Marie Graphics",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep3+shtml/203515.shtml?cone=",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-09-07T20:35:15.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
