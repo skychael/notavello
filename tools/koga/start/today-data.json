@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "09-06",
-  "display_date": "September 6",
-  "generated_at": "2026-09-06T12:09:23.873Z",
+  "date_key": "09-07",
+  "display_date": "September 7",
+  "generated_at": "2026-09-07T14:15:45.515Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-f17a9cf59151d7cb7d7dc81c",
+      "candidate_id": "event-3eb06e2900f4adaa670b660c",
       "type": "event",
-      "year": 1952,
-      "text": "A prototype aircraft crashes at the Farnborough Airshow in Hampshire, England, killing 29 spectators and the two on board.",
-      "article_title": "Farnborough Airshow crash",
-      "url": "https://en.wikipedia.org/wiki/Farnborough_Airshow_crash",
+      "year": 2011,
+      "text": "The Lokomotiv Yaroslavl plane crash in Russia kills 43 people, including nearly the entire roster of the Lokomotiv Yaroslavl Kontinental Hockey League team.",
+      "article_title": "Lokomotiv Yaroslavl plane crash",
+      "url": "https://en.wikipedia.org/wiki/Lokomotiv_Yaroslavl_plane_crash",
+      "category": "Sports"
+    },
+    {
+      "candidate_id": "event-303cab8cf6a9a0f5264cca31",
+      "type": "event",
+      "year": 1920,
+      "text": "Two newly purchased Savoia flying boats crash in the Swiss Alps en route to Finland where they were to serve with the Finnish Air Force, killing both crews.",
+      "article_title": "SIAI-Marchetti",
+      "url": "https://en.wikipedia.org/wiki/SIAI-Marchetti",
       "category": "Disasters and exploration"
     },
     {
-      "candidate_id": "event-5f59de512ade74d09d4269a0",
+      "candidate_id": "event-e9f9c3fe79b0c61144e8b65f",
       "type": "event",
-      "year": 2013,
-      "text": "The first Minotaur V rocket is launched from the Mid-Atlantic Regional Spaceport on Wallops Island, carrying NASA's LADEE spacecraft.",
-      "article_title": "Minotaur V",
-      "url": "https://en.wikipedia.org/wiki/Minotaur_V",
+      "year": 1977,
+      "text": "The 300-metre (980 ft) tall CKVR-DT transmission tower in Barrie, Ontario, Canada, is hit by a light aircraft in a fog, causing it to collapse. All aboard the aircraft are killed.",
+      "article_title": "CKVR-DT",
+      "url": "https://en.wikipedia.org/wiki/CKVR-DT",
       "category": "World history"
-    },
-    {
-      "candidate_id": "event-1940c89c99d7d6473fdca017",
-      "type": "event",
-      "year": 1972,
-      "text": "Munich massacre: Nine Israeli athletes die (along with a German policeman) at the hands of the Palestinian \"Black September\" terrorist group after being taken hostage at the Munich Olympic Games. Two other Israeli athletes were slain in the initial attack the previous day.",
-      "article_title": "Munich massacre",
-      "url": "https://en.wikipedia.org/wiki/Munich_massacre",
-      "category": "Sports"
     }
   ]
 }
