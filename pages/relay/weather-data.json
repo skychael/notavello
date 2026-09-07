@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-07T10:24:58.794Z",
-  "latest_success_at": "2026-09-07T10:24:58.794Z",
+  "generated_at": "2026-09-07T16:30:22.571Z",
+  "latest_success_at": "2026-09-07T16:30:22.571Z",
   "status": "partial",
   "items": [
     {
-      "id": "1f1462ddbb7e7e90",
-      "title": "Tropical Cyclone Local Statement issued September 6 at 11:22PM HST by NWS Honolulu HI",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9129cbaf1d87e856d3c2b1822a613533214855d2.001.1.cap",
+      "id": "945b398c88d68295",
+      "title": "Tropical Cyclone Local Statement issued September 7 at 5:11AM HST by NWS Honolulu HI",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.aec0977c36ff7277c1347d7a278c0e27d9475742.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-09-07T09:22:00.000Z",
+      "published_at": "2026-09-07T15:11:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "999d244d86090842",
-      "title": "Hurricane Warning issued September 6 at 11:08PM HST by NWS Honolulu HI",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.ef7a6bb703ef1e03051ddfd67f9489ae681dceb2.001.1.cap",
+      "id": "0d38de25e57fe0ce",
+      "title": "Hurricane Warning issued September 7 at 5:02AM HST by NWS Honolulu HI",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.398bd8a915d89b7710b21066bd9e87ea569bd672.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-09-07T09:08:00.000Z",
+      "published_at": "2026-09-07T15:02:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "605b4af6ea2e66c2",
-      "title": "Tropical Storm Marie Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep3+shtml/092739.shtml?cone=",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-09-07T09:27:39.000Z",
+      "id": "949be1952eeb2d8d",
+      "title": "Tropical Storm Watch issued September 7 at 5:02AM HST by NWS Honolulu HI",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.398bd8a915d89b7710b21066bd9e87ea569bd672.007.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-09-07T15:02:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }

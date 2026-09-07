@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "checked_at": "2026-09-07T10:24:58.130Z",
-  "latest_success_at": "2026-09-07T10:24:58.130Z",
+  "checked_at": "2026-09-07T16:30:21.880Z",
+  "latest_success_at": "2026-09-07T16:30:21.880Z",
   "status": "partial",
   "items": [
     {
@@ -9,14 +9,6 @@
       "url": "https://oilprice.com/Energy/Energy-General/Oil-Prices-Climb-After-US-Strikes-Three-Iranian-Tankers-and-Iran-Vows-Revenge.html",
       "publisher": "OilPrice.com",
       "published_at": "2026-09-07T03:40:00.000Z",
-      "source_id": "oilprice",
-      "status": "ok"
-    },
-    {
-      "title": "Iran War Forces a Rewrite of Global Oil Trade Routes",
-      "url": "https://oilprice.com/Energy/Crude-Oil/Iran-War-Forces-a-Rewrite-of-Global-Oil-Trade-Routes.html",
-      "publisher": "OilPrice.com",
-      "published_at": "2026-09-05T23:00:00.000Z",
       "source_id": "oilprice",
       "status": "ok"
     },
@@ -37,19 +29,19 @@
       "status": "ok"
     },
     {
+      "title": "Saudi Aramco's Jizan Refinery Hit Again as Houthi Attacks Escalate",
+      "url": "https://oilprice.com/Latest-Energy-News/World-News/Saudi-Aramcos-Jizan-Refinery-Hit-Again-as-Houthi-Attacks-Escalate.html",
+      "publisher": "OilPrice.com",
+      "published_at": "2026-09-07T12:34:07.000Z",
+      "source_id": "oilprice",
+      "status": "ok"
+    },
+    {
       "title": "Iran Renews Threats and Says it Turned Back Ships After US Sinks Tanker",
       "url": "https://maritime-executive.com/article/iran-renews-threats-and-says-it-turned-back-ships-after-us-sinks-tanker",
       "publisher": "The Maritime Executive",
       "published_at": "2026-09-06T17:50:53.000Z",
       "source_id": "maritime-executive",
-      "status": "ok"
-    },
-    {
-      "title": "Fixing the machine: Inside the Navy’s race to rebuild its aviator pipeline",
-      "url": "https://breakingdefense.com/2026/09/fixing-the-machine-inside-the-navys-race-to-rebuild-its-aviator-pipeline",
-      "publisher": "Breaking Defense",
-      "published_at": "2026-09-04T15:47:45.000Z",
-      "source_id": "breaking-defense",
       "status": "ok"
     },
     {
@@ -74,6 +66,14 @@
       "publisher": "TWZ (The War Zone)",
       "published_at": "2026-09-04T20:04:59.000Z",
       "source_id": "twz",
+      "status": "ok"
+    },
+    {
+      "title": "You get a SCIF, you get a SCIF: Pentagon unveils ‘Secure Space Network’",
+      "url": "https://breakingdefense.com/2026/09/you-get-a-scif-you-get-a-scif-pentagon-unveils-secure-space-network",
+      "publisher": "Breaking Defense",
+      "published_at": "2026-09-04T17:46:10.000Z",
+      "source_id": "breaking-defense",
       "status": "ok"
     },
     {
