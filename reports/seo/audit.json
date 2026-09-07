@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-06T06:24:11.390Z",
+  "generatedAt": "2026-09-07T06:32:14.206Z",
   "totals": {
-    "pages": 257,
-    "indexable": 253,
-    "articles": 186,
-    "sitemap": 253,
+    "pages": 258,
+    "indexable": 254,
+    "articles": 187,
+    "sitemap": 254,
     "errors": 0,
-    "warnings": 184
+    "warnings": 186
   },
   "errors": [],
   "warnings": [
@@ -512,6 +512,16 @@
     },
     {
       "type": "template-pattern",
+      "page": "/pages/blog/irans-exclusion-zone-is-a-freight-bill/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/irans-exclusion-zone-is-a-freight-bill/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
       "page": "/pages/blog/irans-missing-oil-is-the-price-signal/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
@@ -940,7 +950,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 257,
+      "incomingLinks": 258,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -964,7 +974,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 257,
+      "incomingLinks": 258,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -1072,7 +1082,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 257,
+      "incomingLinks": 258,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -1084,9 +1094,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 257,
-      "lastmod": "2026-09-05",
-      "bodyWords": 671
+      "incomingLinks": 258,
+      "lastmod": "2026-09-06",
+      "bodyWords": 663
     },
     {
       "route": "/pages/blog/a-plain-language-guide-to-file-permissions/",
@@ -1360,9 +1370,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 125,
-      "lastmod": "2026-09-05",
-      "bodyWords": 2345
+      "incomingLinks": 126,
+      "lastmod": "2026-09-06",
+      "bodyWords": 2355
     },
     {
       "route": "/pages/blog/apple-speechanalyzer-local-transcription-apps/",
@@ -1696,7 +1706,7 @@
       "canonical": "https://notavello.com/pages/blog/east-coast-diesel-draw-is-the-next-fuel-bill/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 3,
+      "incomingLinks": 4,
       "lastmod": "2026-08-27",
       "bodyWords": 1429
     },
@@ -2337,6 +2347,18 @@
       "bodyWords": 1383
     },
     {
+      "route": "/pages/blog/irans-exclusion-zone-is-a-freight-bill/",
+      "file": "pages/blog/irans-exclusion-zone-is-a-freight-bill/index.html",
+      "title": "Iran's Exclusion Zone Is A Freight Bill — The Export | Notavello",
+      "description": "Iran's planned Hormuz exclusion zone turns a military line into higher diesel, freight and insurance costs.",
+      "canonical": "https://notavello.com/pages/blog/irans-exclusion-zone-is-a-freight-bill/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-09-07",
+      "bodyWords": 1593
+    },
+    {
       "route": "/pages/blog/irans-missing-oil-is-the-price-signal/",
       "file": "pages/blog/irans-missing-oil-is-the-price-signal/index.html",
       "title": "Iran's Missing Oil Is The Price Signal — The Export | Notavello",
@@ -2645,8 +2667,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-05",
-      "bodyWords": 871
+      "lastmod": "2026-09-06",
+      "bodyWords": 859
     },
     {
       "route": "/pages/blog/page-11/",
@@ -2657,8 +2679,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": "2026-09-05",
-      "bodyWords": 322
+      "lastmod": "2026-09-06",
+      "bodyWords": 371
     },
     {
       "route": "/pages/blog/page-2/",
@@ -2669,8 +2691,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-05",
-      "bodyWords": 657
+      "lastmod": "2026-09-06",
+      "bodyWords": 661
     },
     {
       "route": "/pages/blog/page-3/",
@@ -2681,8 +2703,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-05",
-      "bodyWords": 686
+      "lastmod": "2026-09-06",
+      "bodyWords": 688
     },
     {
       "route": "/pages/blog/page-4/",
@@ -2693,8 +2715,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-05",
-      "bodyWords": 681
+      "lastmod": "2026-09-06",
+      "bodyWords": 674
     },
     {
       "route": "/pages/blog/page-5/",
@@ -2705,8 +2727,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-05",
-      "bodyWords": 643
+      "lastmod": "2026-09-06",
+      "bodyWords": 647
     },
     {
       "route": "/pages/blog/page-6/",
@@ -2717,8 +2739,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-05",
-      "bodyWords": 677
+      "lastmod": "2026-09-06",
+      "bodyWords": 674
     },
     {
       "route": "/pages/blog/page-7/",
@@ -2729,8 +2751,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-05",
-      "bodyWords": 693
+      "lastmod": "2026-09-06",
+      "bodyWords": 689
     },
     {
       "route": "/pages/blog/page-8/",
@@ -2741,8 +2763,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-05",
-      "bodyWords": 767
+      "lastmod": "2026-09-06",
+      "bodyWords": 759
     },
     {
       "route": "/pages/blog/page-9/",
@@ -2753,8 +2775,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-05",
-      "bodyWords": 824
+      "lastmod": "2026-09-06",
+      "bodyWords": 837
     },
     {
       "route": "/pages/blog/propane-is-the-rare-fuel-cushion-left/",
@@ -3460,7 +3482,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 257,
+      "incomingLinks": 258,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -3472,7 +3494,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 257,
+      "incomingLinks": 258,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -3484,7 +3506,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 257,
+      "incomingLinks": 258,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -3496,7 +3518,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 257,
+      "incomingLinks": 258,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -3508,7 +3530,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 257,
+      "incomingLinks": 258,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -3521,8 +3543,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-09-06",
-      "bodyWords": 291
+      "lastmod": "2026-09-07",
+      "bodyWords": 297
     },
     {
       "route": "/pages/sample",
@@ -3544,7 +3566,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 257,
+      "incomingLinks": 258,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -3556,7 +3578,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 257,
+      "incomingLinks": 258,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -3580,7 +3602,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 257,
+      "incomingLinks": 258,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -4012,7 +4034,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 257,
+      "incomingLinks": 258,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }
