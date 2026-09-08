@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-08T09:46:12.684Z",
-  "latest_success_at": "2026-09-08T09:46:12.684Z",
+  "generated_at": "2026-09-08T14:36:17.540Z",
+  "latest_success_at": "2026-09-08T14:36:17.540Z",
   "status": "partial",
   "items": [
     {
-      "id": "aecbef98b696b357",
-      "title": "Tropical Cyclone Local Statement issued September 7 at 10:58PM HST by NWS Honolulu HI",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.48a39621d0c474621ead1cd7fb88b4375cec2eb2.001.1.cap",
+      "id": "72129cf2f7fe2d36",
+      "title": "Tropical Cyclone Local Statement issued September 8 at 2:39AM HST by NWS Honolulu HI",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.679b188cde2a5e49d3abf5810d67916127cde468.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-09-08T08:58:00.000Z",
+      "published_at": "2026-09-08T12:39:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "93051e666c89bed8",
-      "title": "Hurricane Warning issued September 7 at 10:53PM HST by NWS Honolulu HI",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.4954e7119873a51c87064e207efc890582760fd2.001.1.cap",
+      "id": "425bf0f5d70c827e",
+      "title": "Hurricane Warning issued September 8 at 2:30AM HST by NWS Honolulu HI",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.70f684e7c76e5b16b3da28b009f8cb731099c2bd.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-09-08T08:53:00.000Z",
+      "published_at": "2026-09-08T12:30:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "09fc3f2d4cd6f239",
-      "title": "Tropical Storm Marie Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep3+shtml/092811.shtml?cone=",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-09-08T09:28:11.000Z",
+      "id": "0154621b6733b03c",
+      "title": "High Surf Warning issued September 8 at 4:07AM HST until September 8 at 6:00PM HST by NWS Honolulu HI",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.badd38617c02593be1655869ad30ae015e9785d1.001.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-09-08T14:07:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
