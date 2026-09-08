@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "09-07",
-  "display_date": "September 7",
-  "generated_at": "2026-09-07T14:15:45.515Z",
+  "date_key": "09-08",
+  "display_date": "September 8",
+  "generated_at": "2026-09-08T12:53:02.679Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-3eb06e2900f4adaa670b660c",
+      "candidate_id": "event-3ba348220013fa3aa461c2b8",
       "type": "event",
-      "year": 2011,
-      "text": "The Lokomotiv Yaroslavl plane crash in Russia kills 43 people, including nearly the entire roster of the Lokomotiv Yaroslavl Kontinental Hockey League team.",
-      "article_title": "Lokomotiv Yaroslavl plane crash",
-      "url": "https://en.wikipedia.org/wiki/Lokomotiv_Yaroslavl_plane_crash",
-      "category": "Sports"
-    },
-    {
-      "candidate_id": "event-303cab8cf6a9a0f5264cca31",
-      "type": "event",
-      "year": 1920,
-      "text": "Two newly purchased Savoia flying boats crash in the Swiss Alps en route to Finland where they were to serve with the Finnish Air Force, killing both crews.",
-      "article_title": "SIAI-Marchetti",
-      "url": "https://en.wikipedia.org/wiki/SIAI-Marchetti",
+      "year": 2005,
+      "text": "Two Ilyushin Il-76 aircraft from EMERCOM land at a disaster aid staging area at Little Rock Air Force Base; the first time Russia has flown such a mission to North America.",
+      "article_title": "Ilyushin Il-76",
+      "url": "https://en.wikipedia.org/wiki/Ilyushin_Il-76",
       "category": "Disasters and exploration"
     },
     {
-      "candidate_id": "event-e9f9c3fe79b0c61144e8b65f",
+      "candidate_id": "event-0cef3e3054d773d040b8eee9",
       "type": "event",
-      "year": 1977,
-      "text": "The 300-metre (980 ft) tall CKVR-DT transmission tower in Barrie, Ontario, Canada, is hit by a light aircraft in a fog, causing it to collapse. All aboard the aircraft are killed.",
-      "article_title": "CKVR-DT",
-      "url": "https://en.wikipedia.org/wiki/CKVR-DT",
+      "year": 1989,
+      "text": "Partnair Flight 394 dives into the North Sea, killing 55 people. The investigation showed that the tail of the plane vibrated loose in flight due to sub-standard connecting bolts that had been fraudulently sold as aircraft-grade.",
+      "article_title": "Partnair Flight 394",
+      "url": "https://en.wikipedia.org/wiki/Partnair_Flight_394",
       "category": "World history"
+    },
+    {
+      "candidate_id": "event-286f6fb57b79ece9077c1364",
+      "type": "event",
+      "year": 1960,
+      "text": "In Huntsville, Alabama, US President Dwight D. Eisenhower formally dedicates the Marshall Space Flight Center (NASA had already activated the facility on July 1).",
+      "article_title": "Huntsville, Alabama",
+      "url": "https://en.wikipedia.org/wiki/Huntsville%2C_Alabama",
+      "category": "Science and technology"
     }
   ]
 }
