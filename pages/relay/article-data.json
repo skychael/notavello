@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "checked_at": "2026-09-08T14:36:16.710Z",
-  "latest_success_at": "2026-09-08T14:36:16.710Z",
+  "checked_at": "2026-09-08T18:44:42.896Z",
+  "latest_success_at": "2026-09-08T18:44:42.896Z",
   "status": "partial",
   "items": [
     {
@@ -10,14 +10,6 @@
       "publisher": "OilPrice.com",
       "published_at": "2026-09-08T12:00:00.000Z",
       "source_id": "oilprice",
-      "status": "ok"
-    },
-    {
-      "title": "Iran, US Trade Tit-for-Tat Tanker Attacks As War Drags On",
-      "url": "https://gcaptain.com/iran-us-trade-tit-for-tat-tanker-attacks-as-war-drags-on",
-      "publisher": "gCaptain",
-      "published_at": "2026-09-06T13:36:51.000Z",
-      "source_id": "gcaptain",
       "status": "ok"
     },
     {
@@ -37,6 +29,14 @@
       "status": "ok"
     },
     {
+      "title": "Suez Canal Revival Gathers Pace as Hormuz Crisis Reroutes Ships",
+      "url": "https://gcaptain.com/suez-canal-revival-gathers-pace-as-hormuz-crisis-reroutes-ships",
+      "publisher": "gCaptain",
+      "published_at": "2026-09-08T16:10:46.000Z",
+      "source_id": "gcaptain",
+      "status": "ok"
+    },
+    {
       "title": "Goldman, Rystad See Room for $120 Oil if U.S.-Iran Conflict Continues",
       "url": "https://maritime-executive.com/article/goldman-rystad-see-room-for-120-oil-if-u-s-iran-conflict-continues",
       "publisher": "The Maritime Executive",
@@ -50,6 +50,30 @@
       "publisher": "The Maritime Executive",
       "published_at": "2026-09-06T17:50:53.000Z",
       "source_id": "maritime-executive",
+      "status": "ok"
+    },
+    {
+      "title": "Russia’s New Stealthy Lower-Cost Air-Launched Standoff Weapons On Display In Egypt",
+      "url": "https://www.twz.com/air/russias-new-stealthy-lower-cost-air-launched-standoff-weapons-on-display-in-egypt",
+      "publisher": "TWZ (The War Zone)",
+      "published_at": "2026-09-08T16:52:56.000Z",
+      "source_id": "twz",
+      "status": "ok"
+    },
+    {
+      "title": "European missile-maker MBDA opens first industrial facility in Poland",
+      "url": "https://breakingdefense.com/2026/09/european-missile-maker-mbda-opens-first-industrial-facility-in-poland",
+      "publisher": "Breaking Defense",
+      "published_at": "2026-09-08T17:05:00.000Z",
+      "source_id": "breaking-defense",
+      "status": "ok"
+    },
+    {
+      "title": "Poland’s PGZ unveils Heavy Infantry Fighting Vehicle tech demonstrator",
+      "url": "https://breakingdefense.com/2026/09/polands-pgz-unveils-heavy-infantry-fighting-vehicle-tech-demonstrator",
+      "publisher": "Breaking Defense",
+      "published_at": "2026-09-08T14:36:48.000Z",
+      "source_id": "breaking-defense",
       "status": "ok"
     }
   ]
