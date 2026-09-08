@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-07T06:32:14.206Z",
+  "generatedAt": "2026-09-08T06:24:16.803Z",
   "totals": {
-    "pages": 258,
-    "indexable": 254,
-    "articles": 187,
-    "sitemap": 254,
+    "pages": 259,
+    "indexable": 255,
+    "articles": 188,
+    "sitemap": 255,
     "errors": 0,
-    "warnings": 186
+    "warnings": 188
   },
   "errors": [],
   "warnings": [
@@ -692,6 +692,16 @@
     },
     {
       "type": "template-pattern",
+      "page": "/pages/blog/refineries-are-already-running-flat-out/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/refineries-are-already-running-flat-out/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
       "page": "/pages/blog/refinery-cushion-diesel-warning-light/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
@@ -950,7 +960,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 258,
+      "incomingLinks": 259,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -974,7 +984,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 258,
+      "incomingLinks": 259,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -1082,7 +1092,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 258,
+      "incomingLinks": 259,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -1094,9 +1104,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 258,
-      "lastmod": "2026-09-06",
-      "bodyWords": 663
+      "incomingLinks": 259,
+      "lastmod": "2026-09-07",
+      "bodyWords": 658
     },
     {
       "route": "/pages/blog/a-plain-language-guide-to-file-permissions/",
@@ -1370,9 +1380,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 126,
-      "lastmod": "2026-09-06",
-      "bodyWords": 2355
+      "incomingLinks": 127,
+      "lastmod": "2026-09-07",
+      "bodyWords": 2364
     },
     {
       "route": "/pages/blog/apple-speechanalyzer-local-transcription-apps/",
@@ -2667,7 +2677,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-06",
+      "lastmod": "2026-09-07",
       "bodyWords": 859
     },
     {
@@ -2679,8 +2689,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": "2026-09-06",
-      "bodyWords": 371
+      "lastmod": "2026-09-07",
+      "bodyWords": 419
     },
     {
       "route": "/pages/blog/page-2/",
@@ -2691,8 +2701,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-06",
-      "bodyWords": 661
+      "lastmod": "2026-09-07",
+      "bodyWords": 664
     },
     {
       "route": "/pages/blog/page-3/",
@@ -2703,8 +2713,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-06",
-      "bodyWords": 688
+      "lastmod": "2026-09-07",
+      "bodyWords": 684
     },
     {
       "route": "/pages/blog/page-4/",
@@ -2715,8 +2725,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-06",
-      "bodyWords": 674
+      "lastmod": "2026-09-07",
+      "bodyWords": 675
     },
     {
       "route": "/pages/blog/page-5/",
@@ -2727,8 +2737,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-06",
-      "bodyWords": 647
+      "lastmod": "2026-09-07",
+      "bodyWords": 645
     },
     {
       "route": "/pages/blog/page-6/",
@@ -2739,8 +2749,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-06",
-      "bodyWords": 674
+      "lastmod": "2026-09-07",
+      "bodyWords": 669
     },
     {
       "route": "/pages/blog/page-7/",
@@ -2751,8 +2761,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-06",
-      "bodyWords": 689
+      "lastmod": "2026-09-07",
+      "bodyWords": 698
     },
     {
       "route": "/pages/blog/page-8/",
@@ -2763,8 +2773,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-06",
-      "bodyWords": 759
+      "lastmod": "2026-09-07",
+      "bodyWords": 755
     },
     {
       "route": "/pages/blog/page-9/",
@@ -2775,8 +2785,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-06",
-      "bodyWords": 837
+      "lastmod": "2026-09-07",
+      "bodyWords": 826
     },
     {
       "route": "/pages/blog/propane-is-the-rare-fuel-cushion-left/",
@@ -2815,6 +2825,18 @@
       "bodyWords": 836
     },
     {
+      "route": "/pages/blog/refineries-are-already-running-flat-out/",
+      "file": "pages/blog/refineries-are-already-running-flat-out/index.html",
+      "title": "Refineries Are Already Running Flat Out — The Export | Notavello",
+      "description": "U.S. refineries are at 98% utilization while Hormuz traffic slows, leaving pump prices with little operating cushion.",
+      "canonical": "https://notavello.com/pages/blog/refineries-are-already-running-flat-out/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-09-08",
+      "bodyWords": 1465
+    },
+    {
       "route": "/pages/blog/refinery-cushion-diesel-warning-light/",
       "file": "pages/blog/refinery-cushion-diesel-warning-light/index.html",
       "title": "The Refinery Cushion Is The Warning Light — The Export | Notavello",
@@ -2822,7 +2844,7 @@
       "canonical": "https://notavello.com/pages/blog/refinery-cushion-diesel-warning-light/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 3,
+      "incomingLinks": 4,
       "lastmod": "2026-08-20",
       "bodyWords": 1254
     },
@@ -3482,7 +3504,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 258,
+      "incomingLinks": 259,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -3494,7 +3516,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 258,
+      "incomingLinks": 259,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -3506,7 +3528,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 258,
+      "incomingLinks": 259,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -3518,7 +3540,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 258,
+      "incomingLinks": 259,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -3530,7 +3552,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 258,
+      "incomingLinks": 259,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -3543,8 +3565,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-09-07",
-      "bodyWords": 297
+      "lastmod": "2026-09-08",
+      "bodyWords": 303
     },
     {
       "route": "/pages/sample",
@@ -3566,7 +3588,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 258,
+      "incomingLinks": 259,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -3578,7 +3600,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 258,
+      "incomingLinks": 259,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -3602,7 +3624,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 258,
+      "incomingLinks": 259,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -4034,7 +4056,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 258,
+      "incomingLinks": 259,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }
