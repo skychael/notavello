@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-09T16:42:38.838Z",
-  "latest_success_at": "2026-09-09T16:42:38.838Z",
+  "generated_at": "2026-09-09T19:48:52.234Z",
+  "latest_success_at": "2026-09-09T19:48:52.234Z",
   "status": "partial",
   "items": [
     {
@@ -9,7 +9,7 @@
       "title": "Eastern North Pacific Tropical Weather Outlook",
       "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-09-09T11:23:19.000Z",
+      "published_at": "2026-09-09T17:38:22.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
@@ -23,11 +23,11 @@
       "status": "ok"
     },
     {
-      "id": "38a1d8630caa0383",
-      "title": "SPC Sep 9, 2026 1630 UTC Day 1 Convective Outlook",
-      "url": "https://www.spc.noaa.gov/products/outlook/day1otlk_1630.html",
+      "id": "20010a07739c96ae",
+      "title": "SPC Sep 9, 2026 1930 UTC Day 3 Severe Thunderstorm Outlook",
+      "url": "https://www.spc.noaa.gov/products/outlook/day3otlk_1930.html",
       "publisher": "Storm Prediction Center",
-      "published_at": "2026-09-09T16:30:13.000Z",
+      "published_at": "2026-09-09T19:32:41.000Z",
       "topic": "Severe weather",
       "status": "ok"
     }
