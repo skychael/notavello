@@ -1,24 +1,24 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-08T21:54:04.009Z",
-  "latest_success_at": "2026-09-08T21:54:04.009Z",
+  "generated_at": "2026-09-09T00:18:46.463Z",
+  "latest_success_at": "2026-09-09T00:18:46.463Z",
   "status": "partial",
   "items": [
     {
-      "id": "28ebe0c751b55694",
-      "title": "Tropical Cyclone Local Statement issued September 8 at 5:17AM HST by NWS Honolulu HI",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.319b9cc43f7e11092bf0785f7b750efcd7a5793f.001.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-09-08T15:17:00.000Z",
+      "id": "ee8e390990a944fc",
+      "title": "Eastern North Pacific Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-09-08T23:30:41.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "b5ad93019d019ede",
-      "title": "Atlantic Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-09-08T17:16:17.000Z",
+      "id": "33ea98b81d2d196c",
+      "title": "SPC Day 3-8 Fire Weather Outlook",
+      "url": "https://www.spc.noaa.gov/products/exper/fire_wx",
+      "publisher": "Storm Prediction Center",
+      "published_at": "2026-09-08T22:01:19.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
