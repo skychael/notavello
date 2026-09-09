@@ -2,14 +2,32 @@
   "schema_version": 1,
   "archive_date": "2026-09-09",
   "created_at": "2026-09-09T00:18:47.031Z",
-  "updated_at": "2026-09-09T00:18:47.031Z",
+  "updated_at": "2026-09-09T06:02:15.671Z",
   "articles": [
+    {
+      "title": "Oil Nears $100 as U.S. Destroys Five Iranian Tankers",
+      "url": "https://oilprice.com/Energy/Oil-Prices/Oil-Nears-100-as-US-Destroys-Five-Iranian-Tankers.html",
+      "publisher": "OilPrice.com",
+      "published_at": "2026-09-09T03:50:00.000Z",
+      "source_id": "oilprice",
+      "first_seen_at": "2026-09-09T00:18:47.031Z",
+      "status": "ok"
+    },
     {
       "title": "Iran’s Oil Exports Collapse as Hormuz Standoff Drags On",
       "url": "https://oilprice.com/Energy/Crude-Oil/Irans-Oil-Exports-Collapse-as-Hormuz-Standoff-Drags-On.html",
       "publisher": "OilPrice.com",
       "published_at": "2026-09-09T00:00:00.000Z",
       "source_id": "oilprice",
+      "first_seen_at": "2026-09-09T00:18:47.031Z",
+      "status": "ok"
+    },
+    {
+      "title": "U.S. Destroys Five More IRGC Tankers After Iran Targets Navy Warship",
+      "url": "https://gcaptain.com/u-s-destroys-five-more-irgc-tankers-after-iran-targets-navy-warship",
+      "publisher": "gCaptain",
+      "published_at": "2026-09-08T23:30:16.000Z",
+      "source_id": "gcaptain",
       "first_seen_at": "2026-09-09T00:18:47.031Z",
       "status": "ok"
     },
