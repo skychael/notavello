@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-08T06:24:16.803Z",
+  "generatedAt": "2026-09-09T06:30:13.474Z",
   "totals": {
-    "pages": 259,
-    "indexable": 255,
-    "articles": 188,
-    "sitemap": 255,
+    "pages": 260,
+    "indexable": 256,
+    "articles": 189,
+    "sitemap": 256,
     "errors": 0,
-    "warnings": 188
+    "warnings": 190
   },
   "errors": [],
   "warnings": [
@@ -801,6 +801,16 @@
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
     {
+      "type": "template-pattern",
+      "page": "/pages/blog/the-red-sea-bypass-is-running-out-of-road/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/the-red-sea-bypass-is-running-out-of-road/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
       "type": "topic-review",
       "page": "/pages/blog/ubuntu-4-digit-pin-login/",
       "detail": "title/description lacks a clear AI, software, or computing connection"
@@ -960,7 +970,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 259,
+      "incomingLinks": 260,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -984,7 +994,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 259,
+      "incomingLinks": 260,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -1092,7 +1102,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 259,
+      "incomingLinks": 260,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -1104,9 +1114,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 259,
-      "lastmod": "2026-09-07",
-      "bodyWords": 658
+      "incomingLinks": 260,
+      "lastmod": "2026-09-08",
+      "bodyWords": 656
     },
     {
       "route": "/pages/blog/a-plain-language-guide-to-file-permissions/",
@@ -1380,9 +1390,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 127,
-      "lastmod": "2026-09-07",
-      "bodyWords": 2364
+      "incomingLinks": 128,
+      "lastmod": "2026-09-08",
+      "bodyWords": 2376
     },
     {
       "route": "/pages/blog/apple-speechanalyzer-local-transcription-apps/",
@@ -1416,7 +1426,7 @@
       "canonical": "https://notavello.com/pages/blog/bab-el-mandeb-hormuz-backup-problem/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 3,
+      "incomingLinks": 4,
       "lastmod": "2026-08-08",
       "bodyWords": 1594
     },
@@ -2677,8 +2687,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-07",
-      "bodyWords": 859
+      "lastmod": "2026-09-08",
+      "bodyWords": 847
     },
     {
       "route": "/pages/blog/page-11/",
@@ -2689,8 +2699,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": "2026-09-07",
-      "bodyWords": 419
+      "lastmod": "2026-09-08",
+      "bodyWords": 470
     },
     {
       "route": "/pages/blog/page-2/",
@@ -2701,8 +2711,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-07",
-      "bodyWords": 664
+      "lastmod": "2026-09-08",
+      "bodyWords": 659
     },
     {
       "route": "/pages/blog/page-3/",
@@ -2713,8 +2723,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-07",
-      "bodyWords": 684
+      "lastmod": "2026-09-08",
+      "bodyWords": 678
     },
     {
       "route": "/pages/blog/page-4/",
@@ -2725,8 +2735,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-07",
-      "bodyWords": 675
+      "lastmod": "2026-09-08",
+      "bodyWords": 684
     },
     {
       "route": "/pages/blog/page-5/",
@@ -2737,8 +2747,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-07",
-      "bodyWords": 645
+      "lastmod": "2026-09-08",
+      "bodyWords": 649
     },
     {
       "route": "/pages/blog/page-6/",
@@ -2749,8 +2759,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-07",
-      "bodyWords": 669
+      "lastmod": "2026-09-08",
+      "bodyWords": 665
     },
     {
       "route": "/pages/blog/page-7/",
@@ -2761,8 +2771,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-07",
-      "bodyWords": 698
+      "lastmod": "2026-09-08",
+      "bodyWords": 694
     },
     {
       "route": "/pages/blog/page-8/",
@@ -2773,8 +2783,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-07",
-      "bodyWords": 755
+      "lastmod": "2026-09-08",
+      "bodyWords": 757
     },
     {
       "route": "/pages/blog/page-9/",
@@ -2785,8 +2795,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-07",
-      "bodyWords": 826
+      "lastmod": "2026-09-08",
+      "bodyWords": 824
     },
     {
       "route": "/pages/blog/propane-is-the-rare-fuel-cushion-left/",
@@ -3063,6 +3073,18 @@
       "incomingLinks": 2,
       "lastmod": "2026-09-05",
       "bodyWords": 1574
+    },
+    {
+      "route": "/pages/blog/the-red-sea-bypass-is-running-out-of-road/",
+      "file": "pages/blog/the-red-sea-bypass-is-running-out-of-road/index.html",
+      "title": "The Red Sea Bypass Is Running Out Of Road — The Export | Notavello",
+      "description": "Saudi oil detours are crowding the Suez-SUMED route as Houthi attacks hit the backup plan.",
+      "canonical": "https://notavello.com/pages/blog/the-red-sea-bypass-is-running-out-of-road/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-09-09",
+      "bodyWords": 1231
     },
     {
       "route": "/pages/blog/tiny-text-files-that-taught-the-internet-manners/",
@@ -3504,7 +3526,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 259,
+      "incomingLinks": 260,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -3516,7 +3538,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 259,
+      "incomingLinks": 260,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -3528,7 +3550,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 259,
+      "incomingLinks": 260,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -3540,7 +3562,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 259,
+      "incomingLinks": 260,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -3552,7 +3574,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 259,
+      "incomingLinks": 260,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -3565,8 +3587,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-09-08",
-      "bodyWords": 303
+      "lastmod": "2026-09-09",
+      "bodyWords": 309
     },
     {
       "route": "/pages/sample",
@@ -3588,7 +3610,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 259,
+      "incomingLinks": 260,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -3600,7 +3622,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 259,
+      "incomingLinks": 260,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -3624,7 +3646,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 259,
+      "incomingLinks": 260,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -4056,7 +4078,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 259,
+      "incomingLinks": 260,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }
