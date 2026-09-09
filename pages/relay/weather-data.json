@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-09T19:48:52.234Z",
-  "latest_success_at": "2026-09-09T19:48:52.234Z",
+  "generated_at": "2026-09-09T22:35:35.237Z",
+  "latest_success_at": "2026-09-09T22:35:35.237Z",
   "status": "partial",
   "items": [
     {
-      "id": "ee8e390990a944fc",
-      "title": "Eastern North Pacific Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
+      "id": "c6ad950ffe85016b",
+      "title": "Tropical Depression Fourteen-E Forecast Discussion Number 1",
+      "url": "https://www.nhc.noaa.gov/text/refresh/MIATCDEP4+shtml/092039.shtml",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-09-09T17:38:22.000Z",
+      "published_at": "2026-09-09T20:39:53.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "f9c43e5a601ec246",
-      "title": "Hydrologic Outlook issued September 8 at 2:16PM AKDT by NWS Fairbanks AK",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.dc7706f301703048e25972994caa2089b2e5eb18.001.1.cap",
+      "id": "aaeb69d18a4a2819",
+      "title": "Hydrologic Outlook issued September 9 at 1:51PM AKDT by NWS Fairbanks AK",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.66744ed10985d962d6de46ad70c00b630cdb768a.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-09-08T22:16:00.000Z",
+      "published_at": "2026-09-09T21:51:00.000Z",
       "topic": "Flooding",
       "status": "ok"
     },
     {
-      "id": "20010a07739c96ae",
-      "title": "SPC Sep 9, 2026 1930 UTC Day 3 Severe Thunderstorm Outlook",
-      "url": "https://www.spc.noaa.gov/products/outlook/day3otlk_1930.html",
+      "id": "82ffd3be0cdd785a",
+      "title": "SPC Severe Thunderstorm Watch 665",
+      "url": "https://www.spc.noaa.gov/products/watch/ww0665.html",
       "publisher": "Storm Prediction Center",
-      "published_at": "2026-09-09T19:32:41.000Z",
+      "published_at": "2026-09-09T21:39:03.000Z",
       "topic": "Severe weather",
       "status": "ok"
     }
