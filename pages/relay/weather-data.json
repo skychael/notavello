@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-10T01:07:45.474Z",
-  "latest_success_at": "2026-09-10T01:07:45.474Z",
+  "generated_at": "2026-09-10T06:01:37.441Z",
+  "latest_success_at": "2026-09-10T06:01:37.441Z",
   "status": "partial",
   "items": [
     {
@@ -9,7 +9,16 @@
       "title": "Eastern North Pacific Tropical Weather Outlook",
       "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-09-09T23:21:31.000Z",
+      "published_at": "2026-09-10T05:19:57.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "4ce9c1a6a85338ac",
+      "title": "Summary for Tropical Depression Fourteen-E (EP4/EP142026)",
+      "url": "https://www.nhc.noaa.gov/text/refresh/MIATCPEP4+shtml/100233.shtml",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-09-10T02:33:27.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
@@ -20,15 +29,6 @@
       "publisher": "National Weather Service",
       "published_at": "2026-09-09T21:51:00.000Z",
       "topic": "Flooding",
-      "status": "ok"
-    },
-    {
-      "id": "82ffd3be0cdd785a",
-      "title": "SPC Severe Thunderstorm Watch 665",
-      "url": "https://www.spc.noaa.gov/products/watch/ww0665.html",
-      "publisher": "Storm Prediction Center",
-      "published_at": "2026-09-10T00:45:03.000Z",
-      "topic": "Severe weather",
       "status": "ok"
     }
   ]
