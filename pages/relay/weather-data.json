@@ -1,24 +1,24 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-10T11:26:52.019Z",
-  "latest_success_at": "2026-09-10T11:26:52.019Z",
+  "generated_at": "2026-09-10T16:28:53.077Z",
+  "latest_success_at": "2026-09-10T16:28:53.077Z",
   "status": "partial",
   "items": [
     {
-      "id": "b5ad93019d019ede",
-      "title": "Atlantic Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
+      "id": "c7a88bc2303dccef",
+      "title": "Tropical Storm Norbert Graphics",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep4+shtml/152905.shtml?cone=",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-09-10T11:11:00.000Z",
+      "published_at": "2026-09-10T15:29:05.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "1a304af8361409c4",
-      "title": "Tropical Storm Norbert Wind Speed Probabilities Number 3",
-      "url": "https://www.nhc.noaa.gov/text/refresh/MIAPWSEP4+shtml/100859.shtml",
+      "id": "ee8e390990a944fc",
+      "title": "Eastern North Pacific Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-09-10T10:31:10.000Z",
+      "published_at": "2026-09-10T11:45:01.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
