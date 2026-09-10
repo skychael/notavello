@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "09-09",
-  "display_date": "September 9",
-  "generated_at": "2026-09-09T12:58:24.897Z",
+  "date_key": "09-10",
+  "display_date": "September 10",
+  "generated_at": "2026-09-10T12:55:43.286Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-0dc3b8fd43da3bef7ed2f875",
+      "candidate_id": "event-a5be33374dd0bbfe4cea0cd2",
       "type": "event",
-      "year": 2006,
-      "text": "Space Shuttle Program: Space Shuttle Atlantis is launched on STS-115 to resume assembling the International Space Station. It is the first ISS assembly mission after the Columbia disaster back in 2003.",
-      "article_title": "Space Shuttle Atlantis",
-      "url": "https://en.wikipedia.org/wiki/Space_Shuttle_Atlantis",
+      "year": 2024,
+      "text": "Polaris Dawn, the first private crewed spaceflight to involve a spacewalk, is launched from the Kennedy Space Center in Florida.",
+      "article_title": "Polaris Dawn",
+      "url": "https://en.wikipedia.org/wiki/Polaris_Dawn",
       "category": "Science and technology"
     },
     {
-      "candidate_id": "event-c9659ae1d75301f91d3ec227",
+      "candidate_id": "event-60fe87baf0b4e0fbf019a8e1",
       "type": "event",
-      "year": 1965,
-      "text": "Hurricane Betsy makes its second landfall near New Orleans, leaving 76 dead and $1.42 billion ($10–12 billion in 2005 dollars) in damages, becoming the first hurricane to cause over $1 billion in unadjusted damage.",
-      "article_title": "Hurricane Betsy",
-      "url": "https://en.wikipedia.org/wiki/Hurricane_Betsy",
-      "category": "Disasters and exploration"
+      "year": 1942,
+      "text": "World War II: The British Army carries out an amphibious landing on Madagascar to re-launch Allied offensive operations in the Madagascar Campaign.",
+      "article_title": "Battle of Madagascar",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Madagascar",
+      "category": "World history"
     },
     {
-      "candidate_id": "event-5d44b309c46b2b47d20b1ea3",
+      "candidate_id": "event-33fb94162a4d191f38b8bca3",
       "type": "event",
-      "year": 1969,
-      "text": "Allegheny Airlines Flight 863 collides in mid-air with a Piper PA-28 Cherokee over Moral Township, Shelby County, Indiana, killing all 83 people on board both aircraft.",
-      "article_title": "Allegheny Airlines Flight 853",
-      "url": "https://en.wikipedia.org/wiki/Allegheny_Airlines_Flight_853",
-      "category": "World history"
+      "year": 1961,
+      "text": "In the Italian Grand Prix, a crash causes the death of German Formula One driver Wolfgang von Trips and 15 spectators who are hit by his Ferrari, the deadliest accident in F1 history.",
+      "article_title": "1961 Italian Grand Prix",
+      "url": "https://en.wikipedia.org/wiki/1961_Italian_Grand_Prix",
+      "category": "Disasters and exploration"
     }
   ]
 }
