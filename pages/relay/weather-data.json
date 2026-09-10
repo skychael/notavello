@@ -1,15 +1,15 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-09T22:35:35.237Z",
-  "latest_success_at": "2026-09-09T22:35:35.237Z",
+  "generated_at": "2026-09-10T01:07:45.474Z",
+  "latest_success_at": "2026-09-10T01:07:45.474Z",
   "status": "partial",
   "items": [
     {
-      "id": "c6ad950ffe85016b",
-      "title": "Tropical Depression Fourteen-E Forecast Discussion Number 1",
-      "url": "https://www.nhc.noaa.gov/text/refresh/MIATCDEP4+shtml/092039.shtml",
+      "id": "ee8e390990a944fc",
+      "title": "Eastern North Pacific Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-09-09T20:39:53.000Z",
+      "published_at": "2026-09-09T23:21:31.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
@@ -27,7 +27,7 @@
       "title": "SPC Severe Thunderstorm Watch 665",
       "url": "https://www.spc.noaa.gov/products/watch/ww0665.html",
       "publisher": "Storm Prediction Center",
-      "published_at": "2026-09-09T21:39:03.000Z",
+      "published_at": "2026-09-10T00:45:03.000Z",
       "topic": "Severe weather",
       "status": "ok"
     }
