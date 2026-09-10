@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-09T06:30:13.474Z",
+  "generatedAt": "2026-09-10T06:29:13.365Z",
   "totals": {
-    "pages": 260,
-    "indexable": 256,
-    "articles": 189,
-    "sitemap": 256,
+    "pages": 261,
+    "indexable": 257,
+    "articles": 190,
+    "sitemap": 257,
     "errors": 0,
-    "warnings": 190
+    "warnings": 192
   },
   "errors": [],
   "warnings": [
@@ -667,6 +667,16 @@
     },
     {
       "type": "template-pattern",
+      "page": "/pages/blog/phosphate-is-the-fertilizer-shock-that-did-not-fade/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/phosphate-is-the-fertilizer-shock-that-did-not-fade/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
       "page": "/pages/blog/propane-is-the-rare-fuel-cushion-left/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
@@ -970,7 +980,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 260,
+      "incomingLinks": 261,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -994,7 +1004,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 260,
+      "incomingLinks": 261,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -1102,7 +1112,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 260,
+      "incomingLinks": 261,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -1114,9 +1124,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 260,
-      "lastmod": "2026-09-08",
-      "bodyWords": 656
+      "incomingLinks": 261,
+      "lastmod": "2026-09-09",
+      "bodyWords": 649
     },
     {
       "route": "/pages/blog/a-plain-language-guide-to-file-permissions/",
@@ -1390,9 +1400,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 128,
-      "lastmod": "2026-09-08",
-      "bodyWords": 2376
+      "incomingLinks": 129,
+      "lastmod": "2026-09-09",
+      "bodyWords": 2388
     },
     {
       "route": "/pages/blog/apple-speechanalyzer-local-transcription-apps/",
@@ -1510,7 +1520,7 @@
       "canonical": "https://notavello.com/pages/blog/chinas-urea-cargoes-are-the-fertilizer-relief-valve/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 2,
+      "incomingLinks": 3,
       "lastmod": "2026-08-30",
       "bodyWords": 1487
     },
@@ -2687,8 +2697,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-08",
-      "bodyWords": 847
+      "lastmod": "2026-09-09",
+      "bodyWords": 838
     },
     {
       "route": "/pages/blog/page-11/",
@@ -2699,8 +2709,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": "2026-09-08",
-      "bodyWords": 470
+      "lastmod": "2026-09-09",
+      "bodyWords": 516
     },
     {
       "route": "/pages/blog/page-2/",
@@ -2711,8 +2721,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-08",
-      "bodyWords": 659
+      "lastmod": "2026-09-09",
+      "bodyWords": 666
     },
     {
       "route": "/pages/blog/page-3/",
@@ -2723,8 +2733,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-08",
-      "bodyWords": 678
+      "lastmod": "2026-09-09",
+      "bodyWords": 680
     },
     {
       "route": "/pages/blog/page-4/",
@@ -2735,8 +2745,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-08",
-      "bodyWords": 684
+      "lastmod": "2026-09-09",
+      "bodyWords": 680
     },
     {
       "route": "/pages/blog/page-5/",
@@ -2747,8 +2757,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-08",
-      "bodyWords": 649
+      "lastmod": "2026-09-09",
+      "bodyWords": 655
     },
     {
       "route": "/pages/blog/page-6/",
@@ -2759,8 +2769,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-08",
-      "bodyWords": 665
+      "lastmod": "2026-09-09",
+      "bodyWords": 664
     },
     {
       "route": "/pages/blog/page-7/",
@@ -2771,8 +2781,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-08",
-      "bodyWords": 694
+      "lastmod": "2026-09-09",
+      "bodyWords": 693
     },
     {
       "route": "/pages/blog/page-8/",
@@ -2783,8 +2793,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-08",
-      "bodyWords": 757
+      "lastmod": "2026-09-09",
+      "bodyWords": 745
     },
     {
       "route": "/pages/blog/page-9/",
@@ -2795,8 +2805,20 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-08",
-      "bodyWords": 824
+      "lastmod": "2026-09-09",
+      "bodyWords": 831
+    },
+    {
+      "route": "/pages/blog/phosphate-is-the-fertilizer-shock-that-did-not-fade/",
+      "file": "pages/blog/phosphate-is-the-fertilizer-shock-that-did-not-fade/index.html",
+      "title": "Phosphate Is The Fertilizer Shock That Did Not Fade — The Export | Notavello",
+      "description": "Urea has cooled, but phosphate fertilizer is still expensive as sulfur and Hormuz risk squeeze fall farm budgets.",
+      "canonical": "https://notavello.com/pages/blog/phosphate-is-the-fertilizer-shock-that-did-not-fade/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-09-10",
+      "bodyWords": 1362
     },
     {
       "route": "/pages/blog/propane-is-the-rare-fuel-cushion-left/",
@@ -3526,7 +3548,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 260,
+      "incomingLinks": 261,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -3538,7 +3560,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 260,
+      "incomingLinks": 261,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -3550,7 +3572,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 260,
+      "incomingLinks": 261,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -3562,7 +3584,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 260,
+      "incomingLinks": 261,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -3574,7 +3596,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 260,
+      "incomingLinks": 261,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -3587,8 +3609,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-09-09",
-      "bodyWords": 309
+      "lastmod": "2026-09-10",
+      "bodyWords": 315
     },
     {
       "route": "/pages/sample",
@@ -3610,7 +3632,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 260,
+      "incomingLinks": 261,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -3622,7 +3644,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 260,
+      "incomingLinks": 261,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -3646,7 +3668,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 260,
+      "incomingLinks": 261,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -4078,7 +4100,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 260,
+      "incomingLinks": 261,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }
