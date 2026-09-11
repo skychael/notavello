@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-11T06:04:10.283Z",
-  "latest_success_at": "2026-09-11T06:04:10.283Z",
+  "generated_at": "2026-09-11T11:28:27.381Z",
+  "latest_success_at": "2026-09-11T11:28:27.381Z",
   "status": "partial",
   "items": [
     {
@@ -9,25 +9,25 @@
       "title": "Atlantic Tropical Weather Outlook",
       "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-09-11T05:53:12.000Z",
+      "published_at": "2026-09-11T11:20:13.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "f2bc3e5729017844",
-      "title": "SPC Sep 11, 2026 0600 UTC Day 2 Convective Outlook",
-      "url": "https://www.spc.noaa.gov/products/outlook/day2otlk_0600.html",
-      "publisher": "Storm Prediction Center",
-      "published_at": "2026-09-11T05:30:13.000Z",
+      "id": "0bf671c554ff6c32",
+      "title": "Tropical Storm Norbert Graphics",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep4+shtml/092301.shtml?cone=",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-09-11T09:23:01.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "7cb9935bf42b6ff3",
-      "title": "SPC Sep 11, 2026 0600 UTC Day 1 Convective Outlook",
-      "url": "https://www.spc.noaa.gov/products/outlook/day1otlk_1200.html",
+      "id": "91e5697961c0d7ba",
+      "title": "SPC Sep 11, 2026 0730 UTC Day 3 Severe Thunderstorm Outlook",
+      "url": "https://www.spc.noaa.gov/products/outlook/day3otlk_0730.html",
       "publisher": "Storm Prediction Center",
-      "published_at": "2026-09-11T05:29:06.000Z",
+      "published_at": "2026-09-11T07:31:43.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
