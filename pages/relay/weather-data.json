@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-11T19:46:32.104Z",
-  "latest_success_at": "2026-09-11T19:46:32.104Z",
+  "generated_at": "2026-09-11T22:38:14.159Z",
+  "latest_success_at": "2026-09-11T22:38:14.159Z",
   "status": "partial",
   "items": [
     {
@@ -9,26 +9,26 @@
       "title": "Eastern North Pacific Tropical Weather Outlook",
       "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-09-11T17:28:25.000Z",
+      "published_at": "2026-09-11T21:27:49.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "a345ba9881a18297",
-      "title": "SPC Day 1 Fire Weather Outlook",
-      "url": "https://www.spc.noaa.gov/products/fire_wx/fwdy1.html",
-      "publisher": "Storm Prediction Center",
-      "published_at": "2026-09-11T16:34:31.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "c5df0550dd471ee7",
+      "id": "eec841147198928f",
       "title": "Tropical Storm Norbert Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep4+shtml/152307.shtml?cone=",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep4+shtml/212306.shtml?cone=",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-09-11T15:23:07.000Z",
+      "published_at": "2026-09-11T21:23:06.000Z",
       "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "8bbf72d432860d89",
+      "title": "SPC MD 2282",
+      "url": "https://www.spc.noaa.gov/products/md/md2282.html",
+      "publisher": "Storm Prediction Center",
+      "published_at": "2026-09-11T22:29:05.000Z",
+      "topic": "Severe weather",
       "status": "ok"
     }
   ]
