@@ -1,34 +1,34 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-11T01:09:31.124Z",
-  "latest_success_at": "2026-09-11T01:09:31.124Z",
+  "generated_at": "2026-09-11T06:04:10.283Z",
+  "latest_success_at": "2026-09-11T06:04:10.283Z",
   "status": "partial",
   "items": [
     {
-      "id": "ee8e390990a944fc",
-      "title": "Eastern North Pacific Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
+      "id": "b5ad93019d019ede",
+      "title": "Atlantic Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-09-10T23:17:09.000Z",
+      "published_at": "2026-09-11T05:53:12.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "91137d90e9c42e1c",
-      "title": "Tropical Storm Norbert Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep4+shtml/212856.shtml?cone=",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-09-10T21:28:56.000Z",
+      "id": "f2bc3e5729017844",
+      "title": "SPC Sep 11, 2026 0600 UTC Day 2 Convective Outlook",
+      "url": "https://www.spc.noaa.gov/products/outlook/day2otlk_0600.html",
+      "publisher": "Storm Prediction Center",
+      "published_at": "2026-09-11T05:30:13.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "93a5ec606a4482aa",
-      "title": "Hydrologic Outlook issued September 10 at 1:38PM AKDT by NWS Fairbanks AK",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.bb5c996011e89b7969ce7479df48edf2c56813bb.001.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-09-10T21:38:00.000Z",
-      "topic": "Flooding",
+      "id": "7cb9935bf42b6ff3",
+      "title": "SPC Sep 11, 2026 0600 UTC Day 1 Convective Outlook",
+      "url": "https://www.spc.noaa.gov/products/outlook/day1otlk_1200.html",
+      "publisher": "Storm Prediction Center",
+      "published_at": "2026-09-11T05:29:06.000Z",
+      "topic": "Hurricane",
       "status": "ok"
     }
   ]
