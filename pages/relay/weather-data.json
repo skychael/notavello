@@ -1,9 +1,27 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-11T16:33:00.418Z",
-  "latest_success_at": "2026-09-11T16:33:00.418Z",
+  "generated_at": "2026-09-11T19:46:32.104Z",
+  "latest_success_at": "2026-09-11T19:46:32.104Z",
   "status": "partial",
   "items": [
+    {
+      "id": "ee8e390990a944fc",
+      "title": "Eastern North Pacific Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-09-11T17:28:25.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "a345ba9881a18297",
+      "title": "SPC Day 1 Fire Weather Outlook",
+      "url": "https://www.spc.noaa.gov/products/fire_wx/fwdy1.html",
+      "publisher": "Storm Prediction Center",
+      "published_at": "2026-09-11T16:34:31.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
     {
       "id": "c5df0550dd471ee7",
       "title": "Tropical Storm Norbert Graphics",
@@ -11,24 +29,6 @@
       "publisher": "National Hurricane Center",
       "published_at": "2026-09-11T15:23:07.000Z",
       "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "ee8e390990a944fc",
-      "title": "Eastern North Pacific Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-09-11T11:43:43.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "93a5ec606a4482aa",
-      "title": "Hydrologic Outlook issued September 10 at 1:38PM AKDT by NWS Fairbanks AK",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.bb5c996011e89b7969ce7479df48edf2c56813bb.001.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-09-10T21:38:00.000Z",
-      "topic": "Flooding",
       "status": "ok"
     }
   ]
