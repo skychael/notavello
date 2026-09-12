@@ -1,9 +1,18 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-12T14:11:29.701Z",
-  "latest_success_at": "2026-09-12T14:11:29.701Z",
+  "generated_at": "2026-09-12T17:14:14.324Z",
+  "latest_success_at": "2026-09-12T17:14:14.324Z",
   "status": "partial",
   "items": [
+    {
+      "id": "f00697f24aebae11",
+      "title": "Tropical Storm Norbert Graphics",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep4+shtml/152316.shtml?cone=",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-09-12T15:23:16.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
     {
       "id": "ee8e390990a944fc",
       "title": "Eastern North Pacific Tropical Weather Outlook",
@@ -14,20 +23,11 @@
       "status": "ok"
     },
     {
-      "id": "b8affcbde8ddf4d0",
-      "title": "Tropical Storm Norbert Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep4+shtml/092258.shtml?cone=",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-09-12T09:22:58.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "367a48215cbad27a",
-      "title": "SPC Sep 12, 2026 1300 UTC Day 1 Convective Outlook",
-      "url": "https://www.spc.noaa.gov/products/outlook/day1otlk_1300.html",
+      "id": "4c31190a9c521e8a",
+      "title": "SPC Sep 12, 2026 1730 UTC Day 2 Convective Outlook",
+      "url": "https://www.spc.noaa.gov/products/outlook/day2otlk_1730.html",
       "publisher": "Storm Prediction Center",
-      "published_at": "2026-09-12T12:51:13.000Z",
+      "published_at": "2026-09-12T17:00:14.000Z",
       "topic": "Severe weather",
       "status": "ok"
     }
