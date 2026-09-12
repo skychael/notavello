@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "09-11",
-  "display_date": "September 11",
-  "generated_at": "2026-09-11T12:50:16.197Z",
+  "date_key": "09-12",
+  "display_date": "September 12",
+  "generated_at": "2026-09-12T12:11:18.632Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-56c7fb6004d68eb60ee650f5",
+      "candidate_id": "event-c08f3ffe0a05763a96e85384",
       "type": "event",
-      "year": 2001,
-      "text": "Nineteen members of al-Qaeda execute the September 11 attacks, a series of coordinated terrorist attacks that killed 2,977 people using four hijacked aircraft. Two aircraft crash into the World Trade Center in New York City, a third crashes into The Pentagon in Arlington County, Virginia, and a fourth into a field near Shanksville, Pennsylvania.",
-      "article_title": "Al-Qaeda",
-      "url": "https://en.wikipedia.org/wiki/Al-Qaeda",
-      "category": "Disasters and exploration"
-    },
-    {
-      "candidate_id": "event-857a655a96e26c6bc4e18640",
-      "type": "event",
-      "year": 1968,
-      "text": "Air France Flight 1611 crashes off Nice, France, killing 89 passengers and six crew.",
-      "article_title": "Air France Flight 1611",
-      "url": "https://en.wikipedia.org/wiki/Air_France_Flight_1611",
+      "year": 1966,
+      "text": "Gemini 11, the penultimate mission of NASA's Gemini program, and the current human altitude record holder (except for the Apollo lunar missions and Artemis II).",
+      "article_title": "Gemini 11",
+      "url": "https://en.wikipedia.org/wiki/Gemini_11",
       "category": "World history"
     },
     {
-      "candidate_id": "event-f915229c3fd2a348a54afe1e",
+      "candidate_id": "event-32e06120a5af6f2654d29c8e",
       "type": "event",
-      "year": 2024,
-      "text": "Soyuz MS-26 is launched to the International Space Station, setting a record of 19 people in orbit at the same time.",
-      "article_title": "Soyuz MS-26",
-      "url": "https://en.wikipedia.org/wiki/Soyuz_MS-26",
+      "year": 2013,
+      "text": "NASA confirms that its Voyager 1 probe has become the first manmade object to enter interstellar space.",
+      "article_title": "NASA",
+      "url": "https://en.wikipedia.org/wiki/NASA",
       "category": "Science and technology"
+    },
+    {
+      "candidate_id": "event-11fb9eafcf23da1c2b10b789",
+      "type": "event",
+      "year": 1988,
+      "text": "Hurricane Gilbert devastates Jamaica; it turns towards Mexico's Yucatán Peninsula two days later, causing an estimated $5 billion in damage.",
+      "article_title": "Hurricane Gilbert",
+      "url": "https://en.wikipedia.org/wiki/Hurricane_Gilbert",
+      "category": "Disasters and exploration"
     }
   ]
 }
