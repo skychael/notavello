@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-11T06:31:24.782Z",
+  "generatedAt": "2026-09-12T06:18:18.694Z",
   "totals": {
-    "pages": 262,
-    "indexable": 258,
-    "articles": 191,
-    "sitemap": 258,
+    "pages": 263,
+    "indexable": 259,
+    "articles": 192,
+    "sitemap": 259,
     "errors": 0,
-    "warnings": 194
+    "warnings": 196
   },
   "errors": [],
   "warnings": [
@@ -736,6 +736,16 @@
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
     {
+      "type": "template-pattern",
+      "page": "/pages/blog/saudi-backup-oil-pipeline-became-the-target/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/saudi-backup-oil-pipeline-became-the-target/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
       "type": "topic-review",
       "page": "/pages/blog/self-driving-cars-trucks-can-be-fooled/",
       "detail": "title/description lacks a clear AI, software, or computing connection"
@@ -990,7 +1000,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 262,
+      "incomingLinks": 263,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -1014,7 +1024,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 262,
+      "incomingLinks": 263,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -1122,7 +1132,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 262,
+      "incomingLinks": 263,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -1134,9 +1144,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 262,
-      "lastmod": "2026-09-10",
-      "bodyWords": 645
+      "incomingLinks": 263,
+      "lastmod": "2026-09-11",
+      "bodyWords": 648
     },
     {
       "route": "/pages/blog/a-plain-language-guide-to-file-permissions/",
@@ -1410,9 +1420,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 130,
-      "lastmod": "2026-09-10",
-      "bodyWords": 2398
+      "incomingLinks": 131,
+      "lastmod": "2026-09-11",
+      "bodyWords": 2409
     },
     {
       "route": "/pages/blog/apple-speechanalyzer-local-transcription-apps/",
@@ -1698,7 +1708,7 @@
       "canonical": "https://notavello.com/pages/blog/diesel-inventories-just-got-a-harvest-deadline/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 2,
+      "incomingLinks": 3,
       "lastmod": "2026-09-11",
       "bodyWords": 1273
     },
@@ -2719,8 +2729,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-10",
-      "bodyWords": 840
+      "lastmod": "2026-09-11",
+      "bodyWords": 848
     },
     {
       "route": "/pages/blog/page-11/",
@@ -2731,8 +2741,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": "2026-09-10",
-      "bodyWords": 557
+      "lastmod": "2026-09-11",
+      "bodyWords": 599
     },
     {
       "route": "/pages/blog/page-2/",
@@ -2743,8 +2753,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-10",
-      "bodyWords": 670
+      "lastmod": "2026-09-11",
+      "bodyWords": 666
     },
     {
       "route": "/pages/blog/page-3/",
@@ -2755,8 +2765,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-10",
-      "bodyWords": 675
+      "lastmod": "2026-09-11",
+      "bodyWords": 674
     },
     {
       "route": "/pages/blog/page-4/",
@@ -2767,8 +2777,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-10",
-      "bodyWords": 681
+      "lastmod": "2026-09-11",
+      "bodyWords": 678
     },
     {
       "route": "/pages/blog/page-5/",
@@ -2779,8 +2789,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-10",
-      "bodyWords": 659
+      "lastmod": "2026-09-11",
+      "bodyWords": 657
     },
     {
       "route": "/pages/blog/page-6/",
@@ -2791,8 +2801,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-10",
-      "bodyWords": 656
+      "lastmod": "2026-09-11",
+      "bodyWords": 657
     },
     {
       "route": "/pages/blog/page-7/",
@@ -2803,8 +2813,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-10",
-      "bodyWords": 697
+      "lastmod": "2026-09-11",
+      "bodyWords": 699
     },
     {
       "route": "/pages/blog/page-8/",
@@ -2815,8 +2825,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-10",
-      "bodyWords": 731
+      "lastmod": "2026-09-11",
+      "bodyWords": 715
     },
     {
       "route": "/pages/blog/page-9/",
@@ -2827,8 +2837,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-10",
-      "bodyWords": 837
+      "lastmod": "2026-09-11",
+      "bodyWords": 838
     },
     {
       "route": "/pages/blog/phosphate-is-the-fertilizer-shock-that-did-not-fade/",
@@ -2913,6 +2923,18 @@
       "incomingLinks": 2,
       "lastmod": "2026-07-28",
       "bodyWords": 1219
+    },
+    {
+      "route": "/pages/blog/saudi-backup-oil-pipeline-became-the-target/",
+      "file": "pages/blog/saudi-backup-oil-pipeline-became-the-target/index.html",
+      "title": "Saudi Arabia's Backup Oil Pipeline Became The Target — The Export | Notavello",
+      "description": "Saudi Arabia’s East-West pipeline shutdown turns the Hormuz bypass into a diesel, freight and oil-price problem.",
+      "canonical": "https://notavello.com/pages/blog/saudi-backup-oil-pipeline-became-the-target/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-09-12",
+      "bodyWords": 1568
     },
     {
       "route": "/pages/blog/search-field-2036/",
@@ -3570,7 +3592,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 262,
+      "incomingLinks": 263,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -3582,7 +3604,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 262,
+      "incomingLinks": 263,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -3594,7 +3616,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 262,
+      "incomingLinks": 263,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -3606,7 +3628,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 262,
+      "incomingLinks": 263,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -3618,7 +3640,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 262,
+      "incomingLinks": 263,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -3631,8 +3653,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-09-11",
-      "bodyWords": 321
+      "lastmod": "2026-09-12",
+      "bodyWords": 327
     },
     {
       "route": "/pages/sample",
@@ -3654,7 +3676,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 262,
+      "incomingLinks": 263,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -3666,7 +3688,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 262,
+      "incomingLinks": 263,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -3690,7 +3712,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 262,
+      "incomingLinks": 263,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -4122,7 +4144,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 262,
+      "incomingLinks": 263,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }
