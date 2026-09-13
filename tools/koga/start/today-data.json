@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "09-12",
-  "display_date": "September 12",
-  "generated_at": "2026-09-12T12:11:18.632Z",
+  "date_key": "09-13",
+  "display_date": "September 13",
+  "generated_at": "2026-09-13T13:19:16.391Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-c08f3ffe0a05763a96e85384",
+      "candidate_id": "event-f9d53538d9a64d63ee7fe39b",
       "type": "event",
-      "year": 1966,
-      "text": "Gemini 11, the penultimate mission of NASA's Gemini program, and the current human altitude record holder (except for the Apollo lunar missions and Artemis II).",
-      "article_title": "Gemini 11",
-      "url": "https://en.wikipedia.org/wiki/Gemini_11",
+      "year": 2001,
+      "text": "Civilian aircraft traffic resumes in the United States after the September 11 attacks.",
+      "article_title": "September 11 attacks",
+      "url": "https://en.wikipedia.org/wiki/September_11_attacks",
       "category": "World history"
     },
     {
-      "candidate_id": "event-32e06120a5af6f2654d29c8e",
+      "candidate_id": "event-3a27a25fe81cc090c410fc6d",
       "type": "event",
-      "year": 2013,
-      "text": "NASA confirms that its Voyager 1 probe has become the first manmade object to enter interstellar space.",
-      "article_title": "NASA",
-      "url": "https://en.wikipedia.org/wiki/NASA",
-      "category": "Science and technology"
+      "year": 1986,
+      "text": "A magnitude 6.0 earthquake strikes Kalamata, Greece with a maximum Modified Mercalli intensity of X (Extreme), killing at least 20 and causing heavy damage in the city.",
+      "article_title": "1986 Kalamata earthquake",
+      "url": "https://en.wikipedia.org/wiki/1986_Kalamata_earthquake",
+      "category": "Disasters and exploration"
     },
     {
-      "candidate_id": "event-11fb9eafcf23da1c2b10b789",
+      "candidate_id": "event-b45f7280ff648ee18a8053cf",
       "type": "event",
-      "year": 1988,
-      "text": "Hurricane Gilbert devastates Jamaica; it turns towards Mexico's Yucatán Peninsula two days later, causing an estimated $5 billion in damage.",
-      "article_title": "Hurricane Gilbert",
-      "url": "https://en.wikipedia.org/wiki/Hurricane_Gilbert",
-      "category": "Disasters and exploration"
+      "year": 1906,
+      "text": "The Santos-Dumont 14-bis makes a short hop, the first flight of a fixed-wing aircraft in Europe.",
+      "article_title": "Santos-Dumont 14-bis",
+      "url": "https://en.wikipedia.org/wiki/Santos-Dumont_14-bis",
+      "category": "World history"
     }
   ]
 }
