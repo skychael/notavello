@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "checked_at": "2026-09-12T22:21:24.280Z",
-  "latest_success_at": "2026-09-12T22:21:24.280Z",
+  "checked_at": "2026-09-13T01:04:51.123Z",
+  "latest_success_at": "2026-09-13T01:04:51.123Z",
   "status": "partial",
   "items": [
     {
@@ -10,6 +10,14 @@
       "publisher": "gCaptain",
       "published_at": "2026-09-11T18:21:06.000Z",
       "source_id": "gcaptain",
+      "status": "ok"
+    },
+    {
+      "title": "Oil Industry Braces for Years-Long Iran War",
+      "url": "https://oilprice.com/Energy/Oil-Prices/Oil-Industry-Braces-for-Years-Long-Iran-War.html",
+      "publisher": "OilPrice.com",
+      "published_at": "2026-09-12T23:00:00.000Z",
+      "source_id": "oilprice",
       "status": "ok"
     },
     {
@@ -50,14 +58,6 @@
       "publisher": "gCaptain",
       "published_at": "2026-09-11T17:16:25.000Z",
       "source_id": "gcaptain",
-      "status": "ok"
-    },
-    {
-      "title": "Supertanker Rates Hit $800,000 a Day as Gulf Tensions Escalate",
-      "url": "https://oilprice.com/Energy/Energy-General/Supertanker-Rates-Hit-800000-a-Day-as-Gulf-Tensions-Escalate.html",
-      "publisher": "OilPrice.com",
-      "published_at": "2026-09-11T16:00:00.000Z",
-      "source_id": "oilprice",
       "status": "ok"
     },
     {
