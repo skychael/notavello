@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-13T19:29:59.664Z",
-  "latest_success_at": "2026-09-13T19:29:59.664Z",
+  "generated_at": "2026-09-13T22:27:25.592Z",
+  "latest_success_at": "2026-09-13T22:27:25.592Z",
   "status": "partial",
   "items": [
     {
-      "id": "ee8e390990a944fc",
-      "title": "Eastern North Pacific Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-09-13T17:22:17.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "041dbdb2d2b0daba",
+      "id": "70b8f9d624bf370d",
       "title": "Tropical Storm Norbert Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep4+shtml/152312.shtml?cone=",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep4+shtml/212301.shtml?cone=",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-09-13T15:23:12.000Z",
+      "published_at": "2026-09-13T21:23:01.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "20010a07739c96ae",
-      "title": "SPC Sep 13, 2026 1930 UTC Day 3 Severe Thunderstorm Outlook",
-      "url": "https://www.spc.noaa.gov/products/outlook/day3otlk_1930.html",
+      "id": "3caad114bb84c31c",
+      "title": "Tropical Depression Fifteen-E Wind Speed Probabilities Number 1",
+      "url": "https://www.nhc.noaa.gov/text/refresh/MIAPWSEP5+shtml/132035.shtml",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-09-13T20:35:53.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "b4bcce42aee5b24c",
+      "title": "SPC Sep 13, 2026 2000 UTC Day 1 Convective Outlook",
+      "url": "https://www.spc.noaa.gov/products/outlook/day1otlk_2000.html",
       "publisher": "Storm Prediction Center",
-      "published_at": "2026-09-13T19:26:39.000Z",
+      "published_at": "2026-09-13T20:00:08.000Z",
       "topic": "Severe weather",
       "status": "ok"
     }
