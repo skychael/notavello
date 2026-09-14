@@ -1,36 +1,36 @@
 {
   "schema_version": "1.0",
-  "date_key": "09-13",
-  "display_date": "September 13",
-  "generated_at": "2026-09-13T13:19:16.391Z",
+  "date_key": "09-14",
+  "display_date": "September 14",
+  "generated_at": "2026-09-14T15:01:44.491Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-f9d53538d9a64d63ee7fe39b",
+      "candidate_id": "event-e2af2aae7c6c07e7fa1914cc",
       "type": "event",
-      "year": 2001,
-      "text": "Civilian aircraft traffic resumes in the United States after the September 11 attacks.",
-      "article_title": "September 11 attacks",
-      "url": "https://en.wikipedia.org/wiki/September_11_attacks",
+      "year": 1958,
+      "text": "The first two German post-war rockets, designed by the German engineer Ernst Mohr, reach the upper atmosphere.",
+      "article_title": "Mohr Rocket",
+      "url": "https://en.wikipedia.org/wiki/Mohr_Rocket",
       "category": "World history"
     },
     {
-      "candidate_id": "event-3a27a25fe81cc090c410fc6d",
+      "candidate_id": "event-445ef52f51fc7734a7de3764",
       "type": "event",
-      "year": 1986,
-      "text": "A magnitude 6.0 earthquake strikes Kalamata, Greece with a maximum Modified Mercalli intensity of X (Extreme), killing at least 20 and causing heavy damage in the city.",
-      "article_title": "1986 Kalamata earthquake",
-      "url": "https://en.wikipedia.org/wiki/1986_Kalamata_earthquake",
-      "category": "Disasters and exploration"
+      "year": 2008,
+      "text": "Aeroflot Flight 821, a Boeing 737-500, crashes into a section of the Trans-Siberian Railway while on approach to Perm International Airport, in Perm, Russia, killing all 88 people on board.",
+      "article_title": "Aeroflot Flight 821",
+      "url": "https://en.wikipedia.org/wiki/Aeroflot_Flight_821",
+      "category": "World history"
     },
     {
-      "candidate_id": "event-b45f7280ff648ee18a8053cf",
+      "candidate_id": "event-76022d4f5bd7f7df0ec8a4e6",
       "type": "event",
-      "year": 1906,
-      "text": "The Santos-Dumont 14-bis makes a short hop, the first flight of a fixed-wing aircraft in Europe.",
-      "article_title": "Santos-Dumont 14-bis",
-      "url": "https://en.wikipedia.org/wiki/Santos-Dumont_14-bis",
+      "year": 1993,
+      "text": "Lufthansa Flight 2904, an Airbus A320, crashes into an embankment after overshooting the runway at Okęcie International Airport (now Warsaw Chopin Airport), killing two people.",
+      "article_title": "Lufthansa Flight 2904",
+      "url": "https://en.wikipedia.org/wiki/Lufthansa_Flight_2904",
       "category": "World history"
     }
   ]
