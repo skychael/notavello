@@ -1,9 +1,18 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-13T22:27:25.592Z",
-  "latest_success_at": "2026-09-13T22:27:25.592Z",
+  "generated_at": "2026-09-14T01:10:40.385Z",
+  "latest_success_at": "2026-09-14T01:10:40.385Z",
   "status": "partial",
   "items": [
+    {
+      "id": "ee8e390990a944fc",
+      "title": "Eastern North Pacific Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-09-13T23:27:53.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
     {
       "id": "70b8f9d624bf370d",
       "title": "Tropical Storm Norbert Graphics",
@@ -14,21 +23,12 @@
       "status": "ok"
     },
     {
-      "id": "3caad114bb84c31c",
-      "title": "Tropical Depression Fifteen-E Wind Speed Probabilities Number 1",
-      "url": "https://www.nhc.noaa.gov/text/refresh/MIAPWSEP5+shtml/132035.shtml",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-09-13T20:35:53.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "b4bcce42aee5b24c",
-      "title": "SPC Sep 13, 2026 2000 UTC Day 1 Convective Outlook",
-      "url": "https://www.spc.noaa.gov/products/outlook/day1otlk_2000.html",
-      "publisher": "Storm Prediction Center",
-      "published_at": "2026-09-13T20:00:08.000Z",
-      "topic": "Severe weather",
+      "id": "b7d3cf44ce092303",
+      "title": "Hydrologic Outlook issued September 13 at 2:59PM AKDT by NWS Anchorage AK",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.568842b9c635e848a7795c1f1cb4a4ebec28bb55.001.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-09-13T22:59:00.000Z",
+      "topic": "Flooding",
       "status": "ok"
     }
   ]
