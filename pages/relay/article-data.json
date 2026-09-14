@@ -1,22 +1,22 @@
 {
   "schema_version": "1.0",
-  "checked_at": "2026-09-14T19:25:42.386Z",
-  "latest_success_at": "2026-09-14T19:25:42.386Z",
+  "checked_at": "2026-09-14T23:10:34.636Z",
+  "latest_success_at": "2026-09-14T23:10:34.636Z",
   "status": "partial",
   "items": [
-    {
-      "title": "Brent at $108: Gulf States Halt Hormuz Talks as Houthis Strike Saudi Airbase",
-      "url": "https://oilprice.com/Latest-Energy-News/World-News/Brent-at-108-Gulf-States-Halt-Hormuz-Talks-as-Houthis-Strike-Saudi-Airbase.html",
-      "publisher": "OilPrice.com",
-      "published_at": "2026-09-14T12:43:00.000Z",
-      "source_id": "oilprice",
-      "status": "ok"
-    },
     {
       "title": "New Attacks in Hormuz and Saudi Test Nerves as War’s Spread Worsens Oil Disruption",
       "url": "https://gcaptain.com/new-attacks-in-hormuz-and-saudi-test-nerves-as-wars-spread-worsens-oil-disruption",
       "publisher": "gCaptain",
       "published_at": "2026-09-14T17:16:46.000Z",
+      "source_id": "gcaptain",
+      "status": "ok"
+    },
+    {
+      "title": "Oil Tanker Rates Top $1 Million a Day as Hormuz War Squeezes Fleet",
+      "url": "https://gcaptain.com/oil-tanker-rates-top-1-million-a-day-as-hormuz-war-squeezes-fleet",
+      "publisher": "gCaptain",
+      "published_at": "2026-09-14T18:24:16.000Z",
       "source_id": "gcaptain",
       "status": "ok"
     },
@@ -29,19 +29,19 @@
       "status": "ok"
     },
     {
+      "title": "The Next Oil Shock Is Never the Last",
+      "url": "https://oilprice.com/Energy/Energy-General/The-Next-Oil-Shock-Is-Never-the-Last.html",
+      "publisher": "OilPrice.com",
+      "published_at": "2026-09-14T19:00:00.000Z",
+      "source_id": "oilprice",
+      "status": "ok"
+    },
+    {
       "title": "The Outlook Is Getting Grimmer By The Day For Oil Exports From The Red Sea",
       "url": "https://www.twz.com/news-features/the-outlook-is-getting-grimmer-by-the-day-for-oil-exports-from-the-red-sea",
       "publisher": "TWZ (The War Zone)",
       "published_at": "2026-09-12T00:37:13.000Z",
       "source_id": "twz",
-      "status": "ok"
-    },
-    {
-      "title": "Trump Demands Ukraine Halt Refinery Strikes As Diesel Surges",
-      "url": "https://gcaptain.com/trump-demands-ukraine-halt-refinery-strikes-as-diesel-surges",
-      "publisher": "gCaptain",
-      "published_at": "2026-09-13T22:11:16.000Z",
-      "source_id": "gcaptain",
       "status": "ok"
     },
     {
@@ -53,19 +53,11 @@
       "status": "ok"
     },
     {
-      "title": "Monsoon Weather Abates, but the Caroline Bezengi is Still Leaking Crude",
-      "url": "https://maritime-executive.com/article/monsoon-weather-abates-but-the-caroline-bezengi-is-still-leaking-crude",
+      "title": "Key Saudi Pipeline Could Be Slowed for Weeks, Affecting Global Oil Trade",
+      "url": "https://maritime-executive.com/article/key-saudi-pipeline-could-be-slowed-for-weeks-affecting-global-oil-supply",
       "publisher": "The Maritime Executive",
-      "published_at": "2026-09-13T22:16:37.000Z",
+      "published_at": "2026-09-14T22:36:09.000Z",
       "source_id": "maritime-executive",
-      "status": "ok"
-    },
-    {
-      "title": "Concurrent attacks across multiple domains force rethinking of air-and-missile-defense",
-      "url": "https://breakingdefense.com/2026/09/concurrent-attacks-across-multiple-domains-force-rethinking-of-air-and-missile-defense",
-      "publisher": "Breaking Defense",
-      "published_at": "2026-09-11T19:41:08.000Z",
-      "source_id": "breaking-defense",
       "status": "ok"
     },
     {
@@ -81,6 +73,14 @@
       "url": "https://breakingdefense.com/2026/09/after-combat-success-afsoc-wants-new-leidos-cruise-missile-on-every-type-of-platform",
       "publisher": "Breaking Defense",
       "published_at": "2026-09-14T18:35:09.000Z",
+      "source_id": "breaking-defense",
+      "status": "ok"
+    },
+    {
+      "title": "Despite fire, lengthy deployment, Navy expects only six-month maintenance for USS Ford",
+      "url": "https://breakingdefense.com/2026/09/despite-fire-lengthy-deployment-navy-expects-only-six-month-maintenance-for-uss-ford",
+      "publisher": "Breaking Defense",
+      "published_at": "2026-09-14T19:27:57.000Z",
       "source_id": "breaking-defense",
       "status": "ok"
     }
