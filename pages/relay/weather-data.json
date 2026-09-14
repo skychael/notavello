@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-14T06:23:02.648Z",
-  "latest_success_at": "2026-09-14T06:23:02.648Z",
+  "generated_at": "2026-09-14T14:09:30.351Z",
+  "latest_success_at": "2026-09-14T14:09:30.351Z",
   "status": "partial",
   "items": [
-    {
-      "id": "f2bc3e5729017844",
-      "title": "SPC Sep 14, 2026 0600 UTC Day 2 Convective Outlook",
-      "url": "https://www.spc.noaa.gov/products/outlook/day2otlk_0600.html",
-      "publisher": "Storm Prediction Center",
-      "published_at": "2026-09-14T05:46:18.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
     {
       "id": "ee8e390990a944fc",
       "title": "Eastern North Pacific Tropical Weather Outlook",
       "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-09-14T05:27:26.000Z",
+      "published_at": "2026-09-14T11:26:59.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "951fd9a4ab7e047e",
+      "id": "83fa3147547470a6",
       "title": "Tropical Storm Norbert Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep4+shtml/032241.shtml?cone=",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep4+shtml/092256.shtml?cone=",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-09-14T03:22:41.000Z",
+      "published_at": "2026-09-14T09:22:56.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "7b368172002968fe",
+      "title": "Summary for Tropical Depression Fifteen-E (EP5/EP152026)",
+      "url": "https://www.nhc.noaa.gov/text/refresh/MIATCPEP5+shtml/140837.shtml",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-09-14T08:37:25.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
