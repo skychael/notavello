@@ -1,9 +1,18 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-14T23:10:35.405Z",
-  "latest_success_at": "2026-09-14T23:10:35.405Z",
+  "generated_at": "2026-09-15T01:31:51.419Z",
+  "latest_success_at": "2026-09-15T01:31:51.419Z",
   "status": "partial",
   "items": [
+    {
+      "id": "ee8e390990a944fc",
+      "title": "Eastern North Pacific Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-09-14T23:20:33.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
     {
       "id": "2fc770046e4e8d90",
       "title": "Tropical Storm Norbert Graphics",
@@ -14,20 +23,11 @@
       "status": "ok"
     },
     {
-      "id": "2765ece48a882320",
-      "title": "Tropical Depression Fifteen-E Wind Speed Probabilities Number 5",
-      "url": "https://www.nhc.noaa.gov/text/refresh/MIAPWSEP5+shtml/142034.shtml",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-09-14T20:35:03.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "b4d1d5bf4f64664b",
-      "title": "Hydrologic Outlook issued September 14 at 6:08AM AKDT by NWS Anchorage AK",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9cec182982b6962653fae26ad08cfccc5f28aa90.001.1.cap",
+      "id": "0740e40a908f8f2f",
+      "title": "Hydrologic Outlook issued September 14 at 3:13PM AKDT by NWS Anchorage AK",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.97716134f80b8bf37b06590016599dd5d0c98acd.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-09-14T14:08:00.000Z",
+      "published_at": "2026-09-14T23:13:00.000Z",
       "topic": "Flooding",
       "status": "ok"
     }
