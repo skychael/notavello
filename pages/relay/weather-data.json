@@ -1,15 +1,15 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-15T18:15:07.525Z",
-  "latest_success_at": "2026-09-15T18:15:07.525Z",
+  "generated_at": "2026-09-15T21:29:15.234Z",
+  "latest_success_at": "2026-09-15T21:29:15.234Z",
   "status": "partial",
   "items": [
     {
-      "id": "b5ad93019d019ede",
-      "title": "Atlantic Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
+      "id": "a97bf65873cf69ea",
+      "title": "Tropical Depression Fifteen-E Wind Speed Probabilities Number 9",
+      "url": "https://www.nhc.noaa.gov/text/refresh/MIAPWSEP5+shtml/152040.shtml",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-09-15T17:51:53.000Z",
+      "published_at": "2026-09-15T20:40:07.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
@@ -23,11 +23,11 @@
       "status": "ok"
     },
     {
-      "id": "38a1d8630caa0383",
-      "title": "SPC Sep 15, 2026 1630 UTC Day 1 Convective Outlook",
-      "url": "https://www.spc.noaa.gov/products/outlook/day1otlk_1630.html",
+      "id": "b4bcce42aee5b24c",
+      "title": "SPC Sep 15, 2026 2000 UTC Day 1 Convective Outlook",
+      "url": "https://www.spc.noaa.gov/products/outlook/day1otlk_2000.html",
       "publisher": "Storm Prediction Center",
-      "published_at": "2026-09-15T16:20:10.000Z",
+      "published_at": "2026-09-15T19:57:13.000Z",
       "topic": "Severe weather",
       "status": "ok"
     }
