@@ -1,36 +1,36 @@
 {
   "schema_version": "1.0",
-  "date_key": "09-14",
-  "display_date": "September 14",
-  "generated_at": "2026-09-14T15:01:44.491Z",
+  "date_key": "09-15",
+  "display_date": "September 15",
+  "generated_at": "2026-09-15T13:34:43.184Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-e2af2aae7c6c07e7fa1914cc",
+      "candidate_id": "event-48dacb6bbb95e0f4f9c75ecb",
       "type": "event",
-      "year": 1958,
-      "text": "The first two German post-war rockets, designed by the German engineer Ernst Mohr, reach the upper atmosphere.",
-      "article_title": "Mohr Rocket",
-      "url": "https://en.wikipedia.org/wiki/Mohr_Rocket",
+      "year": 1971,
+      "text": "The first Greenpeace ship departs from Vancouver to protest against the upcoming Cannikin nuclear weapon test in Alaska.",
+      "article_title": "Greenpeace",
+      "url": "https://en.wikipedia.org/wiki/Greenpeace",
+      "category": "Politics and society"
+    },
+    {
+      "candidate_id": "event-20553dabd6bbb13a44322f70",
+      "type": "event",
+      "year": 1968,
+      "text": "The Soviet Zond 5 spaceship is launched, becoming the first spacecraft to fly around the Moon and re-enter the Earth's atmosphere.",
+      "article_title": "Soviet Union",
+      "url": "https://en.wikipedia.org/wiki/Soviet_Union",
       "category": "World history"
     },
     {
-      "candidate_id": "event-445ef52f51fc7734a7de3764",
+      "candidate_id": "event-e0fbde1cb6f12437b969ba4b",
       "type": "event",
-      "year": 2008,
-      "text": "Aeroflot Flight 821, a Boeing 737-500, crashes into a section of the Trans-Siberian Railway while on approach to Perm International Airport, in Perm, Russia, killing all 88 people on board.",
-      "article_title": "Aeroflot Flight 821",
-      "url": "https://en.wikipedia.org/wiki/Aeroflot_Flight_821",
-      "category": "World history"
-    },
-    {
-      "candidate_id": "event-76022d4f5bd7f7df0ec8a4e6",
-      "type": "event",
-      "year": 1993,
-      "text": "Lufthansa Flight 2904, an Airbus A320, crashes into an embankment after overshooting the runway at Okęcie International Airport (now Warsaw Chopin Airport), killing two people.",
-      "article_title": "Lufthansa Flight 2904",
-      "url": "https://en.wikipedia.org/wiki/Lufthansa_Flight_2904",
+      "year": 1942,
+      "text": "World War II: U.S. Navy aircraft carrier USS Wasp is sunk by Japanese torpedoes at Guadalcanal.",
+      "article_title": "United States Navy",
+      "url": "https://en.wikipedia.org/wiki/United_States_Navy",
       "category": "World history"
     }
   ]
