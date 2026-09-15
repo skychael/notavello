@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-14T06:51:28.744Z",
+  "generatedAt": "2026-09-15T06:33:16.951Z",
   "totals": {
-    "pages": 265,
-    "indexable": 261,
-    "articles": 194,
-    "sitemap": 261,
+    "pages": 266,
+    "indexable": 262,
+    "articles": 195,
+    "sitemap": 262,
     "errors": 0,
-    "warnings": 200
+    "warnings": 202
   },
   "errors": [],
   "warnings": [
@@ -313,6 +313,16 @@
     {
       "type": "topic-review",
       "page": "/pages/blog/half-a-hormuz-is-still-a-fuel-bill/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/hanish-islands-put-suez-on-the-fuel-bill/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/hanish-islands-put-suez-on-the-fuel-bill/",
       "detail": "title/description lacks a clear AI, software, or computing connection"
     },
     {
@@ -1020,7 +1030,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 265,
+      "incomingLinks": 266,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -1044,7 +1054,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 265,
+      "incomingLinks": 266,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -1152,7 +1162,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 265,
+      "incomingLinks": 266,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -1164,9 +1174,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 265,
-      "lastmod": "2026-09-13",
-      "bodyWords": 637
+      "incomingLinks": 266,
+      "lastmod": "2026-09-14",
+      "bodyWords": 636
     },
     {
       "route": "/pages/blog/a-plain-language-guide-to-file-permissions/",
@@ -1440,9 +1450,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 133,
-      "lastmod": "2026-09-13",
-      "bodyWords": 2428
+      "incomingLinks": 134,
+      "lastmod": "2026-09-14",
+      "bodyWords": 2439
     },
     {
       "route": "/pages/blog/apple-speechanalyzer-local-transcription-apps/",
@@ -1728,7 +1738,7 @@
       "canonical": "https://notavello.com/pages/blog/diesel-inventories-just-got-a-harvest-deadline/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 4,
+      "incomingLinks": 5,
       "lastmod": "2026-09-11",
       "bodyWords": 1273
     },
@@ -2019,6 +2029,18 @@
       "incomingLinks": 2,
       "lastmod": "2026-08-24",
       "bodyWords": 1425
+    },
+    {
+      "route": "/pages/blog/hanish-islands-put-suez-on-the-fuel-bill/",
+      "file": "pages/blog/hanish-islands-put-suez-on-the-fuel-bill/index.html",
+      "title": "Hanish Islands Put Suez On The Fuel Bill — The Export | Notavello",
+      "description": "Houthi gains near Bab el-Mandeb turn the Red Sea workaround into a fuel-price problem for diesel, shipping and groceries.",
+      "canonical": "https://notavello.com/pages/blog/hanish-islands-put-suez-on-the-fuel-bill/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-09-15",
+      "bodyWords": 1681
     },
     {
       "route": "/pages/blog/hormuz-corridor-deal-is-a-shipping-bottleneck/",
@@ -2761,8 +2783,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-13",
-      "bodyWords": 826
+      "lastmod": "2026-09-14",
+      "bodyWords": 835
     },
     {
       "route": "/pages/blog/page-11/",
@@ -2773,8 +2795,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": "2026-09-13",
-      "bodyWords": 700
+      "lastmod": "2026-09-14",
+      "bodyWords": 745
     },
     {
       "route": "/pages/blog/page-2/",
@@ -2785,8 +2807,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-13",
-      "bodyWords": 668
+      "lastmod": "2026-09-14",
+      "bodyWords": 667
     },
     {
       "route": "/pages/blog/page-3/",
@@ -2797,8 +2819,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-13",
-      "bodyWords": 671
+      "lastmod": "2026-09-14",
+      "bodyWords": 668
     },
     {
       "route": "/pages/blog/page-4/",
@@ -2809,8 +2831,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-13",
-      "bodyWords": 687
+      "lastmod": "2026-09-14",
+      "bodyWords": 686
     },
     {
       "route": "/pages/blog/page-5/",
@@ -2821,8 +2843,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-13",
-      "bodyWords": 664
+      "lastmod": "2026-09-14",
+      "bodyWords": 667
     },
     {
       "route": "/pages/blog/page-6/",
@@ -2833,8 +2855,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-13",
-      "bodyWords": 646
+      "lastmod": "2026-09-14",
+      "bodyWords": 645
     },
     {
       "route": "/pages/blog/page-7/",
@@ -2845,8 +2867,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-13",
-      "bodyWords": 696
+      "lastmod": "2026-09-14",
+      "bodyWords": 700
     },
     {
       "route": "/pages/blog/page-8/",
@@ -2857,8 +2879,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-13",
-      "bodyWords": 714
+      "lastmod": "2026-09-14",
+      "bodyWords": 709
     },
     {
       "route": "/pages/blog/page-9/",
@@ -2869,8 +2891,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-13",
-      "bodyWords": 832
+      "lastmod": "2026-09-14",
+      "bodyWords": 817
     },
     {
       "route": "/pages/blog/phosphate-is-the-fertilizer-shock-that-did-not-fade/",
@@ -3636,7 +3658,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 265,
+      "incomingLinks": 266,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -3648,7 +3670,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 265,
+      "incomingLinks": 266,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -3660,7 +3682,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 265,
+      "incomingLinks": 266,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -3672,7 +3694,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 265,
+      "incomingLinks": 266,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -3684,7 +3706,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 265,
+      "incomingLinks": 266,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -3697,8 +3719,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-09-14",
-      "bodyWords": 339
+      "lastmod": "2026-09-15",
+      "bodyWords": 345
     },
     {
       "route": "/pages/sample",
@@ -3720,7 +3742,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 265,
+      "incomingLinks": 266,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -3732,7 +3754,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 265,
+      "incomingLinks": 266,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -3756,7 +3778,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 265,
+      "incomingLinks": 266,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -4188,7 +4210,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 265,
+      "incomingLinks": 266,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }
