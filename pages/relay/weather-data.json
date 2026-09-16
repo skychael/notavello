@@ -1,16 +1,25 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-15T21:29:15.234Z",
-  "latest_success_at": "2026-09-15T21:29:15.234Z",
+  "generated_at": "2026-09-16T00:25:52.591Z",
+  "latest_success_at": "2026-09-16T00:25:52.591Z",
   "status": "partial",
   "items": [
     {
-      "id": "a97bf65873cf69ea",
-      "title": "Tropical Depression Fifteen-E Wind Speed Probabilities Number 9",
-      "url": "https://www.nhc.noaa.gov/text/refresh/MIAPWSEP5+shtml/152040.shtml",
+      "id": "b5ad93019d019ede",
+      "title": "Atlantic Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-09-15T20:40:07.000Z",
+      "published_at": "2026-09-15T23:16:13.000Z",
       "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "d39f1f78f57ede79",
+      "title": "Hydrologic Outlook issued September 15 at 3:20PM AKDT by NWS Anchorage AK",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.96fe7d78b64e7847d4c0df8b8feae5e35565372b.001.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-09-15T23:20:00.000Z",
+      "topic": "Flooding",
       "status": "ok"
     },
     {
@@ -20,15 +29,6 @@
       "publisher": "National Weather Service",
       "published_at": "2026-09-14T23:13:00.000Z",
       "topic": "Flooding",
-      "status": "ok"
-    },
-    {
-      "id": "b4bcce42aee5b24c",
-      "title": "SPC Sep 15, 2026 2000 UTC Day 1 Convective Outlook",
-      "url": "https://www.spc.noaa.gov/products/outlook/day1otlk_2000.html",
-      "publisher": "Storm Prediction Center",
-      "published_at": "2026-09-15T19:57:13.000Z",
-      "topic": "Severe weather",
       "status": "ok"
     }
   ]
