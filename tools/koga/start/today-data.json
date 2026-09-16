@@ -1,36 +1,36 @@
 {
   "schema_version": "1.0",
-  "date_key": "09-15",
-  "display_date": "September 15",
-  "generated_at": "2026-09-15T13:34:43.184Z",
+  "date_key": "09-16",
+  "display_date": "September 16",
+  "generated_at": "2026-09-16T13:31:06.347Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-48dacb6bbb95e0f4f9c75ecb",
+      "candidate_id": "event-41ce98183f9eadf2fdfe055f",
       "type": "event",
-      "year": 1971,
-      "text": "The first Greenpeace ship departs from Vancouver to protest against the upcoming Cannikin nuclear weapon test in Alaska.",
-      "article_title": "Greenpeace",
-      "url": "https://en.wikipedia.org/wiki/Greenpeace",
-      "category": "Politics and society"
+      "year": 2021,
+      "text": "Inspiration4, the first private orbital crewed spaceflight, is launched from the Kennedy Space Center.",
+      "article_title": "Inspiration4",
+      "url": "https://en.wikipedia.org/wiki/Inspiration4",
+      "category": "Science and technology"
     },
     {
-      "candidate_id": "event-20553dabd6bbb13a44322f70",
+      "candidate_id": "event-521ae18166e91be50c0ea132",
       "type": "event",
-      "year": 1968,
-      "text": "The Soviet Zond 5 spaceship is launched, becoming the first spacecraft to fly around the Moon and re-enter the Earth's atmosphere.",
-      "article_title": "Soviet Union",
-      "url": "https://en.wikipedia.org/wiki/Soviet_Union",
+      "year": 1955,
+      "text": "A Soviet Zulu-class submarine becomes the first to launch a ballistic missile.",
+      "article_title": "Zulu-class submarine",
+      "url": "https://en.wikipedia.org/wiki/Zulu-class_submarine",
       "category": "World history"
     },
     {
-      "candidate_id": "event-e0fbde1cb6f12437b969ba4b",
+      "candidate_id": "event-70e0cb260866085a8cfb0f5d",
       "type": "event",
-      "year": 1942,
-      "text": "World War II: U.S. Navy aircraft carrier USS Wasp is sunk by Japanese torpedoes at Guadalcanal.",
-      "article_title": "United States Navy",
-      "url": "https://en.wikipedia.org/wiki/United_States_Navy",
+      "year": 1975,
+      "text": "The first prototype of the Mikoyan MiG-31 interceptor makes its maiden flight.",
+      "article_title": "Mikoyan MiG-31",
+      "url": "https://en.wikipedia.org/wiki/Mikoyan_MiG-31",
       "category": "World history"
     }
   ]
