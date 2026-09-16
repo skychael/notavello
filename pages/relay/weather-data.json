@@ -1,24 +1,24 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-16T11:43:15.952Z",
-  "latest_success_at": "2026-09-16T11:43:15.952Z",
+  "generated_at": "2026-09-16T17:04:27.072Z",
+  "latest_success_at": "2026-09-16T17:04:27.072Z",
   "status": "partial",
   "items": [
+    {
+      "id": "836aba6a6b328d58",
+      "title": "TEST Tsunami Warning issued September 16 at 12:16PM EDT until September 16 at 1:16PM EDT by NWS National Tsunami Warning Center",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.93c00ae3a9a93db418bd67c53ad7c4e4debf9981.001.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-09-16T16:16:00.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
     {
       "id": "ee8e390990a944fc",
       "title": "Eastern North Pacific Tropical Weather Outlook",
       "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
       "publisher": "National Hurricane Center",
       "published_at": "2026-09-16T11:34:18.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "91e5697961c0d7ba",
-      "title": "SPC Sep 16, 2026 0730 UTC Day 3 Severe Thunderstorm Outlook",
-      "url": "https://www.spc.noaa.gov/products/outlook/day3otlk_0730.html",
-      "publisher": "Storm Prediction Center",
-      "published_at": "2026-09-16T07:31:42.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
