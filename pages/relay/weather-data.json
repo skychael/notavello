@@ -1,9 +1,18 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-17T13:32:33.907Z",
-  "latest_success_at": "2026-09-17T13:32:33.907Z",
+  "generated_at": "2026-09-17T18:17:59.805Z",
+  "latest_success_at": "2026-09-17T18:17:59.805Z",
   "status": "partial",
   "items": [
+    {
+      "id": "ee8e390990a944fc",
+      "title": "Eastern North Pacific Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-09-17T17:53:52.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
     {
       "id": "8c2da2c48a0a2d94",
       "title": "Flood Watch issued September 17 at 3:15AM HST until September 18 at 6:00AM HST by NWS Honolulu HI",
@@ -14,20 +23,11 @@
       "status": "ok"
     },
     {
-      "id": "ee8e390990a944fc",
-      "title": "Eastern North Pacific Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-09-17T11:54:37.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "367a48215cbad27a",
-      "title": "SPC Sep 17, 2026 1300 UTC Day 1 Convective Outlook",
-      "url": "https://www.spc.noaa.gov/products/outlook/day1otlk_1300.html",
+      "id": "38a1d8630caa0383",
+      "title": "SPC Sep 17, 2026 1630 UTC Day 1 Convective Outlook",
+      "url": "https://www.spc.noaa.gov/products/outlook/day1otlk_1630.html",
       "publisher": "Storm Prediction Center",
-      "published_at": "2026-09-17T12:33:14.000Z",
+      "published_at": "2026-09-17T16:13:11.000Z",
       "topic": "Severe weather",
       "status": "ok"
     }

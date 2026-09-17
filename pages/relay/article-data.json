@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "checked_at": "2026-09-17T13:32:33.252Z",
-  "latest_success_at": "2026-09-17T13:32:33.252Z",
+  "checked_at": "2026-09-17T18:17:59.238Z",
+  "latest_success_at": "2026-09-17T18:17:59.238Z",
   "status": "partial",
   "items": [
     {
@@ -13,11 +13,19 @@
       "status": "ok"
     },
     {
-      "title": "Saudi Oil Crisis Is About to Hit Europe",
-      "url": "https://oilprice.com/Energy/Crude-Oil/Saudi-Oil-Crisis-Is-About-to-Hit-Europe.html",
+      "title": "Oil Prices Slide as China Presses Iran to Rein In the Houthis",
+      "url": "https://oilprice.com/Energy/Crude-Oil/Oil-Prices-Slide-as-China-Presses-Iran-to-Rein-In-the-Houthis.html",
       "publisher": "OilPrice.com",
-      "published_at": "2026-09-16T18:32:00.000Z",
+      "published_at": "2026-09-17T14:54:00.000Z",
       "source_id": "oilprice",
+      "status": "ok"
+    },
+    {
+      "title": "Drone Attack Kills Master, Injures Three Crewmembers in Black Sea",
+      "url": "https://maritime-executive.com/article/drone-attack-kills-master-injures-three-crewmembers-in-black-sea",
+      "publisher": "The Maritime Executive",
+      "published_at": "2026-09-17T16:30:13.000Z",
+      "source_id": "maritime-executive",
       "status": "ok"
     },
     {
@@ -29,26 +37,18 @@
       "status": "ok"
     },
     {
-      "title": "Hormuz Route Negotiations Would Have Handed Entry and Exit Control to Iran",
-      "url": "https://maritime-executive.com/article/hormuz-route-negotiations-would-have-handed-substantial-control-to-iran",
-      "publisher": "The Maritime Executive",
-      "published_at": "2026-09-16T18:15:18.000Z",
-      "source_id": "maritime-executive",
-      "status": "ok"
-    },
-    {
-      "title": "Saudis Pivot to Send More Oil Via Hormuz After Pipeline Shut",
-      "url": "https://gcaptain.com/saudis-pivot-to-send-more-oil-via-hormuz-after-pipeline-shut",
-      "publisher": "gCaptain",
-      "published_at": "2026-09-16T16:48:55.000Z",
-      "source_id": "gcaptain",
-      "status": "ok"
-    },
-    {
       "title": "Container Shipping Returns to Suez Despite Rising Red Sea Risks",
       "url": "https://gcaptain.com/container-shipping-returns-to-suez-despite-rising-red-sea-risks",
       "publisher": "gCaptain",
       "published_at": "2026-09-16T21:51:10.000Z",
+      "source_id": "gcaptain",
+      "status": "ok"
+    },
+    {
+      "title": "China Presses Iran to Help Rein in Houthis After Saudi Appeal, Sources Say",
+      "url": "https://gcaptain.com/china-presses-iran-to-help-rein-in-houthis-after-saudi-appeal-sources-say",
+      "publisher": "gCaptain",
+      "published_at": "2026-09-17T12:56:52.000Z",
       "source_id": "gcaptain",
       "status": "ok"
     },
@@ -77,10 +77,10 @@
       "status": "ok"
     },
     {
-      "title": "One of the world’s most versatile attack planes is taking on the counter-UAS mission",
-      "url": "https://breakingdefense.com/2026/09/one-of-the-worlds-most-versatile-attack-planes-is-taking-on-the-counter-uas-mission",
+      "title": "Air Force seeks 737 MAX for VIP airlift",
+      "url": "https://breakingdefense.com/2026/09/air-force-seeks-737-max-for-vip-airlift",
       "publisher": "Breaking Defense",
-      "published_at": "2026-09-16T17:52:00.000Z",
+      "published_at": "2026-09-17T15:02:32.000Z",
       "source_id": "breaking-defense",
       "status": "ok"
     }
