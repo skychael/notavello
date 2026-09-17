@@ -1,24 +1,15 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-17T07:44:54.593Z",
-  "latest_success_at": "2026-09-17T07:44:54.593Z",
+  "generated_at": "2026-09-17T13:32:33.907Z",
+  "latest_success_at": "2026-09-17T13:32:33.907Z",
   "status": "partial",
   "items": [
     {
-      "id": "91e5697961c0d7ba",
-      "title": "SPC Sep 17, 2026 0730 UTC Day 3 Severe Thunderstorm Outlook",
-      "url": "https://www.spc.noaa.gov/products/outlook/day3otlk_0730.html",
-      "publisher": "Storm Prediction Center",
-      "published_at": "2026-09-17T07:40:42.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "f2bc3e5729017844",
-      "title": "SPC Sep 17, 2026 0600 UTC Day 2 Convective Outlook",
-      "url": "https://www.spc.noaa.gov/products/outlook/day2otlk_0600.html",
-      "publisher": "Storm Prediction Center",
-      "published_at": "2026-09-17T05:50:19.000Z",
+      "id": "8c2da2c48a0a2d94",
+      "title": "Flood Watch issued September 17 at 3:15AM HST until September 18 at 6:00AM HST by NWS Honolulu HI",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.cd5e07b644c2fb83e2ef2cf2067d094ddb255fbf.001.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-09-17T13:15:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
@@ -27,8 +18,17 @@
       "title": "Eastern North Pacific Tropical Weather Outlook",
       "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-09-17T05:10:30.000Z",
+      "published_at": "2026-09-17T11:54:37.000Z",
       "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "367a48215cbad27a",
+      "title": "SPC Sep 17, 2026 1300 UTC Day 1 Convective Outlook",
+      "url": "https://www.spc.noaa.gov/products/outlook/day1otlk_1300.html",
+      "publisher": "Storm Prediction Center",
+      "published_at": "2026-09-17T12:33:14.000Z",
+      "topic": "Severe weather",
       "status": "ok"
     }
   ]

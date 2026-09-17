@@ -2,7 +2,7 @@
   "schema_version": 1,
   "archive_date": "2026-09-17",
   "created_at": "2026-09-17T01:29:09.297Z",
-  "updated_at": "2026-09-17T07:44:54.894Z",
+  "updated_at": "2026-09-17T13:32:34.316Z",
   "articles": [
     {
       "title": "Oil Prices Slide as Saudi Arabia Reroutes Crude via Oman",
@@ -10,6 +10,15 @@
       "publisher": "OilPrice.com",
       "published_at": "2026-09-17T05:20:00.000Z",
       "source_id": "oilprice",
+      "first_seen_at": "2026-09-17T01:29:09.297Z",
+      "status": "ok"
+    },
+    {
+      "title": "Container Shipping Returns to Suez Despite Rising Red Sea Risks",
+      "url": "https://gcaptain.com/container-shipping-returns-to-suez-despite-rising-red-sea-risks",
+      "publisher": "gCaptain",
+      "published_at": "2026-09-16T21:51:10.000Z",
+      "source_id": "gcaptain",
       "first_seen_at": "2026-09-17T01:29:09.297Z",
       "status": "ok"
     },
@@ -46,6 +55,15 @@
       "publisher": "OilPrice.com",
       "published_at": "2026-09-16T17:00:00.000Z",
       "source_id": "oilprice",
+      "first_seen_at": "2026-09-17T01:29:09.297Z",
+      "status": "ok"
+    },
+    {
+      "title": "Saudis Pivot to Send More Oil Via Hormuz After Pipeline Shut",
+      "url": "https://gcaptain.com/saudis-pivot-to-send-more-oil-via-hormuz-after-pipeline-shut",
+      "publisher": "gCaptain",
+      "published_at": "2026-09-16T16:48:55.000Z",
+      "source_id": "gcaptain",
       "first_seen_at": "2026-09-17T01:29:09.297Z",
       "status": "ok"
     },
