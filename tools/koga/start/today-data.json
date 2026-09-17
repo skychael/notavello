@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "09-16",
-  "display_date": "September 16",
-  "generated_at": "2026-09-16T13:31:06.347Z",
+  "date_key": "09-17",
+  "display_date": "September 17",
+  "generated_at": "2026-09-17T13:29:18.816Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-41ce98183f9eadf2fdfe055f",
+      "candidate_id": "event-e007fc28147ee2388e4dca43",
       "type": "event",
-      "year": 2021,
-      "text": "Inspiration4, the first private orbital crewed spaceflight, is launched from the Kennedy Space Center.",
-      "article_title": "Inspiration4",
-      "url": "https://en.wikipedia.org/wiki/Inspiration4",
-      "category": "Science and technology"
-    },
-    {
-      "candidate_id": "event-521ae18166e91be50c0ea132",
-      "type": "event",
-      "year": 1955,
-      "text": "A Soviet Zulu-class submarine becomes the first to launch a ballistic missile.",
-      "article_title": "Zulu-class submarine",
-      "url": "https://en.wikipedia.org/wiki/Zulu-class_submarine",
+      "year": 1944,
+      "text": "World War II: Soviet troops launch the Tallinn Offensive against Germany and pro-independence Estonian units.",
+      "article_title": "Tallinn offensive",
+      "url": "https://en.wikipedia.org/wiki/Tallinn_offensive",
       "category": "World history"
     },
     {
-      "candidate_id": "event-70e0cb260866085a8cfb0f5d",
+      "candidate_id": "event-fde7f71d6ef54ef0857b8e5e",
       "type": "event",
-      "year": 1975,
-      "text": "The first prototype of the Mikoyan MiG-31 interceptor makes its maiden flight.",
-      "article_title": "Mikoyan MiG-31",
-      "url": "https://en.wikipedia.org/wiki/Mikoyan_MiG-31",
+      "year": 2018,
+      "text": "A Russian reconnaissance aircraft carrying 15 people on board is brought down by a Syrian surface-to-air missile over the Mediterranean Sea.",
+      "article_title": "Syria missile strikes (September 2018)",
+      "url": "https://en.wikipedia.org/wiki/Syria_missile_strikes_(September_2018)",
       "category": "World history"
+    },
+    {
+      "candidate_id": "event-13b3268442b8d782cfe3a758",
+      "type": "event",
+      "year": 2006,
+      "text": "Fourpeaked Mountain in Alaska erupts, marking the first eruption for the volcano in at least 10,000 years.",
+      "article_title": "Fourpeaked Mountain",
+      "url": "https://en.wikipedia.org/wiki/Fourpeaked_Mountain",
+      "category": "Disasters and exploration"
     }
   ]
 }
