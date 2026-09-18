@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-18T16:29:03.943Z",
-  "latest_success_at": "2026-09-18T16:29:03.943Z",
+  "generated_at": "2026-09-18T19:40:31.502Z",
+  "latest_success_at": "2026-09-18T19:40:31.502Z",
   "status": "partial",
   "items": [
     {
-      "id": "b5ad93019d019ede",
-      "title": "Atlantic Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
+      "id": "ee8e390990a944fc",
+      "title": "Eastern North Pacific Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-09-18T14:28:39.000Z",
+      "published_at": "2026-09-18T17:43:22.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "d39fdf63af4cc57b",
-      "title": "Flash Flood Watch issued September 18 at 3:21AM MDT until September 19 at 6:00PM MDT by NWS Great Falls MT",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.fb5a12567f51b31f1d640bff8cf9c1babe4bc489.001.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-09-18T09:21:00.000Z",
-      "topic": "Wildfire",
+      "id": "04c544708f65ef41",
+      "title": "SPC MD 2306",
+      "url": "https://www.spc.noaa.gov/products/md/md2306.html",
+      "publisher": "Storm Prediction Center",
+      "published_at": "2026-09-18T19:27:05.000Z",
+      "topic": "Severe weather",
       "status": "ok"
     },
     {
-      "id": "9e394b6636ad8f03",
-      "title": "Flash Flood Watch issued September 18 at 3:21AM MDT until September 20 at 12:00AM MDT by NWS Great Falls MT",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.fb5a12567f51b31f1d640bff8cf9c1babe4bc489.002.1.cap",
+      "id": "e08e035ea6b4c555",
+      "title": "Flood Watch issued September 18 at 11:52AM MDT until September 19 at 12:00AM MDT by NWS Albuquerque NM",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.e5f3da4d2776797dc8f0f7a03e83a5bffc4f7482.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-09-18T09:21:00.000Z",
+      "published_at": "2026-09-18T17:52:00.000Z",
       "topic": "Wildfire",
       "status": "ok"
     }
