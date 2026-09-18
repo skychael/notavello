@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-18T19:40:31.502Z",
-  "latest_success_at": "2026-09-18T19:40:31.502Z",
+  "generated_at": "2026-09-18T22:37:34.743Z",
+  "latest_success_at": "2026-09-18T22:37:34.743Z",
   "status": "partial",
   "items": [
     {
@@ -14,21 +14,21 @@
       "status": "ok"
     },
     {
-      "id": "04c544708f65ef41",
-      "title": "SPC MD 2306",
-      "url": "https://www.spc.noaa.gov/products/md/md2306.html",
+      "id": "33b00ac24f5a32ab",
+      "title": "SPC MD 2308",
+      "url": "https://www.spc.noaa.gov/products/md/md2308.html",
       "publisher": "Storm Prediction Center",
-      "published_at": "2026-09-18T19:27:05.000Z",
+      "published_at": "2026-09-18T22:28:03.000Z",
       "topic": "Severe weather",
       "status": "ok"
     },
     {
-      "id": "e08e035ea6b4c555",
-      "title": "Flood Watch issued September 18 at 11:52AM MDT until September 19 at 12:00AM MDT by NWS Albuquerque NM",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.e5f3da4d2776797dc8f0f7a03e83a5bffc4f7482.001.1.cap",
+      "id": "45d74802a84ec0d4",
+      "title": "Dust Storm Warning issued September 18 at 4:20PM MDT until September 18 at 5:00PM MDT by NWS Goodland KS",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.ad43209fcb5a8fb3b712b639f8bde1ddc87db68b.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-09-18T17:52:00.000Z",
-      "topic": "Wildfire",
+      "published_at": "2026-09-18T22:20:00.000Z",
+      "topic": "Severe weather",
       "status": "ok"
     }
   ]
