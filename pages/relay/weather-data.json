@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-18T05:58:59.412Z",
-  "latest_success_at": "2026-09-18T05:58:59.412Z",
+  "generated_at": "2026-09-18T11:22:50.506Z",
+  "latest_success_at": "2026-09-18T11:22:50.506Z",
   "status": "partial",
   "items": [
     {
@@ -23,11 +23,11 @@
       "status": "ok"
     },
     {
-      "id": "672ee263bc31f121",
-      "title": "Flood Watch issued September 17 at 8:25PM MDT until September 18 at 3:00AM MDT by NWS Albuquerque NM",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f7236bc01a7e453572aad2a703f848666e3d4f5d.001.1.cap",
+      "id": "d39fdf63af4cc57b",
+      "title": "Flash Flood Watch issued September 18 at 3:21AM MDT until September 19 at 6:00PM MDT by NWS Great Falls MT",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.fb5a12567f51b31f1d640bff8cf9c1babe4bc489.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-09-18T02:25:00.000Z",
+      "published_at": "2026-09-18T09:21:00.000Z",
       "topic": "Wildfire",
       "status": "ok"
     }
