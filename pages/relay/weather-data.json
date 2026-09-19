@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-19T05:59:25.731Z",
-  "latest_success_at": "2026-09-19T05:59:25.731Z",
+  "generated_at": "2026-09-19T11:06:42.862Z",
+  "latest_success_at": "2026-09-19T11:06:42.862Z",
   "status": "partial",
   "items": [
     {
@@ -14,20 +14,20 @@
       "status": "ok"
     },
     {
-      "id": "fe5c32a6e97bed8b",
-      "title": "Flash Flood Watch issued September 18 at 10:39AM MDT until September 19 at 6:00PM MDT by NWS Great Falls MT",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.01a07f6d7ad77a23df805e8d21e3a41344e89d6e.003.1.cap",
+      "id": "ad7e9b8d3fc324fe",
+      "title": "Flash Flood Watch issued September 19 at 3:09AM MDT until September 20 at 12:00AM MDT by NWS Great Falls MT",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.4decaa076464ac22f7719fe79884d641abf4e54e.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-09-18T16:39:00.000Z",
+      "published_at": "2026-09-19T09:09:00.000Z",
       "topic": "Wildfire",
       "status": "ok"
     },
     {
-      "id": "17d992c908fce272",
-      "title": "Flash Flood Watch issued September 18 at 10:39AM MDT until September 20 at 12:00AM MDT by NWS Great Falls MT",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.01a07f6d7ad77a23df805e8d21e3a41344e89d6e.004.1.cap",
+      "id": "3d106e595866416b",
+      "title": "Flash Flood Watch issued September 19 at 3:09AM MDT until September 19 at 6:00PM MDT by NWS Great Falls MT",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.4decaa076464ac22f7719fe79884d641abf4e54e.002.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-09-18T16:39:00.000Z",
+      "published_at": "2026-09-19T09:09:00.000Z",
       "topic": "Wildfire",
       "status": "ok"
     }
