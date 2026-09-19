@@ -1,34 +1,34 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-19T18:04:48.528Z",
-  "latest_success_at": "2026-09-19T18:04:48.528Z",
+  "generated_at": "2026-09-19T20:46:01.857Z",
+  "latest_success_at": "2026-09-19T20:46:01.857Z",
   "status": "partial",
   "items": [
     {
-      "id": "ee8e390990a944fc",
-      "title": "Eastern North Pacific Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
+      "id": "dfd8725715c0a286",
+      "title": "Tropical Depression Six Wind Speed Probabilities Number 2",
+      "url": "https://www.nhc.noaa.gov/text/refresh/MIAPWSAT1+shtml/192033.shtml",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-09-19T17:37:08.000Z",
+      "published_at": "2026-09-19T20:33:40.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "1391a9abaa75ae19",
-      "title": "Flood Warning issued September 19 at 8:23AM CDT until September 22 at 1:00AM CDT by NWS La Crosse WI",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.c1e6c17fd0d55b514b8483a1a7f5a1fef44da828.002.1.cap",
+      "id": "560c1b2d050c9bda",
+      "title": "Flood Warning issued September 19 at 3:12PM CDT until September 21 at 5:35PM CDT by NWS La Crosse WI",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.53145235bf4d637917d5a898fe42dcbc6f7dcab0.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-09-19T13:23:00.000Z",
+      "published_at": "2026-09-19T20:12:00.000Z",
       "topic": "Flooding",
       "status": "ok"
     },
     {
-      "id": "f1a320f026f77ddc",
-      "title": "Flood Warning issued September 19 at 8:23AM CDT until September 21 at 10:30PM CDT by NWS La Crosse WI",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.c1e6c17fd0d55b514b8483a1a7f5a1fef44da828.003.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-09-19T13:23:00.000Z",
-      "topic": "Flooding",
+      "id": "3de78d9158877e8a",
+      "title": "SPC MD 2309",
+      "url": "https://www.spc.noaa.gov/products/md/md2309.html",
+      "publisher": "Storm Prediction Center",
+      "published_at": "2026-09-19T20:22:02.000Z",
+      "topic": "Severe weather",
       "status": "ok"
     }
   ]
