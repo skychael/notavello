@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "09-18",
-  "display_date": "September 18",
-  "generated_at": "2026-09-18T12:58:35.046Z",
+  "date_key": "09-19",
+  "display_date": "September 19",
+  "generated_at": "2026-09-19T12:30:28.252Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-71710b9a075bf44276923664",
+      "candidate_id": "event-43c1277d303ebfc0dc0cee30",
       "type": "event",
-      "year": 1977,
-      "text": "Voyager I takes the first distant photograph of the Earth and the Moon together.",
-      "article_title": "Voyager 1",
-      "url": "https://en.wikipedia.org/wiki/Voyager_1",
+      "year": 2008,
+      "text": "A Learjet 60 carrying musicians Travis Barker and Adam \"DJ AM\" Goldstein crashes during a rejected takeoff from Colombia Metropolitan Airport in West Columbia, South Carolina, killing four of the six people on board. Barker and Goldstein both survive.",
+      "article_title": "Learjet 60",
+      "url": "https://en.wikipedia.org/wiki/Learjet_60",
       "category": "World history"
     },
     {
-      "candidate_id": "event-8b68bade2af12d85467ab364",
+      "candidate_id": "event-8e599069435f3fd7b588e285",
       "type": "event",
-      "year": 1961,
-      "text": "United Nations Secretary-General Dag Hammarskjöld dies in an air crash while attempting to negotiate peace in the Katanga region of the Democratic Republic of the Congo.",
-      "article_title": "Dag Hammarskjöld",
-      "url": "https://en.wikipedia.org/wiki/Dag_Hammarskj%C3%B6ld",
+      "year": 2021,
+      "text": "The Cumbre Vieja volcano, on the island of La Palma in the Canary Islands, erupts. The eruption lasts for almost three months, ending on December 13.",
+      "article_title": "Cumbre Vieja",
+      "url": "https://en.wikipedia.org/wiki/Cumbre_Vieja",
       "category": "Disasters and exploration"
     },
     {
-      "candidate_id": "event-3cf92dc062bf864d7f7d265c",
+      "candidate_id": "event-5ef661ffe430587661c822ec",
       "type": "event",
-      "year": 1980,
-      "text": "Soyuz 38 carries two cosmonauts (including one Cuban) to the Salyut 6 space station.",
-      "article_title": "Soyuz 38",
-      "url": "https://en.wikipedia.org/wiki/Soyuz_38",
-      "category": "Science and technology"
+      "year": 1976,
+      "text": "Turkish Airlines Flight 452 hits the Taurus Mountains, outskirt of Karatepe, Turkey, killing all 154 passengers and crew.",
+      "article_title": "Turkish Airlines Flight 452",
+      "url": "https://en.wikipedia.org/wiki/Turkish_Airlines_Flight_452",
+      "category": "World history"
     }
   ]
 }
