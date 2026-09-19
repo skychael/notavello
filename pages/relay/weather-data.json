@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-19T01:14:08.219Z",
-  "latest_success_at": "2026-09-19T01:14:08.219Z",
+  "generated_at": "2026-09-19T05:59:25.731Z",
+  "latest_success_at": "2026-09-19T05:59:25.731Z",
   "status": "partial",
   "items": [
     {
-      "id": "b5ad93019d019ede",
-      "title": "Atlantic Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
+      "id": "ee8e390990a944fc",
+      "title": "Eastern North Pacific Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-09-18T23:43:58.000Z",
+      "published_at": "2026-09-19T05:40:01.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "e08e035ea6b4c555",
-      "title": "Flood Watch issued September 18 at 11:52AM MDT until September 19 at 12:00AM MDT by NWS Albuquerque NM",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.e5f3da4d2776797dc8f0f7a03e83a5bffc4f7482.001.1.cap",
+      "id": "fe5c32a6e97bed8b",
+      "title": "Flash Flood Watch issued September 18 at 10:39AM MDT until September 19 at 6:00PM MDT by NWS Great Falls MT",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.01a07f6d7ad77a23df805e8d21e3a41344e89d6e.003.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-09-18T17:52:00.000Z",
+      "published_at": "2026-09-18T16:39:00.000Z",
       "topic": "Wildfire",
       "status": "ok"
     },
     {
-      "id": "7a7745b18015bf66",
-      "title": "Flash Flood Watch issued September 18 at 10:50AM MDT until September 19 at 12:00AM MDT by NWS Boise ID",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.5c63cbb4a1c4bf1788427409b0a4be71a2154dbd.001.1.cap",
+      "id": "17d992c908fce272",
+      "title": "Flash Flood Watch issued September 18 at 10:39AM MDT until September 20 at 12:00AM MDT by NWS Great Falls MT",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.01a07f6d7ad77a23df805e8d21e3a41344e89d6e.004.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-09-18T16:50:00.000Z",
+      "published_at": "2026-09-18T16:39:00.000Z",
       "topic": "Wildfire",
       "status": "ok"
     }
