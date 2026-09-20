@@ -1,15 +1,15 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-19T23:11:13.525Z",
-  "latest_success_at": "2026-09-19T23:11:13.525Z",
+  "generated_at": "2026-09-20T01:14:01.687Z",
+  "latest_success_at": "2026-09-20T01:14:01.687Z",
   "status": "partial",
   "items": [
     {
-      "id": "dfd8725715c0a286",
-      "title": "Tropical Depression Six Wind Speed Probabilities Number 2",
-      "url": "https://www.nhc.noaa.gov/text/refresh/MIAPWSAT1+shtml/192033.shtml",
+      "id": "ee8e390990a944fc",
+      "title": "Eastern North Pacific Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-09-19T20:33:40.000Z",
+      "published_at": "2026-09-19T23:39:40.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
@@ -23,11 +23,11 @@
       "status": "ok"
     },
     {
-      "id": "c62fc6d018652717",
-      "title": "SPC Severe Thunderstorm Watch 670",
-      "url": "https://www.spc.noaa.gov/products/watch/ww0670.html",
+      "id": "b5160defaaf643a4",
+      "title": "SPC MD 2312",
+      "url": "https://www.spc.noaa.gov/products/md/md2312.html",
       "publisher": "Storm Prediction Center",
-      "published_at": "2026-09-19T22:15:05.000Z",
+      "published_at": "2026-09-20T01:11:06.000Z",
       "topic": "Severe weather",
       "status": "ok"
     }
