@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-20T01:14:01.687Z",
-  "latest_success_at": "2026-09-20T01:14:01.687Z",
+  "generated_at": "2026-09-20T06:23:59.630Z",
+  "latest_success_at": "2026-09-20T06:23:59.630Z",
   "status": "partial",
   "items": [
     {
@@ -9,26 +9,26 @@
       "title": "Eastern North Pacific Tropical Weather Outlook",
       "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-09-19T23:39:40.000Z",
+      "published_at": "2026-09-20T06:01:07.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "560c1b2d050c9bda",
-      "title": "Flood Warning issued September 19 at 3:12PM CDT until September 21 at 5:35PM CDT by NWS La Crosse WI",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.53145235bf4d637917d5a898fe42dcbc6f7dcab0.001.1.cap",
+      "id": "925e62266df841f6",
+      "title": "Flood Warning issued September 19 at 8:57PM CDT by NWS Quad Cities IA IL",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.c10ba31e9363469b68935b3938561fa711696fb9.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-09-19T20:12:00.000Z",
+      "published_at": "2026-09-20T01:57:00.000Z",
       "topic": "Flooding",
       "status": "ok"
     },
     {
-      "id": "b5160defaaf643a4",
-      "title": "SPC MD 2312",
-      "url": "https://www.spc.noaa.gov/products/md/md2312.html",
-      "publisher": "Storm Prediction Center",
-      "published_at": "2026-09-20T01:11:06.000Z",
-      "topic": "Severe weather",
+      "id": "33b337c832419c2b",
+      "title": "Flood Warning issued September 19 at 8:43PM CDT until September 21 at 5:07PM CDT by NWS La Crosse WI",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.64a42c7933bb72b1a9f5edc8bae991e7cd37474c.001.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-09-20T01:43:00.000Z",
+      "topic": "Flooding",
       "status": "ok"
     }
   ]
