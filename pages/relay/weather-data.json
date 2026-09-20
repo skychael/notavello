@@ -1,9 +1,18 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-20T16:51:00.367Z",
-  "latest_success_at": "2026-09-20T16:51:00.367Z",
+  "generated_at": "2026-09-20T19:30:00.712Z",
+  "latest_success_at": "2026-09-20T19:30:00.712Z",
   "status": "partial",
   "items": [
+    {
+      "id": "ee8e390990a944fc",
+      "title": "Eastern North Pacific Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-09-20T17:41:24.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
     {
       "id": "38a1d8630caa0383",
       "title": "SPC Sep 20, 2026 1630 UTC Day 1 Convective Outlook",
@@ -19,15 +28,6 @@
       "url": "https://www.nhc.noaa.gov/refresh/graphics_ep1+shtml/152909.shtml?cone=",
       "publisher": "National Hurricane Center",
       "published_at": "2026-09-20T15:29:09.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "07c09dc1ff05e10d",
-      "title": "Tropical Storm Fay Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_at1+shtml/152310.shtml?cone=",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-09-20T15:23:10.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
