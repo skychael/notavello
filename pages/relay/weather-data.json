@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-20T19:30:00.712Z",
-  "latest_success_at": "2026-09-20T19:30:00.712Z",
+  "generated_at": "2026-09-20T22:29:59.241Z",
+  "latest_success_at": "2026-09-20T22:29:59.241Z",
   "status": "partial",
   "items": [
     {
-      "id": "ee8e390990a944fc",
-      "title": "Eastern North Pacific Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
+      "id": "91d5beb00e5fc8a4",
+      "title": "Tropical Depression Seventeen-E Public Advisory Number 1",
+      "url": "https://www.nhc.noaa.gov/text/refresh/MIATCPEP2+shtml/588214.shtml",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-09-20T17:41:24.000Z",
+      "published_at": "2026-09-20T21:43:35.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "38a1d8630caa0383",
-      "title": "SPC Sep 20, 2026 1630 UTC Day 1 Convective Outlook",
-      "url": "https://www.spc.noaa.gov/products/outlook/day1otlk_1630.html",
-      "publisher": "Storm Prediction Center",
-      "published_at": "2026-09-20T16:29:11.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "311113ebfcb6938f",
+      "id": "a0eba5e081dd4c0d",
       "title": "Tropical Storm Odalys Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep1+shtml/152909.shtml?cone=",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep1+shtml/212900.shtml?cone=",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-09-20T15:29:09.000Z",
+      "published_at": "2026-09-20T21:29:00.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "4cfce91d5bf8917a",
+      "title": "Tropical Storm Fay Graphics",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_at1+shtml/212307.shtml?cone=",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-09-20T21:23:07.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
