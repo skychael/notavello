@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-19T06:24:58.366Z",
+  "generatedAt": "2026-09-20T06:47:34.098Z",
   "totals": {
-    "pages": 271,
-    "indexable": 267,
-    "articles": 199,
-    "sitemap": 267,
+    "pages": 272,
+    "indexable": 268,
+    "articles": 200,
+    "sitemap": 268,
     "errors": 0,
-    "warnings": 210
+    "warnings": 212
   },
   "errors": [],
   "warnings": [
@@ -1059,6 +1059,16 @@
       "type": "topic-review",
       "page": "/pages/blog/why-your-address-change-doesnt-stick/",
       "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/yanbu-backup-port-is-the-fuel-bill/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/yanbu-backup-port-is-the-fuel-bill/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
     }
   ],
   "pages": [
@@ -1070,7 +1080,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 271,
+      "incomingLinks": 272,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -1094,7 +1104,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 271,
+      "incomingLinks": 272,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -1202,7 +1212,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 271,
+      "incomingLinks": 272,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -1214,9 +1224,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 271,
-      "lastmod": "2026-09-18",
-      "bodyWords": 636
+      "incomingLinks": 272,
+      "lastmod": "2026-09-19",
+      "bodyWords": 630
     },
     {
       "route": "/pages/blog/a-plain-language-guide-to-file-permissions/",
@@ -1490,9 +1500,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 138,
-      "lastmod": "2026-09-18",
-      "bodyWords": 2482
+      "incomingLinks": 139,
+      "lastmod": "2026-09-19",
+      "bodyWords": 2494
     },
     {
       "route": "/pages/blog/apple-speechanalyzer-local-transcription-apps/",
@@ -2871,8 +2881,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-18",
-      "bodyWords": 837
+      "lastmod": "2026-09-19",
+      "bodyWords": 838
     },
     {
       "route": "/pages/blog/page-11/",
@@ -2883,8 +2893,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-18",
-      "bodyWords": 890
+      "lastmod": "2026-09-19",
+      "bodyWords": 883
     },
     {
       "route": "/pages/blog/page-12/",
@@ -2895,8 +2905,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": null,
-      "bodyWords": 75
+      "lastmod": "2026-09-19",
+      "bodyWords": 128
     },
     {
       "route": "/pages/blog/page-2/",
@@ -2907,8 +2917,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-18",
-      "bodyWords": 667
+      "lastmod": "2026-09-19",
+      "bodyWords": 681
     },
     {
       "route": "/pages/blog/page-3/",
@@ -2919,8 +2929,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-18",
-      "bodyWords": 657
+      "lastmod": "2026-09-19",
+      "bodyWords": 654
     },
     {
       "route": "/pages/blog/page-4/",
@@ -2931,8 +2941,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-18",
-      "bodyWords": 689
+      "lastmod": "2026-09-19",
+      "bodyWords": 687
     },
     {
       "route": "/pages/blog/page-5/",
@@ -2943,8 +2953,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-18",
-      "bodyWords": 672
+      "lastmod": "2026-09-19",
+      "bodyWords": 673
     },
     {
       "route": "/pages/blog/page-6/",
@@ -2955,8 +2965,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-18",
-      "bodyWords": 647
+      "lastmod": "2026-09-19",
+      "bodyWords": 645
     },
     {
       "route": "/pages/blog/page-7/",
@@ -2967,8 +2977,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-18",
-      "bodyWords": 686
+      "lastmod": "2026-09-19",
+      "bodyWords": 689
     },
     {
       "route": "/pages/blog/page-8/",
@@ -2979,8 +2989,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-18",
-      "bodyWords": 678
+      "lastmod": "2026-09-19",
+      "bodyWords": 681
     },
     {
       "route": "/pages/blog/page-9/",
@@ -2991,8 +3001,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-18",
-      "bodyWords": 810
+      "lastmod": "2026-09-19",
+      "bodyWords": 794
     },
     {
       "route": "/pages/blog/phosphate-is-the-fertilizer-shock-that-did-not-fade/",
@@ -3086,7 +3096,7 @@
       "canonical": "https://notavello.com/pages/blog/saudi-backup-oil-pipeline-became-the-target/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 2,
+      "incomingLinks": 3,
       "lastmod": "2026-09-12",
       "bodyWords": 1568
     },
@@ -3739,6 +3749,18 @@
       "bodyWords": 1651
     },
     {
+      "route": "/pages/blog/yanbu-backup-port-is-the-fuel-bill/",
+      "file": "pages/blog/yanbu-backup-port-is-the-fuel-bill/index.html",
+      "title": "Yanbu Is The Backup Port On Your Fuel Bill — The Export | Notavello",
+      "description": "Yanbu was supposed to be Saudi oil’s Hormuz workaround. Now attacks near the Red Sea outlet are showing up in U.S. fuel prices.",
+      "canonical": "https://notavello.com/pages/blog/yanbu-backup-port-is-the-fuel-bill/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-09-20",
+      "bodyWords": 1515
+    },
+    {
       "route": "/pages/blog/your-iphone-cant-check-in/",
       "file": "pages/blog/your-iphone-cant-check-in/index.html",
       "title": "Your iPhone Can't Check In — The Export | Notavello",
@@ -3758,7 +3780,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 271,
+      "incomingLinks": 272,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -3770,7 +3792,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 271,
+      "incomingLinks": 272,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -3782,7 +3804,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 271,
+      "incomingLinks": 272,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -3794,7 +3816,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 271,
+      "incomingLinks": 272,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -3806,7 +3828,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 271,
+      "incomingLinks": 272,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -3819,8 +3841,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-09-19",
-      "bodyWords": 369
+      "lastmod": "2026-09-20",
+      "bodyWords": 375
     },
     {
       "route": "/pages/sample",
@@ -3842,7 +3864,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 271,
+      "incomingLinks": 272,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -3854,7 +3876,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 271,
+      "incomingLinks": 272,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -3878,7 +3900,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 271,
+      "incomingLinks": 272,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -4310,7 +4332,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 271,
+      "incomingLinks": 272,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }
