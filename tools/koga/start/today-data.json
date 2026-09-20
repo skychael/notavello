@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "09-19",
-  "display_date": "September 19",
-  "generated_at": "2026-09-19T12:30:28.252Z",
+  "date_key": "09-20",
+  "display_date": "September 20",
+  "generated_at": "2026-09-20T13:03:31.334Z",
   "source": "Wikimedia On This Day",
-  "selection_method": "deterministic_fallback",
+  "selection_method": "ai",
   "items": [
     {
-      "candidate_id": "event-43c1277d303ebfc0dc0cee30",
+      "candidate_id": "event-938bd229a060db54fc2d7de4",
       "type": "event",
-      "year": 2008,
-      "text": "A Learjet 60 carrying musicians Travis Barker and Adam \"DJ AM\" Goldstein crashes during a rejected takeoff from Colombia Metropolitan Airport in West Columbia, South Carolina, killing four of the six people on board. Barker and Goldstein both survive.",
-      "article_title": "Learjet 60",
-      "url": "https://en.wikipedia.org/wiki/Learjet_60",
-      "category": "World history"
+      "year": 2001,
+      "text": "In an address to a joint session of Congress and the American people, U.S. President George W. Bush declares a \"war on terror\".",
+      "article_title": "War on terror",
+      "url": "https://en.wikipedia.org/wiki/War_on_terror",
+      "category": "Politics and society"
     },
     {
-      "candidate_id": "event-8e599069435f3fd7b588e285",
+      "candidate_id": "event-17030be4486f0290a556a03b",
       "type": "event",
-      "year": 2021,
-      "text": "The Cumbre Vieja volcano, on the island of La Palma in the Canary Islands, erupts. The eruption lasts for almost three months, ending on December 13.",
-      "article_title": "Cumbre Vieja",
-      "url": "https://en.wikipedia.org/wiki/Cumbre_Vieja",
+      "year": 2017,
+      "text": "Hurricane Maria makes landfall in Puerto Rico as a powerful Category 4 hurricane, resulting in 2,975 deaths, US$90 billion in damage, and a major humanitarian crisis.",
+      "article_title": "Hurricane Maria",
+      "url": "https://en.wikipedia.org/wiki/Hurricane_Maria",
       "category": "Disasters and exploration"
     },
     {
-      "candidate_id": "event-5ef661ffe430587661c822ec",
+      "candidate_id": "event-bbcdc7e36ed3668bf19d165a",
       "type": "event",
-      "year": 1976,
-      "text": "Turkish Airlines Flight 452 hits the Taurus Mountains, outskirt of Karatepe, Turkey, killing all 154 passengers and crew.",
-      "article_title": "Turkish Airlines Flight 452",
-      "url": "https://en.wikipedia.org/wiki/Turkish_Airlines_Flight_452",
-      "category": "World history"
+      "year": 1973,
+      "text": "Billie Jean King beats Bobby Riggs in the Battle of the Sexes tennis match at the Houston Astrodome.",
+      "article_title": "Billie Jean King",
+      "url": "https://en.wikipedia.org/wiki/Billie_Jean_King",
+      "category": "Sports"
     }
   ]
 }
