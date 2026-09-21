@@ -1,36 +1,36 @@
 {
   "schema_version": "1.0",
-  "date_key": "09-20",
-  "display_date": "September 20",
-  "generated_at": "2026-09-20T13:03:31.334Z",
+  "date_key": "09-21",
+  "display_date": "September 21",
+  "generated_at": "2026-09-21T15:07:08.141Z",
   "source": "Wikimedia On This Day",
-  "selection_method": "ai",
+  "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-938bd229a060db54fc2d7de4",
+      "candidate_id": "event-2cb54168cf1db848dad8f2d5",
       "type": "event",
-      "year": 2001,
-      "text": "In an address to a joint session of Congress and the American people, U.S. President George W. Bush declares a \"war on terror\".",
-      "article_title": "War on terror",
-      "url": "https://en.wikipedia.org/wiki/War_on_terror",
-      "category": "Politics and society"
-    },
-    {
-      "candidate_id": "event-17030be4486f0290a556a03b",
-      "type": "event",
-      "year": 2017,
-      "text": "Hurricane Maria makes landfall in Puerto Rico as a powerful Category 4 hurricane, resulting in 2,975 deaths, US$90 billion in damage, and a major humanitarian crisis.",
-      "article_title": "Hurricane Maria",
-      "url": "https://en.wikipedia.org/wiki/Hurricane_Maria",
+      "year": 1957,
+      "text": "Pamir, a four-masted barque, was shipwrecked and sank off the Azores during Hurricane Carrie.",
+      "article_title": "Pamir (ship)",
+      "url": "https://en.wikipedia.org/wiki/Pamir_(ship)",
       "category": "Disasters and exploration"
     },
     {
-      "candidate_id": "event-bbcdc7e36ed3668bf19d165a",
+      "candidate_id": "event-3f63c8b3dc452cddded7a543",
       "type": "event",
-      "year": 1973,
-      "text": "Billie Jean King beats Bobby Riggs in the Battle of the Sexes tennis match at the Houston Astrodome.",
-      "article_title": "Billie Jean King",
-      "url": "https://en.wikipedia.org/wiki/Billie_Jean_King",
+      "year": 1993,
+      "text": "A Transair Georgian Airlines Tu-134 is shot down by a missile in the Black Sea near Sokhumi, Georgia.",
+      "article_title": "1993 Sukhumi airliner attacks",
+      "url": "https://en.wikipedia.org/wiki/1993_Sukhumi_airliner_attacks",
+      "category": "World history"
+    },
+    {
+      "candidate_id": "event-a1677225d21a760176756860",
+      "type": "event",
+      "year": 1970,
+      "text": "The first Monday Night Football game is between the Cleveland Browns and the New York Jets.",
+      "article_title": "Monday Night Football",
+      "url": "https://en.wikipedia.org/wiki/Monday_Night_Football",
       "category": "Sports"
     }
   ]
