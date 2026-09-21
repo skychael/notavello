@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-21T19:34:05.029Z",
-  "latest_success_at": "2026-09-21T19:34:05.029Z",
+  "generated_at": "2026-09-21T23:20:13.421Z",
+  "latest_success_at": "2026-09-21T23:20:13.421Z",
   "status": "partial",
   "items": [
     {
-      "id": "ee8e390990a944fc",
-      "title": "Eastern North Pacific Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-09-21T17:56:10.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "0322cc34ea288382",
+      "id": "5b1ea57bef2596f4",
       "title": "Hurricane Polo Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep2+shtml/175322.shtml?cone=",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep2+shtml/213500.shtml?cone=",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-09-21T17:53:22.000Z",
+      "published_at": "2026-09-21T21:35:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "675a128bd0792b06",
+      "id": "7f290c9161051d87",
       "title": "Tropical Storm Odalys Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep1+shtml/152923.shtml?cone=",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep1+shtml/212906.shtml?cone=",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-09-21T15:29:23.000Z",
+      "published_at": "2026-09-21T21:29:06.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "fc562d5890490345",
+      "title": "Tropical Storm Fay Graphics",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_at1+shtml/212308.shtml?cone=",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-09-21T21:23:08.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
