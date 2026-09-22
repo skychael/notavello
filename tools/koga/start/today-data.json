@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "09-21",
-  "display_date": "September 21",
-  "generated_at": "2026-09-21T15:07:08.141Z",
+  "date_key": "09-22",
+  "display_date": "September 22",
+  "generated_at": "2026-09-22T13:25:31.675Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-2cb54168cf1db848dad8f2d5",
+      "candidate_id": "event-1261f264ea4c3e0efa9e56e6",
       "type": "event",
-      "year": 1957,
-      "text": "Pamir, a four-masted barque, was shipwrecked and sank off the Azores during Hurricane Carrie.",
-      "article_title": "Pamir (ship)",
-      "url": "https://en.wikipedia.org/wiki/Pamir_(ship)",
-      "category": "Disasters and exploration"
+      "year": 1979,
+      "text": "A bright flash, resembling the detonation of a nuclear weapon, is observed near the Prince Edward Islands. Its cause is never determined.",
+      "article_title": "Vela incident",
+      "url": "https://en.wikipedia.org/wiki/Vela_incident",
+      "category": "World history"
     },
     {
-      "candidate_id": "event-3f63c8b3dc452cddded7a543",
+      "candidate_id": "event-c395db1764f269db6f966b68",
       "type": "event",
       "year": 1993,
-      "text": "A Transair Georgian Airlines Tu-134 is shot down by a missile in the Black Sea near Sokhumi, Georgia.",
+      "text": "A Transair Georgian Airlines Tu-154 is shot down by a missile in Sukhumi, Georgia.",
       "article_title": "1993 Sukhumi airliner attacks",
       "url": "https://en.wikipedia.org/wiki/1993_Sukhumi_airliner_attacks",
       "category": "World history"
     },
     {
-      "candidate_id": "event-a1677225d21a760176756860",
+      "candidate_id": "event-f9b731e5c994a6b0b89eac61",
       "type": "event",
-      "year": 1970,
-      "text": "The first Monday Night Football game is between the Cleveland Browns and the New York Jets.",
-      "article_title": "Monday Night Football",
-      "url": "https://en.wikipedia.org/wiki/Monday_Night_Football",
-      "category": "Sports"
+      "year": 1995,
+      "text": "An E-3B AWACS crashes outside Elmendorf Air Force Base, Alaska after multiple bird strikes to two of the four engines soon after takeoff; all 24 on board are killed.",
+      "article_title": "1995 Alaska Boeing E-3 Sentry accident",
+      "url": "https://en.wikipedia.org/wiki/1995_Alaska_Boeing_E-3_Sentry_accident",
+      "category": "World history"
     }
   ]
 }
