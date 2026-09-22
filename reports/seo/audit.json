@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-21T06:54:30.342Z",
+  "generatedAt": "2026-09-22T06:39:54.831Z",
   "totals": {
-    "pages": 273,
-    "indexable": 269,
-    "articles": 201,
-    "sitemap": 269,
+    "pages": 274,
+    "indexable": 270,
+    "articles": 202,
+    "sitemap": 270,
     "errors": 0,
-    "warnings": 214
+    "warnings": 216
   },
   "errors": [],
   "warnings": [
@@ -816,6 +816,16 @@
       "detail": "title/description lacks a clear AI, software, or computing connection"
     },
     {
+      "type": "template-pattern",
+      "page": "/pages/blog/saudi-oil-went-back-through-hormuz/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/saudi-oil-went-back-through-hormuz/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
       "type": "topic-review",
       "page": "/pages/blog/self-driving-cars-trucks-can-be-fooled/",
       "detail": "title/description lacks a clear AI, software, or computing connection"
@@ -1090,7 +1100,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 273,
+      "incomingLinks": 274,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -1114,7 +1124,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 273,
+      "incomingLinks": 274,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -1222,7 +1232,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 273,
+      "incomingLinks": 274,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -1234,9 +1244,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 273,
-      "lastmod": "2026-09-20",
-      "bodyWords": 626
+      "incomingLinks": 274,
+      "lastmod": "2026-09-21",
+      "bodyWords": 621
     },
     {
       "route": "/pages/blog/a-plain-language-guide-to-file-permissions/",
@@ -1510,9 +1520,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 140,
-      "lastmod": "2026-09-20",
-      "bodyWords": 2503
+      "incomingLinks": 141,
+      "lastmod": "2026-09-21",
+      "bodyWords": 2512
     },
     {
       "route": "/pages/blog/apple-speechanalyzer-local-transcription-apps/",
@@ -2242,7 +2252,7 @@
       "canonical": "https://notavello.com/pages/blog/hormuz-shuttle-tankers-made-freight-the-oil-shock/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 2,
+      "incomingLinks": 3,
       "lastmod": "2026-09-16",
       "bodyWords": 1616
     },
@@ -2903,7 +2913,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-20",
+      "lastmod": "2026-09-21",
       "bodyWords": 830
     },
     {
@@ -2915,8 +2925,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-20",
-      "bodyWords": 889
+      "lastmod": "2026-09-21",
+      "bodyWords": 872
     },
     {
       "route": "/pages/blog/page-12/",
@@ -2927,8 +2937,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": "2026-09-20",
-      "bodyWords": 174
+      "lastmod": "2026-09-21",
+      "bodyWords": 230
     },
     {
       "route": "/pages/blog/page-2/",
@@ -2939,8 +2949,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-20",
-      "bodyWords": 675
+      "lastmod": "2026-09-21",
+      "bodyWords": 679
     },
     {
       "route": "/pages/blog/page-3/",
@@ -2951,8 +2961,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-20",
-      "bodyWords": 658
+      "lastmod": "2026-09-21",
+      "bodyWords": 655
     },
     {
       "route": "/pages/blog/page-4/",
@@ -2963,7 +2973,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-20",
+      "lastmod": "2026-09-21",
       "bodyWords": 684
     },
     {
@@ -2975,8 +2985,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-20",
-      "bodyWords": 675
+      "lastmod": "2026-09-21",
+      "bodyWords": 674
     },
     {
       "route": "/pages/blog/page-6/",
@@ -2987,8 +2997,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-20",
-      "bodyWords": 650
+      "lastmod": "2026-09-21",
+      "bodyWords": 649
     },
     {
       "route": "/pages/blog/page-7/",
@@ -2999,8 +3009,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-20",
-      "bodyWords": 687
+      "lastmod": "2026-09-21",
+      "bodyWords": 690
     },
     {
       "route": "/pages/blog/page-8/",
@@ -3011,8 +3021,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-20",
-      "bodyWords": 682
+      "lastmod": "2026-09-21",
+      "bodyWords": 680
     },
     {
       "route": "/pages/blog/page-9/",
@@ -3023,8 +3033,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-20",
-      "bodyWords": 783
+      "lastmod": "2026-09-21",
+      "bodyWords": 779
     },
     {
       "route": "/pages/blog/phosphate-is-the-fertilizer-shock-that-did-not-fade/",
@@ -3121,6 +3131,18 @@
       "incomingLinks": 3,
       "lastmod": "2026-09-12",
       "bodyWords": 1568
+    },
+    {
+      "route": "/pages/blog/saudi-oil-went-back-through-hormuz/",
+      "file": "pages/blog/saudi-oil-went-back-through-hormuz/index.html",
+      "title": "Saudi Oil Went Back Through Hormuz — The Export | Notavello",
+      "description": "Saudi exports are moving back through Hormuz, cutting crude prices but keeping fuel risk on your bill.",
+      "canonical": "https://notavello.com/pages/blog/saudi-oil-went-back-through-hormuz/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-09-22",
+      "bodyWords": 1425
     },
     {
       "route": "/pages/blog/search-field-2036/",
@@ -3802,7 +3824,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 273,
+      "incomingLinks": 274,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -3814,7 +3836,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 273,
+      "incomingLinks": 274,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -3826,7 +3848,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 273,
+      "incomingLinks": 274,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -3838,7 +3860,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 273,
+      "incomingLinks": 274,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -3850,7 +3872,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 273,
+      "incomingLinks": 274,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -3863,8 +3885,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-09-21",
-      "bodyWords": 381
+      "lastmod": "2026-09-22",
+      "bodyWords": 387
     },
     {
       "route": "/pages/sample",
@@ -3886,7 +3908,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 273,
+      "incomingLinks": 274,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -3898,7 +3920,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 273,
+      "incomingLinks": 274,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -3922,7 +3944,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 273,
+      "incomingLinks": 274,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -4354,7 +4376,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 273,
+      "incomingLinks": 274,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }
