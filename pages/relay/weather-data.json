@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-22T10:03:21.084Z",
-  "latest_success_at": "2026-09-22T10:03:21.084Z",
+  "generated_at": "2026-09-22T14:59:13.466Z",
+  "latest_success_at": "2026-09-22T14:59:13.466Z",
   "status": "partial",
   "items": [
     {
-      "id": "85e91ef8939c028e",
-      "title": "Hurricane Polo Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep2+shtml/093455.shtml?cone=",
+      "id": "9dbfc3c9c03f0580",
+      "title": "Hurricane Polo Forecast Discussion Number 8",
+      "url": "https://www.nhc.noaa.gov/text/refresh/MIATCDEP2+shtml/221455.shtml",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-09-22T09:34:55.000Z",
+      "published_at": "2026-09-22T14:55:20.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "5fed65fd5eb9b8a2",
+      "id": "4937579c1d81e873",
       "title": "Tropical Storm Odalys Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep1+shtml/092859.shtml?cone=",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep1+shtml/144723.shtml?cone=",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-09-22T09:28:59.000Z",
+      "published_at": "2026-09-22T14:47:23.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "a7b42c1fea225b44",
-      "title": "Tropical Storm Fay Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_at1+shtml/092303.shtml?cone=",
+      "id": "2c6f921d2e41a0fb",
+      "title": "Tropical Depression Fay Wind Speed Probabilities Number 13",
+      "url": "https://www.nhc.noaa.gov/text/refresh/MIAPWSAT1+shtml/221446.shtml",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-09-22T09:23:03.000Z",
+      "published_at": "2026-09-22T14:46:51.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
