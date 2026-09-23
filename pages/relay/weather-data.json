@@ -1,15 +1,24 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-23T17:08:57.321Z",
-  "latest_success_at": "2026-09-23T17:08:57.321Z",
+  "generated_at": "2026-09-23T20:26:50.816Z",
+  "latest_success_at": "2026-09-23T20:26:50.816Z",
   "status": "partial",
   "items": [
     {
-      "id": "68ed6e18c2d63e2e",
+      "id": "69215816827b37ef",
       "title": "Hurricane Polo Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep2+shtml/153546.shtml?cone=",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep2+shtml/194347.shtml?cone=",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-09-23T15:35:46.000Z",
+      "published_at": "2026-09-23T19:43:47.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "b5ad93019d019ede",
+      "title": "Atlantic Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-09-23T17:45:38.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
@@ -19,15 +28,6 @@
       "url": "https://www.nhc.noaa.gov/refresh/graphics_ep1+shtml/152936.shtml?cone=",
       "publisher": "National Hurricane Center",
       "published_at": "2026-09-23T15:29:36.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "148e42c4efc5ce2a",
-      "title": "Flood Watch issued September 23 at 3:44AM HST until September 26 at 6:00PM HST by NWS Honolulu HI",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.27c93ef1b29bda3e04166629795fe71aa61e2ea6.001.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-09-23T13:44:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
