@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-22T22:14:42.968Z",
-  "latest_success_at": "2026-09-22T22:14:42.968Z",
+  "generated_at": "2026-09-23T00:41:08.796Z",
+  "latest_success_at": "2026-09-23T00:41:08.796Z",
   "status": "partial",
   "items": [
     {
-      "id": "d0eed0daf414c6b6",
-      "title": "Flash Flood Warning issued September 22 at 2:49PM MDT until September 22 at 4:30PM MDT by NWS Albuquerque NM",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.561fafd86041ad37bbd71b11de893981904b6023.001.1.cap",
+      "id": "0cab1b9df421f1b9",
+      "title": "Flash Flood Warning issued September 22 at 5:54PM MDT until September 22 at 7:30PM MDT by NWS Albuquerque NM",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.71f73dec39d0fb7174f3d348fcb9b3fce95e6c18.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-09-22T20:49:00.000Z",
+      "published_at": "2026-09-22T23:54:00.000Z",
       "topic": "Flooding",
       "status": "ok"
     },
     {
-      "id": "33ea98b81d2d196c",
-      "title": "SPC Day 3-8 Fire Weather Outlook",
-      "url": "https://www.spc.noaa.gov/products/exper/fire_wx",
-      "publisher": "Storm Prediction Center",
-      "published_at": "2026-09-22T22:01:19.000Z",
+      "id": "1eb78d8fe4488d62",
+      "title": "Hurricane Polo Graphics",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep2+shtml/233603.shtml?cone=",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-09-22T23:36:03.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "8a8e13b17592231d",
-      "title": "Hurricane Polo Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep2+shtml/213506.shtml?cone=",
+      "id": "ee8e390990a944fc",
+      "title": "Eastern North Pacific Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-09-22T21:35:06.000Z",
+      "published_at": "2026-09-22T23:28:58.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
