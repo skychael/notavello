@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-22T06:39:54.831Z",
+  "generatedAt": "2026-09-23T06:28:16.192Z",
   "totals": {
-    "pages": 274,
-    "indexable": 270,
-    "articles": 202,
-    "sitemap": 270,
+    "pages": 275,
+    "indexable": 271,
+    "articles": 203,
+    "sitemap": 271,
     "errors": 0,
-    "warnings": 216
+    "warnings": 218
   },
   "errors": [],
   "warnings": [
@@ -279,6 +279,16 @@
       "type": "template-pattern",
       "page": "/pages/blog/four-dollar-gas-is-the-hormuz-receipt/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/gasoline-is-the-oil-shock-you-cant-expense/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/gasoline-is-the-oil-shock-you-cant-expense/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
     },
     {
       "type": "template-pattern",
@@ -1100,7 +1110,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 274,
+      "incomingLinks": 275,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -1124,7 +1134,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 274,
+      "incomingLinks": 275,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -1232,7 +1242,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 274,
+      "incomingLinks": 275,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -1244,9 +1254,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 274,
-      "lastmod": "2026-09-21",
-      "bodyWords": 621
+      "incomingLinks": 275,
+      "lastmod": "2026-09-22",
+      "bodyWords": 619
     },
     {
       "route": "/pages/blog/a-plain-language-guide-to-file-permissions/",
@@ -1520,9 +1530,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 141,
-      "lastmod": "2026-09-21",
-      "bodyWords": 2512
+      "incomingLinks": 142,
+      "lastmod": "2026-09-22",
+      "bodyWords": 2523
     },
     {
       "route": "/pages/blog/apple-speechanalyzer-local-transcription-apps/",
@@ -1820,7 +1830,7 @@
       "canonical": "https://notavello.com/pages/blog/diesel-gasoline-gap-is-the-inflation-bill/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 5,
+      "incomingLinks": 6,
       "lastmod": "2026-09-17",
       "bodyWords": 1268
     },
@@ -1943,6 +1953,18 @@
       "incomingLinks": 2,
       "lastmod": "2026-08-12",
       "bodyWords": 1390
+    },
+    {
+      "route": "/pages/blog/gasoline-is-the-oil-shock-you-cant-expense/",
+      "file": "pages/blog/gasoline-is-the-oil-shock-you-cant-expense/index.html",
+      "title": "Gasoline Is The Oil Shock You Can’t Expense — The Export | Notavello",
+      "description": "U.S. gasoline jumped to $4.478, while diesel hit $6.529. The Hormuz oil shock is now on ordinary weekly budgets.",
+      "canonical": "https://notavello.com/pages/blog/gasoline-is-the-oil-shock-you-cant-expense/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-09-23",
+      "bodyWords": 1358
     },
     {
       "route": "/pages/blog/gemini-notebook-ai-research-source-management/",
@@ -2913,8 +2935,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-21",
-      "bodyWords": 830
+      "lastmod": "2026-09-22",
+      "bodyWords": 824
     },
     {
       "route": "/pages/blog/page-11/",
@@ -2925,8 +2947,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-21",
-      "bodyWords": 872
+      "lastmod": "2026-09-22",
+      "bodyWords": 871
     },
     {
       "route": "/pages/blog/page-12/",
@@ -2937,8 +2959,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": "2026-09-21",
-      "bodyWords": 230
+      "lastmod": "2026-09-22",
+      "bodyWords": 278
     },
     {
       "route": "/pages/blog/page-2/",
@@ -2949,8 +2971,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-21",
-      "bodyWords": 679
+      "lastmod": "2026-09-22",
+      "bodyWords": 677
     },
     {
       "route": "/pages/blog/page-3/",
@@ -2961,8 +2983,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-21",
-      "bodyWords": 655
+      "lastmod": "2026-09-22",
+      "bodyWords": 650
     },
     {
       "route": "/pages/blog/page-4/",
@@ -2973,8 +2995,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-21",
-      "bodyWords": 684
+      "lastmod": "2026-09-22",
+      "bodyWords": 689
     },
     {
       "route": "/pages/blog/page-5/",
@@ -2985,8 +3007,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-21",
-      "bodyWords": 674
+      "lastmod": "2026-09-22",
+      "bodyWords": 678
     },
     {
       "route": "/pages/blog/page-6/",
@@ -2997,8 +3019,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-21",
-      "bodyWords": 649
+      "lastmod": "2026-09-22",
+      "bodyWords": 647
     },
     {
       "route": "/pages/blog/page-7/",
@@ -3009,8 +3031,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-21",
-      "bodyWords": 690
+      "lastmod": "2026-09-22",
+      "bodyWords": 682
     },
     {
       "route": "/pages/blog/page-8/",
@@ -3021,8 +3043,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-21",
-      "bodyWords": 680
+      "lastmod": "2026-09-22",
+      "bodyWords": 685
     },
     {
       "route": "/pages/blog/page-9/",
@@ -3033,8 +3055,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-21",
-      "bodyWords": 779
+      "lastmod": "2026-09-22",
+      "bodyWords": 777
     },
     {
       "route": "/pages/blog/phosphate-is-the-fertilizer-shock-that-did-not-fade/",
@@ -3824,7 +3846,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 274,
+      "incomingLinks": 275,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -3836,7 +3858,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 274,
+      "incomingLinks": 275,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -3848,7 +3870,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 274,
+      "incomingLinks": 275,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -3860,7 +3882,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 274,
+      "incomingLinks": 275,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -3872,7 +3894,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 274,
+      "incomingLinks": 275,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -3885,8 +3907,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-09-22",
-      "bodyWords": 387
+      "lastmod": "2026-09-23",
+      "bodyWords": 393
     },
     {
       "route": "/pages/sample",
@@ -3908,7 +3930,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 274,
+      "incomingLinks": 275,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -3920,7 +3942,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 274,
+      "incomingLinks": 275,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -3944,7 +3966,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 274,
+      "incomingLinks": 275,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -4376,7 +4398,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 274,
+      "incomingLinks": 275,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }
