@@ -1,15 +1,24 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-23T06:02:47.531Z",
-  "latest_success_at": "2026-09-23T06:02:47.531Z",
+  "generated_at": "2026-09-23T11:44:51.129Z",
+  "latest_success_at": "2026-09-23T11:44:51.129Z",
   "status": "partial",
   "items": [
     {
-      "id": "6f54b74f263c09b4",
+      "id": "d374b15f628c14cc",
       "title": "Hurricane Polo Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep2+shtml/054624.shtml?cone=",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep2+shtml/113806.shtml?cone=",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-09-23T05:46:24.000Z",
+      "published_at": "2026-09-23T11:38:06.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "82f647198080af0d",
+      "title": "Hurricane Odalys Graphics",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep1+shtml/092904.shtml?cone=",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-09-23T09:29:04.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
@@ -19,15 +28,6 @@
       "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
       "publisher": "National Hurricane Center",
       "published_at": "2026-09-23T05:20:32.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "9ac6f9992366dd7a",
-      "title": "Tropical Storm Odalys Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep1+shtml/032251.shtml?cone=",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-09-23T03:22:51.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
