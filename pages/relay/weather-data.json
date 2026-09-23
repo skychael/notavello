@@ -1,24 +1,15 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-23T00:41:08.796Z",
-  "latest_success_at": "2026-09-23T00:41:08.796Z",
+  "generated_at": "2026-09-23T06:02:47.531Z",
+  "latest_success_at": "2026-09-23T06:02:47.531Z",
   "status": "partial",
   "items": [
     {
-      "id": "0cab1b9df421f1b9",
-      "title": "Flash Flood Warning issued September 22 at 5:54PM MDT until September 22 at 7:30PM MDT by NWS Albuquerque NM",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.71f73dec39d0fb7174f3d348fcb9b3fce95e6c18.001.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-09-22T23:54:00.000Z",
-      "topic": "Flooding",
-      "status": "ok"
-    },
-    {
-      "id": "1eb78d8fe4488d62",
+      "id": "6f54b74f263c09b4",
       "title": "Hurricane Polo Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep2+shtml/233603.shtml?cone=",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep2+shtml/054624.shtml?cone=",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-09-22T23:36:03.000Z",
+      "published_at": "2026-09-23T05:46:24.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
@@ -27,7 +18,16 @@
       "title": "Eastern North Pacific Tropical Weather Outlook",
       "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-09-22T23:28:58.000Z",
+      "published_at": "2026-09-23T05:20:32.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "9ac6f9992366dd7a",
+      "title": "Tropical Storm Odalys Graphics",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep1+shtml/032251.shtml?cone=",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-09-23T03:22:51.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
