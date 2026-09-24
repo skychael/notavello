@@ -1,9 +1,18 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-24T10:06:24.812Z",
-  "latest_success_at": "2026-09-24T10:06:24.812Z",
+  "generated_at": "2026-09-24T15:11:34.521Z",
+  "latest_success_at": "2026-09-24T15:11:34.521Z",
   "status": "partial",
   "items": [
+    {
+      "id": "185e97c9396f5be4",
+      "title": "Hurricane Watch issued September 24 at 4:54AM HST by NWS Honolulu HI",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.505969b4cd80e20f3a4aca9eec7fe4dbd80d59ec.001.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-09-24T14:54:00.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
     {
       "id": "b3e881f2d4238588",
       "title": "Tropical Cyclone Local Statement issued September 23 at 11:07PM HST by NWS Honolulu HI",
@@ -14,20 +23,11 @@
       "status": "ok"
     },
     {
-      "id": "4a26257cc14cd607",
-      "title": "Hurricane Watch issued September 23 at 10:44PM HST by NWS Honolulu HI",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.aaa3742406865941224d445b556f7686eedf4f02.001.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-09-24T08:44:00.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "b98ae022798f28b9",
-      "title": "Hurricane Polo Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep2+shtml/094049.shtml?cone=",
+      "id": "0fe7fe27be39f63f",
+      "title": "Hurricane Odalys Graphics",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep1+shtml/145016.shtml?cone=",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-09-24T09:40:49.000Z",
+      "published_at": "2026-09-24T14:50:16.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
