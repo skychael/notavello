@@ -1,36 +1,36 @@
 {
   "schema_version": "1.0",
-  "date_key": "09-23",
-  "display_date": "September 23",
-  "generated_at": "2026-09-23T13:39:32.059Z",
+  "date_key": "09-24",
+  "display_date": "September 24",
+  "generated_at": "2026-09-24T13:33:44.429Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-c2d4c62487ed393d0b815b68",
+      "candidate_id": "event-c82b55198b815ae8b2506a48",
       "type": "event",
-      "year": 1967,
-      "text": "Seven people die, 46 people are injured, and more than 150 boats capsize when a squall hits Lake Michigan during Michigan's first coho salmon sport fishing season.",
-      "article_title": "1967 coho salmon fishing disaster",
-      "url": "https://en.wikipedia.org/wiki/1967_coho_salmon_fishing_disaster",
-      "category": "Sports"
-    },
-    {
-      "candidate_id": "event-6330c2be690bdc63bc7ef20d",
-      "type": "event",
-      "year": 1913,
-      "text": "The United Mine Workers of America launch a strike which eventually escalated into the Colorado Coalfield War.",
-      "article_title": "United Mine Workers of America",
-      "url": "https://en.wikipedia.org/wiki/United_Mine_Workers_of_America",
+      "year": 1960,
+      "text": "USS Enterprise, the world's first nuclear-powered aircraft carrier, is launched.",
+      "article_title": "USS Enterprise (CVN-65)",
+      "url": "https://en.wikipedia.org/wiki/USS_Enterprise_(CVN-65)",
       "category": "World history"
     },
     {
-      "candidate_id": "event-f7a7d8315574b2004bb46064",
+      "candidate_id": "event-34580bc6822819e236dbc122",
       "type": "event",
-      "year": 1950,
-      "text": "Korean War: The Battle of Hill 282 is the first US friendly-fire incident on British military personnel since World War II.",
-      "article_title": "Korean War",
-      "url": "https://en.wikipedia.org/wiki/Korean_War",
+      "year": 2005,
+      "text": "Hurricane Rita makes landfall in the United States, devastating portions of southwestern Louisiana and extreme southeastern Texas.",
+      "article_title": "Hurricane Rita",
+      "url": "https://en.wikipedia.org/wiki/Hurricane_Rita",
+      "category": "Disasters and exploration"
+    },
+    {
+      "candidate_id": "event-123e3d214d6a3449952fb016",
+      "type": "event",
+      "year": 2009,
+      "text": "South African Airlink Flight 8911 crashes near Durban International Airport in Durban, South Africa, killing the captain and injuring the rest of the crew.",
+      "article_title": "South African Airlink Flight 8911",
+      "url": "https://en.wikipedia.org/wiki/South_African_Airlink_Flight_8911",
       "category": "World history"
     }
   ]
