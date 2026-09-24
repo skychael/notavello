@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-24T04:58:23.300Z",
-  "latest_success_at": "2026-09-24T04:58:23.300Z",
+  "generated_at": "2026-09-24T10:06:24.812Z",
+  "latest_success_at": "2026-09-24T10:06:24.812Z",
   "status": "partial",
   "items": [
     {
-      "id": "74fd27eaa7ecb705",
-      "title": "Tropical Cyclone Local Statement issued September 23 at 5:01PM HST by NWS Honolulu HI",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.214f4304af2df727f967351abb3f9d3e14deabf3.001.1.cap",
+      "id": "b3e881f2d4238588",
+      "title": "Tropical Cyclone Local Statement issued September 23 at 11:07PM HST by NWS Honolulu HI",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.071ddf225c38f681a964c13fef7588afc9ec5b46.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-09-24T03:01:00.000Z",
+      "published_at": "2026-09-24T09:07:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "06da1cf2f5bc2f0e",
-      "title": "Hurricane Watch issued September 23 at 4:56PM HST by NWS Honolulu HI",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.e4252018d6318bfb2a7a9a9d020c61228bd36409.001.1.cap",
+      "id": "4a26257cc14cd607",
+      "title": "Hurricane Watch issued September 23 at 10:44PM HST by NWS Honolulu HI",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.aaa3742406865941224d445b556f7686eedf4f02.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-09-24T02:56:00.000Z",
+      "published_at": "2026-09-24T08:44:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "dbd51f61f893325d",
+      "id": "b98ae022798f28b9",
       "title": "Hurricane Polo Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep2+shtml/034012.shtml?cone=",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep2+shtml/094049.shtml?cone=",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-09-24T03:40:12.000Z",
+      "published_at": "2026-09-24T09:40:49.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
