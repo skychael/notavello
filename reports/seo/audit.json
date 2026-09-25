@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-24T06:35:31.230Z",
+  "generatedAt": "2026-09-25T06:29:03.856Z",
   "totals": {
-    "pages": 277,
-    "indexable": 273,
-    "articles": 205,
-    "sitemap": 273,
+    "pages": 279,
+    "indexable": 275,
+    "articles": 207,
+    "sitemap": 275,
     "errors": 0,
-    "warnings": 220
+    "warnings": 224
   },
   "errors": [],
   "warnings": [
@@ -123,6 +123,16 @@
     {
       "type": "topic-review",
       "page": "/pages/blog/big-crude-build-not-pump-relief/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/brent-wti-gap-is-the-import-bill/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/brent-wti-gap-is-the-import-bill/",
       "detail": "title/description lacks a clear AI, software, or computing connection"
     },
     {
@@ -529,6 +539,16 @@
       "type": "template-pattern",
       "page": "/pages/blog/how-to-make-account-recovery-safer-before-you-need-it/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/how-to-prepare-a-raspberry-pi-for-reliable-headless-use/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/how-to-prepare-a-raspberry-pi-for-reliable-headless-use/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
     },
     {
       "type": "template-pattern",
@@ -1120,7 +1140,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 277,
+      "incomingLinks": 279,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -1144,7 +1164,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 277,
+      "incomingLinks": 279,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -1252,7 +1272,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 277,
+      "incomingLinks": 279,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -1264,9 +1284,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 277,
-      "lastmod": "2026-09-23",
-      "bodyWords": 626
+      "incomingLinks": 279,
+      "lastmod": "2026-09-24",
+      "bodyWords": 642
     },
     {
       "route": "/pages/blog/a-plain-language-guide-to-file-permissions/",
@@ -1540,9 +1560,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 144,
-      "lastmod": "2026-09-23",
-      "bodyWords": 2547
+      "incomingLinks": 146,
+      "lastmod": "2026-09-24",
+      "bodyWords": 2571
     },
     {
       "route": "/pages/blog/apple-speechanalyzer-local-transcription-apps/",
@@ -1615,6 +1635,18 @@
       "incomingLinks": 3,
       "lastmod": "2026-08-14",
       "bodyWords": 1388
+    },
+    {
+      "route": "/pages/blog/brent-wti-gap-is-the-import-bill/",
+      "file": "pages/blog/brent-wti-gap-is-the-import-bill/index.html",
+      "title": "The Brent WTI Gap Is The Import Bill — The Export | Notavello",
+      "description": "Brent is far above WTI as Hormuz risk hits seaborne oil. That gap matters for fuel, freight and coastal refiners.",
+      "canonical": "https://notavello.com/pages/blog/brent-wti-gap-is-the-import-bill/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-09-25",
+      "bodyWords": 1489
     },
     {
       "route": "/pages/blog/browser-cache-ruined-my-day/",
@@ -2493,6 +2525,18 @@
       "bodyWords": 1095
     },
     {
+      "route": "/pages/blog/how-to-prepare-a-raspberry-pi-for-reliable-headless-use/",
+      "file": "pages/blog/how-to-prepare-a-raspberry-pi-for-reliable-headless-use/index.html",
+      "title": "How to prepare a Raspberry Pi for reliable headless use — The Export | Notavello",
+      "description": "Learn how to image, network, secure with SSH, update, manage identity, and plan recovery for a dependable headless Raspberry Pi setup using official tools",
+      "canonical": "https://notavello.com/pages/blog/how-to-prepare-a-raspberry-pi-for-reliable-headless-use/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-09-24",
+      "bodyWords": 809
+    },
+    {
       "route": "/pages/blog/how-to-prepare-files-for-a-useful-ai-assisted-review/",
       "file": "pages/blog/how-to-prepare-files-for-a-useful-ai-assisted-review/index.html",
       "title": "How to prepare files for a useful AI-assisted review — The Export | Notavello",
@@ -2957,8 +3001,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-23",
-      "bodyWords": 837
+      "lastmod": "2026-09-24",
+      "bodyWords": 824
     },
     {
       "route": "/pages/blog/page-11/",
@@ -2969,8 +3013,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-23",
-      "bodyWords": 859
+      "lastmod": "2026-09-24",
+      "bodyWords": 847
     },
     {
       "route": "/pages/blog/page-12/",
@@ -2981,8 +3025,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": "2026-09-23",
-      "bodyWords": 371
+      "lastmod": "2026-09-24",
+      "bodyWords": 470
     },
     {
       "route": "/pages/blog/page-2/",
@@ -2993,8 +3037,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-23",
-      "bodyWords": 666
+      "lastmod": "2026-09-24",
+      "bodyWords": 659
     },
     {
       "route": "/pages/blog/page-3/",
@@ -3005,8 +3049,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-23",
-      "bodyWords": 661
+      "lastmod": "2026-09-24",
+      "bodyWords": 659
     },
     {
       "route": "/pages/blog/page-4/",
@@ -3017,8 +3061,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-23",
-      "bodyWords": 688
+      "lastmod": "2026-09-24",
+      "bodyWords": 678
     },
     {
       "route": "/pages/blog/page-5/",
@@ -3029,8 +3073,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-23",
-      "bodyWords": 674
+      "lastmod": "2026-09-24",
+      "bodyWords": 684
     },
     {
       "route": "/pages/blog/page-6/",
@@ -3041,8 +3085,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-23",
-      "bodyWords": 647
+      "lastmod": "2026-09-24",
+      "bodyWords": 649
     },
     {
       "route": "/pages/blog/page-7/",
@@ -3053,8 +3097,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-23",
-      "bodyWords": 674
+      "lastmod": "2026-09-24",
+      "bodyWords": 665
     },
     {
       "route": "/pages/blog/page-8/",
@@ -3065,8 +3109,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-23",
-      "bodyWords": 689
+      "lastmod": "2026-09-24",
+      "bodyWords": 694
     },
     {
       "route": "/pages/blog/page-9/",
@@ -3077,8 +3121,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-23",
-      "bodyWords": 759
+      "lastmod": "2026-09-24",
+      "bodyWords": 757
     },
     {
       "route": "/pages/blog/phosphate-is-the-fertilizer-shock-that-did-not-fade/",
@@ -3376,7 +3420,7 @@
       "canonical": "https://notavello.com/pages/blog/the-import-line-is-the-oil-shock/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 2,
+      "incomingLinks": 3,
       "lastmod": "2026-09-24",
       "bodyWords": 1556
     },
@@ -3880,7 +3924,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 277,
+      "incomingLinks": 279,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -3892,7 +3936,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 277,
+      "incomingLinks": 279,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -3904,7 +3948,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 277,
+      "incomingLinks": 279,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -3916,7 +3960,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 277,
+      "incomingLinks": 279,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -3928,7 +3972,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 277,
+      "incomingLinks": 279,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -3941,8 +3985,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-09-24",
-      "bodyWords": 399
+      "lastmod": "2026-09-25",
+      "bodyWords": 405
     },
     {
       "route": "/pages/sample",
@@ -3964,7 +4008,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 277,
+      "incomingLinks": 279,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -3976,7 +4020,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 277,
+      "incomingLinks": 279,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -4000,7 +4044,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 277,
+      "incomingLinks": 279,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -4432,7 +4476,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 277,
+      "incomingLinks": 279,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }
