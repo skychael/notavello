@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "09-24",
-  "display_date": "September 24",
-  "generated_at": "2026-09-24T13:33:44.429Z",
+  "date_key": "09-25",
+  "display_date": "September 25",
+  "generated_at": "2026-09-25T13:49:08.655Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-c82b55198b815ae8b2506a48",
+      "candidate_id": "event-a122e7862354bde97efeeae2",
       "type": "event",
-      "year": 1960,
-      "text": "USS Enterprise, the world's first nuclear-powered aircraft carrier, is launched.",
-      "article_title": "USS Enterprise (CVN-65)",
-      "url": "https://en.wikipedia.org/wiki/USS_Enterprise_(CVN-65)",
+      "year": 1911,
+      "text": "An explosion of badly degraded propellant charges on board the French battleship Liberté detonates the forward ammunition magazines and destroys the ship.",
+      "article_title": "French battleship Liberté",
+      "url": "https://en.wikipedia.org/wiki/French_battleship_Libert%C3%A9",
       "category": "World history"
     },
     {
-      "candidate_id": "event-34580bc6822819e236dbc122",
+      "candidate_id": "event-c26c9f6e25437a24d97cf414",
       "type": "event",
-      "year": 2005,
-      "text": "Hurricane Rita makes landfall in the United States, devastating portions of southwestern Louisiana and extreme southeastern Texas.",
-      "article_title": "Hurricane Rita",
-      "url": "https://en.wikipedia.org/wiki/Hurricane_Rita",
-      "category": "Disasters and exploration"
+      "year": 1964,
+      "text": "The Mozambican War of Independence against Portugal begins.",
+      "article_title": "Mozambican War of Independence",
+      "url": "https://en.wikipedia.org/wiki/Mozambican_War_of_Independence",
+      "category": "World history"
     },
     {
-      "candidate_id": "event-123e3d214d6a3449952fb016",
+      "candidate_id": "event-4a1344986846f93ee24315c2",
       "type": "event",
-      "year": 2009,
-      "text": "South African Airlink Flight 8911 crashes near Durban International Airport in Durban, South Africa, killing the captain and injuring the rest of the crew.",
-      "article_title": "South African Airlink Flight 8911",
-      "url": "https://en.wikipedia.org/wiki/South_African_Airlink_Flight_8911",
-      "category": "World history"
+      "year": 1997,
+      "text": "NASA launches Space Shuttle Atlantis on STS-86 to the Mir space station.",
+      "article_title": "Space Shuttle Atlantis",
+      "url": "https://en.wikipedia.org/wiki/Space_Shuttle_Atlantis",
+      "category": "Science and technology"
     }
   ]
 }
