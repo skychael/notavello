@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-25T18:40:57.498Z",
-  "latest_success_at": "2026-09-25T18:40:57.498Z",
+  "generated_at": "2026-09-25T22:25:55.872Z",
+  "latest_success_at": "2026-09-25T22:25:55.872Z",
   "status": "partial",
   "items": [
+    {
+      "id": "569ac13c76d832d5",
+      "title": "Tropical Storm Watch issued September 25 at 11:03AM HST by NWS Honolulu HI",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.7808c1574e7b0a32c26c9052420d64c7400d6c63.011.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-09-25T21:03:00.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "9994a203fa4e640b",
+      "title": "Tropical Storm Warning issued September 25 at 11:03AM HST by NWS Honolulu HI",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.7808c1574e7b0a32c26c9052420d64c7400d6c63.020.2.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-09-25T21:03:00.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
     {
       "id": "039add0bb5b6db8f",
       "title": "Tropical Cyclone Local Statement issued September 25 at 5:08AM HST by NWS Honolulu HI",
       "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.3d109f0439c9cf60a5bb44538333edf4ed3badaf.001.1.cap",
       "publisher": "National Weather Service",
       "published_at": "2026-09-25T15:08:00.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "c1c1016ca705ea95",
-      "title": "Tropical Storm Watch issued September 25 at 4:59AM HST by NWS Honolulu HI",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.8557e3a0908b5aa519e41745c6d2352969a54c4e.011.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-09-25T14:59:00.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "4338079c5c25c379",
-      "title": "Tropical Storm Warning issued September 25 at 4:59AM HST by NWS Honolulu HI",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.8557e3a0908b5aa519e41745c6d2352969a54c4e.020.2.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-09-25T14:59:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
