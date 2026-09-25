@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-25T07:54:40.746Z",
-  "latest_success_at": "2026-09-25T07:54:40.746Z",
+  "generated_at": "2026-09-25T13:53:10.097Z",
+  "latest_success_at": "2026-09-25T13:53:10.097Z",
   "status": "partial",
   "items": [
     {
-      "id": "a65afed2b451eff5",
-      "title": "Tropical Cyclone Local Statement issued September 24 at 5:08PM HST by NWS Honolulu HI",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.c68a549211161616ced8ac7736fb5f1bac417d8c.001.1.cap",
+      "id": "1cc488772a5c929b",
+      "title": "Tropical Cyclone Local Statement issued September 24 at 11:10PM HST by NWS Honolulu HI",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.c65c9912a7a31a9e943a83a24bdc22f5a287655c.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-09-25T03:08:00.000Z",
+      "published_at": "2026-09-25T09:10:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "0cb360bac7ae044b",
-      "title": "Tropical Storm Watch issued September 24 at 4:53PM HST by NWS Honolulu HI",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.c7c48b3a72ac7ab3a795372b13d94f0820f4b52d.011.1.cap",
+      "id": "4b001c23cb0a0fa0",
+      "title": "Tropical Storm Watch issued September 24 at 11:00PM HST by NWS Honolulu HI",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.4ddc2b465ec1aed8541c9a2013ad70c4bced1b08.011.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-09-25T02:53:00.000Z",
+      "published_at": "2026-09-25T09:00:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "c23f4a366e40ed25",
-      "title": "Tropical Storm Warning issued September 24 at 4:53PM HST by NWS Honolulu HI",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.c7c48b3a72ac7ab3a795372b13d94f0820f4b52d.020.2.cap",
+      "id": "6dd8fbd67db82aa0",
+      "title": "Tropical Storm Warning issued September 24 at 11:00PM HST by NWS Honolulu HI",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.4ddc2b465ec1aed8541c9a2013ad70c4bced1b08.020.2.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-09-25T02:53:00.000Z",
+      "published_at": "2026-09-25T09:00:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
