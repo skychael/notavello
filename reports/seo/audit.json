@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-25T06:29:03.856Z",
+  "generatedAt": "2026-09-26T06:31:21.473Z",
   "totals": {
-    "pages": 279,
-    "indexable": 275,
-    "articles": 207,
-    "sitemap": 275,
+    "pages": 281,
+    "indexable": 277,
+    "articles": 209,
+    "sitemap": 277,
     "errors": 0,
-    "warnings": 224
+    "warnings": 228
   },
   "errors": [],
   "warnings": [
@@ -572,6 +572,16 @@
     },
     {
       "type": "template-pattern",
+      "page": "/pages/blog/how-to-reduce-storage-problems-on-a-raspberry-pi/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/how-to-reduce-storage-problems-on-a-raspberry-pi/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
       "page": "/pages/blog/how-to-review-browser-site-permissions-without-breaking-everything/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
@@ -916,6 +926,16 @@
       "detail": "title/description lacks a clear AI, software, or computing connection"
     },
     {
+      "type": "template-pattern",
+      "page": "/pages/blog/spr-loan-is-the-fuel-bill/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/spr-loan-is-the-fuel-bill/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
       "type": "topic-review",
       "page": "/pages/blog/strait-of-hormuz-oil-crisis-rationing-timeline/",
       "detail": "title/description lacks a clear AI, software, or computing connection"
@@ -1140,7 +1160,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 279,
+      "incomingLinks": 281,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -1164,7 +1184,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 279,
+      "incomingLinks": 281,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -1272,7 +1292,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 279,
+      "incomingLinks": 281,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -1284,9 +1304,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 279,
-      "lastmod": "2026-09-24",
-      "bodyWords": 642
+      "incomingLinks": 281,
+      "lastmod": "2026-09-25",
+      "bodyWords": 652
     },
     {
       "route": "/pages/blog/a-plain-language-guide-to-file-permissions/",
@@ -1560,9 +1580,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 146,
-      "lastmod": "2026-09-24",
-      "bodyWords": 2571
+      "incomingLinks": 148,
+      "lastmod": "2026-09-25",
+      "bodyWords": 2593
     },
     {
       "route": "/pages/blog/apple-speechanalyzer-local-transcription-apps/",
@@ -2573,6 +2593,18 @@
       "bodyWords": 797
     },
     {
+      "route": "/pages/blog/how-to-reduce-storage-problems-on-a-raspberry-pi/",
+      "file": "pages/blog/how-to-reduce-storage-problems-on-a-raspberry-pi/index.html",
+      "title": "How to Reduce Storage Problems on a Raspberry Pi — The Export | Notavello",
+      "description": "Practical steps to protect Raspberry Pi storage from power loss, low space, excessive logging, and hardware wear using journaling, read-only setups",
+      "canonical": "https://notavello.com/pages/blog/how-to-reduce-storage-problems-on-a-raspberry-pi/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-09-25",
+      "bodyWords": 860
+    },
+    {
       "route": "/pages/blog/how-to-review-browser-site-permissions-without-breaking-everything/",
       "file": "pages/blog/how-to-review-browser-site-permissions-without-breaking-everything/index.html",
       "title": "How to review browser site permissions without breaking everything — The Export | Notavello",
@@ -3001,8 +3033,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-24",
-      "bodyWords": 824
+      "lastmod": "2026-09-25",
+      "bodyWords": 837
     },
     {
       "route": "/pages/blog/page-11/",
@@ -3013,8 +3045,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-24",
-      "bodyWords": 847
+      "lastmod": "2026-09-25",
+      "bodyWords": 840
     },
     {
       "route": "/pages/blog/page-12/",
@@ -3025,8 +3057,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": "2026-09-24",
-      "bodyWords": 470
+      "lastmod": "2026-09-25",
+      "bodyWords": 557
     },
     {
       "route": "/pages/blog/page-2/",
@@ -3037,8 +3069,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-24",
-      "bodyWords": 659
+      "lastmod": "2026-09-25",
+      "bodyWords": 648
     },
     {
       "route": "/pages/blog/page-3/",
@@ -3049,8 +3081,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-24",
-      "bodyWords": 659
+      "lastmod": "2026-09-25",
+      "bodyWords": 670
     },
     {
       "route": "/pages/blog/page-4/",
@@ -3061,8 +3093,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-24",
-      "bodyWords": 678
+      "lastmod": "2026-09-25",
+      "bodyWords": 675
     },
     {
       "route": "/pages/blog/page-5/",
@@ -3073,8 +3105,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-24",
-      "bodyWords": 684
+      "lastmod": "2026-09-25",
+      "bodyWords": 681
     },
     {
       "route": "/pages/blog/page-6/",
@@ -3085,8 +3117,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-24",
-      "bodyWords": 649
+      "lastmod": "2026-09-25",
+      "bodyWords": 659
     },
     {
       "route": "/pages/blog/page-7/",
@@ -3097,8 +3129,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-24",
-      "bodyWords": 665
+      "lastmod": "2026-09-25",
+      "bodyWords": 656
     },
     {
       "route": "/pages/blog/page-8/",
@@ -3109,8 +3141,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-24",
-      "bodyWords": 694
+      "lastmod": "2026-09-25",
+      "bodyWords": 697
     },
     {
       "route": "/pages/blog/page-9/",
@@ -3121,8 +3153,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-24",
-      "bodyWords": 757
+      "lastmod": "2026-09-25",
+      "bodyWords": 731
     },
     {
       "route": "/pages/blog/phosphate-is-the-fertilizer-shock-that-did-not-fade/",
@@ -3336,7 +3368,7 @@
       "canonical": "https://notavello.com/pages/blog/spr-drawdown-buying-time-not-cheap-gas/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 6,
+      "incomingLinks": 7,
       "lastmod": "2026-07-31",
       "bodyWords": 1333
     },
@@ -3351,6 +3383,18 @@
       "incomingLinks": 4,
       "lastmod": "2026-08-11",
       "bodyWords": 1419
+    },
+    {
+      "route": "/pages/blog/spr-loan-is-the-fuel-bill/",
+      "file": "pages/blog/spr-loan-is-the-fuel-bill/index.html",
+      "title": "The SPR Loan Is The Fuel Bill — The Export | Notavello",
+      "description": "The SPR is down to 284.6 million barrels while gasoline and diesel stocks draw. That oil loan is showing up in fuel bills.",
+      "canonical": "https://notavello.com/pages/blog/spr-loan-is-the-fuel-bill/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-09-26",
+      "bodyWords": 1398
     },
     {
       "route": "/pages/blog/strait-of-hormuz-oil-crisis-rationing-timeline/",
@@ -3924,7 +3968,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 279,
+      "incomingLinks": 281,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -3936,7 +3980,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 279,
+      "incomingLinks": 281,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -3948,7 +3992,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 279,
+      "incomingLinks": 281,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -3960,7 +4004,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 279,
+      "incomingLinks": 281,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -3972,7 +4016,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 279,
+      "incomingLinks": 281,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -3985,8 +4029,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-09-25",
-      "bodyWords": 405
+      "lastmod": "2026-09-26",
+      "bodyWords": 411
     },
     {
       "route": "/pages/sample",
@@ -4008,7 +4052,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 279,
+      "incomingLinks": 281,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -4020,7 +4064,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 279,
+      "incomingLinks": 281,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -4044,7 +4088,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 279,
+      "incomingLinks": 281,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -4476,7 +4520,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 279,
+      "incomingLinks": 281,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }
