@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-26T07:47:46.602Z",
-  "latest_success_at": "2026-09-26T07:47:46.602Z",
+  "generated_at": "2026-09-26T13:09:54.334Z",
+  "latest_success_at": "2026-09-26T13:09:54.334Z",
   "status": "partial",
   "items": [
     {
-      "id": "3c4d067899e0704a",
+      "id": "3bd40741c3859ff9",
       "title": "Summary for Hurricane Polo (EP2/EP172026)",
-      "url": "https://www.nhc.noaa.gov/text/refresh/MIATCPEP2+shtml/260553.shtml",
+      "url": "https://www.nhc.noaa.gov/text/refresh/MIATCPEP2+shtml/261153.shtml",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-09-26T05:53:49.000Z",
+      "published_at": "2026-09-26T11:53:25.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "0f1f4fad5071c4af",
-      "title": "Tropical Storm Watch issued September 25 at 5:14PM HST by NWS Honolulu HI",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6822165e775be02446b08bc1036107e1831fcdcf.011.1.cap",
+      "id": "c31f74f5905714ac",
+      "title": "Tropical Storm Watch issued September 25 at 10:56PM HST by NWS Honolulu HI",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b167d090e42990bce437cb8bb59bce4cf6eff846.011.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-09-26T03:14:00.000Z",
+      "published_at": "2026-09-26T08:56:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "3ac2a398fa5475fd",
-      "title": "Tropical Storm Warning issued September 25 at 5:14PM HST by NWS Honolulu HI",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6822165e775be02446b08bc1036107e1831fcdcf.020.2.cap",
+      "id": "19791b6af3e37929",
+      "title": "Tropical Storm Warning issued September 25 at 10:56PM HST by NWS Honolulu HI",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b167d090e42990bce437cb8bb59bce4cf6eff846.020.2.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-09-26T03:14:00.000Z",
+      "published_at": "2026-09-26T08:56:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
