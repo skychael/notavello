@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-26T13:09:54.334Z",
-  "latest_success_at": "2026-09-26T13:09:54.334Z",
+  "generated_at": "2026-09-26T17:13:57.012Z",
+  "latest_success_at": "2026-09-26T17:13:57.012Z",
   "status": "partial",
   "items": [
     {
-      "id": "3bd40741c3859ff9",
+      "id": "66ac4ba92e2ab722",
+      "title": "Tropical Storm Watch issued September 26 at 4:59AM HST by NWS Honolulu HI",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b3aaa8e02ab9293e7520a302f6d688115658a6e4.011.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-09-26T14:59:00.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "ee90035a5e61aff5",
+      "title": "Tropical Storm Warning issued September 26 at 4:59AM HST by NWS Honolulu HI",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b3aaa8e02ab9293e7520a302f6d688115658a6e4.020.2.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-09-26T14:59:00.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "0c5100e4e10632d6",
       "title": "Summary for Hurricane Polo (EP2/EP172026)",
-      "url": "https://www.nhc.noaa.gov/text/refresh/MIATCPEP2+shtml/261153.shtml",
+      "url": "https://www.nhc.noaa.gov/text/refresh/MIATCPEP2+shtml/261450.shtml",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-09-26T11:53:25.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "c31f74f5905714ac",
-      "title": "Tropical Storm Watch issued September 25 at 10:56PM HST by NWS Honolulu HI",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b167d090e42990bce437cb8bb59bce4cf6eff846.011.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-09-26T08:56:00.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "19791b6af3e37929",
-      "title": "Tropical Storm Warning issued September 25 at 10:56PM HST by NWS Honolulu HI",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b167d090e42990bce437cb8bb59bce4cf6eff846.020.2.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-09-26T08:56:00.000Z",
+      "published_at": "2026-09-26T14:56:28.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
