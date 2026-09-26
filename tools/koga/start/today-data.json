@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "09-25",
-  "display_date": "September 25",
-  "generated_at": "2026-09-25T13:49:08.655Z",
+  "date_key": "09-26",
+  "display_date": "September 26",
+  "generated_at": "2026-09-26T13:06:50.114Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-a122e7862354bde97efeeae2",
+      "candidate_id": "event-873d2557c42addeb3513fd39",
       "type": "event",
-      "year": 1911,
-      "text": "An explosion of badly degraded propellant charges on board the French battleship Liberté detonates the forward ammunition magazines and destroys the ship.",
-      "article_title": "French battleship Liberté",
-      "url": "https://en.wikipedia.org/wiki/French_battleship_Libert%C3%A9",
+      "year": 1978,
+      "text": "Air Caribbean Flight 309 crashes in Residencial Las Casas in San Juan, Puerto Rico, killing six.",
+      "article_title": "Air Caribbean Flight 309",
+      "url": "https://en.wikipedia.org/wiki/Air_Caribbean_Flight_309",
       "category": "World history"
     },
     {
-      "candidate_id": "event-c26c9f6e25437a24d97cf414",
+      "candidate_id": "event-bea92cdc854cb42e7683b39d",
       "type": "event",
-      "year": 1964,
-      "text": "The Mozambican War of Independence against Portugal begins.",
-      "article_title": "Mozambican War of Independence",
-      "url": "https://en.wikipedia.org/wiki/Mozambican_War_of_Independence",
-      "category": "World history"
-    },
-    {
-      "candidate_id": "event-4a1344986846f93ee24315c2",
-      "type": "event",
-      "year": 1997,
-      "text": "NASA launches Space Shuttle Atlantis on STS-86 to the Mir space station.",
-      "article_title": "Space Shuttle Atlantis",
-      "url": "https://en.wikipedia.org/wiki/Space_Shuttle_Atlantis",
+      "year": 1983,
+      "text": "Soviet Air Force officer Stanislav Petrov identifies a report of an incoming nuclear missile as a computer error and not an American first strike, thus preventing nuclear war.",
+      "article_title": "Stanislav Petrov",
+      "url": "https://en.wikipedia.org/wiki/Stanislav_Petrov",
       "category": "Science and technology"
+    },
+    {
+      "candidate_id": "event-ea78b06d25f9a78e12f034b9",
+      "type": "event",
+      "year": 2024,
+      "text": "Hurricane Helene makes landfall in Perry, Florida as a Category 4 hurricane, killing over 250 people, causing US$78.7 billion in damage and becoming the deadliest hurricane in the mainland United States since Katrina.",
+      "article_title": "Hurricane Helene",
+      "url": "https://en.wikipedia.org/wiki/Hurricane_Helene",
+      "category": "Disasters and exploration"
     }
   ]
 }
