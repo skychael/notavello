@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "checked_at": "2026-09-26T17:13:56.392Z",
-  "latest_success_at": "2026-09-26T17:13:56.392Z",
+  "checked_at": "2026-09-26T19:55:53.820Z",
+  "latest_success_at": "2026-09-26T19:55:53.820Z",
   "status": "partial",
   "items": [
     {
@@ -10,14 +10,6 @@
       "publisher": "gCaptain",
       "published_at": "2026-09-25T16:45:36.000Z",
       "source_id": "gcaptain",
-      "status": "ok"
-    },
-    {
-      "title": "Aramco Restores East-West Pipeline as War Risk Closes In on Yanbu",
-      "url": "https://oilprice.com/Energy/Energy-General/Aramco-Restores-East-West-Pipeline-as-War-Risk-Closes-In-on-Yanbu.html",
-      "publisher": "OilPrice.com",
-      "published_at": "2026-09-25T13:00:00.000Z",
-      "source_id": "oilprice",
       "status": "ok"
     },
     {
@@ -37,6 +29,14 @@
       "status": "ok"
     },
     {
+      "title": "U.S.-Iran Talks Revive June Plan for Ending Hormuz Standoff",
+      "url": "https://oilprice.com/Energy/Energy-General/US-Iran-Talks-Revive-June-Plan-for-Ending-Hormuz-Standoff.html",
+      "publisher": "OilPrice.com",
+      "published_at": "2026-09-25T13:00:00.000Z",
+      "source_id": "oilprice",
+      "status": "ok"
+    },
+    {
       "title": "US Appears Set to Seize $600M in Iranian Crude Oil From Three Tankers",
       "url": "https://maritime-executive.com/article/us-appears-set-to-seize-600m-in-iranian-crude-oil-from-three-tankers",
       "publisher": "The Maritime Executive",
@@ -45,18 +45,10 @@
       "status": "ok"
     },
     {
-      "title": "Captain Killed in Russia’s Latest Attack on Merchant Shipping",
-      "url": "https://maritime-executive.com/article/captain-killed-in-russia-s-latest-attack-on-merchant-shipping",
-      "publisher": "The Maritime Executive",
-      "published_at": "2026-09-23T17:45:11.000Z",
-      "source_id": "maritime-executive",
-      "status": "ok"
-    },
-    {
-      "title": "Qatar Boosts LNG Traffic Via Hormuz as Global Shortage Bites",
-      "url": "https://gcaptain.com/qatar-boosts-lng-traffic-via-hormuz-as-global-shortage-bites",
+      "title": "Russia Can Restart 80% Of Black Sea Grain Export If Attacks Stop",
+      "url": "https://gcaptain.com/russia-can-restart-80-of-black-sea-grain-export-if-attacks-stop",
       "publisher": "gCaptain",
-      "published_at": "2026-09-25T10:42:47.000Z",
+      "published_at": "2026-09-26T18:29:30.000Z",
       "source_id": "gcaptain",
       "status": "ok"
     },
@@ -66,6 +58,14 @@
       "publisher": "Breaking Defense",
       "published_at": "2026-09-25T14:37:52.000Z",
       "source_id": "breaking-defense",
+      "status": "ok"
+    },
+    {
+      "title": "Russian Military Cargo Ship Heads for Turkey from Tobruk",
+      "url": "https://maritime-executive.com/article/russian-military-cargo-ship-heads-for-turkey-from-tobruk",
+      "publisher": "The Maritime Executive",
+      "published_at": "2026-09-25T14:13:02.000Z",
+      "source_id": "maritime-executive",
       "status": "ok"
     },
     {
