@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-25T22:25:55.872Z",
-  "latest_success_at": "2026-09-25T22:25:55.872Z",
+  "generated_at": "2026-09-26T01:37:46.763Z",
+  "latest_success_at": "2026-09-26T01:37:46.763Z",
   "status": "partial",
   "items": [
     {
@@ -23,11 +23,11 @@
       "status": "ok"
     },
     {
-      "id": "039add0bb5b6db8f",
-      "title": "Tropical Cyclone Local Statement issued September 25 at 5:08AM HST by NWS Honolulu HI",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.3d109f0439c9cf60a5bb44538333edf4ed3badaf.001.1.cap",
+      "id": "adce99a7bca07ace",
+      "title": "High Surf Advisory issued September 25 at 2:51PM HST until September 27 at 6:00PM HST by NWS Honolulu HI",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6e97b03bcbdf1f074e1352b704ef285f992420a8.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-09-25T15:08:00.000Z",
+      "published_at": "2026-09-26T00:51:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
