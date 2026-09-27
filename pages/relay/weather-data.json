@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-26T22:55:56.547Z",
-  "latest_success_at": "2026-09-26T22:55:56.547Z",
+  "generated_at": "2026-09-27T01:31:26.810Z",
+  "latest_success_at": "2026-09-27T01:31:26.810Z",
   "status": "partial",
   "items": [
     {
@@ -23,11 +23,11 @@
       "status": "ok"
     },
     {
-      "id": "33ea98b81d2d196c",
-      "title": "SPC Day 3-8 Fire Weather Outlook",
-      "url": "https://www.spc.noaa.gov/products/exper/fire_wx",
-      "publisher": "Storm Prediction Center",
-      "published_at": "2026-09-26T21:39:22.000Z",
+      "id": "56fcf30f6624a66a",
+      "title": "Hurricane Polo Graphics",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep2+shtml/235759.shtml?cone=",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-09-26T23:57:59.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
