@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-27T08:16:50.714Z",
-  "latest_success_at": "2026-09-27T08:16:50.714Z",
+  "generated_at": "2026-09-27T14:05:58.913Z",
+  "latest_success_at": "2026-09-27T14:05:58.913Z",
   "status": "partial",
   "items": [
     {
-      "id": "5e8939b1330b1460",
-      "title": "Flood Watch issued September 27 at 12:45AM MDT until September 30 at 6:00AM MDT by NWS Grand Junction CO",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.4c2dd958580560f3aefbdfa5fe5606b541da1e5c.001.1.cap",
+      "id": "037e08081f6bf910",
+      "title": "High Surf Advisory issued September 27 at 3:49AM HST until September 27 at 6:00PM HST by NWS Honolulu HI",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6723ce9da4552d97f110a27df07ec13574bd4268.001.2.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-09-27T06:45:00.000Z",
+      "published_at": "2026-09-27T13:49:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "606a45c778be3ca8",
-      "title": "Flood Watch issued September 27 at 12:01AM MDT until September 30 at 6:00AM MDT by NWS Pueblo CO",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.ed13e94394bc5add2bd3cb8c391b8366392efda9.001.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-09-27T06:01:00.000Z",
+      "id": "a06802a7562950cb",
+      "title": "Hurricane Polo Graphics",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep2+shtml/120826.shtml?cone=",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-09-27T12:08:26.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "7cb9935bf42b6ff3",
-      "title": "SPC Sep 27, 2026 0600 UTC Day 1 Convective Outlook",
-      "url": "https://www.spc.noaa.gov/products/outlook/day1otlk_1200.html",
-      "publisher": "Storm Prediction Center",
-      "published_at": "2026-09-27T05:55:16.000Z",
+      "id": "ee8e390990a944fc",
+      "title": "Eastern North Pacific Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-09-27T11:41:33.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
