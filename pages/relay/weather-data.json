@@ -1,24 +1,24 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-27T14:05:58.913Z",
-  "latest_success_at": "2026-09-27T14:05:58.913Z",
+  "generated_at": "2026-09-27T18:29:07.204Z",
+  "latest_success_at": "2026-09-27T18:29:07.204Z",
   "status": "partial",
   "items": [
     {
-      "id": "037e08081f6bf910",
-      "title": "High Surf Advisory issued September 27 at 3:49AM HST until September 27 at 6:00PM HST by NWS Honolulu HI",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6723ce9da4552d97f110a27df07ec13574bd4268.001.2.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-09-27T13:49:00.000Z",
+      "id": "9bb8dcbebaadc1bf",
+      "title": "Hurricane Polo Graphics",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep2+shtml/174705.shtml?cone=",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-09-27T17:47:05.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "a06802a7562950cb",
-      "title": "Hurricane Polo Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep2+shtml/120826.shtml?cone=",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-09-27T12:08:26.000Z",
+      "id": "4c31190a9c521e8a",
+      "title": "SPC Sep 27, 2026 1730 UTC Day 2 Convective Outlook",
+      "url": "https://www.spc.noaa.gov/products/outlook/day2otlk_1730.html",
+      "publisher": "Storm Prediction Center",
+      "published_at": "2026-09-27T17:31:06.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
@@ -27,7 +27,7 @@
       "title": "Eastern North Pacific Tropical Weather Outlook",
       "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-09-27T11:41:33.000Z",
+      "published_at": "2026-09-27T17:26:40.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
