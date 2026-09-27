@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>How to run a small Raspberry Pi project as a system service — The Export | Notavello</title>
+<meta name="description" content="Learn how to run a Raspberry Pi project as a systemd service. Covers service units, startup ordering, restart policies, user accounts, and log inspection."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/blog/how-to-run-a-small-raspberry-pi-project-as-a-system-service/"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2026-09-26T13:14:04.373Z"/>
+<meta property="article:modified_time" content="2026-09-26T13:14:04.373Z"/>
+<meta name="notavello:published_at" content="2026-09-26T13:14:04.373Z"/>
+<meta name="syndication-origin-site" content="toysforbots"/>
+<meta name="syndication-origin-id" content="toysforbots:how-to-run-a-small-raspberry-pi-project-as-a-system-service"/>
+<meta name="syndication-origin-slug" content="how-to-run-a-small-raspberry-pi-project-as-a-system-service"/>
+<meta name="syndication-origin-url" content="https://toysforbots.com/blog/how-to-run-a-small-raspberry-pi-project-as-a-system-service/"/>
+<meta name="syndication-source-format" content="toysforbots-syndication-v1"/>
+<meta property="og:url" content="https://notavello.com/pages/blog/how-to-run-a-small-raspberry-pi-project-as-a-system-service/"/>
+<meta property="og:title" content="How to run a small Raspberry Pi project as a system service"/>
+<meta property="og:description" content="Learn how to run a Raspberry Pi project as a systemd service. Covers service units, startup ordering, restart policies, user accounts, and log inspection."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="How to run a small Raspberry Pi project as a system service"/>
+<meta name="twitter:description" content="Learn how to run a Raspberry Pi project as a systemd service. Covers service units, startup ordering, restart policies, user accounts, and log inspection."/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "How to run a small Raspberry Pi project as a system service",
+  "description": "Learn how to run a Raspberry Pi project as a systemd service. Covers service units, startup ordering, restart policies, user accounts, and log inspection.",
+  "url": "https://notavello.com/pages/blog/how-to-run-a-small-raspberry-pi-project-as-a-system-service/",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://notavello.com/pages/blog/how-to-run-a-small-raspberry-pi-project-as-a-system-service/" },
+  "image": "https://notavello.com/og-image.png",
+  "datePublished": "2026-09-26T13:14:04.373Z",
+  "dateModified": "2026-09-26T13:14:04.373Z",
+  "author": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" },
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com", "logo": { "@type": "ImageObject", "url": "https://notavello.com/og-image.png" } }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
+.post-nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; row-gap: 8px; }
+.post-nav-top { margin-bottom: 40px; }
+.post-nav-bottom { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--border); }
+.post-nav a { display: inline-flex; align-items: center; gap: 6px; font-size: 0.92rem; font-weight: 600; color: var(--ink-muted); text-decoration: none; padding: 12px 14px; border-radius: var(--radius-sm); white-space: nowrap; transition: color 0.15s, background 0.15s; }
+.post-nav a:hover { color: var(--accent); background: var(--accent-light); }
+.post-nav a:first-child { padding-left: 0; }
+.post-nav a:last-child { padding-right: 0; justify-content: flex-end; }
+.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
+.post-date { font-size: 0.78rem; color: var(--ink-faint); }
+.post-title { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; color: var(--ink); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
+.post-lede { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+.post-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink); }
+.post-body h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 44px 0 16px; letter-spacing: -0.01em; }
+.post-body p { margin-bottom: 20px; color: var(--ink-muted); }
+.post-body p strong { color: var(--ink); font-weight: 600; }
+.post-body ul { margin: 0 0 20px 20px; color: var(--ink-muted); }
+.post-body ul li { margin-bottom: 8px; line-height: 1.7; }
+.callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 32px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.7; }
+.post-footer { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.post-footer-label { font-size: 0.8rem; color: var(--ink-faint); }
+.btn-export { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: opacity 0.2s; }
+.btn-export:hover { opacity: 0.9; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } .post-nav a { padding: 12px 8px; font-size: 0.88rem; } }
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+
+  <nav class="post-nav post-nav-top">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+  <div class="post-meta">
+    <span class="post-tag">Small Computers</span>
+    <span class="post-date">September 26, 2026</span>
+  </div>
+
+  <h1 class="post-title">How to run a small Raspberry Pi project as a system service</h1>
+
+  <p class="post-lede">Raspberry Pi projects often need to start automatically and keep running after reboots or crashes. Systemd, the default init system on Raspberry Pi OS, manages services through unit files that declare what to run, when to run it, and how to recover from failures. Unlike older rc.local scripts, systemd starts units based on declared dependencies rather than a fixed sequence, which avoids unpredictable ordering. raspberrypi.com notes that rc.local is no longer guaranteed to run after other services. A properly written service unit gives you control over startup targets, restart behavior, the user account that executes the program, and easy access to logs through journalctl.</p>
+
+  <div class="post-body">
+
+<h2>Understanding service units</h2>
+<p>A systemd service is defined in a plain-text unit file with a .service extension. The file contains sections that describe the unit, the service itself, and when it should be installed. The [Unit] section holds metadata and dependency declarations. The [Service] section specifies the executable and its runtime behavior. The [Install] section tells systemd which target should pull the service in during boot.</p>
+<p>User services live in ~/.config/systemd/user while system services belong in /etc/systemd/system. System services run as root by default and survive user logouts; user services run under the logged-in user and stop when that user logs out. Choosing the right location determines whether the service persists across logouts and whether it requires elevated privileges to manage.</p>
+<p>Each section uses simple key-value pairs. This structure makes it straightforward to read or edit the file with any text editor. Because the format is declarative, systemd can validate dependencies before attempting to start the service.</p><div class="callout"><strong>Caution</strong> Always run `sudo systemctl daemon-reload` after editing or adding unit files. Without it, systemctl enable or start commands may fail silently.</div>
+<h2>Writing a minimal service file</h2>
+<p>A one-shot service runs a script once and exits. A simple service runs continuously. Both start with a [Unit] Description line. In the [Service] section, ExecStart points to the command or script. For a one-shot job that waits for the network, add After=network-online.target and Type=oneshot. For a long-running program, omit Type or set it to simple and add Restart=on-failure so systemd restarts the process after a crash.</p>
+<p>After placing the file, reload the daemon so systemd recognizes the new unit. Then enable the service to create the necessary symlinks for automatic startup. Testing with an immediate start command lets you verify behavior before the next reboot.</p><ul><li>Place the file in /etc/systemd/system/myproject.service for a system service.</li><li>Run sudo systemctl enable myproject.service to create the symlink that starts it at boot.</li><li>Use sudo systemctl start myproject.service to launch it immediately for testing.</li></ul>
+<h2>Controlling startup order</h2>
+<p>Systemd reaches targets in sequence during boot. The default.target is the last target reached on a typical desktop or server install. To make your service start near the end of boot, set WantedBy=default.target in the [Install] section. If your program needs the network first, add After=network-online.target in the [Unit] section. The After directive only sets ordering; it does not activate the other unit. Use Wants= or Requires= when you also need the dependency to be started.</p>
+<p>Ordering directives prevent race conditions where a project tries to use a resource that has not yet been initialized. Because systemd builds a dependency graph, it can start independent services in parallel while still respecting the declared sequence. This approach replaces the linear execution model of older scripts and reduces boot time variability.</p>
+<h2>Restart behavior and failure handling</h2>
+<p>By default systemd leaves a failed service stopped. Adding Restart=on-failure in the [Service] section tells it to restart the process whenever the main process exits with a non-zero code. You can also set RestartSec=5 to wait five seconds between attempts. These options reduce the chance that a transient error leaves your project offline until the next manual reboot. freedesktop.org documents additional Restart settings such as always and on-abnormal for finer control.</p>
+<p>Restart policies apply only after the initial start attempt succeeds. If a service fails during its first execution because of a missing dependency or incorrect path, systemd will not automatically retry unless the unit is also configured with appropriate Wants or Requires directives. Combining restart settings with proper ordering therefore improves overall resilience.</p>
+<h2>Running as a non-root user</h2>
+<p>Running services as root increases risk if the program is compromised. Add User=pi (or another dedicated account) in the [Service] section to drop privileges. The script or binary must then be readable and executable by that user, and any files it writes must be writable by the same account. When the service runs as a normal user it cannot bind to ports below 1024 or access hardware that requires root without additional configuration such as udev rules.</p>
+<p>Privilege separation also limits the scope of any file-system changes the service can make. Before enabling the unit, verify ownership and permissions on all paths referenced by ExecStart and any working directories. This step avoids startup failures that would otherwise appear only after a reboot.</p>
+<h2>Inspecting logs and service status</h2>
+<p>Systemd captures stdout and stderr from services and stores them in the journal. Run journalctl --unit=myproject.service to view recent output. Add -f to follow new messages live. systemctl status myproject.service shows whether the unit is active, the main PID, memory usage, and the last few log lines. These commands replace manual log files and work even when the service writes nothing to disk.</p>
+<p>The journal stores entries with timestamps and metadata, making it possible to correlate service output with other system events. Filtering by unit name keeps the output focused, while the live-follow option helps during initial debugging. When a service fails repeatedly, the status command quickly reveals the exit code and any recent error messages without needing to search separate log directories.</p><h2>Sources</h2><ul><li><a href="https://www.freedesktop.org/software/systemd/man/latest/systemd.html" rel="noopener noreferrer">freedesktop.org</a></li><li><a href="https://github.com/raspberrypi/documentation/blob/83aeab3278fc7b648022fb56b30e4d62c5ccba24/linux/usage/systemd.md" rel="noopener noreferrer">raspberrypi.com</a></li><li><a href="https://www.man7.org/linux/man-pages/man5/systemd.service.5.html" rel="noopener noreferrer">man7.org</a></li></ul>
+
+  </div>
+
+  <div class="post-footer">
+    <span class="post-footer-label">Looking for more AI tools?</span>
+    <a class="btn-export" href="/">See our free AI tools →</a>
+  </div>
+
+  <nav class="post-nav post-nav-bottom">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+</main>
+
+<!--FOOTER-->
+
+</body>
+</html>
