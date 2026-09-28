@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "checked_at": "2026-09-27T22:16:02.145Z",
-  "latest_success_at": "2026-09-27T22:16:02.145Z",
+  "checked_at": "2026-09-28T00:53:58.767Z",
+  "latest_success_at": "2026-09-28T00:53:58.767Z",
   "status": "partial",
   "items": [
     {
@@ -10,14 +10,6 @@
       "publisher": "gCaptain",
       "published_at": "2026-09-25T16:45:36.000Z",
       "source_id": "gcaptain",
-      "status": "ok"
-    },
-    {
-      "title": "France Sending Forces To Help Defend Saudi Arabia’s Red Sea Oil Facilities",
-      "url": "https://www.twz.com/news-features/france-sending-forces-to-help-defend-saudi-arabias-red-sea-oil-facilities",
-      "publisher": "TWZ (The War Zone)",
-      "published_at": "2026-09-24T23:34:08.000Z",
-      "source_id": "twz",
       "status": "ok"
     },
     {
@@ -82,6 +74,14 @@
       "publisher": "Breaking Defense",
       "published_at": "2026-09-25T17:58:58.000Z",
       "source_id": "breaking-defense",
+      "status": "ok"
+    },
+    {
+      "title": "Blackbeard Hypersonic Missile Seen Flying On F/A-18 Super Hornet For The First Time",
+      "url": "https://www.twz.com/air/blackbeard-hypersonic-missile-seen-flying-on-f-a-18-super-hornet-for-the-first-time",
+      "publisher": "TWZ (The War Zone)",
+      "published_at": "2026-09-25T20:37:08.000Z",
+      "source_id": "twz",
       "status": "ok"
     }
   ]
