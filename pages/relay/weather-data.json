@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-28T07:00:40.042Z",
-  "latest_success_at": "2026-09-28T07:00:40.042Z",
+  "generated_at": "2026-09-28T15:34:08.412Z",
+  "latest_success_at": "2026-09-28T15:34:08.412Z",
   "status": "partial",
   "items": [
     {
-      "id": "e0664cca6e00b38c",
-      "title": "Hurricane Polo Public Advisory Number 30a",
-      "url": "https://www.nhc.noaa.gov/text/refresh/MIATCPEP2+shtml/280544.shtml",
+      "id": "17dedd263a8e6844",
+      "title": "Hurricane Polo Public Advisory Number 32",
+      "url": "https://www.nhc.noaa.gov/text/refresh/MIATCPEP2+shtml/281444.shtml",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-09-28T05:49:28.000Z",
+      "published_at": "2026-09-28T14:53:28.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "6d20ded8c8f9fe87",
+      "id": "3f45a79d585500f9",
+      "title": "Tropical Storm Hanna Graphics",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_at3+shtml/152926.shtml?cone=",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-09-28T15:29:26.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "d5cd9851bb346750",
       "title": "Tropical Storm Rachel Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep3+shtml/054847.shtml?cone=",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep3+shtml/144305.shtml?cone=",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-09-28T05:48:47.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "ee8e390990a944fc",
-      "title": "Eastern North Pacific Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-09-28T05:31:46.000Z",
+      "published_at": "2026-09-28T14:43:05.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
