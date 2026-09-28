@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-28T00:53:59.362Z",
-  "latest_success_at": "2026-09-28T00:53:59.362Z",
+  "generated_at": "2026-09-28T07:00:40.042Z",
+  "latest_success_at": "2026-09-28T07:00:40.042Z",
   "status": "partial",
   "items": [
     {
-      "id": "ef4dcf280452c446",
-      "title": "Hurricane Polo Public Advisory Number 29a",
-      "url": "https://www.nhc.noaa.gov/text/refresh/MIATCPEP2+shtml/272354.shtml",
+      "id": "e0664cca6e00b38c",
+      "title": "Hurricane Polo Public Advisory Number 30a",
+      "url": "https://www.nhc.noaa.gov/text/refresh/MIATCPEP2+shtml/280544.shtml",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-09-27T23:54:43.000Z",
+      "published_at": "2026-09-28T05:49:28.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "8b47ae60d8cbd9b2",
-      "title": "SPC Sep 28, 2026 0100 UTC Day 1 Convective Outlook",
-      "url": "https://www.spc.noaa.gov/products/outlook/day1otlk_0100.html",
-      "publisher": "Storm Prediction Center",
-      "published_at": "2026-09-28T00:49:13.000Z",
+      "id": "6d20ded8c8f9fe87",
+      "title": "Tropical Storm Rachel Graphics",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep3+shtml/054847.shtml?cone=",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-09-28T05:48:47.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "b5ad93019d019ede",
-      "title": "Atlantic Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
+      "id": "ee8e390990a944fc",
+      "title": "Eastern North Pacific Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-09-27T23:05:42.000Z",
+      "published_at": "2026-09-28T05:31:46.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
