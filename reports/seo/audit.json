@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-27T06:57:41.624Z",
+  "generatedAt": "2026-09-28T07:25:45.592Z",
   "totals": {
-    "pages": 283,
-    "indexable": 279,
-    "articles": 211,
-    "sitemap": 279,
+    "pages": 285,
+    "indexable": 281,
+    "articles": 213,
+    "sitemap": 281,
     "errors": 0,
-    "warnings": 232
+    "warnings": 236
   },
   "errors": [],
   "warnings": [
@@ -867,6 +867,16 @@
     },
     {
       "type": "template-pattern",
+      "page": "/pages/blog/refinery-run-cut-is-the-diesel-bill/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/refinery-run-cut-is-the-diesel-bill/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
       "page": "/pages/blog/rootless-containers-ai-service-boundary/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
@@ -1151,6 +1161,16 @@
       "detail": "title/description lacks a clear AI, software, or computing connection"
     },
     {
+      "type": "template-pattern",
+      "page": "/pages/blog/why-stable-power-matters-for-small-computers/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/why-stable-power-matters-for-small-computers/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
       "type": "topic-review",
       "page": "/pages/blog/why-website-changes-dont-show-up/",
       "detail": "title/description lacks a clear AI, software, or computing connection"
@@ -1180,7 +1200,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 283,
+      "incomingLinks": 285,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -1204,7 +1224,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 283,
+      "incomingLinks": 285,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -1312,7 +1332,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 283,
+      "incomingLinks": 285,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -1324,9 +1344,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 283,
-      "lastmod": "2026-09-26",
-      "bodyWords": 669
+      "incomingLinks": 285,
+      "lastmod": "2026-09-27",
+      "bodyWords": 664
     },
     {
       "route": "/pages/blog/a-plain-language-guide-to-file-permissions/",
@@ -1600,9 +1620,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 150,
-      "lastmod": "2026-09-26",
-      "bodyWords": 2619
+      "incomingLinks": 152,
+      "lastmod": "2026-09-27",
+      "bodyWords": 2640
     },
     {
       "route": "/pages/blog/apple-speechanalyzer-local-transcription-apps/",
@@ -1948,7 +1968,7 @@
       "canonical": "https://notavello.com/pages/blog/diesels-autumn-maintenance-bill-is-here/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 2,
+      "incomingLinks": 3,
       "lastmod": "2026-08-23",
       "bodyWords": 1463
     },
@@ -3077,8 +3097,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-26",
-      "bodyWords": 842
+      "lastmod": "2026-09-27",
+      "bodyWords": 817
     },
     {
       "route": "/pages/blog/page-11/",
@@ -3089,8 +3109,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-26",
-      "bodyWords": 837
+      "lastmod": "2026-09-27",
+      "bodyWords": 835
     },
     {
       "route": "/pages/blog/page-12/",
@@ -3101,8 +3121,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": "2026-09-26",
-      "bodyWords": 646
+      "lastmod": "2026-09-27",
+      "bodyWords": 745
     },
     {
       "route": "/pages/blog/page-2/",
@@ -3113,8 +3133,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-26",
-      "bodyWords": 648
+      "lastmod": "2026-09-27",
+      "bodyWords": 639
     },
     {
       "route": "/pages/blog/page-3/",
@@ -3125,8 +3145,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-26",
-      "bodyWords": 661
+      "lastmod": "2026-09-27",
+      "bodyWords": 667
     },
     {
       "route": "/pages/blog/page-4/",
@@ -3137,8 +3157,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-26",
-      "bodyWords": 674
+      "lastmod": "2026-09-27",
+      "bodyWords": 668
     },
     {
       "route": "/pages/blog/page-5/",
@@ -3149,8 +3169,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-26",
-      "bodyWords": 681
+      "lastmod": "2026-09-27",
+      "bodyWords": 686
     },
     {
       "route": "/pages/blog/page-6/",
@@ -3161,8 +3181,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-26",
-      "bodyWords": 664
+      "lastmod": "2026-09-27",
+      "bodyWords": 667
     },
     {
       "route": "/pages/blog/page-7/",
@@ -3173,8 +3193,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-26",
-      "bodyWords": 651
+      "lastmod": "2026-09-27",
+      "bodyWords": 645
     },
     {
       "route": "/pages/blog/page-8/",
@@ -3185,7 +3205,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-26",
+      "lastmod": "2026-09-27",
       "bodyWords": 700
     },
     {
@@ -3197,7 +3217,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-26",
+      "lastmod": "2026-09-27",
       "bodyWords": 709
     },
     {
@@ -3271,6 +3291,18 @@
       "incomingLinks": 4,
       "lastmod": "2026-08-20",
       "bodyWords": 1254
+    },
+    {
+      "route": "/pages/blog/refinery-run-cut-is-the-diesel-bill/",
+      "file": "pages/blog/refinery-run-cut-is-the-diesel-bill/index.html",
+      "title": "The 519,000-Barrel Refinery Cut Is The Diesel Bill — The Export | Notavello",
+      "description": "A 519,000 b/d refinery slowdown hit a diesel market already short on inventory, raising freight, harvest and heating costs.",
+      "canonical": "https://notavello.com/pages/blog/refinery-run-cut-is-the-diesel-bill/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-09-28",
+      "bodyWords": 1450
     },
     {
       "route": "/pages/blog/rootless-containers-ai-service-boundary/",
@@ -3921,6 +3953,18 @@
       "bodyWords": 596
     },
     {
+      "route": "/pages/blog/why-stable-power-matters-for-small-computers/",
+      "file": "pages/blog/why-stable-power-matters-for-small-computers/index.html",
+      "title": "Why stable power matters for small computers — The Export | Notavello",
+      "description": "Stable 5V power prevents undervoltage on devices like the Raspberry Pi.",
+      "canonical": "https://notavello.com/pages/blog/why-stable-power-matters-for-small-computers/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-09-27",
+      "bodyWords": 978
+    },
+    {
       "route": "/pages/blog/why-website-changes-dont-show-up/",
       "file": "pages/blog/why-website-changes-dont-show-up/index.html",
       "title": "Why Your Website Changes Won't Show Up — The Export | Notavello",
@@ -4012,7 +4056,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 283,
+      "incomingLinks": 285,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -4024,7 +4068,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 283,
+      "incomingLinks": 285,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -4036,7 +4080,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 283,
+      "incomingLinks": 285,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -4048,7 +4092,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 283,
+      "incomingLinks": 285,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -4060,7 +4104,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 283,
+      "incomingLinks": 285,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -4073,8 +4117,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-09-27",
-      "bodyWords": 417
+      "lastmod": "2026-09-28",
+      "bodyWords": 423
     },
     {
       "route": "/pages/sample",
@@ -4096,7 +4140,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 283,
+      "incomingLinks": 285,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -4108,7 +4152,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 283,
+      "incomingLinks": 285,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -4132,7 +4176,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 283,
+      "incomingLinks": 285,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -4564,7 +4608,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 283,
+      "incomingLinks": 285,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }
