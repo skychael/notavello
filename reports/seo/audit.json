@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-28T07:25:45.592Z",
+  "generatedAt": "2026-09-29T07:22:25.574Z",
   "totals": {
-    "pages": 285,
-    "indexable": 281,
-    "articles": 213,
-    "sitemap": 281,
+    "pages": 287,
+    "indexable": 283,
+    "articles": 215,
+    "sitemap": 283,
     "errors": 0,
-    "warnings": 236
+    "warnings": 239
   },
   "errors": [],
   "warnings": [
@@ -39,6 +39,11 @@
       "type": "topic-review",
       "page": "/pages/blog/a-safe-workflow-for-cleaning-up-old-git-branches/",
       "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/a-simple-backup-plan-for-a-small-home-server/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
     {
       "type": "template-pattern",
@@ -264,6 +269,16 @@
       "type": "template-pattern",
       "page": "/pages/blog/fertilizer-bill-is-a-pipeline-bill/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/fertilizer-delay-is-the-food-price-bill/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/fertilizer-delay-is-the-food-price-bill/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
     },
     {
       "type": "template-pattern",
@@ -1200,7 +1215,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 285,
+      "incomingLinks": 287,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -1224,7 +1239,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 285,
+      "incomingLinks": 287,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -1332,7 +1347,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 285,
+      "incomingLinks": 287,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -1344,9 +1359,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 285,
-      "lastmod": "2026-09-27",
-      "bodyWords": 664
+      "incomingLinks": 287,
+      "lastmod": "2026-09-28",
+      "bodyWords": 671
     },
     {
       "route": "/pages/blog/a-plain-language-guide-to-file-permissions/",
@@ -1395,6 +1410,18 @@
       "incomingLinks": 2,
       "lastmod": "2026-08-15",
       "bodyWords": 874
+    },
+    {
+      "route": "/pages/blog/a-simple-backup-plan-for-a-small-home-server/",
+      "file": "pages/blog/a-simple-backup-plan-for-a-small-home-server/index.html",
+      "title": "A simple backup plan for a small home server — The Export | Notavello",
+      "description": "Separate configuration, application data, replaceable software, and restore testing to create a reliable backup strategy for a small home server using tools",
+      "canonical": "https://notavello.com/pages/blog/a-simple-backup-plan-for-a-small-home-server/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-09-28",
+      "bodyWords": 789
     },
     {
       "route": "/pages/blog/ai-advice-needs-an-i-dont-know-step/",
@@ -1620,9 +1647,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 152,
-      "lastmod": "2026-09-27",
-      "bodyWords": 2640
+      "incomingLinks": 154,
+      "lastmod": "2026-09-28",
+      "bodyWords": 2663
     },
     {
       "route": "/pages/blog/apple-speechanalyzer-local-transcription-apps/",
@@ -1752,7 +1779,7 @@
       "canonical": "https://notavello.com/pages/blog/chinas-urea-cargoes-are-the-fertilizer-relief-valve/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 3,
+      "incomingLinks": 4,
       "lastmod": "2026-08-30",
       "bodyWords": 1487
     },
@@ -2019,6 +2046,18 @@
       "incomingLinks": 3,
       "lastmod": "2026-08-25",
       "bodyWords": 1699
+    },
+    {
+      "route": "/pages/blog/fertilizer-delay-is-the-food-price-bill/",
+      "file": "pages/blog/fertilizer-delay-is-the-food-price-bill/index.html",
+      "title": "The Fertilizer Delay Is The Food Price Bill — The Export | Notavello",
+      "description": "FAO says 1.5 to 3 million tonnes of monthly fertilizer trade is delayed. That is how Hormuz risk reaches food prices.",
+      "canonical": "https://notavello.com/pages/blog/fertilizer-delay-is-the-food-price-bill/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-09-29",
+      "bodyWords": 1636
     },
     {
       "route": "/pages/blog/fertilizer-relief-has-an-august-16-deadline/",
@@ -3097,8 +3136,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-27",
-      "bodyWords": 817
+      "lastmod": "2026-09-28",
+      "bodyWords": 812
     },
     {
       "route": "/pages/blog/page-11/",
@@ -3109,8 +3148,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-27",
-      "bodyWords": 835
+      "lastmod": "2026-09-28",
+      "bodyWords": 841
     },
     {
       "route": "/pages/blog/page-12/",
@@ -3121,8 +3160,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": "2026-09-27",
-      "bodyWords": 745
+      "lastmod": "2026-09-28",
+      "bodyWords": 837
     },
     {
       "route": "/pages/blog/page-2/",
@@ -3133,8 +3172,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-27",
-      "bodyWords": 639
+      "lastmod": "2026-09-28",
+      "bodyWords": 635
     },
     {
       "route": "/pages/blog/page-3/",
@@ -3145,8 +3184,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-27",
-      "bodyWords": 667
+      "lastmod": "2026-09-28",
+      "bodyWords": 672
     },
     {
       "route": "/pages/blog/page-4/",
@@ -3157,8 +3196,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-27",
-      "bodyWords": 668
+      "lastmod": "2026-09-28",
+      "bodyWords": 660
     },
     {
       "route": "/pages/blog/page-5/",
@@ -3169,8 +3208,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-27",
-      "bodyWords": 686
+      "lastmod": "2026-09-28",
+      "bodyWords": 685
     },
     {
       "route": "/pages/blog/page-6/",
@@ -3181,8 +3220,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-27",
-      "bodyWords": 667
+      "lastmod": "2026-09-28",
+      "bodyWords": 677
     },
     {
       "route": "/pages/blog/page-7/",
@@ -3193,8 +3232,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-27",
-      "bodyWords": 645
+      "lastmod": "2026-09-28",
+      "bodyWords": 642
     },
     {
       "route": "/pages/blog/page-8/",
@@ -3205,8 +3244,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-27",
-      "bodyWords": 700
+      "lastmod": "2026-09-28",
+      "bodyWords": 686
     },
     {
       "route": "/pages/blog/page-9/",
@@ -3217,8 +3256,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-27",
-      "bodyWords": 709
+      "lastmod": "2026-09-28",
+      "bodyWords": 699
     },
     {
       "route": "/pages/blog/phosphate-is-the-fertilizer-shock-that-did-not-fade/",
@@ -4056,7 +4095,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 285,
+      "incomingLinks": 287,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -4068,7 +4107,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 285,
+      "incomingLinks": 287,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -4080,7 +4119,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 285,
+      "incomingLinks": 287,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -4092,7 +4131,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 285,
+      "incomingLinks": 287,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -4104,7 +4143,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 285,
+      "incomingLinks": 287,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -4117,8 +4156,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-09-28",
-      "bodyWords": 423
+      "lastmod": "2026-09-29",
+      "bodyWords": 429
     },
     {
       "route": "/pages/sample",
@@ -4140,7 +4179,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 285,
+      "incomingLinks": 287,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -4152,7 +4191,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 285,
+      "incomingLinks": 287,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -4176,7 +4215,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 285,
+      "incomingLinks": 287,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -4608,7 +4647,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 285,
+      "incomingLinks": 287,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }
