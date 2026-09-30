@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-29T20:51:46.404Z",
-  "latest_success_at": "2026-09-29T20:51:46.404Z",
+  "generated_at": "2026-09-30T00:31:51.961Z",
+  "latest_success_at": "2026-09-30T00:31:51.961Z",
   "status": "partial",
   "items": [
     {
-      "id": "40b8ed2e562d2f00",
-      "title": "Flash Flood Warning issued September 29 at 2:01PM MDT until September 29 at 4:45PM MDT by NWS El Paso Tx/Santa Teresa NM",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.fa4038a7992b1186450a8bd8baee7922582e787c.001.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-09-29T20:01:00.000Z",
-      "topic": "Flooding",
-      "status": "ok"
-    },
-    {
-      "id": "cfaba358a93ea674",
+      "id": "e6215c4f3ddf37cf",
       "title": "Tropical Storm Rachel Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep3+shtml/205009.shtml?cone=",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep3+shtml/234255.shtml?cone=",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-09-29T20:50:09.000Z",
+      "published_at": "2026-09-29T23:42:55.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "e063f778f7019eb9",
-      "title": "Flood Watch issued September 29 at 2:47PM MDT until September 30 at 6:00AM MDT by NWS El Paso Tx/Santa Teresa NM",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.650a1f65a0d1fd1474f44c8af90c4493210e1f9b.001.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-09-29T20:47:00.000Z",
+      "id": "d3c5c4062511d0aa",
+      "title": "Summary for Tropical Storm Polo (EP2/EP172026)",
+      "url": "https://www.nhc.noaa.gov/text/refresh/MIATCPEP2+shtml/292331.shtml",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-09-29T23:38:28.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "ee8e390990a944fc",
+      "title": "Eastern North Pacific Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-09-29T23:05:47.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
