@@ -1,24 +1,15 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-30T13:49:34.446Z",
-  "latest_success_at": "2026-09-30T13:49:34.446Z",
+  "generated_at": "2026-09-30T19:26:00.185Z",
+  "latest_success_at": "2026-09-30T19:26:00.185Z",
   "status": "partial",
   "items": [
     {
-      "id": "85867c5ab6035fe8",
-      "title": "Hurricane Rachel Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep3+shtml/125025.shtml?cone=",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-09-30T12:50:25.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "44ffa8de288585df",
-      "title": "Tropical Storm Watch issued September 30 at 10:11PM ChST by NWS Tiyan GU",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a9ebadf7e6e72ad4e4ef91d0322c286d8b7ecc4d.001.1.cap",
+      "id": "5071366c25ba99c2",
+      "title": "Tropical Storm Watch issued October 1 at 4:25AM ChST by NWS Tiyan GU",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.0b342cd13e513392790a3f79184fa41dab1e4437.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-09-30T12:11:00.000Z",
+      "published_at": "2026-09-30T18:25:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
@@ -27,7 +18,16 @@
       "title": "Eastern North Pacific Tropical Weather Outlook",
       "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-09-30T11:41:58.000Z",
+      "published_at": "2026-09-30T17:44:02.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "375627ecc8f707a3",
+      "title": "Flood Watch issued October 1 at 2:57AM ChST until October 5 at 4:00AM ChST by NWS Tiyan GU",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.afc7d3286e819ca14dcace620d0dcbb91705eb4b.001.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-09-30T16:57:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
