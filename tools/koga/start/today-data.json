@@ -1,36 +1,36 @@
 {
   "schema_version": "1.0",
-  "date_key": "09-28",
-  "display_date": "September 28",
-  "generated_at": "2026-09-28T16:45:45.923Z",
+  "date_key": "09-30",
+  "display_date": "September 30",
+  "generated_at": "2026-09-30T14:56:25.955Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-e677f8396deec807195eee3c",
+      "candidate_id": "event-9153165e16ba42e99f5f9456",
       "type": "event",
-      "year": 1912,
-      "text": "Corporal Frank S. Scott of the United States Army becomes the first enlisted man to die in an airplane crash.",
-      "article_title": "Frank S. Scott",
-      "url": "https://en.wikipedia.org/wiki/Frank_S._Scott",
-      "category": "Disasters and exploration"
-    },
-    {
-      "candidate_id": "event-03cf4ed18e5bf59e0cbcb403",
-      "type": "event",
-      "year": 1951,
-      "text": "CBS makes the first color televisions available for sale to the general public, but the product is discontinued less than a month later.",
-      "article_title": "Color television",
-      "url": "https://en.wikipedia.org/wiki/Color_television",
+      "year": 1915,
+      "text": "World War I: Radoje Ljutovac becomes the first soldier in history to shoot down an enemy aircraft with ground-to-air fire.",
+      "article_title": "World War I",
+      "url": "https://en.wikipedia.org/wiki/World_War_I",
       "category": "World history"
     },
     {
-      "candidate_id": "event-a1f16933d1223836536ddde7",
+      "candidate_id": "event-124b4ab49fa99d478bac144b",
       "type": "event",
-      "year": 2012,
-      "text": "Somali and African Union forces launch a coordinated assault on the Somali port of Kismayo to take back the city from al-Shabaab militants.",
-      "article_title": "Battle of Kismayo (2012)",
-      "url": "https://en.wikipedia.org/wiki/Battle_of_Kismayo_(2012)",
+      "year": 1968,
+      "text": "The Boeing 747 is rolled out and shown to the public for the first time.",
+      "article_title": "Boeing 747",
+      "url": "https://en.wikipedia.org/wiki/Boeing_747",
+      "category": "World history"
+    },
+    {
+      "candidate_id": "event-60ae32b52d7c197b95fe9654",
+      "type": "event",
+      "year": 1954,
+      "text": "The U.S. Navy submarine USS Nautilus is commissioned as the world's first nuclear-powered vessel.",
+      "article_title": "USS Nautilus (SSN-571)",
+      "url": "https://en.wikipedia.org/wiki/USS_Nautilus_(SSN-571)",
       "category": "World history"
     }
   ]
