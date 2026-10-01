@@ -1,17 +1,9 @@
 {
   "schema_version": "1.0",
-  "checked_at": "2026-09-30T23:54:57.206Z",
-  "latest_success_at": "2026-09-30T23:54:57.206Z",
+  "checked_at": "2026-10-01T06:03:24.227Z",
+  "latest_success_at": "2026-10-01T06:03:24.227Z",
   "status": "partial",
   "items": [
-    {
-      "title": "OPEC+ Expected to Keep Oil Production Quotas Unchanged",
-      "url": "https://oilprice.com/Latest-Energy-News/World-News/OPEC-Expected-to-Keep-Oil-Production-Quotas-Unchanged.html",
-      "publisher": "OilPrice.com",
-      "published_at": "2026-09-30T13:30:00.000Z",
-      "source_id": "oilprice",
-      "status": "ok"
-    },
     {
       "title": "The World’s Diesel Problem Runs Deeper Than the Iran War",
       "url": "https://oilprice.com/Energy/Energy-General/The-Worlds-Diesel-Problem-Runs-Deeper-Than-the-Iran-War.html",
@@ -21,11 +13,11 @@
       "status": "ok"
     },
     {
-      "title": "Russian Crude Exports Boom Blunted by Kremlin’s Diesel Sales Ban",
-      "url": "https://gcaptain.com/russian-crude-exports-boom-blunted-by-kremlins-diesel-sales-ban",
-      "publisher": "gCaptain",
-      "published_at": "2026-09-29T16:41:11.000Z",
-      "source_id": "gcaptain",
+      "title": "Iran Warns No Energy Infrastructure Will Be Safe If It Can't Sell Oil",
+      "url": "https://oilprice.com/Energy/Energy-General/Iran-Warns-No-Energy-Infrastructure-Will-Be-Safe-If-It-Cant-Sell-Oil.html",
+      "publisher": "OilPrice.com",
+      "published_at": "2026-09-30T14:00:00.000Z",
+      "source_id": "oilprice",
       "status": "ok"
     },
     {
@@ -33,6 +25,14 @@
       "url": "https://gcaptain.com/ships-face-fuel-delays-at-chinas-zhoushan-on-supply-squeeze",
       "publisher": "gCaptain",
       "published_at": "2026-09-30T17:30:39.000Z",
+      "source_id": "gcaptain",
+      "status": "ok"
+    },
+    {
+      "title": "Russia Sends Nuclear Warning to NATO as Tensions Rise in the Baltic",
+      "url": "https://gcaptain.com/russia-sends-nuclear-warning-to-nato-as-tensions-rise-in-the-baltic",
+      "publisher": "gCaptain",
+      "published_at": "2026-09-30T17:37:18.000Z",
       "source_id": "gcaptain",
       "status": "ok"
     },
@@ -61,6 +61,14 @@
       "status": "ok"
     },
     {
+      "title": "Exclusive: Salvage Operation Under Way at Tanker Wreck Site Off Oman",
+      "url": "https://maritime-executive.com/article/exclusive-salvage-operation-under-way-at-tanker-wreck-site-off-oman",
+      "publisher": "The Maritime Executive",
+      "published_at": "2026-09-29T02:26:35.000Z",
+      "source_id": "maritime-executive",
+      "status": "ok"
+    },
+    {
       "title": "Ukraine’s F-16 Fleet Is In A Readiness Crisis",
       "url": "https://www.twz.com/air/ukraines-f-16-fleet-is-in-a-readiness-crisis",
       "publisher": "TWZ (The War Zone)",
@@ -73,14 +81,6 @@
       "url": "https://maritime-executive.com/article/three-vessels-struck-in-strait-of-hormuz-as-iran-s-grip-loosens",
       "publisher": "The Maritime Executive",
       "published_at": "2026-09-30T18:56:11.000Z",
-      "source_id": "maritime-executive",
-      "status": "ok"
-    },
-    {
-      "title": "Ukraine Accused of Attack on Turkish Bulker with One Seafarer Missing",
-      "url": "https://maritime-executive.com/article/ukraine-accused-of-attack-on-turkish-bulker-with-one-seafarer-missing",
-      "publisher": "The Maritime Executive",
-      "published_at": "2026-09-29T23:55:41.000Z",
       "source_id": "maritime-executive",
       "status": "ok"
     }

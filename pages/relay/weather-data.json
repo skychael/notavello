@@ -1,15 +1,24 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-30T23:54:58.204Z",
-  "latest_success_at": "2026-09-30T23:54:58.204Z",
+  "generated_at": "2026-10-01T06:03:24.820Z",
+  "latest_success_at": "2026-10-01T06:03:24.820Z",
   "status": "partial",
   "items": [
     {
-      "id": "2ce2a029733cf917",
-      "title": "Tropical Storm Warning issued October 1 at 9:10AM ChST by NWS Tiyan GU",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.dcdb147a0057614b3b3437dc88adf52dd28d3dda.001.2.cap",
+      "id": "6c592e90d2189ed4",
+      "title": "Tropical Storm Warning issued October 1 at 3:27PM ChST by NWS Tiyan GU",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.4a8ac29cd8f5b7da8ee8216006d836b7275b48d9.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-09-30T23:10:00.000Z",
+      "published_at": "2026-10-01T05:27:00.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "c53ae29dbafbcff7",
+      "title": "Flood Watch issued October 1 at 3:07PM ChST until October 5 at 4:00AM ChST by NWS Tiyan GU",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.fa5de1cbd1ed36d0e57d316d76b9f5da4bee172a.001.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-10-01T05:07:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
@@ -18,16 +27,7 @@
       "title": "Atlantic Tropical Weather Outlook",
       "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-09-30T23:09:31.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "8d7d4be61bcdcaf5",
-      "title": "Flood Watch issued September 30 at 4:46PM MDT until October 1 at 6:00AM MDT by NWS Grand Junction CO",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.84204a0d59c13ed94d4c75274a173b422996c023.001.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-09-30T22:46:00.000Z",
+      "published_at": "2026-10-01T05:04:03.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
