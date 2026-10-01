@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "checked_at": "2026-10-01T06:03:24.227Z",
-  "latest_success_at": "2026-10-01T06:03:24.227Z",
+  "checked_at": "2026-10-01T13:25:55.683Z",
+  "latest_success_at": "2026-10-01T13:25:55.683Z",
   "status": "partial",
   "items": [
     {
@@ -13,11 +13,27 @@
       "status": "ok"
     },
     {
-      "title": "Iran Warns No Energy Infrastructure Will Be Safe If It Can't Sell Oil",
-      "url": "https://oilprice.com/Energy/Energy-General/Iran-Warns-No-Energy-Infrastructure-Will-Be-Safe-If-It-Cant-Sell-Oil.html",
+      "title": "Gulf Oil Exports Rebound to Prewar Levels, Despite Iranian Attacks",
+      "url": "https://maritime-executive.com/article/gulf-oil-exports-rebound-to-prewar-levels-despite-iranian-attacks",
+      "publisher": "The Maritime Executive",
+      "published_at": "2026-10-01T03:21:00.000Z",
+      "source_id": "maritime-executive",
+      "status": "ok"
+    },
+    {
+      "title": "Indian Refiners Seek Tankers for Hormuz Oil",
+      "url": "https://oilprice.com/Latest-Energy-News/World-News/Indian-Refiners-Seek-Tankers-for-Hormuz-Oil.html",
       "publisher": "OilPrice.com",
-      "published_at": "2026-09-30T14:00:00.000Z",
+      "published_at": "2026-10-01T12:30:00.000Z",
       "source_id": "oilprice",
+      "status": "ok"
+    },
+    {
+      "title": "Tanker Congestion Shunts Vital Oil Transfers Farther From Hormuz",
+      "url": "https://gcaptain.com/tanker-congestion-shunts-vital-oil-transfers-farther-from-hormuz",
+      "publisher": "gCaptain",
+      "published_at": "2026-10-01T10:27:39.000Z",
+      "source_id": "gcaptain",
       "status": "ok"
     },
     {
@@ -25,14 +41,6 @@
       "url": "https://gcaptain.com/ships-face-fuel-delays-at-chinas-zhoushan-on-supply-squeeze",
       "publisher": "gCaptain",
       "published_at": "2026-09-30T17:30:39.000Z",
-      "source_id": "gcaptain",
-      "status": "ok"
-    },
-    {
-      "title": "Russia Sends Nuclear Warning to NATO as Tensions Rise in the Baltic",
-      "url": "https://gcaptain.com/russia-sends-nuclear-warning-to-nato-as-tensions-rise-in-the-baltic",
-      "publisher": "gCaptain",
-      "published_at": "2026-09-30T17:37:18.000Z",
       "source_id": "gcaptain",
       "status": "ok"
     },
@@ -61,14 +69,6 @@
       "status": "ok"
     },
     {
-      "title": "Exclusive: Salvage Operation Under Way at Tanker Wreck Site Off Oman",
-      "url": "https://maritime-executive.com/article/exclusive-salvage-operation-under-way-at-tanker-wreck-site-off-oman",
-      "publisher": "The Maritime Executive",
-      "published_at": "2026-09-29T02:26:35.000Z",
-      "source_id": "maritime-executive",
-      "status": "ok"
-    },
-    {
       "title": "Ukraine’s F-16 Fleet Is In A Readiness Crisis",
       "url": "https://www.twz.com/air/ukraines-f-16-fleet-is-in-a-readiness-crisis",
       "publisher": "TWZ (The War Zone)",
@@ -77,10 +77,10 @@
       "status": "ok"
     },
     {
-      "title": "Three Vessels Struck in Strait of Hormuz as Iran’s Grip Loosens",
-      "url": "https://maritime-executive.com/article/three-vessels-struck-in-strait-of-hormuz-as-iran-s-grip-loosens",
+      "title": "Carbon Costs Put Marine Engine Performance Under Scrutiny",
+      "url": "https://maritime-executive.com/article/carbon-costs-put-marine-engine-performance-under-scrutiny",
       "publisher": "The Maritime Executive",
-      "published_at": "2026-09-30T18:56:11.000Z",
+      "published_at": "2026-10-01T03:52:00.000Z",
       "source_id": "maritime-executive",
       "status": "ok"
     }

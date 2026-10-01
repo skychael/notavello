@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-01T06:03:24.820Z",
-  "latest_success_at": "2026-10-01T06:03:24.820Z",
+  "generated_at": "2026-10-01T13:25:56.693Z",
+  "latest_success_at": "2026-10-01T13:25:56.693Z",
   "status": "partial",
   "items": [
     {
-      "id": "6c592e90d2189ed4",
-      "title": "Tropical Storm Warning issued October 1 at 3:27PM ChST by NWS Tiyan GU",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.4a8ac29cd8f5b7da8ee8216006d836b7275b48d9.001.1.cap",
+      "id": "924405099a406503",
+      "title": "Flood Watch issued October 1 at 11:11PM ChST until October 5 at 4:00AM ChST by NWS Tiyan GU",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.29df6bd1b6dc3ef6f6beca7f4b3cfceee5685b91.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-10-01T05:27:00.000Z",
+      "published_at": "2026-10-01T13:11:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "c53ae29dbafbcff7",
-      "title": "Flood Watch issued October 1 at 3:07PM ChST until October 5 at 4:00AM ChST by NWS Tiyan GU",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.fa5de1cbd1ed36d0e57d316d76b9f5da4bee172a.001.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-10-01T05:07:00.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "b5ad93019d019ede",
-      "title": "Atlantic Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
+      "id": "ee8e390990a944fc",
+      "title": "Eastern North Pacific Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-10-01T05:04:03.000Z",
+      "published_at": "2026-10-01T11:40:39.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "8cac1234fc9c4572",
+      "title": "Tropical Storm Warning issued October 1 at 9:22PM ChST by NWS Tiyan GU",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.20876e6fcb096d6d7bd4691a232b1fd6dba11824.001.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-10-01T11:22:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
