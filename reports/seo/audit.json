@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-30T07:12:31.356Z",
+  "generatedAt": "2026-10-01T07:37:16.892Z",
   "totals": {
-    "pages": 290,
-    "indexable": 286,
-    "articles": 217,
-    "sitemap": 286,
+    "pages": 292,
+    "indexable": 288,
+    "articles": 219,
+    "sitemap": 288,
     "errors": 0,
-    "warnings": 243
+    "warnings": 247
   },
   "errors": [],
   "warnings": [
@@ -487,6 +487,16 @@
     },
     {
       "type": "template-pattern",
+      "page": "/pages/blog/how-dry-run-modes-make-automation-safer/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/how-dry-run-modes-make-automation-safer/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
       "page": "/pages/blog/how-environment-files-work-and-how-to-keep-secrets-out-of-git/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
@@ -808,6 +818,16 @@
     {
       "type": "topic-review",
       "page": "/pages/blog/oman-oil-spill-is-the-shadow-fleet-bill/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/opec-targets-are-not-diesel-barrels/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/opec-targets-are-not-diesel-barrels/",
       "detail": "title/description lacks a clear AI, software, or computing connection"
     },
     {
@@ -1235,7 +1255,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 290,
+      "incomingLinks": 292,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -1259,7 +1279,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 290,
+      "incomingLinks": 292,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -1367,7 +1387,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 290,
+      "incomingLinks": 292,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -1379,9 +1399,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 290,
-      "lastmod": "2026-09-29",
-      "bodyWords": 659
+      "incomingLinks": 292,
+      "lastmod": "2026-09-30",
+      "bodyWords": 654
     },
     {
       "route": "/pages/blog/a-plain-language-guide-to-file-permissions/",
@@ -1667,9 +1687,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 156,
-      "lastmod": "2026-09-29",
-      "bodyWords": 2683
+      "incomingLinks": 158,
+      "lastmod": "2026-09-30",
+      "bodyWords": 2701
     },
     {
       "route": "/pages/blog/apple-speechanalyzer-local-transcription-apps/",
@@ -1991,7 +2011,7 @@
       "canonical": "https://notavello.com/pages/blog/diesel-inventories-just-got-a-harvest-deadline/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 5,
+      "incomingLinks": 6,
       "lastmod": "2026-09-11",
       "bodyWords": 1273
     },
@@ -2498,6 +2518,18 @@
       "incomingLinks": 2,
       "lastmod": "2026-07-22",
       "bodyWords": 1831
+    },
+    {
+      "route": "/pages/blog/how-dry-run-modes-make-automation-safer/",
+      "file": "pages/blog/how-dry-run-modes-make-automation-safer/index.html",
+      "title": "How dry-run modes make automation safer — The Export | Notavello",
+      "description": "Dry-run modes in Ansible and Kubernetes let you preview changes, review diffs, and catch problems before they affect live systems.",
+      "canonical": "https://notavello.com/pages/blog/how-dry-run-modes-make-automation-safer/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-09-30",
+      "bodyWords": 941
     },
     {
       "route": "/pages/blog/how-environment-files-work-and-how-to-keep-secrets-out-of-git/",
@@ -3088,6 +3120,18 @@
       "bodyWords": 1253
     },
     {
+      "route": "/pages/blog/opec-targets-are-not-diesel-barrels/",
+      "file": "pages/blog/opec-targets-are-not-diesel-barrels/index.html",
+      "title": "OPEC Targets Are Not Diesel Barrels — The Export | Notavello",
+      "description": "OPEC may hold targets steady, but diesel stocks and Gulf shut-ins show why fuel bills are still exposed.",
+      "canonical": "https://notavello.com/pages/blog/opec-targets-are-not-diesel-barrels/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-10-01",
+      "bodyWords": 1206
+    },
+    {
       "route": "/pages/blog/open-toys-esp32-firmware-setup-guide/",
       "file": "pages/blog/open-toys-esp32-firmware-setup-guide/index.html",
       "title": "Flashing OpenToys Firmware on ESP32-S3 for Local Voice AI — The Export | Notavello",
@@ -3156,8 +3200,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-29",
-      "bodyWords": 810
+      "lastmod": "2026-09-30",
+      "bodyWords": 783
     },
     {
       "route": "/pages/blog/page-11/",
@@ -3168,8 +3212,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-29",
-      "bodyWords": 837
+      "lastmod": "2026-09-30",
+      "bodyWords": 830
     },
     {
       "route": "/pages/blog/page-12/",
@@ -3180,8 +3224,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-29",
-      "bodyWords": 890
+      "lastmod": "2026-09-30",
+      "bodyWords": 889
     },
     {
       "route": "/pages/blog/page-13/",
@@ -3192,8 +3236,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": null,
-      "bodyWords": 75
+      "lastmod": "2026-09-30",
+      "bodyWords": 174
     },
     {
       "route": "/pages/blog/page-2/",
@@ -3204,8 +3248,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-29",
-      "bodyWords": 639
+      "lastmod": "2026-09-30",
+      "bodyWords": 629
     },
     {
       "route": "/pages/blog/page-3/",
@@ -3216,8 +3260,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-29",
-      "bodyWords": 667
+      "lastmod": "2026-09-30",
+      "bodyWords": 675
     },
     {
       "route": "/pages/blog/page-4/",
@@ -3228,8 +3272,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-29",
-      "bodyWords": 657
+      "lastmod": "2026-09-30",
+      "bodyWords": 658
     },
     {
       "route": "/pages/blog/page-5/",
@@ -3240,8 +3284,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-29",
-      "bodyWords": 689
+      "lastmod": "2026-09-30",
+      "bodyWords": 684
     },
     {
       "route": "/pages/blog/page-6/",
@@ -3252,8 +3296,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-29",
-      "bodyWords": 672
+      "lastmod": "2026-09-30",
+      "bodyWords": 675
     },
     {
       "route": "/pages/blog/page-7/",
@@ -3264,8 +3308,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-29",
-      "bodyWords": 647
+      "lastmod": "2026-09-30",
+      "bodyWords": 650
     },
     {
       "route": "/pages/blog/page-8/",
@@ -3276,8 +3320,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-29",
-      "bodyWords": 686
+      "lastmod": "2026-09-30",
+      "bodyWords": 687
     },
     {
       "route": "/pages/blog/page-9/",
@@ -3288,8 +3332,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-09-29",
-      "bodyWords": 678
+      "lastmod": "2026-09-30",
+      "bodyWords": 682
     },
     {
       "route": "/pages/blog/phosphate-is-the-fertilizer-shock-that-did-not-fade/",
@@ -4151,7 +4195,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 290,
+      "incomingLinks": 292,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -4163,7 +4207,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 290,
+      "incomingLinks": 292,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -4175,7 +4219,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 290,
+      "incomingLinks": 292,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -4187,7 +4231,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 290,
+      "incomingLinks": 292,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -4199,7 +4243,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 290,
+      "incomingLinks": 292,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -4212,8 +4256,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-09-30",
-      "bodyWords": 435
+      "lastmod": "2026-10-01",
+      "bodyWords": 443
     },
     {
       "route": "/pages/sample",
@@ -4235,7 +4279,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 290,
+      "incomingLinks": 292,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -4247,7 +4291,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 290,
+      "incomingLinks": 292,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -4271,7 +4315,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 290,
+      "incomingLinks": 292,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -4703,7 +4747,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 290,
+      "incomingLinks": 292,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }
