@@ -1,36 +1,36 @@
 {
   "schema_version": "1.0",
-  "date_key": "09-30",
-  "display_date": "September 30",
-  "generated_at": "2026-09-30T14:56:25.955Z",
+  "date_key": "10-01",
+  "display_date": "October 1",
+  "generated_at": "2026-10-01T15:27:49.990Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-9153165e16ba42e99f5f9456",
+      "candidate_id": "event-494abea6f4db229d288b7e0c",
       "type": "event",
-      "year": 1915,
-      "text": "World War I: Radoje Ljutovac becomes the first soldier in history to shoot down an enemy aircraft with ground-to-air fire.",
-      "article_title": "World War I",
-      "url": "https://en.wikipedia.org/wiki/World_War_I",
+      "year": 2015,
+      "text": "The American cargo vessel SS El Faro sinks with all of its 33 crew after steaming into the eyewall of Hurricane Joaquin.",
+      "article_title": "SS El Faro",
+      "url": "https://en.wikipedia.org/wiki/SS_El_Faro",
+      "category": "Disasters and exploration"
+    },
+    {
+      "candidate_id": "event-5abe58d343490bfa1facf162",
+      "type": "event",
+      "year": 1982,
+      "text": "Sony and Phillips launch the compact disc in Japan; on the same day, Sony releases the model CDP-101 compact disc player, the first player of its kind.",
+      "article_title": "Compact disc",
+      "url": "https://en.wikipedia.org/wiki/Compact_disc",
       "category": "World history"
     },
     {
-      "candidate_id": "event-124b4ab49fa99d478bac144b",
+      "candidate_id": "event-43347b01a2a5c1559de1feb6",
       "type": "event",
-      "year": 1968,
-      "text": "The Boeing 747 is rolled out and shown to the public for the first time.",
-      "article_title": "Boeing 747",
-      "url": "https://en.wikipedia.org/wiki/Boeing_747",
-      "category": "World history"
-    },
-    {
-      "candidate_id": "event-60ae32b52d7c197b95fe9654",
-      "type": "event",
-      "year": 1954,
-      "text": "The U.S. Navy submarine USS Nautilus is commissioned as the world's first nuclear-powered vessel.",
-      "article_title": "USS Nautilus (SSN-571)",
-      "url": "https://en.wikipedia.org/wiki/USS_Nautilus_(SSN-571)",
+      "year": 2001,
+      "text": "3G wireless technology first becomes available when it is adopted by Japanese telecommunications company NTT Docomo.",
+      "article_title": "3G",
+      "url": "https://en.wikipedia.org/wiki/3G",
       "category": "World history"
     }
   ]
