@@ -1,15 +1,23 @@
 {
   "schema_version": "1.0",
-  "checked_at": "2026-10-01T13:25:55.683Z",
-  "latest_success_at": "2026-10-01T13:25:55.683Z",
+  "checked_at": "2026-10-01T19:35:20.409Z",
+  "latest_success_at": "2026-10-01T19:35:20.409Z",
   "status": "partial",
   "items": [
     {
-      "title": "The World’s Diesel Problem Runs Deeper Than the Iran War",
-      "url": "https://oilprice.com/Energy/Energy-General/The-Worlds-Diesel-Problem-Runs-Deeper-Than-the-Iran-War.html",
+      "title": "Middle East Oil Exports Stage a Remarkable Comeback",
+      "url": "https://oilprice.com/Energy/Energy-General/Middle-East-Oil-Exports-Stage-a-Remarkable-Comeback.html",
       "publisher": "OilPrice.com",
-      "published_at": "2026-09-30T18:00:00.000Z",
+      "published_at": "2026-10-01T19:00:00.000Z",
       "source_id": "oilprice",
+      "status": "ok"
+    },
+    {
+      "title": "Resilience Doesn’t Equal Security- Lloyd’s List",
+      "url": "https://gcaptain.com/resilience-doesnt-equal-security-lloyds-list",
+      "publisher": "gCaptain",
+      "published_at": "2026-10-01T17:53:57.000Z",
+      "source_id": "gcaptain",
       "status": "ok"
     },
     {
@@ -37,22 +45,6 @@
       "status": "ok"
     },
     {
-      "title": "Ships Face Fuel Delays at China’s Zhoushan on Supply Squeeze",
-      "url": "https://gcaptain.com/ships-face-fuel-delays-at-chinas-zhoushan-on-supply-squeeze",
-      "publisher": "gCaptain",
-      "published_at": "2026-09-30T17:30:39.000Z",
-      "source_id": "gcaptain",
-      "status": "ok"
-    },
-    {
-      "title": "Army awards up to $7B in sprawling counter-drone IDIQ",
-      "url": "https://breakingdefense.com/2026/09/army-awards-up-to-7b-in-sprawling-counter-drone-idiq",
-      "publisher": "Breaking Defense",
-      "published_at": "2026-09-29T18:30:00.000Z",
-      "source_id": "breaking-defense",
-      "status": "ok"
-    },
-    {
       "title": "Claims Swirl Around U.S. Marines Injured Aboard Mystery Vessel Attacked In The Strait Of Hormuz",
       "url": "https://www.twz.com/news-features/claims-swirl-around-u-s-marines-injured-aboard-mystery-vessel-attacked-in-the-strait-of-hormuz",
       "publisher": "TWZ (The War Zone)",
@@ -65,6 +57,14 @@
       "url": "https://breakingdefense.com/2026/09/china-opens-training-center-with-laos-marking-third-overseas-military-base",
       "publisher": "Breaking Defense",
       "published_at": "2026-09-30T16:33:40.000Z",
+      "source_id": "breaking-defense",
+      "status": "ok"
+    },
+    {
+      "title": "EXCLUSIVE: How the DIA measures a military’s ‘Will to Fight’",
+      "url": "https://breakingdefense.com/2026/09/exclusive-how-the-dia-measures-a-militarys-will-to-fight",
+      "publisher": "Breaking Defense",
+      "published_at": "2026-09-30T18:08:46.000Z",
       "source_id": "breaking-defense",
       "status": "ok"
     },

@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-01T13:25:56.693Z",
-  "latest_success_at": "2026-10-01T13:25:56.693Z",
+  "generated_at": "2026-10-01T19:35:21.107Z",
+  "latest_success_at": "2026-10-01T19:35:21.107Z",
   "status": "partial",
   "items": [
     {
-      "id": "924405099a406503",
-      "title": "Flood Watch issued October 1 at 11:11PM ChST until October 5 at 4:00AM ChST by NWS Tiyan GU",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.29df6bd1b6dc3ef6f6beca7f4b3cfceee5685b91.001.1.cap",
+      "id": "f7f129e040ff57a7",
+      "title": "Flash Flood Warning issued October 1 at 2:32PM CDT until October 1 at 5:30PM CDT by NWS Dodge City KS",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.4bbf5fe2a34be98567e01391b0ba919e0b796a9b.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-10-01T13:11:00.000Z",
+      "published_at": "2026-10-01T19:32:00.000Z",
+      "topic": "Flooding",
+      "status": "ok"
+    },
+    {
+      "id": "2d23bb45bfedeecd",
+      "title": "SPC MD 2345",
+      "url": "https://www.spc.noaa.gov/products/md/md2345.html",
+      "publisher": "Storm Prediction Center",
+      "published_at": "2026-10-01T18:56:06.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "ee8e390990a944fc",
-      "title": "Eastern North Pacific Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
+      "id": "b5ad93019d019ede",
+      "title": "Atlantic Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-10-01T11:40:39.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "8cac1234fc9c4572",
-      "title": "Tropical Storm Warning issued October 1 at 9:22PM ChST by NWS Tiyan GU",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.20876e6fcb096d6d7bd4691a232b1fd6dba11824.001.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-10-01T11:22:00.000Z",
+      "published_at": "2026-10-01T17:51:03.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
