@@ -1,36 +1,36 @@
 {
   "schema_version": "1.0",
-  "date_key": "10-01",
-  "display_date": "October 1",
-  "generated_at": "2026-10-01T15:27:49.990Z",
+  "date_key": "10-02",
+  "display_date": "October 2",
+  "generated_at": "2026-10-02T14:44:48.373Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-494abea6f4db229d288b7e0c",
+      "candidate_id": "event-354a247c7686f251b45850f0",
       "type": "event",
-      "year": 2015,
-      "text": "The American cargo vessel SS El Faro sinks with all of its 33 crew after steaming into the eyewall of Hurricane Joaquin.",
-      "article_title": "SS El Faro",
-      "url": "https://en.wikipedia.org/wiki/SS_El_Faro",
-      "category": "Disasters and exploration"
-    },
-    {
-      "candidate_id": "event-5abe58d343490bfa1facf162",
-      "type": "event",
-      "year": 1982,
-      "text": "Sony and Phillips launch the compact disc in Japan; on the same day, Sony releases the model CDP-101 compact disc player, the first player of its kind.",
-      "article_title": "Compact disc",
-      "url": "https://en.wikipedia.org/wiki/Compact_disc",
+      "year": 1990,
+      "text": "Xiamen Airlines Flight 8301 is hijacked and lands at Guangzhou, where it crashes into two other airliners on the ground, killing 132.",
+      "article_title": "1990 Guangzhou Baiyun airport collisions",
+      "url": "https://en.wikipedia.org/wiki/1990_Guangzhou_Baiyun_airport_collisions",
       "category": "World history"
     },
     {
-      "candidate_id": "event-43347b01a2a5c1559de1feb6",
+      "candidate_id": "event-783d3451b57ae3d788abc360",
       "type": "event",
-      "year": 2001,
-      "text": "3G wireless technology first becomes available when it is adopted by Japanese telecommunications company NTT Docomo.",
-      "article_title": "3G",
-      "url": "https://en.wikipedia.org/wiki/3G",
+      "year": 1980,
+      "text": "Michael Myers becomes the first member of either chamber of Congress to be expelled since the Civil War.",
+      "article_title": "Michael Myers (Pennsylvania politician)",
+      "url": "https://en.wikipedia.org/wiki/Michael_Myers_(Pennsylvania_politician)",
+      "category": "World history"
+    },
+    {
+      "candidate_id": "event-309f62eb2020f4101ba303d8",
+      "type": "event",
+      "year": 2004,
+      "text": "The first parkrun, then known as the Bushy Park Time Trial, takes place in Bushy Park, London, UK.",
+      "article_title": "Parkrun",
+      "url": "https://en.wikipedia.org/wiki/Parkrun",
       "category": "World history"
     }
   ]
