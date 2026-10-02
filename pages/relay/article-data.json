@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "checked_at": "2026-10-01T23:55:47.310Z",
-  "latest_success_at": "2026-10-01T23:55:47.310Z",
+  "checked_at": "2026-10-02T05:46:36.597Z",
+  "latest_success_at": "2026-10-02T05:46:36.597Z",
   "status": "partial",
   "items": [
     {
@@ -9,6 +9,14 @@
       "url": "https://oilprice.com/Energy/Energy-General/Middle-East-Oil-Exports-Stage-a-Remarkable-Comeback.html",
       "publisher": "OilPrice.com",
       "published_at": "2026-10-01T19:00:00.000Z",
+      "source_id": "oilprice",
+      "status": "ok"
+    },
+    {
+      "title": "Brent Holds Above $102 as Gulf Export Rebound Offsets U.S. Military Moves",
+      "url": "https://oilprice.com/Latest-Energy-News/World-News/Brent-Holds-Above-102-as-Gulf-Export-Rebound-Offsets-US-Military-Moves.html",
+      "publisher": "OilPrice.com",
+      "published_at": "2026-10-02T05:06:59.000Z",
       "source_id": "oilprice",
       "status": "ok"
     },
@@ -42,14 +50,6 @@
       "publisher": "The Maritime Executive",
       "published_at": "2026-10-01T19:35:08.000Z",
       "source_id": "maritime-executive",
-      "status": "ok"
-    },
-    {
-      "title": "Venezuela’s Oil Exports Drop 9% as Freight Costs Bite",
-      "url": "https://oilprice.com/Energy/Crude-Oil/Venezuelas-Oil-Exports-Drop-9-as-Freight-Costs-Bite.html",
-      "publisher": "OilPrice.com",
-      "published_at": "2026-10-01T21:00:00.000Z",
-      "source_id": "oilprice",
       "status": "ok"
     },
     {

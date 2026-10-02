@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-01T23:55:48.104Z",
-  "latest_success_at": "2026-10-01T23:55:48.104Z",
+  "generated_at": "2026-10-02T05:46:37.301Z",
+  "latest_success_at": "2026-10-02T05:46:37.301Z",
   "status": "partial",
   "items": [
     {
@@ -14,20 +14,20 @@
       "status": "ok"
     },
     {
-      "id": "b5ad93019d019ede",
-      "title": "Atlantic Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
+      "id": "ee8e390990a944fc",
+      "title": "Eastern North Pacific Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-10-01T23:18:09.000Z",
+      "published_at": "2026-10-02T05:22:14.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "a755ca9b1f82bb09",
-      "title": "Flood Watch issued October 2 at 8:46AM ChST until October 5 at 4:00AM ChST by NWS Tiyan GU",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a7cde57d3079d9997edb7848f01735dcfefe1470.001.1.cap",
+      "id": "2f11d5f63def0b50",
+      "title": "Flood Watch issued October 2 at 3:05PM ChST until October 5 at 4:00AM ChST by NWS Tiyan GU",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.5a16e62ca879f892f8e6df4ca54e09d6c53cf846.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-10-01T22:46:00.000Z",
+      "published_at": "2026-10-02T05:05:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
