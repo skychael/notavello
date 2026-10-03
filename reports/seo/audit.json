@@ -1,15 +1,25 @@
 {
-  "generatedAt": "2026-10-02T07:24:23.873Z",
+  "generatedAt": "2026-10-03T06:57:15.344Z",
   "totals": {
-    "pages": 294,
-    "indexable": 290,
-    "articles": 221,
-    "sitemap": 290,
+    "pages": 296,
+    "indexable": 292,
+    "articles": 223,
+    "sitemap": 292,
     "errors": 0,
-    "warnings": 251
+    "warnings": 255
   },
   "errors": [],
   "warnings": [
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/a-checklist-for-reliable-scheduled-jobs/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/a-checklist-for-reliable-scheduled-jobs/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
     {
       "type": "template-pattern",
       "page": "/pages/blog/a-plain-language-guide-to-file-permissions/",
@@ -1264,6 +1274,16 @@
       "type": "topic-review",
       "page": "/pages/blog/yanbu-backup-port-is-the-fuel-bill/",
       "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/yanbu-war-risk-premium-is-the-fuel-bill/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/yanbu-war-risk-premium-is-the-fuel-bill/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
     }
   ],
   "pages": [
@@ -1275,7 +1295,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 294,
+      "incomingLinks": 296,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -1299,7 +1319,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 294,
+      "incomingLinks": 296,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -1407,7 +1427,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 294,
+      "incomingLinks": 296,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -1419,9 +1439,21 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 294,
-      "lastmod": "2026-10-01",
-      "bodyWords": 661
+      "incomingLinks": 296,
+      "lastmod": "2026-10-02",
+      "bodyWords": 658
+    },
+    {
+      "route": "/pages/blog/a-checklist-for-reliable-scheduled-jobs/",
+      "file": "pages/blog/a-checklist-for-reliable-scheduled-jobs/index.html",
+      "title": "A Checklist for Reliable Scheduled Jobs — The Export | Notavello",
+      "description": "Build dependable cron and scheduler jobs by addressing timing, overlaps, time zones, missed runs, locks, and logs with practical checks drawn from standards",
+      "canonical": "https://notavello.com/pages/blog/a-checklist-for-reliable-scheduled-jobs/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-10-02",
+      "bodyWords": 751
     },
     {
       "route": "/pages/blog/a-plain-language-guide-to-file-permissions/",
@@ -1707,9 +1739,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 160,
-      "lastmod": "2026-10-01",
-      "bodyWords": 2723
+      "incomingLinks": 162,
+      "lastmod": "2026-10-02",
+      "bodyWords": 2744
     },
     {
       "route": "/pages/blog/apple-speechanalyzer-local-transcription-apps/",
@@ -3244,8 +3276,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-01",
-      "bodyWords": 777
+      "lastmod": "2026-10-02",
+      "bodyWords": 759
     },
     {
       "route": "/pages/blog/page-11/",
@@ -3256,8 +3288,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-01",
-      "bodyWords": 824
+      "lastmod": "2026-10-02",
+      "bodyWords": 837
     },
     {
       "route": "/pages/blog/page-12/",
@@ -3268,8 +3300,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-01",
-      "bodyWords": 871
+      "lastmod": "2026-10-02",
+      "bodyWords": 859
     },
     {
       "route": "/pages/blog/page-13/",
@@ -3280,8 +3312,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": "2026-10-01",
-      "bodyWords": 278
+      "lastmod": "2026-10-02",
+      "bodyWords": 371
     },
     {
       "route": "/pages/blog/page-2/",
@@ -3292,8 +3324,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-01",
-      "bodyWords": 622
+      "lastmod": "2026-10-02",
+      "bodyWords": 629
     },
     {
       "route": "/pages/blog/page-3/",
@@ -3304,8 +3336,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-01",
-      "bodyWords": 677
+      "lastmod": "2026-10-02",
+      "bodyWords": 666
     },
     {
       "route": "/pages/blog/page-4/",
@@ -3316,8 +3348,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-01",
-      "bodyWords": 650
+      "lastmod": "2026-10-02",
+      "bodyWords": 661
     },
     {
       "route": "/pages/blog/page-5/",
@@ -3328,8 +3360,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-01",
-      "bodyWords": 689
+      "lastmod": "2026-10-02",
+      "bodyWords": 688
     },
     {
       "route": "/pages/blog/page-6/",
@@ -3340,8 +3372,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-01",
-      "bodyWords": 678
+      "lastmod": "2026-10-02",
+      "bodyWords": 674
     },
     {
       "route": "/pages/blog/page-7/",
@@ -3352,7 +3384,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-01",
+      "lastmod": "2026-10-02",
       "bodyWords": 647
     },
     {
@@ -3364,8 +3396,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-01",
-      "bodyWords": 682
+      "lastmod": "2026-10-02",
+      "bodyWords": 674
     },
     {
       "route": "/pages/blog/page-9/",
@@ -3376,8 +3408,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-01",
-      "bodyWords": 685
+      "lastmod": "2026-10-02",
+      "bodyWords": 689
     },
     {
       "route": "/pages/blog/phosphate-is-the-fertilizer-shock-that-did-not-fade/",
@@ -3759,7 +3791,7 @@
       "canonical": "https://notavello.com/pages/blog/the-red-sea-bypass-is-running-out-of-road/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 2,
+      "incomingLinks": 3,
       "lastmod": "2026-09-09",
       "bodyWords": 1231
     },
@@ -4220,6 +4252,18 @@
       "bodyWords": 1515
     },
     {
+      "route": "/pages/blog/yanbu-war-risk-premium-is-the-fuel-bill/",
+      "file": "pages/blog/yanbu-war-risk-premium-is-the-fuel-bill/index.html",
+      "title": "The Yanbu War Risk Premium Is The Fuel Bill — The Export | Notavello",
+      "description": "Yanbu tanker war-risk premiums are near 3%, and that shipping surcharge is moving into diesel, heating oil and freight.",
+      "canonical": "https://notavello.com/pages/blog/yanbu-war-risk-premium-is-the-fuel-bill/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-10-03",
+      "bodyWords": 1471
+    },
+    {
       "route": "/pages/blog/your-iphone-cant-check-in/",
       "file": "pages/blog/your-iphone-cant-check-in/index.html",
       "title": "Your iPhone Can't Check In — The Export | Notavello",
@@ -4239,7 +4283,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 294,
+      "incomingLinks": 296,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -4251,7 +4295,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 294,
+      "incomingLinks": 296,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -4263,7 +4307,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 294,
+      "incomingLinks": 296,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -4275,7 +4319,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 294,
+      "incomingLinks": 296,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -4287,7 +4331,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 294,
+      "incomingLinks": 296,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -4300,8 +4344,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-10-02",
-      "bodyWords": 449
+      "lastmod": "2026-10-03",
+      "bodyWords": 455
     },
     {
       "route": "/pages/sample",
@@ -4323,7 +4367,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 294,
+      "incomingLinks": 296,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -4335,7 +4379,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 294,
+      "incomingLinks": 296,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -4359,7 +4403,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 294,
+      "incomingLinks": 296,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -4791,7 +4835,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 294,
+      "incomingLinks": 296,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }
