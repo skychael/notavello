@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "10-02",
-  "display_date": "October 2",
-  "generated_at": "2026-10-02T14:44:48.373Z",
+  "date_key": "10-03",
+  "display_date": "October 3",
+  "generated_at": "2026-10-03T13:23:58.903Z",
   "source": "Wikimedia On This Day",
-  "selection_method": "deterministic_fallback",
+  "selection_method": "ai",
   "items": [
     {
-      "candidate_id": "event-354a247c7686f251b45850f0",
+      "candidate_id": "event-2a1971764b0efb79ca5e1fd2",
       "type": "event",
       "year": 1990,
-      "text": "Xiamen Airlines Flight 8301 is hijacked and lands at Guangzhou, where it crashes into two other airliners on the ground, killing 132.",
-      "article_title": "1990 Guangzhou Baiyun airport collisions",
-      "url": "https://en.wikipedia.org/wiki/1990_Guangzhou_Baiyun_airport_collisions",
-      "category": "World history"
+      "text": "The German Democratic Republic is abolished and becomes part of the Federal Republic of Germany; the event is afterwards celebrated as German Unity Day.",
+      "article_title": "East Germany",
+      "url": "https://en.wikipedia.org/wiki/East_Germany",
+      "category": "Politics and society"
     },
     {
-      "candidate_id": "event-783d3451b57ae3d788abc360",
+      "candidate_id": "event-73eb823bcfbbcc39c0a5346a",
       "type": "event",
-      "year": 1980,
-      "text": "Michael Myers becomes the first member of either chamber of Congress to be expelled since the Civil War.",
-      "article_title": "Michael Myers (Pennsylvania politician)",
-      "url": "https://en.wikipedia.org/wiki/Michael_Myers_(Pennsylvania_politician)",
-      "category": "World history"
+      "year": 1995,
+      "text": "O. J. Simpson murder case: O. J. Simpson is acquitted of the murders of Nicole Brown Simpson and Ronald Goldman.",
+      "article_title": "Murder trial of O. J. Simpson",
+      "url": "https://en.wikipedia.org/wiki/Murder_trial_of_O._J._Simpson",
+      "category": "Politics and society"
     },
     {
-      "candidate_id": "event-309f62eb2020f4101ba303d8",
+      "candidate_id": "event-a065471a6f25ba50126f2e2b",
       "type": "event",
-      "year": 2004,
-      "text": "The first parkrun, then known as the Bushy Park Time Trial, takes place in Bushy Park, London, UK.",
-      "article_title": "Parkrun",
-      "url": "https://en.wikipedia.org/wiki/Parkrun",
-      "category": "World history"
+      "year": 1952,
+      "text": "The United Kingdom successfully tests a nuclear weapon in the Montebello Islands, Western Australia, to become the world's third nuclear power.",
+      "article_title": "Operation Hurricane",
+      "url": "https://en.wikipedia.org/wiki/Operation_Hurricane",
+      "category": "Science and technology"
     }
   ]
 }
