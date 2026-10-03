@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-03T13:28:21.811Z",
-  "latest_success_at": "2026-10-03T13:28:21.811Z",
+  "generated_at": "2026-10-03T17:59:43.105Z",
+  "latest_success_at": "2026-10-03T17:59:43.105Z",
   "status": "partial",
   "items": [
     {
@@ -9,16 +9,16 @@
       "title": "Atlantic Tropical Weather Outlook",
       "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-10-03T11:35:31.000Z",
+      "published_at": "2026-10-03T17:30:06.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "c37a9b0cbed70d24",
+      "id": "054977d5b47b6046",
       "title": "Hurricane Rachel Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep3+shtml/092807.shtml?cone=",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep3+shtml/152815.shtml?cone=",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-10-03T09:28:07.000Z",
+      "published_at": "2026-10-03T15:28:15.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
