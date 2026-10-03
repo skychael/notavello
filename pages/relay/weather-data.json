@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-03T17:59:43.105Z",
-  "latest_success_at": "2026-10-03T17:59:43.105Z",
+  "generated_at": "2026-10-03T21:23:03.061Z",
+  "latest_success_at": "2026-10-03T21:23:03.061Z",
   "status": "partial",
   "items": [
+    {
+      "id": "c6167a0850d1011f",
+      "title": "Hurricane Rachel Graphics",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep3+shtml/205522.shtml?cone=",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-10-03T20:55:22.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "ada127c61b8c9338",
+      "title": "High Surf Advisory issued October 4 at 3:59AM ChST until October 5 at 4:00PM ChST by NWS Tiyan GU",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.e9cb7dd040da0f2718c4bedc3d7775ceda108ebf.001.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-10-03T17:59:00.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
     {
       "id": "b5ad93019d019ede",
       "title": "Atlantic Tropical Weather Outlook",
       "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
       "publisher": "National Hurricane Center",
       "published_at": "2026-10-03T17:30:06.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "054977d5b47b6046",
-      "title": "Hurricane Rachel Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep3+shtml/152815.shtml?cone=",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-10-03T15:28:15.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "d30fa2d9101590ee",
-      "title": "Flood Watch issued October 3 at 5:30PM ChST until October 5 at 4:00AM ChST by NWS Tiyan GU",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f28a11b8560800e98c3a7ac79616881bf1463004.001.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-10-03T07:30:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
