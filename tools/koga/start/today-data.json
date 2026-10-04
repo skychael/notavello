@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "10-03",
-  "display_date": "October 3",
-  "generated_at": "2026-10-03T13:23:58.903Z",
+  "date_key": "10-04",
+  "display_date": "October 4",
+  "generated_at": "2026-10-04T14:05:17.725Z",
   "source": "Wikimedia On This Day",
   "selection_method": "ai",
   "items": [
     {
-      "candidate_id": "event-2a1971764b0efb79ca5e1fd2",
+      "candidate_id": "event-d9d027f6a5d0f00195b76768",
       "type": "event",
-      "year": 1990,
-      "text": "The German Democratic Republic is abolished and becomes part of the Federal Republic of Germany; the event is afterwards celebrated as German Unity Day.",
-      "article_title": "East Germany",
-      "url": "https://en.wikipedia.org/wiki/East_Germany",
-      "category": "Politics and society"
-    },
-    {
-      "candidate_id": "event-73eb823bcfbbcc39c0a5346a",
-      "type": "event",
-      "year": 1995,
-      "text": "O. J. Simpson murder case: O. J. Simpson is acquitted of the murders of Nicole Brown Simpson and Ronald Goldman.",
-      "article_title": "Murder trial of O. J. Simpson",
-      "url": "https://en.wikipedia.org/wiki/Murder_trial_of_O._J._Simpson",
-      "category": "Politics and society"
-    },
-    {
-      "candidate_id": "event-a065471a6f25ba50126f2e2b",
-      "type": "event",
-      "year": 1952,
-      "text": "The United Kingdom successfully tests a nuclear weapon in the Montebello Islands, Western Australia, to become the world's third nuclear power.",
-      "article_title": "Operation Hurricane",
-      "url": "https://en.wikipedia.org/wiki/Operation_Hurricane",
+      "year": 1957,
+      "text": "Sputnik 1 becomes the first artificial satellite to orbit the Earth.",
+      "article_title": "Sputnik 1",
+      "url": "https://en.wikipedia.org/wiki/Sputnik_1",
       "category": "Science and technology"
+    },
+    {
+      "candidate_id": "event-6727363aa8d0af83594ab2c5",
+      "type": "event",
+      "year": 1993,
+      "text": "Battle of Mogadishu occurs killing 18 U.S. Special Forces, two UN Peacekeepers and at least 600 Somalian militia men and civilians.",
+      "article_title": "Battle of Mogadishu (1993)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Mogadishu_(1993)",
+      "category": "World history"
+    },
+    {
+      "candidate_id": "event-f392cf5e6184d187ff4baccb",
+      "type": "event",
+      "year": 2006,
+      "text": "WikiLeaks is launched.",
+      "article_title": "WikiLeaks",
+      "url": "https://en.wikipedia.org/wiki/WikiLeaks",
+      "category": "Politics and society"
     }
   ]
 }
