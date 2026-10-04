@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>How to pass secrets to automation without hard-coding them — The Export | Notavello</title>
+<meta name="description" content="Learn to manage secrets in automation with stores, environment injection, log hygiene, and rotation using GitHub Actions and OWASP practices."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/blog/how-to-pass-secrets-to-automation-without-hard-coding-them/"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2026-10-03T13:31:40.851Z"/>
+<meta property="article:modified_time" content="2026-10-03T13:31:40.851Z"/>
+<meta name="notavello:published_at" content="2026-10-03T13:31:40.851Z"/>
+<meta name="syndication-origin-site" content="toysforbots"/>
+<meta name="syndication-origin-id" content="toysforbots:how-to-pass-secrets-to-automation-without-hard-coding-them"/>
+<meta name="syndication-origin-slug" content="how-to-pass-secrets-to-automation-without-hard-coding-them"/>
+<meta name="syndication-origin-url" content="https://toysforbots.com/blog/how-to-pass-secrets-to-automation-without-hard-coding-them/"/>
+<meta name="syndication-source-format" content="toysforbots-syndication-v1"/>
+<meta property="og:url" content="https://notavello.com/pages/blog/how-to-pass-secrets-to-automation-without-hard-coding-them/"/>
+<meta property="og:title" content="How to pass secrets to automation without hard-coding them"/>
+<meta property="og:description" content="Learn to manage secrets in automation with stores, environment injection, log hygiene, and rotation using GitHub Actions and OWASP practices."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="How to pass secrets to automation without hard-coding them"/>
+<meta name="twitter:description" content="Learn to manage secrets in automation with stores, environment injection, log hygiene, and rotation using GitHub Actions and OWASP practices."/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "How to pass secrets to automation without hard-coding them",
+  "description": "Learn to manage secrets in automation with stores, environment injection, log hygiene, and rotation using GitHub Actions and OWASP practices.",
+  "url": "https://notavello.com/pages/blog/how-to-pass-secrets-to-automation-without-hard-coding-them/",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://notavello.com/pages/blog/how-to-pass-secrets-to-automation-without-hard-coding-them/" },
+  "image": "https://notavello.com/og-image.png",
+  "datePublished": "2026-10-03T13:31:40.851Z",
+  "dateModified": "2026-10-03T13:31:40.851Z",
+  "author": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" },
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com", "logo": { "@type": "ImageObject", "url": "https://notavello.com/og-image.png" } }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
+.post-nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; row-gap: 8px; }
+.post-nav-top { margin-bottom: 40px; }
+.post-nav-bottom { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--border); }
+.post-nav a { display: inline-flex; align-items: center; gap: 6px; font-size: 0.92rem; font-weight: 600; color: var(--ink-muted); text-decoration: none; padding: 12px 14px; border-radius: var(--radius-sm); white-space: nowrap; transition: color 0.15s, background 0.15s; }
+.post-nav a:hover { color: var(--accent); background: var(--accent-light); }
+.post-nav a:first-child { padding-left: 0; }
+.post-nav a:last-child { padding-right: 0; justify-content: flex-end; }
+.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
+.post-date { font-size: 0.78rem; color: var(--ink-faint); }
+.post-title { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; color: var(--ink); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
+.post-lede { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+.post-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink); }
+.post-body h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 44px 0 16px; letter-spacing: -0.01em; }
+.post-body p { margin-bottom: 20px; color: var(--ink-muted); }
+.post-body p strong { color: var(--ink); font-weight: 600; }
+.post-body ul { margin: 0 0 20px 20px; color: var(--ink-muted); }
+.post-body ul li { margin-bottom: 8px; line-height: 1.7; }
+.callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 32px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.7; }
+.post-footer { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.post-footer-label { font-size: 0.8rem; color: var(--ink-faint); }
+.btn-export { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: opacity 0.2s; }
+.btn-export:hover { opacity: 0.9; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } .post-nav a { padding: 12px 8px; font-size: 0.88rem; } }
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+
+  <nav class="post-nav post-nav-top">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+  <div class="post-meta">
+    <span class="post-tag">Automation</span>
+    <span class="post-date">October 3, 2026</span>
+  </div>
+
+  <h1 class="post-title">How to pass secrets to automation without hard-coding them</h1>
+
+  <p class="post-lede">Automation often needs database passwords, API keys, or tokens to function. Placing these values directly in scripts or workflow files exposes them to anyone who can read the repository. The safer approach relies on secret stores that keep values encrypted until they are needed, then injects them only into the runtime environment. This method reduces the chance that credentials appear in source control, logs, or error messages. GitHub Actions and similar platforms provide built-in secret management that follows the principle of least privilege. OWASP guidance reinforces the same idea by recommending fine-grained access controls and avoiding static secrets whenever possible. The following sections explain how to implement these controls without introducing new exposure points.</p>
+
+  <div class="post-body">
+
+<h2>Using dedicated secret stores</h2>
+<p>A secret store holds sensitive values outside the main codebase. GitHub supports organization, repository, and environment secrets that are encrypted with Libsodium sealed boxes before they reach the platform. Once stored, the values remain encrypted until a workflow explicitly references them. Organization secrets can reach up to 1,000 entries while repository and environment secrets are limited to 100 each. Environment secrets are read only when a job that references the environment begins, which adds an extra layer of control.</p>
+<p>OWASP recommends applying least privilege at every layer of the secret management system. Engineers should not have blanket access to all secrets. Instead, configure fine-grained permissions on individual objects so that only the required automation jobs can retrieve specific values.</p><ul><li>Create secrets through the repository settings or REST API rather than embedding them in files.</li><li>Register any transformed value, such as a Base64-encoded token, as a separate secret so redaction still works.</li><li>Remove secrets that are no longer referenced by active workflows.</li></ul><div class="callout"><strong>Security note</strong> Any user with write access to a repository can read all configured secrets. Grant the minimum permissions required and review access regularly.</div>
+<h2>Injecting secrets through environment variables</h2>
+<p>Once a secret exists in the store, it must be passed to the running process. The recommended method is to map the secret to an environment variable inside the workflow file. GitHub Actions supplies the secrets context for this purpose. The action or script then reads the variable at runtime without ever seeing the plaintext value in the workflow definition.</p>
+<p>Avoid passing secrets on the command line. Command-line arguments can be observed by other users through process listings or captured in security audit events. Environment variables and standard input are safer channels. When an action requires a secret as an input, declare it explicitly in the workflow so the mapping remains visible and auditable.</p><ul><li>Reference secrets only in jobs that actually need them.</li><li>Use the GITHUB_TOKEN with the narrowest permission set possible and increase scope only for individual jobs.</li><li>Test workflows with both valid and invalid secret values to confirm redaction behaves as expected.</li></ul>
+<h2>Maintaining log hygiene</h2>
+<p>GitHub Actions automatically redacts the contents of registered secrets from workflow logs. This protection works only when the exact secret value reaches the runner. Structured data such as JSON blobs can defeat redaction because the system looks for exact matches. Therefore, never wrap a secret inside a larger data structure before logging.</p>
+<p>OWASP advises logging every action that touches secrets and retaining those logs for at least 90 days. Review logs after changes to verify that no secret appears in plain text. If an unredacted secret reaches a log, delete the log file and rotate the affected secret immediately.</p><ul><li>Mask any locally generated sensitive value with the ::add-mask:: workflow command before it can appear in output.</li><li>Audit workflow source and any actions used to ensure secrets are not sent to unintended hosts.</li><li>Check both STDOUT and STDERR streams, because some tools write errors to standard error.</li></ul>
+<h2>Rotating secrets on a schedule</h2>
+<p>Static secrets that never change increase the window of exposure if they are compromised. OWASP recommends automated rotation of static secrets and the use of dynamic secrets when the application can request fresh credentials at startup. Dynamic credentials expire automatically, limiting reuse even if they are captured.</p>
+<p>GitHub does not rotate secrets for you. You must implement a rotation process that updates the stored value and any dependent systems. Periodically review registered secrets to confirm each one is still required. Secrets that are no longer needed should be deleted rather than left in place.</p><ul><li>Set expiration policies through the secret management system so that credentials become invalid after a defined period.</li><li>Automate the rotation steps to reduce human error during key changes.</li><li>Verify that applications check secret validity before trusting a retrieved value.</li></ul>
+<h2>Putting the pieces together</h2>
+<p>Combine the controls described above into a repeatable workflow. Store secrets only in the platform-provided store, inject them exclusively through environment variables, enforce log redaction, and rotate values on a schedule. Review the source of every action that receives a secret to prevent accidental exfiltration. When these steps are followed consistently, automation can access the credentials it needs without leaving them scattered across repositories or logs.</p><h2>Sources</h2><ul><li><a href="https://docs.github.com/en/actions/reference/security/secure-use" rel="noopener noreferrer">docs.github.com</a></li><li><a href="https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html" rel="noopener noreferrer">cheatsheetseries.owasp.org</a></li><li><a href="https://docs.github.com/en/actions/concepts/security/secrets" rel="noopener noreferrer">docs.github.com</a></li></ul>
+
+  </div>
+
+  <div class="post-footer">
+    <span class="post-footer-label">Looking for more AI tools?</span>
+    <a class="btn-export" href="/">See our free AI tools →</a>
+  </div>
+
+  <nav class="post-nav post-nav-bottom">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+</main>
+
+<!--FOOTER-->
+
+</body>
+</html>

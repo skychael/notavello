@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-03T06:57:15.344Z",
+  "generatedAt": "2026-10-04T07:18:18.424Z",
   "totals": {
-    "pages": 296,
-    "indexable": 292,
-    "articles": 223,
-    "sitemap": 292,
+    "pages": 298,
+    "indexable": 294,
+    "articles": 225,
+    "sitemap": 294,
     "errors": 0,
-    "warnings": 255
+    "warnings": 258
   },
   "errors": [],
   "warnings": [
@@ -99,6 +99,16 @@
       "type": "template-pattern",
       "page": "/pages/blog/ai-model-evaluation-sandbox-security-checklist/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/anhydrous-ammonia-is-the-fall-farm-bill/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/anhydrous-ammonia-is-the-fall-farm-bill/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
     },
     {
       "type": "template-pattern",
@@ -603,6 +613,11 @@
     {
       "type": "template-pattern",
       "page": "/pages/blog/how-to-make-account-recovery-safer-before-you-need-it/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/how-to-pass-secrets-to-automation-without-hard-coding-them/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
     {
@@ -1295,7 +1310,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 296,
+      "incomingLinks": 298,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -1319,7 +1334,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 296,
+      "incomingLinks": 298,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -1427,7 +1442,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 296,
+      "incomingLinks": 298,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -1439,9 +1454,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 296,
-      "lastmod": "2026-10-02",
-      "bodyWords": 658
+      "incomingLinks": 298,
+      "lastmod": "2026-10-03",
+      "bodyWords": 652
     },
     {
       "route": "/pages/blog/a-checklist-for-reliable-scheduled-jobs/",
@@ -1739,9 +1754,21 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 162,
-      "lastmod": "2026-10-02",
-      "bodyWords": 2744
+      "incomingLinks": 164,
+      "lastmod": "2026-10-03",
+      "bodyWords": 2766
+    },
+    {
+      "route": "/pages/blog/anhydrous-ammonia-is-the-fall-farm-bill/",
+      "file": "pages/blog/anhydrous-ammonia-is-the-fall-farm-bill/index.html",
+      "title": "Anhydrous Ammonia Is The Fall Farm Bill — The Export | Notavello",
+      "description": "Anhydrous ammonia is up 25% year over year, turning Middle East energy risk into a fall fertilizer bill for U.S. farms.",
+      "canonical": "https://notavello.com/pages/blog/anhydrous-ammonia-is-the-fall-farm-bill/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-10-04",
+      "bodyWords": 1207
     },
     {
       "route": "/pages/blog/apple-speechanalyzer-local-transcription-apps/",
@@ -2159,7 +2186,7 @@
       "canonical": "https://notavello.com/pages/blog/fertilizer-delay-is-the-food-price-bill/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 2,
+      "incomingLinks": 3,
       "lastmod": "2026-09-29",
       "bodyWords": 1636
     },
@@ -2764,6 +2791,18 @@
       "bodyWords": 1095
     },
     {
+      "route": "/pages/blog/how-to-pass-secrets-to-automation-without-hard-coding-them/",
+      "file": "pages/blog/how-to-pass-secrets-to-automation-without-hard-coding-them/index.html",
+      "title": "How to pass secrets to automation without hard-coding them — The Export | Notavello",
+      "description": "Learn to manage secrets in automation with stores, environment injection, log hygiene, and rotation using GitHub Actions and OWASP practices.",
+      "canonical": "https://notavello.com/pages/blog/how-to-pass-secrets-to-automation-without-hard-coding-them/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-10-03",
+      "bodyWords": 863
+    },
+    {
       "route": "/pages/blog/how-to-prepare-a-raspberry-pi-for-reliable-headless-use/",
       "file": "pages/blog/how-to-prepare-a-raspberry-pi-for-reliable-headless-use/index.html",
       "title": "How to prepare a Raspberry Pi for reliable headless use — The Export | Notavello",
@@ -3276,8 +3315,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-02",
-      "bodyWords": 759
+      "lastmod": "2026-10-03",
+      "bodyWords": 757
     },
     {
       "route": "/pages/blog/page-11/",
@@ -3288,8 +3327,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-02",
-      "bodyWords": 837
+      "lastmod": "2026-10-03",
+      "bodyWords": 824
     },
     {
       "route": "/pages/blog/page-12/",
@@ -3300,8 +3339,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-02",
-      "bodyWords": 859
+      "lastmod": "2026-10-03",
+      "bodyWords": 847
     },
     {
       "route": "/pages/blog/page-13/",
@@ -3312,8 +3351,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": "2026-10-02",
-      "bodyWords": 371
+      "lastmod": "2026-10-03",
+      "bodyWords": 470
     },
     {
       "route": "/pages/blog/page-2/",
@@ -3324,8 +3363,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-02",
-      "bodyWords": 629
+      "lastmod": "2026-10-03",
+      "bodyWords": 645
     },
     {
       "route": "/pages/blog/page-3/",
@@ -3336,8 +3375,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-02",
-      "bodyWords": 666
+      "lastmod": "2026-10-03",
+      "bodyWords": 659
     },
     {
       "route": "/pages/blog/page-4/",
@@ -3348,8 +3387,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-02",
-      "bodyWords": 661
+      "lastmod": "2026-10-03",
+      "bodyWords": 659
     },
     {
       "route": "/pages/blog/page-5/",
@@ -3360,8 +3399,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-02",
-      "bodyWords": 688
+      "lastmod": "2026-10-03",
+      "bodyWords": 678
     },
     {
       "route": "/pages/blog/page-6/",
@@ -3372,8 +3411,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-02",
-      "bodyWords": 674
+      "lastmod": "2026-10-03",
+      "bodyWords": 684
     },
     {
       "route": "/pages/blog/page-7/",
@@ -3384,8 +3423,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-02",
-      "bodyWords": 647
+      "lastmod": "2026-10-03",
+      "bodyWords": 649
     },
     {
       "route": "/pages/blog/page-8/",
@@ -3396,8 +3435,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-02",
-      "bodyWords": 674
+      "lastmod": "2026-10-03",
+      "bodyWords": 665
     },
     {
       "route": "/pages/blog/page-9/",
@@ -3408,8 +3447,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-02",
-      "bodyWords": 689
+      "lastmod": "2026-10-03",
+      "bodyWords": 694
     },
     {
       "route": "/pages/blog/phosphate-is-the-fertilizer-shock-that-did-not-fade/",
@@ -4283,7 +4322,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 296,
+      "incomingLinks": 298,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -4295,7 +4334,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 296,
+      "incomingLinks": 298,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -4307,7 +4346,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 296,
+      "incomingLinks": 298,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -4319,7 +4358,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 296,
+      "incomingLinks": 298,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -4331,7 +4370,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 296,
+      "incomingLinks": 298,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -4344,8 +4383,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-10-03",
-      "bodyWords": 455
+      "lastmod": "2026-10-04",
+      "bodyWords": 461
     },
     {
       "route": "/pages/sample",
@@ -4367,7 +4406,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 296,
+      "incomingLinks": 298,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -4379,7 +4418,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 296,
+      "incomingLinks": 298,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -4403,7 +4442,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 296,
+      "incomingLinks": 298,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -4835,7 +4874,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 296,
+      "incomingLinks": 298,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }
