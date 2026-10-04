@@ -1,34 +1,34 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-04T13:15:29.702Z",
-  "latest_success_at": "2026-10-04T13:15:29.702Z",
+  "generated_at": "2026-10-04T17:39:41.917Z",
+  "latest_success_at": "2026-10-04T17:39:41.917Z",
   "status": "partial",
   "items": [
     {
-      "id": "ee8e390990a944fc",
-      "title": "Eastern North Pacific Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
+      "id": "b5ad93019d019ede",
+      "title": "Atlantic Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-10-04T11:45:17.000Z",
+      "published_at": "2026-10-04T17:35:20.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "ce12ef991faa18d4",
+      "id": "bd919fddd044f0f1",
       "title": "Hurricane Rachel Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep3+shtml/092814.shtml?cone=",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep3+shtml/152850.shtml?cone=",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-10-04T09:28:14.000Z",
+      "published_at": "2026-10-04T15:28:50.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "012337d9be399dc1",
-      "title": "SPC Oct 4, 2026 Day 4-8 Severe Weather Outlook",
-      "url": "https://www.spc.noaa.gov/products/exper/day4-8",
-      "publisher": "Storm Prediction Center",
-      "published_at": "2026-10-04T09:03:14.000Z",
-      "topic": "Hurricane",
+      "id": "e6baa9f11965ba58",
+      "title": "Flood Warning issued October 4 at 10:17AM CDT until October 7 at 4:49AM CDT by NWS Kansas City/Pleasant Hill MO",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.1dc133a6e9976b60d800c6ceb1a3fb48fd11f07b.005.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-10-04T15:17:00.000Z",
+      "topic": "Flooding",
       "status": "ok"
     }
   ]
