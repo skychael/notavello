@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-04T06:59:27.936Z",
-  "latest_success_at": "2026-10-04T06:59:27.936Z",
+  "generated_at": "2026-10-04T13:15:29.702Z",
+  "latest_success_at": "2026-10-04T13:15:29.702Z",
   "status": "partial",
   "items": [
     {
-      "id": "7cb9935bf42b6ff3",
-      "title": "SPC Oct 4, 2026 0600 UTC Day 1 Convective Outlook",
-      "url": "https://www.spc.noaa.gov/products/outlook/day1otlk_1200.html",
-      "publisher": "Storm Prediction Center",
-      "published_at": "2026-10-04T05:50:17.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "b5ad93019d019ede",
-      "title": "Atlantic Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
+      "id": "ee8e390990a944fc",
+      "title": "Eastern North Pacific Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-10-04T05:44:40.000Z",
+      "published_at": "2026-10-04T11:45:17.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "b4930494c6778af2",
+      "id": "ce12ef991faa18d4",
       "title": "Hurricane Rachel Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep3+shtml/032650.shtml?cone=",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep3+shtml/092814.shtml?cone=",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-10-04T03:26:50.000Z",
+      "published_at": "2026-10-04T09:28:14.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "012337d9be399dc1",
+      "title": "SPC Oct 4, 2026 Day 4-8 Severe Weather Outlook",
+      "url": "https://www.spc.noaa.gov/products/exper/day4-8",
+      "publisher": "Storm Prediction Center",
+      "published_at": "2026-10-04T09:03:14.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
