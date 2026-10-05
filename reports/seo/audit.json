@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-04T07:18:18.424Z",
+  "generatedAt": "2026-10-05T07:32:39.397Z",
   "totals": {
-    "pages": 298,
-    "indexable": 294,
-    "articles": 225,
-    "sitemap": 294,
+    "pages": 300,
+    "indexable": 296,
+    "articles": 227,
+    "sitemap": 296,
     "errors": 0,
-    "warnings": 258
+    "warnings": 262
   },
   "errors": [],
   "warnings": [
@@ -343,6 +343,16 @@
     {
       "type": "topic-review",
       "page": "/pages/blog/fuel-truck-waiver-shortage-signal/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/g7-diesel-release-is-the-export-ban-bill/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/g7-diesel-release-is-the-export-ban-bill/",
       "detail": "title/description lacks a clear AI, software, or computing connection"
     },
     {
@@ -693,6 +703,16 @@
     {
       "type": "topic-review",
       "page": "/pages/blog/how-to-run-a-small-raspberry-pi-project-as-a-system-service/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/how-to-use-http-status-codes-when-debugging-an-api/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/how-to-use-http-status-codes-when-debugging-an-api/",
       "detail": "title/description lacks a clear AI, software, or computing connection"
     },
     {
@@ -1310,7 +1330,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 298,
+      "incomingLinks": 300,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -1334,7 +1354,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 298,
+      "incomingLinks": 300,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -1442,7 +1462,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 298,
+      "incomingLinks": 300,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -1454,9 +1474,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 298,
-      "lastmod": "2026-10-03",
-      "bodyWords": 652
+      "incomingLinks": 300,
+      "lastmod": "2026-10-04",
+      "bodyWords": 650
     },
     {
       "route": "/pages/blog/a-checklist-for-reliable-scheduled-jobs/",
@@ -1754,9 +1774,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 164,
-      "lastmod": "2026-10-03",
-      "bodyWords": 2766
+      "incomingLinks": 166,
+      "lastmod": "2026-10-04",
+      "bodyWords": 2790
     },
     {
       "route": "/pages/blog/anhydrous-ammonia-is-the-fall-farm-bill/",
@@ -2102,7 +2122,7 @@
       "canonical": "https://notavello.com/pages/blog/diesel-inventories-just-got-a-harvest-deadline/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 6,
+      "incomingLinks": 7,
       "lastmod": "2026-09-11",
       "bodyWords": 1273
     },
@@ -2237,6 +2257,18 @@
       "incomingLinks": 2,
       "lastmod": "2026-09-27",
       "bodyWords": 1468
+    },
+    {
+      "route": "/pages/blog/g7-diesel-release-is-the-export-ban-bill/",
+      "file": "pages/blog/g7-diesel-release-is-the-export-ban-bill/index.html",
+      "title": "The G7 Diesel Release Is The Export-Ban Bill — The Export | Notavello",
+      "description": "G7’s 100 million-barrel release is a diesel emergency measure, not cheap fuel. The export-ban threat just got a price tag.",
+      "canonical": "https://notavello.com/pages/blog/g7-diesel-release-is-the-export-ban-bill/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-10-05",
+      "bodyWords": 1303
     },
     {
       "route": "/pages/blog/gasoline-is-the-oil-shock-you-cant-expense/",
@@ -2923,6 +2955,18 @@
       "bodyWords": 2199
     },
     {
+      "route": "/pages/blog/how-to-use-http-status-codes-when-debugging-an-api/",
+      "file": "pages/blog/how-to-use-http-status-codes-when-debugging-an-api/index.html",
+      "title": "How to Use HTTP Status Codes When Debugging an API — The Export | Notavello",
+      "description": "Learn to group HTTP status codes by class and map them to client, authentication, server, and retry decisions during API debugging.",
+      "canonical": "https://notavello.com/pages/blog/how-to-use-http-status-codes-when-debugging-an-api/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-10-04",
+      "bodyWords": 818
+    },
+    {
       "route": "/pages/blog/how-to-use-multiple-ai-coding-agents-without-losing-control/",
       "file": "pages/blog/how-to-use-multiple-ai-coding-agents-without-losing-control/index.html",
       "title": "How to Use Multiple AI Coding Agents Without Losing Control — The Export | Notavello",
@@ -3315,8 +3359,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-03",
-      "bodyWords": 757
+      "lastmod": "2026-10-04",
+      "bodyWords": 731
     },
     {
       "route": "/pages/blog/page-11/",
@@ -3327,8 +3371,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-03",
-      "bodyWords": 824
+      "lastmod": "2026-10-04",
+      "bodyWords": 837
     },
     {
       "route": "/pages/blog/page-12/",
@@ -3339,8 +3383,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-03",
-      "bodyWords": 847
+      "lastmod": "2026-10-04",
+      "bodyWords": 840
     },
     {
       "route": "/pages/blog/page-13/",
@@ -3351,8 +3395,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": "2026-10-03",
-      "bodyWords": 470
+      "lastmod": "2026-10-04",
+      "bodyWords": 557
     },
     {
       "route": "/pages/blog/page-2/",
@@ -3363,8 +3407,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-03",
-      "bodyWords": 645
+      "lastmod": "2026-10-04",
+      "bodyWords": 655
     },
     {
       "route": "/pages/blog/page-3/",
@@ -3375,8 +3419,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-03",
-      "bodyWords": 659
+      "lastmod": "2026-10-04",
+      "bodyWords": 648
     },
     {
       "route": "/pages/blog/page-4/",
@@ -3387,8 +3431,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-03",
-      "bodyWords": 659
+      "lastmod": "2026-10-04",
+      "bodyWords": 670
     },
     {
       "route": "/pages/blog/page-5/",
@@ -3399,8 +3443,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-03",
-      "bodyWords": 678
+      "lastmod": "2026-10-04",
+      "bodyWords": 675
     },
     {
       "route": "/pages/blog/page-6/",
@@ -3411,8 +3455,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-03",
-      "bodyWords": 684
+      "lastmod": "2026-10-04",
+      "bodyWords": 681
     },
     {
       "route": "/pages/blog/page-7/",
@@ -3423,8 +3467,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-03",
-      "bodyWords": 649
+      "lastmod": "2026-10-04",
+      "bodyWords": 659
     },
     {
       "route": "/pages/blog/page-8/",
@@ -3435,8 +3479,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-03",
-      "bodyWords": 665
+      "lastmod": "2026-10-04",
+      "bodyWords": 656
     },
     {
       "route": "/pages/blog/page-9/",
@@ -3447,8 +3491,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-03",
-      "bodyWords": 694
+      "lastmod": "2026-10-04",
+      "bodyWords": 697
     },
     {
       "route": "/pages/blog/phosphate-is-the-fertilizer-shock-that-did-not-fade/",
@@ -4322,7 +4366,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 298,
+      "incomingLinks": 300,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -4334,7 +4378,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 298,
+      "incomingLinks": 300,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -4346,7 +4390,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 298,
+      "incomingLinks": 300,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -4358,7 +4402,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 298,
+      "incomingLinks": 300,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -4370,7 +4414,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 298,
+      "incomingLinks": 300,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -4383,8 +4427,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-10-04",
-      "bodyWords": 461
+      "lastmod": "2026-10-05",
+      "bodyWords": 467
     },
     {
       "route": "/pages/sample",
@@ -4406,7 +4450,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 298,
+      "incomingLinks": 300,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -4418,7 +4462,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 298,
+      "incomingLinks": 300,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -4442,7 +4486,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 298,
+      "incomingLinks": 300,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -4874,7 +4918,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 298,
+      "incomingLinks": 300,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }

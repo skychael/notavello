@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>How to Use HTTP Status Codes When Debugging an API — The Export | Notavello</title>
+<meta name="description" content="Learn to group HTTP status codes by class and map them to client, authentication, server, and retry decisions during API debugging."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/blog/how-to-use-http-status-codes-when-debugging-an-api/"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2026-10-04T14:09:24.556Z"/>
+<meta property="article:modified_time" content="2026-10-04T14:09:24.556Z"/>
+<meta name="notavello:published_at" content="2026-10-04T14:09:24.556Z"/>
+<meta name="syndication-origin-site" content="toysforbots"/>
+<meta name="syndication-origin-id" content="toysforbots:how-to-use-http-status-codes-when-debugging-an-api"/>
+<meta name="syndication-origin-slug" content="how-to-use-http-status-codes-when-debugging-an-api"/>
+<meta name="syndication-origin-url" content="https://toysforbots.com/blog/how-to-use-http-status-codes-when-debugging-an-api/"/>
+<meta name="syndication-source-format" content="toysforbots-syndication-v1"/>
+<meta property="og:url" content="https://notavello.com/pages/blog/how-to-use-http-status-codes-when-debugging-an-api/"/>
+<meta property="og:title" content="How to Use HTTP Status Codes When Debugging an API"/>
+<meta property="og:description" content="Learn to group HTTP status codes by class and map them to client, authentication, server, and retry decisions during API debugging."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="How to Use HTTP Status Codes When Debugging an API"/>
+<meta name="twitter:description" content="Learn to group HTTP status codes by class and map them to client, authentication, server, and retry decisions during API debugging."/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "How to Use HTTP Status Codes When Debugging an API",
+  "description": "Learn to group HTTP status codes by class and map them to client, authentication, server, and retry decisions during API debugging.",
+  "url": "https://notavello.com/pages/blog/how-to-use-http-status-codes-when-debugging-an-api/",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://notavello.com/pages/blog/how-to-use-http-status-codes-when-debugging-an-api/" },
+  "image": "https://notavello.com/og-image.png",
+  "datePublished": "2026-10-04T14:09:24.556Z",
+  "dateModified": "2026-10-04T14:09:24.556Z",
+  "author": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" },
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com", "logo": { "@type": "ImageObject", "url": "https://notavello.com/og-image.png" } }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
+.post-nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; row-gap: 8px; }
+.post-nav-top { margin-bottom: 40px; }
+.post-nav-bottom { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--border); }
+.post-nav a { display: inline-flex; align-items: center; gap: 6px; font-size: 0.92rem; font-weight: 600; color: var(--ink-muted); text-decoration: none; padding: 12px 14px; border-radius: var(--radius-sm); white-space: nowrap; transition: color 0.15s, background 0.15s; }
+.post-nav a:hover { color: var(--accent); background: var(--accent-light); }
+.post-nav a:first-child { padding-left: 0; }
+.post-nav a:last-child { padding-right: 0; justify-content: flex-end; }
+.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
+.post-date { font-size: 0.78rem; color: var(--ink-faint); }
+.post-title { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; color: var(--ink); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
+.post-lede { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+.post-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink); }
+.post-body h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 44px 0 16px; letter-spacing: -0.01em; }
+.post-body p { margin-bottom: 20px; color: var(--ink-muted); }
+.post-body p strong { color: var(--ink); font-weight: 600; }
+.post-body ul { margin: 0 0 20px 20px; color: var(--ink-muted); }
+.post-body ul li { margin-bottom: 8px; line-height: 1.7; }
+.callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 32px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.7; }
+.post-footer { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.post-footer-label { font-size: 0.8rem; color: var(--ink-faint); }
+.btn-export { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: opacity 0.2s; }
+.btn-export:hover { opacity: 0.9; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } .post-nav a { padding: 12px 8px; font-size: 0.88rem; } }
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+
+  <nav class="post-nav post-nav-top">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+  <div class="post-meta">
+    <span class="post-tag">APIs</span>
+    <span class="post-date">October 4, 2026</span>
+  </div>
+
+  <h1 class="post-title">How to Use HTTP Status Codes When Debugging an API</h1>
+
+  <p class="post-lede">HTTP status codes are three-digit numbers that servers return with every response. The first digit groups responses into five classes that signal broad outcomes, while the remaining digits add detail. When debugging an API, these codes point directly to the source of failure. A 4xx code usually means the client sent something wrong. A 5xx code indicates the server could not complete a valid request. 3xx codes show the resource moved or needs further action. 2xx codes confirm success. 1xx codes are informational and rarely affect final outcomes. Understanding these classes lets developers decide whether to fix the request, supply credentials, wait and retry, or investigate server logs. Official definitions appear in RFC 9110 and are summarized on developer documentation sites.</p>
+
+  <div class="post-body">
+
+<h2>The five response classes at a glance</h2>
+<p>Status codes begin with 1 through 5. Each class tells the client what kind of action, if any, is required next. 1xx responses are provisional and appear during protocol upgrades or long-running operations. 2xx responses mean the request succeeded. 3xx responses instruct the client to take additional steps, often by following a Location header. 4xx responses indicate the client made an error that must be corrected before retrying. 5xx responses mean the server encountered a problem while processing a syntactically valid request.</p><ul><li>1xx: Informational, request received and processing continues</li><li>2xx: Successful, request completed as expected</li><li>3xx: Redirection, further client action required</li><li>4xx: Client error, request cannot be fulfilled as sent</li><li>5xx: Server error, server failed to fulfill a valid request</li></ul><div class="callout"><strong>Quick reference</strong> Always inspect the full response body and headers alongside the status code. Many APIs return structured error details that explain the exact problem beyond the numeric class.</div>
+<h2>Successful responses and what they confirm</h2>
+<p>Codes in the 200 range confirm the server accepted and processed the request. 200 OK is the most common and indicates a generic success. 201 Created signals that a new resource was made, usually after a POST. 204 No Content means success with no body returned, common after DELETE operations. These codes tell the client it can proceed without changes to the request. When debugging, a 2xx response rules out network, authentication, and syntax problems, so attention shifts to the payload or application logic.</p><ul><li>200 OK: Request succeeded with a response body</li><li>201 Created: New resource created, check Location header</li><li>204 No Content: Success with no body, often after updates or deletes</li></ul>
+<h2>Redirection and client error responses</h2>
+<p>3xx codes require the client to follow a redirect or take another action. 301 Moved Permanently and 302 Found are common when resources change location. In API debugging these often appear when base URLs are outdated. 4xx codes point to client-side mistakes. 400 Bad Request means malformed syntax or invalid parameters. 401 Unauthorized requires valid credentials via the WWW-Authenticate header. 403 Forbidden means the client is authenticated but lacks permission. 404 Not Found indicates the resource does not exist at the requested path. 429 Too Many Requests signals rate limiting and usually includes a Retry-After header.</p><ul><li>Check Location headers on 3xx responses before assuming an error</li><li>401 requires credentials; 403 requires permission changes</li><li>429 responses should trigger backoff and respect Retry-After values</li></ul>
+<h2>Server errors and retry decisions</h2>
+<p>5xx codes mean the server could not fulfill an otherwise valid request. 500 Internal Server Error is the generic case. 502 Bad Gateway and 503 Service Unavailable often appear during maintenance or upstream failures. 504 Gateway Timeout indicates a timeout waiting for another service. These codes suggest the client should retry later rather than immediately resending the same request. RFC 9110 notes that clients should treat unrecognized codes in a class as equivalent to the generic x00 code, so an unknown 5xx can be handled like 500.</p><ul><li>Retry 5xx responses with exponential backoff and jitter</li><li>Log the full response body for server-side investigation</li><li>Monitor 5xx rates to detect capacity or deployment issues</li></ul>
+<h2>Practical debugging workflow</h2>
+<p>Start by capturing the exact request and response, including method, URL, headers, body, and status code. Map the first digit to the class to decide the next step. For 4xx codes, inspect the request for missing fields, wrong content type, or invalid authentication. For 5xx codes, check server logs and recent deployments. For 3xx codes, verify redirect targets and avoid infinite loops. Test with minimal requests first, then add complexity. Use tools that display raw HTTP traffic so status codes are not hidden by client libraries.</p><ul><li>Record request and response in full before changing anything</li><li>Treat 4xx as client fixes and 5xx as server investigation</li><li>Respect rate-limit and retry headers to avoid worsening load</li></ul><h2>Sources</h2><ul><li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status" rel="noopener noreferrer">HTTP response status codes - HTTP | MDN</a></li><li><a href="https://datatracker.ietf.org/doc/rfc9110/" rel="noopener noreferrer">RFC 9110 - HTTP Semantics</a></li><li><a href="https://www.iana.org/assignments/http-status-codes" rel="noopener noreferrer">Hypertext Transfer Protocol (HTTP) Status Code Registry</a></li></ul>
+
+  </div>
+
+  <div class="post-footer">
+    <span class="post-footer-label">Looking for more AI tools?</span>
+    <a class="btn-export" href="/">See our free AI tools →</a>
+  </div>
+
+  <nav class="post-nav post-nav-bottom">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+</main>
+
+<!--FOOTER-->
+
+</body>
+</html>
