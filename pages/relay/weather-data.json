@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-05T01:00:16.501Z",
-  "latest_success_at": "2026-10-05T01:00:16.501Z",
+  "generated_at": "2026-10-05T07:08:14.271Z",
+  "latest_success_at": "2026-10-05T07:08:14.271Z",
   "status": "partial",
   "items": [
     {
@@ -9,26 +9,26 @@
       "title": "Atlantic Tropical Weather Outlook",
       "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-10-04T23:27:51.000Z",
+      "published_at": "2026-10-05T05:08:54.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "7a0c072f9b63a10b",
+      "id": "826596a2167bc7a0",
       "title": "Hurricane Rachel Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep3+shtml/212734.shtml?cone=",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep3+shtml/032154.shtml?cone=",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-10-04T21:27:34.000Z",
+      "published_at": "2026-10-05T03:21:54.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "efd38c213ee073da",
-      "title": "High Surf Advisory issued October 5 at 3:56AM ChST until October 5 at 4:00PM ChST by NWS Tiyan GU",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2ba2194ee912eb2d97863385f2ba8036cee11181.001.1.cap",
+      "id": "b16f170e453bc8ff",
+      "title": "Flood Warning issued October 4 at 8:40PM CDT until October 11 at 6:25AM CDT by NWS Quad Cities IA IL",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.4c548c5eab39ec5b30999b5f6a871f07c47c1323.005.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-10-04T17:56:00.000Z",
-      "topic": "Hurricane",
+      "published_at": "2026-10-05T01:40:00.000Z",
+      "topic": "Flooding",
       "status": "ok"
     }
   ]
