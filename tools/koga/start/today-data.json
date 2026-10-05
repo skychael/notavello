@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "10-04",
-  "display_date": "October 4",
-  "generated_at": "2026-10-04T14:05:17.725Z",
+  "date_key": "10-05",
+  "display_date": "October 5",
+  "generated_at": "2026-10-05T17:09:26.293Z",
   "source": "Wikimedia On This Day",
-  "selection_method": "ai",
+  "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-d9d027f6a5d0f00195b76768",
+      "candidate_id": "event-92f83ace34ed6024811c578c",
       "type": "event",
-      "year": 1957,
-      "text": "Sputnik 1 becomes the first artificial satellite to orbit the Earth.",
-      "article_title": "Sputnik 1",
-      "url": "https://en.wikipedia.org/wiki/Sputnik_1",
-      "category": "Science and technology"
+      "year": 1991,
+      "text": "An Indonesian Air Force C-130 crash kills 135 people.",
+      "article_title": "1991 Jakarta Indonesian Air Force C-130 crash",
+      "url": "https://en.wikipedia.org/wiki/1991_Jakarta_Indonesian_Air_Force_C-130_crash",
+      "category": "Disasters and exploration"
     },
     {
-      "candidate_id": "event-6727363aa8d0af83594ab2c5",
+      "candidate_id": "event-de80faa5500fd4875910e128",
       "type": "event",
-      "year": 1993,
-      "text": "Battle of Mogadishu occurs killing 18 U.S. Special Forces, two UN Peacekeepers and at least 600 Somalian militia men and civilians.",
-      "article_title": "Battle of Mogadishu (1993)",
-      "url": "https://en.wikipedia.org/wiki/Battle_of_Mogadishu_(1993)",
+      "year": 1914,
+      "text": "World War I: An aircraft successfully destroys another aircraft with gunfire for the first time.",
+      "article_title": "World War I",
+      "url": "https://en.wikipedia.org/wiki/World_War_I",
       "category": "World history"
     },
     {
-      "candidate_id": "event-f392cf5e6184d187ff4baccb",
+      "candidate_id": "event-d09d4a9d1222ab35b7214663",
       "type": "event",
-      "year": 2006,
-      "text": "WikiLeaks is launched.",
-      "article_title": "WikiLeaks",
-      "url": "https://en.wikipedia.org/wiki/WikiLeaks",
-      "category": "Politics and society"
+      "year": 1984,
+      "text": "Marc Garneau becomes the first Canadian in space.",
+      "article_title": "Marc Garneau",
+      "url": "https://en.wikipedia.org/wiki/Marc_Garneau",
+      "category": "Science and technology"
     }
   ]
 }
