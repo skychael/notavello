@@ -1,22 +1,22 @@
 {
   "schema_version": "1.0",
-  "checked_at": "2026-10-04T21:33:58.362Z",
-  "latest_success_at": "2026-10-04T21:33:58.362Z",
+  "checked_at": "2026-10-05T01:00:15.926Z",
+  "latest_success_at": "2026-10-05T01:00:15.926Z",
   "status": "partial",
   "items": [
-    {
-      "title": "WTI Whipsaws as Gulf Supply Improves and Middle East Risk Returns",
-      "url": "https://oilprice.com/Energy/Energy-General/WTI-Whipsaws-as-Gulf-Supply-Improves-and-Middle-East-Risk-Returns.html",
-      "publisher": "OilPrice.com",
-      "published_at": "2026-10-02T14:45:00.000Z",
-      "source_id": "oilprice",
-      "status": "ok"
-    },
     {
       "title": "Iran Is Losing Some of Its Leverage Over the Strait of Hormuz",
       "url": "https://oilprice.com/Energy/Energy-General/Iran-Is-Losing-Some-of-Its-Leverage-Over-the-Strait-of-Hormuz.html",
       "publisher": "OilPrice.com",
       "published_at": "2026-10-03T19:00:00.000Z",
+      "source_id": "oilprice",
+      "status": "ok"
+    },
+    {
+      "title": "Fuel Price Shock Pushes Global Gas Car Sales Below 50% for First Time",
+      "url": "https://oilprice.com/Energy/Energy-General/Fuel-Price-Shock-Pushes-Global-Gas-Car-Sales-Below-50-for-First-Time.html",
+      "publisher": "OilPrice.com",
+      "published_at": "2026-10-04T23:00:00.000Z",
       "source_id": "oilprice",
       "status": "ok"
     },
@@ -69,19 +69,19 @@
       "status": "ok"
     },
     {
-      "title": "Ukraine Claims First Combat Use Of FP-7 Ballistic Missile",
-      "url": "https://www.twz.com/news-features/ukraine-claims-first-combat-use-of-fp-7-ballistic-missile",
-      "publisher": "TWZ (The War Zone)",
-      "published_at": "2026-10-01T22:36:17.000Z",
-      "source_id": "twz",
-      "status": "ok"
-    },
-    {
       "title": "After yearslong delay, Taiwan receives first pair of new F-16s",
       "url": "https://breakingdefense.com/2026/10/after-yearslong-delay-taiwan-receives-first-pair-of-new-f-16s",
       "publisher": "Breaking Defense",
       "published_at": "2026-10-02T17:20:31.000Z",
       "source_id": "breaking-defense",
+      "status": "ok"
+    },
+    {
+      "title": "Germany Is Finally Giving Its F125 Frigates Some More Teeth With IRIS-T SLM Surface-To-Air Missiles",
+      "url": "https://www.twz.com/news-features/germany-is-finally-giving-its-f125-frigates-some-more-teeth-with-iris-t-slm-surface-to-air-missiles",
+      "publisher": "TWZ (The War Zone)",
+      "published_at": "2026-10-02T21:01:32.000Z",
+      "source_id": "twz",
       "status": "ok"
     }
   ]
