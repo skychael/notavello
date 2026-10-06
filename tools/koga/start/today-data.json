@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "10-05",
-  "display_date": "October 5",
-  "generated_at": "2026-10-05T17:09:26.293Z",
+  "date_key": "10-06",
+  "display_date": "October 6",
+  "generated_at": "2026-10-06T15:13:26.894Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-92f83ace34ed6024811c578c",
+      "candidate_id": "event-6a285b44b9e9facb8a30fbc6",
       "type": "event",
-      "year": 1991,
-      "text": "An Indonesian Air Force C-130 crash kills 135 people.",
-      "article_title": "1991 Jakarta Indonesian Air Force C-130 crash",
-      "url": "https://en.wikipedia.org/wiki/1991_Jakarta_Indonesian_Air_Force_C-130_crash",
-      "category": "Disasters and exploration"
-    },
-    {
-      "candidate_id": "event-de80faa5500fd4875910e128",
-      "type": "event",
-      "year": 1914,
-      "text": "World War I: An aircraft successfully destroys another aircraft with gunfire for the first time.",
-      "article_title": "World War I",
-      "url": "https://en.wikipedia.org/wiki/World_War_I",
+      "year": 1973,
+      "text": "Egypt and Syria launch coordinated attacks against Israel, beginning the Yom Kippur War.",
+      "article_title": "Operation Badr (1973)",
+      "url": "https://en.wikipedia.org/wiki/Operation_Badr_(1973)",
       "category": "World history"
     },
     {
-      "candidate_id": "event-d09d4a9d1222ab35b7214663",
+      "candidate_id": "event-c7ffa94317280ba8a833e9d7",
       "type": "event",
-      "year": 1984,
-      "text": "Marc Garneau becomes the first Canadian in space.",
-      "article_title": "Marc Garneau",
-      "url": "https://en.wikipedia.org/wiki/Marc_Garneau",
-      "category": "Science and technology"
+      "year": 1977,
+      "text": "The first prototype of the Mikoyan MiG-29, designated 9-01, makes its maiden flight.",
+      "article_title": "Mikoyan MiG-29",
+      "url": "https://en.wikipedia.org/wiki/Mikoyan_MiG-29",
+      "category": "World history"
+    },
+    {
+      "candidate_id": "event-017e38cd16fa5882e93f00d6",
+      "type": "event",
+      "year": 1915,
+      "text": "World War I: Combined Austro-Hungarian and German Central Powers, reinforced by the recently joined Bulgaria, launch a new offensive against Serbia under command of August von Mackensen.",
+      "article_title": "World War I",
+      "url": "https://en.wikipedia.org/wiki/World_War_I",
+      "category": "World history"
     }
   ]
 }
