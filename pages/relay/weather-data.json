@@ -1,24 +1,24 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-05T22:42:33.375Z",
-  "latest_success_at": "2026-10-05T22:42:33.375Z",
+  "generated_at": "2026-10-06T03:03:34.194Z",
+  "latest_success_at": "2026-10-06T03:03:34.194Z",
   "status": "partial",
   "items": [
     {
-      "id": "e0da132d1e90cf0a",
+      "id": "18f5c132cd299d94",
       "title": "Hurricane Rachel Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep3+shtml/212207.shtml?cone=",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep3+shtml/023709.shtml?cone=",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-10-05T21:22:07.000Z",
+      "published_at": "2026-10-06T02:37:09.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "ee8e390990a944fc",
-      "title": "Eastern North Pacific Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
+      "id": "b5ad93019d019ede",
+      "title": "Atlantic Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-10-05T17:30:08.000Z",
+      "published_at": "2026-10-05T23:30:39.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
