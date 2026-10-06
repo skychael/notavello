@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Why API pagination fails in subtle ways — The Export | Notavello</title>
+<meta name="description" content="Cursor pagination, offsets, ordering, and changing datasets create hidden failures in APIs."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/blog/why-api-pagination-fails-in-subtle-ways/"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2026-10-05T17:14:08.547Z"/>
+<meta property="article:modified_time" content="2026-10-05T17:14:08.547Z"/>
+<meta name="notavello:published_at" content="2026-10-05T17:14:08.547Z"/>
+<meta name="syndication-origin-site" content="toysforbots"/>
+<meta name="syndication-origin-id" content="toysforbots:why-api-pagination-fails-in-subtle-ways"/>
+<meta name="syndication-origin-slug" content="why-api-pagination-fails-in-subtle-ways"/>
+<meta name="syndication-origin-url" content="https://toysforbots.com/blog/why-api-pagination-fails-in-subtle-ways/"/>
+<meta name="syndication-source-format" content="toysforbots-syndication-v1"/>
+<meta property="og:url" content="https://notavello.com/pages/blog/why-api-pagination-fails-in-subtle-ways/"/>
+<meta property="og:title" content="Why API pagination fails in subtle ways"/>
+<meta property="og:description" content="Cursor pagination, offsets, ordering, and changing datasets create hidden failures in APIs."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Why API pagination fails in subtle ways"/>
+<meta name="twitter:description" content="Cursor pagination, offsets, ordering, and changing datasets create hidden failures in APIs."/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Why API pagination fails in subtle ways",
+  "description": "Cursor pagination, offsets, ordering, and changing datasets create hidden failures in APIs.",
+  "url": "https://notavello.com/pages/blog/why-api-pagination-fails-in-subtle-ways/",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://notavello.com/pages/blog/why-api-pagination-fails-in-subtle-ways/" },
+  "image": "https://notavello.com/og-image.png",
+  "datePublished": "2026-10-05T17:14:08.547Z",
+  "dateModified": "2026-10-05T17:14:08.547Z",
+  "author": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" },
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com", "logo": { "@type": "ImageObject", "url": "https://notavello.com/og-image.png" } }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
+.post-nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; row-gap: 8px; }
+.post-nav-top { margin-bottom: 40px; }
+.post-nav-bottom { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--border); }
+.post-nav a { display: inline-flex; align-items: center; gap: 6px; font-size: 0.92rem; font-weight: 600; color: var(--ink-muted); text-decoration: none; padding: 12px 14px; border-radius: var(--radius-sm); white-space: nowrap; transition: color 0.15s, background 0.15s; }
+.post-nav a:hover { color: var(--accent); background: var(--accent-light); }
+.post-nav a:first-child { padding-left: 0; }
+.post-nav a:last-child { padding-right: 0; justify-content: flex-end; }
+.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
+.post-date { font-size: 0.78rem; color: var(--ink-faint); }
+.post-title { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; color: var(--ink); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
+.post-lede { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+.post-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink); }
+.post-body h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 44px 0 16px; letter-spacing: -0.01em; }
+.post-body p { margin-bottom: 20px; color: var(--ink-muted); }
+.post-body p strong { color: var(--ink); font-weight: 600; }
+.post-body ul { margin: 0 0 20px 20px; color: var(--ink-muted); }
+.post-body ul li { margin-bottom: 8px; line-height: 1.7; }
+.callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 32px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.7; }
+.post-footer { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.post-footer-label { font-size: 0.8rem; color: var(--ink-faint); }
+.btn-export { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: opacity 0.2s; }
+.btn-export:hover { opacity: 0.9; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } .post-nav a { padding: 12px 8px; font-size: 0.88rem; } }
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+
+  <nav class="post-nav post-nav-top">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+  <div class="post-meta">
+    <span class="post-tag">APIs</span>
+    <span class="post-date">October 5, 2026</span>
+  </div>
+
+  <h1 class="post-title">Why API pagination fails in subtle ways</h1>
+
+  <p class="post-lede">API pagination looks simple until live data changes between requests. An item deleted from an earlier page shifts every subsequent result forward, so the next request skips a record the client never sees. An inserted record causes the same item to appear on two different pages. These failures are not obvious in small test datasets but surface quickly in production collections that grow or shrink while clients page through them. The root causes are the choice between offset and cursor mechanisms, the need for a stable total order, and the rules that decide when a page request has truly reached the end of the collection.</p>
+
+  <div class="post-body">
+
+<h2>Offset pagination and its hidden drift</h2>
+<p>Offset-limit pagination asks the server for a starting position and a count. The server returns items starting after that many records in the current sort order. When a record is removed before the current offset, every later page effectively moves one position earlier. The client therefore misses the record that slid into the gap. When a record is added, the client receives the same record twice because its position has shifted relative to the original offset.</p>
+<p>The problem compounds with concurrent clients or long-lived pagination sessions. Nothing in the protocol tells the client that the collection snapshot has changed, so the only visible symptom is missing or repeated data.</p><div class="callout"><strong>Key risk</strong> Any pagination strategy that relies on numeric offsets will produce skipped or duplicated results whenever the underlying collection is modified during iteration.</div>
+<h2>Cursor pagination removes positional drift</h2>
+<p>Cursor-based pagination replaces the numeric offset with an opaque token that encodes the position of a specific record in a stable order. The token is usually the value of the sort key or a combination of keys that together identify a unique boundary. When the client supplies the token in a page[after] or page[before] parameter, the server returns only records that fall strictly after or before that boundary.</p>
+<p>Because the token points to a concrete record rather than a count, deletions or insertions before the cursor do not change which records come after it. The same token continues to produce the same subsequent page even if the collection size changes.</p><ul><li>page[size] controls the maximum number of records returned.</li><li>page[after] returns the page immediately following the cursor.</li><li>page[before] returns the page immediately preceding the cursor.</li><li>An invalid cursor must produce a standard error rather than silent wrong results.</li></ul>
+<h2>Stable ordering is mandatory</h2>
+<p>Cursor pagination only works when the server can guarantee a total order. If the client requests sorting by a non-unique field such as age, multiple records share the same value and their relative order is undefined. The server must therefore append a unique tie-breaker, typically the primary key, so that every record has a distinct position in the sequence.</p>
+<p>When no client sort is supplied, the server must still impose a deterministic order before it can return paginated results. Without that guarantee, the same cursor can point to different records on successive calls.</p>
+<h2>Termination and empty-page conditions</h2>
+<p>A client knows it has reached the end when the server returns an empty array for a page[after] request. The same rule applies in reverse for page[before]. When both page[after] and page[before] are supplied and the window between them exceeds the requested size, the server returns the after page and sets a rangeTruncated flag so the client understands that not all requested records were delivered.</p>
+<p>Servers that encode session or snapshot identifiers inside the cursor can freeze the result set for the lifetime of that cursor. Most implementations accept that the list may change and simply ensure that no record is skipped or duplicated relative to the cursors that are actually exchanged.</p>
+<h2>Practical checklist for implementers</h2>
+<p>Choose cursor pagination for any collection that clients are likely to iterate in full. Reserve offset pagination only for cases where clients must jump to an arbitrary page number and the collection is known to be static during the session.</p>
+<p>Always include a unique tie-breaker in the sort order. Document the exact fields that constitute the cursor so clients understand what stability they can expect.</p>
+<p>Return pagination links or cursors in the response body so clients do not need to construct tokens themselves. Treat the cursor as an opaque string; never document its internal format.</p><h2>Sources</h2><ul><li><a href="https://jsonapi.org/profiles/ethanresnick/cursor-pagination/" rel="noopener noreferrer">JSON:API Cursor Pagination Profile</a></li><li><a href="https://graphql.org/learn/pagination/" rel="noopener noreferrer">GraphQL Pagination</a></li></ul>
+
+  </div>
+
+  <div class="post-footer">
+    <span class="post-footer-label">Looking for more AI tools?</span>
+    <a class="btn-export" href="/">See our free AI tools →</a>
+  </div>
+
+  <nav class="post-nav post-nav-bottom">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+</main>
+
+<!--FOOTER-->
+
+</body>
+</html>
