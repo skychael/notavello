@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "checked_at": "2026-10-06T17:14:59.141Z",
-  "latest_success_at": "2026-10-06T17:14:59.141Z",
+  "checked_at": "2026-10-06T21:42:38.952Z",
+  "latest_success_at": "2026-10-06T21:42:38.952Z",
   "status": "partial",
   "items": [
     {
@@ -9,14 +9,6 @@
       "url": "https://oilprice.com/Latest-Energy-News/World-News/Saudi-East-West-Pipeline-Moves-58-Million-Barrels-as-Red-Sea-Route-Recovers.html",
       "publisher": "OilPrice.com",
       "published_at": "2026-10-06T16:30:00.000Z",
-      "source_id": "oilprice",
-      "status": "ok"
-    },
-    {
-      "title": "Japan Courts Saudi Arabia and UAE as Asia's Oil Supply Fears Persist",
-      "url": "https://oilprice.com/Latest-Energy-News/World-News/Japan-Courts-Saudi-Arabia-and-UAE-as-Asias-Oil-Supply-Fears-Persist.html",
-      "publisher": "OilPrice.com",
-      "published_at": "2026-10-06T11:30:00.000Z",
       "source_id": "oilprice",
       "status": "ok"
     },
@@ -29,10 +21,10 @@
       "status": "ok"
     },
     {
-      "title": "Kuwait Oil Output at 75% of Prewar as Hormuz Transits Rise",
-      "url": "https://gcaptain.com/kuwait-oil-output-at-75-of-prewar-as-hormuz-transits-rise",
+      "title": "Gulf Oil Flows Rise to Average 81% of Pre-war Rate in September",
+      "url": "https://gcaptain.com/gulf-oil-flows-rise-to-average-81-of-pre-war-rate-in-september",
       "publisher": "gCaptain",
-      "published_at": "2026-10-05T20:02:21.000Z",
+      "published_at": "2026-10-06T17:41:15.000Z",
       "source_id": "gcaptain",
       "status": "ok"
     },
@@ -42,6 +34,14 @@
       "publisher": "gCaptain",
       "published_at": "2026-10-06T15:14:14.000Z",
       "source_id": "gcaptain",
+      "status": "ok"
+    },
+    {
+      "title": "Gulf Producers Say Importers Should Share the Cost of Hormuz Workarounds",
+      "url": "https://oilprice.com/Latest-Energy-News/World-News/Gulf-Producers-Say-Importers-Should-Share-the-Cost-of-Hormuz-Workarounds.html",
+      "publisher": "OilPrice.com",
+      "published_at": "2026-10-06T14:30:00.000Z",
+      "source_id": "oilprice",
       "status": "ok"
     },
     {
@@ -61,6 +61,14 @@
       "status": "ok"
     },
     {
+      "title": "Glaring Holes In UK Air Defense Take Center Stage In New “Britannia Shield” Proposal",
+      "url": "https://www.twz.com/land/glaring-holes-in-uk-air-defense-take-center-stage-in-new-britannia-shield-proposal",
+      "publisher": "TWZ (The War Zone)",
+      "published_at": "2026-10-06T20:44:53.000Z",
+      "source_id": "twz",
+      "status": "ok"
+    },
+    {
       "title": "Unpacking Boeing’s F/A-XX win, plus a report from wartime Ukraine",
       "url": "https://breakingdefense.com/2026/10/unpacking-boeings-f-a-xx-win-plus-a-report-from-wartime-ukraine",
       "publisher": "Breaking Defense",
@@ -73,14 +81,6 @@
       "url": "https://www.twz.com/air/b-1b-bombers-make-hasty-departure-from-england",
       "publisher": "TWZ (The War Zone)",
       "published_at": "2026-10-05T01:04:45.000Z",
-      "source_id": "twz",
-      "status": "ok"
-    },
-    {
-      "title": "First Release Of USAF’s New HACM Hypersonic Cruise Missile Has Happened Over Australian Range",
-      "url": "https://www.twz.com/air/first-release-of-usafs-new-hacm-hypersonic-cruise-missile-has-happened-over-a-test-range-in-australia",
-      "publisher": "TWZ (The War Zone)",
-      "published_at": "2026-10-05T23:26:47.000Z",
       "source_id": "twz",
       "status": "ok"
     }
