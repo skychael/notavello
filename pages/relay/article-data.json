@@ -1,14 +1,22 @@
 {
   "schema_version": "1.0",
-  "checked_at": "2026-10-06T10:26:32.543Z",
-  "latest_success_at": "2026-10-06T10:26:32.543Z",
+  "checked_at": "2026-10-06T17:14:59.141Z",
+  "latest_success_at": "2026-10-06T17:14:59.141Z",
   "status": "partial",
   "items": [
     {
-      "title": "Standard Chartered Says Hormuz Oil Flows Are Far From Normal",
-      "url": "https://oilprice.com/Energy/Crude-Oil/Standard-Chartered-Says-Hormuz-Oil-Flows-Are-Far-From-Normal.html",
+      "title": "Saudi East-West Pipeline Moves 5.8 Million Barrels as Red Sea Route Recovers",
+      "url": "https://oilprice.com/Latest-Energy-News/World-News/Saudi-East-West-Pipeline-Moves-58-Million-Barrels-as-Red-Sea-Route-Recovers.html",
       "publisher": "OilPrice.com",
-      "published_at": "2026-10-06T00:00:00.000Z",
+      "published_at": "2026-10-06T16:30:00.000Z",
+      "source_id": "oilprice",
+      "status": "ok"
+    },
+    {
+      "title": "Japan Courts Saudi Arabia and UAE as Asia's Oil Supply Fears Persist",
+      "url": "https://oilprice.com/Latest-Energy-News/World-News/Japan-Courts-Saudi-Arabia-and-UAE-as-Asias-Oil-Supply-Fears-Persist.html",
+      "publisher": "OilPrice.com",
+      "published_at": "2026-10-06T11:30:00.000Z",
       "source_id": "oilprice",
       "status": "ok"
     },
@@ -29,18 +37,10 @@
       "status": "ok"
     },
     {
-      "title": "Singapore Eyes Nuclear Power as Iran War Exposes Its Import Problem",
-      "url": "https://oilprice.com/Alternative-Energy/Nuclear-Power/Singapore-Eyes-Nuclear-Power-as-Iran-War-Exposes-Its-Import-Problem.html",
-      "publisher": "OilPrice.com",
-      "published_at": "2026-10-05T21:00:00.000Z",
-      "source_id": "oilprice",
-      "status": "ok"
-    },
-    {
-      "title": "Five Hormuz Incidents Reported Monday as Tanker Attacks Mount",
-      "url": "https://gcaptain.com/five-hormuz-incidents-reported-monday-as-tanker-attacks-mount",
+      "title": "A Dozen Seafarers Injured in Strait of Hormuz Tanker Attack, India Says",
+      "url": "https://gcaptain.com/a-dozen-seafarers-injured-in-strait-of-hormuz-tanker-attack-india-says",
       "publisher": "gCaptain",
-      "published_at": "2026-10-05T22:28:14.000Z",
+      "published_at": "2026-10-06T15:14:14.000Z",
       "source_id": "gcaptain",
       "status": "ok"
     },
@@ -61,6 +61,14 @@
       "status": "ok"
     },
     {
+      "title": "Unpacking Boeing’s F/A-XX win, plus a report from wartime Ukraine",
+      "url": "https://breakingdefense.com/2026/10/unpacking-boeings-f-a-xx-win-plus-a-report-from-wartime-ukraine",
+      "publisher": "Breaking Defense",
+      "published_at": "2026-10-06T14:05:00.000Z",
+      "source_id": "breaking-defense",
+      "status": "ok"
+    },
+    {
       "title": "B-1B Bombers Make Hasty Departure From England",
       "url": "https://www.twz.com/air/b-1b-bombers-make-hasty-departure-from-england",
       "publisher": "TWZ (The War Zone)",
@@ -74,14 +82,6 @@
       "publisher": "TWZ (The War Zone)",
       "published_at": "2026-10-05T23:26:47.000Z",
       "source_id": "twz",
-      "status": "ok"
-    },
-    {
-      "title": "Leonardo DRS announces new UK-based subsidiary",
-      "url": "https://breakingdefense.com/2026/10/leonardo-drs-announces-new-uk-based-subsidiary",
-      "publisher": "Breaking Defense",
-      "published_at": "2026-10-06T09:11:00.000Z",
-      "source_id": "breaking-defense",
       "status": "ok"
     }
   ]
