@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "10-06",
-  "display_date": "October 6",
-  "generated_at": "2026-10-06T15:13:26.894Z",
+  "date_key": "10-07",
+  "display_date": "October 7",
+  "generated_at": "2026-10-07T15:34:02.169Z",
   "source": "Wikimedia On This Day",
-  "selection_method": "deterministic_fallback",
+  "selection_method": "ai",
   "items": [
     {
-      "candidate_id": "event-6a285b44b9e9facb8a30fbc6",
+      "candidate_id": "event-cdecd97b7b04f12f79f1c28d",
       "type": "event",
-      "year": 1973,
-      "text": "Egypt and Syria launch coordinated attacks against Israel, beginning the Yom Kippur War.",
-      "article_title": "Operation Badr (1973)",
-      "url": "https://en.wikipedia.org/wiki/Operation_Badr_(1973)",
+      "year": 2023,
+      "text": "Hamas and several other Palestinian militant groups launch an attack into Israel, which results in the deaths of around 1,200, mostly civilians, and the taking of 251 hostages, including civilians and soldiers.",
+      "article_title": "Hamas",
+      "url": "https://en.wikipedia.org/wiki/Hamas",
       "category": "World history"
     },
     {
-      "candidate_id": "event-c7ffa94317280ba8a833e9d7",
+      "candidate_id": "event-55d5ac4b626d6d62e4cebb89",
       "type": "event",
-      "year": 1977,
-      "text": "The first prototype of the Mikoyan MiG-29, designated 9-01, makes its maiden flight.",
-      "article_title": "Mikoyan MiG-29",
-      "url": "https://en.wikipedia.org/wiki/Mikoyan_MiG-29",
+      "year": 2001,
+      "text": "The U.S. invasion of Afghanistan begins with an air assault and covert operations on the ground, starting the longest war in American history.",
+      "article_title": "United States invasion of Afghanistan",
+      "url": "https://en.wikipedia.org/wiki/United_States_invasion_of_Afghanistan",
       "category": "World history"
     },
     {
-      "candidate_id": "event-017e38cd16fa5882e93f00d6",
+      "candidate_id": "event-e770742c499b437b9a72d3e8",
       "type": "event",
-      "year": 1915,
-      "text": "World War I: Combined Austro-Hungarian and German Central Powers, reinforced by the recently joined Bulgaria, launch a new offensive against Serbia under command of August von Mackensen.",
-      "article_title": "World War I",
-      "url": "https://en.wikipedia.org/wiki/World_War_I",
-      "category": "World history"
+      "year": 1913,
+      "text": "Ford Motor Company introduces the first moving vehicle assembly line.",
+      "article_title": "Ford Motor Company",
+      "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company",
+      "category": "Science and technology"
     }
   ]
 }
