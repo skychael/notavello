@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-06T07:58:59.237Z",
+  "generatedAt": "2026-10-07T07:36:59.777Z",
   "totals": {
-    "pages": 302,
-    "indexable": 298,
-    "articles": 229,
-    "sitemap": 298,
+    "pages": 304,
+    "indexable": 300,
+    "articles": 231,
+    "sitemap": 300,
     "errors": 0,
-    "warnings": 266
+    "warnings": 270
   },
   "errors": [],
   "warnings": [
@@ -293,6 +293,16 @@
     {
       "type": "topic-review",
       "page": "/pages/blog/east-coast-diesel-draw-is-the-next-fuel-bill/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/east-coast-heating-oil-gap-is-the-winter-bill/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/east-coast-heating-oil-gap-is-the-winter-bill/",
       "detail": "title/description lacks a clear AI, software, or computing connection"
     },
     {
@@ -624,6 +634,16 @@
       "type": "template-pattern",
       "page": "/pages/blog/how-to-define-a-sensible-data-boundary-for-local-ai-tools/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/how-to-design-an-api-client-around-rate-limits/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/how-to-design-an-api-client-around-rate-limits/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
     },
     {
       "type": "template-pattern",
@@ -1350,7 +1370,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 302,
+      "incomingLinks": 304,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -1374,7 +1394,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 302,
+      "incomingLinks": 304,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -1482,7 +1502,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 302,
+      "incomingLinks": 304,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -1494,9 +1514,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 302,
-      "lastmod": "2026-10-05",
-      "bodyWords": 629
+      "incomingLinks": 304,
+      "lastmod": "2026-10-06",
+      "bodyWords": 635
     },
     {
       "route": "/pages/blog/a-checklist-for-reliable-scheduled-jobs/",
@@ -1794,9 +1814,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 168,
-      "lastmod": "2026-10-05",
-      "bodyWords": 2810
+      "incomingLinks": 170,
+      "lastmod": "2026-10-06",
+      "bodyWords": 2835
     },
     {
       "route": "/pages/blog/anhydrous-ammonia-is-the-fall-farm-bill/",
@@ -2154,7 +2174,7 @@
       "canonical": "https://notavello.com/pages/blog/diesel-is-the-hormuz-tax-you-feel-first/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 7,
+      "incomingLinks": 8,
       "lastmod": "2026-08-01",
       "bodyWords": 1456
     },
@@ -2205,6 +2225,18 @@
       "incomingLinks": 4,
       "lastmod": "2026-08-27",
       "bodyWords": 1429
+    },
+    {
+      "route": "/pages/blog/east-coast-heating-oil-gap-is-the-winter-bill/",
+      "file": "pages/blog/east-coast-heating-oil-gap-is-the-winter-bill/index.html",
+      "title": "The East Coast Heating Oil Gap Is The Winter Bill — The Export | Notavello",
+      "description": "EIA says heating-oil households face a 21% winter bill increase as East Coast distillate stocks lag.",
+      "canonical": "https://notavello.com/pages/blog/east-coast-heating-oil-gap-is-the-winter-bill/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-10-07",
+      "bodyWords": 1512
     },
     {
       "route": "/pages/blog/eighteen-million-barrels-is-the-freight-bill/",
@@ -2819,6 +2851,18 @@
       "bodyWords": 805
     },
     {
+      "route": "/pages/blog/how-to-design-an-api-client-around-rate-limits/",
+      "file": "pages/blog/how-to-design-an-api-client-around-rate-limits/index.html",
+      "title": "How to design an API client around rate limits — The Export | Notavello",
+      "description": "Design API clients that respect rate limits by reading headers, applying backoff, controlling concurrency, and retrying responsibly.",
+      "canonical": "https://notavello.com/pages/blog/how-to-design-an-api-client-around-rate-limits/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-10-06",
+      "bodyWords": 874
+    },
+    {
       "route": "/pages/blog/how-to-guide-claude-through-file-edits/",
       "file": "pages/blog/how-to-guide-claude-through-file-edits/index.html",
       "title": "How to Guide Claude Through File Edits Without Losing Control — The Export | Notavello",
@@ -3391,7 +3435,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-05",
+      "lastmod": "2026-10-06",
       "bodyWords": 709
     },
     {
@@ -3403,8 +3447,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-05",
-      "bodyWords": 842
+      "lastmod": "2026-10-06",
+      "bodyWords": 817
     },
     {
       "route": "/pages/blog/page-12/",
@@ -3415,8 +3459,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-05",
-      "bodyWords": 837
+      "lastmod": "2026-10-06",
+      "bodyWords": 835
     },
     {
       "route": "/pages/blog/page-13/",
@@ -3427,8 +3471,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": "2026-10-05",
-      "bodyWords": 646
+      "lastmod": "2026-10-06",
+      "bodyWords": 745
     },
     {
       "route": "/pages/blog/page-2/",
@@ -3439,8 +3483,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-05",
-      "bodyWords": 672
+      "lastmod": "2026-10-06",
+      "bodyWords": 667
     },
     {
       "route": "/pages/blog/page-3/",
@@ -3451,8 +3495,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-05",
-      "bodyWords": 648
+      "lastmod": "2026-10-06",
+      "bodyWords": 639
     },
     {
       "route": "/pages/blog/page-4/",
@@ -3463,8 +3507,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-05",
-      "bodyWords": 661
+      "lastmod": "2026-10-06",
+      "bodyWords": 667
     },
     {
       "route": "/pages/blog/page-5/",
@@ -3475,8 +3519,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-05",
-      "bodyWords": 674
+      "lastmod": "2026-10-06",
+      "bodyWords": 668
     },
     {
       "route": "/pages/blog/page-6/",
@@ -3487,8 +3531,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-05",
-      "bodyWords": 681
+      "lastmod": "2026-10-06",
+      "bodyWords": 686
     },
     {
       "route": "/pages/blog/page-7/",
@@ -3499,8 +3543,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-05",
-      "bodyWords": 664
+      "lastmod": "2026-10-06",
+      "bodyWords": 667
     },
     {
       "route": "/pages/blog/page-8/",
@@ -3511,8 +3555,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-05",
-      "bodyWords": 651
+      "lastmod": "2026-10-06",
+      "bodyWords": 645
     },
     {
       "route": "/pages/blog/page-9/",
@@ -3523,7 +3567,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-05",
+      "lastmod": "2026-10-06",
       "bodyWords": 700
     },
     {
@@ -4410,7 +4454,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 302,
+      "incomingLinks": 304,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -4422,7 +4466,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 302,
+      "incomingLinks": 304,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -4434,7 +4478,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 302,
+      "incomingLinks": 304,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -4446,7 +4490,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 302,
+      "incomingLinks": 304,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -4458,7 +4502,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 302,
+      "incomingLinks": 304,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -4471,8 +4515,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-10-06",
-      "bodyWords": 473
+      "lastmod": "2026-10-07",
+      "bodyWords": 479
     },
     {
       "route": "/pages/sample",
@@ -4494,7 +4538,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 302,
+      "incomingLinks": 304,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -4506,7 +4550,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 302,
+      "incomingLinks": 304,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -4530,7 +4574,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 302,
+      "incomingLinks": 304,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -4962,7 +5006,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 302,
+      "incomingLinks": 304,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }
