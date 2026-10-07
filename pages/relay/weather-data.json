@@ -1,34 +1,34 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-07T01:36:37.693Z",
-  "latest_success_at": "2026-10-07T01:36:37.693Z",
+  "generated_at": "2026-10-07T08:45:57.967Z",
+  "latest_success_at": "2026-10-07T08:45:57.967Z",
   "status": "partial",
   "items": [
     {
-      "id": "1fcbaf9e65fa7e45",
-      "title": "Tropical Depression Nine Forecast Discussion Number 1",
-      "url": "https://www.nhc.noaa.gov/text/refresh/MIATCDAT4+shtml/062039.shtml",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-10-06T20:39:24.000Z",
+      "id": "012337d9be399dc1",
+      "title": "SPC Oct 7, 2026 Day 4-8 Severe Weather Outlook",
+      "url": "https://www.spc.noaa.gov/products/exper/day4-8",
+      "publisher": "Storm Prediction Center",
+      "published_at": "2026-10-07T08:29:14.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "26543ba82288aa72",
-      "title": "Hurricane Rachel Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep3+shtml/212805.shtml?cone=",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-10-06T21:28:05.000Z",
+      "id": "91e5697961c0d7ba",
+      "title": "SPC Oct 7, 2026 0730 UTC Day 3 Severe Thunderstorm Outlook",
+      "url": "https://www.spc.noaa.gov/products/outlook/day3otlk_0730.html",
+      "publisher": "Storm Prediction Center",
+      "published_at": "2026-10-07T07:35:47.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "084054d624b1a908",
-      "title": "Flood Warning issued October 6 at 7:36PM CDT until October 13 at 5:00AM CDT by NWS Quad Cities IA IL",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9509f2610103a398cfdd76aebc3591887979769e.001.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-10-07T00:36:00.000Z",
-      "topic": "Flooding",
+      "id": "b5ad93019d019ede",
+      "title": "Atlantic Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-10-07T05:14:28.000Z",
+      "topic": "Hurricane",
       "status": "ok"
     }
   ]
