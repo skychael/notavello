@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "10-07",
-  "display_date": "October 7",
-  "generated_at": "2026-10-07T15:34:02.169Z",
+  "date_key": "10-08",
+  "display_date": "October 8",
+  "generated_at": "2026-10-08T15:38:14.583Z",
   "source": "Wikimedia On This Day",
-  "selection_method": "ai",
+  "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-cdecd97b7b04f12f79f1c28d",
+      "candidate_id": "event-e74023d047a9ebb4d90ecde9",
       "type": "event",
-      "year": 2023,
-      "text": "Hamas and several other Palestinian militant groups launch an attack into Israel, which results in the deaths of around 1,200, mostly civilians, and the taking of 251 hostages, including civilians and soldiers.",
-      "article_title": "Hamas",
-      "url": "https://en.wikipedia.org/wiki/Hamas",
+      "year": 2005,
+      "text": "The 7.6 Mw Kashmir earthquake leaves 86,000–87,351 people dead, 69,000–75,266 injured, and 2.8 million homeless.",
+      "article_title": "2005 Kashmir earthquake",
+      "url": "https://en.wikipedia.org/wiki/2005_Kashmir_earthquake",
+      "category": "Disasters and exploration"
+    },
+    {
+      "candidate_id": "event-b053cfd35e198196b721abf2",
+      "type": "event",
+      "year": 1986,
+      "text": "An explosion occurs at the Cipel-Marco fur factory in Kwai Chung, Hong Kong, killing 14 and injuring 10.",
+      "article_title": "1986 Cipel-Marco fur factory explosion",
+      "url": "https://en.wikipedia.org/wiki/1986_Cipel-Marco_fur_factory_explosion",
       "category": "World history"
     },
     {
-      "candidate_id": "event-55d5ac4b626d6d62e4cebb89",
+      "candidate_id": "event-c14f0581eaf19d5a0aa390ff",
       "type": "event",
-      "year": 2001,
-      "text": "The U.S. invasion of Afghanistan begins with an air assault and covert operations on the ground, starting the longest war in American history.",
-      "article_title": "United States invasion of Afghanistan",
-      "url": "https://en.wikipedia.org/wiki/United_States_invasion_of_Afghanistan",
-      "category": "World history"
-    },
-    {
-      "candidate_id": "event-e770742c499b437b9a72d3e8",
-      "type": "event",
-      "year": 1913,
-      "text": "Ford Motor Company introduces the first moving vehicle assembly line.",
-      "article_title": "Ford Motor Company",
-      "url": "https://en.wikipedia.org/wiki/Ford_Motor_Company",
-      "category": "Science and technology"
+      "year": 2016,
+      "text": "In the wake of Hurricane Matthew, the death toll rises to nearly 900.",
+      "article_title": "Hurricane Matthew",
+      "url": "https://en.wikipedia.org/wiki/Hurricane_Matthew",
+      "category": "Disasters and exploration"
     }
   ]
 }
