@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>How to make webhook processing reliable — The Export | Notavello</title>
+<meta name="description" content="Learn how to handle webhook signatures, retries, duplicates, ordering, and acknowledgements to build reliable API integrations."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/blog/how-to-make-webhook-processing-reliable/"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2026-10-07T15:39:00.150Z"/>
+<meta property="article:modified_time" content="2026-10-07T15:39:00.150Z"/>
+<meta name="notavello:published_at" content="2026-10-07T15:39:00.150Z"/>
+<meta name="syndication-origin-site" content="toysforbots"/>
+<meta name="syndication-origin-id" content="toysforbots:how-to-make-webhook-processing-reliable"/>
+<meta name="syndication-origin-slug" content="how-to-make-webhook-processing-reliable"/>
+<meta name="syndication-origin-url" content="https://toysforbots.com/blog/how-to-make-webhook-processing-reliable/"/>
+<meta name="syndication-source-format" content="toysforbots-syndication-v1"/>
+<meta property="og:url" content="https://notavello.com/pages/blog/how-to-make-webhook-processing-reliable/"/>
+<meta property="og:title" content="How to make webhook processing reliable"/>
+<meta property="og:description" content="Learn how to handle webhook signatures, retries, duplicates, ordering, and acknowledgements to build reliable API integrations."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="How to make webhook processing reliable"/>
+<meta name="twitter:description" content="Learn how to handle webhook signatures, retries, duplicates, ordering, and acknowledgements to build reliable API integrations."/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "How to make webhook processing reliable",
+  "description": "Learn how to handle webhook signatures, retries, duplicates, ordering, and acknowledgements to build reliable API integrations.",
+  "url": "https://notavello.com/pages/blog/how-to-make-webhook-processing-reliable/",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://notavello.com/pages/blog/how-to-make-webhook-processing-reliable/" },
+  "image": "https://notavello.com/og-image.png",
+  "datePublished": "2026-10-07T15:39:00.150Z",
+  "dateModified": "2026-10-07T15:39:00.150Z",
+  "author": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" },
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com", "logo": { "@type": "ImageObject", "url": "https://notavello.com/og-image.png" } }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
+.post-nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; row-gap: 8px; }
+.post-nav-top { margin-bottom: 40px; }
+.post-nav-bottom { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--border); }
+.post-nav a { display: inline-flex; align-items: center; gap: 6px; font-size: 0.92rem; font-weight: 600; color: var(--ink-muted); text-decoration: none; padding: 12px 14px; border-radius: var(--radius-sm); white-space: nowrap; transition: color 0.15s, background 0.15s; }
+.post-nav a:hover { color: var(--accent); background: var(--accent-light); }
+.post-nav a:first-child { padding-left: 0; }
+.post-nav a:last-child { padding-right: 0; justify-content: flex-end; }
+.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
+.post-date { font-size: 0.78rem; color: var(--ink-faint); }
+.post-title { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; color: var(--ink); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
+.post-lede { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+.post-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink); }
+.post-body h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 44px 0 16px; letter-spacing: -0.01em; }
+.post-body p { margin-bottom: 20px; color: var(--ink-muted); }
+.post-body p strong { color: var(--ink); font-weight: 600; }
+.post-body ul { margin: 0 0 20px 20px; color: var(--ink-muted); }
+.post-body ul li { margin-bottom: 8px; line-height: 1.7; }
+.callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 32px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.7; }
+.post-footer { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.post-footer-label { font-size: 0.8rem; color: var(--ink-faint); }
+.btn-export { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: opacity 0.2s; }
+.btn-export:hover { opacity: 0.9; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } .post-nav a { padding: 12px 8px; font-size: 0.88rem; } }
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+
+  <nav class="post-nav post-nav-top">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+  <div class="post-meta">
+    <span class="post-tag">APIs</span>
+    <span class="post-date">October 7, 2026</span>
+  </div>
+
+  <h1 class="post-title">How to make webhook processing reliable</h1>
+
+  <p class="post-lede">Webhooks let services notify your application about events such as payments or repository changes. Unlike polling, they arrive as HTTP POST requests that your endpoint must handle correctly every time. Failures in verification, slow responses, or missing deduplication lead to lost updates, duplicate actions, or security issues. Reliable webhook processing rests on five practices: signature verification, immediate acknowledgements, retry awareness, idempotency, and tolerance for out-of-order delivery. These steps come from official documentation for major providers and apply to any webhook sender that uses HTTP callbacks.</p>
+
+  <div class="post-body">
+
+<h2>Verify every incoming request with signatures</h2>
+<p>Without verification an attacker can send fake events that trigger order fulfillment or account changes. Stripe includes a signature in the Stripe-Signature header computed with HMAC-SHA256 over the exact request body and a timestamp. Your code must read the raw body before any framework parses it, because re-serializing JSON changes whitespace or key order and breaks the match.</p>
+<p>Libraries supplied by the provider perform the check and also enforce a default five-minute tolerance on the timestamp to block replay attacks. Use NTP on your server so the clock stays synchronized. IP allow-listing offers a second layer but is insufficient alone because addresses can be spoofed or change.</p><ul><li>Reject any request whose signature does not match the v1 scheme.</li><li>Ignore older signatures or timestamps outside the tolerance window.</li><li>Store the webhook secret in an environment variable never committed to source control.</li></ul><div class="callout"><strong>Core Rule</strong> Return a 2xx status code before any complex logic. Verify the signature on the raw request body. Log every event ID before processing it.</div>
+<h2>Acknowledge delivery before doing work</h2>
+<p>The sender treats any 2xx response as successful delivery. Anything else, including timeouts or redirects, counts as failure and triggers retries. Stripe therefore requires you to return 200 before updating invoices or other long-running tasks. GitHub similarly terminates connections that exceed ten seconds without a 2xx reply.</p>
+<p>When traffic spikes, such as at the start of a billing month, synchronous processing can overwhelm your server. The safe pattern is to place the event on an internal queue and return success immediately. Background workers then perform the actual work with their own error handling and retry logic.</p><ul><li>Configure your web framework to read the raw body without modification.</li><li>Use an asynchronous queue for any operation that might exceed a few hundred milliseconds.</li><li>Monitor queue depth and worker latency to detect back-pressure early.</li></ul>
+<h2>Expect automatic retries and design for them</h2>
+<p>Stripe retries failed deliveries for up to three days in live mode using exponential backoff. Sandbox deliveries receive only three attempts over a few hours. If your endpoint is disabled when a retry occurs, future attempts stop. Re-enabling the endpoint before the next scheduled retry resumes the schedule.</p>
+<p>Manual resends do not cancel the provider’s automatic retry behavior. Therefore your handler must remain idempotent even after you have manually replayed an event. Track the next expected retry time in your monitoring dashboard so you can investigate persistent failures before the three-day window closes.</p><ul><li>Log the delivery attempt count and next scheduled retry for every event.</li><li>Disable an endpoint only when you intend to stop all future deliveries.</li><li>Test your retry handling by deliberately returning 5xx responses in a staging environment.</li></ul>
+<h2>Detect and ignore duplicate deliveries</h2>
+<p>At-least-once delivery means the same event can arrive more than once. Stripe states that endpoints may receive the same Event object multiple times and sometimes generates two distinct Event objects for the same underlying change. The recommended deduplication key is the event ID for the first case and the combination of data.object.id plus event.type for the second case.</p>
+<p>Store processed event IDs in a durable table with a unique constraint. Attempt the insert before any business logic; if the insert fails because the ID already exists, return 200 without further action. This atomic check prevents race conditions when the same event arrives on two parallel connections.</p><ul><li>Use the event ID (evt_...) as the primary idempotency key.</li><li>Fall back to data.object.id plus event.type when two separate Event objects describe the same change.</li><li>Expire old event ID records only after the provider’s maximum retry window has passed.</li></ul>
+<h2>Do not rely on event creation order</h2>
+<p>Stripe does not guarantee that events arrive in the order they were generated. A subscription.created event may reach your endpoint after the corresponding invoice.paid event. Snapshot timestamps are recorded only to the second, so two distinct events can share the same created value. Use the event ID to detect duplicates rather than comparing created times.</p>
+<p>When an event arrives out of order, retrieve any missing objects through the provider’s API instead of waiting for the earlier event. This approach keeps your local state consistent without depending on delivery sequence.</p><ul><li>Never use the created timestamp to decide whether an event has already been processed.</li><li>Call the API to fetch the current state of related objects when an expected earlier event is missing.</li><li>Design downstream systems to accept events in any order or to buffer them until dependencies arrive.</li></ul>
+<h2>Combine the practices into a single handler</h2>
+<p>A reliable webhook handler performs the following steps in order: read the raw body, verify the signature, parse the JSON, attempt to record the event ID atomically, return 200 immediately if the ID already exists, otherwise enqueue the payload for background processing. Each step is small, fast, and independently testable. The same pattern appears in guidance from Stripe and independent analyses of webhook reliability.</p>
+<p>Document the exact headers and body format your endpoint expects. Include a short example request in your internal runbook so on-call engineers can reproduce failures quickly. Review the handler whenever the provider updates its retry or signing behavior.</p><ul><li>Keep the HTTP handler under 200 ms of CPU time before returning a response.</li><li>Expose metrics for signature failures, duplicate receipts, and queue latency.</li><li>Revisit the handler after any change to the provider’s webhook specification.</li></ul><h2>Sources</h2><ul><li><a href="https://docs.stripe.com/webhooks" rel="noopener noreferrer">Stripe Documentation</a></li><li><a href="https://howhttpworks.com/guides/webhooks" rel="noopener noreferrer">How HTTP Works</a></li></ul>
+
+  </div>
+
+  <div class="post-footer">
+    <span class="post-footer-label">Looking for more AI tools?</span>
+    <a class="btn-export" href="/">See our free AI tools →</a>
+  </div>
+
+  <nav class="post-nav post-nav-bottom">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+</main>
+
+<!--FOOTER-->
+
+</body>
+</html>

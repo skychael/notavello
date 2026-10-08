@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-07T07:36:59.777Z",
+  "generatedAt": "2026-10-08T07:53:34.699Z",
   "totals": {
-    "pages": 304,
-    "indexable": 300,
-    "articles": 231,
-    "sitemap": 300,
+    "pages": 306,
+    "indexable": 302,
+    "articles": 233,
+    "sitemap": 302,
     "errors": 0,
-    "warnings": 270
+    "warnings": 274
   },
   "errors": [],
   "warnings": [
@@ -657,6 +657,16 @@
     },
     {
       "type": "template-pattern",
+      "page": "/pages/blog/how-to-make-webhook-processing-reliable/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/how-to-make-webhook-processing-reliable/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
       "page": "/pages/blog/how-to-pass-secrets-to-automation-without-hard-coding-them/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
@@ -913,6 +923,16 @@
     {
       "type": "topic-review",
       "page": "/pages/blog/oman-oil-spill-is-the-shadow-fleet-bill/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/one-hundred-million-barrels-is-the-diesel-triage/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/one-hundred-million-barrels-is-the-diesel-triage/",
       "detail": "title/description lacks a clear AI, software, or computing connection"
     },
     {
@@ -1370,7 +1390,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 304,
+      "incomingLinks": 306,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -1394,7 +1414,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 304,
+      "incomingLinks": 306,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -1502,7 +1522,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 304,
+      "incomingLinks": 306,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -1514,9 +1534,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 304,
-      "lastmod": "2026-10-06",
-      "bodyWords": 635
+      "incomingLinks": 306,
+      "lastmod": "2026-10-07",
+      "bodyWords": 622
     },
     {
       "route": "/pages/blog/a-checklist-for-reliable-scheduled-jobs/",
@@ -1814,9 +1834,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 170,
-      "lastmod": "2026-10-06",
-      "bodyWords": 2835
+      "incomingLinks": 172,
+      "lastmod": "2026-10-07",
+      "bodyWords": 2855
     },
     {
       "route": "/pages/blog/anhydrous-ammonia-is-the-fall-farm-bill/",
@@ -2330,7 +2350,7 @@
       "canonical": "https://notavello.com/pages/blog/g7-diesel-release-is-the-export-ban-bill/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 2,
+      "incomingLinks": 3,
       "lastmod": "2026-10-05",
       "bodyWords": 1303
     },
@@ -2899,6 +2919,18 @@
       "bodyWords": 1095
     },
     {
+      "route": "/pages/blog/how-to-make-webhook-processing-reliable/",
+      "file": "pages/blog/how-to-make-webhook-processing-reliable/index.html",
+      "title": "How to make webhook processing reliable — The Export | Notavello",
+      "description": "Learn how to handle webhook signatures, retries, duplicates, ordering, and acknowledgements to build reliable API integrations.",
+      "canonical": "https://notavello.com/pages/blog/how-to-make-webhook-processing-reliable/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-10-07",
+      "bodyWords": 1011
+    },
+    {
       "route": "/pages/blog/how-to-pass-secrets-to-automation-without-hard-coding-them/",
       "file": "pages/blog/how-to-pass-secrets-to-automation-without-hard-coding-them/index.html",
       "title": "How to pass secrets to automation without hard-coding them — The Export | Notavello",
@@ -3355,6 +3387,18 @@
       "bodyWords": 1253
     },
     {
+      "route": "/pages/blog/one-hundred-million-barrels-is-the-diesel-triage/",
+      "file": "pages/blog/one-hundred-million-barrels-is-the-diesel-triage/index.html",
+      "title": "One Hundred Million Barrels Is The Diesel Triage — The Export | Notavello",
+      "description": "IEA is accelerating emergency oil releases, but the useful barrel now is diesel, not a headline crude number.",
+      "canonical": "https://notavello.com/pages/blog/one-hundred-million-barrels-is-the-diesel-triage/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-10-08",
+      "bodyWords": 1308
+    },
+    {
       "route": "/pages/blog/opec-targets-are-not-diesel-barrels/",
       "file": "pages/blog/opec-targets-are-not-diesel-barrels/index.html",
       "title": "OPEC Targets Are Not Diesel Barrels — The Export | Notavello",
@@ -3435,8 +3479,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-06",
-      "bodyWords": 709
+      "lastmod": "2026-10-07",
+      "bodyWords": 699
     },
     {
       "route": "/pages/blog/page-11/",
@@ -3447,8 +3491,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-06",
-      "bodyWords": 817
+      "lastmod": "2026-10-07",
+      "bodyWords": 812
     },
     {
       "route": "/pages/blog/page-12/",
@@ -3459,8 +3503,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-06",
-      "bodyWords": 835
+      "lastmod": "2026-10-07",
+      "bodyWords": 841
     },
     {
       "route": "/pages/blog/page-13/",
@@ -3471,8 +3515,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": "2026-10-06",
-      "bodyWords": 745
+      "lastmod": "2026-10-07",
+      "bodyWords": 837
     },
     {
       "route": "/pages/blog/page-2/",
@@ -3483,8 +3527,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-06",
-      "bodyWords": 667
+      "lastmod": "2026-10-07",
+      "bodyWords": 674
     },
     {
       "route": "/pages/blog/page-3/",
@@ -3495,8 +3539,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-06",
-      "bodyWords": 639
+      "lastmod": "2026-10-07",
+      "bodyWords": 635
     },
     {
       "route": "/pages/blog/page-4/",
@@ -3507,8 +3551,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-06",
-      "bodyWords": 667
+      "lastmod": "2026-10-07",
+      "bodyWords": 672
     },
     {
       "route": "/pages/blog/page-5/",
@@ -3519,8 +3563,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-06",
-      "bodyWords": 668
+      "lastmod": "2026-10-07",
+      "bodyWords": 660
     },
     {
       "route": "/pages/blog/page-6/",
@@ -3531,8 +3575,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-06",
-      "bodyWords": 686
+      "lastmod": "2026-10-07",
+      "bodyWords": 685
     },
     {
       "route": "/pages/blog/page-7/",
@@ -3543,8 +3587,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-06",
-      "bodyWords": 667
+      "lastmod": "2026-10-07",
+      "bodyWords": 677
     },
     {
       "route": "/pages/blog/page-8/",
@@ -3555,8 +3599,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-06",
-      "bodyWords": 645
+      "lastmod": "2026-10-07",
+      "bodyWords": 642
     },
     {
       "route": "/pages/blog/page-9/",
@@ -3567,8 +3611,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-06",
-      "bodyWords": 700
+      "lastmod": "2026-10-07",
+      "bodyWords": 686
     },
     {
       "route": "/pages/blog/phosphate-is-the-fertilizer-shock-that-did-not-fade/",
@@ -4454,7 +4498,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 304,
+      "incomingLinks": 306,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -4466,7 +4510,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 304,
+      "incomingLinks": 306,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -4478,7 +4522,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 304,
+      "incomingLinks": 306,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -4490,7 +4534,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 304,
+      "incomingLinks": 306,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -4502,7 +4546,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 304,
+      "incomingLinks": 306,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -4515,8 +4559,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-10-07",
-      "bodyWords": 479
+      "lastmod": "2026-10-08",
+      "bodyWords": 485
     },
     {
       "route": "/pages/sample",
@@ -4538,7 +4582,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 304,
+      "incomingLinks": 306,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -4550,7 +4594,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 304,
+      "incomingLinks": 306,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -4574,7 +4618,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 304,
+      "incomingLinks": 306,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -5006,7 +5050,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 304,
+      "incomingLinks": 306,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }
