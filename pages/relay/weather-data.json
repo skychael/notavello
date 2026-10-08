@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-08T09:04:35.545Z",
-  "latest_success_at": "2026-10-08T09:04:35.545Z",
+  "generated_at": "2026-10-08T16:33:38.486Z",
+  "latest_success_at": "2026-10-08T16:33:38.486Z",
   "status": "partial",
   "items": [
     {
-      "id": "84d4e7f0dcf4097e",
-      "title": "Hurricane Warning issued October 8 at 5:03AM EDT by NWS Tallahassee FL",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.3ab1f660a603191fe8f353f1776d91088de7b5d4.001.1.cap",
+      "id": "15a67596779e5bed",
+      "title": "Tropical Cyclone Local Statement issued October 8 at 11:42AM EDT by NWS Peachtree City GA",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.0b22f780d2ef092ffd17c15b451691249991b11b.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-10-08T09:03:00.000Z",
+      "published_at": "2026-10-08T15:42:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "498c7477143a07db",
-      "title": "Storm Surge Warning issued October 8 at 5:03AM EDT by NWS Tallahassee FL",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.3ab1f660a603191fe8f353f1776d91088de7b5d4.001.2.cap",
+      "id": "b5a38f90c670e5eb",
+      "title": "Tropical Storm Watch issued October 8 at 11:17AM EDT by NWS Peachtree City GA",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.74aac90380cdc4c09b499d1770ef3f1e0f57c828.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-10-08T09:03:00.000Z",
+      "published_at": "2026-10-08T15:17:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "0da76b1596d7833b",
-      "title": "Hurricane Watch issued October 8 at 5:03AM EDT by NWS Tallahassee FL",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.3ab1f660a603191fe8f353f1776d91088de7b5d4.002.1.cap",
+      "id": "99c489c4e27a9125",
+      "title": "Tropical Storm Warning issued October 8 at 10:06AM CDT by NWS Mobile AL",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.81d665aae579beaebd150cbc9241060829477fa6.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-10-08T09:03:00.000Z",
+      "published_at": "2026-10-08T15:06:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
