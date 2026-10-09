@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-09T02:14:24.069Z",
-  "latest_success_at": "2026-10-09T02:14:24.069Z",
+  "generated_at": "2026-10-09T09:14:36.732Z",
+  "latest_success_at": "2026-10-09T09:14:36.732Z",
   "status": "partial",
   "items": [
     {
-      "id": "9b4a3bd68b42c307",
-      "title": "Tropical Storm Watch issued October 8 at 9:16PM EDT by NWS Peachtree City GA",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b0f708770d7960ade82fa5cd45938ed038514ef9.001.1.cap",
+      "id": "032688832568bae8",
+      "title": "Storm Surge Warning issued October 9 at 4:12AM CDT by NWS New Orleans LA",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.57cef2d4bacb0146cc5c0dff0866bf589af0586b.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-10-09T01:16:00.000Z",
+      "published_at": "2026-10-09T09:12:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "42724cd4bee260de",
-      "title": "Tropical Cyclone Local Statement issued October 8 at 7:18PM CDT by NWS Birmingham AL",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2da2d82d9d7761acf6a4044ceee04ece3d2aa4ec.001.1.cap",
+      "id": "4772aa3b08099e73",
+      "title": "Tropical Storm Warning issued October 9 at 4:12AM CDT by NWS New Orleans LA",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.57cef2d4bacb0146cc5c0dff0866bf589af0586b.001.2.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-10-09T00:18:00.000Z",
+      "published_at": "2026-10-09T09:12:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "13429c3639fb0b7c",
-      "title": "Tropical Storm Warning issued October 8 at 7:10PM CDT by NWS Birmingham AL",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a176df2fcb9a96e76bc4ea83e324f239080957c8.018.1.cap",
+      "id": "3502775c2500edbe",
+      "title": "Hurricane Watch issued October 9 at 4:12AM CDT by NWS New Orleans LA",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.57cef2d4bacb0146cc5c0dff0866bf589af0586b.008.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-10-09T00:10:00.000Z",
+      "published_at": "2026-10-09T09:12:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
