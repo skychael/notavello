@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-09T16:19:27.211Z",
-  "latest_success_at": "2026-10-09T16:19:27.211Z",
+  "generated_at": "2026-10-09T21:43:42.565Z",
+  "latest_success_at": "2026-10-09T21:43:42.565Z",
   "status": "partial",
   "items": [
     {
-      "id": "4bfccedeaa84f153",
-      "title": "Tropical Cyclone Local Statement issued October 9 at 11:29AM EDT by NWS Tampa Bay Ruskin FL",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.3e425f9c7d9665a279db61767ff51a9985084584.001.1.cap",
+      "id": "898ca3dd34d393e6",
+      "title": "Tropical Cyclone Local Statement issued October 9 at 5:32PM EDT by NWS Tallahassee FL",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.7985e0d61b47732ab3ccc2b36214e297172de2b8.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-10-09T15:29:00.000Z",
+      "published_at": "2026-10-09T21:32:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "59abc0b6ba3cde5d",
-      "title": "Storm Surge Watch issued October 9 at 11:21AM EDT by NWS Tampa Bay Ruskin FL",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.395ba6bb14337e2fe8a2e939efbd360aca6fffa0.001.1.cap",
+      "id": "ac486af2ec7054d9",
+      "title": "Tropical Storm Warning issued October 9 at 4:20PM CDT by NWS Birmingham AL",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.7e176935e170d11eb27ee31f168e61d9b462b9fe.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-10-09T15:21:00.000Z",
+      "published_at": "2026-10-09T21:20:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "21811e5bb20246a7",
-      "title": "Tropical Storm Warning issued October 9 at 10:17AM CDT by NWS Birmingham AL",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.4fbb19e17dc68a9c906c1a7e053306c153c2810f.001.1.cap",
+      "id": "fd3c872c5fd4a009",
+      "title": "Storm Surge Warning issued October 9 at 5:05PM EDT by NWS Tallahassee FL",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.7443edf58810bb5bde5a26c7c8f3a2d5e1b92079.001.2.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-10-09T15:17:00.000Z",
+      "published_at": "2026-10-09T21:05:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
