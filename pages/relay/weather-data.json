@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-09T09:14:36.732Z",
-  "latest_success_at": "2026-10-09T09:14:36.732Z",
+  "generated_at": "2026-10-09T16:19:27.211Z",
+  "latest_success_at": "2026-10-09T16:19:27.211Z",
   "status": "partial",
   "items": [
     {
-      "id": "032688832568bae8",
-      "title": "Storm Surge Warning issued October 9 at 4:12AM CDT by NWS New Orleans LA",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.57cef2d4bacb0146cc5c0dff0866bf589af0586b.001.1.cap",
+      "id": "4bfccedeaa84f153",
+      "title": "Tropical Cyclone Local Statement issued October 9 at 11:29AM EDT by NWS Tampa Bay Ruskin FL",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.3e425f9c7d9665a279db61767ff51a9985084584.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-10-09T09:12:00.000Z",
+      "published_at": "2026-10-09T15:29:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "4772aa3b08099e73",
-      "title": "Tropical Storm Warning issued October 9 at 4:12AM CDT by NWS New Orleans LA",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.57cef2d4bacb0146cc5c0dff0866bf589af0586b.001.2.cap",
+      "id": "59abc0b6ba3cde5d",
+      "title": "Storm Surge Watch issued October 9 at 11:21AM EDT by NWS Tampa Bay Ruskin FL",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.395ba6bb14337e2fe8a2e939efbd360aca6fffa0.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-10-09T09:12:00.000Z",
+      "published_at": "2026-10-09T15:21:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "3502775c2500edbe",
-      "title": "Hurricane Watch issued October 9 at 4:12AM CDT by NWS New Orleans LA",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.57cef2d4bacb0146cc5c0dff0866bf589af0586b.008.1.cap",
+      "id": "21811e5bb20246a7",
+      "title": "Tropical Storm Warning issued October 9 at 10:17AM CDT by NWS Birmingham AL",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.4fbb19e17dc68a9c906c1a7e053306c153c2810f.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-10-09T09:12:00.000Z",
+      "published_at": "2026-10-09T15:17:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
