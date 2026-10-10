@@ -1,9 +1,18 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-10T15:25:19.348Z",
-  "latest_success_at": "2026-10-10T15:25:19.348Z",
+  "generated_at": "2026-10-10T20:07:04.847Z",
+  "latest_success_at": "2026-10-10T20:07:04.847Z",
   "status": "partial",
   "items": [
+    {
+      "id": "675d2fc618fa1bcf",
+      "title": "Hurricane Simon Public Advisory Number 13a",
+      "url": "https://www.nhc.noaa.gov/text/refresh/MIATCPEP5+shtml/101758.shtml",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-10-10T17:58:53.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
     {
       "id": "a83fc97094b18d22",
       "title": "Tropical Cyclone Local Statement issued October 10 at 8:07AM PDT by NWS San Diego CA",
@@ -19,15 +28,6 @@
       "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.e802249bb9fd3adefe9daa8e50843a11cbb0ab78.001.1.cap",
       "publisher": "National Weather Service",
       "published_at": "2026-10-10T15:02:00.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "12c391048875f82e",
-      "title": "Hurricane Simon Public Advisory Number 13",
-      "url": "https://www.nhc.noaa.gov/text/refresh/MIATCPEP5+shtml/101454.shtml",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-10-10T14:54:53.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
