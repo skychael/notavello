@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-09T07:51:30.128Z",
+  "generatedAt": "2026-10-10T07:37:50.746Z",
   "totals": {
-    "pages": 309,
-    "indexable": 305,
-    "articles": 235,
-    "sitemap": 305,
+    "pages": 311,
+    "indexable": 307,
+    "articles": 237,
+    "sitemap": 307,
     "errors": 0,
-    "warnings": 278
+    "warnings": 281
   },
   "errors": [],
   "warnings": [
@@ -137,6 +137,16 @@
     },
     {
       "type": "template-pattern",
+      "page": "/pages/blog/bab-el-mandeb-escort-queue-is-the-freight-bill/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/bab-el-mandeb-escort-queue-is-the-freight-bill/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
       "page": "/pages/blog/bab-el-mandeb-hormuz-backup-problem/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
@@ -198,6 +208,11 @@
     {
       "type": "template-pattern",
       "page": "/pages/blog/claude-opus-5-model-routing/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/cloud-regions-and-availability-zones-in-plain-language/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
     {
@@ -1410,7 +1425,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 309,
+      "incomingLinks": 311,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -1434,7 +1449,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 309,
+      "incomingLinks": 311,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -1542,7 +1557,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 309,
+      "incomingLinks": 311,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -1554,9 +1569,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 309,
-      "lastmod": "2026-10-08",
-      "bodyWords": 635
+      "incomingLinks": 311,
+      "lastmod": "2026-10-09",
+      "bodyWords": 645
     },
     {
       "route": "/pages/blog/a-checklist-for-reliable-scheduled-jobs/",
@@ -1866,9 +1881,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 174,
-      "lastmod": "2026-10-08",
-      "bodyWords": 2876
+      "incomingLinks": 176,
+      "lastmod": "2026-10-09",
+      "bodyWords": 2898
     },
     {
       "route": "/pages/blog/anhydrous-ammonia-is-the-fall-farm-bill/",
@@ -1905,6 +1920,18 @@
       "incomingLinks": 2,
       "lastmod": "2026-07-22",
       "bodyWords": 2224
+    },
+    {
+      "route": "/pages/blog/bab-el-mandeb-escort-queue-is-the-freight-bill/",
+      "file": "pages/blog/bab-el-mandeb-escort-queue-is-the-freight-bill/index.html",
+      "title": "Bab El-Mandeb Escort Queue Is The Freight Bill — The Export | Notavello",
+      "description": "Red Sea shipping is not closed, but tanker escorts, detours and record VLCC rates are moving into fuel and freight costs.",
+      "canonical": "https://notavello.com/pages/blog/bab-el-mandeb-escort-queue-is-the-freight-bill/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-10-10",
+      "bodyWords": 1566
     },
     {
       "route": "/pages/blog/bab-el-mandeb-hormuz-backup-problem/",
@@ -2097,6 +2124,18 @@
       "incomingLinks": 2,
       "lastmod": "2026-07-22",
       "bodyWords": 1196
+    },
+    {
+      "route": "/pages/blog/cloud-regions-and-availability-zones-in-plain-language/",
+      "file": "pages/blog/cloud-regions-and-availability-zones-in-plain-language/index.html",
+      "title": "Cloud regions and availability zones in plain language — The Export | Notavello",
+      "description": "Learn how cloud regions and availability zones create failure boundaries, manage latency, and differ in naming across AWS, Azure, and Google Cloud.",
+      "canonical": "https://notavello.com/pages/blog/cloud-regions-and-availability-zones-in-plain-language/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-10-09",
+      "bodyWords": 862
     },
     {
       "route": "/pages/blog/codex-security-threat-model-code-review/",
@@ -3511,8 +3550,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-08",
-      "bodyWords": 678
+      "lastmod": "2026-10-09",
+      "bodyWords": 682
     },
     {
       "route": "/pages/blog/page-11/",
@@ -3523,8 +3562,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-08",
-      "bodyWords": 810
+      "lastmod": "2026-10-09",
+      "bodyWords": 783
     },
     {
       "route": "/pages/blog/page-12/",
@@ -3535,8 +3574,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-08",
-      "bodyWords": 837
+      "lastmod": "2026-10-09",
+      "bodyWords": 830
     },
     {
       "route": "/pages/blog/page-13/",
@@ -3547,8 +3586,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-08",
-      "bodyWords": 890
+      "lastmod": "2026-10-09",
+      "bodyWords": 889
     },
     {
       "route": "/pages/blog/page-14/",
@@ -3559,8 +3598,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": null,
-      "bodyWords": 75
+      "lastmod": "2026-10-09",
+      "bodyWords": 174
     },
     {
       "route": "/pages/blog/page-2/",
@@ -3571,8 +3610,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-08",
-      "bodyWords": 662
+      "lastmod": "2026-10-09",
+      "bodyWords": 657
     },
     {
       "route": "/pages/blog/page-3/",
@@ -3583,8 +3622,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-08",
-      "bodyWords": 639
+      "lastmod": "2026-10-09",
+      "bodyWords": 629
     },
     {
       "route": "/pages/blog/page-4/",
@@ -3595,8 +3634,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-08",
-      "bodyWords": 667
+      "lastmod": "2026-10-09",
+      "bodyWords": 675
     },
     {
       "route": "/pages/blog/page-5/",
@@ -3607,8 +3646,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-08",
-      "bodyWords": 657
+      "lastmod": "2026-10-09",
+      "bodyWords": 658
     },
     {
       "route": "/pages/blog/page-6/",
@@ -3619,8 +3658,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-08",
-      "bodyWords": 689
+      "lastmod": "2026-10-09",
+      "bodyWords": 684
     },
     {
       "route": "/pages/blog/page-7/",
@@ -3631,8 +3670,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-08",
-      "bodyWords": 672
+      "lastmod": "2026-10-09",
+      "bodyWords": 675
     },
     {
       "route": "/pages/blog/page-8/",
@@ -3643,8 +3682,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-08",
-      "bodyWords": 647
+      "lastmod": "2026-10-09",
+      "bodyWords": 650
     },
     {
       "route": "/pages/blog/page-9/",
@@ -3655,8 +3694,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-08",
-      "bodyWords": 686
+      "lastmod": "2026-10-09",
+      "bodyWords": 687
     },
     {
       "route": "/pages/blog/phosphate-is-the-fertilizer-shock-that-did-not-fade/",
@@ -3966,7 +4005,7 @@
       "canonical": "https://notavello.com/pages/blog/suez-detour-oil-bottleneck/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 3,
+      "incomingLinks": 4,
       "lastmod": "2026-08-16",
       "bodyWords": 1410
     },
@@ -4554,7 +4593,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 309,
+      "incomingLinks": 311,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -4566,7 +4605,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 309,
+      "incomingLinks": 311,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -4578,7 +4617,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 309,
+      "incomingLinks": 311,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -4590,7 +4629,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 309,
+      "incomingLinks": 311,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -4602,7 +4641,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 309,
+      "incomingLinks": 311,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -4615,8 +4654,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-10-09",
-      "bodyWords": 491
+      "lastmod": "2026-10-10",
+      "bodyWords": 497
     },
     {
       "route": "/pages/sample",
@@ -4638,7 +4677,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 309,
+      "incomingLinks": 311,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -4650,7 +4689,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 309,
+      "incomingLinks": 311,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -4674,7 +4713,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 309,
+      "incomingLinks": 311,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -5106,7 +5145,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 309,
+      "incomingLinks": 311,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }
