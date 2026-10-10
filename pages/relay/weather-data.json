@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-09T21:43:42.565Z",
-  "latest_success_at": "2026-10-09T21:43:42.565Z",
+  "generated_at": "2026-10-10T01:46:52.228Z",
+  "latest_success_at": "2026-10-10T01:46:52.228Z",
   "status": "partial",
   "items": [
     {
-      "id": "898ca3dd34d393e6",
-      "title": "Tropical Cyclone Local Statement issued October 9 at 5:32PM EDT by NWS Tallahassee FL",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.7985e0d61b47732ab3ccc2b36214e297172de2b8.001.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-10-09T21:32:00.000Z",
+      "id": "3a3ba3d0152b80dc",
+      "title": "Summary for Hurricane Isaias (AT4/AL092026)",
+      "url": "https://www.nhc.noaa.gov/text/refresh/MIATCUAT4+shtml/100130.shtml",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-10-10T01:30:11.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "ac486af2ec7054d9",
-      "title": "Tropical Storm Warning issued October 9 at 4:20PM CDT by NWS Birmingham AL",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.7e176935e170d11eb27ee31f168e61d9b462b9fe.001.1.cap",
+      "id": "14205c0426f4a6cf",
+      "title": "Tropical Cyclone Local Statement issued October 9 at 7:14PM CDT by NWS Mobile AL",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b371770ded7847de3f7e3f90ae138934a9a3b4ce.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-10-09T21:20:00.000Z",
+      "published_at": "2026-10-10T00:14:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "fd3c872c5fd4a009",
-      "title": "Storm Surge Warning issued October 9 at 5:05PM EDT by NWS Tallahassee FL",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.7443edf58810bb5bde5a26c7c8f3a2d5e1b92079.001.2.cap",
+      "id": "100e035a65d514c0",
+      "title": "Tropical Storm Warning issued October 9 at 6:57PM CDT by NWS Birmingham AL",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.8041e4eb44f6190a1608a94396d4be30b0688657.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-10-09T21:05:00.000Z",
+      "published_at": "2026-10-09T23:57:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
