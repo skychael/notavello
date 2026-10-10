@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-10T08:34:59.949Z",
-  "latest_success_at": "2026-10-10T08:34:59.949Z",
+  "generated_at": "2026-10-10T15:25:19.348Z",
+  "latest_success_at": "2026-10-10T15:25:19.348Z",
   "status": "partial",
   "items": [
     {
-      "id": "d7e570817c0643e9",
-      "title": "Storm Surge Warning issued October 10 at 2:07AM EDT by NWS Tallahassee FL",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.1fa817d32ce283152fa2a4602bbf5788f66ffbb0.001.1.cap",
+      "id": "a83fc97094b18d22",
+      "title": "Tropical Cyclone Local Statement issued October 10 at 8:07AM PDT by NWS San Diego CA",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.3fed4f1a07497bb69c4a4fe9708f116179f42ce2.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-10-10T06:07:00.000Z",
+      "published_at": "2026-10-10T15:07:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "fb0d8164ab30d928",
-      "title": "Hurricane Simon Public Advisory Number 11a",
-      "url": "https://www.nhc.noaa.gov/text/refresh/MIATCPEP5+shtml/100546.shtml",
+      "id": "cbd15740a288ef4e",
+      "title": "Tropical Storm Watch issued October 10 at 8:02AM PDT by NWS San Diego CA",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.e802249bb9fd3adefe9daa8e50843a11cbb0ab78.001.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-10-10T15:02:00.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "12c391048875f82e",
+      "title": "Hurricane Simon Public Advisory Number 13",
+      "url": "https://www.nhc.noaa.gov/text/refresh/MIATCPEP5+shtml/101454.shtml",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-10-10T05:46:50.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "e6e219396bdbd98d",
-      "title": "Tropical Cyclone Local Statement issued October 9 at 8:43PM PDT by NWS San Diego CA",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.c26ae4cb7c8a6731ff960266fb57b14401534c71.001.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-10-10T03:43:00.000Z",
+      "published_at": "2026-10-10T14:54:53.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
