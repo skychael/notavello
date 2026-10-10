@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "10-09",
-  "display_date": "October 9",
-  "generated_at": "2026-10-09T15:19:03.213Z",
+  "date_key": "10-10",
+  "display_date": "October 10",
+  "generated_at": "2026-10-10T14:28:33.223Z",
   "source": "Wikimedia On This Day",
-  "selection_method": "ai",
+  "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-c13df79e3c938f5c9054e992",
+      "candidate_id": "event-3d0d91d6c990b9906102b90e",
       "type": "event",
-      "year": 2012,
-      "text": "Pakistani Taliban attempt to assassinate outspoken schoolgirl Malala Yousafzai.",
-      "article_title": "Malala Yousafzai",
-      "url": "https://en.wikipedia.org/wiki/Malala_Yousafzai",
-      "category": "Politics and society"
+      "year": 2007,
+      "text": "Sheikh Muszaphar Shukor becomes the first Malaysian in space on board Soyuz TMA-11.",
+      "article_title": "Sheikh Muszaphar Shukor",
+      "url": "https://en.wikipedia.org/wiki/Sheikh_Muszaphar_Shukor",
+      "category": "Science and technology"
     },
     {
-      "candidate_id": "event-e42186c58ea6ba6ffe59db4a",
+      "candidate_id": "event-aef9e12b96e91e03c16ab218",
       "type": "event",
-      "year": 2006,
-      "text": "North Korea conducts its first nuclear test.",
-      "article_title": "2006 North Korean nuclear test",
-      "url": "https://en.wikipedia.org/wiki/2006_North_Korean_nuclear_test",
+      "year": 1933,
+      "text": "A United Airlines Boeing 247 is destroyed by sabotage, the first such proven case in the history of commercial aviation.",
+      "article_title": "United Air Lines Flight 23",
+      "url": "https://en.wikipedia.org/wiki/United_Air_Lines_Flight_23",
       "category": "World history"
     },
     {
-      "candidate_id": "event-b9b37db58bd029aa262bff0f",
+      "candidate_id": "event-959ba100b4bb4926ac7e5fd2",
       "type": "event",
-      "year": 1967,
-      "text": "A day after his capture, Ernesto \"Che\" Guevara is executed for attempting to incite a revolution in Bolivia.",
-      "article_title": "Che Guevara",
-      "url": "https://en.wikipedia.org/wiki/Che_Guevara",
-      "category": "World history"
+      "year": 2018,
+      "text": "Hurricane Michael makes landfall in the Florida Panhandle as a catastrophic Category 5 hurricane. It kills 57 people in the United States, 45 in Florida, and causes an estimated $25.1 billion in damage.",
+      "article_title": "Hurricane Michael",
+      "url": "https://en.wikipedia.org/wiki/Hurricane_Michael",
+      "category": "Disasters and exploration"
     }
   ]
 }
