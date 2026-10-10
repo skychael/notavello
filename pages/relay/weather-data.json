@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-10T20:07:04.847Z",
-  "latest_success_at": "2026-10-10T20:07:04.847Z",
+  "generated_at": "2026-10-10T23:36:35.973Z",
+  "latest_success_at": "2026-10-10T23:36:35.973Z",
   "status": "partial",
   "items": [
     {
-      "id": "675d2fc618fa1bcf",
-      "title": "Hurricane Simon Public Advisory Number 13a",
-      "url": "https://www.nhc.noaa.gov/text/refresh/MIATCPEP5+shtml/101758.shtml",
+      "id": "2cdf614eded66952",
+      "title": "Hurricane Simon Public Advisory Number 14a",
+      "url": "https://www.nhc.noaa.gov/text/refresh/MIATCPEP5+shtml/102335.shtml",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-10-10T17:58:53.000Z",
+      "published_at": "2026-10-10T23:35:28.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "a83fc97094b18d22",
-      "title": "Tropical Cyclone Local Statement issued October 10 at 8:07AM PDT by NWS San Diego CA",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.3fed4f1a07497bb69c4a4fe9708f116179f42ce2.001.1.cap",
+      "id": "c141f69d45a205da",
+      "title": "Tropical Cyclone Local Statement issued October 10 at 2:00PM PDT by NWS San Diego CA",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a4cc717811f8f40a252782434cb530c4d76a370e.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-10-10T15:07:00.000Z",
+      "published_at": "2026-10-10T21:00:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "cbd15740a288ef4e",
-      "title": "Tropical Storm Watch issued October 10 at 8:02AM PDT by NWS San Diego CA",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.e802249bb9fd3adefe9daa8e50843a11cbb0ab78.001.1.cap",
+      "id": "c88f3f83f34f1960",
+      "title": "Tropical Storm Watch issued October 10 at 1:54PM PDT by NWS San Diego CA",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.5f597c2456fecf44bb3ddfab6efd89d7528b48c0.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-10-10T15:02:00.000Z",
+      "published_at": "2026-10-10T20:54:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
