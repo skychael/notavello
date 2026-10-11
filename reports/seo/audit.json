@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-10T07:37:50.746Z",
+  "generatedAt": "2026-10-11T07:42:46.937Z",
   "totals": {
-    "pages": 311,
-    "indexable": 307,
-    "articles": 237,
-    "sitemap": 307,
+    "pages": 313,
+    "indexable": 309,
+    "articles": 239,
+    "sitemap": 309,
     "errors": 0,
-    "warnings": 281
+    "warnings": 285
   },
   "errors": [],
   "warnings": [
@@ -1292,6 +1292,16 @@
     },
     {
       "type": "template-pattern",
+      "page": "/pages/blog/when-object-storage-is-different-from-a-normal-filesystem/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/when-object-storage-is-different-from-a-normal-filesystem/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
       "page": "/pages/blog/when-structured-ai-output-is-more-reliable-than-free-form-text/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
@@ -1414,6 +1424,16 @@
       "type": "topic-review",
       "page": "/pages/blog/yanbu-war-risk-premium-is-the-fuel-bill/",
       "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/zero-point-four-percent-is-not-fertilizer-relief/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/zero-point-four-percent-is-not-fertilizer-relief/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
     }
   ],
   "pages": [
@@ -1425,7 +1445,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 311,
+      "incomingLinks": 313,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -1449,7 +1469,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 311,
+      "incomingLinks": 313,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -1557,7 +1577,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 311,
+      "incomingLinks": 313,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -1569,9 +1589,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 311,
-      "lastmod": "2026-10-09",
-      "bodyWords": 645
+      "incomingLinks": 313,
+      "lastmod": "2026-10-10",
+      "bodyWords": 650
     },
     {
       "route": "/pages/blog/a-checklist-for-reliable-scheduled-jobs/",
@@ -1881,9 +1901,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 176,
-      "lastmod": "2026-10-09",
-      "bodyWords": 2898
+      "incomingLinks": 178,
+      "lastmod": "2026-10-10",
+      "bodyWords": 2921
     },
     {
       "route": "/pages/blog/anhydrous-ammonia-is-the-fall-farm-bill/",
@@ -1893,7 +1913,7 @@
       "canonical": "https://notavello.com/pages/blog/anhydrous-ammonia-is-the-fall-farm-bill/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 2,
+      "incomingLinks": 3,
       "lastmod": "2026-10-04",
       "bodyWords": 1207
     },
@@ -3550,8 +3570,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-09",
-      "bodyWords": 682
+      "lastmod": "2026-10-10",
+      "bodyWords": 685
     },
     {
       "route": "/pages/blog/page-11/",
@@ -3562,8 +3582,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-09",
-      "bodyWords": 783
+      "lastmod": "2026-10-10",
+      "bodyWords": 777
     },
     {
       "route": "/pages/blog/page-12/",
@@ -3574,8 +3594,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-09",
-      "bodyWords": 830
+      "lastmod": "2026-10-10",
+      "bodyWords": 824
     },
     {
       "route": "/pages/blog/page-13/",
@@ -3586,8 +3606,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-09",
-      "bodyWords": 889
+      "lastmod": "2026-10-10",
+      "bodyWords": 871
     },
     {
       "route": "/pages/blog/page-14/",
@@ -3598,8 +3618,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": "2026-10-09",
-      "bodyWords": 174
+      "lastmod": "2026-10-10",
+      "bodyWords": 278
     },
     {
       "route": "/pages/blog/page-2/",
@@ -3610,8 +3630,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-09",
-      "bodyWords": 657
+      "lastmod": "2026-10-10",
+      "bodyWords": 664
     },
     {
       "route": "/pages/blog/page-3/",
@@ -3622,8 +3642,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-09",
-      "bodyWords": 629
+      "lastmod": "2026-10-10",
+      "bodyWords": 622
     },
     {
       "route": "/pages/blog/page-4/",
@@ -3634,8 +3654,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-09",
-      "bodyWords": 675
+      "lastmod": "2026-10-10",
+      "bodyWords": 677
     },
     {
       "route": "/pages/blog/page-5/",
@@ -3646,8 +3666,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-09",
-      "bodyWords": 658
+      "lastmod": "2026-10-10",
+      "bodyWords": 650
     },
     {
       "route": "/pages/blog/page-6/",
@@ -3658,8 +3678,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-09",
-      "bodyWords": 684
+      "lastmod": "2026-10-10",
+      "bodyWords": 689
     },
     {
       "route": "/pages/blog/page-7/",
@@ -3670,8 +3690,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-09",
-      "bodyWords": 675
+      "lastmod": "2026-10-10",
+      "bodyWords": 678
     },
     {
       "route": "/pages/blog/page-8/",
@@ -3682,8 +3702,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-09",
-      "bodyWords": 650
+      "lastmod": "2026-10-10",
+      "bodyWords": 647
     },
     {
       "route": "/pages/blog/page-9/",
@@ -3694,8 +3714,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-09",
-      "bodyWords": 687
+      "lastmod": "2026-10-10",
+      "bodyWords": 682
     },
     {
       "route": "/pages/blog/phosphate-is-the-fertilizer-shock-that-did-not-fade/",
@@ -4286,6 +4306,18 @@
       "bodyWords": 778
     },
     {
+      "route": "/pages/blog/when-object-storage-is-different-from-a-normal-filesystem/",
+      "file": "pages/blog/when-object-storage-is-different-from-a-normal-filesystem/index.html",
+      "title": "When Object Storage Is Different from a Normal Filesystem — The Export | Notavello",
+      "description": "Object storage uses flat buckets, keys, and rich metadata instead of folders and paths. Learn how this changes consistency, access, and everyday file workflows.",
+      "canonical": "https://notavello.com/pages/blog/when-object-storage-is-different-from-a-normal-filesystem/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-10-10",
+      "bodyWords": 816
+    },
+    {
       "route": "/pages/blog/when-structured-ai-output-is-more-reliable-than-free-form-text/",
       "file": "pages/blog/when-structured-ai-output-is-more-reliable-than-free-form-text/index.html",
       "title": "When Structured AI Output Is More Reliable Than Free-Form Text — The Export | Notavello",
@@ -4586,6 +4618,18 @@
       "bodyWords": 1441
     },
     {
+      "route": "/pages/blog/zero-point-four-percent-is-not-fertilizer-relief/",
+      "file": "pages/blog/zero-point-four-percent-is-not-fertilizer-relief/index.html",
+      "title": "Zero Point Four Percent Is Not Fertilizer Relief — The Export | Notavello",
+      "description": "World Bank says fertilizer rose just 0.4% in September, but USDA farm prices show fuel and nitrogen still squeezing acres.",
+      "canonical": "https://notavello.com/pages/blog/zero-point-four-percent-is-not-fertilizer-relief/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-10-11",
+      "bodyWords": 1373
+    },
+    {
       "route": "/pages/contact",
       "file": "pages/contact.html",
       "title": "Contact — Notavello",
@@ -4593,7 +4637,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 311,
+      "incomingLinks": 313,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -4605,7 +4649,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 311,
+      "incomingLinks": 313,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -4617,7 +4661,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 311,
+      "incomingLinks": 313,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -4629,7 +4673,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 311,
+      "incomingLinks": 313,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -4641,7 +4685,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 311,
+      "incomingLinks": 313,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -4654,8 +4698,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-10-10",
-      "bodyWords": 497
+      "lastmod": "2026-10-11",
+      "bodyWords": 503
     },
     {
       "route": "/pages/sample",
@@ -4677,7 +4721,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 311,
+      "incomingLinks": 313,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -4689,7 +4733,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 311,
+      "incomingLinks": 313,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -4713,7 +4757,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 311,
+      "incomingLinks": 313,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -5145,7 +5189,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 311,
+      "incomingLinks": 313,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }
