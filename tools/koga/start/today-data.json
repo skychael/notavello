@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "10-10",
-  "display_date": "October 10",
-  "generated_at": "2026-10-10T14:28:33.223Z",
+  "date_key": "10-11",
+  "display_date": "October 11",
+  "generated_at": "2026-10-11T14:55:33.772Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-3d0d91d6c990b9906102b90e",
+      "candidate_id": "event-61319f73072d7b313421ba9b",
       "type": "event",
-      "year": 2007,
-      "text": "Sheikh Muszaphar Shukor becomes the first Malaysian in space on board Soyuz TMA-11.",
-      "article_title": "Sheikh Muszaphar Shukor",
-      "url": "https://en.wikipedia.org/wiki/Sheikh_Muszaphar_Shukor",
+      "year": 1984,
+      "text": "Aboard the Space Shuttle Challenger, astronaut Kathryn D. Sullivan becomes the first American woman to perform a space walk.",
+      "article_title": "Kathryn D. Sullivan",
+      "url": "https://en.wikipedia.org/wiki/Kathryn_D._Sullivan",
       "category": "Science and technology"
     },
     {
-      "candidate_id": "event-aef9e12b96e91e03c16ab218",
+      "candidate_id": "event-ed5d817c25c86ccd684e41a0",
       "type": "event",
-      "year": 1933,
-      "text": "A United Airlines Boeing 247 is destroyed by sabotage, the first such proven case in the history of commercial aviation.",
-      "article_title": "United Air Lines Flight 23",
-      "url": "https://en.wikipedia.org/wiki/United_Air_Lines_Flight_23",
+      "year": 1968,
+      "text": "NASA launches Apollo 7, the first successful crewed Apollo mission.",
+      "article_title": "Apollo 7",
+      "url": "https://en.wikipedia.org/wiki/Apollo_7",
       "category": "World history"
     },
     {
-      "candidate_id": "event-959ba100b4bb4926ac7e5fd2",
+      "candidate_id": "event-67e83f189c692fd6854f76ea",
       "type": "event",
-      "year": 2018,
-      "text": "Hurricane Michael makes landfall in the Florida Panhandle as a catastrophic Category 5 hurricane. It kills 57 people in the United States, 45 in Florida, and causes an estimated $25.1 billion in damage.",
-      "article_title": "Hurricane Michael",
-      "url": "https://en.wikipedia.org/wiki/Hurricane_Michael",
-      "category": "Disasters and exploration"
+      "year": 1958,
+      "text": "NASA launches Pioneer 1, its first space probe, although it fails to achieve a stable orbit.",
+      "article_title": "Pioneer 1",
+      "url": "https://en.wikipedia.org/wiki/Pioneer_1",
+      "category": "Science and technology"
     }
   ]
 }
