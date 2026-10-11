@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-11T05:54:49.195Z",
-  "latest_success_at": "2026-10-11T05:54:49.195Z",
+  "generated_at": "2026-10-11T12:58:51.965Z",
+  "latest_success_at": "2026-10-11T12:58:51.965Z",
   "status": "partial",
   "items": [
     {
-      "id": "2c688d0c50891780",
-      "title": "Tropical Storm Watch issued October 10 at 8:05PM PDT by NWS San Diego CA",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.bb3252494b907059fd0c647ac05ee18deb62a7ab.001.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-10-11T03:05:00.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "c6a8ecb662d09a89",
-      "title": "Hurricane Simon Public Advisory Number 15",
-      "url": "https://www.nhc.noaa.gov/text/refresh/MIATCPEP5+shtml/110232.shtml",
+      "id": "f972e027bdce1d2b",
+      "title": "Hurricane Simon Public Advisory Number 16a",
+      "url": "https://www.nhc.noaa.gov/text/refresh/MIATCPEP5+shtml/111144.shtml",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-10-11T02:33:02.000Z",
+      "published_at": "2026-10-11T11:44:37.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "8b47ae60d8cbd9b2",
-      "title": "SPC Oct 11, 2026 0100 UTC Day 1 Convective Outlook",
-      "url": "https://www.spc.noaa.gov/products/outlook/day1otlk_0100.html",
+      "id": "367a48215cbad27a",
+      "title": "SPC Oct 11, 2026 1300 UTC Day 1 Convective Outlook",
+      "url": "https://www.spc.noaa.gov/products/outlook/day1otlk_1300.html",
       "publisher": "Storm Prediction Center",
-      "published_at": "2026-10-11T01:00:11.000Z",
+      "published_at": "2026-10-11T12:46:07.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "5188fa50f4fd4a9a",
+      "title": "Flood Watch issued October 11 at 6:42AM MDT until October 12 at 6:00PM MDT by NWS Salt Lake City UT",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.eb8193b8fbd42ea37824d6a9b67048487fdf921c.001.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-10-11T12:42:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
