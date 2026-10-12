@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-11T22:03:11.495Z",
-  "latest_success_at": "2026-10-11T22:03:11.495Z",
+  "generated_at": "2026-10-12T01:22:39.721Z",
+  "latest_success_at": "2026-10-12T01:22:39.721Z",
   "status": "partial",
   "items": [
     {
-      "id": "37ff8471f52d6625",
+      "id": "6e4cd61db9f590fb",
       "title": "Hurricane Simon Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep5+shtml/212209.shtml?cone=",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep5+shtml/235343.shtml?cone=",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-10-11T21:22:09.000Z",
+      "published_at": "2026-10-11T23:53:43.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "b4bcce42aee5b24c",
-      "title": "SPC Oct 11, 2026 2000 UTC Day 1 Convective Outlook",
-      "url": "https://www.spc.noaa.gov/products/outlook/day1otlk_2000.html",
-      "publisher": "Storm Prediction Center",
-      "published_at": "2026-10-11T20:03:12.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "a8bf3f0fb37d7d66",
-      "title": "Flood Watch issued October 11 at 11:08AM MST until October 12 at 5:00AM MST by NWS Flagstaff AZ",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.1b0195d6842f9abaa06e8a68e2a007fd9ece2e74.001.1.cap",
+      "id": "f05c260e21c2a9f4",
+      "title": "Flood Watch issued October 11 at 4:33PM PDT until October 12 at 5:00AM PDT by NWS Elko NV",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.030ec9563bebc4f6ecbd35b4a370b3b717ccad1f.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-10-11T18:08:00.000Z",
+      "published_at": "2026-10-11T23:33:00.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "ee8e390990a944fc",
+      "title": "Eastern North Pacific Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-10-11T23:20:44.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
