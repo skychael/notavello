@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-12T01:22:39.721Z",
-  "latest_success_at": "2026-10-12T01:22:39.721Z",
+  "generated_at": "2026-10-12T09:19:39.880Z",
+  "latest_success_at": "2026-10-12T09:19:39.880Z",
   "status": "partial",
   "items": [
     {
-      "id": "6e4cd61db9f590fb",
+      "id": "09e63f64a2ddfa00",
       "title": "Hurricane Simon Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep5+shtml/235343.shtml?cone=",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep5+shtml/090016.shtml?cone=",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-10-11T23:53:43.000Z",
+      "published_at": "2026-10-12T09:00:16.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "f05c260e21c2a9f4",
-      "title": "Flood Watch issued October 11 at 4:33PM PDT until October 12 at 5:00AM PDT by NWS Elko NV",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.030ec9563bebc4f6ecbd35b4a370b3b717ccad1f.001.1.cap",
+      "id": "ba010680f19eae4f",
+      "title": "Flood Watch issued October 12 at 12:31AM MST until October 12 at 5:00PM MST by NWS Flagstaff AZ",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.38ae4a614dce28a6316a689d9f70c91718c89be9.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-10-11T23:33:00.000Z",
+      "published_at": "2026-10-12T07:31:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "ee8e390990a944fc",
-      "title": "Eastern North Pacific Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
+      "id": "b5ad93019d019ede",
+      "title": "Atlantic Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-10-11T23:20:44.000Z",
+      "published_at": "2026-10-12T05:32:19.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }

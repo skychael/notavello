@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "checked_at": "2026-10-12T01:22:38.854Z",
-  "latest_success_at": "2026-10-12T01:22:38.854Z",
+  "checked_at": "2026-10-12T09:19:39.247Z",
+  "latest_success_at": "2026-10-12T09:19:39.247Z",
   "status": "partial",
   "items": [
     {
@@ -37,6 +37,14 @@
       "status": "ok"
     },
     {
+      "title": "Three years of war, 100,000 targets struck: IDF releases new conflict data",
+      "url": "https://breakingdefense.com/2026/10/three-years-of-war-100000-targets-struck-idf-releases-new-conflict-data",
+      "publisher": "Breaking Defense",
+      "published_at": "2026-10-12T08:00:00.000Z",
+      "source_id": "breaking-defense",
+      "status": "ok"
+    },
+    {
       "title": "Two Seafarers Missing in Drone Attack on Product Tanker off Oman",
       "url": "https://maritime-executive.com/article/two-seafarers-missing-in-drone-attack-on-product-tanker-off-oman",
       "publisher": "The Maritime Executive",
@@ -61,18 +69,18 @@
       "status": "ok"
     },
     {
-      "title": "Lockheed unveils PAC-3 Edge, its next-gen Patriot interceptor",
-      "url": "https://breakingdefense.com/2026/10/lockheed-unveils-pac-3-edge-its-next-gen-patriot-interceptor",
-      "publisher": "Breaking Defense",
-      "published_at": "2026-10-09T19:45:39.000Z",
-      "source_id": "breaking-defense",
-      "status": "ok"
-    },
-    {
       "title": "B-52 To Get Stealthy AGM-158C Long-Range Anti-Ship Missiles",
       "url": "https://www.twz.com/air/b-52-to-get-stealthy-agm-158c-long-range-anti-ship-missiles",
       "publisher": "TWZ (The War Zone)",
       "published_at": "2026-10-09T17:59:23.000Z",
+      "source_id": "twz",
+      "status": "ok"
+    },
+    {
+      "title": "Anduril Unveils Steelfin Family Of Modular Surface-To-Air Missiles",
+      "url": "https://www.twz.com/land/anduril-unveils-steelfin-family-of-modular-surface-to-air-missiles",
+      "publisher": "TWZ (The War Zone)",
+      "published_at": "2026-10-12T05:30:10.000Z",
       "source_id": "twz",
       "status": "ok"
     }
