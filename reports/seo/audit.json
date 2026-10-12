@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-11T07:42:46.937Z",
+  "generatedAt": "2026-10-12T07:51:13.222Z",
   "totals": {
-    "pages": 313,
-    "indexable": 309,
-    "articles": 239,
-    "sitemap": 309,
+    "pages": 315,
+    "indexable": 311,
+    "articles": 241,
+    "sitemap": 311,
     "errors": 0,
-    "warnings": 285
+    "warnings": 288
   },
   "errors": [],
   "warnings": [
@@ -44,6 +44,11 @@
       "type": "topic-review",
       "page": "/pages/blog/a-practical-introduction-to-api-versioning/",
       "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/a-practical-introduction-to-cloud-identity-and-access-management/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
     {
       "type": "template-pattern",
@@ -1112,6 +1117,16 @@
     },
     {
       "type": "template-pattern",
+      "page": "/pages/blog/sohar-is-not-the-safe-waiting-room/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/sohar-is-not-the-safe-waiting-room/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
       "page": "/pages/blog/sohar-tanker-queue-is-the-oil-bill/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
@@ -1445,7 +1460,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 313,
+      "incomingLinks": 315,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -1469,7 +1484,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 313,
+      "incomingLinks": 315,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -1577,7 +1592,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 313,
+      "incomingLinks": 315,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -1589,9 +1604,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 313,
-      "lastmod": "2026-10-10",
-      "bodyWords": 650
+      "incomingLinks": 315,
+      "lastmod": "2026-10-11",
+      "bodyWords": 652
     },
     {
       "route": "/pages/blog/a-checklist-for-reliable-scheduled-jobs/",
@@ -1640,6 +1655,18 @@
       "incomingLinks": 2,
       "lastmod": "2026-10-08",
       "bodyWords": 860
+    },
+    {
+      "route": "/pages/blog/a-practical-introduction-to-cloud-identity-and-access-management/",
+      "file": "pages/blog/a-practical-introduction-to-cloud-identity-and-access-management/index.html",
+      "title": "A practical introduction to cloud identity and access management — The Export | Notavello",
+      "description": "Learn the core concepts of cloud IAM including identities, roles, policies, temporary credentials, and least privilege with examples from AWS and Google Cloud.",
+      "canonical": "https://notavello.com/pages/blog/a-practical-introduction-to-cloud-identity-and-access-management/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-10-11",
+      "bodyWords": 764
     },
     {
       "route": "/pages/blog/a-practical-way-to-audit-app-permissions-on-a-computer/",
@@ -1901,9 +1928,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 178,
-      "lastmod": "2026-10-10",
-      "bodyWords": 2921
+      "incomingLinks": 180,
+      "lastmod": "2026-10-11",
+      "bodyWords": 2943
     },
     {
       "route": "/pages/blog/anhydrous-ammonia-is-the-fall-farm-bill/",
@@ -2681,7 +2708,7 @@
       "canonical": "https://notavello.com/pages/blog/hormuz-crew-risk-is-now-the-price-signal/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 3,
+      "incomingLinks": 4,
       "lastmod": "2026-08-09",
       "bodyWords": 1327
     },
@@ -3570,8 +3597,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-10",
-      "bodyWords": 685
+      "lastmod": "2026-10-11",
+      "bodyWords": 689
     },
     {
       "route": "/pages/blog/page-11/",
@@ -3582,8 +3609,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-10",
-      "bodyWords": 777
+      "lastmod": "2026-10-11",
+      "bodyWords": 759
     },
     {
       "route": "/pages/blog/page-12/",
@@ -3594,8 +3621,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-10",
-      "bodyWords": 824
+      "lastmod": "2026-10-11",
+      "bodyWords": 837
     },
     {
       "route": "/pages/blog/page-13/",
@@ -3606,8 +3633,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-10",
-      "bodyWords": 871
+      "lastmod": "2026-10-11",
+      "bodyWords": 859
     },
     {
       "route": "/pages/blog/page-14/",
@@ -3618,8 +3645,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": "2026-10-10",
-      "bodyWords": 278
+      "lastmod": "2026-10-11",
+      "bodyWords": 371
     },
     {
       "route": "/pages/blog/page-2/",
@@ -3630,8 +3657,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-10",
-      "bodyWords": 664
+      "lastmod": "2026-10-11",
+      "bodyWords": 661
     },
     {
       "route": "/pages/blog/page-3/",
@@ -3642,8 +3669,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-10",
-      "bodyWords": 622
+      "lastmod": "2026-10-11",
+      "bodyWords": 629
     },
     {
       "route": "/pages/blog/page-4/",
@@ -3654,8 +3681,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-10",
-      "bodyWords": 677
+      "lastmod": "2026-10-11",
+      "bodyWords": 666
     },
     {
       "route": "/pages/blog/page-5/",
@@ -3666,8 +3693,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-10",
-      "bodyWords": 650
+      "lastmod": "2026-10-11",
+      "bodyWords": 661
     },
     {
       "route": "/pages/blog/page-6/",
@@ -3678,8 +3705,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-10",
-      "bodyWords": 689
+      "lastmod": "2026-10-11",
+      "bodyWords": 688
     },
     {
       "route": "/pages/blog/page-7/",
@@ -3690,8 +3717,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-10",
-      "bodyWords": 678
+      "lastmod": "2026-10-11",
+      "bodyWords": 674
     },
     {
       "route": "/pages/blog/page-8/",
@@ -3702,7 +3729,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-10",
+      "lastmod": "2026-10-11",
       "bodyWords": 647
     },
     {
@@ -3714,8 +3741,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-10",
-      "bodyWords": 682
+      "lastmod": "2026-10-11",
+      "bodyWords": 674
     },
     {
       "route": "/pages/blog/phosphate-is-the-fertilizer-shock-that-did-not-fade/",
@@ -3920,6 +3947,18 @@
       "incomingLinks": 2,
       "lastmod": "2026-08-22",
       "bodyWords": 1497
+    },
+    {
+      "route": "/pages/blog/sohar-is-not-the-safe-waiting-room/",
+      "file": "pages/blog/sohar-is-not-the-safe-waiting-room/index.html",
+      "title": "Sohar Is Not The Safe Waiting Room — The Export | Notavello",
+      "description": "A drone strike off Oman shows the Gulf oil workaround now carries a crew, freight and diesel price tag.",
+      "canonical": "https://notavello.com/pages/blog/sohar-is-not-the-safe-waiting-room/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-10-12",
+      "bodyWords": 1612
     },
     {
       "route": "/pages/blog/sohar-tanker-queue-is-the-oil-bill/",
@@ -4637,7 +4676,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 313,
+      "incomingLinks": 315,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -4649,7 +4688,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 313,
+      "incomingLinks": 315,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -4661,7 +4700,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 313,
+      "incomingLinks": 315,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -4673,7 +4712,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 313,
+      "incomingLinks": 315,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -4685,7 +4724,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 313,
+      "incomingLinks": 315,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -4698,8 +4737,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-10-11",
-      "bodyWords": 503
+      "lastmod": "2026-10-12",
+      "bodyWords": 509
     },
     {
       "route": "/pages/sample",
@@ -4721,7 +4760,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 313,
+      "incomingLinks": 315,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -4733,7 +4772,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 313,
+      "incomingLinks": 315,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -4757,7 +4796,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 313,
+      "incomingLinks": 315,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -5189,7 +5228,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 313,
+      "incomingLinks": 315,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }

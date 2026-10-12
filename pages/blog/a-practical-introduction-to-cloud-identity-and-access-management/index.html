@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>A practical introduction to cloud identity and access management — The Export | Notavello</title>
+<meta name="description" content="Learn the core concepts of cloud IAM including identities, roles, policies, temporary credentials, and least privilege with examples from AWS and Google Cloud."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/blog/a-practical-introduction-to-cloud-identity-and-access-management/"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2026-10-11T14:58:27.762Z"/>
+<meta property="article:modified_time" content="2026-10-11T14:58:27.762Z"/>
+<meta name="notavello:published_at" content="2026-10-11T14:58:27.762Z"/>
+<meta name="syndication-origin-site" content="toysforbots"/>
+<meta name="syndication-origin-id" content="toysforbots:a-practical-introduction-to-cloud-identity-and-access-management"/>
+<meta name="syndication-origin-slug" content="a-practical-introduction-to-cloud-identity-and-access-management"/>
+<meta name="syndication-origin-url" content="https://toysforbots.com/blog/a-practical-introduction-to-cloud-identity-and-access-management/"/>
+<meta name="syndication-source-format" content="toysforbots-syndication-v1"/>
+<meta property="og:url" content="https://notavello.com/pages/blog/a-practical-introduction-to-cloud-identity-and-access-management/"/>
+<meta property="og:title" content="A practical introduction to cloud identity and access management"/>
+<meta property="og:description" content="Learn the core concepts of cloud IAM including identities, roles, policies, temporary credentials, and least privilege with examples from AWS and Google Cloud."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="A practical introduction to cloud identity and access management"/>
+<meta name="twitter:description" content="Learn the core concepts of cloud IAM including identities, roles, policies, temporary credentials, and least privilege with examples from AWS and Google Cloud."/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "A practical introduction to cloud identity and access management",
+  "description": "Learn the core concepts of cloud IAM including identities, roles, policies, temporary credentials, and least privilege with examples from AWS and Google Cloud.",
+  "url": "https://notavello.com/pages/blog/a-practical-introduction-to-cloud-identity-and-access-management/",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://notavello.com/pages/blog/a-practical-introduction-to-cloud-identity-and-access-management/" },
+  "image": "https://notavello.com/og-image.png",
+  "datePublished": "2026-10-11T14:58:27.762Z",
+  "dateModified": "2026-10-11T14:58:27.762Z",
+  "author": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" },
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com", "logo": { "@type": "ImageObject", "url": "https://notavello.com/og-image.png" } }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
+.post-nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; row-gap: 8px; }
+.post-nav-top { margin-bottom: 40px; }
+.post-nav-bottom { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--border); }
+.post-nav a { display: inline-flex; align-items: center; gap: 6px; font-size: 0.92rem; font-weight: 600; color: var(--ink-muted); text-decoration: none; padding: 12px 14px; border-radius: var(--radius-sm); white-space: nowrap; transition: color 0.15s, background 0.15s; }
+.post-nav a:hover { color: var(--accent); background: var(--accent-light); }
+.post-nav a:first-child { padding-left: 0; }
+.post-nav a:last-child { padding-right: 0; justify-content: flex-end; }
+.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
+.post-date { font-size: 0.78rem; color: var(--ink-faint); }
+.post-title { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; color: var(--ink); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
+.post-lede { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+.post-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink); }
+.post-body h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 44px 0 16px; letter-spacing: -0.01em; }
+.post-body p { margin-bottom: 20px; color: var(--ink-muted); }
+.post-body p strong { color: var(--ink); font-weight: 600; }
+.post-body ul { margin: 0 0 20px 20px; color: var(--ink-muted); }
+.post-body ul li { margin-bottom: 8px; line-height: 1.7; }
+.callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 32px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.7; }
+.post-footer { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.post-footer-label { font-size: 0.8rem; color: var(--ink-faint); }
+.btn-export { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: opacity 0.2s; }
+.btn-export:hover { opacity: 0.9; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } .post-nav a { padding: 12px 8px; font-size: 0.88rem; } }
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+
+  <nav class="post-nav post-nav-top">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+  <div class="post-meta">
+    <span class="post-tag">Cloud Basics</span>
+    <span class="post-date">October 11, 2026</span>
+  </div>
+
+  <h1 class="post-title">A practical introduction to cloud identity and access management</h1>
+
+  <p class="post-lede">Cloud identity and access management (IAM) determines who can do what inside your cloud account. When you create an AWS or Google Cloud account you start with a root identity that has full control. Everyday work should use additional identities instead. IAM systems evaluate requests against attached policies to decide whether to allow or deny access. The same principles appear across providers even when the exact objects differ.</p>
+
+  <div class="post-body">
+
+<h2>Identities represent who or what is making a request</h2>
+<p>An identity is the entity that signs in or authenticates to the cloud provider. In AWS the main identities are IAM users, IAM roles, and groups. Google Cloud uses principals that include user accounts, service accounts, and groups. After authentication the provider checks authorization against policies attached to the identity or the resource.</p>
+<p>AWS recommends replacing long-term IAM user credentials with roles wherever possible. Human users should sign in through IAM Identity Center or federation and then assume a role. Service accounts and workloads also use roles to obtain temporary credentials rather than embedding permanent keys.</p><ul><li>Root user: full access created with the account; avoid for daily use</li><li>IAM user: long-term credentials tied to one person or application</li><li>IAM role: assumable identity that grants temporary credentials</li><li>Service account (Google Cloud): identity for applications and VMs</li></ul><div class="callout"><strong>Security note</strong> Never use root credentials for routine tasks. Create dedicated identities and grant only the permissions each task requires.</div>
+<h2>Roles collect permissions for a purpose</h2>
+<p>A role is a named collection of permissions. You grant the role to a principal instead of assigning individual permissions. Google Cloud defines basic roles for broad access, predefined roles for specific services, and custom roles for exact needs. AWS uses managed policies and inline policies attached to roles or users.</p>
+<p>Roles make it easier to change access for many principals at once. When a workload needs to read from an object store, attach a role that contains only the required read actions rather than giving full administrative rights.</p><ul><li>Basic roles provide broad access and are rarely suitable for production</li><li>Predefined roles target one service and follow common job functions</li><li>Custom roles let you list only the permissions you need</li></ul>
+<h2>Policies define the actual permissions</h2>
+<p>A policy is a document that states what actions are allowed or denied on which resources. AWS stores most policies as JSON. Google Cloud uses allow policies that bind roles to principals on a resource. When a request arrives the provider evaluates every applicable policy and reaches a final allow or deny decision.</p>
+<p>Policies can be identity-based or resource-based. Identity-based policies travel with the user or role. Resource-based policies are attached directly to the bucket, queue, or other resource and can grant access to principals outside the account.</p><ul><li>Start with the minimum actions required for the task</li><li>Use conditions to restrict access by IP range, time, or required MFA</li><li>Review policies regularly because requirements change</li></ul>
+<h2>Temporary credentials reduce long-term risk</h2>
+<p>Temporary credentials expire after a set time and cannot be reused after expiration. AWS Security Token Service (STS) issues them when a role is assumed. Google Cloud also issues short-lived credentials for service accounts. Because the credentials are generated on demand you do not need to distribute or rotate static keys inside applications.</p>
+<p>Temporary credentials support identity federation and workloads running on compute instances. The instance metadata service supplies the credentials automatically so code never stores secrets. Once the session ends or the token expires the credentials stop working.</p><ul><li>Temporary credentials last from minutes to hours</li><li>They are generated dynamically and not stored with the user</li><li>No manual rotation is required after they expire</li></ul>
+<h2>Least privilege limits blast radius</h2>
+<p>Least privilege means granting only the permissions required to complete a task. Begin with a narrow set of actions and add more only after monitoring shows they are needed. Both AWS and Google Cloud provide tools that report which permissions an identity actually uses so you can refine policies over time.</p>
+<p>Starting with overly broad policies and tightening them later is less secure. Managed policies with wildcards can serve as a starting point, but they should be replaced with custom policies once usage patterns are understood. Regular audits prevent unused permissions from accumulating.</p><ul><li>Monitor actual permission usage before writing final policies</li><li>Replace broad managed policies with scoped custom policies</li><li>Revisit policies after application changes or new features</li></ul><h2>Sources</h2><ul><li><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html" rel="noopener noreferrer">aws.amazon.com</a></li><li><a href="https://cloud.google.com/iam/docs/overview" rel="noopener noreferrer">cloud.google.com</a></li><li><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction_identity-management.html" rel="noopener noreferrer">aws.amazon.com</a></li></ul>
+
+  </div>
+
+  <div class="post-footer">
+    <span class="post-footer-label">Looking for more AI tools?</span>
+    <a class="btn-export" href="/">See our free AI tools →</a>
+  </div>
+
+  <nav class="post-nav post-nav-bottom">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+</main>
+
+<!--FOOTER-->
+
+</body>
+</html>
