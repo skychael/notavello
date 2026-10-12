@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "10-11",
-  "display_date": "October 11",
-  "generated_at": "2026-10-11T14:55:33.772Z",
+  "date_key": "10-12",
+  "display_date": "October 12",
+  "generated_at": "2026-10-12T17:56:45.527Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-61319f73072d7b313421ba9b",
+      "candidate_id": "event-dd071898f3f3b6c526de5c9c",
       "type": "event",
-      "year": 1984,
-      "text": "Aboard the Space Shuttle Challenger, astronaut Kathryn D. Sullivan becomes the first American woman to perform a space walk.",
-      "article_title": "Kathryn D. Sullivan",
-      "url": "https://en.wikipedia.org/wiki/Kathryn_D._Sullivan",
-      "category": "Science and technology"
-    },
-    {
-      "candidate_id": "event-ed5d817c25c86ccd684e41a0",
-      "type": "event",
-      "year": 1968,
-      "text": "NASA launches Apollo 7, the first successful crewed Apollo mission.",
-      "article_title": "Apollo 7",
-      "url": "https://en.wikipedia.org/wiki/Apollo_7",
+      "year": 1967,
+      "text": "A bomb explodes on board Cyprus Airways Flight 284 while flying over the Mediterranean Sea, killing 66.",
+      "article_title": "Cyprus Airways Flight 284",
+      "url": "https://en.wikipedia.org/wiki/Cyprus_Airways_Flight_284",
       "category": "World history"
     },
     {
-      "candidate_id": "event-67e83f189c692fd6854f76ea",
+      "candidate_id": "event-1a01fa0587a4f585c1cfb2a4",
       "type": "event",
-      "year": 1958,
-      "text": "NASA launches Pioneer 1, its first space probe, although it fails to achieve a stable orbit.",
-      "article_title": "Pioneer 1",
-      "url": "https://en.wikipedia.org/wiki/Pioneer_1",
+      "year": 2013,
+      "text": "An apartment building collapse in Medellín, Colombia results in the deaths of twelve people.",
+      "article_title": "Collapse of the Space Building",
+      "url": "https://en.wikipedia.org/wiki/Collapse_of_the_Space_Building",
       "category": "Science and technology"
+    },
+    {
+      "candidate_id": "event-9f418e5341edf116bad43cf5",
+      "type": "event",
+      "year": 1992,
+      "text": "A 5.8 earthquake occurred in Cairo, Egypt. At least 510 died.",
+      "article_title": "1992 Cairo earthquake",
+      "url": "https://en.wikipedia.org/wiki/1992_Cairo_earthquake",
+      "category": "Disasters and exploration"
     }
   ]
 }
