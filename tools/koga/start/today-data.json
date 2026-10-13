@@ -1,36 +1,36 @@
 {
   "schema_version": "1.0",
-  "date_key": "10-12",
-  "display_date": "October 12",
-  "generated_at": "2026-10-12T17:56:45.527Z",
+  "date_key": "10-13",
+  "display_date": "October 13",
+  "generated_at": "2026-10-13T16:00:45.272Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-dd071898f3f3b6c526de5c9c",
+      "candidate_id": "event-88df8511c59813425394a864",
       "type": "event",
-      "year": 1967,
-      "text": "A bomb explodes on board Cyprus Airways Flight 284 while flying over the Mediterranean Sea, killing 66.",
-      "article_title": "Cyprus Airways Flight 284",
-      "url": "https://en.wikipedia.org/wiki/Cyprus_Airways_Flight_284",
+      "year": 1972,
+      "text": "Uruguayan Air Force Flight 571 crashes in the Andes mountains. Twenty-eight survive the crash. All but 16 succumb before rescue on December 23.",
+      "article_title": "Uruguayan Air Force Flight 571",
+      "url": "https://en.wikipedia.org/wiki/Uruguayan_Air_Force_Flight_571",
+      "category": "Disasters and exploration"
+    },
+    {
+      "candidate_id": "event-ccb92d5e2d00c9f7d191fecf",
+      "type": "event",
+      "year": 1977,
+      "text": "Hijacking of Lufthansa Flight 181 by the Popular Front for the Liberation of Palestine.",
+      "article_title": "Lufthansa Flight 181",
+      "url": "https://en.wikipedia.org/wiki/Lufthansa_Flight_181",
       "category": "World history"
     },
     {
-      "candidate_id": "event-1a01fa0587a4f585c1cfb2a4",
+      "candidate_id": "event-0ef3b63470833cd573ed240e",
       "type": "event",
-      "year": 2013,
-      "text": "An apartment building collapse in Medellín, Colombia results in the deaths of twelve people.",
-      "article_title": "Collapse of the Space Building",
-      "url": "https://en.wikipedia.org/wiki/Collapse_of_the_Space_Building",
-      "category": "Science and technology"
-    },
-    {
-      "candidate_id": "event-9f418e5341edf116bad43cf5",
-      "type": "event",
-      "year": 1992,
-      "text": "A 5.8 earthquake occurred in Cairo, Egypt. At least 510 died.",
-      "article_title": "1992 Cairo earthquake",
-      "url": "https://en.wikipedia.org/wiki/1992_Cairo_earthquake",
+      "year": 1962,
+      "text": "The Pacific Northwest experiences a cyclone the equal of a Category 3 hurricane, with winds above 150 mph. Forty-six people die.",
+      "article_title": "Columbus Day storm of 1962",
+      "url": "https://en.wikipedia.org/wiki/Columbus_Day_storm_of_1962",
       "category": "Disasters and exploration"
     }
   ]
