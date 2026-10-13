@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-12T19:50:28.745Z",
-  "latest_success_at": "2026-10-12T19:50:28.745Z",
+  "generated_at": "2026-10-13T02:03:55.932Z",
+  "latest_success_at": "2026-10-13T02:03:55.932Z",
   "status": "ok",
   "items": [
     {
@@ -14,11 +14,11 @@
       "status": "ok"
     },
     {
-      "id": "b00cea9e2e0ca992",
+      "id": "58d34c8634b88629",
       "title": "Hurricane Simon Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep5+shtml/185853.shtml?cone=",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep5+shtml/233936.shtml?cone=",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-10-12T18:58:53.000Z",
+      "published_at": "2026-10-12T23:39:36.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
@@ -27,7 +27,7 @@
       "title": "Eastern North Pacific Tropical Weather Outlook",
       "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-10-12T17:10:54.000Z",
+      "published_at": "2026-10-12T23:07:59.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
