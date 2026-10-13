@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-13T09:29:51.763Z",
-  "latest_success_at": "2026-10-13T09:29:51.763Z",
-  "status": "ok",
+  "generated_at": "2026-10-13T17:37:41.385Z",
+  "latest_success_at": "2026-10-13T17:37:41.385Z",
+  "status": "partial",
   "items": [
     {
-      "id": "2aa8204ec0404061",
-      "title": "Tornado threat forecast as Hurricane Isaias strengthens ahead of northern Gulf Coast landfall, United States",
-      "url": "https://watchers.news/2026/10/09/tornado-threat-forecast-as-hurricane-isaias-strengthens-ahead-of-northern-gulf-coast-landfall-united-states",
-      "publisher": "The Watchers",
-      "published_at": "2026-10-09T11:41:16.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "f9a7770155a103ce",
-      "title": "Hurricane Simon Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep5+shtml/092239.shtml?cone=",
+      "id": "cc8c0bdba84946ad",
+      "title": "Hurricane Simon Public Advisory Number 25a",
+      "url": "https://www.nhc.noaa.gov/text/refresh/MIATCPEP5+shtml/131734.shtml",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-10-13T09:22:39.000Z",
+      "published_at": "2026-10-13T17:34:12.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "b251b9dcb641fc40",
-      "title": "Hydrologic Outlook issued October 13 at 5:31PM ChST by NWS Tiyan GU",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.94c39ebf9df775340f8e5a6920199270a526f143.001.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-10-13T07:31:00.000Z",
+      "id": "4cc1d313069d0fab",
+      "title": "Tropical Depression Twenty-One-E Forecast Discussion Number 1",
+      "url": "https://www.nhc.noaa.gov/text/refresh/MIATCDEP1+shtml/131453.shtml",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-10-13T14:53:38.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "0c11812378e2d908",
+      "title": "Summary for Tropical Depression Twenty-One-E (EP1/EP212026)",
+      "url": "https://www.nhc.noaa.gov/text/refresh/MIATCPEP1+shtml/131449.shtml",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-10-13T14:49:40.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
