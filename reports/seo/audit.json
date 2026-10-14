@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-13T08:14:48.062Z",
+  "generatedAt": "2026-10-14T06:35:15.480Z",
   "totals": {
-    "pages": 317,
-    "indexable": 313,
-    "articles": 243,
-    "sitemap": 313,
+    "pages": 319,
+    "indexable": 315,
+    "articles": 245,
+    "sitemap": 315,
     "errors": 0,
-    "warnings": 292
+    "warnings": 295
   },
   "errors": [],
   "warnings": [
@@ -1117,6 +1117,16 @@
     },
     {
       "type": "template-pattern",
+      "page": "/pages/blog/ship-to-ship-oil-transfers-are-the-new-hormuz-target/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/ship-to-ship-oil-transfers-are-the-new-hormuz-target/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
       "page": "/pages/blog/six-dollar-diesel-is-the-grocery-bill/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
@@ -1347,6 +1357,11 @@
     },
     {
       "type": "template-pattern",
+      "page": "/pages/blog/why-a-cloud-snapshot-is-not-always-a-complete-backup-plan/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "template-pattern",
       "page": "/pages/blog/why-a-web-page-can-stay-stale-after-you-refresh-it/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
@@ -1480,7 +1495,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 317,
+      "incomingLinks": 319,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -1504,7 +1519,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 317,
+      "incomingLinks": 319,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -1612,7 +1627,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 317,
+      "incomingLinks": 319,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -1624,9 +1639,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 317,
-      "lastmod": "2026-10-12",
-      "bodyWords": 654
+      "incomingLinks": 319,
+      "lastmod": "2026-10-13",
+      "bodyWords": 658
     },
     {
       "route": "/pages/blog/a-checklist-for-reliable-scheduled-jobs/",
@@ -1948,9 +1963,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 182,
-      "lastmod": "2026-10-12",
-      "bodyWords": 2967
+      "incomingLinks": 184,
+      "lastmod": "2026-10-13",
+      "bodyWords": 2992
     },
     {
       "route": "/pages/blog/anhydrous-ammonia-is-the-fall-farm-bill/",
@@ -2812,7 +2827,7 @@
       "canonical": "https://notavello.com/pages/blog/hormuz-shuttle-tankers-made-freight-the-oil-shock/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 4,
+      "incomingLinks": 5,
       "lastmod": "2026-09-16",
       "bodyWords": 1616
     },
@@ -3641,8 +3656,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-12",
-      "bodyWords": 694
+      "lastmod": "2026-10-13",
+      "bodyWords": 697
     },
     {
       "route": "/pages/blog/page-11/",
@@ -3653,8 +3668,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-12",
-      "bodyWords": 757
+      "lastmod": "2026-10-13",
+      "bodyWords": 731
     },
     {
       "route": "/pages/blog/page-12/",
@@ -3665,8 +3680,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-12",
-      "bodyWords": 824
+      "lastmod": "2026-10-13",
+      "bodyWords": 837
     },
     {
       "route": "/pages/blog/page-13/",
@@ -3677,8 +3692,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-12",
-      "bodyWords": 847
+      "lastmod": "2026-10-13",
+      "bodyWords": 840
     },
     {
       "route": "/pages/blog/page-14/",
@@ -3689,8 +3704,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": "2026-10-12",
-      "bodyWords": 470
+      "lastmod": "2026-10-13",
+      "bodyWords": 557
     },
     {
       "route": "/pages/blog/page-2/",
@@ -3701,8 +3716,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-12",
-      "bodyWords": 655
+      "lastmod": "2026-10-13",
+      "bodyWords": 653
     },
     {
       "route": "/pages/blog/page-3/",
@@ -3713,8 +3728,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-12",
-      "bodyWords": 645
+      "lastmod": "2026-10-13",
+      "bodyWords": 655
     },
     {
       "route": "/pages/blog/page-4/",
@@ -3725,8 +3740,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-12",
-      "bodyWords": 659
+      "lastmod": "2026-10-13",
+      "bodyWords": 648
     },
     {
       "route": "/pages/blog/page-5/",
@@ -3737,8 +3752,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-12",
-      "bodyWords": 659
+      "lastmod": "2026-10-13",
+      "bodyWords": 670
     },
     {
       "route": "/pages/blog/page-6/",
@@ -3749,8 +3764,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-12",
-      "bodyWords": 678
+      "lastmod": "2026-10-13",
+      "bodyWords": 675
     },
     {
       "route": "/pages/blog/page-7/",
@@ -3761,8 +3776,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-12",
-      "bodyWords": 684
+      "lastmod": "2026-10-13",
+      "bodyWords": 681
     },
     {
       "route": "/pages/blog/page-8/",
@@ -3773,8 +3788,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-12",
-      "bodyWords": 649
+      "lastmod": "2026-10-13",
+      "bodyWords": 659
     },
     {
       "route": "/pages/blog/page-9/",
@@ -3785,8 +3800,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-12",
-      "bodyWords": 665
+      "lastmod": "2026-10-13",
+      "bodyWords": 656
     },
     {
       "route": "/pages/blog/phosphate-is-the-fertilizer-shock-that-did-not-fade/",
@@ -3967,6 +3982,18 @@
       "incomingLinks": 2,
       "lastmod": "2026-10-09",
       "bodyWords": 1308
+    },
+    {
+      "route": "/pages/blog/ship-to-ship-oil-transfers-are-the-new-hormuz-target/",
+      "file": "pages/blog/ship-to-ship-oil-transfers-are-the-new-hormuz-target/index.html",
+      "title": "Ship-To-Ship Oil Transfers Are The New Hormuz Target — The Export | Notavello",
+      "description": "Hormuz risk has moved from the main lane to the workaround, and that keeps fuel, freight and heating oil exposed.",
+      "canonical": "https://notavello.com/pages/blog/ship-to-ship-oil-transfers-are-the-new-hormuz-target/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-10-14",
+      "bodyWords": 1548
     },
     {
       "route": "/pages/blog/six-dollar-diesel-is-the-grocery-bill/",
@@ -4425,6 +4452,18 @@
       "bodyWords": 820
     },
     {
+      "route": "/pages/blog/why-a-cloud-snapshot-is-not-always-a-complete-backup-plan/",
+      "file": "pages/blog/why-a-cloud-snapshot-is-not-always-a-complete-backup-plan/index.html",
+      "title": "Why a Cloud Snapshot Is Not Always a Complete Backup Plan — The Export | Notavello",
+      "description": "Cloud snapshots provide point-in-time copies but fall short as a full backup strategy due to consistency gaps, retention limits, isolation risks, and untested",
+      "canonical": "https://notavello.com/pages/blog/why-a-cloud-snapshot-is-not-always-a-complete-backup-plan/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-10-13",
+      "bodyWords": 999
+    },
+    {
       "route": "/pages/blog/why-a-web-page-can-stay-stale-after-you-refresh-it/",
       "file": "pages/blog/why-a-web-page-can-stay-stale-after-you-refresh-it/index.html",
       "title": "Why a web page can stay stale after you refresh it — The Export | Notavello",
@@ -4720,7 +4759,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 317,
+      "incomingLinks": 319,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -4732,7 +4771,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 317,
+      "incomingLinks": 319,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -4744,7 +4783,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 317,
+      "incomingLinks": 319,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -4756,7 +4795,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 317,
+      "incomingLinks": 319,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -4768,7 +4807,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 317,
+      "incomingLinks": 319,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -4781,8 +4820,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-10-13",
-      "bodyWords": 515
+      "lastmod": "2026-10-14",
+      "bodyWords": 521
     },
     {
       "route": "/pages/sample",
@@ -4804,7 +4843,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 317,
+      "incomingLinks": 319,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -4816,7 +4855,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 317,
+      "incomingLinks": 319,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -4840,7 +4879,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 317,
+      "incomingLinks": 319,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -5272,7 +5311,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 317,
+      "incomingLinks": 319,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }
