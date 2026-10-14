@@ -1,36 +1,36 @@
 {
   "schema_version": "1.0",
-  "date_key": "10-13",
-  "display_date": "October 13",
-  "generated_at": "2026-10-13T16:00:45.272Z",
+  "date_key": "10-14",
+  "display_date": "October 14",
+  "generated_at": "2026-10-14T13:44:18.050Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-88df8511c59813425394a864",
+      "candidate_id": "event-b4ebc3435f39d6d774c8da51",
       "type": "event",
-      "year": 1972,
-      "text": "Uruguayan Air Force Flight 571 crashes in the Andes mountains. Twenty-eight survive the crash. All but 16 succumb before rescue on December 23.",
-      "article_title": "Uruguayan Air Force Flight 571",
-      "url": "https://en.wikipedia.org/wiki/Uruguayan_Air_Force_Flight_571",
-      "category": "Disasters and exploration"
-    },
-    {
-      "candidate_id": "event-ccb92d5e2d00c9f7d191fecf",
-      "type": "event",
-      "year": 1977,
-      "text": "Hijacking of Lufthansa Flight 181 by the Popular Front for the Liberation of Palestine.",
-      "article_title": "Lufthansa Flight 181",
-      "url": "https://en.wikipedia.org/wiki/Lufthansa_Flight_181",
+      "year": 1968,
+      "text": "Apollo program: The first live television broadcast by American astronauts in orbit is performed by the Apollo 7 crew.",
+      "article_title": "Apollo program",
+      "url": "https://en.wikipedia.org/wiki/Apollo_program",
       "category": "World history"
     },
     {
-      "candidate_id": "event-0ef3b63470833cd573ed240e",
+      "candidate_id": "event-53d967bbe684b642d1e7d720",
       "type": "event",
-      "year": 1962,
-      "text": "The Pacific Northwest experiences a cyclone the equal of a Category 3 hurricane, with winds above 150 mph. Forty-six people die.",
-      "article_title": "Columbus Day storm of 1962",
-      "url": "https://en.wikipedia.org/wiki/Columbus_Day_storm_of_1962",
+      "year": 1940,
+      "text": "World War II: The Balham underground station disaster kills sixty-six people during the London Blitz.",
+      "article_title": "Balham station",
+      "url": "https://en.wikipedia.org/wiki/Balham_station",
+      "category": "Disasters and exploration"
+    },
+    {
+      "candidate_id": "event-0ea1f7fac64e3f17b2b0e1f0",
+      "type": "event",
+      "year": 1968,
+      "text": "The 6.5 Mw Meckering earthquake shakes the southwest portion of Western Australia with a maximum Mercalli intensity of IX (Violent), causing $2.2 million in damage and leaving 20–28 people injured.",
+      "article_title": "1968 Meckering earthquake",
+      "url": "https://en.wikipedia.org/wiki/1968_Meckering_earthquake",
       "category": "Disasters and exploration"
     }
   ]
