@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-13T22:50:46.057Z",
-  "latest_success_at": "2026-10-13T22:50:46.057Z",
+  "generated_at": "2026-10-14T01:57:06.497Z",
+  "latest_success_at": "2026-10-14T01:57:06.497Z",
   "status": "ok",
   "items": [
+    {
+      "id": "0610d6383432d932",
+      "title": "Summary for Hurricane Simon (EP5/EP202026)",
+      "url": "https://www.nhc.noaa.gov/text/refresh/MIATCUEP5+shtml/140152.shtml",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-10-14T01:52:46.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "ee8e390990a944fc",
+      "title": "Eastern North Pacific Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-10-13T23:16:43.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
     {
       "id": "2c8a54d97779808a",
       "title": "Tropical Storm Trudy Graphics",
       "url": "https://www.nhc.noaa.gov/refresh/graphics_ep1+shtml/212835.shtml?cone=",
       "publisher": "National Hurricane Center",
       "published_at": "2026-10-13T21:28:35.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "e4e23983d9e1a857",
-      "title": "Hurricane Simon Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep5+shtml/212247.shtml?cone=",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-10-13T21:22:47.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "b5ad93019d019ede",
-      "title": "Atlantic Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-10-13T17:17:38.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
