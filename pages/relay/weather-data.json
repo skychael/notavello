@@ -1,24 +1,15 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-14T22:20:00.952Z",
-  "latest_success_at": "2026-10-14T22:20:00.952Z",
+  "generated_at": "2026-10-15T01:31:31.139Z",
+  "latest_success_at": "2026-10-15T01:31:31.139Z",
   "status": "ok",
   "items": [
     {
-      "id": "722cd8d823f55fbc",
-      "title": "Tropical Storm Trudy Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep1+shtml/212834.shtml?cone=",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-10-14T21:28:34.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "7f0aeca455ebc1b2",
-      "title": "Hurricane Simon Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep5+shtml/212249.shtml?cone=",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-10-14T21:22:49.000Z",
+      "id": "c5efad9093b03a16",
+      "title": "Special Weather Statement issued October 15 at 9:39AM ChST by NWS Tiyan GU",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.aff0a79e3e480b13124f868b92a07bd472503c7c.001.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-10-14T23:39:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
@@ -27,7 +18,16 @@
       "title": "Eastern North Pacific Tropical Weather Outlook",
       "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-10-14T17:40:53.000Z",
+      "published_at": "2026-10-14T23:29:31.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "722cd8d823f55fbc",
+      "title": "Tropical Storm Trudy Graphics",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep1+shtml/212834.shtml?cone=",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-10-14T21:28:34.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
