@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-14T06:35:15.480Z",
+  "generatedAt": "2026-10-15T06:17:55.397Z",
   "totals": {
-    "pages": 319,
-    "indexable": 315,
-    "articles": 245,
-    "sitemap": 315,
+    "pages": 321,
+    "indexable": 317,
+    "articles": 247,
+    "sitemap": 317,
     "errors": 0,
-    "warnings": 295
+    "warnings": 298
   },
   "errors": [],
   "warnings": [
@@ -298,6 +298,16 @@
     {
       "type": "topic-review",
       "page": "/pages/blog/diesel-is-the-hormuz-tax-you-feel-first/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/diesel-is-where-the-oil-shock-stops-being-abstract/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/diesel-is-where-the-oil-shock-stops-being-abstract/",
       "detail": "title/description lacks a clear AI, software, or computing connection"
     },
     {
@@ -683,6 +693,11 @@
     {
       "type": "template-pattern",
       "page": "/pages/blog/how-to-make-account-recovery-safer-before-you-need-it/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/how-to-make-sense-of-usb-ports-cables-and-labels/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
     {
@@ -1495,7 +1510,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 319,
+      "incomingLinks": 321,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -1519,7 +1534,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 319,
+      "incomingLinks": 321,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -1627,7 +1642,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 319,
+      "incomingLinks": 321,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -1639,9 +1654,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 319,
-      "lastmod": "2026-10-13",
-      "bodyWords": 658
+      "incomingLinks": 321,
+      "lastmod": "2026-10-14",
+      "bodyWords": 676
     },
     {
       "route": "/pages/blog/a-checklist-for-reliable-scheduled-jobs/",
@@ -1963,9 +1978,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 184,
-      "lastmod": "2026-10-13",
-      "bodyWords": 2992
+      "incomingLinks": 186,
+      "lastmod": "2026-10-14",
+      "bodyWords": 3017
     },
     {
       "route": "/pages/blog/anhydrous-ammonia-is-the-fall-farm-bill/",
@@ -2350,6 +2365,18 @@
       "incomingLinks": 8,
       "lastmod": "2026-08-01",
       "bodyWords": 1456
+    },
+    {
+      "route": "/pages/blog/diesel-is-where-the-oil-shock-stops-being-abstract/",
+      "file": "pages/blog/diesel-is-where-the-oil-shock-stops-being-abstract/index.html",
+      "title": "Diesel Is Where The Oil Shock Stops Being Abstract — The Export | Notavello",
+      "description": "IEA says diesel is carrying the oil shock as demand falls, exports shrink and U.S. retail diesel stays above $6.",
+      "canonical": "https://notavello.com/pages/blog/diesel-is-where-the-oil-shock-stops-being-abstract/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-10-15",
+      "bodyWords": 1275
     },
     {
       "route": "/pages/blog/diesels-autumn-maintenance-bill-is-here/",
@@ -3072,6 +3099,18 @@
       "bodyWords": 1095
     },
     {
+      "route": "/pages/blog/how-to-make-sense-of-usb-ports-cables-and-labels/",
+      "file": "pages/blog/how-to-make-sense-of-usb-ports-cables-and-labels/index.html",
+      "title": "How to Make Sense of USB Ports, Cables, and Labels — The Export | Notavello",
+      "description": "Learn the difference between USB connector shapes and supported protocols, plus how to read official power and data markings to verify capabilities",
+      "canonical": "https://notavello.com/pages/blog/how-to-make-sense-of-usb-ports-cables-and-labels/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-10-14",
+      "bodyWords": 806
+    },
+    {
       "route": "/pages/blog/how-to-make-webhook-processing-reliable/",
       "file": "pages/blog/how-to-make-webhook-processing-reliable/index.html",
       "title": "How to make webhook processing reliable — The Export | Notavello",
@@ -3656,8 +3695,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-13",
-      "bodyWords": 697
+      "lastmod": "2026-10-14",
+      "bodyWords": 700
     },
     {
       "route": "/pages/blog/page-11/",
@@ -3668,8 +3707,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-13",
-      "bodyWords": 731
+      "lastmod": "2026-10-14",
+      "bodyWords": 709
     },
     {
       "route": "/pages/blog/page-12/",
@@ -3680,8 +3719,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-13",
-      "bodyWords": 837
+      "lastmod": "2026-10-14",
+      "bodyWords": 842
     },
     {
       "route": "/pages/blog/page-13/",
@@ -3692,8 +3731,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-13",
-      "bodyWords": 840
+      "lastmod": "2026-10-14",
+      "bodyWords": 837
     },
     {
       "route": "/pages/blog/page-14/",
@@ -3704,8 +3743,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": "2026-10-13",
-      "bodyWords": 557
+      "lastmod": "2026-10-14",
+      "bodyWords": 646
     },
     {
       "route": "/pages/blog/page-2/",
@@ -3716,8 +3755,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-13",
-      "bodyWords": 653
+      "lastmod": "2026-10-14",
+      "bodyWords": 632
     },
     {
       "route": "/pages/blog/page-3/",
@@ -3728,8 +3767,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-13",
-      "bodyWords": 655
+      "lastmod": "2026-10-14",
+      "bodyWords": 672
     },
     {
       "route": "/pages/blog/page-4/",
@@ -3740,7 +3779,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-13",
+      "lastmod": "2026-10-14",
       "bodyWords": 648
     },
     {
@@ -3752,8 +3791,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-13",
-      "bodyWords": 670
+      "lastmod": "2026-10-14",
+      "bodyWords": 661
     },
     {
       "route": "/pages/blog/page-6/",
@@ -3764,8 +3803,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-13",
-      "bodyWords": 675
+      "lastmod": "2026-10-14",
+      "bodyWords": 674
     },
     {
       "route": "/pages/blog/page-7/",
@@ -3776,7 +3815,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-13",
+      "lastmod": "2026-10-14",
       "bodyWords": 681
     },
     {
@@ -3788,8 +3827,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-13",
-      "bodyWords": 659
+      "lastmod": "2026-10-14",
+      "bodyWords": 664
     },
     {
       "route": "/pages/blog/page-9/",
@@ -3800,8 +3839,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-13",
-      "bodyWords": 656
+      "lastmod": "2026-10-14",
+      "bodyWords": 651
     },
     {
       "route": "/pages/blog/phosphate-is-the-fertilizer-shock-that-did-not-fade/",
@@ -4003,7 +4042,7 @@
       "canonical": "https://notavello.com/pages/blog/six-dollar-diesel-is-the-grocery-bill/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 2,
+      "incomingLinks": 3,
       "lastmod": "2026-09-13",
       "bodyWords": 1454
     },
@@ -4759,7 +4798,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 319,
+      "incomingLinks": 321,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -4771,7 +4810,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 319,
+      "incomingLinks": 321,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -4783,7 +4822,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 319,
+      "incomingLinks": 321,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -4795,7 +4834,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 319,
+      "incomingLinks": 321,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -4807,7 +4846,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 319,
+      "incomingLinks": 321,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -4820,8 +4859,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-10-14",
-      "bodyWords": 521
+      "lastmod": "2026-10-15",
+      "bodyWords": 527
     },
     {
       "route": "/pages/sample",
@@ -4843,7 +4882,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 319,
+      "incomingLinks": 321,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -4855,7 +4894,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 319,
+      "incomingLinks": 321,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -4879,7 +4918,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 319,
+      "incomingLinks": 321,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -5311,7 +5350,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 319,
+      "incomingLinks": 321,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }
