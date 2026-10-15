@@ -1,15 +1,24 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-15T01:31:31.139Z",
-  "latest_success_at": "2026-10-15T01:31:31.139Z",
+  "generated_at": "2026-10-15T07:30:53.748Z",
+  "latest_success_at": "2026-10-15T07:30:53.748Z",
   "status": "ok",
   "items": [
     {
-      "id": "c5efad9093b03a16",
-      "title": "Special Weather Statement issued October 15 at 9:39AM ChST by NWS Tiyan GU",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.aff0a79e3e480b13124f868b92a07bd472503c7c.001.1.cap",
+      "id": "5ba1832572d3e771",
+      "title": "Typhoon Watch issued October 15 at 3:49PM ChST by NWS Tiyan GU",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.265ea36c16109a39c2baf5c9102779a56c826b28.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-10-14T23:39:00.000Z",
+      "published_at": "2026-10-15T05:49:00.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "f2bc3e5729017844",
+      "title": "SPC Oct 15, 2026 0600 UTC Day 2 Convective Outlook",
+      "url": "https://www.spc.noaa.gov/products/outlook/day2otlk_0600.html",
+      "publisher": "Storm Prediction Center",
+      "published_at": "2026-10-15T05:36:14.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
@@ -18,16 +27,7 @@
       "title": "Eastern North Pacific Tropical Weather Outlook",
       "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-10-14T23:29:31.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "722cd8d823f55fbc",
-      "title": "Tropical Storm Trudy Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep1+shtml/212834.shtml?cone=",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-10-14T21:28:34.000Z",
+      "published_at": "2026-10-15T05:18:02.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
