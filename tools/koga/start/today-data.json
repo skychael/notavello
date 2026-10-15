@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "10-14",
-  "display_date": "October 14",
-  "generated_at": "2026-10-14T13:44:18.050Z",
+  "date_key": "10-15",
+  "display_date": "October 15",
+  "generated_at": "2026-10-15T13:27:13.057Z",
   "source": "Wikimedia On This Day",
-  "selection_method": "deterministic_fallback",
+  "selection_method": "ai",
   "items": [
     {
-      "candidate_id": "event-b4ebc3435f39d6d774c8da51",
+      "candidate_id": "event-23482614cbad518468204b44",
       "type": "event",
-      "year": 1968,
-      "text": "Apollo program: The first live television broadcast by American astronauts in orbit is performed by the Apollo 7 crew.",
-      "article_title": "Apollo program",
-      "url": "https://en.wikipedia.org/wiki/Apollo_program",
+      "year": 2003,
+      "text": "China launches Shenzhou 5, its first crewed space mission.",
+      "article_title": "Shenzhou 5",
+      "url": "https://en.wikipedia.org/wiki/Shenzhou_5",
+      "category": "Science and technology"
+    },
+    {
+      "candidate_id": "event-5ee6ef599b0962810eae1957",
+      "type": "event",
+      "year": 1966,
+      "text": "The Black Panther Party is created by Huey P. Newton and Bobby Seale.",
+      "article_title": "Black Panther Party",
+      "url": "https://en.wikipedia.org/wiki/Black_Panther_Party",
+      "category": "Politics and society"
+    },
+    {
+      "candidate_id": "event-3ce6b93b141af8870c60d7cc",
+      "type": "event",
+      "year": 2008,
+      "text": "The Dow Jones Industrial Average closes down 733.08 points, or 7.87%, the second worst percentage drop in the Dow's history.",
+      "article_title": "Dow Jones Industrial Average",
+      "url": "https://en.wikipedia.org/wiki/Dow_Jones_Industrial_Average",
       "category": "World history"
-    },
-    {
-      "candidate_id": "event-53d967bbe684b642d1e7d720",
-      "type": "event",
-      "year": 1940,
-      "text": "World War II: The Balham underground station disaster kills sixty-six people during the London Blitz.",
-      "article_title": "Balham station",
-      "url": "https://en.wikipedia.org/wiki/Balham_station",
-      "category": "Disasters and exploration"
-    },
-    {
-      "candidate_id": "event-0ea1f7fac64e3f17b2b0e1f0",
-      "type": "event",
-      "year": 1968,
-      "text": "The 6.5 Mw Meckering earthquake shakes the southwest portion of Western Australia with a maximum Mercalli intensity of IX (Violent), causing $2.2 million in damage and leaving 20–28 people injured.",
-      "article_title": "1968 Meckering earthquake",
-      "url": "https://en.wikipedia.org/wiki/1968_Meckering_earthquake",
-      "category": "Disasters and exploration"
     }
   ]
 }
