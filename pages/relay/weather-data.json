@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-16T17:29:09.022Z",
-  "latest_success_at": "2026-10-16T17:29:09.022Z",
+  "generated_at": "2026-10-16T21:16:58.092Z",
+  "latest_success_at": "2026-10-16T21:16:58.092Z",
   "status": "ok",
   "items": [
     {
-      "id": "ee8e390990a944fc",
-      "title": "Eastern North Pacific Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
+      "id": "c1fdbdffd34b255c",
+      "title": "Hurricane Trudy Graphics",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep1+shtml/204904.shtml?cone=",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-10-16T17:21:25.000Z",
+      "published_at": "2026-10-16T20:49:04.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "c2574de756c1710b",
-      "title": "Typhoon Warning issued October 17 at 3:03AM ChST by NWS Tiyan GU",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.0ee6a7519bf9283a0c3ce63c2b1c084561cadc09.001.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-10-16T17:03:00.000Z",
+      "id": "4a1b693e38b10751",
+      "title": "Remnants of Simon Wind Speed Probabilities Number 38",
+      "url": "https://www.nhc.noaa.gov/text/refresh/MIAPWSEP5+shtml/162035.shtml",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-10-16T20:35:31.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "a58b0eaf57c747e5",
-      "title": "Typhoon Watch issued October 17 at 3:03AM ChST by NWS Tiyan GU",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.0ee6a7519bf9283a0c3ce63c2b1c084561cadc09.003.2.cap",
+      "id": "571747374faa8d03",
+      "title": "Flood Watch issued October 17 at 5:01AM ChST until October 18 at 4:00PM ChST by NWS Tiyan GU",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.fd4402cac5e6279d4fe881da4c732b2b0a8dc3b5.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-10-16T17:03:00.000Z",
+      "published_at": "2026-10-16T19:01:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
