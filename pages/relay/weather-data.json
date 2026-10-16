@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-15T22:24:20.875Z",
-  "latest_success_at": "2026-10-15T22:24:20.875Z",
+  "generated_at": "2026-10-16T01:26:01.813Z",
+  "latest_success_at": "2026-10-16T01:26:01.813Z",
   "status": "ok",
   "items": [
     {
-      "id": "d82eb7a03e48c314",
+      "id": "2568eac36abd6b20",
       "title": "Hurricane Trudy Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep1+shtml/212833.shtml?cone=",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep1+shtml/234800.shtml?cone=",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-10-15T21:28:33.000Z",
+      "published_at": "2026-10-15T23:48:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "e4e23983d9e1a857",
-      "title": "Tropical Storm Simon Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep5+shtml/212247.shtml?cone=",
+      "id": "b5ad93019d019ede",
+      "title": "Atlantic Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-10-15T21:22:47.000Z",
+      "published_at": "2026-10-15T23:19:48.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "05c1317ba28786f2",
-      "title": "Typhoon and Flood watches cover Mariana Islands as Tropical Storm Champi approaches",
-      "url": "https://watchers.news/2026/10/15/typhoon-and-flood-watches-cover-mariana-islands-as-tropical-storm-champi-approaches",
-      "publisher": "The Watchers",
-      "published_at": "2026-10-15T20:01:53.000Z",
+      "id": "01c6fc00c054c008",
+      "title": "Typhoon Watch issued October 16 at 8:50AM ChST by NWS Tiyan GU",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b5cb625f12b9fc5bb56b6921e3b6c379d542f776.001.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-10-15T22:50:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
