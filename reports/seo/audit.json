@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-15T06:17:55.397Z",
+  "generatedAt": "2026-10-16T06:13:43.190Z",
   "totals": {
-    "pages": 321,
-    "indexable": 317,
-    "articles": 247,
-    "sitemap": 317,
+    "pages": 323,
+    "indexable": 319,
+    "articles": 249,
+    "sitemap": 319,
     "errors": 0,
-    "warnings": 298
+    "warnings": 301
   },
   "errors": [],
   "warnings": [
@@ -69,6 +69,16 @@
       "type": "template-pattern",
       "page": "/pages/blog/a-simple-backup-plan-for-a-small-home-server/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/a-sunk-container-ship-is-the-import-bill/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/a-sunk-container-ship-is-the-import-bill/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
     },
     {
       "type": "template-pattern",
@@ -1047,6 +1057,11 @@
     },
     {
       "type": "template-pattern",
+      "page": "/pages/blog/ram-and-storage-solve-different-computer-problems/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "template-pattern",
       "page": "/pages/blog/ram-vram-and-local-ai-what-each-resource-does/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
@@ -1510,7 +1525,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 321,
+      "incomingLinks": 323,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -1534,7 +1549,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 321,
+      "incomingLinks": 323,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -1642,7 +1657,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 321,
+      "incomingLinks": 323,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -1654,9 +1669,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 321,
-      "lastmod": "2026-10-14",
-      "bodyWords": 676
+      "incomingLinks": 323,
+      "lastmod": "2026-10-15",
+      "bodyWords": 685
     },
     {
       "route": "/pages/blog/a-checklist-for-reliable-scheduled-jobs/",
@@ -1753,6 +1768,18 @@
       "incomingLinks": 2,
       "lastmod": "2026-09-28",
       "bodyWords": 789
+    },
+    {
+      "route": "/pages/blog/a-sunk-container-ship-is-the-import-bill/",
+      "file": "pages/blog/a-sunk-container-ship-is-the-import-bill/index.html",
+      "title": "A Sunk Container Ship Is The Import Bill — The Export | Notavello",
+      "description": "Two Singapore container ships were hit in Hormuz. The fuel chokepoint is now an import and insurance problem too.",
+      "canonical": "https://notavello.com/pages/blog/a-sunk-container-ship-is-the-import-bill/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-10-16",
+      "bodyWords": 1505
     },
     {
       "route": "/pages/blog/ai-advice-needs-an-i-dont-know-step/",
@@ -1978,9 +2005,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 186,
-      "lastmod": "2026-10-14",
-      "bodyWords": 3017
+      "incomingLinks": 188,
+      "lastmod": "2026-10-15",
+      "bodyWords": 3038
     },
     {
       "route": "/pages/blog/anhydrous-ammonia-is-the-fall-farm-bill/",
@@ -2374,7 +2401,7 @@
       "canonical": "https://notavello.com/pages/blog/diesel-is-where-the-oil-shock-stops-being-abstract/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 2,
+      "incomingLinks": 3,
       "lastmod": "2026-10-15",
       "bodyWords": 1275
     },
@@ -3695,7 +3722,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-14",
+      "lastmod": "2026-10-15",
       "bodyWords": 700
     },
     {
@@ -3707,7 +3734,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-14",
+      "lastmod": "2026-10-15",
       "bodyWords": 709
     },
     {
@@ -3719,8 +3746,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-14",
-      "bodyWords": 842
+      "lastmod": "2026-10-15",
+      "bodyWords": 817
     },
     {
       "route": "/pages/blog/page-13/",
@@ -3731,8 +3758,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-14",
-      "bodyWords": 837
+      "lastmod": "2026-10-15",
+      "bodyWords": 835
     },
     {
       "route": "/pages/blog/page-14/",
@@ -3743,8 +3770,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": "2026-10-14",
-      "bodyWords": 646
+      "lastmod": "2026-10-15",
+      "bodyWords": 745
     },
     {
       "route": "/pages/blog/page-2/",
@@ -3755,8 +3782,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-14",
-      "bodyWords": 632
+      "lastmod": "2026-10-15",
+      "bodyWords": 638
     },
     {
       "route": "/pages/blog/page-3/",
@@ -3767,8 +3794,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-14",
-      "bodyWords": 672
+      "lastmod": "2026-10-15",
+      "bodyWords": 667
     },
     {
       "route": "/pages/blog/page-4/",
@@ -3779,8 +3806,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-14",
-      "bodyWords": 648
+      "lastmod": "2026-10-15",
+      "bodyWords": 639
     },
     {
       "route": "/pages/blog/page-5/",
@@ -3791,8 +3818,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-14",
-      "bodyWords": 661
+      "lastmod": "2026-10-15",
+      "bodyWords": 667
     },
     {
       "route": "/pages/blog/page-6/",
@@ -3803,8 +3830,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-14",
-      "bodyWords": 674
+      "lastmod": "2026-10-15",
+      "bodyWords": 668
     },
     {
       "route": "/pages/blog/page-7/",
@@ -3815,8 +3842,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-14",
-      "bodyWords": 681
+      "lastmod": "2026-10-15",
+      "bodyWords": 686
     },
     {
       "route": "/pages/blog/page-8/",
@@ -3827,8 +3854,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-14",
-      "bodyWords": 664
+      "lastmod": "2026-10-15",
+      "bodyWords": 667
     },
     {
       "route": "/pages/blog/page-9/",
@@ -3839,8 +3866,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-14",
-      "bodyWords": 651
+      "lastmod": "2026-10-15",
+      "bodyWords": 645
     },
     {
       "route": "/pages/blog/phosphate-is-the-fertilizer-shock-that-did-not-fade/",
@@ -3865,6 +3892,18 @@
       "incomingLinks": 3,
       "lastmod": "2026-08-29",
       "bodyWords": 1513
+    },
+    {
+      "route": "/pages/blog/ram-and-storage-solve-different-computer-problems/",
+      "file": "pages/blog/ram-and-storage-solve-different-computer-problems/index.html",
+      "title": "RAM and storage solve different computer problems — The Export | Notavello",
+      "description": "RAM handles fast working memory while storage keeps data safe when power is off. Learn how swapping works and how to diagnose memory versus storage issues.",
+      "canonical": "https://notavello.com/pages/blog/ram-and-storage-solve-different-computer-problems/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-10-15",
+      "bodyWords": 781
     },
     {
       "route": "/pages/blog/ram-vram-and-local-ai-what-each-resource-does/",
@@ -4798,7 +4837,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 321,
+      "incomingLinks": 323,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -4810,7 +4849,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 321,
+      "incomingLinks": 323,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -4822,7 +4861,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 321,
+      "incomingLinks": 323,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -4834,7 +4873,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 321,
+      "incomingLinks": 323,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -4846,7 +4885,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 321,
+      "incomingLinks": 323,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -4859,8 +4898,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-10-15",
-      "bodyWords": 527
+      "lastmod": "2026-10-16",
+      "bodyWords": 533
     },
     {
       "route": "/pages/sample",
@@ -4882,7 +4921,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 321,
+      "incomingLinks": 323,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -4894,7 +4933,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 321,
+      "incomingLinks": 323,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -4918,7 +4957,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 321,
+      "incomingLinks": 323,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -5350,7 +5389,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 321,
+      "incomingLinks": 323,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }
