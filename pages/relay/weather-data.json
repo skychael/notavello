@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-17T13:46:37.728Z",
-  "latest_success_at": "2026-10-17T13:46:37.728Z",
+  "generated_at": "2026-10-17T17:16:01.821Z",
+  "latest_success_at": "2026-10-17T17:16:01.821Z",
   "status": "ok",
   "items": [
     {
-      "id": "1fe1e8c42e435b12",
-      "title": "Hurricane Trudy Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep1+shtml/121014.shtml?cone=",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-10-17T12:10:14.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "ee8e390990a944fc",
-      "title": "Eastern North Pacific Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-10-17T11:38:08.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "df1eae5fd640d171",
-      "title": "Typhoon Warning issued October 17 at 9:19PM ChST by NWS Tiyan GU",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9a5870c872448e6423b4191a0b6d1863ee7a2d3a.001.1.cap",
+      "id": "1a40fcb3fd9709b4",
+      "title": "Typhoon Warning issued October 18 at 3:01AM ChST by NWS Tiyan GU",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.8f96da8543860aa3cc71d31b3156d80289ac78dd.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-10-17T11:19:00.000Z",
+      "published_at": "2026-10-17T17:01:00.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "564c24757303acb6",
+      "title": "Typhoon Watch issued October 18 at 3:01AM ChST by NWS Tiyan GU",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.8f96da8543860aa3cc71d31b3156d80289ac78dd.003.2.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-10-17T17:01:00.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "430646061bd84fc3",
+      "title": "Hurricane Trudy Graphics",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep1+shtml/152318.shtml?cone=",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-10-17T15:23:18.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
