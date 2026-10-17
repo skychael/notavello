@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-16T06:13:43.190Z",
+  "generatedAt": "2026-10-17T05:59:00.357Z",
   "totals": {
-    "pages": 323,
-    "indexable": 319,
-    "articles": 249,
-    "sitemap": 319,
+    "pages": 325,
+    "indexable": 321,
+    "articles": 251,
+    "sitemap": 321,
     "errors": 0,
-    "warnings": 301
+    "warnings": 304
   },
   "errors": [],
   "warnings": [
@@ -1291,6 +1291,16 @@
       "detail": "title/description lacks a clear AI, software, or computing connection"
     },
     {
+      "type": "template-pattern",
+      "page": "/pages/blog/the-spr-is-paying-two-bills-at-once/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/the-spr-is-paying-two-bills-at-once/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
       "type": "topic-review",
       "page": "/pages/blog/ubuntu-4-digit-pin-login/",
       "detail": "title/description lacks a clear AI, software, or computing connection"
@@ -1358,6 +1368,11 @@
     {
       "type": "template-pattern",
       "page": "/pages/blog/what-safe-mode-tells-you-about-a-computer-problem/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/what-ssd-health-indicators-can-and-cannot-tell-you/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
     {
@@ -1525,7 +1540,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 323,
+      "incomingLinks": 325,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -1549,7 +1564,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 323,
+      "incomingLinks": 325,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -1657,7 +1672,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 323,
+      "incomingLinks": 325,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -1669,9 +1684,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 323,
-      "lastmod": "2026-10-15",
-      "bodyWords": 685
+      "incomingLinks": 325,
+      "lastmod": "2026-10-16",
+      "bodyWords": 689
     },
     {
       "route": "/pages/blog/a-checklist-for-reliable-scheduled-jobs/",
@@ -2005,9 +2020,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 188,
-      "lastmod": "2026-10-15",
-      "bodyWords": 3038
+      "incomingLinks": 190,
+      "lastmod": "2026-10-16",
+      "bodyWords": 3061
     },
     {
       "route": "/pages/blog/anhydrous-ammonia-is-the-fall-farm-bill/",
@@ -3722,8 +3737,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-15",
-      "bodyWords": 700
+      "lastmod": "2026-10-16",
+      "bodyWords": 686
     },
     {
       "route": "/pages/blog/page-11/",
@@ -3734,8 +3749,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-15",
-      "bodyWords": 709
+      "lastmod": "2026-10-16",
+      "bodyWords": 699
     },
     {
       "route": "/pages/blog/page-12/",
@@ -3746,8 +3761,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-15",
-      "bodyWords": 817
+      "lastmod": "2026-10-16",
+      "bodyWords": 812
     },
     {
       "route": "/pages/blog/page-13/",
@@ -3758,8 +3773,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-15",
-      "bodyWords": 835
+      "lastmod": "2026-10-16",
+      "bodyWords": 841
     },
     {
       "route": "/pages/blog/page-14/",
@@ -3770,8 +3785,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": "2026-10-15",
-      "bodyWords": 745
+      "lastmod": "2026-10-16",
+      "bodyWords": 837
     },
     {
       "route": "/pages/blog/page-2/",
@@ -3782,8 +3797,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-15",
-      "bodyWords": 638
+      "lastmod": "2026-10-16",
+      "bodyWords": 625
     },
     {
       "route": "/pages/blog/page-3/",
@@ -3794,8 +3809,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-15",
-      "bodyWords": 667
+      "lastmod": "2026-10-16",
+      "bodyWords": 674
     },
     {
       "route": "/pages/blog/page-4/",
@@ -3806,8 +3821,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-15",
-      "bodyWords": 639
+      "lastmod": "2026-10-16",
+      "bodyWords": 635
     },
     {
       "route": "/pages/blog/page-5/",
@@ -3818,8 +3833,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-15",
-      "bodyWords": 667
+      "lastmod": "2026-10-16",
+      "bodyWords": 672
     },
     {
       "route": "/pages/blog/page-6/",
@@ -3830,8 +3845,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-15",
-      "bodyWords": 668
+      "lastmod": "2026-10-16",
+      "bodyWords": 660
     },
     {
       "route": "/pages/blog/page-7/",
@@ -3842,8 +3857,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-15",
-      "bodyWords": 686
+      "lastmod": "2026-10-16",
+      "bodyWords": 685
     },
     {
       "route": "/pages/blog/page-8/",
@@ -3854,8 +3869,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-15",
-      "bodyWords": 667
+      "lastmod": "2026-10-16",
+      "bodyWords": 677
     },
     {
       "route": "/pages/blog/page-9/",
@@ -3866,8 +3881,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-15",
-      "bodyWords": 645
+      "lastmod": "2026-10-16",
+      "bodyWords": 642
     },
     {
       "route": "/pages/blog/phosphate-is-the-fertilizer-shock-that-did-not-fade/",
@@ -4165,7 +4180,7 @@
       "canonical": "https://notavello.com/pages/blog/spr-drawdown-is-now-the-oil-cushion/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 5,
+      "incomingLinks": 6,
       "lastmod": "2026-08-11",
       "bodyWords": 1419
     },
@@ -4300,6 +4315,18 @@
       "incomingLinks": 3,
       "lastmod": "2026-09-09",
       "bodyWords": 1231
+    },
+    {
+      "route": "/pages/blog/the-spr-is-paying-two-bills-at-once/",
+      "file": "pages/blog/the-spr-is-paying-two-bills-at-once/index.html",
+      "title": "The SPR Is Paying Two Bills At Once — The Export | Notavello",
+      "description": "The latest crude draw and SPR exchanges show why fuel prices stay jumpy even before winter demand arrives.",
+      "canonical": "https://notavello.com/pages/blog/the-spr-is-paying-two-bills-at-once/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-10-17",
+      "bodyWords": 1424
     },
     {
       "route": "/pages/blog/tiny-text-files-that-taught-the-internet-manners/",
@@ -4480,6 +4507,18 @@
       "incomingLinks": 2,
       "lastmod": "2026-08-28",
       "bodyWords": 1005
+    },
+    {
+      "route": "/pages/blog/what-ssd-health-indicators-can-and-cannot-tell-you/",
+      "file": "pages/blog/what-ssd-health-indicators-can-and-cannot-tell-you/index.html",
+      "title": "What SSD health indicators can and cannot tell you — The Export | Notavello",
+      "description": "SMART data on SSDs provides useful warnings but cannot guarantee failure timing or prevent data loss.",
+      "canonical": "https://notavello.com/pages/blog/what-ssd-health-indicators-can-and-cannot-tell-you/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-10-16",
+      "bodyWords": 878
     },
     {
       "route": "/pages/blog/when-a-clean-reinstall-fixes-software-problems-and-when-it-does-not/",
@@ -4837,7 +4876,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 323,
+      "incomingLinks": 325,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -4849,7 +4888,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 323,
+      "incomingLinks": 325,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -4861,7 +4900,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 323,
+      "incomingLinks": 325,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -4873,7 +4912,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 323,
+      "incomingLinks": 325,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -4885,7 +4924,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 323,
+      "incomingLinks": 325,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -4898,8 +4937,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-10-16",
-      "bodyWords": 533
+      "lastmod": "2026-10-17",
+      "bodyWords": 539
     },
     {
       "route": "/pages/sample",
@@ -4921,7 +4960,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 323,
+      "incomingLinks": 325,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -4933,7 +4972,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 323,
+      "incomingLinks": 325,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -4957,7 +4996,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 323,
+      "incomingLinks": 325,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -5389,7 +5428,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 323,
+      "incomingLinks": 325,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }
