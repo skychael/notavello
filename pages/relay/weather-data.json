@@ -1,15 +1,24 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-17T04:35:42.695Z",
-  "latest_success_at": "2026-10-17T04:35:42.695Z",
+  "generated_at": "2026-10-17T09:27:08.691Z",
+  "latest_success_at": "2026-10-17T09:27:08.691Z",
   "status": "ok",
   "items": [
     {
-      "id": "7e9ccde7a741a891",
+      "id": "7cb9b2e968736564",
       "title": "Hurricane Trudy Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep1+shtml/032247.shtml?cone=",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep1+shtml/092244.shtml?cone=",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-10-17T03:22:47.000Z",
+      "published_at": "2026-10-17T09:22:44.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "c5ae7fd5d87be1f4",
+      "title": "Flood Watch issued October 17 at 4:10PM ChST until October 18 at 4:00PM ChST by NWS Tiyan GU",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.7d0ef09ad166d91fd2eddb5b4c770f3139482d76.001.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-10-17T06:10:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
@@ -18,16 +27,7 @@
       "title": "Eastern North Pacific Tropical Weather Outlook",
       "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-10-16T23:34:00.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "7d92a7de06c437a5",
-      "title": "Typhoon Warning issued October 17 at 9:13AM ChST by NWS Tiyan GU",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.72709b808056f6ef1d8e7631ce1c34eba52dcab0.001.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-10-16T23:13:00.000Z",
+      "published_at": "2026-10-17T05:11:32.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
