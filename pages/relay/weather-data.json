@@ -1,9 +1,18 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-17T19:30:44.270Z",
-  "latest_success_at": "2026-10-17T19:30:44.270Z",
+  "generated_at": "2026-10-17T22:24:11.584Z",
+  "latest_success_at": "2026-10-17T22:24:11.584Z",
   "status": "ok",
   "items": [
+    {
+      "id": "7e5b802568a139fc",
+      "title": "Hurricane Trudy Graphics",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep1+shtml/212246.shtml?cone=",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-10-17T21:22:46.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
     {
       "id": "104342fa86dbf405",
       "title": "Typhoon Warning issued October 18 at 4:40AM ChST by NWS Tiyan GU",
@@ -19,15 +28,6 @@
       "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.055e621cf1da043247c479ddca8241afb4380bd2.003.2.cap",
       "publisher": "National Weather Service",
       "published_at": "2026-10-17T18:40:00.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "eec967fa3a968219",
-      "title": "Flood Watch issued October 18 at 4:12AM ChST until October 18 at 6:00PM ChST by NWS Tiyan GU",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b187582ea6dcd1a7c1f8379456014ac638c541b4.002.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-10-17T18:12:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
