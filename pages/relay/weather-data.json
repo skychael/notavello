@@ -1,15 +1,24 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-18T05:58:58.022Z",
-  "latest_success_at": "2026-10-18T05:58:58.022Z",
+  "generated_at": "2026-10-18T11:16:11.810Z",
+  "latest_success_at": "2026-10-18T11:16:11.810Z",
   "status": "ok",
   "items": [
     {
-      "id": "555195d10e5d7a00",
+      "id": "c986086ee9172001",
       "title": "Hurricane Trudy Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep1+shtml/053326.shtml?cone=",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep1+shtml/092245.shtml?cone=",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-10-18T05:33:26.000Z",
+      "published_at": "2026-10-18T09:22:45.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "abbce1b2127f29b3",
+      "title": "High Surf Advisory issued October 18 at 7:07PM ChST until October 19 at 4:00PM ChST by NWS Tiyan GU",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.92a6350de71a6933188b2646d0f960fa714f799a.001.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-10-18T09:07:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
@@ -19,15 +28,6 @@
       "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
       "publisher": "National Hurricane Center",
       "published_at": "2026-10-18T05:07:20.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "e507d99f0a9d119b",
-      "title": "Typhoon Warning issued October 18 at 3:01PM ChST by NWS Tiyan GU",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.e45c43cdf22bc5e22e9e9e488eac770866bf398c.001.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-10-18T05:01:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
