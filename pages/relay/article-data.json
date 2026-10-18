@@ -1,17 +1,9 @@
 {
   "schema_version": "1.0",
-  "checked_at": "2026-10-18T20:50:33.861Z",
-  "latest_success_at": "2026-10-18T20:50:33.861Z",
+  "checked_at": "2026-10-18T23:18:27.685Z",
+  "latest_success_at": "2026-10-18T23:18:27.685Z",
   "status": "ok",
   "items": [
-    {
-      "title": "Oil Prices Are Stuck at $105 as Geopolitical Risks Mount",
-      "url": "https://oilprice.com/Energy/Oil-Prices/Oil-Prices-Are-Stuck-at-105-as-Geopolitical-Risks-Mount.html",
-      "publisher": "OilPrice.com",
-      "published_at": "2026-10-16T16:13:00.000Z",
-      "source_id": "oilprice",
-      "status": "ok"
-    },
     {
       "title": "Supertanker Rates Fall from Record Highs",
       "url": "https://gcaptain.com/supertanker-rates-fall-from-record-highs",
@@ -25,6 +17,14 @@
       "url": "https://oilprice.com/Energy/Oil-Prices/Oil-Prices-Stay-High-as-War-Keeps-Supply-Tight-Into-2027.html",
       "publisher": "OilPrice.com",
       "published_at": "2026-10-17T23:00:00.000Z",
+      "source_id": "oilprice",
+      "status": "ok"
+    },
+    {
+      "title": "Bolivia’s Energy Crisis Deepens as Natural Gas Reserves Run Dry",
+      "url": "https://oilprice.com/Energy/Energy-General/Bolivias-Energy-Crisis-Deepens-as-Natural-Gas-Reserves-Run-Dry.html",
+      "publisher": "OilPrice.com",
+      "published_at": "2026-10-17T15:00:00.000Z",
       "source_id": "oilprice",
       "status": "ok"
     },
@@ -53,14 +53,6 @@
       "status": "ok"
     },
     {
-      "title": "North Korea’s ‘Hunchback’ Submarine Makes First At-Sea Appearance For Missile Tests",
-      "url": "https://www.twz.com/news-features/north-koreas-hunchback-missile-submarine-makes-first-at-sea-appearance-for-missile-tests",
-      "publisher": "TWZ (The War Zone)",
-      "published_at": "2026-10-15T21:01:09.000Z",
-      "source_id": "twz",
-      "status": "ok"
-    },
-    {
       "title": "Latvian official warns Russia ‘tempted to test’ European readiness, sounds alarm over border issues",
       "url": "https://breakingdefense.com/2026/10/latvian-official-warns-russia-tempted-to-test-european-readiness-sounds-alarm-over-border-issues",
       "publisher": "Breaking Defense",
@@ -82,6 +74,14 @@
       "publisher": "TWZ (The War Zone)",
       "published_at": "2026-10-16T19:20:49.000Z",
       "source_id": "twz",
+      "status": "ok"
+    },
+    {
+      "title": "Zone 5 ‘found a spot’ in drone interceptor market with new Eclipse: CEO",
+      "url": "https://breakingdefense.com/2026/10/zone-5-found-a-spot-in-drone-interceptor-market-with-new-eclipse-ceo",
+      "publisher": "Breaking Defense",
+      "published_at": "2026-10-16T16:28:00.000Z",
+      "source_id": "breaking-defense",
       "status": "ok"
     }
   ]
