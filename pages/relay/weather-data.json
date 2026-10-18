@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-17T22:24:11.584Z",
-  "latest_success_at": "2026-10-17T22:24:11.584Z",
+  "generated_at": "2026-10-18T01:07:57.172Z",
+  "latest_success_at": "2026-10-18T01:07:57.172Z",
   "status": "ok",
   "items": [
     {
-      "id": "7e5b802568a139fc",
+      "id": "906bc4c19f0b278f",
       "title": "Hurricane Trudy Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep1+shtml/212246.shtml?cone=",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep1+shtml/234346.shtml?cone=",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-10-17T21:22:46.000Z",
+      "published_at": "2026-10-17T23:43:46.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "104342fa86dbf405",
-      "title": "Typhoon Warning issued October 18 at 4:40AM ChST by NWS Tiyan GU",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.055e621cf1da043247c479ddca8241afb4380bd2.001.1.cap",
+      "id": "1cdb6919df95349f",
+      "title": "Typhoon Warning issued October 18 at 9:38AM ChST by NWS Tiyan GU",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f85c1cb2776ac5a31a0748a0fd7609ce3ffc26c7.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-10-17T18:40:00.000Z",
+      "published_at": "2026-10-17T23:38:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "a79af9aaebdabab0",
-      "title": "Typhoon Watch issued October 18 at 4:40AM ChST by NWS Tiyan GU",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.055e621cf1da043247c479ddca8241afb4380bd2.003.2.cap",
+      "id": "a9cf669b5ceac21e",
+      "title": "Typhoon Watch issued October 18 at 9:38AM ChST by NWS Tiyan GU",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f85c1cb2776ac5a31a0748a0fd7609ce3ffc26c7.003.2.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-10-17T18:40:00.000Z",
+      "published_at": "2026-10-17T23:38:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
