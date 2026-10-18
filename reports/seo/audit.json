@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-17T05:59:00.357Z",
+  "generatedAt": "2026-10-18T06:27:11.012Z",
   "totals": {
-    "pages": 325,
-    "indexable": 321,
-    "articles": 251,
-    "sitemap": 321,
+    "pages": 328,
+    "indexable": 324,
+    "articles": 253,
+    "sitemap": 324,
     "errors": 0,
-    "warnings": 304
+    "warnings": 307
   },
   "errors": [],
   "warnings": [
@@ -1262,6 +1262,16 @@
     },
     {
       "type": "template-pattern",
+      "page": "/pages/blog/the-food-index-is-reading-the-fuel-gauge/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/the-food-index-is-reading-the-fuel-gauge/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
       "page": "/pages/blog/the-import-line-is-the-oil-shock/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
@@ -1373,6 +1383,11 @@
     {
       "type": "template-pattern",
       "page": "/pages/blog/what-ssd-health-indicators-can-and-cannot-tell-you/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/what-thermal-throttling-looks-like-on-a-computer/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
     {
@@ -1540,7 +1555,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 325,
+      "incomingLinks": 328,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -1564,7 +1579,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 325,
+      "incomingLinks": 328,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -1672,7 +1687,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 325,
+      "incomingLinks": 328,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -1684,9 +1699,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 325,
-      "lastmod": "2026-10-16",
-      "bodyWords": 689
+      "incomingLinks": 328,
+      "lastmod": "2026-10-17",
+      "bodyWords": 678
     },
     {
       "route": "/pages/blog/a-checklist-for-reliable-scheduled-jobs/",
@@ -2020,9 +2035,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 190,
-      "lastmod": "2026-10-16",
-      "bodyWords": 3061
+      "incomingLinks": 192,
+      "lastmod": "2026-10-17",
+      "bodyWords": 3083
     },
     {
       "route": "/pages/blog/anhydrous-ammonia-is-the-fall-farm-bill/",
@@ -3732,157 +3747,169 @@
       "route": "/pages/blog/page-10/",
       "file": "pages/blog/page-10/index.html",
       "title": "The Export — Page 10 | Notavello",
-      "description": "Older Notavello posts from The Export, page 10 of 14.",
+      "description": "Older Notavello posts from The Export, page 10 of 15.",
       "canonical": "https://notavello.com/pages/blog/page-10/",
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-16",
+      "lastmod": "2026-10-17",
       "bodyWords": 686
     },
     {
       "route": "/pages/blog/page-11/",
       "file": "pages/blog/page-11/index.html",
       "title": "The Export — Page 11 | Notavello",
-      "description": "Older Notavello posts from The Export, page 11 of 14.",
+      "description": "Older Notavello posts from The Export, page 11 of 15.",
       "canonical": "https://notavello.com/pages/blog/page-11/",
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-16",
-      "bodyWords": 699
+      "lastmod": "2026-10-17",
+      "bodyWords": 678
     },
     {
       "route": "/pages/blog/page-12/",
       "file": "pages/blog/page-12/index.html",
       "title": "The Export — Page 12 | Notavello",
-      "description": "Older Notavello posts from The Export, page 12 of 14.",
+      "description": "Older Notavello posts from The Export, page 12 of 15.",
       "canonical": "https://notavello.com/pages/blog/page-12/",
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-16",
-      "bodyWords": 812
+      "lastmod": "2026-10-17",
+      "bodyWords": 810
     },
     {
       "route": "/pages/blog/page-13/",
       "file": "pages/blog/page-13/index.html",
       "title": "The Export — Page 13 | Notavello",
-      "description": "Older Notavello posts from The Export, page 13 of 14.",
+      "description": "Older Notavello posts from The Export, page 13 of 15.",
       "canonical": "https://notavello.com/pages/blog/page-13/",
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-16",
-      "bodyWords": 841
+      "lastmod": "2026-10-17",
+      "bodyWords": 837
     },
     {
       "route": "/pages/blog/page-14/",
       "file": "pages/blog/page-14/index.html",
       "title": "The Export — Page 14 | Notavello",
-      "description": "Older Notavello posts from The Export, page 14 of 14.",
+      "description": "Older Notavello posts from The Export, page 14 of 15.",
       "canonical": "https://notavello.com/pages/blog/page-14/",
       "robots": "index, follow",
       "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-10-17",
+      "bodyWords": 890
+    },
+    {
+      "route": "/pages/blog/page-15/",
+      "file": "pages/blog/page-15/index.html",
+      "title": "The Export — Page 15 | Notavello",
+      "description": "Older Notavello posts from The Export, page 15 of 15.",
+      "canonical": "https://notavello.com/pages/blog/page-15/",
+      "robots": "index, follow",
+      "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": "2026-10-16",
-      "bodyWords": 837
+      "lastmod": null,
+      "bodyWords": 75
     },
     {
       "route": "/pages/blog/page-2/",
       "file": "pages/blog/page-2/index.html",
       "title": "The Export — Page 2 | Notavello",
-      "description": "Older Notavello posts from The Export, page 2 of 14.",
+      "description": "Older Notavello posts from The Export, page 2 of 15.",
       "canonical": "https://notavello.com/pages/blog/page-2/",
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-16",
-      "bodyWords": 625
+      "lastmod": "2026-10-17",
+      "bodyWords": 638
     },
     {
       "route": "/pages/blog/page-3/",
       "file": "pages/blog/page-3/index.html",
       "title": "The Export — Page 3 | Notavello",
-      "description": "Older Notavello posts from The Export, page 3 of 14.",
+      "description": "Older Notavello posts from The Export, page 3 of 15.",
       "canonical": "https://notavello.com/pages/blog/page-3/",
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-16",
-      "bodyWords": 674
+      "lastmod": "2026-10-17",
+      "bodyWords": 662
     },
     {
       "route": "/pages/blog/page-4/",
       "file": "pages/blog/page-4/index.html",
       "title": "The Export — Page 4 | Notavello",
-      "description": "Older Notavello posts from The Export, page 4 of 14.",
+      "description": "Older Notavello posts from The Export, page 4 of 15.",
       "canonical": "https://notavello.com/pages/blog/page-4/",
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-16",
-      "bodyWords": 635
+      "lastmod": "2026-10-17",
+      "bodyWords": 639
     },
     {
       "route": "/pages/blog/page-5/",
       "file": "pages/blog/page-5/index.html",
       "title": "The Export — Page 5 | Notavello",
-      "description": "Older Notavello posts from The Export, page 5 of 14.",
+      "description": "Older Notavello posts from The Export, page 5 of 15.",
       "canonical": "https://notavello.com/pages/blog/page-5/",
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-16",
-      "bodyWords": 672
+      "lastmod": "2026-10-17",
+      "bodyWords": 667
     },
     {
       "route": "/pages/blog/page-6/",
       "file": "pages/blog/page-6/index.html",
       "title": "The Export — Page 6 | Notavello",
-      "description": "Older Notavello posts from The Export, page 6 of 14.",
+      "description": "Older Notavello posts from The Export, page 6 of 15.",
       "canonical": "https://notavello.com/pages/blog/page-6/",
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-16",
-      "bodyWords": 660
+      "lastmod": "2026-10-17",
+      "bodyWords": 657
     },
     {
       "route": "/pages/blog/page-7/",
       "file": "pages/blog/page-7/index.html",
       "title": "The Export — Page 7 | Notavello",
-      "description": "Older Notavello posts from The Export, page 7 of 14.",
+      "description": "Older Notavello posts from The Export, page 7 of 15.",
       "canonical": "https://notavello.com/pages/blog/page-7/",
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-16",
-      "bodyWords": 685
+      "lastmod": "2026-10-17",
+      "bodyWords": 689
     },
     {
       "route": "/pages/blog/page-8/",
       "file": "pages/blog/page-8/index.html",
       "title": "The Export — Page 8 | Notavello",
-      "description": "Older Notavello posts from The Export, page 8 of 14.",
+      "description": "Older Notavello posts from The Export, page 8 of 15.",
       "canonical": "https://notavello.com/pages/blog/page-8/",
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-16",
-      "bodyWords": 677
+      "lastmod": "2026-10-17",
+      "bodyWords": 672
     },
     {
       "route": "/pages/blog/page-9/",
       "file": "pages/blog/page-9/index.html",
       "title": "The Export — Page 9 | Notavello",
-      "description": "Older Notavello posts from The Export, page 9 of 14.",
+      "description": "Older Notavello posts from The Export, page 9 of 15.",
       "canonical": "https://notavello.com/pages/blog/page-9/",
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-16",
-      "bodyWords": 642
+      "lastmod": "2026-10-17",
+      "bodyWords": 647
     },
     {
       "route": "/pages/blog/phosphate-is-the-fertilizer-shock-that-did-not-fade/",
@@ -4257,6 +4284,18 @@
       "bodyWords": 738
     },
     {
+      "route": "/pages/blog/the-food-index-is-reading-the-fuel-gauge/",
+      "file": "pages/blog/the-food-index-is-reading-the-fuel-gauge/index.html",
+      "title": "The Food Index Is Reading The Fuel Gauge — The Export | Notavello",
+      "description": "FAO’s September food index shows how Hormuz risk is moving from fuel and fertilizer into crop and grocery pressure.",
+      "canonical": "https://notavello.com/pages/blog/the-food-index-is-reading-the-fuel-gauge/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-10-18",
+      "bodyWords": 1308
+    },
+    {
       "route": "/pages/blog/the-import-line-is-the-oil-shock/",
       "file": "pages/blog/the-import-line-is-the-oil-shock/index.html",
       "title": "The Import Line Is The Oil Shock — The Export | Notavello",
@@ -4519,6 +4558,18 @@
       "incomingLinks": 2,
       "lastmod": "2026-10-16",
       "bodyWords": 878
+    },
+    {
+      "route": "/pages/blog/what-thermal-throttling-looks-like-on-a-computer/",
+      "file": "pages/blog/what-thermal-throttling-looks-like-on-a-computer/index.html",
+      "title": "What Thermal Throttling Looks Like on a Computer — The Export | Notavello",
+      "description": "Thermal throttling reduces processor speed when temperatures rise.",
+      "canonical": "https://notavello.com/pages/blog/what-thermal-throttling-looks-like-on-a-computer/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-10-17",
+      "bodyWords": 992
     },
     {
       "route": "/pages/blog/when-a-clean-reinstall-fixes-software-problems-and-when-it-does-not/",
@@ -4864,7 +4915,7 @@
       "canonical": "https://notavello.com/pages/blog/zero-point-four-percent-is-not-fertilizer-relief/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 2,
+      "incomingLinks": 3,
       "lastmod": "2026-10-11",
       "bodyWords": 1373
     },
@@ -4876,7 +4927,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 325,
+      "incomingLinks": 328,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -4888,7 +4939,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 325,
+      "incomingLinks": 328,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -4900,7 +4951,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 325,
+      "incomingLinks": 328,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -4912,7 +4963,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 325,
+      "incomingLinks": 328,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -4924,7 +4975,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 325,
+      "incomingLinks": 328,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -4937,8 +4988,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-10-17",
-      "bodyWords": 539
+      "lastmod": "2026-10-18",
+      "bodyWords": 545
     },
     {
       "route": "/pages/sample",
@@ -4960,7 +5011,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 325,
+      "incomingLinks": 328,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -4972,7 +5023,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 325,
+      "incomingLinks": 328,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -4996,7 +5047,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 325,
+      "incomingLinks": 328,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -5428,7 +5479,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 325,
+      "incomingLinks": 328,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }

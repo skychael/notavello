@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>What Thermal Throttling Looks Like on a Computer — The Export | Notavello</title>
+<meta name="description" content="Thermal throttling reduces processor speed when temperatures rise."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/blog/what-thermal-throttling-looks-like-on-a-computer/"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2026-10-17T12:16:16.637Z"/>
+<meta property="article:modified_time" content="2026-10-17T12:16:16.637Z"/>
+<meta name="notavello:published_at" content="2026-10-17T12:16:16.637Z"/>
+<meta name="syndication-origin-site" content="toysforbots"/>
+<meta name="syndication-origin-id" content="toysforbots:what-thermal-throttling-looks-like-on-a-computer"/>
+<meta name="syndication-origin-slug" content="what-thermal-throttling-looks-like-on-a-computer"/>
+<meta name="syndication-origin-url" content="https://toysforbots.com/blog/what-thermal-throttling-looks-like-on-a-computer/"/>
+<meta name="syndication-source-format" content="toysforbots-syndication-v1"/>
+<meta property="og:url" content="https://notavello.com/pages/blog/what-thermal-throttling-looks-like-on-a-computer/"/>
+<meta property="og:title" content="What Thermal Throttling Looks Like on a Computer"/>
+<meta property="og:description" content="Thermal throttling reduces processor speed when temperatures rise."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="What Thermal Throttling Looks Like on a Computer"/>
+<meta name="twitter:description" content="Thermal throttling reduces processor speed when temperatures rise."/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "What Thermal Throttling Looks Like on a Computer",
+  "description": "Thermal throttling reduces processor speed when temperatures rise.",
+  "url": "https://notavello.com/pages/blog/what-thermal-throttling-looks-like-on-a-computer/",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://notavello.com/pages/blog/what-thermal-throttling-looks-like-on-a-computer/" },
+  "image": "https://notavello.com/og-image.png",
+  "datePublished": "2026-10-17T12:16:16.637Z",
+  "dateModified": "2026-10-17T12:16:16.637Z",
+  "author": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" },
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com", "logo": { "@type": "ImageObject", "url": "https://notavello.com/og-image.png" } }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
+.post-nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; row-gap: 8px; }
+.post-nav-top { margin-bottom: 40px; }
+.post-nav-bottom { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--border); }
+.post-nav a { display: inline-flex; align-items: center; gap: 6px; font-size: 0.92rem; font-weight: 600; color: var(--ink-muted); text-decoration: none; padding: 12px 14px; border-radius: var(--radius-sm); white-space: nowrap; transition: color 0.15s, background 0.15s; }
+.post-nav a:hover { color: var(--accent); background: var(--accent-light); }
+.post-nav a:first-child { padding-left: 0; }
+.post-nav a:last-child { padding-right: 0; justify-content: flex-end; }
+.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
+.post-date { font-size: 0.78rem; color: var(--ink-faint); }
+.post-title { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; color: var(--ink); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
+.post-lede { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+.post-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink); }
+.post-body h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 44px 0 16px; letter-spacing: -0.01em; }
+.post-body p { margin-bottom: 20px; color: var(--ink-muted); }
+.post-body p strong { color: var(--ink); font-weight: 600; }
+.post-body ul { margin: 0 0 20px 20px; color: var(--ink-muted); }
+.post-body ul li { margin-bottom: 8px; line-height: 1.7; }
+.callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 32px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.7; }
+.post-footer { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.post-footer-label { font-size: 0.8rem; color: var(--ink-faint); }
+.btn-export { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: opacity 0.2s; }
+.btn-export:hover { opacity: 0.9; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } .post-nav a { padding: 12px 8px; font-size: 0.88rem; } }
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+
+  <nav class="post-nav post-nav-top">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+  <div class="post-meta">
+    <span class="post-tag">Hardware Explainers</span>
+    <span class="post-date">October 17, 2026</span>
+  </div>
+
+  <h1 class="post-title">What Thermal Throttling Looks Like on a Computer</h1>
+
+  <p class="post-lede">Thermal throttling occurs when a processor detects temperatures approaching its maximum safe limit and automatically reduces clock speed to lower heat output. Intel documentation describes this as a built-in protection that activates near Tjunction max, typically between 100°C and 110°C depending on the model. The processor reduces frequency and power to stay within safe bounds rather than risking damage. Users may notice slower performance during sustained tasks even though the system remains stable. AMD guidance similarly notes that temperature, power, and performance are directly linked, with the processor reaching its specified maximum operating temperature at the same time power and performance reach their limits under heavy load. The effect is most noticeable when workloads keep the processor near its thermal ceiling for extended periods. Because throttling is a normal safeguard, it does not always indicate a fault, but repeated early activation or accompanying shutdowns warrant investigation of cooling components and system airflow.</p>
+
+  <div class="post-body">
+
+<h2>Temperature Limits and Processor Behavior</h2>
+<p>Every Intel processor lists a maximum operating temperature on its product specification page under Package Specifications. This value, labeled Tjunction or Max Operating Temperature, is the point at which the processor begins using internal thermal control mechanisms. Activation of these controls reduces frequency and power to prevent overheating. The exact limit varies by model, so users must look up their specific processor on ark.intel.com rather than assuming a universal number.</p>
+<p>AMD processors follow a comparable approach. Their documentation states that the processor is designed to operate at its maximum temperature during heavy workloads without damage, provided the cooling solution meets the processor’s TDP rating. Both vendors emphasize that brief spikes to the limit are expected and do not indicate failure.</p><ul><li>Check the processor model on the manufacturer specification site before comparing temperatures.</li><li>Tjunction max is the threshold that triggers throttling; it is not a target for normal operation.</li><li>Instantaneous temperatures may briefly exceed the listed value without immediate harm.</li></ul><div class="callout"><strong>Caution</strong> Never remove or bypass thermal protection mechanisms. Operating without proper cooling can lead to unexpected shutdowns that interrupt work and risk data loss.</div>
+<h2>Observable Effects of Throttling</h2>
+<p>When throttling engages, the most common user experience is a sudden drop in responsiveness during long-running tasks such as video encoding or large compiles. The system does not crash; instead, it simply slows. Task Manager on Windows or equivalent monitoring tools may show clock speeds well below the processor’s rated boost frequency while temperatures remain high. Because the reduction is automatic and reversible, performance returns once temperatures drop.</p>
+<p>Throttling that begins within minutes of light use or occurs together with system lockups points to a cooling problem rather than normal behavior. Dell support materials note that throttling by itself is expected under sustained heavy work, but early or frequent activation alongside heat symptoms requires troubleshooting.</p><ul><li>Monitor clock speed alongside temperature to confirm throttling is active.</li><li>Compare behavior under light versus sustained loads to distinguish normal from problematic throttling.</li><li>Record whether slowdowns coincide with fan noise increases or case warmth.</li></ul>
+<h2>Verifying Airflow and Cooling Hardware</h2>
+<p>Effective cooling requires both a properly mounted heatsink and steady airflow through the chassis. Intel’s thermal management recommendations stress that boxed processors include a fan heatsink sized for the processor’s TDP, yet system builders remain responsible for ensuring air can enter and exit the case. Blocked intake vents, accumulated dust on fins, or failing fans reduce the heatsink’s ability to transfer heat to the surrounding air.</p>
+<p>AMD guidance similarly advises confirming that the cooling solution’s TDP rating meets or exceeds the processor specification and that the cooler is correctly mounted with adequate thermal interface material. Loose cables or dust buildup inside the case can obstruct the front-to-back airflow path common in ATX systems.</p><ul><li>Inspect intake and exhaust vents for obstructions before assuming a hardware fault.</li><li>Verify that the cooler fan spins freely and that mounting pressure is even.</li><li>Clear dust from heatsink fins and case filters using compressed air while the system is powered off.</li></ul>
+<h2>Step-by-Step Diagnosis Without Benchmarks</h2>
+<p>Begin diagnosis by confirming the processor model and its published temperature limit. Next, ensure the system is running in a stock configuration with current firmware and drivers. Observe temperatures and fan behavior during typical workloads rather than artificial stress tests. If temperatures approach the limit quickly under light use, check cooler mounting and thermal paste application. If airflow appears adequate yet throttling persists, consider whether ambient room temperature or case placement is contributing to heat buildup.</p>
+<p>Dell troubleshooting steps recommend repeating basic checks if symptoms continue and contacting vendor support when lockups or shutdowns accompany throttling. Avoid assumptions about specific temperature readings without the processor’s official specification, as normal operating ranges depend on system design and workload.</p><ul><li>Identify the processor and locate its Tjunction or Tcase value on the vendor site.</li><li>Confirm cooler compatibility and proper installation before altering any settings.</li><li>Document symptoms, temperatures, and fan behavior over several sessions before concluding a fault exists.</li></ul>
+<h2>When Professional Help Is Appropriate</h2>
+<p>Persistent throttling despite clean airflow, correct cooler installation, and updated firmware indicates the need for further hardware inspection. Physical damage to fans, degraded thermal material, or a failing pump in liquid cooling setups can all produce the same symptoms. In these cases, contacting the system vendor or a qualified technician prevents unnecessary part replacement and reduces the risk of further issues.</p>
+<p>Both Intel and AMD stress that processors contain multiple layers of protection, including automatic shutdown if throttling cannot maintain safe temperatures. These safeguards make permanent damage from overheating unlikely when the system is left unmodified.</p><ul><li>Retain records of temperatures and observed behavior when seeking support.</li><li>Do not attempt to override thermal limits through firmware changes.</li><li>Schedule service if shutdowns occur or if basic cleaning and reseating do not improve symptoms.</li></ul><h2>Sources</h2><ul><li><a href="https://www.intel.com/content/www/us/en/support/articles/000088048/processors.html" rel="noopener noreferrer">intel.com</a></li><li><a href="https://www.intel.com/content/www/us/en/support/articles/000005597/processors.html" rel="noopener noreferrer">intel.com</a></li><li><a href="https://www.amd.com/en/resources/support-articles/faqs/PIBRMATS3.html" rel="noopener noreferrer">amd.com</a></li></ul>
+
+  </div>
+
+  <div class="post-footer">
+    <span class="post-footer-label">Looking for more AI tools?</span>
+    <a class="btn-export" href="/">See our free AI tools →</a>
+  </div>
+
+  <nav class="post-nav post-nav-bottom">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+</main>
+
+<!--FOOTER-->
+
+</body>
+</html>
