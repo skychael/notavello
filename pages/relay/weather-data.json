@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-18T14:40:16.572Z",
-  "latest_success_at": "2026-10-18T14:40:16.572Z",
+  "generated_at": "2026-10-18T18:10:36.792Z",
+  "latest_success_at": "2026-10-18T18:10:36.792Z",
   "status": "ok",
   "items": [
     {
-      "id": "4f4030b990c8bf2c",
+      "id": "77892096b0d0fb9d",
       "title": "Hurricane Trudy Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep1+shtml/143704.shtml?cone=",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep1+shtml/175733.shtml?cone=",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-10-18T14:37:04.000Z",
+      "published_at": "2026-10-18T17:57:33.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "b5ad93019d019ede",
-      "title": "Atlantic Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
+      "id": "ee8e390990a944fc",
+      "title": "Eastern North Pacific Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-10-18T11:42:27.000Z",
+      "published_at": "2026-10-18T17:34:28.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "abbce1b2127f29b3",
-      "title": "High Surf Advisory issued October 18 at 7:07PM ChST until October 19 at 4:00PM ChST by NWS Tiyan GU",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.92a6350de71a6933188b2646d0f960fa714f799a.001.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-10-18T09:07:00.000Z",
+      "id": "1cce4883d203dda1",
+      "title": "Champi briefly reaches super typhoon strength after its closest approach to Guam causes widespread outages",
+      "url": "https://watchers.news/2026/10/18/champi-briefly-reaches-super-typhoon-strength-after-its-closest-approach-to-guam-causes-widespread-outages",
+      "publisher": "The Watchers",
+      "published_at": "2026-10-18T15:45:09.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
