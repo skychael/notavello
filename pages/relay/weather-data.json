@@ -1,15 +1,24 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-18T18:10:36.792Z",
-  "latest_success_at": "2026-10-18T18:10:36.792Z",
+  "generated_at": "2026-10-18T20:50:34.504Z",
+  "latest_success_at": "2026-10-18T20:50:34.504Z",
   "status": "ok",
   "items": [
     {
-      "id": "77892096b0d0fb9d",
+      "id": "aaa1efadb122b367",
       "title": "Hurricane Trudy Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep1+shtml/175733.shtml?cone=",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep1+shtml/204641.shtml?cone=",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-10-18T17:57:33.000Z",
+      "published_at": "2026-10-18T20:46:41.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "b31934640f42bf12",
+      "title": "High Surf Advisory issued October 19 at 5:18AM ChST until October 19 at 4:00PM ChST by NWS Tiyan GU",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.e5c7118dfac85b7befa67acf6523f05cbd9d08bf.001.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-10-18T19:18:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
@@ -19,15 +28,6 @@
       "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
       "publisher": "National Hurricane Center",
       "published_at": "2026-10-18T17:34:28.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "1cce4883d203dda1",
-      "title": "Champi briefly reaches super typhoon strength after its closest approach to Guam causes widespread outages",
-      "url": "https://watchers.news/2026/10/18/champi-briefly-reaches-super-typhoon-strength-after-its-closest-approach-to-guam-causes-widespread-outages",
-      "publisher": "The Watchers",
-      "published_at": "2026-10-18T15:45:09.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
