@@ -1,36 +1,36 @@
 {
   "schema_version": "1.0",
-  "date_key": "10-17",
-  "display_date": "October 17",
-  "generated_at": "2026-10-17T12:12:27.486Z",
+  "date_key": "10-18",
+  "display_date": "October 18",
+  "generated_at": "2026-10-18T12:37:06.756Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-fa064d1f237de9ae0e998be3",
+      "candidate_id": "event-3353ef9eb1a8190ed04b18e8",
       "type": "event",
-      "year": 2023,
-      "text": "An explosion at Al-Ahli Arab Hospital in Gaza kills hundreds of Palestinians during the Gaza war.",
-      "article_title": "Al-Ahli Arab Hospital explosion",
-      "url": "https://en.wikipedia.org/wiki/Al-Ahli_Arab_Hospital_explosion",
-      "category": "World history"
+      "year": 2019,
+      "text": "NASA Astronauts Jessica Meir and Christina Koch take part in the first all-female spacewalk when they venture out of the International Space Station to replace a power controller.",
+      "article_title": "NASA Astronaut Corps",
+      "url": "https://en.wikipedia.org/wiki/NASA_Astronaut_Corps",
+      "category": "Science and technology"
     },
     {
-      "candidate_id": "event-2ab065d68051b30c015c6d0f",
+      "candidate_id": "event-a69d9f1083996e8f041205fe",
       "type": "event",
-      "year": 1956,
-      "text": "The first commercial nuclear power station is officially opened by Queen Elizabeth II in Sellafield, England.",
-      "article_title": "Sellafield",
-      "url": "https://en.wikipedia.org/wiki/Sellafield",
-      "category": "World history"
+      "year": 1963,
+      "text": "Félicette, a black and white female Parisian stray cat, becomes the first cat launched into space.",
+      "article_title": "Félicette",
+      "url": "https://en.wikipedia.org/wiki/F%C3%A9licette",
+      "category": "Science and technology"
     },
     {
-      "candidate_id": "event-2a2b98e9110d0e23dcf15dd3",
+      "candidate_id": "event-8b69d6217c6f3cf2dfae6e8d",
       "type": "event",
-      "year": 1973,
-      "text": "OPEC imposes an oil embargo against countries they deem to have helped Israel in the Yom Kippur War.",
-      "article_title": "1973 oil crisis",
-      "url": "https://en.wikipedia.org/wiki/1973_oil_crisis",
+      "year": 1992,
+      "text": "Merpati Nustantara Airlines Flight 5601 crashes into Mount Papandayan near the town of Garut in West Java, Indonesia, killing 31.",
+      "article_title": "Merpati Nusantara Airlines Flight 5601",
+      "url": "https://en.wikipedia.org/wiki/Merpati_Nusantara_Airlines_Flight_5601",
       "category": "World history"
     }
   ]
