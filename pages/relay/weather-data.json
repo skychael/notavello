@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-19T04:49:17.063Z",
-  "latest_success_at": "2026-10-19T04:49:17.063Z",
+  "generated_at": "2026-10-19T10:50:49.372Z",
+  "latest_success_at": "2026-10-19T10:50:49.372Z",
   "status": "ok",
   "items": [
     {
-      "id": "ee0b2d03c23d84fb",
-      "title": "Hurricane Trudy Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep1+shtml/032245.shtml?cone=",
+      "id": "807ff2b865085c9f",
+      "title": "Tropical Storm Trudy Graphics",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep1+shtml/092240.shtml?cone=",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-10-19T03:22:45.000Z",
+      "published_at": "2026-10-19T09:22:40.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "b5ad93019d019ede",
-      "title": "Atlantic Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-10-18T23:41:14.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "b31934640f42bf12",
-      "title": "High Surf Advisory issued October 19 at 5:18AM ChST until October 19 at 4:00PM ChST by NWS Tiyan GU",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.e5c7118dfac85b7befa67acf6523f05cbd9d08bf.001.1.cap",
+      "id": "c8870ba50f3d092b",
+      "title": "High Surf Advisory issued October 19 at 4:42PM ChST until October 20 at 6:00PM ChST by NWS Tiyan GU",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.adf197e95c21b4ccb4dfb42912f1f74814265f2c.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-10-18T19:18:00.000Z",
+      "published_at": "2026-10-19T06:42:00.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "ee8e390990a944fc",
+      "title": "Eastern North Pacific Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-10-19T05:09:04.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }

@@ -2,7 +2,7 @@
   "schema_version": 1,
   "archive_date": "2026-10-19",
   "created_at": "2026-10-19T04:49:17.409Z",
-  "updated_at": "2026-10-19T04:49:17.409Z",
+  "updated_at": "2026-10-19T10:50:49.847Z",
   "articles": [
     {
       "title": "Is Russia Probing NATO Weakness in the Black Sea?",
@@ -36,6 +36,15 @@
       "url": "https://oilprice.com/Energy/Oil-Prices/Oil-Prices-Stay-High-as-War-Keeps-Supply-Tight-Into-2027.html",
       "publisher": "OilPrice.com",
       "published_at": "2026-10-17T23:00:00.000Z",
+      "source_id": "oilprice",
+      "first_seen_at": "2026-10-19T04:49:17.409Z",
+      "status": "ok"
+    },
+    {
+      "title": "Middle East Chemicals Keep Their Cost Edge Despite Hormuz Crisis",
+      "url": "https://oilprice.com/Energy/Natural-Gas/Middle-East-Chemicals-Keep-Their-Cost-Edge-Despite-Hormuz-Crisis.html",
+      "publisher": "OilPrice.com",
+      "published_at": "2026-10-17T21:00:00.000Z",
       "source_id": "oilprice",
       "first_seen_at": "2026-10-19T04:49:17.409Z",
       "status": "ok"
@@ -81,6 +90,15 @@
       "url": "https://breakingdefense.com/2026/10/zone-5-found-a-spot-in-drone-interceptor-market-with-new-eclipse-ceo",
       "publisher": "Breaking Defense",
       "published_at": "2026-10-16T16:28:00.000Z",
+      "source_id": "breaking-defense",
+      "first_seen_at": "2026-10-19T04:49:17.409Z",
+      "status": "ok"
+    },
+    {
+      "title": "Germany changes course on plans to buy MQ-28 drone wingman: Boeing official",
+      "url": "https://breakingdefense.com/2026/10/germany-changes-course-on-plans-to-buy-mq-28-drone-wingman-boeing-official",
+      "publisher": "Breaking Defense",
+      "published_at": "2026-10-16T15:19:30.000Z",
       "source_id": "breaking-defense",
       "first_seen_at": "2026-10-19T04:49:17.409Z",
       "status": "ok"
