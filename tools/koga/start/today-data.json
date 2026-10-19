@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "10-18",
-  "display_date": "October 18",
-  "generated_at": "2026-10-18T12:37:06.756Z",
+  "date_key": "10-19",
+  "display_date": "October 19",
+  "generated_at": "2026-10-19T15:37:26.693Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-3353ef9eb1a8190ed04b18e8",
+      "candidate_id": "event-176797a2aeed75cc2ae04b5f",
       "type": "event",
-      "year": 2019,
-      "text": "NASA Astronauts Jessica Meir and Christina Koch take part in the first all-female spacewalk when they venture out of the International Space Station to replace a power controller.",
-      "article_title": "NASA Astronaut Corps",
-      "url": "https://en.wikipedia.org/wiki/NASA_Astronaut_Corps",
-      "category": "Science and technology"
+      "year": 1986,
+      "text": "The president of Mozambique and a prominent leader of FRELIMO, along with 33 others, die when their aircraft crashes into the Lebombo Mountains.",
+      "article_title": "1986 Mozambican Tupolev Tu-134 crash",
+      "url": "https://en.wikipedia.org/wiki/1986_Mozambican_Tupolev_Tu-134_crash",
+      "category": "Disasters and exploration"
     },
     {
-      "candidate_id": "event-a69d9f1083996e8f041205fe",
+      "candidate_id": "event-a0135d16ad3f161a129b0b7c",
       "type": "event",
-      "year": 1963,
-      "text": "Félicette, a black and white female Parisian stray cat, becomes the first cat launched into space.",
-      "article_title": "Félicette",
-      "url": "https://en.wikipedia.org/wiki/F%C3%A9licette",
-      "category": "Science and technology"
-    },
-    {
-      "candidate_id": "event-8b69d6217c6f3cf2dfae6e8d",
-      "type": "event",
-      "year": 1992,
-      "text": "Merpati Nustantara Airlines Flight 5601 crashes into Mount Papandayan near the town of Garut in West Java, Indonesia, killing 31.",
-      "article_title": "Merpati Nusantara Airlines Flight 5601",
-      "url": "https://en.wikipedia.org/wiki/Merpati_Nusantara_Airlines_Flight_5601",
+      "year": 2012,
+      "text": "A bomb explosion kills eight people and injures 110 more in Lebanon.",
+      "article_title": "Assassination of Wissam al-Hassan",
+      "url": "https://en.wikipedia.org/wiki/Assassination_of_Wissam_al-Hassan",
       "category": "World history"
+    },
+    {
+      "candidate_id": "event-79dc1200983b7bccb2722c16",
+      "type": "event",
+      "year": 2005,
+      "text": "Hurricane Wilma becomes the most intense Atlantic hurricane on record with a minimum pressure of 882 mb.",
+      "article_title": "Hurricane Wilma",
+      "url": "https://en.wikipedia.org/wiki/Hurricane_Wilma",
+      "category": "Disasters and exploration"
     }
   ]
 }
