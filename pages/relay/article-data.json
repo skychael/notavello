@@ -1,17 +1,9 @@
 {
   "schema_version": "1.0",
-  "checked_at": "2026-10-18T23:18:27.685Z",
-  "latest_success_at": "2026-10-18T23:18:27.685Z",
+  "checked_at": "2026-10-19T04:49:16.139Z",
+  "latest_success_at": "2026-10-19T04:49:16.139Z",
   "status": "ok",
   "items": [
-    {
-      "title": "Supertanker Rates Fall from Record Highs",
-      "url": "https://gcaptain.com/supertanker-rates-fall-from-record-highs",
-      "publisher": "gCaptain",
-      "published_at": "2026-10-16T16:36:16.000Z",
-      "source_id": "gcaptain",
-      "status": "ok"
-    },
     {
       "title": "Oil Prices Stay High as War Keeps Supply Tight Into 2027",
       "url": "https://oilprice.com/Energy/Oil-Prices/Oil-Prices-Stay-High-as-War-Keeps-Supply-Tight-Into-2027.html",
@@ -37,19 +29,27 @@
       "status": "ok"
     },
     {
-      "title": "International Seaways Expands VLCC Fleet Through Combination with Bruton",
-      "url": "https://maritime-executive.com/article/international-seaways-expands-vlcc-fleet-through-combination-with-bruton",
+      "title": "Ukraine Hits Petroleum Terminal on St. Petersburg's Waterfront",
+      "url": "https://maritime-executive.com/article/ukraine-hits-petroleum-terminal-on-st-petersburg-s-waterfront",
       "publisher": "The Maritime Executive",
-      "published_at": "2026-10-17T18:09:23.000Z",
+      "published_at": "2026-10-19T00:52:35.000Z",
       "source_id": "maritime-executive",
       "status": "ok"
     },
     {
-      "title": "War in Yemen Now Impacting the Whole Gulf Region",
-      "url": "https://maritime-executive.com/article/war-in-yemen-now-impacting-the-whole-gulf-region",
+      "title": "Is Russia Probing NATO Weakness in the Black Sea?",
+      "url": "https://maritime-executive.com/article/is-russia-probing-nato-weakness-in-the-black-sea",
       "publisher": "The Maritime Executive",
-      "published_at": "2026-10-16T18:46:57.000Z",
+      "published_at": "2026-10-19T03:26:29.000Z",
       "source_id": "maritime-executive",
+      "status": "ok"
+    },
+    {
+      "title": "Fog of War Deepens in Hormuz as UKMTO Says Most Ship Attacks Go Unreported",
+      "url": "https://gcaptain.com/fog-of-war-deepens-in-hormuz-as-ukmto-says-most-ship-attacks-go-unreported",
+      "publisher": "gCaptain",
+      "published_at": "2026-10-16T18:53:29.000Z",
+      "source_id": "gcaptain",
       "status": "ok"
     },
     {
@@ -58,14 +58,6 @@
       "publisher": "Breaking Defense",
       "published_at": "2026-10-16T10:00:00.000Z",
       "source_id": "breaking-defense",
-      "status": "ok"
-    },
-    {
-      "title": "Strong M6.9 earthquake hits Kamchatka Peninsula, Russia",
-      "url": "https://watchers.news/2026/10/16/strong-m6-9-earthquake-hits-kamchatka-peninsula-russia",
-      "publisher": "The Watchers",
-      "published_at": "2026-10-16T04:41:36.000Z",
-      "source_id": "the-watchers",
       "status": "ok"
     },
     {
@@ -82,6 +74,14 @@
       "publisher": "Breaking Defense",
       "published_at": "2026-10-16T16:28:00.000Z",
       "source_id": "breaking-defense",
+      "status": "ok"
+    },
+    {
+      "title": "Second Chinese Submarine Drone Mothership Emerges",
+      "url": "https://www.twz.com/sea/second-chinese-submarine-drone-mothership-emerges",
+      "publisher": "TWZ (The War Zone)",
+      "published_at": "2026-10-18T18:31:41.000Z",
+      "source_id": "twz",
       "status": "ok"
     }
   ]
