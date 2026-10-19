@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-18T06:27:11.012Z",
+  "generatedAt": "2026-10-19T06:38:44.130Z",
   "totals": {
-    "pages": 328,
-    "indexable": 324,
-    "articles": 253,
-    "sitemap": 324,
+    "pages": 330,
+    "indexable": 326,
+    "articles": 255,
+    "sitemap": 326,
     "errors": 0,
-    "warnings": 307
+    "warnings": 310
   },
   "errors": [],
   "warnings": [
@@ -802,6 +802,11 @@
     },
     {
       "type": "template-pattern",
+      "page": "/pages/blog/how-to-troubleshoot-a-display-connection-methodically/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "template-pattern",
       "page": "/pages/blog/how-to-use-http-status-codes-when-debugging-an-api/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
@@ -1311,6 +1316,16 @@
       "detail": "title/description lacks a clear AI, software, or computing connection"
     },
     {
+      "type": "template-pattern",
+      "page": "/pages/blog/three-hundred-forty-three-million-is-the-farm-bill/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/three-hundred-forty-three-million-is-the-farm-bill/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
       "type": "topic-review",
       "page": "/pages/blog/ubuntu-4-digit-pin-login/",
       "detail": "title/description lacks a clear AI, software, or computing connection"
@@ -1555,7 +1570,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 328,
+      "incomingLinks": 330,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -1579,7 +1594,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 328,
+      "incomingLinks": 330,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -1687,7 +1702,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 328,
+      "incomingLinks": 330,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -1699,9 +1714,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 328,
-      "lastmod": "2026-10-17",
-      "bodyWords": 678
+      "incomingLinks": 330,
+      "lastmod": "2026-10-18",
+      "bodyWords": 669
     },
     {
       "route": "/pages/blog/a-checklist-for-reliable-scheduled-jobs/",
@@ -2035,9 +2050,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 192,
-      "lastmod": "2026-10-17",
-      "bodyWords": 3083
+      "incomingLinks": 194,
+      "lastmod": "2026-10-18",
+      "bodyWords": 3105
     },
     {
       "route": "/pages/blog/anhydrous-ammonia-is-the-fall-farm-bill/",
@@ -2047,7 +2062,7 @@
       "canonical": "https://notavello.com/pages/blog/anhydrous-ammonia-is-the-fall-farm-bill/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 3,
+      "incomingLinks": 4,
       "lastmod": "2026-10-04",
       "bodyWords": 1207
     },
@@ -3312,6 +3327,18 @@
       "bodyWords": 2199
     },
     {
+      "route": "/pages/blog/how-to-troubleshoot-a-display-connection-methodically/",
+      "file": "pages/blog/how-to-troubleshoot-a-display-connection-methodically/index.html",
+      "title": "How to Troubleshoot a Display Connection Methodically — The Export | Notavello",
+      "description": "Separate source, cable, adapter, input, resolution, and operating-system causes when a display shows no signal.",
+      "canonical": "https://notavello.com/pages/blog/how-to-troubleshoot-a-display-connection-methodically/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-10-18",
+      "bodyWords": 1116
+    },
+    {
       "route": "/pages/blog/how-to-use-http-status-codes-when-debugging-an-api/",
       "file": "pages/blog/how-to-use-http-status-codes-when-debugging-an-api/index.html",
       "title": "How to Use HTTP Status Codes When Debugging an API — The Export | Notavello",
@@ -3752,8 +3779,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-17",
-      "bodyWords": 686
+      "lastmod": "2026-10-18",
+      "bodyWords": 687
     },
     {
       "route": "/pages/blog/page-11/",
@@ -3764,8 +3791,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-17",
-      "bodyWords": 678
+      "lastmod": "2026-10-18",
+      "bodyWords": 682
     },
     {
       "route": "/pages/blog/page-12/",
@@ -3776,8 +3803,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-17",
-      "bodyWords": 810
+      "lastmod": "2026-10-18",
+      "bodyWords": 783
     },
     {
       "route": "/pages/blog/page-13/",
@@ -3788,8 +3815,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-17",
-      "bodyWords": 837
+      "lastmod": "2026-10-18",
+      "bodyWords": 830
     },
     {
       "route": "/pages/blog/page-14/",
@@ -3800,8 +3827,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-17",
-      "bodyWords": 890
+      "lastmod": "2026-10-18",
+      "bodyWords": 889
     },
     {
       "route": "/pages/blog/page-15/",
@@ -3812,8 +3839,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": null,
-      "bodyWords": 75
+      "lastmod": "2026-10-18",
+      "bodyWords": 174
     },
     {
       "route": "/pages/blog/page-2/",
@@ -3824,8 +3851,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-17",
-      "bodyWords": 638
+      "lastmod": "2026-10-18",
+      "bodyWords": 648
     },
     {
       "route": "/pages/blog/page-3/",
@@ -3836,8 +3863,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-17",
-      "bodyWords": 662
+      "lastmod": "2026-10-18",
+      "bodyWords": 657
     },
     {
       "route": "/pages/blog/page-4/",
@@ -3848,8 +3875,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-17",
-      "bodyWords": 639
+      "lastmod": "2026-10-18",
+      "bodyWords": 629
     },
     {
       "route": "/pages/blog/page-5/",
@@ -3860,8 +3887,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-17",
-      "bodyWords": 667
+      "lastmod": "2026-10-18",
+      "bodyWords": 675
     },
     {
       "route": "/pages/blog/page-6/",
@@ -3872,8 +3899,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-17",
-      "bodyWords": 657
+      "lastmod": "2026-10-18",
+      "bodyWords": 658
     },
     {
       "route": "/pages/blog/page-7/",
@@ -3884,8 +3911,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-17",
-      "bodyWords": 689
+      "lastmod": "2026-10-18",
+      "bodyWords": 684
     },
     {
       "route": "/pages/blog/page-8/",
@@ -3896,8 +3923,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-17",
-      "bodyWords": 672
+      "lastmod": "2026-10-18",
+      "bodyWords": 675
     },
     {
       "route": "/pages/blog/page-9/",
@@ -3908,8 +3935,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-17",
-      "bodyWords": 647
+      "lastmod": "2026-10-18",
+      "bodyWords": 650
     },
     {
       "route": "/pages/blog/phosphate-is-the-fertilizer-shock-that-did-not-fade/",
@@ -4366,6 +4393,18 @@
       "incomingLinks": 2,
       "lastmod": "2026-10-17",
       "bodyWords": 1424
+    },
+    {
+      "route": "/pages/blog/three-hundred-forty-three-million-is-the-farm-bill/",
+      "file": "pages/blog/three-hundred-forty-three-million-is-the-farm-bill/index.html",
+      "title": "Three Hundred Forty Three Million Is The Farm Bill — The Export | Notavello",
+      "description": "Arkansas puts a dollar figure on fuel and fertilizer shock: $343M in added farm costs from disrupted shipping routes.",
+      "canonical": "https://notavello.com/pages/blog/three-hundred-forty-three-million-is-the-farm-bill/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-10-19",
+      "bodyWords": 1266
     },
     {
       "route": "/pages/blog/tiny-text-files-that-taught-the-internet-manners/",
@@ -4927,7 +4966,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 328,
+      "incomingLinks": 330,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -4939,7 +4978,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 328,
+      "incomingLinks": 330,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -4951,7 +4990,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 328,
+      "incomingLinks": 330,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -4963,7 +5002,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 328,
+      "incomingLinks": 330,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -4975,7 +5014,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 328,
+      "incomingLinks": 330,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -4988,8 +5027,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-10-18",
-      "bodyWords": 545
+      "lastmod": "2026-10-19",
+      "bodyWords": 551
     },
     {
       "route": "/pages/sample",
@@ -5011,7 +5050,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 328,
+      "incomingLinks": 330,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -5023,7 +5062,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 328,
+      "incomingLinks": 330,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -5047,7 +5086,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 328,
+      "incomingLinks": 330,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -5479,7 +5518,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 328,
+      "incomingLinks": 330,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }
