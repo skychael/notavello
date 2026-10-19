@@ -1,15 +1,31 @@
 {
   "schema_version": "1.0",
-  "checked_at": "2026-10-19T10:50:48.682Z",
-  "latest_success_at": "2026-10-19T10:50:48.682Z",
+  "checked_at": "2026-10-19T17:31:16.042Z",
+  "latest_success_at": "2026-10-19T17:31:16.042Z",
   "status": "ok",
   "items": [
     {
-      "title": "Oil Prices Stay High as War Keeps Supply Tight Into 2027",
-      "url": "https://oilprice.com/Energy/Oil-Prices/Oil-Prices-Stay-High-as-War-Keeps-Supply-Tight-Into-2027.html",
+      "title": "Iraq's October Oil Exports Top 3.4 Million Bpd, Nearing Pre-War Levels",
+      "url": "https://oilprice.com/Latest-Energy-News/World-News/Iraqs-October-Oil-Exports-Top-34-Million-Bpd-Nearing-Pre-War-Levels.html",
       "publisher": "OilPrice.com",
-      "published_at": "2026-10-17T23:00:00.000Z",
+      "published_at": "2026-10-19T15:30:00.000Z",
       "source_id": "oilprice",
+      "status": "ok"
+    },
+    {
+      "title": "Qatari LNG Cargo Heads Through Red Sea to Europe in Rare Suez Run",
+      "url": "https://oilprice.com/Latest-Energy-News/World-News/Qatari-LNG-Cargo-Heads-Through-Red-Sea-to-Europe-in-Rare-Suez-Run.html",
+      "publisher": "OilPrice.com",
+      "published_at": "2026-10-19T13:30:00.000Z",
+      "source_id": "oilprice",
+      "status": "ok"
+    },
+    {
+      "title": "Qatar LNG Cargo Makes Rare Red Sea Journey to Get Gas to Europe",
+      "url": "https://gcaptain.com/qatar-lng-cargo-makes-rare-red-sea-journey-to-get-gas-to-europe",
+      "publisher": "gCaptain",
+      "published_at": "2026-10-19T10:50:00.000Z",
+      "source_id": "gcaptain",
       "status": "ok"
     },
     {
@@ -18,14 +34,6 @@
       "publisher": "gCaptain",
       "published_at": "2026-10-17T14:44:46.000Z",
       "source_id": "gcaptain",
-      "status": "ok"
-    },
-    {
-      "title": "Middle East Chemicals Keep Their Cost Edge Despite Hormuz Crisis",
-      "url": "https://oilprice.com/Energy/Natural-Gas/Middle-East-Chemicals-Keep-Their-Cost-Edge-Despite-Hormuz-Crisis.html",
-      "publisher": "OilPrice.com",
-      "published_at": "2026-10-17T21:00:00.000Z",
-      "source_id": "oilprice",
       "status": "ok"
     },
     {
@@ -45,14 +53,6 @@
       "status": "ok"
     },
     {
-      "title": "Fog of War Deepens in Hormuz as UKMTO Says Most Ship Attacks Go Unreported",
-      "url": "https://gcaptain.com/fog-of-war-deepens-in-hormuz-as-ukmto-says-most-ship-attacks-go-unreported",
-      "publisher": "gCaptain",
-      "published_at": "2026-10-16T18:53:29.000Z",
-      "source_id": "gcaptain",
-      "status": "ok"
-    },
-    {
       "title": "The Army’s Plan For Employing LUCAS Kamikaze Drones Against Its Adversaries",
       "url": "https://www.twz.com/news-features/the-armys-plan-for-employing-lucas-kamikaze-drones-against-its-adversaries",
       "publisher": "TWZ (The War Zone)",
@@ -61,10 +61,18 @@
       "status": "ok"
     },
     {
-      "title": "Zone 5 ‘found a spot’ in drone interceptor market with new Eclipse: CEO",
-      "url": "https://breakingdefense.com/2026/10/zone-5-found-a-spot-in-drone-interceptor-market-with-new-eclipse-ceo",
+      "title": "Why the Army can’t build its Pacific network like the one in Europe",
+      "url": "https://breakingdefense.com/2026/10/why-the-army-cant-build-its-pacific-network-like-the-one-in-europe",
       "publisher": "Breaking Defense",
-      "published_at": "2026-10-16T16:28:00.000Z",
+      "published_at": "2026-10-19T12:46:00.000Z",
+      "source_id": "breaking-defense",
+      "status": "ok"
+    },
+    {
+      "title": "Army feels ‘growing pains’ as it integrates Anduril NGC2 tech with older comms",
+      "url": "https://breakingdefense.com/2026/10/army-feels-growing-pains-as-it-integrates-anduril-ngc2-tech-with-older-comms",
+      "publisher": "Breaking Defense",
+      "published_at": "2026-10-19T11:30:00.000Z",
       "source_id": "breaking-defense",
       "status": "ok"
     },
@@ -74,14 +82,6 @@
       "publisher": "TWZ (The War Zone)",
       "published_at": "2026-10-18T18:31:41.000Z",
       "source_id": "twz",
-      "status": "ok"
-    },
-    {
-      "title": "Germany changes course on plans to buy MQ-28 drone wingman: Boeing official",
-      "url": "https://breakingdefense.com/2026/10/germany-changes-course-on-plans-to-buy-mq-28-drone-wingman-boeing-official",
-      "publisher": "Breaking Defense",
-      "published_at": "2026-10-16T15:19:30.000Z",
-      "source_id": "breaking-defense",
       "status": "ok"
     }
   ]
