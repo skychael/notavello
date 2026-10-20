@@ -1,36 +1,36 @@
 {
   "schema_version": "1.0",
-  "date_key": "10-19",
-  "display_date": "October 19",
-  "generated_at": "2026-10-19T15:37:26.693Z",
+  "date_key": "10-20",
+  "display_date": "October 20",
+  "generated_at": "2026-10-20T13:33:55.550Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-176797a2aeed75cc2ae04b5f",
+      "candidate_id": "event-9e3cb25bbeae478a43c34030",
       "type": "event",
-      "year": 1986,
-      "text": "The president of Mozambique and a prominent leader of FRELIMO, along with 33 others, die when their aircraft crashes into the Lebombo Mountains.",
-      "article_title": "1986 Mozambican Tupolev Tu-134 crash",
-      "url": "https://en.wikipedia.org/wiki/1986_Mozambican_Tupolev_Tu-134_crash",
-      "category": "Disasters and exploration"
-    },
-    {
-      "candidate_id": "event-a0135d16ad3f161a129b0b7c",
-      "type": "event",
-      "year": 2012,
-      "text": "A bomb explosion kills eight people and injures 110 more in Lebanon.",
-      "article_title": "Assassination of Wissam al-Hassan",
-      "url": "https://en.wikipedia.org/wiki/Assassination_of_Wissam_al-Hassan",
+      "year": 2011,
+      "text": "Libyan Crisis: Rebel forces capture Libyan dictator Muammar Gaddafi and his son Mutassim in his hometown of Sirte and kill them shortly thereafter, ending the first Libyan civil war.",
+      "article_title": "Libyan crisis",
+      "url": "https://en.wikipedia.org/wiki/Libyan_crisis",
       "category": "World history"
     },
     {
-      "candidate_id": "event-79dc1200983b7bccb2722c16",
+      "candidate_id": "event-9c9e9c44c7a827a1f12d9e86",
       "type": "event",
-      "year": 2005,
-      "text": "Hurricane Wilma becomes the most intense Atlantic hurricane on record with a minimum pressure of 882 mb.",
-      "article_title": "Hurricane Wilma",
-      "url": "https://en.wikipedia.org/wiki/Hurricane_Wilma",
+      "year": 1910,
+      "text": "British ocean liner RMS Olympic is launched.",
+      "article_title": "Ocean liner",
+      "url": "https://en.wikipedia.org/wiki/Ocean_liner",
+      "category": "Sports"
+    },
+    {
+      "candidate_id": "event-b0febf463f2f53a91377fb6a",
+      "type": "event",
+      "year": 1991,
+      "text": "A 6.8 Mw earthquake strikes the Uttarkashi region of India, killing more than 1,000 people.",
+      "article_title": "Moment magnitude scale",
+      "url": "https://en.wikipedia.org/wiki/Moment_magnitude_scale",
       "category": "Disasters and exploration"
     }
   ]
