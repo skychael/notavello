@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-20T18:29:55.260Z",
-  "latest_success_at": "2026-10-20T18:29:55.260Z",
+  "generated_at": "2026-10-20T22:20:54.209Z",
+  "latest_success_at": "2026-10-20T22:20:54.209Z",
   "status": "ok",
   "items": [
     {
@@ -23,12 +23,12 @@
       "status": "ok"
     },
     {
-      "id": "f56b57cf02e57db6",
-      "title": "Flood Watch issued October 20 at 2:44AM AKDT until October 21 at 4:00AM AKDT by NWS Juneau AK",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.e512c690ce888a99610b14562bca654c399dbd0f.001.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-10-20T10:44:00.000Z",
-      "topic": "Flooding",
+      "id": "4c31190a9c521e8a",
+      "title": "SPC Oct 20, 2026 1730 UTC Day 2 Convective Outlook",
+      "url": "https://www.spc.noaa.gov/products/outlook/day2otlk_1730.html",
+      "publisher": "Storm Prediction Center",
+      "published_at": "2026-10-20T17:56:03.000Z",
+      "topic": "Severe weather",
       "status": "ok"
     }
   ]
