@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-19T06:38:44.130Z",
+  "generatedAt": "2026-10-20T06:24:45.751Z",
   "totals": {
-    "pages": 330,
-    "indexable": 326,
-    "articles": 255,
-    "sitemap": 326,
+    "pages": 332,
+    "indexable": 328,
+    "articles": 257,
+    "sitemap": 328,
     "errors": 0,
-    "warnings": 310
+    "warnings": 314
   },
   "errors": [],
   "warnings": [
@@ -593,6 +593,16 @@
     {
       "type": "topic-review",
       "page": "/pages/blog/hormuz-shuttle-tankers-made-freight-the-oil-shock/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/how-a-password-manager-changes-everyday-account-security/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/how-a-password-manager-changes-everyday-account-security/",
       "detail": "title/description lacks a clear AI, software, or computing connection"
     },
     {
@@ -1326,6 +1336,16 @@
       "detail": "title/description lacks a clear AI, software, or computing connection"
     },
     {
+      "type": "template-pattern",
+      "page": "/pages/blog/two-point-one-nine-million-teu-is-not-a-normal-suez/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/two-point-one-nine-million-teu-is-not-a-normal-suez/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
       "type": "topic-review",
       "page": "/pages/blog/ubuntu-4-digit-pin-login/",
       "detail": "title/description lacks a clear AI, software, or computing connection"
@@ -1570,7 +1590,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 330,
+      "incomingLinks": 332,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -1594,7 +1614,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 330,
+      "incomingLinks": 332,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -1702,7 +1722,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 330,
+      "incomingLinks": 332,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -1714,9 +1734,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 330,
-      "lastmod": "2026-10-18",
-      "bodyWords": 669
+      "incomingLinks": 332,
+      "lastmod": "2026-10-19",
+      "bodyWords": 664
     },
     {
       "route": "/pages/blog/a-checklist-for-reliable-scheduled-jobs/",
@@ -1822,7 +1842,7 @@
       "canonical": "https://notavello.com/pages/blog/a-sunk-container-ship-is-the-import-bill/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 2,
+      "incomingLinks": 3,
       "lastmod": "2026-10-16",
       "bodyWords": 1505
     },
@@ -2050,9 +2070,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 194,
-      "lastmod": "2026-10-18",
-      "bodyWords": 3105
+      "incomingLinks": 196,
+      "lastmod": "2026-10-19",
+      "bodyWords": 3130
     },
     {
       "route": "/pages/blog/anhydrous-ammonia-is-the-fall-farm-bill/",
@@ -2931,6 +2951,18 @@
       "bodyWords": 1616
     },
     {
+      "route": "/pages/blog/how-a-password-manager-changes-everyday-account-security/",
+      "file": "pages/blog/how-a-password-manager-changes-everyday-account-security/index.html",
+      "title": "How a password manager changes everyday account security — The Export | Notavello",
+      "description": "A password manager lets you use unique, strong passwords on every account while protecting the vault with a single master passphrase and multi-factor",
+      "canonical": "https://notavello.com/pages/blog/how-a-password-manager-changes-everyday-account-security/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-10-19",
+      "bodyWords": 748
+    },
+    {
       "route": "/pages/blog/how-ai-actually-searches-the-web/",
       "file": "pages/blog/how-ai-actually-searches-the-web/index.html",
       "title": "How AI Actually Searches the Web — and Why It's Not the Same as Googling — The Export | Notavello",
@@ -3779,8 +3811,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-18",
-      "bodyWords": 687
+      "lastmod": "2026-10-19",
+      "bodyWords": 682
     },
     {
       "route": "/pages/blog/page-11/",
@@ -3791,8 +3823,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-18",
-      "bodyWords": 682
+      "lastmod": "2026-10-19",
+      "bodyWords": 685
     },
     {
       "route": "/pages/blog/page-12/",
@@ -3803,8 +3835,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-18",
-      "bodyWords": 783
+      "lastmod": "2026-10-19",
+      "bodyWords": 777
     },
     {
       "route": "/pages/blog/page-13/",
@@ -3815,8 +3847,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-18",
-      "bodyWords": 830
+      "lastmod": "2026-10-19",
+      "bodyWords": 824
     },
     {
       "route": "/pages/blog/page-14/",
@@ -3827,8 +3859,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-18",
-      "bodyWords": 889
+      "lastmod": "2026-10-19",
+      "bodyWords": 871
     },
     {
       "route": "/pages/blog/page-15/",
@@ -3839,8 +3871,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": "2026-10-18",
-      "bodyWords": 174
+      "lastmod": "2026-10-19",
+      "bodyWords": 278
     },
     {
       "route": "/pages/blog/page-2/",
@@ -3851,8 +3883,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-18",
-      "bodyWords": 648
+      "lastmod": "2026-10-19",
+      "bodyWords": 653
     },
     {
       "route": "/pages/blog/page-3/",
@@ -3863,8 +3895,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-18",
-      "bodyWords": 657
+      "lastmod": "2026-10-19",
+      "bodyWords": 664
     },
     {
       "route": "/pages/blog/page-4/",
@@ -3875,8 +3907,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-18",
-      "bodyWords": 629
+      "lastmod": "2026-10-19",
+      "bodyWords": 622
     },
     {
       "route": "/pages/blog/page-5/",
@@ -3887,8 +3919,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-18",
-      "bodyWords": 675
+      "lastmod": "2026-10-19",
+      "bodyWords": 677
     },
     {
       "route": "/pages/blog/page-6/",
@@ -3899,8 +3931,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-18",
-      "bodyWords": 658
+      "lastmod": "2026-10-19",
+      "bodyWords": 650
     },
     {
       "route": "/pages/blog/page-7/",
@@ -3911,8 +3943,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-18",
-      "bodyWords": 684
+      "lastmod": "2026-10-19",
+      "bodyWords": 689
     },
     {
       "route": "/pages/blog/page-8/",
@@ -3923,8 +3955,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-18",
-      "bodyWords": 675
+      "lastmod": "2026-10-19",
+      "bodyWords": 678
     },
     {
       "route": "/pages/blog/page-9/",
@@ -3935,8 +3967,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-18",
-      "bodyWords": 650
+      "lastmod": "2026-10-19",
+      "bodyWords": 647
     },
     {
       "route": "/pages/blog/phosphate-is-the-fertilizer-shock-that-did-not-fade/",
@@ -4429,6 +4461,18 @@
       "incomingLinks": 2,
       "lastmod": "2026-07-22",
       "bodyWords": 1972
+    },
+    {
+      "route": "/pages/blog/two-point-one-nine-million-teu-is-not-a-normal-suez/",
+      "file": "pages/blog/two-point-one-nine-million-teu-is-not-a-normal-suez/index.html",
+      "title": "Two Point One Nine Million TEU Is Not A Normal Suez — The Export | Notavello",
+      "description": "Suez container traffic is recovering, but Red Sea risk still keeps freight bills jumpy.",
+      "canonical": "https://notavello.com/pages/blog/two-point-one-nine-million-teu-is-not-a-normal-suez/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-10-20",
+      "bodyWords": 1451
     },
     {
       "route": "/pages/blog/ubuntu-4-digit-pin-login/",
@@ -4966,7 +5010,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 330,
+      "incomingLinks": 332,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -4978,7 +5022,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 330,
+      "incomingLinks": 332,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -4990,7 +5034,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 330,
+      "incomingLinks": 332,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -5002,7 +5046,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 330,
+      "incomingLinks": 332,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -5014,7 +5058,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 330,
+      "incomingLinks": 332,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -5027,8 +5071,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-10-19",
-      "bodyWords": 551
+      "lastmod": "2026-10-20",
+      "bodyWords": 557
     },
     {
       "route": "/pages/sample",
@@ -5050,7 +5094,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 330,
+      "incomingLinks": 332,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -5062,7 +5106,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 330,
+      "incomingLinks": 332,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -5086,7 +5130,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 330,
+      "incomingLinks": 332,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -5518,7 +5562,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 330,
+      "incomingLinks": 332,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }
