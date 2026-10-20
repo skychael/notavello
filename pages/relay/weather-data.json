@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-20T07:40:12.813Z",
-  "latest_success_at": "2026-10-20T07:40:12.813Z",
+  "generated_at": "2026-10-20T13:36:24.810Z",
+  "latest_success_at": "2026-10-20T13:36:24.810Z",
   "status": "ok",
   "items": [
     {
@@ -9,7 +9,7 @@
       "title": "Atlantic Tropical Weather Outlook",
       "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-10-20T05:04:51.000Z",
+      "published_at": "2026-10-20T11:50:28.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
@@ -23,11 +23,11 @@
       "status": "ok"
     },
     {
-      "id": "1f7c78e606eb0097",
-      "title": "Flood Watch issued October 19 at 3:22PM AKDT until October 21 at 4:00AM AKDT by NWS Juneau AK",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.bd966519e3b6f707f8613eafa727faf5b8bc5e93.001.1.cap",
+      "id": "f56b57cf02e57db6",
+      "title": "Flood Watch issued October 20 at 2:44AM AKDT until October 21 at 4:00AM AKDT by NWS Juneau AK",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.e512c690ce888a99610b14562bca654c399dbd0f.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-10-19T23:22:00.000Z",
+      "published_at": "2026-10-20T10:44:00.000Z",
       "topic": "Flooding",
       "status": "ok"
     }
