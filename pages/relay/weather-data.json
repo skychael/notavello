@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-20T01:52:24.909Z",
-  "latest_success_at": "2026-10-20T01:52:24.909Z",
+  "generated_at": "2026-10-20T07:40:12.813Z",
+  "latest_success_at": "2026-10-20T07:40:12.813Z",
   "status": "ok",
   "items": [
     {
@@ -9,26 +9,26 @@
       "title": "Atlantic Tropical Weather Outlook",
       "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-10-19T23:48:15.000Z",
+      "published_at": "2026-10-20T05:04:51.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "8a1115309c915ef2",
-      "title": "Tropical Storm Trudy Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep1+shtml/212243.shtml?cone=",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-10-19T21:22:43.000Z",
+      "id": "1cce4883d203dda1",
+      "title": "Champi briefly reaches super typhoon strength after its closest approach to Guam causes widespread outages",
+      "url": "https://watchers.news/2026/10/18/champi-briefly-reaches-super-typhoon-strength-after-its-closest-approach-to-guam-causes-widespread-outages",
+      "publisher": "The Watchers",
+      "published_at": "2026-10-18T15:45:09.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "880cf3e213cc37f6",
-      "title": "High Surf Advisory issued October 20 at 4:20AM ChST until October 20 at 6:00PM ChST by NWS Tiyan GU",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.31dce43922ee2bbd4d25d278223d745ded665c2d.001.1.cap",
+      "id": "1f7c78e606eb0097",
+      "title": "Flood Watch issued October 19 at 3:22PM AKDT until October 21 at 4:00AM AKDT by NWS Juneau AK",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.bd966519e3b6f707f8613eafa727faf5b8bc5e93.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-10-19T18:20:00.000Z",
-      "topic": "Hurricane",
+      "published_at": "2026-10-19T23:22:00.000Z",
+      "topic": "Flooding",
       "status": "ok"
     }
   ]
