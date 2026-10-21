@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-21T18:42:09.556Z",
-  "latest_success_at": "2026-10-21T18:42:09.556Z",
+  "generated_at": "2026-10-21T22:24:29.514Z",
+  "latest_success_at": "2026-10-21T22:24:29.514Z",
   "status": "ok",
   "items": [
     {
-      "id": "b5ad93019d019ede",
-      "title": "Atlantic Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
+      "id": "72c447189e71142d",
+      "title": "Tropical Storm Vance Graphics",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep2+shtml/212845.shtml?cone=",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-10-21T17:26:30.000Z",
+      "published_at": "2026-10-21T21:28:45.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "38a1d8630caa0383",
-      "title": "SPC Oct 21, 2026 1630 UTC Day 1 Convective Outlook",
-      "url": "https://www.spc.noaa.gov/products/outlook/day1otlk_1630.html",
+      "id": "adc0e5ac66fc4167",
+      "title": "Subtropical Storm Josephine Wind Speed Probabilities Number 1",
+      "url": "https://www.nhc.noaa.gov/text/refresh/MIAPWSAT5+shtml/212046.shtml",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-10-21T20:46:59.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "b4bcce42aee5b24c",
+      "title": "SPC Oct 21, 2026 2000 UTC Day 1 Convective Outlook",
+      "url": "https://www.spc.noaa.gov/products/outlook/day1otlk_2000.html",
       "publisher": "Storm Prediction Center",
-      "published_at": "2026-10-21T16:25:13.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "f311381f8158df12",
-      "title": "Super Typhoon Champi becomes the strongest tropical cyclone of 2026, Signal No. 2 remains over Batanes, Philippines",
-      "url": "https://watchers.news/2026/10/21/super-typhoon-champi-becomes-the-strongest-tropical-cyclone-of-2026-signal-no-2-remains-over-batanes-philippines",
-      "publisher": "The Watchers",
-      "published_at": "2026-10-21T13:31:40.000Z",
+      "published_at": "2026-10-21T19:55:11.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
