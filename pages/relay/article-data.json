@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
-  "checked_at": "2026-10-21T13:52:17.545Z",
-  "latest_success_at": "2026-10-21T13:52:17.545Z",
-  "status": "ok",
+  "checked_at": "2026-10-21T18:42:07.783Z",
+  "latest_success_at": "2026-10-21T18:42:07.783Z",
+  "status": "partial",
   "items": [
     {
       "title": "Goldman Sachs Warns of New Oil Price Shock as Tanker Rates Soar",
@@ -21,10 +21,10 @@
       "status": "ok"
     },
     {
-      "title": "China Sends Naval Forces to Monitor US Warship Near Disputed Shoal",
-      "url": "https://gcaptain.com/china-sends-naval-forces-to-monitor-us-warship-near-disputed-shoal",
+      "title": "Middle East Oil Flows Near Prewar Levels Defy Hormuz Attacks",
+      "url": "https://gcaptain.com/middle-east-oil-flows-near-prewar-levels-defy-hormuz-attacks",
       "publisher": "gCaptain",
-      "published_at": "2026-10-20T12:16:08.000Z",
+      "published_at": "2026-10-21T17:01:59.000Z",
       "source_id": "gcaptain",
       "status": "ok"
     },
@@ -53,14 +53,6 @@
       "status": "ok"
     },
     {
-      "title": "Finland To Build A Million Landmines As Russian Threat Looms",
-      "url": "https://www.twz.com/news-features/finland-plans-to-build-a-million-landmines-as-russian-threat-looms",
-      "publisher": "TWZ (The War Zone)",
-      "published_at": "2026-10-20T20:53:28.000Z",
-      "source_id": "twz",
-      "status": "ok"
-    },
-    {
       "title": "Russia’s naval posture in the Mediterranean has ‘significantly decreased’: NATO official",
       "url": "https://breakingdefense.com/2026/10/russias-naval-posture-in-the-mediterranean-has-significantly-decreased-nato-official",
       "publisher": "Breaking Defense",
@@ -77,11 +69,19 @@
       "status": "ok"
     },
     {
-      "title": "Army’s Plan To Launch Hundreds Of Balloons Into Enemy Territory If A Future Conflict Breaks Out",
-      "url": "https://www.twz.com/air/armys-plan-to-launch-hundreds-of-balloons-into-enemy-territory-if-a-future-conflict-breaks-out",
-      "publisher": "TWZ (The War Zone)",
-      "published_at": "2026-10-19T19:49:31.000Z",
-      "source_id": "twz",
+      "title": "Will a second US city tax billion-dollar firms to fund clean energy?",
+      "url": "https://www.canarymedia.com/articles/clean-energy/eugene-ballot-measure-tax-companies-climate-fund",
+      "publisher": "Canary Media",
+      "published_at": "2026-10-20T07:30:00.000Z",
+      "source_id": "canary-media",
+      "status": "ok"
+    },
+    {
+      "title": "Super Typhoon Champi becomes the strongest tropical cyclone of 2026, Signal No. 2 remains over Batanes, Philippines",
+      "url": "https://watchers.news/2026/10/21/super-typhoon-champi-becomes-the-strongest-tropical-cyclone-of-2026-signal-no-2-remains-over-batanes-philippines",
+      "publisher": "The Watchers",
+      "published_at": "2026-10-21T13:31:40.000Z",
+      "source_id": "the-watchers",
       "status": "ok"
     }
   ]

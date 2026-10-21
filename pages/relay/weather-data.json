@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-21T13:52:18.365Z",
-  "latest_success_at": "2026-10-21T13:52:18.365Z",
+  "generated_at": "2026-10-21T18:42:09.556Z",
+  "latest_success_at": "2026-10-21T18:42:09.556Z",
   "status": "ok",
   "items": [
+    {
+      "id": "b5ad93019d019ede",
+      "title": "Atlantic Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-10-21T17:26:30.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "38a1d8630caa0383",
+      "title": "SPC Oct 21, 2026 1630 UTC Day 1 Convective Outlook",
+      "url": "https://www.spc.noaa.gov/products/outlook/day1otlk_1630.html",
+      "publisher": "Storm Prediction Center",
+      "published_at": "2026-10-21T16:25:13.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
     {
       "id": "f311381f8158df12",
       "title": "Super Typhoon Champi becomes the strongest tropical cyclone of 2026, Signal No. 2 remains over Batanes, Philippines",
       "url": "https://watchers.news/2026/10/21/super-typhoon-champi-becomes-the-strongest-tropical-cyclone-of-2026-signal-no-2-remains-over-batanes-philippines",
       "publisher": "The Watchers",
       "published_at": "2026-10-21T13:31:40.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "ee8e390990a944fc",
-      "title": "Eastern North Pacific Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-10-21T11:44:56.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "1cce4883d203dda1",
-      "title": "Champi briefly reaches super typhoon strength after its closest approach to Guam causes widespread outages",
-      "url": "https://watchers.news/2026/10/18/champi-briefly-reaches-super-typhoon-strength-after-its-closest-approach-to-guam-causes-widespread-outages",
-      "publisher": "The Watchers",
-      "published_at": "2026-10-18T15:45:09.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
