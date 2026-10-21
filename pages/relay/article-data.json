@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "checked_at": "2026-10-20T22:20:53.548Z",
-  "latest_success_at": "2026-10-20T22:20:53.548Z",
+  "checked_at": "2026-10-21T01:39:13.289Z",
+  "latest_success_at": "2026-10-21T01:39:13.289Z",
   "status": "ok",
   "items": [
     {
@@ -9,14 +9,6 @@
       "url": "https://oilprice.com/Energy/Crude-Oil/The-Next-Major-Oil-Supply-Shock-Could-Come-From-Saudi-Arabia.html",
       "publisher": "OilPrice.com",
       "published_at": "2026-10-20T16:11:00.000Z",
-      "source_id": "oilprice",
-      "status": "ok"
-    },
-    {
-      "title": "Shipping Crisis Forces Asian Crude Buyers to Use Smaller Tankers",
-      "url": "https://oilprice.com/Latest-Energy-News/World-News/Shipping-Crisis-Forces-Asian-Crude-Buyers-to-Use-Smaller-Tankers.html",
-      "publisher": "OilPrice.com",
-      "published_at": "2026-10-20T14:30:00.000Z",
       "source_id": "oilprice",
       "status": "ok"
     },
@@ -34,6 +26,14 @@
       "publisher": "gCaptain",
       "published_at": "2026-10-20T16:20:13.000Z",
       "source_id": "gcaptain",
+      "status": "ok"
+    },
+    {
+      "title": "Russia’s Oil Export Revenue Slides as Production Declines",
+      "url": "https://oilprice.com/Latest-Energy-News/World-News/Russias-Oil-Export-Revenue-Slides-as-Production-Declines.html",
+      "publisher": "OilPrice.com",
+      "published_at": "2026-10-20T16:30:00.000Z",
+      "source_id": "oilprice",
       "status": "ok"
     },
     {

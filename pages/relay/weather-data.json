@@ -1,15 +1,15 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-20T22:20:54.209Z",
-  "latest_success_at": "2026-10-20T22:20:54.209Z",
+  "generated_at": "2026-10-21T01:39:14.029Z",
+  "latest_success_at": "2026-10-21T01:39:14.029Z",
   "status": "ok",
   "items": [
     {
-      "id": "ee8e390990a944fc",
-      "title": "Eastern North Pacific Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
+      "id": "b5ad93019d019ede",
+      "title": "Atlantic Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-10-20T17:01:05.000Z",
+      "published_at": "2026-10-20T23:52:50.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
@@ -23,12 +23,12 @@
       "status": "ok"
     },
     {
-      "id": "4c31190a9c521e8a",
-      "title": "SPC Oct 20, 2026 1730 UTC Day 2 Convective Outlook",
-      "url": "https://www.spc.noaa.gov/products/outlook/day2otlk_1730.html",
-      "publisher": "Storm Prediction Center",
-      "published_at": "2026-10-20T17:56:03.000Z",
-      "topic": "Severe weather",
+      "id": "39ed46cf446a678f",
+      "title": "Four killed and two seriously injured during wildfire suppression in Bromo Tengger Semeru National Park, Indonesia",
+      "url": "https://watchers.news/2026/10/16/four-killed-and-two-seriously-injured-during-wildfire-suppression-in-bromo-tengger-semeru-national-park-indonesia",
+      "publisher": "The Watchers",
+      "published_at": "2026-10-16T18:28:37.000Z",
+      "topic": "Wildfire",
       "status": "ok"
     }
   ]
