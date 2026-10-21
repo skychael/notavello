@@ -1,36 +1,36 @@
 {
   "schema_version": "1.0",
-  "date_key": "10-20",
-  "display_date": "October 20",
-  "generated_at": "2026-10-20T13:33:55.550Z",
+  "date_key": "10-21",
+  "display_date": "October 21",
+  "generated_at": "2026-10-21T13:49:18.408Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-9e3cb25bbeae478a43c34030",
+      "candidate_id": "event-4453303e574af3877f3747d6",
       "type": "event",
-      "year": 2011,
-      "text": "Libyan Crisis: Rebel forces capture Libyan dictator Muammar Gaddafi and his son Mutassim in his hometown of Sirte and kill them shortly thereafter, ending the first Libyan civil war.",
-      "article_title": "Libyan crisis",
-      "url": "https://en.wikipedia.org/wiki/Libyan_crisis",
+      "year": 1959,
+      "text": "President Dwight D. Eisenhower approves the transfer of all US Army space-related activities to NASA, including most of the Army Ballistic Missile Agency.",
+      "article_title": "Dwight D. Eisenhower",
+      "url": "https://en.wikipedia.org/wiki/Dwight_D._Eisenhower",
+      "category": "Science and technology"
+    },
+    {
+      "candidate_id": "event-57a32e8801c29e7f25ad2232",
+      "type": "event",
+      "year": 1910,
+      "text": "HMS Niobe arrives in Halifax Harbour to become the first ship of the Royal Canadian Navy.",
+      "article_title": "HMS Niobe (1897)",
+      "url": "https://en.wikipedia.org/wiki/HMS_Niobe_(1897)",
       "category": "World history"
     },
     {
-      "candidate_id": "event-9c9e9c44c7a827a1f12d9e86",
+      "candidate_id": "event-83408928ec0b806fafe220c9",
       "type": "event",
-      "year": 1910,
-      "text": "British ocean liner RMS Olympic is launched.",
-      "article_title": "Ocean liner",
-      "url": "https://en.wikipedia.org/wiki/Ocean_liner",
-      "category": "Sports"
-    },
-    {
-      "candidate_id": "event-b0febf463f2f53a91377fb6a",
-      "type": "event",
-      "year": 1991,
-      "text": "A 6.8 Mw earthquake strikes the Uttarkashi region of India, killing more than 1,000 people.",
-      "article_title": "Moment magnitude scale",
-      "url": "https://en.wikipedia.org/wiki/Moment_magnitude_scale",
+      "year": 1966,
+      "text": "A colliery spoil tip slips onto houses and a school in the village of Aberfan in Wales, killing 144 people, 116 of whom were schoolchildren.",
+      "article_title": "Aberfan disaster",
+      "url": "https://en.wikipedia.org/wiki/Aberfan_disaster",
       "category": "Disasters and exploration"
     }
   ]
