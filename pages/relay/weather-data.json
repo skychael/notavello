@@ -1,15 +1,24 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-21T07:44:23.282Z",
-  "latest_success_at": "2026-10-21T07:44:23.282Z",
+  "generated_at": "2026-10-21T13:52:18.365Z",
+  "latest_success_at": "2026-10-21T13:52:18.365Z",
   "status": "ok",
   "items": [
     {
-      "id": "b5ad93019d019ede",
-      "title": "Atlantic Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
+      "id": "f311381f8158df12",
+      "title": "Super Typhoon Champi becomes the strongest tropical cyclone of 2026, Signal No. 2 remains over Batanes, Philippines",
+      "url": "https://watchers.news/2026/10/21/super-typhoon-champi-becomes-the-strongest-tropical-cyclone-of-2026-signal-no-2-remains-over-batanes-philippines",
+      "publisher": "The Watchers",
+      "published_at": "2026-10-21T13:31:40.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "ee8e390990a944fc",
+      "title": "Eastern North Pacific Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-10-21T05:16:51.000Z",
+      "published_at": "2026-10-21T11:44:56.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
@@ -20,15 +29,6 @@
       "publisher": "The Watchers",
       "published_at": "2026-10-18T15:45:09.000Z",
       "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "39ed46cf446a678f",
-      "title": "Four killed and two seriously injured during wildfire suppression in Bromo Tengger Semeru National Park, Indonesia",
-      "url": "https://watchers.news/2026/10/16/four-killed-and-two-seriously-injured-during-wildfire-suppression-in-bromo-tengger-semeru-national-park-indonesia",
-      "publisher": "The Watchers",
-      "published_at": "2026-10-16T18:28:37.000Z",
-      "topic": "Wildfire",
       "status": "ok"
     }
   ]
