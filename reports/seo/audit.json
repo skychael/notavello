@@ -1,15 +1,25 @@
 {
-  "generatedAt": "2026-10-20T06:24:45.751Z",
+  "generatedAt": "2026-10-21T06:25:52.052Z",
   "totals": {
-    "pages": 332,
-    "indexable": 328,
-    "articles": 257,
-    "sitemap": 328,
+    "pages": 334,
+    "indexable": 330,
+    "articles": 259,
+    "sitemap": 330,
     "errors": 0,
-    "warnings": 314
+    "warnings": 318
   },
   "errors": [],
   "warnings": [
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/a-calm-checklist-for-inspecting-a-suspicious-message/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/a-calm-checklist-for-inspecting-a-suspicious-message/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
     {
       "type": "template-pattern",
       "page": "/pages/blog/a-checklist-for-reliable-scheduled-jobs/",
@@ -353,6 +363,16 @@
     {
       "type": "topic-review",
       "page": "/pages/blog/east-coast-heating-oil-gap-is-the-winter-bill/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/eight-billion-dollars-is-the-harvest-fuel-receipt/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/eight-billion-dollars-is-the-harvest-fuel-receipt/",
       "detail": "title/description lacks a clear AI, software, or computing connection"
     },
     {
@@ -1590,7 +1610,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 332,
+      "incomingLinks": 334,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -1614,7 +1634,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 332,
+      "incomingLinks": 334,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -1722,7 +1742,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 332,
+      "incomingLinks": 334,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -1734,9 +1754,21 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 332,
-      "lastmod": "2026-10-19",
-      "bodyWords": 664
+      "incomingLinks": 334,
+      "lastmod": "2026-10-20",
+      "bodyWords": 661
+    },
+    {
+      "route": "/pages/blog/a-calm-checklist-for-inspecting-a-suspicious-message/",
+      "file": "pages/blog/a-calm-checklist-for-inspecting-a-suspicious-message/index.html",
+      "title": "A calm checklist for inspecting a suspicious message — The Export | Notavello",
+      "description": "A methodical checklist to evaluate suspicious emails or texts by checking sender context, links, requests, urgency, and independent verification",
+      "canonical": "https://notavello.com/pages/blog/a-calm-checklist-for-inspecting-a-suspicious-message/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-10-20",
+      "bodyWords": 1090
     },
     {
       "route": "/pages/blog/a-checklist-for-reliable-scheduled-jobs/",
@@ -2070,9 +2102,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 196,
-      "lastmod": "2026-10-19",
-      "bodyWords": 3130
+      "incomingLinks": 198,
+      "lastmod": "2026-10-20",
+      "bodyWords": 3152
     },
     {
       "route": "/pages/blog/anhydrous-ammonia-is-the-fall-farm-bill/",
@@ -2529,6 +2561,18 @@
       "incomingLinks": 2,
       "lastmod": "2026-10-07",
       "bodyWords": 1512
+    },
+    {
+      "route": "/pages/blog/eight-billion-dollars-is-the-harvest-fuel-receipt/",
+      "file": "pages/blog/eight-billion-dollars-is-the-harvest-fuel-receipt/index.html",
+      "title": "Eight Billion Dollars Is The Harvest Fuel Receipt — The Export | Notavello",
+      "description": "USDA’s $8B Harvest Fuel Relief shows diesel and fertilizer shocks are now a farm-bill problem, not just an oil-market headline.",
+      "canonical": "https://notavello.com/pages/blog/eight-billion-dollars-is-the-harvest-fuel-receipt/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-10-21",
+      "bodyWords": 1358
     },
     {
       "route": "/pages/blog/eighteen-million-barrels-is-the-freight-bill/",
@@ -3811,8 +3855,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-19",
-      "bodyWords": 682
+      "lastmod": "2026-10-20",
+      "bodyWords": 674
     },
     {
       "route": "/pages/blog/page-11/",
@@ -3823,8 +3867,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-19",
-      "bodyWords": 685
+      "lastmod": "2026-10-20",
+      "bodyWords": 689
     },
     {
       "route": "/pages/blog/page-12/",
@@ -3835,8 +3879,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-19",
-      "bodyWords": 777
+      "lastmod": "2026-10-20",
+      "bodyWords": 759
     },
     {
       "route": "/pages/blog/page-13/",
@@ -3847,8 +3891,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-19",
-      "bodyWords": 824
+      "lastmod": "2026-10-20",
+      "bodyWords": 837
     },
     {
       "route": "/pages/blog/page-14/",
@@ -3859,8 +3903,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-19",
-      "bodyWords": 871
+      "lastmod": "2026-10-20",
+      "bodyWords": 859
     },
     {
       "route": "/pages/blog/page-15/",
@@ -3871,8 +3915,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": "2026-10-19",
-      "bodyWords": 278
+      "lastmod": "2026-10-20",
+      "bodyWords": 371
     },
     {
       "route": "/pages/blog/page-2/",
@@ -3883,8 +3927,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-19",
-      "bodyWords": 653
+      "lastmod": "2026-10-20",
+      "bodyWords": 655
     },
     {
       "route": "/pages/blog/page-3/",
@@ -3895,8 +3939,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-19",
-      "bodyWords": 664
+      "lastmod": "2026-10-20",
+      "bodyWords": 661
     },
     {
       "route": "/pages/blog/page-4/",
@@ -3907,8 +3951,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-19",
-      "bodyWords": 622
+      "lastmod": "2026-10-20",
+      "bodyWords": 629
     },
     {
       "route": "/pages/blog/page-5/",
@@ -3919,8 +3963,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-19",
-      "bodyWords": 677
+      "lastmod": "2026-10-20",
+      "bodyWords": 666
     },
     {
       "route": "/pages/blog/page-6/",
@@ -3931,8 +3975,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-19",
-      "bodyWords": 650
+      "lastmod": "2026-10-20",
+      "bodyWords": 661
     },
     {
       "route": "/pages/blog/page-7/",
@@ -3943,8 +3987,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-19",
-      "bodyWords": 689
+      "lastmod": "2026-10-20",
+      "bodyWords": 688
     },
     {
       "route": "/pages/blog/page-8/",
@@ -3955,8 +3999,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-19",
-      "bodyWords": 678
+      "lastmod": "2026-10-20",
+      "bodyWords": 674
     },
     {
       "route": "/pages/blog/page-9/",
@@ -3967,7 +4011,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-19",
+      "lastmod": "2026-10-20",
       "bodyWords": 647
     },
     {
@@ -4434,7 +4478,7 @@
       "canonical": "https://notavello.com/pages/blog/three-hundred-forty-three-million-is-the-farm-bill/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 2,
+      "incomingLinks": 3,
       "lastmod": "2026-10-19",
       "bodyWords": 1266
     },
@@ -5010,7 +5054,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 332,
+      "incomingLinks": 334,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -5022,7 +5066,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 332,
+      "incomingLinks": 334,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -5034,7 +5078,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 332,
+      "incomingLinks": 334,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -5046,7 +5090,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 332,
+      "incomingLinks": 334,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -5058,7 +5102,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 332,
+      "incomingLinks": 334,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -5071,8 +5115,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-10-20",
-      "bodyWords": 557
+      "lastmod": "2026-10-21",
+      "bodyWords": 563
     },
     {
       "route": "/pages/sample",
@@ -5094,7 +5138,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 332,
+      "incomingLinks": 334,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -5106,7 +5150,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 332,
+      "incomingLinks": 334,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -5130,7 +5174,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 332,
+      "incomingLinks": 334,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -5562,7 +5606,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 332,
+      "incomingLinks": 334,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }
