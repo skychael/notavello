@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-21T22:24:29.514Z",
-  "latest_success_at": "2026-10-21T22:24:29.514Z",
+  "generated_at": "2026-10-22T01:34:04.757Z",
+  "latest_success_at": "2026-10-22T01:34:04.757Z",
   "status": "ok",
   "items": [
     {
-      "id": "72c447189e71142d",
-      "title": "Tropical Storm Vance Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep2+shtml/212845.shtml?cone=",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-10-21T21:28:45.000Z",
+      "id": "44f73158df740a63",
+      "title": "Special Weather Statement issued October 21 at 7:31PM MDT by NWS Salt Lake City UT",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.d38c189f90f542f2274340dde3b9264999232786.001.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-10-22T01:31:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "adc0e5ac66fc4167",
-      "title": "Subtropical Storm Josephine Wind Speed Probabilities Number 1",
-      "url": "https://www.nhc.noaa.gov/text/refresh/MIAPWSAT5+shtml/212046.shtml",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-10-21T20:46:59.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "b4bcce42aee5b24c",
-      "title": "SPC Oct 21, 2026 2000 UTC Day 1 Convective Outlook",
-      "url": "https://www.spc.noaa.gov/products/outlook/day1otlk_2000.html",
+      "id": "8b47ae60d8cbd9b2",
+      "title": "SPC Oct 22, 2026 0100 UTC Day 1 Convective Outlook",
+      "url": "https://www.spc.noaa.gov/products/outlook/day1otlk_0100.html",
       "publisher": "Storm Prediction Center",
-      "published_at": "2026-10-21T19:55:11.000Z",
+      "published_at": "2026-10-22T01:03:14.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "ee8e390990a944fc",
+      "title": "Eastern North Pacific Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-10-21T23:19:30.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
