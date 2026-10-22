@@ -1,15 +1,24 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-22T18:35:08.972Z",
-  "latest_success_at": "2026-10-22T18:35:08.972Z",
+  "generated_at": "2026-10-22T22:24:00.001Z",
+  "latest_success_at": "2026-10-22T22:24:00.001Z",
   "status": "ok",
   "items": [
     {
-      "id": "0a73be9a413910ee",
-      "title": "Flash Flood Warning issued October 22 at 11:40AM MDT until October 22 at 3:45PM MDT by NWS Salt Lake City UT",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.ecaae166b84537273bcce57a864461d7997f0e5d.001.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-10-22T17:40:00.000Z",
+      "id": "4570d0d386de1ab6",
+      "title": "Tropical Storm Vance Graphics",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep2+shtml/212844.shtml?cone=",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-10-22T21:28:44.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "20010a07739c96ae",
+      "title": "SPC Oct 22, 2026 1930 UTC Day 3 Severe Thunderstorm Outlook",
+      "url": "https://www.spc.noaa.gov/products/outlook/day3otlk_1930.html",
+      "publisher": "Storm Prediction Center",
+      "published_at": "2026-10-22T19:29:52.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
@@ -19,15 +28,6 @@
       "url": "https://www.spc.noaa.gov/products/outlook/day2otlk_1730.html",
       "publisher": "Storm Prediction Center",
       "published_at": "2026-10-22T17:33:04.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "ee8e390990a944fc",
-      "title": "Eastern North Pacific Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-10-22T17:28:14.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
