@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-21T06:25:52.052Z",
+  "generatedAt": "2026-10-22T06:28:22.254Z",
   "totals": {
-    "pages": 334,
-    "indexable": 330,
-    "articles": 259,
-    "sitemap": 330,
+    "pages": 336,
+    "indexable": 332,
+    "articles": 261,
+    "sitemap": 332,
     "errors": 0,
-    "warnings": 318
+    "warnings": 320
   },
   "errors": [],
   "warnings": [
@@ -907,6 +907,11 @@
     },
     {
       "type": "template-pattern",
+      "page": "/pages/blog/japans-oil-import-bill-is-the-chokepoint-receipt/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "template-pattern",
       "page": "/pages/blog/jet-fuel-is-the-hormuz-bill-in-your-airfare/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
@@ -1546,6 +1551,11 @@
       "detail": "title/description lacks a clear AI, software, or computing connection"
     },
     {
+      "type": "template-pattern",
+      "page": "/pages/blog/why-routine-software-updates-are-a-security-control/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
       "type": "topic-review",
       "page": "/pages/blog/why-shopify-won-ecommerce-dominance-2026/",
       "detail": "title/description lacks a clear AI, software, or computing connection"
@@ -1610,7 +1620,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 334,
+      "incomingLinks": 336,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -1634,7 +1644,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 334,
+      "incomingLinks": 336,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -1742,7 +1752,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 334,
+      "incomingLinks": 336,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -1754,9 +1764,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 334,
-      "lastmod": "2026-10-20",
-      "bodyWords": 661
+      "incomingLinks": 336,
+      "lastmod": "2026-10-21",
+      "bodyWords": 647
     },
     {
       "route": "/pages/blog/a-calm-checklist-for-inspecting-a-suspicious-message/",
@@ -2102,9 +2112,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 198,
-      "lastmod": "2026-10-20",
-      "bodyWords": 3152
+      "incomingLinks": 200,
+      "lastmod": "2026-10-21",
+      "bodyWords": 3174
     },
     {
       "route": "/pages/blog/anhydrous-ammonia-is-the-fall-farm-bill/",
@@ -3523,6 +3533,18 @@
       "bodyWords": 1429
     },
     {
+      "route": "/pages/blog/japans-oil-import-bill-is-the-chokepoint-receipt/",
+      "file": "pages/blog/japans-oil-import-bill-is-the-chokepoint-receipt/index.html",
+      "title": "Japan's Oil Import Bill Is The Chokepoint Receipt — The Export | Notavello",
+      "description": "Japan’s trade data shows how Gulf oil risk turns into import inflation before anyone runs out of fuel.",
+      "canonical": "https://notavello.com/pages/blog/japans-oil-import-bill-is-the-chokepoint-receipt/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-10-22",
+      "bodyWords": 1234
+    },
+    {
       "route": "/pages/blog/jet-fuel-is-the-hormuz-bill-in-your-airfare/",
       "file": "pages/blog/jet-fuel-is-the-hormuz-bill-in-your-airfare/index.html",
       "title": "Jet Fuel Is The Hormuz Bill In Your Airfare — The Export | Notavello",
@@ -3855,8 +3877,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-20",
-      "bodyWords": 674
+      "lastmod": "2026-10-21",
+      "bodyWords": 665
     },
     {
       "route": "/pages/blog/page-11/",
@@ -3867,8 +3889,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-20",
-      "bodyWords": 689
+      "lastmod": "2026-10-21",
+      "bodyWords": 694
     },
     {
       "route": "/pages/blog/page-12/",
@@ -3879,8 +3901,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-20",
-      "bodyWords": 759
+      "lastmod": "2026-10-21",
+      "bodyWords": 757
     },
     {
       "route": "/pages/blog/page-13/",
@@ -3891,8 +3913,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-20",
-      "bodyWords": 837
+      "lastmod": "2026-10-21",
+      "bodyWords": 824
     },
     {
       "route": "/pages/blog/page-14/",
@@ -3903,8 +3925,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-20",
-      "bodyWords": 859
+      "lastmod": "2026-10-21",
+      "bodyWords": 847
     },
     {
       "route": "/pages/blog/page-15/",
@@ -3915,8 +3937,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": "2026-10-20",
-      "bodyWords": 371
+      "lastmod": "2026-10-21",
+      "bodyWords": 470
     },
     {
       "route": "/pages/blog/page-2/",
@@ -3927,8 +3949,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-20",
-      "bodyWords": 655
+      "lastmod": "2026-10-21",
+      "bodyWords": 657
     },
     {
       "route": "/pages/blog/page-3/",
@@ -3939,8 +3961,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-20",
-      "bodyWords": 661
+      "lastmod": "2026-10-21",
+      "bodyWords": 655
     },
     {
       "route": "/pages/blog/page-4/",
@@ -3951,8 +3973,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-20",
-      "bodyWords": 629
+      "lastmod": "2026-10-21",
+      "bodyWords": 645
     },
     {
       "route": "/pages/blog/page-5/",
@@ -3963,8 +3985,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-20",
-      "bodyWords": 666
+      "lastmod": "2026-10-21",
+      "bodyWords": 659
     },
     {
       "route": "/pages/blog/page-6/",
@@ -3975,8 +3997,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-20",
-      "bodyWords": 661
+      "lastmod": "2026-10-21",
+      "bodyWords": 659
     },
     {
       "route": "/pages/blog/page-7/",
@@ -3987,8 +4009,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-20",
-      "bodyWords": 688
+      "lastmod": "2026-10-21",
+      "bodyWords": 678
     },
     {
       "route": "/pages/blog/page-8/",
@@ -3999,8 +4021,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-20",
-      "bodyWords": 674
+      "lastmod": "2026-10-21",
+      "bodyWords": 684
     },
     {
       "route": "/pages/blog/page-9/",
@@ -4011,8 +4033,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-20",
-      "bodyWords": 647
+      "lastmod": "2026-10-21",
+      "bodyWords": 649
     },
     {
       "route": "/pages/blog/phosphate-is-the-fertilizer-shock-that-did-not-fade/",
@@ -4406,7 +4428,7 @@
       "canonical": "https://notavello.com/pages/blog/the-import-line-is-the-oil-shock/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 3,
+      "incomingLinks": 4,
       "lastmod": "2026-09-24",
       "bodyWords": 1556
     },
@@ -4915,6 +4937,18 @@
       "bodyWords": 993
     },
     {
+      "route": "/pages/blog/why-routine-software-updates-are-a-security-control/",
+      "file": "pages/blog/why-routine-software-updates-are-a-security-control/index.html",
+      "title": "Why Routine Software Updates Are a Security Control — The Export | Notavello",
+      "description": "Routine software updates close known vulnerabilities before attackers exploit them.",
+      "canonical": "https://notavello.com/pages/blog/why-routine-software-updates-are-a-security-control/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-10-21",
+      "bodyWords": 734
+    },
+    {
       "route": "/pages/blog/why-shopify-won-ecommerce-dominance-2026/",
       "file": "pages/blog/why-shopify-won-ecommerce-dominance-2026/index.html",
       "title": "Why Shopify Won: From 1990s Self-Hosted Nightmares to SaaS Domination in 2026 — The Export | Notavello",
@@ -5054,7 +5088,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 334,
+      "incomingLinks": 336,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -5066,7 +5100,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 334,
+      "incomingLinks": 336,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -5078,7 +5112,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 334,
+      "incomingLinks": 336,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -5090,7 +5124,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 334,
+      "incomingLinks": 336,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -5102,7 +5136,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 334,
+      "incomingLinks": 336,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -5115,8 +5149,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-10-21",
-      "bodyWords": 563
+      "lastmod": "2026-10-22",
+      "bodyWords": 569
     },
     {
       "route": "/pages/sample",
@@ -5138,7 +5172,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 334,
+      "incomingLinks": 336,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -5150,7 +5184,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 334,
+      "incomingLinks": 336,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -5174,7 +5208,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 334,
+      "incomingLinks": 336,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -5606,7 +5640,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 334,
+      "incomingLinks": 336,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }
