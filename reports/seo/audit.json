@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-22T06:28:22.254Z",
+  "generatedAt": "2026-10-23T06:24:00.262Z",
   "totals": {
-    "pages": 336,
-    "indexable": 332,
-    "articles": 261,
-    "sitemap": 332,
+    "pages": 338,
+    "indexable": 334,
+    "articles": 263,
+    "sitemap": 334,
     "errors": 0,
-    "warnings": 320
+    "warnings": 324
   },
   "errors": [],
   "warnings": [
@@ -832,6 +832,16 @@
     },
     {
       "type": "template-pattern",
+      "page": "/pages/blog/how-to-store-account-backup-codes-safely/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/how-to-store-account-backup-codes-safely/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
       "page": "/pages/blog/how-to-troubleshoot-a-display-connection-methodically/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
@@ -1352,6 +1362,16 @@
     },
     {
       "type": "template-pattern",
+      "page": "/pages/blog/three-hundred-fifteen-thousand-barrels-is-the-heating-oil-warning/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/three-hundred-fifteen-thousand-barrels-is-the-heating-oil-warning/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
       "page": "/pages/blog/three-hundred-forty-three-million-is-the-farm-bill/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
@@ -1620,7 +1640,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 336,
+      "incomingLinks": 338,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -1644,7 +1664,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 336,
+      "incomingLinks": 338,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -1752,7 +1772,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 336,
+      "incomingLinks": 338,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -1764,9 +1784,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 336,
-      "lastmod": "2026-10-21",
-      "bodyWords": 647
+      "incomingLinks": 338,
+      "lastmod": "2026-10-22",
+      "bodyWords": 642
     },
     {
       "route": "/pages/blog/a-calm-checklist-for-inspecting-a-suspicious-message/",
@@ -2112,9 +2132,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 200,
-      "lastmod": "2026-10-21",
-      "bodyWords": 3174
+      "incomingLinks": 202,
+      "lastmod": "2026-10-22",
+      "bodyWords": 3197
     },
     {
       "route": "/pages/blog/anhydrous-ammonia-is-the-fall-farm-bill/",
@@ -2568,7 +2588,7 @@
       "canonical": "https://notavello.com/pages/blog/east-coast-heating-oil-gap-is-the-winter-bill/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 2,
+      "incomingLinks": 3,
       "lastmod": "2026-10-07",
       "bodyWords": 1512
     },
@@ -3401,6 +3421,18 @@
       "bodyWords": 992
     },
     {
+      "route": "/pages/blog/how-to-store-account-backup-codes-safely/",
+      "file": "pages/blog/how-to-store-account-backup-codes-safely/index.html",
+      "title": "How to store account backup codes safely — The Export | Notavello",
+      "description": "Learn how to store MFA backup codes offline, set access boundaries, replace used sets, and test recovery without locking yourself out.",
+      "canonical": "https://notavello.com/pages/blog/how-to-store-account-backup-codes-safely/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-10-22",
+      "bodyWords": 815
+    },
+    {
       "route": "/pages/blog/how-to-submit-an-app-to-apple-and-google/",
       "file": "pages/blog/how-to-submit-an-app-to-apple-and-google/index.html",
       "title": "How to Submit an App to Apple and Google: The Big-Picture Guide for 2026 — The Export | Notavello",
@@ -3877,8 +3909,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-21",
-      "bodyWords": 665
+      "lastmod": "2026-10-22",
+      "bodyWords": 656
     },
     {
       "route": "/pages/blog/page-11/",
@@ -3889,8 +3921,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-21",
-      "bodyWords": 694
+      "lastmod": "2026-10-22",
+      "bodyWords": 697
     },
     {
       "route": "/pages/blog/page-12/",
@@ -3901,8 +3933,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-21",
-      "bodyWords": 757
+      "lastmod": "2026-10-22",
+      "bodyWords": 731
     },
     {
       "route": "/pages/blog/page-13/",
@@ -3913,8 +3945,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-21",
-      "bodyWords": 824
+      "lastmod": "2026-10-22",
+      "bodyWords": 837
     },
     {
       "route": "/pages/blog/page-14/",
@@ -3925,8 +3957,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-21",
-      "bodyWords": 847
+      "lastmod": "2026-10-22",
+      "bodyWords": 840
     },
     {
       "route": "/pages/blog/page-15/",
@@ -3937,8 +3969,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": "2026-10-21",
-      "bodyWords": 470
+      "lastmod": "2026-10-22",
+      "bodyWords": 557
     },
     {
       "route": "/pages/blog/page-2/",
@@ -3949,8 +3981,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-21",
-      "bodyWords": 657
+      "lastmod": "2026-10-22",
+      "bodyWords": 661
     },
     {
       "route": "/pages/blog/page-3/",
@@ -3961,8 +3993,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-21",
-      "bodyWords": 655
+      "lastmod": "2026-10-22",
+      "bodyWords": 653
     },
     {
       "route": "/pages/blog/page-4/",
@@ -3973,8 +4005,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-21",
-      "bodyWords": 645
+      "lastmod": "2026-10-22",
+      "bodyWords": 655
     },
     {
       "route": "/pages/blog/page-5/",
@@ -3985,8 +4017,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-21",
-      "bodyWords": 659
+      "lastmod": "2026-10-22",
+      "bodyWords": 648
     },
     {
       "route": "/pages/blog/page-6/",
@@ -3997,8 +4029,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-21",
-      "bodyWords": 659
+      "lastmod": "2026-10-22",
+      "bodyWords": 670
     },
     {
       "route": "/pages/blog/page-7/",
@@ -4009,8 +4041,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-21",
-      "bodyWords": 678
+      "lastmod": "2026-10-22",
+      "bodyWords": 675
     },
     {
       "route": "/pages/blog/page-8/",
@@ -4021,8 +4053,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-21",
-      "bodyWords": 684
+      "lastmod": "2026-10-22",
+      "bodyWords": 681
     },
     {
       "route": "/pages/blog/page-9/",
@@ -4033,8 +4065,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-21",
-      "bodyWords": 649
+      "lastmod": "2026-10-22",
+      "bodyWords": 659
     },
     {
       "route": "/pages/blog/phosphate-is-the-fertilizer-shock-that-did-not-fade/",
@@ -4491,6 +4523,18 @@
       "incomingLinks": 2,
       "lastmod": "2026-10-17",
       "bodyWords": 1424
+    },
+    {
+      "route": "/pages/blog/three-hundred-fifteen-thousand-barrels-is-the-heating-oil-warning/",
+      "file": "pages/blog/three-hundred-fifteen-thousand-barrels-is-the-heating-oil-warning/index.html",
+      "title": "Three Hundred Fifteen Thousand Barrels Is The Heating Oil Warning — The Export | Notavello",
+      "description": "DOE’s Northeast heating oil exchange shows winter fuel stress is already a household bill, not a distant oil chart.",
+      "canonical": "https://notavello.com/pages/blog/three-hundred-fifteen-thousand-barrels-is-the-heating-oil-warning/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-10-23",
+      "bodyWords": 1497
     },
     {
       "route": "/pages/blog/three-hundred-forty-three-million-is-the-farm-bill/",
@@ -5088,7 +5132,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 336,
+      "incomingLinks": 338,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -5100,7 +5144,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 336,
+      "incomingLinks": 338,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -5112,7 +5156,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 336,
+      "incomingLinks": 338,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -5124,7 +5168,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 336,
+      "incomingLinks": 338,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -5136,7 +5180,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 336,
+      "incomingLinks": 338,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -5149,8 +5193,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-10-22",
-      "bodyWords": 569
+      "lastmod": "2026-10-23",
+      "bodyWords": 575
     },
     {
       "route": "/pages/sample",
@@ -5172,7 +5216,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 336,
+      "incomingLinks": 338,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -5184,7 +5228,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 336,
+      "incomingLinks": 338,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -5208,7 +5252,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 336,
+      "incomingLinks": 338,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -5640,7 +5684,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 336,
+      "incomingLinks": 338,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }

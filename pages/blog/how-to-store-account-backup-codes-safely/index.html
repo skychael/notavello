@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>How to store account backup codes safely — The Export | Notavello</title>
+<meta name="description" content="Learn how to store MFA backup codes offline, set access boundaries, replace used sets, and test recovery without locking yourself out."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/blog/how-to-store-account-backup-codes-safely/"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2026-10-22T13:55:30.943Z"/>
+<meta property="article:modified_time" content="2026-10-22T13:55:30.943Z"/>
+<meta name="notavello:published_at" content="2026-10-22T13:55:30.943Z"/>
+<meta name="syndication-origin-site" content="toysforbots"/>
+<meta name="syndication-origin-id" content="toysforbots:how-to-store-account-backup-codes-safely"/>
+<meta name="syndication-origin-slug" content="how-to-store-account-backup-codes-safely"/>
+<meta name="syndication-origin-url" content="https://toysforbots.com/blog/how-to-store-account-backup-codes-safely/"/>
+<meta name="syndication-source-format" content="toysforbots-syndication-v1"/>
+<meta property="og:url" content="https://notavello.com/pages/blog/how-to-store-account-backup-codes-safely/"/>
+<meta property="og:title" content="How to store account backup codes safely"/>
+<meta property="og:description" content="Learn how to store MFA backup codes offline, set access boundaries, replace used sets, and test recovery without locking yourself out."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="How to store account backup codes safely"/>
+<meta name="twitter:description" content="Learn how to store MFA backup codes offline, set access boundaries, replace used sets, and test recovery without locking yourself out."/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "How to store account backup codes safely",
+  "description": "Learn how to store MFA backup codes offline, set access boundaries, replace used sets, and test recovery without locking yourself out.",
+  "url": "https://notavello.com/pages/blog/how-to-store-account-backup-codes-safely/",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://notavello.com/pages/blog/how-to-store-account-backup-codes-safely/" },
+  "image": "https://notavello.com/og-image.png",
+  "datePublished": "2026-10-22T13:55:30.943Z",
+  "dateModified": "2026-10-22T13:55:30.943Z",
+  "author": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" },
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com", "logo": { "@type": "ImageObject", "url": "https://notavello.com/og-image.png" } }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
+.post-nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; row-gap: 8px; }
+.post-nav-top { margin-bottom: 40px; }
+.post-nav-bottom { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--border); }
+.post-nav a { display: inline-flex; align-items: center; gap: 6px; font-size: 0.92rem; font-weight: 600; color: var(--ink-muted); text-decoration: none; padding: 12px 14px; border-radius: var(--radius-sm); white-space: nowrap; transition: color 0.15s, background 0.15s; }
+.post-nav a:hover { color: var(--accent); background: var(--accent-light); }
+.post-nav a:first-child { padding-left: 0; }
+.post-nav a:last-child { padding-right: 0; justify-content: flex-end; }
+.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
+.post-date { font-size: 0.78rem; color: var(--ink-faint); }
+.post-title { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; color: var(--ink); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
+.post-lede { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+.post-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink); }
+.post-body h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 44px 0 16px; letter-spacing: -0.01em; }
+.post-body p { margin-bottom: 20px; color: var(--ink-muted); }
+.post-body p strong { color: var(--ink); font-weight: 600; }
+.post-body ul { margin: 0 0 20px 20px; color: var(--ink-muted); }
+.post-body ul li { margin-bottom: 8px; line-height: 1.7; }
+.callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 32px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.7; }
+.post-footer { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.post-footer-label { font-size: 0.8rem; color: var(--ink-faint); }
+.btn-export { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: opacity 0.2s; }
+.btn-export:hover { opacity: 0.9; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } .post-nav a { padding: 12px 8px; font-size: 0.88rem; } }
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+
+  <nav class="post-nav post-nav-top">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+  <div class="post-meta">
+    <span class="post-tag">Safe Cybersecurity</span>
+    <span class="post-date">October 22, 2026</span>
+  </div>
+
+  <h1 class="post-title">How to store account backup codes safely</h1>
+
+  <p class="post-lede">Backup codes serve as a last-resort second factor when you lose your phone, change numbers, or cannot reach an authenticator app. Google and other services generate sets of single-use codes that bypass normal 2-Step Verification. Because each code works only once and old sets become inactive when new ones are created, the storage method directly affects whether you can regain access later. The safest approach keeps codes completely offline, restricts physical and digital access, replaces them after use or loss, and includes periodic recovery tests. Official guidance from Google stresses printing or downloading codes and storing them like a passport, while security references such as OWASP recommend treating recovery codes with the same care as passwords.</p>
+
+  <div class="post-body">
+
+<h2>Create offline copies only</h2>
+<p>Generate backup codes through your account security settings while 2-Step Verification is already enabled. Google provides a set of ten 8-digit codes that you can print or download as a text file named Backup-codes-username.txt.</p>
+<p>Immediately move the printed sheet or USB drive to a secure physical location such as a locked drawer or safe. Avoid photographing the codes or saving them to any device that syncs to the cloud. Login.gov notes that printed codes are the least secure MFA option precisely because they can be stolen or copied if left accessible.</p>
+<p>If you must keep a digital copy, encrypt the file with a strong passphrase and store it on removable media that stays disconnected from networks. Search your computer only if you lose the printed version; the file name follows the pattern Backup-codes-username.txt.</p><div class="callout"><strong>Quick rule</strong> Never store backup codes in password managers, cloud notes, email, or any synced device. Keep printed or encrypted offline copies in a locked physical location and test access at least once a year.</div>
+<h2>Define strict access boundaries</h2>
+<p>Limit physical access to the printed codes to yourself and, at most, one trusted person who knows the storage location. Do not place copies in shared household areas or with family members who might need them without your knowledge.</p>
+<p>Never email codes, store them in shared documents, or upload them to any service. Google explicitly states it will never ask for a backup code except during sign-in, so any request outside that context is a social-engineering attempt.</p>
+<p>For organization administrators, generate codes only when a user is locked out and deliver them through a secure channel such as an in-person handoff or encrypted message that expires. Store the generated list only long enough to deliver it, then delete the copy.</p>
+<h2>Replace codes on a schedule</h2>
+<p>Each backup code works only once. After using one, mark it used on the printed sheet. When the last code is consumed or you suspect theft, immediately generate a fresh set through account settings. The old set becomes inactive automatically.</p>
+<p>Create a new set whenever you change phones, reset an authenticator app, or suspect any compromise. Google allows you to refresh codes at any time; the previous list is invalidated the moment the new list is created.</p>
+<p>Keep the replacement process simple: sign in with an active code or another factor, navigate to security settings, and select the option to get or refresh backup codes. Print or download the new list and destroy the old printed sheet.</p>
+<h2>Test recovery before you need it</h2>
+<p>Schedule an annual test: sign out of all sessions, attempt sign-in using only a backup code, and confirm you reach the account. This verifies that the printed codes still work and that no service changes have invalidated the recovery path.</p>
+<p>During testing, note the exact steps required by each service. Some providers ask you to click “Try another way” and then enter an 8-digit code; others present the option directly. Document the sequence so you can repeat it under stress.</p>
+<p>If the test fails, regenerate codes immediately while you still have access. Do not wait until an actual lockout occurs. Administrators can generate codes for users through the admin console when 2-Step Verification enforcement is active.</p>
+<h2>Understand the limits</h2>
+<p>Backup codes are a convenience, not a complete recovery plan. They do not replace keeping recovery phone numbers and email addresses current. If an attacker obtains both your password and a printed code list, they can take over the account.</p>
+<p>Services may change code format or delivery methods over time. Relying solely on one printed sheet without periodic checks leaves you exposed to policy updates. Combine backup codes with hardware security keys or multiple authenticator apps when possible.</p>
+<p>Finally, treat every code as a high-value secret. Once used or replaced, destroy the physical copy so it cannot be recovered from trash or found by others.</p><h2>Sources</h2><ul><li><a href="https://support.google.com/accounts/answer/1187538" rel="noopener noreferrer">Google Account Help</a></li><li><a href="https://support.google.com/a/answer/9176734" rel="noopener noreferrer">Google Workspace Admin Help</a></li><li><a href="https://cheatsheetseries.owasp.org/cheatsheets/Multifactor_Authentication_Cheat_Sheet.html" rel="noopener noreferrer">OWASP Cheat Sheet Series</a></li></ul>
+
+  </div>
+
+  <div class="post-footer">
+    <span class="post-footer-label">Looking for more AI tools?</span>
+    <a class="btn-export" href="/">See our free AI tools →</a>
+  </div>
+
+  <nav class="post-nav post-nav-bottom">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+</main>
+
+<!--FOOTER-->
+
+</body>
+</html>
