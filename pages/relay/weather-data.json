@@ -1,9 +1,18 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-22T22:24:00.001Z",
-  "latest_success_at": "2026-10-22T22:24:00.001Z",
+  "generated_at": "2026-10-23T01:34:34.937Z",
+  "latest_success_at": "2026-10-23T01:34:34.937Z",
   "status": "ok",
   "items": [
+    {
+      "id": "ee8e390990a944fc",
+      "title": "Eastern North Pacific Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-10-22T23:15:22.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
     {
       "id": "4570d0d386de1ab6",
       "title": "Tropical Storm Vance Graphics",
@@ -14,20 +23,11 @@
       "status": "ok"
     },
     {
-      "id": "20010a07739c96ae",
-      "title": "SPC Oct 22, 2026 1930 UTC Day 3 Severe Thunderstorm Outlook",
-      "url": "https://www.spc.noaa.gov/products/outlook/day3otlk_1930.html",
-      "publisher": "Storm Prediction Center",
-      "published_at": "2026-10-22T19:29:52.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "4c31190a9c521e8a",
-      "title": "SPC Oct 22, 2026 1730 UTC Day 2 Convective Outlook",
-      "url": "https://www.spc.noaa.gov/products/outlook/day2otlk_1730.html",
-      "publisher": "Storm Prediction Center",
-      "published_at": "2026-10-22T17:33:04.000Z",
+      "id": "459ef2565e67176a",
+      "title": "Subtropical Storm Josephine forms off U.S. East Coast, forecast to become a hurricane-force extratropical cyclone",
+      "url": "https://watchers.news/2026/10/22/subtropical-storm-josephine-forms-off-u-s-east-coast-forecast-to-become-a-hurricane-force-extratropical-cyclone",
+      "publisher": "The Watchers",
+      "published_at": "2026-10-22T14:34:06.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
