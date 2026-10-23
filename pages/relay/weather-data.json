@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-23T07:37:16.532Z",
-  "latest_success_at": "2026-10-23T07:37:16.532Z",
+  "generated_at": "2026-10-23T13:31:14.425Z",
+  "latest_success_at": "2026-10-23T13:31:14.425Z",
   "status": "ok",
   "items": [
     {
-      "id": "91e5697961c0d7ba",
-      "title": "SPC Oct 23, 2026 0730 UTC Day 3 Severe Thunderstorm Outlook",
-      "url": "https://www.spc.noaa.gov/products/outlook/day3otlk_0730.html",
-      "publisher": "Storm Prediction Center",
-      "published_at": "2026-10-23T06:52:45.000Z",
+      "id": "ee8e390990a944fc",
+      "title": "Eastern North Pacific Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-10-23T11:16:25.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "f2bc3e5729017844",
-      "title": "SPC Oct 23, 2026 0600 UTC Day 2 Convective Outlook",
-      "url": "https://www.spc.noaa.gov/products/outlook/day2otlk_0600.html",
-      "publisher": "Storm Prediction Center",
-      "published_at": "2026-10-23T06:05:24.000Z",
+      "id": "4d378be4d40e03f6",
+      "title": "Hurricane Vance Graphics",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep2+shtml/092243.shtml?cone=",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-10-23T09:22:43.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "7cb9935bf42b6ff3",
-      "title": "SPC Oct 23, 2026 0600 UTC Day 1 Convective Outlook",
-      "url": "https://www.spc.noaa.gov/products/outlook/day1otlk_1200.html",
-      "publisher": "Storm Prediction Center",
-      "published_at": "2026-10-23T06:04:14.000Z",
+      "id": "459ef2565e67176a",
+      "title": "Subtropical Storm Josephine forms off U.S. East Coast, forecast to become a hurricane-force extratropical cyclone",
+      "url": "https://watchers.news/2026/10/22/subtropical-storm-josephine-forms-off-u-s-east-coast-forecast-to-become-a-hurricane-force-extratropical-cyclone",
+      "publisher": "The Watchers",
+      "published_at": "2026-10-22T14:34:06.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
