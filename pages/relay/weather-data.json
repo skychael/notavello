@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-23T13:31:14.425Z",
-  "latest_success_at": "2026-10-23T13:31:14.425Z",
+  "generated_at": "2026-10-23T18:25:05.180Z",
+  "latest_success_at": "2026-10-23T18:25:05.180Z",
   "status": "ok",
   "items": [
     {
@@ -9,25 +9,25 @@
       "title": "Eastern North Pacific Tropical Weather Outlook",
       "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-10-23T11:16:25.000Z",
+      "published_at": "2026-10-23T17:45:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "4d378be4d40e03f6",
-      "title": "Hurricane Vance Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep2+shtml/092243.shtml?cone=",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-10-23T09:22:43.000Z",
+      "id": "38a1d8630caa0383",
+      "title": "SPC Oct 23, 2026 1630 UTC Day 1 Convective Outlook",
+      "url": "https://www.spc.noaa.gov/products/outlook/day1otlk_1630.html",
+      "publisher": "Storm Prediction Center",
+      "published_at": "2026-10-23T16:33:17.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "459ef2565e67176a",
-      "title": "Subtropical Storm Josephine forms off U.S. East Coast, forecast to become a hurricane-force extratropical cyclone",
-      "url": "https://watchers.news/2026/10/22/subtropical-storm-josephine-forms-off-u-s-east-coast-forecast-to-become-a-hurricane-force-extratropical-cyclone",
+      "id": "0c83c965547f0d19",
+      "title": "Hurricane Vance continues strengthening south of Mexico, forecast to reach Category 3",
+      "url": "https://watchers.news/2026/10/23/hurricane-vance-continues-strengthening-south-of-mexico-forecast-to-reach-category-3",
       "publisher": "The Watchers",
-      "published_at": "2026-10-22T14:34:06.000Z",
+      "published_at": "2026-10-23T16:20:36.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
