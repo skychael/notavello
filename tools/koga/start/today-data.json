@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "10-21",
-  "display_date": "October 21",
-  "generated_at": "2026-10-21T13:49:18.408Z",
+  "date_key": "10-23",
+  "display_date": "October 23",
+  "generated_at": "2026-10-23T13:28:00.386Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-4453303e574af3877f3747d6",
+      "candidate_id": "event-3f2e1027cea5d310f42b9390",
       "type": "event",
-      "year": 1959,
-      "text": "President Dwight D. Eisenhower approves the transfer of all US Army space-related activities to NASA, including most of the Army Ballistic Missile Agency.",
-      "article_title": "Dwight D. Eisenhower",
-      "url": "https://en.wikipedia.org/wiki/Dwight_D._Eisenhower",
-      "category": "Science and technology"
-    },
-    {
-      "candidate_id": "event-57a32e8801c29e7f25ad2232",
-      "type": "event",
-      "year": 1910,
-      "text": "HMS Niobe arrives in Halifax Harbour to become the first ship of the Royal Canadian Navy.",
-      "article_title": "HMS Niobe (1897)",
-      "url": "https://en.wikipedia.org/wiki/HMS_Niobe_(1897)",
+      "year": 1995,
+      "text": "Yolanda Saldívar is found guilty of first-degree murder in the shooting death of popular Latin singer Selena.",
+      "article_title": "Yolanda Saldívar",
+      "url": "https://en.wikipedia.org/wiki/Yolanda_Sald%C3%ADvar",
       "category": "World history"
     },
     {
-      "candidate_id": "event-83408928ec0b806fafe220c9",
+      "candidate_id": "event-6e92736d1a49d0b83126abe1",
       "type": "event",
-      "year": 1966,
-      "text": "A colliery spoil tip slips onto houses and a school in the village of Aberfan in Wales, killing 144 people, 116 of whom were schoolchildren.",
-      "article_title": "Aberfan disaster",
-      "url": "https://en.wikipedia.org/wiki/Aberfan_disaster",
+      "year": 2015,
+      "text": "The lowest sea-level pressure in the Western Hemisphere, and the highest reliably-measured non-tornadic sustained winds, are recorded in Hurricane Patricia, which strikes Mexico hours later, killing at least 13 and causing over $280 million in damages.",
+      "article_title": "Atmospheric pressure",
+      "url": "https://en.wikipedia.org/wiki/Atmospheric_pressure",
       "category": "Disasters and exploration"
+    },
+    {
+      "candidate_id": "event-882c92ad6da46a640aae6999",
+      "type": "event",
+      "year": 2007,
+      "text": "Space Shuttle Discovery is launched on STS-120, with Pamela Melroy becoming the second female space shuttle commander.",
+      "article_title": "Space Shuttle Discovery",
+      "url": "https://en.wikipedia.org/wiki/Space_Shuttle_Discovery",
+      "category": "Science and technology"
     }
   ]
 }
