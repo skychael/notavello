@@ -346,7 +346,7 @@ async function buildVideoData({
       }
     } else {
       for (const previous of previousData?.items || []) {
-        if (previous.channel_id === result.channel.channel_id) {
+        if (previous.channel_id === result.channel.channel_id && new Date(previous.published_at) >= cutoff && new Date(previous.published_at) <= now) {
           candidates.push({ ...previous, status: "stale" });
         }
       }
