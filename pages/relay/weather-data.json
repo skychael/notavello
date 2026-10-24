@@ -1,9 +1,27 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-24T14:36:44.315Z",
-  "latest_success_at": "2026-10-24T14:36:44.315Z",
+  "generated_at": "2026-10-24T18:12:16.780Z",
+  "latest_success_at": "2026-10-24T18:12:16.780Z",
   "status": "ok",
   "items": [
+    {
+      "id": "44d3da13eadaab59",
+      "title": "Hurricane Vance Forecast Discussion Number 13",
+      "url": "https://www.nhc.noaa.gov/text/refresh/MIATCDEP2+shtml/241454.shtml",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-10-24T14:54:09.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "845cfe05c8068fd0",
+      "title": "Flood Warning issued October 24 at 11:45AM MDT until October 26 at 3:07AM MDT by NWS Albuquerque NM",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.ce194b8b006b838fe88b9b241ff1365606193380.001.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-10-24T17:45:00.000Z",
+      "topic": "Flooding",
+      "status": "ok"
+    },
     {
       "id": "10f0cef9ccdf0428",
       "title": "Flood Warning issued October 23 at 3:57PM MDT until October 24 at 3:45PM MDT by NWS Grand Junction CO",
@@ -11,24 +29,6 @@
       "publisher": "National Weather Service",
       "published_at": "2026-10-23T21:57:00.000Z",
       "topic": "Flooding",
-      "status": "ok"
-    },
-    {
-      "id": "b5ad93019d019ede",
-      "title": "Atlantic Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-10-24T11:25:42.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "754f8c6867efe083",
-      "title": "Hurricane Vance Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep2+shtml/092247.shtml?cone=",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-10-24T09:22:47.000Z",
-      "topic": "Hurricane",
       "status": "ok"
     }
   ]
