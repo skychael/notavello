@@ -1,18 +1,9 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-24T18:12:16.780Z",
-  "latest_success_at": "2026-10-24T18:12:16.780Z",
+  "generated_at": "2026-10-24T20:55:28.343Z",
+  "latest_success_at": "2026-10-24T20:55:28.343Z",
   "status": "ok",
   "items": [
-    {
-      "id": "44d3da13eadaab59",
-      "title": "Hurricane Vance Forecast Discussion Number 13",
-      "url": "https://www.nhc.noaa.gov/text/refresh/MIATCDEP2+shtml/241454.shtml",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-10-24T14:54:09.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
     {
       "id": "845cfe05c8068fd0",
       "title": "Flood Warning issued October 24 at 11:45AM MDT until October 26 at 3:07AM MDT by NWS Albuquerque NM",
@@ -29,6 +20,15 @@
       "publisher": "National Weather Service",
       "published_at": "2026-10-23T21:57:00.000Z",
       "topic": "Flooding",
+      "status": "ok"
+    },
+    {
+      "id": "64d6b1d00946ea59",
+      "title": "Hurricane Vance Graphics",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep2+shtml/204340.shtml?cone=",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-10-24T20:43:40.000Z",
+      "topic": "Hurricane",
       "status": "ok"
     }
   ]
