@@ -1,9 +1,9 @@
 {
   "schema_version": "2.0",
-  "description": "Approved YouTube channels and collection settings for Relay. This is a tightly curated specialist whitelist: the channel list itself is the primary relevance filter, not keyword or topic matching. Set YOUTUBE_API_KEY in the environment, then run: node relay-automation/update-videos.js",
+  "description": "Approved YouTube channels and collection settings for Relay. This is a tightly curated specialist whitelist: the channel list itself is the primary relevance filter, not keyword or topic matching. Set YOUTUBE_API_KEY in the environment, then run: node relay-automation/update-videos.js Only display videos published within the most recent five days.",
   "check_interval_minutes": 180,
   "maximum_items": 6,
-  "lookback_hours": 720,
+  "lookback_hours": 120,
   "max_per_channel": 1,
   "approved_channels": [
     {
