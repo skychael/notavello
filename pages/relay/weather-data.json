@@ -1,9 +1,18 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-25T09:52:13.062Z",
-  "latest_success_at": "2026-10-25T09:52:13.062Z",
+  "generated_at": "2026-10-25T14:25:27.077Z",
+  "latest_success_at": "2026-10-25T14:25:27.077Z",
   "status": "ok",
   "items": [
+    {
+      "id": "2e33ee80cabaeae8",
+      "title": "Typhoon Champi leaves one dead and hundreds injured as recovery continues in Taiwan",
+      "url": "https://watchers.news/2026/10/25/typhoon-champi-leaves-one-dead-and-hundreds-injured-as-recovery-continues-in-taiwan",
+      "publisher": "The Watchers",
+      "published_at": "2026-10-25T13:29:11.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
     {
       "id": "3cd034f9b2bc5181",
       "title": "Flood Warning issued October 24 at 11:01PM MDT until October 26 at 3:00AM MDT by NWS Albuquerque NM",
@@ -20,15 +29,6 @@
       "publisher": "National Weather Service",
       "published_at": "2026-10-25T02:35:00.000Z",
       "topic": "Flooding",
-      "status": "ok"
-    },
-    {
-      "id": "4d378be4d40e03f6",
-      "title": "Hurricane Vance Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep2+shtml/092243.shtml?cone=",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-10-25T09:22:43.000Z",
-      "topic": "Hurricane",
       "status": "ok"
     }
   ]
