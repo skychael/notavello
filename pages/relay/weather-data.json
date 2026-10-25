@@ -1,9 +1,18 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-25T04:50:31.976Z",
-  "latest_success_at": "2026-10-25T04:50:31.976Z",
+  "generated_at": "2026-10-25T09:52:13.062Z",
+  "latest_success_at": "2026-10-25T09:52:13.062Z",
   "status": "ok",
   "items": [
+    {
+      "id": "3cd034f9b2bc5181",
+      "title": "Flood Warning issued October 24 at 11:01PM MDT until October 26 at 3:00AM MDT by NWS Albuquerque NM",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.7f320b505622a9e97e2066a55ebb176aa0b48918.001.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-10-25T05:01:00.000Z",
+      "topic": "Flooding",
+      "status": "ok"
+    },
     {
       "id": "35bfc13d27cce605",
       "title": "Flood Warning issued October 24 at 8:35PM MDT until October 26 at 1:00PM MDT by NWS Grand Junction CO",
@@ -14,20 +23,11 @@
       "status": "ok"
     },
     {
-      "id": "70c955dee6e9f03e",
-      "title": "Flood Warning issued October 24 at 4:11PM MDT until October 26 at 3:00AM MDT by NWS Albuquerque NM",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.68cbc181bcb5fd79afc637812d02a54b0627d45f.001.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-10-24T22:11:00.000Z",
-      "topic": "Flooding",
-      "status": "ok"
-    },
-    {
-      "id": "e5b84a695d7a6c81",
+      "id": "4d378be4d40e03f6",
       "title": "Hurricane Vance Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep2+shtml/032249.shtml?cone=",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep2+shtml/092243.shtml?cone=",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-10-25T03:22:49.000Z",
+      "published_at": "2026-10-25T09:22:43.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
