@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-24T06:18:31.946Z",
+  "generatedAt": "2026-10-25T06:37:37.018Z",
   "totals": {
-    "pages": 340,
-    "indexable": 336,
-    "articles": 265,
-    "sitemap": 336,
+    "pages": 342,
+    "indexable": 338,
+    "articles": 267,
+    "sitemap": 338,
     "errors": 0,
-    "warnings": 328
+    "warnings": 332
   },
   "errors": [],
   "warnings": [
@@ -28,6 +28,16 @@
     {
       "type": "topic-review",
       "page": "/pages/blog/a-checklist-for-reliable-scheduled-jobs/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/a-file-naming-system-that-stays-useful-over-time/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/a-file-naming-system-that-stays-useful-over-time/",
       "detail": "title/description lacks a clear AI, software, or computing connection"
     },
     {
@@ -1217,6 +1227,16 @@
     },
     {
       "type": "template-pattern",
+      "page": "/pages/blog/seven-tankers-are-the-dark-shuttle-bill/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/seven-tankers-are-the-dark-shuttle-bill/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
       "page": "/pages/blog/ship-to-ship-oil-transfers-are-the-new-hormuz-target/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
@@ -1660,7 +1680,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 340,
+      "incomingLinks": 342,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -1684,7 +1704,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 340,
+      "incomingLinks": 342,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -1792,7 +1812,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 340,
+      "incomingLinks": 342,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -1804,8 +1824,8 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 340,
-      "lastmod": "2026-10-23",
+      "incomingLinks": 342,
+      "lastmod": "2026-10-24",
       "bodyWords": 635
     },
     {
@@ -1831,6 +1851,18 @@
       "incomingLinks": 2,
       "lastmod": "2026-10-02",
       "bodyWords": 751
+    },
+    {
+      "route": "/pages/blog/a-file-naming-system-that-stays-useful-over-time/",
+      "file": "pages/blog/a-file-naming-system-that-stays-useful-over-time/index.html",
+      "title": "A file-naming system that stays useful over time — The Export | Notavello",
+      "description": "Create a simple file naming system with stable dates, project identifiers, and versions that remains clear and searchable for years without complex rules.",
+      "canonical": "https://notavello.com/pages/blog/a-file-naming-system-that-stays-useful-over-time/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-10-24",
+      "bodyWords": 1008
     },
     {
       "route": "/pages/blog/a-plain-language-guide-to-file-permissions/",
@@ -1936,7 +1968,7 @@
       "canonical": "https://notavello.com/pages/blog/a-sunk-container-ship-is-the-import-bill/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 3,
+      "incomingLinks": 4,
       "lastmod": "2026-10-16",
       "bodyWords": 1505
     },
@@ -2164,9 +2196,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 204,
-      "lastmod": "2026-10-23",
-      "bodyWords": 3220
+      "incomingLinks": 206,
+      "lastmod": "2026-10-24",
+      "bodyWords": 3241
     },
     {
       "route": "/pages/blog/anhydrous-ammonia-is-the-fall-farm-bill/",
@@ -3953,8 +3985,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-23",
-      "bodyWords": 651
+      "lastmod": "2026-10-24",
+      "bodyWords": 645
     },
     {
       "route": "/pages/blog/page-11/",
@@ -3965,7 +3997,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-23",
+      "lastmod": "2026-10-24",
       "bodyWords": 700
     },
     {
@@ -3977,7 +4009,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-23",
+      "lastmod": "2026-10-24",
       "bodyWords": 709
     },
     {
@@ -3989,8 +4021,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-23",
-      "bodyWords": 842
+      "lastmod": "2026-10-24",
+      "bodyWords": 817
     },
     {
       "route": "/pages/blog/page-14/",
@@ -4001,8 +4033,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-23",
-      "bodyWords": 837
+      "lastmod": "2026-10-24",
+      "bodyWords": 835
     },
     {
       "route": "/pages/blog/page-15/",
@@ -4013,8 +4045,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": "2026-10-23",
-      "bodyWords": 646
+      "lastmod": "2026-10-24",
+      "bodyWords": 745
     },
     {
       "route": "/pages/blog/page-2/",
@@ -4025,8 +4057,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-23",
-      "bodyWords": 679
+      "lastmod": "2026-10-24",
+      "bodyWords": 688
     },
     {
       "route": "/pages/blog/page-3/",
@@ -4037,8 +4069,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-23",
-      "bodyWords": 632
+      "lastmod": "2026-10-24",
+      "bodyWords": 638
     },
     {
       "route": "/pages/blog/page-4/",
@@ -4049,8 +4081,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-23",
-      "bodyWords": 672
+      "lastmod": "2026-10-24",
+      "bodyWords": 667
     },
     {
       "route": "/pages/blog/page-5/",
@@ -4061,8 +4093,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-23",
-      "bodyWords": 648
+      "lastmod": "2026-10-24",
+      "bodyWords": 639
     },
     {
       "route": "/pages/blog/page-6/",
@@ -4073,8 +4105,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-23",
-      "bodyWords": 661
+      "lastmod": "2026-10-24",
+      "bodyWords": 667
     },
     {
       "route": "/pages/blog/page-7/",
@@ -4085,8 +4117,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-23",
-      "bodyWords": 674
+      "lastmod": "2026-10-24",
+      "bodyWords": 668
     },
     {
       "route": "/pages/blog/page-8/",
@@ -4097,8 +4129,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-23",
-      "bodyWords": 681
+      "lastmod": "2026-10-24",
+      "bodyWords": 686
     },
     {
       "route": "/pages/blog/page-9/",
@@ -4109,8 +4141,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-23",
-      "bodyWords": 664
+      "lastmod": "2026-10-24",
+      "bodyWords": 667
     },
     {
       "route": "/pages/blog/phosphate-is-the-fertilizer-shock-that-did-not-fade/",
@@ -4303,6 +4335,18 @@
       "incomingLinks": 2,
       "lastmod": "2026-10-09",
       "bodyWords": 1308
+    },
+    {
+      "route": "/pages/blog/seven-tankers-are-the-dark-shuttle-bill/",
+      "file": "pages/blog/seven-tankers-are-the-dark-shuttle-bill/index.html",
+      "title": "Seven Tankers Are The Dark Shuttle Bill — The Export | Notavello",
+      "description": "Seven damaged tankers show Hormuz oil is moving, but only through a costly dark shuttle that raises freight, fuel and crew risk.",
+      "canonical": "https://notavello.com/pages/blog/seven-tankers-are-the-dark-shuttle-bill/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-10-25",
+      "bodyWords": 1553
     },
     {
       "route": "/pages/blog/ship-to-ship-oil-transfers-are-the-new-hormuz-target/",
@@ -5176,7 +5220,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 340,
+      "incomingLinks": 342,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -5188,7 +5232,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 340,
+      "incomingLinks": 342,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -5200,7 +5244,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 340,
+      "incomingLinks": 342,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -5212,7 +5256,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 340,
+      "incomingLinks": 342,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -5224,7 +5268,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 340,
+      "incomingLinks": 342,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -5237,8 +5281,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-10-24",
-      "bodyWords": 581
+      "lastmod": "2026-10-25",
+      "bodyWords": 587
     },
     {
       "route": "/pages/sample",
@@ -5260,7 +5304,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 340,
+      "incomingLinks": 342,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -5272,7 +5316,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 340,
+      "incomingLinks": 342,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -5296,7 +5340,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 340,
+      "incomingLinks": 342,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -5585,8 +5629,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-07-30",
-      "bodyWords": 163
+      "lastmod": "2026-10-24",
+      "bodyWords": 146
     },
     {
       "route": "/tools/koga/support",
@@ -5728,7 +5772,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 340,
+      "incomingLinks": 342,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }
