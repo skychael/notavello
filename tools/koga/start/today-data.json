@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "10-24",
-  "display_date": "October 24",
-  "generated_at": "2026-10-24T12:41:17.896Z",
+  "date_key": "10-25",
+  "display_date": "October 25",
+  "generated_at": "2026-10-25T13:12:00.013Z",
   "source": "Wikimedia On This Day",
-  "selection_method": "deterministic_fallback",
+  "selection_method": "ai",
   "items": [
     {
-      "candidate_id": "event-65f46d240941d0e381632caf",
+      "candidate_id": "event-5b15928f31d5f1e8780154be",
       "type": "event",
-      "year": 1960,
-      "text": "Nedelin catastrophe: An R-16 ballistic missile explodes on the launch pad at the Soviet Union's Baikonur Cosmodrome space facility, killing over 100 people, including Field Marshal Mitrofan Nedelin.",
-      "article_title": "Nedelin catastrophe",
-      "url": "https://en.wikipedia.org/wiki/Nedelin_catastrophe",
+      "year": 1962,
+      "text": "Cuban Missile Crisis: Adlai Stevenson shows the United Nations Security Council reconnaissance photographs of Soviet ballistic missiles in Cuba.",
+      "article_title": "Cuban Missile Crisis",
+      "url": "https://en.wikipedia.org/wiki/Cuban_Missile_Crisis",
+      "category": "World history"
+    },
+    {
+      "candidate_id": "event-359c0d75a6617497d5b756a0",
+      "type": "event",
+      "year": 2001,
+      "text": "Microsoft releases Windows XP, which becomes one of Microsoft's most successful operating systems.",
+      "article_title": "Microsoft",
+      "url": "https://en.wikipedia.org/wiki/Microsoft",
       "category": "Science and technology"
     },
     {
-      "candidate_id": "event-54723a7c6f47e246bcd3b9b4",
+      "candidate_id": "event-9adcc271aff744af245408a0",
       "type": "event",
-      "year": 2016,
-      "text": "A French surveillance aircraft flying to Libya crashes on takeoff in Malta, killing all five people on board.",
-      "article_title": "2016 CAE Aviation Fairchild Merlin crash",
-      "url": "https://en.wikipedia.org/wiki/2016_CAE_Aviation_Fairchild_Merlin_crash",
-      "category": "Disasters and exploration"
-    },
-    {
-      "candidate_id": "event-b21faa85134190aefe26f816",
-      "type": "event",
-      "year": 2007,
-      "text": "Chang'e 1, the first satellite in the Chinese Lunar Exploration Program, is launched from Xichang Satellite Launch Center.",
-      "article_title": "Chang'e 1",
-      "url": "https://en.wikipedia.org/wiki/Chang'e_1",
-      "category": "World history"
+      "year": 1971,
+      "text": "The People's Republic of China replaces the Republic of China at the United Nations.",
+      "article_title": "China",
+      "url": "https://en.wikipedia.org/wiki/China",
+      "category": "Politics and society"
     }
   ]
 }
