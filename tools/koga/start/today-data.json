@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "10-25",
-  "display_date": "October 25",
-  "generated_at": "2026-10-25T13:12:00.013Z",
+  "date_key": "10-26",
+  "display_date": "October 26",
+  "generated_at": "2026-10-26T15:12:29.511Z",
   "source": "Wikimedia On This Day",
-  "selection_method": "ai",
+  "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-5b15928f31d5f1e8780154be",
+      "candidate_id": "event-dfd975690f17292b5eb270bd",
       "type": "event",
-      "year": 1962,
-      "text": "Cuban Missile Crisis: Adlai Stevenson shows the United Nations Security Council reconnaissance photographs of Soviet ballistic missiles in Cuba.",
-      "article_title": "Cuban Missile Crisis",
-      "url": "https://en.wikipedia.org/wiki/Cuban_Missile_Crisis",
+      "year": 1968,
+      "text": "Space Race: The Soyuz 3 mission achieves the first Soviet space rendezvous.",
+      "article_title": "Space Race",
+      "url": "https://en.wikipedia.org/wiki/Space_Race",
+      "category": "Sports"
+    },
+    {
+      "candidate_id": "event-f8acd9713411e3f95459bcc7",
+      "type": "event",
+      "year": 1942,
+      "text": "World War II: In the Battle of the Santa Cruz Islands during the Guadalcanal Campaign, one U.S. aircraft carrier is sunk and another carrier is heavily damaged, while two Japanese carriers and one cruiser are heavily damaged.",
+      "article_title": "World War II",
+      "url": "https://en.wikipedia.org/wiki/World_War_II",
       "category": "World history"
     },
     {
-      "candidate_id": "event-359c0d75a6617497d5b756a0",
+      "candidate_id": "event-ffc40098e2e914a499f715bf",
       "type": "event",
-      "year": 2001,
-      "text": "Microsoft releases Windows XP, which becomes one of Microsoft's most successful operating systems.",
-      "article_title": "Microsoft",
-      "url": "https://en.wikipedia.org/wiki/Microsoft",
-      "category": "Science and technology"
-    },
-    {
-      "candidate_id": "event-9adcc271aff744af245408a0",
-      "type": "event",
-      "year": 1971,
-      "text": "The People's Republic of China replaces the Republic of China at the United Nations.",
-      "article_title": "China",
-      "url": "https://en.wikipedia.org/wiki/China",
-      "category": "Politics and society"
+      "year": 2015,
+      "text": "A 7.5 magnitude earthquake strikes in the Hindu Kush mountain range in South Asia, killing 399 people and leaving 2,536 people injured.",
+      "article_title": "October 2015 Hindu Kush earthquake",
+      "url": "https://en.wikipedia.org/wiki/October_2015_Hindu_Kush_earthquake",
+      "category": "Disasters and exploration"
     }
   ]
 }
