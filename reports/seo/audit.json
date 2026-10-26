@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-25T06:37:37.018Z",
+  "generatedAt": "2026-10-26T06:47:47.465Z",
   "totals": {
-    "pages": 342,
-    "indexable": 338,
-    "articles": 267,
-    "sitemap": 338,
+    "pages": 344,
+    "indexable": 340,
+    "articles": 269,
+    "sitemap": 340,
     "errors": 0,
-    "warnings": 332
+    "warnings": 336
   },
   "errors": [],
   "warnings": [
@@ -692,6 +692,16 @@
     },
     {
       "type": "template-pattern",
+      "page": "/pages/blog/how-text-expansion-saves-time-without-creating-risky-shortcuts/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/how-text-expansion-saves-time-without-creating-risky-shortcuts/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
       "page": "/pages/blog/how-to-add-retries-without-making-automation-dangerous/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
@@ -1038,6 +1048,16 @@
     {
       "type": "topic-review",
       "page": "/pages/blog/nine-million-barrels-is-not-normal-for-hormuz/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/nine-percent-is-the-fertilizer-gap/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/nine-percent-is-the-fertilizer-gap/",
       "detail": "title/description lacks a clear AI, software, or computing connection"
     },
     {
@@ -1680,7 +1700,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 342,
+      "incomingLinks": 344,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -1704,7 +1724,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 342,
+      "incomingLinks": 344,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -1812,7 +1832,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 342,
+      "incomingLinks": 344,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -1824,9 +1844,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 342,
-      "lastmod": "2026-10-24",
-      "bodyWords": 635
+      "incomingLinks": 344,
+      "lastmod": "2026-10-25",
+      "bodyWords": 637
     },
     {
       "route": "/pages/blog/a-calm-checklist-for-inspecting-a-suspicious-message/",
@@ -2196,9 +2216,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 206,
-      "lastmod": "2026-10-24",
-      "bodyWords": 3241
+      "incomingLinks": 208,
+      "lastmod": "2026-10-25",
+      "bodyWords": 3262
     },
     {
       "route": "/pages/blog/anhydrous-ammonia-is-the-fall-farm-bill/",
@@ -3209,6 +3229,18 @@
       "bodyWords": 808
     },
     {
+      "route": "/pages/blog/how-text-expansion-saves-time-without-creating-risky-shortcuts/",
+      "file": "pages/blog/how-text-expansion-saves-time-without-creating-risky-shortcuts/index.html",
+      "title": "How text expansion saves time without creating risky shortcuts — The Export | Notavello",
+      "description": "Use text expansion tools effectively by selecting safe abbreviations, avoiding secrets in snippets, and keeping templates clear and maintainable.",
+      "canonical": "https://notavello.com/pages/blog/how-text-expansion-saves-time-without-creating-risky-shortcuts/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-10-25",
+      "bodyWords": 1069
+    },
+    {
       "route": "/pages/blog/how-to-add-retries-without-making-automation-dangerous/",
       "file": "pages/blog/how-to-add-retries-without-making-automation-dangerous/index.html",
       "title": "How to add retries without making automation dangerous — The Export | Notavello",
@@ -3845,6 +3877,18 @@
       "bodyWords": 1490
     },
     {
+      "route": "/pages/blog/nine-percent-is-the-fertilizer-gap/",
+      "file": "pages/blog/nine-percent-is-the-fertilizer-gap/index.html",
+      "title": "Nine Percent Is The Fertilizer Gap — The Export | Notavello",
+      "description": "Fertilizer did not vanish; it got rerouted. The 9% nitrogen export gap is already a farm and food-price warning.",
+      "canonical": "https://notavello.com/pages/blog/nine-percent-is-the-fertilizer-gap/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-10-26",
+      "bodyWords": 1456
+    },
+    {
       "route": "/pages/blog/oil-demand-destruction-is-the-shortage-receipt/",
       "file": "pages/blog/oil-demand-destruction-is-the-shortage-receipt/index.html",
       "title": "Oil Demand Destruction Is The Shortage Receipt — The Export | Notavello",
@@ -3985,8 +4029,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-24",
-      "bodyWords": 645
+      "lastmod": "2026-10-25",
+      "bodyWords": 642
     },
     {
       "route": "/pages/blog/page-11/",
@@ -3997,8 +4041,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-24",
-      "bodyWords": 700
+      "lastmod": "2026-10-25",
+      "bodyWords": 686
     },
     {
       "route": "/pages/blog/page-12/",
@@ -4009,8 +4053,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-24",
-      "bodyWords": 709
+      "lastmod": "2026-10-25",
+      "bodyWords": 699
     },
     {
       "route": "/pages/blog/page-13/",
@@ -4021,8 +4065,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-24",
-      "bodyWords": 817
+      "lastmod": "2026-10-25",
+      "bodyWords": 812
     },
     {
       "route": "/pages/blog/page-14/",
@@ -4033,8 +4077,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-24",
-      "bodyWords": 835
+      "lastmod": "2026-10-25",
+      "bodyWords": 841
     },
     {
       "route": "/pages/blog/page-15/",
@@ -4045,8 +4089,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": "2026-10-24",
-      "bodyWords": 745
+      "lastmod": "2026-10-25",
+      "bodyWords": 837
     },
     {
       "route": "/pages/blog/page-2/",
@@ -4057,8 +4101,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-24",
-      "bodyWords": 688
+      "lastmod": "2026-10-25",
+      "bodyWords": 692
     },
     {
       "route": "/pages/blog/page-3/",
@@ -4069,8 +4113,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-24",
-      "bodyWords": 638
+      "lastmod": "2026-10-25",
+      "bodyWords": 625
     },
     {
       "route": "/pages/blog/page-4/",
@@ -4081,8 +4125,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-24",
-      "bodyWords": 667
+      "lastmod": "2026-10-25",
+      "bodyWords": 674
     },
     {
       "route": "/pages/blog/page-5/",
@@ -4093,8 +4137,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-24",
-      "bodyWords": 639
+      "lastmod": "2026-10-25",
+      "bodyWords": 635
     },
     {
       "route": "/pages/blog/page-6/",
@@ -4105,8 +4149,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-24",
-      "bodyWords": 667
+      "lastmod": "2026-10-25",
+      "bodyWords": 672
     },
     {
       "route": "/pages/blog/page-7/",
@@ -4117,8 +4161,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-24",
-      "bodyWords": 668
+      "lastmod": "2026-10-25",
+      "bodyWords": 660
     },
     {
       "route": "/pages/blog/page-8/",
@@ -4129,8 +4173,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-24",
-      "bodyWords": 686
+      "lastmod": "2026-10-25",
+      "bodyWords": 685
     },
     {
       "route": "/pages/blog/page-9/",
@@ -4141,8 +4185,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-24",
-      "bodyWords": 667
+      "lastmod": "2026-10-25",
+      "bodyWords": 677
     },
     {
       "route": "/pages/blog/phosphate-is-the-fertilizer-shock-that-did-not-fade/",
@@ -4536,7 +4580,7 @@
       "canonical": "https://notavello.com/pages/blog/the-food-index-is-reading-the-fuel-gauge/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 2,
+      "incomingLinks": 3,
       "lastmod": "2026-10-18",
       "bodyWords": 1308
     },
@@ -5220,7 +5264,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 342,
+      "incomingLinks": 344,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -5232,7 +5276,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 342,
+      "incomingLinks": 344,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -5244,7 +5288,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 342,
+      "incomingLinks": 344,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -5256,7 +5300,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 342,
+      "incomingLinks": 344,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -5268,7 +5312,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 342,
+      "incomingLinks": 344,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -5281,8 +5325,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-10-25",
-      "bodyWords": 587
+      "lastmod": "2026-10-26",
+      "bodyWords": 593
     },
     {
       "route": "/pages/sample",
@@ -5304,7 +5348,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 342,
+      "incomingLinks": 344,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -5316,7 +5360,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 342,
+      "incomingLinks": 344,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -5340,7 +5384,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 342,
+      "incomingLinks": 344,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -5772,7 +5816,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 342,
+      "incomingLinks": 344,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }
