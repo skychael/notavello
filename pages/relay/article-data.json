@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "checked_at": "2026-10-27T06:21:25.346Z",
-  "latest_success_at": "2026-10-27T06:21:25.346Z",
+  "checked_at": "2026-10-27T13:17:39.334Z",
+  "latest_success_at": "2026-10-27T13:17:39.334Z",
   "status": "ok",
   "items": [
     {
@@ -13,18 +13,18 @@
       "status": "ok"
     },
     {
-      "title": "Why Saudi Just Abandoned Its Core Oil Rule",
-      "url": "https://oilprice.com/Energy/Crude-Oil/Why-Saudi-Just-Abandoned-Its-Core-Oil-Rule.html",
-      "publisher": "OilPrice.com",
-      "published_at": "2026-10-26T16:00:00.000Z",
-      "source_id": "oilprice",
-      "status": "ok"
-    },
-    {
       "title": "Asia Needs $1 Trillion a Year to Avoid the Next Energy Shock",
       "url": "https://oilprice.com/Energy/Energy-General/Asia-Needs-1-Trillion-a-Year-to-Avoid-the-Next-Energy-Shock.html",
       "publisher": "OilPrice.com",
       "published_at": "2026-10-26T21:00:00.000Z",
+      "source_id": "oilprice",
+      "status": "ok"
+    },
+    {
+      "title": "The Iran War Just Added $39 Billion to the World's LNG Bill",
+      "url": "https://oilprice.com/Energy/Natural-Gas/The-Iran-War-Just-Added-39-Billion-to-the-Worlds-LNG-Bill.html",
+      "publisher": "OilPrice.com",
+      "published_at": "2026-10-26T18:00:00.000Z",
       "source_id": "oilprice",
       "status": "ok"
     },
@@ -42,6 +42,14 @@
       "publisher": "The Maritime Executive",
       "published_at": "2026-10-26T15:34:20.000Z",
       "source_id": "maritime-executive",
+      "status": "ok"
+    },
+    {
+      "title": "USAF should buy newly designed air refuelers to meet China threat: Report",
+      "url": "https://breakingdefense.com/2026/10/usaf-should-buy-newly-designed-air-refuelers-to-meet-china-threat-report",
+      "publisher": "Breaking Defense",
+      "published_at": "2026-10-27T12:00:00.000Z",
+      "source_id": "breaking-defense",
       "status": "ok"
     },
     {
@@ -66,14 +74,6 @@
       "publisher": "TWZ (The War Zone)",
       "published_at": "2026-10-26T23:23:37.000Z",
       "source_id": "twz",
-      "status": "ok"
-    },
-    {
-      "title": "Strong earthquake sequence strikes off northern Vanuatu after initial M6.9 event",
-      "url": "https://watchers.news/2026/10/24/strong-earthquake-sequence-strikes-off-northern-vanuatu-after-initial-m6-9-event",
-      "publisher": "The Watchers",
-      "published_at": "2026-10-24T07:47:54.000Z",
-      "source_id": "the-watchers",
       "status": "ok"
     },
     {

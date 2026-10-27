@@ -1,9 +1,18 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-27T06:21:25.851Z",
-  "latest_success_at": "2026-10-27T06:21:25.851Z",
+  "generated_at": "2026-10-27T13:17:39.875Z",
+  "latest_success_at": "2026-10-27T13:17:39.875Z",
   "status": "ok",
   "items": [
+    {
+      "id": "b45a6c572aeddc42",
+      "title": "Very severe cyclone Arnab nears Andhra Pradesh–Yanam coast ahead of October 28 landfall, India",
+      "url": "https://watchers.news/2026/10/27/very-severe-cyclone-arnab-nears-andhra-pradesh-yanam-coast-ahead-of-october-28-landfall-india",
+      "publisher": "The Watchers",
+      "published_at": "2026-10-27T12:45:33.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
     {
       "id": "2e33ee80cabaeae8",
       "title": "Typhoon Champi leaves one dead and hundreds injured as recovery continues in Taiwan",
@@ -14,20 +23,11 @@
       "status": "ok"
     },
     {
-      "id": "37da69af1d54848c",
-      "title": "Flood Warning issued October 26 at 11:07PM MDT until October 27 at 8:00AM MDT by NWS Grand Junction CO",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.8371398a196da0e74bdad7cacd9c509b0e72b572.001.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-10-27T05:07:00.000Z",
-      "topic": "Flooding",
-      "status": "ok"
-    },
-    {
-      "id": "b5ad93019d019ede",
-      "title": "Atlantic Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
+      "id": "e05152af6b698b8e",
+      "title": "Tropical Storm Vance Graphics",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep2+shtml/124242.shtml?cone=",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-10-27T05:12:20.000Z",
+      "published_at": "2026-10-27T12:42:42.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
