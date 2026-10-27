@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-27T00:31:02.143Z",
-  "latest_success_at": "2026-10-27T00:31:02.143Z",
+  "generated_at": "2026-10-27T06:21:25.851Z",
+  "latest_success_at": "2026-10-27T06:21:25.851Z",
   "status": "ok",
   "items": [
     {
@@ -14,20 +14,20 @@
       "status": "ok"
     },
     {
-      "id": "8cc7507ddd3dc152",
-      "title": "Flood Warning issued October 26 at 8:29AM MDT until October 27 at 6:00AM MDT by NWS Grand Junction CO",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.758ffcb92bf2d59f4bedc082605c7152b4695322.001.1.cap",
+      "id": "37da69af1d54848c",
+      "title": "Flood Warning issued October 26 at 11:07PM MDT until October 27 at 8:00AM MDT by NWS Grand Junction CO",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.8371398a196da0e74bdad7cacd9c509b0e72b572.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-10-26T14:29:00.000Z",
+      "published_at": "2026-10-27T05:07:00.000Z",
       "topic": "Flooding",
       "status": "ok"
     },
     {
-      "id": "ee8e390990a944fc",
-      "title": "Eastern North Pacific Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
+      "id": "b5ad93019d019ede",
+      "title": "Atlantic Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-10-26T23:53:17.000Z",
+      "published_at": "2026-10-27T05:12:20.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
