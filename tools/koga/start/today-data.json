@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "10-26",
-  "display_date": "October 26",
-  "generated_at": "2026-10-26T15:12:29.511Z",
+  "date_key": "10-27",
+  "display_date": "October 27",
+  "generated_at": "2026-10-27T14:32:40.086Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-dfd975690f17292b5eb270bd",
+      "candidate_id": "event-5113b3fc7b71e9d4ad57f1bb",
       "type": "event",
-      "year": 1968,
-      "text": "Space Race: The Soyuz 3 mission achieves the first Soviet space rendezvous.",
-      "article_title": "Space Race",
-      "url": "https://en.wikipedia.org/wiki/Space_Race",
-      "category": "Sports"
-    },
-    {
-      "candidate_id": "event-f8acd9713411e3f95459bcc7",
-      "type": "event",
-      "year": 1942,
-      "text": "World War II: In the Battle of the Santa Cruz Islands during the Guadalcanal Campaign, one U.S. aircraft carrier is sunk and another carrier is heavily damaged, while two Japanese carriers and one cruiser are heavily damaged.",
-      "article_title": "World War II",
-      "url": "https://en.wikipedia.org/wiki/World_War_II",
+      "year": 1961,
+      "text": "NASA tests the first Saturn I rocket in Mission Saturn-Apollo 1.",
+      "article_title": "Saturn I SA-1",
+      "url": "https://en.wikipedia.org/wiki/Saturn_I_SA-1",
       "category": "World history"
     },
     {
-      "candidate_id": "event-ffc40098e2e914a499f715bf",
+      "candidate_id": "event-7c7dd51646e9e96eaeb0a4be",
       "type": "event",
-      "year": 2015,
-      "text": "A 7.5 magnitude earthquake strikes in the Hindu Kush mountain range in South Asia, killing 399 people and leaving 2,536 people injured.",
-      "article_title": "October 2015 Hindu Kush earthquake",
-      "url": "https://en.wikipedia.org/wiki/October_2015_Hindu_Kush_earthquake",
-      "category": "Disasters and exploration"
+      "year": 1954,
+      "text": "Benjamin O. Davis, Jr. becomes the first African-American general in the United States Air Force.",
+      "article_title": "Benjamin O. Davis Jr.",
+      "url": "https://en.wikipedia.org/wiki/Benjamin_O._Davis_Jr.",
+      "category": "World history"
+    },
+    {
+      "candidate_id": "event-64c5299837cc96067e75132b",
+      "type": "event",
+      "year": 2018,
+      "text": "Leicester City F.C. owner Vichai Srivaddhanaprabha dies in a helicopter crash along with four others after a Premier League match against West Ham United at the King Power Stadium in Leicester, England.",
+      "article_title": "Leicester City F.C.",
+      "url": "https://en.wikipedia.org/wiki/Leicester_City_F.C.",
+      "category": "Sports"
     }
   ]
 }
