@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "10-27",
-  "display_date": "October 27",
-  "generated_at": "2026-10-27T14:32:40.086Z",
+  "date_key": "10-28",
+  "display_date": "October 28",
+  "generated_at": "2026-10-28T15:06:48.941Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-5113b3fc7b71e9d4ad57f1bb",
+      "candidate_id": "event-40740dfa259579f04b103eab",
       "type": "event",
-      "year": 1961,
-      "text": "NASA tests the first Saturn I rocket in Mission Saturn-Apollo 1.",
-      "article_title": "Saturn I SA-1",
-      "url": "https://en.wikipedia.org/wiki/Saturn_I_SA-1",
-      "category": "World history"
+      "year": 2025,
+      "text": "Hurricane Melissa makes landfall near Black River, Jamaica, killing over 30 people, as well as tying the 1935 Labor Day hurricane as the most intense landfall in the North Atlantic.",
+      "article_title": "Hurricane Melissa",
+      "url": "https://en.wikipedia.org/wiki/Hurricane_Melissa",
+      "category": "Disasters and exploration"
     },
     {
-      "candidate_id": "event-7c7dd51646e9e96eaeb0a4be",
+      "candidate_id": "event-cc929768f5b6e7f6afce4ce4",
       "type": "event",
-      "year": 1954,
-      "text": "Benjamin O. Davis, Jr. becomes the first African-American general in the United States Air Force.",
-      "article_title": "Benjamin O. Davis Jr.",
-      "url": "https://en.wikipedia.org/wiki/Benjamin_O._Davis_Jr.",
-      "category": "World history"
+      "year": 2014,
+      "text": "A rocket carrying NASA's Cygnus CRS Orb-3 resupply mission to the International Space Station explodes seconds after taking off from the Mid-Atlantic Regional Spaceport in Wallops Island, Virginia.",
+      "article_title": "Cygnus Orb-3",
+      "url": "https://en.wikipedia.org/wiki/Cygnus_Orb-3",
+      "category": "Science and technology"
     },
     {
-      "candidate_id": "event-64c5299837cc96067e75132b",
+      "candidate_id": "event-fbc2a00dbff8f02fb975ce41",
       "type": "event",
-      "year": 2018,
-      "text": "Leicester City F.C. owner Vichai Srivaddhanaprabha dies in a helicopter crash along with four others after a Premier League match against West Ham United at the King Power Stadium in Leicester, England.",
-      "article_title": "Leicester City F.C.",
-      "url": "https://en.wikipedia.org/wiki/Leicester_City_F.C.",
-      "category": "Sports"
+      "year": 1989,
+      "text": "Aloha Island Air Flight 1712, a Twin Otter 300, crashed into terrain at night in Hawaii killing all 20 occupants onboard.",
+      "article_title": "Aloha IslandAir Flight 1712",
+      "url": "https://en.wikipedia.org/wiki/Aloha_IslandAir_Flight_1712",
+      "category": "World history"
     }
   ]
 }
