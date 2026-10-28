@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-27T06:41:34.868Z",
+  "generatedAt": "2026-10-28T07:13:44.568Z",
   "totals": {
-    "pages": 347,
-    "indexable": 343,
-    "articles": 271,
-    "sitemap": 343,
+    "pages": 349,
+    "indexable": 345,
+    "articles": 273,
+    "sitemap": 345,
     "errors": 0,
-    "warnings": 339
+    "warnings": 343
   },
   "errors": [],
   "warnings": [
@@ -862,6 +862,16 @@
     },
     {
       "type": "template-pattern",
+      "page": "/pages/blog/how-to-run-a-practical-notification-audit/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/how-to-run-a-practical-notification-audit/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
       "page": "/pages/blog/how-to-run-a-small-raspberry-pi-project-as-a-system-service/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
@@ -1292,6 +1302,16 @@
     },
     {
       "type": "template-pattern",
+      "page": "/pages/blog/six-dollars-twenty-cents-is-the-heating-oil-bill/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/six-dollars-twenty-cents-is-the-heating-oil-bill/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
       "page": "/pages/blog/six-ships-hormuz-fuel-price-signal/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
@@ -1715,7 +1735,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 347,
+      "incomingLinks": 349,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -1739,7 +1759,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 347,
+      "incomingLinks": 349,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -1847,7 +1867,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 347,
+      "incomingLinks": 349,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -1859,9 +1879,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 347,
-      "lastmod": "2026-10-26",
-      "bodyWords": 655
+      "incomingLinks": 349,
+      "lastmod": "2026-10-27",
+      "bodyWords": 662
     },
     {
       "route": "/pages/blog/a-calm-checklist-for-inspecting-a-suspicious-message/",
@@ -2231,9 +2251,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 210,
-      "lastmod": "2026-10-26",
-      "bodyWords": 3288
+      "incomingLinks": 212,
+      "lastmod": "2026-10-27",
+      "bodyWords": 3311
     },
     {
       "route": "/pages/blog/anhydrous-ammonia-is-the-fall-farm-bill/",
@@ -2687,7 +2707,7 @@
       "canonical": "https://notavello.com/pages/blog/east-coast-heating-oil-gap-is-the-winter-bill/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 3,
+      "incomingLinks": 4,
       "lastmod": "2026-10-07",
       "bodyWords": 1512
     },
@@ -3532,6 +3552,18 @@
       "bodyWords": 876
     },
     {
+      "route": "/pages/blog/how-to-run-a-practical-notification-audit/",
+      "file": "pages/blog/how-to-run-a-practical-notification-audit/index.html",
+      "title": "How to run a practical notification audit — The Export | Notavello",
+      "description": "Separate urgent signals from interruptions by auditing notifications on Mac and Windows with built-in Focus tools and summary features.",
+      "canonical": "https://notavello.com/pages/blog/how-to-run-a-practical-notification-audit/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-10-27",
+      "bodyWords": 925
+    },
+    {
       "route": "/pages/blog/how-to-run-a-small-raspberry-pi-project-as-a-system-service/",
       "file": "pages/blog/how-to-run-a-small-raspberry-pi-project-as-a-system-service/index.html",
       "title": "How to run a small Raspberry Pi project as a system service — The Export | Notavello",
@@ -4068,8 +4100,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-26",
-      "bodyWords": 647
+      "lastmod": "2026-10-27",
+      "bodyWords": 650
     },
     {
       "route": "/pages/blog/page-11/",
@@ -4080,8 +4112,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-26",
-      "bodyWords": 686
+      "lastmod": "2026-10-27",
+      "bodyWords": 687
     },
     {
       "route": "/pages/blog/page-12/",
@@ -4092,8 +4124,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-26",
-      "bodyWords": 678
+      "lastmod": "2026-10-27",
+      "bodyWords": 682
     },
     {
       "route": "/pages/blog/page-13/",
@@ -4104,8 +4136,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-26",
-      "bodyWords": 810
+      "lastmod": "2026-10-27",
+      "bodyWords": 783
     },
     {
       "route": "/pages/blog/page-14/",
@@ -4116,8 +4148,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-26",
-      "bodyWords": 837
+      "lastmod": "2026-10-27",
+      "bodyWords": 830
     },
     {
       "route": "/pages/blog/page-15/",
@@ -4128,8 +4160,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-26",
-      "bodyWords": 890
+      "lastmod": "2026-10-27",
+      "bodyWords": 889
     },
     {
       "route": "/pages/blog/page-16/",
@@ -4140,8 +4172,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": null,
-      "bodyWords": 75
+      "lastmod": "2026-10-27",
+      "bodyWords": 174
     },
     {
       "route": "/pages/blog/page-2/",
@@ -4152,8 +4184,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-26",
-      "bodyWords": 681
+      "lastmod": "2026-10-27",
+      "bodyWords": 672
     },
     {
       "route": "/pages/blog/page-3/",
@@ -4164,8 +4196,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-26",
-      "bodyWords": 638
+      "lastmod": "2026-10-27",
+      "bodyWords": 648
     },
     {
       "route": "/pages/blog/page-4/",
@@ -4176,8 +4208,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-26",
-      "bodyWords": 662
+      "lastmod": "2026-10-27",
+      "bodyWords": 657
     },
     {
       "route": "/pages/blog/page-5/",
@@ -4188,8 +4220,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-26",
-      "bodyWords": 639
+      "lastmod": "2026-10-27",
+      "bodyWords": 629
     },
     {
       "route": "/pages/blog/page-6/",
@@ -4200,8 +4232,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-26",
-      "bodyWords": 667
+      "lastmod": "2026-10-27",
+      "bodyWords": 675
     },
     {
       "route": "/pages/blog/page-7/",
@@ -4212,8 +4244,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-26",
-      "bodyWords": 657
+      "lastmod": "2026-10-27",
+      "bodyWords": 658
     },
     {
       "route": "/pages/blog/page-8/",
@@ -4224,8 +4256,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-26",
-      "bodyWords": 689
+      "lastmod": "2026-10-27",
+      "bodyWords": 684
     },
     {
       "route": "/pages/blog/page-9/",
@@ -4236,8 +4268,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-26",
-      "bodyWords": 672
+      "lastmod": "2026-10-27",
+      "bodyWords": 675
     },
     {
       "route": "/pages/blog/phosphate-is-the-fertilizer-shock-that-did-not-fade/",
@@ -4466,6 +4498,18 @@
       "incomingLinks": 3,
       "lastmod": "2026-09-13",
       "bodyWords": 1454
+    },
+    {
+      "route": "/pages/blog/six-dollars-twenty-cents-is-the-heating-oil-bill/",
+      "file": "pages/blog/six-dollars-twenty-cents-is-the-heating-oil-bill/index.html",
+      "title": "Six Dollars And Twenty Cents Is The Heating Oil Bill — The Export | Notavello",
+      "description": "EIA’s latest heating-oil survey puts East Coast homes at $6.20 a gallon, with thin inventories turning war risk into winter bills.",
+      "canonical": "https://notavello.com/pages/blog/six-dollars-twenty-cents-is-the-heating-oil-bill/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-10-28",
+      "bodyWords": 1518
     },
     {
       "route": "/pages/blog/six-ships-hormuz-fuel-price-signal/",
@@ -5315,7 +5359,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 347,
+      "incomingLinks": 349,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -5327,7 +5371,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 347,
+      "incomingLinks": 349,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -5339,7 +5383,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 347,
+      "incomingLinks": 349,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -5351,7 +5395,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 347,
+      "incomingLinks": 349,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -5363,7 +5407,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 347,
+      "incomingLinks": 349,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -5376,8 +5420,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-10-27",
-      "bodyWords": 599
+      "lastmod": "2026-10-28",
+      "bodyWords": 605
     },
     {
       "route": "/pages/sample",
@@ -5399,7 +5443,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 347,
+      "incomingLinks": 349,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -5411,7 +5455,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 347,
+      "incomingLinks": 349,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -5435,7 +5479,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 347,
+      "incomingLinks": 349,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -5867,7 +5911,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 347,
+      "incomingLinks": 349,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }
