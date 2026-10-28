@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-28T05:50:30.963Z",
-  "latest_success_at": "2026-10-28T05:50:30.963Z",
+  "generated_at": "2026-10-28T13:04:42.350Z",
+  "latest_success_at": "2026-10-28T13:04:42.350Z",
   "status": "ok",
   "items": [
     {
@@ -23,11 +23,11 @@
       "status": "ok"
     },
     {
-      "id": "ee8e390990a944fc",
-      "title": "Eastern North Pacific Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
+      "id": "69ad54b80f3d0a33",
+      "title": "Tropical Storm Vance Graphics",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep2+shtml/120634.shtml?cone=",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-10-28T05:05:31.000Z",
+      "published_at": "2026-10-28T12:06:34.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
