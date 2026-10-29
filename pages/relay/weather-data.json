@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-29T10:06:03.478Z",
-  "latest_success_at": "2026-10-29T10:06:03.478Z",
+  "generated_at": "2026-10-29T16:57:19.418Z",
+  "latest_success_at": "2026-10-29T16:57:19.418Z",
   "status": "ok",
   "items": [
     {
@@ -14,20 +14,20 @@
       "status": "ok"
     },
     {
-      "id": "91ce825dfd0b922b",
+      "id": "4eb68cb606c25d01",
       "title": "Tropical Storm Vance Graphics",
-      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep2+shtml/092245.shtml?cone=",
+      "url": "https://www.nhc.noaa.gov/refresh/graphics_ep2+shtml/152325.shtml?cone=",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-10-29T09:22:45.000Z",
+      "published_at": "2026-10-29T15:23:25.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "012337d9be399dc1",
-      "title": "SPC Oct 29, 2026 Day 4-8 Severe Weather Outlook",
-      "url": "https://www.spc.noaa.gov/products/exper/day4-8",
-      "publisher": "Storm Prediction Center",
-      "published_at": "2026-10-29T07:45:16.000Z",
+      "id": "ee8e390990a944fc",
+      "title": "Eastern North Pacific Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-10-29T11:22:48.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
