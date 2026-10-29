@@ -2,13 +2,22 @@
   "schema_version": 1,
   "archive_date": "2026-10-29",
   "created_at": "2026-10-29T02:31:17.829Z",
-  "updated_at": "2026-10-29T02:31:17.829Z",
+  "updated_at": "2026-10-29T10:06:03.825Z",
   "articles": [
     {
       "title": "Oil Refineries Become Prime Targets as Global Fuel Shortage Worsens",
       "url": "https://oilprice.com/Energy/Energy-General/Oil-Refineries-Become-Prime-Targets-as-Global-Fuel-Shortage-Worsens.html",
       "publisher": "OilPrice.com",
       "published_at": "2026-10-28T23:00:00.000Z",
+      "source_id": "oilprice",
+      "first_seen_at": "2026-10-29T02:31:17.829Z",
+      "status": "ok"
+    },
+    {
+      "title": "U.S. Natural Gas Production Hits New Records as Demand Surges",
+      "url": "https://oilprice.com/Energy/Natural-Gas/US-Natural-Gas-Production-Hits-New-Records-as-Demand-Surges.html",
+      "publisher": "OilPrice.com",
+      "published_at": "2026-10-28T22:00:00.000Z",
       "source_id": "oilprice",
       "first_seen_at": "2026-10-29T02:31:17.829Z",
       "status": "ok"
