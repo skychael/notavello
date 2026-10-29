@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "10-28",
-  "display_date": "October 28",
-  "generated_at": "2026-10-28T15:06:48.941Z",
+  "date_key": "10-29",
+  "display_date": "October 29",
+  "generated_at": "2026-10-29T15:14:16.753Z",
   "source": "Wikimedia On This Day",
-  "selection_method": "deterministic_fallback",
+  "selection_method": "ai",
   "items": [
     {
-      "candidate_id": "event-40740dfa259579f04b103eab",
+      "candidate_id": "event-985c5bddb58ce2aa1295e447",
       "type": "event",
-      "year": 2025,
-      "text": "Hurricane Melissa makes landfall near Black River, Jamaica, killing over 30 people, as well as tying the 1935 Labor Day hurricane as the most intense landfall in the North Atlantic.",
-      "article_title": "Hurricane Melissa",
-      "url": "https://en.wikipedia.org/wiki/Hurricane_Melissa",
-      "category": "Disasters and exploration"
-    },
-    {
-      "candidate_id": "event-cc929768f5b6e7f6afce4ce4",
-      "type": "event",
-      "year": 2014,
-      "text": "A rocket carrying NASA's Cygnus CRS Orb-3 resupply mission to the International Space Station explodes seconds after taking off from the Mid-Atlantic Regional Spaceport in Wallops Island, Virginia.",
-      "article_title": "Cygnus Orb-3",
-      "url": "https://en.wikipedia.org/wiki/Cygnus_Orb-3",
+      "year": 1969,
+      "text": "The first-ever computer-to-computer link is established on ARPANET, the precursor to the Internet.",
+      "article_title": "Computer",
+      "url": "https://en.wikipedia.org/wiki/Computer",
       "category": "Science and technology"
     },
     {
-      "candidate_id": "event-fbc2a00dbff8f02fb975ce41",
+      "candidate_id": "event-577c4f0e05b1a94cb3ad625c",
       "type": "event",
-      "year": 1989,
-      "text": "Aloha Island Air Flight 1712, a Twin Otter 300, crashed into terrain at night in Hawaii killing all 20 occupants onboard.",
-      "article_title": "Aloha IslandAir Flight 1712",
-      "url": "https://en.wikipedia.org/wiki/Aloha_IslandAir_Flight_1712",
-      "category": "World history"
+      "year": 2012,
+      "text": "Hurricane Sandy hits the east coast of the United States, killing hundreds, while leaving nearly $70 billion in damages and causing major power outages.",
+      "article_title": "Hurricane Sandy",
+      "url": "https://en.wikipedia.org/wiki/Hurricane_Sandy",
+      "category": "Disasters and exploration"
+    },
+    {
+      "candidate_id": "event-a354e7befe8bdba71e0c6c65",
+      "type": "event",
+      "year": 2015,
+      "text": "China announces the end of its one-child policy after 35 years.",
+      "article_title": "China",
+      "url": "https://en.wikipedia.org/wiki/China",
+      "category": "Politics and society"
     }
   ]
 }
