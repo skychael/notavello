@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-28T07:13:44.568Z",
+  "generatedAt": "2026-10-29T07:34:56.345Z",
   "totals": {
-    "pages": 349,
-    "indexable": 345,
-    "articles": 273,
-    "sitemap": 345,
+    "pages": 351,
+    "indexable": 347,
+    "articles": 275,
+    "sitemap": 347,
     "errors": 0,
-    "warnings": 343
+    "warnings": 347
   },
   "errors": [],
   "warnings": [
@@ -452,6 +452,16 @@
     },
     {
       "type": "template-pattern",
+      "page": "/pages/blog/forty-one-million-barrels-is-the-midwest-gasoline-warning/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/forty-one-million-barrels-is-the-midwest-gasoline-warning/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
       "page": "/pages/blog/four-dollar-gas-is-the-hormuz-receipt/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
@@ -769,6 +779,16 @@
       "type": "template-pattern",
       "page": "/pages/blog/how-to-investigate-disappearing-disk-space/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/how-to-keep-reusable-templates-from-becoming-stale/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/how-to-keep-reusable-templates-from-becoming-stale/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
     },
     {
       "type": "template-pattern",
@@ -1735,7 +1755,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 349,
+      "incomingLinks": 351,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -1759,7 +1779,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 349,
+      "incomingLinks": 351,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -1867,7 +1887,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 349,
+      "incomingLinks": 351,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -1879,9 +1899,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 349,
-      "lastmod": "2026-10-27",
-      "bodyWords": 662
+      "incomingLinks": 351,
+      "lastmod": "2026-10-28",
+      "bodyWords": 663
     },
     {
       "route": "/pages/blog/a-calm-checklist-for-inspecting-a-suspicious-message/",
@@ -2251,9 +2271,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 212,
-      "lastmod": "2026-10-27",
-      "bodyWords": 3311
+      "incomingLinks": 214,
+      "lastmod": "2026-10-28",
+      "bodyWords": 3334
     },
     {
       "route": "/pages/blog/anhydrous-ammonia-is-the-fall-farm-bill/",
@@ -2347,7 +2367,7 @@
       "canonical": "https://notavello.com/pages/blog/big-crude-build-not-pump-relief/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 3,
+      "incomingLinks": 4,
       "lastmod": "2026-08-14",
       "bodyWords": 1388
     },
@@ -2794,6 +2814,18 @@
       "incomingLinks": 2,
       "lastmod": "2026-09-14",
       "bodyWords": 1546
+    },
+    {
+      "route": "/pages/blog/forty-one-million-barrels-is-the-midwest-gasoline-warning/",
+      "file": "pages/blog/forty-one-million-barrels-is-the-midwest-gasoline-warning/index.html",
+      "title": "Forty One Million Barrels Is The Midwest Gasoline Warning — The Export | Notavello",
+      "description": "Midwest gasoline stocks hit 41M barrels as pump prices jumped, showing why national fuel headlines miss local pain.",
+      "canonical": "https://notavello.com/pages/blog/forty-one-million-barrels-is-the-midwest-gasoline-warning/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-10-29",
+      "bodyWords": 1294
     },
     {
       "route": "/pages/blog/four-dollar-gas-is-the-hormuz-receipt/",
@@ -3406,6 +3438,18 @@
       "incomingLinks": 2,
       "lastmod": "2026-08-26",
       "bodyWords": 860
+    },
+    {
+      "route": "/pages/blog/how-to-keep-reusable-templates-from-becoming-stale/",
+      "file": "pages/blog/how-to-keep-reusable-templates-from-becoming-stale/index.html",
+      "title": "How to Keep Reusable Templates from Becoming Stale — The Export | Notavello",
+      "description": "Assign ownership, set review dates, add examples, and track changes lightly so templates remain accurate and useful instead of turning into sources",
+      "canonical": "https://notavello.com/pages/blog/how-to-keep-reusable-templates-from-becoming-stale/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-10-28",
+      "bodyWords": 820
     },
     {
       "route": "/pages/blog/how-to-make-account-recovery-safer-before-you-need-it/",
@@ -4100,8 +4144,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-27",
-      "bodyWords": 650
+      "lastmod": "2026-10-28",
+      "bodyWords": 647
     },
     {
       "route": "/pages/blog/page-11/",
@@ -4112,8 +4156,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-27",
-      "bodyWords": 687
+      "lastmod": "2026-10-28",
+      "bodyWords": 682
     },
     {
       "route": "/pages/blog/page-12/",
@@ -4124,8 +4168,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-27",
-      "bodyWords": 682
+      "lastmod": "2026-10-28",
+      "bodyWords": 685
     },
     {
       "route": "/pages/blog/page-13/",
@@ -4136,8 +4180,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-27",
-      "bodyWords": 783
+      "lastmod": "2026-10-28",
+      "bodyWords": 777
     },
     {
       "route": "/pages/blog/page-14/",
@@ -4148,8 +4192,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-27",
-      "bodyWords": 830
+      "lastmod": "2026-10-28",
+      "bodyWords": 824
     },
     {
       "route": "/pages/blog/page-15/",
@@ -4160,8 +4204,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-27",
-      "bodyWords": 889
+      "lastmod": "2026-10-28",
+      "bodyWords": 871
     },
     {
       "route": "/pages/blog/page-16/",
@@ -4172,8 +4216,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": "2026-10-27",
-      "bodyWords": 174
+      "lastmod": "2026-10-28",
+      "bodyWords": 278
     },
     {
       "route": "/pages/blog/page-2/",
@@ -4184,8 +4228,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-27",
-      "bodyWords": 672
+      "lastmod": "2026-10-28",
+      "bodyWords": 667
     },
     {
       "route": "/pages/blog/page-3/",
@@ -4196,8 +4240,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-27",
-      "bodyWords": 648
+      "lastmod": "2026-10-28",
+      "bodyWords": 653
     },
     {
       "route": "/pages/blog/page-4/",
@@ -4208,8 +4252,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-27",
-      "bodyWords": 657
+      "lastmod": "2026-10-28",
+      "bodyWords": 664
     },
     {
       "route": "/pages/blog/page-5/",
@@ -4220,8 +4264,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-27",
-      "bodyWords": 629
+      "lastmod": "2026-10-28",
+      "bodyWords": 622
     },
     {
       "route": "/pages/blog/page-6/",
@@ -4232,8 +4276,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-27",
-      "bodyWords": 675
+      "lastmod": "2026-10-28",
+      "bodyWords": 677
     },
     {
       "route": "/pages/blog/page-7/",
@@ -4244,8 +4288,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-27",
-      "bodyWords": 658
+      "lastmod": "2026-10-28",
+      "bodyWords": 650
     },
     {
       "route": "/pages/blog/page-8/",
@@ -4256,8 +4300,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-27",
-      "bodyWords": 684
+      "lastmod": "2026-10-28",
+      "bodyWords": 689
     },
     {
       "route": "/pages/blog/page-9/",
@@ -4268,8 +4312,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-10-27",
-      "bodyWords": 675
+      "lastmod": "2026-10-28",
+      "bodyWords": 678
     },
     {
       "route": "/pages/blog/phosphate-is-the-fertilizer-shock-that-did-not-fade/",
@@ -5359,7 +5403,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 349,
+      "incomingLinks": 351,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -5371,7 +5415,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 349,
+      "incomingLinks": 351,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -5383,7 +5427,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 349,
+      "incomingLinks": 351,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -5395,7 +5439,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 349,
+      "incomingLinks": 351,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -5407,7 +5451,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 349,
+      "incomingLinks": 351,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -5420,8 +5464,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-10-28",
-      "bodyWords": 605
+      "lastmod": "2026-10-29",
+      "bodyWords": 611
     },
     {
       "route": "/pages/sample",
@@ -5443,7 +5487,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 349,
+      "incomingLinks": 351,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -5455,7 +5499,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 349,
+      "incomingLinks": 351,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -5479,7 +5523,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 349,
+      "incomingLinks": 351,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -5911,7 +5955,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 349,
+      "incomingLinks": 351,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }
