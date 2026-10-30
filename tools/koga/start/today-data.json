@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "10-29",
-  "display_date": "October 29",
-  "generated_at": "2026-10-29T15:14:16.753Z",
+  "date_key": "10-30",
+  "display_date": "October 30",
+  "generated_at": "2026-10-30T15:03:23.987Z",
   "source": "Wikimedia On This Day",
-  "selection_method": "ai",
+  "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-985c5bddb58ce2aa1295e447",
+      "candidate_id": "event-d6008c1f264523c76b7c4c7f",
       "type": "event",
-      "year": 1969,
-      "text": "The first-ever computer-to-computer link is established on ARPANET, the precursor to the Internet.",
-      "article_title": "Computer",
-      "url": "https://en.wikipedia.org/wiki/Computer",
-      "category": "Science and technology"
+      "year": 2023,
+      "text": "First rescue of a prisoner during the Israeli invasion of Gaza.",
+      "article_title": "Rescue of Ori Megidish",
+      "url": "https://en.wikipedia.org/wiki/Rescue_of_Ori_Megidish",
+      "category": "World history"
     },
     {
-      "candidate_id": "event-577c4f0e05b1a94cb3ad625c",
+      "candidate_id": "event-8dfd76bbdc0ce47bf8517ae0",
       "type": "event",
-      "year": 2012,
-      "text": "Hurricane Sandy hits the east coast of the United States, killing hundreds, while leaving nearly $70 billion in damages and causing major power outages.",
-      "article_title": "Hurricane Sandy",
-      "url": "https://en.wikipedia.org/wiki/Hurricane_Sandy",
+      "year": 2020,
+      "text": "A magnitude 7.0 earthquake strikes the Aegean Sea between Greece and Turkey, triggering a tsunami. At least 119 people die mainly due to collapsed buildings.",
+      "article_title": "2020 Aegean Sea earthquake",
+      "url": "https://en.wikipedia.org/wiki/2020_Aegean_Sea_earthquake",
       "category": "Disasters and exploration"
     },
     {
-      "candidate_id": "event-a354e7befe8bdba71e0c6c65",
+      "candidate_id": "event-416b37b9e5fe8bd64c0e910e",
       "type": "event",
-      "year": 2015,
-      "text": "China announces the end of its one-child policy after 35 years.",
-      "article_title": "China",
-      "url": "https://en.wikipedia.org/wiki/China",
-      "category": "Politics and society"
+      "year": 1985,
+      "text": "Space Shuttle Challenger lifts off for mission STS-61-A, its final successful mission.",
+      "article_title": "Space Shuttle Challenger",
+      "url": "https://en.wikipedia.org/wiki/Space_Shuttle_Challenger",
+      "category": "Science and technology"
     }
   ]
 }
