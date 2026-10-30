@@ -1,9 +1,17 @@
 {
   "schema_version": "1.0",
-  "checked_at": "2026-10-30T01:59:20.658Z",
-  "latest_success_at": "2026-10-30T01:59:20.658Z",
+  "checked_at": "2026-10-30T08:43:13.257Z",
+  "latest_success_at": "2026-10-30T08:43:13.257Z",
   "status": "ok",
   "items": [
+    {
+      "title": "Oil Prices Head for Fourth Monthly Gain as Middle East Tensions Escalate",
+      "url": "https://oilprice.com/Latest-Energy-News/World-News/Oil-Prices-Head-for-Fourth-Monthly-Gain-as-Middle-East-Tensions-Escalate.html",
+      "publisher": "OilPrice.com",
+      "published_at": "2026-10-30T06:20:00.000Z",
+      "source_id": "oilprice",
+      "status": "ok"
+    },
     {
       "title": "What’s Next for Global Natural Gas Demand?",
       "url": "https://oilprice.com/Energy/Natural-Gas/Whats-Next-for-Global-Natural-Gas-Demand.html",
@@ -29,11 +37,11 @@
       "status": "ok"
     },
     {
-      "title": "Mexico’s Richest Man Sells $1.15 Billion in Oil Stocks",
-      "url": "https://oilprice.com/Latest-Energy-News/World-News/Mexicos-Richest-Man-Sells-115-Billion-in-Oil-Stocks.html",
-      "publisher": "OilPrice.com",
-      "published_at": "2026-10-29T17:30:00.000Z",
-      "source_id": "oilprice",
+      "title": "Here's how much Trump's Iran war has added to Americans' fuel costs",
+      "url": "https://www.canarymedia.com/articles/fossil-fuels/trump-iran-war-american-fuel-costs",
+      "publisher": "Canary Media",
+      "published_at": "2026-10-30T07:30:00.000Z",
+      "source_id": "canary-media",
       "status": "ok"
     },
     {
@@ -73,14 +81,6 @@
       "url": "https://www.twz.com/air/ukraines-stargate-drone-now-evacuating-wounded-soldiers",
       "publisher": "TWZ (The War Zone)",
       "published_at": "2026-10-27T16:32:30.000Z",
-      "source_id": "twz",
-      "status": "ok"
-    },
-    {
-      "title": "Japan To Assemble AMRAAM Missiles As U.S. Moves To Dramatically Boost AIM-120 Production",
-      "url": "https://www.twz.com/air/japan-to-assemble-amraam-missiles-as-u-s-moves-to-dramatically-boost-aim-120-production",
-      "publisher": "TWZ (The War Zone)",
-      "published_at": "2026-10-29T21:59:58.000Z",
       "source_id": "twz",
       "status": "ok"
     }
