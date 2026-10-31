@@ -2,7 +2,7 @@
   "schema_version": 1,
   "archive_date": "2026-10-31",
   "created_at": "2026-10-31T00:50:50.519Z",
-  "updated_at": "2026-10-31T13:41:38.229Z",
+  "updated_at": "2026-10-31T18:36:42.054Z",
   "articles": [
     {
       "title": "US greenlights 500 Patriot missiles for Ukraine, with $2.1 billion to be paid by allies",
@@ -46,6 +46,15 @@
       "publisher": "TWZ (The War Zone)",
       "published_at": "2026-10-30T16:14:23.000Z",
       "source_id": "twz",
+      "first_seen_at": "2026-10-31T00:50:50.519Z",
+      "status": "ok"
+    },
+    {
+      "title": "Japan to Tap $7 Billion from Government Fund to Subsidize Gasoline Prices",
+      "url": "https://oilprice.com/Latest-Energy-News/World-News/Japan-to-Tap-7-Billion-from-Government-Fund-to-Subsidize-Gasoline-Prices.html",
+      "publisher": "OilPrice.com",
+      "published_at": "2026-10-30T13:30:00.000Z",
+      "source_id": "oilprice",
       "first_seen_at": "2026-10-31T00:50:50.519Z",
       "status": "ok"
     },
