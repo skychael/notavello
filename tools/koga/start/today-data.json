@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "10-30",
-  "display_date": "October 30",
-  "generated_at": "2026-10-30T15:03:23.987Z",
+  "date_key": "10-31",
+  "display_date": "October 31",
+  "generated_at": "2026-10-31T14:32:24.759Z",
   "source": "Wikimedia On This Day",
-  "selection_method": "deterministic_fallback",
+  "selection_method": "ai",
   "items": [
     {
-      "candidate_id": "event-d6008c1f264523c76b7c4c7f",
+      "candidate_id": "event-96b22a68db9d0a5176843505",
       "type": "event",
-      "year": 2023,
-      "text": "First rescue of a prisoner during the Israeli invasion of Gaza.",
-      "article_title": "Rescue of Ori Megidish",
-      "url": "https://en.wikipedia.org/wiki/Rescue_of_Ori_Megidish",
-      "category": "World history"
-    },
-    {
-      "candidate_id": "event-8dfd76bbdc0ce47bf8517ae0",
-      "type": "event",
-      "year": 2020,
-      "text": "A magnitude 7.0 earthquake strikes the Aegean Sea between Greece and Turkey, triggering a tsunami. At least 119 people die mainly due to collapsed buildings.",
-      "article_title": "2020 Aegean Sea earthquake",
-      "url": "https://en.wikipedia.org/wiki/2020_Aegean_Sea_earthquake",
-      "category": "Disasters and exploration"
-    },
-    {
-      "candidate_id": "event-416b37b9e5fe8bd64c0e910e",
-      "type": "event",
-      "year": 1985,
-      "text": "Space Shuttle Challenger lifts off for mission STS-61-A, its final successful mission.",
-      "article_title": "Space Shuttle Challenger",
-      "url": "https://en.wikipedia.org/wiki/Space_Shuttle_Challenger",
+      "year": 2000,
+      "text": "Soyuz TM-31 launches, carrying the first resident crew to the International Space Station. The ISS has been crewed continuously since then.",
+      "article_title": "Soyuz TM-31",
+      "url": "https://en.wikipedia.org/wiki/Soyuz_TM-31",
       "category": "Science and technology"
+    },
+    {
+      "candidate_id": "event-6a31b0cc91bed243280bb673",
+      "type": "event",
+      "year": 1984,
+      "text": "Indian Prime Minister Indira Gandhi is assassinated by two Sikh security guards. Riots break out in New Delhi and other cities and around 3,000 Sikhs are killed.",
+      "article_title": "Indira Gandhi",
+      "url": "https://en.wikipedia.org/wiki/Indira_Gandhi",
+      "category": "Politics and society"
+    },
+    {
+      "candidate_id": "event-9ae19cfcd0827940420cf02f",
+      "type": "event",
+      "year": 1956,
+      "text": "Suez Crisis: The United Kingdom and France begin bombing Egypt to force the reopening of the Suez Canal.",
+      "article_title": "Suez Crisis",
+      "url": "https://en.wikipedia.org/wiki/Suez_Crisis",
+      "category": "World history"
     }
   ]
 }
