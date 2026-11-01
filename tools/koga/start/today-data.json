@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "10-31",
-  "display_date": "October 31",
-  "generated_at": "2026-10-31T14:32:24.759Z",
+  "date_key": "11-01",
+  "display_date": "November 1",
+  "generated_at": "2026-11-01T15:11:09.956Z",
   "source": "Wikimedia On This Day",
-  "selection_method": "ai",
+  "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-96b22a68db9d0a5176843505",
+      "candidate_id": "event-8502565929e6cd066b6439fc",
       "type": "event",
-      "year": 2000,
-      "text": "Soyuz TM-31 launches, carrying the first resident crew to the International Space Station. The ISS has been crewed continuously since then.",
-      "article_title": "Soyuz TM-31",
-      "url": "https://en.wikipedia.org/wiki/Soyuz_TM-31",
-      "category": "Science and technology"
-    },
-    {
-      "candidate_id": "event-6a31b0cc91bed243280bb673",
-      "type": "event",
-      "year": 1984,
-      "text": "Indian Prime Minister Indira Gandhi is assassinated by two Sikh security guards. Riots break out in New Delhi and other cities and around 3,000 Sikhs are killed.",
-      "article_title": "Indira Gandhi",
-      "url": "https://en.wikipedia.org/wiki/Indira_Gandhi",
-      "category": "Politics and society"
-    },
-    {
-      "candidate_id": "event-9ae19cfcd0827940420cf02f",
-      "type": "event",
-      "year": 1956,
-      "text": "Suez Crisis: The United Kingdom and France begin bombing Egypt to force the reopening of the Suez Canal.",
-      "article_title": "Suez Crisis",
-      "url": "https://en.wikipedia.org/wiki/Suez_Crisis",
+      "year": 1952,
+      "text": "Nuclear weapons testing: The United States successfully detonates Ivy Mike, the first thermonuclear device, at the Eniwetok atoll. The explosion had a yield of ten megatons TNT equivalent.",
+      "article_title": "Nuclear weapons testing",
+      "url": "https://en.wikipedia.org/wiki/Nuclear_weapons_testing",
       "category": "World history"
+    },
+    {
+      "candidate_id": "event-c5aa0c40fee8cf6a189f2db5",
+      "type": "event",
+      "year": 1914,
+      "text": "World War I: The Australian Imperial Force (AIF) departed by ship in a single convoy from Albany, Western Australia bound for Egypt.",
+      "article_title": "First Australian Imperial Force",
+      "url": "https://en.wikipedia.org/wiki/First_Australian_Imperial_Force",
+      "category": "World history"
+    },
+    {
+      "candidate_id": "event-f7b3c36ac33da90df6f273ea",
+      "type": "event",
+      "year": 1997,
+      "text": "Titanic premieres publicly at Tokyo festival, launching a global blockbuster career.",
+      "article_title": "Titanic (1997 film)",
+      "url": "https://en.wikipedia.org/wiki/Titanic_(1997_film)",
+      "category": "Culture and notable people"
     }
   ]
 }
