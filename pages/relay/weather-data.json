@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-11-01T02:17:24.100Z",
-  "latest_success_at": "2026-11-01T02:17:24.100Z",
+  "generated_at": "2026-11-01T10:34:28.428Z",
+  "latest_success_at": "2026-11-01T10:34:28.428Z",
   "status": "ok",
   "items": [
     {
@@ -18,16 +18,16 @@
       "title": "Atlantic Tropical Weather Outlook",
       "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-10-31T23:18:56.000Z",
+      "published_at": "2026-11-01T05:00:55.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "494ee1d7e8616833",
-      "title": "High Surf Advisory issued November 1 at 3:52AM ChST until November 2 at 4:00AM ChST by NWS Tiyan GU",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.c7c0d55946fd098fa988fb8440bebcbc70914196.001.1.cap",
+      "id": "f1adc453141b9407",
+      "title": "High Surf Advisory issued November 1 at 2:09PM ChST until November 2 at 4:00PM ChST by NWS Tiyan GU",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.54917b1e3e91309ec49f3c573f044f6a2d779474.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-10-31T17:52:00.000Z",
+      "published_at": "2026-11-01T04:09:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
