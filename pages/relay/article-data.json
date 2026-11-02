@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "checked_at": "2026-11-02T00:50:06.999Z",
-  "latest_success_at": "2026-11-02T00:50:06.999Z",
+  "checked_at": "2026-11-02T07:43:39.421Z",
+  "latest_success_at": "2026-11-02T07:43:39.421Z",
   "status": "ok",
   "items": [
     {
@@ -9,6 +9,14 @@
       "url": "https://gcaptain.com/irans-irgc-navy-says-four-tankers-catch-fire-in-strait-of-hormuz",
       "publisher": "gCaptain",
       "published_at": "2026-10-31T18:01:30.000Z",
+      "source_id": "gcaptain",
+      "status": "ok"
+    },
+    {
+      "title": "Pakistan LNG Cargo Attacked Near Hormuz Had Iranian Approval",
+      "url": "https://gcaptain.com/pakistan-lng-cargo-attacked-near-hormuz-had-iranian-approval",
+      "publisher": "gCaptain",
+      "published_at": "2026-11-02T02:57:24.000Z",
       "source_id": "gcaptain",
       "status": "ok"
     },
@@ -21,27 +29,11 @@
       "status": "ok"
     },
     {
-      "title": "Here's how much Trump's Iran war has added to Americans' fuel costs",
-      "url": "https://www.canarymedia.com/articles/fossil-fuels/trump-iran-war-american-fuel-costs",
-      "publisher": "Canary Media",
-      "published_at": "2026-10-30T07:30:00.000Z",
-      "source_id": "canary-media",
-      "status": "ok"
-    },
-    {
       "title": "Iran Used Limpet Mine Placed On Ship’s Hull In Latest Strait Of Hormuz Attack: Report",
       "url": "https://www.twz.com/news-features/iran-used-limpet-mine-placed-on-ships-hull-in-latest-strait-of-hormuz-attack-report",
       "publisher": "TWZ (The War Zone)",
       "published_at": "2026-10-30T18:33:46.000Z",
       "source_id": "twz",
-      "status": "ok"
-    },
-    {
-      "title": "Shipping Strikes In Hormuz Leave Both Sides With Economic Pain",
-      "url": "https://gcaptain.com/shipping-strikes-in-hormuz-leave-both-sides-with-economic-pain",
-      "publisher": "gCaptain",
-      "published_at": "2026-11-01T03:45:55.000Z",
-      "source_id": "gcaptain",
       "status": "ok"
     },
     {
@@ -53,10 +45,10 @@
       "status": "ok"
     },
     {
-      "title": "Tanker Hit by Limpet Mine Attack in Strait of Hormuz",
-      "url": "https://maritime-executive.com/article/tanker-hit-by-limpet-mine-attack-in-strait-of-hormuz",
+      "title": "Offshore Tug Hit in Latest Attack in Strait of Hormuz",
+      "url": "https://maritime-executive.com/article/offshore-tug-hit-in-latest-attack-in-strait-of-hormuz",
       "publisher": "The Maritime Executive",
-      "published_at": "2026-10-30T02:54:03.000Z",
+      "published_at": "2026-11-01T22:48:41.000Z",
       "source_id": "maritime-executive",
       "status": "ok"
     },
@@ -82,6 +74,14 @@
       "publisher": "OilPrice.com",
       "published_at": "2026-10-31T21:00:00.000Z",
       "source_id": "oilprice",
+      "status": "ok"
+    },
+    {
+      "title": "Bilateral no more: PACOM officials highlight multi-national data sharing network",
+      "url": "https://breakingdefense.com/2026/10/bilateral-no-more-pacom-officials-highlight-multi-national-data-sharing-network",
+      "publisher": "Breaking Defense",
+      "published_at": "2026-10-30T17:33:00.000Z",
+      "source_id": "breaking-defense",
       "status": "ok"
     }
   ]

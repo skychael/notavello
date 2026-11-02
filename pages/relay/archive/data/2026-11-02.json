@@ -2,14 +2,32 @@
   "schema_version": 1,
   "archive_date": "2026-11-02",
   "created_at": "2026-11-02T00:50:09.862Z",
-  "updated_at": "2026-11-02T00:50:09.862Z",
+  "updated_at": "2026-11-02T07:43:41.857Z",
   "articles": [
+    {
+      "title": "Pakistan LNG Cargo Attacked Near Hormuz Had Iranian Approval",
+      "url": "https://gcaptain.com/pakistan-lng-cargo-attacked-near-hormuz-had-iranian-approval",
+      "publisher": "gCaptain",
+      "published_at": "2026-11-02T02:57:24.000Z",
+      "source_id": "gcaptain",
+      "first_seen_at": "2026-11-02T00:50:09.862Z",
+      "status": "ok"
+    },
     {
       "title": "Oil Prices No Longer Follow Headlines",
       "url": "https://oilprice.com/Energy/Oil-Prices/Oil-Prices-No-Longer-Follow-Headlines.html",
       "publisher": "OilPrice.com",
       "published_at": "2026-11-02T00:00:00.000Z",
       "source_id": "oilprice",
+      "first_seen_at": "2026-11-02T00:50:09.862Z",
+      "status": "ok"
+    },
+    {
+      "title": "Offshore Tug Hit in Latest Attack in Strait of Hormuz",
+      "url": "https://maritime-executive.com/article/offshore-tug-hit-in-latest-attack-in-strait-of-hormuz",
+      "publisher": "The Maritime Executive",
+      "published_at": "2026-11-01T22:48:41.000Z",
+      "source_id": "maritime-executive",
       "first_seen_at": "2026-11-02T00:50:09.862Z",
       "status": "ok"
     },
@@ -68,6 +86,15 @@
       "status": "ok"
     },
     {
+      "title": "Bilateral no more: PACOM officials highlight multi-national data sharing network",
+      "url": "https://breakingdefense.com/2026/10/bilateral-no-more-pacom-officials-highlight-multi-national-data-sharing-network",
+      "publisher": "Breaking Defense",
+      "published_at": "2026-10-30T17:33:00.000Z",
+      "source_id": "breaking-defense",
+      "first_seen_at": "2026-11-02T00:50:09.862Z",
+      "status": "ok"
+    },
+    {
       "title": "General Atomics Developing Strike-Recon Flying Wing Called NextGen That Uses Hybrid-Electric Propulsion",
       "url": "https://www.twz.com/news-features/general-atomics-developing-strike-recon-flying-wing-called-nextgen-that-uses-hybrid-electric-propulsion",
       "publisher": "TWZ (The War Zone)",
@@ -96,6 +123,16 @@
     }
   ],
   "videos": [
+    {
+      "title": "What the Ship (Ep 150): Global Shipbuilding Boom, Dock Strike & Chokepoint Attacks",
+      "url": "https://www.youtube.com/watch?v=E1hUEY9f4Po",
+      "channel_name": "What's Going on With Shipping?",
+      "channel_id": "UCT_yBgKSiwb3WP4ACPnF5nA",
+      "video_id": "E1hUEY9f4Po",
+      "published_at": "2026-11-01T20:36:19.000Z",
+      "first_seen_at": "2026-11-02T00:50:09.862Z",
+      "status": "ok"
+    },
     {
       "title": "This Week in Volcano News; French Island Magma Intrusion, Mayon Erupts",
       "url": "https://www.youtube.com/watch?v=bHbLth6ri9w",

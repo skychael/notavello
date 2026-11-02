@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-11-02T00:50:08.442Z",
-  "latest_success_at": "2026-11-02T00:50:08.442Z",
+  "generated_at": "2026-11-02T07:43:40.630Z",
+  "latest_success_at": "2026-11-02T07:43:40.630Z",
   "status": "ok",
   "items": [
     {
@@ -14,21 +14,21 @@
       "status": "ok"
     },
     {
-      "id": "a16e3ac35bdc7cd2",
-      "title": "Flash Flood Warning issued November 1 at 3:41PM MST until November 1 at 8:30PM MST by NWS Flagstaff AZ",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.0f249843e88a299941228be8727603e5a979cd63.001.1.cap",
+      "id": "64c99daefa057604",
+      "title": "Flood Warning issued November 1 at 10:49PM MST until November 3 at 6:24AM MST by NWS Albuquerque NM",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.4903c3519e53e9f29b09edb47f8452d4ed9c2548.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-11-01T22:41:00.000Z",
+      "published_at": "2026-11-02T05:49:00.000Z",
       "topic": "Flooding",
       "status": "ok"
     },
     {
-      "id": "b5ad93019d019ede",
-      "title": "Atlantic Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-11-01T23:41:37.000Z",
-      "topic": "Hurricane",
+      "id": "826d134f48a85c47",
+      "title": "Flood Warning issued November 1 at 9:24PM MST until November 2 at 8:00PM MST by NWS Flagstaff AZ",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.31b49772b5b8f4f8325fdd42b64a6f05e4844198.001.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-11-02T04:24:00.000Z",
+      "topic": "Flooding",
       "status": "ok"
     }
   ]
