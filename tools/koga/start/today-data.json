@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "11-01",
-  "display_date": "November 1",
-  "generated_at": "2026-11-01T15:11:09.956Z",
+  "date_key": "11-02",
+  "display_date": "November 2",
+  "generated_at": "2026-11-02T18:23:26.981Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-8502565929e6cd066b6439fc",
+      "candidate_id": "event-93dd3c15cab04036f26bbf02",
       "type": "event",
-      "year": 1952,
-      "text": "Nuclear weapons testing: The United States successfully detonates Ivy Mike, the first thermonuclear device, at the Eniwetok atoll. The explosion had a yield of ten megatons TNT equivalent.",
-      "article_title": "Nuclear weapons testing",
-      "url": "https://en.wikipedia.org/wiki/Nuclear_weapons_testing",
+      "year": 2000,
+      "text": "Expedition 1 arrived at the International Space Station for the first long-duration stay onboard. From this day to present, a continuous human presence in space on the station remains uninterrupted.",
+      "article_title": "Expedition 1",
+      "url": "https://en.wikipedia.org/wiki/Expedition_1",
+      "category": "Science and technology"
+    },
+    {
+      "candidate_id": "event-bc2a31c75435813a5460c3f3",
+      "type": "event",
+      "year": 1988,
+      "text": "LOT Polish Airlines Flight 703 crashes in Białobrzegi, Podkarpackie Voivodeship, Poland, killing one person and injuring several more.",
+      "article_title": "LOT Polish Airlines Flight 703",
+      "url": "https://en.wikipedia.org/wiki/LOT_Polish_Airlines_Flight_703",
       "category": "World history"
     },
     {
-      "candidate_id": "event-c5aa0c40fee8cf6a189f2db5",
+      "candidate_id": "event-d2995d9a4038b9a68e855cab",
       "type": "event",
-      "year": 1914,
-      "text": "World War I: The Australian Imperial Force (AIF) departed by ship in a single convoy from Albany, Western Australia bound for Egypt.",
-      "article_title": "First Australian Imperial Force",
-      "url": "https://en.wikipedia.org/wiki/First_Australian_Imperial_Force",
-      "category": "World history"
-    },
-    {
-      "candidate_id": "event-f7b3c36ac33da90df6f273ea",
-      "type": "event",
-      "year": 1997,
-      "text": "Titanic premieres publicly at Tokyo festival, launching a global blockbuster career.",
-      "article_title": "Titanic (1997 film)",
-      "url": "https://en.wikipedia.org/wiki/Titanic_(1997_film)",
-      "category": "Culture and notable people"
+      "year": 1967,
+      "text": "Vietnam War: US President Lyndon B. Johnson and \"The Wise Men\" conclude that the American people should be given more optimistic reports on the progress of the war.",
+      "article_title": "Vietnam War",
+      "url": "https://en.wikipedia.org/wiki/Vietnam_War",
+      "category": "Politics and society"
     }
   ]
 }
