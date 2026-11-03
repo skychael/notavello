@@ -1,36 +1,36 @@
 {
   "schema_version": "1.0",
-  "date_key": "11-02",
-  "display_date": "November 2",
-  "generated_at": "2026-11-02T18:23:26.981Z",
+  "date_key": "11-03",
+  "display_date": "November 3",
+  "generated_at": "2026-11-03T16:15:46.766Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-93dd3c15cab04036f26bbf02",
+      "candidate_id": "event-d2a1c4135df75260ba310f67",
       "type": "event",
-      "year": 2000,
-      "text": "Expedition 1 arrived at the International Space Station for the first long-duration stay onboard. From this day to present, a continuous human presence in space on the station remains uninterrupted.",
-      "article_title": "Expedition 1",
-      "url": "https://en.wikipedia.org/wiki/Expedition_1",
-      "category": "Science and technology"
-    },
-    {
-      "candidate_id": "event-bc2a31c75435813a5460c3f3",
-      "type": "event",
-      "year": 1988,
-      "text": "LOT Polish Airlines Flight 703 crashes in Białobrzegi, Podkarpackie Voivodeship, Poland, killing one person and injuring several more.",
-      "article_title": "LOT Polish Airlines Flight 703",
-      "url": "https://en.wikipedia.org/wiki/LOT_Polish_Airlines_Flight_703",
+      "year": 1960,
+      "text": "The land that would become the Great Swamp National Wildlife Refuge is established by an Act of Congress after a year-long legal battle that pitted local residents against Port Authority of New York and New Jersey officials wishing to turn the Great Swamp into a major regional airport for jet aircraft.",
+      "article_title": "Great Swamp National Wildlife Refuge",
+      "url": "https://en.wikipedia.org/wiki/Great_Swamp_National_Wildlife_Refuge",
       "category": "World history"
     },
     {
-      "candidate_id": "event-d2995d9a4038b9a68e855cab",
+      "candidate_id": "event-3047334f307682a9d1ae894f",
       "type": "event",
-      "year": 1967,
-      "text": "Vietnam War: US President Lyndon B. Johnson and \"The Wise Men\" conclude that the American people should be given more optimistic reports on the progress of the war.",
-      "article_title": "Vietnam War",
-      "url": "https://en.wikipedia.org/wiki/Vietnam_War",
+      "year": 1973,
+      "text": "Mariner program: NASA launches the Mariner 10 toward Mercury. On March 29, 1974, it becomes the first space probe to reach that planet.",
+      "article_title": "Mariner program",
+      "url": "https://en.wikipedia.org/wiki/Mariner_program",
+      "category": "Science and technology"
+    },
+    {
+      "candidate_id": "event-e167bd3af50f6b55dd665480",
+      "type": "event",
+      "year": 1969,
+      "text": "Vietnam War: U.S. President Richard Nixon addresses the nation on television and radio, asking the \"silent majority\" to join him in solidarity on the Vietnam War effort and to support his policies.",
+      "article_title": "Richard Nixon",
+      "url": "https://en.wikipedia.org/wiki/Richard_Nixon",
       "category": "Politics and society"
     }
   ]
