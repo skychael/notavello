@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-11-02T18:28:03.439Z",
-  "latest_success_at": "2026-11-02T18:28:03.439Z",
+  "generated_at": "2026-11-03T01:37:48.112Z",
+  "latest_success_at": "2026-11-03T01:37:48.112Z",
   "status": "ok",
   "items": [
     {
@@ -14,21 +14,21 @@
       "status": "ok"
     },
     {
-      "id": "4148b72b1abc7ab4",
-      "title": "Flash Flood Warning issued November 2 at 11:35AM EST until November 2 at 1:45PM EST by NWS Melbourne FL",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.ac7dba1599b43eb454c506dae8000ef9b572c2d6.001.1.cap",
+      "id": "e3e81b8b5d1cee9b",
+      "title": "Flood Warning issued November 2 at 4:32PM MST until November 4 at 5:43AM MST by NWS Albuquerque NM",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.c012a598114d193771ebe1a21de78b14fee1a679.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-11-02T16:35:00.000Z",
+      "published_at": "2026-11-02T23:32:00.000Z",
       "topic": "Flooding",
       "status": "ok"
     },
     {
-      "id": "ddea5451ebbe3921",
-      "title": "Flood Warning issued November 2 at 9:31AM MST until November 4 at 2:50AM MST by NWS Albuquerque NM",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.c0657db7d7d259c3e8332054b0487146e8f86e1d.001.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-11-02T16:31:00.000Z",
-      "topic": "Flooding",
+      "id": "ee8e390990a944fc",
+      "title": "Eastern North Pacific Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-11-02T23:08:50.000Z",
+      "topic": "Hurricane",
       "status": "ok"
     }
   ]
