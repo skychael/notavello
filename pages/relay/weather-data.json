@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-11-03T09:38:48.231Z",
-  "latest_success_at": "2026-11-03T09:38:48.231Z",
+  "generated_at": "2026-11-03T17:54:36.426Z",
+  "latest_success_at": "2026-11-03T17:54:36.426Z",
   "status": "ok",
   "items": [
     {
-      "id": "d269930a8671207c",
-      "title": "Cyclone Arnab leaves 3 dead after landfall in Andhra Pradesh, India",
-      "url": "https://watchers.news/2026/10/28/cyclone-arnab-leaves-3-dead-after-landfall-in-andhra-pradesh-india",
-      "publisher": "The Watchers",
-      "published_at": "2026-10-28T13:11:36.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "cc11762ad4545e5d",
-      "title": "High Surf Advisory issued November 3 at 4:40PM ChST until November 4 at 5:00AM ChST by NWS Tiyan GU",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.fd197ccf9972fc3ded217debb7c83126ad42a6c2.001.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-11-03T06:40:00.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "ee8e390990a944fc",
-      "title": "Eastern North Pacific Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
+      "id": "b5ad93019d019ede",
+      "title": "Atlantic Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-11-03T05:15:58.000Z",
+      "published_at": "2026-11-03T17:13:03.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "38a1d8630caa0383",
+      "title": "SPC Nov 3, 2026 1630 UTC Day 1 Convective Outlook",
+      "url": "https://www.spc.noaa.gov/products/outlook/day1otlk_1630.html",
+      "publisher": "Storm Prediction Center",
+      "published_at": "2026-11-03T16:29:15.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "367a48215cbad27a",
+      "title": "SPC Nov 3, 2026 1300 UTC Day 1 Convective Outlook",
+      "url": "https://www.spc.noaa.gov/products/outlook/day1otlk_1300.html",
+      "publisher": "Storm Prediction Center",
+      "published_at": "2026-11-03T12:54:16.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
