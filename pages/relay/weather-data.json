@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-11-03T17:54:36.426Z",
-  "latest_success_at": "2026-11-03T17:54:36.426Z",
+  "generated_at": "2026-11-03T23:27:57.427Z",
+  "latest_success_at": "2026-11-03T23:27:57.427Z",
   "status": "ok",
   "items": [
     {
@@ -9,25 +9,25 @@
       "title": "Atlantic Tropical Weather Outlook",
       "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-11-03T17:13:03.000Z",
+      "published_at": "2026-11-03T23:15:35.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "38a1d8630caa0383",
-      "title": "SPC Nov 3, 2026 1630 UTC Day 1 Convective Outlook",
-      "url": "https://www.spc.noaa.gov/products/outlook/day1otlk_1630.html",
+      "id": "b4bcce42aee5b24c",
+      "title": "SPC Nov 3, 2026 2000 UTC Day 1 Convective Outlook",
+      "url": "https://www.spc.noaa.gov/products/outlook/day1otlk_2000.html",
       "publisher": "Storm Prediction Center",
-      "published_at": "2026-11-03T16:29:15.000Z",
+      "published_at": "2026-11-03T20:03:19.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "367a48215cbad27a",
-      "title": "SPC Nov 3, 2026 1300 UTC Day 1 Convective Outlook",
-      "url": "https://www.spc.noaa.gov/products/outlook/day1otlk_1300.html",
-      "publisher": "Storm Prediction Center",
-      "published_at": "2026-11-03T12:54:16.000Z",
+      "id": "cf8e9b72eff9d5f8",
+      "title": "High Surf Advisory issued November 4 at 5:04AM ChST until November 4 at 5:00PM ChST by NWS Tiyan GU",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.09d10dd18014d183c6e1025869538e8b0d8a19ae.001.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-11-03T19:04:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
