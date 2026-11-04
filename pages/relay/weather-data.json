@@ -1,24 +1,24 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-11-03T23:27:57.427Z",
-  "latest_success_at": "2026-11-03T23:27:57.427Z",
+  "generated_at": "2026-11-04T06:35:22.485Z",
+  "latest_success_at": "2026-11-04T06:35:22.485Z",
   "status": "ok",
   "items": [
+    {
+      "id": "a605a4fb70977cb7",
+      "title": "SPC Day 2 Fire Weather Outlook",
+      "url": "https://www.spc.noaa.gov/products/fire_wx/fwdy2.html",
+      "publisher": "Storm Prediction Center",
+      "published_at": "2026-11-04T06:00:44.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
     {
       "id": "b5ad93019d019ede",
       "title": "Atlantic Tropical Weather Outlook",
       "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-11-03T23:15:35.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "b4bcce42aee5b24c",
-      "title": "SPC Nov 3, 2026 2000 UTC Day 1 Convective Outlook",
-      "url": "https://www.spc.noaa.gov/products/outlook/day1otlk_2000.html",
-      "publisher": "Storm Prediction Center",
-      "published_at": "2026-11-03T20:03:19.000Z",
+      "published_at": "2026-11-04T05:10:10.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
