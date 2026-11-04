@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "11-03",
-  "display_date": "November 3",
-  "generated_at": "2026-11-03T16:15:46.766Z",
+  "date_key": "11-04",
+  "display_date": "November 4",
+  "generated_at": "2026-11-04T16:20:03.820Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-d2a1c4135df75260ba310f67",
+      "candidate_id": "event-33326142754885ac15ee9b45",
       "type": "event",
-      "year": 1960,
-      "text": "The land that would become the Great Swamp National Wildlife Refuge is established by an Act of Congress after a year-long legal battle that pitted local residents against Port Authority of New York and New Jersey officials wishing to turn the Great Swamp into a major regional airport for jet aircraft.",
-      "article_title": "Great Swamp National Wildlife Refuge",
-      "url": "https://en.wikipedia.org/wiki/Great_Swamp_National_Wildlife_Refuge",
+      "year": 2015,
+      "text": "A cargo plane crashes shortly after takeoff from Juba International Airport in Juba, South Sudan, killing at least 37 people.",
+      "article_title": "2015 Juba Antonov An-12 crash",
+      "url": "https://en.wikipedia.org/wiki/2015_Juba_Antonov_An-12_crash",
+      "category": "Disasters and exploration"
+    },
+    {
+      "candidate_id": "event-085cd3ba1d88799c1ba183ab",
+      "type": "event",
+      "year": 2025,
+      "text": "UPS Airlines Flight 2976, a McDonnell Douglas MD-11F crashes into multiple buildings during takeoff at Louisville Muhammad Ali International Airport in Louisville, Kentucky, killing 15 people, including the 3 crew members.",
+      "article_title": "UPS Airlines Flight 2976",
+      "url": "https://en.wikipedia.org/wiki/UPS_Airlines_Flight_2976",
       "category": "World history"
     },
     {
-      "candidate_id": "event-3047334f307682a9d1ae894f",
+      "candidate_id": "event-136af7fc660c3728f8d0d33e",
       "type": "event",
-      "year": 1973,
-      "text": "Mariner program: NASA launches the Mariner 10 toward Mercury. On March 29, 1974, it becomes the first space probe to reach that planet.",
-      "article_title": "Mariner program",
-      "url": "https://en.wikipedia.org/wiki/Mariner_program",
-      "category": "Science and technology"
-    },
-    {
-      "candidate_id": "event-e167bd3af50f6b55dd665480",
-      "type": "event",
-      "year": 1969,
-      "text": "Vietnam War: U.S. President Richard Nixon addresses the nation on television and radio, asking the \"silent majority\" to join him in solidarity on the Vietnam War effort and to support his policies.",
-      "article_title": "Richard Nixon",
-      "url": "https://en.wikipedia.org/wiki/Richard_Nixon",
-      "category": "Politics and society"
+      "year": 2010,
+      "text": "Qantas Flight 32, an Airbus A380, suffers an uncontained engine failure over Indonesia shortly after taking off from Singapore, crippling the jet. The crew manage to safely return to Singapore, saving all 469 passengers and crew.",
+      "article_title": "Qantas Flight 32",
+      "url": "https://en.wikipedia.org/wiki/Qantas_Flight_32",
+      "category": "World history"
     }
   ]
 }
