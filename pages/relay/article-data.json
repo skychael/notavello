@@ -1,14 +1,22 @@
 {
   "schema_version": "1.0",
-  "checked_at": "2026-11-05T11:03:35.432Z",
-  "latest_success_at": "2026-11-05T11:03:35.432Z",
+  "checked_at": "2026-11-05T18:47:46.819Z",
+  "latest_success_at": "2026-11-05T18:47:46.819Z",
   "status": "ok",
   "items": [
     {
-      "title": "Qatar Becomes Largest Buyer of U.S. LNG Amid Hormuz Crisis",
-      "url": "https://oilprice.com/Energy/Natural-Gas/Qatar-Becomes-Largest-Buyer-of-US-LNG-Amid-Hormuz-Crisis.html",
+      "title": "Guyana’s Oil Boom Could Ease the Global Supply Crunch",
+      "url": "https://oilprice.com/Energy/Energy-General/Guyanas-Oil-Boom-Could-Ease-the-Global-Supply-Crunch.html",
       "publisher": "OilPrice.com",
-      "published_at": "2026-11-04T23:00:00.000Z",
+      "published_at": "2026-11-05T17:00:00.000Z",
+      "source_id": "oilprice",
+      "status": "ok"
+    },
+    {
+      "title": "Iran Reports More Tanker Fires in Strait of Hormuz",
+      "url": "https://oilprice.com/Latest-Energy-News/World-News/Iran-Reports-More-Tanker-Fires-in-Strait-of-Hormuz.html",
+      "publisher": "OilPrice.com",
+      "published_at": "2026-11-05T11:15:00.000Z",
       "source_id": "oilprice",
       "status": "ok"
     },
@@ -18,14 +26,6 @@
       "publisher": "TWZ (The War Zone)",
       "published_at": "2026-11-03T00:49:12.000Z",
       "source_id": "twz",
-      "status": "ok"
-    },
-    {
-      "title": "New Jersey Moves to Block Trump's Russian Diesel Imports",
-      "url": "https://oilprice.com/Energy/Energy-General/New-Jersey-Moves-to-Block-Trumps-Russian-Diesel-Imports.html",
-      "publisher": "OilPrice.com",
-      "published_at": "2026-11-04T17:00:00.000Z",
-      "source_id": "oilprice",
       "status": "ok"
     },
     {
@@ -41,6 +41,14 @@
       "url": "https://gcaptain.com/vance-blames-his-own-administrations-iran-war-for-republican-defeat",
       "publisher": "gCaptain",
       "published_at": "2026-11-04T18:53:44.000Z",
+      "source_id": "gcaptain",
+      "status": "ok"
+    },
+    {
+      "title": "France Extends Maritime Patrol Plane’s Stay in Black Sea After Cargo Ship Attacks",
+      "url": "https://gcaptain.com/france-extends-maritime-patrol-planes-stay-in-black-sea-after-cargo-ship-attacks",
+      "publisher": "gCaptain",
+      "published_at": "2026-11-05T14:09:49.000Z",
       "source_id": "gcaptain",
       "status": "ok"
     },
@@ -61,27 +69,19 @@
       "status": "ok"
     },
     {
-      "title": "Trump Plays Down Prospect of Iran Strikes After Midterm Rout",
-      "url": "https://gcaptain.com/trump-plays-down-prospect-of-iran-strikes-after-midterm-rout",
-      "publisher": "gCaptain",
-      "published_at": "2026-11-04T17:19:24.000Z",
-      "source_id": "gcaptain",
-      "status": "ok"
-    },
-    {
-      "title": "Israel Weapons Industry expands into Southeast Asia with Thailand’s deployment of counter-drone system",
-      "url": "https://breakingdefense.com/2026/11/israel-weapons-industry-expands-into-southeast-asia-with-thailands-deployment-of-counter-drone-system",
-      "publisher": "Breaking Defense",
-      "published_at": "2026-11-04T11:09:00.000Z",
-      "source_id": "breaking-defense",
-      "status": "ok"
-    },
-    {
       "title": "What Trump’s Drastic Reduction Of U.S. Military Aid To Israel Could Mean",
       "url": "https://www.twz.com/news-features/what-trumps-drastic-reduction-of-u-s-military-aid-to-israel-could-mean",
       "publisher": "TWZ (The War Zone)",
       "published_at": "2026-11-03T23:15:40.000Z",
       "source_id": "twz",
+      "status": "ok"
+    },
+    {
+      "title": "Fairbanks Morse Defense in talks with Navy about Seawolf-class submarine repairs",
+      "url": "https://breakingdefense.com/2026/11/fairbanks-morse-defense-in-talks-with-navy-about-seawolf-class-submarine-repairs",
+      "publisher": "Breaking Defense",
+      "published_at": "2026-11-05T17:00:00.000Z",
+      "source_id": "breaking-defense",
       "status": "ok"
     }
   ]
