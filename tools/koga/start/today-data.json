@@ -1,36 +1,36 @@
 {
   "schema_version": "1.0",
-  "date_key": "11-04",
-  "display_date": "November 4",
-  "generated_at": "2026-11-04T16:20:03.820Z",
+  "date_key": "11-05",
+  "display_date": "November 5",
+  "generated_at": "2026-11-05T16:28:59.469Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-33326142754885ac15ee9b45",
+      "candidate_id": "event-5b62fd91b886fc0b1217df10",
       "type": "event",
-      "year": 2015,
-      "text": "A cargo plane crashes shortly after takeoff from Juba International Airport in Juba, South Sudan, killing at least 37 people.",
-      "article_title": "2015 Juba Antonov An-12 crash",
-      "url": "https://en.wikipedia.org/wiki/2015_Juba_Antonov_An-12_crash",
-      "category": "Disasters and exploration"
-    },
-    {
-      "candidate_id": "event-085cd3ba1d88799c1ba183ab",
-      "type": "event",
-      "year": 2025,
-      "text": "UPS Airlines Flight 2976, a McDonnell Douglas MD-11F crashes into multiple buildings during takeoff at Louisville Muhammad Ali International Airport in Louisville, Kentucky, killing 15 people, including the 3 crew members.",
-      "article_title": "UPS Airlines Flight 2976",
-      "url": "https://en.wikipedia.org/wiki/UPS_Airlines_Flight_2976",
+      "year": 2007,
+      "text": "China's first lunar satellite, Chang'e 1, goes into orbit around the Moon.",
+      "article_title": "Chang'e 1",
+      "url": "https://en.wikipedia.org/wiki/Chang'e_1",
       "category": "World history"
     },
     {
-      "candidate_id": "event-136af7fc660c3728f8d0d33e",
+      "candidate_id": "event-b27e51d7148f784bd7ebf74f",
+      "type": "event",
+      "year": 2006,
+      "text": "Saddam Hussein, the former president of Iraq, and his co-defendants Barzan Ibrahim al-Tikriti and Awad Hamed al-Bandar, are sentenced to death in the al-Dujail trial for their roles in the 1982 massacre of 148 Shia Muslims.",
+      "article_title": "Saddam Hussein",
+      "url": "https://en.wikipedia.org/wiki/Saddam_Hussein",
+      "category": "Politics and society"
+    },
+    {
+      "candidate_id": "event-f35a5c561b9af29045a78fea",
       "type": "event",
       "year": 2010,
-      "text": "Qantas Flight 32, an Airbus A380, suffers an uncontained engine failure over Indonesia shortly after taking off from Singapore, crippling the jet. The crew manage to safely return to Singapore, saving all 469 passengers and crew.",
-      "article_title": "Qantas Flight 32",
-      "url": "https://en.wikipedia.org/wiki/Qantas_Flight_32",
+      "text": "JS Air Flight 201 crashes after takeoff from Jinnah International Airport in Karachi, Pakistan, killing all 21 aboard.",
+      "article_title": "JS Air Flight 201",
+      "url": "https://en.wikipedia.org/wiki/JS_Air_Flight_201",
       "category": "World history"
     }
   ]
