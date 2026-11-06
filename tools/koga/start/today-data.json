@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "11-05",
-  "display_date": "November 5",
-  "generated_at": "2026-11-05T16:28:59.469Z",
+  "date_key": "11-06",
+  "display_date": "November 6",
+  "generated_at": "2026-11-06T15:55:58.881Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-5b62fd91b886fc0b1217df10",
+      "candidate_id": "event-de30272a925161396d3a896f",
       "type": "event",
-      "year": 2007,
-      "text": "China's first lunar satellite, Chang'e 1, goes into orbit around the Moon.",
-      "article_title": "Chang'e 1",
-      "url": "https://en.wikipedia.org/wiki/Chang'e_1",
+      "year": 1986,
+      "text": "Sumburgh disaster: A British International Helicopters Boeing 234LR Chinook crashes 2.5 miles (4.0 km) east of Sumburgh Airport killing 45 people. It is the deadliest civilian helicopter crash on record.",
+      "article_title": "1986 British International Helicopters Chinook crash",
+      "url": "https://en.wikipedia.org/wiki/1986_British_International_Helicopters_Chinook_crash",
+      "category": "Disasters and exploration"
+    },
+    {
+      "candidate_id": "event-693d3eb4209884378acad5c1",
+      "type": "event",
+      "year": 2016,
+      "text": "Syrian civil war: The Syrian Democratic Forces launch an offensive to capture the ISIL-held city of Raqqa.",
+      "article_title": "Syrian civil war",
+      "url": "https://en.wikipedia.org/wiki/Syrian_civil_war",
       "category": "World history"
     },
     {
-      "candidate_id": "event-b27e51d7148f784bd7ebf74f",
+      "candidate_id": "event-65f252bb53760b2bfe1927b8",
       "type": "event",
-      "year": 2006,
-      "text": "Saddam Hussein, the former president of Iraq, and his co-defendants Barzan Ibrahim al-Tikriti and Awad Hamed al-Bandar, are sentenced to death in the al-Dujail trial for their roles in the 1982 massacre of 148 Shia Muslims.",
-      "article_title": "Saddam Hussein",
-      "url": "https://en.wikipedia.org/wiki/Saddam_Hussein",
+      "year": 1956,
+      "text": "Following pressure by US president Eisenhower, Great Britain announces a ceasefire in the Suez crisis, one day after it landed paratroopers together with France at key locations.",
+      "article_title": "Dwight D. Eisenhower",
+      "url": "https://en.wikipedia.org/wiki/Dwight_D._Eisenhower",
       "category": "Politics and society"
-    },
-    {
-      "candidate_id": "event-f35a5c561b9af29045a78fea",
-      "type": "event",
-      "year": 2010,
-      "text": "JS Air Flight 201 crashes after takeoff from Jinnah International Airport in Karachi, Pakistan, killing all 21 aboard.",
-      "article_title": "JS Air Flight 201",
-      "url": "https://en.wikipedia.org/wiki/JS_Air_Flight_201",
-      "category": "World history"
     }
   ]
 }
