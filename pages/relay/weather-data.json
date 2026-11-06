@@ -1,25 +1,25 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-11-05T18:47:48.618Z",
-  "latest_success_at": "2026-11-05T18:47:48.618Z",
+  "generated_at": "2026-11-06T00:21:59.371Z",
+  "latest_success_at": "2026-11-06T00:21:59.371Z",
   "status": "ok",
   "items": [
     {
-      "id": "724fe31e8e02b4a0",
-      "title": "Flood Warning issued November 5 at 11:16AM EST until November 5 at 2:15PM EST by NWS Morristown TN",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.fa0f57ccfbcde9a096b8f328cf607506e2d6679c.001.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-11-05T16:16:00.000Z",
-      "topic": "Flooding",
+      "id": "ee8e390990a944fc",
+      "title": "Eastern North Pacific Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-11-05T23:44:18.000Z",
+      "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "b5ad93019d019ede",
-      "title": "Atlantic Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-11-05T17:55:20.000Z",
-      "topic": "Hurricane",
+      "id": "1891cc96d8b87896",
+      "title": "Flood Warning issued November 5 at 3:10PM EST by NWS Melbourne FL",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.48188c715b42181a12a0eddf79fffe1de3c87256.001.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-11-05T20:10:00.000Z",
+      "topic": "Flooding",
       "status": "ok"
     },
     {
