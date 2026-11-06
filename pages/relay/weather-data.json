@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-11-06T00:21:59.371Z",
-  "latest_success_at": "2026-11-06T00:21:59.371Z",
+  "generated_at": "2026-11-06T07:57:57.030Z",
+  "latest_success_at": "2026-11-06T07:57:57.030Z",
   "status": "ok",
   "items": [
     {
-      "id": "ee8e390990a944fc",
-      "title": "Eastern North Pacific Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-11-05T23:44:18.000Z",
+      "id": "1c19e21a1f19fe11",
+      "title": "Special Weather Statement issued November 6 at 3:18PM ChST by NWS Tiyan GU",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.21e0d11facb8d57bef4c5de8de40dd23ba113460.001.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-11-06T05:18:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "1891cc96d8b87896",
-      "title": "Flood Warning issued November 5 at 3:10PM EST by NWS Melbourne FL",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.48188c715b42181a12a0eddf79fffe1de3c87256.001.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-11-05T20:10:00.000Z",
-      "topic": "Flooding",
+      "id": "b5ad93019d019ede",
+      "title": "Atlantic Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-11-06T05:09:20.000Z",
+      "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "3efe566314de6081",
-      "title": "Flood Warning issued November 5 at 10:58AM EST by NWS Tampa Bay Ruskin FL",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.e96b9a3b5f056374f293a703d5d39936f0441d89.002.1.cap",
+      "id": "719199e7383452e5",
+      "title": "Flood Warning issued November 5 at 8:42PM EST by NWS Tampa Bay Ruskin FL",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6e5f64284c4f97d89a041dc2d2160b84ff477ae8.002.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-11-05T15:58:00.000Z",
+      "published_at": "2026-11-06T01:42:00.000Z",
       "topic": "Flooding",
       "status": "ok"
     }
