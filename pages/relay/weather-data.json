@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-11-06T21:33:26.297Z",
-  "latest_success_at": "2026-11-06T21:33:26.297Z",
+  "generated_at": "2026-11-07T01:58:30.888Z",
+  "latest_success_at": "2026-11-07T01:58:30.888Z",
   "status": "ok",
   "items": [
     {
@@ -9,16 +9,7 @@
       "title": "Eastern North Pacific Tropical Weather Outlook",
       "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-11-06T17:34:30.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "4c31190a9c521e8a",
-      "title": "SPC Nov 6, 2026 1730 UTC Day 2 Convective Outlook",
-      "url": "https://www.spc.noaa.gov/products/outlook/day2otlk_1730.html",
-      "publisher": "Storm Prediction Center",
-      "published_at": "2026-11-06T17:03:05.000Z",
+      "published_at": "2026-11-06T23:58:02.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
@@ -29,6 +20,15 @@
       "publisher": "National Weather Service",
       "published_at": "2026-11-06T05:18:00.000Z",
       "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "778880b1a0378024",
+      "title": "Flood Warning issued November 6 at 8:32PM EST by NWS Tampa Bay Ruskin FL",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.1f82b9d57711bcd7208c3eabdc11096674c258b0.001.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-11-07T01:32:00.000Z",
+      "topic": "Flooding",
       "status": "ok"
     }
   ]
