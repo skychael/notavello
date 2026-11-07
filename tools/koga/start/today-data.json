@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "11-06",
-  "display_date": "November 6",
-  "generated_at": "2026-11-06T15:55:58.881Z",
+  "date_key": "11-07",
+  "display_date": "November 7",
+  "generated_at": "2026-11-07T14:54:31.569Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-de30272a925161396d3a896f",
+      "candidate_id": "event-e48aa138bf6f6e908cac8b1b",
       "type": "event",
-      "year": 1986,
-      "text": "Sumburgh disaster: A British International Helicopters Boeing 234LR Chinook crashes 2.5 miles (4.0 km) east of Sumburgh Airport killing 45 people. It is the deadliest civilian helicopter crash on record.",
-      "article_title": "1986 British International Helicopters Chinook crash",
-      "url": "https://en.wikipedia.org/wiki/1986_British_International_Helicopters_Chinook_crash",
-      "category": "Disasters and exploration"
-    },
-    {
-      "candidate_id": "event-693d3eb4209884378acad5c1",
-      "type": "event",
-      "year": 2016,
-      "text": "Syrian civil war: The Syrian Democratic Forces launch an offensive to capture the ISIL-held city of Raqqa.",
-      "article_title": "Syrian civil war",
-      "url": "https://en.wikipedia.org/wiki/Syrian_civil_war",
+      "year": 1941,
+      "text": "World War II: Soviet hospital ship Armenia is sunk by German planes while evacuating refugees and wounded military and staff of several Crimean hospitals. It is estimated that over 5,000 people died in the sinking.",
+      "article_title": "World War II",
+      "url": "https://en.wikipedia.org/wiki/World_War_II",
       "category": "World history"
     },
     {
-      "candidate_id": "event-65f252bb53760b2bfe1927b8",
+      "candidate_id": "event-223537c524e270f48a83fdbe",
       "type": "event",
-      "year": 1956,
-      "text": "Following pressure by US president Eisenhower, Great Britain announces a ceasefire in the Suez crisis, one day after it landed paratroopers together with France at key locations.",
-      "article_title": "Dwight D. Eisenhower",
-      "url": "https://en.wikipedia.org/wiki/Dwight_D._Eisenhower",
-      "category": "Politics and society"
+      "year": 2017,
+      "text": "Shamshad TV is attacked by gunmen and suicide bombers, with a security guard killed and 20 people wounded; ISIS claims responsibility for the attack.",
+      "article_title": "Shamshad TV",
+      "url": "https://en.wikipedia.org/wiki/Shamshad_TV",
+      "category": "World history"
+    },
+    {
+      "candidate_id": "event-c9253d5043b8e15a523ea138",
+      "type": "event",
+      "year": 1913,
+      "text": "The first day of the Great Lakes Storm of 1913, a massive blizzard that ultimately killed 250 and caused over $5 million (about $159,243,000 in 2024 dollars) damage. Winds reach hurricane force on this date.",
+      "article_title": "Great Lakes Storm of 1913",
+      "url": "https://en.wikipedia.org/wiki/Great_Lakes_Storm_of_1913",
+      "category": "Disasters and exploration"
     }
   ]
 }
