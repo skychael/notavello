@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "checked_at": "2026-11-07T14:54:53.413Z",
-  "latest_success_at": "2026-11-07T14:54:53.413Z",
+  "checked_at": "2026-11-07T20:14:29.717Z",
+  "latest_success_at": "2026-11-07T20:14:29.717Z",
   "status": "ok",
   "items": [
     {
@@ -23,6 +23,17 @@
       "channel_id": "UCT_yBgKSiwb3WP4ACPnF5nA",
       "published_at": "2026-11-06T18:10:03.000Z",
       "source_priority": 9,
+      "is_livestream_replay": false,
+      "status": "ok"
+    },
+    {
+      "video_id": "PlfIzs7JLJ0",
+      "title": "A Triangle-Shaped Coronal Hole & the Sun Gets Noisy | Space Weather Spotlight 07 November 2026",
+      "url": "https://www.youtube.com/watch?v=PlfIzs7JLJ0",
+      "channel_name": "Dr. Tamitha Skov (Space Weather Woman)",
+      "channel_id": "UCkXjdDQ-db0xz8f4PKgKsag",
+      "published_at": "2026-11-07T18:44:01.000Z",
+      "source_priority": 8,
       "is_livestream_replay": false,
       "status": "ok"
     }
