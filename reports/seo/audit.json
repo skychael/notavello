@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-11-07T07:40:29.962Z",
+  "generatedAt": "2026-11-08T07:49:50.000Z",
   "totals": {
-    "pages": 360,
-    "indexable": 356,
-    "articles": 284,
-    "sitemap": 356,
+    "pages": 361,
+    "indexable": 357,
+    "articles": 285,
+    "sitemap": 357,
     "errors": 0,
-    "warnings": 365
+    "warnings": 367
   },
   "errors": [],
   "warnings": [
@@ -1507,6 +1507,16 @@
     },
     {
       "type": "template-pattern",
+      "page": "/pages/blog/the-gulf-of-oman-warning-shot-is-the-freight-bill/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/the-gulf-of-oman-warning-shot-is-the-freight-bill/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
       "page": "/pages/blog/the-import-line-is-the-oil-shock/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
@@ -1845,7 +1855,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 360,
+      "incomingLinks": 361,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -1869,7 +1879,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 360,
+      "incomingLinks": 361,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -1977,7 +1987,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 360,
+      "incomingLinks": 361,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -1989,9 +1999,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 360,
-      "lastmod": "2026-11-06",
-      "bodyWords": 662
+      "incomingLinks": 361,
+      "lastmod": "2026-11-07",
+      "bodyWords": 661
     },
     {
       "route": "/pages/blog/a-calm-checklist-for-inspecting-a-suspicious-message/",
@@ -2361,9 +2371,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 223,
-      "lastmod": "2026-11-06",
-      "bodyWords": 3441
+      "incomingLinks": 224,
+      "lastmod": "2026-11-07",
+      "bodyWords": 3454
     },
     {
       "route": "/pages/blog/anhydrous-ammonia-is-the-fall-farm-bill/",
@@ -4294,8 +4304,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-06",
-      "bodyWords": 664
+      "lastmod": "2026-11-07",
+      "bodyWords": 667
     },
     {
       "route": "/pages/blog/page-11/",
@@ -4306,8 +4316,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-06",
-      "bodyWords": 646
+      "lastmod": "2026-11-07",
+      "bodyWords": 645
     },
     {
       "route": "/pages/blog/page-12/",
@@ -4318,8 +4328,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-06",
-      "bodyWords": 696
+      "lastmod": "2026-11-07",
+      "bodyWords": 700
     },
     {
       "route": "/pages/blog/page-13/",
@@ -4330,8 +4340,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-06",
-      "bodyWords": 714
+      "lastmod": "2026-11-07",
+      "bodyWords": 709
     },
     {
       "route": "/pages/blog/page-14/",
@@ -4342,8 +4352,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-06",
-      "bodyWords": 832
+      "lastmod": "2026-11-07",
+      "bodyWords": 817
     },
     {
       "route": "/pages/blog/page-15/",
@@ -4354,8 +4364,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-06",
-      "bodyWords": 826
+      "lastmod": "2026-11-07",
+      "bodyWords": 835
     },
     {
       "route": "/pages/blog/page-16/",
@@ -4366,8 +4376,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": "2026-11-06",
-      "bodyWords": 700
+      "lastmod": "2026-11-07",
+      "bodyWords": 745
     },
     {
       "route": "/pages/blog/page-2/",
@@ -4378,8 +4388,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-06",
-      "bodyWords": 636
+      "lastmod": "2026-11-07",
+      "bodyWords": 638
     },
     {
       "route": "/pages/blog/page-3/",
@@ -4390,8 +4400,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-06",
-      "bodyWords": 687
+      "lastmod": "2026-11-07",
+      "bodyWords": 688
     },
     {
       "route": "/pages/blog/page-4/",
@@ -4402,8 +4412,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-06",
-      "bodyWords": 639
+      "lastmod": "2026-11-07",
+      "bodyWords": 638
     },
     {
       "route": "/pages/blog/page-5/",
@@ -4414,7 +4424,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-06",
+      "lastmod": "2026-11-07",
       "bodyWords": 667
     },
     {
@@ -4426,8 +4436,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-06",
-      "bodyWords": 640
+      "lastmod": "2026-11-07",
+      "bodyWords": 639
     },
     {
       "route": "/pages/blog/page-7/",
@@ -4438,8 +4448,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-06",
-      "bodyWords": 668
+      "lastmod": "2026-11-07",
+      "bodyWords": 667
     },
     {
       "route": "/pages/blog/page-8/",
@@ -4450,8 +4460,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-06",
-      "bodyWords": 671
+      "lastmod": "2026-11-07",
+      "bodyWords": 668
     },
     {
       "route": "/pages/blog/page-9/",
@@ -4462,8 +4472,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-06",
-      "bodyWords": 687
+      "lastmod": "2026-11-07",
+      "bodyWords": 686
     },
     {
       "route": "/pages/blog/phosphate-is-the-fertilizer-shock-that-did-not-fade/",
@@ -4869,7 +4879,7 @@
       "canonical": "https://notavello.com/pages/blog/the-crude-drop-is-not-the-diesel-drop/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 3,
+      "incomingLinks": 4,
       "lastmod": "2026-11-05",
       "bodyWords": 1311
     },
@@ -4896,6 +4906,18 @@
       "incomingLinks": 3,
       "lastmod": "2026-10-18",
       "bodyWords": 1308
+    },
+    {
+      "route": "/pages/blog/the-gulf-of-oman-warning-shot-is-the-freight-bill/",
+      "file": "pages/blog/the-gulf-of-oman-warning-shot-is-the-freight-bill/index.html",
+      "title": "The Gulf Of Oman Warning Shot Is The Freight Bill — The Export | Notavello",
+      "description": "A U.S. strike on M/V Huda shows Hormuz risk is now enforcement risk, not just oil price risk.",
+      "canonical": "https://notavello.com/pages/blog/the-gulf-of-oman-warning-shot-is-the-freight-bill/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-11-08",
+      "bodyWords": 1793
     },
     {
       "route": "/pages/blog/the-import-line-is-the-oil-shock/",
@@ -5601,7 +5623,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 360,
+      "incomingLinks": 361,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -5613,7 +5635,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 360,
+      "incomingLinks": 361,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -5625,7 +5647,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 360,
+      "incomingLinks": 361,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -5637,7 +5659,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 360,
+      "incomingLinks": 361,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -5649,7 +5671,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 360,
+      "incomingLinks": 361,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -5662,8 +5684,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-11-07",
-      "bodyWords": 667
+      "lastmod": "2026-11-08",
+      "bodyWords": 673
     },
     {
       "route": "/pages/sample",
@@ -5685,7 +5707,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 360,
+      "incomingLinks": 361,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -5697,7 +5719,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 360,
+      "incomingLinks": 361,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -5721,7 +5743,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 360,
+      "incomingLinks": 361,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -6153,7 +6175,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 360,
+      "incomingLinks": 361,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }
