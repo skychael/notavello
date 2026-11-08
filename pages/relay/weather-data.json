@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-11-07T23:41:27.786Z",
-  "latest_success_at": "2026-11-07T23:41:27.786Z",
+  "generated_at": "2026-11-08T06:11:54.101Z",
+  "latest_success_at": "2026-11-08T06:11:54.101Z",
   "status": "ok",
   "items": [
     {
@@ -9,25 +9,25 @@
       "title": "Eastern North Pacific Tropical Weather Outlook",
       "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-11-07T23:20:43.000Z",
+      "published_at": "2026-11-08T05:41:45.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "0e24c63f5319160f",
-      "title": "Flood Warning issued November 7 at 10:53AM EST by NWS Melbourne FL",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.1d4b44ff8a2e0fd7896841e8a2ddc3f8e5515978.001.1.cap",
+      "id": "9d92083910c18fb6",
+      "title": "Flood Warning issued November 7 at 8:46PM EST by NWS Melbourne FL",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a34982d3b11f62dcc8e0cc7e260fe3b974457087.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-11-07T15:53:00.000Z",
+      "published_at": "2026-11-08T01:46:00.000Z",
       "topic": "Flooding",
       "status": "ok"
     },
     {
-      "id": "0a7cb5efc3f71171",
-      "title": "High Wind Warning issued November 7 at 1:17PM PST until November 8 at 4:00AM PST by NWS Seattle WA",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.64a7c6dfaa6c2c0925cb3468fc81ad12a92531bb.001.1.cap",
+      "id": "e12dffaeb6e05556",
+      "title": "High Wind Warning issued November 7 at 10:21PM MST until November 8 at 8:00PM MST by NWS Great Falls MT",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.ecbd2b473ac798ea3ba194ae1a54c9210e6c9498.001.2.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-11-07T21:17:00.000Z",
+      "published_at": "2026-11-08T05:21:00.000Z",
       "topic": "Severe weather",
       "status": "ok"
     }
