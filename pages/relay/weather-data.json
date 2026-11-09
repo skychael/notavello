@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-11-09T11:42:40.841Z",
-  "latest_success_at": "2026-11-09T11:42:40.841Z",
+  "generated_at": "2026-11-09T22:26:58.567Z",
+  "latest_success_at": "2026-11-09T22:26:58.567Z",
   "status": "ok",
   "items": [
     {
@@ -9,26 +9,26 @@
       "title": "Eastern North Pacific Tropical Weather Outlook",
       "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-11-09T11:34:06.000Z",
+      "published_at": "2026-11-09T17:18:14.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "f992547bf7191896",
-      "title": "Flood Warning issued November 8 at 8:11PM CST until November 11 at 1:00PM CST by NWS Corpus Christi TX",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.06e3bc1cddebea0842f00846127e150c5fe3cacf.001.1.cap",
+      "id": "071a793f236f56ab",
+      "title": "Flood Warning issued November 9 at 9:22AM EST by NWS Melbourne FL",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.1cd7f27364f3548489b2423ca62e99b48c28028a.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-11-09T02:11:00.000Z",
+      "published_at": "2026-11-09T14:22:00.000Z",
       "topic": "Flooding",
       "status": "ok"
     },
     {
-      "id": "4c0013e0bce7c736",
-      "title": "Flood Warning issued November 8 at 8:07PM EST by NWS Melbourne FL",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.85da380c803564ef0dc2f117f38f373cd7dc883d.001.1.cap",
+      "id": "9e7ff58f0e65202d",
+      "title": "Blizzard Warning issued November 9 at 11:55AM AKST until November 11 at 6:00AM AKST by NWS Fairbanks AK",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.43cf0d18524494a13b7991b6d7f1755db5e080de.001.2.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-11-09T01:07:00.000Z",
-      "topic": "Flooding",
+      "published_at": "2026-11-09T20:55:00.000Z",
+      "topic": "Snow",
       "status": "ok"
     }
   ]
