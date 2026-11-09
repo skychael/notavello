@@ -1,36 +1,36 @@
 {
   "schema_version": "1.0",
-  "date_key": "11-08",
-  "display_date": "November 8",
-  "generated_at": "2026-11-08T15:13:57.748Z",
+  "date_key": "11-09",
+  "display_date": "November 9",
+  "generated_at": "2026-11-09T18:49:42.527Z",
   "source": "Wikimedia On This Day",
-  "selection_method": "deterministic_fallback",
+  "selection_method": "ai",
   "items": [
     {
-      "candidate_id": "event-70c6525bdf10b43b89025bbc",
+      "candidate_id": "event-22b7132fdd98eaaf56b9f97d",
       "type": "event",
-      "year": 1950,
-      "text": "Korean War: United States Air Force Lt. Russell J. Brown, while piloting an F-80 Shooting Star, shoots down two North Korean MiG-15s in the first jet aircraft-to-jet aircraft dogfight in history.",
-      "article_title": "Korean War",
-      "url": "https://en.wikipedia.org/wiki/Korean_War",
-      "category": "World history"
+      "year": 1989,
+      "text": "Cold War: Fall of the Berlin Wall: East Germany opens checkpoints in the Berlin Wall, allowing its citizens to travel to West Berlin.",
+      "article_title": "Fall of the Berlin Wall",
+      "url": "https://en.wikipedia.org/wiki/Fall_of_the_Berlin_Wall",
+      "category": "Politics and society"
     },
     {
-      "candidate_id": "event-dd5c0b29f7ba3301dbf9f723",
+      "candidate_id": "event-ebf31ee079c1af418645cca0",
       "type": "event",
-      "year": 1999,
-      "text": "Bruce Miller is killed at his junkyard near Flint, Michigan. His wife Sharee Miller, who convinced her online lover Jerry Cassaday to kill him (before later killing himself) was convicted of the crime, in what became the world's first Internet murder.",
-      "article_title": "Sharee Miller",
-      "url": "https://en.wikipedia.org/wiki/Sharee_Miller",
-      "category": "World history"
+      "year": 1967,
+      "text": "Apollo program: NASA launches the unmanned Apollo 4 test spacecraft, atop the first Saturn V rocket, from Florida's Cape Kennedy.",
+      "article_title": "Apollo program",
+      "url": "https://en.wikipedia.org/wiki/Apollo_program",
+      "category": "Science and technology"
     },
     {
-      "candidate_id": "event-e5b27ba7d9c3a69f80702dfa",
+      "candidate_id": "event-bd51cdb85fcd62fc5cae0132",
       "type": "event",
-      "year": 1965,
-      "text": "The 173rd Airborne is ambushed by over 1,200 Viet Cong in Operation Hump during the Vietnam War, while the 1st Battalion, Royal Australian Regiment fight one of the first set-piece engagements of the war between Australian forces and the Viet Cong at the Battle of Gang Toi.",
-      "article_title": "173rd Airborne Brigade",
-      "url": "https://en.wikipedia.org/wiki/173rd_Airborne_Brigade",
+      "year": 1979,
+      "text": "Cold War: Nuclear false alarm: The NORAD computers and the Alternate National Military Command Center in Fort Ritchie, Maryland, detect a purported massive Soviet nuclear strike. After reviewing the raw data from satellites and checking the early-warning radars, the alert is cancelled.",
+      "article_title": "Cold War",
+      "url": "https://en.wikipedia.org/wiki/Cold_War",
       "category": "World history"
     }
   ]
