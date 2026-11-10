@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "11-09",
-  "display_date": "November 9",
-  "generated_at": "2026-11-09T18:49:42.527Z",
+  "date_key": "11-10",
+  "display_date": "November 10",
+  "generated_at": "2026-11-10T16:25:50.055Z",
   "source": "Wikimedia On This Day",
-  "selection_method": "ai",
+  "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-22b7132fdd98eaaf56b9f97d",
+      "candidate_id": "event-b2e90c25c45b39dbd83d7d91",
       "type": "event",
-      "year": 1989,
-      "text": "Cold War: Fall of the Berlin Wall: East Germany opens checkpoints in the Berlin Wall, allowing its citizens to travel to West Berlin.",
-      "article_title": "Fall of the Berlin Wall",
-      "url": "https://en.wikipedia.org/wiki/Fall_of_the_Berlin_Wall",
-      "category": "Politics and society"
-    },
-    {
-      "candidate_id": "event-ebf31ee079c1af418645cca0",
-      "type": "event",
-      "year": 1967,
-      "text": "Apollo program: NASA launches the unmanned Apollo 4 test spacecraft, atop the first Saturn V rocket, from Florida's Cape Kennedy.",
-      "article_title": "Apollo program",
-      "url": "https://en.wikipedia.org/wiki/Apollo_program",
-      "category": "Science and technology"
-    },
-    {
-      "candidate_id": "event-bd51cdb85fcd62fc5cae0132",
-      "type": "event",
-      "year": 1979,
-      "text": "Cold War: Nuclear false alarm: The NORAD computers and the Alternate National Military Command Center in Fort Ritchie, Maryland, detect a purported massive Soviet nuclear strike. After reviewing the raw data from satellites and checking the early-warning radars, the alert is cancelled.",
-      "article_title": "Cold War",
-      "url": "https://en.wikipedia.org/wiki/Cold_War",
+      "year": 1971,
+      "text": "In Cambodia, Khmer Rouge forces attack the city of Phnom Penh and its airport, killing 44, wounding at least 30 and damaging nine aircraft.",
+      "article_title": "Cambodia",
+      "url": "https://en.wikipedia.org/wiki/Cambodia",
       "category": "World history"
+    },
+    {
+      "candidate_id": "event-ddf829b17975f85f6ae2607d",
+      "type": "event",
+      "year": 1970,
+      "text": "Vietnam War: Vietnamization: For the first time in five years, an entire week ends with no reports of American combat fatalities in Southeast Asia.",
+      "article_title": "Vietnam War",
+      "url": "https://en.wikipedia.org/wiki/Vietnam_War",
+      "category": "World history"
+    },
+    {
+      "candidate_id": "event-d55cdea8060f826cd7b9c283",
+      "type": "event",
+      "year": 1970,
+      "text": "Luna 17: uncrewed space mission launched by the Soviet Union.",
+      "article_title": "Luna 17",
+      "url": "https://en.wikipedia.org/wiki/Luna_17",
+      "category": "Science and technology"
     }
   ]
 }
