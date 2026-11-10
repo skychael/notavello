@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-11-09T22:26:58.567Z",
-  "latest_success_at": "2026-11-09T22:26:58.567Z",
+  "generated_at": "2026-11-10T04:39:16.141Z",
+  "latest_success_at": "2026-11-10T04:39:16.141Z",
   "status": "ok",
   "items": [
     {
-      "id": "ee8e390990a944fc",
-      "title": "Eastern North Pacific Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
+      "id": "b5ad93019d019ede",
+      "title": "Atlantic Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-11-09T17:18:14.000Z",
+      "published_at": "2026-11-09T23:12:16.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "071a793f236f56ab",
-      "title": "Flood Warning issued November 9 at 9:22AM EST by NWS Melbourne FL",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.1cd7f27364f3548489b2423ca62e99b48c28028a.001.1.cap",
+      "id": "509f13c42a2065ad",
+      "title": "Flood Warning issued November 9 at 8:04PM EST by NWS Melbourne FL",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.d3a4ddd1acc63053e0d8efa550909dde99891c1c.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-11-09T14:22:00.000Z",
+      "published_at": "2026-11-10T01:04:00.000Z",
       "topic": "Flooding",
       "status": "ok"
     },
     {
-      "id": "9e7ff58f0e65202d",
-      "title": "Blizzard Warning issued November 9 at 11:55AM AKST until November 11 at 6:00AM AKST by NWS Fairbanks AK",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.43cf0d18524494a13b7991b6d7f1755db5e080de.001.2.cap",
+      "id": "e0cff8d21d26be09",
+      "title": "Blizzard Warning issued November 9 at 7:33PM AKST until November 11 at 6:00AM AKST by NWS Fairbanks AK",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.8b05241c6d9536a8eadf3867be3f8dc45faca8ab.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-11-09T20:55:00.000Z",
+      "published_at": "2026-11-10T04:33:00.000Z",
       "topic": "Snow",
       "status": "ok"
     }
