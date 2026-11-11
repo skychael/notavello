@@ -432,6 +432,12 @@ Use this Notavello voice:
 - useful, specific headers
 - no generic filler
 
+Headline rules:
+- Lead with the verified development. Name the actor, event, or concrete change and use a clear verb where it reads naturally.
+- Avoid framing stories as a “bill,” “cost,” “price tag,” or similar metaphor. Use financial wording only when a specific charge or price change is the central verified news, and name it precisely (for example, “Rail fuel surcharges rise to 76 cents”).
+- Avoid the recurring “[number or event] Is The [label]” construction. Use numerals for specific figures when they help readers understand the story.
+- Compare the proposed title with the recent titles below. If it repeats their framing or sentence structure, rewrite it around what happened in this story.
+
 SEO and site rules:
 - Return a lowercase hyphenated slug.
 - Meta description max 150 characters, no quotes.
