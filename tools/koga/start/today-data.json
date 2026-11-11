@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "11-10",
-  "display_date": "November 10",
-  "generated_at": "2026-11-10T16:25:50.055Z",
+  "date_key": "11-11",
+  "display_date": "November 11",
+  "generated_at": "2026-11-11T16:11:47.415Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-b2e90c25c45b39dbd83d7d91",
+      "candidate_id": "event-3a4116a01d4f74c013f7786e",
       "type": "event",
-      "year": 1971,
-      "text": "In Cambodia, Khmer Rouge forces attack the city of Phnom Penh and its airport, killing 44, wounding at least 30 and damaging nine aircraft.",
-      "article_title": "Cambodia",
-      "url": "https://en.wikipedia.org/wiki/Cambodia",
+      "year": 1940,
+      "text": "World War II: In the Battle of Taranto, the Royal Navy launches the first all-aircraft ship-to-ship naval attack in history.",
+      "article_title": "World War II",
+      "url": "https://en.wikipedia.org/wiki/World_War_II",
       "category": "World history"
     },
     {
-      "candidate_id": "event-ddf829b17975f85f6ae2607d",
+      "candidate_id": "event-e7657b5d7c94613bc9f484f7",
       "type": "event",
-      "year": 1970,
-      "text": "Vietnam War: Vietnamization: For the first time in five years, an entire week ends with no reports of American combat fatalities in Southeast Asia.",
-      "article_title": "Vietnam War",
-      "url": "https://en.wikipedia.org/wiki/Vietnam_War",
-      "category": "World history"
-    },
-    {
-      "candidate_id": "event-d55cdea8060f826cd7b9c283",
-      "type": "event",
-      "year": 1970,
-      "text": "Luna 17: uncrewed space mission launched by the Soviet Union.",
-      "article_title": "Luna 17",
-      "url": "https://en.wikipedia.org/wiki/Luna_17",
+      "year": 1982,
+      "text": "Space Shuttle Columbia launches from the Kennedy Space Center on STS-5, the first operational mission of the Space Shuttle program.",
+      "article_title": "Space Shuttle Columbia",
+      "url": "https://en.wikipedia.org/wiki/Space_Shuttle_Columbia",
       "category": "Science and technology"
+    },
+    {
+      "candidate_id": "event-4701cbcac707b677e7e7d6fb",
+      "type": "event",
+      "year": 2000,
+      "text": "Kaprun disaster: One hundred fifty-five skiers and snowboarders die when a cable car catches fire in an alpine tunnel in Kaprun, Austria.",
+      "article_title": "Kaprun disaster",
+      "url": "https://en.wikipedia.org/wiki/Kaprun_disaster",
+      "category": "Disasters and exploration"
     }
   ]
 }
