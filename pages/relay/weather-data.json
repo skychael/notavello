@@ -1,34 +1,34 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-11-10T20:51:52.858Z",
-  "latest_success_at": "2026-11-10T20:51:52.858Z",
+  "generated_at": "2026-11-11T01:16:40.511Z",
+  "latest_success_at": "2026-11-11T01:16:40.511Z",
   "status": "ok",
   "items": [
     {
-      "id": "a605a4fb70977cb7",
-      "title": "SPC Day 2 Fire Weather Outlook",
-      "url": "https://www.spc.noaa.gov/products/fire_wx/fwdy2.html",
+      "id": "8b47ae60d8cbd9b2",
+      "title": "SPC Nov 11, 2026 0100 UTC Day 1 Convective Outlook",
+      "url": "https://www.spc.noaa.gov/products/outlook/day1otlk_0100.html",
       "publisher": "Storm Prediction Center",
-      "published_at": "2026-11-10T19:32:24.000Z",
+      "published_at": "2026-11-11T00:44:22.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "b5ad93019d019ede",
-      "title": "Atlantic Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
+      "id": "ee8e390990a944fc",
+      "title": "Eastern North Pacific Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-11-10T17:46:26.000Z",
+      "published_at": "2026-11-10T23:09:00.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "a345ba9881a18297",
-      "title": "SPC Day 1 Fire Weather Outlook",
-      "url": "https://www.spc.noaa.gov/products/fire_wx/fwdy1.html",
-      "publisher": "Storm Prediction Center",
-      "published_at": "2026-11-10T16:35:34.000Z",
-      "topic": "Hurricane",
+      "id": "5e6cdfc378b0a38b",
+      "title": "Flood Warning issued November 10 at 7:48PM EST by NWS Melbourne FL",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f07484db571e2982dcf0ce6581a6bc2ab17436cf.001.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-11-11T00:48:00.000Z",
+      "topic": "Flooding",
       "status": "ok"
     }
   ]
