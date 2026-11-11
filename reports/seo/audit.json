@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-11-10T08:45:07.480Z",
+  "generatedAt": "2026-11-11T08:10:03.436Z",
   "totals": {
-    "pages": 363,
-    "indexable": 359,
-    "articles": 287,
-    "sitemap": 359,
+    "pages": 366,
+    "indexable": 362,
+    "articles": 289,
+    "sitemap": 362,
     "errors": 0,
-    "warnings": 371
+    "warnings": 375
   },
   "errors": [],
   "warnings": [
@@ -952,6 +952,16 @@
     },
     {
       "type": "template-pattern",
+      "page": "/pages/blog/imo-counts-133-middle-east-shipping-incidents/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/imo-counts-133-middle-east-shipping-incidents/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
       "page": "/pages/blog/inkling-open-weights-deployment-plan/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
@@ -1298,6 +1308,16 @@
     {
       "type": "topic-review",
       "page": "/pages/blog/refinery-run-cut-is-the-diesel-bill/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/reliable-exit-code-checks-in-shell-pipelines/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/reliable-exit-code-checks-in-shell-pipelines/",
       "detail": "title/description lacks a clear AI, software, or computing connection"
     },
     {
@@ -1875,7 +1895,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 363,
+      "incomingLinks": 366,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -1899,7 +1919,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 363,
+      "incomingLinks": 366,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -2007,7 +2027,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 363,
+      "incomingLinks": 366,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -2019,9 +2039,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 363,
-      "lastmod": "2026-11-09",
-      "bodyWords": 659
+      "incomingLinks": 366,
+      "lastmod": "2026-11-10",
+      "bodyWords": 655
     },
     {
       "route": "/pages/blog/a-calm-checklist-for-inspecting-a-suspicious-message/",
@@ -2391,9 +2411,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 226,
-      "lastmod": "2026-11-09",
-      "bodyWords": 3476
+      "incomingLinks": 228,
+      "lastmod": "2026-11-10",
+      "bodyWords": 3500
     },
     {
       "route": "/pages/blog/anhydrous-ammonia-is-the-fall-farm-bill/",
@@ -3303,7 +3323,7 @@
       "canonical": "https://notavello.com/pages/blog/hormuz-shipping-lane-screening-risk/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 3,
+      "incomingLinks": 4,
       "lastmod": "2026-08-10",
       "bodyWords": 1619
     },
@@ -3848,6 +3868,18 @@
       "bodyWords": 2290
     },
     {
+      "route": "/pages/blog/imo-counts-133-middle-east-shipping-incidents/",
+      "file": "pages/blog/imo-counts-133-middle-east-shipping-incidents/index.html",
+      "title": "IMO Counts 133 Middle East Shipping Incidents As Tanker Attacks Continue — The Export | Notavello",
+      "description": "IMO now lists 133 confirmed Middle East shipping incidents while diesel remains above $6 and Hormuz tankers take fresh hits.",
+      "canonical": "https://notavello.com/pages/blog/imo-counts-133-middle-east-shipping-incidents/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-11-11",
+      "bodyWords": 1450
+    },
+    {
       "route": "/pages/blog/inkling-open-weights-deployment-plan/",
       "file": "pages/blog/inkling-open-weights-deployment-plan/index.html",
       "title": "Inkling Shows Open Weights Still Need A Deployment Plan — The Export | Notavello",
@@ -4319,181 +4351,193 @@
       "route": "/pages/blog/page-10/",
       "file": "pages/blog/page-10/index.html",
       "title": "The Export — Page 10 | Notavello",
-      "description": "Older Notavello posts from The Export, page 10 of 16.",
+      "description": "Older Notavello posts from The Export, page 10 of 17.",
       "canonical": "https://notavello.com/pages/blog/page-10/",
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-09",
-      "bodyWords": 677
+      "lastmod": "2026-11-10",
+      "bodyWords": 672
     },
     {
       "route": "/pages/blog/page-11/",
       "file": "pages/blog/page-11/index.html",
       "title": "The Export — Page 11 | Notavello",
-      "description": "Older Notavello posts from The Export, page 11 of 16.",
+      "description": "Older Notavello posts from The Export, page 11 of 17.",
       "canonical": "https://notavello.com/pages/blog/page-11/",
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-09",
-      "bodyWords": 642
+      "lastmod": "2026-11-10",
+      "bodyWords": 647
     },
     {
       "route": "/pages/blog/page-12/",
       "file": "pages/blog/page-12/index.html",
       "title": "The Export — Page 12 | Notavello",
-      "description": "Older Notavello posts from The Export, page 12 of 16.",
+      "description": "Older Notavello posts from The Export, page 12 of 17.",
       "canonical": "https://notavello.com/pages/blog/page-12/",
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-09",
+      "lastmod": "2026-11-10",
       "bodyWords": 686
     },
     {
       "route": "/pages/blog/page-13/",
       "file": "pages/blog/page-13/index.html",
       "title": "The Export — Page 13 | Notavello",
-      "description": "Older Notavello posts from The Export, page 13 of 16.",
+      "description": "Older Notavello posts from The Export, page 13 of 17.",
       "canonical": "https://notavello.com/pages/blog/page-13/",
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-09",
-      "bodyWords": 699
+      "lastmod": "2026-11-10",
+      "bodyWords": 678
     },
     {
       "route": "/pages/blog/page-14/",
       "file": "pages/blog/page-14/index.html",
       "title": "The Export — Page 14 | Notavello",
-      "description": "Older Notavello posts from The Export, page 14 of 16.",
+      "description": "Older Notavello posts from The Export, page 14 of 17.",
       "canonical": "https://notavello.com/pages/blog/page-14/",
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-09",
-      "bodyWords": 812
+      "lastmod": "2026-11-10",
+      "bodyWords": 810
     },
     {
       "route": "/pages/blog/page-15/",
       "file": "pages/blog/page-15/index.html",
       "title": "The Export — Page 15 | Notavello",
-      "description": "Older Notavello posts from The Export, page 15 of 16.",
+      "description": "Older Notavello posts from The Export, page 15 of 17.",
       "canonical": "https://notavello.com/pages/blog/page-15/",
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-09",
-      "bodyWords": 841
+      "lastmod": "2026-11-10",
+      "bodyWords": 837
     },
     {
       "route": "/pages/blog/page-16/",
       "file": "pages/blog/page-16/index.html",
       "title": "The Export — Page 16 | Notavello",
-      "description": "Older Notavello posts from The Export, page 16 of 16.",
+      "description": "Older Notavello posts from The Export, page 16 of 17.",
       "canonical": "https://notavello.com/pages/blog/page-16/",
       "robots": "index, follow",
       "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-11-10",
+      "bodyWords": 890
+    },
+    {
+      "route": "/pages/blog/page-17/",
+      "file": "pages/blog/page-17/index.html",
+      "title": "The Export — Page 17 | Notavello",
+      "description": "Older Notavello posts from The Export, page 17 of 17.",
+      "canonical": "https://notavello.com/pages/blog/page-17/",
+      "robots": "index, follow",
+      "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": "2026-11-09",
-      "bodyWords": 837
+      "lastmod": null,
+      "bodyWords": 75
     },
     {
       "route": "/pages/blog/page-2/",
       "file": "pages/blog/page-2/index.html",
       "title": "The Export — Page 2 | Notavello",
-      "description": "Older Notavello posts from The Export, page 2 of 16.",
+      "description": "Older Notavello posts from The Export, page 2 of 17.",
       "canonical": "https://notavello.com/pages/blog/page-2/",
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-09",
-      "bodyWords": 640
+      "lastmod": "2026-11-10",
+      "bodyWords": 658
     },
     {
       "route": "/pages/blog/page-3/",
       "file": "pages/blog/page-3/index.html",
       "title": "The Export — Page 3 | Notavello",
-      "description": "Older Notavello posts from The Export, page 3 of 16.",
+      "description": "Older Notavello posts from The Export, page 3 of 17.",
       "canonical": "https://notavello.com/pages/blog/page-3/",
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-09",
-      "bodyWords": 692
+      "lastmod": "2026-11-10",
+      "bodyWords": 681
     },
     {
       "route": "/pages/blog/page-4/",
       "file": "pages/blog/page-4/index.html",
       "title": "The Export — Page 4 | Notavello",
-      "description": "Older Notavello posts from The Export, page 4 of 16.",
+      "description": "Older Notavello posts from The Export, page 4 of 17.",
       "canonical": "https://notavello.com/pages/blog/page-4/",
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-09",
-      "bodyWords": 625
+      "lastmod": "2026-11-10",
+      "bodyWords": 638
     },
     {
       "route": "/pages/blog/page-5/",
       "file": "pages/blog/page-5/index.html",
       "title": "The Export — Page 5 | Notavello",
-      "description": "Older Notavello posts from The Export, page 5 of 16.",
+      "description": "Older Notavello posts from The Export, page 5 of 17.",
       "canonical": "https://notavello.com/pages/blog/page-5/",
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-09",
-      "bodyWords": 674
+      "lastmod": "2026-11-10",
+      "bodyWords": 662
     },
     {
       "route": "/pages/blog/page-6/",
       "file": "pages/blog/page-6/index.html",
       "title": "The Export — Page 6 | Notavello",
-      "description": "Older Notavello posts from The Export, page 6 of 16.",
+      "description": "Older Notavello posts from The Export, page 6 of 17.",
       "canonical": "https://notavello.com/pages/blog/page-6/",
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-09",
-      "bodyWords": 635
+      "lastmod": "2026-11-10",
+      "bodyWords": 639
     },
     {
       "route": "/pages/blog/page-7/",
       "file": "pages/blog/page-7/index.html",
       "title": "The Export — Page 7 | Notavello",
-      "description": "Older Notavello posts from The Export, page 7 of 16.",
+      "description": "Older Notavello posts from The Export, page 7 of 17.",
       "canonical": "https://notavello.com/pages/blog/page-7/",
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-09",
-      "bodyWords": 672
+      "lastmod": "2026-11-10",
+      "bodyWords": 667
     },
     {
       "route": "/pages/blog/page-8/",
       "file": "pages/blog/page-8/index.html",
       "title": "The Export — Page 8 | Notavello",
-      "description": "Older Notavello posts from The Export, page 8 of 16.",
+      "description": "Older Notavello posts from The Export, page 8 of 17.",
       "canonical": "https://notavello.com/pages/blog/page-8/",
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-09",
-      "bodyWords": 660
+      "lastmod": "2026-11-10",
+      "bodyWords": 657
     },
     {
       "route": "/pages/blog/page-9/",
       "file": "pages/blog/page-9/index.html",
       "title": "The Export — Page 9 | Notavello",
-      "description": "Older Notavello posts from The Export, page 9 of 16.",
+      "description": "Older Notavello posts from The Export, page 9 of 17.",
       "canonical": "https://notavello.com/pages/blog/page-9/",
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-09",
-      "bodyWords": 685
+      "lastmod": "2026-11-10",
+      "bodyWords": 689
     },
     {
       "route": "/pages/blog/phosphate-is-the-fertilizer-shock-that-did-not-fade/",
@@ -4590,6 +4634,18 @@
       "incomingLinks": 2,
       "lastmod": "2026-09-28",
       "bodyWords": 1450
+    },
+    {
+      "route": "/pages/blog/reliable-exit-code-checks-in-shell-pipelines/",
+      "file": "pages/blog/reliable-exit-code-checks-in-shell-pipelines/index.html",
+      "title": "Reliable Exit Code Checks in Shell Pipelines — The Export | Notavello",
+      "description": "Learn how to inspect exit codes after pipelines so automation scripts catch failures instead of continuing on hidden errors.",
+      "canonical": "https://notavello.com/pages/blog/reliable-exit-code-checks-in-shell-pipelines/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-11-10",
+      "bodyWords": 820
     },
     {
       "route": "/pages/blog/rootless-containers-ai-service-boundary/",
@@ -5667,7 +5723,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 363,
+      "incomingLinks": 366,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -5679,7 +5735,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 363,
+      "incomingLinks": 366,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -5691,7 +5747,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 363,
+      "incomingLinks": 366,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -5703,7 +5759,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 363,
+      "incomingLinks": 366,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -5715,7 +5771,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 363,
+      "incomingLinks": 366,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -5728,8 +5784,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-11-10",
-      "bodyWords": 685
+      "lastmod": "2026-11-11",
+      "bodyWords": 691
     },
     {
       "route": "/pages/sample",
@@ -5751,7 +5807,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 363,
+      "incomingLinks": 366,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -5763,7 +5819,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 363,
+      "incomingLinks": 366,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -5787,7 +5843,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 363,
+      "incomingLinks": 366,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -6219,7 +6275,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 363,
+      "incomingLinks": 366,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Reliable Exit Code Checks in Shell Pipelines — The Export | Notavello</title>
+<meta name="description" content="Learn how to inspect exit codes after pipelines so automation scripts catch failures instead of continuing on hidden errors."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/blog/reliable-exit-code-checks-in-shell-pipelines/"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2026-11-10T17:09:41.365Z"/>
+<meta property="article:modified_time" content="2026-11-10T17:09:41.365Z"/>
+<meta name="notavello:published_at" content="2026-11-10T17:09:41.365Z"/>
+<meta name="syndication-origin-site" content="toysforbots"/>
+<meta name="syndication-origin-id" content="toysforbots:reliable-exit-code-checks-in-shell-pipelines"/>
+<meta name="syndication-origin-slug" content="reliable-exit-code-checks-in-shell-pipelines"/>
+<meta name="syndication-origin-url" content="https://toysforbots.com/blog/reliable-exit-code-checks-in-shell-pipelines/"/>
+<meta name="syndication-source-format" content="toysforbots-syndication-v1"/>
+<meta property="og:url" content="https://notavello.com/pages/blog/reliable-exit-code-checks-in-shell-pipelines/"/>
+<meta property="og:title" content="Reliable Exit Code Checks in Shell Pipelines"/>
+<meta property="og:description" content="Learn how to inspect exit codes after pipelines so automation scripts catch failures instead of continuing on hidden errors."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Reliable Exit Code Checks in Shell Pipelines"/>
+<meta name="twitter:description" content="Learn how to inspect exit codes after pipelines so automation scripts catch failures instead of continuing on hidden errors."/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Reliable Exit Code Checks in Shell Pipelines",
+  "description": "Learn how to inspect exit codes after pipelines so automation scripts catch failures instead of continuing on hidden errors.",
+  "url": "https://notavello.com/pages/blog/reliable-exit-code-checks-in-shell-pipelines/",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://notavello.com/pages/blog/reliable-exit-code-checks-in-shell-pipelines/" },
+  "image": "https://notavello.com/og-image.png",
+  "datePublished": "2026-11-10T17:09:41.365Z",
+  "dateModified": "2026-11-10T17:09:41.365Z",
+  "author": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" },
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com", "logo": { "@type": "ImageObject", "url": "https://notavello.com/og-image.png" } }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
+.post-nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; row-gap: 8px; }
+.post-nav-top { margin-bottom: 40px; }
+.post-nav-bottom { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--border); }
+.post-nav a { display: inline-flex; align-items: center; gap: 6px; font-size: 0.92rem; font-weight: 600; color: var(--ink-muted); text-decoration: none; padding: 12px 14px; border-radius: var(--radius-sm); white-space: nowrap; transition: color 0.15s, background 0.15s; }
+.post-nav a:hover { color: var(--accent); background: var(--accent-light); }
+.post-nav a:first-child { padding-left: 0; }
+.post-nav a:last-child { padding-right: 0; justify-content: flex-end; }
+.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
+.post-date { font-size: 0.78rem; color: var(--ink-faint); }
+.post-title { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; color: var(--ink); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
+.post-lede { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+.post-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink); }
+.post-body h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 44px 0 16px; letter-spacing: -0.01em; }
+.post-body p { margin-bottom: 20px; color: var(--ink-muted); }
+.post-body p strong { color: var(--ink); font-weight: 600; }
+.post-body ul { margin: 0 0 20px 20px; color: var(--ink-muted); }
+.post-body ul li { margin-bottom: 8px; line-height: 1.7; }
+.callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 32px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.7; }
+.post-footer { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.post-footer-label { font-size: 0.8rem; color: var(--ink-faint); }
+.btn-export { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: opacity 0.2s; }
+.btn-export:hover { opacity: 0.9; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } .post-nav a { padding: 12px 8px; font-size: 0.88rem; } }
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+
+  <nav class="post-nav post-nav-top">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+  <div class="post-meta">
+    <span class="post-tag">Developer Tools</span>
+    <span class="post-date">November 10, 2026</span>
+  </div>
+
+  <h1 class="post-title">Reliable Exit Code Checks in Shell Pipelines</h1>
+
+  <p class="post-lede">Command-line tools report outcomes through numeric exit codes. A value of zero conventionally means success while any other value signals a problem. Scripts and automation systems read these codes to decide whether to continue or stop. When commands run in pipelines the shell reports only the status of the last command by default, which can mask earlier failures and let broken steps pass unnoticed. Understanding how to surface and act on the right codes prevents silent errors from propagating through scheduled jobs and CI steps.</p>
+
+  <div class="post-body">
+
+<h2>Standard meaning of exit codes</h2>
+<p>POSIX defines that a process exits with a status. The _Exit and exit functions pass that status to the parent. Most tools follow the convention that zero indicates success and nonzero indicates failure or an error condition.</p>
+<p>PowerShell follows a similar pattern. Normal termination sets the exit code to zero. An uncaught throw sets it to one. The exit statement lets a script set any specific value before stopping.</p><ul><li>Zero always means success under the common convention.</li><li>Nonzero values are interpreted by the calling script or scheduler.</li><li>Some tools use specific numbers such as 130 for interruption by Ctrl+C.</li></ul><div class="callout"><strong>Quick check</strong> After any pipeline, capture the full status array immediately. Later commands overwrite it, so store the values on the next line before they disappear.</div>
+<h2>Why pipelines hide failures</h2>
+<p>A pipeline runs several commands at once. The shell waits for every stage but normally returns only the exit status of the final command. Earlier stages can fail completely and the pipeline still reports success because the last program finished without error.</p>
+<p>This behavior appears in everyday commands such as counting lines from a nonexistent directory or searching logs that produce no matches. The downstream command exits zero and the overall status looks clean even though an upstream step failed.</p><ul><li>false | true reports zero because true succeeds.</li><li>ls on a missing path followed by wc still exits zero.</li><li>The shell discards intermediate statuses unless told otherwise.</li></ul>
+<h2>Enabling pipefail for safer scripts</h2>
+<p>Bash, ksh, and zsh provide the pipefail option. When enabled, the pipeline status becomes the rightmost nonzero exit code or zero if every command succeeded. Adding set -o pipefail near the top of a script changes the default behavior without rewriting every pipeline.</p>
+<p>The option works together with set -e. A failed pipeline now aborts the script as intended. Without -e the script continues but the captured status is already the correct one.</p><ul><li>Place set -o pipefail early in the script header.</li><li>Combine with set -euo pipefail for stricter execution.</li><li>Test the change by deliberately inserting a failing command at the start of a pipeline.</li></ul>
+<h2>Reading every stage with PIPESTATUS</h2>
+<p>When pipefail alone is not enough, inspect the status of each stage. Bash stores the exit codes of every command in a pipeline inside the PIPESTATUS array. The array is overwritten by the next command, so copy it immediately after the pipeline finishes.</p>
+<p>A safe pattern stores the array into a new variable on the following line. Later code can then examine which stage produced the nonzero code and decide whether that stage should be treated as fatal.</p><ul><li>echo &quot;${PIPESTATUS[@]}&quot; shows every code right after the pipeline.</li><li>st=(&quot;${PIPESTATUS[@]}&quot;) preserves the values for later use.</li><li>Zsh uses the lowercase pipestatus array with one-based indexing.</li></ul>
+<h2>Practical patterns and cautions</h2>
+<p>Some filters legitimately exit nonzero when they find nothing. Grep returns one for no matches. In those cases wrap the command with || true inside a subshell or block so pipefail does not treat the expected result as failure.</p>
+<p>Early-exit consumers such as head or grep -q can send SIGPIPE to upstream producers. The resulting 141 status is often harmless but must be recognized when reviewing PIPESTATUS output. Capture output first or tolerate the specific code when the consumer is expected to stop reading.</p><ul><li>Use { grep pattern || true; } to allow expected nonzero results.</li><li>Capture output with a variable when early exit is likely.</li><li>Document any tolerated nonzero codes in comments near the pipeline.</li></ul>
+<h2>Cross-platform and long-term considerations</h2>
+<p>POSIX shells do not standardize pipefail, so scripts that must run under plain sh need alternative approaches such as temporary files or explicit status checks after each command. PowerShell scripts can use $LASTEXITCODE or the automatic $? variable after each statement.</p>
+<p>Semantic exit code schemes used by some tools separate user errors from software errors. Scripts that call such tools should map the documented ranges rather than treating every nonzero value identically.</p><ul><li>Check for pipefail support with sh -c &#039;set -o pipefail&#039; before relying on it.</li><li>Store exit codes early when mixing tools that use custom ranges.</li><li>Review the calling environment when moving scripts between shells or CI systems.</li></ul><h2>Sources</h2><ul><li><a href="https://pubs.opengroup.org/onlinepubs/9699919799/functions/_exit.html" rel="noopener noreferrer">pubs.opengroup.org</a></li><li><a href="https://devblogs.microsoft.com/powershell/windows-powershell-exit-codes/" rel="noopener noreferrer">devblogs.microsoft.com</a></li><li><a href="https://dixon.cx/blog/cli-exit-code-always-zero-after-pipe.html" rel="noopener noreferrer">dixon.cx</a></li></ul>
+
+  </div>
+
+  <div class="post-footer">
+    <span class="post-footer-label">Looking for more AI tools?</span>
+    <a class="btn-export" href="/">See our free AI tools →</a>
+  </div>
+
+  <nav class="post-nav post-nav-bottom">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+</main>
+
+<!--FOOTER-->
+
+</body>
+</html>
