@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-11-11T08:10:03.436Z",
+  "generatedAt": "2026-11-12T08:45:19.399Z",
   "totals": {
-    "pages": 366,
-    "indexable": 362,
-    "articles": 289,
-    "sitemap": 362,
+    "pages": 368,
+    "indexable": 364,
+    "articles": 291,
+    "sitemap": 364,
     "errors": 0,
-    "warnings": 375
+    "warnings": 379
   },
   "errors": [],
   "warnings": [
@@ -363,6 +363,16 @@
     {
       "type": "topic-review",
       "page": "/pages/blog/displayport-vs-hdmi/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/doe-sends-300000-barrels-of-heating-oil-northeast-supply/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/doe-sends-300000-barrels-of-heating-oil-northeast-supply/",
       "detail": "title/description lacks a clear AI, software, or computing connection"
     },
     {
@@ -1262,6 +1272,16 @@
     },
     {
       "type": "template-pattern",
+      "page": "/pages/blog/protecting-shared-history-when-undoing-git-changes/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/protecting-shared-history-when-undoing-git-changes/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
       "page": "/pages/blog/ram-and-storage-solve-different-computer-problems/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
@@ -1895,7 +1915,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 366,
+      "incomingLinks": 368,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -1919,7 +1939,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 366,
+      "incomingLinks": 368,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -2027,7 +2047,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 366,
+      "incomingLinks": 368,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -2039,9 +2059,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 366,
-      "lastmod": "2026-11-10",
-      "bodyWords": 655
+      "incomingLinks": 368,
+      "lastmod": "2026-11-11",
+      "bodyWords": 657
     },
     {
       "route": "/pages/blog/a-calm-checklist-for-inspecting-a-suspicious-message/",
@@ -2411,9 +2431,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 228,
-      "lastmod": "2026-11-10",
-      "bodyWords": 3500
+      "incomingLinks": 230,
+      "lastmod": "2026-11-11",
+      "bodyWords": 3523
     },
     {
       "route": "/pages/blog/anhydrous-ammonia-is-the-fall-farm-bill/",
@@ -2834,6 +2854,18 @@
       "incomingLinks": 3,
       "lastmod": "2026-07-22",
       "bodyWords": 1596
+    },
+    {
+      "route": "/pages/blog/doe-sends-300000-barrels-of-heating-oil-northeast-supply/",
+      "file": "pages/blog/doe-sends-300000-barrels-of-heating-oil-northeast-supply/index.html",
+      "title": "DOE Sends 300,000 Barrels of Heating Oil Into Northeast Supply — The Export | Notavello",
+      "description": "DOE moved 300,000 barrels of heating oil into Northeast supply as diesel stocks stayed tight and winter bills stayed exposed.",
+      "canonical": "https://notavello.com/pages/blog/doe-sends-300000-barrels-of-heating-oil-northeast-supply/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-11-12",
+      "bodyWords": 1580
     },
     {
       "route": "/pages/blog/does-perplexity-pay-openai/",
@@ -4356,8 +4388,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-10",
-      "bodyWords": 672
+      "lastmod": "2026-11-11",
+      "bodyWords": 675
     },
     {
       "route": "/pages/blog/page-11/",
@@ -4368,8 +4400,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-10",
-      "bodyWords": 647
+      "lastmod": "2026-11-11",
+      "bodyWords": 650
     },
     {
       "route": "/pages/blog/page-12/",
@@ -4380,8 +4412,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-10",
-      "bodyWords": 686
+      "lastmod": "2026-11-11",
+      "bodyWords": 687
     },
     {
       "route": "/pages/blog/page-13/",
@@ -4392,8 +4424,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-10",
-      "bodyWords": 678
+      "lastmod": "2026-11-11",
+      "bodyWords": 682
     },
     {
       "route": "/pages/blog/page-14/",
@@ -4404,8 +4436,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-10",
-      "bodyWords": 810
+      "lastmod": "2026-11-11",
+      "bodyWords": 783
     },
     {
       "route": "/pages/blog/page-15/",
@@ -4416,8 +4448,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-10",
-      "bodyWords": 837
+      "lastmod": "2026-11-11",
+      "bodyWords": 830
     },
     {
       "route": "/pages/blog/page-16/",
@@ -4428,8 +4460,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-10",
-      "bodyWords": 890
+      "lastmod": "2026-11-11",
+      "bodyWords": 889
     },
     {
       "route": "/pages/blog/page-17/",
@@ -4440,8 +4472,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": null,
-      "bodyWords": 75
+      "lastmod": "2026-11-11",
+      "bodyWords": 174
     },
     {
       "route": "/pages/blog/page-2/",
@@ -4452,8 +4484,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-10",
-      "bodyWords": 658
+      "lastmod": "2026-11-11",
+      "bodyWords": 665
     },
     {
       "route": "/pages/blog/page-3/",
@@ -4464,8 +4496,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-10",
-      "bodyWords": 681
+      "lastmod": "2026-11-11",
+      "bodyWords": 672
     },
     {
       "route": "/pages/blog/page-4/",
@@ -4476,8 +4508,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-10",
-      "bodyWords": 638
+      "lastmod": "2026-11-11",
+      "bodyWords": 648
     },
     {
       "route": "/pages/blog/page-5/",
@@ -4488,8 +4520,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-10",
-      "bodyWords": 662
+      "lastmod": "2026-11-11",
+      "bodyWords": 657
     },
     {
       "route": "/pages/blog/page-6/",
@@ -4500,8 +4532,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-10",
-      "bodyWords": 639
+      "lastmod": "2026-11-11",
+      "bodyWords": 629
     },
     {
       "route": "/pages/blog/page-7/",
@@ -4512,8 +4544,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-10",
-      "bodyWords": 667
+      "lastmod": "2026-11-11",
+      "bodyWords": 675
     },
     {
       "route": "/pages/blog/page-8/",
@@ -4524,8 +4556,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-10",
-      "bodyWords": 657
+      "lastmod": "2026-11-11",
+      "bodyWords": 658
     },
     {
       "route": "/pages/blog/page-9/",
@@ -4536,8 +4568,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-10",
-      "bodyWords": 689
+      "lastmod": "2026-11-11",
+      "bodyWords": 684
     },
     {
       "route": "/pages/blog/phosphate-is-the-fertilizer-shock-that-did-not-fade/",
@@ -4562,6 +4594,18 @@
       "incomingLinks": 3,
       "lastmod": "2026-08-29",
       "bodyWords": 1513
+    },
+    {
+      "route": "/pages/blog/protecting-shared-history-when-undoing-git-changes/",
+      "file": "pages/blog/protecting-shared-history-when-undoing-git-changes/index.html",
+      "title": "Protecting Shared History When Undoing Git Changes — The Export | Notavello",
+      "description": "Learn how to select Git undo commands that avoid rewriting public commit history while still recovering from mistakes on private branches.",
+      "canonical": "https://notavello.com/pages/blog/protecting-shared-history-when-undoing-git-changes/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-11-11",
+      "bodyWords": 1117
     },
     {
       "route": "/pages/blog/ram-and-storage-solve-different-computer-problems/",
@@ -4811,7 +4855,7 @@
       "canonical": "https://notavello.com/pages/blog/six-dollars-twenty-cents-is-the-heating-oil-bill/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 3,
+      "incomingLinks": 4,
       "lastmod": "2026-10-28",
       "bodyWords": 1518
     },
@@ -5723,7 +5767,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 366,
+      "incomingLinks": 368,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -5735,7 +5779,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 366,
+      "incomingLinks": 368,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -5747,7 +5791,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 366,
+      "incomingLinks": 368,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -5759,7 +5803,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 366,
+      "incomingLinks": 368,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -5771,7 +5815,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 366,
+      "incomingLinks": 368,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -5784,8 +5828,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-11-11",
-      "bodyWords": 691
+      "lastmod": "2026-11-12",
+      "bodyWords": 697
     },
     {
       "route": "/pages/sample",
@@ -5807,7 +5851,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 366,
+      "incomingLinks": 368,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -5819,7 +5863,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 366,
+      "incomingLinks": 368,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -5843,7 +5887,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 366,
+      "incomingLinks": 368,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -6275,7 +6319,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 366,
+      "incomingLinks": 368,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Protecting Shared History When Undoing Git Changes — The Export | Notavello</title>
+<meta name="description" content="Learn how to select Git undo commands that avoid rewriting public commit history while still recovering from mistakes on private branches."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/blog/protecting-shared-history-when-undoing-git-changes/"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2026-11-11T17:17:23.134Z"/>
+<meta property="article:modified_time" content="2026-11-11T17:17:23.134Z"/>
+<meta name="notavello:published_at" content="2026-11-11T17:17:23.134Z"/>
+<meta name="syndication-origin-site" content="toysforbots"/>
+<meta name="syndication-origin-id" content="toysforbots:protecting-shared-history-when-undoing-git-changes"/>
+<meta name="syndication-origin-slug" content="protecting-shared-history-when-undoing-git-changes"/>
+<meta name="syndication-origin-url" content="https://toysforbots.com/blog/protecting-shared-history-when-undoing-git-changes/"/>
+<meta name="syndication-source-format" content="toysforbots-syndication-v1"/>
+<meta property="og:url" content="https://notavello.com/pages/blog/protecting-shared-history-when-undoing-git-changes/"/>
+<meta property="og:title" content="Protecting Shared History When Undoing Git Changes"/>
+<meta property="og:description" content="Learn how to select Git undo commands that avoid rewriting public commit history while still recovering from mistakes on private branches."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Protecting Shared History When Undoing Git Changes"/>
+<meta name="twitter:description" content="Learn how to select Git undo commands that avoid rewriting public commit history while still recovering from mistakes on private branches."/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Protecting Shared History When Undoing Git Changes",
+  "description": "Learn how to select Git undo commands that avoid rewriting public commit history while still recovering from mistakes on private branches.",
+  "url": "https://notavello.com/pages/blog/protecting-shared-history-when-undoing-git-changes/",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://notavello.com/pages/blog/protecting-shared-history-when-undoing-git-changes/" },
+  "image": "https://notavello.com/og-image.png",
+  "datePublished": "2026-11-11T17:17:23.134Z",
+  "dateModified": "2026-11-11T17:17:23.134Z",
+  "author": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" },
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com", "logo": { "@type": "ImageObject", "url": "https://notavello.com/og-image.png" } }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
+.post-nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; row-gap: 8px; }
+.post-nav-top { margin-bottom: 40px; }
+.post-nav-bottom { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--border); }
+.post-nav a { display: inline-flex; align-items: center; gap: 6px; font-size: 0.92rem; font-weight: 600; color: var(--ink-muted); text-decoration: none; padding: 12px 14px; border-radius: var(--radius-sm); white-space: nowrap; transition: color 0.15s, background 0.15s; }
+.post-nav a:hover { color: var(--accent); background: var(--accent-light); }
+.post-nav a:first-child { padding-left: 0; }
+.post-nav a:last-child { padding-right: 0; justify-content: flex-end; }
+.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
+.post-date { font-size: 0.78rem; color: var(--ink-faint); }
+.post-title { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; color: var(--ink); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
+.post-lede { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+.post-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink); }
+.post-body h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 44px 0 16px; letter-spacing: -0.01em; }
+.post-body p { margin-bottom: 20px; color: var(--ink-muted); }
+.post-body p strong { color: var(--ink); font-weight: 600; }
+.post-body ul { margin: 0 0 20px 20px; color: var(--ink-muted); }
+.post-body ul li { margin-bottom: 8px; line-height: 1.7; }
+.callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 32px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.7; }
+.post-footer { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.post-footer-label { font-size: 0.8rem; color: var(--ink-faint); }
+.btn-export { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: opacity 0.2s; }
+.btn-export:hover { opacity: 0.9; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } .post-nav a { padding: 12px 8px; font-size: 0.88rem; } }
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+
+  <nav class="post-nav post-nav-top">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+  <div class="post-meta">
+    <span class="post-tag">Git and GitHub</span>
+    <span class="post-date">November 11, 2026</span>
+  </div>
+
+  <h1 class="post-title">Protecting Shared History When Undoing Git Changes</h1>
+
+  <p class="post-lede">Teams that share repositories need reliable ways to correct mistakes without breaking the commit history others depend on. Git provides restore, revert, and reset for different situations. Choosing the wrong one on a public branch can force teammates to resolve confusing conflicts or lose work. The key distinction is whether an operation rewrites existing commits or adds new ones that everyone can pull safely. Revert always adds a new commit that undoes the target, preserving the original record. Reset moves the branch pointer and can discard commits entirely. Restore updates files in the working tree or index without touching history. Understanding these effects on the three Git trees—working directory, index, and commit history—helps you pick the command that matches the scope of your change and the visibility of your branch.</p>
+
+  <div class="post-body">
+
+<h2>How the three commands affect repository state</h2>
+<p>Git tracks three separate areas: the working directory that holds your files, the index that stages changes for the next commit, and the commit history that records snapshots. Each undo command touches these areas differently. Revert operates only at the commit level by creating an inverse patch and recording it as a new commit. It never alters the working directory or index unless you have uncommitted changes that conflict. Reset can update all three areas depending on the mode you choose. The default mixed mode updates the index to match the target commit while leaving the working directory untouched. Hard mode overwrites both the index and working directory. Restore focuses on paths rather than commits and pulls content from a source commit or the index into the working tree or staging area.</p><ul><li>git revert creates a new commit that reverses the selected change and leaves history intact</li><li>git reset --soft moves HEAD only and keeps staged and working changes</li><li>git reset --mixed updates the index but leaves the working tree alone</li><li>git reset --hard replaces the index and working tree with the target commit</li><li>git restore updates specific files from HEAD or another source without moving HEAD</li></ul><div class="callout"><strong>Quick rule</strong> Use revert on any branch that has been pushed and shared. Reserve reset and restore for branches that only you have cloned.</div>
+<h2>Safe undo on branches others have cloned</h2>
+<p>Once a branch is pushed and teammates have fetched it, any command that rewrites commits creates divergent histories. Revert is the standard tool for these situations because it adds a new commit that everyone can merge or pull without force-pushing. The command inspects the patch introduced by the target commit and records the opposite changes. You can revert a single commit or a range, and Git will create one new commit per reverted commit by default. After the revert commit is pushed, the original faulty commit remains visible in the log, which helps future debugging and code review.</p>
+<p>Always run git status first to confirm the working tree is clean. If uncommitted changes exist, stash or commit them before reverting. Revert will prompt you to resolve conflicts if the inverse patch overlaps with later work. The resulting commit message starts with Revert and includes the original commit subject, making the intent clear in the history.</p><ul><li>git revert creates the reversing commit on the current branch</li><li>git revert --no-commit lets you review the changes before committing</li><li>git revert HEAD~2 reverts the second most recent commit</li><li>Push the revert commit so teammates receive the correction</li></ul>
+<h2>Using reset on private branches only</h2>
+<p>Reset is appropriate when you have not yet shared the commits you want to discard. It moves the current branch pointer to a different commit and optionally updates the index and working tree. Because it removes commits from the visible history, teammates who have already fetched those commits will encounter errors on their next pull. The safest practice is to run reset only on local feature branches that you created and have not pushed, or on branches you are willing to force-push after coordinating with the team.</p>
+<p>Choose the mode carefully. Soft mode is useful when you want to combine several small commits into one larger commit. Mixed mode, the default, unstages changes so you can edit them before committing again. Hard mode is the most destructive because it permanently discards uncommitted work in the working directory. Before using hard mode, consider whether git stash or git checkout would preserve the changes instead.</p><ul><li>git reset --soft HEAD~3 keeps all changes staged for a new commit</li><li>git reset --mixed HEAD~1 unstages the last commit while keeping files</li><li>git reset --hard origin/main discards everything since the last push</li><li>Never reset a branch that has been pushed unless you coordinate a force push</li></ul>
+<h2>Restoring files without moving history</h2>
+<p>Restore is the right choice when you need to recover the contents of specific files rather than entire commits. It can pull a file from HEAD, from the index, or from any other commit. Because it does not change which commit HEAD points to, it is safe on both private and shared branches. The command is especially helpful after you have accidentally edited a file or when you want to unstage a single file without affecting other staged changes.</p>
+<p>By default, restore pulls from the index into the working tree. Adding the --staged flag restores the index from HEAD. You can combine both flags to restore a file completely to the state recorded in HEAD. When you need content from an older commit, supply the --source option followed by a commit reference.</p><ul><li>git restore replaces the working copy with the staged version</li><li>git restore --staged unstages the file without touching the working tree</li><li>git restore --source=HEAD~2 restores the file as it existed two commits ago</li><li>git restore --staged --worktree resets both index and working tree</li></ul>
+<h2>Practical decision checklist</h2>
+<p>Before running any undo command, answer three questions: Has the commit been pushed? Do you need to change history or only files? Are other people depending on the current state? If the answer to the first question is yes, reach for revert. If the branch is private and you want to discard commits, reset is acceptable. If you only need to fix file contents, restore is usually sufficient. After any operation that changes history, run git status and git log to verify the result before pushing.</p><ul><li>Check git status before every undo operation</li><li>Prefer revert when the branch is shared</li><li>Use reset only on branches you control</li><li>Restore individual files when history should stay untouched</li><li>Document the reason for the change in the commit message</li></ul><h2>Sources</h2><ul><li><a href="https://git-scm.com/docs/git-revert" rel="noopener noreferrer">git-scm.com</a></li><li><a href="https://git-scm.com/docs/git-reset" rel="noopener noreferrer">git-scm.com</a></li><li><a href="https://git-scm.com/docs/git-restore" rel="noopener noreferrer">git-scm.com</a></li><li><a href="https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting" rel="noopener noreferrer">atlassian.com</a></li></ul>
+
+  </div>
+
+  <div class="post-footer">
+    <span class="post-footer-label">Looking for more AI tools?</span>
+    <a class="btn-export" href="/">See our free AI tools →</a>
+  </div>
+
+  <nav class="post-nav post-nav-bottom">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+</main>
+
+<!--FOOTER-->
+
+</body>
+</html>
