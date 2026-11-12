@@ -399,10 +399,3 @@ a:hover { color: var(--accent-text); }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
 }
-
-.outlier-referral { margin: 16px 0; padding: 18px; border: 1px solid var(--border); border-radius: 20px; background: var(--surface); }
-.outlier-referral h2 { margin: 0 0 8px; font-size: 1.1rem; line-height: 1.3; }
-.outlier-referral > p:not(.eyebrow) { margin: 0 0 12px; color: var(--muted); font-size: .85rem; }
-.outlier-referral-link { min-height: 44px; display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 12px; background: var(--accent); color: var(--button-text); font-weight: 750; text-decoration: none; }
-.outlier-referral-link:focus-visible { outline: 2px solid var(--text); outline-offset: 3px; }
-.outlier-referral small { display: block; margin-top: 10px; color: var(--muted); font-size: .75rem; line-height: 1.5; }
