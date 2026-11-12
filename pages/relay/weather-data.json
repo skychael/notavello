@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-11-11T22:48:28.729Z",
-  "latest_success_at": "2026-11-11T22:48:28.729Z",
+  "generated_at": "2026-11-12T03:51:35.159Z",
+  "latest_success_at": "2026-11-12T03:51:35.159Z",
   "status": "ok",
   "items": [
     {
-      "id": "a605a4fb70977cb7",
-      "title": "SPC Day 2 Fire Weather Outlook",
-      "url": "https://www.spc.noaa.gov/products/fire_wx/fwdy2.html",
+      "id": "8b47ae60d8cbd9b2",
+      "title": "SPC Nov 12, 2026 0100 UTC Day 1 Convective Outlook",
+      "url": "https://www.spc.noaa.gov/products/outlook/day1otlk_0100.html",
       "publisher": "Storm Prediction Center",
-      "published_at": "2026-11-11T19:36:25.000Z",
+      "published_at": "2026-11-12T00:43:18.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "b5ad93019d019ede",
-      "title": "Atlantic Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
+      "id": "ee8e390990a944fc",
+      "title": "Eastern North Pacific Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-11-11T17:12:43.000Z",
+      "published_at": "2026-11-11T23:26:47.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "36aa7554984138b1",
-      "title": "Coastal Flood Watch issued November 11 at 12:16PM PST until November 14 at 3:00PM PST by NWS Los Angeles/Oxnard CA",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.98557eccc99607f2444692d9236df2d4f2c31436.001.1.cap",
+      "id": "734d7fc64ba03622",
+      "title": "Flood Warning issued November 11 at 7:39PM PST by NWS Seattle WA",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.e70634c0e4829aaf626b376c506e66e97ac3080c.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-11-11T20:16:00.000Z",
+      "published_at": "2026-11-12T03:39:00.000Z",
       "topic": "Flooding",
       "status": "ok"
     }
