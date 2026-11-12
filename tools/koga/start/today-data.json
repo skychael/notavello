@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "11-11",
-  "display_date": "November 11",
-  "generated_at": "2026-11-11T16:11:47.415Z",
+  "date_key": "11-12",
+  "display_date": "November 12",
+  "generated_at": "2026-11-12T16:49:12.407Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-3a4116a01d4f74c013f7786e",
+      "candidate_id": "event-832c90c391bd4ebda98d02d4",
       "type": "event",
-      "year": 1940,
-      "text": "World War II: In the Battle of Taranto, the Royal Navy launches the first all-aircraft ship-to-ship naval attack in history.",
-      "article_title": "World War II",
-      "url": "https://en.wikipedia.org/wiki/World_War_II",
-      "category": "World history"
-    },
-    {
-      "candidate_id": "event-e7657b5d7c94613bc9f484f7",
-      "type": "event",
-      "year": 1982,
-      "text": "Space Shuttle Columbia launches from the Kennedy Space Center on STS-5, the first operational mission of the Space Shuttle program.",
-      "article_title": "Space Shuttle Columbia",
-      "url": "https://en.wikipedia.org/wiki/Space_Shuttle_Columbia",
+      "year": 1981,
+      "text": "Space Shuttle program: Mission STS-2, utilizing the Space Shuttle Columbia, marks the first time a crewed spacecraft is launched into space twice.",
+      "article_title": "Space Shuttle program",
+      "url": "https://en.wikipedia.org/wiki/Space_Shuttle_program",
       "category": "Science and technology"
     },
     {
-      "candidate_id": "event-4701cbcac707b677e7e7d6fb",
+      "candidate_id": "event-8ae8e4cfe3aab67622f1e1bb",
       "type": "event",
-      "year": 2000,
-      "text": "Kaprun disaster: One hundred fifty-five skiers and snowboarders die when a cable car catches fire in an alpine tunnel in Kaprun, Austria.",
-      "article_title": "Kaprun disaster",
-      "url": "https://en.wikipedia.org/wiki/Kaprun_disaster",
-      "category": "Disasters and exploration"
+      "year": 1944,
+      "text": "World War II: The Royal Air Force sink the German battleship Tirpitz, moored off Tromsø, Norway.",
+      "article_title": "Royal Air Force",
+      "url": "https://en.wikipedia.org/wiki/Royal_Air_Force",
+      "category": "World history"
+    },
+    {
+      "candidate_id": "event-f3fa3f649f5f8bbc9fa6585e",
+      "type": "event",
+      "year": 1980,
+      "text": "The NASA space probe Voyager I makes its closest approach to Saturn and takes the first images of its rings.",
+      "article_title": "NASA",
+      "url": "https://en.wikipedia.org/wiki/NASA",
+      "category": "Science and technology"
     }
   ]
 }
