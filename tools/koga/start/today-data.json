@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "11-12",
-  "display_date": "November 12",
-  "generated_at": "2026-11-12T16:49:12.407Z",
+  "date_key": "11-13",
+  "display_date": "November 13",
+  "generated_at": "2026-11-13T16:26:37.198Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-832c90c391bd4ebda98d02d4",
+      "candidate_id": "event-f704cbccd3ba212c618290f5",
       "type": "event",
-      "year": 1981,
-      "text": "Space Shuttle program: Mission STS-2, utilizing the Space Shuttle Columbia, marks the first time a crewed spacecraft is launched into space twice.",
-      "article_title": "Space Shuttle program",
-      "url": "https://en.wikipedia.org/wiki/Space_Shuttle_program",
-      "category": "Science and technology"
+      "year": 2001,
+      "text": "War on terror: In the first such act since World War II, US President George W. Bush signs an executive order allowing military tribunals against foreigners suspected of connections to terrorist acts or planned acts on the United States.",
+      "article_title": "War on terror",
+      "url": "https://en.wikipedia.org/wiki/War_on_terror",
+      "category": "Politics and society"
     },
     {
-      "candidate_id": "event-8ae8e4cfe3aab67622f1e1bb",
+      "candidate_id": "event-c0a7ea8611495eee18b4cfdf",
       "type": "event",
-      "year": 1944,
-      "text": "World War II: The Royal Air Force sink the German battleship Tirpitz, moored off Tromsø, Norway.",
-      "article_title": "Royal Air Force",
-      "url": "https://en.wikipedia.org/wiki/Royal_Air_Force",
+      "year": 1995,
+      "text": "Nigeria Airways Flight 357 crashes at Kaduna International Airport in Kaduna, Nigeria, killing 11 people and injuring 66.",
+      "article_title": "Nigeria Airways Flight 357",
+      "url": "https://en.wikipedia.org/wiki/Nigeria_Airways_Flight_357",
       "category": "World history"
     },
     {
-      "candidate_id": "event-f3fa3f649f5f8bbc9fa6585e",
+      "candidate_id": "event-6e490e3923d935a5a22ffb89",
       "type": "event",
-      "year": 1980,
-      "text": "The NASA space probe Voyager I makes its closest approach to Saturn and takes the first images of its rings.",
-      "article_title": "NASA",
-      "url": "https://en.wikipedia.org/wiki/NASA",
-      "category": "Science and technology"
+      "year": 1966,
+      "text": "All Nippon Airways Flight 533 crashes into the Seto Inland Sea near Matsuyama Airport in Japan, killing 50 people.",
+      "article_title": "All Nippon Airways Flight 533",
+      "url": "https://en.wikipedia.org/wiki/All_Nippon_Airways_Flight_533",
+      "category": "World history"
     }
   ]
 }
