@@ -2,8 +2,26 @@
   "schema_version": 1,
   "archive_date": "2026-11-13",
   "created_at": "2026-11-13T01:53:13.470Z",
-  "updated_at": "2026-11-13T01:53:13.470Z",
+  "updated_at": "2026-11-13T09:38:36.955Z",
   "articles": [
+    {
+      "title": "The Iran war will cause global fossil fuel emissions to fall",
+      "url": "https://www.canarymedia.com/articles/emissions-reduction/turns-out-the-worlds-fossil-fuel-emissions-will-actually-drop-this-year",
+      "publisher": "Canary Media",
+      "published_at": "2026-11-13T08:30:00.000Z",
+      "source_id": "canary-media",
+      "first_seen_at": "2026-11-13T01:53:13.470Z",
+      "status": "ok"
+    },
+    {
+      "title": "Oil Prices Head for Second Weekly Loss Despite Fresh Middle East Attacks",
+      "url": "https://oilprice.com/Latest-Energy-News/World-News/Oil-Prices-Head-for-Second-Weekly-Loss-Despite-Fresh-Middle-East-Attacks.html",
+      "publisher": "OilPrice.com",
+      "published_at": "2026-11-13T05:45:00.000Z",
+      "source_id": "oilprice",
+      "first_seen_at": "2026-11-13T01:53:13.470Z",
+      "status": "ok"
+    },
     {
       "title": "Oil Prices Squeezed Between Peace Hopes and Iran Escalation Risk",
       "url": "https://oilprice.com/Energy/Crude-Oil/Oil-Prices-Squeezed-Between-Peace-Hopes-and-Iran-Escalation-Risk.html",
@@ -97,6 +115,16 @@
   ],
   "videos": [
     {
+      "title": "Inside the 8-Hour Sinking of SS United States",
+      "url": "https://www.youtube.com/watch?v=t5wXbz9foMk",
+      "channel_name": "What's Going on With Shipping?",
+      "channel_id": "UCT_yBgKSiwb3WP4ACPnF5nA",
+      "video_id": "t5wXbz9foMk",
+      "published_at": "2026-11-12T18:52:17.000Z",
+      "first_seen_at": "2026-11-13T01:53:13.470Z",
+      "status": "ok"
+    },
+    {
       "title": "The Profane-Sounding & \"Interesting\" Mineral Names; Geologist Analysis",
       "url": "https://www.youtube.com/watch?v=DwEqCSa3O7g",
       "channel_name": "GeologyHub",
@@ -113,6 +141,16 @@
       "channel_id": "UCT_yBgKSiwb3WP4ACPnF5nA",
       "video_id": "T6vt3Tdz5d8",
       "published_at": "2026-11-11T13:53:42.000Z",
+      "first_seen_at": "2026-11-13T01:53:13.470Z",
+      "status": "ok"
+    },
+    {
+      "title": "Q&A Mini-Course (SOSR): \"Secrets our Sun Reveals: Declining Phase - Part 1\"",
+      "url": "https://www.youtube.com/watch?v=vskLSb3Pkf0",
+      "channel_name": "Dr. Tamitha Skov (Space Weather Woman)",
+      "channel_id": "UCkXjdDQ-db0xz8f4PKgKsag",
+      "video_id": "vskLSb3Pkf0",
+      "published_at": "2026-11-08T21:19:35.000Z",
       "first_seen_at": "2026-11-13T01:53:13.470Z",
       "status": "ok"
     },

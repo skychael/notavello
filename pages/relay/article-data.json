@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "checked_at": "2026-11-13T01:53:12.418Z",
-  "latest_success_at": "2026-11-13T01:53:12.418Z",
+  "checked_at": "2026-11-13T09:38:35.775Z",
+  "latest_success_at": "2026-11-13T09:38:35.775Z",
   "status": "ok",
   "items": [
     {
@@ -9,6 +9,14 @@
       "url": "https://oilprice.com/Energy/Crude-Oil/Oil-Prices-Squeezed-Between-Peace-Hopes-and-Iran-Escalation-Risk.html",
       "publisher": "OilPrice.com",
       "published_at": "2026-11-13T00:00:00.000Z",
+      "source_id": "oilprice",
+      "status": "ok"
+    },
+    {
+      "title": "Oil Prices Head for Second Weekly Loss Despite Fresh Middle East Attacks",
+      "url": "https://oilprice.com/Latest-Energy-News/World-News/Oil-Prices-Head-for-Second-Weekly-Loss-Despite-Fresh-Middle-East-Attacks.html",
+      "publisher": "OilPrice.com",
+      "published_at": "2026-11-13T05:45:00.000Z",
       "source_id": "oilprice",
       "status": "ok"
     },
@@ -29,11 +37,11 @@
       "status": "ok"
     },
     {
-      "title": "More Drilling Won’t Shield U.S. Consumers From Oil Price Shocks",
-      "url": "https://oilprice.com/Energy/Crude-Oil/More-Drilling-Wont-Shield-US-Consumers-From-Oil-Price-Shocks.html",
-      "publisher": "OilPrice.com",
-      "published_at": "2026-11-12T22:00:00.000Z",
-      "source_id": "oilprice",
+      "title": "The Iran war will cause global fossil fuel emissions to fall",
+      "url": "https://www.canarymedia.com/articles/emissions-reduction/turns-out-the-worlds-fossil-fuel-emissions-will-actually-drop-this-year",
+      "publisher": "Canary Media",
+      "published_at": "2026-11-13T08:30:00.000Z",
+      "source_id": "canary-media",
       "status": "ok"
     },
     {
@@ -73,14 +81,6 @@
       "url": "https://breakingdefense.com/2026/11/cry-drone-and-let-slip-the-fruit-flies-of-war",
       "publisher": "Breaking Defense",
       "published_at": "2026-11-12T16:29:34.000Z",
-      "source_id": "breaking-defense",
-      "status": "ok"
-    },
-    {
-      "title": "NATO nations have a missile crisis. How did it happen, and can it be fixed?",
-      "url": "https://breakingdefense.com/2026/11/nato-nations-have-a-missile-crisis-how-did-it-happen-and-can-it-be-fixed",
-      "publisher": "Breaking Defense",
-      "published_at": "2026-11-12T14:04:58.000Z",
       "source_id": "breaking-defense",
       "status": "ok"
     }

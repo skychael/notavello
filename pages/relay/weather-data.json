@@ -1,34 +1,34 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-11-13T01:53:13.024Z",
-  "latest_success_at": "2026-11-13T01:53:13.024Z",
+  "generated_at": "2026-11-13T09:38:36.522Z",
+  "latest_success_at": "2026-11-13T09:38:36.522Z",
   "status": "ok",
   "items": [
+    {
+      "id": "577689e4c4b11dcc",
+      "title": "SPC Nov 13, 2026 0700 UTC Day 2 Convective Outlook",
+      "url": "https://www.spc.noaa.gov/products/outlook/day2otlk_0700.html",
+      "publisher": "Storm Prediction Center",
+      "published_at": "2026-11-13T06:59:08.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "dcaec6b002da2bc8",
+      "title": "High Surf Advisory issued November 13 at 3:46PM ChST until November 14 at 4:00PM ChST by NWS Tiyan GU",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.0fc9850f75c22c0edf278d99354ee899dd8d7872.001.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-11-13T05:46:00.000Z",
+      "topic": "Hurricane",
+      "status": "ok"
+    },
     {
       "id": "ee8e390990a944fc",
       "title": "Eastern North Pacific Tropical Weather Outlook",
       "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-11-12T23:23:31.000Z",
+      "published_at": "2026-11-13T05:23:08.000Z",
       "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "e08ee0a4c6dfc190",
-      "title": "Flood Warning issued November 12 at 8:49PM EST by NWS Melbourne FL",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.eed05b6b397d90a7d16c832f95d8be75f742ff8b.001.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-11-13T01:49:00.000Z",
-      "topic": "Flooding",
-      "status": "ok"
-    },
-    {
-      "id": "cf4b2cfc366da5f5",
-      "title": "Flood Warning issued November 12 at 8:35PM EST by NWS Melbourne FL",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.e89dd6c48550b7bb91b254e4361d17d17c790705.001.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-11-13T01:35:00.000Z",
-      "topic": "Flooding",
       "status": "ok"
     }
   ]
