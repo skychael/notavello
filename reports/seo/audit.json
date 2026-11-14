@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-11-13T08:36:55.765Z",
+  "generatedAt": "2026-11-14T07:55:03.450Z",
   "totals": {
-    "pages": 370,
-    "indexable": 366,
-    "articles": 293,
-    "sitemap": 366,
+    "pages": 372,
+    "indexable": 368,
+    "articles": 295,
+    "sitemap": 368,
     "errors": 0,
-    "warnings": 383
+    "warnings": 386
   },
   "errors": [],
   "warnings": [
@@ -213,6 +213,16 @@
     {
       "type": "topic-review",
       "page": "/pages/blog/big-crude-build-not-pump-relief/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/bls-truck-freight-prices-rose-as-diesel-stayed-above-six/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/bls-truck-freight-prices-rose-as-diesel-stayed-above-six/",
       "detail": "title/description lacks a clear AI, software, or computing connection"
     },
     {
@@ -783,6 +793,11 @@
     {
       "type": "template-pattern",
       "page": "/pages/blog/how-to-create-a-minimal-reproducible-software-bug-report/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/how-to-create-a-pull-request-template-that-guides-reviewers/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
     {
@@ -1935,7 +1950,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 370,
+      "incomingLinks": 372,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -1959,7 +1974,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 370,
+      "incomingLinks": 372,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -2067,7 +2082,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 370,
+      "incomingLinks": 372,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -2079,9 +2094,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 370,
-      "lastmod": "2026-11-12",
-      "bodyWords": 665
+      "incomingLinks": 372,
+      "lastmod": "2026-11-13",
+      "bodyWords": 677
     },
     {
       "route": "/pages/blog/a-calm-checklist-for-inspecting-a-suspicious-message/",
@@ -2451,9 +2466,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 232,
-      "lastmod": "2026-11-12",
-      "bodyWords": 3551
+      "incomingLinks": 234,
+      "lastmod": "2026-11-13",
+      "bodyWords": 3579
     },
     {
       "route": "/pages/blog/anhydrous-ammonia-is-the-fall-farm-bill/",
@@ -2550,6 +2565,18 @@
       "incomingLinks": 4,
       "lastmod": "2026-08-14",
       "bodyWords": 1388
+    },
+    {
+      "route": "/pages/blog/bls-truck-freight-prices-rose-as-diesel-stayed-above-six/",
+      "file": "pages/blog/bls-truck-freight-prices-rose-as-diesel-stayed-above-six/index.html",
+      "title": "BLS Says Truck Freight Prices Rose 3.9% While Diesel Stayed Above $6 — The Export | Notavello",
+      "description": "BLS truck freight prices rose 3.9% in October as diesel stayed above $6, keeping fuel pressure in food and goods prices.",
+      "canonical": "https://notavello.com/pages/blog/bls-truck-freight-prices-rose-as-diesel-stayed-above-six/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-11-14",
+      "bodyWords": 1253
     },
     {
       "route": "/pages/blog/brent-wti-gap-is-the-import-bill/",
@@ -2847,7 +2874,7 @@
       "canonical": "https://notavello.com/pages/blog/diesel-is-where-the-oil-shock-stops-being-abstract/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 7,
+      "incomingLinks": 8,
       "lastmod": "2026-10-15",
       "bodyWords": 1275
     },
@@ -3594,6 +3621,18 @@
       "incomingLinks": 2,
       "lastmod": "2026-08-13",
       "bodyWords": 1007
+    },
+    {
+      "route": "/pages/blog/how-to-create-a-pull-request-template-that-guides-reviewers/",
+      "file": "pages/blog/how-to-create-a-pull-request-template-that-guides-reviewers/index.html",
+      "title": "How to Create a Pull Request Template That Guides Reviewers — The Export | Notavello",
+      "description": "Learn to build a GitHub pull request template that prompts contributors for scope, tests, risks, and rollback details so reviews stay focused and consistent.",
+      "canonical": "https://notavello.com/pages/blog/how-to-create-a-pull-request-template-that-guides-reviewers/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-11-13",
+      "bodyWords": 941
     },
     {
       "route": "/pages/blog/how-to-debug-an-ai-prompt-that-gives-inconsistent-answers/",
@@ -4432,8 +4471,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-12",
-      "bodyWords": 678
+      "lastmod": "2026-11-13",
+      "bodyWords": 674
     },
     {
       "route": "/pages/blog/page-11/",
@@ -4444,7 +4483,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-12",
+      "lastmod": "2026-11-13",
       "bodyWords": 647
     },
     {
@@ -4456,8 +4495,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-12",
-      "bodyWords": 682
+      "lastmod": "2026-11-13",
+      "bodyWords": 674
     },
     {
       "route": "/pages/blog/page-13/",
@@ -4468,8 +4507,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-12",
-      "bodyWords": 685
+      "lastmod": "2026-11-13",
+      "bodyWords": 689
     },
     {
       "route": "/pages/blog/page-14/",
@@ -4480,8 +4519,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-12",
-      "bodyWords": 777
+      "lastmod": "2026-11-13",
+      "bodyWords": 759
     },
     {
       "route": "/pages/blog/page-15/",
@@ -4492,8 +4531,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-12",
-      "bodyWords": 824
+      "lastmod": "2026-11-13",
+      "bodyWords": 837
     },
     {
       "route": "/pages/blog/page-16/",
@@ -4504,8 +4543,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-12",
-      "bodyWords": 871
+      "lastmod": "2026-11-13",
+      "bodyWords": 859
     },
     {
       "route": "/pages/blog/page-17/",
@@ -4516,8 +4555,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": "2026-11-12",
-      "bodyWords": 278
+      "lastmod": "2026-11-13",
+      "bodyWords": 371
     },
     {
       "route": "/pages/blog/page-2/",
@@ -4528,8 +4567,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-12",
-      "bodyWords": 666
+      "lastmod": "2026-11-13",
+      "bodyWords": 667
     },
     {
       "route": "/pages/blog/page-3/",
@@ -4540,8 +4579,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-12",
-      "bodyWords": 667
+      "lastmod": "2026-11-13",
+      "bodyWords": 664
     },
     {
       "route": "/pages/blog/page-4/",
@@ -4552,8 +4591,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-12",
-      "bodyWords": 653
+      "lastmod": "2026-11-13",
+      "bodyWords": 655
     },
     {
       "route": "/pages/blog/page-5/",
@@ -4564,8 +4603,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-12",
-      "bodyWords": 664
+      "lastmod": "2026-11-13",
+      "bodyWords": 661
     },
     {
       "route": "/pages/blog/page-6/",
@@ -4576,8 +4615,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-12",
-      "bodyWords": 622
+      "lastmod": "2026-11-13",
+      "bodyWords": 629
     },
     {
       "route": "/pages/blog/page-7/",
@@ -4588,8 +4627,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-12",
-      "bodyWords": 677
+      "lastmod": "2026-11-13",
+      "bodyWords": 666
     },
     {
       "route": "/pages/blog/page-8/",
@@ -4600,8 +4639,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-12",
-      "bodyWords": 650
+      "lastmod": "2026-11-13",
+      "bodyWords": 661
     },
     {
       "route": "/pages/blog/page-9/",
@@ -4612,8 +4651,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-12",
-      "bodyWords": 689
+      "lastmod": "2026-11-13",
+      "bodyWords": 688
     },
     {
       "route": "/pages/blog/phosphate-is-the-fertilizer-shock-that-did-not-fade/",
@@ -5811,7 +5850,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 370,
+      "incomingLinks": 372,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -5823,7 +5862,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 370,
+      "incomingLinks": 372,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -5835,7 +5874,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 370,
+      "incomingLinks": 372,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -5847,7 +5886,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 370,
+      "incomingLinks": 372,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -5859,7 +5898,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 370,
+      "incomingLinks": 372,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -5872,8 +5911,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-11-13",
-      "bodyWords": 703
+      "lastmod": "2026-11-14",
+      "bodyWords": 709
     },
     {
       "route": "/pages/sample",
@@ -5895,7 +5934,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 370,
+      "incomingLinks": 372,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -5907,7 +5946,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 370,
+      "incomingLinks": 372,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -5931,7 +5970,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 370,
+      "incomingLinks": 372,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -6184,8 +6223,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-12",
-      "bodyWords": 110
+      "lastmod": "2026-11-13",
+      "bodyWords": 124
     },
     {
       "route": "/tools/koga/ios/support",
@@ -6220,8 +6259,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-11-12",
-      "bodyWords": 146
+      "lastmod": "2026-11-13",
+      "bodyWords": 160
     },
     {
       "route": "/tools/koga/support",
@@ -6363,7 +6402,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 370,
+      "incomingLinks": 372,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }
