@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-11-13T23:38:01.226Z",
-  "latest_success_at": "2026-11-13T23:38:01.226Z",
+  "generated_at": "2026-11-14T06:35:03.771Z",
+  "latest_success_at": "2026-11-14T06:35:03.771Z",
   "status": "ok",
   "items": [
     {
@@ -9,25 +9,25 @@
       "title": "Eastern North Pacific Tropical Weather Outlook",
       "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-11-13T23:34:19.000Z",
+      "published_at": "2026-11-14T05:02:53.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "016c39ee17481e4a",
-      "title": "High Surf Advisory issued November 14 at 5:08AM ChST until November 14 at 4:00PM ChST by NWS Tiyan GU",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.56f2650721d8f7367b4d988762836bbadd4e32e2.001.1.cap",
+      "id": "3398e1d9d02e85a2",
+      "title": "Flood Warning issued November 13 at 8:40PM EST by NWS Melbourne FL",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b50b923a14c5bc8fb76e067870c4de114a2edf28.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-11-13T19:08:00.000Z",
-      "topic": "Hurricane",
+      "published_at": "2026-11-14T01:40:00.000Z",
+      "topic": "Flooding",
       "status": "ok"
     },
     {
-      "id": "ff5e4e4d24a74773",
-      "title": "High Surf Warning issued November 13 at 12:05PM PST until November 15 at 3:00AM PST by NWS Los Angeles/Oxnard CA",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.675a494808a43fed225a9a9482bf4a210fafc816.002.1.cap",
+      "id": "8d9cefa9e97fe790",
+      "title": "High Surf Warning issued November 13 at 5:35PM PST until November 15 at 3:00AM PST by NWS Los Angeles/Oxnard CA",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a511b79eef9e40c20b5e31f137aae53f00caeaed.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-11-13T20:05:00.000Z",
+      "published_at": "2026-11-14T01:35:00.000Z",
       "topic": "Flooding",
       "status": "ok"
     }
