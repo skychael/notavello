@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "11-13",
-  "display_date": "November 13",
-  "generated_at": "2026-11-13T16:26:37.198Z",
+  "date_key": "11-14",
+  "display_date": "November 14",
+  "generated_at": "2026-11-14T15:06:19.313Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-f704cbccd3ba212c618290f5",
+      "candidate_id": "event-883064cb120a83fadb3ba53b",
+      "type": "event",
+      "year": 1941,
+      "text": "World War II: The aircraft carrier HMS Ark Royal sinks due to torpedo damage from the German submarine U-81 sustained on November 13.",
+      "article_title": "Aircraft carrier",
+      "url": "https://en.wikipedia.org/wiki/Aircraft_carrier",
+      "category": "World history"
+    },
+    {
+      "candidate_id": "event-bb38605d2b5a172ae9638892",
+      "type": "event",
+      "year": 1965,
+      "text": "Vietnam War: The Battle of Ia Drang begins. This is the first major engagement between regular American and North Vietnamese forces.",
+      "article_title": "Vietnam War",
+      "url": "https://en.wikipedia.org/wiki/Vietnam_War",
+      "category": "World history"
+    },
+    {
+      "candidate_id": "event-99e025282e2bce6f16f97118",
       "type": "event",
       "year": 2001,
-      "text": "War on terror: In the first such act since World War II, US President George W. Bush signs an executive order allowing military tribunals against foreigners suspected of connections to terrorist acts or planned acts on the United States.",
-      "article_title": "War on terror",
-      "url": "https://en.wikipedia.org/wiki/War_on_terror",
-      "category": "Politics and society"
-    },
-    {
-      "candidate_id": "event-c0a7ea8611495eee18b4cfdf",
-      "type": "event",
-      "year": 1995,
-      "text": "Nigeria Airways Flight 357 crashes at Kaduna International Airport in Kaduna, Nigeria, killing 11 people and injuring 66.",
-      "article_title": "Nigeria Airways Flight 357",
-      "url": "https://en.wikipedia.org/wiki/Nigeria_Airways_Flight_357",
-      "category": "World history"
-    },
-    {
-      "candidate_id": "event-6e490e3923d935a5a22ffb89",
-      "type": "event",
-      "year": 1966,
-      "text": "All Nippon Airways Flight 533 crashes into the Seto Inland Sea near Matsuyama Airport in Japan, killing 50 people.",
-      "article_title": "All Nippon Airways Flight 533",
-      "url": "https://en.wikipedia.org/wiki/All_Nippon_Airways_Flight_533",
-      "category": "World history"
+      "text": "A magnitude 7.8 earthquake strikes a remote part of the Tibetan Plateau. It has the longest known surface rupture recorded on land (~400 km) and is the best documented example of a supershear earthquake.",
+      "article_title": "2001 Kunlun earthquake",
+      "url": "https://en.wikipedia.org/wiki/2001_Kunlun_earthquake",
+      "category": "Disasters and exploration"
     }
   ]
 }
