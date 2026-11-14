@@ -1,0 +1,8 @@
+/* Shared by the Android and iPhone start pages; follows their theme colors. */
+.daily-saying { margin: 0 0 18px; padding: 2px 0 2px 14px; border-left: 3px solid var(--accent); min-width: 0; }
+.daily-saying-label { margin: 0 0 5px; color: var(--muted); font-size: .65rem; font-weight: 750; letter-spacing: .09em; text-transform: uppercase; }
+.daily-saying blockquote { margin: 0; color: var(--text); font-size: .9rem; font-weight: 650; font-style: italic; line-height: 1.5; overflow-wrap: anywhere; }
+.daily-saying figcaption { margin-top: 5px; color: var(--muted); font-size: .72rem; }
+.daily-saying a { color: inherit; text-decoration: none; }
+.daily-saying a:hover { text-decoration: underline; }
+.daily-saying a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
