@@ -1,14 +1,22 @@
 {
   "schema_version": "1.0",
-  "checked_at": "2026-11-15T17:47:17.971Z",
-  "latest_success_at": "2026-11-15T17:47:17.971Z",
+  "checked_at": "2026-11-15T22:54:29.177Z",
+  "latest_success_at": "2026-11-15T22:54:29.177Z",
   "status": "ok",
   "items": [
     {
-      "title": "Trump Extends Jones Act Waiver For Another 90 Days",
-      "url": "https://oilprice.com/Latest-Energy-News/World-News/Trump-Extends-Jones-Act-Waiver-For-Another-90-Days.html",
+      "title": "The $130 Billion Oil Boom Fueled by the Iran War",
+      "url": "https://oilprice.com/Energy/Crude-Oil/The-130-Billion-Oil-Boom-Fueled-by-the-Iran-War.html",
       "publisher": "OilPrice.com",
-      "published_at": "2026-11-13T19:30:00.000Z",
+      "published_at": "2026-11-15T20:00:00.000Z",
+      "source_id": "oilprice",
+      "status": "ok"
+    },
+    {
+      "title": "Asia Is Building 73% of the World's New Nuclear Capacity",
+      "url": "https://oilprice.com/Alternative-Energy/Nuclear-Power/Asia-Is-Building-73-of-the-Worlds-New-Nuclear-Capacity.html",
+      "publisher": "OilPrice.com",
+      "published_at": "2026-11-15T22:00:00.000Z",
       "source_id": "oilprice",
       "status": "ok"
     },
@@ -37,14 +45,6 @@
       "status": "ok"
     },
     {
-      "title": "Iran War Accelerates Southeast Asia’s Renewable Energy Push",
-      "url": "https://oilprice.com/Energy/Energy-General/Iran-War-Accelerates-Southeast-Asias-Renewable-Energy-Push.html",
-      "publisher": "OilPrice.com",
-      "published_at": "2026-11-14T20:00:00.000Z",
-      "source_id": "oilprice",
-      "status": "ok"
-    },
-    {
       "title": "Ukraine Hits Russian Corvette With Multiple Drones in the Gulf of Finland",
       "url": "https://maritime-executive.com/article/estonia-confirms-ukrainian-drone-hits-on-russian-corvette-in-the-baltic",
       "publisher": "The Maritime Executive",
@@ -69,19 +69,19 @@
       "status": "ok"
     },
     {
-      "title": "L-39NG Skyfox Jets Could Give Ukraine A Critical New Russian Drone Hunting Capability",
-      "url": "https://www.twz.com/air/l-39ng-skyfox-jets-could-give-ukraine-a-critical-new-russian-drone-hunting-capability",
-      "publisher": "TWZ (The War Zone)",
-      "published_at": "2026-11-12T19:13:31.000Z",
-      "source_id": "twz",
-      "status": "ok"
-    },
-    {
       "title": "FAA grounds all departing flights across the US after communications outage hits air traffic control centers nationwide",
       "url": "https://watchers.news/2026/11/13/faa-grounds-all-departing-flights-us-communications-outage",
       "publisher": "The Watchers",
       "published_at": "2026-11-13T22:30:33.000Z",
       "source_id": "the-watchers",
+      "status": "ok"
+    },
+    {
+      "title": "Submarine maintenance delays saw ‘significant’ improvements in FY26, sub czar says",
+      "url": "https://breakingdefense.com/2026/11/submarine-maintenance-delays-saw-significant-improvements-in-fy26-sub-czar-says",
+      "publisher": "Breaking Defense",
+      "published_at": "2026-11-13T20:23:10.000Z",
+      "source_id": "breaking-defense",
       "status": "ok"
     }
   ]
