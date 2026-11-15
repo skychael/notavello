@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-11-15T11:05:00.950Z",
-  "latest_success_at": "2026-11-15T11:05:00.950Z",
+  "generated_at": "2026-11-15T17:47:18.724Z",
+  "latest_success_at": "2026-11-15T17:47:18.724Z",
   "status": "ok",
   "items": [
     {
-      "id": "012337d9be399dc1",
-      "title": "SPC Nov 15, 2026 Day 4-8 Severe Weather Outlook",
-      "url": "https://www.spc.noaa.gov/products/exper/day4-8",
-      "publisher": "Storm Prediction Center",
-      "published_at": "2026-11-15T10:03:16.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "ee8e390990a944fc",
-      "title": "Eastern North Pacific Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
+      "id": "b5ad93019d019ede",
+      "title": "Atlantic Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-11-15T05:06:37.000Z",
+      "published_at": "2026-11-15T17:10:42.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "a1871f4ac9d91707",
-      "title": "Flood Warning issued November 14 at 9:58PM PST until November 16 at 1:00PM PST by NWS Seattle WA",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.971abe2d4f6b65b3206fb0fc70bb9b44cd92e13f.001.1.cap",
+      "id": "5b063a8549b21ed0",
+      "title": "Flood Warning issued November 15 at 6:24AM PST until November 16 at 1:26PM PST by NWS Seattle WA",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.47390e6b5be83cf81b242495204991614cb2a0ed.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-11-15T05:58:00.000Z",
+      "published_at": "2026-11-15T14:24:00.000Z",
+      "topic": "Flooding",
+      "status": "ok"
+    },
+    {
+      "id": "22e669a2366bb4e8",
+      "title": "Flood Warning issued November 15 at 9:19AM EST by NWS Melbourne FL",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.1caba9b7d187bc9dc3abe9a264be394af9b3ec6c.001.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-11-15T14:19:00.000Z",
       "topic": "Flooding",
       "status": "ok"
     }
