@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-11-14T23:03:32.496Z",
-  "latest_success_at": "2026-11-14T23:03:32.496Z",
+  "generated_at": "2026-11-15T02:44:49.622Z",
+  "latest_success_at": "2026-11-15T02:44:49.622Z",
   "status": "ok",
   "items": [
     {
@@ -9,25 +9,25 @@
       "title": "Eastern North Pacific Tropical Weather Outlook",
       "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-11-14T17:05:28.000Z",
+      "published_at": "2026-11-14T23:29:36.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "97292466783861fb",
-      "title": "Flood Warning issued November 14 at 9:42AM EST by NWS Melbourne FL",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.8b8a68aad3b0f7423b28caf680ab84bd82eba464.001.1.cap",
+      "id": "d7927fe18555048a",
+      "title": "High Surf Warning issued November 14 at 6:02PM PST until November 15 at 3:00AM PST by NWS Los Angeles/Oxnard CA",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.4ace4d0f38aaf9d505d0be4f8ef5d22576865faa.001.2.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-11-14T14:42:00.000Z",
+      "published_at": "2026-11-15T02:02:00.000Z",
       "topic": "Flooding",
       "status": "ok"
     },
     {
-      "id": "dd79f97836f7928b",
-      "title": "Coastal Flood Warning issued November 14 at 4:02AM PST until November 14 at 6:00PM PST by NWS Los Angeles/Oxnard CA",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.23e2632c41b8a812adeaffc0dd96c84ff5e8f0c1.002.1.cap",
+      "id": "4b48dfe31a66da4b",
+      "title": "Flood Warning issued November 14 at 7:49PM EST by NWS Melbourne FL",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.eea3065f50e2dbd4e6f3d7a9c915972f7eb47a09.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-11-14T12:02:00.000Z",
+      "published_at": "2026-11-15T00:49:00.000Z",
       "topic": "Flooding",
       "status": "ok"
     }
