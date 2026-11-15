@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "11-14",
-  "display_date": "November 14",
-  "generated_at": "2026-11-14T15:06:19.313Z",
+  "date_key": "11-15",
+  "display_date": "November 15",
+  "generated_at": "2026-11-15T15:40:10.755Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-883064cb120a83fadb3ba53b",
+      "candidate_id": "event-89322a5604b0d9439b43e90e",
       "type": "event",
-      "year": 1941,
-      "text": "World War II: The aircraft carrier HMS Ark Royal sinks due to torpedo damage from the German submarine U-81 sustained on November 13.",
-      "article_title": "Aircraft carrier",
-      "url": "https://en.wikipedia.org/wiki/Aircraft_carrier",
-      "category": "World history"
-    },
-    {
-      "candidate_id": "event-bb38605d2b5a172ae9638892",
-      "type": "event",
-      "year": 1965,
-      "text": "Vietnam War: The Battle of Ia Drang begins. This is the first major engagement between regular American and North Vietnamese forces.",
-      "article_title": "Vietnam War",
-      "url": "https://en.wikipedia.org/wiki/Vietnam_War",
-      "category": "World history"
-    },
-    {
-      "candidate_id": "event-99e025282e2bce6f16f97118",
-      "type": "event",
-      "year": 2001,
-      "text": "A magnitude 7.8 earthquake strikes a remote part of the Tibetan Plateau. It has the longest known surface rupture recorded on land (~400 km) and is the best documented example of a supershear earthquake.",
-      "article_title": "2001 Kunlun earthquake",
-      "url": "https://en.wikipedia.org/wiki/2001_Kunlun_earthquake",
+      "year": 1992,
+      "text": "An Aero Caribbean Ilyushin Il-18 crashes on approach to Gregorio Luperón International Airport in Puerto Plata, killing 34.",
+      "article_title": "1992 Aero Caribbean Ilyushin Il-18 crash",
+      "url": "https://en.wikipedia.org/wiki/1992_Aero_Caribbean_Ilyushin_Il-18_crash",
       "category": "Disasters and exploration"
+    },
+    {
+      "candidate_id": "event-b1cc0a49d30371161e0749c7",
+      "type": "event",
+      "year": 1957,
+      "text": "Short Solent 3 crashes near Chessell.",
+      "article_title": "1957 Aquila Airways Solent crash",
+      "url": "https://en.wikipedia.org/wiki/1957_Aquila_Airways_Solent_crash",
+      "category": "Disasters and exploration"
+    },
+    {
+      "candidate_id": "event-9fe6e656956649e1a38bd24d",
+      "type": "event",
+      "year": 1971,
+      "text": "Intel releases the world's first commercial single-chip microprocessor, the 4004.",
+      "article_title": "Intel",
+      "url": "https://en.wikipedia.org/wiki/Intel",
+      "category": "World history"
     }
   ]
 }
