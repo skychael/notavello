@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>How to Diagnose Caching Problems Using the Browser Network Panel — The Export | Notavello</title>
+<meta name="description" content="Learn to spot cache hits, stale responses, and loading failures in Chrome and Firefox Network panels so you can force fresh content or fix persistent issues."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/blog/how-to-diagnose-caching-problems-using-the-browser-network-panel/"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2026-11-14T15:53:57.606Z"/>
+<meta property="article:modified_time" content="2026-11-14T15:53:57.606Z"/>
+<meta name="notavello:published_at" content="2026-11-14T15:53:57.606Z"/>
+<meta name="syndication-origin-site" content="toysforbots"/>
+<meta name="syndication-origin-id" content="toysforbots:how-to-diagnose-caching-problems-using-the-browser-network-panel"/>
+<meta name="syndication-origin-slug" content="how-to-diagnose-caching-problems-using-the-browser-network-panel"/>
+<meta name="syndication-origin-url" content="https://toysforbots.com/blog/how-to-diagnose-caching-problems-using-the-browser-network-panel/"/>
+<meta name="syndication-source-format" content="toysforbots-syndication-v1"/>
+<meta property="og:url" content="https://notavello.com/pages/blog/how-to-diagnose-caching-problems-using-the-browser-network-panel/"/>
+<meta property="og:title" content="How to Diagnose Caching Problems Using the Browser Network Panel"/>
+<meta property="og:description" content="Learn to spot cache hits, stale responses, and loading failures in Chrome and Firefox Network panels so you can force fresh content or fix persistent issues."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="How to Diagnose Caching Problems Using the Browser Network Panel"/>
+<meta name="twitter:description" content="Learn to spot cache hits, stale responses, and loading failures in Chrome and Firefox Network panels so you can force fresh content or fix persistent issues."/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "How to Diagnose Caching Problems Using the Browser Network Panel",
+  "description": "Learn to spot cache hits, stale responses, and loading failures in Chrome and Firefox Network panels so you can force fresh content or fix persistent issues.",
+  "url": "https://notavello.com/pages/blog/how-to-diagnose-caching-problems-using-the-browser-network-panel/",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://notavello.com/pages/blog/how-to-diagnose-caching-problems-using-the-browser-network-panel/" },
+  "image": "https://notavello.com/og-image.png",
+  "datePublished": "2026-11-14T15:53:57.606Z",
+  "dateModified": "2026-11-14T15:53:57.606Z",
+  "author": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" },
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com", "logo": { "@type": "ImageObject", "url": "https://notavello.com/og-image.png" } }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
+.post-nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; row-gap: 8px; }
+.post-nav-top { margin-bottom: 40px; }
+.post-nav-bottom { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--border); }
+.post-nav a { display: inline-flex; align-items: center; gap: 6px; font-size: 0.92rem; font-weight: 600; color: var(--ink-muted); text-decoration: none; padding: 12px 14px; border-radius: var(--radius-sm); white-space: nowrap; transition: color 0.15s, background 0.15s; }
+.post-nav a:hover { color: var(--accent); background: var(--accent-light); }
+.post-nav a:first-child { padding-left: 0; }
+.post-nav a:last-child { padding-right: 0; justify-content: flex-end; }
+.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
+.post-date { font-size: 0.78rem; color: var(--ink-faint); }
+.post-title { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; color: var(--ink); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
+.post-lede { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+.post-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink); }
+.post-body h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 44px 0 16px; letter-spacing: -0.01em; }
+.post-body p { margin-bottom: 20px; color: var(--ink-muted); }
+.post-body p strong { color: var(--ink); font-weight: 600; }
+.post-body ul { margin: 0 0 20px 20px; color: var(--ink-muted); }
+.post-body ul li { margin-bottom: 8px; line-height: 1.7; }
+.callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 32px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.7; }
+.post-footer { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.post-footer-label { font-size: 0.8rem; color: var(--ink-faint); }
+.btn-export { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: opacity 0.2s; }
+.btn-export:hover { opacity: 0.9; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } .post-nav a { padding: 12px 8px; font-size: 0.88rem; } }
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+
+  <nav class="post-nav post-nav-top">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+  <div class="post-meta">
+    <span class="post-tag">Browsers</span>
+    <span class="post-date">November 14, 2026</span>
+  </div>
+
+  <h1 class="post-title">How to Diagnose Caching Problems Using the Browser Network Panel</h1>
+
+  <p class="post-lede">Web pages often load old CSS, scripts, or images even after you edit the files on the server. The browser Network panel reveals whether a resource came from memory cache, disk cache, or a fresh download. By reading the Status, Size, and Timing columns you can tell whether a stale copy is blocking your changes and what steps will force an update without guessing.</p>
+
+  <div class="post-body">
+
+<h2>Open the panel and reload with cache disabled</h2>
+<p>Open DevTools with Control+Shift+I or Command+Option+I. Switch to the Network tab. Check the Disable cache box so every reload bypasses the browser cache. This setting only applies while DevTools stays open.</p>
+<p>Click the reload button or press Control+Shift+R. The Requests table now lists every resource the page actually fetched from the network. Compare this list with a normal reload later to see which items were previously served from cache.</p>
+<p>The disable cache option provides a baseline view of network activity without any stored copies interfering. After running a test with the box checked, uncheck it and perform a standard reload to observe differences in which resources load from local storage instead of the server. This comparison helps isolate whether a particular file is the source of outdated content on the page.</p><ul><li>Disable cache works only while DevTools is open.</li><li>A normal reload may still use validators such as If-Modified-Since.</li><li>Hard reload (Control+Shift+R) forces a new download in most cases.</li></ul><div class="callout"><strong>Quick check</strong> Look for (from memory cache) or (from disk cache) in the Size column. These entries usually show status 200 even though no network request occurred.</div>
+<h2>Read status codes and size labels for cache behavior</h2>
+<p>A 200 status with a small transferred size usually means a fresh response. A 304 status means the server told the browser the cached copy is still valid. In the Size column you may also see the literal text (from memory cache) or (from disk cache). These indicate the browser never contacted the server at all.</p>
+<p>Hover over the status code to see any extra messages such as (blocked:origin) or CORS errors. These appear when a cached cross-origin resource fails validation even though the file itself is present locally.</p>
+<p>Status and size details together give a clear picture of reuse versus fresh retrieval. When a resource shows a 200 code paired with a large transferred byte count, it confirms the browser pulled new data over the network. In contrast, entries labeled from memory or disk cache with minimal or zero transferred size confirm no server contact happened, allowing quick identification of items that may need manual clearing if updates are not appearing.</p><ul><li>304 means the cached copy was reused after a quick check.</li><li>(from memory cache) is the fastest and most common for same-origin scripts.</li><li>A 200 with large transferred bytes shows the resource was downloaded again.</li></ul>
+<h2>Inspect timing to find stalled or queued cache checks</h2>
+<p>Select any request and open the Timing tab. Queueing time appears when the browser waits for an available connection or checks the disk cache. Stalled time can also include service worker preparation before the request proceeds.</p>
+<p>Long Waiting (TTFB) values on a 304 response show the server took time to validate the cache. Content Download time stays near zero for cached items because the browser reads from local storage instead of the network.</p>
+<p>Breaking down the timing phases reveals hidden delays even when a resource ultimately comes from cache. Queueing often captures the moment spent looking up disk entries, while extended Waiting phases on validation responses point to server-side checks that still occur. Reviewing these breakdowns across multiple requests helps determine whether cache lookups themselves are contributing to slow page loads or if other phases require attention.</p><ul><li>Queueing often includes disk cache lookup time.</li><li>ServiceWorker Preparation appears only when a service worker is active.</li><li>Hover the Waterfall column for a quick visual of each phase.</li></ul>
+<h2>Handle failed or blocked resources that appear cached</h2>
+<p>A red row with status (failed) or (blocked:devtools) means the resource never loaded. Even if the file exists in cache, a new policy or certificate error can prevent reuse. Check the Headers tab for the exact blocking reason.</p>
+<p>Use the Search tab (Control+F) to scan all headers and responses for Cache-Control or Expires values. This quickly shows whether a resource was intentionally cached for a long period.</p>
+<p>When a request fails despite prior caching, examining header details pinpoints the exact cause such as policy changes or validation blocks. Searching across all recorded entries for cache-related headers surfaces long-lived directives that may explain why updates remain hidden. Clearing site data through the Application panel offers one route to reset such entries when repeated reloads do not resolve the issue.</p><ul><li>Right-click a failed request and choose Block request URL to test page behavior without it.</li><li>Clear site data from the Application panel when cache entries refuse to update.</li><li>Service workers can serve their own cached responses; check the Application panel for those entries.</li></ul>
+<h2>Compare Chrome and Firefox cache indicators</h2>
+<p>Chrome shows explicit cache labels in the Size column and a separate Cache tab for 304 responses. Firefox displays similar information in the Cache tab of the request details and lists Last fetched and Expires dates. Both browsers let you right-click a request to copy the URL or open it in a new tab for verification.</p>
+<p>Firefox also records the number of times a resource was fetched in the current session. Use this count to spot resources that reload repeatedly instead of staying cached.</p>
+<p>Each browser surfaces cache details in slightly different locations, yet both provide enough information to confirm reuse or fresh fetches. Chrome surfaces labels directly in the main table while Firefox separates device and size data in its dedicated tab. Cross-checking the same request in both tools confirms consistent behavior and helps decide whether a hard reload or full site data clear will address the observed problem.</p><ul><li>Chrome Timing tab includes Proxy negotiation and ServiceWorker Preparation phases.</li><li>Firefox Cache tab shows Device (disk or memory) and Data size separately.</li><li>Both panels update live while you interact with the page.</li></ul><h2>Sources</h2><ul><li><a href="https://developer.chrome.com/docs/devtools/network/overview" rel="noopener noreferrer">Chrome DevTools Network overview</a></li><li><a href="https://developer.chrome.google.cn/docs/devtools/network/reference" rel="noopener noreferrer">Chrome DevTools Network reference</a></li><li><a href="https://github.com/mozilla-firefox/firefox/blob/main/devtools/docs/user/network_monitor/request_details/index.md" rel="noopener noreferrer">Firefox Network Monitor request details</a></li></ul>
+
+  </div>
+
+  <div class="post-footer">
+    <span class="post-footer-label">Looking for more AI tools?</span>
+    <a class="btn-export" href="/">See our free AI tools →</a>
+  </div>
+
+  <nav class="post-nav post-nav-bottom">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+</main>
+
+<!--FOOTER-->
+
+</body>
+</html>
