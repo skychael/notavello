@@ -1,16 +1,25 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-11-16T02:47:53.351Z",
-  "latest_success_at": "2026-11-16T02:47:53.351Z",
+  "generated_at": "2026-11-16T11:34:14.782Z",
+  "latest_success_at": "2026-11-16T11:34:14.782Z",
   "status": "ok",
   "items": [
     {
-      "id": "ee8e390990a944fc",
-      "title": "Eastern North Pacific Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
+      "id": "b5ad93019d019ede",
+      "title": "Atlantic Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-11-15T23:23:14.000Z",
+      "published_at": "2026-11-16T11:15:23.000Z",
       "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "b4a9eef391620e30",
+      "title": "Flood Warning issued November 15 at 9:54PM PST until November 16 at 11:53AM PST by NWS Seattle WA",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.1d6879f3a2d610969a217024dc92cdf8c121419e.001.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-11-16T05:54:00.000Z",
+      "topic": "Flooding",
       "status": "ok"
     },
     {
@@ -19,15 +28,6 @@
       "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9955f0a4ca1469288ddd57ca0b681efc73bc2bc4.001.1.cap",
       "publisher": "National Weather Service",
       "published_at": "2026-11-16T00:41:00.000Z",
-      "topic": "Flooding",
-      "status": "ok"
-    },
-    {
-      "id": "8892bd94efa338c7",
-      "title": "High Surf Advisory issued November 15 at 3:55PM PST until November 17 at 3:00PM PST by NWS Los Angeles/Oxnard CA",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a32cf3713c07638377c4bc50ae0bd5c2fe58b562.001.2.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-11-15T23:55:00.000Z",
       "topic": "Flooding",
       "status": "ok"
     }
