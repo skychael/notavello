@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-11-15T08:17:38.891Z",
+  "generatedAt": "2026-11-16T08:26:21.687Z",
   "totals": {
-    "pages": 374,
-    "indexable": 370,
-    "articles": 297,
-    "sitemap": 370,
+    "pages": 376,
+    "indexable": 372,
+    "articles": 299,
+    "sitemap": 372,
     "errors": 0,
-    "warnings": 388
+    "warnings": 391
   },
   "errors": [],
   "warnings": [
@@ -842,6 +842,11 @@
     },
     {
       "type": "template-pattern",
+      "page": "/pages/blog/how-to-limit-browser-extension-site-access-to-reduce-privacy-risks/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "template-pattern",
       "page": "/pages/blog/how-to-make-account-recovery-safer-before-you-need-it/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
@@ -1063,6 +1068,16 @@
     {
       "type": "topic-review",
       "page": "/pages/blog/iraqs-discount-oil-is-not-cheap-fuel/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/japans-gdp-shrinks-as-oil-imports-rise/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/japans-gdp-shrinks-as-oil-imports-rise/",
       "detail": "title/description lacks a clear AI, software, or computing connection"
     },
     {
@@ -1960,7 +1975,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 374,
+      "incomingLinks": 376,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -1984,7 +1999,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 374,
+      "incomingLinks": 376,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -2092,7 +2107,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 374,
+      "incomingLinks": 376,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -2104,9 +2119,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 374,
-      "lastmod": "2026-11-14",
-      "bodyWords": 692
+      "incomingLinks": 376,
+      "lastmod": "2026-11-15",
+      "bodyWords": 709
     },
     {
       "route": "/pages/blog/a-calm-checklist-for-inspecting-a-suspicious-message/",
@@ -2476,9 +2491,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 236,
-      "lastmod": "2026-11-14",
-      "bodyWords": 3609
+      "incomingLinks": 238,
+      "lastmod": "2026-11-15",
+      "bodyWords": 3638
     },
     {
       "route": "/pages/blog/anhydrous-ammonia-is-the-fall-farm-bill/",
@@ -3729,6 +3744,18 @@
       "bodyWords": 820
     },
     {
+      "route": "/pages/blog/how-to-limit-browser-extension-site-access-to-reduce-privacy-risks/",
+      "file": "pages/blog/how-to-limit-browser-extension-site-access-to-reduce-privacy-risks/index.html",
+      "title": "How to Limit Browser Extension Site Access to Reduce Privacy Risks — The Export | Notavello",
+      "description": "Control which sites browser extensions can read and modify by adjusting permissions in Chrome and Firefox. Practical steps for safer daily use.",
+      "canonical": "https://notavello.com/pages/blog/how-to-limit-browser-extension-site-access-to-reduce-privacy-risks/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-11-15",
+      "bodyWords": 921
+    },
+    {
       "route": "/pages/blog/how-to-make-account-recovery-safer-before-you-need-it/",
       "file": "pages/blog/how-to-make-account-recovery-safer-before-you-need-it/index.html",
       "title": "How to make account recovery safer before you need it — The Export | Notavello",
@@ -4087,6 +4114,18 @@
       "incomingLinks": 2,
       "lastmod": "2026-09-04",
       "bodyWords": 1429
+    },
+    {
+      "route": "/pages/blog/japans-gdp-shrinks-as-oil-imports-rise/",
+      "file": "pages/blog/japans-gdp-shrinks-as-oil-imports-rise/index.html",
+      "title": "Japan’s GDP Shrinks As Oil Imports Turn Hormuz Risk Into Household Pressure — The Export | Notavello",
+      "description": "Japan’s Q3 GDP slipped as oil imports rose, showing how Hormuz risk is moving into household budgets and trade.",
+      "canonical": "https://notavello.com/pages/blog/japans-gdp-shrinks-as-oil-imports-rise/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-11-16",
+      "bodyWords": 1314
     },
     {
       "route": "/pages/blog/japans-oil-import-bill-is-the-chokepoint-receipt/",
@@ -4505,8 +4544,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-14",
-      "bodyWords": 684
+      "lastmod": "2026-11-15",
+      "bodyWords": 681
     },
     {
       "route": "/pages/blog/page-11/",
@@ -4517,8 +4556,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-14",
-      "bodyWords": 649
+      "lastmod": "2026-11-15",
+      "bodyWords": 659
     },
     {
       "route": "/pages/blog/page-12/",
@@ -4529,8 +4568,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-14",
-      "bodyWords": 665
+      "lastmod": "2026-11-15",
+      "bodyWords": 656
     },
     {
       "route": "/pages/blog/page-13/",
@@ -4541,8 +4580,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-14",
-      "bodyWords": 694
+      "lastmod": "2026-11-15",
+      "bodyWords": 697
     },
     {
       "route": "/pages/blog/page-14/",
@@ -4553,8 +4592,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-14",
-      "bodyWords": 757
+      "lastmod": "2026-11-15",
+      "bodyWords": 731
     },
     {
       "route": "/pages/blog/page-15/",
@@ -4565,8 +4604,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-14",
-      "bodyWords": 824
+      "lastmod": "2026-11-15",
+      "bodyWords": 837
     },
     {
       "route": "/pages/blog/page-16/",
@@ -4577,8 +4616,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-14",
-      "bodyWords": 847
+      "lastmod": "2026-11-15",
+      "bodyWords": 840
     },
     {
       "route": "/pages/blog/page-17/",
@@ -4589,8 +4628,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": "2026-11-14",
-      "bodyWords": 470
+      "lastmod": "2026-11-15",
+      "bodyWords": 557
     },
     {
       "route": "/pages/blog/page-2/",
@@ -4601,8 +4640,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-14",
-      "bodyWords": 678
+      "lastmod": "2026-11-15",
+      "bodyWords": 667
     },
     {
       "route": "/pages/blog/page-3/",
@@ -4613,8 +4652,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-14",
-      "bodyWords": 650
+      "lastmod": "2026-11-15",
+      "bodyWords": 645
     },
     {
       "route": "/pages/blog/page-4/",
@@ -4625,8 +4664,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-14",
-      "bodyWords": 657
+      "lastmod": "2026-11-15",
+      "bodyWords": 661
     },
     {
       "route": "/pages/blog/page-5/",
@@ -4637,8 +4676,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-14",
-      "bodyWords": 655
+      "lastmod": "2026-11-15",
+      "bodyWords": 653
     },
     {
       "route": "/pages/blog/page-6/",
@@ -4649,8 +4688,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-14",
-      "bodyWords": 645
+      "lastmod": "2026-11-15",
+      "bodyWords": 655
     },
     {
       "route": "/pages/blog/page-7/",
@@ -4661,8 +4700,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-14",
-      "bodyWords": 659
+      "lastmod": "2026-11-15",
+      "bodyWords": 648
     },
     {
       "route": "/pages/blog/page-8/",
@@ -4673,8 +4712,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-14",
-      "bodyWords": 659
+      "lastmod": "2026-11-15",
+      "bodyWords": 670
     },
     {
       "route": "/pages/blog/page-9/",
@@ -4685,8 +4724,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-14",
-      "bodyWords": 678
+      "lastmod": "2026-11-15",
+      "bodyWords": 675
     },
     {
       "route": "/pages/blog/phosphate-is-the-fertilizer-shock-that-did-not-fade/",
@@ -5188,7 +5227,7 @@
       "canonical": "https://notavello.com/pages/blog/the-import-line-is-the-oil-shock/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 4,
+      "incomingLinks": 5,
       "lastmod": "2026-09-24",
       "bodyWords": 1556
     },
@@ -5884,7 +5923,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 374,
+      "incomingLinks": 376,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -5896,7 +5935,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 374,
+      "incomingLinks": 376,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -5908,7 +5947,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 374,
+      "incomingLinks": 376,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -5920,7 +5959,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 374,
+      "incomingLinks": 376,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -5932,7 +5971,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 374,
+      "incomingLinks": 376,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -5945,8 +5984,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-11-15",
-      "bodyWords": 715
+      "lastmod": "2026-11-16",
+      "bodyWords": 721
     },
     {
       "route": "/pages/sample",
@@ -5968,7 +6007,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 374,
+      "incomingLinks": 376,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -5980,7 +6019,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 374,
+      "incomingLinks": 376,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -6004,7 +6043,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 374,
+      "incomingLinks": 376,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -6436,7 +6475,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 374,
+      "incomingLinks": 376,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }

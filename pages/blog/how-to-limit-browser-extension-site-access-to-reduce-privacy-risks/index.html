@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>How to Limit Browser Extension Site Access to Reduce Privacy Risks — The Export | Notavello</title>
+<meta name="description" content="Control which sites browser extensions can read and modify by adjusting permissions in Chrome and Firefox. Practical steps for safer daily use."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/blog/how-to-limit-browser-extension-site-access-to-reduce-privacy-risks/"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2026-11-15T16:28:29.300Z"/>
+<meta property="article:modified_time" content="2026-11-15T16:28:29.300Z"/>
+<meta name="notavello:published_at" content="2026-11-15T16:28:29.300Z"/>
+<meta name="syndication-origin-site" content="toysforbots"/>
+<meta name="syndication-origin-id" content="toysforbots:how-to-limit-browser-extension-site-access-to-reduce-privacy-risks"/>
+<meta name="syndication-origin-slug" content="how-to-limit-browser-extension-site-access-to-reduce-privacy-risks"/>
+<meta name="syndication-origin-url" content="https://toysforbots.com/blog/how-to-limit-browser-extension-site-access-to-reduce-privacy-risks/"/>
+<meta name="syndication-source-format" content="toysforbots-syndication-v1"/>
+<meta property="og:url" content="https://notavello.com/pages/blog/how-to-limit-browser-extension-site-access-to-reduce-privacy-risks/"/>
+<meta property="og:title" content="How to Limit Browser Extension Site Access to Reduce Privacy Risks"/>
+<meta property="og:description" content="Control which sites browser extensions can read and modify by adjusting permissions in Chrome and Firefox. Practical steps for safer daily use."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="How to Limit Browser Extension Site Access to Reduce Privacy Risks"/>
+<meta name="twitter:description" content="Control which sites browser extensions can read and modify by adjusting permissions in Chrome and Firefox. Practical steps for safer daily use."/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "How to Limit Browser Extension Site Access to Reduce Privacy Risks",
+  "description": "Control which sites browser extensions can read and modify by adjusting permissions in Chrome and Firefox. Practical steps for safer daily use.",
+  "url": "https://notavello.com/pages/blog/how-to-limit-browser-extension-site-access-to-reduce-privacy-risks/",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://notavello.com/pages/blog/how-to-limit-browser-extension-site-access-to-reduce-privacy-risks/" },
+  "image": "https://notavello.com/og-image.png",
+  "datePublished": "2026-11-15T16:28:29.300Z",
+  "dateModified": "2026-11-15T16:28:29.300Z",
+  "author": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" },
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com", "logo": { "@type": "ImageObject", "url": "https://notavello.com/og-image.png" } }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
+.post-nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; row-gap: 8px; }
+.post-nav-top { margin-bottom: 40px; }
+.post-nav-bottom { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--border); }
+.post-nav a { display: inline-flex; align-items: center; gap: 6px; font-size: 0.92rem; font-weight: 600; color: var(--ink-muted); text-decoration: none; padding: 12px 14px; border-radius: var(--radius-sm); white-space: nowrap; transition: color 0.15s, background 0.15s; }
+.post-nav a:hover { color: var(--accent); background: var(--accent-light); }
+.post-nav a:first-child { padding-left: 0; }
+.post-nav a:last-child { padding-right: 0; justify-content: flex-end; }
+.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
+.post-date { font-size: 0.78rem; color: var(--ink-faint); }
+.post-title { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; color: var(--ink); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
+.post-lede { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+.post-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink); }
+.post-body h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 44px 0 16px; letter-spacing: -0.01em; }
+.post-body p { margin-bottom: 20px; color: var(--ink-muted); }
+.post-body p strong { color: var(--ink); font-weight: 600; }
+.post-body ul { margin: 0 0 20px 20px; color: var(--ink-muted); }
+.post-body ul li { margin-bottom: 8px; line-height: 1.7; }
+.callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 32px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.7; }
+.post-footer { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.post-footer-label { font-size: 0.8rem; color: var(--ink-faint); }
+.btn-export { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: opacity 0.2s; }
+.btn-export:hover { opacity: 0.9; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } .post-nav a { padding: 12px 8px; font-size: 0.88rem; } }
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+
+  <nav class="post-nav post-nav-top">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+  <div class="post-meta">
+    <span class="post-tag">Browsers</span>
+    <span class="post-date">November 15, 2026</span>
+  </div>
+
+  <h1 class="post-title">How to Limit Browser Extension Site Access to Reduce Privacy Risks</h1>
+
+  <p class="post-lede">Browser extensions improve productivity but can access far more of your browsing data than necessary. Many request permission to read and change data on all sites you visit, which creates ongoing privacy exposure even for extensions you trust. Adjusting site access settings lets you keep useful tools while limiting their reach to only the pages where they are needed. This approach reduces the amount of information an extension can collect without removing the extension entirely. Both Chrome and Firefox provide built-in controls that make these changes straightforward and reversible.</p>
+
+  <div class="post-body">
+
+<h2>Why site access matters more than you might expect</h2>
+<p>When an extension asks to read and change site data on all websites, it gains the ability to see URLs, page content, and form inputs across your entire browsing session. This level of access is convenient for tools like password managers or ad blockers, yet it also means the extension can observe activity on banking sites, private forums, and search results. Limiting access to specific sites or the current tab only keeps the extension functional where it is useful while preventing unnecessary observation elsewhere.</p>
+<p>Reviewing these settings regularly is useful because extension updates can expand requested permissions over time. An extension that once worked on one site may later request broader access after an update. Checking the current configuration helps confirm that the granted access still matches your actual needs.</p><div class="callout"><strong>Note</strong> Changes to site access only affect extensions that request host permissions. VPN-style extensions that alter network traffic are not limited by these settings.</div>
+<h2>Reviewing and changing permissions in Chrome</h2>
+<p>Open Chrome and click the three-dot menu, then select Extensions followed by Manage extensions. Locate the extension you want to review and click Details. Under the Permissions section you can see the current setting for site access. The options typically include On click, On specific sites, or On all sites. Selecting On specific sites lets you add only the domains where the extension should operate.</p>
+<p>If the extension currently has broad access, change the setting to On specific sites and add the domains you actually use. You can add sites later if needed. After saving, test the extension on both allowed and non-allowed sites to confirm it behaves as expected. Chrome also shows a warning when an extension requests broad access, which serves as a reminder to review the setting.</p><ul><li>Open chrome://extensions and find the target extension</li><li>Click Details then locate the site access control</li><li>Switch from On all sites to On specific sites or On click</li><li>Add only the domains you need and remove any unnecessary entries</li></ul>
+<h2>Adjusting site access controls in Firefox</h2>
+<p>Firefox handles extension permissions through its Add-ons Manager. Type about:addons in the address bar and select the Extensions tab. Click the three-dot menu next to an extension and choose Options or Permissions. Firefox extensions that request host permissions display the sites they can access, and you can often restrict them during installation or later through the same menu.</p>
+<p>Some Firefox extensions allow per-site toggles directly from the toolbar icon. Right-click the icon and look for options to allow the extension only on the current site. This method is faster for one-off adjustments. Because Firefox uses a different permission model than Chrome, always verify the extension description in the add-on listing to understand exactly which data it can access.</p><ul><li>Visit about:addons and open the extension entry</li><li>Check the Permissions section for host access details</li><li>Use the toolbar icon menu to restrict to the current site when available</li><li>Review the extension listing for any listed data practices</li></ul>
+<h2>Deciding which extensions truly need broad access</h2>
+<p>Not every extension benefits from access to every site. Password managers and form fillers often work best with broad access because they must detect login forms anywhere. In contrast, a grammar checker or price comparison tool may only need to run on specific domains such as email or shopping sites. Compare the extension&#039;s stated purpose against the sites you actually visit to decide the appropriate scope.</p>
+<p>Consider starting with the most restrictive setting that still allows the extension to function. If the tool stops working on a needed page, expand access one site at a time. This incremental approach prevents over-granting permissions while keeping the extension useful. Document the sites you add so you can periodically re-evaluate whether each one is still required.</p>
+<h2>Maintaining good habits after initial changes</h2>
+<p>After adjusting permissions, run a quick test on both allowed and restricted sites to ensure expected behavior. Some extensions display a notification or require reactivation when their access changes. Schedule a brief review every few months, especially after major browser or extension updates. Removing unused extensions entirely remains the most effective way to eliminate risk, but limiting site access provides a practical middle step for tools you still rely on.</p>
+<p>If an extension stops working correctly after you restrict its access, you can always restore the previous setting. The goal is to match permissions to actual usage rather than to disable functionality. Over time these small adjustments reduce the overall data an extension can observe without requiring you to abandon helpful tools.</p><ul><li>Test extensions after each permission change</li><li>Revisit settings after browser or extension updates</li><li>Remove extensions that no longer serve a purpose</li><li>Keep a short list of allowed sites for complex extensions</li></ul><h2>Sources</h2><ul><li><a href="https://support.google.com/chrome/answer/2664769?hl=en" rel="noopener noreferrer">support.google.com</a></li><li><a href="https://support.google.com/chrome_webstore/answer/186213?hl=en" rel="noopener noreferrer">support.google.com</a></li></ul>
+
+  </div>
+
+  <div class="post-footer">
+    <span class="post-footer-label">Looking for more AI tools?</span>
+    <a class="btn-export" href="/">See our free AI tools →</a>
+  </div>
+
+  <nav class="post-nav post-nav-bottom">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+</main>
+
+<!--FOOTER-->
+
+</body>
+</html>
