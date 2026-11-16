@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-11-15T22:54:29.628Z",
-  "latest_success_at": "2026-11-15T22:54:29.628Z",
+  "generated_at": "2026-11-16T02:47:53.351Z",
+  "latest_success_at": "2026-11-16T02:47:53.351Z",
   "status": "ok",
   "items": [
     {
-      "id": "b5ad93019d019ede",
-      "title": "Atlantic Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
+      "id": "ee8e390990a944fc",
+      "title": "Eastern North Pacific Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-11-15T17:10:42.000Z",
+      "published_at": "2026-11-15T23:23:14.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "90dfac49cc8aff5d",
-      "title": "Flood Warning issued November 15 at 1:55PM PST until November 16 at 11:53AM PST by NWS Seattle WA",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.ae1e45e25d8d349e65a031c2561517ece4606c75.001.1.cap",
+      "id": "4a272f9c24505deb",
+      "title": "Flood Warning issued November 15 at 7:41PM EST by NWS Melbourne FL",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9955f0a4ca1469288ddd57ca0b681efc73bc2bc4.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-11-15T21:55:00.000Z",
+      "published_at": "2026-11-16T00:41:00.000Z",
       "topic": "Flooding",
       "status": "ok"
     },
     {
-      "id": "f8eac3020335baeb",
-      "title": "High Surf Warning issued November 15 at 11:44AM PST until November 15 at 4:00PM PST by NWS Los Angeles/Oxnard CA",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.d4174fe930e84d0785b48b165ea6dd46478e740f.001.1.cap",
+      "id": "8892bd94efa338c7",
+      "title": "High Surf Advisory issued November 15 at 3:55PM PST until November 17 at 3:00PM PST by NWS Los Angeles/Oxnard CA",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a32cf3713c07638377c4bc50ae0bd5c2fe58b562.001.2.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-11-15T19:44:00.000Z",
+      "published_at": "2026-11-15T23:55:00.000Z",
       "topic": "Flooding",
       "status": "ok"
     }
