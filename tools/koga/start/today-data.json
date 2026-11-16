@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "11-15",
-  "display_date": "November 15",
-  "generated_at": "2026-11-15T15:40:10.755Z",
+  "date_key": "11-16",
+  "display_date": "November 16",
+  "generated_at": "2026-11-16T18:34:37.681Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-89322a5604b0d9439b43e90e",
+      "candidate_id": "event-64d5a1a04c8c6d92b3923c30",
       "type": "event",
-      "year": 1992,
-      "text": "An Aero Caribbean Ilyushin Il-18 crashes on approach to Gregorio Luperón International Airport in Puerto Plata, killing 34.",
-      "article_title": "1992 Aero Caribbean Ilyushin Il-18 crash",
-      "url": "https://en.wikipedia.org/wiki/1992_Aero_Caribbean_Ilyushin_Il-18_crash",
-      "category": "Disasters and exploration"
+      "year": 1965,
+      "text": "Venera program: The Soviet Union launches the Venera 3 space probe toward Venus, which will be the first spacecraft to reach the surface of another planet.",
+      "article_title": "Venera program",
+      "url": "https://en.wikipedia.org/wiki/Venera_program",
+      "category": "Science and technology"
     },
     {
-      "candidate_id": "event-b1cc0a49d30371161e0749c7",
+      "candidate_id": "event-abfa0b3bc3309e4417b4fab1",
       "type": "event",
-      "year": 1957,
-      "text": "Short Solent 3 crashes near Chessell.",
-      "article_title": "1957 Aquila Airways Solent crash",
-      "url": "https://en.wikipedia.org/wiki/1957_Aquila_Airways_Solent_crash",
-      "category": "Disasters and exploration"
-    },
-    {
-      "candidate_id": "event-9fe6e656956649e1a38bd24d",
-      "type": "event",
-      "year": 1971,
-      "text": "Intel releases the world's first commercial single-chip microprocessor, the 4004.",
-      "article_title": "Intel",
-      "url": "https://en.wikipedia.org/wiki/Intel",
+      "year": 1973,
+      "text": "Skylab program: NASA launches Skylab 4 with a crew of three astronauts from Cape Canaveral, Florida for an 84-day mission.",
+      "article_title": "Skylab",
+      "url": "https://en.wikipedia.org/wiki/Skylab",
       "category": "World history"
+    },
+    {
+      "candidate_id": "event-06f070e9c05a4b8db989e280",
+      "type": "event",
+      "year": 2022,
+      "text": "Artemis Program: NASA launches Artemis 1 on the first flight of the Space Launch System, the start of the program's future missions to the moon.",
+      "article_title": "Artemis program",
+      "url": "https://en.wikipedia.org/wiki/Artemis_program",
+      "category": "Science and technology"
     }
   ]
 }
