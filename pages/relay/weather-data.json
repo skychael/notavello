@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-11-17T14:32:58.747Z",
-  "latest_success_at": "2026-11-17T14:32:58.747Z",
+  "generated_at": "2026-11-17T22:56:34.454Z",
+  "latest_success_at": "2026-11-17T22:56:34.454Z",
   "status": "ok",
   "items": [
     {
@@ -14,21 +14,21 @@
       "status": "ok"
     },
     {
-      "id": "b5ad93019d019ede",
-      "title": "Atlantic Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
+      "id": "ee8e390990a944fc",
+      "title": "Eastern North Pacific Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-11-17T11:48:10.000Z",
+      "published_at": "2026-11-17T17:47:09.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "012337d9be399dc1",
-      "title": "SPC Nov 17, 2026 Day 4-8 Severe Weather Outlook",
-      "url": "https://www.spc.noaa.gov/products/exper/day4-8",
-      "publisher": "Storm Prediction Center",
-      "published_at": "2026-11-17T10:02:39.000Z",
-      "topic": "Hurricane",
+      "id": "f552687a904a6314",
+      "title": "Flood Watch issued November 17 at 1:32PM AKST until November 19 at 6:00PM AKST by NWS Anchorage AK",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.3d20aeb65c9b9f53ec78f58d9dd95e014f8436c4.001.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-11-17T22:32:00.000Z",
+      "topic": "Flooding",
       "status": "ok"
     }
   ]
