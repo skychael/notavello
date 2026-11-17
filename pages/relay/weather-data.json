@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-11-17T04:34:30.212Z",
-  "latest_success_at": "2026-11-17T04:34:30.212Z",
+  "generated_at": "2026-11-17T14:32:58.747Z",
+  "latest_success_at": "2026-11-17T14:32:58.747Z",
   "status": "ok",
   "items": [
     {
@@ -14,20 +14,20 @@
       "status": "ok"
     },
     {
-      "id": "ee8e390990a944fc",
-      "title": "Eastern North Pacific Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
+      "id": "b5ad93019d019ede",
+      "title": "Atlantic Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-11-16T23:15:31.000Z",
+      "published_at": "2026-11-17T11:48:10.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "ff3201aba3a0a919",
-      "title": "Tropical Cyclone Xavier reaches Category 2 over Northern Cook Islands, gale warning for Manihiki and Rakahanga",
-      "url": "https://watchers.news/2026/11/16/tropical-cyclone-xavier-northern-cook-islands-manihiki-rakahanga-november-2026",
-      "publisher": "The Watchers",
-      "published_at": "2026-11-16T11:56:58.000Z",
+      "id": "012337d9be399dc1",
+      "title": "SPC Nov 17, 2026 Day 4-8 Severe Weather Outlook",
+      "url": "https://www.spc.noaa.gov/products/exper/day4-8",
+      "publisher": "Storm Prediction Center",
+      "published_at": "2026-11-17T10:02:39.000Z",
       "topic": "Hurricane",
       "status": "ok"
     }
