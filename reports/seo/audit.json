@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-11-17T09:39:03.181Z",
+  "generatedAt": "2026-11-18T08:59:15.839Z",
   "totals": {
-    "pages": 378,
-    "indexable": 374,
-    "articles": 301,
-    "sitemap": 374,
+    "pages": 380,
+    "indexable": 376,
+    "articles": 303,
+    "sitemap": 376,
     "errors": 0,
-    "warnings": 394
+    "warnings": 398
   },
   "errors": [],
   "warnings": [
@@ -118,6 +118,16 @@
     {
       "type": "topic-review",
       "page": "/pages/blog/aaa-diesel-under-six-eia-stocks-still-tight/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/adnoc-vessel-attack-hormuz-inventories-fuel-prices/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/adnoc-vessel-attack-hormuz-inventories-fuel-prices/",
       "detail": "title/description lacks a clear AI, software, or computing connection"
     },
     {
@@ -978,6 +988,16 @@
     {
       "type": "topic-review",
       "page": "/pages/blog/how-to-run-a-small-raspberry-pi-project-as-a-system-service/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/how-to-set-least-privilege-file-permissions-on-linux/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/how-to-set-least-privilege-file-permissions-on-linux/",
       "detail": "title/description lacks a clear AI, software, or computing connection"
     },
     {
@@ -1990,7 +2010,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 378,
+      "incomingLinks": 380,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -2014,7 +2034,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 378,
+      "incomingLinks": 380,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -2122,7 +2142,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 378,
+      "incomingLinks": 380,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -2134,9 +2154,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 378,
-      "lastmod": "2026-11-16",
-      "bodyWords": 724
+      "incomingLinks": 380,
+      "lastmod": "2026-11-17",
+      "bodyWords": 729
     },
     {
       "route": "/pages/blog/a-calm-checklist-for-inspecting-a-suspicious-message/",
@@ -2293,6 +2313,18 @@
       "incomingLinks": 2,
       "lastmod": "2026-11-17",
       "bodyWords": 1183
+    },
+    {
+      "route": "/pages/blog/adnoc-vessel-attack-hormuz-inventories-fuel-prices/",
+      "file": "pages/blog/adnoc-vessel-attack-hormuz-inventories-fuel-prices/index.html",
+      "title": "ADNOC Vessel Attack Keeps Hormuz Risk In Fuel Prices As U.S. Inventories Build — The Export | Notavello",
+      "description": "ADNOC vessel attack keeps Hormuz risk alive even as API stock builds pull oil lower and diesel relief stays incomplete.",
+      "canonical": "https://notavello.com/pages/blog/adnoc-vessel-attack-hormuz-inventories-fuel-prices/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-11-18",
+      "bodyWords": 1572
     },
     {
       "route": "/pages/blog/ai-advice-needs-an-i-dont-know-step/",
@@ -2518,9 +2550,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 240,
-      "lastmod": "2026-11-16",
-      "bodyWords": 3669
+      "incomingLinks": 242,
+      "lastmod": "2026-11-17",
+      "bodyWords": 3696
     },
     {
       "route": "/pages/blog/anhydrous-ammonia-is-the-fall-farm-bill/",
@@ -3478,7 +3510,7 @@
       "canonical": "https://notavello.com/pages/blog/hormuz-shipping-lane-screening-risk/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 4,
+      "incomingLinks": 5,
       "lastmod": "2026-08-10",
       "bodyWords": 1619
     },
@@ -3973,6 +4005,18 @@
       "incomingLinks": 2,
       "lastmod": "2026-09-26",
       "bodyWords": 992
+    },
+    {
+      "route": "/pages/blog/how-to-set-least-privilege-file-permissions-on-linux/",
+      "file": "pages/blog/how-to-set-least-privilege-file-permissions-on-linux/index.html",
+      "title": "How to Set Least-Privilege File Permissions on Linux — The Export | Notavello",
+      "description": "Apply least privilege when creating and adjusting file and directory permissions on Linux using chmod, umask, and ownership controls.",
+      "canonical": "https://notavello.com/pages/blog/how-to-set-least-privilege-file-permissions-on-linux/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-11-17",
+      "bodyWords": 753
     },
     {
       "route": "/pages/blog/how-to-store-account-backup-codes-safely/",
@@ -4583,8 +4627,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-16",
-      "bodyWords": 681
+      "lastmod": "2026-11-17",
+      "bodyWords": 686
     },
     {
       "route": "/pages/blog/page-11/",
@@ -4595,8 +4639,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-16",
-      "bodyWords": 664
+      "lastmod": "2026-11-17",
+      "bodyWords": 667
     },
     {
       "route": "/pages/blog/page-12/",
@@ -4607,8 +4651,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-16",
-      "bodyWords": 651
+      "lastmod": "2026-11-17",
+      "bodyWords": 645
     },
     {
       "route": "/pages/blog/page-13/",
@@ -4619,7 +4663,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-16",
+      "lastmod": "2026-11-17",
       "bodyWords": 700
     },
     {
@@ -4631,7 +4675,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-16",
+      "lastmod": "2026-11-17",
       "bodyWords": 709
     },
     {
@@ -4643,8 +4687,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-16",
-      "bodyWords": 842
+      "lastmod": "2026-11-17",
+      "bodyWords": 817
     },
     {
       "route": "/pages/blog/page-16/",
@@ -4655,8 +4699,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-16",
-      "bodyWords": 837
+      "lastmod": "2026-11-17",
+      "bodyWords": 835
     },
     {
       "route": "/pages/blog/page-17/",
@@ -4667,8 +4711,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": "2026-11-16",
-      "bodyWords": 646
+      "lastmod": "2026-11-17",
+      "bodyWords": 745
     },
     {
       "route": "/pages/blog/page-2/",
@@ -4679,8 +4723,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-16",
-      "bodyWords": 669
+      "lastmod": "2026-11-17",
+      "bodyWords": 664
     },
     {
       "route": "/pages/blog/page-3/",
@@ -4691,7 +4735,7 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-16",
+      "lastmod": "2026-11-17",
       "bodyWords": 638
     },
     {
@@ -4703,8 +4747,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-16",
-      "bodyWords": 679
+      "lastmod": "2026-11-17",
+      "bodyWords": 688
     },
     {
       "route": "/pages/blog/page-5/",
@@ -4715,8 +4759,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-16",
-      "bodyWords": 632
+      "lastmod": "2026-11-17",
+      "bodyWords": 638
     },
     {
       "route": "/pages/blog/page-6/",
@@ -4727,8 +4771,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-16",
-      "bodyWords": 672
+      "lastmod": "2026-11-17",
+      "bodyWords": 667
     },
     {
       "route": "/pages/blog/page-7/",
@@ -4739,8 +4783,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-16",
-      "bodyWords": 648
+      "lastmod": "2026-11-17",
+      "bodyWords": 639
     },
     {
       "route": "/pages/blog/page-8/",
@@ -4751,8 +4795,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-16",
-      "bodyWords": 661
+      "lastmod": "2026-11-17",
+      "bodyWords": 667
     },
     {
       "route": "/pages/blog/page-9/",
@@ -4763,8 +4807,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-16",
-      "bodyWords": 674
+      "lastmod": "2026-11-17",
+      "bodyWords": 668
     },
     {
       "route": "/pages/blog/phosphate-is-the-fertilizer-shock-that-did-not-fade/",
@@ -5962,7 +6006,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 378,
+      "incomingLinks": 380,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -5974,7 +6018,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 378,
+      "incomingLinks": 380,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -5986,7 +6030,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 378,
+      "incomingLinks": 380,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -5998,7 +6042,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 378,
+      "incomingLinks": 380,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -6010,7 +6054,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 378,
+      "incomingLinks": 380,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -6023,8 +6067,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-11-17",
-      "bodyWords": 727
+      "lastmod": "2026-11-18",
+      "bodyWords": 733
     },
     {
       "route": "/pages/sample",
@@ -6046,7 +6090,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 378,
+      "incomingLinks": 380,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -6058,7 +6102,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 378,
+      "incomingLinks": 380,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -6082,7 +6126,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 378,
+      "incomingLinks": 380,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -6514,7 +6558,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 378,
+      "incomingLinks": 380,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }

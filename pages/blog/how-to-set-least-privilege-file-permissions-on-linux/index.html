@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>How to Set Least-Privilege File Permissions on Linux — The Export | Notavello</title>
+<meta name="description" content="Apply least privilege when creating and adjusting file and directory permissions on Linux using chmod, umask, and ownership controls."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/blog/how-to-set-least-privilege-file-permissions-on-linux/"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2026-11-17T18:40:23.224Z"/>
+<meta property="article:modified_time" content="2026-11-17T18:40:23.224Z"/>
+<meta name="notavello:published_at" content="2026-11-17T18:40:23.224Z"/>
+<meta name="syndication-origin-site" content="toysforbots"/>
+<meta name="syndication-origin-id" content="toysforbots:how-to-set-least-privilege-file-permissions-on-linux"/>
+<meta name="syndication-origin-slug" content="how-to-set-least-privilege-file-permissions-on-linux"/>
+<meta name="syndication-origin-url" content="https://toysforbots.com/blog/how-to-set-least-privilege-file-permissions-on-linux/"/>
+<meta name="syndication-source-format" content="toysforbots-syndication-v1"/>
+<meta property="og:url" content="https://notavello.com/pages/blog/how-to-set-least-privilege-file-permissions-on-linux/"/>
+<meta property="og:title" content="How to Set Least-Privilege File Permissions on Linux"/>
+<meta property="og:description" content="Apply least privilege when creating and adjusting file and directory permissions on Linux using chmod, umask, and ownership controls."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="How to Set Least-Privilege File Permissions on Linux"/>
+<meta name="twitter:description" content="Apply least privilege when creating and adjusting file and directory permissions on Linux using chmod, umask, and ownership controls."/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "How to Set Least-Privilege File Permissions on Linux",
+  "description": "Apply least privilege when creating and adjusting file and directory permissions on Linux using chmod, umask, and ownership controls.",
+  "url": "https://notavello.com/pages/blog/how-to-set-least-privilege-file-permissions-on-linux/",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://notavello.com/pages/blog/how-to-set-least-privilege-file-permissions-on-linux/" },
+  "image": "https://notavello.com/og-image.png",
+  "datePublished": "2026-11-17T18:40:23.224Z",
+  "dateModified": "2026-11-17T18:40:23.224Z",
+  "author": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" },
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com", "logo": { "@type": "ImageObject", "url": "https://notavello.com/og-image.png" } }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
+.post-nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; row-gap: 8px; }
+.post-nav-top { margin-bottom: 40px; }
+.post-nav-bottom { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--border); }
+.post-nav a { display: inline-flex; align-items: center; gap: 6px; font-size: 0.92rem; font-weight: 600; color: var(--ink-muted); text-decoration: none; padding: 12px 14px; border-radius: var(--radius-sm); white-space: nowrap; transition: color 0.15s, background 0.15s; }
+.post-nav a:hover { color: var(--accent); background: var(--accent-light); }
+.post-nav a:first-child { padding-left: 0; }
+.post-nav a:last-child { padding-right: 0; justify-content: flex-end; }
+.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
+.post-date { font-size: 0.78rem; color: var(--ink-faint); }
+.post-title { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; color: var(--ink); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
+.post-lede { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+.post-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink); }
+.post-body h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 44px 0 16px; letter-spacing: -0.01em; }
+.post-body p { margin-bottom: 20px; color: var(--ink-muted); }
+.post-body p strong { color: var(--ink); font-weight: 600; }
+.post-body ul { margin: 0 0 20px 20px; color: var(--ink-muted); }
+.post-body ul li { margin-bottom: 8px; line-height: 1.7; }
+.callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 32px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.7; }
+.post-footer { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.post-footer-label { font-size: 0.8rem; color: var(--ink-faint); }
+.btn-export { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: opacity 0.2s; }
+.btn-export:hover { opacity: 0.9; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } .post-nav a { padding: 12px 8px; font-size: 0.88rem; } }
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+
+  <nav class="post-nav post-nav-top">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+  <div class="post-meta">
+    <span class="post-tag">Operating Systems</span>
+    <span class="post-date">November 17, 2026</span>
+  </div>
+
+  <h1 class="post-title">How to Set Least-Privilege File Permissions on Linux</h1>
+
+  <p class="post-lede">File permissions on Linux decide who can read, change, or run files and directories. The principle of least privilege requires giving each user or process only the minimum rights required. Default settings often grant too much access, so administrators adjust ownership and permissions after creation. The base permissions for new files start at 666 and for directories at 777, then the umask value subtracts rights to produce safer defaults. Understanding these mechanics lets teams create shared folders that allow collaboration without exposing unrelated data.</p>
+
+  <div class="post-body">
+
+<h2>Base permissions and the role of umask</h2>
+<p>Every new file receives base permissions of read and write for owner, group, and others. Directories receive read, write, and execute for all three. These values equal 666 for files and 777 for directories in octal notation.</p>
+<p>The umask setting reduces these base values. A common umask of 022 removes write permission for group and others, resulting in 644 for files and 755 for directories. Administrators can view the current umask by running umask and change it temporarily with umask 027 for stricter group access.</p><ul><li>Read permission (4) lets users view file contents or list directory entries.</li><li>Write permission (2) allows modification of file contents or creation and deletion inside directories.</li><li>Execute permission (1) permits running files as programs or traversing directories with cd.</li></ul><div class="callout"><strong>Caution</strong> Overly broad permissions increase the chance of accidental or malicious changes. Always verify settings with ls -l after changes and test access from each required account.</div>
+<h2>Changing permissions with chmod</h2>
+<p>The chmod command updates permissions after files exist. Symbolic mode uses letters for who, an operator, and the permission letter. Numeric mode uses three octal digits that directly set the three ownership levels.</p>
+<p>For example, chmod u=rw,g=r,o= file.txt grants the owner read and write while giving the group only read access. The same result in numeric form is chmod 640 file.txt. When working with directories that multiple people must use, chmod 2770 shared/ adds the setgid bit so new files inherit the group owner.</p><ul><li>chmod a+r file adds read permission for everyone.</li><li>chmod g-w file removes write permission from the group.</li><li>chmod 755 script.sh sets owner full access and others read plus execute.</li></ul>
+<h2>Ownership with chown and chgrp</h2>
+<p>Permissions apply to the owner, the group, and everyone else. The chown command transfers ownership to another user. The chgrp command changes only the group. Both commands accept the -R flag to act recursively on directories.</p>
+<p>When a directory must be writable by several users without giving them ownership of each other&#039;s files, create a dedicated group, add members with usermod, then set the directory group and permissions accordingly. New files created inside inherit the directory group only when the setgid bit is present.</p><ul><li>chown user:group path changes both owner and group at once.</li><li>chgrp developers reports/ updates the group without touching the owner.</li><li>ls -ld directory shows the current owner, group, and permission string.</li></ul>
+<h2>Practical directory setups for teams</h2>
+<p>Shared project directories benefit from a dedicated group and the setgid bit. First create the group, then mkdir project, chown root:project project, chmod 2770 project. Members of the project group can now create files that stay owned by the project group.</p>
+<p>For cases where only a subset of files should be readable by others, keep the directory at 2770 and adjust individual files with chmod 640 or 660 after creation. This approach prevents accidental exposure while still allowing necessary collaboration.</p><ul><li>Avoid 777 on any production directory.</li><li>Use 755 for directories that only need to be traversed and read.</li><li>Test access by switching to each target user account with su or sudo -u.</li></ul>
+<h2>Verification and ongoing maintenance</h2>
+<p>After any change, run ls -l or ls -ld to confirm the permission string, owner, and group. The find command can locate files with overly permissive settings such as find /path -perm -o=w. Regular audits help maintain least privilege as projects evolve and team membership changes.</p>
+<p>Remember that execute permission on a directory only grants traversal. Without read permission, users cannot list contents even if they can cd into the directory. Combine both rights when listing is required.</p><ul><li>ls -l shows the permission string, owner, group, and name.</li><li>find . -perm 777 lists world-writable items that may need tightening.</li><li>getfacl path displays any extended ACL entries that supplement standard permissions.</li></ul><h2>Sources</h2><ul><li><a href="https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html/configuring_basic_system_settings/managing-file-system-permissions_configuring-basic-system-settings" rel="noopener noreferrer">docs.redhat.com</a></li><li><a href="https://www.redhat.com/en/blog/linux-file-permissions-explained" rel="noopener noreferrer">redhat.com</a></li></ul>
+
+  </div>
+
+  <div class="post-footer">
+    <span class="post-footer-label">Looking for more AI tools?</span>
+    <a class="btn-export" href="/">See our free AI tools →</a>
+  </div>
+
+  <nav class="post-nav post-nav-bottom">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+</main>
+
+<!--FOOTER-->
+
+</body>
+</html>
