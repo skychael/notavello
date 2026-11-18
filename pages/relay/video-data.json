@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "checked_at": "2026-11-18T07:30:10.340Z",
-  "latest_success_at": "2026-11-18T07:30:10.340Z",
+  "checked_at": "2026-11-18T17:15:39.424Z",
+  "latest_success_at": "2026-11-18T17:15:39.424Z",
   "status": "ok",
   "items": [
     {
@@ -23,6 +23,17 @@
       "channel_id": "UCT_yBgKSiwb3WP4ACPnF5nA",
       "published_at": "2026-11-16T13:17:21.000Z",
       "source_priority": 9,
+      "is_livestream_replay": false,
+      "status": "ok"
+    },
+    {
+      "video_id": "6PQfklmJyog",
+      "title": "Force Thirteen 2026 Holiday Season Trailer",
+      "url": "https://www.youtube.com/watch?v=6PQfklmJyog",
+      "channel_name": "Force Thirteen",
+      "channel_id": "UCr7wmRGObn4Mmiuk_MmgeTQ",
+      "published_at": "2026-11-18T12:19:55.000Z",
+      "source_priority": 8,
       "is_livestream_replay": false,
       "status": "ok"
     }
