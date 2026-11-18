@@ -1,36 +1,36 @@
 {
   "schema_version": "1.0",
-  "date_key": "11-17",
-  "display_date": "November 17",
-  "generated_at": "2026-11-17T17:38:09.514Z",
+  "date_key": "11-18",
+  "display_date": "November 18",
+  "generated_at": "2026-11-18T17:16:18.398Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-fb421b35d593e86f9d4b0f27",
+      "candidate_id": "event-a1ece81ebd2ec9764fe886ee",
       "type": "event",
-      "year": 1970,
-      "text": "Luna programme: The Soviet Union lands Lunokhod 1 on Mare Imbrium (Sea of Rains) on the Moon. This is the first roving remote-controlled robot to land on another world and is released by the orbiting Luna 17 spacecraft.",
-      "article_title": "Luna programme",
-      "url": "https://en.wikipedia.org/wiki/Luna_programme",
+      "year": 1943,
+      "text": "World War II:  In the first action of the Berlin Air Offensive, four hundred and forty Royal Air Force planes bomb Berlin causing only light damage and killing 131. The RAF loses nine aircraft and 53 air crew.",
+      "article_title": "Battle of Berlin (RAF campaign)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Berlin_(RAF_campaign)",
       "category": "World history"
     },
     {
-      "candidate_id": "event-908f809579d5cace1dabef39",
+      "candidate_id": "event-81b8e36ca2e0f63c2f10d09b",
       "type": "event",
-      "year": 1957,
-      "text": "Vickers Viscount G-AOHP of British European Airways crashes at Ballerup after the failure of three engines on approach to Copenhagen Airport. The cause is a malfunction of the anti-icing system on the aircraft. There are no fatalities.",
-      "article_title": "Vickers Viscount",
-      "url": "https://en.wikipedia.org/wiki/Vickers_Viscount",
+      "year": 1978,
+      "text": "The McDonnell Douglas F/A-18 Hornet makes its first flight, at the Naval Air Test Center in Maryland, United States.",
+      "article_title": "McDonnell Douglas F/A-18 Hornet",
+      "url": "https://en.wikipedia.org/wiki/McDonnell_Douglas_F%2FA-18_Hornet",
       "category": "World history"
     },
     {
-      "candidate_id": "event-c344c78674036e7c67dde084",
+      "candidate_id": "event-695861801ae96740a5d6552e",
       "type": "event",
-      "year": 2013,
-      "text": "A rare late-season tornado outbreak strikes the Midwest. Illinois and Indiana are most affected with tornado reports as far north as lower Michigan. In all around six dozen tornadoes touch down in approximately an 11-hour time period, including seven EF3 and two EF4 tornadoes.",
-      "article_title": "Tornado outbreak of November 17, 2013",
-      "url": "https://en.wikipedia.org/wiki/Tornado_outbreak_of_November_17%2C_2013",
+      "year": 2026,
+      "text": "Voyager 1 becomes the first manmade object to travel a full light day from Earth.",
+      "article_title": "Voyager 1",
+      "url": "https://en.wikipedia.org/wiki/Voyager_1",
       "category": "World history"
     }
   ]
