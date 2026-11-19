@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "11-18",
-  "display_date": "November 18",
-  "generated_at": "2026-11-18T17:16:18.398Z",
+  "date_key": "11-19",
+  "display_date": "November 19",
+  "generated_at": "2026-11-19T17:23:09.985Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-a1ece81ebd2ec9764fe886ee",
+      "candidate_id": "event-888adfe3497906a8241e1197",
       "type": "event",
-      "year": 1943,
-      "text": "World War II:  In the first action of the Berlin Air Offensive, four hundred and forty Royal Air Force planes bomb Berlin causing only light damage and killing 131. The RAF loses nine aircraft and 53 air crew.",
-      "article_title": "Battle of Berlin (RAF campaign)",
-      "url": "https://en.wikipedia.org/wiki/Battle_of_Berlin_(RAF_campaign)",
+      "year": 2002,
+      "text": "The Greek oil tanker Prestige splits in half and sinks off the coast of Galicia, releasing over 76,000 m3 (20 million US gal) of oil in the largest environmental disaster in Spanish and Portuguese history.",
+      "article_title": "Oil tanker",
+      "url": "https://en.wikipedia.org/wiki/Oil_tanker",
+      "category": "Disasters and exploration"
+    },
+    {
+      "candidate_id": "event-73cc68f2c0000b9fa7ff4c5f",
+      "type": "event",
+      "year": 1942,
+      "text": "World War II: Battle of Stalingrad: Soviet Union forces under General Georgy Zhukov launch the Operation Uranus counterattacks at Stalingrad, turning the tide of the battle in the USSR's favor.",
+      "article_title": "Battle of Stalingrad",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Stalingrad",
       "category": "World history"
     },
     {
-      "candidate_id": "event-81b8e36ca2e0f63c2f10d09b",
+      "candidate_id": "event-42e56f14b373998e36498b23",
       "type": "event",
-      "year": 1978,
-      "text": "The McDonnell Douglas F/A-18 Hornet makes its first flight, at the Naval Air Test Center in Maryland, United States.",
-      "article_title": "McDonnell Douglas F/A-18 Hornet",
-      "url": "https://en.wikipedia.org/wiki/McDonnell_Douglas_F%2FA-18_Hornet",
-      "category": "World history"
-    },
-    {
-      "candidate_id": "event-695861801ae96740a5d6552e",
-      "type": "event",
-      "year": 2026,
-      "text": "Voyager 1 becomes the first manmade object to travel a full light day from Earth.",
-      "article_title": "Voyager 1",
-      "url": "https://en.wikipedia.org/wiki/Voyager_1",
-      "category": "World history"
+      "year": 2010,
+      "text": "The first of four explosions takes place at the Pike River Mine in New Zealand. Twenty-nine people are killed in the nation's worst mining disaster since 1914.",
+      "article_title": "Pike River Mine disaster",
+      "url": "https://en.wikipedia.org/wiki/Pike_River_Mine_disaster",
+      "category": "Disasters and exploration"
     }
   ]
 }
