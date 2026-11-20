@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-11-20T03:26:50.159Z",
-  "latest_success_at": "2026-11-20T03:26:50.159Z",
+  "generated_at": "2026-11-20T13:01:46.130Z",
+  "latest_success_at": "2026-11-20T13:01:46.130Z",
   "status": "ok",
   "items": [
     {
@@ -18,16 +18,16 @@
       "title": "Atlantic Tropical Weather Outlook",
       "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-11-19T23:27:09.000Z",
+      "published_at": "2026-11-20T11:38:16.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "f39c9f6fe03da935",
-      "title": "Flood Warning issued November 19 at 8:45PM EST by NWS Melbourne FL",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.5f6585eb92c50fd0b137216a08ccb385063b914c.001.1.cap",
+      "id": "750a73ed331e402f",
+      "title": "Flood Warning issued November 20 at 5:21AM EST by NWS Melbourne FL",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.92471b3a505bfac3a4a6843c0e0510dd6e0bd363.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-11-20T01:45:00.000Z",
+      "published_at": "2026-11-20T10:21:00.000Z",
       "topic": "Flooding",
       "status": "ok"
     }
