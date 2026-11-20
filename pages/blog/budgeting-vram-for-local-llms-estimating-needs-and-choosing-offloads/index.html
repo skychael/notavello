@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Budgeting VRAM for Local LLMs: Estimating Needs and Choosing Offloads — The Export | Notavello</title>
+<meta name="description" content="Learn how to estimate VRAM requirements for local AI models by breaking down weights, KV cache, and buffers, then decide when and how to apply offloading"/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/blog/budgeting-vram-for-local-llms-estimating-needs-and-choosing-offloads/"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2026-11-19T18:24:38.437Z"/>
+<meta property="article:modified_time" content="2026-11-19T18:24:38.437Z"/>
+<meta name="notavello:published_at" content="2026-11-19T18:24:38.437Z"/>
+<meta name="syndication-origin-site" content="toysforbots"/>
+<meta name="syndication-origin-id" content="toysforbots:budgeting-vram-for-local-llms-estimating-needs-and-choosing-offloads"/>
+<meta name="syndication-origin-slug" content="budgeting-vram-for-local-llms-estimating-needs-and-choosing-offloads"/>
+<meta name="syndication-origin-url" content="https://toysforbots.com/blog/budgeting-vram-for-local-llms-estimating-needs-and-choosing-offloads/"/>
+<meta name="syndication-source-format" content="toysforbots-syndication-v1"/>
+<meta property="og:url" content="https://notavello.com/pages/blog/budgeting-vram-for-local-llms-estimating-needs-and-choosing-offloads/"/>
+<meta property="og:title" content="Budgeting VRAM for Local LLMs: Estimating Needs and Choosing Offloads"/>
+<meta property="og:description" content="Learn how to estimate VRAM requirements for local AI models by breaking down weights, KV cache, and buffers, then decide when and how to apply offloading"/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Budgeting VRAM for Local LLMs: Estimating Needs and Choosing Offloads"/>
+<meta name="twitter:description" content="Learn how to estimate VRAM requirements for local AI models by breaking down weights, KV cache, and buffers, then decide when and how to apply offloading"/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Budgeting VRAM for Local LLMs: Estimating Needs and Choosing Offloads",
+  "description": "Learn how to estimate VRAM requirements for local AI models by breaking down weights, KV cache, and buffers, then decide when and how to apply offloading",
+  "url": "https://notavello.com/pages/blog/budgeting-vram-for-local-llms-estimating-needs-and-choosing-offloads/",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://notavello.com/pages/blog/budgeting-vram-for-local-llms-estimating-needs-and-choosing-offloads/" },
+  "image": "https://notavello.com/og-image.png",
+  "datePublished": "2026-11-19T18:24:38.437Z",
+  "dateModified": "2026-11-19T18:24:38.437Z",
+  "author": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" },
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com", "logo": { "@type": "ImageObject", "url": "https://notavello.com/og-image.png" } }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
+.post-nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; row-gap: 8px; }
+.post-nav-top { margin-bottom: 40px; }
+.post-nav-bottom { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--border); }
+.post-nav a { display: inline-flex; align-items: center; gap: 6px; font-size: 0.92rem; font-weight: 600; color: var(--ink-muted); text-decoration: none; padding: 12px 14px; border-radius: var(--radius-sm); white-space: nowrap; transition: color 0.15s, background 0.15s; }
+.post-nav a:hover { color: var(--accent); background: var(--accent-light); }
+.post-nav a:first-child { padding-left: 0; }
+.post-nav a:last-child { padding-right: 0; justify-content: flex-end; }
+.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
+.post-date { font-size: 0.78rem; color: var(--ink-faint); }
+.post-title { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; color: var(--ink); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
+.post-lede { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+.post-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink); }
+.post-body h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 44px 0 16px; letter-spacing: -0.01em; }
+.post-body p { margin-bottom: 20px; color: var(--ink-muted); }
+.post-body p strong { color: var(--ink); font-weight: 600; }
+.post-body ul { margin: 0 0 20px 20px; color: var(--ink-muted); }
+.post-body ul li { margin-bottom: 8px; line-height: 1.7; }
+.callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 32px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.7; }
+.post-footer { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.post-footer-label { font-size: 0.8rem; color: var(--ink-faint); }
+.btn-export { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: opacity 0.2s; }
+.btn-export:hover { opacity: 0.9; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } .post-nav a { padding: 12px 8px; font-size: 0.88rem; } }
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+
+  <nav class="post-nav post-nav-top">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+  <div class="post-meta">
+    <span class="post-tag">Local AI</span>
+    <span class="post-date">November 19, 2026</span>
+  </div>
+
+  <h1 class="post-title">Budgeting VRAM for Local LLMs: Estimating Needs and Choosing Offloads</h1>
+
+  <p class="post-lede">Running a local LLM starts with matching the model&#039;s memory footprint to available VRAM. Model weights form the largest fixed cost, the KV cache grows with context length, and runtime buffers plus headroom fill the remainder. When the total exceeds GPU memory, offloading moves selected layers or cache entries to system RAM. The approach works but adds PCIe transfers that reduce generation speed. This guide shows how to calculate each component using model configuration values, then how to enable offloading in Hugging Face Transformers when the numbers require it. [huggingface.co](https://huggingface.co/docs/transformers/main/en/kv_cache) and [pytorch.org](https://docs.pytorch.org/TensorRT/tutorials/resource%5Fmemory/resource%5Fmanagement.html) documentation provide the underlying allocation rules.</p>
+
+  <div class="post-body">
+
+<h2>Start with model weight size</h2>
+<p>Downloaded checkpoints contain learned parameters plus tokenizer and configuration files. These weights must reside in VRAM for the entire session unless the runtime explicitly offloads layers. On consumer GPUs the initial PCIe transfer time becomes noticeable once models exceed a few billion parameters.</p>
+<p>Weights remain static after loading and do not grow with context length. Partial layer offload keeps some transformer blocks in system RAM while the active block stays on the GPU. Integrated GPUs share a single memory pool, so the same allocation serves both model weights and operating system tasks.</p><ul><li>Check the model card or config.json for hidden size, number of layers, and vocabulary size to estimate parameter count.</li><li>Quantized formats such as 4-bit or 8-bit reduce the byte-per-parameter cost before any runtime allocation occurs.</li><li>Keep the full weight set on the GPU whenever VRAM permits to avoid repeated transfers during generation.</li></ul><div class="callout"><strong>Memory budget rule</strong> Estimate weights first, add KV cache for the target context, then add runtime buffers and 10-20 percent headroom. Only after that total decide whether offloading is required.</div>
+<h2>Calculate the variable KV cache</h2>
+<p>During autoregressive generation the model stores key and value vectors for every processed token so attention does not recompute the full history. Cache size scales linearly with sequence length, layer count, hidden dimension, and batch size. For a 7-billion-parameter model at 8 k context the cache can reach several gigabytes.</p>
+<p>Dynamic cache allocates on demand and works with most generation settings. Static cache pre-allocates the maximum size and enables torch.compile but wastes space on short sequences. Quantized cache lowers precision of stored vectors at a small accuracy cost.</p><ul><li>Multiply layers by 2 (key and value) by hidden size by bytes per element by context length to obtain a base cache estimate.</li><li>Longer contexts or larger batches increase the requirement; test the actual allocation on target hardware rather than relying on advertised card capacity.</li><li>When the cache no longer fits in VRAM, offloading moves older layers to system RAM while the current layer remains on the GPU.</li></ul>
+<h2>Add runtime buffers and headroom</h2>
+<p>Inference runtimes allocate additional memory for activations, output logits, and temporary tensors. Flash Attention kernels can reduce peak usage, yet the exact savings depend on the backend. After accounting for weights and KV cache, a practical allowance of 10-20 percent extra VRAM prevents out-of-memory errors when allocations spike.</p>
+<p>Systems that also drive a display or run concurrent GPU workloads need the higher end of that range. Unified memory architectures still require budgeting because the single pool serves both the model and operating system demands simultaneously.</p><ul><li>Profile a short generation run with the target context length to observe actual peak usage.</li><li>Leave extra margin when the GPU also renders a desktop or runs other compute tasks.</li><li>Measure rather than assume; advertised VRAM figures do not guarantee usable space after driver and display overhead.</li></ul>
+<h2>When and how to apply offloading</h2>
+<p>Offloading trades speed for capacity. When total demand exceeds VRAM the runtime can keep some layers or the KV cache in system RAM. Only the active layer stays on the GPU during each forward pass; the next layer is prefetched asynchronously. The cost appears as extra PCIe traffic that lowers tokens per second, especially on long contexts where the KV cache moves frequently.</p>
+<p>KV offload keeps weights on the GPU while moving only the cache to RAM. Layer offload spreads the model itself across both memory pools. Both approaches are exposed through cache_implementation settings or explicit offloading flags.</p><ul><li>Enable cache_implementation=&quot;offloaded&quot; for DynamicCache or &quot;offloaded_static&quot; for StaticCache in GenerationConfig.</li><li>Instantiate DynamicCache or StaticCache directly with the offloading=True option and pass it to generate or the model forward method.</li><li>Expect a measurable drop in generation throughput; the penalty grows with context length and PCIe bandwidth limits.</li></ul>
+<h2>Measure before committing to a model</h2>
+<p>A workable local AI setup begins with the model weights, adds the KV cache required by the longest context expected, then includes runtime buffers and headroom. If the total exceeds available VRAM, choose between layer offload, KV offload, or a smaller model. Offloading extends reach on memory-constrained hardware but introduces measurable slowdowns that vary with PCIe bandwidth and context length.</p>
+<p>Measuring the actual allocations on target hardware remains the only reliable way to set expectations before deployment. Run a short generation pass with the intended context length and batch size, then inspect peak VRAM usage reported by the framework.</p><ul><li>Use framework memory profilers or nvidia-smi before and during generation to record exact footprints.</li><li>Test both full GPU placement and the chosen offload configuration on the same prompt to quantify the speed difference.</li><li>Document the measured values alongside the model card so future runs start from known limits rather than advertised specifications.</li></ul><h2>Sources</h2><ul><li><a href="https://huggingface.co/docs/transformers/main/en/kv_cache" rel="noopener noreferrer">huggingface.co</a></li><li><a href="https://docs.pytorch.org/TensorRT/tutorials/resource%5Fmemory/resource%5Fmanagement.html" rel="noopener noreferrer">pytorch.org</a></li><li><a href="https://notavello.com/pages/blog/ram-vram-and-local-ai-what-each-resource-does/" rel="noopener noreferrer">notavello.com</a></li></ul>
+
+  </div>
+
+  <div class="post-footer">
+    <span class="post-footer-label">Looking for more AI tools?</span>
+    <a class="btn-export" href="/">See our free AI tools →</a>
+  </div>
+
+  <nav class="post-nav post-nav-bottom">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+</main>
+
+<!--FOOTER-->
+
+</body>
+</html>
