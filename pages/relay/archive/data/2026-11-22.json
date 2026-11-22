@@ -2,7 +2,7 @@
   "schema_version": 1,
   "archive_date": "2026-11-22",
   "created_at": "2026-11-22T06:59:00.329Z",
-  "updated_at": "2026-11-22T15:25:27.944Z",
+  "updated_at": "2026-11-22T21:52:03.645Z",
   "articles": [
     {
       "title": "Russian Military RoRo Abandoned After Drone Attack in the Baltic",
@@ -10,6 +10,15 @@
       "publisher": "The Maritime Executive",
       "published_at": "2026-11-21T18:26:21.000Z",
       "source_id": "maritime-executive",
+      "first_seen_at": "2026-11-22T06:59:00.329Z",
+      "status": "ok"
+    },
+    {
+      "title": "UK Races to Rewrite Nuclear Rules by 2027",
+      "url": "https://oilprice.com/Alternative-Energy/Nuclear-Power/UK-Races-to-Rewrite-Nuclear-Rules-by-2027.html",
+      "publisher": "OilPrice.com",
+      "published_at": "2026-11-21T16:00:00.000Z",
+      "source_id": "oilprice",
       "first_seen_at": "2026-11-22T06:59:00.329Z",
       "status": "ok"
     },
@@ -73,6 +82,15 @@
       "publisher": "OilPrice.com",
       "published_at": "2026-11-20T17:11:05.000Z",
       "source_id": "oilprice",
+      "first_seen_at": "2026-11-22T06:59:00.329Z",
+      "status": "ok"
+    },
+    {
+      "title": "The Jet That Always Shadows Air Force One When The President Travels Abroad",
+      "url": "https://www.twz.com/news-features/why-the-e-4b-doomsday-plane-always-shadows-air-force-one-when-the-president-travels-abroad",
+      "publisher": "TWZ (The War Zone)",
+      "published_at": "2026-11-20T01:01:44.000Z",
+      "source_id": "twz",
       "first_seen_at": "2026-11-22T06:59:00.329Z",
       "status": "ok"
     },
