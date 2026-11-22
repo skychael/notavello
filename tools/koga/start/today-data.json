@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "11-21",
-  "display_date": "November 21",
-  "generated_at": "2026-11-21T16:09:49.120Z",
+  "date_key": "11-22",
+  "display_date": "November 22",
+  "generated_at": "2026-11-22T16:17:15.451Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-e8782e11c01a8a6116318102",
+      "candidate_id": "event-cccd5979dae9bdcda577c6af",
       "type": "event",
-      "year": 1916,
-      "text": "World War I:  One of the mines laid by SM U-73 sink HMHS Britannic in the Kea Channel, the largest ship lost in the war.",
-      "article_title": "World War I",
-      "url": "https://en.wikipedia.org/wiki/World_War_I",
+      "year": 1994,
+      "text": "A Trans World Airlines McDonnell Douglas MD-80 and Cessna 441 Conquest II aircraft collide on the runway at St. Louis Lambert International Airport in Bridgeton, Missouri, killing two people and injuring eight.",
+      "article_title": "Trans World Airlines",
+      "url": "https://en.wikipedia.org/wiki/Trans_World_Airlines",
       "category": "World history"
     },
     {
-      "candidate_id": "event-308737714ab53b03a587a21c",
+      "candidate_id": "event-5bc800ce5c5b2f64f98e81dd",
       "type": "event",
-      "year": 1980,
-      "text": "A deadly fire breaks out at the MGM Grand Hotel in Paradise, Nevada (now Bally's Las Vegas). Eighty-five people are killed and more than 650 are injured in the worst disaster in Nevada history.",
-      "article_title": "MGM Grand fire",
-      "url": "https://en.wikipedia.org/wiki/MGM_Grand_fire",
+      "year": 1971,
+      "text": "In Britain's worst mountaineering tragedy, the Cairngorm Plateau Disaster, five children and one of their leaders are found dead from exposure in the Scottish mountains.",
+      "article_title": "Cairngorm Plateau disaster",
+      "url": "https://en.wikipedia.org/wiki/Cairngorm_Plateau_disaster",
       "category": "Disasters and exploration"
     },
     {
-      "candidate_id": "event-0e5492c6969eb721d30b0826",
+      "candidate_id": "event-0313575cf13160c5c32b76aa",
       "type": "event",
-      "year": 1920,
-      "text": "Irish War of Independence: On \"Bloody Sunday\" in Dublin, the Irish Republican Army (IRA) assassinated a group of British Intelligence agents, and British forces killed 14 civilians at a Gaelic football match at Croke Park.",
-      "article_title": "Irish War of Independence",
-      "url": "https://en.wikipedia.org/wiki/Irish_War_of_Independence",
-      "category": "Sports"
+      "year": 1989,
+      "text": "NASA launches Space Shuttle Discovery on STS-33, a classified mission for the United States Department of Defense.",
+      "article_title": "NASA",
+      "url": "https://en.wikipedia.org/wiki/NASA",
+      "category": "Science and technology"
     }
   ]
 }
