@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-11-21T08:40:53.704Z",
+  "generatedAt": "2026-11-22T08:38:39.110Z",
   "totals": {
-    "pages": 387,
-    "indexable": 383,
-    "articles": 309,
-    "sitemap": 383,
+    "pages": 390,
+    "indexable": 386,
+    "articles": 312,
+    "sitemap": 386,
     "errors": 0,
-    "warnings": 408
+    "warnings": 414
   },
   "errors": [],
   "warnings": [
@@ -257,6 +257,16 @@
     },
     {
       "type": "template-pattern",
+      "page": "/pages/blog/broccoli-and-cauliflower-same-plant/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/broccoli-and-cauliflower-same-plant/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
       "page": "/pages/blog/browser-privacy-signals-cookie-banner-fix/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
@@ -483,6 +493,16 @@
     {
       "type": "topic-review",
       "page": "/pages/blog/eighteen-million-barrels-is-the-freight-bill/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/farm-bureau-thanksgiving-dinner-diesel/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/farm-bureau-thanksgiving-dinner-diesel/",
       "detail": "title/description lacks a clear AI, software, or computing connection"
     },
     {
@@ -1437,6 +1457,16 @@
     },
     {
       "type": "template-pattern",
+      "page": "/pages/blog/recovery-planning-for-a-reliable-headless-raspberry-pi/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/recovery-planning-for-a-reliable-headless-raspberry-pi/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
       "page": "/pages/blog/refineries-are-already-running-flat-out/",
       "detail": "generated-post metadata and shared locked layout; editorial review only"
     },
@@ -2060,7 +2090,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 387,
+      "incomingLinks": 390,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -2084,7 +2114,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 387,
+      "incomingLinks": 390,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -2192,7 +2222,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 387,
+      "incomingLinks": 390,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -2204,9 +2234,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 387,
-      "lastmod": "2026-11-20",
-      "bodyWords": 754
+      "incomingLinks": 390,
+      "lastmod": "2026-11-21",
+      "bodyWords": 748
     },
     {
       "route": "/pages/blog/a-calm-checklist-for-inspecting-a-suspicious-message/",
@@ -2360,7 +2390,7 @@
       "canonical": "https://notavello.com/pages/blog/aaa-diesel-under-six-eia-stocks-still-tight/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 5,
+      "incomingLinks": 6,
       "lastmod": "2026-11-17",
       "bodyWords": 1183
     },
@@ -2600,9 +2630,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 248,
-      "lastmod": "2026-11-20",
-      "bodyWords": 3778
+      "incomingLinks": 251,
+      "lastmod": "2026-11-21",
+      "bodyWords": 3816
     },
     {
       "route": "/pages/blog/anhydrous-ammonia-is-the-fall-farm-bill/",
@@ -2723,6 +2753,18 @@
       "incomingLinks": 2,
       "lastmod": "2026-09-25",
       "bodyWords": 1489
+    },
+    {
+      "route": "/pages/blog/broccoli-and-cauliflower-same-plant/",
+      "file": "pages/blog/broccoli-and-cauliflower-same-plant/index.html",
+      "title": "Broccoli and Cauliflower Are the Same Plant. Sort Of. — The Export | Notavello",
+      "description": "Broccoli, cauliflower, kale, cabbage, and Brussels sprouts share a species. The mustard bottle tells a story about what growers chose to harvest.",
+      "canonical": "https://notavello.com/pages/blog/broccoli-and-cauliflower-same-plant/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-11-21",
+      "bodyWords": 878
     },
     {
       "route": "/pages/blog/browser-cache-ruined-my-day/",
@@ -3167,6 +3209,18 @@
       "incomingLinks": 2,
       "lastmod": "2026-10-06",
       "bodyWords": 1409
+    },
+    {
+      "route": "/pages/blog/farm-bureau-thanksgiving-dinner-diesel/",
+      "file": "pages/blog/farm-bureau-thanksgiving-dinner-diesel/index.html",
+      "title": "Farm Bureau Says Thanksgiving Dinner Rises 6% as Diesel Stays Near $5.94 — The Export | Notavello",
+      "description": "Farm Bureau puts Thanksgiving dinner at $58.63 for 10 as diesel remains $2.07 above last year and distillate stocks stay thin.",
+      "canonical": "https://notavello.com/pages/blog/farm-bureau-thanksgiving-dinner-diesel/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-11-22",
+      "bodyWords": 1446
     },
     {
       "route": "/pages/blog/fertilizer-bill-is-a-pipeline-bill/",
@@ -4725,8 +4779,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-20",
-      "bodyWords": 684
+      "lastmod": "2026-11-21",
+      "bodyWords": 686
     },
     {
       "route": "/pages/blog/page-11/",
@@ -4737,8 +4791,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-20",
-      "bodyWords": 675
+      "lastmod": "2026-11-21",
+      "bodyWords": 681
     },
     {
       "route": "/pages/blog/page-12/",
@@ -4749,8 +4803,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-20",
-      "bodyWords": 650
+      "lastmod": "2026-11-21",
+      "bodyWords": 643
     },
     {
       "route": "/pages/blog/page-13/",
@@ -4761,8 +4815,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-20",
-      "bodyWords": 687
+      "lastmod": "2026-11-21",
+      "bodyWords": 677
     },
     {
       "route": "/pages/blog/page-14/",
@@ -4773,8 +4827,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-20",
-      "bodyWords": 682
+      "lastmod": "2026-11-21",
+      "bodyWords": 693
     },
     {
       "route": "/pages/blog/page-15/",
@@ -4785,8 +4839,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-20",
-      "bodyWords": 783
+      "lastmod": "2026-11-21",
+      "bodyWords": 767
     },
     {
       "route": "/pages/blog/page-16/",
@@ -4797,8 +4851,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-20",
-      "bodyWords": 830
+      "lastmod": "2026-11-21",
+      "bodyWords": 824
     },
     {
       "route": "/pages/blog/page-17/",
@@ -4809,8 +4863,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-20",
-      "bodyWords": 889
+      "lastmod": "2026-11-21",
+      "bodyWords": 871
     },
     {
       "route": "/pages/blog/page-18/",
@@ -4821,8 +4875,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": "2026-11-20",
-      "bodyWords": 174
+      "lastmod": "2026-11-21",
+      "bodyWords": 322
     },
     {
       "route": "/pages/blog/page-2/",
@@ -4833,8 +4887,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-20",
-      "bodyWords": 660
+      "lastmod": "2026-11-21",
+      "bodyWords": 676
     },
     {
       "route": "/pages/blog/page-3/",
@@ -4845,8 +4899,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-20",
-      "bodyWords": 665
+      "lastmod": "2026-11-21",
+      "bodyWords": 666
     },
     {
       "route": "/pages/blog/page-4/",
@@ -4857,8 +4911,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-20",
-      "bodyWords": 672
+      "lastmod": "2026-11-21",
+      "bodyWords": 662
     },
     {
       "route": "/pages/blog/page-5/",
@@ -4869,8 +4923,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-20",
-      "bodyWords": 648
+      "lastmod": "2026-11-21",
+      "bodyWords": 657
     },
     {
       "route": "/pages/blog/page-6/",
@@ -4881,8 +4935,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-20",
-      "bodyWords": 657
+      "lastmod": "2026-11-21",
+      "bodyWords": 659
     },
     {
       "route": "/pages/blog/page-7/",
@@ -4893,8 +4947,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-20",
-      "bodyWords": 629
+      "lastmod": "2026-11-21",
+      "bodyWords": 626
     },
     {
       "route": "/pages/blog/page-8/",
@@ -4905,8 +4959,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-20",
-      "bodyWords": 675
+      "lastmod": "2026-11-21",
+      "bodyWords": 674
     },
     {
       "route": "/pages/blog/page-9/",
@@ -4917,8 +4971,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-20",
-      "bodyWords": 658
+      "lastmod": "2026-11-21",
+      "bodyWords": 657
     },
     {
       "route": "/pages/blog/phosphate-is-the-fertilizer-shock-that-did-not-fade/",
@@ -5003,6 +5057,18 @@
       "incomingLinks": 2,
       "lastmod": "2026-08-16",
       "bodyWords": 836
+    },
+    {
+      "route": "/pages/blog/recovery-planning-for-a-reliable-headless-raspberry-pi/",
+      "file": "pages/blog/recovery-planning-for-a-reliable-headless-raspberry-pi/index.html",
+      "title": "Recovery planning for a reliable headless Raspberry Pi — The Export | Notavello",
+      "description": "Learn how to prepare a headless Raspberry Pi with imaging, networking, SSH, updates, user identity, and recovery steps that keep the device maintainable",
+      "canonical": "https://notavello.com/pages/blog/recovery-planning-for-a-reliable-headless-raspberry-pi/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-11-21",
+      "bodyWords": 775
     },
     {
       "route": "/pages/blog/refineries-are-already-running-flat-out/",
@@ -6140,7 +6206,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 387,
+      "incomingLinks": 390,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -6152,7 +6218,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 387,
+      "incomingLinks": 390,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -6164,7 +6230,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 387,
+      "incomingLinks": 390,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -6176,7 +6242,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 387,
+      "incomingLinks": 390,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -6188,7 +6254,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 387,
+      "incomingLinks": 390,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -6201,8 +6267,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-11-21",
-      "bodyWords": 751
+      "lastmod": "2026-11-22",
+      "bodyWords": 757
     },
     {
       "route": "/pages/sample",
@@ -6224,7 +6290,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 387,
+      "incomingLinks": 390,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -6236,7 +6302,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 387,
+      "incomingLinks": 390,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -6260,7 +6326,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 387,
+      "incomingLinks": 390,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -6692,7 +6758,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 387,
+      "incomingLinks": 390,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }

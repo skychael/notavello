@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Recovery planning for a reliable headless Raspberry Pi — The Export | Notavello</title>
+<meta name="description" content="Learn how to prepare a headless Raspberry Pi with imaging, networking, SSH, updates, user identity, and recovery steps that keep the device maintainable"/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/blog/recovery-planning-for-a-reliable-headless-raspberry-pi/"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2026-11-21T16:51:39.337Z"/>
+<meta property="article:modified_time" content="2026-11-21T16:51:39.338Z"/>
+<meta name="notavello:published_at" content="2026-11-21T16:51:39.337Z"/>
+<meta name="syndication-origin-site" content="toysforbots"/>
+<meta name="syndication-origin-id" content="toysforbots:recovery-planning-for-a-reliable-headless-raspberry-pi"/>
+<meta name="syndication-origin-slug" content="recovery-planning-for-a-reliable-headless-raspberry-pi"/>
+<meta name="syndication-origin-url" content="https://toysforbots.com/blog/recovery-planning-for-a-reliable-headless-raspberry-pi/"/>
+<meta name="syndication-source-format" content="toysforbots-syndication-v1"/>
+<meta property="og:url" content="https://notavello.com/pages/blog/recovery-planning-for-a-reliable-headless-raspberry-pi/"/>
+<meta property="og:title" content="Recovery planning for a reliable headless Raspberry Pi"/>
+<meta property="og:description" content="Learn how to prepare a headless Raspberry Pi with imaging, networking, SSH, updates, user identity, and recovery steps that keep the device maintainable"/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Recovery planning for a reliable headless Raspberry Pi"/>
+<meta name="twitter:description" content="Learn how to prepare a headless Raspberry Pi with imaging, networking, SSH, updates, user identity, and recovery steps that keep the device maintainable"/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Recovery planning for a reliable headless Raspberry Pi",
+  "description": "Learn how to prepare a headless Raspberry Pi with imaging, networking, SSH, updates, user identity, and recovery steps that keep the device maintainable",
+  "url": "https://notavello.com/pages/blog/recovery-planning-for-a-reliable-headless-raspberry-pi/",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://notavello.com/pages/blog/recovery-planning-for-a-reliable-headless-raspberry-pi/" },
+  "image": "https://notavello.com/og-image.png",
+  "datePublished": "2026-11-21T16:51:39.337Z",
+  "dateModified": "2026-11-21T16:51:39.337Z",
+  "author": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" },
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com", "logo": { "@type": "ImageObject", "url": "https://notavello.com/og-image.png" } }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
+.post-nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; row-gap: 8px; }
+.post-nav-top { margin-bottom: 40px; }
+.post-nav-bottom { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--border); }
+.post-nav a { display: inline-flex; align-items: center; gap: 6px; font-size: 0.92rem; font-weight: 600; color: var(--ink-muted); text-decoration: none; padding: 12px 14px; border-radius: var(--radius-sm); white-space: nowrap; transition: color 0.15s, background 0.15s; }
+.post-nav a:hover { color: var(--accent); background: var(--accent-light); }
+.post-nav a:first-child { padding-left: 0; }
+.post-nav a:last-child { padding-right: 0; justify-content: flex-end; }
+.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
+.post-date { font-size: 0.78rem; color: var(--ink-faint); }
+.post-title { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; color: var(--ink); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
+.post-lede { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+.post-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink); }
+.post-body h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 44px 0 16px; letter-spacing: -0.01em; }
+.post-body p { margin-bottom: 20px; color: var(--ink-muted); }
+.post-body p strong { color: var(--ink); font-weight: 600; }
+.post-body ul { margin: 0 0 20px 20px; color: var(--ink-muted); }
+.post-body ul li { margin-bottom: 8px; line-height: 1.7; }
+.callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 32px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.7; }
+.post-footer { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.post-footer-label { font-size: 0.8rem; color: var(--ink-faint); }
+.btn-export { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: opacity 0.2s; }
+.btn-export:hover { opacity: 0.9; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } .post-nav a { padding: 12px 8px; font-size: 0.88rem; } }
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+
+  <nav class="post-nav post-nav-top">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+  <div class="post-meta">
+    <span class="post-tag">Small Computers</span>
+    <span class="post-date">November 21, 2026</span>
+  </div>
+
+  <h1 class="post-title">Recovery planning for a reliable headless Raspberry Pi</h1>
+
+  <p class="post-lede">Running a Raspberry Pi without a monitor, keyboard, or mouse requires careful preparation. The device must connect to the network, accept remote logins, stay updated, and support recovery when something goes wrong. Official documentation from raspberrypi.com outlines the steps for imaging, network configuration, and SSH access. Adding recovery planning turns a working setup into one that remains usable after power loss, failed updates, or credential problems.</p>
+
+  <div class="post-body">
+
+<h2>Create the initial image with remote access enabled</h2>
+<p>Use Raspberry Pi Imager to write the operating system and configure headless options at the same time. In the advanced settings, enter wireless network details, enable SSH, and set a username and password. This produces a bootable card that connects on first power-up without any local peripherals.</p>
+<p>If you prefer manual control, flash the image first and then create an empty ssh file in the boot partition. The file tells the system to start the SSH server on the next boot. Both methods achieve the same result: the Pi joins the network and accepts remote connections.</p><ul><li>Choose Raspberry Pi OS Lite when a desktop is unnecessary.</li><li>Record the exact image version and date for future reference.</li><li>Store the custom settings file used during imaging with the project notes.</li></ul><div class="callout"><strong>Note</strong> Always test recovery steps on a spare SD card before relying on them in production. A failed restore can leave the device unreachable.</div>
+<h2>Confirm network connectivity and SSH access</h2>
+<p>After the first boot, locate the IP address through your router&#039;s DHCP list or by checking connected devices. Connect from another computer with the ssh command using the username and IP. Accept the host key on the first connection and enter the password when prompted.</p>
+<p>If the connection times out, verify the wireless credentials or try a wired Ethernet connection. Some Raspberry Pi models and adapters do not support 5 GHz networks, so confirm compatibility before deployment. Once SSH works, you can continue configuration remotely.</p><ul><li>Test both password and key-based authentication if you plan to use keys later.</li><li>Note the hostname so you can reach the device by name after DNS updates.</li><li>Disable password authentication only after confirming key login succeeds.</li></ul>
+<h2>Apply updates and maintain system identity</h2>
+<p>Run sudo apt update followed by sudo apt full-upgrade to bring packages, kernel, and firmware current. Reboot after major updates to load the new kernel. Schedule or document this step so the device does not drift out of date.</p>
+<p>Keep a consistent username and hostname across reinstalls. Changing these values later can break scripts and monitoring. Record the final hostname, username, and any custom groups in your project notes so you can recreate the same identity during recovery.</p><ul><li>Check the output of uname -r after each reboot to confirm the running kernel.</li><li>Avoid running full upgrades during active production windows.</li><li>Store the output of dpkg -l in a dated file for version tracking.</li></ul>
+<h2>Prepare recovery options before problems occur</h2>
+<p>Create a second SD card with the same image and settings. Label it clearly and store it with the device. If the primary card fails or an update corrupts the filesystem, swap cards and regain access quickly.</p>
+<p>Enable VNC through raspi-config only after confirming SSH works. VNC provides a graphical desktop when needed, but it is unavailable on Lite images. Document the exact commands used to re-enable SSH or VNC so you can repeat them from a recovery card.</p>
+<p>Keep a recent backup of important configuration files and any project data. Copy these files off the device regularly. When restoring, place the files back in their original locations before restarting services.</p><ul><li>Test the spare card on the same hardware at least once.</li><li>Write the date and image version on the spare card label.</li><li>Store recovery notes in a location separate from the Pi itself.</li></ul>
+<h2>Verify the complete setup and document the process</h2>
+<p>After all steps, reboot the device and confirm it rejoins the network and accepts SSH within a few minutes. Run a simple command such as uptime to verify the connection. Note any delays or errors for future troubleshooting.</p>
+<p>Write a short checklist that includes the imaging settings, network details, update commands, and recovery card location. Keep this checklist with the project so anyone maintaining the device can follow the same steps without guessing.</p><ul><li>Reboot at least twice to confirm consistent network attachment.</li><li>Record the final IP address and any DHCP reservation used.</li><li>Review the checklist after any hardware or OS change.</li></ul><h2>Sources</h2><ul><li><a href="https://www.raspberrypi.com/documentation/computers/remote-access.html" rel="noopener noreferrer">raspberrypi.com</a></li><li><a href="https://www.raspberrypi.com/documentation/computers/getting-started.html" rel="noopener noreferrer">raspberrypi.com</a></li><li><a href="https://github.com/raspberrypi/documentation/blob/9de619f8/documentation/asciidoc/computers/configuration/headless.adoc" rel="noopener noreferrer">github.com</a></li></ul>
+
+  </div>
+
+  <div class="post-footer">
+    <span class="post-footer-label">Looking for more AI tools?</span>
+    <a class="btn-export" href="/">See our free AI tools →</a>
+  </div>
+
+  <nav class="post-nav post-nav-bottom">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+</main>
+
+<!--FOOTER-->
+
+</body>
+</html>
