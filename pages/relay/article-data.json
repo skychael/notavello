@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "checked_at": "2026-11-21T23:25:08.798Z",
-  "latest_success_at": "2026-11-21T23:25:08.798Z",
+  "checked_at": "2026-11-22T06:58:59.210Z",
+  "latest_success_at": "2026-11-22T06:58:59.210Z",
   "status": "ok",
   "items": [
     {
@@ -9,14 +9,6 @@
       "url": "https://oilprice.com/Energy/Crude-Oil/Tankers-Are-Being-Hit-Daily-So-Why-Is-Oil-Falling.html",
       "publisher": "OilPrice.com",
       "published_at": "2026-11-20T17:11:05.000Z",
-      "source_id": "oilprice",
-      "status": "ok"
-    },
-    {
-      "title": "China’s Oil Imports from Persian Gulf Jump to Wartime High",
-      "url": "https://oilprice.com/Latest-Energy-News/World-News/Chinas-Oil-Imports-from-Persian-Gulf-Jump-to-Wartime-High.html",
-      "publisher": "OilPrice.com",
-      "published_at": "2026-11-20T15:36:00.000Z",
       "source_id": "oilprice",
       "status": "ok"
     },
@@ -45,6 +37,14 @@
       "status": "ok"
     },
     {
+      "title": "Oil Prices Caught Between a Looming Glut and Middle East Turmoil",
+      "url": "https://oilprice.com/Energy/Energy-General/Oil-Prices-Caught-Between-a-Looming-Glut-and-Middle-East-Turmoil.html",
+      "publisher": "OilPrice.com",
+      "published_at": "2026-11-21T00:00:00.000Z",
+      "source_id": "oilprice",
+      "status": "ok"
+    },
+    {
       "title": "Russian Military RoRo Abandoned After Drone Attack in the Baltic",
       "url": "https://maritime-executive.com/article/russian-military-roro-attacked-by-drones-in-the-baltic-near-finland",
       "publisher": "The Maritime Executive",
@@ -57,14 +57,6 @@
       "url": "https://www.twz.com/news-features/impacts-of-latest-neptune-missile-strike-on-kerch-bridge-seen-in-satellite-imagery",
       "publisher": "TWZ (The War Zone)",
       "published_at": "2026-11-19T18:14:45.000Z",
-      "source_id": "twz",
-      "status": "ok"
-    },
-    {
-      "title": "Ukraine Strikes Kerch Bridge Once Again: Crimea Governor (Updated)",
-      "url": "https://www.twz.com/news-features/ukraine-strikes-kerch-bridge-once-again-crimea-governor",
-      "publisher": "TWZ (The War Zone)",
-      "published_at": "2026-11-19T00:49:07.000Z",
       "source_id": "twz",
       "status": "ok"
     },
@@ -82,6 +74,14 @@
       "publisher": "Breaking Defense",
       "published_at": "2026-11-20T23:52:57.000Z",
       "source_id": "breaking-defense",
+      "status": "ok"
+    },
+    {
+      "title": "Regent Squire Wing-In-Ground Effect Drone To Patrol Middle East Waters",
+      "url": "https://www.twz.com/news-features/regent-squire-wing-in-ground-effect-drone-to-patrol-middle-east-waters",
+      "publisher": "TWZ (The War Zone)",
+      "published_at": "2026-11-19T22:08:02.000Z",
+      "source_id": "twz",
       "status": "ok"
     }
   ]
