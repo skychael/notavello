@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "11-22",
-  "display_date": "November 22",
-  "generated_at": "2026-11-22T16:17:15.451Z",
+  "date_key": "11-23",
+  "display_date": "November 23",
+  "generated_at": "2026-11-23T20:15:35.312Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-cccd5979dae9bdcda577c6af",
+      "candidate_id": "event-83db6bb7ebbab560c2d7d493",
       "type": "event",
-      "year": 1994,
-      "text": "A Trans World Airlines McDonnell Douglas MD-80 and Cessna 441 Conquest II aircraft collide on the runway at St. Louis Lambert International Airport in Bridgeton, Missouri, killing two people and injuring eight.",
-      "article_title": "Trans World Airlines",
-      "url": "https://en.wikipedia.org/wiki/Trans_World_Airlines",
+      "year": 1996,
+      "text": "Ethiopian Airlines Flight 961 is hijacked, then crashes into the Indian Ocean off the coast of Comoros after running out of fuel, killing 125.",
+      "article_title": "Ethiopian Airlines Flight 961",
+      "url": "https://en.wikipedia.org/wiki/Ethiopian_Airlines_Flight_961",
       "category": "World history"
     },
     {
-      "candidate_id": "event-5bc800ce5c5b2f64f98e81dd",
+      "candidate_id": "event-8d1db0a3ea7b130b5f9edc8a",
       "type": "event",
-      "year": 1971,
-      "text": "In Britain's worst mountaineering tragedy, the Cairngorm Plateau Disaster, five children and one of their leaders are found dead from exposure in the Scottish mountains.",
-      "article_title": "Cairngorm Plateau disaster",
-      "url": "https://en.wikipedia.org/wiki/Cairngorm_Plateau_disaster",
-      "category": "Disasters and exploration"
+      "year": 2015,
+      "text": "Blue Origin's New Shepard space vehicle became the first rocket to successfully fly to space and then return to Earth for a controlled, vertical landing.",
+      "article_title": "Blue Origin",
+      "url": "https://en.wikipedia.org/wiki/Blue_Origin",
+      "category": "Science and technology"
     },
     {
-      "candidate_id": "event-0313575cf13160c5c32b76aa",
+      "candidate_id": "event-6afede504d85c7743faebeb1",
       "type": "event",
-      "year": 1989,
-      "text": "NASA launches Space Shuttle Discovery on STS-33, a classified mission for the United States Department of Defense.",
-      "article_title": "NASA",
-      "url": "https://en.wikipedia.org/wiki/NASA",
-      "category": "Science and technology"
+      "year": 1985,
+      "text": "Gunmen hijack EgyptAir Flight 648 en route from Athens to Cairo. When the plane lands in Malta, Egyptian commandos storm the aircraft, but 60 people die in the raid.",
+      "article_title": "Aircraft hijacking",
+      "url": "https://en.wikipedia.org/wiki/Aircraft_hijacking",
+      "category": "Disasters and exploration"
     }
   ]
 }
