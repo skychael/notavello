@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "11-23",
-  "display_date": "November 23",
-  "generated_at": "2026-11-23T20:15:35.312Z",
+  "date_key": "11-24",
+  "display_date": "November 24",
+  "generated_at": "2026-11-24T19:30:49.601Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-83db6bb7ebbab560c2d7d493",
+      "candidate_id": "event-a1716fd88d000aafd6f64c75",
       "type": "event",
-      "year": 1996,
-      "text": "Ethiopian Airlines Flight 961 is hijacked, then crashes into the Indian Ocean off the coast of Comoros after running out of fuel, killing 125.",
-      "article_title": "Ethiopian Airlines Flight 961",
-      "url": "https://en.wikipedia.org/wiki/Ethiopian_Airlines_Flight_961",
+      "year": 2015,
+      "text": "An explosion on a bus carrying Tunisian Presidential Guard personnel in Tunisia's capital Tunis leaves at least 14 people dead.",
+      "article_title": "2015 Tunis bombing",
+      "url": "https://en.wikipedia.org/wiki/2015_Tunis_bombing",
       "category": "World history"
     },
     {
-      "candidate_id": "event-8d1db0a3ea7b130b5f9edc8a",
+      "candidate_id": "event-fbfba9bef2e5e5bdd76c8ea5",
       "type": "event",
-      "year": 2015,
-      "text": "Blue Origin's New Shepard space vehicle became the first rocket to successfully fly to space and then return to Earth for a controlled, vertical landing.",
-      "article_title": "Blue Origin",
-      "url": "https://en.wikipedia.org/wiki/Blue_Origin",
-      "category": "Science and technology"
+      "year": 1963,
+      "text": "Lee Harvey Oswald, the assassin of President John F. Kennedy, is killed by Jack Ruby on live television. Robert H. Jackson takes a photograph of the shooting that will win the 1964 Pulitzer Prize in Photography.",
+      "article_title": "Lee Harvey Oswald",
+      "url": "https://en.wikipedia.org/wiki/Lee_Harvey_Oswald",
+      "category": "Politics and society"
     },
     {
-      "candidate_id": "event-6afede504d85c7743faebeb1",
+      "candidate_id": "event-391a0d4d9acfa81f11a7d664",
       "type": "event",
-      "year": 1985,
-      "text": "Gunmen hijack EgyptAir Flight 648 en route from Athens to Cairo. When the plane lands in Malta, Egyptian commandos storm the aircraft, but 60 people die in the raid.",
-      "article_title": "Aircraft hijacking",
-      "url": "https://en.wikipedia.org/wiki/Aircraft_hijacking",
-      "category": "Disasters and exploration"
+      "year": 1974,
+      "text": "Donald Johanson and Tom Gray discover the 40% complete Australopithecus afarensis skeleton, nicknamed \"Lucy\" (after The Beatles song \"Lucy in the Sky with Diamonds\"), in the Awash Valley of Ethiopia's Afar Depression.",
+      "article_title": "Donald Johanson",
+      "url": "https://en.wikipedia.org/wiki/Donald_Johanson",
+      "category": "Science and technology"
     }
   ]
 }
