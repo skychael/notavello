@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-11-24T00:58:16.558Z",
-  "latest_success_at": "2026-11-24T00:58:16.558Z",
+  "generated_at": "2026-11-24T11:01:46.885Z",
+  "latest_success_at": "2026-11-24T11:01:46.885Z",
   "status": "ok",
   "items": [
     {
@@ -14,20 +14,20 @@
       "status": "ok"
     },
     {
-      "id": "b5ad93019d019ede",
-      "title": "Atlantic Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
+      "id": "ee8e390990a944fc",
+      "title": "Eastern North Pacific Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-11-23T23:07:07.000Z",
+      "published_at": "2026-11-24T05:08:08.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "c36420c6668504eb",
-      "title": "Coastal Flood Warning issued November 23 at 2:34PM PST until November 24 at 1:00PM PST by NWS Eureka CA",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.653469f13fa543848c6ee132a8d0485686b9b615.001.2.cap",
+      "id": "b37cbd0ec044d695",
+      "title": "Coastal Flood Warning issued November 23 at 9:16PM PST until November 24 at 1:00PM PST by NWS Eureka CA",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6ee3e62a752fcd1636bfa5982c4e802cc2a42325.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-11-23T22:34:00.000Z",
+      "published_at": "2026-11-24T05:16:00.000Z",
       "topic": "Flooding",
       "status": "ok"
     }
