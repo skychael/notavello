@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-11-25T04:55:12.559Z",
-  "latest_success_at": "2026-11-25T04:55:12.559Z",
+  "generated_at": "2026-11-25T15:42:36.561Z",
+  "latest_success_at": "2026-11-25T15:42:36.561Z",
   "status": "ok",
   "items": [
     {
@@ -14,21 +14,21 @@
       "status": "ok"
     },
     {
-      "id": "ed9c288fc188e2dc",
-      "title": "Coastal Flood Warning issued November 24 at 9:11PM EST until November 26 at 5:00PM EST by NWS Wakefield VA",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.e9fe63367399b824a86309fcef9d8643cdbd8deb.005.1.cap",
+      "id": "e00ec92585d57979",
+      "title": "High Surf Advisory issued November 25 at 3:14AM EST until November 27 at 7:00AM EST by NWS Wakefield VA",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9851f63573be3bd64e30050f1ff86fba4a1fd46a.009.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-11-25T02:11:00.000Z",
+      "published_at": "2026-11-25T08:14:00.000Z",
       "topic": "Flooding",
       "status": "ok"
     },
     {
-      "id": "ee8e390990a944fc",
-      "title": "Eastern North Pacific Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
-      "publisher": "National Hurricane Center",
-      "published_at": "2026-11-24T23:20:47.000Z",
-      "topic": "Hurricane",
+      "id": "7c4589a74bf7c6ca",
+      "title": "Coastal Flood Warning issued November 25 at 3:14AM EST until November 26 at 5:00PM EST by NWS Wakefield VA",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9851f63573be3bd64e30050f1ff86fba4a1fd46a.009.2.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-11-25T08:14:00.000Z",
+      "topic": "Flooding",
       "status": "ok"
     }
   ]

@@ -1,14 +1,22 @@
 {
   "schema_version": "1.0",
-  "checked_at": "2026-11-25T04:55:11.888Z",
-  "latest_success_at": "2026-11-25T04:55:11.888Z",
+  "checked_at": "2026-11-25T15:42:36.041Z",
+  "latest_success_at": "2026-11-25T15:42:36.041Z",
   "status": "ok",
   "items": [
     {
-      "title": "Saudi Arabia Sees Smaller Economic Slump as More Oil Reaches Market",
-      "url": "https://oilprice.com/Latest-Energy-News/World-News/Saudi-Arabia-Sees-Smaller-Economic-Slump-as-More-Oil-Reaches-Market.html",
+      "title": "Iran War Is Pushing Record Numbers of Fuel Tankers Into Crude Trade",
+      "url": "https://oilprice.com/Latest-Energy-News/World-News/Iran-War-Is-Pushing-Record-Numbers-of-Fuel-Tankers-Into-Crude-Trade.html",
       "publisher": "OilPrice.com",
-      "published_at": "2026-11-24T17:00:00.000Z",
+      "published_at": "2026-11-25T13:00:00.000Z",
+      "source_id": "oilprice",
+      "status": "ok"
+    },
+    {
+      "title": "Iran Reports Fresh Tanker Explosions as Hormuz Attacks Intensify",
+      "url": "https://oilprice.com/Latest-Energy-News/World-News/Iran-Reports-Fresh-Tanker-Explosions-as-Hormuz-Attacks-Intensify.html",
+      "publisher": "OilPrice.com",
+      "published_at": "2026-11-25T09:30:00.000Z",
       "source_id": "oilprice",
       "status": "ok"
     },
@@ -18,14 +26,6 @@
       "publisher": "gCaptain",
       "published_at": "2026-11-24T16:13:27.000Z",
       "source_id": "gcaptain",
-      "status": "ok"
-    },
-    {
-      "title": "Iran Faces a Deepening Natural Gas Crisis Ahead of Winter",
-      "url": "https://oilprice.com/Energy/Energy-General/Iran-Faces-a-Deepening-Natural-Gas-Crisis-Ahead-of-Winter.html",
-      "publisher": "OilPrice.com",
-      "published_at": "2026-11-24T15:00:00.000Z",
-      "source_id": "oilprice",
       "status": "ok"
     },
     {
@@ -69,19 +69,19 @@
       "status": "ok"
     },
     {
-      "title": "Yes, no, maybe? The countries that can (or can’t) deliver Ukraine’s 40 requested F-16s",
-      "url": "https://breakingdefense.com/2026/11/yes-no-maybe-the-countries-that-can-or-cant-deliver-ukraines-40-requested-f-16s",
-      "publisher": "Breaking Defense",
-      "published_at": "2026-11-23T15:10:53.000Z",
-      "source_id": "breaking-defense",
-      "status": "ok"
-    },
-    {
       "title": "Ukraine’s Campaign Against Russian Naval Assets Far Beyond The Black Sea Enters A New Phase (Updated)",
       "url": "https://www.twz.com/sea/ukraines-campaign-against-russian-naval-assets-far-beyond-the-black-sea-enters-a-new-phase",
       "publisher": "TWZ (The War Zone)",
       "published_at": "2026-11-22T22:26:09.000Z",
       "source_id": "twz",
+      "status": "ok"
+    },
+    {
+      "title": "Uber drivers are flocking to EVs amid high gas prices",
+      "url": "https://www.canarymedia.com/articles/electric-vehicles/uber-drivers-flocking-to-evs",
+      "publisher": "Canary Media",
+      "published_at": "2026-11-25T08:30:00.000Z",
+      "source_id": "canary-media",
       "status": "ok"
     }
   ]
