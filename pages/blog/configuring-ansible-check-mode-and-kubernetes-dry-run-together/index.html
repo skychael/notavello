@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Configuring Ansible Check Mode and Kubernetes Dry-Run Together — The Export | Notavello</title>
+<meta name="description" content="Learn how to run Ansible in check mode with diff output and pair it with Kubernetes server-side dry-run requests to preview changes safely before applying them."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/blog/configuring-ansible-check-mode-and-kubernetes-dry-run-together/"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2026-11-24T20:15:04.125Z"/>
+<meta property="article:modified_time" content="2026-11-24T20:15:04.125Z"/>
+<meta name="notavello:published_at" content="2026-11-24T20:15:04.125Z"/>
+<meta name="syndication-origin-site" content="toysforbots"/>
+<meta name="syndication-origin-id" content="toysforbots:configuring-ansible-check-mode-and-kubernetes-dry-run-together"/>
+<meta name="syndication-origin-slug" content="configuring-ansible-check-mode-and-kubernetes-dry-run-together"/>
+<meta name="syndication-origin-url" content="https://toysforbots.com/blog/configuring-ansible-check-mode-and-kubernetes-dry-run-together/"/>
+<meta name="syndication-source-format" content="toysforbots-syndication-v1"/>
+<meta property="og:url" content="https://notavello.com/pages/blog/configuring-ansible-check-mode-and-kubernetes-dry-run-together/"/>
+<meta property="og:title" content="Configuring Ansible Check Mode and Kubernetes Dry-Run Together"/>
+<meta property="og:description" content="Learn how to run Ansible in check mode with diff output and pair it with Kubernetes server-side dry-run requests to preview changes safely before applying them."/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Configuring Ansible Check Mode and Kubernetes Dry-Run Together"/>
+<meta name="twitter:description" content="Learn how to run Ansible in check mode with diff output and pair it with Kubernetes server-side dry-run requests to preview changes safely before applying them."/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Configuring Ansible Check Mode and Kubernetes Dry-Run Together",
+  "description": "Learn how to run Ansible in check mode with diff output and pair it with Kubernetes server-side dry-run requests to preview changes safely before applying them.",
+  "url": "https://notavello.com/pages/blog/configuring-ansible-check-mode-and-kubernetes-dry-run-together/",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://notavello.com/pages/blog/configuring-ansible-check-mode-and-kubernetes-dry-run-together/" },
+  "image": "https://notavello.com/og-image.png",
+  "datePublished": "2026-11-24T20:15:04.125Z",
+  "dateModified": "2026-11-24T20:15:04.125Z",
+  "author": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" },
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com", "logo": { "@type": "ImageObject", "url": "https://notavello.com/og-image.png" } }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
+.post-nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; row-gap: 8px; }
+.post-nav-top { margin-bottom: 40px; }
+.post-nav-bottom { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--border); }
+.post-nav a { display: inline-flex; align-items: center; gap: 6px; font-size: 0.92rem; font-weight: 600; color: var(--ink-muted); text-decoration: none; padding: 12px 14px; border-radius: var(--radius-sm); white-space: nowrap; transition: color 0.15s, background 0.15s; }
+.post-nav a:hover { color: var(--accent); background: var(--accent-light); }
+.post-nav a:first-child { padding-left: 0; }
+.post-nav a:last-child { padding-right: 0; justify-content: flex-end; }
+.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
+.post-date { font-size: 0.78rem; color: var(--ink-faint); }
+.post-title { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; color: var(--ink); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
+.post-lede { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+.post-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink); }
+.post-body h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 44px 0 16px; letter-spacing: -0.01em; }
+.post-body p { margin-bottom: 20px; color: var(--ink-muted); }
+.post-body p strong { color: var(--ink); font-weight: 600; }
+.post-body ul { margin: 0 0 20px 20px; color: var(--ink-muted); }
+.post-body ul li { margin-bottom: 8px; line-height: 1.7; }
+.callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 32px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.7; }
+.post-footer { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.post-footer-label { font-size: 0.8rem; color: var(--ink-faint); }
+.btn-export { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: opacity 0.2s; }
+.btn-export:hover { opacity: 0.9; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } .post-nav a { padding: 12px 8px; font-size: 0.88rem; } }
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+
+  <nav class="post-nav post-nav-top">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+  <div class="post-meta">
+    <span class="post-tag">Automation</span>
+    <span class="post-date">November 24, 2026</span>
+  </div>
+
+  <h1 class="post-title">Configuring Ansible Check Mode and Kubernetes Dry-Run Together</h1>
+
+  <p class="post-lede">Automation tools often provide built-in preview options that let you see what would happen before any real change occurs. Ansible offers check mode to simulate task execution and diff mode to show before-and-after file or resource differences. Kubernetes supports server-side dry-run requests that process API calls through validation and admission stages without persisting objects. Using these features together helps teams catch configuration errors, permission issues, and unexpected side effects early. The approach works best when you understand each tool&#039;s exact contract, disable diff output on sensitive tasks, and document what the preview cannot test.</p>
+
+  <div class="post-body">
+
+<h2>Running Ansible in check mode</h2>
+<p>Ansible check mode runs a playbook without applying changes on remote hosts. Modules that support the mode report the changes they would make, while unsupported modules report nothing and perform no action. Invoke the mode with the --check flag on the ansible-playbook command. The simulation skips tasks that rely on registered variables from earlier steps, so it works best for configuration management playbooks that target one node at a time. This selective skipping occurs because the preview cannot generate the actual runtime values that later tasks would consume, which means playbooks relying on sequential data gathering across multiple hosts often produce incomplete results. Teams therefore benefit from structuring playbooks so that each host&#039;s configuration tasks stand alone or draw only from static inputs defined at the start. In practice this encourages breaking large playbooks into smaller targeted files that can be validated independently, reducing the chance that an early skipped task masks a later problem. Reviewers should also note that check mode still performs authorization checks against the target hosts, giving an early signal about permission problems before any real run occurs.</p><ul><li>Use ansible-playbook foo.yml --check to start a simulation run.</li><li>Add --limit to restrict the run to a single host when output volume is high.</li><li>Review module output carefully because some modules silently skip reporting.</li></ul><div class="callout"><strong>Key limit</strong> Dry-run and check modes never execute external side effects or post-persistence reconciliation. Always treat a clean preview as evidence for a later decision rather than a guarantee of success.</div>
+<h2>Adding diff mode for visible changes</h2>
+<p>Diff mode supplies before-and-after comparisons for modules that support it. The most common use appears with file and template modules, though the user module can also display differences. Run diff mode alone or combined with check mode. Because the output can be large, limit the run to one host at a time. When combined with check mode the two flags together let operators inspect both the intent of each task and the precise textual or structural result that would appear after execution. This pairing is especially helpful for template-driven configuration where small variable changes can produce large rendered differences that are hard to predict from reading the source alone. Operators can therefore walk through the diff output line by line to confirm that no unintended lines were added or removed and that sensitive values remain masked where expected. The same combined run also surfaces cases where a module claims support for check mode yet produces no diff, prompting an earlier rewrite of that task before it reaches production.</p><ul><li>Combine flags as ansible-playbook foo.yml --check --diff --limit foo.example.com.</li><li>Diff output shows exact line changes for templates and file edits.</li><li>Use the combination to validate both intent and final state before execution.</li></ul>
+<h2>Controlling diff output at the task level</h2>
+<p>The --diff flag can expose sensitive data such as passwords or keys. To prevent this, set diff: false on any task that should never produce diff output. This per-task setting overrides the command-line flag and keeps the playbook safe for shared repositories or CI logs. Because the override lives inside the playbook itself, it travels with the code and prevents accidental leakage even when a new engineer runs the same command with broader flags. In addition the setting serves as living documentation that certain tasks handle material that must stay confidential, guiding future reviewers to treat those tasks with extra care during both preview and real runs. When a playbook mixes public configuration with secret handling, applying the flag selectively lets the team keep useful diff output for the non-sensitive portions while silencing it only where necessary.</p><ul><li>Add diff: false directly under a task definition in the playbook.</li><li>Apply the setting to any task that manipulates secrets or large binary files.</li><li>Document the choice in comments so future maintainers understand the reason.</li></ul>
+<h2>Using Kubernetes server-side dry-run</h2>
+<p>Kubernetes dry-run processes requests through the normal API stages of defaulting, validation, and admission without writing to storage. The apiserver guarantees that dry-run requests are never persisted. Dynamic admission controllers must declare that they have no dry-run side effects for the request to succeed. Kubectl diff relies on this server-side dry-run capability and therefore requires PATCH, CREATE, and UPDATE permissions. Because the request still traverses the full admission chain, any webhook that declares side effects will cause the dry-run to fail, surfacing potential conflicts before a real apply attempt. Operators can therefore use the returned object to verify that defaulting rules have filled in expected fields and that validation rules accept the proposed values. Comparing the returned defaulted object against the submitted manifest also reveals whether any mutating admission steps altered the resource in ways that could affect later reconciliation loops.</p><ul><li>Run kubectl diff -f manifest.yaml to compare the live object with the proposed change.</li><li>Enable dry-run on the kube-apiserver if the feature is not already active.</li><li>Compare the returned defaulted object, not only the submitted manifest.</li></ul>
+<h2>Combining the two tools and reporting limits</h2>
+<p>Teams can run Ansible check mode first to validate host-level configuration, then issue Kubernetes dry-run requests for cluster objects. Both previews share the same core contract: they perform no durable mutation and use the same authorization checks as a real request. Generated values such as UIDs, timestamps, and service IPs may differ at execution time. Admission webhooks that declare side effects will cause dry-run requests to fail rather than risk unintended behavior. Record stable identities and preconditions so that later execution can detect drift between preview and apply time. When sequencing the two previews, operators should capture the exact command lines and timestamps used so that any later discrepancy can be traced to changes that occurred between the preview window and the actual run. If a dry-run request fails because a required resource cannot be read, the failure itself becomes useful signal that the subsequent real request would also be blocked, allowing the team to correct RBAC or namespace issues early. Re-running the full preview sequence immediately before a destructive action further reduces the window during which external changes could invalidate the earlier simulation results.</p><ul><li>Label every preview output with the exact mode and snapshot time used.</li><li>Fail closed when a dry-run request cannot read a required resource.</li><li>Re-run the preview immediately before destructive actions if preconditions may have changed.</li></ul><h2>Sources</h2><ul><li><a href="https://docs.ansible.com/projects/ansible/latest/playbook_guide/playbooks_checkmode.html" rel="noopener noreferrer">docs.ansible.com</a></li><li><a href="https://kubernetes.io/blog/2019/01/14/apiserver-dry-run-and-kubectl-diff/" rel="noopener noreferrer">kubernetes.io</a></li></ul>
+
+  </div>
+
+  <div class="post-footer">
+    <span class="post-footer-label">Looking for more AI tools?</span>
+    <a class="btn-export" href="/">See our free AI tools →</a>
+  </div>
+
+  <nav class="post-nav post-nav-bottom">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+</main>
+
+<!--FOOTER-->
+
+</body>
+</html>
