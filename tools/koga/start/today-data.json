@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "11-25",
-  "display_date": "November 25",
-  "generated_at": "2026-11-25T18:39:34.748Z",
+  "date_key": "11-26",
+  "display_date": "November 26",
+  "generated_at": "2026-11-26T18:25:51.078Z",
   "source": "Wikimedia On This Day",
-  "selection_method": "deterministic_fallback",
+  "selection_method": "ai",
   "items": [
     {
-      "candidate_id": "event-d8606416268e434df7f9bfde",
+      "candidate_id": "event-19c73c159f1a05f61dca59e6",
       "type": "event",
-      "year": 2009,
-      "text": "Jeddah floods: Freak rains swamp the city of Jeddah, Saudi Arabia, during an ongoing Hajj pilgrimage. Three thousand cars are swept away and 122 people perish in the torrents, with 350 others missing.",
-      "article_title": "2009 Jeddah floods",
-      "url": "https://en.wikipedia.org/wiki/2009_Jeddah_floods",
-      "category": "World history"
+      "year": 2008,
+      "text": "Mumbai attacks, a series of coordinated terrorist attacks took place in Mumbai killing 166 citizens by 10 terrorists of Lashkar-e-Taiba, a Pakistan based extremist Islamist terrorist organisation.",
+      "article_title": "2008 Mumbai attacks",
+      "url": "https://en.wikipedia.org/wiki/2008_Mumbai_attacks",
+      "category": "Politics and society"
     },
     {
-      "candidate_id": "event-b42882dc6ff35a81683b2237",
+      "candidate_id": "event-cb5b75563debbe197c176055",
       "type": "event",
-      "year": 2000,
-      "text": "The 2000 Baku earthquake, with a Richter magnitude of 7.0 kills 26 people in Baku, Azerbaijan.",
-      "article_title": "2000 Baku earthquake",
-      "url": "https://en.wikipedia.org/wiki/2000_Baku_earthquake",
+      "year": 2021,
+      "text": "COVID-19 pandemic: The World Health Organization identifies the SARS-CoV-2 Omicron variant.",
+      "article_title": "COVID-19 pandemic",
+      "url": "https://en.wikipedia.org/wiki/COVID-19_pandemic",
+      "category": "Science and technology"
+    },
+    {
+      "candidate_id": "event-2ca979e11ab495441a878609",
+      "type": "event",
+      "year": 1922,
+      "text": "Howard Carter and Lord Carnarvon become the first people to enter the tomb of Pharaoh Tutankhamun in over 3,000 years.",
+      "article_title": "Howard Carter",
+      "url": "https://en.wikipedia.org/wiki/Howard_Carter",
       "category": "Disasters and exploration"
-    },
-    {
-      "candidate_id": "event-6c256a5bd5460338847eedad",
-      "type": "event",
-      "year": 1970,
-      "text": "In Japan, author Yukio Mishima and one compatriot commit ritualistic seppuku after an unsuccessful coup attempt.",
-      "article_title": "Yukio Mishima",
-      "url": "https://en.wikipedia.org/wiki/Yukio_Mishima",
-      "category": "Culture and notable people"
     }
   ]
 }
