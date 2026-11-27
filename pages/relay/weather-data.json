@@ -1,33 +1,33 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-11-27T02:54:37.299Z",
-  "latest_success_at": "2026-11-27T02:54:37.299Z",
+  "generated_at": "2026-11-27T12:36:31.849Z",
+  "latest_success_at": "2026-11-27T12:36:31.849Z",
   "status": "ok",
   "items": [
     {
-      "id": "dd720ece7d15ea41",
-      "title": "Cyclone Akvan weakens after landfall near Gopalpur; more than 300 000 evacuated in Odisha, India",
-      "url": "https://watchers.news/2026/11/20/cyclone-akvan-landfall-gopalpur-november-20-2026-deep-depression",
-      "publisher": "The Watchers",
-      "published_at": "2026-11-20T11:26:15.000Z",
+      "id": "ee8e390990a944fc",
+      "title": "Eastern North Pacific Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
+      "publisher": "National Hurricane Center",
+      "published_at": "2026-11-27T11:23:56.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "9d995784f17e2064",
-      "title": "Coastal Flood Warning issued November 26 at 3:19PM EST until November 27 at 7:00PM EST by NWS Wakefield VA",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.652c3e26b3b5664b115d51921332a5872e3c7bb5.003.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-11-26T20:19:00.000Z",
-      "topic": "Flooding",
+      "id": "012337d9be399dc1",
+      "title": "SPC Nov 27, 2026 Day 4-8 Severe Weather Outlook",
+      "url": "https://www.spc.noaa.gov/products/exper/day4-8",
+      "publisher": "Storm Prediction Center",
+      "published_at": "2026-11-27T09:30:20.000Z",
+      "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "7b33412cda728dad",
-      "title": "High Surf Advisory issued November 26 at 3:19PM EST until November 27 at 1:00PM EST by NWS Wakefield VA",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.652c3e26b3b5664b115d51921332a5872e3c7bb5.003.2.cap",
+      "id": "5f6660f58c8ae824",
+      "title": "Coastal Flood Warning issued November 27 at 6:32AM EST until November 27 at 5:00PM EST by NWS Wakefield VA",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a9380edeb0917abbc993adb7dc3da733e2881463.004.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-11-26T20:19:00.000Z",
+      "published_at": "2026-11-27T11:32:00.000Z",
       "topic": "Flooding",
       "status": "ok"
     }
