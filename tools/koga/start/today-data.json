@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "11-26",
-  "display_date": "November 26",
-  "generated_at": "2026-11-26T18:25:51.078Z",
+  "date_key": "11-27",
+  "display_date": "November 27",
+  "generated_at": "2026-11-27T18:12:08.103Z",
   "source": "Wikimedia On This Day",
-  "selection_method": "ai",
+  "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-19c73c159f1a05f61dca59e6",
+      "candidate_id": "event-0cf5987371c2f6e9a6b6ea44",
       "type": "event",
-      "year": 2008,
-      "text": "Mumbai attacks, a series of coordinated terrorist attacks took place in Mumbai killing 166 citizens by 10 terrorists of Lashkar-e-Taiba, a Pakistan based extremist Islamist terrorist organisation.",
-      "article_title": "2008 Mumbai attacks",
-      "url": "https://en.wikipedia.org/wiki/2008_Mumbai_attacks",
-      "category": "Politics and society"
-    },
-    {
-      "candidate_id": "event-cb5b75563debbe197c176055",
-      "type": "event",
-      "year": 2021,
-      "text": "COVID-19 pandemic: The World Health Organization identifies the SARS-CoV-2 Omicron variant.",
-      "article_title": "COVID-19 pandemic",
-      "url": "https://en.wikipedia.org/wiki/COVID-19_pandemic",
-      "category": "Science and technology"
-    },
-    {
-      "candidate_id": "event-2ca979e11ab495441a878609",
-      "type": "event",
-      "year": 1922,
-      "text": "Howard Carter and Lord Carnarvon become the first people to enter the tomb of Pharaoh Tutankhamun in over 3,000 years.",
-      "article_title": "Howard Carter",
-      "url": "https://en.wikipedia.org/wiki/Howard_Carter",
+      "year": 2004,
+      "text": "Blackwater 61 crash: A CASA C-212 Aviocar crashes into the Koh-i-Baba mountain range in Afghanistan, killing six.",
+      "article_title": "Blackwater 61 crash",
+      "url": "https://en.wikipedia.org/wiki/Blackwater_61_crash",
       "category": "Disasters and exploration"
+    },
+    {
+      "candidate_id": "event-02481239530ebcba6ec61305",
+      "type": "event",
+      "year": 1989,
+      "text": "Avianca Flight 203: A Boeing 727 explodes in mid-air over Colombia, killing all 107 people on board and three people on the ground. The Medellín Cartel claimed responsibility for the attack.",
+      "article_title": "Avianca Flight 203",
+      "url": "https://en.wikipedia.org/wiki/Avianca_Flight_203",
+      "category": "World history"
+    },
+    {
+      "candidate_id": "event-35acd2fbe569fe1b0a26c045",
+      "type": "event",
+      "year": 1971,
+      "text": "The Soviet space program's Mars 2 orbiter releases a descent module. It malfunctions and crashes, but it is the first man-made object to reach the surface of Mars.",
+      "article_title": "Soviet space program",
+      "url": "https://en.wikipedia.org/wiki/Soviet_space_program",
+      "category": "Science and technology"
     }
   ]
 }
