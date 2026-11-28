@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>How to read rate limit headers and back off correctly — The Export | Notavello</title>
+<meta name="description" content="Learn to parse rate limit headers, respect Retry-After values, and apply scoped backoff so your API client stays reliable without triggering repeated"/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://notavello.com/pages/blog/how-to-read-rate-limit-headers-and-back-off-correctly/"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2026-11-27T19:04:43.847Z"/>
+<meta property="article:modified_time" content="2026-11-27T19:04:43.847Z"/>
+<meta name="notavello:published_at" content="2026-11-27T19:04:43.847Z"/>
+<meta name="syndication-origin-site" content="toysforbots"/>
+<meta name="syndication-origin-id" content="toysforbots:how-to-read-rate-limit-headers-and-back-off-correctly"/>
+<meta name="syndication-origin-slug" content="how-to-read-rate-limit-headers-and-back-off-correctly"/>
+<meta name="syndication-origin-url" content="https://toysforbots.com/blog/how-to-read-rate-limit-headers-and-back-off-correctly/"/>
+<meta name="syndication-source-format" content="toysforbots-syndication-v1"/>
+<meta property="og:url" content="https://notavello.com/pages/blog/how-to-read-rate-limit-headers-and-back-off-correctly/"/>
+<meta property="og:title" content="How to read rate limit headers and back off correctly"/>
+<meta property="og:description" content="Learn to parse rate limit headers, respect Retry-After values, and apply scoped backoff so your API client stays reliable without triggering repeated"/>
+<meta property="og:site_name" content="Notavello"/>
+<meta property="og:image" content="https://notavello.com/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="How to read rate limit headers and back off correctly"/>
+<meta name="twitter:description" content="Learn to parse rate limit headers, respect Retry-After values, and apply scoped backoff so your API client stays reliable without triggering repeated"/>
+<meta name="twitter:image" content="https://notavello.com/og-image.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "How to read rate limit headers and back off correctly",
+  "description": "Learn to parse rate limit headers, respect Retry-After values, and apply scoped backoff so your API client stays reliable without triggering repeated",
+  "url": "https://notavello.com/pages/blog/how-to-read-rate-limit-headers-and-back-off-correctly/",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://notavello.com/pages/blog/how-to-read-rate-limit-headers-and-back-off-correctly/" },
+  "image": "https://notavello.com/og-image.png",
+  "datePublished": "2026-11-27T19:04:43.847Z",
+  "dateModified": "2026-11-27T19:04:43.847Z",
+  "author": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com" },
+  "publisher": { "@type": "Organization", "name": "Notavello", "url": "https://notavello.com", "logo": { "@type": "ImageObject", "url": "https://notavello.com/og-image.png" } }
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F0F4FF; --surface: #FFFFFF; --surface2: #F8FAFF;
+  --ink: #0F172A; --ink-muted: #64748B; --ink-faint: #94A3B8;
+  --accent: #4F46E5; --accent2: #7C3AED; --accent-light: #EEF2FF;
+  --green: #059669; --green-light: #D1FAE5;
+  --border: #E2E8F0; --radius: 20px; --radius-sm: 12px;
+  --shadow: 0 2px 8px rgba(15,23,42,0.06), 0 8px 32px rgba(15,23,42,0.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: 'Sora', sans-serif; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79,70,229,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124,58,237,0.08) 0%, transparent 60%);
+}
+.header { background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 16px 36px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.logo { font-family: 'Sora', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(79,70,229,0.35); }
+.logo span { color: var(--accent); }
+.header-login { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); text-decoration: none; padding: 7px 18px; border: 1.5px solid rgba(79,70,229,0.3); border-radius: 8px; background: var(--accent-light); transition: background 0.15s; }
+.header-login:hover { background: #e0e7ff; border-color: var(--accent); }
+.main { max-width: 680px; margin: 0 auto; padding: 64px 24px 100px; }
+.post-nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; row-gap: 8px; }
+.post-nav-top { margin-bottom: 40px; }
+.post-nav-bottom { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--border); }
+.post-nav a { display: inline-flex; align-items: center; gap: 6px; font-size: 0.92rem; font-weight: 600; color: var(--ink-muted); text-decoration: none; padding: 12px 14px; border-radius: var(--radius-sm); white-space: nowrap; transition: color 0.15s, background 0.15s; }
+.post-nav a:hover { color: var(--accent); background: var(--accent-light); }
+.post-nav a:first-child { padding-left: 0; }
+.post-nav a:last-child { padding-right: 0; justify-content: flex-end; }
+.post-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: var(--accent-light); color: var(--accent); padding: 4px 10px; border-radius: 20px; }
+.post-date { font-size: 0.78rem; color: var(--ink-faint); }
+.post-title { font-family: 'Lora', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; color: var(--ink); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
+.post-lede { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+.post-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink); }
+.post-body h2 { font-family: 'Lora', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin: 44px 0 16px; letter-spacing: -0.01em; }
+.post-body p { margin-bottom: 20px; color: var(--ink-muted); }
+.post-body p strong { color: var(--ink); font-weight: 600; }
+.post-body ul { margin: 0 0 20px 20px; color: var(--ink-muted); }
+.post-body ul li { margin-bottom: 8px; line-height: 1.7; }
+.callout { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 32px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.7; }
+.post-footer { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.post-footer-label { font-size: 0.8rem; color: var(--ink-faint); }
+.btn-export { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-sm); text-decoration: none; box-shadow: 0 4px 14px rgba(79,70,229,0.3); transition: opacity 0.2s; }
+.btn-export:hover { opacity: 0.9; }
+.site-footer { border-top: 1px solid var(--border); padding: 32px 36px; margin-top: 48px; background: var(--surface); }
+.site-footer-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.footer-nav-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); width: 100%; margin-bottom: 4px; }
+.footer-nav a { font-size: 0.8rem; color: var(--ink-muted); text-decoration: none; transition: color 0.15s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-nav-divider { color: var(--border); font-size: 0.8rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--border); }
+.footer-copy { font-size: 0.75rem; color: var(--ink-faint); }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: var(--ink-faint); text-decoration: none; }
+.footer-legal a:hover { color: var(--accent); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.main { animation: fadeUp 0.6s ease both; }
+@media (max-width: 600px) { .header { padding: 14px 20px; } .main { padding: 40px 16px 80px; } .post-nav a { padding: 12px 8px; font-size: 0.88rem; } }
+</style>
+</head>
+<body>
+
+<!--HEADER-->
+
+<main class="main">
+
+  <nav class="post-nav post-nav-top">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+  <div class="post-meta">
+    <span class="post-tag">APIs</span>
+    <span class="post-date">November 27, 2026</span>
+  </div>
+
+  <h1 class="post-title">How to read rate limit headers and back off correctly</h1>
+
+  <p class="post-lede">APIs protect shared resources with rate limits that vary by endpoint, HTTP method, tenant, and time window. A client that ignores the headers returned with every response will hit 429 responses repeatedly, while one that reads those headers can pace itself, back off only the affected scope, and continue working on other parts of the API. The difference shows up in reliability during traffic spikes or when multiple instances share the same quota.</p>
+
+  <div class="post-body">
+
+<h2>Common rate limit headers and what they mean</h2>
+<p>Most APIs return headers that describe remaining capacity or the time until the window resets. GitHub uses x-ratelimit-remaining and x-ratelimit-reset in UTC epoch seconds. Jira Cloud returns RateLimit-Reason on 429 responses to indicate whether the limit is burst-based, per-issue, or quota-based. The IETF draft for rate limit headers defines structured fields such as RateLimit with parameters r for remaining quota and t for the effective window in seconds.</p>
+<p>These headers are not guarantees. They reflect the server&#039;s view at the moment the response was generated. A positive remaining value can still lead to a 429 if another client consumes the last token before your next request arrives. Always treat the values as advisory and combine them with your own pacing logic.</p><ul><li>Retry-After: preferred delay in seconds for both 429 and some 503 responses</li><li>X-RateLimit-Reset: ISO 8601 timestamp when the current window ends</li><li>RateLimit-Reason: scope identifier such as jira-burst-based or jira-quota-tenant-based</li><li>RateLimit and RateLimit-Policy: structured fields from the IETF draft</li></ul><div class="callout"><strong>Core rule</strong> Treat every response as carrying current limit information. When a 429 arrives, read RateLimit-Reason or Retry-After first, then pause only the limited scope instead of halting the entire client.</div>
+<h2>Responding to a 429 without stalling the whole client</h2>
+<p>A 429 response blocks only the scope named in RateLimit-Reason. When the reason is jira-burst-based, slow requests to that single endpoint and method. When the reason is jira-quota-tenant-based, pause all requests to that tenant until the Retry-After period passes. Other endpoints and other tenants remain available.</p>
+<p>Record the block at the scope level rather than in each thread. Multiple concurrent requests often receive identical 429 responses at the same moment. A shared block prevents every thread from starting its own independent backoff and waking together to hit the limit again.</p><ul><li>Retry only requests that are safe to repeat (GET, PUT, DELETE are usually safe)</li><li>Never retry a POST that creates a resource unless you can detect duplicates</li><li>Cap total wait time and retry count so a long quota window does not hang the caller</li></ul>
+<h2>Pacing requests and capping concurrency</h2>
+<p>The most frequent cause of 429 responses is sending too many requests at once. Promise.all on hundreds of keys or launching dozens of workers quickly exhausts burst capacity even when the steady-state rate is respected. Limit in-flight requests to a small number, typically five to ten, across the entire application rather than per thread or process.</p>
+<p>Design around the steady-state rate instead of the burst buffer. The burst allowance absorbs occasional spikes, but relying on it for normal operation produces repeated throttling. Spread traffic over time and reduce pressure on any single endpoint and method combination.</p><ul><li>Apply the same concurrency cap to the whole app, not per worker</li><li>Pace requests to the documented steady-state rate for each endpoint</li><li>Use token-bucket logic locally to smooth bursts before they reach the server</li></ul>
+<h2>Adding jitter and respecting scope-specific delays</h2>
+<p>When Retry-After is present, wait at least that many seconds. If the header is missing, fall back to X-RateLimit-Reset or a short exponential backoff with jitter. Jitter prevents multiple clients that were limited together from retrying in lockstep and recreating the problem.</p>
+<p>For burst limits the Retry-After value is often one second. Treat that as the minimum and apply exponential growth on subsequent 429 responses for the same scope. Reduce the request rate that triggered the limit rather than simply waiting and repeating the same pattern.</p><ul><li>Add a small random delay to every backoff calculation</li><li>Back off only the limited scope identified by RateLimit-Reason</li><li>Return the response to the caller instead of retrying when the required wait exceeds your configured maximum</li></ul>
+<h2>Putting the pieces together in client code</h2>
+<p>A well-behaved client combines three behaviors: it paces requests to the steady-state rate, caps concurrency across the whole application, and reacts to 429 responses by reading the reason header and waiting only for the affected scope. The same client continues sending requests to other endpoints and other tenants while one scope is blocked.</p>
+<p>Test the logic with synthetic 429 responses and varying Retry-After values. Verify that a limit on one endpoint does not stall unrelated work and that the client eventually succeeds once capacity is restored. These checks catch the common failure modes before they appear in production.</p><h2>Sources</h2><ul><li><a href="https://learn.microsoft.com/en-us/microsoft-cloud/dev/dev-proxy/concepts/how-to-handle-rate-limiting" rel="noopener noreferrer">learn.microsoft.com</a></li><li><a href="https://developer.atlassian.com/cloud/jira/platform/build-an-app-that-respects-rate-limits/" rel="noopener noreferrer">developer.atlassian.com</a></li><li><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpapi-ratelimit-headers-11" rel="noopener noreferrer">datatracker.ietf.org</a></li><li><a href="https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api" rel="noopener noreferrer">docs.github.com</a></li></ul>
+
+  </div>
+
+  <div class="post-footer">
+    <span class="post-footer-label">Looking for more AI tools?</span>
+    <a class="btn-export" href="/">See our free AI tools →</a>
+  </div>
+
+  <nav class="post-nav post-nav-bottom">
+    <a href="/pages/blog/">← The Export</a>
+    <a href="/pages/blog/all-posts/">All Posts</a>
+    <a href="/pages/blog/all-posts/">Older Posts →</a>
+  </nav>
+
+</main>
+
+<!--FOOTER-->
+
+</body>
+</html>

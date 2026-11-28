@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-11-27T10:00:43.910Z",
+  "generatedAt": "2026-11-28T09:17:24.146Z",
   "totals": {
-    "pages": 400,
-    "indexable": 396,
-    "articles": 322,
-    "sitemap": 396,
+    "pages": 402,
+    "indexable": 398,
+    "articles": 324,
+    "sitemap": 398,
     "errors": 0,
-    "warnings": 433
+    "warnings": 437
   },
   "errors": [],
   "warnings": [
@@ -203,6 +203,16 @@
     {
       "type": "topic-review",
       "page": "/pages/blog/apple-speechanalyzer-local-transcription-apps/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/armed-men-seize-cargo-ship-off-yemen-gulf-of-aden-risk-returns/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/armed-men-seize-cargo-ship-off-yemen-gulf-of-aden-risk-returns/",
       "detail": "title/description lacks a clear AI, software, or computing connection"
     },
     {
@@ -1013,6 +1023,16 @@
     {
       "type": "topic-review",
       "page": "/pages/blog/how-to-read-an-application-log-without-getting-lost/",
+      "detail": "title/description lacks a clear AI, software, or computing connection"
+    },
+    {
+      "type": "template-pattern",
+      "page": "/pages/blog/how-to-read-rate-limit-headers-and-back-off-correctly/",
+      "detail": "generated-post metadata and shared locked layout; editorial review only"
+    },
+    {
+      "type": "topic-review",
+      "page": "/pages/blog/how-to-read-rate-limit-headers-and-back-off-correctly/",
       "detail": "title/description lacks a clear AI, software, or computing connection"
     },
     {
@@ -2185,7 +2205,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 400,
+      "incomingLinks": 402,
       "lastmod": "2026-08-02",
       "bodyWords": 744
     },
@@ -2209,7 +2229,7 @@
       "canonical": "https://notavello.com/exporters/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 400,
+      "incomingLinks": 402,
       "lastmod": "2026-07-26",
       "bodyWords": 116
     },
@@ -2317,7 +2337,7 @@
       "canonical": "https://notavello.com/pages/about",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 400,
+      "incomingLinks": 402,
       "lastmod": "2026-07-22",
       "bodyWords": 355
     },
@@ -2329,9 +2349,9 @@
       "canonical": "https://notavello.com/pages/blog/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 400,
-      "lastmod": "2026-11-26",
-      "bodyWords": 747
+      "incomingLinks": 402,
+      "lastmod": "2026-11-27",
+      "bodyWords": 746
     },
     {
       "route": "/pages/blog/a-calm-checklist-for-inspecting-a-suspicious-message/",
@@ -2737,9 +2757,9 @@
       "canonical": "https://notavello.com/pages/blog/all-posts/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 261,
-      "lastmod": "2026-11-26",
-      "bodyWords": 3956
+      "incomingLinks": 263,
+      "lastmod": "2026-11-27",
+      "bodyWords": 3985
     },
     {
       "route": "/pages/blog/anhydrous-ammonia-is-the-fall-farm-bill/",
@@ -2764,6 +2784,18 @@
       "incomingLinks": 2,
       "lastmod": "2026-07-14",
       "bodyWords": 1529
+    },
+    {
+      "route": "/pages/blog/armed-men-seize-cargo-ship-off-yemen-gulf-of-aden-risk-returns/",
+      "file": "pages/blog/armed-men-seize-cargo-ship-off-yemen-gulf-of-aden-risk-returns/index.html",
+      "title": "Armed Men Seize Cargo Ship Off Yemen As Gulf Of Aden Risk Returns — The Export | Notavello",
+      "description": "Armed men seized a cargo ship off Yemen, adding Gulf of Aden hijack risk to Hormuz and Red Sea shipping pressure.",
+      "canonical": "https://notavello.com/pages/blog/armed-men-seize-cargo-ship-off-yemen-gulf-of-aden-risk-returns/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-11-28",
+      "bodyWords": 1385
     },
     {
       "route": "/pages/blog/asic-vs-gpu-mining-versatility/",
@@ -4218,6 +4250,18 @@
       "bodyWords": 797
     },
     {
+      "route": "/pages/blog/how-to-read-rate-limit-headers-and-back-off-correctly/",
+      "file": "pages/blog/how-to-read-rate-limit-headers-and-back-off-correctly/index.html",
+      "title": "How to read rate limit headers and back off correctly — The Export | Notavello",
+      "description": "Learn to parse rate limit headers, respect Retry-After values, and apply scoped backoff so your API client stays reliable without triggering repeated",
+      "canonical": "https://notavello.com/pages/blog/how-to-read-rate-limit-headers-and-back-off-correctly/",
+      "robots": "index, follow",
+      "inSitemap": true,
+      "incomingLinks": 2,
+      "lastmod": "2026-11-27",
+      "bodyWords": 827
+    },
+    {
       "route": "/pages/blog/how-to-rebase-a-git-branch-and-resolve-merge-conflicts-safely/",
       "file": "pages/blog/how-to-rebase-a-git-branch-and-resolve-merge-conflicts-safely/index.html",
       "title": "How to rebase a Git branch and resolve merge conflicts safely — The Export | Notavello",
@@ -4597,7 +4641,7 @@
       "canonical": "https://notavello.com/pages/blog/kpler-hormuz-transits-five-zero-weekend/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 2,
+      "incomingLinks": 3,
       "lastmod": "2026-11-23",
       "bodyWords": 1369
     },
@@ -4970,8 +5014,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-26",
-      "bodyWords": 666
+      "lastmod": "2026-11-27",
+      "bodyWords": 659
     },
     {
       "route": "/pages/blog/page-11/",
@@ -4982,8 +5026,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-26",
-      "bodyWords": 686
+      "lastmod": "2026-11-27",
+      "bodyWords": 688
     },
     {
       "route": "/pages/blog/page-12/",
@@ -4994,8 +5038,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-26",
-      "bodyWords": 666
+      "lastmod": "2026-11-27",
+      "bodyWords": 668
     },
     {
       "route": "/pages/blog/page-13/",
@@ -5006,8 +5050,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-26",
-      "bodyWords": 645
+      "lastmod": "2026-11-27",
+      "bodyWords": 650
     },
     {
       "route": "/pages/blog/page-14/",
@@ -5018,8 +5062,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-26",
-      "bodyWords": 696
+      "lastmod": "2026-11-27",
+      "bodyWords": 683
     },
     {
       "route": "/pages/blog/page-15/",
@@ -5030,8 +5074,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-26",
-      "bodyWords": 710
+      "lastmod": "2026-11-27",
+      "bodyWords": 691
     },
     {
       "route": "/pages/blog/page-16/",
@@ -5042,8 +5086,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-26",
-      "bodyWords": 809
+      "lastmod": "2026-11-27",
+      "bodyWords": 806
     },
     {
       "route": "/pages/blog/page-17/",
@@ -5054,8 +5098,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-26",
-      "bodyWords": 837
+      "lastmod": "2026-11-27",
+      "bodyWords": 842
     },
     {
       "route": "/pages/blog/page-18/",
@@ -5066,8 +5110,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 1,
-      "lastmod": "2026-11-26",
-      "bodyWords": 789
+      "lastmod": "2026-11-27",
+      "bodyWords": 884
     },
     {
       "route": "/pages/blog/page-2/",
@@ -5078,8 +5122,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-26",
-      "bodyWords": 737
+      "lastmod": "2026-11-27",
+      "bodyWords": 751
     },
     {
       "route": "/pages/blog/page-3/",
@@ -5090,8 +5134,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-26",
-      "bodyWords": 661
+      "lastmod": "2026-11-27",
+      "bodyWords": 653
     },
     {
       "route": "/pages/blog/page-4/",
@@ -5102,8 +5146,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-26",
-      "bodyWords": 641
+      "lastmod": "2026-11-27",
+      "bodyWords": 659
     },
     {
       "route": "/pages/blog/page-5/",
@@ -5114,8 +5158,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-26",
-      "bodyWords": 692
+      "lastmod": "2026-11-27",
+      "bodyWords": 684
     },
     {
       "route": "/pages/blog/page-6/",
@@ -5126,8 +5170,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-26",
-      "bodyWords": 628
+      "lastmod": "2026-11-27",
+      "bodyWords": 635
     },
     {
       "route": "/pages/blog/page-7/",
@@ -5138,8 +5182,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-26",
-      "bodyWords": 671
+      "lastmod": "2026-11-27",
+      "bodyWords": 663
     },
     {
       "route": "/pages/blog/page-8/",
@@ -5150,8 +5194,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-26",
-      "bodyWords": 637
+      "lastmod": "2026-11-27",
+      "bodyWords": 638
     },
     {
       "route": "/pages/blog/page-9/",
@@ -5162,8 +5206,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 2,
-      "lastmod": "2026-11-26",
-      "bodyWords": 672
+      "lastmod": "2026-11-27",
+      "bodyWords": 670
     },
     {
       "route": "/pages/blog/phosphate-is-the-fertilizer-shock-that-did-not-fade/",
@@ -6421,7 +6465,7 @@
       "canonical": "https://notavello.com/pages/contact",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 400,
+      "incomingLinks": 402,
       "lastmod": "2026-07-22",
       "bodyWords": 117
     },
@@ -6433,7 +6477,7 @@
       "canonical": "https://notavello.com/pages/faq",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 400,
+      "incomingLinks": 402,
       "lastmod": "2026-07-22",
       "bodyWords": 509
     },
@@ -6445,7 +6489,7 @@
       "canonical": "https://notavello.com/pages/pricing",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 400,
+      "incomingLinks": 402,
       "lastmod": "2026-07-22",
       "bodyWords": 219
     },
@@ -6457,7 +6501,7 @@
       "canonical": "https://notavello.com/pages/privacy",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 400,
+      "incomingLinks": 402,
       "lastmod": "2026-07-22",
       "bodyWords": 320
     },
@@ -6469,7 +6513,7 @@
       "canonical": "https://notavello.com/pages/relay/",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 400,
+      "incomingLinks": 402,
       "lastmod": "2026-07-31",
       "bodyWords": 170
     },
@@ -6482,8 +6526,8 @@
       "robots": "index, follow",
       "inSitemap": true,
       "incomingLinks": 3,
-      "lastmod": "2026-11-27",
-      "bodyWords": 787
+      "lastmod": "2026-11-28",
+      "bodyWords": 793
     },
     {
       "route": "/pages/sample",
@@ -6505,7 +6549,7 @@
       "canonical": "https://notavello.com/pages/sitemap",
       "robots": "noindex, follow",
       "inSitemap": false,
-      "incomingLinks": 400,
+      "incomingLinks": 402,
       "lastmod": "2026-08-02",
       "bodyWords": 684
     },
@@ -6517,7 +6561,7 @@
       "canonical": "https://notavello.com/pages/terms",
       "robots": "index, follow",
       "inSitemap": true,
-      "incomingLinks": 400,
+      "incomingLinks": 402,
       "lastmod": "2026-07-22",
       "bodyWords": 277
     },
@@ -6541,7 +6585,7 @@
       "canonical": "https://notavello.com/",
       "robots": "index, follow",
       "inSitemap": false,
-      "incomingLinks": 400,
+      "incomingLinks": 402,
       "lastmod": "2026-07-22",
       "bodyWords": 333
     },
@@ -6973,7 +7017,7 @@
       "canonical": "https://notavello.com/weather",
       "robots": "",
       "inSitemap": true,
-      "incomingLinks": 400,
+      "incomingLinks": 402,
       "lastmod": "2026-07-26",
       "bodyWords": 107
     }
