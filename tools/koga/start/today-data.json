@@ -1,37 +1,37 @@
 {
   "schema_version": "1.0",
-  "date_key": "11-27",
-  "display_date": "November 27",
-  "generated_at": "2026-11-27T18:12:08.103Z",
+  "date_key": "11-28",
+  "display_date": "November 28",
+  "generated_at": "2026-11-28T16:54:12.076Z",
   "source": "Wikimedia On This Day",
   "selection_method": "deterministic_fallback",
   "items": [
     {
-      "candidate_id": "event-0cf5987371c2f6e9a6b6ea44",
+      "candidate_id": "event-7cdf563da9fc094f66a0f57b",
       "type": "event",
-      "year": 2004,
-      "text": "Blackwater 61 crash: A CASA C-212 Aviocar crashes into the Koh-i-Baba mountain range in Afghanistan, killing six.",
-      "article_title": "Blackwater 61 crash",
-      "url": "https://en.wikipedia.org/wiki/Blackwater_61_crash",
+      "year": 1979,
+      "text": "Air New Zealand Flight 901, a DC-10 sightseeing flight over Antarctica, crashes into Mount Erebus, killing all 257 people on board.",
+      "article_title": "Mount Erebus disaster",
+      "url": "https://en.wikipedia.org/wiki/Mount_Erebus_disaster",
       "category": "Disasters and exploration"
     },
     {
-      "candidate_id": "event-02481239530ebcba6ec61305",
+      "candidate_id": "event-e2e84be790e7ba0092c22391",
       "type": "event",
-      "year": 1989,
-      "text": "Avianca Flight 203: A Boeing 727 explodes in mid-air over Colombia, killing all 107 people on board and three people on the ground. The Medellín Cartel claimed responsibility for the attack.",
-      "article_title": "Avianca Flight 203",
-      "url": "https://en.wikipedia.org/wiki/Avianca_Flight_203",
-      "category": "World history"
+      "year": 1983,
+      "text": "Space Shuttle Columbia is launched on STS-9, the first mission to carry the European Space Agency's Spacelab module.",
+      "article_title": "Space Shuttle Columbia",
+      "url": "https://en.wikipedia.org/wiki/Space_Shuttle_Columbia",
+      "category": "Science and technology"
     },
     {
-      "candidate_id": "event-35acd2fbe569fe1b0a26c045",
+      "candidate_id": "event-8b4c48bf6da0e7fb6abccf49",
       "type": "event",
-      "year": 1971,
-      "text": "The Soviet space program's Mars 2 orbiter releases a descent module. It malfunctions and crashes, but it is the first man-made object to reach the surface of Mars.",
-      "article_title": "Soviet space program",
-      "url": "https://en.wikipedia.org/wiki/Soviet_space_program",
-      "category": "Science and technology"
+      "year": 2016,
+      "text": "LaMia Flight 2933 crashes near Medellín, Colombia, killing 71 of 77 people on board, including members of the Brazilian football club Chapecoense",
+      "article_title": "LaMia Flight 2933",
+      "url": "https://en.wikipedia.org/wiki/LaMia_Flight_2933",
+      "category": "World history"
     }
   ]
 }
