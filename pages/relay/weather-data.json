@@ -1,34 +1,34 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-11-27T22:02:28.819Z",
-  "latest_success_at": "2026-11-27T22:02:28.819Z",
+  "generated_at": "2026-11-28T03:57:27.211Z",
+  "latest_success_at": "2026-11-28T03:57:27.211Z",
   "status": "ok",
   "items": [
     {
-      "id": "33ea98b81d2d196c",
-      "title": "SPC Day 3-8 Fire Weather Outlook",
-      "url": "https://www.spc.noaa.gov/products/exper/fire_wx",
-      "publisher": "Storm Prediction Center",
-      "published_at": "2026-11-27T20:54:17.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "b4bcce42aee5b24c",
-      "title": "SPC Nov 27, 2026 2000 UTC Day 1 Convective Outlook",
-      "url": "https://www.spc.noaa.gov/products/outlook/day1otlk_2000.html",
-      "publisher": "Storm Prediction Center",
-      "published_at": "2026-11-27T19:48:18.000Z",
-      "topic": "Hurricane",
-      "status": "ok"
-    },
-    {
-      "id": "b5ad93019d019ede",
-      "title": "Atlantic Tropical Weather Outlook",
-      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=atlc",
+      "id": "ee8e390990a944fc",
+      "title": "Eastern North Pacific Tropical Weather Outlook",
+      "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-11-27T17:08:29.000Z",
+      "published_at": "2026-11-27T23:35:24.000Z",
       "topic": "Hurricane",
+      "status": "ok"
+    },
+    {
+      "id": "3742b4efbc4e85fb",
+      "title": "Flood Warning issued November 27 at 8:58PM EST by NWS Melbourne FL",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a8b9f86051c1c3cde40eab6224dc78b6f63e57f3.001.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-11-28T01:58:00.000Z",
+      "topic": "Flooding",
+      "status": "ok"
+    },
+    {
+      "id": "81878ec24684bb95",
+      "title": "Flood Warning issued November 27 at 8:52PM EST by NWS Melbourne FL",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.aa2f56357813a15f2e4e75bc8dad392d99c8858c.001.1.cap",
+      "publisher": "National Weather Service",
+      "published_at": "2026-11-28T01:52:00.000Z",
+      "topic": "Flooding",
       "status": "ok"
     }
   ]
