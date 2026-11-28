@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "checked_at": "2026-11-28T03:57:26.553Z",
-  "latest_success_at": "2026-11-28T03:57:26.553Z",
+  "checked_at": "2026-11-28T13:08:56.171Z",
+  "latest_success_at": "2026-11-28T13:08:56.171Z",
   "status": "ok",
   "items": [
     {
@@ -61,14 +61,6 @@
       "status": "ok"
     },
     {
-      "title": "Uber drivers are flocking to EVs amid high gas prices",
-      "url": "https://www.canarymedia.com/articles/electric-vehicles/uber-drivers-flocking-to-evs",
-      "publisher": "Canary Media",
-      "published_at": "2026-11-25T08:30:00.000Z",
-      "source_id": "canary-media",
-      "status": "ok"
-    },
-    {
       "title": "Ship-Killing ARRW Hypersonic Missile Variant Struggling To Get Full Support From Lawmakers",
       "url": "https://www.twz.com/air/ship-killing-arrw-hypersonic-missile-variant-struggling-to-get-full-support-from-lawmakers",
       "publisher": "TWZ (The War Zone)",
@@ -82,6 +74,14 @@
       "publisher": "Breaking Defense",
       "published_at": "2026-11-25T16:01:00.000Z",
       "source_id": "breaking-defense",
+      "status": "ok"
+    },
+    {
+      "title": "Final KC-46 Tankers Under Original Contract With Boeing Ordered By USAF",
+      "url": "https://www.twz.com/air/final-kc-46-tankers-under-original-contract-with-boeing-ordered-by-usaf",
+      "publisher": "TWZ (The War Zone)",
+      "published_at": "2026-11-25T19:28:11.000Z",
+      "source_id": "twz",
       "status": "ok"
     }
   ]

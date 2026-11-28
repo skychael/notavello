@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-11-28T03:57:27.211Z",
-  "latest_success_at": "2026-11-28T03:57:27.211Z",
+  "generated_at": "2026-11-28T13:08:57.174Z",
+  "latest_success_at": "2026-11-28T13:08:57.174Z",
   "status": "ok",
   "items": [
     {
@@ -9,25 +9,25 @@
       "title": "Eastern North Pacific Tropical Weather Outlook",
       "url": "https://www.nhc.noaa.gov/gtwo.php?basin=epac",
       "publisher": "National Hurricane Center",
-      "published_at": "2026-11-27T23:35:24.000Z",
+      "published_at": "2026-11-28T11:36:57.000Z",
       "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "3742b4efbc4e85fb",
-      "title": "Flood Warning issued November 27 at 8:58PM EST by NWS Melbourne FL",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a8b9f86051c1c3cde40eab6224dc78b6f63e57f3.001.1.cap",
-      "publisher": "National Weather Service",
-      "published_at": "2026-11-28T01:58:00.000Z",
-      "topic": "Flooding",
+      "id": "012337d9be399dc1",
+      "title": "SPC Nov 28, 2026 Day 4-8 Severe Weather Outlook",
+      "url": "https://www.spc.noaa.gov/products/exper/day4-8",
+      "publisher": "Storm Prediction Center",
+      "published_at": "2026-11-28T10:03:21.000Z",
+      "topic": "Hurricane",
       "status": "ok"
     },
     {
-      "id": "81878ec24684bb95",
-      "title": "Flood Warning issued November 27 at 8:52PM EST by NWS Melbourne FL",
-      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.aa2f56357813a15f2e4e75bc8dad392d99c8858c.001.1.cap",
+      "id": "fd7908db72f44a3b",
+      "title": "Flood Warning issued November 27 at 11:13PM PST until November 28 at 10:00AM PST by NWS Seattle WA",
+      "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.25f785102e7aa4390ec3c30df25ed8d39cf78d95.001.1.cap",
       "publisher": "National Weather Service",
-      "published_at": "2026-11-28T01:52:00.000Z",
+      "published_at": "2026-11-28T07:13:00.000Z",
       "topic": "Flooding",
       "status": "ok"
     }
